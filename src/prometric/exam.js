@@ -773,7 +773,6 @@ class ExamEngine {
         const seconds = timeSpent % 60;
 
         document.getElementById('final-score').textContent = `${score}%`;
-        document.querySelector('.score-circle')?.style.setProperty('--score-pct', `${score}%`);
         document.getElementById('correct-count').textContent = correct;
         document.getElementById('incorrect-count').textContent = total - correct;
         document.getElementById('time-spent').textContent = 
@@ -1049,8 +1048,8 @@ class ExamEngine {
                 datasets: [{
                     label: 'Score %',
                     data,
-                    borderColor: '#00d4aa',
-                    backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
                     fill: true,
                     tension: 0.4
                 }]

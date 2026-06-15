@@ -223,4 +223,3 @@ self.addEventListener('message', function(event) {
       break;
   }
 });
-b
