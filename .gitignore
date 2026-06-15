@@ -29,7 +29,6 @@ package-lock.json
 npm-debug.log*
 
 # ── Dev server scripts ─────────────────────────────────────────────────────
-server.py
 server.bat
 
 # ── OS / editor ────────────────────────────────────────────────────────────
