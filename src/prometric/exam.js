@@ -514,7 +514,13 @@ class ExamEngine {
         document.getElementById('question-subject').className = 'subject-badge';
         document.getElementById('question-difficulty').textContent = q.difficulty.toUpperCase();
         document.getElementById('question-difficulty').className = `difficulty-badge ${q.difficulty}`;
-        document.getElementById('question-topic').textContent = q.topic;
+        const topicEl = document.getElementById('question-topic');
+        if (q.topic && q.topic !== q.subject) {
+            topicEl.textContent = q.topic;
+            topicEl.style.display = '';
+        } else {
+            topicEl.style.display = 'none';
+        }
         
         document.getElementById('question-stem').textContent = q.text;
         
