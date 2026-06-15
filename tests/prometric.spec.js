@@ -163,9 +163,7 @@ test('can complete exam and see results', async ({ page }) => {
       // Select first option (letter 'A')
       engine.selectOption(document.querySelector('.option-item'), 'A');
       engine.submitAnswer();
-      if (engine.currentIndex < engine.questions.length - 1) {
-        engine.nextOrEnd();
-      }
+      engine.nextOrEnd();
     });
   }
 

@@ -638,6 +638,7 @@ class ExamEngine {
             const expContainer = document.getElementById('explanation-container');
             expContainer.innerHTML = `<h4>Explanation</h4><p>${q.explanation}</p>`;
             expContainer.classList.remove('hidden');
+            setTimeout(() => expContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
         }
         
         submitBtn.textContent = this.currentIndex < this.questions.length - 1 ? 'Next Question' : 'Finish Exam';
@@ -647,12 +648,6 @@ class ExamEngine {
         }
 
         this.updateNavigator();
-        
-        setTimeout(() => {
-            if (!this.tutorMode) {
-                this.nextOrEnd();
-            }
-        }, this.tutorMode ? 0 : 300);
     }
 
     adjustCatDifficulty() {
