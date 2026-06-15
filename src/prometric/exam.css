@@ -2278,6 +2278,10 @@ body {
         gap: 0;
     }
 
+    .kbd-hint {
+        display: none;
+    }
+
     .left-panel,
     .right-panel {
         display: none;
