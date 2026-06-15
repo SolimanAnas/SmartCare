@@ -9,6 +9,14 @@
     "ecmaVersion": 2021,
     "sourceType": "script"
   },
+  "overrides": [
+    {
+      "files": ["playwright.config.js"],
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    }
+  ],
   "extends": "eslint:recommended",
   "rules": {
     "no-unused-vars": "warn",
