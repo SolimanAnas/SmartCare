@@ -20,7 +20,7 @@ class ExamEngine {
         this.examStats = this.loadStats();
         this.improvementChart = null;
         this.questionHistory = this.loadQuestionHistory();
-        this.settings = { count: 50, difficulty: 'all', timer: 'timed', score: 'show' };
+        this.settings = { count: 50, difficulty: 'all', timer: 'tutor', score: 'show' };
         this.keyboardHandler = (e) => this.handleKeyboard(e);
         this.touchStartX = 0;
         this.touchStartY = 0;

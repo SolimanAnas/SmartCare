@@ -56,6 +56,8 @@ async function navigateWizard(page) {
   await page.locator('.wizard-next[data-next="2"]').click();
   // Step 2 → Step 3: Click Next on topics step
   await page.locator('.wizard-next[data-next="3"]').click();
+  // Step 3: select timed mode for tests that need auto-advance
+  await page.locator('[data-setting="timer"][data-value="timed"]').click();
   // Step 3: click Start Exam
   await page.locator('#start-exam').click();
 }
