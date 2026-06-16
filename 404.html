@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="/CPG-2025/styles.css">
+    <link rel="manifest" href="/CPG-2025/manifest.json">
     <meta name="theme-color" content="#0056b3">
-    <link rel="apple-touch-icon" href="icons/icon.png">
+    <link rel="apple-touch-icon" href="/CPG-2025/icons/icon.png">
 
     <style>
         :root {
@@ -459,9 +459,9 @@
 
     <div class="header-right" id="headerShortcuts">
         <button class="icon-btn" id="themeToggle" title="Switch Theme">🎨</button>
-        <a href="pages/courses.html" class="icon-btn" title="Courses">🎓</a>
-        <a href="chapters/c-index.html?view=summary" class="icon-btn" title="Index">📋</a>
-        <a href="pages/about.html" class="icon-btn" title="About">ℹ️</a>
+        <a href="/CPG-2025/pages/courses.html" class="icon-btn" title="Courses">🎓</a>
+        <a href="/CPG-2025/chapters/c-index.html?view=summary" class="icon-btn" title="Index">📋</a>
+        <a href="/CPG-2025/pages/about.html" class="icon-btn" title="About">ℹ️</a>
     </div>
 </header>
 
@@ -504,14 +504,14 @@
                 </div>
 
                 <div class="action-stack">
-                    <a href="index.html" class="action-btn action-btn-primary">
+                    <a href="/CPG-2025/index.html" class="action-btn action-btn-primary">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         Return to Home
                     </a>
-                    <a href="chapters/c-index.html?view=summary" class="action-btn action-btn-secondary">
+                    <a href="/CPG-2025/chapters/c-index.html?view=summary" class="action-btn action-btn-secondary">
                         📋 Browse All Chapters
                     </a>
-                    <a href="pages/courses.html" class="action-btn action-btn-secondary">
+                    <a href="/CPG-2025/pages/courses.html" class="action-btn action-btn-secondary">
                         🎓 Courses & Exams
                     </a>
                 </div>
@@ -527,7 +527,7 @@
 
 <footer>
     <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="pages/about.html">About &amp; Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
+    <div><a href="/CPG-2025/pages/about.html">About &amp; Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
 </footer>
 
 <script>
@@ -547,7 +547,7 @@
 
     // Home button
     const homeBtn = document.getElementById('homeBtn');
-    if (homeBtn) homeBtn.addEventListener('click', () => window.location.href = 'index.html');
+    if (homeBtn) homeBtn.addEventListener('click', () => window.location.href = '/CPG-2025/index.html');
 
     // Theme toggle
     const themeBtn = document.getElementById('themeToggle');
@@ -572,7 +572,7 @@
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('/CPG-2025/sw.js')
             .then(r => console.log('PWA Ready', r))
             .catch(e => console.log('SW failed', e));
     });
