@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const BASE = 'http://127.0.0.1:8899';
-const EXAM_PAGE = `${BASE}/src/prometric/exams.html`;
+const EXAM_PAGE = `${BASE}/src/prometric/exam.html`;
 const DB_URL = `${BASE}/src/prometric/exam-db.json`;
 
 // ── 1. Database integrity ──────────────────────────────────────────────
@@ -38,7 +38,7 @@ test('exam-db.json has 2559 questions and 17 categories', async ({ request }) =>
 });
 
 // ── 2. Page loads with no console errors ──────────────────────────────
-test('exams.html loads without console errors', async ({ page }) => {
+test('exam.html loads without console errors', async ({ page }) => {
   const errors = [];
   page.on('pageerror', err => errors.push(err.message));
 
