@@ -2395,6 +2395,10 @@ body {
         display: none;
     }
 
+    .focus-toggle {
+        display: none;
+    }
+
     .left-panel {
         display: none;
         padding: 14px 12px;

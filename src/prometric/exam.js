@@ -419,7 +419,9 @@ class ExamEngine {
         this.showScreen('exam-screen');
         this.renderQuestion();
         
-        if (!this.tutorMode) {
+        if (this.tutorMode) {
+            this.startTimer(true);
+        } else {
             this.startTimer();
         }
         
@@ -713,27 +715,36 @@ class ExamEngine {
         this.renderQuestion();
     }
 
-    startTimer() {
+    startTimer(countUp = false) {
         clearInterval(this.timerInterval);
+        
+        const label = document.querySelector('.timer-label');
+        if (label) label.textContent = countUp ? 'Elapsed' : 'Time Remaining';
         
         this.timerInterval = setInterval(() => {
             if (this.isPaused) return;
             
             this.elapsedSeconds = Math.floor((Date.now() - this._timerBase) / 1000);
-            const timeLeft = this.totalExamSeconds - this.elapsedSeconds;
             
             const timer = document.getElementById('timer');
-            timer.textContent = this.formatTime(Math.max(0, timeLeft));
             
-            timer.classList.remove('warning', 'danger');
-            if (timeLeft <= 60) {
-                timer.classList.add('danger');
-            } else if (timeLeft <= 300) {
-                timer.classList.add('warning');
-            }
-            
-            if (timeLeft <= 0) {
-                this.endExam();
+            if (countUp) {
+                timer.textContent = this.formatTime(this.elapsedSeconds);
+                timer.classList.remove('warning', 'danger');
+            } else {
+                const timeLeft = this.totalExamSeconds - this.elapsedSeconds;
+                timer.textContent = this.formatTime(Math.max(0, timeLeft));
+                
+                timer.classList.remove('warning', 'danger');
+                if (timeLeft <= 60) {
+                    timer.classList.add('danger');
+                } else if (timeLeft <= 300) {
+                    timer.classList.add('warning');
+                }
+                
+                if (timeLeft <= 0) {
+                    this.endExam();
+                }
             }
         }, 200);
     }
@@ -758,7 +769,9 @@ class ExamEngine {
         this.closeModal();
         this.isPaused = false;
         this._timerBase = Date.now() - (this._pausedElapsed * 1000);
-        if (!this.tutorMode) {
+        if (this.tutorMode) {
+            this.startTimer(true);
+        } else {
             this.startTimer();
         }
     }
@@ -1014,7 +1027,9 @@ class ExamEngine {
         this.showScreen('exam-screen');
         this.renderQuestion();
         
-        if (!this.tutorMode) {
+        if (this.tutorMode) {
+            this.startTimer(true);
+        } else {
             this.startTimer();
         }
     }
