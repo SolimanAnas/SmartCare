@@ -1,4 +1,4 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ================================================================
-   EMPACT ‚Äî Full UI (ITLS style)
+   EMPACT ó Full UI (ITLS style)
 ================================================================ */
 :root,[data-theme="dark"]{
   --bg:#070f1d;--panel:#0c1628;--card:#111d30;--card2:#162035;
@@ -345,13 +345,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
     <div class="exam-card" onclick="startExam('../src/EMPACT/exam1.json', 'EMPACT Mock Exam')">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></div>
       <div class="ec-title">EMPACT Mock Exam</div>
-      <div class="ec-meta">50 questions ¬∑ Exam & Study modes</div>
+      <div class="ec-meta">50 questions ∑ Exam & Study modes</div>
       <span class="ec-tag tag-exam">Mock Test</span>
     </div>
     <div class="exam-card" onclick="openPearls()">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#gem"/></svg></div>
       <div class="ec-title">EMPACT Clinical Pearls</div>
-      <div class="ec-meta">47 study hints ¬∑ categorized</div>
+      <div class="ec-meta">47 study hints ∑ categorized</div>
       <span class="ec-tag tag-pearl">Study Guide</span>
     </div>
   </div>
@@ -364,7 +364,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
     <div class="eh-left">
       <button class="sb-toggle" onclick="toggleSidebar()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#menu"/></svg></button>
       <span class="hdr-brand">EMPACT</span>
-      <span class="hdr-exam" id="examName">‚Äî</span>
+      <span class="hdr-exam" id="examName">ó</span>
       <span class="hdr-mode m-exam" id="modeBadge">Exam</span>
     </div>
     <div class="eh-center"><div class="hdr-timer" id="timerDisplay">00:00</div></div>
@@ -400,7 +400,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
     <main class="q-main">
       <div class="q-scroll" id="qScroll">
         <div class="q-hdr"><span class="q-badge" id="qBadge">Question 1 of 50</span><div class="q-pbar"><div class="q-pfill" id="qPfill"></div></div></div>
-        <div class="q-box" id="qBox"><span class="study-watermark">Study Mode</span><span id="qText">Loading‚Ä¶</span></div>
+        <div class="q-box" id="qBox"><span class="study-watermark">Study Mode</span><span id="qText">LoadingÖ</span></div>
         <div class="opts" id="optsList"></div>
         <div id="expArea"></div>
       </div>
@@ -422,7 +422,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
 <!-- Pearls screen -->
 <div id="pearlsScreen">
   <div class="pearls-header"><span class="pearls-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#gem"/></svg> EMPACT Clinical Pearls</span><button class="pearls-back" onclick="closePearls()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back</button></div>
-  <div class="pearls-scroll" id="pearlsContainer"><div style="text-align:center;padding:40px">Loading pearls‚Ä¶</div></div>
+  <div class="pearls-scroll" id="pearlsContainer"><div style="text-align:center;padding:40px">Loading pearlsÖ</div></div>
 </div>
 
 <!-- Modal -->
@@ -534,7 +534,7 @@ async function startExam(path, name) {
     document.getElementById('examName').textContent = name;
     document.getElementById('resExamName').textContent = name;
     const modeBadge = document.getElementById('modeBadge');
-    modeBadge.textContent = ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
+    modeBadge.innerHTML = ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
     modeBadge.className = 'hdr-mode ' + (ST.mode === 'study' ? 'm-study' : 'm-exam');
     const isStudy = ST.mode === 'study';
     document.getElementById('endBtn').style.display = isStudy ? 'none' : '';
@@ -695,10 +695,10 @@ function submitExam() {
     const ua = ST.answers[q.id];
     const isC = ua && ua === q.correct_answer, isX = ua && !isC, isO = !ua;
     const dotClass = isC ? 'dot-c' : isX ? 'dot-x' : 'dot-o';
-    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : '‚Äî';
+    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : 'ó';
     const badgeClass = isC ? 'rqb-c' : isX ? 'rqb-x' : 'rqb-o';
     const badgeText = isC ? 'Correct' : isX ? 'Incorrect' : 'Omitted';
-    html += `<div class="rq-item"><div class="rq-row" onclick="xpand(this,${i})"><span class="rq-n">${i+1}</span><span class="rq-dot ${dotClass}">${ind}</span><span class="rq-q">${escapeHtml(q.text)}</span><span class="rq-badge ${badgeClass}">${badgeText}</span><span class="rq-chev">‚ñº</span></div><div class="rq-body" id="rb${i}">${buildResOpts(q,ua)}<div class="exp-box"><div class="exp-label"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Explanation</div><div class="exp-body">${escapeHtml(q.explanation||'')}</div></div></div></div>`;
+    html += `<div class="rq-item"><div class="rq-row" onclick="xpand(this,${i})"><span class="rq-n">${i+1}</span><span class="rq-dot ${dotClass}">${ind}</span><span class="rq-q">${escapeHtml(q.text)}</span><span class="rq-badge ${badgeClass}">${badgeText}</span><span class="rq-chev">?</span></div><div class="rq-body" id="rb${i}">${buildResOpts(q,ua)}<div class="exp-box"><div class="exp-label"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Explanation</div><div class="exp-body">${escapeHtml(q.explanation||'')}</div></div></div></div>`;
   });
   html += '</div>';
   document.getElementById('resContent').innerHTML = html;
@@ -750,7 +750,7 @@ showScreen('sel');
 <!-- Exit Confirmation Modal -->
 <div class="modal-bg" id="exitModal" onclick="if(event.target===this)closeExitModal()" role="dialog" aria-modal="true" aria-labelledby="exitModalTitleE">
   <div class="modal">
-    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>Ô∏è</div>
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>?</div>
     <div class="modal-ttl" id="exitModalTitleE">Leave Exam?</div>
     <div class="modal-sub">Your current progress will be lost.</div>
     <div class="modal-btns">
