@@ -54,7 +54,7 @@ window.CPG_DATA = {
                 { category: "KPI", question: "Time to request ALS Backup?", answer: "Within 1 minute of patient contact" },
                 { category: "Transport", question: "Transport vs Wait Rule?", answer: "If transport < 10 mins, do NOT wait for ALS" },
                 { category: "Airwing", question: "Airwing Exclusion?", answer: "Imminent Birth, Violent Patient" },
-                { category: "Primary Survey", question: "Cardiac arrest sequence?", answer: 'C‑A‑B\nCompressions (start immediately, 30:2) <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> Airway (open, OPA/NPA) <svg class='lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> Breathing (BVM, 2 breaths)" },
+                { category: "Primary Survey", question: "Cardiac arrest sequence?", answer: 'C‑A‑B\nCompressions (start immediately, 30:2) <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> Airway (open, OPA/NPA) <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> Breathing (BVM, 2 breaths)" },
                 { category: "Primary Survey", question: "General Impression elements?", answer: "1. Appearance (tone, interactivity)\n2. Work of Breathing (noises, retractions, position)\n3. Circulation to skin (colour, pallor, cyanosis)" },
                 { category: "AVPU", question: "What does AVPU stand for?", answer: "Alert (A) – eyes open, tracking\nVerbal (V) – responds to voice\nPain (P) – responds to pain/pressure\nUnresponsive (U) – no response" },
                 { category: "Vitals", question: "Normal adult pulse?", answer: "60‑100 beats per minute\n<60 = bradycardia\n>100 = tachycardia" },
@@ -287,7 +287,7 @@ window.CPG_DATA = {
             shortTitle: "1.4 Functional Needs",
             summary: `
                 <div class="sum-card">
-                    <h3 style='color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg>‍<svg class='lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#handshake"/></svg>‍<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Special Populations</h3>
+                    <h3 style='color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg>‍<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#handshake"/></svg>‍<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Special Populations</h3>
                     <ul>
                         <li><strong>Pediatrics:</strong> Age <strong>≤ 13 years</strong>. Use Broselow Tape.</li>
                         <li><strong>Geriatrics:</strong> Age <strong>≥ 65 years</strong>. High risk of under-triage.</li>
