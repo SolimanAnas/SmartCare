@@ -233,7 +233,7 @@
             top: 20%;
             height: 60%;
             width: 3px;
-            background: var(--primary-accent);
+            background: var(--cat-color, var(--primary-accent));
             border-radius: 0 3px 3px 0;
             opacity: 0;
             transition: opacity 0.25s, height 0.25s, top 0.25s;
@@ -248,8 +248,8 @@
             outline-offset: 2px;
         }
         .course-card:hover {
-            border-color: color-mix(in srgb, var(--primary-accent) 35%, transparent);
-            box-shadow: 0 4px 24px -8px rgba(0,0,0,0.2), 0 0 0 1px color-mix(in srgb, var(--primary-accent) 8%, transparent);
+            border-color: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 40%, transparent);
+            box-shadow: 0 4px 24px -8px rgba(0,0,0,0.2), 0 0 0 1px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, transparent);
             transform: translateY(-1px);
         }
         .course-card:active {
@@ -280,14 +280,14 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: color-mix(in srgb, var(--primary-accent) 8%, transparent);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, transparent);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            color: var(--primary-accent);
+            color: var(--cat-color, var(--primary-accent));
             transition: background 0.25s, transform 0.2s;
-            border: 1px solid color-mix(in srgb, var(--primary-accent) 12%, transparent);
+            border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 16%, transparent);
         }
         .cc-icon svg.lucide {
             width: 22px;
@@ -296,7 +296,7 @@
             stroke-width: 2;
         }
         .course-card:hover .cc-icon {
-            background: color-mix(in srgb, var(--primary-accent) 16%, transparent);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 20%, transparent);
             transform: scale(1.05);
         }
 
@@ -325,11 +325,11 @@
             font-weight: 700;
             padding: 3px 8px;
             border-radius: 6px;
-            background: color-mix(in srgb, var(--primary-accent) 12%, transparent);
-            color: var(--primary-accent);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 12%, transparent);
+            color: var(--cat-color, var(--primary-accent));
             white-space: nowrap;
             flex-shrink: 0;
-            border: 1px solid color-mix(in srgb, var(--primary-accent) 15%, transparent);
+            border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 18%, transparent);
             letter-spacing: 0.2px;
         }
         .cc-chevron {
@@ -373,16 +373,16 @@
         .cc-progress-fill {
             height: 100%;
             border-radius: inherit;
-            background: linear-gradient(90deg, var(--primary-accent), color-mix(in srgb, var(--primary-accent) 60%, #fff));
-            transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+            background: linear-gradient(90deg, var(--cat-color, var(--primary-accent)), color-mix(in srgb, var(--cat-color, var(--primary-accent)) 55%, #fff));
+            transition: width 0.7s cubic-bezier(0.16,1,0.3,1);
             width: 0%;
-            box-shadow: 0 0 8px color-mix(in srgb, var(--primary-accent) 25%, transparent);
+            box-shadow: 0 0 8px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 30%, transparent);
         }
         .cc-pct {
             font-size: 0.64rem;
             font-weight: 700;
             font-variant-numeric: tabular-nums;
-            color: var(--primary-accent);
+            color: var(--cat-color, var(--primary-accent));
             min-width: 32px;
             text-align: right;
             flex-shrink: 0;
@@ -415,22 +415,22 @@
             align-items: center;
             gap: 14px;
             padding: 16px 18px;
-            background: linear-gradient(135deg, color-mix(in srgb, var(--primary-accent) 4%, var(--glass-bg)), var(--glass-bg));
-            border: 1px solid color-mix(in srgb, var(--primary-accent) 25%, var(--glass-border));
+            background: linear-gradient(135deg, color-mix(in srgb, var(--cat-color, var(--primary-accent)) 5%, var(--glass-bg)), var(--glass-bg));
+            border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 28%, var(--glass-border));
             border-radius: var(--card-radius);
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary-accent) 6%, transparent),
-                        0 4px 20px -8px color-mix(in srgb, var(--primary-accent) 15%, transparent);
+            box-shadow: 0 0 0 1px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 7%, transparent),
+                        0 4px 20px -8px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 18%, transparent);
             transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
             cursor: pointer;
             position: relative;
             animation: cardIn 0.45s cubic-bezier(0.16,1,0.3,1) both;
         }
         .continue-card:hover {
-            border-color: color-mix(in srgb, var(--primary-accent) 40%, transparent);
-            box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary-accent) 10%, transparent),
-                        0 6px 28px -8px color-mix(in srgb, var(--primary-accent) 20%, transparent);
+            border-color: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 45%, transparent);
+            box-shadow: 0 0 0 1px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 12%, transparent),
+                        0 6px 28px -8px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 22%, transparent);
             transform: translateY(-1px);
         }
         .continue-card:active {
@@ -439,9 +439,9 @@
         .continue-card .cc-icon {
             width: 46px;
             height: 46px;
-            background: color-mix(in srgb, var(--primary-accent) 14%, transparent);
-            border-color: color-mix(in srgb, var(--primary-accent) 18%, transparent);
-            color: var(--primary-accent);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 14%, transparent);
+            border-color: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 20%, transparent);
+            color: var(--cat-color, var(--primary-accent));
         }
         .continue-card .cc-icon svg.lucide { width: 24px; height: 24px; }
         .continue-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
@@ -453,7 +453,7 @@
             font-size: 0.78rem;
             font-weight: 700;
             font-family: var(--font-display);
-            color: var(--primary-accent);
+            color: var(--cat-color, var(--primary-accent));
             white-space: nowrap;
             flex-shrink: 0;
             transition: gap 0.2s;
@@ -657,6 +657,69 @@
         }
         .pwa-share-icon { display: inline-block; font-size: 1rem; margin: 0 2px; }
 
+        /* ── Per-category accent colors ── */
+        [data-cat="cardiac"]     { --cat-color: #f87171; }
+        [data-cat="trauma"]      { --cat-color: #fb923c; }
+        [data-cat="pediatrics"]  { --cat-color: #a78bfa; }
+        [data-cat="medical"]     { --cat-color: #34d399; }
+        [data-cat="ecg"]         { --cat-color: #fbbf24; }
+        [data-cat="general"]     { --cat-color: var(--primary-accent); }
+
+        /* ── Stats strip ── */
+        .stats-strip {
+            display: none;
+            align-items: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 11px 6px;
+            margin-bottom: 16px;
+            box-shadow: var(--glass-shadow);
+        }
+        .stats-strip.visible { display: flex; }
+        .stat-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+        }
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-variant-numeric: tabular-nums;
+            line-height: 1.2;
+        }
+        .stat-lab {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            opacity: 0.6;
+        }
+        .stat-divider {
+            width: 1px;
+            height: 26px;
+            background: var(--glass-border);
+            flex-shrink: 0;
+            opacity: 0.5;
+        }
+
+        /* ── Section count badge ── */
+        .section-count {
+            font-size: 0.58rem;
+            font-weight: 700;
+            padding: 1px 7px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.08);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-left: 2px;
+        }
+
         /* ── Lucide sizing ── */
         .icon-btn svg.lucide,
         .toggle-btn svg.lucide { width: 60%; height: 60%; }
@@ -785,6 +848,23 @@
         <button class="chip" data-filter="ecg" role="tab" aria-selected="false">ECG</button>
     </div>
 
+    <div class="stats-strip" id="statsStrip">
+        <div class="stat-item">
+            <span class="stat-num" id="statCourses">—</span>
+            <span class="stat-lab">Courses</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-num" id="statQuestions">—</span>
+            <span class="stat-lab">Questions</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-num" id="statStudied">—</span>
+            <span class="stat-lab">Studied</span>
+        </div>
+    </div>
+
     <div id="courseList"></div>
 </main>
 
@@ -851,15 +931,34 @@
     let activeFilter = 'all';
     let searchQuery = '';
 
+    function updateStats(courses) {
+        const strip = document.getElementById('statsStrip');
+        if (!strip) return;
+        const totalQ = courses.reduce(function(s, c) { return s + (c.count || 0); }, 0);
+        const progress = getAllProgress();
+        const studiedCount = courses.filter(function(c) { return progress[c.id] && (progress[c.id].pct || 0) > 0; }).length;
+        document.getElementById('statCourses').textContent = courses.length;
+        document.getElementById('statQuestions').textContent = totalQ >= 1000
+            ? (totalQ / 1000).toFixed(1).replace(/\.0$/, '') + 'k'
+            : totalQ;
+        document.getElementById('statStudied').textContent = studiedCount + '/' + courses.length;
+        strip.classList.toggle('visible', courses.length > 0);
+    }
+
+    function animateFills(container) {
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                container.querySelectorAll('.cc-progress-fill[data-fill]').forEach(function(el) {
+                    const w = parseFloat(el.getAttribute('data-fill'));
+                    if (w > 0) el.style.width = w + '%';
+                });
+            });
+        });
+    }
+
     function renderCourses() {
         const container = document.getElementById('courseList');
         if (!container) return;
-
-        let html = '';
-
-        if (activeFilter === 'all' && !searchQuery.trim()) {
-            html += renderContinueLearning();
-        }
 
         let filtered = COURSES.filter(c => c.available !== false);
 
@@ -875,8 +974,19 @@
             );
         }
 
+        updateStats(filtered);
+
+        let html = '';
+
+        if (activeFilter === 'all' && !searchQuery.trim()) {
+            html += renderContinueLearning();
+        }
+
         if (filtered.length === 0) {
-            html += '<div class="empty-state">No courses match your search.</div>';
+            html += `<div class="empty-state">
+                <svg class="lucide" style="width:36px;height:36px;opacity:0.25;display:block;margin:0 auto 12px" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg>
+                No courses match your search.
+            </div>`;
             container.innerHTML = html;
             return;
         }
@@ -893,7 +1003,7 @@
                 const items = grouped[cat];
                 if (!items || items.length === 0) return;
                 const label = CATEGORY_LABELS[cat] || cat;
-                html += `<div class="section-header">${label}</div>`;
+                html += `<div class="section-header"><span>${label}</span><span class="section-count">${items.length}</span></div>`;
                 html += items.map(course => renderCard(course)).join('');
             });
         } else {
@@ -901,6 +1011,7 @@
         }
 
         container.innerHTML = html;
+        animateFills(container);
     }
 
     function timeAgo(ts) {
@@ -933,9 +1044,9 @@
 
         const prog = all[bestId];
         const pct = prog.pct || 0;
-        const fillWidth = pct > 0 ? `width:${pct}%` : '';
         const iconHtml = `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
         const ago = timeAgo(prog.lastStudied);
+        const cat = course.category || 'general';
         let detail = pct + '% complete';
         if (prog.completed > 0 && prog.total > 0) {
             detail = prog.completed + ' / ' + prog.total + ' completed';
@@ -944,7 +1055,7 @@
         return `
             <div class="continue-section">
                 <div class="continue-label">Continue Learning</div>
-                <a href="${course.link}" class="continue-card">
+                <a href="${course.link}" class="continue-card" data-cat="${cat}">
                     <div class="cc-icon">${iconHtml}</div>
                     <div class="continue-body">
                         <div class="cc-top">
@@ -952,7 +1063,7 @@
                         </div>
                         <div class="cc-sub">${detail} · ${ago}</div>
                         <div class="cc-progress">
-                            <div class="cc-progress-track"><div class="cc-progress-fill" style="${fillWidth}"></div></div>
+                            <div class="cc-progress-track"><div class="cc-progress-fill" data-fill="${pct}"></div></div>
                             <span class="cc-pct">${pct}%</span>
                         </div>
                     </div>
@@ -971,7 +1082,7 @@
         const badge = course.count > 0 ? `<span class="cc-badge">${course.count}</span>` : '';
         const chevron = '<svg class="lucide cc-chevron" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
         const iconHtml = `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
-        const fillWidth = pct > 0 ? `width:${pct}%` : '';
+        const cat = course.category || 'general';
 
         let progressLabel = '';
         if (prog.completed > 0 && prog.total > 0) {
@@ -981,7 +1092,7 @@
         }
 
         return `
-            <a href="${course.link}" class="course-card" data-id="${course.id}">
+            <a href="${course.link}" class="course-card" data-id="${course.id}" data-cat="${cat}">
                 <div class="cc-icon">${iconHtml}</div>
                 <div class="cc-body">
                     <div class="cc-top">
@@ -991,8 +1102,8 @@
                     </div>
                     <div class="cc-sub">${course.title}</div>
                     <div class="cc-progress">
-                        <div class="cc-progress-track"><div class="cc-progress-fill" style="${fillWidth}"></div></div>
-                        <span class="cc-pct">${progressLabel || pct + '%'}</span>
+                        <div class="cc-progress-track"><div class="cc-progress-fill" data-fill="${pct}"></div></div>
+                        <span class="cc-pct">${progressLabel || (pct > 0 ? pct + '%' : '')}</span>
                     </div>
                 </div>
             </a>
