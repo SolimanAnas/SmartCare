@@ -34,7 +34,6 @@
     <link rel="apple-touch-icon" href="../icons/icon.png">
     
     <style>
-        /* ── Claymorphic Design System ── */
         body {
             font-family: 'Noto Sans', 'Segoe UI', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -44,241 +43,265 @@
         }
 
         /* ── Core Layout ── */
-        main { padding: 80px 20px 40px; max-width: 800px; margin: 0 auto; width: 100%; box-sizing: border-box; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-        @media (min-width: 600px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+        main { padding: 76px 16px 40px; max-width: 640px; margin: 0 auto; width: 100%; box-sizing: border-box; }
 
-        /* ── Special cards (Claymorphic) ── */
-        .menu-card {
-            cursor: pointer;
-            background: var(--glass-bg);
-            border: 3px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 24px 20px 20px;
-            box-shadow:
-                0 4px 6px -2px rgba(0,0,0,0.12),
-                0 12px 30px -6px rgba(0,0,0,0.18);
-            text-decoration: none;
-            color: inherit;
+        /* ── Search Bar ── */
+        .search-wrap {
             display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.25s cubic-bezier(0.16,1,0.3,1),
-                        box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),
-                        border-color 0.25s ease;
-            animation: cardEnter 0.5s cubic-bezier(0.16,1,0.3,1) both;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            border: 1.5px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            box-shadow: var(--glass-shadow);
+            transition: border-color 0.2s;
         }
-        /* Staggered entrance */
-        .menu-card:nth-child(1) { animation-delay: 0.02s; }
-        .menu-card:nth-child(2) { animation-delay: 0.06s; }
-        .menu-card:nth-child(3) { animation-delay: 0.10s; }
-        .menu-card:nth-child(4) { animation-delay: 0.14s; }
-        .menu-card:nth-child(5) { animation-delay: 0.18s; }
-        .menu-card:nth-child(6) { animation-delay: 0.22s; }
-        .menu-card:nth-child(7) { animation-delay: 0.26s; }
-        .menu-card:nth-child(8) { animation-delay: 0.30s; }
-        .menu-card:nth-child(9) { animation-delay: 0.34s; }
-        .menu-card:nth-child(10) { animation-delay: 0.38s; }
-        .menu-card:nth-child(11) { animation-delay: 0.42s; }
-        .menu-card:nth-child(12) { animation-delay: 0.46s; }
-
-        .menu-card:hover {
-            transform: translateY(-4px);
-            box-shadow:
-                0 8px 12px -4px rgba(0,0,0,0.15),
-                0 20px 40px -8px rgba(0,0,0,0.22);
+        .search-wrap:focus-within {
             border-color: var(--primary-accent);
         }
-        .menu-card:active {
-            transform: translateY(-1px);
-            transition-duration: 0.08s;
+        .search-wrap svg.lucide {
+            width: 18px;
+            height: 18px;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+        #searchInput {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: inherit;
+            min-width: 0;
+        }
+        #searchInput::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        .search-clear {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        .search-clear.visible { display: flex; }
+
+        /* ── Filter Chips ── */
+        .filter-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 2px 0 14px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .filter-row::-webkit-scrollbar { display: none; }
+        .chip {
+            flex-shrink: 0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1.5px solid var(--glass-border);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+        .chip:hover {
+            border-color: var(--primary-accent);
+            color: var(--text-primary);
+        }
+        .chip.active {
+            background: var(--primary-accent);
+            border-color: var(--primary-accent);
+            color: #fff;
         }
 
-        .menu-card::before {
+        /* ── Section Header ── */
+        .section-header {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-secondary);
+            padding: 6px 4px 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.7;
+        }
+        .section-header::after {
             content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 24px;
-            background: radial-gradient(ellipse at 100% 0%, rgba(255,255,255,0.08) 0%, transparent 60%);
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
+        }
+
+        /* ── Course Card (compact, clickable) ── */
+        .course-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            background: var(--glass-bg);
+            border: 1.5px solid var(--glass-border);
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            position: relative;
+            min-height: 60px;
+            box-sizing: border-box;
+        }
+        .course-card:focus-visible {
+            outline: 2px solid var(--primary-accent);
+            outline-offset: 2px;
+        }
+        .course-card:hover {
+            border-color: var(--primary-accent);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .course-card:active {
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .course-card.disabled {
+            opacity: 0.5;
+            cursor: default;
             pointer-events: none;
         }
 
-        .card-header {
+        /* ── Icon Circle ── */
+        .cc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary-accent);
+            transition: background 0.2s, color 0.2s;
+        }
+        .cc-icon svg.lucide {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+        .course-card:hover .cc-icon {
+            background: color-mix(in srgb, var(--primary-accent) 18%, transparent);
+        }
+
+        /* ── Card Body ── */
+        .cc-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .cc-top {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 12px;
-            position: relative;
-            z-index: 1;
         }
-
-        .status-badge {
-            font-size: 0.72rem;
-            font-weight: 800;
-            padding: 5px 14px;
-            border-radius: 20px;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            border: 2px solid;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .status-badge:hover {
-            transform: scale(1.04);
-        }
-
-        .badge-available {
-            background: rgba(34, 197, 94, 0.15);
-            color: #86efac;
-            border-color: #22c55e;
-            box-shadow: 0 2px 8px rgba(34,197,94,0.2);
-        }
-
-        .course-count {
-            background: var(--primary-accent);
-            color: #fff;
-            border: 2px solid color-mix(in srgb, var(--primary-accent) 70%, white);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            white-space: nowrap;
-            letter-spacing: 0.3px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        }
-
-        .badge-coming {
-            background: rgba(245, 158, 11, 0.15);
-            color: #fde047;
-            border-color: #f59e0b;
-            box-shadow: 0 2px 8px rgba(245,158,11,0.2);
-        }
-
-        .menu-card h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin: 0 0 5px 0;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            position: relative;
-            z-index: 1;
-        }
-        .menu-card p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin: 0 0 15px 0;
-            line-height: 1.4;
-            flex: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .course-icon {
-            font-size: 2.8rem;
-            position: absolute;
-            right: 20px;
-            top: 48px;
-            opacity: 0.20;
-            z-index: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        .menu-card:hover .course-icon {
-            opacity: 0.35;
-            transform: scale(1.08) rotate(-3deg);
-        }
-
-        /* ── Disabled Card State ── */
-        .menu-card.disabled { cursor: default; }
-        .menu-card.disabled:hover { transform: none; box-shadow: none; border-color: var(--glass-border); }
-        .menu-card.disabled .course-icon { opacity: 0.15; filter: grayscale(100%); }
-        .menu-card.disabled:hover .course-icon { opacity: 0.15; transform: none; }
-
-        /* ── Action buttons (Claymorphic) ── */
-        .menu-sub-options {
-            display: flex;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: auto;
-            position: relative;
-            z-index: 1;
-        }
-        .btn-action {
-            flex: 1;
-            text-align: center;
-            padding: 13px 15px;
+        .cc-title {
             font-size: 0.95rem;
             font-weight: 700;
-            white-space: nowrap;
-            border-radius: 14px;
-            text-decoration: none;
-            transition: transform 0.15s cubic-bezier(0.16,1,0.3,1),
-                        box-shadow 0.2s ease,
-                        filter 0.2s ease;
+            color: var(--text-primary);
             font-family: 'Figtree', 'Segoe UI', sans-serif;
+            line-height: 1.3;
         }
-
-        .btn-launch {
-            background: var(--primary-accent);
-            color: white;
-            border: none;
-            box-shadow:
-                0 4px 12px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.2);
-        }
-        .btn-launch:hover {
-            filter: brightness(1.12);
-            box-shadow:
-                0 6px 18px rgba(0,0,0,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.25);
-            transform: translateY(-2px);
-        }
-        .btn-launch:active {
-            transform: translateY(1px) scale(0.97);
-            transition-duration: 0.08s;
-        }
-
-        .btn-locked {
-            background: rgba(255,255,255,0.05);
+        .cc-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
             color: var(--text-secondary);
-            border: 2px dashed var(--glass-border);
-            cursor: not-allowed;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .cc-chevron {
+            width: 16px;
+            height: 16px;
+            margin-left: auto;
+            flex-shrink: 0;
+            color: var(--text-secondary);
+            opacity: 0.35;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .course-card:hover .cc-chevron {
+            opacity: 0.7;
+            transform: translateX(2px);
         }
 
-        /* ── Card entrance keyframes ── */
-        @keyframes cardEnter {
-            from {
-                opacity: 0;
-                transform: translateY(24px) scale(0.96);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .cc-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
+            opacity: 0.8;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .menu-card {
-                animation: none;
-                transition: none;
-            }
-            .menu-card:hover {
-                transform: none;
-            }
-            .menu-card:active {
-                transform: none;
-            }
-            .course-icon {
-                transition: none;
-            }
-            .menu-card:hover .course-icon {
-                opacity: 0.20;
-                transform: none;
-            }
+        .cc-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .cc-progress-track {
+            flex: 1;
+            height: 3px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+        .cc-progress-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: var(--primary-accent);
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+        .cc-pct {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            min-width: 28px;
+            text-align: right;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        /* ── Empty / No Results ── */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         footer { text-align: center; font-size: 0.8rem; color: var(--text-secondary); padding: 30px 20px; margin-top: 20px; }
@@ -434,8 +457,22 @@
 </header>
 
 <main id="mainContent">
-    <div class="menu-grid" id="menuGrid">
-        </div>
+    <div class="search-wrap">
+        <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg>
+        <input type="search" id="searchInput" placeholder="Search courses…" aria-label="Search courses" autocomplete="off">
+        <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+    </div>
+
+    <div class="filter-row" id="filterRow" role="tablist" aria-label="Filter by category">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="cardiac" role="tab" aria-selected="false">Cardiac</button>
+        <button class="chip" data-filter="trauma" role="tab" aria-selected="false">Trauma</button>
+        <button class="chip" data-filter="pediatrics" role="tab" aria-selected="false">Pediatrics</button>
+        <button class="chip" data-filter="medical" role="tab" aria-selected="false">Medical</button>
+        <button class="chip" data-filter="ecg" role="tab" aria-selected="false">ECG</button>
+    </div>
+
+    <div id="courseList"></div>
 </main>
 
 <footer>
@@ -451,65 +488,163 @@
     "use strict";
 
     // ══════════════════════════════════════════════════════════
-    //  COURSE DATA & RENDER ENGINE
+    //  COURSE DATA
     // ══════════════════════════════════════════════════════════
     const COURSES = [
-        { id: 'prometric', shortTitle: 'Prometric', title: 'Prometric Mock Exam', link: '../src/prometric/exam.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>', count: 2559 },
-        { id: 'itls', shortTitle: 'ITLS', title: 'International Trauma Life Support', link: 'itls.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>', count: 200 },
-        { id: 'empact', shortTitle: 'EMPACT', title: 'Emergency Medical Patients: Assessment, Care & Transport', link: 'empact.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cross"/></svg>️', count: 50 },
-        { id: 'bls', shortTitle: 'BLS', title: 'Basic Life Support', link: 'bls.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>', count: 284 },
-        { id: 'acls', shortTitle: 'ACLS', title: 'Advanced Cardiovascular Life Support', link: 'acls.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg>', count: 33 },
-        { id: 'bdls', shortTitle: 'BDLS', title: 'Basic Disaster Life Support', link: 'bdls.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#tornado"/></svg>️', count: 40 },
-        { id: 'pepp', shortTitle: 'PEPP', title: 'Pediatric Education for Prehospital Professionals', link: 'pepp.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg>', count: 200 },
-        { id: 'ppet', shortTitle: 'PPET', title: 'Prehospital Pediatric Emergency Transport', link: 'ppet.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#plane-takeoff"/></svg>', count: 57 },
-        { id: 'pals', shortTitle: 'PALS', title: 'Pediatric Advanced Life Support', link: 'pals.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg>', count: 57 },
-        { id: 'medical', shortTitle: 'Medical', title: 'Medical Emergencies Review', link: 'medical.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>', count: 45 },
-        { id: 'ecg', shortTitle: 'ECG', title: 'ECG Interpretation', link: 'ecg.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trending-down"/></svg>' },
-        { id: 'ecg-test', shortTitle: 'ECG Test', title: 'ECG Interpretation Practice Tests', link: 'ecg-test.html', available: true, icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trending-up"/></svg>', count: 60 }
+        { id: 'prometric', shortTitle: 'Prometric', title: 'Prometric Mock Exam',          link: '../src/prometric/exam.html', icon: 'clipboard-list',  count: 2559, category: 'general' },
+        { id: 'itls',      shortTitle: 'ITLS',    title: 'International Trauma Life Support', link: 'itls.html',             icon: 'bandage',        count: 200,  category: 'trauma' },
+        { id: 'empact',    shortTitle: 'EMPACT',  title: 'Emergency Medical Patients: Assessment, Care & Transport', link: 'empact.html', icon: 'stethoscope', count: 50,   category: 'medical' },
+        { id: 'bls',       shortTitle: 'BLS',     title: 'Basic Life Support',                link: 'bls.html',              icon: 'heart-pulse',    count: 284,  category: 'cardiac' },
+        { id: 'acls',      shortTitle: 'ACLS',    title: 'Advanced Cardiovascular Life Support', link: 'acls.html',         icon: 'heart',          count: 33,   category: 'cardiac' },
+        { id: 'bdls',      shortTitle: 'BDLS',    title: 'Basic Disaster Life Support',       link: 'bdls.html',             icon: 'tornado',        count: 40,   category: 'trauma' },
+        { id: 'pepp',      shortTitle: 'PEPP',    title: 'Pediatric Education for Prehospital Professionals', link: 'pepp.html', icon: 'smile-plus', count: 200, category: 'pediatrics' },
+        { id: 'ppet',      shortTitle: 'PPET',    title: 'Prehospital Pediatric Emergency Transport', link: 'ppet.html',    icon: 'ambulance',      count: 57,   category: 'pediatrics' },
+        { id: 'pals',      shortTitle: 'PALS',    title: 'Pediatric Advanced Life Support',   link: 'pals.html',             icon: 'hand-heart',     count: 57,   category: 'pediatrics' },
+        { id: 'medical',   shortTitle: 'Medical', title: 'Medical Emergencies Review',       link: 'medical.html',          icon: 'pill',           count: 45,   category: 'medical' },
+        { id: 'ecg',       shortTitle: 'ECG',     title: 'ECG Interpretation',                link: 'ecg.html',              icon: 'trending-down',  count: 0,    category: 'ecg' },
+        { id: 'ecg-test',  shortTitle: 'ECG Test',title: 'ECG Interpretation Practice Tests', link: 'ecg-test.html',         icon: 'trending-up',    count: 60,   category: 'ecg' }
     ];
 
-    function renderCourses() {
-        const grid = document.getElementById('menuGrid');
-        
-        const html = COURSES.map((course) => {
-            if (course.available) {
-                // Available Course Card 
-                const countTag = course.count ? `<span class="course-count">${course.count} Qs</span>` : '';
-                return `
-                    <div class="menu-card">
-                        <div class="card-header">
-                            ${countTag}
-                        </div>
-                        <div class="course-icon">${course.icon}</div>
-                        <h2>${course.shortTitle}</h2>
-                        <p>${course.title}</p>
-                        <div class="menu-sub-options">
-                            <a href="${course.link}" class="btn-action btn-launch">Launch App</a>
-                        </div>
-                    </div>
-                `;
-            } else {
-                // Coming Soon Course Card 
-                return `
-                    <div class="menu-card disabled">
-                        <div class="card-header">
-                            <span class="status-badge badge-coming"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hourglass"/></svg> Coming Soon</span>
-                        </div>
-                        <div class="course-icon">${course.icon}</div>
-                        <h2>${course.shortTitle}</h2>
-                        <p>${course.title}</p>
-                        <div class="menu-sub-options">
-                            <span class="btn-action btn-locked">Pending Update</span>
-                        </div>
-                    </div>
-                `;
-            }
-        }).join('');
+    const CATEGORY_LABELS = {
+        general: 'General',
+        cardiac: 'Cardiac',
+        trauma: 'Trauma',
+        pediatrics: 'Pediatrics',
+        medical: 'Medical',
+        ecg: 'ECG'
+    };
 
-        grid.innerHTML = html;
+    const CATEGORY_ORDER = ['cardiac', 'trauma', 'pediatrics', 'medical', 'ecg', 'general'];
+
+    // ══════════════════════════════════════════════════════════
+    //  PROGRESS (localStorage)
+    // ══════════════════════════════════════════════════════════
+    function getProgress(id) {
+        return parseInt(localStorage.getItem('dcas_progress_' + id) || '0', 10);
+    }
+    function setProgress(id, pct) {
+        localStorage.setItem('dcas_progress_' + id, String(Math.min(100, Math.max(0, pct))));
     }
 
-    // Call the render function immediately on page load
+    // ══════════════════════════════════════════════════════════
+    //  STATE
+    // ══════════════════════════════════════════════════════════
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    // ══════════════════════════════════════════════════════════
+    //  RENDER ENGINE
+    // ══════════════════════════════════════════════════════════
+    function renderCourses() {
+        const container = document.getElementById('courseList');
+        if (!container) return;
+
+        let filtered = COURSES.filter(c => c.available !== false);
+
+        if (activeFilter !== 'all') {
+            filtered = filtered.filter(c => c.category === activeFilter);
+        }
+
+        if (searchQuery.trim()) {
+            const q = searchQuery.trim().toLowerCase();
+            filtered = filtered.filter(c =>
+                c.shortTitle.toLowerCase().includes(q) ||
+                c.title.toLowerCase().includes(q)
+            );
+        }
+
+        if (filtered.length === 0) {
+            container.innerHTML = '<div class="empty-state">No courses match your search.</div>';
+            return;
+        }
+
+        let html = '';
+
+        if (activeFilter === 'all' && !searchQuery.trim()) {
+            const grouped = {};
+            filtered.forEach(c => {
+                const cat = c.category || 'general';
+                if (!grouped[cat]) grouped[cat] = [];
+                grouped[cat].push(c);
+            });
+
+            CATEGORY_ORDER.forEach(cat => {
+                const items = grouped[cat];
+                if (!items || items.length === 0) return;
+                const label = CATEGORY_LABELS[cat] || cat;
+                html += `<div class="section-header">${label}</div>`;
+                html += items.map(course => renderCard(course)).join('');
+            });
+        } else {
+            html = filtered.map(course => renderCard(course)).join('');
+        }
+
+        container.innerHTML = html;
+    }
+
+    function renderCard(course) {
+        const pct = getProgress(course.id);
+        const badge = course.count > 0 ? `<span class="cc-badge">${course.count}</span>` : '';
+        const chevron = '<svg class="lucide cc-chevron" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
+        const iconHtml = `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
+        const fillWidth = pct > 0 ? `width:${pct}%` : '';
+
+        return `
+            <a href="${course.link}" class="course-card">
+                <div class="cc-icon">${iconHtml}</div>
+                <div class="cc-body">
+                    <div class="cc-top">
+                        <span class="cc-title">${course.shortTitle}</span>
+                        ${badge}
+                        ${chevron}
+                    </div>
+                    <div class="cc-sub">${course.title}</div>
+                    <div class="cc-progress">
+                        <div class="cc-progress-track"><div class="cc-progress-fill" style="${fillWidth}"></div></div>
+                        <span class="cc-pct">${pct}%</span>
+                    </div>
+                </div>
+            </a>
+        `;
+    }
+
+    // ══════════════════════════════════════════════════════════
+    //  FILTER + SEARCH BINDING
+    // ══════════════════════════════════════════════════════════
+    function setupFilterAndSearch() {
+        const chips = document.querySelectorAll('.chip');
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', function() {
+                chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+                activeFilter = this.getAttribute('data-filter');
+                renderCourses();
+            });
+        });
+
+        searchInput.addEventListener('input', function() {
+            searchQuery = this.value;
+            searchClear.classList.toggle('visible', this.value.length > 0);
+            renderCourses();
+        });
+
+        searchClear.addEventListener('click', function() {
+            searchInput.value = '';
+            searchQuery = '';
+            searchClear.classList.remove('visible');
+            renderCourses();
+            searchInput.focus();
+        });
+    }
+
+    // ══════════════════════════════════════════════════════════
+    //  BOOT
+    // ══════════════════════════════════════════════════════════
+    setupFilterAndSearch();
     renderCourses();
 
     // ══════════════════════════════════════════════════════════
