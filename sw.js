@@ -1,6 +1,6 @@
 ﻿// ============================================================
 //  DCAS CPG 2025 – Service Worker
-//  Strategy: NETWORK FIRST  <svg class="lucide" width='1em' height='1em' aria-hidden='true' focusable='false'><use href='icons/sprite.svg#arrow-right'/></svg>  cache fallback
+//  Strategy: NETWORK FIRST  <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-right"/></svg>  cache fallback
 // ============================================================
 
 const CACHE_VERSION = 'dcas-cpg-v5.2';           // Bumped to v5.2 to add Lucide icon sprite
