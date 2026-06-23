@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Ôªø<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <style>
 /* ================================================================
-   PEPP ó Enhanced UI/UX
+   PEPP ‚Äî Enhanced UI/UX
 ================================================================ */
 :root,[data-theme="dark"]{
   --bg:#070f1d;--panel:#0c1628;--card:#111d30;--card2:#162035;
@@ -682,33 +682,33 @@ input:checked+.slider:before{transform:translateX(20px)}
     </button>
     <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">
       <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam Mode
-      <span class="mode-hint">No hints ï Timed ï Submit to score</span>
+      <span class="mode-hint">No hints ‚Ä¢ Timed ‚Ä¢ Submit to score</span>
     </button>
   </div>
 
   <div class="exam-cards" role="list">
-    <div class="exam-card" onclick="startExam('../src/PEPP/exam_a.json', 'PEPP Exam ó Form A')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form A">
+    <div class="exam-card" onclick="startExam('../src/PEPP/exam_a.json', 'PEPP Exam ‚Äî Form A')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form A">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg></div>
-      <div class="ec-title">PEPP Exam ó Form A</div>
-      <div class="ec-meta">Pediatric scenarios ∑ Exam & Study modes</div>
+      <div class="ec-title">PEPP Exam ‚Äî Form A</div>
+      <div class="ec-meta">Pediatric scenarios ¬∑ Exam & Study modes</div>
       <span class="ec-tag tag-exam">Practice Exam</span>
     </div>
-    <div class="exam-card" onclick="startExam('../src/PEPP/exam_b.json', 'PEPP Exam ó Form B')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form B">
+    <div class="exam-card" onclick="startExam('../src/PEPP/exam_b.json', 'PEPP Exam ‚Äî Form B')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form B">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg></div>
-      <div class="ec-title">PEPP Exam ó Form B</div>
-      <div class="ec-meta">Pediatric scenarios ∑ Exam & Study modes</div>
+      <div class="ec-title">PEPP Exam ‚Äî Form B</div>
+      <div class="ec-meta">Pediatric scenarios ¬∑ Exam & Study modes</div>
       <span class="ec-tag tag-exam">Practice Exam</span>
     </div>
-    <div class="exam-card" onclick="startExam('../src/PEPP/exam_c.json', 'PEPP Exam ó Form C')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form C">
+    <div class="exam-card" onclick="startExam('../src/PEPP/exam_c.json', 'PEPP Exam ‚Äî Form C')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form C">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg></div>
-      <div class="ec-title">PEPP Exam ó Form C</div>
-      <div class="ec-meta">Pediatric scenarios ∑ Exam & Study modes</div>
+      <div class="ec-title">PEPP Exam ‚Äî Form C</div>
+      <div class="ec-meta">Pediatric scenarios ¬∑ Exam & Study modes</div>
       <span class="ec-tag tag-exam">Practice Exam</span>
     </div>
-    <div class="exam-card" onclick="startExam('../src/PEPP/exam_d.json', 'PEPP Exam ó Form D')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form D">
+    <div class="exam-card" onclick="startExam('../src/PEPP/exam_d.json', 'PEPP Exam ‚Äî Form D')" role="listitem" tabindex="0" aria-label="Start PEPP Exam Form D">
       <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg></div>
-      <div class="ec-title">PEPP Exam ó Form D</div>
-      <div class="ec-meta">Pediatric scenarios ∑ Exam & Study modes</div>
+      <div class="ec-title">PEPP Exam ‚Äî Form D</div>
+      <div class="ec-meta">Pediatric scenarios ¬∑ Exam & Study modes</div>
       <span class="ec-tag tag-exam">Practice Exam</span>
     </div>
   </div>
@@ -721,7 +721,7 @@ input:checked+.slider:before{transform:translateX(20px)}
     <div class="eh-left">
       <button class="sb-toggle" onclick="toggleSidebar()" aria-label="Toggle question navigator" aria-expanded="false"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#menu"/></svg></button>
       <span class="hdr-brand">PEPP</span>
-      <span class="hdr-exam" id="examName" aria-live="polite">ó</span>
+      <span class="hdr-exam" id="examName" aria-live="polite">‚Äî</span>
       <span class="hdr-mode m-exam" id="modeBadge" aria-live="polite">Exam</span>
     </div>
     <div class="eh-center">
@@ -791,7 +791,7 @@ input:checked+.slider:before{transform:translateX(20px)}
         </div>
         
         <div class="q-box" id="qBox">
-		<span id="qText" aria-live="polite">LoadingÖ</span>
+		<span id="qText" aria-live="polite">Loading‚Ä¶</span>
 		</div>
         
         <!-- Study mode actions -->
@@ -872,7 +872,7 @@ input:checked+.slider:before{transform:translateX(20px)}
 <!-- Exit Confirmation Modal -->
 <div class="modal-bg" id="exitModal" onclick="if(event.target===this)closeExitModal()" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle">
   <div class="modal">
-    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>?</div>
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>Ô∏è</div>
     <div class="modal-ttl" id="exitModalTitle">Leave Exam?</div>
     <div class="modal-sub" id="exitModalSub">Your progress will be saved. You can resume later.</div>
     <div class="modal-btns">
@@ -885,7 +885,7 @@ input:checked+.slider:before{transform:translateX(20px)}
 <!-- Settings Modal for Hint Toggle -->
 <div class="modal-bg" id="settingsModal" onclick="if(event.target===this)closeSettingsModal()" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
   <div class="modal">
-    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#settings-2"/></svg>?</div>
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#settings-2"/></svg>Ô∏è</div>
     <div class="modal-ttl" id="settingsModalTitle">Settings</div>
     <div class="modal-sub">Customize your experience</div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--border)">
@@ -1116,7 +1116,7 @@ async function startExam(path, name) {
     document.getElementById('resExamName').textContent = name;
     
     const modeBadge = document.getElementById('modeBadge');
-    modeBadge.innerHTML = ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
+    modeBadge.innerHTML =ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
     modeBadge.className = 'hdr-mode ' + (ST.mode === 'study' ? 'm-study' : 'm-exam');
     
     const isStudy = ST.mode === 'study';
@@ -1384,7 +1384,7 @@ function renderQ() {
     nextBtn.textContent = 'Check Answer';
     nextBtn.disabled = false;
   } else {
-    nextBtn.innerHTML = 'Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
+    nextBtn.innerHTML ='Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
     nextBtn.disabled = ST.idx === total - 1;
   }
   
@@ -1654,7 +1654,7 @@ function submitExam() {
       <button class="study-btn" onclick="filterResults('all')">All Questions</button>
       <button class="study-btn" onclick="filterResults('incorrect')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect Only</button>
       <button class="study-btn" onclick="filterResults('flagged')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg> Flagged</button>
-      <button class="study-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg>? Print</button>
+      <button class="study-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg>Ô∏è Print</button>
     </div>
     
     <div class="rq-list" id="resultsList">`;
@@ -1663,7 +1663,7 @@ function submitExam() {
     const ua = ST.answers[q.id];
     const isC = ua && ua === q.correct_answer, isX = ua && !isC, isO = !ua;
     const dotClass = isC ? 'dot-c' : isX ? 'dot-x' : 'dot-o';
-    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : 'ó';
+    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : '‚Äî';
     const badgeClass = isC ? 'rqb-c' : isX ? 'rqb-x' : 'rqb-o';
     const badgeText = isC ? 'Correct' : isX ? 'Incorrect' : 'Omitted';
     const confidence = ST.confidence[q.id];
@@ -1675,7 +1675,7 @@ function submitExam() {
         <span class="rq-dot ${dotClass}" aria-hidden="true">${ind}</span>
         <span class="rq-q">${escapeHtml(q.text)}</span>
         <span class="rq-badge ${badgeClass}">${badgeText}${confDisplay}</span>
-        <span class="rq-chev" aria-hidden="true">?</span>
+        <span class="rq-chev" aria-hidden="true">‚ñº</span>
       </div>
       <div class="rq-body" id="rb${i}">
         ${buildResOpts(q,ua)}
