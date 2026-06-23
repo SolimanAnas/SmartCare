@@ -293,7 +293,7 @@ window.CPG_DATA = {
         { category: "Hypothermia", question: "How does hypothermia affect drowning management?", answer: "May cause bradycardia; rewarming is priority; in cardiac arrest, withhold epinephrine until >30�C." },
         { category: "Fluid resuscitation � adult", question: "What is the initial fluid bolus for an adult drowning victim with shock?", answer: "250-500 mL normal saline." },
         { category: "Fluid resuscitation � pediatric", question: "What is the initial fluid bolus for a child?", answer: "20 mL/kg normal saline." },
-        category: "Salbutamol dose � adult", question: "What is the salbutamol dose for an adult with wheezing after drowning?", answer: "5 mg nebulized." },
+        { category: "Salbutamol dose � adult", question: "What is the salbutamol dose for an adult with wheezing after drowning?", answer: "5 mg nebulized." },
         { category: "Salbutamol dose � pediatric", question: "What is the pediatric salbutamol dose?", answer: "<5 years: 2.5 mg; >5 years: 5 mg." },
         { category: "Submersion time", question: "What submersion time is associated with worse outcomes?", answer: ">10 minutes." },
         { category: "Delayed pulmonary edema", question: "Why transport asymptomatic drowning victims?", answer: "Risk of delayed pulmonary edema or ARDS." },

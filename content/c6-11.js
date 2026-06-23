@@ -389,4 +389,3 @@ window.CPG_DATA = {
         }
     ]
 };
-};
