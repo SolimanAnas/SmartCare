@@ -12,17 +12,18 @@
     flex-shrink: 0;
 }
 .icon-btn svg.lucide,
-.toggle-btn svg.lucide,
-.btn-action svg.lucide,
-.sc-icon svg.lucide,
-.lv-icon svg.lucide,
-.search-empty-icon svg.lucide,
-.pwa-icon-fallback svg.lucide {
+.toggle-btn svg.lucide {
     width: 60%;
     height: 60%;
 }
-.lv-icon svg.lucide,
+.btn-action svg.lucide,
+.study-btn svg.lucide,
+.view-tab svg.lucide {
+    width: 1.5em;
+    height: 1.5em;
+}
 .sc-icon svg.lucide,
+.lv-icon svg.lucide,
 .pwa-icon-fallback svg.lucide,
 .search-empty-icon svg.lucide {
     width: 100%;
@@ -1177,8 +1178,10 @@ footer a { color: inherit; text-decoration: underline; }
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: white !important;       /* force white text */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 4px;
     font-size: 0.7rem;            /* smaller font */
     font-weight: 700;
     text-decoration: none;
@@ -1187,9 +1190,9 @@ footer a { color: inherit; text-decoration: underline; }
     backdrop-filter: blur(4px);
 }
 .nav-pill i {
-    font-size: 1rem;              /* smaller icons */
-    margin-bottom: 2px;
-    display: block;
+    font-size: 1.2em;
+    display: inline;
+    margin-bottom: 0;
 }
 .nav-pill.active {
     background: var(--primary-accent);
