@@ -339,7 +339,7 @@ function buildAZ(){
   });
 }
 function toggleAZ(){azOpen=!azOpen;document.getElementById('azPanel').classList.toggle('open',azOpen);document.getElementById('azBtn').classList.toggle('active',azOpen);}
-function toggleSort(){sortAZ=!sortAZ;document.getElementById('sortBtn').textContent=sortAZ?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#move-vertical"/></svg> Cat':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#move-vertical"/></svg> A–Z';document.getElementById('sortBtn').classList.toggle('active',sortAZ);render();}
+function toggleSort(){sortAZ=!sortAZ;document.getElementById('sortBtn').innerHTML=sortAZ?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#move-vertical"/></svg> Cat':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#move-vertical"/></svg> A–Z';document.getElementById('sortBtn').classList.toggle('active',sortAZ);render();}
 
 /* SEARCH */
 document.getElementById('searchInput').addEventListener('input',function(){

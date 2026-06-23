@@ -369,7 +369,7 @@ function showResults(){
 
   document.getElementById('scoreCircle').innerHTML=`<span>${pct}%</span><span class="score-label">${correct}/${total}</span>`;
   document.getElementById('passTag').className='pass-tag '+(pass?'pass':'fail');
-  document.getElementById('passTag').textContent=pass?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> PASS':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> NEEDS REVIEW';
+  document.getElementById('passTag').innerHTML=pass?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> PASS':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> NEEDS REVIEW';
   document.getElementById('resultTitle').textContent=lastTitle;
 
   document.getElementById('resultStats').innerHTML=`

@@ -708,7 +708,7 @@ function updateProgress() {
   const fab = document.getElementById('fabBtn');
   const ready = pct >= 80;
   fab.classList.toggle('ready', ready);
-  document.getElementById('fabIcon').textContent = ready ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg>' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>';
+  document.getElementById('fabIcon').innerHTML = ready ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg>' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>';
   document.getElementById('fabText').textContent = ready ? 'Complete Assessment' : `Summary (${pct}%)`;
 }
 

@@ -876,7 +876,7 @@
             bannerSub.textContent    = 'Follow the steps below to install';
         } else if (!deferredPrompt) {
             installBtn.style.display = 'none';
-            bannerSub.textContent    = 'Use browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"';
+            bannerSub.innerHTML    = 'Use browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"';
         }
     }
 
@@ -921,7 +921,7 @@
             banner.style.display = 'block';
             banner.classList.remove('pwa-hiding');
             if (isIosSafari) { installBtn.style.display = 'none'; iosSteps.style.display = 'flex'; }
-            else { bannerSub.textContent = 'Use your browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"'; installBtn.style.display = 'none'; }
+            else { bannerSub.innerHTML = 'Use your browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"'; installBtn.style.display = 'none'; }
         }
         document.getElementById('notificationDrawer').classList.remove('open');
         document.getElementById('drawerOverlay').classList.remove('active');

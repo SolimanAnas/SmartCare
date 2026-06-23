@@ -919,7 +919,7 @@ function togglePause() {
   isPaused = !isPaused;
   lastTs   = null;
   const btn = document.getElementById('pauseBtn');
-  btn.textContent = isPaused ? '▶ Resume' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pause"/></svg> Pause';
+  btn.innerHTML = isPaused ? '▶ Resume' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pause"/></svg> Pause';
   btn.classList.toggle('playing', !isPaused);
   document.getElementById('liveDot').style.opacity = isPaused ? '0.2' : '1';
 }

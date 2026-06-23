@@ -795,7 +795,7 @@ function updateTimerCard(id, remaining, totalSec) {
   const pct    = totalSec > 0 ? Math.min(100, (remaining / totalSec) * 100) : 0;
 
   if (count) {
-    count.textContent = remaining > 0 ? fmtHMS(remaining) : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Expired';
+    count.innerHTML = remaining > 0 ? fmtHMS(remaining) : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Expired';
     count.className   = 'tc-countdown ' + txtCls;
   }
   if (prog) {
