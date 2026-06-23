@@ -1046,7 +1046,7 @@
         document.getElementById('popupChaptersDone').innerText = `${done}/${totalChaps}`;
         document.getElementById('popupAttempts').innerText     = stats.totalAttempts || 0;
         document.getElementById('popupCritical').innerText     = `${critAcc}%`;
-        document.getElementById('popupQuote').innerText        = `<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#sparkles"/></svg> ${quote}`;
+        document.getElementById('popupQuote').innerHTML        = `<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#sparkles"/></svg> ${quote}`;
         document.getElementById('drawerDone').innerText        = `${done}/${totalChaps}`;
         document.getElementById('drawerAttempts').innerText    = stats.totalAttempts || 0;
         document.getElementById('drawerAcc').innerText         = `${critAcc}%`;
