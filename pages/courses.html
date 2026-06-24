@@ -991,6 +991,193 @@
         .bat-indicator.bat-charging { color: #22c55e; }
         .bat-pct { font-variant-numeric: tabular-nums; }
         .bat-pct { font-variant-numeric: tabular-nums; }
+
+        /* ── Mobile Phone Friendly (Small Screens) Optimizations ── */
+        @media (max-width: 480px) {
+            /* 1. Main Page padding & safe areas */
+            main {
+                padding: calc(var(--header-height) + 10px) 12px 30px;
+            }
+
+            /* 2. Compact Search & Filter Row */
+            .search-wrap {
+                padding: 9px 15px;
+                margin-bottom: 12px;
+                gap: 10px;
+            }
+            .chip {
+                padding: 6px 14px;
+                font-size: 0.76rem;
+            }
+            .filter-row {
+                padding-bottom: 12px;
+            }
+
+            /* 3. Compact Stats Strip */
+            .stats-strip {
+                padding: 10px 4px;
+                border-radius: 16px;
+                margin-bottom: 16px;
+            }
+            .stat-item {
+                gap: 6px;
+                padding: 2px;
+            }
+            .stat-icon-wrapper {
+                width: 30px;
+                height: 30px;
+                border-radius: 9px;
+            }
+            .stat-icon-wrapper svg.lucide {
+                width: 15px;
+                height: 15px;
+            }
+            .stat-num {
+                font-size: 0.95rem;
+            }
+            .stat-lab {
+                font-size: 0.56rem;
+                letter-spacing: 0.3px;
+            }
+            .stat-divider {
+                height: 24px;
+            }
+
+            /* 4. Compact Continue Learning Card */
+            .continue-section {
+                margin-bottom: 18px;
+            }
+            .continue-label {
+                font-size: 0.68rem;
+                letter-spacing: 1.2px;
+                padding: 0 4px 8px;
+            }
+            .continue-card {
+                padding: 14px 14px;
+                border-radius: 20px;
+                gap: 12px;
+            }
+            .continue-card .cc-icon {
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+            }
+            .continue-card .cc-icon svg.lucide {
+                width: 20px;
+                height: 20px;
+            }
+            .continue-body {
+                gap: 2px;
+            }
+            .continue-body .cc-title {
+                font-size: 0.95rem;
+            }
+            .continue-resume {
+                padding: 6px 10px;
+                font-size: 0.72rem;
+                border-radius: 20px;
+            }
+            /* Hide the word 'Resume' on very narrow screens (e.g. iPhone SE / 320px-375px width) to prevent squeezing */
+            @media (max-width: 390px) {
+                .continue-resume span {
+                    display: none;
+                }
+                .continue-resume {
+                    padding: 8px;
+                    border-radius: 50%;
+                }
+            }
+
+            /* 5. Compact Course Cards */
+            .course-card {
+                padding: 12px 14px;
+                border-radius: 16px;
+                gap: 12px;
+                min-height: 64px;
+            }
+            .course-card::before {
+                border-radius: 16px 0 0 16px;
+            }
+            .course-card .cc-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+            .course-card .cc-icon svg.lucide {
+                width: 18px;
+                height: 18px;
+            }
+            .cc-title {
+                font-size: 0.88rem;
+            }
+            .cc-tag {
+                font-size: 0.58rem;
+                padding: 1.5px 5px;
+            }
+            .cc-badge {
+                font-size: 0.62rem;
+                padding: 2px 6px;
+            }
+            .cc-sub {
+                font-size: 0.7rem;
+            }
+            .cc-progress {
+                margin-top: 6px;
+                gap: 6px;
+            }
+            .cc-progress-track {
+                height: 5px;
+            }
+            .cc-pct {
+                font-size: 0.62rem;
+                min-width: 28px;
+            }
+
+            /* 6. Control Center Drawer adjustments */
+            .notification-drawer {
+                padding: 24px 18px 25px;
+                border-radius: 0 0 24px 24px;
+                gap: 18px;
+            }
+            .drawer-section-title {
+                font-size: 0.62rem;
+                letter-spacing: 1px;
+            }
+            .toggle-btn {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+            }
+            .toggle-btn svg.lucide {
+                width: 18px;
+                height: 18px;
+            }
+            .amoled-circle-icon {
+                width: 16px;
+                height: 16px;
+            }
+            .toggle-label {
+                font-size: 0.65rem;
+                margin-top: 6px;
+            }
+            .close-drawer-btn {
+                margin-top: -10px;
+            }
+            .drawer-trigger {
+                width: 56px;
+                height: 26px;
+                bottom: -26px;
+                border-radius: 0 0 16px 16px;
+            }
+            .trigger-line.top { width: 20px; }
+            .trigger-line.bottom { width: 12px; }
+            .drawer-trigger:hover {
+                height: 28px;
+                bottom: -28px;
+            }
+            .drawer-trigger:hover .trigger-line.top { width: 24px; }
+            .drawer-trigger:hover .trigger-line.bottom { width: 14px; }
+        }
     </style>
 </head>
 <body>
@@ -1329,7 +1516,7 @@
                         </div>
                     </div>
                     <span class="continue-resume">
-                        Resume
+                        <span>Resume</span>
                         <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>
                     </span>
                 </a>
