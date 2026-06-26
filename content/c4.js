@@ -908,7 +908,7 @@ window.CPG_DATA = {
                 q: "[HARD] A 58-year-old male with crushing substernal chest pain has an ECG showing 3 mm ST elevation in V1–V4 with new left bundle branch block. The paramedic asks if this meets STEMI criteria. What is your response?",
                 options: [
                     "No — LBBB makes STEMI criteria unreliable, wait for the hospital",
-                    "Yes — new LBBB with ischemic symptoms is a STEMI equivalent. Activate the cath lab and expedite transport",
+                    "Yes — a new LBBB with ischemic symptoms is treated as a STEMI equivalent (confirm with Sgarbossa criteria where available). Activate the cath lab and expedite transport",
                     "No — <4 mm ST elevation in precordial leads does not meet STEMI threshold",
                     "Yes — but only if reciprocal depression is present in the inferior leads"
                 ],

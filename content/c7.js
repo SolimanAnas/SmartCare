@@ -206,7 +206,7 @@ window.CPG_DATA = {
                     q: "[HARD] A 26-year-old female delivers a baby with thick, green-tinged amniotic fluid. The baby is limp, cyanotic, and has a heart rate of 80. What is the priority intervention?",
                     options: [
                         "Immediately stimulate the baby by rubbing the back vigorously",
-                        "Suction the mouth and trachea before stimulating the baby to breathe — this baby has meconium staining and is depressed",
+                        "Begin positive-pressure ventilation (PPV) — for a non-vigorous meconium-stained newborn, routine tracheal suctioning is no longer recommended; clear the mouth and nose only as needed",
                         "Start positive pressure ventilation immediately — the baby needs oxygen",
                         "Begin chest compressions because the heart rate is below 100"
                     ],
@@ -557,7 +557,7 @@ window.CPG_DATA = {
                 <p>The approach to meconium-stained amniotic fluid has changed significantly. <strong>Routine intubation and suctioning of all meconium-stained newborns is no longer recommended.</strong> Current NRP guidelines recommend:</p>
                 <ul>
                     <li><strong>If the baby is vigorous</strong> (strong respiratory effort, good muscle tone, HR ≥100): No tracheal suctioning needed. Dry, warm, stimulate, and provide routine care.</li>
-                    <li><strong>If the baby is depressed</strong> (poor respiratory effort, poor tone, HR <100): Suction the mouth and trachea (using a meconium aspirator attached to the ET tube) BEFORE stimulating the baby to breathe. Intubate and suction as you withdraw the tube. Repeat as needed until clear.</li>
+                    <li><strong>If the baby is depressed</strong> (poor respiratory effort, poor tone, HR <100): Current NRP no longer recommends routine endotracheal suctioning for a non-vigorous (limp, bradycardic) meconium-stained newborn. Open the airway, clear the mouth and nose as needed, and begin PPV within the first minute. Intubate and suction only if PPV is ineffective due to airway obstruction.</li>
                 </ul>
 
                 <h4>Chest Compressions in Neonates</h4>

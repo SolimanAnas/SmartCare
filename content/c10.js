@@ -493,7 +493,7 @@ window.CPG_DATA = {
                     <li>Tighten the tourniquet by twisting the windlass rod until bleeding stops</li>
                     <li>Secure the windlass with the locking clip</li>
                     <li>Note the <strong>application time</strong> — write "TK + time" on a piece of tape and place it on the patient's forehead or document clearly</li>
-                    <li><strong>Do NOT release the tourniquet</strong> once applied — even for reassessment. Release in the field is associated with worsening hemorrhage, air embolism, and metabolic washout (reperfusion syndrome)</li>
+                    <li><strong>Do NOT release the tourniquet</strong> once applied — even for reassessment. Release in the field is associated with worsening hemorrhage and metabolic washout (reperfusion syndrome)</li>
                 </ul>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -622,7 +622,7 @@ window.CPG_DATA = {
                     q: "[HARD] You applied a tourniquet to a patient's thigh 20 minutes ago for life-threatening hemorrhage. En route to the hospital, the bleeding has stopped and the patient is stable. The receiving physician radios asking you to release the tourniquet to assess the wound. What should you do?",
                     options: [
                         "Release the tourniquet as requested — the physician is in charge of patient care",
-                        "Do NOT release the tourniquet — field release of a tourniquet can cause worsening hemorrhage, air embolism, and metabolic washout (reperfusion syndrome). Communicate that the tourniquet has been on for only 20 minutes and definitive removal should occur in the controlled hospital setting",
+                        "Do NOT release the tourniquet — field release of a tourniquet can cause worsening hemorrhage and metabolic washout (reperfusion syndrome). Communicate that the tourniquet has been on for only 20 minutes and definitive removal should occur in the controlled hospital setting",
                         "Partially loosen the tourniquet to allow some blood flow but maintain some pressure",
                         "Release it but keep direct pressure on the wound as an alternative"
                     ],

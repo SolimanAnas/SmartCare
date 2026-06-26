@@ -1632,7 +1632,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Agitation and Excited Delirium</h4>
-            <p><strong>Agitation</strong> is a state of extreme physical or verbal activity characterised by restlessness, pacing, shouting, or threatening behaviour. It exists on a spectrum from mild anxiety to violent aggression. <strong>Excited delirium (hyperactive delirium with autonomic dysregulation)</strong> is a severe, life-threatening medical emergency that presents with:</p>
+            <p><strong>Agitation</strong> is a state of extreme physical or verbal activity characterised by restlessness, pacing, shouting, or threatening behaviour. It exists on a spectrum from mild anxiety to violent aggression. <strong>Hyperactive (agitated) delirium (hyperactive delirium with autonomic dysregulation)</strong> is a severe, life-threatening medical emergency that presents with:</p>
             <ul>
                 <li>Extreme agitation and aggression</li>
                 <li>Superhuman strength and pain tolerance</li>
@@ -1642,7 +1642,7 @@ window.CPG_DATA = {
                 <li>Paranoid or bizarre behaviour (e.g., crawling on the ground, breaking glass)</li>
                 <li><strong>Rapid progression to cardiorespiratory arrest</strong> if not recognised and treated</li>
             </ul>
-            <p>Excited delirium is most commonly associated with stimulant drug use (cocaine, methamphetamine), psychiatric illness, and improper restraint. The combination of hyperthermia, acidosis, and catecholamine excess creates a perfect storm for sudden death. Management: request law enforcement and ALS backup, attempt verbal de-escalation, consider sedation (ALS), aggressive cooling, and rapid transport.</p>
+            <p>Hyperactive (agitated) delirium is most commonly associated with stimulant drug use (cocaine, methamphetamine), psychiatric illness, and improper restraint. The combination of hyperthermia, acidosis, and catecholamine excess creates a perfect storm for sudden death. Management: request law enforcement and ALS backup, attempt verbal de-escalation, consider sedation (ALS), aggressive cooling, and rapid transport.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning — Positional Asphyxia:</strong> Never restrain a patient in a prone position (face down) or "hog-tie" (knees bent back toward handcuffs). Restraint in these positions restricts diaphragmatic movement, impairs ventilation, and can cause sudden death from positional asphyxia — even in patients who seemed to be "calming down." If restraints are necessary, place the patient on their <strong>side (lateral recumbent)</strong> and monitor their breathing continuously. Once restrained, patients should never be left unattended.
@@ -1699,7 +1699,7 @@ window.CPG_DATA = {
         </div>`,
         flashcards: [
             { question: "What medical causes must be ruled out before assuming a behavioural emergency is psychiatric?", answer: "Hypoglycaemia, hypoxia, intoxication/overdose, head injury, infection (CNS/sepsis), electrolyte imbalance, postictal state, and stroke. Always check blood glucose, SpO₂, and vital signs.", category: "Medical Causes" },
-            { question: "What is excited delirium and why is it a medical emergency?", answer: "A severe state of agitation with hyperthermia, tachycardia, hypertension, diaphoresis, and bizarre behaviour. It can rapidly progress to cardiorespiratory arrest due to hyperthermia, acidosis, and catecholamine excess.", category: "Excited Delirium" },
+            { question: "What is hyperactive (agitated) delirium and why is it a medical emergency?", answer: "A severe state of agitation with hyperthermia, tachycardia, hypertension, diaphoresis, and bizarre behaviour. It can rapidly progress to cardiorespiratory arrest due to hyperthermia, acidosis, and catecholamine excess.", category: "Excited Delirium" },
             { question: "What is the MOST important safety consideration when restraining a patient?", answer: "NEVER restrain in a prone (face-down) position — this causes positional asphyxia. Always place the patient on their side (lateral recumbent) and monitor breathing continuously.", category: "Restraints" },
             { question: "What questions should an EMT ask when assessing suicidal ideation?", answer: "Ask directly: 'Are you thinking about hurting yourself?' Assess plan, method, access to means, and timing. Identify risk factors (prior attempts, male, >65, access to firearms) and protective factors.", category: "Suicidal Ideation" },
             { question: "How should an EMT approach a patient experiencing psychosis?", answer: "Speak calmly and respectfully, acknowledge feelings without arguing with delusions, do not validate false content, maintain safe distance, keep an exit path clear, and rule out medical causes.", category: "Psychosis" },
@@ -1713,11 +1713,11 @@ window.CPG_DATA = {
                 options: [
                     "Acute psychosis from schizophrenia — transport for psychiatric evaluation",
                     "Hypoglycaemia — despite the normal reading, symptoms suggest low blood sugar",
-                    "Excited delirium with possible stimulant intoxication — this is a medical emergency requiring aggressive cooling, de-escalation, and rapid transport",
+                    "Hyperactive (agitated) delirium with possible stimulant intoxication — this is a medical emergency requiring aggressive cooling, de-escalation, and rapid transport",
                     "Panic attack — provide reassurance and calm the patient"
                 ],
                 correct: 2,
-                explanation: "Agitation, hyperthermia, tachycardia, diaphoresis, and bizarre behaviour (stripping off clothes, shouting at unseen people) with normal glucose and SpO₂ is classic for excited delirium. This is a medical emergency, not a primary psychiatric condition, and can progress to cardiorespiratory arrest."
+                explanation: "Agitation, hyperthermia, tachycardia, diaphoresis, and bizarre behaviour (stripping off clothes, shouting at unseen people) with normal glucose and SpO₂ is classic for hyperactive (agitated) delirium. This is a medical emergency, not a primary psychiatric condition, and can progress to cardiorespiratory arrest."
             },
             {
                 q: "You are called to assess a 22-year-old female who suddenly developed chest tightness, shortness of breath, palpitations, tingling in her hands, and a feeling that she is 'going to die.' She has no significant medical history. Vital signs: HR 118, BP 132/84, RR 26, SpO₂ 99%, temperature 36.8°C. Her symptoms started 15 minutes ago during a final exam. What is the MOST appropriate next step?",

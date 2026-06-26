@@ -170,7 +170,7 @@ window.CPG_DATA = {
                     explanation: "Steering wheel deformity + chest wall imprint = high-energy transfer to chest. Suspect cardiac contusion, pulmonary contusion, possible great-vessel injury — regardless of stable vitals."
                 },
                 {
-                    q: "An adult patient falls from an 18-foot window. He is awake with no visible injuries and stable vitals. What is the appropriate transport decision?",
+                    q: "An adult patient falls from an 25-foot window. He is awake with no visible injuries and stable vitals. What is the appropriate transport decision?",
                     options: [
                         "No trauma center — fall was not >20 ft",
                         "Transport to trauma center — fall >20 ft is a mechanism criterion",

@@ -1335,13 +1335,13 @@ window.CPG_DATA = {
                         <tr><th>Colour</th><th>Division</th><th>Examples</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>Red</strong></td><td>Class 1 — Explosives</td><td>Dynamite, fireworks, ammunition (1.1–1.6)</td></tr>
+                        <tr><td><strong>Orange</strong></td><td>Class 1 — Explosives</td><td>Dynamite, fireworks, ammunition (1.1–1.6)</td></tr>
                         <tr><td><strong>Red</strong></td><td>Class 2.1 — Flammable Gases</td><td>Propane, butane, acetylene</td></tr>
                         <tr><td><strong>Green</strong></td><td>Class 2.2 — Non-Flammable Gases</td><td>Oxygen, nitrogen, carbon dioxide</td></tr>
-                        <tr><td><strong>Red/White</strong></td><td>Class 2.3 — Toxic Gases</td><td>Chlorine, ammonia, phosgene</td></tr>
+                        <tr><td><strong>White</strong></td><td>Class 2.3 — Toxic Gases</td><td>Chlorine, ammonia, phosgene</td></tr>
                         <tr><td><strong>Red</strong></td><td>Class 3 — Flammable Liquids</td><td>Gasoline, ethanol, acetone, benzene</td></tr>
-                        <tr><td><strong>Yellow</strong></td><td>Class 4 — Flammable Solids</td><td>Magnesium, phosphorus, matches</td></tr>
-                        <tr><td><strong>White/Red</strong></td><td>Class 5 — Oxidisers & Organic Peroxides</td><td>Hydrogen peroxide, ammonium nitrate</td></tr>
+                        <tr><td><strong>Red/White Striped</strong></td><td>Class 4.1 — Flammable Solids</td><td>Magnesium, phosphorus, matches</td></tr>
+                        <tr><td><strong>Yellow</strong></td><td>Class 5 — Oxidisers & Organic Peroxides</td><td>Hydrogen peroxide, ammonium nitrate</td></tr>
                         <tr><td><strong>White</strong></td><td>Class 6 — Toxic/Infectious Substances</td><td>Pesticides, cyanide, medical waste</td></tr>
                         <tr><td><strong>Yellow/White</strong></td><td>Class 7 — Radioactive Materials</td><td>Uranium, medical isotopes, Cobalt-60</td></tr>
                         <tr><td><strong>White/Black</strong></td><td>Class 8 — Corrosives</td><td>Sulfuric acid, hydrochloric acid, sodium hydroxide</td></tr>
@@ -1582,11 +1582,11 @@ window.CPG_DATA = {
                     options: [
                         "Class 3 (Flammable liquid) — evacuate 500 feet, no respiratory hazard",
                         "The yellow placard indicates Class 4 (Flammable solid) — the fire risk is the primary concern",
-                        "Yellow placards are Class 4 (Flammable solids/reactive) — UN 1971 is not a valid UN number in current ERG. This means the placard may be misleading or the substance requires immediate lookup in the ERG. Regardless, multiple patients with respiratory symptoms = a respiratory hazard exists. Maintain safe position, consult the ERG, and do NOT enter until the substance is identified and appropriate PPE is donned",
+                        "Yellow placards indicate an OXIDIZER (Class 5). UN 1971 is methane / compressed natural gas (a Class 2.1 flammable gas), so the colour and UN number are mismatched and the placard is unreliable. This means the placard may be misleading or the substance requires immediate lookup in the ERG. Regardless, multiple patients with respiratory symptoms = a respiratory hazard exists. Maintain safe position, consult the ERG, and do NOT enter until the substance is identified and appropriate PPE is donned",
                         "The placard is yellow with a 1971 number — that indicates Class 7 (Radioactive). Evacuate 1 mile immediately"
                     ],
                     correct: 2,
-                    explanation: "This is a trick question testing ERG knowledge. Yellow placards indicate Class 4 (Flammable Solids / Spontaneously Combustible / Dangerous When Wet). UN 1971 does not correspond to a known substance in the ERG (1971 is not an assigned number for a common hazmat — the closest common numbers are 1972 [Methane/LNG] and 1977 [Nitrogen]). The key point: an unknown placard with an invalid/unknown UN number requires the EMT to: 1) Maintain safe position upwind/uphill; 2) Consult the ERG with the placard class colour and any legible information; 3) NOT enter or approach; 4) Wait for the HAZMAT team to identify the substance. The multiple patients with respiratory symptoms confirm an inhalation hazard exists regardless of what the placard seems to indicate."
+                    explanation: "This is a trick question testing ERG knowledge. Yellow placards indicate an OXIDIZER (Class 5.1) or Organic Peroxide (5.2). UN 1971 is methane / compressed natural gas (a Class 2.1 flammable gas), so the placard colour and the UN number do not match — treat the placard as unreliable and verify with the ERG. The key point: an unknown placard with an invalid/unknown UN number requires the EMT to: 1) Maintain safe position upwind/uphill; 2) Consult the ERG with the placard class colour and any legible information; 3) NOT enter or approach; 4) Wait for the HAZMAT team to identify the substance. The multiple patients with respiratory symptoms confirm an inhalation hazard exists regardless of what the placard seems to indicate."
                 },
                 {
                     q: "You are at a mass casualty incident involving a suspected chemical release in a subway station. Multiple patients are streaming out of the station, coughing and complaining of eye irritation. Some are vomiting and have difficulty breathing. You see several patients collapsed near the exit. What is the correct approach to triage and treatment?",

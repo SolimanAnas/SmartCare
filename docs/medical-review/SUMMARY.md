@@ -2,8 +2,36 @@
 
 **Scope:** all 10 chapters (`c1–c10`), ~600+ quiz items + ~750 flashcards + critical scenarios.
 **Bottom line:** 🟢 **The medical content is impressively accurate and clinically sophisticated.**
-Across the whole curriculum there are only **3 clear errors** and a short list of verify/nuance items.
 *This automated review does not replace physician / medical-director sign-off before public release.*
+
+---
+
+## ✅ Fixes applied (this pass)
+
+**Encoding:** full demojibake with `ftfy.fix_encoding` — **418+ corrupted characters** repaired in
+c1 & c6 (em/en-dashes, smart quotes, °, ≈, ×). **0 mojibake remaining; 10/10 chapters valid JS.**
+
+**Content fixes applied:**
+| Item | Fix |
+|---|---|
+| c1 · 1.8 CHART "P" | → **"H"** (History) |
+| c1 · 1.4 meningococcal | removed the gown — droplet = mask + eye protection |
+| c4 · 4.6 new LBBB | softened to "treated as a STEMI equivalent (confirm with Sgarbossa)" |
+| c5 · 5.10 "excited delirium" (5×) | → **"hyperactive (agitated) delirium"** |
+| c6 · 6.1 fall height | 18-foot → **25-foot** (now consistent with the >20 ft criterion) |
+| c7 · 7.1 meconium | → **begin PPV**; routine tracheal suctioning removed (current NRP) |
+| c8 · 8.6 hazmat Q5 | corrected: **Yellow = Class 5 Oxidizer**; **UN 1971 = methane** |
+| **c8 placard color table** | corrected 4 rows: **Class 1 = Orange, Class 2.3 = White, Class 4.1 = Red/White striped, Class 5 = Yellow** (found during fixing) |
+| c10 · 10.3 tourniquet | removed "air embolism" from the release rationale |
+
+**Reviewed and intentionally left (defensible / correct as written):** HIV PEP "within 2 h" (correct
+*ideal*); "struck by a vehicle" leading EMS death (cited both ways — confirm with your source);
+sarin "faint fruity odor" (impure sarin can be faintly fruity); E-cylinder "≈30 min" (depends on
+whether the 200 psi safe-residual convention is taught).
+
+---
+
+## Original findings (for reference)
 
 ---
 
