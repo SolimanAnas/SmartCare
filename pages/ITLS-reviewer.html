@@ -410,16 +410,14 @@
                 if (!isMatched) return;
 
                 const isChecked = completionState[ch.id] || false;
-                const isCh1 = (ch.id === 'c01'); // Only chapter 1 is active right now
-                
                 // Clicking study options
-                const summaryHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=summary` : '#';
-                const flashHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=flashcards` : '#';
-                const quizHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=quiz` : '#';
-                const scenarioHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=critical` : '#';
+                const summaryHref = `itls-chapter.html?chapter=${ch.id}&view=summary`;
+                const flashHref = `itls-chapter.html?chapter=${ch.id}&view=flashcards`;
+                const quizHref = `itls-chapter.html?chapter=${ch.id}&view=quiz`;
+                const scenarioHref = `itls-chapter.html?chapter=${ch.id}&view=critical`;
                 
-                const disabledAttr = isCh1 ? '' : 'style="opacity:0.4; pointer-events:none;"';
-                const comingSoonText = isCh1 ? '' : ' <span style="font-size:0.75rem; color:var(--muted); font-weight:normal;">(Coming Soon)</span>';
+                const disabledAttr = '';
+                const comingSoonText = '';
 
                 html += `
                     <div class="chapter-card">

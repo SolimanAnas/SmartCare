@@ -1299,36 +1299,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     refreshStatsBadge();
 
+    // ── Chapter page boot ───────────────────────────────────
+    function bootApp() {
+        if (isChapterMissing) {
+            renderComingSoon();
+            return;
+        }
+
+        const urlSection = utils.getQueryParam('section');
+        const urlView    = utils.getQueryParam('view') || 'summary';
+
+        if (urlSection && state.sections) {
+            const section = utils.getSection(urlSection);
+            if (section) {
+                state.activeSectionId = urlSection;
+                state.activeSection   = section;
+                state.flashData       = section.flashcards || [];
+                state.criticalData    = section.critical   || [];
+                if      (urlView === 'flashcards') render.flashcards();
+                else if (urlView === 'quiz')       render.quizSetup();
+                else if (urlView === 'critical')   render.criticalGame();
+                else                               render.summary();
+            } else {
+                if (state.sections && state.sections.length > 0) switchSection(state.sections[0].id);
+            }
+        } else {
+            if (state.sections && state.sections.length > 0) switchSection(state.sections[0].id);
+        }
+    }
+
     // ── Attach unified scroll controller ────────────────────
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
 
-    // ── Chapter page boot ───────────────────────────────────
-    if (isChapterMissing) {
-        renderComingSoon();
-        return;
-    }
-
-    const urlSection = utils.getQueryParam('section');
-    const urlView    = utils.getQueryParam('view') || 'summary';
-
-    if (urlSection && state.sections) {
-        const section = utils.getSection(urlSection);
-        if (section) {
-            state.activeSectionId = urlSection;
-            state.activeSection   = section;
-            state.flashData       = section.flashcards || [];
-            state.criticalData    = section.critical   || [];
-            if      (urlView === 'flashcards') render.flashcards();
-            else if (urlView === 'quiz')       render.quizSetup();
-            else if (urlView === 'critical')   render.criticalGame();
-            else                               render.summary();
-        } else {
-            if (state.sections && state.sections.length > 0) switchSection(state.sections[0].id);
-        }
+    // Run boot sequence directly if the DOM is already interactive/complete, otherwise wait for listener.
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+        bootApp();
     } else {
-        if (state.sections && state.sections.length > 0) switchSection(state.sections[0].id);
+        document.addEventListener('DOMContentLoaded', bootApp);
     }
 });
 
