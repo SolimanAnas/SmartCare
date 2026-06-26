@@ -115,7 +115,56 @@ window.CPG_DATA = {
 },
 {
     id: "c3s3",
-    shortTitle: "3.3 Airway Adjuncts",
+    shortTitle: "3.3 Foreign Body Airway Obstruction (FBAO)",
+    summary: `<div class="sum-card">
+        <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#alert-octagon"/></svg> Foreign Body Airway Obstruction (Choking)</h3>
+
+        <p>FBAO is a sudden mechanical blockage of the airway by food or an object. It is a leading cause of preventable death, especially in young children and the elderly. Rapid recognition of severity and the correct age-appropriate technique can be immediately lifesaving.</p>
+
+        <h4>Recognize Severity</h4>
+        <table>
+            <thead><tr><th>Mild (good air exchange)</th><th>Severe (poor/no air exchange)</th></tr></thead>
+            <tbody>
+                <tr><td>Forceful cough, able to speak, wheeze between coughs</td><td>Silent or weak cough, unable to speak/breathe, stridor, cyanosis</td></tr>
+                <tr><td><strong>Encourage coughing — do NOT interfere</strong></td><td><strong>Act immediately</strong> (thrusts)</td></tr>
+            </tbody>
+        </table>
+
+        <h4>Technique by Patient</h4>
+        <ul>
+            <li><strong>Responsive adult or child (over 1 yr):</strong> Abdominal thrusts (Heimlich) until the object is expelled or the patient becomes unresponsive.</li>
+            <li><strong>Responsive infant (under 1 yr):</strong> Alternate <strong>5 back blows</strong> and <strong>5 chest thrusts</strong>; never abdominal thrusts (risk of organ injury).</li>
+            <li><strong>Pregnant or markedly obese:</strong> Use <strong>chest thrusts</strong> in place of abdominal thrusts.</li>
+            <li><strong>Becomes unresponsive:</strong> Lower to the ground and begin <strong>CPR</strong>; before each set of ventilations, look in the mouth and remove an object only if you can <strong>see</strong> it.</li>
+        </ul>
+
+        <div class="highlight-box" style="background:#f8d7da; border-left-color:#721c24;">
+            <strong>Critical Point:</strong> Never perform a blind finger sweep — it can push the object deeper. Remove only a visible object. The universal sign of choking is both hands clutching the throat.
+        </div>
+    </div>`,
+    flashcards: [
+        {question: "What is the universal sign of choking?", answer: "Both hands clutching the throat, unable to speak or cough effectively.", category: "FBAO"},
+        {question: "How do you manage a MILD airway obstruction (good air exchange, forceful cough)?", answer: "Encourage the patient to keep coughing; do not interfere.", category: "FBAO"},
+        {question: "What is the technique for a responsive choking adult with severe obstruction?", answer: "Abdominal thrusts (Heimlich) until the object is expelled or the patient becomes unresponsive.", category: "FBAO"},
+        {question: "How do you relieve a severe airway obstruction in a responsive infant under 1 year?", answer: "Alternate 5 back blows and 5 chest thrusts; never use abdominal thrusts.", category: "FBAO"},
+        {question: "What replaces abdominal thrusts in a pregnant or markedly obese choking patient?", answer: "Chest thrusts.", category: "FBAO"},
+        {question: "What do you do when a choking patient becomes unresponsive?", answer: "Lower them to the ground and begin CPR; check the mouth before ventilations and remove a visible object only.", category: "FBAO"},
+        {question: "Are blind finger sweeps recommended?", answer: "No — only remove an object you can see; a blind sweep can push it deeper.", category: "FBAO"}
+    ],
+    quiz: [
+        {q: "A choking adult is coughing forcefully and can still speak. You should:", options: ["Begin abdominal thrusts immediately", "Encourage continued coughing and monitor", "Perform a blind finger sweep", "Start CPR"], correct: 1, explanation: "A strong cough means a mild obstruction with good air exchange — do not interfere; let the cough clear it."},
+        {q: "The correct technique for a responsive choking 6-month-old infant is:", options: ["Abdominal thrusts", "5 back blows and 5 chest thrusts", "Blind finger sweep", "A single sharp slap"], correct: 1, explanation: "Infants receive alternating back blows and chest thrusts; abdominal thrusts risk organ injury."},
+        {q: "A choking adult becomes unresponsive during abdominal thrusts. Your next step is to:", options: ["Continue standing thrusts", "Lower them and begin CPR, checking the mouth before breaths", "Perform a deep blind finger sweep", "Wait for ALS"], correct: 1, explanation: "When the patient becomes unresponsive, begin CPR; compressions help expel the object, and you remove it only if visible."}
+    ],
+    critical: [
+        {id: "crit_3_3_1", scenario: "At a restaurant, a man suddenly stands, clutches his throat, cannot speak, and is turning blue.", question: "What is your immediate action?", options: [{t: "Encourage him to cough", f: "Incorrect. A silent, ineffective cough with cyanosis is a severe obstruction — coughing will not clear it."}, {t: "Begin abdominal thrusts (Heimlich) immediately", f: "Correct. Severe obstruction in a responsive adult requires immediate abdominal thrusts."}], correct: 1, explanation: "Inability to speak, a silent cough, and cyanosis indicate a severe obstruction; begin abdominal thrusts at once and continue until relieved or unresponsive.", kpi: "Differentiates mild from severe FBAO and acts appropriately"},
+        {id: "crit_3_3_2", scenario: "A 30-week-pregnant woman is choking on food, cannot speak, and is panicking.", question: "Which technique do you use?", options: [{t: "Standard abdominal thrusts", f: "Incorrect. The gravid uterus makes abdominal thrusts unsafe and ineffective."}, {t: "Chest thrusts in place of abdominal thrusts", f: "Correct. Use chest thrusts for pregnant or markedly obese patients."}], correct: 1, explanation: "In late pregnancy (or marked obesity), abdominal thrusts are replaced by chest thrusts to avoid harm and remain effective.", kpi: "Selects chest thrusts for the pregnant choking patient"},
+        {id: "crit_3_3_3", scenario: "You are giving back blows to a choking infant. The infant goes limp and stops responding.", question: "What do you do next?", options: [{t: "Perform a blind finger sweep to find the object", f: "Incorrect. Blind sweeps can push the object deeper."}, {t: "Begin infant CPR; look in the mouth before each set of breaths and remove the object only if visible", f: "Correct. Start CPR and remove the object only under direct vision."}], correct: 1, explanation: "An unresponsive choking infant needs CPR; chest compressions help dislodge the object, which is removed only if you can see it.", kpi: "Transitions to CPR for the unresponsive choking infant"}
+    ]
+},
+{
+    id: "c3s4",
+    shortTitle: "3.4 Airway Adjuncts",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#git-merge"/></svg> Basic Airway Adjuncts</h3>
 
@@ -163,8 +212,8 @@ window.CPG_DATA = {
     ]
 },
 {
-    id: "c3s4",
-    shortTitle: "3.4 Oxygen Therapy",
+    id: "c3s5",
+    shortTitle: "3.5 Oxygen Therapy",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg> Oxygen Therapy</h3>
 
@@ -219,8 +268,8 @@ window.CPG_DATA = {
     ]
 },
 {
-    id: "c3s5",
-    shortTitle: "3.5 Ventilation",
+    id: "c3s6",
+    shortTitle: "3.6 Ventilation",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg> Assisted Ventilation</h3>
 
@@ -269,8 +318,8 @@ window.CPG_DATA = {
     ]
 },
 {
-    id: "c3s6",
-    shortTitle: "3.6 Suction",
+    id: "c3s7",
+    shortTitle: "3.7 Suction",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#filter"/></svg> Airway Suctioning</h3>
 
@@ -317,8 +366,8 @@ window.CPG_DATA = {
     ]
 },
 {
-    id: "c3s7",
-    shortTitle: "3.7 Advanced Airways",
+    id: "c3s8",
+    shortTitle: "3.8 Advanced Airways",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#layers"/></svg> Advanced Airways</h3>
 
@@ -364,8 +413,8 @@ window.CPG_DATA = {
     ]
 },
 {
-    id: "c3s8",
-    shortTitle: "3.8 Respiratory Failure",
+    id: "c3s9",
+    shortTitle: "3.9 Respiratory Failure",
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#alert-triangle"/></svg> Respiratory Distress vs Failure</h3>
 

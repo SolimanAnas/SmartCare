@@ -157,7 +157,7 @@ window.CPG_DATA = {
                 kpi: "Applies knowledge of referred pain patterns and organ location to differential assessment"
             }
         ]
-    },,
+    },
     {
         id: "c2s2",
         shortTitle: "2.2 Pathophysiology of Perfusion & Shock",
@@ -291,7 +291,7 @@ window.CPG_DATA = {
                 kpi: "Identifies anaphylactic shock and initiates epinephrine as the priority intervention"
             }
         ]
-    },,
+    },
     {
         id: "c2s3",
         shortTitle: "2.3 Scene Size-up & Safety",
@@ -439,7 +439,7 @@ window.CPG_DATA = {
                 kpi: "Recognizes high-risk scene indicators (secluded location, poor lighting, limited dispatch info) and stages for law enforcement"
             }
         ]
-    },,
+    },
     {
         id: "c2s4",
         shortTitle: "2.4 Primary Assessment (XABCDE)",
@@ -760,7 +760,7 @@ window.CPG_DATA = {
                 kpi: "Shock trend recognition"
             }
         ]
-    },,
+    },
     {
         id: "c2s6",
         shortTitle: "2.6 Monitoring Devices",
@@ -997,7 +997,7 @@ window.CPG_DATA = {
                 kpi: "Hypoglycemia diagnosis and treatment"
             }
         ]
-    },,
+    },
     {
         id: "c2s7",
         shortTitle: "2.7 History Taking (SAMPLE / OPQRST)",
@@ -1466,7 +1466,7 @@ window.CPG_DATA = {
                 kpi: "Open pneumothorax management"
             }
         ]
-    },,
+    },
     {
         id: "c2s9",
         shortTitle: "2.9 Reassessment & Trending",
@@ -1658,7 +1658,7 @@ window.CPG_DATA = {
                 kpi: "Trend interpretation — improvement"
             }
         ]
-    },,
+    },
     {
         id: "c2s10",
         shortTitle: "2.10 Clinical Decision Making",
@@ -1870,7 +1870,7 @@ window.CPG_DATA = {
                 kpi: "Protocol adherence decision making — chest pain"
             }
         ]
-    },,
+    },
     {
         id: "c2s11",
         shortTitle: "2.11 Field Triage (START / SALT)",

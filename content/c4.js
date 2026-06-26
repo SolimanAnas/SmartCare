@@ -140,7 +140,7 @@ window.CPG_DATA = {
             kpi: "Recognizes aortic dissection anatomy and the significance of BP differential/pulse deficits"
         }
     ]
-},,
+},
 {
     id: "c4s2",
     shortTitle: "4.2 Chest Pain / Acute Coronary Syndrome",
@@ -288,7 +288,7 @@ window.CPG_DATA = {
             kpi: "Applies STEMI destination protocols and understands the importance of primary PCI over secondary transfer"
         }
     ]
-},,
+},
 {
     id: "c4s3",
     shortTitle: "4.3 Heart Failure & Pulmonary Edema",
@@ -414,7 +414,7 @@ window.CPG_DATA = {
             kpi: "Recognizes transition from ADHF to cardiogenic shock and initiates appropriate rescue ventilation"
         }
     ]
-},,
+},
 {
     id: "c4s4",
     shortTitle: "4.4 Hypertensive Emergencies",
@@ -738,7 +738,7 @@ window.CPG_DATA = {
                 kpi: "PEA recognition and management"
             }
         ]
-    },,
+    },
     {
         id: "c4s6",
         shortTitle: "4.6 ECG Basics & 12-Lead / STEMI",
@@ -941,7 +941,7 @@ window.CPG_DATA = {
                 kpi: "STEMI vs. mimic differentiation"
             }
         ]
-    },,
+    },
     {
         id: "c4s7",
         shortTitle: "4.7 Cardiac Arrest & High-Quality CPR",
@@ -1154,7 +1154,7 @@ window.CPG_DATA = {
                 kpi: "ROSC recognition and post-arrest care transition"
             }
         ]
-    },,
+    },
     {
         id: "c4s8",
         shortTitle: "4.8 AED & Defibrillation",
@@ -1482,7 +1482,7 @@ window.CPG_DATA = {
                 kpi: "Avoidance of hyperventilation in post-arrest care"
             }
         ]
-    },,
+    },
     {
         id: "c4s10",
         shortTitle: "4.10 Shock & Hemorrhage",
@@ -1611,7 +1611,7 @@ window.CPG_DATA = {
                 kpi: "Identifies cardiogenic shock and avoids fluid overload in the setting of pulmonary oedema"
             }
         ]
-    },,
+    },
     {
         id: "c4s11",
         shortTitle: "4.11 Fluid Resuscitation",
@@ -1743,5 +1743,109 @@ window.CPG_DATA = {
             }
         ]
     }
+    ,
+{
+    id: "c4s12",
+    shortTitle: "4.12 Pediatric Cardiac Arrest & BLS",
+    summary: `<div class="sum-card">
+        <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Cardiac Arrest & BLS</h3>
+
+        <p>Unlike adults (usually a primary cardiac/electrical event), most pediatric arrests result from <strong>respiratory failure and progressive hypoxia</strong>. The priority is therefore high-quality compressions <em>and</em> effective oxygenation/ventilation. Recognize and treat respiratory distress early to prevent arrest.</p>
+
+        <h4>High-Quality CPR Parameters by Age</h4>
+        <table>
+            <thead><tr><th>Parameter</th><th>Infant (&lt;1 yr)</th><th>Child (1 yr–puberty)</th><th>Adult</th></tr></thead>
+            <tbody>
+                <tr><td>Rate</td><td>100–120/min</td><td>100–120/min</td><td>100–120/min</td></tr>
+                <tr><td>Depth</td><td>~1.5 in (4 cm), ~⅓ AP diameter</td><td>~2 in (5 cm), ~⅓ AP diameter</td><td>≥2 in (5 cm)</td></tr>
+                <tr><td>Hand position</td><td>2 fingers (1 rescuer) / 2-thumb encircling (2 rescuers)</td><td>1 or 2 hands</td><td>2 hands</td></tr>
+                <tr><td>Ratio (single rescuer)</td><td>30:2</td><td>30:2</td><td>30:2</td></tr>
+                <tr><td>Ratio (2 rescuers)</td><td><strong>15:2</strong></td><td><strong>15:2</strong></td><td>30:2</td></tr>
+            </tbody>
+        </table>
+
+        <h4>Key Points</h4>
+        <ul>
+            <li>Allow full chest recoil; minimize interruptions; rotate compressors ~every 2 minutes.</li>
+            <li><strong>AED:</strong> Use a pediatric dose attenuator/pads for children &lt;8 yr (or &lt;25 kg) if available; if not, use a standard adult AED.</li>
+            <li>Because hypoxia is the usual cause, ensure an open airway and effective ventilations (~1 breath every 2–3 seconds when an advanced airway/2-rescuer BVM is in place).</li>
+        </ul>
+
+        <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
+            <strong>Clinical Pearl:</strong> A bradycardic child with poor perfusion despite adequate oxygenation and ventilation is treated like cardiac arrest — begin CPR if the heart rate is below 60/min with signs of poor perfusion.
+        </div>
+    </div>`,
+    flashcards: [
+        {question: "What is the most common underlying cause of pediatric cardiac arrest?", answer: "Respiratory failure and progressive hypoxia (not a primary cardiac event).", category: "Pediatric Resus"},
+        {question: "What is the 2-rescuer compression-to-ventilation ratio for an infant or child?", answer: "15:2 (versus 30:2 for adults).", category: "Pediatric Resus"},
+        {question: "What is the correct compression depth for a child?", answer: "About 2 inches (5 cm), or roughly one-third of the chest's anterior-posterior diameter.", category: "Pediatric Resus"},
+        {question: "Which compression technique is preferred for a 2-rescuer infant resuscitation?", answer: "The 2-thumb encircling-hands technique.", category: "Pediatric Resus"},
+        {question: "How is an AED used on a child under 8 years (or <25 kg)?", answer: "Use a pediatric dose attenuator/pads if available; if not, use a standard adult AED.", category: "Pediatric Resus"},
+        {question: "When do you start CPR on a child with a pulse?", answer: "When the heart rate is below 60/min with signs of poor perfusion despite adequate oxygenation and ventilation.", category: "Pediatric Resus"},
+        {question: "What is the single-rescuer compression-to-ventilation ratio for a child?", answer: "30:2 (the same as adults).", category: "Pediatric Resus"}
+    ],
+    quiz: [
+        {q: "The most common cause of cardiac arrest in children is:", options: ["A primary heart rhythm problem", "Respiratory failure/hypoxia", "Congenital heart disease", "Drug overdose"], correct: 1, explanation: "Pediatric arrests are usually the end result of respiratory failure, so airway and ventilation are critical."},
+        {q: "The 2-rescuer compression-to-ventilation ratio for a child is:", options: ["30:2", "15:2", "5:1", "10:2"], correct: 1, explanation: "Two-rescuer pediatric CPR uses 15:2; single-rescuer uses 30:2."},
+        {q: "You should begin CPR on an infant who has a pulse when the heart rate is:", options: ["Below 100/min", "Below 80/min", "Below 60/min with poor perfusion", "Below 40/min only"], correct: 2, explanation: "A heart rate under 60 with poor perfusion despite oxygenation/ventilation is treated as arrest in infants and children."}
+    ],
+    critical: [
+        {id: "crit_4_12_1", scenario: "A 6-month-old is unresponsive and not breathing. Two EMTs are present and begin CPR.", question: "Which technique and ratio are correct?", options: [{t: "Heel of one hand, 30:2", f: "Incorrect. That is adult technique; 2-rescuer infant CPR differs."}, {t: "2-thumb encircling-hands technique at a 15:2 ratio", f: "Correct. Two rescuers use the 2-thumb technique and a 15:2 ratio for infants."}], correct: 1, explanation: "Two-rescuer infant CPR uses the 2-thumb encircling-hands technique with a 15:2 compression-to-ventilation ratio.", kpi: "Applies correct pediatric 2-rescuer CPR technique and ratio"},
+        {id: "crit_4_12_2", scenario: "A 3-year-old in respiratory distress becomes limp; the heart rate is 40/min with mottled skin and no central pulse improvement despite good BVM ventilation with oxygen.", question: "What is the next step?", options: [{t: "Continue ventilations only and reassess in 2 minutes", f: "Incorrect. A HR <60 with poor perfusion despite ventilation requires compressions."}, {t: "Begin chest compressions (CPR) now", f: "Correct. HR <60 with poor perfusion despite oxygenation/ventilation is treated as arrest."}], correct: 1, explanation: "In children, a heart rate below 60/min with poor perfusion despite adequate oxygenation and ventilation is an indication to start CPR.", kpi: "Initiates CPR for pediatric bradycardia with poor perfusion"},
+        {id: "crit_4_12_3", scenario: "You must defibrillate a 5-year-old in ventricular fibrillation, but your AED has only adult pads and no pediatric attenuator.", question: "What should you do?", options: [{t: "Withhold defibrillation because pediatric pads are unavailable", f: "Incorrect. Defibrillation should not be delayed; an adult AED is acceptable if pediatric equipment is unavailable."}, {t: "Use the standard adult AED, ensuring pads do not touch each other (anterior-posterior placement if needed)", f: "Correct. A standard AED is preferred over no defibrillation when pediatric equipment is unavailable."}], correct: 1, explanation: "If a pediatric attenuator/pads are unavailable, use a standard adult AED rather than withhold defibrillation; position pads so they do not touch.", kpi: "Defibrillates a child appropriately when pediatric equipment is unavailable"}
+    ]
+},
+{
+    id: "c4s13",
+    shortTitle: "4.13 Termination of Resuscitation & Verification of Death",
+    summary: `<div class="sum-card">
+        <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#file-text"/></svg> Termination of Resuscitation & Verification of Death</h3>
+
+        <p>Not every cardiac arrest should be resuscitated, and not every resuscitation should continue indefinitely. Decisions to withhold or terminate resuscitation follow local protocol and medical direction. Always know your service's specific policy.</p>
+
+        <h4>When NOT to Begin Resuscitation</h4>
+        <ul>
+            <li><strong>Obvious/irreversible death:</strong> Decapitation, decomposition, incineration, rigor mortis, or dependent lividity (livor mortis) with injuries incompatible with life.</li>
+            <li><strong>A valid DNR / POLST order</strong> directing no resuscitation.</li>
+        </ul>
+
+        <h4>Field Termination of Resuscitation (TOR)</h4>
+        <p>When started, resuscitation may be terminated under medical direction. Commonly considered factors (per protocol) include:</p>
+        <ul>
+            <li>Arrest not witnessed by EMS, no return of spontaneous circulation (ROSC) after adequate resuscitation, and no shock delivered (BLS TOR criteria).</li>
+            <li>Persistent asystole after high-quality CPR and reversible causes addressed.</li>
+            <li>Online medical direction / physician order to cease efforts.</li>
+        </ul>
+
+        <h4>After a Death</h4>
+        <ul>
+            <li>Communicate clearly and compassionately with family; use the word "died/dead" (avoid euphemisms).</li>
+            <li>Preserve the scene if a crime is suspected; minimize disturbance of the body and surroundings.</li>
+            <li>Follow protocol for notification (medical examiner/coroner, law enforcement) and documentation.</li>
+        </ul>
+
+        <div class="highlight-box" style="background:#f8d7da; border-left-color:#721c24;">
+            <strong>Protocol First:</strong> EMT authority to withhold or terminate resuscitation varies by jurisdiction and usually requires medical direction. When in doubt, begin resuscitation and contact medical control.
+        </div>
+    </div>`,
+    flashcards: [
+        {question: "Name four signs of obvious/irreversible death where resuscitation is withheld.", answer: "Decapitation, decomposition, incineration, rigor mortis (also dependent lividity and injuries incompatible with life).", category: "TOR"},
+        {question: "What is dependent lividity (livor mortis)?", answer: "Pooling of blood in dependent body parts after death, producing a reddish-purple discoloration — a sign of obvious death.", category: "TOR"},
+        {question: "What document directs you to withhold resuscitation?", answer: "A valid DNR (Do Not Resuscitate) order or POLST.", category: "TOR"},
+        {question: "What are the BLS termination-of-resuscitation criteria?", answer: "Arrest not witnessed by EMS, no ROSC after adequate resuscitation, and no shock delivered — terminate per medical direction.", category: "TOR"},
+        {question: "How should you communicate a death to family?", answer: "Clearly and compassionately, using the words 'died' or 'dead' rather than euphemisms.", category: "TOR"},
+        {question: "What must you preserve if a death may involve a crime?", answer: "The scene and evidence — minimize disturbance of the body and surroundings and notify law enforcement.", category: "TOR"}
+    ],
+    quiz: [
+        {q: "Which finding allows an EMT to withhold resuscitation?", options: ["Cool skin", "Rigor mortis with dependent lividity", "A weak pulse", "Agonal breathing"], correct: 1, explanation: "Rigor mortis and dependent lividity are signs of obvious, irreversible death."},
+        {q: "Before terminating resuscitation in the field, an EMT generally must:", options: ["Decide alone", "Obtain medical direction per protocol", "Wait 60 minutes", "Transport regardless"], correct: 1, explanation: "Field termination typically requires online medical direction and follows local protocol."},
+        {q: "A patient presents a valid DNR order during a cardiac arrest. You should:", options: ["Begin full resuscitation anyway", "Honor the DNR and provide comfort/supportive care", "Ignore it without family present", "Transport with CPR"], correct: 1, explanation: "A valid DNR directs that resuscitation be withheld; provide comfort care and follow protocol."}
+    ],
+    critical: [
+        {id: "crit_4_13_1", scenario: "You arrive to find a pulseless, apneic patient who is cold with obvious rigor mortis and dependent lividity.", question: "What is the appropriate action?", options: [{t: "Begin CPR and transport immediately", f: "Incorrect. Rigor mortis and lividity are signs of obvious, irreversible death."}, {t: "Withhold resuscitation, follow death-in-the-field protocol, and support the family", f: "Correct. Obvious death signs mean resuscitation is not indicated; follow protocol."}], correct: 1, explanation: "Rigor mortis with dependent lividity indicates obvious, irreversible death; resuscitation is withheld and the death-in-the-field protocol is followed.", kpi: "Recognizes obvious death and withholds futile resuscitation"},
+        {id: "crit_4_13_2", scenario: "During resuscitation of an unwitnessed arrest, after adequate CPR there has been no ROSC and the AED has advised 'no shock' on every analysis.", question: "What is the most appropriate next step?", options: [{t: "Continue indefinitely until the patient is in the ED", f: "Incorrect. Protocols allow consideration of termination when BLS TOR criteria are met."}, {t: "Contact medical direction to consider termination of resuscitation per protocol", f: "Correct. Unwitnessed arrest, no ROSC, and no shocks meet BLS TOR criteria for consideration."}], correct: 1, explanation: "Meeting the BLS TOR criteria (unwitnessed, no ROSC, no shock) is a reason to contact medical direction to consider termination per protocol.", kpi: "Applies BLS termination criteria with medical direction"},
+        {id: "crit_4_13_3", scenario: "A family produces a valid DNR/POLST as you prepare to resuscitate their pulseless relative.", question: "What do you do?", options: [{t: "Resuscitate anyway because family may change their mind", f: "Incorrect. A valid DNR must be honored."}, {t: "Honor the DNR, withhold resuscitation, and provide compassionate support and documentation", f: "Correct. A valid DNR directs that resuscitation be withheld."}], correct: 1, explanation: "A valid DNR/POLST must be honored; withhold resuscitation, support the family, and document per protocol.", kpi: "Honors a valid DNR order"}
+    ]
+}
     ]
 };

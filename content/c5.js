@@ -202,7 +202,7 @@ window.CPG_DATA = {
                 kpi: "PE recognition and risk stratification"
             }
         ]
-    },,
+    },
     {
         id: "c5s2",
         shortTitle: "5.2 Neurological Emergencies",
@@ -412,7 +412,7 @@ window.CPG_DATA = {
                 kpi: "Meningitis recognition and infection control"
             }
         ]
-    },,
+    },
     {
         id: "c5s3",
         shortTitle: "5.3 Endocrine Emergencies",
@@ -645,7 +645,7 @@ window.CPG_DATA = {
                 kpi: "Hypoglycemia in Type 2 diabetes"
             }
         ]
-    },,
+    },
     {
         id: "c5s4",
         shortTitle: "5.4 Allergy & Anaphylaxis",
@@ -977,7 +977,7 @@ window.CPG_DATA = {
                 kpi: "Recognizes delayed toxicity in polypharmacy overdose despite initial normal vital signs"
             }
         ]
-    },,
+    },
     {
         id: "c5s6",
         shortTitle: "5.6 Gastrointestinal & Abdominal",
@@ -1131,7 +1131,7 @@ window.CPG_DATA = {
                 kpi: "Identifies ruptured AAA by the triad of shock, tearing pain, and pulsatile mass"
             }
         ]
-    },,
+    },
     {
         id: "c5s7",
         shortTitle: "5.7 Genitourinary & Renal",
@@ -1240,7 +1240,7 @@ window.CPG_DATA = {
                 kpi: "Recognizes pulmonary edema from fluid overload in a missed-dialysis patient"
             }
         ]
-    },,
+    },
     {
         id: "c5s8",
         shortTitle: "5.8 Hematologic Emergencies",
@@ -1566,7 +1566,7 @@ window.CPG_DATA = {
                 kpi: "Recognises tuberculosis and applies appropriate airborne precautions"
             }
         ]
-    },,
+    },
     {
         id: "c5s10",
         shortTitle: "5.10 Behavioral & Psychiatric",
@@ -1780,7 +1780,7 @@ window.CPG_DATA = {
                 kpi: "Prioritises presenting toxidrome over medical history when managing altered mental status"
             }
         ]
-    },,
+    },
     {
         id: "c5s11",
         shortTitle: "5.11 Pain Management",
