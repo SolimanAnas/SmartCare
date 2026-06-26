@@ -58,6 +58,5 @@ content_dcas_archive/
 # Generated knowledge graph
 graphify-out/
 
-# Large copyrighted source files
-TOC/*.pdf
-TOC/*.epub
+# Large copyrighted source files / generated section fragments
+TOC/
