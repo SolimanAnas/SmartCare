@@ -1,0 +1,419 @@
+{
+  "version": "1.0-prehospital",
+  "audience": [
+    "emt"
+  ],
+  "chapters": [
+    {
+      "id": "c1",
+      "title": "Foundations of Care",
+      "group": "foundations",
+      "sections": [
+        {
+          "id": "c1s1",
+          "title": "EMS & Healthcare Systems"
+        },
+        {
+          "id": "c1s2",
+          "title": "Roles, Responsibilities & Professionalism"
+        },
+        {
+          "id": "c1s3",
+          "title": "Workforce Safety & Wellness"
+        },
+        {
+          "id": "c1s4",
+          "title": "Infection Prevention & PPE"
+        },
+        {
+          "id": "c1s5",
+          "title": "Medical, Legal & Ethical Issues"
+        },
+        {
+          "id": "c1s6",
+          "title": "Consent, Refusal & Advance Directives"
+        },
+        {
+          "id": "c1s7",
+          "title": "Communication & Handoff"
+        },
+        {
+          "id": "c1s8",
+          "title": "Documentation & the Patient Care Report"
+        },
+        {
+          "id": "c1s9",
+          "title": "Medical Terminology"
+        },
+        {
+          "id": "c1s10",
+          "title": "Lifting, Moving & Positioning"
+        },
+        {
+          "id": "c1s11",
+          "title": "Evidence-Based Practice & Quality Improvement"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Patient Assessment",
+      "group": "assessment",
+      "sections": [
+        {
+          "id": "c2s1",
+          "title": "Anatomy & Physiology Essentials"
+        },
+        {
+          "id": "c2s2",
+          "title": "Pathophysiology of Perfusion & Shock"
+        },
+        {
+          "id": "c2s3",
+          "title": "Scene Size-up & Safety"
+        },
+        {
+          "id": "c2s4",
+          "title": "Primary Assessment (XABCDE)"
+        },
+        {
+          "id": "c2s5",
+          "title": "Vital Signs"
+        },
+        {
+          "id": "c2s6",
+          "title": "Monitoring Devices"
+        },
+        {
+          "id": "c2s7",
+          "title": "History Taking (SAMPLE / OPQRST)"
+        },
+        {
+          "id": "c2s8",
+          "title": "Secondary Assessment"
+        },
+        {
+          "id": "c2s9",
+          "title": "Reassessment & Trending"
+        },
+        {
+          "id": "c2s10",
+          "title": "Clinical Decision Making"
+        },
+        {
+          "id": "c2s11",
+          "title": "Field Triage (START / SALT)"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "title": "Cardiovascular & Resuscitation",
+      "group": "cardio",
+      "sections": [
+        {
+          "id": "c4s1",
+          "title": "Cardiac Anatomy & Physiology"
+        },
+        {
+          "id": "c4s2",
+          "title": "Chest Pain / Acute Coronary Syndrome"
+        },
+        {
+          "id": "c4s3",
+          "title": "Heart Failure & Pulmonary Edema"
+        },
+        {
+          "id": "c4s4",
+          "title": "Hypertensive Emergencies"
+        },
+        {
+          "id": "c4s5",
+          "title": "Dysrhythmia Recognition"
+        },
+        {
+          "id": "c4s6",
+          "title": "ECG Basics & 12-Lead / STEMI"
+        },
+        {
+          "id": "c4s7",
+          "title": "Cardiac Arrest & High-Quality CPR"
+        },
+        {
+          "id": "c4s8",
+          "title": "AED & Defibrillation"
+        },
+        {
+          "id": "c4s9",
+          "title": "Post-Cardiac-Arrest (ROSC) Care"
+        },
+        {
+          "id": "c4s10",
+          "title": "Shock & Hemorrhage"
+        },
+        {
+          "id": "c4s11",
+          "title": "Fluid Resuscitation"
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "title": "Medical Emergencies",
+      "group": "medical",
+      "sections": [
+        {
+          "id": "c5s1",
+          "title": "Respiratory Emergencies"
+        },
+        {
+          "id": "c5s2",
+          "title": "Neurological Emergencies"
+        },
+        {
+          "id": "c5s3",
+          "title": "Endocrine Emergencies"
+        },
+        {
+          "id": "c5s4",
+          "title": "Allergy & Anaphylaxis"
+        },
+        {
+          "id": "c5s5",
+          "title": "Toxicology & Overdose"
+        },
+        {
+          "id": "c5s6",
+          "title": "Gastrointestinal & Abdominal"
+        },
+        {
+          "id": "c5s7",
+          "title": "Genitourinary & Renal"
+        },
+        {
+          "id": "c5s8",
+          "title": "Hematologic Emergencies"
+        },
+        {
+          "id": "c5s9",
+          "title": "Infectious Disease & Sepsis"
+        },
+        {
+          "id": "c5s10",
+          "title": "Behavioral & Psychiatric"
+        },
+        {
+          "id": "c5s11",
+          "title": "Pain Management"
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "title": "Trauma Emergencies",
+      "group": "trauma",
+      "sections": [
+        {
+          "id": "c6s1",
+          "title": "Trauma Systems & Kinematics"
+        },
+        {
+          "id": "c6s2",
+          "title": "Bleeding Control"
+        },
+        {
+          "id": "c6s3",
+          "title": "Shock in Trauma"
+        },
+        {
+          "id": "c6s4",
+          "title": "Soft-Tissue Injuries & Wound Care"
+        },
+        {
+          "id": "c6s5",
+          "title": "Burns"
+        },
+        {
+          "id": "c6s6",
+          "title": "Head & Brain Injury (GCS)"
+        },
+        {
+          "id": "c6s7",
+          "title": "Spine & Motion Restriction"
+        },
+        {
+          "id": "c6s8",
+          "title": "Chest Trauma"
+        },
+        {
+          "id": "c6s9",
+          "title": "Abdominal & Pelvic Trauma"
+        },
+        {
+          "id": "c6s10",
+          "title": "Musculoskeletal Injuries & Splinting"
+        },
+        {
+          "id": "c6s11",
+          "title": "Multisystem Trauma & Trauma in Pregnancy"
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "title": "Special Populations",
+      "group": "special",
+      "sections": [
+        {
+          "id": "c7s1",
+          "title": "Obstetrics & Childbirth"
+        },
+        {
+          "id": "c7s2",
+          "title": "Gynecologic Emergencies"
+        },
+        {
+          "id": "c7s3",
+          "title": "Neonatal Resuscitation"
+        },
+        {
+          "id": "c7s4",
+          "title": "Pediatric Assessment & Emergencies"
+        },
+        {
+          "id": "c7s5",
+          "title": "Child Abuse & Neglect Recognition"
+        },
+        {
+          "id": "c7s6",
+          "title": "Geriatrics"
+        },
+        {
+          "id": "c7s7",
+          "title": "Patients with Special Challenges"
+        },
+        {
+          "id": "c7s8",
+          "title": "Bariatric Considerations"
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "title": "Environmental & Disaster",
+      "group": "environmental",
+      "sections": [
+        {
+          "id": "c8s1",
+          "title": "Heat-Related Illness"
+        },
+        {
+          "id": "c8s2",
+          "title": "Cold Exposure & Hypothermia"
+        },
+        {
+          "id": "c8s3",
+          "title": "Drowning & Submersion"
+        },
+        {
+          "id": "c8s4",
+          "title": "Diving & Altitude Emergencies"
+        },
+        {
+          "id": "c8s5",
+          "title": "Bites, Stings & Envenomation"
+        },
+        {
+          "id": "c8s6",
+          "title": "Hazardous Materials Awareness"
+        },
+        {
+          "id": "c8s7",
+          "title": "CBRNE & Terrorism Response"
+        },
+        {
+          "id": "c8s8",
+          "title": "Mass-Casualty Incidents & Triage"
+        },
+        {
+          "id": "c8s9",
+          "title": "Incident Command System (ICS)"
+        }
+      ]
+    },
+    {
+      "id": "c9",
+      "title": "Emergency Pharmacology",
+      "group": "pharmacology",
+      "sections": [
+        {
+          "id": "c9s1",
+          "title": "Principles of Pharmacology & Drug Classes"
+        },
+        {
+          "id": "c9s2",
+          "title": "Routes of Administration"
+        },
+        {
+          "id": "c9s3",
+          "title": "The Rights of Medication Administration"
+        },
+        {
+          "id": "c9s4",
+          "title": "Dose & Simple Calculations"
+        },
+        {
+          "id": "c9s5",
+          "title": "Emergency Drug Formulary"
+        },
+        {
+          "id": "c9s6",
+          "title": "Medication-Assisted Treatment"
+        },
+        {
+          "id": "c9s7",
+          "title": "Medication Safety & Error Prevention"
+        }
+      ]
+    },
+    {
+      "id": "c10",
+      "title": "Clinical Procedures & Skills",
+      "group": "procedures",
+      "sections": [
+        {
+          "id": "c10s1",
+          "title": "Airway & Breathing Skills"
+        },
+        {
+          "id": "c10s2",
+          "title": "Oxygen & Ventilation Skills"
+        },
+        {
+          "id": "c10s3",
+          "title": "Bleeding Control & Wound Care"
+        },
+        {
+          "id": "c10s4",
+          "title": "Splinting & Bandaging"
+        },
+        {
+          "id": "c10s5",
+          "title": "Spinal Motion Restriction Skills"
+        },
+        {
+          "id": "c10s6",
+          "title": "Patient Movement & Lifting"
+        },
+        {
+          "id": "c10s7",
+          "title": "ECG Acquisition (12-Lead)"
+        },
+        {
+          "id": "c10s8",
+          "title": "Medication Administration Skills"
+        }
+      ]
+    }
+  ]
+}
