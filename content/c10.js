@@ -915,14 +915,14 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wrench"/></svg> Spinal Motion Restriction Skills</h3>
 
-                <h4>From Full Immobilization to Motion Restriction � The Paradigm Shift</h4>
+                <h4>From Full Immobilization to Motion Restriction — The Paradigm Shift</h4>
                 <p>EMS has evolved from routine full spinal immobilization (backboard, collar, straps, head blocks for everyone with any MOI) to a more nuanced, evidence-based approach called <strong>spinal motion restriction (SMR)</strong>. The change was driven by research showing: backboards cause pain, anxiety, respiratory restriction (especially in elderly), and pressure ulcers; they do NOT improve neurologic outcome for most patients; and unnecessary immobilization leads to increased imaging and hospital resource use. Current national guidelines emphasize that backboards are <strong>extrication devices</strong>, not transport devices.</p>
 
                 <div class="highlight-box" style="background:#e8f4f8; border-left-color:#17a2b8;">
-                    <strong>NREMT Update:</strong> While NREMT still tests backboard skills, the current standard of care emphasizes assessment-based decision-making. You will be tested on correct application technique, but also on <strong>when</strong> to apply SMR � and when it is not needed. Know the criteria for both.
+                    <strong>NREMT Update:</strong> While NREMT still tests backboard skills, the current standard of care emphasizes assessment-based decision-making. You will be tested on correct application technique, but also on <strong>when</strong> to apply SMR — and when it is not needed. Know the criteria for both.
                 </div>
 
-                <h4>NEXUS Criteria � Clinical Clearance of the Spine</h4>
+                <h4>NEXUS Criteria — Clinical Clearance of the Spine</h4>
                 <p>The <strong>NEXUS (National Emergency X-Radiography Utilization Study)</strong> criteria are the most widely used decision rules for determining if spinal imaging is needed. <strong>If ALL NEXUS criteria are negative, SMR is not needed.</strong></p>
                 <table>
                     <thead>
@@ -942,20 +942,20 @@ window.CPG_DATA = {
                     <li>Any positive NEXUS criterion (tenderness, neuro deficit, altered LOC, intoxication, or distracting injury)</li>
                     <li>High-risk mechanism: high-speed MVC (&gt;40 mph), fall &gt;3 m (10 ft), axial load (diving, fall landing on feet), rollover MVC, ejection from vehicle, death of another occupant in same MVC</li>
                     <li>Significant head/facial trauma (concern for C-spine injury from mechanism)</li>
-                    <li>If patient cannot be reliably assessed (intubated, severely altered, unconscious, severe distracting injury) � err on the side of SMR</li>
+                    <li>If patient cannot be reliably assessed (intubated, severely altered, unconscious, severe distracting injury) — err on the side of SMR</li>
                 </ul>
 
-                <h4>Cervical Collar � Proper Sizing and Application</h4>
-                <p>The cervical collar alone immobilizes <strong>&lt;10%</strong> of cervical motion. It serves as a <strong>reminder</strong> to the patient not to move, and as a <strong>platform</strong> for head blocks. Proper sizing: measure from the patient\'s trapezius (shoulder) to the angle of the mandible. The chin must sit in the correct cup. The collar must not hyperextend or flex the neck. For the correct size: the chin must rest in the concave chin support, the tracheal opening must be midline, and the chest plate must sit flat on the sternum. Too large: chin falls forward (flexion). Too small: chin pushed back (extension). Apply during manual stabilization � do not release stabilization until collar, head blocks, and straps are all in place.</p>
+                <h4>Cervical Collar — Proper Sizing and Application</h4>
+                <p>The cervical collar alone immobilizes <strong>&lt;10%</strong> of cervical motion. It serves as a <strong>reminder</strong> to the patient not to move, and as a <strong>platform</strong> for head blocks. Proper sizing: measure from the patient\'s trapezius (shoulder) to the angle of the mandible. The chin must sit in the correct cup. The collar must not hyperextend or flex the neck. For the correct size: the chin must rest in the concave chin support, the tracheal opening must be midline, and the chest plate must sit flat on the sternum. Too large: chin falls forward (flexion). Too small: chin pushed back (extension). Apply during manual stabilization — do not release stabilization until collar, head blocks, and straps are all in place.</p>
 
-                <h4>Log Roll � Technique</h4>
-                <p><strong>Step 1:</strong> One rescuer maintains inline stabilization at the head (C-spine neutral). <strong>Step 2:</strong> Place backboard alongside patient. <strong>Step 3:</strong> Three rescuers on opposite side: one at chest/shoulders, one at hips/pelvis, one at knees/ankles. <strong>Step 4:</strong> Leader counts: On three � one, two, three � roll! Roll patient as a <strong>single unit</strong> (shoulders and hips together, no twisting). <strong>Step 5:</strong> Assess posterior spine (palpate entire spine). <strong>Step 6:</strong> Slide backboard under patient. <strong>Step 7:</strong> On three � roll back onto board. <strong>Step 8:</strong> Position patient midline, pad voids (occiput, lumbar curve, knees), secure torso first (chest then pelvis), then head/head blocks, then extremity straps. Reassess distal neuro status after securing.</p>
+                <h4>Log Roll — Technique</h4>
+                <p><strong>Step 1:</strong> One rescuer maintains inline stabilization at the head (C-spine neutral). <strong>Step 2:</strong> Place backboard alongside patient. <strong>Step 3:</strong> Three rescuers on opposite side: one at chest/shoulders, one at hips/pelvis, one at knees/ankles. <strong>Step 4:</strong> Leader counts: On three — one, two, three — roll! Roll patient as a <strong>single unit</strong> (shoulders and hips together, no twisting). <strong>Step 5:</strong> Assess posterior spine (palpate entire spine). <strong>Step 6:</strong> Slide backboard under patient. <strong>Step 7:</strong> On three — roll back onto board. <strong>Step 8:</strong> Position patient midline, pad voids (occiput, lumbar curve, knees), secure torso first (chest then pelvis), then head/head blocks, then extremity straps. Reassess distal neuro status after securing.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>DO NOT:</strong> Log roll suspected spine-injured patients with only 2 rescuers. The minimum is 4 (1 head + 3 body) or more for large patients. Inadequate log roll causes more spinal motion than no log roll at all.
                 </div>
 
-                <h4>Rapid Extrication � When Seconds Count</h4>
+                <h4>Rapid Extrication — When Seconds Count</h4>
                 <p>Indications for rapid extrication from a vehicle: unsafe scene (fire, fuel leak, electrical hazard, suspected explosion, active shooter, building collapse), patient in cardiac arrest where CPR cannot be effectively performed in vehicle, or deteriorating patient needing immediate life-saving care (cannot wait for controlled extrication). Steps: rescuer #1 enters from opposite side (or passenger door), applies collar, supports C-spine from behind. Rescuer #2 at driver door, slides backboard behind patient under buttocks. On command, patient is rotated onto board and slid out in one controlled motion. Rescuers lift board and carry to waiting stretcher.</p>
 
                 <h4>Standing Take-Down (Sitting Patient to Board)</h4>
@@ -963,7 +963,7 @@ window.CPG_DATA = {
 
                 <h4>Special Populations</h4>
                 <ul>
-                    <li><strong>Elderly:</strong> Osteoporosis, degenerative changes, higher risk from low-energy mechanisms. Pad generously (sacrum, occiput). Minimize time on backboard � use vacuum mattress if available.</li>
+                    <li><strong>Elderly:</strong> Osteoporosis, degenerative changes, higher risk from low-energy mechanisms. Pad generously (sacrum, occiput). Minimize time on backboard — use vacuum mattress if available.</li>
                     <li><strong>Children (&lt;8 years):</strong> Larger occiput causes neck flexion on flat surface. Pad under shoulders/torso to achieve neutral alignment. Use pediatric-sized collar. Use pediatric board with head recess if available.</li>
                     <li><strong>Obese patients:</strong> May need multiple backboards side by side or wider extrication device. Pad appropriately. Extra rescuers for log roll.</li>
                     <li><strong>Pregnancy:</strong> Pad under right hip to tilt uterus leftward (avoid supine hypotension). Minimize time supine.</li>
@@ -982,8 +982,8 @@ window.CPG_DATA = {
             quiz: [
                 { q: "42-year-old restrained driver, rear-ended at low speed, no loss of consciousness, GCS 15, no spine tenderness, neurologically intact, not intoxicated. What is the appropriate spinal care?", options: ["Full SMR: collar, backboard, straps, head blocks", "No SMR needed. Patient meets all NEXUS criteria. Document and transport seated position of comfort", "C-collar only, no backboard", "SMR with vacuum mattress instead of backboard"], correct: 1 },
                 { q: "Which of the following mechanisms ALONE justifies spinal motion restriction regardless of NEXUS findings?", options: ["Low-speed MVC (< 20 mph), rear-end, no vehicle damage", "Fall from standing height on level ground", "None. SMR decision must be based on assessment, not mechanism alone. High-risk mechanism should lower threshold, but does not mandate SMR if NEXUS negative", "Any fall above 1 m"], correct: 2 },
-                { q: "[HARD] 78-year-old female, ground-level fall, complains of neck pain. GCS 15, no neuro deficit. NEXUS positive (midline tenderness). For transport, what is the BEST approach?", options: ["Full backboard immobilization � standard of care", "C-collar + secure to stretcher in position of comfort with limited movement instruction (motion restriction). Minimize backboard time. Pad generously", "No immobilization � elderly patients have higher complication rates from backboards", "Only manual stabilization for transport"], correct: 1 },
-                { q: "Patient log rolled onto backboard. During transport, patient becomes progressively SOB. What should you do?", options: ["Continue transport. Patient is secured. Do not remove from board", "Loosen torso straps. If breathing does not improve, remove from backboard onto stretcher. Backboards restrict respiratory mechanics", "Place patient supine on backboard � this helps breathing", "Intubate patient"], correct: 1 }
+                { q: "[HARD] 78-year-old female, ground-level fall, complains of neck pain. GCS 15, no neuro deficit. NEXUS positive (midline tenderness). For transport, what is the BEST approach?", options: ["Full backboard immobilization — standard of care", "C-collar + secure to stretcher in position of comfort with limited movement instruction (motion restriction). Minimize backboard time. Pad generously", "No immobilization — elderly patients have higher complication rates from backboards", "Only manual stabilization for transport"], correct: 1 },
+                { q: "Patient log rolled onto backboard. During transport, patient becomes progressively SOB. What should you do?", options: ["Continue transport. Patient is secured. Do not remove from board", "Loosen torso straps. If breathing does not improve, remove from backboard onto stretcher. Backboards restrict respiratory mechanics", "Place patient supine on backboard — this helps breathing", "Intubate patient"], correct: 1 }
             ],
             critical: [
                 {
@@ -991,7 +991,7 @@ window.CPG_DATA = {
                     scenario: "22-year-old unrestrained driver involved in high-speed T-bone MVC at estimated 50 mph. Driver's side door collapsed inward. Patient is awake, GCS 15, no spine tenderness, no neuro deficit, no intoxication, but has obvious deformed femur and large facial laceration. Patient is hemodynamically stable. Vehicle has fuel leaking from engine compartment.",
                     question: "What is the correct sequence of actions?",
                     options: [
-                        {t: "Perform rapid extrication due to fuel leak. Apply c-collar during extrication and backboard patient. Patient has distracting injury (femur) so NEXUS cannot be reliably applied", f: "Correct Fuel leak = unsafe scene indication for rapid extrication. Femur fracture is distracting injury � NEXUS unreliable. C-collar and motion restriction during extrication."},
+                        {t: "Perform rapid extrication due to fuel leak. Apply c-collar during extrication and backboard patient. Patient has distracting injury (femur) so NEXUS cannot be reliably applied", f: "Correct Fuel leak = unsafe scene indication for rapid extrication. Femur fracture is distracting injury — NEXUS unreliable. C-collar and motion restriction during extrication."},
                         {t: "Patient meets NEXUS criteria (GCS 15, no tenderness, no neuro deficit, no intoxication). No SMR needed. Extricate rapidly for fuel leak without spinal precautions", f: "Incorrect Femur fracture is a distracting injury (NEXUS positive). Patient needs SMR during rapid extrication due to unsafe scene."}
                     ],
                     correct: 0,
@@ -1003,11 +1003,11 @@ window.CPG_DATA = {
                     scenario: "26-year-old male, awake, talking, no spine pain, no focal deficit, no drugs/alcohol after fall from 4 m (13 ft) landing on feet. Complains of bilateral heel pain. You suspect calcaneal fractures. GCS 15.",
                     question: "Does this patient need spinal motion restriction?",
                     options: [
-                        {t: "No SMR. NEXUS negative � no tenderness, no deficit, GCS 15, no intoxication. Distracting injury rule is about pain distracting from spine pain, but even so, mechanism alone does not mandate SMR when NEXUS is clearly negative", f: "Incorrect Fall from >3 m is high-risk mechanism warranting caution. However, NEXUS is designed for clinical decision-making. Current guidelines allow NEXUS-based clearance if all criteria negative, even with high mechanism."},
-                        {t: "SMR is indicated. High-risk mechanism (fall >3 m) plus potentially distracting injury (bilateral heel pain). While NEXUS may be negative, the combination of high-risk mechanism and multi-system injury pattern warrants SMR until imaging clears the spine", f: "Correct Fall >3 m is high-risk mechanism. Bilateral calcaneal fractures are significant distracting injuries. Axial-load mechanism (feet-first landing) is associated with lumbar spine fractures (L1 burst fractures). NEXUS may be unreliable in this context. SMR is appropriate."
+                        {t: "No SMR. NEXUS negative — no tenderness, no deficit, GCS 15, no intoxication. Distracting injury rule is about pain distracting from spine pain, but even so, mechanism alone does not mandate SMR when NEXUS is clearly negative", f: "Incorrect Fall from >3 m is high-risk mechanism warranting caution. However, NEXUS is designed for clinical decision-making. Current guidelines allow NEXUS-based clearance if all criteria negative, even with high mechanism."},
+                        {t: "SMR is indicated. High-risk mechanism (fall >3 m) plus potentially distracting injury (bilateral heel pain). While NEXUS may be negative, the combination of high-risk mechanism and multi-system injury pattern warrants SMR until imaging clears the spine", f: "Correct Fall >3 m is high-risk mechanism. Bilateral calcaneal fractures are significant distracting injuries. Axial-load mechanism (feet-first landing) is associated with lumbar spine fractures (L1 burst fractures). NEXUS may be unreliable in this context. SMR is appropriate."}
                     ],
                     correct: 1,
-                    explanation: "Fall >3 m landing on feet = axial load mechanism. Axial loading causes calcaneus fractures AND lumbar spine burst fractures (L1 is most common). The heel pain may distract from subtle back pain. NEXUS in pure axial-load mechanisms has been questioned � safest approach is SMR with vacuum mattress (preserves lumbar lordosis better than rigid backboard). Full spinal assessment in ED including lumbar spine imaging.",
+                    explanation: "Fall >3 m landing on feet = axial load mechanism. Axial loading causes calcaneus fractures AND lumbar spine burst fractures (L1 is most common). The heel pain may distract from subtle back pain. NEXUS in pure axial-load mechanisms has been questioned — safest approach is SMR with vacuum mattress (preserves lumbar lordosis better than rigid backboard). Full spinal assessment in ED including lumbar spine imaging.",
                     kpi: "Recognizes axial-load mechanism as high-risk for thoracolumbar spine injury and applies SMR despite clinically negative NEXUS"
                 },
                 {
