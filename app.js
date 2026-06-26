@@ -1130,8 +1130,13 @@ document.addEventListener('click', function(e) {
     
     if (action === 'backHome') {
         e.preventDefault();
-        const isInSubfolder = window.location.pathname.includes('/chapters/');
-        window.location.href = isInSubfolder ? '../index.html' : 'index.html';
+        const returnUrl = sessionStorage.getItem('smartcare_reviewer_return');
+        if (returnUrl) {
+            window.location.href = returnUrl;
+        } else {
+            const isInSubfolder = window.location.pathname.includes('/chapters/');
+            window.location.href = isInSubfolder ? '../index.html' : 'index.html';
+        }
         return;
     }
     

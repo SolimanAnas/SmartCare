@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="SmartCare is an interactive clinical learning platform. Review the ITLS Course, browse chapters, practice quizzes, and access the official examination.">
+    <meta name="keywords" content="ITLS, Trauma, SmartCare, Clinical Learning, EMS, Paramedic Study">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SmartCare · ITLS Course Dashboard">
+    <meta property="og:description" content="The global standard in trauma education. Study chapter-by-chapter and test your skills.">
+    <meta property="og:image" content="../images/og.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SmartCare · ITLS Course Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#EA580C">
+
+    <style>
+        :root {
+            --font-display: 'Figtree', system-ui, sans-serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --primary-accent: #EA580C;
+            --primary-accent-rgb: 234, 88, 12;
+            --card-radius: 20px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            background: var(--bg);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(234, 88, 12, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 24px 16px 40px;
+            max-width: 650px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .course-header-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .course-header-card::after {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, rgba(234, 88, 12, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .course-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(234, 88, 12, 0.12);
+            color: #EA580C;
+            padding: 4px 10px;
+            border-radius: 50px;
+            border: 1px solid rgba(234, 88, 12, 0.2);
+            margin-bottom: 12px;
+        }
+
+        .course-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .course-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 16px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .meta-value {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .hub-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .hub-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .hub-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hub-card:active {
+            transform: translateY(-1px);
+        }
+
+        .hub-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: color-mix(in srgb, var(--accent-color) 12%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent-color) 20%, transparent);
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .hub-card:hover .hub-icon {
+            transform: scale(1.08) rotate(-3deg);
+            background: color-mix(in srgb, var(--accent-color) 20%, transparent);
+        }
+
+        .hub-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2.25;
+        }
+
+        .hub-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hub-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .hub-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .hub-arrow {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            opacity: 0.3;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .hub-card:hover .hub-arrow {
+            opacity: 0.8;
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <button class="icon-btn" id="backBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="header-text">
+            <h1>ITLS</h1>
+            <p>SmartCare Course Hub</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
+    </div>
+</header>
+
+<main>
+    <div class="course-header-card">
+        <span class="course-badge">Trauma Care</span>
+        <h2 class="course-title">International Trauma Life Support</h2>
+        <p class="course-desc">The global benchmark course for prehospital trauma management. Learn structured assessment, hemorrhage control, airway optimization, and critical packaging.</p>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="meta-label">Accreditation</div>
+                <div class="meta-value">NREMT & CAPCE</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Chapters</div>
+                <div class="meta-value">22 Sections</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Est. Time</div>
+                <div class="meta-value">16 Hours</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hub-grid">
+        <a href="ITLS-reviewer.html" class="hub-card" style="--accent-color: #EA580C;">
+            <div class="hub-icon">
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#graduation-cap"/></svg>
+            </div>
+            <div class="hub-body">
+                <div class="hub-title">Clinical Reviewer</div>
+                <div class="hub-text">Study summaries, practice flashcards, take chapter quizzes, and solve interactive branching clinical scenarios.</div>
+            </div>
+            <div class="hub-arrow">›</div>
+        </a>
+
+        <a href="itls.html" class="hub-card" style="--accent-color: #2563EB;">
+            <div class="hub-icon">
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>
+            </div>
+            <div class="hub-body">
+                <div class="hub-title">Official Pre/Post Exam</div>
+                <div class="hub-text">Complete the official certification-style examination to assess your global ITLS competency.</div>
+            </div>
+            <div class="hub-arrow">›</div>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <div>Created by Soliman Anas · for study aid only</div>
+    <div><a href="about.html">About &amp; Disclaimer</a></div>
+</footer>
+
+<script>
+    (function() {
+        const themeBtn = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themes = ['dark', 'amoled', 'light', 'sepia', 'forest'];
+        
+        function applyTheme(t) {
+            if (!themes.includes(t)) t = 'dark';
+            html.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+        }
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function() {
+                const cur = html.getAttribute('data-theme') || 'dark';
+                const idx = themes.indexOf(cur);
+                applyTheme(themes[(idx + 1) % themes.length]);
+            });
+        }
+        applyTheme(localStorage.getItem('theme') || 'dark');
+
+        document.getElementById('backBtn').addEventListener('click', () => {
+            window.location.href = 'courses.html';
+        });
+    })();
+</script>
+
+</body>
+</html>

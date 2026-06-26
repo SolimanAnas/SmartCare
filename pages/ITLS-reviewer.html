@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="ITLS Clinical Reviewer. Browse the ITLS curriculum chapter by chapter, read summaries, study flashcards, take quizzes, and solve clinical scenarios.">
+    <meta name="keywords" content="ITLS Reviewer, Trauma study aid, paramedic review, EMT, NREMT flashcards">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SmartCare · ITLS Course Reviewer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#EA580C">
+
+    <style>
+        :root {
+            --font-display: 'Figtree', system-ui, sans-serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --primary-accent: #EA580C;
+            --primary-accent-rgb: 234, 88, 12;
+            --card-radius: 20px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            background: var(--bg);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 20px 16px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Hero Progress Card */
+        .hero-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 20px 24px;
+            box-shadow: var(--glass-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, rgba(234, 88, 12, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-text { flex: 1; min-width: 0; }
+        .hero-greeting { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px; }
+        .hero-sub { font-size: 0.82rem; color: var(--text-secondary); }
+        
+        .hero-ring { position: relative; flex-shrink: 0; width: 72px; height: 72px; }
+        .hero-ring svg { width: 72px; height: 72px; transform: rotate(-90deg); }
+        .ring-track { fill: none; stroke: rgba(0,0,0,0.08); stroke-width: 6; }
+        [data-theme="dark"] .ring-track,
+        [data-theme="amoled"] .ring-track { stroke: rgba(255,255,255,0.1); }
+        .ring-fill { fill: none; stroke: var(--primary-accent); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 0.8s ease; }
+        .ring-label { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .ring-pct { font-size: 1rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+        .ring-done { font-size: 0.55rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px; }
+
+        /* Search Container */
+        .search-container {
+            margin-bottom: 20px; display: flex; align-items: center;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-radius: 40px; padding: 4px 4px 4px 20px;
+            backdrop-filter: blur(10px); box-shadow: var(--glass-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .search-container:focus-within {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15), var(--glass-shadow);
+        }
+        .search-container span { font-size: 1.2rem; margin-right: 8px; color: var(--text-secondary); }
+        .search-container input { flex: 1; background: transparent; border: none; padding: 12px 0; font-size: 1rem; color: var(--text-primary); outline: none; }
+        .search-container input::placeholder { color: var(--text-secondary); opacity: 0.7; }
+        .search-container button { background: transparent; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; margin-right: 4px; padding: 0; }
+        .search-container button:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
+
+        /* Chapter Cards styling */
+        .chapter-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.25s ease, border-color 0.25s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(234, 88, 12, 0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: rgba(234, 88, 12, 0.1);
+            color: #EA580C;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(234, 88, 12, 0.15);
+        }
+
+        .chapter-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .chapter-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .menu-sub-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 12px;
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+            text-align: center;
+        }
+        [data-theme="light"] .btn-action {
+            background: rgba(0,0,0,0.02);
+        }
+
+        .btn-action:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-summary:hover { background: rgba(234, 88, 12, 0.08); border-color: rgba(234, 88, 12, 0.3); color: #EA580C; }
+        .btn-flash:hover { background: rgba(251, 191, 36, 0.08); border-color: rgba(251, 191, 36, 0.3); color: #fbbf24; }
+        .btn-quiz:hover { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3); color: #10b981; }
+        .btn-scenario:hover { background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.3); color: #2563eb; }
+
+        .btn-action svg {
+            width: 13px;
+            height: 13px;
+            stroke-width: 2.25;
+        }
+
+        /* Checkbox styling */
+        .toggle-wrapper { display: flex; align-items: center; }
+        .toggle-label {
+            display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.72rem; font-weight: 600; color: var(--text-secondary);
+        }
+        .toggle-input { display: none; }
+        .toggle-track {
+            width: 32px; height: 18px; border-radius: 100px; background: rgba(255,255,255,0.1); position: relative; border: 1px solid var(--glass-border); transition: all 0.3s;
+        }
+        [data-theme="light"] .toggle-track { background: rgba(0,0,0,0.06); }
+        .toggle-track::after {
+            content: ''; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--text-secondary); transition: transform 0.3s, background-color 0.3s;
+        }
+        .toggle-input:checked + .toggle-track {
+            background: #EA580C; border-color: #EA580C;
+        }
+        .toggle-input:checked + .toggle-track::after {
+            transform: translateX(14px); background: #fff;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 24px 0 12px 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            opacity: 0.8;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--glass-border), transparent);
+        }
+
+        @media (max-width: 580px) {
+            .menu-sub-options {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <button class="icon-btn" id="backBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="header-text">
+            <h1>ITLS Reviewer</h1>
+            <p>Study & Learn Platform</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
+    </div>
+</header>
+
+<main>
+    <!-- Overall Progress Card -->
+    <div class="hero-card" id="heroCard">
+        <div class="hero-text">
+            <div class="hero-greeting">ITLS Learning Progress</div>
+            <div class="hero-sub" id="progressSub">0/22 chapters completed</div>
+        </div>
+        <div class="hero-ring">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle class="ring-track" cx="32" cy="32" r="28"/>
+                <circle class="ring-fill" id="ringFill" cx="32" cy="32" r="28"
+                    stroke-dasharray="175.93"
+                    stroke-dashoffset="175.93"/>
+            </svg>
+            <div class="ring-label">
+                <span class="ring-pct" id="ringPct">0%</span>
+                <span class="ring-done">done</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Input -->
+    <div class="search-container">
+        <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg></span>
+        <input type="text" id="searchInput" placeholder="Search chapters &amp; topics...">
+        <button id="searchClearBtn" style="display:none;" aria-label="Clear"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg></button>
+    </div>
+
+    <!-- Chapter list -->
+    <div class="section-label">ITLS Curriculum</div>
+    <div id="chapterList"></div>
+</main>
+
+<footer>
+    <div>Created by Soliman Anas · for study aid only</div>
+    <div><a href="about.html">About &amp; Disclaimer</a></div>
+</footer>
+
+<script>
+    (function() {
+        "use strict";
+
+        const MANIFEST_URL = '../courses/itls/manifest.json';
+        const COMPLETION_KEY = 'smartcare_itls_completion';
+        
+        let courseManifest = null;
+        let completionState = {};
+
+        // DOM elements
+        const chapterListEl = document.getElementById('chapterList');
+        const progressSubEl = document.getElementById('progressSub');
+        const ringFillEl = document.getElementById('ringFill');
+        const ringPctEl = document.getElementById('ringPct');
+        const searchInput = document.getElementById('searchInput');
+        const searchClearBtn = document.getElementById('searchClearBtn');
+
+        // Theme management
+        const themeBtn = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themes = ['dark', 'amoled', 'light', 'sepia', 'forest'];
+        
+        function applyTheme(t) {
+            if (!themes.includes(t)) t = 'dark';
+            html.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+        }
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function() {
+                const cur = html.getAttribute('data-theme') || 'dark';
+                const idx = themes.indexOf(cur);
+                applyTheme(themes[(idx + 1) % themes.length]);
+            });
+        }
+        applyTheme(localStorage.getItem('theme') || 'dark');
+
+        document.getElementById('backBtn').addEventListener('click', () => {
+            window.location.href = 'ITLS-course.html';
+        });
+
+        // Load progress completion
+        function loadCompletionState() {
+            try {
+                completionState = JSON.parse(localStorage.getItem(COMPLETION_KEY)) || {};
+            } catch(e) {
+                completionState = {};
+            }
+        }
+
+        function saveCompletionState() {
+            localStorage.setItem(COMPLETION_KEY, JSON.stringify(completionState));
+            updateProgress();
+        }
+
+        window.toggleChapterDone = function(checkbox, chId) {
+            completionState[chId] = checkbox.checked;
+            saveCompletionState();
+        };
+
+        // Update progress UI
+        function updateProgress() {
+            if (!courseManifest) return;
+            const chapters = courseManifest.chapters;
+            const total = chapters.length;
+            const completed = chapters.filter(c => completionState[c.id]).length;
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            progressSubEl.textContent = `${completed}/${total} chapters completed`;
+            ringPctEl.textContent = `${percent}%`;
+
+            // SVG ring animation (r = 28 => C = 2 * PI * 28 ≈ 175.93)
+            const C = 175.93;
+            const offset = C - (percent / 100) * C;
+            ringFillEl.style.strokeDashoffset = offset;
+        }
+
+        // Fetch manifest and render chapters
+        async function init() {
+            try {
+                const res = await fetch(MANIFEST_URL);
+                courseManifest = await res.json();
+                loadCompletionState();
+                renderChapters('');
+                updateProgress();
+            } catch (err) {
+                console.error("Failed to load ITLS course manifest:", err);
+                chapterListEl.innerHTML = `<div class="sum-card" style="text-align:center; color:var(--red);">Error loading curriculum. Please refresh.</div>`;
+            }
+        }
+
+        function renderChapters(query) {
+            if (!courseManifest) return;
+            const cleanQuery = query.toLowerCase().trim();
+            const chapters = courseManifest.chapters;
+            
+            let html = '';
+            chapters.forEach(ch => {
+                const isMatched = !cleanQuery || 
+                                  ch.title.toLowerCase().includes(cleanQuery) || 
+                                  ch.num.includes(cleanQuery);
+                if (!isMatched) return;
+
+                const isChecked = completionState[ch.id] || false;
+                const isCh1 = (ch.id === 'c01'); // Only chapter 1 is active right now
+                
+                // Clicking study options
+                const summaryHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=summary` : '#';
+                const flashHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=flashcards` : '#';
+                const quizHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=quiz` : '#';
+                const scenarioHref = isCh1 ? `itls-chapter.html?chapter=${ch.id}&view=critical` : '#';
+                
+                const disabledAttr = isCh1 ? '' : 'style="opacity:0.4; pointer-events:none;"';
+                const comingSoonText = isCh1 ? '' : ' <span style="font-size:0.75rem; color:var(--muted); font-weight:normal;">(Coming Soon)</span>';
+
+                html += `
+                    <div class="chapter-card">
+                        <div class="card-header">
+                            <span class="status-badge">Chapter ${ch.num}</span>
+                            <div class="toggle-wrapper">
+                                <label class="toggle-label">
+                                    <span>${isChecked ? 'Completed' : 'Mark Done'}</span>
+                                    <input type="checkbox" class="toggle-input"
+                                        ${isChecked ? 'checked' : ''}
+                                        onchange="toggleChapterDone(this, '${ch.id}')">
+                                    <span class="toggle-track"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <h2>${ch.title}${comingSoonText}</h2>
+                        <div class="menu-sub-options" ${disabledAttr}>
+                            <a href="${summaryHref}" class="btn-action btn-summary" onclick="sessionStorage.setItem('smartcare_reviewer_return', window.location.href)">
+                                <svg class="lucide"><use href="../icons/sprite.svg#book"/></svg> Summary
+                            </a>
+                            <a href="${flashHref}" class="btn-action btn-flash" onclick="sessionStorage.setItem('smartcare_reviewer_return', window.location.href)">
+                                <svg class="lucide"><use href="../icons/sprite.svg#zap"/></svg> Cards
+                            </a>
+                            <a href="${quizHref}" class="btn-action btn-quiz" onclick="sessionStorage.setItem('smartcare_reviewer_return', window.location.href)">
+                                <svg class="lucide"><use href="../icons/sprite.svg#notebook-pen"/></svg> Quiz
+                            </a>
+                            <a href="${scenarioHref}" class="btn-action btn-scenario" onclick="sessionStorage.setItem('smartcare_reviewer_return', window.location.href)">
+                                <svg class="lucide"><use href="../icons/sprite.svg#ambulance"/></svg> Scenario
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            if (!html) {
+                html = `<div class="sum-card" style="text-align:center; color:var(--text-secondary);">No chapters match your search.</div>`;
+            }
+            chapterListEl.innerHTML = html;
+        }
+
+        // Search event listeners
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            searchClearBtn.style.display = query ? 'block' : 'none';
+            renderChapters(query);
+        });
+
+        searchClearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClearBtn.style.display = 'none';
+            renderChapters('');
+        });
+
+        init();
+    })();
+</script>
+
+</body>
+</html>

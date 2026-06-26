@@ -33,6 +33,7 @@ playwright-report/
 test-results/
 
 # ── Dev server scripts ─────────────────────────────────────────────────────
+server.py
 server.bat
 
 # ── OS / editor ────────────────────────────────────────────────────────────
