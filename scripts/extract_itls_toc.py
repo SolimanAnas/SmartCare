@@ -1,6 +1,7 @@
 """Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in TOC."""
-import fitz
 import json
+
+import fitz
 
 pdf_path = "D:\\Apps\\SmartCare\\TOC\\International Trauma Life Support.pdf"
 output_path = "D:\\Apps\\SmartCare\\TOC\\International Trauma Life Support TOC.json"

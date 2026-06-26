@@ -10,7 +10,9 @@ PRESERVES already-authored chapters listed in KEEP (e.g. c3). Run from repo root
     python scripts/build_toc.py
 """
 from __future__ import annotations
-import json, os
+
+import json
+import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
