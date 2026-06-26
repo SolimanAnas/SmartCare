@@ -1,4 +1,4 @@
-﻿/* ========== Chapter 1 â€“ Foundations of Care ========== */
+﻿/* ========== Chapter 1 – Foundations of Care ========== */
 window.CPG_DATA = {
     id: "c1",
     title: "Foundations of Care",
@@ -14,13 +14,13 @@ window.CPG_DATA = {
                 <p>Emergency Medical Services (EMS) is a comprehensive system that provides emergency medical care to individuals who are experiencing a medical emergency or traumatic injury. The EMS system is a critical component of the broader healthcare system, serving as the front door to emergency care for millions of patients each year. EMTs are the backbone of this system, providing prehospital care, stabilization, and transport to definitive care facilities.</p>
                 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>Key Concept:</strong> EMS is not just an ambulance ride â€” it is a coordinated system of public education, dispatch, first response, prehospital treatment, and transport that functions as an extension of the emergency department into the field.
+                    <strong>Key Concept:</strong> EMS is not just an ambulance ride — it is a coordinated system of public education, dispatch, first response, prehospital treatment, and transport that functions as an extension of the emergency department into the field.
                 </div>
                 
                 <h4>Historical Origins of EMS</h4>
-                <p>Modern EMS in the United States has its roots in the 1960s. Prior to this, ambulance services were often run by funeral homes â€” hearse drivers who had minimal medical training. Care during transport was rudimentary at best. Several key events transformed this landscape:</p>
+                <p>Modern EMS in the United States has its roots in the 1960s. Prior to this, ambulance services were often run by funeral homes — hearse drivers who had minimal medical training. Care during transport was rudimentary at best. Several key events transformed this landscape:</p>
                 <ul>
-                    <li><strong>1966:</strong> The National Academy of Sciences published a landmark report titled <em>"Accidental Death and Disability: The Neglected Disease of Modern Society"</em> â€” known today as <strong>The White Paper</strong>. This report exposed that traffic accident victims in the United States had worse survival rates than soldiers wounded on the battlefields of Vietnam. It called for standardized training, equipment, and coordination for prehospital care.</li>
+                    <li><strong>1966:</strong> The National Academy of Sciences published a landmark report titled <em>"Accidental Death and Disability: The Neglected Disease of Modern Society"</em> — known today as <strong>The White Paper</strong>. This report exposed that traffic accident victims in the United States had worse survival rates than soldiers wounded on the battlefields of Vietnam. It called for standardized training, equipment, and coordination for prehospital care.</li>
                     <li><strong>1966:</strong> The <strong>Highway Safety Act</strong> established the Department of Transportation (DOT) and required states to implement highway safety programs, including EMS systems. This legislation provided the first federal framework for EMS development.</li>
                     <li><strong>1970s:</strong> The first paramedic programs emerged in Miami, Los Angeles, and Seattle. Dr. Eugene Nagel and others pioneered the use of telemetry to transmit cardiac rhythms from the field to emergency physicians.</li>
                     <li><strong>1973:</strong> The EMS Systems Act provided federal funding for the development of regional EMS systems across the country.</li>
@@ -44,7 +44,7 @@ window.CPG_DATA = {
                 
                 <h4>Accessing EMS: The 9-1-1 System</h4>
                 <p>The <strong>9-1-1 system</strong> is the universal emergency number in the United States and Canada. When a caller dials 9-1-1, the call is routed to a Public Safety Answering Point (PSAP), where trained Emergency Medical Dispatchers (EMDs) answer the call. <strong>Enhanced 9-1-1 (E-911)</strong> automatically provides the caller's location and callback number to the dispatcher, even if the caller cannot speak. This technology has been critical in wilderness, domestic violence, and medical emergency scenarios where the patient is unable to verbally communicate their location.</p>
-                <p>EMDs are trained to ask specific questions to determine the nature of the emergency, assess the patient's condition, and prioritize the response. They may also provide pre-arrival instructions such as CPR, bleeding control, or how to assist a patient who is seizing. As an EMT, you will rely on dispatch information â€” often called the <strong>dispatch narrative</strong> â€” to prepare for what you will encounter on scene.</p>
+                <p>EMDs are trained to ask specific questions to determine the nature of the emergency, assess the patient's condition, and prioritize the response. They may also provide pre-arrival instructions such as CPR, bleeding control, or how to assist a patient who is seizing. As an EMT, you will rely on dispatch information — often called the <strong>dispatch narrative</strong> — to prepare for what you will encounter on scene.</p>
                 
                 <h4>Levels of EMS Training</h4>
                 <p>The National EMS Scope of Practice Model defines four levels of EMS practitioners, each with a defined scope of practice:</p>
@@ -58,13 +58,13 @@ window.CPG_DATA = {
                 <h4>Medical Direction and Oversight</h4>
                 <p>Every EMS system operates under the authority of a <strong>physician medical director</strong>. This physician is responsible for the clinical aspects of the EMS system, including developing protocols, ensuring quality of care, and providing direct oversight of EMS personnel. Medical direction exists in two forms:</p>
                 <ul>
-                    <li><strong>Online (Direct) Medical Direction:</strong> Real-time communication with a physician â€” typically via radio or phone â€” to receive approval for specific treatments. This is commonly used for paramedic-level interventions such as administering certain medications or declaring a field death.</li>
+                    <li><strong>Online (Direct) Medical Direction:</strong> Real-time communication with a physician — typically via radio or phone — to receive approval for specific treatments. This is commonly used for paramedic-level interventions such as administering certain medications or declaring a field death.</li>
                     <li><strong>Offline (Indirect) Medical Direction:</strong> Written protocols, standing orders, and treatment guidelines that authorize patient care without real-time physician contact. Standing orders allow EMTs to initiate care immediately according to pre-approved standards.</li>
                 </ul>
                 <p><strong>Protocols</strong> are system-specific treatment guidelines that define what care you can provide in given clinical situations. <strong>Standing orders</strong> are a subset of protocols that authorize specific treatments to be performed without contacting medical direction first. Some protocols require <strong>on-line consultation</strong> before certain treatments can be initiated.</p>
                 
                 <h4>Continuous Quality Improvement (CQI)</h4>
-                <p>EMS systems use <strong>Continuous Quality Improvement (CQI)</strong> â€” also called quality assurance or performance improvement â€” to evaluate and improve patient care. CQI is a cyclical process of reviewing patient care reports, identifying opportunities for improvement, providing feedback to practitioners, and implementing system changes. Types of CQI reviews include:</p>
+                <p>EMS systems use <strong>Continuous Quality Improvement (CQI)</strong> — also called quality assurance or performance improvement — to evaluate and improve patient care. CQI is a cyclical process of reviewing patient care reports, identifying opportunities for improvement, providing feedback to practitioners, and implementing system changes. Types of CQI reviews include:</p>
                 <ul>
                     <li><strong>Run reviews:</strong> Case-by-case review of individual calls</li>
                     <li><strong>Chart audits:</strong> Systematic review of documentation completeness and accuracy</li>
@@ -135,22 +135,22 @@ window.CPG_DATA = {
                 <p>As an Emergency Medical Technician, you occupy a position of trust and responsibility in the community. The public relies on you to provide competent, compassionate care during moments of crisis. The role of the EMT extends far beyond simply driving an ambulance and transporting patients to the hospital. Your responsibilities encompass the full spectrum of prehospital emergency care and can be broken down into several key domains:</p>
                 
                 <h5>Scene Safety and Assessment</h5>
-                <p>Your first responsibility on every call is <strong>scene safety</strong>. Before you can help anyone, you must ensure that the scene is safe for yourself, your partner, your patient, and bystanders. This includes evaluating for hazards such as traffic, fire, electrical dangers, hazardous materials, violence, unstable structures, and environmental threats. A scene that becomes unsafe can turn a rescue into a tragedy. Scene size-up begins before you even exit the ambulance â€” by observing the scene from the cab and using dispatch information to anticipate what you will encounter.</p>
+                <p>Your first responsibility on every call is <strong>scene safety</strong>. Before you can help anyone, you must ensure that the scene is safe for yourself, your partner, your patient, and bystanders. This includes evaluating for hazards such as traffic, fire, electrical dangers, hazardous materials, violence, unstable structures, and environmental threats. A scene that becomes unsafe can turn a rescue into a tragedy. Scene size-up begins before you even exit the ambulance — by observing the scene from the cab and using dispatch information to anticipate what you will encounter.</p>
                 
                 <h5>Patient Assessment and Treatment</h5>
-                <p>The systematic assessment of your patient is the foundation of everything you do. This includes the <strong>primary assessment</strong> (identifying and managing life threats â€” the ABCs: Airway, Breathing, Circulation) followed by the <strong>secondary assessment</strong> (detailed physical examination and history taking). Based on your assessment findings, you provide appropriate treatment within your scope of practice, from basic first aid and splinting to oxygen therapy, medications, and spinal immobilization.</p>
+                <p>The systematic assessment of your patient is the foundation of everything you do. This includes the <strong>primary assessment</strong> (identifying and managing life threats — the ABCs: Airway, Breathing, Circulation) followed by the <strong>secondary assessment</strong> (detailed physical examination and history taking). Based on your assessment findings, you provide appropriate treatment within your scope of practice, from basic first aid and splinting to oxygen therapy, medications, and spinal immobilization.</p>
                 
                 <h5>Lifting, Moving, and Patient Handling</h5>
                 <p>Safe patient handling is a critical EMT skill. Improper lifting techniques are a leading cause of injury among EMS providers. You must be proficient in using the <strong>power lift</strong> (using leg muscles, keeping your back straight), using equipment such as stair chairs, scoop stretchers, backboards, and powered stretchers, and selecting the appropriate number of personnel for lifting and moving patients. Body mechanics and knowing your physical limits are essential for a long career in EMS.</p>
                 
                 <h5>Transport and Destination Decisions</h5>
-                <p>Once the patient is stabilized, you must transport them safely to an appropriate facility. This involves selecting the correct destination based on the patient's condition and local protocols â€” the closest hospital, the nearest trauma center, a burn center, or a specialty stroke or STEMI center. During transport, you continue to monitor the patient, reassess vital signs, and provide ongoing care. Safe ambulance operation is a responsibility you share with your partner; the driver must operate the vehicle with due regard for the safety of all others on the road.</p>
+                <p>Once the patient is stabilized, you must transport them safely to an appropriate facility. This involves selecting the correct destination based on the patient's condition and local protocols — the closest hospital, the nearest trauma center, a burn center, or a specialty stroke or STEMI center. During transport, you continue to monitor the patient, reassess vital signs, and provide ongoing care. Safe ambulance operation is a responsibility you share with your partner; the driver must operate the vehicle with due regard for the safety of all others on the road.</p>
                 
                 <h5>Documentation</h5>
                 <p>Accurate, complete, and timely documentation is a fundamental EMT responsibility. The <strong>patient care report (PCR)</strong> is both a medical record and a legal document. It serves as the permanent record of the care you provided, the patient's condition, and the decisions you made. A well-documented PCR supports continuity of care at the hospital, protects you in legal proceedings, and provides data for CQI and research. Documentation should be objective, factual, and completed as soon as possible after the call. Remember: <em>"If it wasn't documented, it wasn't done."</em></p>
                 
                 <h5>Transfer of Care</h5>
-                <p>When you arrive at the hospital, you must provide a thorough <strong>handoff report</strong> â€” often called the <strong>verbal report</strong> or <strong>transfer of care</strong>. This report should follow the format required by your system (commonly using the acronym <strong>MIST</strong>: Mechanism of injury / Medical complaint, Injuries or findings, Signs and symptoms including vital signs, Treatment provided and response). You remain responsible for the patient until care is formally transferred to the receiving facility staff.</p>
+                <p>When you arrive at the hospital, you must provide a thorough <strong>handoff report</strong> — often called the <strong>verbal report</strong> or <strong>transfer of care</strong>. This report should follow the format required by your system (commonly using the acronym <strong>MIST</strong>: Mechanism of injury / Medical complaint, Injuries or findings, Signs and symptoms including vital signs, Treatment provided and response). You remain responsible for the patient until care is formally transferred to the receiving facility staff.</p>
                 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Professional Obligation:</strong> Your responsibility to the patient does not end when you drop them off at the ER. You must provide a complete oral report, transfer all written documentation, help move the patient to the hospital bed if needed, and ensure the ambulance is restocked and ready for the next call before leaving the hospital.
@@ -160,12 +160,12 @@ window.CPG_DATA = {
                 <p>Professionalism in EMS is about more than wearing a uniform. It is a set of attitudes, behaviors, and values that define how you interact with patients, colleagues, and the community. Essential traits include:</p>
                 <ul>
                     <li><strong>Integrity:</strong> Being honest in your documentation, truthful with patients and their families, and trustworthy in all interactions. Integrity means doing the right thing even when no one is watching.</li>
-                    <li><strong>Empathy and Compassion:</strong> Understanding and sharing the feelings of your patients. EMS calls often occur on the worst day of a person's life. A compassionate approach â€” listening, explaining what you are doing, respecting the patient's dignity â€” has a powerful therapeutic effect.</li>
+                    <li><strong>Empathy and Compassion:</strong> Understanding and sharing the feelings of your patients. EMS calls often occur on the worst day of a person's life. A compassionate approach — listening, explaining what you are doing, respecting the patient's dignity — has a powerful therapeutic effect.</li>
                     <li><strong>Teamwork:</strong> EMS is never a one-person job. You must work effectively with your partner, other EMS crews, fire and police personnel, nurses, physicians, and dispatchers. Good teamwork means clear communication, mutual respect, and knowing your role.</li>
                     <li><strong>Communication Skills:</strong> You must communicate clearly with patients (who may be frightened, confused, or non-English speaking), family members, bystanders, other healthcare providers, and dispatchers. This includes both verbal communication and written documentation.</li>
                     <li><strong>Physical Fitness:</strong> EMS is physically demanding. Lifting patients, carrying equipment, performing CPR, and working long shifts require cardiovascular endurance, strength, and flexibility. Maintaining physical fitness is a professional responsibility.</li>
                     <li><strong>Stress Management:</strong> EMS exposes you to traumatic and emotionally challenging situations. Developing healthy coping strategies and recognizing when you need help is a mark of professionalism.</li>
-                    <li><strong>Lifelong Learning:</strong> Medicine evolves, protocols change, and skills require practice. The best EMTs commit to continuous education â€” reading, attending training, practicing skills, and seeking feedback.</li>
+                    <li><strong>Lifelong Learning:</strong> Medicine evolves, protocols change, and skills require practice. The best EMTs commit to continuous education — reading, attending training, practicing skills, and seeking feedback.</li>
                 </ul>
                 
                 <h4>National Registry of EMTs (NREMT)</h4>
@@ -193,7 +193,7 @@ window.CPG_DATA = {
                 <h4>Scope of Practice vs. Standard of Care</h4>
                 <p>Two legal concepts are essential for every EMT to understand:</p>
                 <p><strong>Scope of Practice:</strong> The range of duties and skills that an EMT is legally authorized to perform as defined by state law and regulations. Your scope of practice is determined by your level of certification (EMT, AEMT, Paramedic). Performing skills outside your scope of practice is practicing medicine without a license and can result in loss of certification, legal liability, and patient harm.</p>
-                <p><strong>Standard of Care:</strong> The level of care that a reasonably prudent EMT with similar training would provide under similar circumstances. The standard of care is established by state protocols, national guidelines, expert testimony, and professional literature. Deviating from the standard of care â€” even if acting within your scope of practice â€” can be grounds for a malpractice claim if the patient is harmed.</p>
+                <p><strong>Standard of Care:</strong> The level of care that a reasonably prudent EMT with similar training would provide under similar circumstances. The standard of care is established by state protocols, national guidelines, expert testimony, and professional literature. Deviating from the standard of care — even if acting within your scope of practice — can be grounds for a malpractice claim if the patient is harmed.</p>
                 <p>Another important concept is <strong>duty to act</strong>. While on duty, an EMT has a legal obligation to respond to requests for medical assistance and provide care. Failure to respond, refusing to treat a patient, or abandoning a patient after initiating care constitutes a breach of duty and can lead to legal consequences.</p>
                 
                 <h4>Where EMTs Work</h4>
@@ -209,15 +209,15 @@ window.CPG_DATA = {
                 </ul>
                 
                 <h4>Professional Appearance and Conduct</h4>
-                <p>Your appearance and conduct directly affect how the public â€” and your patients â€” perceive you and the EMS profession. A professional EMT presents a neat, clean, and well-groomed appearance, wears the uniform properly (clean, pressed, complete), and maintains a professional demeanor at all times. This means using appropriate language, respecting patient privacy and confidentiality (HIPAA), maintaining composure under stress, and treating every patient with dignity regardless of their condition, behavior, or circumstances.</p>
+                <p>Your appearance and conduct directly affect how the public — and your patients — perceive you and the EMS profession. A professional EMT presents a neat, clean, and well-groomed appearance, wears the uniform properly (clean, pressed, complete), and maintains a professional demeanor at all times. This means using appropriate language, respecting patient privacy and confidentiality (HIPAA), maintaining composure under stress, and treating every patient with dignity regardless of their condition, behavior, or circumstances.</p>
             </div>`,
             flashcards: [
                 { question: "What does the acronym MIST stand for when giving a patient handoff report?", answer: "Mechanism of injury / Medical complaint, Injuries or findings, Signs and symptoms (including vitals), Treatment provided and response", category: "Patient Handoff" },
                 { question: "What is the difference between scope of practice and standard of care?", answer: "Scope of practice is what you are legally authorized to do by state law; standard of care is what a reasonably prudent EMT with similar training would do under similar circumstances.", category: "Legal Concepts" },
                 { question: "What organization provides national certification for EMTs?", answer: "The National Registry of Emergency Medical Technicians (NREMT)", category: "Certification" },
                 { question: "List five key traits of a professional EMT.", answer: "Integrity, empathy/compassion, teamwork, effective communication, and physical fitness (among others)", category: "Professionalism" },
-                { question: "What is the EMT's first responsibility when arriving on scene?", answer: "Scene safety â€” ensuring the scene is safe for yourself, your partner, patient, and bystanders before providing care", category: "Scene Operations" },
-                { question: "What legal principle requires an on-duty EMT to respond and provide care?", answer: "Duty to act â€” a legal obligation to provide emergency care within your scope of practice while on duty", category: "Legal Concepts" },
+                { question: "What is the EMT's first responsibility when arriving on scene?", answer: "Scene safety — ensuring the scene is safe for yourself, your partner, patient, and bystanders before providing care", category: "Scene Operations" },
+                { question: "What legal principle requires an on-duty EMT to respond and provide care?", answer: "Duty to act — a legal obligation to provide emergency care within your scope of practice while on duty", category: "Legal Concepts" },
                 { question: "What is the purpose of the patient care report (PCR)?", answer: "A medical and legal record documenting the patient's condition, care provided, and decisions made during the call", category: "Documentation" },
                 { question: "When does an EMT's responsibility for patient care officially end at the hospital?", answer: "When care is formally transferred to the receiving facility staff through the handoff report process", category: "Patient Handoff" }
             ],
@@ -229,11 +229,11 @@ window.CPG_DATA = {
                 { q: "What is the correct lifting technique EMTs should use to prevent back injuries?", options: ["Bending at the waist with straight knees", "The power lift using leg muscles with a straight back", "Lifting with arms extended and back arched", "Twisting at the torso while lifting"], correct: 1 },
                 { q: "In the MIST handoff report format, what does the 'S' stand for?", options: ["Subjective findings", "Signs and symptoms including vital signs", "Scene safety", "Surgical history"], correct: 1 },
                 { q: "[HARD] An EMT performs a skill that is outside of their state-defined scope of practice. This action is legally considered:", options: ["A protocol variance requiring additional documentation", "Negligence only if the patient is harmed", "Practicing medicine without a license", "Acceptable if a paramedic was not available"], correct: 2 },
-                { q: "[HARD] Which of the following scenarios BEST illustrates the difference between scope of practice and standard of care?", options: ["An EMT performs CPR â€” within scope and meeting standard of care", "An EMT administers a medication that is in their scope but does so using the wrong dose â€” within scope but below standard of care", "A paramedic intubates a patient â€” outside scope for EMT", "An EMT refuses to treat a violent patient â€” breach of duty to act"], correct: 1 },
+                { q: "[HARD] Which of the following scenarios BEST illustrates the difference between scope of practice and standard of care?", options: ["An EMT performs CPR — within scope and meeting standard of care", "An EMT administers a medication that is in their scope but does so using the wrong dose — within scope but below standard of care", "A paramedic intubates a patient — outside scope for EMT", "An EMT refuses to treat a violent patient — breach of duty to act"], correct: 1 },
                 { q: "Where would an EMT working as an ED technician MOST likely be employed?", options: ["In an ambulance responding to 9-1-1 calls", "In a hospital emergency department assisting with patient care", "On a fire engine responding to fires", "At a concert providing event medical coverage"], correct: 1 },
                 { q: "The EMT's responsibility for a patient ends when:", options: ["The ambulance arrives at the hospital parking lot", "The patient is handed off to the ER staff with a complete oral report", "The PCR is completed", "The patient is discharged from the hospital"], correct: 1 },
-                { q: "How often does an EMT need to recertify with the NREMT?", options: ["Every year", "Every two years", "Every five years", "Once â€” certification is lifetime"], correct: 1 },
-                { q: "[HARD] An EMT arrives on scene to find a patient in cardiac arrest. The family states they do not want CPR performed due to religious beliefs. The EMT should:", options: ["Respect the family's wishes and do not start CPR", "Start CPR because the patient is in cardiac arrest and the EMT has a duty to act", "Call medical direction for guidance â€” the EMT cannot independently withhold resuscitation in most systems", "Leave the scene and refuse to provide care"], correct: 2 }
+                { q: "How often does an EMT need to recertify with the NREMT?", options: ["Every year", "Every two years", "Every five years", "Once — certification is lifetime"], correct: 1 },
+                { q: "[HARD] An EMT arrives on scene to find a patient in cardiac arrest. The family states they do not want CPR performed due to religious beliefs. The EMT should:", options: ["Respect the family's wishes and do not start CPR", "Start CPR because the patient is in cardiac arrest and the EMT has a duty to act", "Call medical direction for guidance — the EMT cannot independently withhold resuscitation in most systems", "Leave the scene and refuse to provide care"], correct: 2 }
             ],
             critical: [
                 {
@@ -242,7 +242,7 @@ window.CPG_DATA = {
                     options: ["Begin patient assessment immediately since windows are open", "Direct everyone to evacuate the building and contact the gas company/fire department before patient care", "Start CPR and ignore the gas odor since the windows are open", "Have the family member turn off the gas while you begin patient care"], correct: 1
                 },
                 {
-                    scenario: "You are a newly certified EMT working for a private ambulance service. During an interfacility transfer, you are transporting a stable patient from a nursing home to a dialysis center. The patient has a do-not-resuscitate (DNR) order on file. During transport, the patient becomes unresponsive, stops breathing, and has no pulse. Your partner, who has been an EMT for 15 years, tells you to 'just start CPR â€” nobody will check the paperwork.' However, you have seen the valid DNR order signed by the patient's physician.",
+                    scenario: "You are a newly certified EMT working for a private ambulance service. During an interfacility transfer, you are transporting a stable patient from a nursing home to a dialysis center. The patient has a do-not-resuscitate (DNR) order on file. During transport, the patient becomes unresponsive, stops breathing, and has no pulse. Your partner, who has been an EMT for 15 years, tells you to 'just start CPR — nobody will check the paperwork.' However, you have seen the valid DNR order signed by the patient's physician.",
                     question: "What is the MOST appropriate professional decision in this situation?",
                     options: ["Follow your partner's instructions since they have more experience", "Honor the valid DNR order and do not initiate resuscitation, explaining your decision to your partner", "Start CPR to protect yourself from legal liability, then check the DNR later", "Call the dialysis center for guidance before making a decision"], correct: 1
                 },
@@ -260,13 +260,13 @@ window.CPG_DATA = {
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#shield"/></svg> Workforce Safety & Wellness</h3>
                 
                 <h4>Introduction to EMT Wellness</h4>
-                <p>Working as an EMT is physically demanding, emotionally challenging, and psychologically stressful in ways that few other professions can match. You will face situations that involve life-and-death decisions, exposure to trauma and suffering, threats to personal safety, and the weight of responsibility for patient outcomes. <strong>Workforce safety and wellness</strong> is the recognition that protecting the EMT is as important as protecting the patient. An injured, burned-out, or unhealthy EMT cannot provide safe and effective care. Understanding the risks to your personal safety and well-being â€” and how to manage them â€” is essential for a sustainable career in EMS.</p>
+                <p>Working as an EMT is physically demanding, emotionally challenging, and psychologically stressful in ways that few other professions can match. You will face situations that involve life-and-death decisions, exposure to trauma and suffering, threats to personal safety, and the weight of responsibility for patient outcomes. <strong>Workforce safety and wellness</strong> is the recognition that protecting the EMT is as important as protecting the patient. An injured, burned-out, or unhealthy EMT cannot provide safe and effective care. Understanding the risks to your personal safety and well-being — and how to manage them — is essential for a sustainable career in EMS.</p>
                 
                 <h4>The Well-Being of the EMT</h4>
                 <p>Wellness in EMS encompasses three interconnected domains: <strong>physical</strong>, <strong>mental</strong>, and <strong>emotional</strong>. Neglect in any one area inevitably affects the others.</p>
-                <p><strong>Physical wellness</strong> includes maintaining cardiovascular fitness, muscular strength and endurance (especially for lifting), flexibility, a healthy body weight, adequate sleep, proper nutrition, and avoidance of tobacco, alcohol abuse, and other substances. EMS shifts often involve long hours, irregular schedules, missed meals, and limited opportunities for exercise â€” all of which challenge physical wellness. You must be intentional about protecting your health: prioritize sleep between shifts, pack nutritious meals, stay hydrated, and incorporate strength training to prevent lifting injuries.</p>
-                <p><strong>Emotional wellness</strong> involves recognizing and managing your emotional responses to the calls you run. It is normal to feel sadness, anger, anxiety, or grief after difficult calls. The key is processing these emotions in healthy ways â€” through conversation, counseling, exercise, or creative outlets â€” rather than suppressing them or turning to unhealthy coping mechanisms. Emotional wellness also means having a life outside of EMS: maintaining relationships, pursuing hobbies, and having an identity beyond being an EMT.</p>
-                <p><strong>Mental wellness</strong> encompasses your cognitive and psychological health. This includes your ability to concentrate, make decisions, cope with stress, and maintain a realistic perspective. EMS providers are at increased risk for depression, anxiety, post-traumatic stress disorder (PTSD), and substance use disorders. Recognizing the signs of psychological distress â€” in yourself and in your colleagues â€” and seeking help without stigma is a professional responsibility.</p>
+                <p><strong>Physical wellness</strong> includes maintaining cardiovascular fitness, muscular strength and endurance (especially for lifting), flexibility, a healthy body weight, adequate sleep, proper nutrition, and avoidance of tobacco, alcohol abuse, and other substances. EMS shifts often involve long hours, irregular schedules, missed meals, and limited opportunities for exercise — all of which challenge physical wellness. You must be intentional about protecting your health: prioritize sleep between shifts, pack nutritious meals, stay hydrated, and incorporate strength training to prevent lifting injuries.</p>
+                <p><strong>Emotional wellness</strong> involves recognizing and managing your emotional responses to the calls you run. It is normal to feel sadness, anger, anxiety, or grief after difficult calls. The key is processing these emotions in healthy ways — through conversation, counseling, exercise, or creative outlets — rather than suppressing them or turning to unhealthy coping mechanisms. Emotional wellness also means having a life outside of EMS: maintaining relationships, pursuing hobbies, and having an identity beyond being an EMT.</p>
+                <p><strong>Mental wellness</strong> encompasses your cognitive and psychological health. This includes your ability to concentrate, make decisions, cope with stress, and maintain a realistic perspective. EMS providers are at increased risk for depression, anxiety, post-traumatic stress disorder (PTSD), and substance use disorders. Recognizing the signs of psychological distress — in yourself and in your colleagues — and seeking help without stigma is a professional responsibility.</p>
                 
                 <h4>Stress in EMS</h4>
                 <p>Stress is a normal and unavoidable part of EMS. It is the body's response to demands placed upon it. However, the cumulative effect of repeated exposure to high-stress situations can be detrimental. EMS stress is typically categorized into three types:</p>
@@ -295,8 +295,8 @@ window.CPG_DATA = {
                 </div>
                 
                 <h4>Critical Incident Stress Management (CISM)</h4>
-                <p>When an EMT experiences a particularly traumatic event â€” called a <strong>critical incident</strong> â€” the stress response can be overwhelming. Critical incidents may include: the death or serious injury of a child, a mass casualty incident, the death of a colleague, an incident involving excessive media attention, a case that personally reminds you of a family member, or any call that produces an unusually strong emotional reaction.</p>
-                <p><strong>Critical Incident Stress Management (CISM)</strong> is a comprehensive, integrated system of interventions designed to mitigate the psychological impact of critical incidents on emergency personnel. CISM is not a single technique â€” it is a framework that includes several components:</p>
+                <p>When an EMT experiences a particularly traumatic event — called a <strong>critical incident</strong> — the stress response can be overwhelming. Critical incidents may include: the death or serious injury of a child, a mass casualty incident, the death of a colleague, an incident involving excessive media attention, a case that personally reminds you of a family member, or any call that produces an unusually strong emotional reaction.</p>
+                <p><strong>Critical Incident Stress Management (CISM)</strong> is a comprehensive, integrated system of interventions designed to mitigate the psychological impact of critical incidents on emergency personnel. CISM is not a single technique — it is a framework that includes several components:</p>
                 <ul>
                     <li><strong>Pre-incident education:</strong> Training EMTs about stress reactions and coping strategies before a critical incident occurs</li>
                     <li><strong>On-scene support:</strong> Providing immediate support during extended or large-scale incidents</li>
@@ -307,40 +307,40 @@ window.CPG_DATA = {
                 <p>CISD is <strong>not</strong> an operational critique or an investigation. It is a confidential, supportive discussion designed to help EMS providers process traumatic events. Participation is voluntary but strongly encouraged.</p>
                 
                 <h4>Scene Safety Awareness</h4>
-                <p>Scene safety is the foundation of every EMS response. It is not a one-time check â€” it is an ongoing process that begins when you receive the call and continues until you leave the scene. Key scene safety considerations include:</p>
+                <p>Scene safety is the foundation of every EMS response. It is not a one-time check — it is an ongoing process that begins when you receive the call and continues until you leave the scene. Key scene safety considerations include:</p>
                 <ul>
-                    <li><strong>Hazardous materials (HazMat):</strong> Recognize the presence of hazardous materials using the <strong>HazMat placard system</strong>, shipping papers, and sensory clues (unusual odors, visible clouds, leaking containers). If a HazMat scene is suspected, <strong>isolate the area, deny entry, and notify appropriate resources</strong>. Do not enter a HazMat scene without proper training and protective equipment. Your job is to establish a safe perimeter and provide medical support to the HazMat team â€” not to enter the hot zone yourself.</li>
-                    <li><strong>Vehicle safety:</strong> When operating at a roadway incident, scene safety requires proper <strong>vehicle positioning</strong> (creating a barrier between the scene and oncoming traffic), wearing high-visibility safety vests, using warning lights and flares, and maintaining situational awareness of traffic. The leading cause of death among on-duty EMS providers is a <strong>struck-by incident</strong> â€” being hit by a vehicle while working on a roadway.</li>
+                    <li><strong>Hazardous materials (HazMat):</strong> Recognize the presence of hazardous materials using the <strong>HazMat placard system</strong>, shipping papers, and sensory clues (unusual odors, visible clouds, leaking containers). If a HazMat scene is suspected, <strong>isolate the area, deny entry, and notify appropriate resources</strong>. Do not enter a HazMat scene without proper training and protective equipment. Your job is to establish a safe perimeter and provide medical support to the HazMat team — not to enter the hot zone yourself.</li>
+                    <li><strong>Vehicle safety:</strong> When operating at a roadway incident, scene safety requires proper <strong>vehicle positioning</strong> (creating a barrier between the scene and oncoming traffic), wearing high-visibility safety vests, using warning lights and flares, and maintaining situational awareness of traffic. The leading cause of death among on-duty EMS providers is a <strong>struck-by incident</strong> — being hit by a vehicle while working on a roadway.</li>
                     <li><strong>Violence at the scene:</strong> EMS calls can place you in volatile situations: domestic disputes, combative patients, intoxicated individuals, gang-related violence, and scenes involving weapons. Scene safety requires evaluating the potential for violence before entering, positioning yourself with an escape route, requesting law enforcement presence when needed, and never entering a scene that law enforcement has not secured if violence is suspected.</li>
                     <li><strong>Environmental hazards:</strong> Consider weather conditions, unstable structures, fire, electrical hazards (downed power lines), water, and terrain. Scene safety may require waiting for specialized resources (fire department, utility company, technical rescue) before patient access is safe.</li>
                 </ul>
                 
                 <h4>Rescue Operations and Vehicle Safety</h4>
-                <p>EMTs are often involved in rescue operations, particularly vehicle extrication. While specialized rescue training belongs to fire and rescue personnel, every EMT should understand the basic principles: stabilizing the vehicle, disconnecting the battery, establishing access, providing medical care during extrication, and coordinating with rescue crews. <strong>Vehicle safety</strong> also extends to safe ambulance driving practices â€” always wearing seatbelts, ensuring all passengers are belted, driving defensively with lights and sirens used appropriately, and following your agency's vehicle operation policies.</p>
+                <p>EMTs are often involved in rescue operations, particularly vehicle extrication. While specialized rescue training belongs to fire and rescue personnel, every EMT should understand the basic principles: stabilizing the vehicle, disconnecting the battery, establishing access, providing medical care during extrication, and coordinating with rescue crews. <strong>Vehicle safety</strong> also extends to safe ambulance driving practices — always wearing seatbelts, ensuring all passengers are belted, driving defensively with lights and sirens used appropriately, and following your agency's vehicle operation policies.</p>
                 
                 <h4>Personal Wellness Strategies</h4>
                 <p>Protecting your well-being requires active effort. Key strategies include:</p>
                 <ul>
                     <li><strong>Sleep:</strong> Sleep deprivation impairs cognitive function, decision-making, and physical performance as much as alcohol intoxication. Prioritize 7-9 hours of sleep. Use sleep hygiene strategies: keep the bedroom dark and cool, avoid screens before bed, maintain a consistent sleep schedule even on days off.</li>
                     <li><strong>Nutrition:</strong> Avoid relying on fast food, gas station snacks, and energy drinks. Plan and pack meals, carry healthy snacks (nuts, fruit, protein bars), and stay hydrated with water throughout your shift.</li>
-                    <li><strong>Exercise:</strong> Regular physical activity â€” both cardiovascular and strength training â€” reduces stress, improves mood, protects against injury, and supports overall health. Even 30 minutes of exercise on duty days (before or after shift) makes a significant difference.</li>
-                    <li><strong>Emotional support:</strong> Cultivate relationships with people inside and outside of EMS who you can talk to honestly. Many EMS agencies have peer support programs â€” trained colleagues who provide confidential emotional support. Professional counseling and employee assistance programs (EAPs) are also valuable resources.</li>
+                    <li><strong>Exercise:</strong> Regular physical activity — both cardiovascular and strength training — reduces stress, improves mood, protects against injury, and supports overall health. Even 30 minutes of exercise on duty days (before or after shift) makes a significant difference.</li>
+                    <li><strong>Emotional support:</strong> Cultivate relationships with people inside and outside of EMS who you can talk to honestly. Many EMS agencies have peer support programs — trained colleagues who provide confidential emotional support. Professional counseling and employee assistance programs (EAPs) are also valuable resources.</li>
                     <li><strong>Balance:</strong> Develop interests and connections outside of EMS. Hobbies, time with family and friends, spiritual practices, and time in nature all help maintain perspective and prevent burnout.</li>
                     <li><strong>Immunizations:</strong> As a healthcare worker, you are at increased risk of exposure to infectious diseases. Stay current with all recommended immunizations including hepatitis B, influenza, tetanus/diphtheria/pertussis (Tdap), MMR, varicella, and COVID-19.</li>
                 </ul>
                 
                 <h4>Creating a Culture of Wellness</h4>
-                <p>Wellness is not just an individual responsibility â€” it is an organizational priority that every EMT should advocate for. A healthy EMS culture is one where providers look out for each other, where asking for help is encouraged rather than stigmatized, where critical incidents are followed by debriefing and support, and where the physical and mental health of the workforce is valued as highly as clinical competence. As you begin your EMS career, commit to protecting your own wellness, supporting your colleagues, and being part of building a healthier EMS culture.</p>
+                <p>Wellness is not just an individual responsibility — it is an organizational priority that every EMT should advocate for. A healthy EMS culture is one where providers look out for each other, where asking for help is encouraged rather than stigmatized, where critical incidents are followed by debriefing and support, and where the physical and mental health of the workforce is valued as highly as clinical competence. As you begin your EMS career, commit to protecting your own wellness, supporting your colleagues, and being part of building a healthier EMS culture.</p>
             </div>`,
             flashcards: [
                 { question: "What are the three types of stress experienced by EMS providers?", answer: "Acute stress (immediate reaction to a critical incident), delayed stress (reactions that emerge later, like PTSD), and cumulative stress (gradual burnout from prolonged exposure)", category: "Stress Management" },
-                { question: "What does CISM stand for and what is its purpose?", answer: "Critical Incident Stress Management â€” a comprehensive system of interventions designed to mitigate the psychological impact of critical incidents on emergency personnel", category: "Stress Management" },
+                { question: "What does CISM stand for and what is its purpose?", answer: "Critical Incident Stress Management — a comprehensive system of interventions designed to mitigate the psychological impact of critical incidents on emergency personnel", category: "Stress Management" },
                 { question: "What is the difference between a defusing and a CISD?", answer: "A defusing is brief, informal, and held within hours of an incident. CISD is a structured 7-phase session held 24-72 hours after the incident.", category: "Stress Management" },
-                { question: "What is the leading cause of death among on-duty EMS providers?", answer: "Struck-by incidents â€” being hit by a vehicle while working on a roadway", category: "Scene Safety" },
+                { question: "What is the leading cause of death among on-duty EMS providers?", answer: "Struck-by incidents — being hit by a vehicle while working on a roadway", category: "Scene Safety" },
                 { question: "List four signs of cumulative stress (burnout).", answer: "Emotional exhaustion, cynicism, reduced empathy for patients (compassion fatigue), and decreased sense of personal accomplishment", category: "Stress Management" },
-                { question: "What should an EMT do if they suspect a hazardous materials scene?", answer: "Isolate the area, deny entry, and notify appropriate HazMat resources â€” do not enter without proper training and PPE", category: "Scene Safety" },
-                { question: "What are the three domains of EMT wellness?", answer: "Physical wellness, emotional wellness, and mental wellness â€” all interconnected", category: "Wellness" },
-                { question: "How many phases does a formal CISD session have?", answer: "Seven phases â€” including introduction, fact, thought, reaction, symptom, teaching, and re-entry phases", category: "Stress Management" }
+                { question: "What should an EMT do if they suspect a hazardous materials scene?", answer: "Isolate the area, deny entry, and notify appropriate HazMat resources — do not enter without proper training and PPE", category: "Scene Safety" },
+                { question: "What are the three domains of EMT wellness?", answer: "Physical wellness, emotional wellness, and mental wellness — all interconnected", category: "Wellness" },
+                { question: "How many phases does a formal CISD session have?", answer: "Seven phases — including introduction, fact, thought, reaction, symptom, teaching, and re-entry phases", category: "Stress Management" }
             ],
             quiz: [
                 { q: "Which type of stress is characterized by gradual burnout occurring over months or years of EMS work?", options: ["Acute stress", "Delayed stress", "Cumulative stress", "Critical incident stress"], correct: 2 },
@@ -365,7 +365,7 @@ window.CPG_DATA = {
                 {
                     scenario: "You and your partner have just finished a 14-hour shift in a busy urban 9-1-1 system. Your last call of the shift was a particularly difficult one: a 3-year-old drowning victim that did not survive despite prolonged resuscitation efforts. The child was approximately the same age as your own child. After the call, your medical director tells you to take some time and offers the services of the CISM team. Your partner says, 'I'm fine, I just want to go home, have a beer, and forget about it.' However, you notice your partner's hands are still shaking, they haven't made eye contact with anyone since the call ended, and their voice is unsteady.",
                     question: "What is the MOST appropriate action regarding this situation?",
-                    options: ["Respect your partner's wishes and go home â€” everyone copes differently", "Encourage your partner to participate in a defusing session now or a CISD in the next 24-72 hours, noting that acute stress reactions are normal and CISM is designed specifically for situations like this", "Tell your partner to 'man up' and move on", "Report your partner to the supervisor as emotionally unfit for duty"], correct: 1
+                    options: ["Respect your partner's wishes and go home — everyone copes differently", "Encourage your partner to participate in a defusing session now or a CISD in the next 24-72 hours, noting that acute stress reactions are normal and CISM is designed specifically for situations like this", "Tell your partner to 'man up' and move on", "Report your partner to the supervisor as emotionally unfit for duty"], correct: 1
                 },
                 {
                     scenario: "You are called to a motor vehicle collision on a rural two-lane highway at dusk. As you approach from the east, you can see a single vehicle has struck a tree. There is light smoke coming from the engine compartment. Traffic is passing in both directions at approximately 55 mph. No law enforcement or fire department has arrived yet. Your patient is a 22-year-old male who appears to have a deformed right femur and is complaining of difficulty breathing. He is still in the vehicle.",
@@ -381,7 +381,7 @@ window.CPG_DATA = {
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#shield-alert"/></svg> Infection Prevention & PPE</h3>
                 
                 <h4>Introduction to Infection Prevention</h4>
-                <p>Every patient encounter carries the potential for exposure to infectious agents. As an EMT, you will come into contact with blood, saliva, respiratory secretions, vomitus, feces, urine, and other body fluids on a regular basis. You will enter homes, nursing facilities, and public spaces where contagious diseases may be present. Understanding how infections spread and how to protect yourself â€” and your patients â€” is not optional knowledge. It is a life-safety skill as fundamental as managing an airway or controlling bleeding. The principles of infection prevention are rooted in the concept that <strong>you cannot tell by looking at a patient whether they carry an infectious disease</strong>, and therefore you must approach every patient encounter with the same standard of precautions.</p>
+                <p>Every patient encounter carries the potential for exposure to infectious agents. As an EMT, you will come into contact with blood, saliva, respiratory secretions, vomitus, feces, urine, and other body fluids on a regular basis. You will enter homes, nursing facilities, and public spaces where contagious diseases may be present. Understanding how infections spread and how to protect yourself — and your patients — is not optional knowledge. It is a life-safety skill as fundamental as managing an airway or controlling bleeding. The principles of infection prevention are rooted in the concept that <strong>you cannot tell by looking at a patient whether they carry an infectious disease</strong>, and therefore you must approach every patient encounter with the same standard of precautions.</p>
                 
                 <h4>Standard Precautions vs. Transmission-Based Precautions</h4>
                 <p>The Centers for Disease Control and Prevention (CDC) defines two levels of infection prevention strategies:</p>
@@ -402,17 +402,17 @@ window.CPG_DATA = {
                 </ul>
                 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>Clinical Pearl:</strong> In the prehospital setting, you often do not know the patient's infection status when you arrive. Always use Standard Precautions as your baseline. If you identify signs of a potentially transmissible infection â€” such as a patient with a persistent cough, fever, rash, or known infectious disease â€” escalate to the appropriate Transmission-Based Precautions.
+                    <strong>Clinical Pearl:</strong> In the prehospital setting, you often do not know the patient's infection status when you arrive. Always use Standard Precautions as your baseline. If you identify signs of a potentially transmissible infection — such as a patient with a persistent cough, fever, rash, or known infectious disease — escalate to the appropriate Transmission-Based Precautions.
                 </div>
                 
                 <h4>Personal Protective Equipment (PPE)</h4>
                 <p>Personal Protective Equipment is the barrier between you and potentially infectious materials. The type of PPE you wear depends on the nature of the patient encounter and the anticipated exposure. PPE must be selected based on the task, must be worn correctly, and must be removed in the correct order to prevent self-contamination. Key PPE components include:</p>
                 
                 <h5>Gloves</h5>
-                <p>Wear <strong>disposable medical examination gloves</strong> whenever there is potential contact with blood, body fluids, mucous membranes, or non-intact skin. Gloves should be changed between patients and between different procedures on the same patient. Never wash or reuse disposable gloves. Remove gloves by grasping the outside of one glove at the wrist and peeling it off (glove-to-glove), then sliding fingers under the remaining glove at the wrist and peeling it off (skin-to-skin). Perform hand hygiene immediately after glove removal, because gloves do not provide complete protection â€” microscopic defects can allow pathogen passage, and hands can become contaminated during removal.</p>
+                <p>Wear <strong>disposable medical examination gloves</strong> whenever there is potential contact with blood, body fluids, mucous membranes, or non-intact skin. Gloves should be changed between patients and between different procedures on the same patient. Never wash or reuse disposable gloves. Remove gloves by grasping the outside of one glove at the wrist and peeling it off (glove-to-glove), then sliding fingers under the remaining glove at the wrist and peeling it off (skin-to-skin). Perform hand hygiene immediately after glove removal, because gloves do not provide complete protection — microscopic defects can allow pathogen passage, and hands can become contaminated during removal.</p>
                 
                 <h5>Mask and Eye Protection</h5>
-                <p>A <strong>surgical mask</strong> protects you from splashes and large droplets. An <strong>N95 respirator</strong> (or higher) is required for airborne precautions â€” it must be <strong>fit-tested</strong> to ensure an adequate seal. Fit testing must be performed annually and whenever you change facial hair or weight significantly. <strong>Eye protection</strong> (safety glasses, goggles, or a face shield) protects the mucous membranes of your eyes from splash exposure. Wear eye protection whenever there is risk of blood or body fluid splashes â€” such as during childbirth, wound irrigation, suctioning, or any procedure involving arterial bleeding.</p>
+                <p>A <strong>surgical mask</strong> protects you from splashes and large droplets. An <strong>N95 respirator</strong> (or higher) is required for airborne precautions — it must be <strong>fit-tested</strong> to ensure an adequate seal. Fit testing must be performed annually and whenever you change facial hair or weight significantly. <strong>Eye protection</strong> (safety glasses, goggles, or a face shield) protects the mucous membranes of your eyes from splash exposure. Wear eye protection whenever there is risk of blood or body fluid splashes — such as during childbirth, wound irrigation, suctioning, or any procedure involving arterial bleeding.</p>
                 
                 <h5>Gowns</h5>
                 <p>Disposable isolation gowns protect your skin and clothing from contamination during procedures that may generate splashes or spray. Gowns should cover your torso, arms to the wrists, and extend to the knees. Remove gowns by unfastening ties and pulling the gown away from your body, rolling it inward so the contaminated outside surface is contained, and disposing of it immediately.</p>
@@ -428,7 +428,7 @@ window.CPG_DATA = {
                     <li>Before eating, drinking, or touching your face</li>
                     <li>After using the restroom</li>
                 </ul>
-                <p><strong>How to perform hand hygiene:</strong> Use <strong>alcohol-based hand rub</strong> (at least 60% alcohol) if hands are not visibly soiled â€” apply to palm, rub hands together covering all surfaces until dry. Use <strong>soap and water</strong> when hands are visibly soiled, after caring for patients with known or suspected C. difficile or norovirus (alcohol does not kill C. difficile spores), and after using the restroom. Wash with soap and water for at least 20 seconds â€” the time it takes to sing "Happy Birthday" twice.</p>
+                <p><strong>How to perform hand hygiene:</strong> Use <strong>alcohol-based hand rub</strong> (at least 60% alcohol) if hands are not visibly soiled — apply to palm, rub hands together covering all surfaces until dry. Use <strong>soap and water</strong> when hands are visibly soiled, after caring for patients with known or suspected C. difficile or norovirus (alcohol does not kill C. difficile spores), and after using the restroom. Wash with soap and water for at least 20 seconds — the time it takes to sing "Happy Birthday" twice.</p>
                 
                 <h4>Diseases of Concern for EMS Providers</h4>
                 <p>EMTs face occupational exposure to a range of infectious diseases. Understanding the risks, modes of transmission, and prevention strategies for each is critical:</p>
@@ -438,7 +438,7 @@ window.CPG_DATA = {
                         <tr><th>Disease</th><th>Transmission</th><th>Key Facts</th><th>Prevention</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Hepatitis B (HBV)</td><td>Blood, body fluids, sexual contact</td><td>Highly infectious â€” can survive on surfaces for 7 days. Vaccine available and highly effective. 90% of healthcare workers who receive the full series develop immunity.</td><td>Vaccination, Standard Precautions, sharps safety</td></tr>
+                        <tr><td>Hepatitis B (HBV)</td><td>Blood, body fluids, sexual contact</td><td>Highly infectious — can survive on surfaces for 7 days. Vaccine available and highly effective. 90% of healthcare workers who receive the full series develop immunity.</td><td>Vaccination, Standard Precautions, sharps safety</td></tr>
                         <tr><td>Hepatitis C (HCV)</td><td>Bloodborne (primarily)</td><td>Most common chronic bloodborne infection in the U.S. No vaccine available. 70-80% of acute cases become chronic.</td><td>Standard Precautions, sharps safety, post-exposure follow-up</td></tr>
                         <tr><td>Human Immunodeficiency Virus (HIV)</td><td>Blood, sexual contact, breastfeeding</td><td>Low transmission risk after needlestick (~0.3%). No vaccine. Post-exposure prophylaxis (PEP) must be started within 72 hours, ideally within 2 hours.</td><td>Standard Precautions, sharps safety, immediate PEP after exposure</td></tr>
                         <tr><td>Tuberculosis (TB)</td><td>Airborne</td><td>Caused by <em>Mycobacterium tuberculosis</em>. Latent TB can reactivate. Annual screening (PPD or blood test) required for healthcare workers.</td><td>N95 respirator, airborne precautions, annual screening</td></tr>
@@ -461,32 +461,32 @@ window.CPG_DATA = {
                 <p>Needlestick injuries and other sharps exposures are among the most preventable yet most dangerous risks in EMS. Prevention strategies include:</p>
                 <ul>
                     <li>Always use <strong>safety-engineered sharps devices</strong> (needles with retractable shields, self-sheathing needles)</li>
-                    <li>Never recap a used needle by hand â€” use a one-handed scoop technique or a recapping device if recapping is necessary</li>
+                    <li>Never recap a used needle by hand — use a one-handed scoop technique or a recapping device if recapping is necessary</li>
                     <li>Dispose of sharps immediately after use in a <strong>puncture-resistant, labeled sharps container</strong></li>
-                    <li>Carry the sharps container to the patient â€” never carry an exposed needle across the room</li>
+                    <li>Carry the sharps container to the patient — never carry an exposed needle across the room</li>
                     <li>Communicate clearly with your partner when passing sharps or performing procedures involving sharps</li>
                     <li>Never reach into a sharps container or attempt to retrieve items from one</li>
                 </ul>
                 <p><strong>If a needlestick or other exposure occurs, follow these steps IMMEDIATELY:</strong></p>
                 <ol>
                     <li>Wash the exposed area thoroughly with soap and water. If the exposure is to mucous membranes (eyes, mouth, nose), flush copiously with water or saline for at least 15 minutes.</li>
-                    <li>Report the exposure to your supervisor immediately â€” do not wait until the end of shift.</li>
+                    <li>Report the exposure to your supervisor immediately — do not wait until the end of shift.</li>
                     <li>Seek immediate medical evaluation at the designated exposure treatment facility (usually the nearest ER or occupational health center).</li>
-                    <li>Identify the source patient (if known) â€” the treating physician will determine if source patient testing is indicated.</li>
+                    <li>Identify the source patient (if known) — the treating physician will determine if source patient testing is indicated.</li>
                     <li>Post-exposure prophylaxis (PEP) for HIV should ideally be started within <strong>2 hours</strong> of exposure (up to 72 hours is still recommended).</li>
                     <li>Complete an exposure incident report and follow your agency's exposure tracking procedures.</li>
                     <li>Participate in follow-up testing and counseling as recommended by occupational health.</li>
                 </ol>
                 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>Time is Critical:</strong> In the case of an HIV exposure, post-exposure prophylaxis (PEP) should be initiated as soon as possible â€” ideally within 2 hours. Delays beyond 72 hours significantly reduce efficacy. Do not wait; every minute counts.
+                    <strong>Time is Critical:</strong> In the case of an HIV exposure, post-exposure prophylaxis (PEP) should be initiated as soon as possible — ideally within 2 hours. Delays beyond 72 hours significantly reduce efficacy. Do not wait; every minute counts.
                 </div>
                 
                 <h4>Immunizations for Healthcare Workers</h4>
                 <p>Immunizations are a critical component of infection prevention. OSHA requires employers to offer certain immunizations at no cost to employees with potential occupational exposure. Recommended immunizations for EMTs include:</p>
                 <ul>
                     <li><strong>Hepatitis B vaccine:</strong> 3-dose series. OSHA requires employers to offer it free within 10 days of hire. Antibody titers should be checked 1-2 months after completion to confirm immunity.</li>
-                    <li><strong>Influenza vaccine:</strong> Annual â€” recommended for all healthcare workers to protect both themselves and vulnerable patients.</li>
+                    <li><strong>Influenza vaccine:</strong> Annual — recommended for all healthcare workers to protect both themselves and vulnerable patients.</li>
                     <li><strong>Tdap (Tetanus, Diphtheria, Pertussis):</strong> Single dose (if not received as an adult), then Td booster every 10 years.</li>
                     <li><strong>MMR (Measles, Mumps, Rubella):</strong> Two doses for healthcare workers born after 1957 unless immunity is documented.</li>
                     <li><strong>Varicella (Chickenpox):</strong> Two doses for healthcare workers without evidence of immunity.</li>
@@ -511,7 +511,7 @@ window.CPG_DATA = {
                 { question: "What is the difference between Standard Precautions and Transmission-Based Precautions?", answer: "Standard Precautions apply to ALL patient care regardless of infection status. Transmission-Based Precautions are additional measures for patients with known/suspected specific infections spread by contact, droplet, or airborne routes.", category: "Infection Control" },
                 { question: "What are the three categories of Transmission-Based Precautions?", answer: "Contact Precautions (gloves, gown), Droplet Precautions (surgical mask), and Airborne Precautions (N95 respirator)", category: "Infection Control" },
                 { question: "When should hand hygiene be performed with soap and water instead of alcohol-based hand rub?", answer: "When hands are visibly soiled, after caring for patients with C. difficile or norovirus, and after using the restroom", category: "Hand Hygiene" },
-                { question: "What is the proper order for removing PPE to avoid self-contamination?", answer: "Gloves â†’ gown â†’ mask/respirator â†’ eye protection, with hand hygiene after each step if possible and always after all PPE is removed", category: "PPE" },
+                { question: "What is the proper order for removing PPE to avoid self-contamination?", answer: "Gloves → gown → mask/respirator → eye protection, with hand hygiene after each step if possible and always after all PPE is removed", category: "PPE" },
                 { question: "How soon should post-exposure prophylaxis (PEP) for HIV be initiated after a needlestick injury?", answer: "Ideally within 2 hours, and no later than 72 hours after exposure", category: "Needlestick Safety" },
                 { question: "Which federal regulation requires employers to protect workers from bloodborne pathogen exposure?", answer: "OSHA Bloodborne Pathogens Standard (29 CFR 1910.1030)", category: "Regulations" },
                 { question: "What are examples of diseases requiring airborne precautions?", answer: "Tuberculosis (TB), measles (rubeola), chickenpox (varicella), and disseminated shingles (herpes zoster)", category: "Transmission-Based Precautions" },
@@ -529,18 +529,18 @@ window.CPG_DATA = {
                 { q: "Contact precautions would be indicated for which of the following patients?", options: ["A patient with influenza", "A patient with a known MRSA wound infection", "A patient with active tuberculosis", "A patient with COVID-19"], correct: 1 },
                 { q: "[HARD] Which of the following statements about Hepatitis C is correct?", options: ["A vaccine is available to prevent Hepatitis C infection", "Hepatitis C is primarily transmitted through the airborne route", "Most acute Hepatitis C infections become chronic, and no vaccine is available", "Hepatitis C cannot survive outside the human body"], correct: 2 },
                 { q: "How long should you wash your hands with soap and water to effectively remove pathogens?", options: ["5 seconds", "At least 20 seconds", "1 minute", "2 minutes"], correct: 1 },
-                { q: "[HARD] An EMT is transporting a patient with suspected meningococcal meningitis. The EMT is wearing gloves and a surgical mask. Based on recommended precautions, what additional PPE is required for optimal protection?", options: ["None â€” gloves and mask are sufficient", "An N95 respirator instead of a surgical mask", "Eye protection and a gown should be added â€” meningococcal disease requires droplet precautions", "A face shield only"], correct: 2 }
+                { q: "[HARD] An EMT is transporting a patient with suspected meningococcal meningitis. The EMT is wearing gloves and a surgical mask. Based on recommended precautions, what additional PPE is required for optimal protection?", options: ["None — gloves and mask are sufficient", "An N95 respirator instead of a surgical mask", "Eye protection and a gown should be added — meningococcal disease requires droplet precautions", "A face shield only"], correct: 2 }
             ],
             critical: [
                 {
                     scenario: "You and your partner are dispatched to a skilled nursing facility for a 78-year-old female with a fever and altered mental status. Upon arrival, the charge nurse informs you that the patient has been on contact precautions for a positive MRSA wound culture from a pressure ulcer on her sacrum. The patient is incontinent of urine, has dried emesis on her gown, and requires full assistance with repositioning. As you enter the room, you see the contact precaution sign on the door with a supply cart containing gloves, gowns, and a face shield. Your partner starts to enter the room with just gloves on, saying 'We're just here to pick her up and go.'",
                     question: "What is the MOST appropriate action regarding infection prevention in this scenario?",
-                    options: ["Follow your partner's lead â€” a brief patient contact for transport does not require full PPE", "Don full contact precautions including gloves and gown before entering the room, and clean and disinfect the stretcher and ambulance after transport", "Only wear a mask since MRSA is not airborne", "Ask the nursing staff to clean the patient and change her gown before you transport"], correct: 1
+                    options: ["Follow your partner's lead — a brief patient contact for transport does not require full PPE", "Don full contact precautions including gloves and gown before entering the room, and clean and disinfect the stretcher and ambulance after transport", "Only wear a mask since MRSA is not airborne", "Ask the nursing staff to clean the patient and change her gown before you transport"], correct: 1
                 },
                 {
-                    scenario: "While starting an IV line on a 45-year-old male patient with dehydration in the back of the ambulance, the patient suddenly moves his arm as the ambulance goes over a bump. The used IV catheter â€” which has just been withdrawn â€” accidentally punctures your gloved hand. The patient has a history of intravenous drug use and his Hepatitis B and HIV status are unknown. Your partner is driving and cannot assist. You are 15 minutes from the hospital.",
+                    scenario: "While starting an IV line on a 45-year-old male patient with dehydration in the back of the ambulance, the patient suddenly moves his arm as the ambulance goes over a bump. The used IV catheter — which has just been withdrawn — accidentally punctures your gloved hand. The patient has a history of intravenous drug use and his Hepatitis B and HIV status are unknown. Your partner is driving and cannot assist. You are 15 minutes from the hospital.",
                     question: "What is the MOST appropriate sequence of actions following this needlestick injury?",
-                    options: ["Finish the IV attempt and complete patient care, then report the exposure after arriving at the hospital", "Remove your glove, squeeze the wound to make it bleed, wash the area thoroughly with soap and water, inform your partner, and request immediate evaluation at the receiving hospital for PEP consideration", "Apply a bandage and continue â€” the risk of transmission is very low", "Use an alcohol wipe on the wound and continue with patient care"], correct: 1
+                    options: ["Finish the IV attempt and complete patient care, then report the exposure after arriving at the hospital", "Remove your glove, squeeze the wound to make it bleed, wash the area thoroughly with soap and water, inform your partner, and request immediate evaluation at the receiving hospital for PEP consideration", "Apply a bandage and continue — the risk of transmission is very low", "Use an alcohol wipe on the wound and continue with patient care"], correct: 1
                 },
                 {
                     scenario: "You are called to a private residence for a 30-year-old male with a fever, sore throat, and a rash. The patient has a temperature of 102.8°F, a red throat with exudate, and a fine red rash on his torso that feels like sandpaper. He is coughing frequently. The patient's roommate mentions that several other people at their workplace have been sick with 'something going around.' The patient says he feels like he is 'barely able to breathe.' His oxygen saturation is 94% on room air, and his respiratory rate is 22. You suspect this could be a contagious respiratory infection, possibly measles, given the rash and fever pattern. Measles requires airborne precautions.",
@@ -554,41 +554,41 @@ window.CPG_DATA = {
         shortTitle: "1.5 Medical, Legal & Ethical Issues",
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Medical, Legal & Ethical Issues</h3>
-            <p>As an EMT, you operate within a complex framework of laws, regulations, and ethical principles that govern every aspect of prehospital care. Understanding these legal and ethical foundations is not optional â€” it protects your patients, your partners, your medical director, and yourself. This section covers the core legal doctrines and ethical principles that shape EMS practice.</p>
+            <p>As an EMT, you operate within a complex framework of laws, regulations, and ethical principles that govern every aspect of prehospital care. Understanding these legal and ethical foundations is not optional — it protects your patients, your partners, your medical director, and yourself. This section covers the core legal doctrines and ethical principles that shape EMS practice.</p>
 
             <h4>Scope of Practice vs. Standard of Care</h4>
-            <p><strong>Scope of practice</strong> refers to the legally defined range of duties and skills an EMT is authorized to perform. It is established by state law â€” typically through a state EMS office or health department â€” and outlines exactly what procedures you may perform (e.g., oxygen administration, spinal immobilization, AED use) and under what conditions. Your scope of practice may be further expanded or limited by your local medical director through <strong>written protocols</strong> or <strong>online medical direction</strong> (phone/radio orders from a physician).</p>
-            <p><strong>Standard of care</strong> is a legal concept that asks: "What would a reasonable, prudent EMT with similar training do under the same or similar circumstances?" It is a <em>national</em> standard â€” meaning you are held to the same level of care regardless of whether you work in a busy city or a rural volunteer agency. Violation of the standard of care is one of the four elements required to prove negligence.</p>
+            <p><strong>Scope of practice</strong> refers to the legally defined range of duties and skills an EMT is authorized to perform. It is established by state law — typically through a state EMS office or health department — and outlines exactly what procedures you may perform (e.g., oxygen administration, spinal immobilization, AED use) and under what conditions. Your scope of practice may be further expanded or limited by your local medical director through <strong>written protocols</strong> or <strong>online medical direction</strong> (phone/radio orders from a physician).</p>
+            <p><strong>Standard of care</strong> is a legal concept that asks: "What would a reasonable, prudent EMT with similar training do under the same or similar circumstances?" It is a <em>national</em> standard — meaning you are held to the same level of care regardless of whether you work in a busy city or a rural volunteer agency. Violation of the standard of care is one of the four elements required to prove negligence.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Key Distinction:</strong> Scope of practice is <em>regulatory</em> (what you are legally allowed to do). Standard of care is <em>professional</em> (what a competent EMT would do). You must stay within your scope AND meet the standard of care on every call.
             </div>
 
             <h4>Duty to Act</h4>
-            <p><strong>Duty to act</strong> is a legal obligation to provide care. For an EMT on duty â€” whether career or volunteer â€” this duty begins the moment you are dispatched or when you encounter a patient while on duty. Off-duty EMTs generally have <em>no</em> legal duty to act (though some states impose one), but ethical obligations may still apply. Once you begin care, you cannot abandon the patient; you must continue until someone of equal or higher training assumes care.</p>
+            <p><strong>Duty to act</strong> is a legal obligation to provide care. For an EMT on duty — whether career or volunteer — this duty begins the moment you are dispatched or when you encounter a patient while on duty. Off-duty EMTs generally have <em>no</em> legal duty to act (though some states impose one), but ethical obligations may still apply. Once you begin care, you cannot abandon the patient; you must continue until someone of equal or higher training assumes care.</p>
 
-            <h4>Negligence â€” The Four D's</h4>
+            <h4>Negligence — The Four D's</h4>
             <p>To prove negligence in an EMS context, a plaintiff must establish all four of the following elements:</p>
             <ul>
-                <li><strong>Duty</strong> â€” The EMT had a legal duty to act (responded to the call, was on duty).</li>
-                <li><strong>Breach</strong> â€” The EMT breached that duty by failing to meet the standard of care (e.g., did not apply spinal precautions despite mechanism of injury).</li>
-                <li><strong>Damages</strong> â€” The patient suffered actual harm (physical, emotional, or financial).</li>
-                <li><strong>Causation</strong> â€” The breach of duty directly caused the damages (proximate cause).</li>
+                <li><strong>Duty</strong> — The EMT had a legal duty to act (responded to the call, was on duty).</li>
+                <li><strong>Breach</strong> — The EMT breached that duty by failing to meet the standard of care (e.g., did not apply spinal precautions despite mechanism of injury).</li>
+                <li><strong>Damages</strong> — The patient suffered actual harm (physical, emotional, or financial).</li>
+                <li><strong>Causation</strong> — The breach of duty directly caused the damages (proximate cause).</li>
             </ul>
-            <p>If any one of these elements is missing, negligence is not established. This is why thorough documentation is critical â€” your patient care report (PCR) is often the central piece of evidence in any lawsuit.</p>
+            <p>If any one of these elements is missing, negligence is not established. This is why thorough documentation is critical — your patient care report (PCR) is often the central piece of evidence in any lawsuit.</p>
 
             <h4>Good Samaritan Laws</h4>
-            <p>Good Samaritan laws are designed to protect healthcare providers â€” including EMTs â€” from civil liability when they voluntarily provide emergency care outside of their normal employment duties. These laws vary by state but generally protect you as long as you:</p>
+            <p>Good Samaritan laws are designed to protect healthcare providers — including EMTs — from civil liability when they voluntarily provide emergency care outside of their normal employment duties. These laws vary by state but generally protect you as long as you:</p>
             <ul>
                 <li>Act in <strong>good faith</strong></li>
                 <li>Provide care within your <strong>scope of training</strong></li>
                 <li>Are not <strong>grossly negligent</strong> (willful, wanton, or reckless conduct is NOT protected)</li>
                 <li>Do not receive <strong>compensation</strong> for the specific act (volunteer vs. paid on-duty status matters)</li>
             </ul>
-            <p>Important: Good Samaritan laws generally do <strong>not</strong> apply when you are acting within your employment duties â€” your employer's liability insurance and sovereign/governmental immunity protections apply instead.</p>
+            <p>Important: Good Samaritan laws generally do <strong>not</strong> apply when you are acting within your employment duties — your employer's liability insurance and sovereign/governmental immunity protections apply instead.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                <strong>Legal Warning:</strong> Good Samaritan laws are NOT a shield against gross negligence or intentional misconduct. If you render care outside your scope, act recklessly, or abandon a patient, you can still be held liable. These laws encourage bystander aid â€” they do not eliminate professional accountability.
+                <strong>Legal Warning:</strong> Good Samaritan laws are NOT a shield against gross negligence or intentional misconduct. If you render care outside your scope, act recklessly, or abandon a patient, you can still be held liable. These laws encourage bystander aid — they do not eliminate professional accountability.
             </div>
 
             <h4>Confidentiality & HIPAA</h4>
@@ -606,47 +606,47 @@ window.CPG_DATA = {
                 <li>Law enforcement with a valid warrant or as required by law</li>
                 <li>Public health agencies for specific reporting requirements</li>
             </ul>
-            <p>Never discuss patient information in public areas (hallways, elevators, cafeterias), on social media, or with family/friends â€” even if you do not use the patient's name. Violations of HIPAA carry severe civil and criminal penalties, including fines up to $50,000 per violation and potential imprisonment.</p>
+            <p>Never discuss patient information in public areas (hallways, elevators, cafeterias), on social media, or with family/friends — even if you do not use the patient's name. Violations of HIPAA carry severe civil and criminal penalties, including fines up to $50,000 per violation and potential imprisonment.</p>
 
-            <h4>Exceptions to Confidentiality â€” Mandatory Reporting</h4>
-            <p>Your duty to maintain confidentiality is <strong>not absolute</strong>. As an EMT, you are a mandated reporter in most states. You must report â€” even without the patient's consent â€” the following:</p>
+            <h4>Exceptions to Confidentiality — Mandatory Reporting</h4>
+            <p>Your duty to maintain confidentiality is <strong>not absolute</strong>. As an EMT, you are a mandated reporter in most states. You must report — even without the patient's consent — the following:</p>
             <ul>
-                <li><strong>Child abuse or neglect</strong> â€” Any suspicion, to child protective services</li>
-                <li><strong>Elder abuse or neglect</strong> â€” To adult protective services</li>
-                <li><strong>Domestic violence</strong> â€” Involving serious physical injury or weapons (varies by state)</li>
-                <li><strong>Infectious disease reporting</strong> â€” Certain communicable diseases (tuberculosis, COVID-19, meningitis, etc.) to public health authorities</li>
-                <li><strong>Crime-related injuries</strong> â€” Gunshot wounds, stab wounds, poisonings, and injuries from criminal acts</li>
-                <li><strong>Animal bites</strong> â€” Required for rabies surveillance and quarantine</li>
-                <li><strong>Drug-related injuries</strong> â€” Overdoses and drug-facilitated crimes</li>
+                <li><strong>Child abuse or neglect</strong> — Any suspicion, to child protective services</li>
+                <li><strong>Elder abuse or neglect</strong> — To adult protective services</li>
+                <li><strong>Domestic violence</strong> — Involving serious physical injury or weapons (varies by state)</li>
+                <li><strong>Infectious disease reporting</strong> — Certain communicable diseases (tuberculosis, COVID-19, meningitis, etc.) to public health authorities</li>
+                <li><strong>Crime-related injuries</strong> — Gunshot wounds, stab wounds, poisonings, and injuries from criminal acts</li>
+                <li><strong>Animal bites</strong> — Required for rabies surveillance and quarantine</li>
+                <li><strong>Drug-related injuries</strong> — Overdoses and drug-facilitated crimes</li>
             </ul>
 
             <h4>Crime Scenes</h4>
-            <p>When responding to a crime scene, your <strong>first priority is scene safety</strong>. Do not enter if law enforcement has not secured the scene. Once safe, your primary role is patient care â€” not evidence collection. However, you must be aware of how your actions affect evidence:</p>
+            <p>When responding to a crime scene, your <strong>first priority is scene safety</strong>. Do not enter if law enforcement has not secured the scene. Once safe, your primary role is patient care — not evidence collection. However, you must be aware of how your actions affect evidence:</p>
             <ul>
                 <li><strong>Preserve evidence:</strong> Move only what is necessary for patient care. Cut around bullet holes in clothing if possible. Do not disturb weapons or other items.</li>
                 <li><strong>Document:</strong> Note the position of the patient and any objects moved during care.</li>
                 <li><strong>Chain of custody:</strong> If you handle evidence (e.g., a weapon found on the patient), document who handled it and transfer it to law enforcement with a clear chain of custody.</li>
-                <li><strong>Work with law enforcement:</strong> Communicate clearly â€” they need to investigate, and you need to treat. These priorities can coexist with good communication.</li>
+                <li><strong>Work with law enforcement:</strong> Communicate clearly — they need to investigate, and you need to treat. These priorities can coexist with good communication.</li>
             </ul>
-            <p>Remember: Patient care always takes priority over evidence preservation. The courts understand that lifesaving care may disturb a scene â€” proper documentation is your protection.</p>
+            <p>Remember: Patient care always takes priority over evidence preservation. The courts understand that lifesaving care may disturb a scene — proper documentation is your protection.</p>
 
             <h4>Ethical Principles in EMS</h4>
             <p>Medical ethics provide a framework for making difficult decisions in the field. The four core principles are:</p>
             <ul>
-                <li><strong>Autonomy</strong> â€” Respecting the patient's right to make their own decisions about their care, including the right to refuse treatment (if they are competent and informed).</li>
-                <li><strong>Beneficence</strong> â€” Acting in the patient's best interest; doing good and providing benefit through your interventions.</li>
-                <li><strong>Non-maleficence</strong> â€” "First, do no harm." Weigh the potential benefits of an intervention against its risks. Do not perform unnecessary or harmful procedures.</li>
-                <li><strong>Justice</strong> â€” Providing care fairly and equitably regardless of the patient's race, socioeconomic status, age, gender, religion, sexual orientation, or any other factor.</li>
+                <li><strong>Autonomy</strong> — Respecting the patient's right to make their own decisions about their care, including the right to refuse treatment (if they are competent and informed).</li>
+                <li><strong>Beneficence</strong> — Acting in the patient's best interest; doing good and providing benefit through your interventions.</li>
+                <li><strong>Non-maleficence</strong> — "First, do no harm." Weigh the potential benefits of an intervention against its risks. Do not perform unnecessary or harmful procedures.</li>
+                <li><strong>Justice</strong> — Providing care fairly and equitably regardless of the patient's race, socioeconomic status, age, gender, religion, sexual orientation, or any other factor.</li>
             </ul>
             <p>Ethical dilemmas arise when these principles conflict. For example, a patient's autonomy (refusing a life-saving transport) may conflict with beneficence (your desire to help). Understanding these principles helps you navigate such conflicts professionally and ethically.</p>
 
             <h4>Advance Directives & DNR Orders</h4>
             <p><strong>Advance directives</strong> are legal documents that allow patients to express their healthcare wishes in advance, in case they become unable to communicate. As an EMT, you may encounter:</p>
             <ul>
-                <li><strong>Living wills</strong> â€” Written instructions about what treatments a patient wants or does not want (e.g., mechanical ventilation, feeding tubes)</li>
-                <li><strong>DNR (Do Not Resuscitate) orders</strong> â€” A specific medical order, signed by a physician, instructing EMS not to attempt resuscitation. Must be present, signed, and dated. State-specific forms are often required (e.g., out-of-hospital DNR).</li>
-                <li><strong>Healthcare Power of Attorney (POA)</strong> â€” A legal document designating someone else to make healthcare decisions on the patient's behalf.</li>
-                <li><strong>POLST/MOLST forms</strong> â€” Portable Medical Orders that translate patient wishes into actionable medical orders (e.g., "Do Not Intubate," "Comfort Care Only"). These are valid across care settings.</li>
+                <li><strong>Living wills</strong> — Written instructions about what treatments a patient wants or does not want (e.g., mechanical ventilation, feeding tubes)</li>
+                <li><strong>DNR (Do Not Resuscitate) orders</strong> — A specific medical order, signed by a physician, instructing EMS not to attempt resuscitation. Must be present, signed, and dated. State-specific forms are often required (e.g., out-of-hospital DNR).</li>
+                <li><strong>Healthcare Power of Attorney (POA)</strong> — A legal document designating someone else to make healthcare decisions on the patient's behalf.</li>
+                <li><strong>POLST/MOLST forms</strong> — Portable Medical Orders that translate patient wishes into actionable medical orders (e.g., "Do Not Intubate," "Comfort Care Only"). These are valid across care settings.</li>
             </ul>
             <p><strong>When a DNR is present and valid:</strong> Follow its instructions. If it says "No resuscitation," do not start CPR, do not intubate, do not defibrillate. Provide comfort care and pain management instead. If the arrest was witnessed and the patient is a candidate for transport with ongoing CPR, you may contact medical direction for guidance.</p>
             <p><strong>When a DNR is not immediately available:</strong> If family reports a DNR exists but cannot produce it, you should generally begin resuscitation and contact medical direction. It is better to err on the side of providing care. Some states have DNR registries or bracelets/necklaces that are legally valid.</p>
@@ -655,11 +655,11 @@ window.CPG_DATA = {
             <h4>Organ Donation</h4>
             <p>The <strong>Uniform Anatomical Gift Act (UAGA)</strong> allows individuals to donate their organs and tissues through advance directives, donor registries, or driver's license designations. As an EMT, you should:</p>
             <ul>
-                <li>Respect documented donor status â€” organ donation does not change your care</li>
+                <li>Respect documented donor status — organ donation does not change your care</li>
                 <li>Provide full resuscitative efforts for potential organ donors (viable organs require perfusion)</li>
                 <li>Notify the receiving hospital of potential organ donor status</li>
                 <li>Never withhold or withdraw care solely because a patient is a donor</li>
-                <li>The decision to donate is made by the individual or family â€” you are not responsible for consent</li>
+                <li>The decision to donate is made by the individual or family — you are not responsible for consent</li>
             </ul>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -699,7 +699,7 @@ window.CPG_DATA = {
             },
             {
                 question: "When you are first on scene at a crime scene as an EMT, what is your priority?",
-                answer: "Scene safety first â€” do not enter until law enforcement has secured the scene. Then patient care takes priority over evidence preservation. Document any items moved during care.",
+                answer: "Scene safety first — do not enter until law enforcement has secured the scene. Then patient care takes priority over evidence preservation. Document any items moved during care.",
                 category: "Crime Scenes"
             },
             {
@@ -836,14 +836,14 @@ window.CPG_DATA = {
                 question: "How should the EMT balance evidence preservation, patient care, and the patient's request for confidentiality?",
                 options: [
                     "Refuse to cut the clothing and transport the patient fully clothed to preserve all evidence",
-                    "Cut around the bullet hole in the shirt, document what was done, provide full care, and inform the patient that confidentiality has limits â€” the police and hospital will need relevant information for her treatment",
+                    "Cut around the bullet hole in the shirt, document what was done, provide full care, and inform the patient that confidentiality has limits — the police and hospital will need relevant information for her treatment",
                     "Cut through the bullet hole to save time, tell the patient you will keep her secret, and transport without documenting the shirt damage",
                     "Wait for the police to photograph and document the clothing before beginning any patient care"
                 ],
                 correct: 1
             },
             {
-                scenario: "You respond to a nursing home for an 82-year-old male patient who is confused and has a fever of 102.5°F. The nursing staff reports he has a DNR order on file but cannot produce the actual document because 'it's in the administrator's office and she went home for the day.' The patient is breathing but his respiratory rate is 28 and shallow, and his oxygen saturation is 88% on room air. His daughter arrives and insists, 'My father would never want to be kept alive by machines â€” he signed that DNR for a reason. Do not put him on oxygen or take him to the hospital.' The patient's son, who arrives a few minutes later, yells, 'My father needs help! Do everything you can! The DNR only means no CPR, not no treatment at all!'",
+                scenario: "You respond to a nursing home for an 82-year-old male patient who is confused and has a fever of 102.5°F. The nursing staff reports he has a DNR order on file but cannot produce the actual document because 'it's in the administrator's office and she went home for the day.' The patient is breathing but his respiratory rate is 28 and shallow, and his oxygen saturation is 88% on room air. His daughter arrives and insists, 'My father would never want to be kept alive by machines — he signed that DNR for a reason. Do not put him on oxygen or take him to the hospital.' The patient's son, who arrives a few minutes later, yells, 'My father needs help! Do everything you can! The DNR only means no CPR, not no treatment at all!'",
                 question: "What is the EMT's BEST course of action given the conflicting information and unavailable DNR documentation?",
                 options: [
                     "Follow the daughter's wishes because the DNR was mentioned, withhold oxygen, and do not transport",
@@ -854,11 +854,11 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                scenario: "You are transporting a 19-year-old college student who was found unconscious in her dorm room after ingesting an unknown quantity of pills in an apparent suicide attempt. She is now awake and crying. During transport, she tells you, 'I took the pills because my boyfriend broke up with me, but I didn't really want to die â€” I just wanted the pain to stop.' She then grabs your arm and whispers, 'Please don't tell my parents. They're strict Muslims â€” they will disown me if they find out I tried to kill myself. If you tell them, I'll deny everything and say I just got sick from food poisoning.' Her parents are waiting at the hospital and you know they will ask you what happened. You also know that suicidal ideation with a plan and attempt represents a mandatory mental health hold in your state, and the emergency department will need to evaluate her for inpatient psychiatric care.",
+                scenario: "You are transporting a 19-year-old college student who was found unconscious in her dorm room after ingesting an unknown quantity of pills in an apparent suicide attempt. She is now awake and crying. During transport, she tells you, 'I took the pills because my boyfriend broke up with me, but I didn't really want to die — I just wanted the pain to stop.' She then grabs your arm and whispers, 'Please don't tell my parents. They're strict Muslims — they will disown me if they find out I tried to kill myself. If you tell them, I'll deny everything and say I just got sick from food poisoning.' Her parents are waiting at the hospital and you know they will ask you what happened. You also know that suicidal ideation with a plan and attempt represents a mandatory mental health hold in your state, and the emergency department will need to evaluate her for inpatient psychiatric care.",
                 question: "How should the EMT handle this situation regarding the patient's request for confidentiality and the parents' expected questions?",
                 options: [
                     "Promise the patient you will keep her secret and tell the parents she had food poisoning to protect her relationship with her family",
-                    "Explain to the patient that while you respect her privacy, you are required to report the truth to the hospital staff for her safety, and that the hospital team will determine what to share with her parents â€” you will not discuss details with the family yourself but will document the accurate clinical presentation",
+                    "Explain to the patient that while you respect her privacy, you are required to report the truth to the hospital staff for her safety, and that the hospital team will determine what to share with her parents — you will not discuss details with the family yourself but will document the accurate clinical presentation",
                     "Contact law enforcement to report the suicide attempt and have them inform the parents",
                     "Tell the patient that since she is over 18, you are legally bound to follow her wishes and will not write anything in your report about the suicide attempt"
                 ],
@@ -871,10 +871,10 @@ window.CPG_DATA = {
         shortTitle: "1.6 Consent, Refusal & Advance Directives",
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Consent, Refusal & Advance Directives</h3>
-            <p>Every patient interaction in EMS begins with the concept of <strong>consent</strong> â€” the patient's permission to be touched, assessed, and treated. Without valid consent, even well-intentioned care can constitute battery (unlawful touching). This section covers the types of consent, how to handle refusals, and how advance directives guide end-of-life decisions in the field.</p>
+            <p>Every patient interaction in EMS begins with the concept of <strong>consent</strong> — the patient's permission to be touched, assessed, and treated. Without valid consent, even well-intentioned care can constitute battery (unlawful touching). This section covers the types of consent, how to handle refusals, and how advance directives guide end-of-life decisions in the field.</p>
 
             <h4>Types of Consent</h4>
-            <p><strong>Expressed (Actual) Consent:</strong> The patient verbally or non-verbally agrees to receive care. This requires the patient to be a <strong>competent adult</strong> (at least 18 years old, or an emancipated minor) who has been <strong>informed</strong> of the nature of the treatment, its risks, benefits, and alternatives. Expressed consent can be withdrawn at any time â€” if a patient initially agrees to treatment but later changes their mind, you must stop (unless the patient is no longer competent).</p>
+            <p><strong>Expressed (Actual) Consent:</strong> The patient verbally or non-verbally agrees to receive care. This requires the patient to be a <strong>competent adult</strong> (at least 18 years old, or an emancipated minor) who has been <strong>informed</strong> of the nature of the treatment, its risks, benefits, and alternatives. Expressed consent can be withdrawn at any time — if a patient initially agrees to treatment but later changes their mind, you must stop (unless the patient is no longer competent).</p>
             <p>Components of informed consent include:</p>
             <ul>
                 <li>Your name and level of training (EMT, paramedic, etc.)</li>
@@ -884,7 +884,7 @@ window.CPG_DATA = {
                 <li>The risks of refusing treatment</li>
             </ul>
 
-            <p><strong>Implied Consent (Emergency Exception):</strong> When a patient is <strong>unconscious, altered, or otherwise unable to give consent</strong>, and a life-threatening emergency exists, the law assumes the patient would consent to care if they could. This is called implied consent. It applies only in true emergencies â€” not for minor complaints in an unconscious patient (e.g., a patient who faints but regains consciousness quickly). Implied consent is a legal fiction that protects EMTs who provide emergency care to patients who cannot speak for themselves.</p>
+            <p><strong>Implied Consent (Emergency Exception):</strong> When a patient is <strong>unconscious, altered, or otherwise unable to give consent</strong>, and a life-threatening emergency exists, the law assumes the patient would consent to care if they could. This is called implied consent. It applies only in true emergencies — not for minor complaints in an unconscious patient (e.g., a patient who faints but regains consciousness quickly). Implied consent is a legal fiction that protects EMTs who provide emergency care to patients who cannot speak for themselves.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> Implied consent is temporary. Once a patient regains consciousness and decision-making capacity, they may withdraw consent or refuse further treatment. Document the transition carefully.
@@ -892,24 +892,24 @@ window.CPG_DATA = {
 
             <p><strong>Consent for Minors:</strong> A minor (generally under age 18) cannot legally give consent for their own medical care. You must obtain consent from a <strong>parent, legal guardian, or a person acting <em>in loco parentis</em></strong> (in place of a parent, such as a school nurse or grandparent with a signed authorization). Exceptions include:</p>
             <ul>
-                <li><strong>Emancipated minors</strong> â€” Minors who are married, in the military, financially independent, or court-emancipated. They may consent for themselves.</li>
-                <li><strong>Mature minor doctrine</strong> â€” Some states allow minors of a certain age (typically 14+) to consent for specific treatments (e.g., STI testing, pregnancy care, mental health services).</li>
-                <li><strong>Emergency exception for minors</strong> â€” If a life-threatening emergency exists and a parent or guardian is not available, implied consent applies to the minor.</li>
+                <li><strong>Emancipated minors</strong> — Minors who are married, in the military, financially independent, or court-emancipated. They may consent for themselves.</li>
+                <li><strong>Mature minor doctrine</strong> — Some states allow minors of a certain age (typically 14+) to consent for specific treatments (e.g., STI testing, pregnancy care, mental health services).</li>
+                <li><strong>Emergency exception for minors</strong> — If a life-threatening emergency exists and a parent or guardian is not available, implied consent applies to the minor.</li>
             </ul>
 
             <p><strong>Involuntary Consent:</strong> In certain situations, patients can be treated without their consent due to legal authority:</p>
             <ul>
-                <li><strong>Court-ordered treatment</strong> â€” A judge has ordered specific medical care or evaluation.</li>
-                <li><strong>Mental health holds</strong> â€” When a patient poses a danger to themselves or others due to mental illness, law enforcement can initiate an involuntary hold (varies by state â€” 5150 in California, 72-hour holds in many states).</li>
-                <li><strong>Prisoners and detainees</strong> â€” Patients in police custody may have limited rights to refuse care if the treatment is necessary for their health and safety.</li>
+                <li><strong>Court-ordered treatment</strong> — A judge has ordered specific medical care or evaluation.</li>
+                <li><strong>Mental health holds</strong> — When a patient poses a danger to themselves or others due to mental illness, law enforcement can initiate an involuntary hold (varies by state — 5150 in California, 72-hour holds in many states).</li>
+                <li><strong>Prisoners and detainees</strong> — Patients in police custody may have limited rights to refuse care if the treatment is necessary for their health and safety.</li>
             </ul>
 
             <h4>Patient Refusal of Care</h4>
             <p>One of the most challenging situations EMTs face is a patient who needs medical care but refuses it. The patient's right to refuse treatment is protected by the ethical principle of <strong>autonomy</strong> and the legal doctrine of <strong>informed refusal</strong>. For a refusal to be valid, the patient must be:</p>
             <ul>
-                <li><strong>Competent</strong> (mentally capable of understanding the situation) â€” Not impaired by alcohol, drugs, head injury, hypoxia, hypoglycemia, or psychiatric crisis</li>
-                <li><strong>Informed</strong> â€” Has been told about their condition (based on your assessment), the risks of refusing care, and the consequences of not being transported</li>
-                <li><strong>Voluntary</strong> â€” Not coerced by anyone (EMS, police, or family)</li>
+                <li><strong>Competent</strong> (mentally capable of understanding the situation) — Not impaired by alcohol, drugs, head injury, hypoxia, hypoglycemia, or psychiatric crisis</li>
+                <li><strong>Informed</strong> — Has been told about their condition (based on your assessment), the risks of refusing care, and the consequences of not being transported</li>
+                <li><strong>Voluntary</strong> — Not coerced by anyone (EMS, police, or family)</li>
             </ul>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
@@ -927,9 +927,9 @@ window.CPG_DATA = {
                 <li>Patient's signature (or notation if they refuse to sign)</li>
                 <li>Signature of a witness (preferably law enforcement or a family member)</li>
                 <li>Medical director contact or online medical direction if contacted</li>
-                <li>Offer to call a friend or family member â€” document if refused</li>
+                <li>Offer to call a friend or family member — document if refused</li>
             </ul>
-            <p>If the patient refuses to sign, document that fact. If law enforcement is on scene, ask them to witness. When in doubt, attempt to contact <strong>online medical direction</strong> (OLMD) â€” a physician who can provide additional guidance and sometimes authorize a refusal or mandate transport.</p>
+            <p>If the patient refuses to sign, document that fact. If law enforcement is on scene, ask them to witness. When in doubt, attempt to contact <strong>online medical direction</strong> (OLMD) — a physician who can provide additional guidance and sometimes authorize a refusal or mandate transport.</p>
 
             <h4>EMTALA and Refusal</h4>
             <p>The <strong>Emergency Medical Treatment and Active Labor Act (EMTALA)</strong> is a federal law that requires anyone presenting for emergency care to receive a medical screening examination and stabilizing treatment. While EMTALA primarily applies to hospitals, it has implications for EMS: you cannot refuse to treat or transport a patient based on inability to pay, insurance status, or any discriminatory factor. If a patient changes their mind after refusing, you must re-evaluate and document.</p>
@@ -937,7 +937,7 @@ window.CPG_DATA = {
             <h4>Advance Directives in the Field</h4>
             <p>Advance directives allow patients to exercise their autonomy even when they can no longer communicate. As an EMT, you need to understand the types of advance directives you may encounter:</p>
 
-            <p><strong>Living Will:</strong> A written document stating the patient's wishes regarding life-sustaining treatment (e.g., mechanical ventilation, tube feeding, dialysis). Living wills typically go into effect when the patient is <strong>terminally ill</strong> or in a <strong>persistent vegetative state</strong> and unable to communicate. Living wills are often not designed for EMS â€” they provide general guidance rather than specific orders. Always contact medical direction if you encounter a living will without a signed DNR.</p>
+            <p><strong>Living Will:</strong> A written document stating the patient's wishes regarding life-sustaining treatment (e.g., mechanical ventilation, tube feeding, dialysis). Living wills typically go into effect when the patient is <strong>terminally ill</strong> or in a <strong>persistent vegetative state</strong> and unable to communicate. Living wills are often not designed for EMS — they provide general guidance rather than specific orders. Always contact medical direction if you encounter a living will without a signed DNR.</p>
 
             <p><strong>Do Not Resuscitate (DNR) Orders:</strong> A DNR is a written physician's order instructing healthcare providers not to attempt cardiopulmonary resuscitation in the event of cardiac or respiratory arrest. For field use, most states have specific <strong>out-of-hospital DNR forms</strong> (also called prehospital DNRs) that include:</p>
             <ul>
@@ -951,14 +951,14 @@ window.CPG_DATA = {
 
             <p><strong>POLST (Physician Orders for Life-Sustaining Treatment) / MOLST (Medical Orders for Life-Sustaining Treatment):</strong> POLST/MOLST forms are more specific than living wills. They are <strong>medical orders</strong> signed by a physician that turn a patient's treatment preferences into actionable instructions for EMS. Unlike a DNR which only addresses CPR, POLST forms cover a range of interventions including:</p>
             <ul>
-                <li><strong>Section A:</strong> CPR â€” Full code vs. DNR</li>
-                <li><strong>Section B:</strong> Medical Interventions â€” Comfort measures only, limited interventions (oxygen, suction, basic airway), or full treatment (intubation, IV fluids, medications)</li>
+                <li><strong>Section A:</strong> CPR — Full code vs. DNR</li>
+                <li><strong>Section B:</strong> Medical Interventions — Comfort measures only, limited interventions (oxygen, suction, basic airway), or full treatment (intubation, IV fluids, medications)</li>
                 <li><strong>Section C:</strong> Antibiotics</li>
                 <li><strong>Section D:</strong> Artificial nutrition (IV fluids, feeding tubes)</li>
             </ul>
             <p>POLST forms are designed to be honored across all care settings (home, hospital, nursing home, EMS). They are bright-colored (usually pink or bright green) and posted prominently.</p>
 
-            <p><strong>Healthcare Power of Attorney (POA) / Healthcare Proxy:</strong> A legal document designating someone else (an agent) to make healthcare decisions for the patient when they cannot. The POA has the same decision-making authority the patient would have â€” they can consent to or refuse treatment on the patient's behalf. As an EMT, if the patient is incapacitated and a POA is present and provides the documentation, you should follow the POA's decisions within the bounds of legal care.</p>
+            <p><strong>Healthcare Power of Attorney (POA) / Healthcare Proxy:</strong> A legal document designating someone else (an agent) to make healthcare decisions for the patient when they cannot. The POA has the same decision-making authority the patient would have — they can consent to or refuse treatment on the patient's behalf. As an EMT, if the patient is incapacitated and a POA is present and provides the documentation, you should follow the POA's decisions within the bounds of legal care.</p>
 
             <h4>What to Do When Advance Directives Are Unclear</h4>
             <p>In real-world EMS practice, advance directives are often unclear, missing, or disputed. Follow this decision tree:</p>
@@ -981,9 +981,9 @@ window.CPG_DATA = {
                 <li>Assess for medical causes of altered mental status (hypoglycemia, hypoxia, overdose, head injury) before assuming a psychiatric cause</li>
                 <li>Document the patient's vital signs, mental status exam, and any statements they make about harming themselves or others</li>
                 <li>Transport to the designated psychiatric receiving facility per your local protocols</li>
-                <li>A patient on a mental health hold <strong>cannot refuse transport</strong> â€” they have been deemed a danger and their refusal is not valid</li>
+                <li>A patient on a mental health hold <strong>cannot refuse transport</strong> — they have been deemed a danger and their refusal is not valid</li>
             </ul>
-            <p><strong>Patients in Police Custody:</strong> Prisoners and arrestees have the right to medical care. The police remain responsible for security; you are responsible for medical assessment and treatment. Document all findings objectively. If the patient refuses care, the custody situation complicates consent â€” involve medical direction and document the law enforcement presence.</p>
+            <p><strong>Patients in Police Custody:</strong> Prisoners and arrestees have the right to medical care. The police remain responsible for security; you are responsible for medical assessment and treatment. Document all findings objectively. If the patient refuses care, the custody situation complicates consent — involve medical direction and document the law enforcement presence.</p>
 
             <h4>Organ Donation after Death</h4>
             <p>The <strong>Uniform Anatomical Gift Act (UAGA)</strong> creates a legal framework for organ and tissue donation. As an EMT, your role is straightforward: provide full resuscitative care to all patients regardless of donor status. If a patient dies despite your efforts and has a valid donor designation (driver's license, donor registry), notify the receiving hospital. Organ recovery does not affect your care decisions in the field.</p>
@@ -991,7 +991,7 @@ window.CPG_DATA = {
         flashcards: [
             {
                 question: "What is the difference between expressed consent and implied consent?",
-                answer: "Expressed consent is verbally or non-verbally given by a competent, informed adult. Implied consent applies when a patient is unconscious or unable to consent and a life-threatening emergency exists â€” the law assumes they would consent if able.",
+                answer: "Expressed consent is verbally or non-verbally given by a competent, informed adult. Implied consent applies when a patient is unconscious or unable to consent and a life-threatening emergency exists — the law assumes they would consent if able.",
                 category: "Consent"
             },
             {
@@ -1082,7 +1082,7 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                q: "A 55-year-old patient with chest pain refuses transport. He is alert, oriented, and has a GCS of 15. After you explain the risks of refusing care â€” including the possibility of a heart attack â€” he still refuses and signs the AMA form. Two hours later, you are dispatched to the same address for a cardiac arrest. The patient died. Which statement is MOST accurate?",
+                q: "A 55-year-old patient with chest pain refuses transport. He is alert, oriented, and has a GCS of 15. After you explain the risks of refusing care — including the possibility of a heart attack — he still refuses and signs the AMA form. Two hours later, you are dispatched to the same address for a cardiac arrest. The patient died. Which statement is MOST accurate?",
                 options: [
                     "The EMT will be found negligent for not transporting the patient",
                     "The EMT properly documented the refusal and is protected if the patient was competent, informed, and the refusal was voluntary",
@@ -1135,17 +1135,17 @@ window.CPG_DATA = {
                 q: "HARD: A 40-year-old female is alert and oriented following a motor vehicle collision. She has minor abrasions but refuses transport. During your assessment, you notice her breath smells of alcohol and she admits to having 'a couple of drinks.' She wants to sign out AMA. What should the EMT do?",
                 options: [
                     "Allow her to sign the AMA since she is alert and oriented",
-                    "Carefully assess her mental status â€” intoxication may impair her ability to make an informed refusal. Consult medical direction and consider transportation for evaluation of both the collision injuries and the intoxication",
+                    "Carefully assess her mental status — intoxication may impair her ability to make an informed refusal. Consult medical direction and consider transportation for evaluation of both the collision injuries and the intoxication",
                     "Call law enforcement and have them force her to go to the hospital",
                     "Explain the risks, let her sign, and document the alcohol use"
                 ],
                 correct: 1
             },
             {
-                q: "HARD: An EMT is called to a home where a 92-year-old female with advanced dementia is unresponsive with agonal respirations. The family produces a valid DNR but also says, 'She would never want to be in a hospital â€” please let her die at home.' The nursing notes indicate she has a fever and possible sepsis. The DNR says 'No CPR' but does not address treatment for non-arrest conditions. What should the EMT do?",
+                q: "HARD: An EMT is called to a home where a 92-year-old female with advanced dementia is unresponsive with agonal respirations. The family produces a valid DNR but also says, 'She would never want to be in a hospital — please let her die at home.' The nursing notes indicate she has a fever and possible sepsis. The DNR says 'No CPR' but does not address treatment for non-arrest conditions. What should the EMT do?",
                 options: [
                     "Leave the patient at home since she has a DNR and the family wants her to die in peace",
-                    "Provide comfort care, oxygen, and transport for evaluation and treatment of the underlying condition (sepsis). The DNR only means no resuscitation if she arrests â€” it does not mean withhold all medical care",
+                    "Provide comfort care, oxygen, and transport for evaluation and treatment of the underlying condition (sepsis). The DNR only means no resuscitation if she arrests — it does not mean withhold all medical care",
                     "Provide full ACLS care including IV medications and intubation despite the DNR",
                     "Contact medical direction to ask whether to honor or ignore the DNR"
                 ],
@@ -1154,10 +1154,10 @@ window.CPG_DATA = {
         ],
         critical: [
             {
-                scenario: "You are dispatched to a private residence for a 68-year-old male with chest pain. Upon arrival, you find the patient sitting in a chair, pale, diaphoretic, and clutching his chest. He tells you the pain started about 45 minutes ago and rates it as 8/10, radiating to his left arm. He has a history of hypertension and type 2 diabetes. His vital signs are: BP 100/68, HR 104, RR 22, SpO2 95% on room air. After your assessment, you recommend immediate transport to the hospital. The patient says, 'I know I'm having a heart attack â€” my father died from one. But I don't want to go. I've had a good life and I'm ready to go whenever it's my time. I'm not signing anything, I'm just staying here.' His wife is crying and begging him to go. His son, who is a nurse, tells you, 'He has decision-making capacity â€” he's not confused, he's just made a choice. You have to respect that.' You suspect the patient may be experiencing an acute STEMI based on his presentation and risk factors.",
+                scenario: "You are dispatched to a private residence for a 68-year-old male with chest pain. Upon arrival, you find the patient sitting in a chair, pale, diaphoretic, and clutching his chest. He tells you the pain started about 45 minutes ago and rates it as 8/10, radiating to his left arm. He has a history of hypertension and type 2 diabetes. His vital signs are: BP 100/68, HR 104, RR 22, SpO2 95% on room air. After your assessment, you recommend immediate transport to the hospital. The patient says, 'I know I'm having a heart attack — my father died from one. But I don't want to go. I've had a good life and I'm ready to go whenever it's my time. I'm not signing anything, I'm just staying here.' His wife is crying and begging him to go. His son, who is a nurse, tells you, 'He has decision-making capacity — he's not confused, he's just made a choice. You have to respect that.' You suspect the patient may be experiencing an acute STEMI based on his presentation and risk factors.",
                 question: "Should the EMT respect the patient's refusal of transport, and how should the situation be managed?",
                 options: [
-                    "The patient clearly has decision-making capacity â€” explain the risks one more time, have him sign a refusal (or document his refusal to sign), have the son and wife witness, and clear the scene",
+                    "The patient clearly has decision-making capacity — explain the risks one more time, have him sign a refusal (or document his refusal to sign), have the son and wife witness, and clear the scene",
                     "The patient may have decision-making capacity, but the chest pain and diaphoresis could indicate a cardiac event that is compromising his perfusion and thus his competence. Attempt transport, involve medical direction, and if he continues to refuse despite a physician speaking to him, document thoroughly with law enforcement or family witnesses",
                     "Forcibly transport the patient since chest pain is a life-threatening emergency and implied consent applies",
                     "Call law enforcement to place the patient on a mental health hold since refusing life-saving care is not rational"
@@ -1165,7 +1165,7 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                scenario: "You are dispatched to a long-term care facility for an 85-year-old female with a sudden change in mental status. The nurse reports the patient has advanced Alzheimer's disease and was found this morning with a blood glucose of 42 mg/dL. The patient is awake but confused, unable to follow commands, and does not recognize her daughter who is at the bedside. There is no advance directive on file at the facility. The daughter tells you, 'My mother signed a living will five years ago that says no extraordinary measures. She has Alzheimer's â€” she wouldn't want to be treated for this. Please just let her go.' The nurse says she cannot locate the living will and is not sure a current copy exists. While you are assessing the patient, she becomes increasingly lethargic and her blood glucose is now 38 mg/dL. You have standing orders to administer oral glucose or IM glucagon for altered mental status with hypoglycemia.",
+                scenario: "You are dispatched to a long-term care facility for an 85-year-old female with a sudden change in mental status. The nurse reports the patient has advanced Alzheimer's disease and was found this morning with a blood glucose of 42 mg/dL. The patient is awake but confused, unable to follow commands, and does not recognize her daughter who is at the bedside. There is no advance directive on file at the facility. The daughter tells you, 'My mother signed a living will five years ago that says no extraordinary measures. She has Alzheimer's — she wouldn't want to be treated for this. Please just let her go.' The nurse says she cannot locate the living will and is not sure a current copy exists. While you are assessing the patient, she becomes increasingly lethargic and her blood glucose is now 38 mg/dL. You have standing orders to administer oral glucose or IM glucagon for altered mental status with hypoglycemia.",
                 question: "How should the EMT proceed given the reported (but absent) advance directive and the daughter's request?",
                 options: [
                     "Follow the daughter's request and withhold treatment since the patient has a living will",
@@ -1176,11 +1176,11 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                scenario: "You are called to a college dormitory at 2:00 AM for a 19-year-old female who is intoxicated and was reportedly 'acting strangely' by her roommate. Upon arrival, you find the patient slurring her speech, unsteady on her feet, and reeking of alcohol. She tells you she is from Saudi Arabia, is studying engineering on a full scholarship, and had 'two beers' at a party (her BAC is later estimated to be approximately 0.15%). She has no visible injuries, vital signs are stable, and her pupils are equal and reactive. When you recommend transport to the hospital for evaluation, she becomes extremely upset. 'You cannot take me to the hospital! If the university finds out I was drinking, I will lose my scholarship and my visa. My family will disown me. I'm an adult â€” I'm 19 and I have the right to refuse.' Her roommate confirms the patient has no history of mental illness but is terrified of the consequences of a hospital visit. You know that in your state, the legal drinking age is 21 and that an intoxicated patient may not have the capacity to make an informed refusal.",
+                scenario: "You are called to a college dormitory at 2:00 AM for a 19-year-old female who is intoxicated and was reportedly 'acting strangely' by her roommate. Upon arrival, you find the patient slurring her speech, unsteady on her feet, and reeking of alcohol. She tells you she is from Saudi Arabia, is studying engineering on a full scholarship, and had 'two beers' at a party (her BAC is later estimated to be approximately 0.15%). She has no visible injuries, vital signs are stable, and her pupils are equal and reactive. When you recommend transport to the hospital for evaluation, she becomes extremely upset. 'You cannot take me to the hospital! If the university finds out I was drinking, I will lose my scholarship and my visa. My family will disown me. I'm an adult — I'm 19 and I have the right to refuse.' Her roommate confirms the patient has no history of mental illness but is terrified of the consequences of a hospital visit. You know that in your state, the legal drinking age is 21 and that an intoxicated patient may not have the capacity to make an informed refusal.",
                 question: "How should the EMT handle this patient's refusal given the cultural considerations, her intoxication status, and her stated fears?",
                 options: [
                     "Allow her to sign a refusal since she is 19, alert, and able to verbally articulate her reasoning, despite the alcohol",
-                    "The patient's judgment is likely impaired by alcohol. Not all intoxicated patients lack capacity, but a BAC of 0.15% with slurred speech and unsteady gait raises significant concern. Attempt to contact medical direction for guidance. If medical direction supports transport, explain to the patient that her safety comes first and that you will document only the medical necessity â€” not the drinking â€” in the report. If she continues to refuse, have law enforcement evaluate her capacity and document everything",
+                    "The patient's judgment is likely impaired by alcohol. Not all intoxicated patients lack capacity, but a BAC of 0.15% with slurred speech and unsteady gait raises significant concern. Attempt to contact medical direction for guidance. If medical direction supports transport, explain to the patient that her safety comes first and that you will document only the medical necessity — not the drinking — in the report. If she continues to refuse, have law enforcement evaluate her capacity and document everything",
                     "Call law enforcement to place her on a mental health hold since her refusal is irrational",
                     "Transport her regardless of her wishes because she is under 21 and under the influence"
                 ],
@@ -1193,12 +1193,12 @@ window.CPG_DATA = {
         shortTitle: "1.7 Communication & Handoff",
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#radio"/></svg> Communication & Handoff</h3>
-            <p>Effective communication is the backbone of EMS operations. From the moment you receive a dispatch to the moment you transfer care at the hospital, every interaction â€” whether over the radio, face-to-face with a patient, or in a handoff report to a nurse â€” depends on clear, concise, and professional communication. Communication failures are a leading contributor to medical errors and adverse events in emergency care. This section covers radio communication, interpersonal skills, therapeutic communication with patients, and the critical handoff process.</p>
+            <p>Effective communication is the backbone of EMS operations. From the moment you receive a dispatch to the moment you transfer care at the hospital, every interaction — whether over the radio, face-to-face with a patient, or in a handoff report to a nurse — depends on clear, concise, and professional communication. Communication failures are a leading contributor to medical errors and adverse events in emergency care. This section covers radio communication, interpersonal skills, therapeutic communication with patients, and the critical handoff process.</p>
 
             <h4>Communication Systems in EMS</h4>
             <p>Modern EMS relies on a network of communication systems to coordinate emergency response:</p>
             <ul>
-                <li><strong>Dispatch Center (Public Safety Answering Point â€” PSAP):</strong> The 9-1-1 center that receives calls, dispatches resources, and relays information to responding units. Dispatchers are often trained Emergency Medical Dispatchers (EMDs) who can provide pre-arrival instructions to callers.</li>
+                <li><strong>Dispatch Center (Public Safety Answering Point — PSAP):</strong> The 9-1-1 center that receives calls, dispatches resources, and relays information to responding units. Dispatchers are often trained Emergency Medical Dispatchers (EMDs) who can provide pre-arrival instructions to callers.</li>
                 <li><strong>Radio Frequencies:</strong> EMS radios operate on specific frequencies allocated by the FCC. Common systems include VHF (very high frequency), UHF (ultra-high frequency), and 800 MHz trunked systems. Many regions use <strong>digital radios</strong> with encryption for privacy.</li>
                 <li><strong>Mobile Data Terminals (MDTs) / Tablets:</strong> Many EMS systems now use computers or tablets mounted in the ambulance for dispatch information, navigation, and electronic patient care reporting (ePCR).</li>
                 <li><strong>Repeater Systems:</strong> To extend radio range, repeaters receive a signal and retransmit it at higher power. When using a repeater, you must often key the microphone and wait a moment before speaking (to allow the repeater to activate).</li>
@@ -1206,11 +1206,11 @@ window.CPG_DATA = {
             </ul>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                <strong>Clinical Pearl:</strong> Always test your portable and mobile radios at the beginning of your shift. A radio that doesn't work when you need it is worse than no radio at all â€” it gives you a false sense of security. Know your assigned channels and the location of backup communication equipment.
+                <strong>Clinical Pearl:</strong> Always test your portable and mobile radios at the beginning of your shift. A radio that doesn't work when you need it is worse than no radio at all — it gives you a false sense of security. Know your assigned channels and the location of backup communication equipment.
             </div>
 
             <h4>Radio Communication Protocols</h4>
-            <p>Radio transmissions in EMS must be clear, concise, and professional. The radio is a shared resource â€” other units, dispatch centers, and sometimes media scanners can hear everything you transmit. Follow these protocols:</p>
+            <p>Radio transmissions in EMS must be clear, concise, and professional. The radio is a shared resource — other units, dispatch centers, and sometimes media scanners can hear everything you transmit. Follow these protocols:</p>
 
             <p><strong>Components of a Radio Report:</strong> When calling the hospital (a "patch" or "medic" report), structure your transmission to include:</p>
             <ol>
@@ -1229,14 +1229,14 @@ window.CPG_DATA = {
 
             <p><strong>Radio Communication Etiquette:</strong></p>
             <ul>
-                <li><strong>Listen before transmitting</strong> â€” do not interrupt another transmission</li>
+                <li><strong>Listen before transmitting</strong> — do not interrupt another transmission</li>
                 <li><strong>Press the push-to-talk (PTT) button and wait one second</strong> before speaking (for repeater activation)</li>
-                <li><strong>Speak clearly, at a moderate pace</strong> â€” not too fast, not too slow</li>
-                <li><strong>Keep transmissions brief</strong> â€” 30 seconds or less is the goal</li>
-                <li><strong>Use plain language</strong> â€” avoid codes (unless your system uses them) and NEVER use profanity</li>
+                <li><strong>Speak clearly, at a moderate pace</strong> — not too fast, not too slow</li>
+                <li><strong>Keep transmissions brief</strong> — 30 seconds or less is the goal</li>
+                <li><strong>Use plain language</strong> — avoid codes (unless your system uses them) and NEVER use profanity</li>
                 <li><strong>Never use the patient's name</strong> over the radio to protect confidentiality (HIPAA)</li>
                 <li><strong>Avoid saying "we have a" or slangs.</strong> Use "We are transporting a 67-year-old male with..."</li>
-                <li><strong>Acknowledge all transmissions</strong> â€” say "Received" or "Copy" to confirm</li>
+                <li><strong>Acknowledge all transmissions</strong> — say "Received" or "Copy" to confirm</li>
                 <li><strong>Use the phonetic alphabet</strong> for letters that are hard to understand (A-Alpha, B-Bravo, etc.)</li>
                 <li><strong>End with your unit number</strong> so the recipient knows who is speaking</li>
                 <li><strong>If you need to repeat, say "Repeat" not "Say again"</strong> (to avoid confusion)</li>
@@ -1247,13 +1247,13 @@ window.CPG_DATA = {
                 <p><em>"Mount Sinai, this is Medic 7. We are transporting a 67-year-old male from 1420 Elm Street with a chief complaint of chest pain for approximately one hour. Patient has a history of hypertension and diabetes. He is awake, alert, pale, and diaphoretic. Breath sounds are clear bilaterally. Vital signs: BP 110/68, heart rate 102 and regular, respiratory rate 20, SpO2 97% on room air. We have administered 324 mg of aspirin and placed him on 4 liters of oxygen via nasal cannula. Patient reports his pain has decreased from 8/10 to 5/10. We are approximately 8 minutes out. Any questions? Medic 7."</em>
             </div>
 
-            <h4>Interpersonal Communication â€” Team Communication</h4>
-            <p>Inside the ambulance and at the scene, you work as part of a team â€” with your partner, other responders (police, fire), dispatchers, and hospital staff. Team communication can be optimized by:</p>
+            <h4>Interpersonal Communication — Team Communication</h4>
+            <p>Inside the ambulance and at the scene, you work as part of a team — with your partner, other responders (police, fire), dispatchers, and hospital staff. Team communication can be optimized by:</p>
             <ul>
-                <li><strong>Closed-Loop Communication:</strong> The sender gives a message, the receiver acknowledges it, and the sender confirms the acknowledgment. This ensures critical information is not lost. Example: <em>"I need 10 mg of albuterol." â€” "10 mg albuterol." â€” "Correct."</em></li>
+                <li><strong>Closed-Loop Communication:</strong> The sender gives a message, the receiver acknowledges it, and the sender confirms the acknowledgment. This ensures critical information is not lost. Example: <em>"I need 10 mg of albuterol." — "10 mg albuterol." — "Correct."</em></li>
                 <li><strong>Clear Roles:</strong> Every team member should know who is leading patient care (the team leader) and what their role is. Ambiguity leads to errors.</li>
-                <li><strong>Assertive Communication:</strong> If you see something unsafe or disagree with a treatment decision, speak up. Use a respectful, direct approach: <em>"I'm concerned about giving that medication â€” the patient's heart rate is only 52."</em></li>
-                <li><strong>CUS Words:</strong> A structured way to express concern â€” <strong>C</strong>oncerned, <strong>U</strong>ncomfortable, <strong>S</strong>afety issue. These are universally recognized keywords in healthcare that signal a need to pause and re-evaluate.</li>
+                <li><strong>Assertive Communication:</strong> If you see something unsafe or disagree with a treatment decision, speak up. Use a respectful, direct approach: <em>"I'm concerned about giving that medication — the patient's heart rate is only 52."</em></li>
+                <li><strong>CUS Words:</strong> A structured way to express concern — <strong>C</strong>oncerned, <strong>U</strong>ncomfortable, <strong>S</strong>afety issue. These are universally recognized keywords in healthcare that signal a need to pause and re-evaluate.</li>
             </ul>
 
             <h4>Therapeutic Communication with Patients</h4>
@@ -1261,9 +1261,9 @@ window.CPG_DATA = {
             <ul>
                 <li><strong>Active Listening:</strong> Give the patient your full attention. Maintain appropriate eye contact, nod, and use verbal affirmations like "I see" or "Tell me more." Do not interrupt.</li>
                 <li><strong>Open-Ended Questions:</strong> Use questions that cannot be answered with yes or no. <em>"Can you tell me what happened?"</em> rather than <em>"Did you fall?"</em></li>
-                <li><strong>Empathy:</strong> Acknowledge the patient's feelings without judgment. <em>"That sounds very frightening. I understand why you're upset."</em> Empathy is NOT the same as sympathy â€” it is recognizing the emotion, not necessarily sharing it.</li>
+                <li><strong>Empathy:</strong> Acknowledge the patient's feelings without judgment. <em>"That sounds very frightening. I understand why you're upset."</em> Empathy is NOT the same as sympathy — it is recognizing the emotion, not necessarily sharing it.</li>
                 <li><strong>Reflection:</strong> Repeat back what the patient said to show you understand. <em>"So you're saying the pain started after you ate lunch?"</em></li>
-                <li><strong>Clarification:</strong> Ask for more detail when something is unclear. <em>"You said the pain is 'different' â€” can you describe how it's different from usual?"</em></li>
+                <li><strong>Clarification:</strong> Ask for more detail when something is unclear. <em>"You said the pain is 'different' — can you describe how it's different from usual?"</em></li>
                 <li><strong>Summarization:</strong> At the end of your history-taking, summarize what you heard to ensure accuracy. <em>"Let me make sure I have this right. You were watching TV when the chest pain started..."</em></li>
                 <li><strong>Patient-Centered Language:</strong> Use the patient's name, explain what you are doing before you do it, and use language they can understand (avoid medical jargon). <em>"I'm going to put this clip on your finger to check your oxygen level"</em> instead of <em>"I'm applying a pulse oximeter."</em></li>
             </ul>
@@ -1271,54 +1271,54 @@ window.CPG_DATA = {
             <h4>Communication Barriers</h4>
             <p>EMTs frequently encounter patients who are difficult to communicate with due to various barriers:</p>
             <ul>
-                <li><strong>Language Barriers:</strong> Use a certified medical interpreter (in-person or by phone) when possible. Do NOT use family members â€” especially minors â€” as interpreters. Speak to the patient, not the interpreter. Use simple words and speak slowly.</li>
+                <li><strong>Language Barriers:</strong> Use a certified medical interpreter (in-person or by phone) when possible. Do NOT use family members — especially minors — as interpreters. Speak to the patient, not the interpreter. Use simple words and speak slowly.</li>
                 <li><strong>Hearing Impairment:</strong> Face the patient so they can read your lips. Write down key questions. If the patient uses American Sign Language (ASL), use a video relay service or ASL interpreter. Point, gesture, and use visual aids.</li>
-                <li><strong>Visual Impairment:</strong> Identify yourself clearly. Describe what you are doing before you touch the patient. Orient them to the environment: <em>"I'm going to guide your hand to the railing â€” the stretcher is on your right."</em></li>
+                <li><strong>Visual Impairment:</strong> Identify yourself clearly. Describe what you are doing before you touch the patient. Orient them to the environment: <em>"I'm going to guide your hand to the railing — the stretcher is on your right."</em></li>
                 <li><strong>Pediatric Patients:</strong> Get down to the child's eye level. Use age-appropriate language (for a 4-year-old, a stethoscope is a "listening tool"). Involve the parent but communicate with the child directly. Use toys, stickers, or distraction techniques.</li>
-                <li><strong>Geriatric Patients:</strong> Allow extra time. Speak clearly and face the patient (many older adults have undiagnosed hearing loss). Ask about hearing aids and glasses. Avoid ageist language ("sweetie," "dear") â€” use the patient's name and maintain dignity.</li>
+                <li><strong>Geriatric Patients:</strong> Allow extra time. Speak clearly and face the patient (many older adults have undiagnosed hearing loss). Ask about hearing aids and glasses. Avoid ageist language ("sweetie," "dear") — use the patient's name and maintain dignity.</li>
                 <li><strong>Cognitive Impairment (Dementia, Intellectual Disability):</strong> Speak calmly, use short sentences, and allow processing time. Do not argue with delusions or hallucinations. Redirect gently. Involve caregivers who know the patient's baseline.</li>
                 <li><strong>Culturally Diverse Patients:</strong> Be aware of cultural differences in eye contact, touch, personal space, and decision-making (some cultures expect family involvement in healthcare decisions). Ask about preferences rather than assuming.</li>
                 <li><strong>Aggressive or Combative Patients:</strong> Maintain a safe distance, keep an exit path open, speak in a calm and slow tone, and avoid arguing. Use the patient's name. Set clear limits: <em>"I'm here to help you, but I need you to sit down so I can check you."</em></li>
             </ul>
 
-            <h4>The Patient Handoff â€” SBAR</h4>
+            <h4>The Patient Handoff — SBAR</h4>
             <p>The patient handoff (or transfer of care) is one of the highest-risk moments in emergency medicine. Information lost during handoff is a major source of medical errors. The SBAR framework provides a standardized structure for handoff communication:</p>
             <ul>
-                <li><strong>S â€” Situation:</strong> What is happening now? "I'm calling about a 72-year-old female with acute onset of shortness of breath."</li>
-                <li><strong>B â€” Background:</strong> What is the relevant clinical history? "She has a history of COPD, congestive heart failure, and hypertension. This started about 2 hours ago after she woke up from a nap."</li>
-                <li><strong>A â€” Assessment:</strong> What did you find? "She is awake and anxious, using accessory muscles to breathe. Lung sounds have diffuse wheezing in all fields with crackles at the bases. BP 150/90, HR 110, RR 28, SpO2 88% on room air."</li>
-                <li><strong>R â€” Recommendation:</strong> What do you need? "We are requesting a respiratory isolation room and have her on CPAP at 10 cmH2O with improvement to 94%. We need a bed for further management of acute CHF exacerbation versus COPD exacerbation."</li>
+                <li><strong>S — Situation:</strong> What is happening now? "I'm calling about a 72-year-old female with acute onset of shortness of breath."</li>
+                <li><strong>B — Background:</strong> What is the relevant clinical history? "She has a history of COPD, congestive heart failure, and hypertension. This started about 2 hours ago after she woke up from a nap."</li>
+                <li><strong>A — Assessment:</strong> What did you find? "She is awake and anxious, using accessory muscles to breathe. Lung sounds have diffuse wheezing in all fields with crackles at the bases. BP 150/90, HR 110, RR 28, SpO2 88% on room air."</li>
+                <li><strong>R — Recommendation:</strong> What do you need? "We are requesting a respiratory isolation room and have her on CPAP at 10 cmH2O with improvement to 94%. We need a bed for further management of acute CHF exacerbation versus COPD exacerbation."</li>
             </ul>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                <strong>Clinical Pearl:</strong> When transferring care at the hospital, do NOT just read your PCR â€” tell the story. The SBAR framework helps you organize your thinking so the receiving team gets a clear picture. After your verbal report, the PCR serves as the permanent legal record. Always ask: "Do you have any questions?" before leaving the patient's side.
+                <strong>Clinical Pearl:</strong> When transferring care at the hospital, do NOT just read your PCR — tell the story. The SBAR framework helps you organize your thinking so the receiving team gets a clear picture. After your verbal report, the PCR serves as the permanent legal record. Always ask: "Do you have any questions?" before leaving the patient's side.
             </div>
 
-            <h4>Transfer of Care â€” What to Tell the Receiving Facility</h4>
+            <h4>Transfer of Care — What to Tell the Receiving Facility</h4>
             <p>In addition to the SBAR elements, when you transfer care to the emergency department nurse or physician, you should also communicate:</p>
             <ul>
                 <li><strong>Patient's response to your treatments:</strong> Did the pain improve? Did oxygen help? Did the bleeding stop?</li>
                 <li><strong>Trend of vital signs:</strong> Is the patient getting better, worse, or staying the same?</li>
                 <li><strong>Changes in mental status</strong> during transport</li>
                 <li><strong>Anything the patient or family told you</strong> that is relevant to ongoing care (e.g., "The patient mentioned she had a fall last week and hit her head")</li>
-                <li><strong>What was done at the scene</strong> â€” position found, mechanism of injury, bystander interventions (e.g., "Bystander CPR was in progress for approximately 5 minutes before our arrival")</li>
+                <li><strong>What was done at the scene</strong> — position found, mechanism of injury, bystander interventions (e.g., "Bystander CPR was in progress for approximately 5 minutes before our arrival")</li>
                 <li><strong>Pertinent negatives:</strong> Things you checked that were normal (e.g., "No loss of consciousness," "No nausea or vomiting")</li>
                 <li><strong>Patient's belongings</strong> and where they are (e.g., "Her purse is in the jump bag at your desk")</li>
             </ul>
             <p>Once the handoff is complete, remain available for questions from the receiving team. Do not leave the patient alone until care has been officially transferred. If the patient's condition is unstable, provide a brief summary to the attending physician in addition to the nursing report.</p>
 
             <h4>Documentation as Communication</h4>
-            <p>The patient care report (PCR) is both a medical record and a legal document. It communicates your findings, reasoning, and actions to everyone who subsequently touches the patient. Write your PCR as if it will be read in court â€” because it may be. Use objective, factual language. Avoid opinions, judgments, or vague statements. If you did not document it, the legal presumption is that it did not happen.</p>
+            <p>The patient care report (PCR) is both a medical record and a legal document. It communicates your findings, reasoning, and actions to everyone who subsequently touches the patient. Write your PCR as if it will be read in court — because it may be. Use objective, factual language. Avoid opinions, judgments, or vague statements. If you did not document it, the legal presumption is that it did not happen.</p>
 
             <div class="highlight-box" style="background:#e8f4fd; border-left-color:#0d6efd;">
-                <strong>Verbal Report Example â€” Complete Handoff:</strong><br>
-                <em>"Dr. Chen, this is Emma from Medic 7. We're bringing in a 45-year-old male from a motor vehicle collision â€” T-boned on the driver's side at approximately 45 mph. He was the restrained driver with airbag deployment. He walked out of the vehicle with assistance at the scene. Background: no significant medical history, no medications. Assessment: He is alert and oriented, c/o pain in his left arm and left hip. He has an obvious deformity to his left forearm with distal pulses intact. Breath sounds are clear, abdomen is soft and non-tender. Vitals: BP 128/76, HR 98, RR 18, SpO2 99%. We splinted the left arm and placed a cervical collar due to the mechanism. He remains stable and his pain is 4/10 after splinting. We are recommending a trauma evaluation given the mechanism of injury. Do you have any questions?"</em>
+                <strong>Verbal Report Example — Complete Handoff:</strong><br>
+                <em>"Dr. Chen, this is Emma from Medic 7. We're bringing in a 45-year-old male from a motor vehicle collision — T-boned on the driver's side at approximately 45 mph. He was the restrained driver with airbag deployment. He walked out of the vehicle with assistance at the scene. Background: no significant medical history, no medications. Assessment: He is alert and oriented, c/o pain in his left arm and left hip. He has an obvious deformity to his left forearm with distal pulses intact. Breath sounds are clear, abdomen is soft and non-tender. Vitals: BP 128/76, HR 98, RR 18, SpO2 99%. We splinted the left arm and placed a cervical collar due to the mechanism. He remains stable and his pain is 4/10 after splinting. We are recommending a trauma evaluation given the mechanism of injury. Do you have any questions?"</em>
             </div>
 
             <h4>Special Communication Situations</h4>
-            <p><strong>Mass Casualty Incidents (MCIs):</strong> In an MCI, radio communication must be even more disciplined. Use the incident command system (ICS) terminology. Transmit only essential information â€” avoid unnecessary traffic on command channels. Use the situation status (SITSTAT) to report the number of patients, types of injuries, and resources needed.</p>
+            <p><strong>Mass Casualty Incidents (MCIs):</strong> In an MCI, radio communication must be even more disciplined. Use the incident command system (ICS) terminology. Transmit only essential information — avoid unnecessary traffic on command channels. Use the situation status (SITSTAT) to report the number of patients, types of injuries, and resources needed.</p>
             <p><strong>Interfacility Transfers:</strong> When transferring a patient from one hospital to another, you will often receive a nurse-to-nurse report AND need to communicate with the receiving facility during transport if the patient's condition changes. Carry all documentation, lab results, and imaging with you.</p>
-            <p><strong>Communicating with the Family:</strong> Family members are often more anxious than the patient. Briefly explain who you are, what you are doing, and where you are taking the patient. Allow them to say goodbye. If they want to follow the ambulance, provide directions to the hospital. Never dismiss family members â€” they are often your best source of information about the patient's history and baseline.</p>
+            <p><strong>Communicating with the Family:</strong> Family members are often more anxious than the patient. Briefly explain who you are, what you are doing, and where you are taking the patient. Allow them to say goodbye. If they want to follow the ambulance, provide directions to the hospital. Never dismiss family members — they are often your best source of information about the patient's history and baseline.</p>
         </div>`,
         flashcards: [
             {
@@ -1343,7 +1343,7 @@ window.CPG_DATA = {
             },
             {
                 question: "What are three therapeutic communication techniques an EMT should use with patients?",
-                answer: "(1) Active listening â€” giving full attention and using verbal affirmations. (2) Open-ended questions â€” questions that cannot be answered with yes/no. (3) Empathy â€” acknowledging the patient's feelings without judgment.",
+                answer: "(1) Active listening — giving full attention and using verbal affirmations. (2) Open-ended questions — questions that cannot be answered with yes/no. (3) Empathy — acknowledging the patient's feelings without judgment.",
                 category: "Therapeutic Communication"
             },
             {
@@ -1409,7 +1409,7 @@ window.CPG_DATA = {
                     "Speak only to the parent since the child is too young to understand",
                     "Get down to the child's eye level, use simple language, and explain what you are doing",
                     "Use medical terminology to sound professional and authoritative",
-                    "Ignore the child's tears â€” children need to learn that medical care is not optional"
+                    "Ignore the child's tears — children need to learn that medical care is not optional"
                 ],
                 correct: 1
             },
@@ -1427,7 +1427,7 @@ window.CPG_DATA = {
                 q: "Which of the following is TRUE regarding radio communication in EMS?",
                 options: [
                     "It is acceptable to use codes and abbreviations to shorten transmission time",
-                    "Transmissions should be as brief as possible â€” typically under 30 seconds",
+                    "Transmissions should be as brief as possible — typically under 30 seconds",
                     "Patient names should be included so the hospital can prepare the correct chart",
                     "Using profanity is acceptable in stressful situations"
                 ],
@@ -1449,7 +1449,7 @@ window.CPG_DATA = {
                     "Speak loudly into the patient's ear",
                     "Face the patient so they can read lips, write down key questions, and use gestures",
                     "Use a family member to interpret everything",
-                    "Speak normally â€” hearing-impaired patients are used to lip reading"
+                    "Speak normally — hearing-impaired patients are used to lip reading"
                 ],
                 correct: 1
             },
@@ -1476,7 +1476,7 @@ window.CPG_DATA = {
             {
                 q: "HARD: An EMT is handing off a patient with a suspected stroke to the emergency department nurse. The EMT says, 'Patient is a 68-year-old female with left-sided weakness starting two hours ago. She has a history of atrial fibrillation. Her NIHSS is 12 and she meets stroke alert criteria. We need a CT scan and stroke team activation.' This handoff exemplifies which SBAR component being used across multiple elements?",
                 options: [
-                    "S â€” Situation (what's happening now) and R â€” Recommendation (what is needed)",
+                    "S — Situation (what's happening now) and R — Recommendation (what is needed)",
                     "Only Assessment",
                     "Only Background",
                     "Situation only"
@@ -1486,7 +1486,7 @@ window.CPG_DATA = {
         ],
         critical: [
             {
-                scenario: "You and your partner are transporting a 58-year-old male with acute chest pain to the regional cardiac center. He is on 4 LPM oxygen, has received aspirin, and his pain has decreased from 9/10 to 4/10 after nitroglycerin. En route, his condition deteriorates â€” his blood pressure drops from 128/78 to 82/50, his heart rate goes from 94 to 46, and he becomes diaphoretic and confused. Your partner is driving. You need to call the hospital to update them, but you also need to initiate the protocol for hypotension (fluid bolus, calling medical direction for further orders). The patient is becoming restless and trying to pull off his oxygen mask. You are the only EMT in the back of the ambulance.",
+                scenario: "You and your partner are transporting a 58-year-old male with acute chest pain to the regional cardiac center. He is on 4 LPM oxygen, has received aspirin, and his pain has decreased from 9/10 to 4/10 after nitroglycerin. En route, his condition deteriorates — his blood pressure drops from 128/78 to 82/50, his heart rate goes from 94 to 46, and he becomes diaphoretic and confused. Your partner is driving. You need to call the hospital to update them, but you also need to initiate the protocol for hypotension (fluid bolus, calling medical direction for further orders). The patient is becoming restless and trying to pull off his oxygen mask. You are the only EMT in the back of the ambulance.",
                 question: "How should you prioritize and manage your communication with the hospital given this rapidly changing situation?",
                 options: [
                     "Wait until you arrive at the hospital to give the full report since it's only a few more minutes",
@@ -1497,10 +1497,10 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                scenario: "You are called to a home for a 72-year-old female with acute onset of confusion. Her husband meets you at the door and says in a heavy accent, 'She doesn't know where she is. She was fine this morning, then after lunch she started talking nonsense.' The patient is sitting on the couch, agitated, pulling at her clothes, and speaking rapidly in what sounds like a mix of English and another language you do not recognize. Her husband explains that her primary language is Mandarin Chinese â€” English is her second language and she uses it less when she is stressed or confused. The patient clearly needs transport for evaluation of a potential stroke or metabolic emergency, but she is terrified and keeps saying, 'No hospital, no hospital.' She has no phone or tablet to access an interpreter service, and the husband's English is functional but limited for medical concepts. Your protocols require you to obtain a baseline neurological assessment including orientation questions and a Cincinnati Stroke Scale, but you cannot communicate effectively enough to complete it.",
+                scenario: "You are called to a home for a 72-year-old female with acute onset of confusion. Her husband meets you at the door and says in a heavy accent, 'She doesn't know where she is. She was fine this morning, then after lunch she started talking nonsense.' The patient is sitting on the couch, agitated, pulling at her clothes, and speaking rapidly in what sounds like a mix of English and another language you do not recognize. Her husband explains that her primary language is Mandarin Chinese — English is her second language and she uses it less when she is stressed or confused. The patient clearly needs transport for evaluation of a potential stroke or metabolic emergency, but she is terrified and keeps saying, 'No hospital, no hospital.' She has no phone or tablet to access an interpreter service, and the husband's English is functional but limited for medical concepts. Your protocols require you to obtain a baseline neurological assessment including orientation questions and a Cincinnati Stroke Scale, but you cannot communicate effectively enough to complete it.",
                 question: "How should the EMT manage this communication barrier to ensure an adequate assessment and safe transport?",
                 options: [
-                    "Use the husband as an interpreter since he is the only available resource â€” ask him to translate your questions and the patient's responses",
+                    "Use the husband as an interpreter since he is the only available resource — ask him to translate your questions and the patient's responses",
                     "Activate a language interpreter service by phone (most dispatch centers have access to over-the-phone interpretation in hundreds of languages). While waiting, use gestures, a translation app on your phone, and simple English words to assess the patient. The husband can assist with basic translation but explain that a professional interpreter is needed for medical accuracy. Transport and continue using the interpreter service en route",
                     "Skip the detailed neurological assessment and transport immediately since communication is impossible",
                     "Do not transport until a Mandarin-speaking paramedic can be dispatched from another station"
@@ -1508,10 +1508,10 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                scenario: "You and your partner respond to a motor vehicle collision. A 35-year-old female was the restrained driver of a car that was rear-ended at moderate speed. She initially refused EMS at the scene, stating she was 'fine.' Her airbag did not deploy, and she got out of the car on her own. The police officer on scene convinced her to be evaluated, and she now reluctantly agrees to assessment. Your partner is obtaining vital signs while you ask questions. A bystander approaches you and says, 'I saw the whole thing â€” she was texting just before the crash. I told the police already.' When you ask the patient what happened, she says, 'I looked down to change the radio station for one second, and then I got hit.' You note she has a small bruise on her forehead from hitting the steering wheel and some mild midline cervical spine tenderness. She is alert and oriented with no distracting injuries. You want to place a cervical collar and transport for evaluation, but the patient says, 'Look, I agreed to let you check me, but I'm not wearing that collar and I'm definitely not going to the hospital. My kids are at home with a babysitter and I have to pick them up in an hour.'",
+                scenario: "You and your partner respond to a motor vehicle collision. A 35-year-old female was the restrained driver of a car that was rear-ended at moderate speed. She initially refused EMS at the scene, stating she was 'fine.' Her airbag did not deploy, and she got out of the car on her own. The police officer on scene convinced her to be evaluated, and she now reluctantly agrees to assessment. Your partner is obtaining vital signs while you ask questions. A bystander approaches you and says, 'I saw the whole thing — she was texting just before the crash. I told the police already.' When you ask the patient what happened, she says, 'I looked down to change the radio station for one second, and then I got hit.' You note she has a small bruise on her forehead from hitting the steering wheel and some mild midline cervical spine tenderness. She is alert and oriented with no distracting injuries. You want to place a cervical collar and transport for evaluation, but the patient says, 'Look, I agreed to let you check me, but I'm not wearing that collar and I'm definitely not going to the hospital. My kids are at home with a babysitter and I have to pick them up in an hour.'",
                 question: "Given the mechanism of injury, the distracting environment of the scene, the conflicting information about the crash (texting vs. radio), and the patient's refusal to be collared or transported, how should you manage communication with this patient to achieve the best outcome?",
                 options: [
-                    "Tell the patient she has no choice â€” she was in a car crash and needs to be evaluated at the hospital. Apply the collar by explaining it is for her safety",
+                    "Tell the patient she has no choice — she was in a car crash and needs to be evaluated at the hospital. Apply the collar by explaining it is for her safety",
                     "Use therapeutic communication: explain your specific concerns (the bruise on her forehead suggests flexion-extension of the neck, and the midline tenderness could indicate a spine injury). Explain the risks of refusing in concrete terms ('If there is an injury to your spine and you move the wrong way, you could become paralyzed'). Offer to contact the babysitter on her behalf. If she still refuses, involve the police officer as a witness, document thoroughly, and have her sign a refusal",
                     "Agree not to apply the collar since she has no neurological symptoms and transport her without it",
                     "Call medical direction and request that the patient be placed on an involuntary hold since refusing a collar is an unsafe decision"
@@ -1527,31 +1527,31 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#file-text"/></svg> Documentation & the Patient Care Report</h3>
 
             <h4>The Purpose of the PCR</h4>
-            <p>The Patient Care Report (PCR) is the single most important document you will create as an EMT. It serves five critical functions. First, <strong>continuity of care</strong> â€” the PCR communicates your assessment findings, interventions, and the patient's response to care to hospital staff who take over treatment. A well-written PCR ensures the emergency department knows exactly what happened in the prehospital setting. Second, the PCR is a <strong>legal document</strong>. It becomes part of the patient's permanent medical record and can be subpoenaed in court proceedings. Third, the PCR supports <strong>billing and reimbursement</strong> â€” ambulance services rely on accurate documentation to justify transport level (ALS vs. BLS) and interventions performed. Fourth, PCR data contributes to <strong>EMS research</strong>, helping identify trends, improve protocols, and advance prehospital medicine. Fifth, PCRs drive <strong>quality improvement (QI)</strong> â€” agencies review PCRs to evaluate crew performance, protocol compliance, and identify areas for system-wide improvement.</p>
+            <p>The Patient Care Report (PCR) is the single most important document you will create as an EMT. It serves five critical functions. First, <strong>continuity of care</strong> — the PCR communicates your assessment findings, interventions, and the patient's response to care to hospital staff who take over treatment. A well-written PCR ensures the emergency department knows exactly what happened in the prehospital setting. Second, the PCR is a <strong>legal document</strong>. It becomes part of the patient's permanent medical record and can be subpoenaed in court proceedings. Third, the PCR supports <strong>billing and reimbursement</strong> — ambulance services rely on accurate documentation to justify transport level (ALS vs. BLS) and interventions performed. Fourth, PCR data contributes to <strong>EMS research</strong>, helping identify trends, improve protocols, and advance prehospital medicine. Fifth, PCRs drive <strong>quality improvement (QI)</strong> — agencies review PCRs to evaluate crew performance, protocol compliance, and identify areas for system-wide improvement.</p>
 
             <h4>The PCR as a Legal Document</h4>
-            <p>In the legal realm, the PCR carries enormous weight. Attorneys, judges, and juries rely on your documentation to reconstruct what happened during an emergency call. The fundamental principle of EMS documentation is simple but absolute: <strong>"If it wasn't documented, it wasn't done."</strong> If you administered oxygen, applied a splint, or performed CPR but failed to document it, in the eyes of the court, that care never occurred. Conversely, if you documented an assessment finding or intervention that did not actually happen, that constitutes falsification â€” a serious legal and ethical violation that can result in loss of certification, termination, and criminal charges. Never alter a PCR after it has been submitted. If an error is discovered, follow your agency's amendment policy: draw a single line through the error (do not use white-out or erase), initial and date it, and add a corrected entry or a late-entry supplement explaining the revision.</p>
+            <p>In the legal realm, the PCR carries enormous weight. Attorneys, judges, and juries rely on your documentation to reconstruct what happened during an emergency call. The fundamental principle of EMS documentation is simple but absolute: <strong>"If it wasn't documented, it wasn't done."</strong> If you administered oxygen, applied a splint, or performed CPR but failed to document it, in the eyes of the court, that care never occurred. Conversely, if you documented an assessment finding or intervention that did not actually happen, that constitutes falsification — a serious legal and ethical violation that can result in loss of certification, termination, and criminal charges. Never alter a PCR after it has been submitted. If an error is discovered, follow your agency's amendment policy: draw a single line through the error (do not use white-out or erase), initial and date it, and add a corrected entry or a late-entry supplement explaining the revision.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                <strong>Remember:</strong> The PCR is not just paperwork â€” it is your professional testimony. Write it as if you will have to defend every word in a deposition. Because someday, you might.
+                <strong>Remember:</strong> The PCR is not just paperwork — it is your professional testimony. Write it as if you will have to defend every word in a deposition. Because someday, you might.
             </div>
 
             <h4>Components of the PCR</h4>
             <p>A complete PCR includes the following elements: dispatch and response information (time of call, arrival, transport, transfer of care); patient demographics (name, age, date of birth, gender); the chief complaint in the patient's own words (e.g., "My chest hurts"); the history of present illness or mechanism of injury; past medical history, medications, and allergies; baseline and serial vital signs (blood pressure, pulse, respirations, SpO2, GCS); detailed physical exam findings; interventions performed and the patient's response; transport information (mode of transport, destination, position during transport); and a narrative that tells a coherent story from dispatch to transfer of care.</p>
 
             <h4>Narrative Formats</h4>
-            <p>Two common formats organize PCR narratives. The <strong>SOAP</strong> format divides the narrative into <strong>S</strong>ubjective (the patient's chief complaint and history in their own words), <strong>O</strong>bjective (your physical findings, vital signs, and assessment data), <strong>A</strong>ssessment (your impression or differential diagnoses), and <strong>P</strong>lan (treatment provided and transport decisions). The <strong>CHART</strong> format uses <strong>C</strong>hief complaint, <strong>H</strong>istory, <strong>A</strong>ssessment, <strong>R</strong>x (treatment), and <strong>T</strong>ransport. Some services use a straight chronological narrative. Regardless of format, your narrative must be objective, accurate, complete, and legible (or typed, in the case of ePCR). Avoid subjective language like "patient appeared intoxicated" â€” instead document specific findings: "patient smelled of alcohol, speech was slurred, and he was unable to walk without assistance."</p>
+            <p>Two common formats organize PCR narratives. The <strong>SOAP</strong> format divides the narrative into <strong>S</strong>ubjective (the patient's chief complaint and history in their own words), <strong>O</strong>bjective (your physical findings, vital signs, and assessment data), <strong>A</strong>ssessment (your impression or differential diagnoses), and <strong>P</strong>lan (treatment provided and transport decisions). The <strong>CHART</strong> format uses <strong>C</strong>hief complaint, <strong>H</strong>istory, <strong>A</strong>ssessment, <strong>R</strong>x (treatment), and <strong>T</strong>ransport. Some services use a straight chronological narrative. Regardless of format, your narrative must be objective, accurate, complete, and legible (or typed, in the case of ePCR). Avoid subjective language like "patient appeared intoxicated" — instead document specific findings: "patient smelled of alcohol, speech was slurred, and he was unable to walk without assistance."</p>
 
             <h4>Special Documentation Challenges</h4>
             <p>Several situations require careful documentation. When a patient <strong>refuses care or transport</strong>, document their competence (orientation to person, place, time, and event), the specific risks explained (AMA form), and the patient's signature. If the patient refuses to sign, document that fact. For <strong>unusual incidents</strong> (combative patient, equipment failure, MCI), provide detailed objective documentation and complete any supplemental incident reports required by your agency. When caring for <strong>multiple patients</strong>, ensure each patient has a separate PCR with unique identifying information and that treatments are not confused between patients.</p>
 
             <h4>Electronic vs. Written PCR</h4>
-            <p>Most EMS systems now use <strong>electronic PCR (ePCR)</strong> platforms. ePCRs offer advantages: they enforce mandatory fields (reducing omissions), improve legibility, allow direct data upload for QI, and integrate with hospital records. However, the same documentation standards apply. Always review your ePCR entry for completeness before finalizing. For written PCRs, use black ink (photocopies best), print legibly, and never leave blank fields â€” if information was not obtained, document "not obtained" or "unable to obtain." Remember the minimum data set required by your state and local protocols always includes patient demographics, chief complaint, assessment findings, vital signs, treatment provided, and transport information.</p>
+            <p>Most EMS systems now use <strong>electronic PCR (ePCR)</strong> platforms. ePCRs offer advantages: they enforce mandatory fields (reducing omissions), improve legibility, allow direct data upload for QI, and integrate with hospital records. However, the same documentation standards apply. Always review your ePCR entry for completeness before finalizing. For written PCRs, use black ink (photocopies best), print legibly, and never leave blank fields — if information was not obtained, document "not obtained" or "unable to obtain." Remember the minimum data set required by your state and local protocols always includes patient demographics, chief complaint, assessment findings, vital signs, treatment provided, and transport information.</p>
         </div>`,
         flashcards: [
             { question: "What does PCR stand for?", answer: "Patient Care Report", category: "Documentation Basics" },
             { question: "What is the legal maxim regarding documentation in EMS?", answer: "\"If it wasn't documented, it wasn't done.\"", category: "Legal Issues" },
-            { question: "What does the 'S' in SOAP narrative format stand for?", answer: "Subjective â€” the patient's chief complaint and history in their own words.", category: "Narrative Formats" },
+            { question: "What does the 'S' in SOAP narrative format stand for?", answer: "Subjective — the patient's chief complaint and history in their own words.", category: "Narrative Formats" },
             { question: "How should you correct an error on a written PCR?", answer: "Draw a single line through the error, initial and date it, then write the correct information. Never use white-out or erase.", category: "Legal Issues" },
             { question: "What are the five functions of the PCR?", answer: "Continuity of care, legal document, billing/reimbursement, research data, and quality improvement.", category: "Documentation Basics" },
             { question: "What does CHART stand for in narrative documentation?", answer: "Chief complaint, History, Assessment, Rx (treatment), Transport.", category: "Narrative Formats" },
@@ -1561,7 +1561,7 @@ window.CPG_DATA = {
         quiz: [
             { q: "Which of the following is NOT a function of the Patient Care Report?", options: ["Continuity of care", "Legal documentation", "Determining hospital discharge diagnosis", "Quality improvement"], correct: 2 },
             { q: "A PCR has been subpoenaed for a lawsuit. Which principle should guide your documentation practice?", options: ["It is acceptable to omit minor details", "If it wasn't documented, it wasn't done", "Only ALS interventions need to be documented", "The PCR is not admissible in court"], correct: 1 },
-            { q: "In the SOAP narrative format, what does the 'A' represent?", options: ["Actions taken", "Assessment â€” your impression of the patient's condition", "Administrative data", "Arrival time"], correct: 1 },
+            { q: "In the SOAP narrative format, what does the 'A' represent?", options: ["Actions taken", "Assessment — your impression of the patient's condition", "Administrative data", "Arrival time"], correct: 1 },
             { q: "You notice an error in a written PCR you just completed. How should you correct it?", options: ["Use white-out and rewrite", "Erase the error and write over it", "Draw a single line through the error, initial and date it", "Rewrite the entire PCR and discard the original"], correct: 2 },
             { q: "A patient is alert and oriented but refuses transport after a minor fall. What is the MOST important element to document?", options: ["That the patient was being difficult", "That the patient understood the risks and was competent to refuse", "Your opinion that the patient needed transport", "That law enforcement was contacted"], correct: 1 },
             { q: "Which statement demonstrates objective documentation?", options: ["The patient was completely intoxicated", "The patient is a frequent flyer who abuses the system", "The patient had slurred speech and a strong odor of ethanol on his breath", "The patient was a drunk mess"], correct: 2 },
@@ -1570,11 +1570,11 @@ window.CPG_DATA = {
             { q: "Which field should be included in the minimum data set of every PCR?", options: ["Patient's insurance information", "Patient's home address", "Serial vital signs", "Next of kin contact information"], correct: 2, difficulty: "hard" },
             { q: "You are documenting a call involving a combative patient who required physical restraint. What should be included in your documentation?", options: ["Only that the patient was restrained", "Detailed justification, type of restraints applied, duration, and serial assessment of neurovascular status", "A statement that the patient was dangerous", "The patient's criminal history"], correct: 1 },
             { q: "What does the 'P' in CHART narrative format stand for?", options: ["Patient history", "Plan of care", "Primary impression", "Protocol used"], correct: 0, difficulty: "hard" },
-            { q: "A crew member asks if they can document a treatment they did not perform because 'it sounds better for the record.' What is your BEST response?", options: ["Agree, because the hospital will not check", "Refuse â€” falsifying a PCR is illegal and unethical", "Document it but note it was not performed", "Document it only if they were too busy to perform it"], correct: 1, difficulty: "hard" }
+            { q: "A crew member asks if they can document a treatment they did not perform because 'it sounds better for the record.' What is your BEST response?", options: ["Agree, because the hospital will not check", "Refuse — falsifying a PCR is illegal and unethical", "Document it but note it was not performed", "Document it only if they were too busy to perform it"], correct: 1, difficulty: "hard" }
         ],
         critical: [
             {
-                scenario: "You and your partner respond to a 72-year-old male with chest pain. The patient is alert, oriented, and has a history of hypertension and diabetes. You perform a 12-lead ECG showing ST-elevation in leads II, III, and aVF. You administer oxygen, aspirin, and nitroglycerin en route to the hospital, with relief of pain from 8/10 to 4/10. Upon arrival at the ED, you give a verbal report to the nurse and transfer care. Later, back at the station, your partner starts writing the PCR and says, 'I don't remember the exact vitals from en route â€” I'll just make up something close enough.'",
+                scenario: "You and your partner respond to a 72-year-old male with chest pain. The patient is alert, oriented, and has a history of hypertension and diabetes. You perform a 12-lead ECG showing ST-elevation in leads II, III, and aVF. You administer oxygen, aspirin, and nitroglycerin en route to the hospital, with relief of pain from 8/10 to 4/10. Upon arrival at the ED, you give a verbal report to the nurse and transfer care. Later, back at the station, your partner starts writing the PCR and says, 'I don't remember the exact vitals from en route — I'll just make up something close enough.'",
                 question: "What is the correct course of action regarding the missing vital signs?",
                 options: [
                     "Allow your partner to estimate the vitals since you both agree they were 'normal'",
@@ -1585,7 +1585,7 @@ window.CPG_DATA = {
                 correct: 2
             },
             {
-                scenario: "You are called to a single-vehicle MVC. The driver, a 34-year-old female, is ambulatory at the scene with minor abrasions and complains of neck pain. She refuses cervical collar and insists she is fine. She is alert and oriented Ã— 3. She refuses transport and signs an AMA form. Two days later, you learn that the same patient was transported by another ambulance after developing severe neck pain and was diagnosed with a C5 fracture. Your supervisor asks to review your PCR for the original call.",
+                scenario: "You are called to a single-vehicle MVC. The driver, a 34-year-old female, is ambulatory at the scene with minor abrasions and complains of neck pain. She refuses cervical collar and insists she is fine. She is alert and oriented × 3. She refuses transport and signs an AMA form. Two days later, you learn that the same patient was transported by another ambulance after developing severe neck pain and was diagnosed with a C5 fracture. Your supervisor asks to review your PCR for the original call.",
                 question: "What element of documentation will be MOST critical in defending your care on the original call?",
                 options: [
                     "That you notified law enforcement of the refusal",
@@ -1684,7 +1684,7 @@ window.CPG_DATA = {
             </table>
 
             <h4>Common EMS Abbreviations</h4>
-            <p>You will encounter abbreviations daily in EMS. Common ones include: <strong>VS</strong> (vital signs), <strong>BP</strong> (blood pressure), <strong>HR</strong> (heart rate), <strong>RR</strong> (respiratory rate), <strong>SpO2</strong> (oxygen saturation), <strong>ETCO2</strong> (end-tidal carbon dioxide), <strong>LOC</strong> (level of consciousness), <strong>GCS</strong> (Glasgow Coma Scale), <strong>AMS</strong> (altered mental status), <strong>SOB</strong> (shortness of breath), <strong>CP</strong> (chest pain), <strong>MVC</strong> (motor vehicle collision), <strong>MVA</strong> (motor vehicle accident), <strong>ETOH</strong> (alcohol), <strong>NKDA</strong> (no known drug allergies), <strong>POC</strong> (point of care), and <strong>AMS</strong> (altered mental status). While abbreviations save time, use them cautiously â€” some agencies maintain a "do not abbreviate" list (e.g., never abbreviate "right" and "left" as they can be misread). When in doubt, write the full term.</p>
+            <p>You will encounter abbreviations daily in EMS. Common ones include: <strong>VS</strong> (vital signs), <strong>BP</strong> (blood pressure), <strong>HR</strong> (heart rate), <strong>RR</strong> (respiratory rate), <strong>SpO2</strong> (oxygen saturation), <strong>ETCO2</strong> (end-tidal carbon dioxide), <strong>LOC</strong> (level of consciousness), <strong>GCS</strong> (Glasgow Coma Scale), <strong>AMS</strong> (altered mental status), <strong>SOB</strong> (shortness of breath), <strong>CP</strong> (chest pain), <strong>MVC</strong> (motor vehicle collision), <strong>MVA</strong> (motor vehicle accident), <strong>ETOH</strong> (alcohol), <strong>NKDA</strong> (no known drug allergies), <strong>POC</strong> (point of care), and <strong>AMS</strong> (altered mental status). While abbreviations save time, use them cautiously — some agencies maintain a "do not abbreviate" list (e.g., never abbreviate "right" and "left" as they can be misread). When in doubt, write the full term.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Caution:</strong> Never use medical terminology when speaking directly to patients or their families. A patient who hears "you have dyspnea" may not understand they are being told they have difficulty breathing. Say "you are having trouble breathing." Clear communication builds trust and ensures informed decision-making.
@@ -1694,17 +1694,17 @@ window.CPG_DATA = {
             <p>Anatomical directional terms describe the position of one body part relative to another. <strong>Anterior</strong> (front) vs. <strong>posterior</strong> (back); <strong>superior</strong> (toward the head) vs. <strong>inferior</strong> (toward the feet); <strong>medial</strong> (toward the midline) vs. <strong>lateral</strong> (away from midline); <strong>proximal</strong> (closer to the trunk) vs. <strong>distal</strong> (farther from the trunk); <strong>supine</strong> (lying face up); <strong>prone</strong> (lying face down); <strong>Trendelenburg</strong> (head lower than feet); and <strong>Fowler's</strong> (sitting upright at 45-90 degrees). These terms allow precise communication about patient positioning and injury location.</p>
 
             <h4>Anatomic Planes</h4>
-            <p>The body is divided by three major planes. The <strong>sagittal plane</strong> divides the body vertically into left and right portions â€” the midsagittal plane runs exactly through the midline. The <strong>transverse (axial) plane</strong> divides the body horizontally into superior (upper) and inferior (lower) portions. The <strong>frontal (coronal) plane</strong> divides the body vertically into anterior (front) and posterior (back) portions. Understanding these planes helps you accurately describe injury locations and relate findings during radio reports to the hospital. For example, "a stab wound to the left anterior chest at the midclavicular line, approximately the 4th intercostal space" paints a precise picture of the injury.</p>
+            <p>The body is divided by three major planes. The <strong>sagittal plane</strong> divides the body vertically into left and right portions — the midsagittal plane runs exactly through the midline. The <strong>transverse (axial) plane</strong> divides the body horizontally into superior (upper) and inferior (lower) portions. The <strong>frontal (coronal) plane</strong> divides the body vertically into anterior (front) and posterior (back) portions. Understanding these planes helps you accurately describe injury locations and relate findings during radio reports to the hospital. For example, "a stab wound to the left anterior chest at the midclavicular line, approximately the 4th intercostal space" paints a precise picture of the injury.</p>
         </div>`,
         flashcards: [
             { question: "What three components typically make up a medical term?", answer: "Prefix, root word, and suffix.", category: "Word Building" },
-            { question: "What does the prefix 'tachy-' mean?", answer: "Fast â€” as in tachycardia (fast heart rate) or tachypnea (fast respiratory rate).", category: "Prefixes" },
-            { question: "What does the suffix '-ectomy' mean?", answer: "Surgical removal â€” as in appendectomy (removal of the appendix).", category: "Suffixes" },
-            { question: "What does 'cardio-' refer to?", answer: "The heart â€” as in cardiac, cardiology, or cardiomegaly.", category: "Root Words" },
+            { question: "What does the prefix 'tachy-' mean?", answer: "Fast — as in tachycardia (fast heart rate) or tachypnea (fast respiratory rate).", category: "Prefixes" },
+            { question: "What does the suffix '-ectomy' mean?", answer: "Surgical removal — as in appendectomy (removal of the appendix).", category: "Suffixes" },
+            { question: "What does 'cardio-' refer to?", answer: "The heart — as in cardiac, cardiology, or cardiomegaly.", category: "Root Words" },
             { question: "What is the difference between '-otomy' and '-ostomy'?", answer: " -otomy means cutting into (incision), while -ostomy means creating an opening (stoma).", category: "Suffixes" },
-            { question: "What does the directional term 'proximal' mean?", answer: "Closer to the trunk or point of attachment â€” the elbow is proximal to the wrist.", category: "Directional Terms" },
+            { question: "What does the directional term 'proximal' mean?", answer: "Closer to the trunk or point of attachment — the elbow is proximal to the wrist.", category: "Directional Terms" },
             { question: "What plane divides the body into front and back portions?", answer: "The frontal (coronal) plane.", category: "Anatomic Planes" },
-            { question: "What does 'dys-' mean as a prefix?", answer: "Abnormal, difficult, or painful â€” as in dyspnea (difficulty breathing) or dysphagia (difficulty swallowing).", category: "Prefixes" }
+            { question: "What does 'dys-' mean as a prefix?", answer: "Abnormal, difficult, or painful — as in dyspnea (difficulty breathing) or dysphagia (difficulty swallowing).", category: "Prefixes" }
         ],
         quiz: [
             { q: "What does the prefix 'brady-' indicate?", options: ["Fast", "Slow", "Painful", "Without"], correct: 1 },
@@ -1722,7 +1722,7 @@ window.CPG_DATA = {
         ],
         critical: [
             {
-                scenario: "You are called to a nursing home for an 82-year-old female with altered mental status. The nurse gives you a report using extensive medical terminology: 'The patient has had a two-day history of dysuria, pyrexia to 101.2\u00b0F, andå¥¹çŽ°åœ¨ is exhibiting acute confusion. She has a past medical history of CKD stage 3, CHF, and DM type 2. Her med list includes Lasix, metformin, and lisinopril.' Your partner, a new EMT, looks confused and whispers, 'I didn't understand half of that.'",
+                scenario: "You are called to a nursing home for an 82-year-old female with altered mental status. The nurse gives you a report using extensive medical terminology: 'The patient has had a two-day history of dysuria, pyrexia to 101.2\u00b0F, and她现在 is exhibiting acute confusion. She has a past medical history of CKD stage 3, CHF, and DM type 2. Her med list includes Lasix, metformin, and lisinopril.' Your partner, a new EMT, looks confused and whispers, 'I didn't understand half of that.'",
                 question: "What is the most appropriate action?",
                 options: [
                     "Nod and pretend you understood, then look it up later",
@@ -1763,31 +1763,31 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#users"/></svg> Lifting, Moving & Positioning</h3>
 
             <h4>Body Mechanics: The Foundation of Safe Lifting</h4>
-            <p>EMTs perform physically demanding work every shift. Lifting patients, carrying equipment, and maneuvering stretchers in tight spaces puts tremendous strain on the body â€” particularly the lower back. Proper <strong>body mechanics</strong> are essential to prevent career-ending injuries. The fundamental principles are simple. Always <strong>lift with your legs, not your back</strong> â€” your leg muscles are the largest and strongest in the body. <strong>Keep the weight close to your body</strong>; holding a load at arm's length increases the force on your spine by up to ten times. <strong>Maintain a stable, wide base of support</strong> with your feet shoulder-width apart. <strong>Avoid twisting</strong> â€” pivot with your whole body instead. Use the <strong>power lift</strong> when lifting from a squatting position: keep your back straight, your arms close to your body, and your feet flat on the ground. Communicate clearly with your partner â€” call out "ready, lift" before moving so you move together. Never attempt to lift more than you and your partner can safely handle; call for additional help.</p>
+            <p>EMTs perform physically demanding work every shift. Lifting patients, carrying equipment, and maneuvering stretchers in tight spaces puts tremendous strain on the body — particularly the lower back. Proper <strong>body mechanics</strong> are essential to prevent career-ending injuries. The fundamental principles are simple. Always <strong>lift with your legs, not your back</strong> — your leg muscles are the largest and strongest in the body. <strong>Keep the weight close to your body</strong>; holding a load at arm's length increases the force on your spine by up to ten times. <strong>Maintain a stable, wide base of support</strong> with your feet shoulder-width apart. <strong>Avoid twisting</strong> — pivot with your whole body instead. Use the <strong>power lift</strong> when lifting from a squatting position: keep your back straight, your arms close to your body, and your feet flat on the ground. Communicate clearly with your partner — call out "ready, lift" before moving so you move together. Never attempt to lift more than you and your partner can safely handle; call for additional help.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Injury Prevention:</strong> Back injuries are the most common cause of early retirement in EMS. Every time you lift a patient, ask yourself: Is my back straight? Are my feet shoulder-width apart? Is the weight close? Am I about to twist? If the answer to any of these is "no," adjust your position before lifting.
             </div>
 
             <h4>Emergency Moves</h4>
-            <p>Emergency moves are performed when there is an immediate threat to the patient or the rescuer â€” fire, explosion risk, hazardous materials, or an unsafe scene that requires rapid evacuation. In these situations, <strong>spinal precautions are temporarily abandoned</strong> to save a life. Techniques include the <strong>clothes drag</strong> (grasp the patient's clothing behind the neck and pull them to safety), the <strong>blanket drag</strong> (roll the patient onto a blanket and drag the blanket), the <strong>firefighter's carry</strong> (drape the patient over your shoulder â€” only for smaller patients), the <strong>extremity lift</strong> (one rescuer lifts under the arms, the other lifts at the knees), and the <strong>direct ground lift</strong> (both rescuers kneel, slide arms under the patient, and lift together). Use emergency moves only when the benefit of immediate removal outweighs the risk of aggravating potential spinal injuries.</p>
+            <p>Emergency moves are performed when there is an immediate threat to the patient or the rescuer — fire, explosion risk, hazardous materials, or an unsafe scene that requires rapid evacuation. In these situations, <strong>spinal precautions are temporarily abandoned</strong> to save a life. Techniques include the <strong>clothes drag</strong> (grasp the patient's clothing behind the neck and pull them to safety), the <strong>blanket drag</strong> (roll the patient onto a blanket and drag the blanket), the <strong>firefighter's carry</strong> (drape the patient over your shoulder — only for smaller patients), the <strong>extremity lift</strong> (one rescuer lifts under the arms, the other lifts at the knees), and the <strong>direct ground lift</strong> (both rescuers kneel, slide arms under the patient, and lift together). Use emergency moves only when the benefit of immediate removal outweighs the risk of aggravating potential spinal injuries.</p>
 
             <h4>Urgent Moves</h4>
             <p>Urgent moves are indicated when the patient has a serious condition but there is no immediate environmental danger. The most common urgent move is <strong>rapid extrication</strong> from a vehicle. This technique is used when a patient has a critical condition (e.g., cardiac arrest, severe uncontrolled hemorrhage, airway compromise) and needs rapid transport, but the mechanism of injury suggests possible spinal injury. One rescuer stabilizes the head and cervical spine while another applies a cervical collar, the backboard is positioned, and the patient is log-rolled onto the board and removed from the vehicle in under one minute. The key difference between emergency and urgent moves: in emergency moves, you do not take spinal precautions; in urgent moves, you maintain manual spinal stabilization throughout.</p>
 
             <h4>Non-Urgent Moves</h4>
-            <p>When no threat exists, non-urgent moves allow for careful, controlled patient handling with full spinal precautions when indicated. Common devices include the <strong>wheeled stretcher (ambulance cot)</strong>, which is used for the majority of transports and should always be secured with safety straps. The <strong>stair chair</strong> is designed for moving patients down stairs or in narrow hallways â€” it requires at least two EMTs, one above and one below, and a track system or stair glide for safety. The <strong>scoop stretcher</strong> splits into two halves that are placed under the patient from each side, minimizing movement; it is excellent for patients with suspected spinal injuries found in awkward positions. The <strong>long spine board</strong> provides full spinal immobilization and is used in conjunction with a cervical collar and head immobilization. The <strong>basket stretcher (Stokes basket)</strong> is used for technical rescues in rough terrain. Always secure the patient with straps at the chest, hips, and knees, and pad all voids for comfort and stability.</p>
+            <p>When no threat exists, non-urgent moves allow for careful, controlled patient handling with full spinal precautions when indicated. Common devices include the <strong>wheeled stretcher (ambulance cot)</strong>, which is used for the majority of transports and should always be secured with safety straps. The <strong>stair chair</strong> is designed for moving patients down stairs or in narrow hallways — it requires at least two EMTs, one above and one below, and a track system or stair glide for safety. The <strong>scoop stretcher</strong> splits into two halves that are placed under the patient from each side, minimizing movement; it is excellent for patients with suspected spinal injuries found in awkward positions. The <strong>long spine board</strong> provides full spinal immobilization and is used in conjunction with a cervical collar and head immobilization. The <strong>basket stretcher (Stokes basket)</strong> is used for technical rescues in rough terrain. Always secure the patient with straps at the chest, hips, and knees, and pad all voids for comfort and stability.</p>
 
             <h4>Patient Positioning</h4>
-            <p>Positioning the patient correctly is a critical intervention. <strong>Supine</strong> (flat on the back) is the standard position for most assessments and for CPR. <strong>Fowler's position</strong> (sitting upright at 45-90 degrees) is used for patients with respiratory distress â€” it maximizes diaphragmatic excursion and improves oxygenation. <strong>Semi-Fowler's</strong> (30-45 degrees) is a compromise for patients who are short of breath but cannot sit fully upright. The <strong>left lateral recumbent (recovery position)</strong> is used for unconscious patients with a pulse who are breathing adequately â€” it allows fluids to drain from the mouth and prevents airway obstruction by the tongue. <strong>Trendelenburg</strong> (head lower than feet, approximately 15-30 degrees) was historically used for shock but current evidence no longer supports its routine use. The <strong>shock position</strong> (supine with legs elevated 8-12 inches) may help with some hypotensive patients but should not delay transport of critical patients. Position the patient on the basis of their clinical presentation and suspected injury pattern.</p>
+            <p>Positioning the patient correctly is a critical intervention. <strong>Supine</strong> (flat on the back) is the standard position for most assessments and for CPR. <strong>Fowler's position</strong> (sitting upright at 45-90 degrees) is used for patients with respiratory distress — it maximizes diaphragmatic excursion and improves oxygenation. <strong>Semi-Fowler's</strong> (30-45 degrees) is a compromise for patients who are short of breath but cannot sit fully upright. The <strong>left lateral recumbent (recovery position)</strong> is used for unconscious patients with a pulse who are breathing adequately — it allows fluids to drain from the mouth and prevents airway obstruction by the tongue. <strong>Trendelenburg</strong> (head lower than feet, approximately 15-30 degrees) was historically used for shock but current evidence no longer supports its routine use. The <strong>shock position</strong> (supine with legs elevated 8-12 inches) may help with some hypotensive patients but should not delay transport of critical patients. Position the patient on the basis of their clinical presentation and suspected injury pattern.</p>
 
             <h4>Special Considerations</h4>
-            <p><strong>Obese patients (bariatric)</strong> require specialized equipment including bariatric stretchers rated for higher weight capacities, wider backboards, and lift teams. Never attempt to lift a bariatric patient with a standard crew â€” call for additional personnel and use mechanical lift devices if available. <strong>Pediatric patients</strong> are not simply small adults; they have a higher center of gravity, a proportionally larger head, and more flexible bones. Use pediatric immobilization devices (pediatric backboard with head recess) and position the child to maintain a neutral airway. <strong>Geriatric patients</strong> often have fragile skin, osteoporosis, and joint stiffness â€” use extra padding, lift gently, and avoid pressure points that can cause bruising or fractures. <strong>Pregnant patients</strong> in the third trimester should be positioned supine with a wedge under the right hip to displace the uterus off the inferior vena cava (left lateral displacement). This prevents supine hypotensive syndrome. Regardless of the patient population, the golden rules remain: lift safely, communicate with your team, and keep the patient secure at all times.</p>
+            <p><strong>Obese patients (bariatric)</strong> require specialized equipment including bariatric stretchers rated for higher weight capacities, wider backboards, and lift teams. Never attempt to lift a bariatric patient with a standard crew — call for additional personnel and use mechanical lift devices if available. <strong>Pediatric patients</strong> are not simply small adults; they have a higher center of gravity, a proportionally larger head, and more flexible bones. Use pediatric immobilization devices (pediatric backboard with head recess) and position the child to maintain a neutral airway. <strong>Geriatric patients</strong> often have fragile skin, osteoporosis, and joint stiffness — use extra padding, lift gently, and avoid pressure points that can cause bruising or fractures. <strong>Pregnant patients</strong> in the third trimester should be positioned supine with a wedge under the right hip to displace the uterus off the inferior vena cava (left lateral displacement). This prevents supine hypotensive syndrome. Regardless of the patient population, the golden rules remain: lift safely, communicate with your team, and keep the patient secure at all times.</p>
         </div>`,
         flashcards: [
-            { question: "What is the most important rule of body mechanics when lifting?", answer: "Lift with your legs, not your back â€” use the large muscle groups of the legs to do the work.", category: "Body Mechanics" },
+            { question: "What is the most important rule of body mechanics when lifting?", answer: "Lift with your legs, not your back — use the large muscle groups of the legs to do the work.", category: "Body Mechanics" },
             { question: "When are emergency moves indicated?", answer: "When the patient or rescuer is in immediate danger (fire, hazardous environment, unsafe scene). Spinal precautions are temporarily abandoned.", category: "Emergency Moves" },
-            { question: "What is an example of an emergency move?", answer: "The clothes drag â€” grasping the patient's clothing at the neck and dragging them to safety.", category: "Emergency Moves" },
+            { question: "What is an example of an emergency move?", answer: "The clothes drag — grasping the patient's clothing at the neck and dragging them to safety.", category: "Emergency Moves" },
             { question: "What is the difference between urgent and non-urgent moves?", answer: "Urgent moves are for serious conditions without immediate danger (rapid extrication with spinal precautions). Non-urgent moves are for stable patients with no threat.", category: "Patient Movement" },
             { question: "What position is best for a patient in respiratory distress?", answer: "Fowler's or semi-Fowler's position (sitting upright 45-90 degrees) to maximize diaphragmatic excursion.", category: "Positioning" },
             { question: "What position should an unconscious patient with adequate breathing be placed in?", answer: "Left lateral recumbent (recovery position) to protect the airway and allow fluids to drain.", category: "Positioning" },
@@ -1806,15 +1806,15 @@ window.CPG_DATA = {
             { q: "How should a bariatric patient be lifted?", options: ["With two EMTs using standard equipment", "With additional personnel, bariatric-rated equipment, and mechanical lifts if available", "With a sheet drag only", "By the patient's family members"], correct: 1, difficulty: "hard" },
             { q: "What is the proper position for a pregnant patient in the third trimester, and why?", options: ["Prone, to protect the fetus", "Supine with a wedge under the right hip, to prevent supine hypotensive syndrome", "Fowler's, to improve maternal breathing", "Left lateral recumbent, to reduce back pain"], correct: 1, difficulty: "hard" },
             { q: "What is the most important safety consideration when using a wheeled stretcher?", options: ["Keeping the stretcher clean", "Always securing the patient with safety straps", "Using the stretcher only for critical patients", "Ensuring the stretcher is folded before loading"], correct: 1 },
-            { q: "If you need to twist while carrying a patient, what should you do?", options: ["Twist slowly at the waist", "Pivot with your entire body â€” do not twist your spine", "Twist quickly to minimize time in an awkward position", "Twist only if you are the stronger EMT"], correct: 1, difficulty: "hard" }
+            { q: "If you need to twist while carrying a patient, what should you do?", options: ["Twist slowly at the waist", "Pivot with your entire body — do not twist your spine", "Twist quickly to minimize time in an awkward position", "Twist only if you are the stronger EMT"], correct: 1, difficulty: "hard" }
         ],
         critical: [
             {
                 scenario: "You and your partner respond to a single-vehicle rollover MVC. The car is resting on its roof, and smoke is coming from the engine compartment. The driver, a 45-year-old male, is conscious, confused, and still buckled in, hanging upside down. He has a visible scalp laceration with moderate bleeding. The smoke is starting to thicken.",
                 question: "What type of move should be performed, and why?",
                 options: [
-                    "Non-urgent move â€” take time to apply a cervical collar and log-roll the patient onto a backboard",
-                    "Emergency move â€” there is an immediate fire risk; rapidly remove the patient from the vehicle using a clothes drag or similar technique, abandoning spinal precautions",
+                    "Non-urgent move — take time to apply a cervical collar and log-roll the patient onto a backboard",
+                    "Emergency move — there is an immediate fire risk; rapidly remove the patient from the vehicle using a clothes drag or similar technique, abandoning spinal precautions",
                     "Wait for the fire department to extinguish any potential fire before moving the patient",
                     "Perform rapid extrication (urgent move) with spinal precautions since the bleeding is only moderate"
                 ],
@@ -1851,23 +1851,23 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trending-up"/></svg> Evidence-Based Practice & Quality Improvement</h3>
 
             <h4>What Is Evidence-Based Practice?</h4>
-            <p><strong>Evidence-based practice (EBP)</strong> is the integration of three essential components: the best available research evidence, the clinician's professional expertise, and the patient's values and preferences. In the past, many EMS protocols were based on tradition or expert opinion â€” "this is how we have always done it." EBP challenges authority-based practice by asking a critical question: <em>What does the scientific evidence actually show?</em> For example, for decades, EMTs were taught to provide high-concentration oxygen to every patient with chest pain. Research later showed that excessive oxygen can actually be harmful in certain cardiac patients by causing vasoconstriction, leading to updated protocols that now titrate oxygen to target SpO2 levels.</p>
+            <p><strong>Evidence-based practice (EBP)</strong> is the integration of three essential components: the best available research evidence, the clinician's professional expertise, and the patient's values and preferences. In the past, many EMS protocols were based on tradition or expert opinion — "this is how we have always done it." EBP challenges authority-based practice by asking a critical question: <em>What does the scientific evidence actually show?</em> For example, for decades, EMTs were taught to provide high-concentration oxygen to every patient with chest pain. Research later showed that excessive oxygen can actually be harmful in certain cardiac patients by causing vasoconstriction, leading to updated protocols that now titrate oxygen to target SpO2 levels.</p>
 
             <h4>EMS Research: Why It Matters</h4>
-            <p>Prehospital research is challenging but vital. Unlike controlled hospital environments, the field is unpredictable â€” noisy scenes, moving ambulances, diverse patient populations, and time pressures make rigorous research difficult. Yet EMS research has led to some of the most significant advances in emergency medicine: high-performance CPR (rate, depth, recoil, and fraction), spinal motion restriction (moving away from routine long-board immobilization), and the use of tranexamic acid (TXA) in hemorrhagic shock. Understanding the basics of research methodology helps you evaluate new studies critically. Key questions to ask include: <strong>What was the sample size?</strong> (Small studies are more prone to random error.) <strong>Was there a control group?</strong> (Without controls, you cannot determine causation.) <strong>Was the study randomized?</strong> (Randomization reduces bias.) <strong>Is the study relevant to your patient population?</strong> (Results from a hospital ICU may not apply to prehospital trauma.)</p>
+            <p>Prehospital research is challenging but vital. Unlike controlled hospital environments, the field is unpredictable — noisy scenes, moving ambulances, diverse patient populations, and time pressures make rigorous research difficult. Yet EMS research has led to some of the most significant advances in emergency medicine: high-performance CPR (rate, depth, recoil, and fraction), spinal motion restriction (moving away from routine long-board immobilization), and the use of tranexamic acid (TXA) in hemorrhagic shock. Understanding the basics of research methodology helps you evaluate new studies critically. Key questions to ask include: <strong>What was the sample size?</strong> (Small studies are more prone to random error.) <strong>Was there a control group?</strong> (Without controls, you cannot determine causation.) <strong>Was the study randomized?</strong> (Randomization reduces bias.) <strong>Is the study relevant to your patient population?</strong> (Results from a hospital ICU may not apply to prehospital trauma.)</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                <strong>Point of Care:</strong> EBP is not about dismissing clinical experience. Your judgment as an EMT â€” recognizing subtle changes in a patient's condition, adapting to challenging scenes, communicating with families â€” is an irreplaceable part of the equation. EBP means combining your expertise with the best evidence to make the best decision for <em>this</em> patient, <em>right now</em>.
+                <strong>Point of Care:</strong> EBP is not about dismissing clinical experience. Your judgment as an EMT — recognizing subtle changes in a patient's condition, adapting to challenging scenes, communicating with families — is an irreplaceable part of the equation. EBP means combining your expertise with the best evidence to make the best decision for <em>this</em> patient, <em>right now</em>.
             </div>
 
             <h4>Continuous Quality Improvement (CQI)</h4>
-            <p>Quality improvement in EMS is not about punishing mistakes â€” it is a systematic process to identify what works, what doesn't, and how to improve. The <strong>CQI loop</strong> has four stages: (1) <strong>Identify</strong> â€” recognize a problem or area for improvement (e.g., "our scene times for STEMI patients are exceeding the 90-minute benchmark"); (2) <strong>Analyze</strong> â€” collect and review data to understand why (e.g., "average scene time is 22 minutes, with delays in obtaining 12-lead ECGs"); (3) <strong>Implement</strong> â€” develop and deploy an intervention (e.g., "new protocol to obtain ECG within 5 minutes of patient contact"); and (4) <strong>Evaluate</strong> â€” re-measure to see if the intervention worked (e.g., "average ECG acquisition time dropped to 4.5 minutes"). This loop repeats continuously â€” hence the "continuous" in CQI.</p>
+            <p>Quality improvement in EMS is not about punishing mistakes — it is a systematic process to identify what works, what doesn't, and how to improve. The <strong>CQI loop</strong> has four stages: (1) <strong>Identify</strong> — recognize a problem or area for improvement (e.g., "our scene times for STEMI patients are exceeding the 90-minute benchmark"); (2) <strong>Analyze</strong> — collect and review data to understand why (e.g., "average scene time is 22 minutes, with delays in obtaining 12-lead ECGs"); (3) <strong>Implement</strong> — develop and deploy an intervention (e.g., "new protocol to obtain ECG within 5 minutes of patient contact"); and (4) <strong>Evaluate</strong> — re-measure to see if the intervention worked (e.g., "average ECG acquisition time dropped to 4.5 minutes"). This loop repeats continuously — hence the "continuous" in CQI.</p>
 
             <h4>How You Participate in QI</h4>
-            <p>Every EMT is a vital part of the QI process. You participate every time you complete a PCR accurately, because PCR data is the primary source of QI analysis. You participate when you attend run reviews (case conferences where crews discuss interesting or challenging calls) and give honest, constructive feedback. You participate when you follow protocols faithfully â€” protocol compliance is a key QI metric. You also participate when you identify a system issue and report it through the appropriate channel: "The suction unit on Truck 4 does not seem to be maintaining adequate pressure." Many services also have <strong>peer review</strong> committees where EMTs review cases to identify learning opportunities. The culture of QI must be non-punitive; if EMTs fear discipline for reporting errors or complications, they will hide problems instead of fixing them, and the system cannot improve.</p>
+            <p>Every EMT is a vital part of the QI process. You participate every time you complete a PCR accurately, because PCR data is the primary source of QI analysis. You participate when you attend run reviews (case conferences where crews discuss interesting or challenging calls) and give honest, constructive feedback. You participate when you follow protocols faithfully — protocol compliance is a key QI metric. You also participate when you identify a system issue and report it through the appropriate channel: "The suction unit on Truck 4 does not seem to be maintaining adequate pressure." Many services also have <strong>peer review</strong> committees where EMTs review cases to identify learning opportunities. The culture of QI must be non-punitive; if EMTs fear discipline for reporting errors or complications, they will hide problems instead of fixing them, and the system cannot improve.</p>
 
             <h4>Examples of EBP in Modern EMS</h4>
-            <p><strong>High-performance CPR</strong> â€” research demonstrated that quality chest compressions (adequate rate of 100-120/min, depth of 2-2.4 inches, full chest recoil, and minimal interruptions) dramatically improves survival from cardiac arrest. This led to the development of pit-crew CPR models, mechanical CPR devices, and real-time feedback devices. <strong>Spinal motion restriction (SMR)</strong> â€” mounting evidence showed that routine long-board immobilization of all trauma patients caused more harm than benefit (pain, respiratory restriction, pressure sores), leading to selective SMR protocols that restrict motion without routinely using backboards. <strong>Tranexamic acid (TXA)</strong> â€” the CRASH-2 trial demonstrated that early administration of TXA in bleeding trauma patients reduces mortality, leading to TXA inclusion in many trauma protocols. <strong>Scoop-and-run vs. stay-and-play</strong> â€” research showed that for penetrating trauma, rapid transport with minimal scene time improves outcomes, while for certain medical conditions (e.g., cardiac arrest), on-scene high-quality CPR before transport is critical.</p>
+            <p><strong>High-performance CPR</strong> — research demonstrated that quality chest compressions (adequate rate of 100-120/min, depth of 2-2.4 inches, full chest recoil, and minimal interruptions) dramatically improves survival from cardiac arrest. This led to the development of pit-crew CPR models, mechanical CPR devices, and real-time feedback devices. <strong>Spinal motion restriction (SMR)</strong> — mounting evidence showed that routine long-board immobilization of all trauma patients caused more harm than benefit (pain, respiratory restriction, pressure sores), leading to selective SMR protocols that restrict motion without routinely using backboards. <strong>Tranexamic acid (TXA)</strong> — the CRASH-2 trial demonstrated that early administration of TXA in bleeding trauma patients reduces mortality, leading to TXA inclusion in many trauma protocols. <strong>Scoop-and-run vs. stay-and-play</strong> — research showed that for penetrating trauma, rapid transport with minimal scene time improves outcomes, while for certain medical conditions (e.g., cardiac arrest), on-scene high-quality CPR before transport is critical.</p>
 
             <h4>Evaluating a Research Study</h4>
             <p>You do not need to be a statistician to critically evaluate research. Ask yourself: (1) Was the study published in a peer-reviewed journal? (2) How large was the study population? (3) Was there a control group that received standard care or a placebo? (4) Were the groups randomly assigned? (5) Were the researchers and subjects blinded? (6) Is the study's endpoint meaningful (e.g., survival to discharge) or surrogate (e.g., improved vital signs)? (7) Could the results be explained by bias or confounding factors? (8) Can the results be applied to your patient population and practice setting? (9) Have the results been replicated by other studies? (10) Do the benefits outweigh the risks and costs of changing practice? Developing these critical thinking skills will serve you throughout your career as healthcare continues to evolve.</p>
@@ -1877,7 +1877,7 @@ window.CPG_DATA = {
         </div>`,
         flashcards: [
             { question: "What are the three components of evidence-based practice?", answer: "Best available research evidence, clinical expertise, and patient values/preferences.", category: "EBP Basics" },
-            { question: "What is the CQI loop?", answer: "Identify a problem, Analyze the data, Implement an intervention, Evaluate the outcome â€” then repeat continuously.", category: "Quality Improvement" },
+            { question: "What is the CQI loop?", answer: "Identify a problem, Analyze the data, Implement an intervention, Evaluate the outcome — then repeat continuously.", category: "Quality Improvement" },
             { question: "How does an EMT participate in quality improvement?", answer: "By completing accurate PCRs, attending run reviews, following protocols faithfully, and reporting system issues through appropriate channels.", category: "Quality Improvement" },
             { question: "Why should routine long-board spinal immobilization be avoided in many trauma patients?", answer: "Evidence shows it can cause more harm (pain, respiratory restriction, pressure sores) than benefit in awake, cooperative patients without neurological deficits.", category: "EBP Examples" },
             { question: "What is the significance of the CRASH-2 trial for EMS?", answer: "It demonstrated that early administration of TXA reduces mortality in bleeding trauma patients, leading to TXA inclusion in many EMS trauma protocols.", category: "EBP Examples" },
@@ -1901,22 +1901,22 @@ window.CPG_DATA = {
         ],
         critical: [
             {
-                scenario: "You are a field training officer and notice that over the past three months, scene times for suspected stroke patients in your squad have been averaging 28 minutes â€” well above the national benchmark of 15 minutes. You review several PCRs and notice crews are spending extra time performing detailed neurological exams and consulting with the hospital before transport. One crew member says, 'I want to be thorough before we leave.'",
+                scenario: "You are a field training officer and notice that over the past three months, scene times for suspected stroke patients in your squad have been averaging 28 minutes — well above the national benchmark of 15 minutes. You review several PCRs and notice crews are spending extra time performing detailed neurological exams and consulting with the hospital before transport. One crew member says, 'I want to be thorough before we leave.'",
                 question: "Using the CQI framework, what should you do next?",
                 options: [
                     "Tell crews to leave the scene faster without further analysis",
                     "Analyze the data to understand WHY scene times are long (e.g., specific on-scene tasks creating delays), then develop a targeted intervention such as a streamlined stroke assessment protocol",
-                    "Ignore it â€” 28 minutes is close enough to 15",
+                    "Ignore it — 28 minutes is close enough to 15",
                     "Discipline the crews for slow scene times"
                 ],
                 correct: 1
             },
             {
-                scenario: "Your agency is considering adopting a new protocol for pediatric airway management based on a single study published in a non-peer-reviewed journal. The study included 30 patients and had no control group. The results claim a 40% improvement in first-pass success rates. A colleague argues, 'The numbers speak for themselves â€” we should adopt this immediately.'",
+                scenario: "Your agency is considering adopting a new protocol for pediatric airway management based on a single study published in a non-peer-reviewed journal. The study included 30 patients and had no control group. The results claim a 40% improvement in first-pass success rates. A colleague argues, 'The numbers speak for themselves — we should adopt this immediately.'",
                 question: "How should you evaluate this study before changing practice?",
                 options: [
                     "Adopt it immediately because any improvement is worthwhile",
-                    "Reject it because it is not from a peer-reviewed journal, has a small sample size, and lacks a control group â€” these are major methodological flaws that make the results unreliable",
+                    "Reject it because it is not from a peer-reviewed journal, has a small sample size, and lacks a control group — these are major methodological flaws that make the results unreliable",
                     "Adopt it but only for adult patients",
                     "Accept the results because 40% improvement is too large to ignore"
                 ],
@@ -1928,7 +1928,7 @@ window.CPG_DATA = {
                 options: [
                     "Write up every crew that gave unnecessary oxygen",
                     "Present the data at a staff meeting, provide education on the current oxygen titration evidence and protocol, review the rationale (oxygen toxicity, vasoconstriction risks), and re-audit in 30 days to measure improvement",
-                    "Ignore it â€” oxygen is harmless and the protocol does not matter",
+                    "Ignore it — oxygen is harmless and the protocol does not matter",
                     "Change the protocol to allow oxygen for everyone"
                 ],
                 correct: 1

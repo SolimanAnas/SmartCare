@@ -27,7 +27,6 @@ function generateIndexHTML() {
         { id:"c8",     shortTitle:"8. Environmental",     title:"Environmental & Disaster Medicine",            chapterFile:"c8",  chapterGroup:"environmental" },
         { id:"c9",     shortTitle:"9. Pharmacology",      title:"Emergency Pharmacology",                       chapterFile:"c9",  chapterGroup:"pharmacology" },
         { id:"c10",    shortTitle:"10. Procedures",       title:"Clinical Procedures & Skills",                 chapterFile:"c10", chapterGroup:"procedures" },
-        { id:"s1",     shortTitle:"Scope of Practice",    title:"Clinical Scope Matrix",                        chapterFile:"s1",  chapterGroup:"scope" },
         { id:"m1-38",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    chapterFile:"m1-38", chapterGroup:"scope" }
     ];
 
