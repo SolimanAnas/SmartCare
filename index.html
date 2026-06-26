@@ -978,7 +978,6 @@
     //  CHAPTER DATA
     // ══════════════════════════════════════════════════════════
     const CHAPTERS = [
-        { id:"c0",     shortTitle:"Updates",              title:"SmartCare Platform Updates",                   hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"updates" },
         { id:"c-index",shortTitle:"Index",                title:"Table of Contents",                            hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"index" },
         { id:"c1",     shortTitle:"1. Foundations",       title:"Foundations of Emergency Care",                hasCritical:true,  chapterFile:"c1",  isFirstInChapter:true,  chapterGroup:"foundations" },
         { id:"c2",     shortTitle:"2. Assessment",        title:"Patient Assessment",                           hasCritical:true,  chapterFile:"c2",  isFirstInChapter:true,  chapterGroup:"assessment" },
@@ -1007,7 +1006,7 @@
     function updateAllProgress() {
         const stats    = loadStorage(STATS_KEY, { totalAttempts:0, critical:{total:0,correct:0} });
         const critAcc  = stats.critical.total ? Math.round((stats.critical.correct / stats.critical.total) * 100) : 0;
-        const totalChaps = CHAPTERS.filter(c => c.id !== 'c0' && c.id !== 'c-index').length;
+        const totalChaps = CHAPTERS.filter(c => c.id !== 'c-index').length;
         const completion = loadStorage(COMPLETION_KEY, {});
         const done     = Object.values(completion).filter(v => v).length;
         const quote    = ENCOURAGEMENTS[Math.floor(Math.random() * ENCOURAGEMENTS.length)];
@@ -1083,21 +1082,15 @@
         const searchHtml = `
             <div class="search-container">
                 <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg></span>
-                <input type="text" id="searchInput" placeholder="Search all CPG chapters &amp; guidelines…" value="${filterText.replace(/"/g,'&quot;')}">
+                <input type="text" id="searchInput" placeholder="Search all clinical chapters &amp; guidelines…" value="${filterText.replace(/"/g,'&quot;')}">
                 <button id="searchClearBtn" ${filterText ? '' : 'style="display:none;"'} aria-label="Clear search"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#x"/></svg></button>
             </div>
-            <div class="cpg-search-hint" id="cpgSearchHint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg> Searching across all ${CHAPTERS.filter(c=>!c.isSpecial).length} CPG chapters &amp; guidelines</div>`;
+            <div class="cpg-search-hint" id="cpgSearchHint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg> Searching across all ${CHAPTERS.filter(c=>!c.isSpecial).length} clinical chapters &amp; guidelines</div>`;
 
-        // ── Quick Access (2-col) ──
+        // ── Quick Access (1-col) ──
         const quickHtml = `
             <div class="section-label">Quick Access</div>
-            <div class="quick-grid" data-section="quick">
-                <a href="chapters/c0.html?view=summary" class="menu-card special-card"
-                   data-chapter="updates" data-search="What's New 2025 Updates c0">
-                    <span class="sc-icon">🆕</span>
-                    <h2>What's New</h2>
-                    <p>2025 Updates</p>
-                </a>
+            <div class="quick-grid" data-section="quick" style="grid-template-columns: 1fr;">
                 <a href="chapters/c-index.html?view=summary" class="menu-card special-card"
                    data-chapter="index" data-search="Index Full Table of Contents c-index">
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></span>
