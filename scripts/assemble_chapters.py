@@ -5,7 +5,8 @@ For each chapter c6–c10, reads TOC/cXsY-cXz.js section files and merges
 the section objects into content/cX.js with window.CPG_DATA format.
 """
 
-import os, re
+import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
@@ -90,7 +91,6 @@ def assemble(cid: str, info: dict) -> str:
     """Assemble a complete chapter JS file."""
     num = cid[1:]  # "6".."10"
     title = info["title"]
-    icon = info["icon"]
 
     header = f"/* ========== Chapter {num} \u2013 {title} ========== */\n"
     header += "window.CPG_DATA = {\n"
