@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>DCAS CPG 2025 · M1–38 Formulary</title>
+    <title>SmartCare · Medication Formulary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
         </button>
         <div class="header-text">
             <h1 id="pageTitle">M1–38 Formulary</h1>
-            <p id="pageSubtitle">DCAS CPG 2025</p>
+            <p id="pageSubtitle">SmartCare</p>
         </div>
     </div>
     <div class="header-right">
@@ -42,8 +42,8 @@
 <main id="mainContent"></main>
 
 <footer>
-    <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="../pages/about.html">About & Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
+    <div>Created & Maintained by Soliman Anas · for study aid only</div>
+    <div><a href="../pages/about.html">About & Disclaimer</a> · Intended for educational and clinical revision purposes.</div>
 </footer>
 
 <script src="../content/m1-38.js"></script>
@@ -79,7 +79,7 @@
 
         function loadStats() {
             try {
-                const data = localStorage.getItem('dcas_cpg_stats');
+                const data = localStorage.getItem('smartcare_cpg_stats');
                 const stats = data ? JSON.parse(data) : { totalAttempts: 0, critical: { total: 0, correct: 0 } };
                 const critAcc = stats.critical.total ? Math.round((stats.critical.correct / stats.critical.total) * 100) : 0;
                 document.getElementById('statsAttempts').innerText = stats.totalAttempts || 0;

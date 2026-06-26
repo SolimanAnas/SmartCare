@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <script>
-  // ── DCAS Security Guard: runs before anything else renders ──
+  // ── SmartCare Security Guard: runs before anything else renders ──
   // Redirects to login if no valid session exists.
   // [TEMPORARILY DISABLED FOR TESTING]
   /*
   (function() {
-    const AUTH_KEY = 'dcas_local_auth';
+    const AUTH_KEY = 'smartcare_local_auth';
     try {
       const sessionRaw = localStorage.getItem(AUTH_KEY);
       if (!sessionRaw) { window.location.replace('pages/login.html'); return; }
@@ -24,7 +24,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>DCAS CPG 2025 · Landing Page</title>
+    <title>SmartCare · Landing Page</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -191,7 +191,7 @@
         .menu-card.special-card[data-chapter="courses"]    { border-left-color: #9b59b6; }
         .menu-card.special-card[data-chapter="prometric"]  { border-left-color: #2563eb; }
         .menu-card.special-card[data-chapter="ems"]        { border-left-color: #00d4ff; }
-        .menu-card.special-card[data-chapter="dcas-cpg"]   { border-left-color: #0056b3; }
+        .menu-card.special-card[data-chapter="smartcare-cpg"] { border-left-color: #0056b3; }
         .menu-card.special-card[data-chapter="statistics"] { border-left-color: #27ae60; }
 
         /* EMS Card - match other CPG cards styling */
@@ -214,7 +214,7 @@
         .menu-card.special-card[data-chapter="courses"]:hover    { box-shadow: 0 16px 36px -8px rgba(155,89,182,0.25); }
         .menu-card.special-card[data-chapter="prometric"]:hover  { box-shadow: 0 16px 36px -8px rgba(37,99,235,0.25); }
         .menu-card.special-card[data-chapter="ems"]:hover        { box-shadow: 0 16px 36px -8px rgba(0,212,255,0.35); }
-        .menu-card.special-card[data-chapter="dcas-cpg"]:hover   { box-shadow: 0 16px 36px -8px rgba(0,86,179,0.25); }
+        .menu-card.special-card[data-chapter="smartcare-cpg"]:hover { box-shadow: 0 16px 36px -8px rgba(0,86,179,0.25); }
         .menu-card.special-card[data-chapter="statistics"]:hover { box-shadow: 0 16px 36px -8px rgba(39,174,96,0.25); }
 
         /* Chevron arrow on non-quick cards */
@@ -270,8 +270,8 @@
         .ems-btn-ecg   { background: var(--btn-grad-quiz); color: var(--text-quiz); border: 1px solid var(--border-quiz); }
         .ems-btn-more  { background: var(--btn-grad-scen); color: var(--text-scen); border: 1px solid var(--border-scen); }
 
-        /* DCAS CPG expand button */
-        .dcas-expand-btn {
+        /* SmartCare expand button */
+        .sc-expand-btn {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -288,8 +288,8 @@
             justify-content: center;
             transition: background 0.2s;
         }
-        .dcas-expand-btn:hover { background: rgba(0,86,179,0.18); }
-        .dcas-expand-btn:active { transform: scale(0.97); }
+        .sc-expand-btn:hover { background: rgba(0,86,179,0.18); }
+        .sc-expand-btn:active { transform: scale(0.97); }
 
         /* CPG chapter cards — compact version */
         .chapter-card {
@@ -486,12 +486,12 @@
 <div id="pwaInstallBanner" style="display:none;" role="complementary" aria-label="Install app">
     <div class="pwa-banner-inner">
         <div class="pwa-banner-icon">
-            <img src="icons/icon.png" alt="DCAS CPG"
+            <img src="icons/icon.png" alt="SmartCare"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <span class="pwa-icon-fallback" style="display:none;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#shield"/></svg>️</span>
         </div>
         <div class="pwa-banner-text">
-            <strong class="pwa-banner-title">Install DCAS CPG</strong>
+            <strong class="pwa-banner-title">Install SmartCare</strong>
             <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen · works offline</span>
         </div>
         <div class="pwa-banner-actions">
@@ -557,7 +557,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         </button>
         <div class="header-text">
-            <h1 id="pageTitle">DCAS CPG 2025</h1>
+            <h1 id="pageTitle">SmartCare</h1>
             <p id="pageSubtitle">Clinical Review Platform</p>
         </div>
     </div>
@@ -591,8 +591,8 @@
 <main id="mainContent"></main>
 
 <footer>
-    <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="pages/about.html">About &amp; Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
+    <div>Created & Maintained by Soliman Anas</div>
+    <div><a href="pages/about.html">About &amp; Disclaimer</a> · SmartCare is intended for educational and revision purposes.</div>
 </footer>
 
 <button class="float-btn hidden" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up"/></svg></button>
@@ -602,14 +602,14 @@
 (function(){
     "use strict";
 
-    let showCpgChapters = false;
+    let showCpgChapters = localStorage.getItem('smartcare_chapters_expanded') === 'true';
     let showStats = false;
 
     // ══════════════════════════════════════════════════════════
     //  PWA INSTALL BANNER LOGIC
     // ══════════════════════════════════════════════════════════
-    const PWA_KEY       = 'dcas_pwa_install';
-    const PWA_NEVER_KEY = 'dcas_pwa_never';
+    const PWA_KEY       = 'smartcare_pwa_install';
+    const PWA_NEVER_KEY = 'smartcare_pwa_never';
     const PWA_DELAY_MS  = 4000;   // wait before showing on page load
     const PWA_SNOOZE_MS = 24 * 60 * 60 * 1000; // re-show after 24 h if soft-dismissed
 
@@ -813,7 +813,7 @@
 
     // Logout
     document.getElementById('qsLogout').addEventListener('click', () => {
-        localStorage.removeItem('dcas_local_auth');
+        localStorage.removeItem('smartcare_local_auth');
         window.location.replace('pages/login.html');
     });
 
@@ -826,13 +826,13 @@
     function setFontSize(size) {
         if (!FONT_SIZES.includes(size)) size = 'medium';
         document.documentElement.setAttribute('data-font-size', size);
-        localStorage.setItem('dcas_font_size', size);
+        localStorage.setItem('smartcare_font_size', size);
         FONT_SIZES.forEach(s => {
             const b = document.getElementById(FONT_BTN_IDS[s]);
             if (b) b.classList.toggle('active', s === size);
         });
     }
-    setFontSize(localStorage.getItem('dcas_font_size') || 'medium');
+    setFontSize(localStorage.getItem('smartcare_font_size') || 'medium');
     FONT_SIZES.forEach(s => {
         const b = document.getElementById(FONT_BTN_IDS[s]);
         if (b) b.addEventListener('click', () => setFontSize(s));
@@ -899,7 +899,7 @@
     }
 
     function renderLastVisited() {
-        const LV_KEY = 'dcas_last_visited';
+        const LV_KEY = 'smartcare_last_visited';
         let history = [];
         try { history = JSON.parse(localStorage.getItem(LV_KEY) || '[]'); } catch(e) {}
         const container = document.getElementById('lastVisitedSection');
@@ -956,81 +956,27 @@
     //  CHAPTER DATA
     // ══════════════════════════════════════════════════════════
     const CHAPTERS = [
-        { id:"c0",    shortTitle:"2025 Updates",         title:"What's New in 2025",                           hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"updates" },
-        { id:"c-index",shortTitle:"Index",               title:"Full Table of Contents",                       hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"index" },
-        { id:"c1s1",  shortTitle:"1.1 Universal Care",   title:"Universal Care – Core Assessment",             hasCritical:true,  chapterFile:"c1", sectionParam:"c1s1", isFirstInChapter:true,  chapterGroup:"universal" },
-        { id:"c1s2",  shortTitle:"1.2 Documentation",    title:"Patient Care Documentation",                   hasCritical:true,  chapterFile:"c1", sectionParam:"c1s2", isFirstInChapter:false, chapterGroup:"universal" },
-        { id:"c1s3",  shortTitle:"1.3 Triage",           title:"Patient Triage Categories",                   hasCritical:true,  chapterFile:"c1", sectionParam:"c1s3", isFirstInChapter:false, chapterGroup:"universal" },
-        { id:"c1s4",  shortTitle:"1.4 Functional Needs", title:"Functional Needs",                             hasCritical:true,  chapterFile:"c1", sectionParam:"c1s4", isFirstInChapter:false, chapterGroup:"universal" },
-        { id:"c1s5",  shortTitle:"1.5 Treated at Scene", title:"Treated at Scene",                             hasCritical:true,  chapterFile:"c1", sectionParam:"c1s5", isFirstInChapter:false, chapterGroup:"universal" },
-        { id:"c1s6",  shortTitle:"1.6 Refusal of Transfer",title:"Patient Refusal of Transfer",               hasCritical:true,  chapterFile:"c1", sectionParam:"c1s6", isFirstInChapter:false, chapterGroup:"universal" },
-        { id:"c2s1",  shortTitle:"2.1 Airway Management",title:"Airway & Breathing",                          hasCritical:true,  chapterFile:"c2", sectionParam:"c2s1", isFirstInChapter:true,  chapterGroup:"airway" },
-        { id:"c2s2",  shortTitle:"2.2 FBAO",             title:"Foreign Body Airway Obstruction",              hasCritical:true,  chapterFile:"c2", sectionParam:"c2s2", isFirstInChapter:false, chapterGroup:"airway" },
-        { id:"c2s3",  shortTitle:"2.3 Asthma",           title:"Asthma",                                       hasCritical:true,  chapterFile:"c2", sectionParam:"c2s3", isFirstInChapter:false, chapterGroup:"airway" },
-        { id:"c2s4",  shortTitle:"2.4 COPD",             title:"COPD",                                         hasCritical:true,  chapterFile:"c2", sectionParam:"c2s4", isFirstInChapter:false, chapterGroup:"airway" },
-        { id:"c2s5",  shortTitle:"2.5 Invasive Ventilation",title:"Invasive (Mechanical) Ventilation",        hasCritical:true,  chapterFile:"c2", sectionParam:"c2s5", isFirstInChapter:false, chapterGroup:"airway" },
-        { id:"c3-1",  shortTitle:"3.1 Chest Pain / ACS",  title:"Chest Pain / Acute Coronary Syndrome",       hasCritical:true,  isFirstInChapter:true,  chapterGroup:"cardio" },
-        { id:"c3-2",  shortTitle:"3.2 Adult Bradycardia", title:"Adult Bradycardia",                           hasCritical:true,  isFirstInChapter:false, chapterGroup:"cardio" },
-        { id:"c3-3",  shortTitle:"3.3 Adult Tachycardia", title:"Adult Tachycardia with a Pulse",              hasCritical:true,  isFirstInChapter:false, chapterGroup:"cardio" },
-        { id:"c3-4",  shortTitle:"3.4 Acute Pulmonary Edema",title:"Acute Pulmonary Edema",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"cardio" },
-        { id:"c4-1",  shortTitle:"4.1 Adult BLS",         title:"Adult Basic Life Support",                    hasCritical:true,  isFirstInChapter:true,  chapterGroup:"resus" },
-        { id:"c4-2",  shortTitle:"4.2 Pediatric BLS",     title:"Pediatric Basic Life Support",                hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-3",  shortTitle:"4.3 Adult Cardiac Arrest",title:"Adult Cardiac Arrest",                     hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-4",  shortTitle:"4.4 Pediatric Cardiac Arrest",title:"Pediatric Cardiac Arrest",             hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-5",  shortTitle:"4.5 Trauma Cardiac Arrest",title:"Cardiac Arrest in Trauma",                hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-6",  shortTitle:"4.6 Newborn Resuscitation",title:"Newborn (<4 weeks) and Pre‑term Infant Resuscitation",hasCritical:true,isFirstInChapter:false,chapterGroup:"resus" },
-        { id:"c4-7",  shortTitle:"4.7 Post-ROSC",          title:"Post Cardiac Arrest Care (ROSC)",            hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-8",  shortTitle:"4.8 Starting/Stopping CPR",title:"Starting, Stopping and Transferring CPR", hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c4-9",  shortTitle:"4.9 Verification of Death",title:"Verification of Death",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"resus" },
-        { id:"c5-1",  shortTitle:"5.1 Stroke",             title:"Stroke",                                     hasCritical:true,  isFirstInChapter:true,  chapterGroup:"neuro" },
-        { id:"c5-2",  shortTitle:"5.2 Seizures",           title:"Seizures",                                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"neuro" },
-        { id:"c6-1",  shortTitle:"6.1 Abdominal Pain",     title:"Abdominal Pain",                             hasCritical:true,  isFirstInChapter:true,  chapterGroup:"medical" },
-        { id:"c6-2",  shortTitle:"6.2 Abnormal Behavior",  title:"Abnormal Behavior",                          hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-3",  shortTitle:"6.3 Adrenal Insufficiency",title:"Adrenal Insufficiency",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-4",  shortTitle:"6.4 Anaphylaxis",        title:"Anaphylaxis / Allergic Reaction",            hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-5",  shortTitle:"6.5 Altered Mental Status",title:"Altered Mental Status",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-6",  shortTitle:"6.6 Epistaxis",          title:"Epistaxis",                                  hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-7",  shortTitle:"6.7 Fever and Sepsis",   title:"Fever and Sepsis",                           hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-8",  shortTitle:"6.8 Hypoglycemia",       title:"Hypoglycemia",                               hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-9",  shortTitle:"6.9 Hyperglycemia",      title:"Hyperglycemia",                              hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-10", shortTitle:"6.10 Nausea and Vomiting",title:"Nausea and Vomiting",                      hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-11", shortTitle:"6.11 Non‑Traumatic Shock",title:"Non‑Traumatic Shock",                      hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-12", shortTitle:"6.12 Pain Management",   title:"Pain Management",                            hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-13", shortTitle:"6.13 Sickle Cell Crisis",title:"Sickle Cell Crisis",                        hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c6-14", shortTitle:"6.14 Alcohol Intoxication",title:"Suspected Alcohol Intoxication",          hasCritical:true,  isFirstInChapter:false, chapterGroup:"medical" },
-        { id:"c7-1",  shortTitle:"7.1 General Trauma",     title:"General Trauma Management",                  hasCritical:true,  isFirstInChapter:true,  chapterGroup:"trauma" },
-        { id:"c7-2",  shortTitle:"7.2 Burns",              title:"Burns",                                       hasCritical:true,  isFirstInChapter:false, chapterGroup:"trauma" },
-        { id:"c7-3",  shortTitle:"7.3 Crush Injuries",     title:"Crush Injuries",                             hasCritical:true,  isFirstInChapter:false, chapterGroup:"trauma" },
-        { id:"c7-4",  shortTitle:"7.4 Limb Injuries",      title:"Limb Injuries",                              hasCritical:true,  isFirstInChapter:false, chapterGroup:"trauma" },
-        { id:"c7-5",  shortTitle:"7.5 Spinal Motion Restriction",title:"Spinal Motion Restriction",           hasCritical:true,  isFirstInChapter:false, chapterGroup:"trauma" },
-        { id:"c7-6",  shortTitle:"7.6 Traumatic Brain Injury",title:"Traumatic Brain Injuries",               hasCritical:true,  isFirstInChapter:false, chapterGroup:"trauma" },
-        { id:"c8-1",  shortTitle:"8.1 General Toxicology", title:"General Toxicology Management",              hasCritical:true,  isFirstInChapter:true,  chapterGroup:"environmental" },
-        { id:"c8-2",  shortTitle:"8.2 Opioid Overdose",    title:"Opioid Overdose",                            hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-3",  shortTitle:"8.3 Beta‑Blocker Overdose",title:"Beta‑Blocker Overdose",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-4",  shortTitle:"8.4 CCB Overdose",       title:"Calcium Channel Blocker Overdose",           hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-5",  shortTitle:"8.5 Organophosphate",    title:"Organophosphate Poisoning",                  hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-6",  shortTitle:"8.6 Diving Emergencies", title:"Diving (SCUBA) Emergencies",                 hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-7",  shortTitle:"8.7 Drowning",           title:"Drowning / Near Drowning",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-8",  shortTitle:"8.8 Envenomation",       title:"Envenomation",                               hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-9",  shortTitle:"8.9 Hypothermia",        title:"Hypothermia / Cold Exposure",                hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c8-10", shortTitle:"8.10 Hyperthermia",      title:"Hyperthermia / Heat Exposure",               hasCritical:true,  isFirstInChapter:false, chapterGroup:"environmental" },
-        { id:"c9-1",  shortTitle:"9.1 Croup",              title:"Croup",                                       hasCritical:true,  isFirstInChapter:true,  chapterGroup:"pediatric" },
-        { id:"c9-2",  shortTitle:"9.2 Pediatric Bradycardia",title:"Pediatric Bradycardia",                    hasCritical:true,  isFirstInChapter:false, chapterGroup:"pediatric" },
-        { id:"c9-3",  shortTitle:"9.3 Pediatric Tachycardia",title:"Pediatric Tachycardia",                   hasCritical:true,  isFirstInChapter:false, chapterGroup:"pediatric" },
-        { id:"c10-1", shortTitle:"10.1 Childbirth",        title:"Childbirth",                                  hasCritical:true,  isFirstInChapter:true,  chapterGroup:"obstetric" },
-        { id:"c10-2", shortTitle:"10.2 Post Partum Hemorrhage",title:"Post Partum Hemorrhage",                 hasCritical:true,  isFirstInChapter:false, chapterGroup:"obstetric" },
-        { id:"c10-3", shortTitle:"10.3 PV Hemorrhage",     title:"PV Hemorrhage in Pregnancy",                 hasCritical:true,  isFirstInChapter:false, chapterGroup:"obstetric" },
-        { id:"c10-4", shortTitle:"10.4 Eclampsia",         title:"Eclampsia / Pre‑eclampsia",                  hasCritical:true,  isFirstInChapter:false, chapterGroup:"obstetric" },
-        { id:"c11-1", shortTitle:"11.1 START Triage",      title:"S.T.A.R.T Triage (MCI Triage)",              hasCritical:true,  isFirstInChapter:true,  chapterGroup:"mci" },
-        { id:"s1",    shortTitle:"S1 Scope of Practice",   title:"Scope of Practice Matrix",                    hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope" },
-        { id:"m1-38", shortTitle:"M1–38 Formulary",        title:"Medication Formulary (38 drugs)",             hasCritical:false, isFirstInChapter:false, chapterGroup:"scope", chapterFile:"m1-38" }
+        { id:"c0",     shortTitle:"Updates",              title:"SmartCare Platform Updates",                   hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"updates" },
+        { id:"c-index",shortTitle:"Index",                title:"Table of Contents",                            hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"index" },
+        { id:"c1",     shortTitle:"1. Foundations",       title:"Foundations of Emergency Care",                hasCritical:true,  chapterFile:"c1",  isFirstInChapter:true,  chapterGroup:"foundations" },
+        { id:"c2",     shortTitle:"2. Assessment",        title:"Patient Assessment",                           hasCritical:true,  chapterFile:"c2",  isFirstInChapter:true,  chapterGroup:"assessment" },
+        { id:"c3",     shortTitle:"3. Airway",            title:"Airway & Ventilation",                         hasCritical:true,  chapterFile:"c3",  isFirstInChapter:true,  chapterGroup:"airway" },
+        { id:"c4",     shortTitle:"4. Cardio & Resus",    title:"Cardiovascular & Resuscitation",               hasCritical:true,  chapterFile:"c4",  isFirstInChapter:true,  chapterGroup:"cardio" },
+        { id:"c5",     shortTitle:"5. Medical",           title:"Medical Emergencies",                          hasCritical:true,  chapterFile:"c5",  isFirstInChapter:true,  chapterGroup:"medical" },
+        { id:"c6",     shortTitle:"6. Trauma",            title:"Trauma Emergencies",                           hasCritical:true,  chapterFile:"c6",  isFirstInChapter:true,  chapterGroup:"trauma" },
+        { id:"c7",     shortTitle:"7. Special Pop",       title:"Special Populations",                          hasCritical:true,  chapterFile:"c7",  isFirstInChapter:true,  chapterGroup:"special" },
+        { id:"c8",     shortTitle:"8. Environmental",     title:"Environmental & Disaster Medicine",            hasCritical:true,  chapterFile:"c8",  isFirstInChapter:true,  chapterGroup:"environmental" },
+        { id:"c9",     shortTitle:"9. Pharmacology",      title:"Emergency Pharmacology",                       hasCritical:true,  chapterFile:"c9",  isFirstInChapter:true,  chapterGroup:"pharmacology" },
+        { id:"c10",    shortTitle:"10. Procedures",       title:"Clinical Procedures & Skills",                 hasCritical:true,  chapterFile:"c10", isFirstInChapter:true,  chapterGroup:"procedures" },
+        { id:"s1",     shortTitle:"Scope of Practice",    title:"Clinical Scope Matrix",                        hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope" },
+        { id:"m1-38",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    hasCritical:false, isFirstInChapter:false, chapterGroup:"scope", chapterFile:"m1-38" }
     ];
 
     // ══════════════════════════════════════════════════════════
     //  STORAGE
     // ══════════════════════════════════════════════════════════
-    const COMPLETION_KEY = 'dcas_cpg_completion';
-    const STATS_KEY      = 'dcas_cpg_stats';
+    const COMPLETION_KEY = 'smartcare_cpg_completion';
+    const STATS_KEY      = 'smartcare_cpg_stats';
     const EXAM_STATS_KEY = 'examStats';
 
     function loadStorage(key, def) { try { return JSON.parse(localStorage.getItem(key)) || def; } catch(e) { return def; } }
@@ -1176,16 +1122,16 @@
                 </div>
             </div>`;
 
-        // ── CPG Reference ──
+        // ── Core modules ──
         const cpgRefHtml = `
-            <div class="section-label">CPG Reference</div>
+            <div class="section-label">Core modules</div>
             <div class="menu-grid" data-section="cpg-ref">
                 <div class="menu-card special-card"
-                     data-chapter="dcas-cpg" data-search="DCAS CPG Chapters 1.1 Universal Care protocols guidelines">
+                     data-chapter="smartcare-cpg" data-search="SmartCare Chapters 1.1 Universal Care protocols guidelines">
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#library"/></svg></span>
-                    <h2>DCAS CPG 2025</h2>
+                    <h2>SmartCare</h2>
                     <p>All clinical practice guidelines — Chapters 1.1 onwards</p>
-                    <button class="dcas-expand-btn" id="dcasExpandBtn">
+                    <button class="sc-expand-btn" id="scExpandBtn">
                         ${showCpgChapters ? '▲ Hide chapters' : '▼ Browse all chapters'}
                     </button>
                 </div>
@@ -1209,10 +1155,17 @@
                 groups[g].push(ch);
             });
             const groupLabels = {
-                universal:'Universal Care', airway:'Airway & Breathing', cardio:'Cardiology',
-                resus:'Resuscitation', neuro:'Neurology', medical:'Medical Emergencies',
-                trauma:'Trauma', environmental:'Environmental & Toxicology',
-                pediatric:'Pediatrics', obstetric:'Obstetrics', mci:'MCI & Triage', scope:'Scope & Formulary'
+                foundations: '1. Foundations of Care',
+                assessment: '2. Patient Assessment',
+                airway: '3. Airway & Ventilation',
+                cardio: '4. Cardiovascular & Resuscitation',
+                medical: '5. Medical Emergencies',
+                trauma: '6. Trauma Emergencies',
+                special: '7. Special Populations',
+                environmental: '8. Environmental & Disaster',
+                pharmacology: '9. Emergency Pharmacology',
+                procedures: '10. Clinical Procedures & Skills',
+                scope: '11. Scope & Reference'
             };
             let idx = 0;
             chaptersHtml = `<div id="cpgChaptersContainer" class="${showCpgChapters ? '' : 'cpg-section-hidden'}">
@@ -1304,7 +1257,7 @@
             downloadBtn.addEventListener('click', async function() {
                 if (!('caches' in window)) { alert('Your browser does not support caching.'); return; }
                 downloadBtn.disabled = true; progressBar.style.display = 'block'; progressBar.value = 0;
-                const base = window.location.origin + (window.location.pathname.includes('/DCAS-CPG-Review-V1') ? '/DCAS-CPG-Review-V1' : '') + '/';
+                const base = window.location.origin + (window.location.pathname.includes('/SmartCare-CPG-Review-V1') ? '/SmartCare-CPG-Review-V1' : '') + '/';
                 const files = [
                     '/','/index.html','/login.html','/about.html','/styles.css','/app.js','/manifest.json',
                     '/icons/icon.png','/images/image-01.png',
@@ -1313,7 +1266,7 @@
                     base+'content/c0.js', base+'content/c-index.js',
                     base+'chapters/c0.html', base+'chapters/c-index.html'
                 ].map(p => p.startsWith('/') ? base+p.slice(1) : p);
-                const cache = await caches.open('dcas-cpg-v1');
+                const cache = await caches.open('smartcare-cpg-v1');
                 let done = 0, total = files.length;
                 for (const url of files) {
                     try { const r = await fetch(url); if (r.ok) await cache.put(url, r); } catch(_) {}
@@ -1326,16 +1279,17 @@
 
         if (filterText) filterCards(filterText);
 
-        // DCAS CPG expand button
-        const dcasExpandBtn = document.getElementById('dcasExpandBtn');
-        if (dcasExpandBtn) {
-            dcasExpandBtn.addEventListener('click', function(e) {
+        // SmartCare expand button
+        const scExpandBtn = document.getElementById('scExpandBtn');
+        if (scExpandBtn) {
+            scExpandBtn.addEventListener('click', function(e) {
                 e.preventDefault(); e.stopPropagation();
                 showCpgChapters = !showCpgChapters;
+                localStorage.setItem('smartcare_chapters_expanded', showCpgChapters);
                 // Toggle visibility without a full re-render (chapters are always in DOM)
                 const container = document.getElementById('cpgChaptersContainer');
                 if (container) container.classList.toggle('cpg-section-hidden', !showCpgChapters);
-                dcasExpandBtn.textContent = showCpgChapters ? '▲ Hide chapters' : '▼ Browse all chapters';
+                scExpandBtn.textContent = showCpgChapters ? '▲ Hide chapters' : '▼ Browse all chapters';
                 // Hide search hint if user manually expanded
                 const srchHint = document.getElementById('cpgSearchHint');
                 if (srchHint) srchHint.classList.remove('visible');
@@ -1353,7 +1307,7 @@
         const statsCard = document.querySelector('.menu-card.special-card[data-chapter="statistics"]');
         if (statsCard) {
             statsCard.addEventListener('click', function(e) {
-                if (e.target.closest('.dcas-expand-btn')) return;
+                if (e.target.closest('.sc-expand-btn')) return;
                 showGlobalStatsModal();
             });
         }

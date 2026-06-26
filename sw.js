@@ -1,9 +1,9 @@
 ﻿// ============================================================
-//  DCAS CPG 2025 – Service Worker
+//  SmartCare – Service Worker
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'dcas-cpg-v5.5';           // Bumped to v5.5 to force cache refresh after courses.html UI/UX enhancements
+const CACHE_VERSION = 'smartcare-v1.0';           // Bumped to v5.5 to force cache refresh after courses.html UI/UX enhancements
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
@@ -24,8 +24,32 @@ const PRE_CACHE = [
   'images/image-01.png',
   'chapters/c-index.html',
   'chapters/c0.html',
+  'chapters/c1.html',
+  'chapters/c2.html',
+  'chapters/c3.html',
+  'chapters/c4.html',
+  'chapters/c5.html',
+  'chapters/c6.html',
+  'chapters/c7.html',
+  'chapters/c8.html',
+  'chapters/c9.html',
+  'chapters/c10.html',
+  'chapters/s1.html',
+  'chapters/m1-38.html',
   'content/c-index.js',
   'content/c0.js',
+  'content/c1.js',
+  'content/c2.js',
+  'content/c3.js',
+  'content/c4.js',
+  'content/c5.js',
+  'content/c6.js',
+  'content/c7.js',
+  'content/c8.js',
+  'content/c9.js',
+  'content/c10.js',
+  'content/s1.js',
+  'content/m1-38.js',
   'pages/drug-calculator.js',
   'pages/drug-data.json',
   'pages/ecg.html',

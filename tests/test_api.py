@@ -1,9 +1,9 @@
-"""Smoke tests for the DCAS CPG Flask API."""
+"""Smoke tests for the SmartCare Flask API."""
 import json
 import logging
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
-STRONG_PW = "Dcas2025!Secure"  # meets all policy requirements
+STRONG_PW = "SmartCare2025!Secure"  # meets all policy requirements
 
 
 def _register(client, email, password=STRONG_PW, role="Paramedic"):
@@ -30,13 +30,13 @@ class TestIndex:
 # ── Registration ──────────────────────────────────────────────────────────────
 class TestRegister:
     def test_register_creates_user(self, client):
-        resp = _register(client, "test@dcas.ae")
+        resp = _register(client, "test@smartcare.org")
         assert resp.status_code == 201
         assert "Account created successfully" in resp.get_json()["message"]
 
     def test_register_duplicate_email(self, client):
-        _register(client, "dup@dcas.ae")
-        resp = _register(client, "dup@dcas.ae")
+        _register(client, "dup@smartcare.org")
+        resp = _register(client, "dup@smartcare.org")
         assert resp.status_code == 400
         assert "already exists" in resp.get_json()["error"]
 
@@ -46,27 +46,27 @@ class TestRegister:
 
     # ── Password policy (P2-1, ISR 5.2.1.5) ──────────────────────────────────
     def test_password_too_short(self, client):
-        resp = _register(client, "short@dcas.ae", password="Ab1short")
+        resp = _register(client, "short@smartcare.org", password="Ab1short")
         assert resp.status_code == 400
         assert "10 characters" in resp.get_json()["error"]
 
     def test_password_no_uppercase(self, client):
-        resp = _register(client, "noupper@dcas.ae", password="alllower1234")
+        resp = _register(client, "noupper@smartcare.org", password="alllower1234")
         assert resp.status_code == 400
         assert "uppercase" in resp.get_json()["error"]
 
     def test_password_no_lowercase(self, client):
-        resp = _register(client, "nolower@dcas.ae", password="ALLUPPER1234")
+        resp = _register(client, "nolower@smartcare.org", password="ALLUPPER1234")
         assert resp.status_code == 400
         assert "lowercase" in resp.get_json()["error"]
 
     def test_password_no_digit(self, client):
-        resp = _register(client, "nodigit@dcas.ae", password="NoDigitAtAll")
+        resp = _register(client, "nodigit@smartcare.org", password="NoDigitAtAll")
         assert resp.status_code == 400
         assert "digit" in resp.get_json()["error"]
 
     def test_common_password_blocked(self, client):
-        resp = _register(client, "common@dcas.ae", password="Password123")
+        resp = _register(client, "common@smartcare.org", password="Password123")
         assert resp.status_code == 400
         assert "common" in resp.get_json()["error"].lower()
 
@@ -77,7 +77,7 @@ class TestRegister:
 
     def test_invalid_professional_level_rejected(self, client):
         resp = client.post("/api/register", json={
-            "username": "badlevel@dcas.ae",
+            "username": "badlevel@smartcare.org",
             "password": STRONG_PW,
             "professional_level": "Hacker",
         })
@@ -87,27 +87,27 @@ class TestRegister:
 # ── Login ─────────────────────────────────────────────────────────────────────
 class TestLogin:
     def test_login_success(self, client):
-        _register(client, "login@dcas.ae")
-        resp = _login(client, "login@dcas.ae")
+        _register(client, "login@smartcare.org")
+        resp = _login(client, "login@smartcare.org")
         assert resp.status_code == 200
         data = resp.get_json()
         assert "Logged in successfully" in data["message"]
         assert data["redirect"] == "/index.html"
 
     def test_login_wrong_password(self, client):
-        _register(client, "bad@dcas.ae")
-        resp = _login(client, "bad@dcas.ae", password="WrongPass99!")
+        _register(client, "bad@smartcare.org")
+        resp = _login(client, "bad@smartcare.org", password="WrongPass99!")
         assert resp.status_code == 401
 
     def test_login_nonexistent_user(self, client):
-        resp = _login(client, "nobody@dcas.ae")
+        resp = _login(client, "nobody@smartcare.org")
         assert resp.status_code == 401
 
     def test_login_generic_error_message(self, client):
         """Both bad-user and bad-password return the same message (anti-enumeration)."""
-        _register(client, "enum@dcas.ae")
-        r1 = _login(client, "enum@dcas.ae", password="WrongPass99!")
-        r2 = _login(client, "noone@dcas.ae", password="WrongPass99!")
+        _register(client, "enum@smartcare.org")
+        r1 = _login(client, "enum@smartcare.org", password="WrongPass99!")
+        r2 = _login(client, "noone@smartcare.org", password="WrongPass99!")
         assert r1.get_json()["error"] == r2.get_json()["error"]
 
 
@@ -139,48 +139,48 @@ class TestAdminUsers:
 
     def test_admin_users_forbidden_for_regular_user(self, client):
         """A signed-in non-admin must be forbidden (broken-access-control fix)."""
-        _register(client, "regular@dcas.ae", role="Paramedic")
-        _login(client, "regular@dcas.ae")
+        _register(client, "regular@smartcare.org", role="Paramedic")
+        _login(client, "regular@smartcare.org")
         assert client.get("/api/admin/users").status_code == 403
 
     def test_admin_can_list_users(self, client):
         """An authenticated admin (role == 'Admin') can list users."""
-        _register(client, "admin-test@dcas.ae", role="Admin")
-        _login(client, "admin-test@dcas.ae")
+        _register(client, "admin-test@smartcare.org", role="Admin")
+        _login(client, "admin-test@smartcare.org")
         resp = client.get("/api/admin/users")
         assert resp.status_code == 200
         data = resp.get_json()
-        assert any(u["email"] == "admin-test@dcas.ae" for u in data)
+        assert any(u["email"] == "admin-test@smartcare.org" for u in data)
 
     def test_admin_role_update(self, client):
-        _register(client, "promote-me@dcas.ae", role="EMT")
-        _register(client, "mgr@dcas.ae", role="Admin")
-        _login(client, "mgr@dcas.ae")
+        _register(client, "promote-me@smartcare.org", role="EMT")
+        _register(client, "mgr@smartcare.org", role="Admin")
+        _login(client, "mgr@smartcare.org")
         users = client.get("/api/admin/users").get_json()
-        target = next(u for u in users if u["email"] == "promote-me@dcas.ae")
+        target = next(u for u in users if u["email"] == "promote-me@smartcare.org")
         resp = client.patch(f"/api/admin/users/{target['id']}/role",
                             json={"role": "Paramedic"})
         assert resp.status_code == 200
         assert resp.get_json()["role"] == "Paramedic"
 
     def test_admin_delete_user(self, client):
-        _register(client, "todelete@dcas.ae", role="EMT")
-        _register(client, "deleter@dcas.ae", role="Admin")
-        _login(client, "deleter@dcas.ae")
+        _register(client, "todelete@smartcare.org", role="EMT")
+        _register(client, "deleter@smartcare.org", role="Admin")
+        _login(client, "deleter@smartcare.org")
         users = client.get("/api/admin/users").get_json()
-        target = next(u for u in users if u["email"] == "todelete@dcas.ae")
+        target = next(u for u in users if u["email"] == "todelete@smartcare.org")
         resp = client.delete(
             f"/api/admin/users/{target['id']}",
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
         assert resp.status_code == 200
         users_after = client.get("/api/admin/users").get_json()
-        assert not any(u["email"] == "todelete@dcas.ae" for u in users_after)
+        assert not any(u["email"] == "todelete@smartcare.org" for u in users_after)
 
     def test_non_admin_cannot_update_role(self, client):
-        _register(client, "attacker@dcas.ae", role="EMT")
-        _register(client, "victim@dcas.ae", role="EMT")
-        _login(client, "attacker@dcas.ae")
+        _register(client, "attacker@smartcare.org", role="EMT")
+        _register(client, "victim@smartcare.org", role="EMT")
+        _login(client, "attacker@smartcare.org")
         # attacker doesn't know victim's id but any id should return 403
         resp = client.patch("/api/admin/users/1/role", json={"role": "Admin"})
         assert resp.status_code == 403
@@ -218,27 +218,27 @@ class TestHealthCheck:
 # ── Audit logging (P2-5, §4.7(b)) ────────────────────────────────────────────
 class TestAuditLogging:
     def test_successful_login_is_audited(self, client, caplog):
-        _register(client, "audit@dcas.ae")
-        with caplog.at_level(logging.INFO, logger="dcas.audit"):
-            _login(client, "audit@dcas.ae")
-        records = [r for r in caplog.records if r.name == "dcas.audit"]
+        _register(client, "audit@smartcare.org")
+        with caplog.at_level(logging.INFO, logger="smartcare.audit"):
+            _login(client, "audit@smartcare.org")
+        records = [r for r in caplog.records if r.name == "smartcare.audit"]
         events = [json.loads(r.message) for r in records]
         login_events = [e for e in events if e["event"] == "login"]
         assert any(e["outcome"] == "success" for e in login_events)
 
     def test_failed_login_is_audited(self, client, caplog):
-        with caplog.at_level(logging.INFO, logger="dcas.audit"):
-            _login(client, "ghost@dcas.ae", password="WrongPass99!")
-        records = [r for r in caplog.records if r.name == "dcas.audit"]
+        with caplog.at_level(logging.INFO, logger="smartcare.audit"):
+            _login(client, "ghost@smartcare.org", password="WrongPass99!")
+        records = [r for r in caplog.records if r.name == "smartcare.audit"]
         events = [json.loads(r.message) for r in records]
         assert any(e["event"] == "login" and e["outcome"] == "fail" for e in events)
 
     def test_admin_action_is_audited(self, client, caplog):
-        _register(client, "adminlog@dcas.ae", role="Admin")
-        _login(client, "adminlog@dcas.ae")
-        with caplog.at_level(logging.INFO, logger="dcas.audit"):
+        _register(client, "adminlog@smartcare.org", role="Admin")
+        _login(client, "adminlog@smartcare.org")
+        with caplog.at_level(logging.INFO, logger="smartcare.audit"):
             client.get("/api/admin/users")
-        records = [r for r in caplog.records if r.name == "dcas.audit"]
+        records = [r for r in caplog.records if r.name == "smartcare.audit"]
         events = [json.loads(r.message) for r in records]
         assert any(e["event"] == "admin_list_users" and e["outcome"] == "success"
                    for e in events)
@@ -269,7 +269,7 @@ class TestCsrfGuard:
         """A well-formed JSON POST with the CSRF headers must reach the handler."""
         resp = client.post(
             "/api/login",
-            json={"username": "noone@dcas.ae", "password": "whatever"},
+            json={"username": "noone@smartcare.org", "password": "whatever"},
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
         # Handler reached — 401 from wrong credentials, not 400 from CSRF guard.

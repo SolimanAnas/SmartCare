@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>DCAS CPG 2025 · Drug Index</title>
+<title>SmartCare · Drug Index</title>
 <script>
   (function(){
     var t=localStorage.getItem('theme')||'dark';
@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ════════════════════════════════════════════════════════════
-   DCAS Drug Index — Quick Reference
+   SmartCare Drug Index — Quick Reference
 ═══════════════════════════════════════════════════════════ */
 :root{
   --bg:#07111f;--sf:rgba(255,255,255,.055);--sf2:rgba(255,255,255,.09);
@@ -231,7 +231,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 
   async function loadData() {
     try {
-      const resp = await fetch('drug-data.json'));
+      const resp = await fetch('drug-data.json');
       const data = await resp.json();
       allCategories = data.categories || [];
       allDrugs = data.drugs || {};

@@ -1,5 +1,5 @@
 /* ============================================================
-   DCAS Drug Calculator 2026  —  Application Logic
+   SmartCare Drug Calculator 2026  —  Application Logic
    drug-calculator.js  |  Data: drug-data.json
    ============================================================ */
 'use strict';

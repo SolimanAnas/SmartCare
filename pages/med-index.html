@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>DCAS · Medication Index</title>
-<script>(function(){var t=localStorage.getItem('dcas-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<title>SmartCare · Medication Index</title>
+<script>(function(){var t=localStorage.getItem('smartcare-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -223,7 +223,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <!-- HERO -->
 <div class="hero">
   <div>
-    <div class="hero-eyebrow">DCAS CPG 2026 · Formulary</div>
+    <div class="hero-eyebrow">SmartCare · Formulary</div>
     <div class="hero-heading">EMS <span class="hl">Drug Reference</span></div>
     <div class="hero-desc">Tap any medication to open full dosing in the calculator</div>
   </div>
@@ -277,7 +277,7 @@ let DRUGS={},CATS=[],activeCat='ALL',query='',sortAZ=false,azOpen=false;
 /* THEME */
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
-  localStorage.setItem('dcas-theme',t);
+  localStorage.setItem('smartcare-theme',t);
   document.querySelectorAll('.tp-option').forEach(o=>o.classList.toggle('active',o.dataset.theme===t));
   closeThemePanel();
 }
@@ -297,13 +297,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeThemePanel();})
 /* INIT */
 async function init(){
   try{
-    const data=await (await fetch('drug-data.json'))).json();
+    const data=await (await fetch('drug-data.json')).json();
     CATS=data.categories; DRUGS=data.drugs;
     const totalInds=Object.values(DRUGS).reduce((s,d)=>s+(d.indications||[]).length,0);
     document.getElementById('hsTotalDrugs').textContent=Object.keys(DRUGS).length;
     document.getElementById('hsTotalCats').textContent=CATS.length;
     document.getElementById('hsTotalInds').textContent=totalInds;
-    document.getElementById('hdrSub').textContent=Object.keys(DRUGS).length+' medications · DCAS CPG 2026';
+    document.getElementById('hdrSub').textContent=Object.keys(DRUGS).length+' medications · SmartCare';
     buildPills(); buildAZ(); render();
     // deep-link
     const d=new URLSearchParams(location.search).get('drug');

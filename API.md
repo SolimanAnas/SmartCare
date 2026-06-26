@@ -1,4 +1,4 @@
-# API Reference — DCAS CPG
+# API Reference — SmartCare – Clinical Learning Platform
 
 Base URL (local): `http://localhost:8899`
 
@@ -8,7 +8,7 @@ session cookie issued on login.
 ## CSRF requirement for state-changing requests
 
 For any `POST`, `PATCH`, `PUT`, or `DELETE` to a `/api/` route, the CSRF guard
-(`_register_csrf_guard`) requires:
+requires:
 
 - header `X-Requested-With: XMLHttpRequest`, **and**
 - `Content-Type: application/json` for body-carrying methods (POST/PATCH/PUT).
@@ -27,7 +27,7 @@ Requests missing these are rejected with `400 {"error": "Invalid request"}`.
 ### POST `/api/register`
 
 ```json
-{ "username": "user@dcas.ae", "password": "Str0ngPass!", "full_name": "Jane Doe", "professional_level": "Paramedic" }
+{ "username": "user@smartcare.org", "password": "Str0ngPass!", "full_name": "Jane Doe", "professional_level": "Paramedic" }
 ```
 - `username` must be a valid email.
 - `password` policy: min 10 chars, with upper/lower/digit; common passwords blocked.
@@ -38,7 +38,7 @@ Responses: `201` success · `400` validation error / duplicate email.
 ### POST `/api/login`
 
 ```json
-{ "username": "user@dcas.ae", "password": "Str0ngPass!" }
+{ "username": "user@smartcare.org", "password": "Str0ngPass!" }
 ```
 - `200` — `{ "message", "redirect": "/index.html", "role", "email" }` (sets session)
 - `401` — `{ "error": "Invalid username or password" }` (generic, anti-enumeration)
@@ -82,5 +82,5 @@ breaches return `429`; forbidden returns `403`.
 
 ## Audit logging
 
-Auth and admin events emit one JSON line to the `dcas.audit` logger
+Auth and admin events emit one JSON line to the `smartcare.audit` logger
 (`_audit`). Wire this to a monitored sink in production (see `DEPLOYMENT.md`).

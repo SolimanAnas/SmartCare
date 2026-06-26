@@ -1,5 +1,5 @@
 /**
- * DCAS Clinical ECG Engine v3.0
+ * SmartCare Clinical ECG Engine v3.0
  * Real-time physics-based ECG synthesis
  * Based on ecg.md (physics model) + ecg-data.md (clinical data)
  *

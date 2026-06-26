@@ -1,7 +1,7 @@
 {
-  "name": "DCAS CPG 2025 – Study Aid",
-  "short_name": "DCAS CPG",
-  "description": "Study aid for Dubai Corporation for Ambulance Services Clinical Practice Guidelines 2025",
+  "name": "SmartCare – Study Aid",
+  "short_name": "SmartCare",
+  "description": "Generic clinical learning platform for healthcare professionals.",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0f2027",

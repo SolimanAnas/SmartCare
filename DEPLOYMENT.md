@@ -1,13 +1,12 @@
-# Deployment Guide — DCAS CPG
+# Deployment Guide — SmartCare
 
-Covers local development and production deployment. The production server/host is
-provided by the organization; fill in host-specific values where indicated.
+Covers local development and production deployment.
 
 ## 1. Prerequisites
 
 - Python 3.11+
 - `pip` / virtualenv
-- A WSGI host (Render, or org-provided server) running Gunicorn
+- A WSGI host (Render, or standard server) running Gunicorn
 
 ## 2. Environment Variables
 
@@ -24,14 +23,14 @@ provided by the organization; fill in host-specific values where indicated.
 ## 3. Local Development
 
 ```bash
-git clone https://github.com/SolimanAnas/CPG-2025.git
-cd CPG-2025
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 export SECRET_KEY=$(python -c "import secrets; print(secrets.token_hex(32))")
 python server.py        # http://localhost:8899 (set FLASK_DEBUG=1 for debug)
 ```
+
+Alternatively, run `server.bat` on Windows to launch and open the app in your browser automatically.
 
 ## 4. Running Tests
 
@@ -56,7 +55,7 @@ APP_ENV=production SECRET_KEY=... gunicorn server:app --bind 0.0.0.0:$PORT --wor
 > When running more than one worker, set `RATELIMIT_STORAGE_URI=redis://...` so
 > rate limits are enforced consistently across processes.
 
-## 6. Host Configuration (org-provided)
+## 6. Host Configuration
 
 1. **TLS / HTTPS** — terminate TLS at the host/load balancer. Setting
    `APP_ENV=production` makes session cookies `Secure` and emits HSTS.
@@ -64,7 +63,7 @@ APP_ENV=production SECRET_KEY=... gunicorn server:app --bind 0.0.0.0:$PORT --wor
    single-instance only; see `reports/database-roadmap.md`.
 3. **Rate-limit storage** — Redis via `RATELIMIT_STORAGE_URI` for multi-worker.
 4. **Backups** — schedule automated database backups.
-5. **Audit log sink** — route the `dcas.audit` logger to a monitored sink
+5. **Audit log sink** — route the `smartcare.audit` logger to a monitored sink
    (CloudWatch/Datadog/etc.).
 6. **Health checks** — point the monitor at `GET /api/health`
    (`200` healthy, `503` degraded).

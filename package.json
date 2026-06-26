@@ -1,5 +1,5 @@
 {
-  "name": "cpg-2025",
+  "name": "smartcare",
   "version": "1.0.0",
   "description": "![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Framework-Flask-black.svg?logo=flask&logoColor=white) ![Vanilla JS](https://img.shields.io/badge/Frontend-Vanilla_JS-f7df1e.svg?logo=javascript&logoColor=black) ![PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-5a0fc8.svg?logo=pwa&logoColor=white)",
   "main": "app.js",

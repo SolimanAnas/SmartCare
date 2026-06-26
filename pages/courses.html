@@ -2,11 +2,11 @@
 <html lang="en" data-theme="dark">
 <head>
 <script>
-  // ── DCAS Security Guard: runs before anything else renders ──
+  // ── SmartCare Security Guard: runs before anything else renders ──
   // [TEMPORARILY DISABLED FOR TESTING]
   /*
   (function() {
-    const AUTH_KEY = 'dcas_local_auth';
+    const AUTH_KEY = 'smartcare_local_auth';
     try {
       const sessionRaw = localStorage.getItem(AUTH_KEY);
       if (!sessionRaw) { window.location.replace('login.html'); return; }
@@ -23,7 +23,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>DCAS · Medical Courses</title>
+    <title>SmartCare · Medical Courses</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1185,11 +1185,11 @@
 <div id="pwaInstallBanner" style="display:none;" role="complementary" aria-label="Install app">
     <div class="pwa-banner-inner">
         <div class="pwa-banner-icon">
-            <img src="../icons/icon.png" alt="DCAS Courses" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="../icons/icon.png" alt="SmartCare Courses" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <span class="pwa-icon-fallback" style="display:none;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#shield"/></svg>️</span>
         </div>
         <div class="pwa-banner-text">
-            <strong class="pwa-banner-title">Install DCAS Hub</strong>
+            <strong class="pwa-banner-title">Install SmartCare</strong>
             <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen · works offline</span>
         </div>
         <div class="pwa-banner-actions">
@@ -1345,7 +1345,7 @@
     };
 
     const CATEGORY_ORDER = ['cardiac', 'trauma', 'pediatrics', 'medical', 'ecg', 'general'];
-    const PROGRESS_KEY = 'dcas_course_progress';
+    const PROGRESS_KEY = 'smartcare_course_progress';
 
     function getAllProgress() {
         try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
@@ -1605,8 +1605,8 @@
     renderCourses();
 
     // ── PWA Install Banner ──
-    const PWA_KEY       = 'dcas_pwa_install';
-    const PWA_NEVER_KEY = 'dcas_pwa_never';
+    const PWA_KEY       = 'smartcare_pwa_install';
+    const PWA_NEVER_KEY = 'smartcare_pwa_never';
     const PWA_DELAY_MS  = 4000;
     const PWA_SNOOZE_MS = 24 * 60 * 60 * 1000;
 
@@ -1733,7 +1733,7 @@
     document.getElementById('qsHome').addEventListener('click', () => { window.location.href = '../index.html'; });
     document.getElementById('qsAbout').addEventListener('click', () => { window.location.href = 'about.html'; });
     document.getElementById('qsLogout').addEventListener('click', () => {
-        localStorage.removeItem('dcas_local_auth');
+        localStorage.removeItem('smartcare_local_auth');
         window.location.replace('login.html');
     });
 

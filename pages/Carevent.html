@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>DCAS · O₂ Duration Calculator</title>
+<title>SmartCare · O₂ Duration Calculator</title>
 <script>
   (function(){
     var t=localStorage.getItem('theme')||'dark';
@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
-   DCAS O₂ Duration Calculator  —  carevent.html
+   SmartCare O₂ Duration Calculator  —  carevent.html
 ═══════════════════════════════════════════════════════ */
 :root{
   --bg:#07111f;--sf:rgba(255,255,255,.055);--sf2:rgba(255,255,255,.09);
@@ -257,7 +257,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
   <div class="hdr-badge"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
   <div class="hdr-info">
     <div class="hdr-title">O₂ Duration Calculator</div>
-    <div class="hdr-sub">Oxygen Supply Planning · DCAS CPG 2026</div>
+    <div class="hdr-sub">Oxygen Supply Planning · SmartCare</div>
   </div>
 </header>
 
@@ -411,12 +411,12 @@ function saveState() {
     flow: state.flowRate,
     qty: state.quantity
   };
-  localStorage.setItem('dcas_o2_state', JSON.stringify(s));
+  localStorage.setItem('smartcare_o2_state', JSON.stringify(s));
 }
 
 function loadState() {
   try {
-    const cachedStr = localStorage.getItem('dcas_o2_state');
+    const cachedStr = localStorage.getItem('smartcare_o2_state');
     if (cachedStr) {
       const cached = JSON.parse(cachedStr);
       

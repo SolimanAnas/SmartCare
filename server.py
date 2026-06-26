@@ -26,9 +26,9 @@ login_manager = LoginManager()
 limiter = Limiter(key_func=get_remote_address)
 
 # ── Audit logger (Secure SDLC §4.7(b), §3.9) ─────────────────────────────────
-# Emits one JSON line per security event to the "dcas.audit" logger.
+# Emits one JSON line per security event to the "smartcare.audit" logger.
 # Wire this logger to a monitored sink (e.g. CloudWatch, Datadog) in production.
-_audit_log = logging.getLogger("dcas.audit")
+_audit_log = logging.getLogger("smartcare.audit")
 
 
 def _audit(event: str, outcome: str, actor: str = "anonymous", detail: str = "") -> None:

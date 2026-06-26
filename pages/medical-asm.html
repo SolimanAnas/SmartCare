@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>DCAS · Medical Assessment</title>
+<title>SmartCare · Medical Assessment</title>
 <script>
   (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
 </script>
@@ -202,7 +202,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
   <div class="hdr-badge"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg></div>
   <div class="hdr-info">
     <div class="hdr-title">Medical Assessment</div>
-    <div class="hdr-sub">DCAS CPG 2026 · Systematic Evaluation</div>
+    <div class="hdr-sub">SmartCare · Systematic Evaluation</div>
   </div>
   <div class="hdr-timer" id="hdrTimer">00:00</div>
 </header>
@@ -796,7 +796,7 @@ function openSummary() {
   }
 
   html += `<button class="print-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg>️ Print / Save Report</button>`;
-  html += `<button class="reset-btn" onclick="if(confirm('Reset entire assessment?')){localStorage.removeItem('dcas-med-assess');location.reload()}"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trash-2"/></svg>️ Reset Assessment</button>`;
+  html += `<button class="reset-btn" onclick="if(confirm('Reset entire assessment?')){localStorage.removeItem('smartcare-med-assess');location.reload()}"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trash-2"/></svg>️ Reset Assessment</button>`;
 
   document.getElementById('bsContent').innerHTML = html;
   document.getElementById('bsOverlay').classList.add('open');
@@ -832,11 +832,11 @@ function startTimer() {
    PERSISTENCE
 ═══════════════════════════════════════════════════════ */
 function saveState() {
-  try { localStorage.setItem('dcas-med-assess', JSON.stringify(state)); } catch(e) {}
+  try { localStorage.setItem('smartcare-med-assess', JSON.stringify(state)); } catch(e) {}
 }
 function loadState() {
   try {
-    const raw = localStorage.getItem('dcas-med-assess');
+    const raw = localStorage.getItem('smartcare-med-assess');
     if (raw) {
       const saved = JSON.parse(raw);
       Object.assign(state, saved);

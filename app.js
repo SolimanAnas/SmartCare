@@ -1,10 +1,10 @@
-﻿/* ========== app.js – DCAS CPG 2025 (Final Clean) ========== */
+/* ========== app.js – SmartCare (Final Clean) ========== */
 (function(){
 "use strict";
 
 // ---------- STORAGE ----------  
 const storage = (function() {  
-    const KEY = 'dcas_cpg_stats';  
+    const KEY = 'smartcare_cpg_stats';  
     const defaultStats = { totalAttempts: 0, chapters: {}, critical: { total: 0, correct: 0 } };  
     function load() {  
         try {  
@@ -23,7 +23,7 @@ const storage = (function() {
     const html = document.documentElement;
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
-    const savedSize = localStorage.getItem('dcas_font_size') || 'medium';
+    const savedSize = localStorage.getItem('smartcare_font_size') || 'medium';
     html.setAttribute('data-font-size', savedSize);
 })();
 
@@ -31,7 +31,7 @@ const storage = (function() {
 
 /*
 (function() {
-    const AUTH_KEY = 'dcas_local_auth';
+    const AUTH_KEY = 'smartcare_local_auth';
     const PUBLIC_PAGES = ['login.html', 'about.html', 'privacy.html', 'terms.html'];
 
     function getBasePath() {
@@ -74,7 +74,7 @@ const storage = (function() {
 // ============================================================
 // LAST VISITED – records chapter visits to localStorage (single implementation)
 // ============================================================
-const LAST_VISITED_KEY = 'dcas_last_visited';
+const LAST_VISITED_KEY = 'smartcare_last_visited';
 
 function recordLastVisited() {
     if (!chapterData) return;
@@ -140,13 +140,13 @@ function initChapterPage() {
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
-    const savedSize = localStorage.getItem('dcas_font_size') || 'medium';
+    const savedSize = localStorage.getItem('smartcare_font_size') || 'medium';
     html.setAttribute('data-font-size', savedSize);
 
     const headerEl = document.querySelector('header');
     if (headerEl && chapterData) {
-        const title    = chapterData.shortTitle || chapterData.title || 'DCAS CPG';
-        const subtitle = 'DCAS CPG 2025';
+        const title    = chapterData.shortTitle || chapterData.title || 'SmartCare';
+        const subtitle = 'SmartCare';
         headerEl.innerHTML = `
             <div class="header-left">
                 <button class="icon-btn" id="homeBtn" title="Home" aria-label="Home">
@@ -182,8 +182,8 @@ function initChapterPage() {
     const footerEl = document.querySelector('footer');
     if (footerEl) {
         footerEl.innerHTML = `
-            <div>Created by Soliman Anas · for study aid only</div>
-            <div><a href="../pages/about.html">About &amp; Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
+            <div>Created & Maintained by Soliman Anas · Generic clinical learning platform</div>
+            <div><a href="../pages/about.html">About &amp; Disclaimer</a> · Refer to SmartCare and memo for procedures and protocols.</div>
         `;
     }
 
@@ -201,7 +201,7 @@ function initChapterPage() {
 
     function loadStats() {
         try {
-            const data  = localStorage.getItem('dcas_cpg_stats');
+            const data  = localStorage.getItem('smartcare_cpg_stats');
             const stats = data ? JSON.parse(data) : { totalAttempts: 0, critical: { total: 0, correct: 0 } };
             const critAcc = stats.critical && stats.critical.total
                 ? Math.round((stats.critical.correct / stats.critical.total) * 100)
@@ -223,7 +223,7 @@ function initChapterPage() {
         });
     }
 
-    document.addEventListener('dcas:rendered', () => {
+    document.addEventListener('smartcare:rendered', () => {
         const main = document.getElementById('mainContent');
         if (main) {
             main.classList.add('content-entering');
@@ -323,7 +323,7 @@ const utils = {
 
 // ---------- HEADER ----------  
 function updateHeader(title, subtitle = '', showBack = true) {  
-    if (dom.pageTitle) dom.pageTitle.innerText = title || 'DCAS CPG 2025';  
+    if (dom.pageTitle) dom.pageTitle.innerText = title || 'SmartCare';  
     if (dom.pageSubtitle) dom.pageSubtitle.innerText = subtitle || '';  
     if (dom.homeBtn) dom.homeBtn.style.display = showBack ? 'block' : 'none';  
 
@@ -1277,7 +1277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     applyTheme(localStorage.getItem('theme') || 'dark');
 
     // ── Font size ───────────────────────────────────────────
-    const savedFont = localStorage.getItem('dcas_font_size') || 'medium';
+    const savedFont = localStorage.getItem('smartcare_font_size') || 'medium';
     htmlEl.setAttribute('data-font-size', savedFont);
 
     // ── Stats badge ─────────────────────────────────────────

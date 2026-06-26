@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>DCAS CPG 2025 · Full Index</title>
+    <title>SmartCare · Table of Contents</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         </button>
         <div class="header-text">
-            <h1 id="pageTitle">DCAS CPG Index</h1>
+            <h1 id="pageTitle">Table of Contents</h1>
             <p id="pageSubtitle">Complete Table of Contents</p>
         </div>
     </div>
@@ -58,8 +58,8 @@
 </main>
 
 <footer>
-    <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="../pages/about.html">About & Disclaimer</a> · Refer to DCAS CPG and memo for procedures and protocols.</div>
+    <div>Created & Maintained by Soliman Anas · for study aid only</div>
+    <div><a href="../pages/about.html">About & Disclaimer</a> · Intended for educational and clinical revision purposes.</div>
 </footer>
 
 <button class="float-btn hidden" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-up"/></svg></button>
@@ -73,7 +73,7 @@
     (function() {
         const themeBtn = document.getElementById('themeToggle');
         const html = document.documentElement;
-        const themes = ['dark', 'light', 'sepia', 'forest'];
+        const themes = ['dark', 'amoled', 'light', 'sepia', 'forest'];
         
         function initTheme() {
             const saved = localStorage.getItem('theme') || 'dark';
@@ -100,7 +100,7 @@
 
         function loadStats() {
             try {
-                const data = localStorage.getItem('dcas_cpg_stats');
+                const data = localStorage.getItem('smartcare_cpg_stats');
                 const stats = data ? JSON.parse(data) : { totalAttempts: 0, critical: { total: 0, correct: 0 } };
                 const critAcc = stats.critical.total ? Math.round((stats.critical.correct / stats.critical.total) * 100) : 0;
                 document.getElementById('statsAttempts').innerText = stats.totalAttempts || 0;

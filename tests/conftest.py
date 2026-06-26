@@ -1,7 +1,10 @@
+import os
 import pytest
 
 from server import create_app
 from server import db as _db
+
+os.environ.setdefault('GOOGLE_CLIENT_ID', 'dummy-client-id')
 
 
 @pytest.fixture

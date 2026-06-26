@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>DCAS · EMS Tools</title>
+<title>SmartCare · EMS Tools</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -323,11 +323,11 @@ const APGAR_LABELS = {
   R:{2:"Strong cry",1:"Weak / irregular",0:"Absent"}
 };
 const APGAR_FIELDS = [
-  {k:"A", label:"Appearance", icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg>"},
-  {k:"P", label:"Pulse",      icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>"},
-  {k:"G", label:"Grimace",    icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg>"},
-  {k:"Ac",label:"Activity",   icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hand"/></svg>"},
-  {k:"R", label:"Respiration",icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>"}
+  {k:"A", label:"Appearance", icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg>`},
+  {k:"P", label:"Pulse",      icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>`},
+  {k:"G", label:"Grimace",    icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg>`},
+  {k:"Ac",label:"Activity",   icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hand"/></svg>`},
+  {k:"R", label:"Respiration",icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`}
 ];
 
 function openApgar(){
@@ -384,18 +384,18 @@ function renderApgar(){
     // EMS actions
     html += `<div class="cat-card"><div class="cat-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg> Neonatal Actions</div>`;
     const acts = t>=7?[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg>",t:"<strong>No resuscitation needed</strong>",d:"Routine newborn care. Dry, warm, stimulate."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>Monitor breathing</strong>",d:"SpO₂ monitor. Ensure airway clear."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer-sun"/></svg>️",t:"<strong>Maintain warmth</strong>",d:"Dry immediately. Skin-to-skin or warm wrap."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg>`,t:"<strong>No resuscitation needed</strong>",d:"Routine newborn care. Dry, warm, stimulate."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>Monitor breathing</strong>",d:"SpO₂ monitor. Ensure airway clear."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer-sun"/></svg>️`,t:"<strong>Maintain warmth</strong>",d:"Dry immediately. Skin-to-skin or warm wrap."},
     ]:t>=4?[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>Supplemental Oxygen</strong>",d:"Free-flow O₂ via mask. Target SpO₂ 90–95%."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#refresh-ccw"/></svg>",t:"<strong>Stimulate</strong>",d:"Dry, rub back, flick soles. Reassess in 30 sec."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>",t:"<strong>Reassess at 5 min</strong>",d:"Repeat APGAR. If no improvement <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> PPV."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>Supplemental Oxygen</strong>",d:"Free-flow O₂ via mask. Target SpO₂ 90–95%."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#refresh-ccw"/></svg>`,t:"<strong>Stimulate</strong>",d:"Dry, rub back, flick soles. Reassess in 30 sec."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>`,t:"<strong>Reassess at 5 min</strong>",d:`Repeat APGAR. If no improvement <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> PPV.`},
     ]:[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg>",t:"<strong>Positive Pressure Ventilation (PPV)</strong>",d:"BVM mask ventilation. Rate 40–60/min. 21% O₂ initially."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#plug"/></svg>",t:"<strong>Cardiac Compression if HR < 60</strong>",d:"2-thumb technique. 3:1 compression:ventilation ratio."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>",t:"<strong>IV/UVC Access</strong>",d:"Epinephrine 0.01–0.03 mg/kg IV/IO if HR <60 after 30 sec CPR."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer"/></svg>️",t:"<strong>Prevent hypothermia</strong>",d:"Warm wrap or polyethylene bag for premature infants."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg>`,t:"<strong>Positive Pressure Ventilation (PPV)</strong>",d:"BVM mask ventilation. Rate 40–60/min. 21% O₂ initially."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#plug"/></svg>`,t:"<strong>Cardiac Compression if HR < 60</strong>",d:"2-thumb technique. 3:1 compression:ventilation ratio."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>`,t:"<strong>IV/UVC Access</strong>",d:"Epinephrine 0.01–0.03 mg/kg IV/IO if HR <60 after 30 sec CPR."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer"/></svg>️`,t:"<strong>Prevent hypothermia</strong>",d:"Warm wrap or polyethylene bag for premature infants."},
     ];
     acts.forEach(a=>{ html+=`<div class="act-row"><div class="act-i">${a.i}</div><div class="act-t"><strong>${a.t}</strong><br><span style="color:var(--muted);font-size:.71rem">${a.d}</span></div></div>`; });
     html += `</div>`;
@@ -415,14 +415,14 @@ function apgarPick(key,val){
    BURNS — Rule of Nines
 ═══════════════════════════════════════════════════════════ */
 const BURNS_REGIONS = [
-  {k:"head",   label:"Head",        pct:9,  icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg>"},
-  {k:"chest",  label:"Chest",       pct:18, icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>"},
+  {k:"head",   label:"Head",        pct:9,  icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg>`},
+  {k:"chest",  label:"Chest",       pct:18, icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>`},
   {k:"back",   label:"Back",        pct:18, icon:"⬜"},
-  {k:"armL",   label:"Left Arm",    pct:9,  icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#dumbbell"/></svg>"},
-  {k:"armR",   label:"Right Arm",   pct:9,  icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#dumbbell"/></svg>"},
-  {k:"legL",   label:"Left Leg",    pct:18, icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg>"},
-  {k:"legR",   label:"Right Leg",   pct:18, icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg>"},
-  {k:"peri",   label:"Perineum",    pct:1,  icon:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-dot"/></svg>"}
+  {k:"armL",   label:"Left Arm",    pct:9,  icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#dumbbell"/></svg>`},
+  {k:"armR",   label:"Right Arm",   pct:9,  icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#dumbbell"/></svg>`},
+  {k:"legL",   label:"Left Leg",    pct:18, icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg>`},
+  {k:"legR",   label:"Right Leg",   pct:18, icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg>`},
+  {k:"peri",   label:"Perineum",    pct:1,  icon:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-dot"/></svg>`}
 ];
 let burnWeight = 0;
 const BURNS_STATE = {};
@@ -491,18 +491,18 @@ function renderBurns(){
   if(tbsa>0){
     html += `<div class="cat-card"><div class="cat-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg> EMS Actions</div>`;
     const acts = tbsa<10?[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>O₂ if inhalation injury suspected</strong>",d:"High-flow 15L NRB. Check for singed nasal hairs, soot."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>",t:"<strong>IV Access</strong>",d:"Large-bore IV. Cover with clean dry dressings."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer"/></svg>️",t:"<strong>Prevent hypothermia</strong>",d:"Remove burning clothing. Warm environment."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>O₂ if inhalation injury suspected</strong>",d:"High-flow 15L NRB. Check for singed nasal hairs, soot."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>`,t:"<strong>IV Access</strong>",d:"Large-bore IV. Cover with clean dry dressings."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#thermometer"/></svg>️`,t:"<strong>Prevent hypothermia</strong>",d:"Remove burning clothing. Warm environment."},
     ]:tbsa<=20?[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>",t:"<strong>IV Fluid Resuscitation</strong>",d:"Lactated Ringer's. Start Parkland formula if >20 min to hospital."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>",t:"<strong>Burns unit notification</strong>",d:"Pre-alert receiving facility. Cover with cling wrap."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>",t:"<strong>Analgesia</strong>",d:"Morphine 0.1 mg/kg IV titrated. Burns are extremely painful."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>`,t:"<strong>IV Fluid Resuscitation</strong>",d:"Lactated Ringer's. Start Parkland formula if >20 min to hospital."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>`,t:"<strong>Burns unit notification</strong>",d:"Pre-alert receiving facility. Cover with cling wrap."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>`,t:"<strong>Analgesia</strong>",d:"Morphine 0.1 mg/kg IV titrated. Burns are extremely painful."},
     ]:[
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg>",t:"<strong>Major Burn — Immediate resuscitation</strong>",d:"2 large-bore IVs. Parkland formula immediately."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>Airway priority</strong>",d:"Burns >40% TBSA or facial burns <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> early intubation before oedema."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>",t:"<strong>Aggressive fluid therapy</strong>",d:"Lactated Ringer's. First 8h = half of 24h total."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>",t:"<strong>Burns centre transport</strong>",d:"Bypass local ED if possible. Pre-alert burns team."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg>`,t:"<strong>Major Burn — Immediate resuscitation</strong>",d:"2 large-bore IVs. Parkland formula immediately."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>Airway priority</strong>",d:`Burns >40% TBSA or facial burns <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> early intubation before oedema.`},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg>`,t:"<strong>Aggressive fluid therapy</strong>",d:"Lactated Ringer's. First 8h = half of 24h total."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>`,t:"<strong>Burns centre transport</strong>",d:"Bypass local ED if possible. Pre-alert burns team."},
     ];
     acts.forEach(a=>{ html+=`<div class="act-row"><div class="act-i">${a.i}</div><div class="act-t"><strong>${a.t}</strong><br><span style="color:var(--muted);font-size:.71rem">${a.d}</span></div></div>`; });
     html += `</div>`;
@@ -632,16 +632,16 @@ function renderRts(){
     html += `<div class="cat-card"><div class="cat-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg> EMS Actions</div>`;
     const acts = rts>=7?[
       {i:"🟢",t:"<strong>Delayed triage</strong>",d:"Stable vitals. Can withstand short delay. Monitor continuously."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>",t:"<strong>Serial reassessment</strong>",d:"Repeat RTS every 10–15 min. Any deterioration = upgrade to immediate."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>`,t:"<strong>Serial reassessment</strong>",d:"Repeat RTS every 10–15 min. Any deterioration = upgrade to immediate."},
     ]:rts>=5?[
       {i:"🟡",t:"<strong>Urgent intervention</strong>",d:"Significant physiological derangement. Transport without delay."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>",t:"<strong>IV access + fluid resuscitation</strong>",d:"Permissive hypotension if haemorrhagic trauma (SBP 80–90)."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#satellite"/></svg>",t:"<strong>Pre-alert trauma centre</strong>",d:"Notify early. Consider air transport if available."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>`,t:"<strong>IV access + fluid resuscitation</strong>",d:"Permissive hypotension if haemorrhagic trauma (SBP 80–90)."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#satellite"/></svg>`,t:"<strong>Pre-alert trauma centre</strong>",d:"Notify early. Consider air transport if available."},
     ]:[
       {i:"🔴",t:"<strong>IMMEDIATE — Life-saving intervention</strong>",d:"Critical physiological compromise. All resources immediately."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>Airway management priority</strong>",d:"GCS coded ≤2 <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> intubation indicated. Protect from aspiration."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>",t:"<strong>IV/IO access × 2</strong>",d:"Large bore. Crystalloid bolus. MTP activation if haemorrhagic."},
-      {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>",t:"<strong>Trauma centre bypass</strong>",d:"Bypass community ED. Direct to Level I/II trauma centre."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>Airway management priority</strong>",d:`GCS coded ≤2 <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> intubation indicated. Protect from aspiration.`},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>`,t:"<strong>IV/IO access × 2</strong>",d:"Large bore. Crystalloid bolus. MTP activation if haemorrhagic."},
+      {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>`,t:"<strong>Trauma centre bypass</strong>",d:"Bypass community ED. Direct to Level I/II trauma centre."},
     ];
     acts.forEach(a=>{ html+=`<div class="act-row"><div class="act-i">${a.i}</div><div class="act-t"><strong>${a.t}</strong><br><span style="color:var(--muted);font-size:.71rem">${a.d}</span></div></div>`; });
     html += `</div>`;
@@ -668,7 +668,7 @@ const START_STEPS = [
   {
     id:"breathing",
     q:"Is the patient BREATHING?",
-    sub:"Look, listen, feel. If not breathing <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> attempt to open airway first.",
+    sub:`Look, listen, feel. If not breathing <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> attempt to open airway first.`,
     yes:"rr",
     no:"airway"
   },
@@ -704,23 +704,23 @@ const START_STEPS = [
 const START_RESULTS = {
   RED:   {label:"IMMEDIATE",  icon:"I",  cls:"tag-r",  ringCls:"r", pill:"pill-r", actions:[
     {i:"🔴",t:"<strong>IMMEDIATE treatment &amp; transport</strong>",d:"Life-threatening injury. First priority. Immediate life-saving intervention."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>",t:"<strong>Open airway / Haemorrhage control</strong>",d:"Tourniquet, pressure dressings, needle decompression as indicated."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>",t:"<strong>Load and go — minimize scene time</strong>",d:"Target scene time < 10 min. Transport to nearest trauma centre."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>`,t:"<strong>Open airway / Haemorrhage control</strong>",d:"Tourniquet, pressure dressings, needle decompression as indicated."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>`,t:"<strong>Load and go — minimize scene time</strong>",d:"Target scene time < 10 min. Transport to nearest trauma centre."},
   ]},
   YELLOW:{label:"DELAYED",    icon:"D",  cls:"tag-y",  ringCls:"y", pill:"pill-y", actions:[
     {i:"🟡",t:"<strong>DELAYED — stable for now</strong>",d:"Significant injury but stable. Will need treatment but can wait."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>",t:"<strong>Reassess frequently</strong>",d:"Re-triage every 10 min. Can deteriorate to RED. Mark and monitor."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>",t:"<strong>Pain management when resources allow</strong>",d:"Analgesia if stable and resources available after RED patients treated."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>`,t:"<strong>Reassess frequently</strong>",d:"Re-triage every 10 min. Can deteriorate to RED. Mark and monitor."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg>`,t:"<strong>Pain management when resources allow</strong>",d:"Analgesia if stable and resources available after RED patients treated."},
   ]},
   GREEN: {label:"MINOR",      icon:"M",  cls:"tag-g",  ringCls:"g", pill:"pill-g", actions:[
     {i:"🟢",t:"<strong>MINOR — Walking wounded</strong>",d:"Ambulatory. Self-treating injuries. Direct to collection point."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>",t:"<strong>Assign to treatment area</strong>",d:"Walking wounded can assist with other casualties under supervision."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>",t:"<strong>Monitor for deterioration</strong>",d:"GREEN can deteriorate. Reassess periodically."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hospital"/></svg>`,t:"<strong>Assign to treatment area</strong>",d:"Walking wounded can assist with other casualties under supervision."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>`,t:"<strong>Monitor for deterioration</strong>",d:"GREEN can deteriorate. Reassess periodically."},
   ]},
   BLACK: {label:"EXPECTANT",  icon:"E",  cls:"tag-k",  ringCls:"k", pill:"pill-k", actions:[
     {i:"⬛",t:"<strong>EXPECTANT — Unsurvivable / Deceased</strong>",d:"Injuries not survivable given current resources. Do not divert resources."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>",t:"<strong>Document and mark</strong>",d:"Note position, tag if available. Notify incident commander."},
-    {i:"<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hand-heart"/></svg>",t:"<strong>Reassess if resources allow</strong>",d:"If mass of critical patients clears, reassess BLACK patients."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>`,t:"<strong>Document and mark</strong>",d:"Note position, tag if available. Notify incident commander."},
+    {i:`<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#hand-heart"/></svg>`,t:"<strong>Reassess if resources allow</strong>",d:"If mass of critical patients clears, reassess BLACK patients."},
   ]}
 };
 

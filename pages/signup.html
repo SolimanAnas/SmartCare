@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>DCAS CPG | Professional Registration</title>
+  <title>SmartCare | Professional Registration</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -105,7 +105,7 @@
   <div class="professional-card">
     <div class="brand-header">
       <div class="badge-icon"><i class="fas fa-hand-holding-heart"></i></div>
-      <h1>DCAS · CPG</h1>
+      <h1>SmartCare · CPG</h1>
       <div class="subhead">Clinical Practice Guidelines — Advanced Provider Network</div>
     </div>
 
@@ -117,7 +117,7 @@
 
       <div class="form-group">
         <div class="input-label"><i class="fas fa-envelope"></i><span>Email address</span></div>
-        <input type="email" id="regEmail" class="input-field" placeholder="clinical@dcas.org" autocomplete="email">
+        <input type="email" id="regEmail" class="input-field" placeholder="clinical@smartcare.org" autocomplete="email">
       </div>
 
       <div class="form-group">
@@ -148,7 +148,7 @@
 
       <div class="terms-row">
         <input type="checkbox" id="termsCheckbox">
-        <label for="termsCheckbox">I agree to the <a href="#" id="termsLink">DCAS Clinical Terms</a> and data processing.</label>
+        <label for="termsCheckbox">I agree to the <a href="#" id="termsLink">SmartCare Clinical Terms</a> and data processing.</label>
       </div>
 
       <button type="submit" class="register-btn">
@@ -164,7 +164,7 @@
     </div>
 
     <div class="login-redirect">
-      Already have a DCAS CPG profile? <a href="login.html">Sign in <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></a>
+      Already have a SmartCare profile? <a href="login.html">Sign in <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -211,7 +211,7 @@
       if (!professionalLevel) { showMessage('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️ Please select your professional level.', true); return; }
       if (!password || !validatePasswordStrength(password)) { showMessage('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#key-round"/></svg> Password must be at least 8 characters long.', true); return; }
       if (password !== confirmPwd) { showMessage('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>️ Passwords do not match. Please re-enter.', true); return; }
-      if (!termsAccepted) { showMessage('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scroll"/></svg> You must agree to the DCAS Clinical Terms to register.', true); return; }
+      if (!termsAccepted) { showMessage('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scroll"/></svg> You must agree to the SmartCare Clinical Terms to register.', true); return; }
 
       // Show loading state
       const submitBtn = form.querySelector('.register-btn');
@@ -260,7 +260,7 @@
     if (termsLink) {
       termsLink.addEventListener('click', (e) => {
         e.preventDefault();
-        alert("DCAS CPG Terms of Use:\n• All clinical data is confidential.\n• Professional level verification required.\n• By registering you adhere to CPG protocols v2025.");
+        alert("SmartCare Terms of Use:\n• All clinical data is confidential.\n• Professional level verification required.\n• By registering you adhere to CPG protocols v2025.");
       });
     }
   })();

@@ -43,3 +43,21 @@ Thumbs.db
 *.swp
 .opencode/
 run-debug.mjs
+
+# ── Archived DCAS Guidelines (reboot) ─────────────────────────────────────
+chapters_dcas_archive/
+content_dcas_archive/
+
+# Agent/IDE configs
+.agents/
+.claude/
+.codex/
+.cursor/
+.opencode/
+
+# Generated knowledge graph
+graphify-out/
+
+# Large copyrighted source files
+TOC/*.pdf
+TOC/*.epub

@@ -1,37 +1,36 @@
-# 🚑 DCAS CPG 2025 - Clinical Review Platform
+# 🚑 SmartCare – Clinical Learning Platform
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Framework-Flask-black.svg?logo=flask&logoColor=white)
 ![Vanilla JS](https://img.shields.io/badge/Frontend-Vanilla_JS-f7df1e.svg?logo=javascript&logoColor=black)
 ![PWA](https://img.shields.io/badge/PWA-100%25_Offline_Ready-5a0fc8.svg?logo=pwa&logoColor=white)
 
-A secure, high-performance Progressive Web Application (PWA) designed to provide Dubai Corporation for Ambulance Services (DCAS) EMS personnel with a digitized, interactive study aid and rapid reference tool for the 2025 Clinical Practice Guidelines.
+A secure, high-performance Progressive Web Application (PWA) designed to serve as a generic clinical learning platform and study aid for healthcare professionals.
 
-*🔗 **Live Demo:** [https://smart-cpg.onrender.com/]*
 ---
 
-## ✨ Enterprise Features
+## ✨ Features
 
-### 🔐 Secure Authentication & IT Management
+### 🔐 Secure Authentication & User Management
 * **Google OAuth 2.0 Integration:** Seamless single-tap login utilizing Google Cloud credentials.
 * **Encrypted Standard Login:** Secure email/password registration utilizing `Werkzeug` SHA-256 password hashing.
-* **IT Admin Console:** A hidden, protected directory dashboard (`/api/admin/users`) allowing IT and management to monitor registered clinical staff and track professional levels (Physician, Paramedic, EMT).
+* **IT Admin Console:** A hidden, protected directory dashboard (`/api/admin/users`) allowing IT and management to monitor registered clinical users and track professional levels (Physician, Paramedic, EMT).
 
 ### ⚡ 100% Offline Capability (PWA)
 Built for the field where cellular service is unreliable. 
-* Utilizes **Service Workers** to aggressively cache core clinical guidelines, flashcards, and UI assets.
+* Utilizes **Service Workers** to cache core clinical guidelines, flashcards, and UI assets.
 * Instant load times via local storage rendering.
-* Dedicated "Clear Cache" protocol for seamless over-the-air (OTA) updates.
+* Dedicated cache refresh mechanisms for seamless over-the-air (OTA) updates.
 
 ### 🎨 Premium Glassmorphism UI & Accessibility
 * **Zero-Dependency Frontend:** Built entirely in Vanilla JavaScript and raw CSS for maximum rendering speed and zero framework bloat.
-* **5 Custom Themes:** Includes Dark, Light, Sepia, Forest, and a true **AMOLED Black** theme for battery conservation during long shifts.
+* **5 Custom Themes:** Includes Dark, Light, Sepia, Forest, and a true **AMOLED Black** theme for battery conservation.
 * **Accessibility:** Dynamic font scaling and battery-level monitoring.
 
-### 🧠 Interactive Clinical Engine
+### 🧠 Interactive Clinical Learning Engine
 * **Study Modules:** Chapter summaries, interactive flashcards, quizzes, and clinical scenarios.
 * **Progress Tracking:** Local caching engine memorizes chapter completion, quiz accuracy, and total attempts.
-* **Session Memory:** Automatically remembers the user's last scrolled position and recently visited protocols.
+* **Session Memory:** Automatically remembers the user's last scrolled position, expand states, and recently visited protocols.
 
 ---
 
@@ -42,24 +41,25 @@ Built for the field where cellular service is unreliable.
 * Flask (Web Framework)
 * Flask-SQLAlchemy (ORM) & SQLite (Database)
 * Flask-Login (Session Management)
-* Gunicorn (Production WSGI Server)
 
 **Frontend:**
 * HTML5 / CSS3 (Modern Glassmorphism Design)
 * Vanilla JavaScript (ES6+)
 * Service Workers / Cache API
 
-**Deployment:**
-* Render Cloud Hosting
-* GitHub CI/CD Pipeline
-
 ---
 
 ## 💻 Local Installation & Setup
 
-For IT review or local development, follow these steps:
+For local development or deployment:
 
-1. **Clone the repository:**
+1. **Setup dependencies:**
    ```bash
-   git clone [https://github.com/SolimanAnas/CPG-2025.git](https://github.com/SolimanAnas/CPG-2025.git)
-   cd CPG-2025
+   pip install -r requirements.txt
+   ```
+
+2. **Run the local server:**
+   Double-click the `server.bat` launch script or run:
+   ```bash
+   python server.py
+   ```

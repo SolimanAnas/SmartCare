@@ -6,7 +6,7 @@ window.CPG_DATA = {
     summary: `
         <div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg> Scope of Practice Matrix</h3>
-            <p>This matrix outlines the medications, skills, procedures, and interventions that DCAS staff are authorized to perform at each clinical level.</p>
+            <p>This matrix outlines the medications, skills, procedures, and interventions that providers are authorized to perform at each clinical level.</p>
             <p><strong>Colour key:</strong></p>
             <ul>
                 <li><span style="background:#0056b3; color:white; padding:2px 8px; border-radius:12px;">Blue box</span> – Independent practice (may be carried out without supervision).</li>
@@ -154,7 +154,7 @@ window.CPG_DATA = {
                 </table>
             </div>
 
-            <p><strong>Note:</strong> This matrix is a summary. For full details, always refer to the current DCAS Clinical Practice Guidelines.</p>
+            <p><strong>Note:</strong> This matrix is a summary. For full details, always refer to local protocols and guidelines.</p>
         </div>
     `,
     quiz: [],
