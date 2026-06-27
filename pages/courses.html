@@ -271,13 +271,14 @@
             background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, rgba(255,255,255,0.06));
             border-radius: 8px;
             border-left: 3px solid var(--cat-color, var(--primary-accent));
-            color: var(--text-primary);
+            color: #e2e8f0;
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
             grid-column: 1 / -1;
         }
         [data-theme="light"] .section-header {
             background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 8%, rgba(0,0,0,0.04));
             border-left-color: var(--cat-color, var(--primary-accent));
+            color: #1e293b;
             text-shadow: none;
         }
         .section-header::after {
@@ -549,22 +550,35 @@
             grid-column: 1 / -1; /* Spans full grid width on desktop */
         }
         .continue-label {
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
             letter-spacing: 1.5px;
-            color: var(--text-secondary);
-            padding: 0 8px 10px;
+            text-transform: uppercase;
+            margin: 0 0 14px 0;
+            padding: 8px 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            opacity: 0.8;
+            gap: 10px;
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, rgba(255,255,255,0.06));
+            border-radius: 8px;
+            border-left: 3px solid var(--cat-color, var(--primary-accent));
+            color: #e2e8f0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        [data-theme="light"] .continue-label {
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 8%, rgba(0,0,0,0.04));
+            border-left-color: var(--cat-color, var(--primary-accent));
+            color: #1e293b;
+            text-shadow: none;
         }
         .continue-label::after {
             content: '';
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, var(--glass-border), transparent);
+            background: linear-gradient(90deg, color-mix(in srgb, var(--cat-color, var(--primary-accent)) 35%, transparent), transparent);
+        }
+        [data-theme="light"] .continue-label::after {
+            background: linear-gradient(90deg, color-mix(in srgb, var(--cat-color, var(--primary-accent)) 25%, transparent), transparent);
         }
         .continue-card {
             display: flex;
@@ -1692,9 +1706,9 @@
         const catLabel = CATEGORY_LABELS[course.category] || course.category;
 
         return `
-            <div class="continue-section">
+            <div class="continue-section" style="--cat-color:${catColor}">
                 <div class="continue-label">Continue Learning</div>
-                <a href="${course.link}" class="continue-card" style="--cat-color:${catColor}" data-id="${course.id}">
+                <a href="${course.link}" class="continue-card" data-id="${course.id}">
                     <div class="cc-icon">${iconHtml}</div>
                     <div class="continue-body">
                         <div class="cc-top">
