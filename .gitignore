@@ -43,6 +43,7 @@ Thumbs.db
 .vscode/
 *.swp
 .opencode/
+.omo/
 run-debug.mjs
 
 # ── Archived DCAS Guidelines (reboot) ─────────────────────────────────────

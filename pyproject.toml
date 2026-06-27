@@ -13,8 +13,9 @@ extend-exclude = ["_archive", "reports"]
 select = ["E", "F", "W", "I"]
 
 [tool.ruff.lint.per-file-ignores]
-# One-off content generator: long f-string replacements are intentional.
+# One-off content generators: long f-string replacements / data strings are intentional.
 "scripts/gen.py" = ["E501"]
+"scripts/generate_all_itls_data.py" = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"
