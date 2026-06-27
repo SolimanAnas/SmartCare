@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "branchName": "main",
+  "worktreePath": "D:\\Apps\\SmartCare",
+  "upstream": "origin/main",
+  "mergeBase": "fe7449d2732faaa3abcba42fc0b71cec6ce5f59d",
+  "firstSeenHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
+  "lastSeenHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
+  "lastAnalyzedHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
+  "stale": false,
+  "staleReason": null,
+  "staleSince": null,
+  "lifecycleEvent": null,
+  "createdAt": "2026-06-27T18:26:37.316Z",
+  "updatedAt": "2026-06-27T18:26:37.316Z"
+}

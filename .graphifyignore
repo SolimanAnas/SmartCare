@@ -28,3 +28,4 @@ pyproject.toml
 *.svg
 *.html
 *.md
+*.txt
