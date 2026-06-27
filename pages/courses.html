@@ -259,23 +259,24 @@
 
         /* ── Section Header ── */
         .section-header {
-            font-size: 0.72rem;
+            font-size: 0.82rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             padding: 16px 8px 10px;
             display: flex;
             align-items: center;
             gap: 12px;
-            opacity: 0.7;
+            opacity: 1;
             grid-column: 1 / -1; /* Spans full grid width on desktop */
         }
         .section-header::after {
             content: '';
             flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--glass-border), transparent);
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, color-mix(in srgb, var(--cat-color, var(--primary-accent)) 40%, transparent), transparent);
         }
 
         /* ── Course Grid System ── */
@@ -363,9 +364,9 @@
         /* ── Icon ── branded course badge in a glass tile ── */
         .cc-icon {
             position: relative;
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            width: 88px;
+            height: 88px;
+            border-radius: 22px;
             background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 12%, transparent);
             display: flex;
             align-items: center;
@@ -374,7 +375,7 @@
             color: var(--cat-color, var(--primary-accent));
             transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
             border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 24%, transparent);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
         }
         /* soft category-coloured halo bleeding out behind the badge */
         .cc-icon::after {
@@ -397,9 +398,8 @@
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
         }
         .cc-icon svg.lucide {
-            width: 36px;
-            height: 36px;
-            stroke: currentColor;
+            width: 44px;
+            height: 44px;
             stroke-width: 2.25;
         }
         .course-card:hover .cc-icon {
@@ -493,12 +493,12 @@
             flex: 1;
             height: 6px;
             border-radius: 100px;
-            background: rgba(255, 255, 255, 0.07);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 12%, rgba(255, 255, 255, 0.06));
             overflow: hidden;
             position: relative;
         }
         [data-theme="light"] .cc-progress-track {
-            background: rgba(0, 0, 0, 0.06);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, rgba(0, 0, 0, 0.05));
         }
         .cc-progress-fill {
             height: 100%;
@@ -1092,14 +1092,14 @@
             font-weight: 750;
             padding: 2px 8px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.08);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 14%, transparent);
+            color: var(--cat-color, var(--primary-accent));
             text-transform: none;
             letter-spacing: 0;
             margin-left: 6px;
-            color: var(--text-primary);
         }
         [data-theme="light"] .section-count {
-            background: rgba(0,0,0,0.05);
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, transparent);
         }
 
         /* ── Lucide sizing ── */
@@ -1251,16 +1251,16 @@
                 border-radius: 18px 0 0 18px;
             }
             .course-card .cc-icon {
-                width: 70px;
-                height: 70px;
-                border-radius: 16px;
+                width: 76px;
+                height: 76px;
+                border-radius: 17px;
             }
             .course-card .cc-icon .cc-img {
                 border-radius: 15px;
             }
             .course-card .cc-icon svg.lucide {
-                width: 32px;
-                height: 32px;
+                width: 38px;
+                height: 38px;
             }
             .cc-badge { top: 12px; right: 12px; }
             .cc-title {
@@ -1507,6 +1507,10 @@
         general: '#2563EB'
     };
 
+    const CAT_EMOJI = {
+        cardiac: '\u{1FAC0}', trauma: '\u{1F691}', pediatrics: '\u{1F476}',
+        medical: '\u{1F48A}', ecg: '\u{1F4C8}', general: '\u{1F4DA}'
+    };
     const CATEGORY_ORDER = ['cardiac', 'trauma', 'pediatrics', 'medical', 'ecg', 'general'];
     const PROGRESS_KEY = 'smartcare_course_progress';
 
@@ -1625,7 +1629,9 @@
                 const items = grouped[cat];
                 if (!items || items.length === 0) return;
                 const label = CATEGORY_LABELS[cat] || cat;
-                html += `<div class="section-header"><span>${label}</span><span class="section-count">${items.length}</span></div>`;
+                const emoji = CAT_EMOJI[cat] || '';
+                const catColor = CAT_COLORS[cat] || CAT_COLORS.general;
+                html += `<div class="section-header" style="--cat-color:${catColor}"><span>${emoji} ${label}</span><span class="section-count">${items.length}</span></div>`;
                 html += items.map(course => renderCard(course)).join('');
             });
         } else {

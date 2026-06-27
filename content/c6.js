@@ -185,7 +185,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     id: "crit_6_1_1",
-                    scenario: "You are at a single-vehicle MVC. A 34-year-old unrestrained driver struck a concrete barrier at 55 mph. The front end is severely deformed with engine compartment intrusion. The patient has a large ecchymotic steering wheel imprint on his chest. Vitals: BP 106/74, HR 116, RR 26, SpOâ‚‚ 93%, GCS 15. Auscultation reveals diminished breath sounds on the left with crackles on the right.",
+                    scenario: "You are at a single-vehicle MVC. A 34-year-old unrestrained driver struck a concrete barrier at 55 mph. The front end is severely deformed with engine compartment intrusion. The patient has a large ecchymotic steering wheel imprint on his chest. Vitals: BP 106/74, HR 116, RR 26, SpO₂ 93%, GCS 15. Auscultation reveals diminished breath sounds on the left with crackles on the right.",
                     question: "Based on the three-collision model and MOI, what injuries must you suspect and what is your transport priority?",
                     options: [
                         {t: "Treat for simple rib contusion — apply oxygen, transport non-emergently; the steering wheel contusion is likely superficial", f: "Incorrect. A steering-wheel deformity at 55 mph indicates massive energy transfer to the chest. Suspect cardiac contusion, pulmonary contusion, and possible aortic injury."},
@@ -542,7 +542,7 @@ window.CPG_DATA = {
                 <h4>EMT Management of Shock</h4>
                 <ol>
                     <li>Hemorrhage control FIRST — tourniquets, pressure dressings, wound packing before anything else</li>
-                    <li>High-flow Oâ‚‚ — titrate to SpOâ‚‚ ≥94%</li>
+                    <li>High-flow O₂ — titrate to SpO₂ ≥94%</li>
                     <li>Large-bore IV × 2 (14-16G) or IO if unable</li>
                     <li>500 mL NS bolus if SBP <90 or shock signs — reassess, repeat once, limit 2 L</li>
                     <li>Permissive hypotension — unless TBI (target SBP ≥100-110)</li>
@@ -590,7 +590,7 @@ window.CPG_DATA = {
                 },
                 {
                     question: "What are the key prehospital interventions for shock?",
-                    answer: "(1) Hemorrhage control first. (2) High-flow Oâ‚‚. (3) Large-bore IV × 2. (4) 500 mL NS if SBP <90. (5) Prevent hypothermia. (6) Scoop and run. (7) Notify trauma center.",
+                    answer: "(1) Hemorrhage control first. (2) High-flow O₂. (3) Large-bore IV × 2. (4) 500 mL NS if SBP <90. (5) Prevent hypothermia. (6) Scoop and run. (7) Notify trauma center.",
                     category: "Shock — Management"
                 }
             ],
@@ -619,7 +619,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     id: "crit_6_3_1",
-                    scenario: "A 35-year-old male was shot once in the right upper chest. Initial: BP 102/74, HR 116, RR 26, SpOâ‚‚ 95%, breath sounds clear bilaterally, no tracheal deviation, neck veins flat. Over 10 minutes, BP drops to 88/60, HR 130, confused, SpOâ‚‚ 89%. Neck veins now distended, trachea midline but right chest hyperresonant to percussion.",
+                    scenario: "A 35-year-old male was shot once in the right upper chest. Initial: BP 102/74, HR 116, RR 26, SpO₂ 95%, breath sounds clear bilaterally, no tracheal deviation, neck veins flat. Over 10 minutes, BP drops to 88/60, HR 130, confused, SpO₂ 89%. Neck veins now distended, trachea midline but right chest hyperresonant to percussion.",
                     question: "What is the most likely cause of this rapid decompensation?",
                     options: [
                         {t: "Hemorrhagic shock from internal chest bleed — increase IV fluids, give second bolus, expedite transport", f: "Incorrect. Distended neck veins + hyperresonance + hypotension from penetrating chest wound = tension pneumothorax, not just hemorrhagic shock. Fluids alone will not resolve it."},
@@ -643,7 +643,7 @@ window.CPG_DATA = {
                 },
                 {
                     id: "crit_6_3_3",
-                    scenario: "A 26-year-old restrained passenger in a rollover MVC (3 rolls, no ejection). Complains of neck and back pain. BP 88/56, HR 100, RR 20, SpOâ‚‚ 99%. Skin is warm and dry. Thoracic spine tenderness (T4-T6). Cannot feel anything below nipples, no leg movement, minimal arm movement. Hands are warm and well-perfused.",
+                    scenario: "A 26-year-old restrained passenger in a rollover MVC (3 rolls, no ejection). Complains of neck and back pain. BP 88/56, HR 100, RR 20, SpO₂ 99%. Skin is warm and dry. Thoracic spine tenderness (T4-T6). Cannot feel anything below nipples, no leg movement, minimal arm movement. Hands are warm and well-perfused.",
                     question: "How do you differentiate neurogenic from hemorrhagic shock, and what is the appropriate management?",
                     options: [
                         {t: "Hemorrhagic shock from internal bleeding — aggressive fluids, PASG/MAST if available", f: "Incorrect. Warm dry skin + relative bradycardia (HR 100 with SBP 88) + spinal cord deficit = neurogenic shock. Aggressive fluids alone may not correct neurogenic shock."},
