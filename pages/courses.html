@@ -2,29 +2,65 @@
 <html lang="en" data-theme="dark">
 <head>
     <!-- General SEO Meta Tags -->
-    <meta name="description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta name="keywords" content="SmartCare, clinical learning, EMS guidelines, paramedic study, EMT exam, offline flashcards, patient assessment, clinical scenarios">
+    <meta name="description" content="Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.">
+    <meta name="keywords" content="SmartCare, pages, courses, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
     <meta name="author" content="Soliman Anas">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smartcare-learning.net">
+    <meta property="og:url" content="https://smartcare-learning.net/pages/courses">
     <meta property="og:title" content="SmartCare · Medical Courses">
-    <meta property="og:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta property="og:image" content="../images/og.png">
+    <meta property="og:description" content="Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smartcare-learning.net">
+    <meta name="twitter:url" content="https://smartcare-learning.net/pages/courses">
     <meta name="twitter:title" content="SmartCare · Medical Courses">
-    <meta name="twitter:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta name="twitter:image" content="../images/og.png">
+    <meta name="twitter:description" content="Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartcare-learning.net/pages/courses">
+
     <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon.png">
     <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SmartCare · Medical Courses",
+  "url": "https://smartcare-learning.net/pages/courses",
+  "description": "Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.",
+  "image": "https://smartcare-learning.net/images/og.png",
+  "author": {
+    "@type": "Person",
+    "name": "Soliman Anas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://smartcare-learning.net/icons/icon.png"
+    }
+  },
+  "inLanguage": "en-US"
+}
+    </script>
 <script>
   // ── SmartCare Security Guard: runs before anything else renders ──
   // [TEMPORARILY DISABLED FOR TESTING]
@@ -245,23 +281,23 @@
         /* ── Course Grid System ── */
         #courseList {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr;   /* single column by default (mobile) */
             gap: 12px;
             width: 100%;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 600px) {
             #courseList {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
+                grid-template-columns: 1fr 1fr;   /* two columns on tablets/desktop */
+                gap: 18px;
             }
         }
 
         /* ── Course Card ── */
         .course-card {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 16px;
-            padding: 16px 18px;
+            padding: 20px;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             border-radius: var(--card-radius);
@@ -270,9 +306,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             position: relative;
-            min-height: 72px;
             box-sizing: border-box;
             overflow: hidden;
+            width: 100%;
+            max-width: 460px;
+            justify-self: center;
             animation: cardIn 0.5s cubic-bezier(0.16,1,0.3,1) both;
         }
         .course-card::before {
@@ -322,44 +360,68 @@
             to   { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* ── Icon ── */
+        /* ── Icon ── branded course badge in a glass tile ── */
         .cc-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 14px;
-            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 10%, transparent);
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 12%, transparent);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             color: var(--cat-color, var(--primary-accent));
-            transition: all 0.3s ease;
-            border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 18%, transparent);
+            transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 1px solid color-mix(in srgb, var(--cat-color, var(--primary-accent)) 24%, transparent);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+        }
+        /* soft category-coloured halo bleeding out behind the badge */
+        .cc-icon::after {
+            content: "";
+            position: absolute;
+            inset: -35%;
+            z-index: -1;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 35%,
+                color-mix(in srgb, var(--cat-color, var(--primary-accent)) 32%, transparent), transparent 62%);
+            opacity: 0.45;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .cc-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 19px;
+            display: block;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
         }
         .cc-icon svg.lucide {
-            width: 22px;
-            height: 22px;
+            width: 36px;
+            height: 36px;
             stroke: currentColor;
             stroke-width: 2.25;
         }
         .course-card:hover .cc-icon {
-            background: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 20%, transparent);
-            border-color: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 30%, transparent);
-            transform: scale(1.08) rotate(-4deg);
-            box-shadow: 0 0 16px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 15%, transparent);
+            transform: translateY(-2px) scale(1.07);
+            border-color: color-mix(in srgb, var(--cat-color, var(--primary-accent)) 48%, transparent);
+            box-shadow: 0 8px 22px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 30%, transparent);
         }
+        .course-card:hover .cc-icon::after { opacity: 0.85; transform: scale(1.12); }
 
         /* ── Card Body ── */
         .cc-body {
             flex: 1;
+            width: 100%;
             min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 3px;
         }
         .cc-top {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 6px;
         }
         .cc-title {
@@ -400,28 +462,22 @@
             letter-spacing: 0.3px;
             font-variant-numeric: tabular-nums;
             box-shadow: 0 0 10px color-mix(in srgb, var(--cat-color, var(--primary-accent)) 4%, transparent);
-            margin-left: auto; /* Push badge and chevron to right */
+            position: absolute;   /* pin the count to the tile's top-right corner */
+            top: 16px;
+            right: 16px;
+            margin-left: 0;
         }
-        .cc-chevron {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-            color: var(--text-secondary);
-            opacity: 0.3;
-            transition: opacity 0.25s, transform 0.25s;
-        }
-        .course-card:hover .cc-chevron {
-            opacity: 0.7;
-            transform: translateX(4px);
-        }
+        /* chevron is redundant in the tile layout */
+        .cc-chevron { display: none; }
 
         .cc-sub {
             font-size: 0.75rem;
             color: var(--text-secondary);
-            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1.3;
+            line-height: 1.35;
             opacity: 0.8;
         }
 
@@ -429,7 +485,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-top: 8px;
+            margin-top: auto;
+            padding-top: 12px;
+            width: 100%;
         }
         .cc-progress-track {
             flex: 1;
@@ -589,6 +647,76 @@
             font-weight: 500;
             opacity: 0.7;
             grid-column: 1 / -1;
+        }
+
+        /* ── Card Header Layout (Icon + Text beside it) ── */
+        .cc-header {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            align-items: center;
+            position: relative;
+        }
+        .cc-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+            min-width: 0;
+            padding-right: 48px; /* Leave space for absolute badge */
+        }
+
+        /* ITLS Actions (bottom of card) */
+        .itls-actions {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            margin-top: 4px;
+        }
+        .itls-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .itls-btn-review {
+            background: color-mix(in srgb, var(--primary-accent) 15%, var(--glass-bg));
+            border: 1.5px solid color-mix(in srgb, var(--primary-accent) 30%, var(--glass-border));
+            color: var(--primary-accent);
+        }
+        .itls-btn-review:hover {
+            background: var(--primary-accent);
+            color: #fff;
+            border-color: var(--primary-accent);
+            box-shadow: 0 4px 14px color-mix(in srgb, var(--primary-accent) 40%, transparent);
+            transform: translateY(-1.5px);
+        }
+        .itls-btn-review:active {
+            transform: translateY(0) scale(0.97);
+        }
+        .itls-btn-exam {
+            background: color-mix(in srgb, #EA580C 15%, var(--glass-bg));
+            border: 1.5px solid color-mix(in srgb, #EA580C 30%, var(--glass-border));
+            color: #EA580C;
+        }
+        .itls-btn-exam:hover {
+            background: linear-gradient(135deg, #EA580C, #DC2626);
+            color: #fff;
+            border-color: #EA580C;
+            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+            transform: translateY(-1.5px);
+        }
+        .itls-btn-exam:active {
+            transform: translateY(0) scale(0.97);
         }
 
         footer {
@@ -1112,49 +1240,60 @@
                 }
             }
 
-            /* 5. Compact Course Cards */
+            /* 5. Course Tiles (mobile) */
+            #courseList { gap: 12px; }
             .course-card {
-                padding: 12px 14px;
-                border-radius: 16px;
-                gap: 12px;
-                min-height: 64px;
+                padding: 16px;
+                border-radius: 18px;
+                gap: 14px;
             }
             .course-card::before {
-                border-radius: 16px 0 0 16px;
+                border-radius: 18px 0 0 18px;
             }
             .course-card .cc-icon {
-                width: 40px;
-                height: 40px;
-                border-radius: 10px;
+                width: 70px;
+                height: 70px;
+                border-radius: 16px;
+            }
+            .course-card .cc-icon .cc-img {
+                border-radius: 15px;
             }
             .course-card .cc-icon svg.lucide {
-                width: 18px;
-                height: 18px;
+                width: 32px;
+                height: 32px;
             }
+            .cc-badge { top: 12px; right: 12px; }
             .cc-title {
-                font-size: 0.88rem;
+                font-size: 0.95rem;
             }
             .cc-tag {
-                font-size: 0.58rem;
-                padding: 1.5px 5px;
-            }
-            .cc-badge {
-                font-size: 0.62rem;
+                font-size: 0.6rem;
                 padding: 2px 6px;
             }
+            .cc-badge {
+                font-size: 0.65rem;
+                padding: 3px 7px;
+            }
             .cc-sub {
-                font-size: 0.7rem;
+                font-size: 0.72rem;
             }
             .cc-progress {
-                margin-top: 6px;
-                gap: 6px;
+                margin-top: 4px;
+                gap: 8px;
             }
             .cc-progress-track {
-                height: 5px;
+                height: 6px;
             }
             .cc-pct {
-                font-size: 0.62rem;
-                min-width: 28px;
+                font-size: 0.68rem;
+                min-width: 30px;
+            }
+
+            /* ITLS Mobile Buttons */
+            .itls-btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+                border-radius: 10px;
             }
 
             /* 6. Control Center Drawer adjustments */
@@ -1341,7 +1480,7 @@
 
     const COURSES = [
         { id: 'prometric', shortTitle: 'Prometric', title: 'Prometric Mock Exam',          link: '../src/prometric/exam.html', icon: 'clipboard-list',  count: 2559, category: 'general' },
-        { id: 'itls',      shortTitle: 'ITLS',    title: 'International Trauma Life Support', link: 'ITLS-course.html',             icon: 'bandage',        count: 200,  category: 'trauma' },
+        { id: 'itls',      shortTitle: 'ITLS',    title: 'International Trauma Life Support', link: '../courses/itls/index.html',  icon: 'bandage',        count: 455,  category: 'trauma' },
         { id: 'empact',    shortTitle: 'EMPACT',  title: 'Emergency Medical Patients: Assessment, Care & Transport', link: 'empact.html', icon: 'stethoscope', count: 50,   category: 'medical' },
         { id: 'bls',       shortTitle: 'BLS',     title: 'Basic Life Support',                link: 'bls.html',              icon: 'heart-pulse',    count: 284,  category: 'cardiac' },
         { id: 'acls',      shortTitle: 'ACLS',    title: 'Advanced Cardiovascular Life Support', link: 'acls.html',         icon: 'heart',          count: 33,   category: 'cardiac' },
@@ -1370,6 +1509,21 @@
 
     const CATEGORY_ORDER = ['cardiac', 'trauma', 'pediatrics', 'medical', 'ecg', 'general'];
     const PROGRESS_KEY = 'smartcare_course_progress';
+
+    // Branded course icons (optimized thumbnails). ecg-test reuses the ecg art.
+    const COURSE_IMG = {
+        prometric: 'prometric', itls: 'itls', empact: 'empact', bls: 'bls', acls: 'acls',
+        bdls: 'bdls', pepp: 'pepp', ppet: 'ppet', pals: 'pals', medical: 'medical',
+        ecg: 'ecg', 'ecg-test': 'ecg'
+    };
+    function courseIcon(course) {
+        const key = COURSE_IMG[course.id];
+        if (key) {
+            return `<img class="cc-img" src="../icons/courses/thumb/${key}.png" alt="" loading="lazy" decoding="async" width="160" height="160">`;
+        }
+        // Fallback (e.g. Medical) — keep the themed lucide glyph.
+        return `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
+    }
 
     function getAllProgress() {
         try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
@@ -1512,7 +1666,7 @@
 
         const prog = all[bestId];
         const pct = prog.pct || 0;
-        const iconHtml = `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
+        const iconHtml = courseIcon(course);
         const ago = timeAgo(prog.lastStudied);
         const cat = course.category || 'general';
         let detail = pct + '% complete';
@@ -1552,8 +1706,7 @@
         const prog = getProgress(course.id);
         const pct = prog.pct || 0;
         const badge = course.count > 0 ? `<span class="cc-badge">${course.count}</span>` : '';
-        const chevron = '<svg class="lucide cc-chevron" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
-        const iconHtml = `<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${course.icon}"/></svg>`;
+        const iconHtml = courseIcon(course);
         const cat = course.category || 'general';
         const catLabel = CATEGORY_LABELS[course.category] || course.category;
 
@@ -1566,21 +1719,52 @@
 
         const catColor = CAT_COLORS[course.category] || CAT_COLORS.general;
 
-        return `
-            <a href="${course.link}" class="course-card" data-id="${course.id}" style="--cat-color:${catColor}">
-                <div class="cc-icon">${iconHtml}</div>
-                <div class="cc-body">
-                    <div class="cc-top">
-                        <span class="cc-title">${course.shortTitle}</span>
-                        <span class="cc-tag">${catLabel}</span>
+        if (course.id === 'itls') {
+            return `
+                <div class="course-card" data-id="${course.id}" style="--cat-color:${catColor}; cursor: default;">
+                    <div class="cc-header">
+                        <div class="cc-icon">${iconHtml}</div>
+                        <div class="cc-info">
+                            <div class="cc-top">
+                                <span class="cc-title">${course.shortTitle}</span>
+                                <span class="cc-tag">${catLabel}</span>
+                            </div>
+                            <div class="cc-sub">${course.title}</div>
+                        </div>
                         ${badge}
-                        ${chevron}
                     </div>
-                    <div class="cc-sub">${course.title}</div>
                     <div class="cc-progress">
                         <div class="cc-progress-track"><div class="cc-progress-fill" data-fill="${pct}"></div></div>
                         <span class="cc-pct">${progressLabel || (pct > 0 ? pct + '%' : '')}</span>
                     </div>
+                    <div class="itls-actions">
+                        <a href="../courses/itls/index.html" class="itls-btn itls-btn-review">
+                            <span>📚 Review</span>
+                        </a>
+                        <a href="itls.html" class="itls-btn itls-btn-exam">
+                            <span>📝 Exam</span>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        return `
+            <a href="${course.link}" class="course-card" data-id="${course.id}" style="--cat-color:${catColor}">
+                <div class="cc-header">
+                    <div class="cc-icon">${iconHtml}</div>
+                    <div class="cc-info">
+                        <div class="cc-top">
+                            <span class="cc-title">${course.shortTitle}</span>
+                            <span class="cc-tag">${catLabel}</span>
+                        </div>
+                        <div class="cc-sub">${course.title}</div>
+                    </div>
+                    ${badge}
+                </div>
+                <div class="cc-progress">
+                    <div class="cc-progress-track"><div class="cc-progress-fill" data-fill="${pct}"></div></div>
+                    <span class="cc-pct">${progressLabel || (pct > 0 ? pct + '%' : '')}</span>
                 </div>
             </a>
         `;
