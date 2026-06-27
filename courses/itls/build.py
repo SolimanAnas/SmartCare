@@ -11,7 +11,10 @@ Also validates: JSON parse, unique IDs, and chapter cross-references.
 
 Usage:  python build.py
 """
-import json, os, sys, glob
+import glob
+import json
+import os
+import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data", "itls")
@@ -69,7 +72,8 @@ def main():
                 n = 0
                 for key in ("cards", "questions", "cases", "summary", "algorithms", "tables"):
                     if isinstance(obj.get(key), list):
-                        n = len(obj[key]); break
+                        n = len(obj[key])
+                        break
                 row.append(f"{n:>5}")
         print(f"{cid:6}", *[f"{c:>6}" for c in row])
 

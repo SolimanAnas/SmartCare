@@ -1,4 +1,0 @@
-[2026-06-15 18:08:59,262] WARNING in server: SECRET_KEY not set — generated an ephemeral key. Sessions will not survive a restart. Set SECRET_KEY in the environment for production.
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:8899
-Press CTRL+C to quit

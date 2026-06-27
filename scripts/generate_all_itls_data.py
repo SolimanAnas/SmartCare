@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 CHAPTERS_DATA = {
     "c02": {
@@ -650,7 +650,7 @@ CHAPTERS_DATA = {
     <ul>
         <li><strong>Airway Burns (Inhalation):</strong> Watch for soot around the mouth/nose, singed nasal hairs, hoarseness, stridor. Proactive intubation is critical before edema closes the airway.</li>
         <li><strong>Rule of Nines (Adult):</strong> Head 9%, Chest/Abdomen 18%, Back 18%, Each Arm 9%, Each Leg 18%, Genitalia 1%.</li>
-        <li><strong>Fluid Resuscitation (Parkland Formula):</strong> \(4 \text{ mL} \times \text{weight (kg)} \times \% \text{ TBSA (Partial/Full thickness)}\). Give half in the first 8 hours.</li>
+        <li><strong>Fluid Resuscitation (Parkland Formula):</strong> \\(4 \text{ mL} \times \text{weight (kg)} \times \\% \text{ TBSA (Partial/Full thickness)}\\). Give half in the first 8 hours.</li>
     </ul>
 </div>"""
             }
@@ -975,11 +975,11 @@ CHAPTERS_DATA = {
 def main():
     target_dir = r"d:\Apps\SmartCare\courses\itls\chapters"
     os.makedirs(target_dir, exist_ok=True)
-    
+
     for ch_id, ch_data in CHAPTERS_DATA.items():
         filename = f"{ch_id}.js"
         filepath = os.path.join(target_dir, filename)
-        
+
         js_content = f"""/* ========== ITLS Chapter {ch_id[1:]}: {ch_data['title']} Reviewer Dataset ========== */
 window.CPG_DATA = {json.dumps({
             "id": f"itls-{ch_id}",
