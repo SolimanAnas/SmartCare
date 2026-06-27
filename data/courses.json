@@ -1,6 +1,6 @@
 [
     { "id": "prometric", "shortTitle": "Prometric", "title": "Prometric Mock Exam", "link": "src/prometric/exam.html", "available": true, "icon": "📋", "count": 879 },
-    { "id": "itls", "shortTitle": "ITLS", "title": "International Trauma Life Support", "link": "itls.html", "available": true, "icon": "🚑", "count": 200 },
+    { "id": "itls", "shortTitle": "ITLS", "title": "International Trauma Life Support", "link": "../courses/itls/index.html", "available": true, "icon": "🚑", "count": 455 },
     { "id": "empact", "shortTitle": "EMPACT", "title": "Emergency Medical Patients: Assessment, Care & Transport", "link": "empact.html", "available": true, "icon": "⚕️", "count": 50 },
     { "id": "bls", "shortTitle": "BLS", "title": "Basic Life Support", "link": "bls.html", "available": true, "icon": "🫀", "count": 284 },
     { "id": "acls", "shortTitle": "ACLS", "title": "Advanced Cardiovascular Life Support", "link": "acls.html", "available": true, "icon": "❤️", "count": 33 },
