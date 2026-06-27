@@ -1,32 +1,76 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta name="keywords" content="SmartCare, clinical learning, EMS guidelines, paramedic study, EMT exam, offline flashcards, patient assessment, clinical scenarios">
+    <meta name="keywords" content="SmartCare, clinical learning platform, EMS, NREMT, paramedic study, EMT exam, healthcare education">
     <meta name="author" content="Soliman Anas">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smartcare-learning.net">
-    <meta property="og:title" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:title" content="SmartCare Â· Clinical Learning Platform">
     <meta property="og:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta property="og:image" content="images/og.png">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare Â· Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://smartcare-learning.net">
-    <meta name="twitter:title" content="SmartCare · Clinical Learning Platform">
+    <meta name="twitter:title" content="SmartCare Â· Clinical Learning Platform">
     <meta name="twitter:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta name="twitter:image" content="images/og.png">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image:alt" content="SmartCare Â· Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartcare-learning.net">
+
     <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96x96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="icons/icon.png">
     <link rel="shortcut icon" href="icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "SmartCare Â· Clinical Learning Platform",
+  "url": "https://smartcare-learning.net",
+  "description": "SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.",
+  "image": "https://smartcare-learning.net/images/og.png",
+  "author": {
+    "@type": "Person",
+    "name": "Soliman Anas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://smartcare-learning.net/icons/icon.png"
+    }
+  },
+  "inLanguage": "en-US",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://smartcare-learning.net/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+    </script>
 <script>
-  // ── SmartCare Security Guard: runs before anything else renders ──
+  // â”€â”€ SmartCare Security Guard: runs before anything else renders â”€â”€
   // Redirects to login if no valid session exists.
   // [TEMPORARILY DISABLED FOR TESTING]
   /*
@@ -48,7 +92,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>SmartCare · Clinical Learning Platform</title>
+    <title>SmartCare Â· Clinical Learning Platform</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
-        /* ── Search ── */
+        /* â”€â”€ Search â”€â”€ */
         .search-container {
             margin-bottom: 20px; display: flex; align-items: center;
             background: var(--glass-bg); border: 1px solid var(--glass-border);
@@ -81,7 +125,7 @@
 
         .menu-card.filtered-out { display: none !important; }
 
-        /* ── Hero progress card ── */
+        /* â”€â”€ Hero progress card â”€â”€ */
         .hero-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -119,7 +163,7 @@
         .ring-pct { font-size: 1rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
         .ring-done { font-size: 0.55rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px; }
 
-        /* ── Section labels ── */
+        /* â”€â”€ Section labels â”€â”€ */
         .section-label {
             font-size: 0.75rem;
             font-weight: 700;
@@ -152,7 +196,7 @@
             background: linear-gradient(90deg, rgba(0,0,0,0.1), transparent);
         }
 
-        /* ── Quick 2-col grid ── */
+        /* â”€â”€ Quick 2-col grid â”€â”€ */
         .quick-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -161,7 +205,7 @@
         }
         .quick-grid .menu-card.special-card { margin-bottom: 0; }
 
-       /* ── Special cards – enhanced ── */
+       /* â”€â”€ Special cards â€“ enhanced â”€â”€ */
         .menu-card.special-card {
             cursor: pointer;
             transition: transform 0.22s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.22s;
@@ -256,7 +300,7 @@
             display: none;
         }
 
-        /* ── EMS tools button strip (Match chapter view button style) ── */
+        /* â”€â”€ EMS tools button strip (Match chapter view button style) â”€â”€ */
         .ems-tools-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,7 +357,7 @@
         .sc-expand-btn:hover { background: rgba(0,86,179,0.18); }
         .sc-expand-btn:active { transform: scale(0.97); }
 
-        /* CPG chapter cards — compact version */
+        /* CPG chapter cards â€” compact version */
         .chapter-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -353,7 +397,7 @@
         .search-empty-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
         .search-empty-sub { font-size: 0.85rem; }
 
-        /* ── Global search: chapters always in DOM, hidden via CSS ── */
+        /* â”€â”€ Global search: chapters always in DOM, hidden via CSS â”€â”€ */
         .cpg-section-hidden { display: none !important; }
         .cpg-search-hint {
             text-align: center; font-size: 0.78rem; color: var(--text-secondary);
@@ -364,7 +408,7 @@
         }
         .cpg-search-hint.visible { display: block; }
 
-        /* ── Global Stats Modal ── */
+        /* â”€â”€ Global Stats Modal â”€â”€ */
         .stats-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
         .stats-modal-content { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 24px; width: 100%; max-width: 500px; max-height: 85vh; overflow-y: auto; box-shadow: var(--glass-shadow); }
         .stats-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px 0; position: sticky; top: 0; background: var(--glass-bg); backdrop-filter: blur(12px); }
@@ -385,7 +429,7 @@
         .stats-clear-btn:hover { background: rgba(231,76,60,0.22); }
         .stats-chart-container { height: 200px; margin: 16px 0; }
 
-        /* ── Progress popup ── */
+        /* â”€â”€ Progress popup â”€â”€ */
         .progress-popup { position: absolute; top: 60px; right: 10px; background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 20px; box-shadow: var(--glass-shadow); z-index: 1001; min-width: 250px; display: none; color: var(--text-primary); }
         .progress-popup.show { display: block; }
         .progress-popup .popup-title { font-weight: 700; margin-bottom: 12px; color: var(--primary-accent); }
@@ -394,12 +438,12 @@
 
         footer a { color: inherit; text-decoration: underline; }
 
-        /* ── Action buttons ── */
+        /* â”€â”€ Action buttons â”€â”€ */
         .menu-sub-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; width: 100%; box-sizing: border-box; }
         .btn-action { width: 100%; text-align: center; padding: 12px 8px; font-size: 0.88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; }
         @media (max-width: 360px) { .btn-action { font-size: 0.78rem; padding: 10px 4px; } }
 
-        /* ── Offline download ── */
+        /* â”€â”€ Offline download â”€â”€ */
         .offline-download { margin: 24px 0 8px; text-align: center; }
         .download-btn { background: var(--glass-bg); color: var(--text-primary); border: 1px solid var(--glass-border); border-radius: 40px; padding: 11px 28px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: var(--glass-shadow); display: inline-flex; align-items: center; gap: 8px; }
         .download-btn:hover { background: rgba(0,86,179,0.1); border-color: var(--primary-accent); color: var(--primary-accent); }
@@ -409,7 +453,7 @@
         progress::-webkit-progress-bar { background-color: var(--glass-bg); border-radius: 6px; }
         progress::-webkit-progress-value { background-color: var(--primary-accent); border-radius: 6px; transition: width 0.3s; }
 
-        /* ── Float buttons ── */
+        /* â”€â”€ Float buttons â”€â”€ */
         .float-btn { position: fixed; width: 40px; height: 40px; border-radius: 50%; background: rgba(61,100,115,0.7); color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: transform 0.2s, background 0.2s, opacity 0.2s; z-index: 999; backdrop-filter: blur(2px); opacity: 0.8; }
         .float-btn:hover { transform: scale(1.1); background: var(--toggle-active); opacity: 1; }
         .float-btn:active { transform: scale(0.95); }
@@ -417,7 +461,7 @@
         #scrollToBottomBtn { bottom: 20px; right: 15px; }
         #scrollToTopBtn   { bottom: 70px; right: 15px; }
 
-        /* ── Drawer ── */
+        /* â”€â”€ Drawer â”€â”€ */
         .drawer-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(4px); }
         .drawer-overlay.active { opacity: 1; pointer-events: auto; }
         .notification-drawer { position: fixed; top: -600px; left: 0; right: 0; width: 100%; box-sizing: border-box; overflow: hidden; background: rgba(20,30,40,0.4); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.15); box-shadow: 0 15px 40px rgba(0,0,0,0.4); z-index: 2001; padding: 25px 16px 35px; border-radius: 0 0 30px 30px; transition: top 0.4s cubic-bezier(0.25,1,0.5,1); display: flex; flex-direction: column; gap: 20px; }
@@ -439,9 +483,9 @@
         .trigger-line.bottom { width: 20px; }
         @keyframes floatDown { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-        /* ══════════════════════════════════════════════════════════
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
            PWA INSTALL BANNER
-        ══════════════════════════════════════════════════════════ */
+        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
         #pwaInstallBanner {
             position: fixed;
             bottom: 0; left: 0; right: 0;
@@ -510,11 +554,11 @@
         <div class="pwa-banner-icon">
             <img src="icons/icon.png" alt="SmartCare"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <span class="pwa-icon-fallback" style="display:none;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#shield"/></svg>️</span>
+            <span class="pwa-icon-fallback" style="display:none;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#shield"/></svg>ï¸</span>
         </div>
         <div class="pwa-banner-text">
             <strong class="pwa-banner-title">Install SmartCare</strong>
-            <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen · works offline</span>
+            <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen Â· works offline</span>
         </div>
         <div class="pwa-banner-actions">
             <button class="pwa-btn-install" id="pwaInstallBtn">Install</button>
@@ -538,7 +582,7 @@
 <div class="notification-drawer" id="notificationDrawer">
     <div class="toggles-grid theme-row" style="grid-template-columns: repeat(5, 1fr);">
         <div class="toggle-item"><button class="toggle-btn" id="toggleDark"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#moon"/></svg></button><div class="toggle-label">Dark</div></div>
-        <div class="toggle-item"><button class="toggle-btn amoled-btn" id="toggleAmoled">⬛</button><div class="toggle-label">AMOLED</div></div>
+        <div class="toggle-item"><button class="toggle-btn amoled-btn" id="toggleAmoled">â¬›</button><div class="toggle-label">AMOLED</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="toggleLight"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#sun"/></svg></button><div class="toggle-label">Light</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="toggleSepia"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#scroll"/></svg></button><div class="toggle-label">Sepia</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="toggleForest"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#tree-pine"/></svg></button><div class="toggle-label">Forest</div></div>
@@ -614,7 +658,7 @@
 
 <footer>
     <div>Created & Maintained by Soliman Anas</div>
-    <div><a href="pages/about.html">About &amp; Disclaimer</a> · SmartCare is intended for educational and revision purposes.</div>
+    <div><a href="pages/about.html">About &amp; Disclaimer</a> Â· SmartCare is intended for educational and revision purposes.</div>
 </footer>
 
 <button class="float-btn hidden" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up"/></svg></button>
@@ -627,9 +671,9 @@
     let showCpgChapters = localStorage.getItem('smartcare_chapters_expanded') === 'true';
     let showStats = false;
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  PWA INSTALL BANNER LOGIC
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const PWA_KEY       = 'smartcare_pwa_install';
     const PWA_NEVER_KEY = 'smartcare_pwa_never';
     const PWA_DELAY_MS  = 4000;   // wait before showing on page load
@@ -754,7 +798,7 @@
         }
     }
 
-    // Drawer "Install" shortcut — triggers native prompt or shows banner
+    // Drawer "Install" shortcut â€” triggers native prompt or shows banner
     document.getElementById('qsInstall').addEventListener('click', function() {
         if (deferredPrompt) {
             deferredPrompt.prompt();
@@ -775,9 +819,9 @@
         document.getElementById('drawerOverlay').classList.remove('active');
     });
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  THEME SYSTEM
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const themeBtn = document.getElementById('themeToggle');
     const html     = document.documentElement;
     const themes   = ['dark', 'amoled', 'light', 'sepia', 'forest'];
@@ -805,9 +849,9 @@
     document.getElementById('toggleSepia').addEventListener('click',  () => setTheme('sepia'));
     document.getElementById('toggleForest').addEventListener('click', () => setTheme('forest'));
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  DRAWER
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const drawer  = document.getElementById('notificationDrawer');
     const overlay = document.getElementById('drawerOverlay');
     const trigger = document.getElementById('drawerTrigger');
@@ -839,9 +883,9 @@
         window.location.replace('pages/login.html');
     });
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  FONT SIZE
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const FONT_SIZES   = ['small', 'medium', 'large', 'xl'];
     const FONT_BTN_IDS = { small:'fontSmall', medium:'fontMedium', large:'fontLarge', xl:'fontXL' };
 
@@ -860,9 +904,9 @@
         if (b) b.addEventListener('click', () => setFontSize(s));
     });
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  PROGRESS POPUP
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const progressToggle = document.getElementById('progressToggle');
     const progressPopup  = document.getElementById('progressPopup');
 
@@ -876,9 +920,9 @@
         }
     });
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  FLOAT BUTTONS
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const scrollTopBtn    = document.getElementById('scrollToTopBtn');
     const scrollBottomBtn = document.getElementById('scrollToBottomBtn');
 
@@ -899,9 +943,9 @@
         else window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  MISC HELPERS
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const ENCOURAGEMENTS = [
         "Every review sharpens your skills.", "Progress, not perfection.", "Small steps lead to mastery.",
         "You've got this!", "Stay curious, stay sharp.", "Excellence is a habit.",
@@ -934,7 +978,7 @@
                     <div class="lv-title">${escapeHtml(h.title)}</div>
                     <div class="lv-time">${timeAgo(h.ts)}</div>
                 </div>
-                <div class="lv-arrow">›</div>
+                <div class="lv-arrow">â€º</div>
             </a>`).join('');
         container.innerHTML = `
             <div class="lv-header">
@@ -974,9 +1018,9 @@
     initBattery();
     renderLastVisited();
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  CHAPTER DATA
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const CHAPTERS = [
         { id:"c-index",shortTitle:"Index",                title:"Table of Contents",                            hasCritical:false, isFirstInChapter:false, chapterGroup:null,          isSpecial:true, specialGroup:"index" },
         { id:"c1",     shortTitle:"1. Foundations",       title:"Foundations of Emergency Care",                hasCritical:true,  chapterFile:"c1",  isFirstInChapter:true,  chapterGroup:"foundations" },
@@ -992,9 +1036,9 @@
         { id:"m1-38",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope", chapterFile:"m1-38" }
     ];
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  STORAGE
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     const COMPLETION_KEY = 'smartcare_cpg_completion';
     const STATS_KEY      = 'smartcare_cpg_stats';
     const EXAM_STATS_KEY = 'examStats';
@@ -1029,9 +1073,9 @@
         updateAllProgress();
     };
 
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     //  RENDER MENU
-    // ══════════════════════════════════════════════════════════
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     function getGreeting() {
         const h = new Date().getHours();
         if (h < 12) return 'Good morning';
@@ -1040,7 +1084,7 @@
     }
 
     function buildRingPath(pct) {
-        // SVG circle r=28, circumference = 2π×28 ≈ 175.93
+        // SVG circle r=28, circumference = 2Ï€Ã—28 â‰ˆ 175.93
         const C = 2 * Math.PI * 28;
         const offset = C - (pct / 100) * C;
         return { C, offset };
@@ -1056,12 +1100,12 @@
         const overallPercent = totalChaps ? Math.round((completedCount / totalChaps) * 100) : 0;
         const { C, offset } = buildRingPath(overallPercent);
 
-        // ── Hero progress card ──
+        // â”€â”€ Hero progress card â”€â”€
         const heroHtml = `
             <div class="hero-card" id="heroCard">
                 <div class="hero-text">
                     <div class="hero-greeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
-                    <div class="hero-sub">${completedCount}/${totalChaps} chapters · keep it up!</div>
+                    <div class="hero-sub">${completedCount}/${totalChaps} chapters Â· keep it up!</div>
                 </div>
                 <div class="hero-ring">
                     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -1077,16 +1121,16 @@
                 </div>
             </div>`;
 
-        // ── Search bar ──
+        // â”€â”€ Search bar â”€â”€
         const searchHtml = `
             <div class="search-container">
                 <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg></span>
-                <input type="text" id="searchInput" placeholder="Search all clinical chapters &amp; guidelines…" value="${filterText.replace(/"/g,'&quot;')}">
+                <input type="text" id="searchInput" placeholder="Search all clinical chapters &amp; guidelinesâ€¦" value="${filterText.replace(/"/g,'&quot;')}">
                 <button id="searchClearBtn" ${filterText ? '' : 'style="display:none;"'} aria-label="Clear search"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#x"/></svg></button>
             </div>
             <div class="cpg-search-hint" id="cpgSearchHint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg> Searching across all ${CHAPTERS.filter(c=>!c.isSpecial).length} clinical chapters &amp; guidelines</div>`;
 
-        // ── Quick Access (1-col) ──
+        // â”€â”€ Quick Access (1-col) â”€â”€
         const quickHtml = `
             <div class="section-label">Quick Access</div>
             <div class="quick-grid" data-section="quick" style="grid-template-columns: 1fr;">
@@ -1098,7 +1142,7 @@
                 </a>
             </div>`;
 
-        // ── Courses & Exams ──
+        // â”€â”€ Courses & Exams â”€â”€
         const coursesExamsHtml = `
             <div class="section-label">Courses &amp; Exams</div>
             <div class="menu-grid" data-section="courses">
@@ -1106,19 +1150,19 @@
                    data-chapter="courses" data-search="Courses Training ITLS EMPACT ACLS BLS">
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#graduation-cap"/></svg></span>
                     <h2>Courses Preparation</h2>
-                    <p>Training &amp; mock tests — ITLS, EMPACT, ACLS, BLS…</p>
-                    <span class="sc-arrow">›</span>
+                    <p>Training &amp; mock tests â€” ITLS, EMPACT, ACLS, BLSâ€¦</p>
+                    <span class="sc-arrow">â€º</span>
                 </a>
                 <a href="src/prometric/exam.html" class="menu-card special-card"
                    data-chapter="prometric" data-search="Prometric NREMT EMT Exam Practice Questions">
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg></span>
                     <h2>Prometric EMT Exam</h2>
                     <p>NREMT-style practice questions with analytics</p>
-                    <span class="sc-arrow">›</span>
+                    <span class="sc-arrow">â€º</span>
                 </a>
             </div>`;
 
-        // ── EMS Tools ──
+        // â”€â”€ EMS Tools â”€â”€
         const emsHtml = `
             <div class="section-label">EMS Tools</div>
             <div class="menu-grid" data-section="ems">
@@ -1136,7 +1180,7 @@
                 </div>
             </div>`;
 
-        // ── Core modules ──
+        // â”€â”€ Core modules â”€â”€
         const cpgRefHtml = `
             <div class="section-label">Core modules</div>
             <div class="menu-grid" data-section="cpg-ref">
@@ -1144,9 +1188,9 @@
                      data-chapter="smartcare-cpg" data-search="SmartCare Chapters 1.1 Universal Care protocols guidelines">
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#library"/></svg></span>
                     <h2>SmartCare</h2>
-                    <p>All clinical practice guidelines — Chapters 1.1 onwards</p>
+                    <p>All clinical practice guidelines â€” Chapters 1.1 onwards</p>
                     <button class="sc-expand-btn" id="scExpandBtn">
-                        ${showCpgChapters ? '▲ Hide chapters' : '▼ Browse all chapters'}
+                        ${showCpgChapters ? 'â–² Hide chapters' : 'â–¼ Browse all chapters'}
                     </button>
                 </div>
                 <div class="menu-card special-card"
@@ -1154,11 +1198,11 @@
                     <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#chart-no-axes-column"/></svg></span>
                     <h2>Statistics &amp; Progress</h2>
                     <p>Detailed study analytics and performance dashboard</p>
-                    <span class="sc-arrow">›</span>
+                    <span class="sc-arrow">â€º</span>
                 </div>
             </div>`;
 
-        // ── CPG Chapter list (always rendered; CSS-hidden when collapsed for global search) ──
+        // â”€â”€ CPG Chapter list (always rendered; CSS-hidden when collapsed for global search) â”€â”€
         let chaptersHtml = '';
         {
             const regularChapters = CHAPTERS.filter(ch => !ch.isSpecial);
@@ -1214,7 +1258,7 @@
                                 </div>
                             </div>
                             <h2>${ch.shortTitle}</h2>
-                            <p>${ch.title}${s.attempts ? ` · ${s.attempts} attempts · Avg ${avg}%` : ''}</p>
+                            <p>${ch.title}${s.attempts ? ` Â· ${s.attempts} attempts Â· Avg ${avg}%` : ''}</p>
                             <div class="menu-sub-options">
 <a href="${ch.id === 'm1-38' ? 'pages/med-index.html' : `chapters/${baseFile}.html?view=summary${sec}`}" class="btn-action btn-summary"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg> Summary</a>                                <a href="chapters/${baseFile}.html?view=flashcards${sec}" class="btn-action btn-flash"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg> Flashcards</a>
                                 <a href="chapters/${baseFile}.html?view=quiz${sec}"       class="btn-action btn-quiz"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Quiz</a>
@@ -1227,14 +1271,14 @@
             chaptersHtml += `</div>`; // close #cpgChaptersContainer
         }
 
-        // ── Offline download ──
+        // â”€â”€ Offline download â”€â”€
         const downloadHtml = `
             <div class="offline-download">
                 <button class="download-btn" id="downloadOfflineBtn"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#download"/></svg> Download All for Offline</button>
                 <progress id="downloadProgress" value="0" max="100" style="display:none;"></progress>
             </div>`;
 
-        // ── Empty search state ──
+        // â”€â”€ Empty search state â”€â”€
         const emptyHtml = `
             <div class="search-empty" id="searchEmpty" style="display:none;">
                 <div class="search-empty-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zoom-in"/></svg></div>
@@ -1303,7 +1347,7 @@
                 // Toggle visibility without a full re-render (chapters are always in DOM)
                 const container = document.getElementById('cpgChaptersContainer');
                 if (container) container.classList.toggle('cpg-section-hidden', !showCpgChapters);
-                scExpandBtn.textContent = showCpgChapters ? '▲ Hide chapters' : '▼ Browse all chapters';
+                scExpandBtn.textContent = showCpgChapters ? 'â–² Hide chapters' : 'â–¼ Browse all chapters';
                 // Hide search hint if user manually expanded
                 const srchHint = document.getElementById('cpgSearchHint');
                 if (srchHint) srchHint.classList.remove('visible');

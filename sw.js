@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v1.0';           // Bumped to v5.5 to force cache refresh after courses.html UI/UX enhancements
+const CACHE_VERSION = 'smartcare-v1.1';           // Bumped to v1.1: new ITLS reviewer (courses/itls) replaces legacy ITLS pages
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
@@ -55,7 +55,8 @@ const PRE_CACHE = [
   'pages/ecg.html',
   'pages/aha.html',
   'pages/courses.html',
-  'pages/itls.html'
+  'courses/itls/index.html',
+  'courses/itls/data/bundle.js'
 ];
 
 // ── File type routing ────────────────────────────────────────
