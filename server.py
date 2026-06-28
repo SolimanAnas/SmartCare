@@ -442,7 +442,7 @@ def _register_security_headers(app):
             "https://cdn.jsdelivr.net; "
             "style-src 'self' 'unsafe-inline' https:; "
             "font-src 'self' https: data:; "
-            "connect-src 'self' https://accounts.google.com; "
+            "connect-src 'self' https://accounts.google.com https://cdn.jsdelivr.net; "
             "frame-src https://accounts.google.com; "
             "frame-ancestors 'none'"
         )

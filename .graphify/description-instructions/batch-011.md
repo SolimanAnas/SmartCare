@@ -26,6 +26,31 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "app_rendersectiontabs": "renderSectionTabs()" | kind=code-symbol | source=app.js:L372 | neighbors=[app.js] | lang=en
+- "app_timeago": "timeAgo()" | kind=code-symbol | source=app.js:L96 | neighbors=[app.js] | lang=en
+- "app_updatebottomnavvisibility": "updateBottomNavVisibility()" | kind=code-symbol | source=app.js:L463 | neighbors=[app.js] | lang=en
+- "app_updatefooternavposition": "updateFooterNavPosition()" | kind=code-symbol | source=app.js:L474 | neighbors=[app.js] | lang=en
+- "app_updateheadervisibility": "updateHeaderVisibility()" | kind=code-symbol | source=app.js:L440 | neighbors=[app.js] | lang=en
+- "app_updateprogressbarposition": "updateProgressBarPosition()" | kind=code-symbol | source=app.js:L453 | neighbors=[app.js] | lang=en
+- "app_updatescrollprogress": "updateScrollProgress()" | kind=code-symbol | source=app.js:L483 | neighbors=[app.js] | lang=en
+- "content_c_index_generateindexhtml": "generateIndexHTML()" | kind=code-symbol | source=content/c-index.js:L18 | neighbors=[c-index.js] | lang=en
+- "content_starters_backup_c_index_generateindexhtml": "generateIndexHTML()" | kind=code-symbol | source=content_starters_backup/c-index.js:L18 | neighbors=[c-index.js] | lang=en
+- "content_starters_backup_c0": "c0.js" | kind=code-symbol | source=content_starters_backup/c0.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c1": "c1.js" | kind=code-symbol | source=content_starters_backup/c1.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c10": "c10.js" | kind=code-symbol | source=content_starters_backup/c10.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c2": "c2.js" | kind=code-symbol | source=content_starters_backup/c2.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c3": "c3.js" | kind=code-symbol | source=content_starters_backup/c3.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c4": "c4.js" | kind=code-symbol | source=content_starters_backup/c4.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c5": "c5.js" | kind=code-symbol | source=content_starters_backup/c5.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c6": "c6.js" | kind=code-symbol | source=content_starters_backup/c6.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c7": "c7.js" | kind=code-symbol | source=content_starters_backup/c7.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c8": "c8.js" | kind=code-symbol | source=content_starters_backup/c8.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_c9": "c9.js" | kind=code-symbol | source=content_starters_backup/c9.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_m1_38": "m1-38.js" | kind=code-symbol | source=content_starters_backup/m1-38.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "content_starters_backup_s1": "s1.js" | kind=code-symbol | source=content_starters_backup/s1.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
+- "data_bundle": "bundle.js" | kind=code-symbol | source=courses/itls/data/bundle.js:L1 | neighbors=[1a00316 feat(itls): restructure itls co…] | lang=en
+- "playwright_config": "playwright.config.js" | kind=code-symbol | source=playwright.config.js:L1 | neighbors=[beb9c47 fix(ui): swap CSS to 0dad921 gl…] | lang=en
+- "prometric_exam_examengine_formattime": ".formatTime()" | kind=code-symbol | source=src/prometric/exam.js:L752 | neighbors=[ExamEngine] | lang=en
 - "prometric_exam_examengine_handletouchstart": ".handleTouchStart()" | kind=code-symbol | source=src/prometric/exam.js:L218 | neighbors=[ExamEngine] | lang=en
 - "prometric_exam_examengine_showmobilepanel": ".showMobilePanel()" | kind=code-symbol | source=src/prometric/exam.js:L238 | neighbors=[ExamEngine] | lang=en
 - "prometric_exam_examengine_togglefocusmode": ".toggleFocusMode()" | kind=code-symbol | source=src/prometric/exam.js:L234 | neighbors=[ExamEngine] | lang=en
@@ -36,36 +61,11 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_gen_rationale_25": "Creates the necessary src/COURSE folders." | kind=entity | source=scripts/gen.py:L25 | neighbors=[create_src_folders()] | lang=en
 - "scripts_gen_rationale_33": "Replaces placeholders in the template with course-specific data." | kind=entity | source=scripts/gen.py:L33 | neighbors=[generate_course_page()] | lang=en
 - "scripts_generate_all_itls_data_main": "main()" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L975 | neighbors=[generate_all_itls_data.py] | lang=en
-- "sw_cache_first_patterns": "CACHE_FIRST_PATTERNS" | kind=code-symbol | source=sw.js:L63 | neighbors=[sw.js] | lang=en
-- "sw_cachefirst": "cacheFirst()" | kind=code-symbol | source=sw.js:L190 | neighbors=[sw.js] | lang=en
-- "sw_iscacheable": "isCacheable()" | kind=code-symbol | source=sw.js:L208 | neighbors=[sw.js] | lang=en
-- "sw_networkfirst": "networkFirst()" | kind=code-symbol | source=sw.js:L141 | neighbors=[sw.js] | lang=en
-- "sw_pre_cache": "PRE_CACHE" | kind=code-symbol | source=sw.js:L10 | neighbors=[sw.js] | lang=en
-- "tests_check_exam_flow_spec_pages": "PAGES" | kind=code-symbol | source=tests/_check_exam_flow.spec.js:L3 | neighbors=[_check_exam_flow.spec.js] | lang=en
-- "tests_conftest_app": "app()" | kind=code-symbol | source=tests/conftest.py:L12 | neighbors=[conftest.py] | lang=en
-- "tests_conftest_client": "client()" | kind=code-symbol | source=tests/conftest.py:L32 | neighbors=[conftest.py] | lang=en
-- "tests_conftest_runner": "runner()" | kind=code-symbol | source=tests/conftest.py:L45 | neighbors=[conftest.py] | lang=en
-- "tests_prometric_spec_navigatewizard": "navigateWizard()" | kind=code-symbol | source=tests/prometric.spec.js:L54 | neighbors=[prometric.spec.js] | lang=en
-- "tests_test_api_rationale_1": "Smoke tests for the SmartCare Flask API." | kind=entity | source=tests/test_api.py:L1 | neighbors=[test_api.py] | lang=en
-- "tests_test_api_rationale_107": "Both bad-user and bad-password return the same message (anti-enumeration)." | kind=entity | source=tests/test_api.py:L107 | neighbors=[.test_login_generic_error_message()] | lang=en
-- "tests_test_api_rationale_136": "Anonymous access to the admin API must be denied (no PII leak)." | kind=entity | source=tests/test_api.py:L136 | neighbors=[.test_admin_users_requires_auth()] | lang=en
-- "tests_test_api_rationale_141": "A signed-in non-admin must be forbidden (broken-access-control fix)." | kind=entity | source=tests/test_api.py:L141 | neighbors=[.test_admin_users_forbidden_for_regular…] | lang=pt
-- "tests_test_api_rationale_147": "An authenticated admin (role == 'Admin') can list users." | kind=entity | source=tests/test_api.py:L147 | neighbors=[.test_admin_can_list_users()] | lang=en
-- "tests_test_api_rationale_250": "A plain-form POST to an API endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L250 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
-- "tests_test_api_rationale_260": "A POST missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L260 | neighbors=[.test_post_without_xrw_header_rejected()] | lang=pt
-- "tests_test_api_rationale_269": "A well-formed JSON POST with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L269 | neighbors=[.test_valid_json_post_allowed()] | lang=en
-- "tests_test_api_rationale_279": "GET requests are never subject to the CSRF guard." | kind=entity | source=tests/test_api.py:L279 | neighbors=[.test_get_requests_not_blocked()] | lang=en
-- "tests_test_api_testgooglelogin_test_google_login_bad_token": ".test_google_login_bad_token()" | kind=code-symbol | source=tests/test_api.py:L121 | neighbors=[TestGoogleLogin] | lang=en
-- "tests_test_api_testgooglelogin_test_google_login_missing_token": ".test_google_login_missing_token()" | kind=code-symbol | source=tests/test_api.py:L116 | neighbors=[TestGoogleLogin] | lang=en
-- "tests_test_api_testhealthcheck_test_health_returns_ok": ".test_health_returns_ok()" | kind=code-symbol | source=tests/test_api.py:L210 | neighbors=[TestHealthCheck] | lang=en
-- "tests_test_api_testindex_test_index_serves_html": ".test_index_serves_html()" | kind=code-symbol | source=tests/test_api.py:L24 | neighbors=[TestIndex] | lang=en
-- "tests_test_api_testlogout_test_logout_requires_auth": ".test_logout_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L128 | neighbors=[TestLogout] | lang=en
-- "tests_test_api_testregister_test_invalid_professional_level_rejected": ".test_invalid_professional_level_rejected()" | kind=code-symbol | source=tests/test_api.py:L78 | neighbors=[TestRegister] | lang=en
-- "tests_test_api_testregister_test_register_missing_password": ".test_register_missing_password()" | kind=code-symbol | source=tests/test_api.py:L43 | neighbors=[TestRegister] | lang=en
-- "tests_test_api_testsecurityheaders_test_csp_blocks_framing": ".test_csp_blocks_framing()" | kind=code-symbol | source=tests/test_api.py:L203 | neighbors=[TestSecurityHeaders] | lang=en
-- "tests_test_api_testsecurityheaders_test_security_headers_present": ".test_security_headers_present()" | kind=code-symbol | source=tests/test_api.py:L198 | neighbors=[TestSecurityHeaders] | lang=en
-- "tests_test_api_teststaticfiles_test_manifest_json": ".test_manifest_json()" | kind=code-symbol | source=tests/test_api.py:L290 | neighbors=[TestStaticFiles] | lang=en
-- "tests_test_api_teststaticfiles_test_nonexistent_file_returns_404": ".test_nonexistent_file_returns_404()" | kind=code-symbol | source=tests/test_api.py:L295 | neighbors=[TestStaticFiles] | lang=en
+- "server_load_user": "load_user()" | kind=code-symbol | source=server.py:L146 | neighbors=[server.py] | lang=en
+- "server_rationale_151": "Allow-list of admin emails sourced from the environment (no hard-coding)." | kind=entity | source=server.py:L151 | neighbors=[_admin_emails()] | lang=en
+- "server_rationale_157": "A user is an admin if their role is 'Admin' or they are allow-listed." | kind=entity | source=server.py:L157 | neighbors=[_is_admin()] | lang=en
+- "server_rationale_35": "Write a structured audit record for auth and admin events." | kind=entity | source=server.py:L35 | neighbors=[_audit()] | lang=en
+- "server_rationale_61": "Return an error string, or None if valid." | kind=entity | source=server.py:L61 | neighbors=[_validate_email()] | lang=en
 
 ## Instructions
 

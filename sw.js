@@ -188,17 +188,41 @@ function networkFirst(req) {
 //  STRATEGY: Cache First
 // ============================================================
 function cacheFirst(req) {
+  // Never cache non-GET or non-http requests
+  if (req.method !== 'GET' || !req.url.startsWith('http')) {
+    return fetch(req);
+  }
   return caches.match(req, { ignoreSearch: true }).then(function(cached) {
-    const networkUpdate = fetch(req.clone()).then(function(response) {
-      if (response && response.ok) {
-        caches.open(CACHE_VERSION).then(function(cache) {
-          cache.put(req, response.clone());
-        });
+    // Clone the request only if its body is still usable
+    var fetchReq;
+    try {
+      fetchReq = req.clone();
+    } catch (e) {
+      // Body already consumed — just fetch without caching
+      return cached || fetch(req);
+    }
+
+    var networkUpdate = fetch(fetchReq).then(function(response) {
+      if (response && response.ok && response.clone) {
+        try {
+          var copy = response.clone();
+          caches.open(CACHE_VERSION).then(function(cache) {
+            cache.put(req, copy);
+          });
+        } catch (e) {
+          // Clone failed — cache skipped, response still returned
+        }
       }
       return response;
-    }).catch(function() { /* offline, ignore */ });
+    }).catch(function() {
+      // Offline or CSP-blocked — ignore, cached response will be used
+      return null;
+    });
 
     return cached || networkUpdate;
+  }).catch(function() {
+    // cache.match itself failed — fall back to network
+    return fetch(req);
   });
 }
 

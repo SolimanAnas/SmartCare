@@ -3,14 +3,14 @@
   "branchName": "main",
   "worktreePath": "D:\\Apps\\SmartCare",
   "upstream": "origin/main",
-  "mergeBase": "fe7449d2732faaa3abcba42fc0b71cec6ce5f59d",
+  "mergeBase": "6c55b58a08f87310c2157a2ecec18a123b5f5594",
   "firstSeenHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
-  "lastSeenHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
-  "lastAnalyzedHead": "1fc629ed8067812d2115ce0199634b321a6a231d",
+  "lastSeenHead": "6c55b58a08f87310c2157a2ecec18a123b5f5594",
+  "lastAnalyzedHead": "6c55b58a08f87310c2157a2ecec18a123b5f5594",
   "stale": false,
   "staleReason": null,
   "staleSince": null,
   "lifecycleEvent": null,
   "createdAt": "2026-06-27T18:26:37.316Z",
-  "updatedAt": "2026-06-27T18:26:37.316Z"
+  "updatedAt": "2026-06-28T09:43:44.866Z"
 }

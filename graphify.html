@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCare Codebase Knowledge Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.6/standalone/umd/vis-network.min.js"></script>
+    <script>
+        // Inline dataset for file:// fallback when fetch is blocked by CORS
+        // This is a subset of the full graph — enough to render something useful.
+        // The full dataset loads from graphify-out/graph.json when served via HTTP.
+        var FALLBACK_GRAPH = null;
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-dark: #0a0e1a;
+            --secondary-dark: #1a1a2e;
+            --accent-teal: #00d4ff;
+            --accent-blue: #0056b3;
+            --accent-navy: #004e92;
+            --text-primary: #e0e0e0;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(26, 26, 46, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+            --gradient-bg: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 50%, #0f3460 100%);
+        }
+
+        body {
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        #graph {
+            flex: 1;
+            position: relative;
+            background: rgba(10, 14, 26, 0.5);
+        }
+
+        #sidebar {
+            width: 280px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-left: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Mobile overlay */
+        @media (max-width: 767px) {
+            #sidebar {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 85%;
+                max-width: 320px;
+                transform: translateX(100%);
+                z-index: 1000;
+                box-shadow: var(--shadow-lg);
+            }
+            
+            #sidebar.open {
+                transform: translateX(0);
+            }
+            
+            #graph {
+                width: 100%;
+            }
+        }
+
+        #sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+
+        #sidebar-toggle:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent-teal);
+            transform: translateY(-1px);
+        }
+
+        #search-wrap {
+            padding: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(10, 14, 26, 0.5);
+        }
+
+        #search-container {
+            position: relative;
+        }
+
+        #search {
+            width: 100%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        #search:focus {
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        #search-results {
+            max-height: 160px;
+            overflow-y: auto;
+            padding: 4px 12px;
+            border-bottom: 1px solid var(--glass-border);
+            display: none;
+            background: var(--secondary-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 0 0 8px 8px;
+            margin-top: -4px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-item {
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 2px 0;
+            transition: all 0.15s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .search-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(2px);
+        }
+
+        #info-panel {
+            padding: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            min-height: 160px;
+            background: rgba(10, 14, 26, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        #info-panel:hover {
+            background: rgba(0, 212, 255, 0.03);
+        }
+
+        #info-panel h3 {
+            font-size: 14px;
+            color: var(--accent-teal);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        #info-content {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        #info-content .field {
+            margin-bottom: 8px;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        #info-content .field::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 3px;
+            height: 3px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+        }
+
+        #info-content .field b {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        #info-content .empty {
+            color: var(--text-secondary);
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            border: 1px dashed var(--glass-border);
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .neighbor-link {
+            display: block;
+            padding: 6px 10px;
+            margin: 4px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-left: 3px solid #333;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .neighbor-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-left-color: var(--accent-teal);
+            transform: translateX(2px);
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.2);
+        }
+
+        #neighbors-list {
+            max-height: 180px;
+            overflow-y: auto;
+            margin-top: 8px;
+            padding: 4px;
+        }
+
+        #legend-wrap {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            background: rgba(10, 14, 26, 0.5);
+        }
+
+        #legend-wrap h3 {
+            font-size: 14px;
+            color: var(--accent-teal);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        #legend-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        #legend-controls label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text-secondary);
+            user-select: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        #legend-controls label:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            padding-left: 8px;
+        }
+
+        .legend-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 12px;
+        }
+
+        .legend-item.dimmed {
+            opacity: 0.35;
+            transform: scale(0.98);
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px currentColor;
+        }
+
+        .legend-label {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .legend-cb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--glass-border);
+            border-radius: 4px;
+            background: rgba(10, 14, 26, 0.8);
+            cursor: pointer;
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .legend-cb:checked {
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+        }
+        .legend-cb:checked::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 0;
+            width: 5px;
+            height: 9px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .legend-count {
+            color: var(--text-secondary);
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+
+        #stats {
+            padding: 12px 16px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-teal);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        /* Loading state */
+        #loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        #loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 212, 255, 0.1);
+            border-top: 3px solid var(--accent-teal);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 16px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Node hover effects */
+        .node-hover {
+            stroke: var(--accent-teal) !important;
+            stroke-width: 3px !important;
+            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
+        }
+
+        /* Network tooltip styling */
+        .vis-tooltip {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text-primary);
+            font-size: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 255, 0.5);
+        }
+
+        /* Selection styling */
+        .node-selected {
+            stroke: #fff !important;
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+
+        /* Animation for sidebar toggle */
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading overlay -->
+    <div id="loading-overlay">
+        <div style="text-align: center;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading SmartCare Knowledge Graph...</div>
+        </div>
+    </div>
+
+    <!-- Mobile toggle button -->
+    <button id="sidebar-toggle" onclick="toggleSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+    </button>
+
+    <!-- Main graph container -->
+    <div id="graph"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <!-- Search section -->
+        <div id="search-wrap">
+            <div id="search-container">
+                <input id="search" type="text" placeholder="Search nodes by label..." autocomplete="off">
+                <div id="search-results"></div>
+            </div>
+        </div>
+
+        <!-- Node info panel -->
+        <div id="info-panel">
+            <h3>Node Information</h3>
+            <div id="info-content">
+                <span class="empty">Click a node to inspect it</span>
+            </div>
+        </div>
+
+        <!-- Communities legend -->
+        <div id="legend-wrap">
+            <h3>Communities</h3>
+            <div id="legend-controls">
+                <label>
+                    <input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)">
+                    Select All
+                </label>
+            </div>
+            <div id="legend"></div>
+        </div>
+
+        <!-- Stats bar -->
+        <div id="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-nodes">0</span>
+                    <span class="stat-label">Nodes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-edges">0</span>
+                    <span class="stat-label">Edges</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-communities">0</span>
+                    <span class="stat-label">Communities</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Graph colour palette (Tableau 20 + extended) ──────────
+        var COMMUNITY_COLORS = [
+            '#4E79A7','#F28E2B','#E15759','#76B7B2','#59A14F','#EDC948','#B07AA1','#FF9DA7','#9C755F','#BAB0AC',
+            '#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf',
+            '#aec7e8','#ffbb78','#98df8a','#ff9896','#c5b0d5','#c49c94','#f7b6d2','#c7c7c7','#dbdb8d','#9edae5',
+            '#393b79','#637939','#8c6d31','#843c39','#7b4173','#5254a3','#8ca252','#bd9e39','#ad494a','#a55194',
+            '#6b6ecf','#b5cf6b','#e7ba52','#d6616b','#ce6dbd','#9c9ede','#cedb9c','#e7cb94','#e7969c','#f7c6c9'
+        ];
+
+        // Global variables
+        var graphData = null;
+        var nodesDS = null;
+        var edgesDS = null;
+        var network = null;
+        var hoveredNodeId = null;
+        var hiddenCommunities = new Set();
+        var isLoading = true;
+        var communityColorMap = {};
+
+        // HTML-escape helper
+        function esc(s) {
+            return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&#39;');
+        }
+
+        // ── Data preparation: normalise graph.json for vis.js ─────
+        function prepareGraphData(raw) {
+            if (!raw || !raw.nodes) return null;
+
+            // Build links array (graph.json uses "links", not "edges")
+            var links = raw.links || raw.edges || [];
+
+            // Compute degree for each node (number of connections)
+            var degree = {};
+            raw.nodes.forEach(function(n) { degree[n.id] = 0; });
+            links.forEach(function(l) {
+                var src = l.source || l.from;
+                var tgt = l.target || l.to;
+                if (degree[src] !== undefined) degree[src] = (degree[src] || 0) + 1;
+                if (degree[tgt] !== undefined) degree[tgt] = (degree[tgt] || 0) + 1;
+            });
+
+            // Assign a colour per community
+            var communities = {};
+            raw.nodes.forEach(function(n) {
+                var cid = n.community !== undefined ? n.community : 0;
+                if (!communities[cid]) {
+                    communities[cid] = { id: cid, name: n.community_name || 'Community ' + cid, count: 0, color: COMMUNITY_COLORS[cid % COMMUNITY_COLORS.length] };
+                }
+                communities[cid].count++;
+            });
+            var legend = [];
+            for (var cid in communities) {
+                communityColorMap[cid] = communities[cid].color;
+                legend.push(communities[cid]);
+            }
+            legend.sort(function(a, b) { return b.count - a.count; });
+
+            // Assign prepared data back
+            raw._prepared = true;
+            raw._links = links;
+            raw._degree = degree;
+            raw._legend = legend;
+            raw._communities = communities;
+
+            // Compute stats
+            var maxDeg = 0;
+            for (var id in degree) { if (degree[id] > maxDeg) maxDeg = degree[id]; }
+            raw._maxDegree = maxDeg;
+
+            return raw;
+        }
+
+        // ── Load graph data ────────────────────────────────────────
+        async function loadGraphData() {
+            try {
+                var response = await fetch('graphify-out/graph.json');
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                var raw = await response.json();
+                graphData = prepareGraphData(raw);
+                if (graphData) console.log('Graph data loaded: ' + graphData.nodes.length + ' nodes, ' + graphData._links.length + ' links');
+                return graphData;
+            } catch (e) {
+                console.warn('Fetch failed, fallback:', e.message);
+            }
+            // Fallback: inline data (for file://)
+            if (typeof FALLBACK_GRAPH !== 'undefined' && FALLBACK_GRAPH) {
+                graphData = prepareGraphData(FALLBACK_GRAPH);
+                return graphData;
+            }
+            showLoadError('Could not load graph data.',
+                'Open via HTTP server (e.g. <code>python server.py</code>) and go to <code>/graphify.html</code>.');
+            return null;
+        }
+
+        function showLoadError(title, detail) {
+            var overlay = document.getElementById('loading-overlay');
+            if (!overlay) return;
+            overlay.innerHTML = '<div style="text-align:center;padding:2rem;max-width:400px">' +
+                '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.5">' +
+                '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' +
+                '<div style="color:#e0e0e0;font-size:16px;font-weight:600;margin-top:12px">' + esc(title) + '</div>' +
+                '<div style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.5">' + detail + '</div></div>';
+            overlay.classList.remove('hidden');
+            var btn = document.getElementById('sidebar-toggle');
+            if (btn) btn.style.display = 'none';
+        }
+
+        // ── Build vis.js network ──────────────────────────────────
+        function initializeNetwork() {
+            if (!graphData || !graphData.nodes) {
+                showLoadError('No graph data available.',
+                    'Run <code>graphify update .</code> to generate the knowledge graph, then reload.');
+                return;
+            }
+            var links = graphData._links;
+            var degree = graphData._degree;
+            var maxDeg = graphData._maxDegree || 1;
+
+            // Nodes
+            var visNodes = graphData.nodes.map(function(n) {
+                var cid = n.community !== undefined ? n.community : 0;
+                var col = communityColorMap[cid] || '#4E79A7';
+                var deg = degree[n.id] || 1;
+                // Size scales from 10 (1 connection) to 30 (max connections)
+                var sz = 10 + (deg / maxDeg) * 20;
+                return {
+                    id: n.id,
+                    label: n.label,
+                    color: {
+                        background: col,
+                        border: col,
+                        highlight: { background: '#ffffff', border: col }
+                    },
+                    size: sz,
+                    font: { size: 0, color: '#ffffff' },
+                    title: n.label,
+                    _community: cid,
+                    _community_name: n.community_name || 'Community ' + cid,
+                    _source_file: n.source_file || '',
+                    _file_type: n.file_type || 'unknown',
+                    _degree: deg
+                };
+            });
+
+            // Links
+            var visEdges = links.map(function(l, i) {
+                return {
+                    id: i,
+                    from: l.source || l.from,
+                    to: l.target || l.to,
+                    label: '',
+                    title: (l.source || l.from) + ' ' + (l.relation || '→') + ' ' + (l.target || l.to),
+                    dashes: false,
+                    width: Math.min(1 + (l.weight || 1) * 0.5, 4),
+                    color: { opacity: 0.5 },
+                    arrows: { to: { enabled: true, scaleFactor: 0.4 } }
+                };
+            });
+
+            nodesDS = new vis.DataSet(visNodes);
+            edgesDS = new vis.DataSet(visEdges);
+
+            var options = {
+                layout: { improvedLayout: false },
+                physics: {
+                    enabled: true, solver: 'forceAtlas2Based',
+                    forceAtlas2Based: { gravitationalConstant: -60, centralGravity: 0.005, springLength: 120, springConstant: 0.08, damping: 0.4, avoidOverlap: 0.8 },
+                    stabilization: { iterations: 200, fit: true }
+                },
+                interaction: { hover: true, tooltipDelay: 100, hideEdgesOnDrag: true, navigationButtons: false, keyboard: false },
+                nodes: { shape: 'dot', borderWidth: 1.5, scaling: { min: 8, max: 30 } },
+                edges: { smooth: { type: 'continuous', roundness: 0.2 }, selectionWidth: 3, color: { color: '#4E79A7', highlight: '#00d4ff', hover: '#00d4ff', opacity: 0.5 } }
+            };
+
+            var container = document.getElementById('graph');
+            network = new vis.Network(container, { nodes: nodesDS, edges: edgesDS }, options);
+
+            network.once('stabilizationIterationsDone', function() {
+                network.setOptions({ physics: { enabled: false } });
+                hideLoadingOverlay();
+            });
+
+            setupEventListeners();
+            updateStats();
+            populateLegend();
+        }
+
+        // ── Event listeners ───────────────────────────────────────
+        function setupEventListeners() {
+            network.on('hoverNode', function(params) {
+                hoveredNodeId = params.node;
+                document.getElementById('graph').style.cursor = 'pointer';
+                var node = nodesDS.get(params.node);
+                if (node) {
+                    nodesDS.update({
+                        id: params.node,
+                        color: { background: '#ffffff', border: node.color.border, highlight: node.color.highlight }
+                    });
+                }
+            });
+
+            network.on('blurNode', function() {
+                hoveredNodeId = null;
+                document.getElementById('graph').style.cursor = 'default';
+                if (network.getSelectedNodes().length === 0) resetNodeColors();
+            });
+
+            document.getElementById('graph').addEventListener('click', function() {
+                if (hoveredNodeId !== null) { showInfo(hoveredNodeId); network.selectNodes([hoveredNodeId]); }
+            });
+
+            network.on('click', function(params) {
+                if (params.nodes.length > 0) showInfo(params.nodes[0]);
+                else if (hoveredNodeId === null) document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+            });
+
+            // Search
+            var searchInput = document.getElementById('search');
+            var searchResults = document.getElementById('search-results');
+
+            searchInput.addEventListener('input', function() {
+                var q = searchInput.value.toLowerCase().trim();
+                searchResults.innerHTML = '';
+                if (!q) { searchResults.style.display = 'none'; return; }
+                var matches = graphData.nodes.filter(function(n) { return n.label.toLowerCase().indexOf(q) !== -1; }).slice(0, 20);
+                if (!matches.length) { searchResults.style.display = 'none'; return; }
+                searchResults.style.display = 'block';
+                matches.forEach(function(n) {
+                    var col = communityColorMap[n.community] || '#4E79A7';
+                    var el = document.createElement('div');
+                    el.className = 'search-item';
+                    el.textContent = n.label;
+                    el.style.borderLeft = '3px solid ' + col;
+                    el.onclick = function() {
+                        network.focus(n.id, { scale: 1.5, animation: true });
+                        network.selectNodes([n.id]); showInfo(n.id);
+                        searchResults.style.display = 'none'; searchInput.value = '';
+                    };
+                    searchResults.appendChild(el);
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!searchResults.contains(e.target) && e.target !== searchInput) searchResults.style.display = 'none';
+            });
+
+            // Keyboard
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    network.selectNodes([]);
+                    document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+                }
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') { e.preventDefault(); searchInput.focus(); }
+            });
+        }
+
+        // ── Node info panel ────────────────────────────────────────
+        function showInfo(nodeId) {
+            var n = nodesDS.get(nodeId);
+            if (!n) return;
+            var neighborIds = network.getConnectedNodes(nodeId);
+            var neighborItems = neighborIds.map(function(nid) {
+                var nb = nodesDS.get(nid);
+                var col = nb ? (nb.color && nb.color.background ? nb.color.background : '#555') : '#555';
+                return '<span class="neighbor-link" style="border-left-color:' + esc(col) + '" onclick="focusNode(\'' + esc(nid) + '\')">' + esc(nb ? nb.label : nid) + '</span>';
+            }).join('');
+
+            document.getElementById('info-content').innerHTML =
+                '<div class="field"><b>' + esc(n.label) + '</b></div>' +
+                '<div class="field">Type: ' + esc(n._file_type) + '</div>' +
+                '<div class="field">Community: ' + esc(n._community_name) + '</div>' +
+                '<div class="field">Source: ' + esc(n._source_file || '-') + '</div>' +
+                '<div class="field">Degree: ' + n._degree + '</div>' +
+                (neighborIds.length
+                    ? '<div class="field" style="margin-top:12px;color:#aaa;font-size:12px">Connected Nodes (' + neighborIds.length + ')</div><div id="neighbors-list">' + neighborItems + '</div>'
+                    : '');
+        }
+
+        function focusNode(nodeId) {
+            network.focus(nodeId, { scale: 1.4, animation: true });
+            network.selectNodes([nodeId]); showInfo(nodeId);
+        }
+
+        // ── Color management ──────────────────────────────────────
+        function resetNodeColors() {
+            nodesDS.forEach(function(node) {
+                var cid = node._community;
+                var col = communityColorMap[cid] || '#4E79A7';
+                nodesDS.update({
+                    id: node.id,
+                    color: { background: col, border: col, highlight: { background: '#ffffff', border: col } }
+                });
+            });
+        }
+
+        // ── Community legend ──────────────────────────────────────
+        function populateLegend() {
+            var legendEl = document.getElementById('legend');
+            legendEl.innerHTML = '';
+            var list = graphData._legend || [];
+
+            if (list.length === 0) {
+                legendEl.innerHTML = '<span class="empty">No communities found</span>';
+                return;
+            }
+
+            list.forEach(function(c) {
+                var item = document.createElement('div');
+                item.className = 'legend-item';
+
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.className = 'legend-cb';
+                cb.checked = true;
+                cb.addEventListener('change', function(e) {
+                    e.stopPropagation();
+                    if (cb.checked) { hiddenCommunities.delete(String(c.id)); item.classList.remove('dimmed'); }
+                    else { hiddenCommunities.add(String(c.id)); item.classList.add('dimmed'); }
+                    var updates = graphData.nodes
+                        .filter(function(n) { return String(n.community) === String(c.id); })
+                        .map(function(n) { return { id: n.id, hidden: !cb.checked }; });
+                    nodesDS.update(updates);
+                    updateSelectAllState();
+                });
+
+                item.innerHTML = '<div class="legend-dot" style="background:' + c.color + '"></div>' +
+                    '<span class="legend-label">' + esc(c.name) + '</span>' +
+                    '<span class="legend-count">' + c.count + '</span>';
+                item.prepend(cb);
+                item.onclick = function(e) { if (e.target === cb) return; cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); };
+                legendEl.appendChild(item);
+            });
+        }
+
+        function toggleAllCommunities(hide) {
+            document.querySelectorAll('.legend-item').forEach(function(item) {
+                hide ? item.classList.add('dimmed') : item.classList.remove('dimmed');
+            });
+            document.querySelectorAll('.legend-cb').forEach(function(cb) { cb.checked = !hide; });
+            (graphData._legend || []).forEach(function(c) {
+                if (hide) hiddenCommunities.add(String(c.id)); else hiddenCommunities.delete(String(c.id));
+            });
+            var updates = graphData.nodes.map(function(n) { return { id: n.id, hidden: hide }; });
+            nodesDS.update(updates);
+            updateSelectAllState();
+        }
+
+        function updateSelectAllState() {
+            var total = (graphData._legend || []).length;
+            var hidden = hiddenCommunities.size;
+            var selectAllCb = document.getElementById('select-all-cb');
+            selectAllCb.checked = hidden === 0;
+            selectAllCb.indeterminate = hidden > 0 && hidden < total;
+        }
+
+        function updateStats() {
+            document.getElementById('stat-nodes').textContent = graphData.nodes.length;
+            document.getElementById('stat-edges').textContent = graphData._links.length;
+            document.getElementById('stat-communities').textContent = (graphData._legend || []).length;
+        }
+
+        // ── Loading overlay ───────────────────────────────────────
+        function hideLoadingOverlay() {
+            var overlay = document.getElementById('loading-overlay');
+            if (!overlay || overlay.classList.contains('hidden')) return;
+            overlay.classList.add('hidden');
+            setTimeout(function() { overlay.style.display = 'none'; }, 300);
+            isLoading = false;
+        }
+
+        // ── Mobile sidebar ────────────────────────────────────────
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var btn = document.getElementById('sidebar-toggle');
+            if (!sidebar || !btn) return;
+            var open = sidebar.classList.contains('open');
+            sidebar.classList.toggle('open');
+            btn.innerHTML = open
+                ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>'
+                : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>';
+        }
+
+        // ── Init ──────────────────────────────────────────────────
+        window.addEventListener('load', async function() {
+            graphData = await loadGraphData();
+            if (!graphData) return;
+            initializeNetwork();
+        });
+
+        // Close sidebar on outside click (mobile)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth > 767) return;
+            var sidebar = document.getElementById('sidebar');
+            var btn = document.getElementById('sidebar-toggle');
+            if (sidebar && btn && !sidebar.contains(e.target) && !btn.contains(e.target)) {
+                sidebar.classList.remove('open');
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                var sidebar = document.getElementById('sidebar');
+                var btn = document.getElementById('sidebar-toggle');
+                if (sidebar) sidebar.classList.remove('open');
+                if (btn) btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+            }
+        });
+    </script>
+</body>
+</html>
