@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v1.2';           // v1.2: refreshed PWA icons from new22.png
+const CACHE_VERSION = 'smartcare-v2.2';           // v2.2: initial public release
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
