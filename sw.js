@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v1.1';           // Bumped to v1.1: new ITLS reviewer (courses/itls) replaces legacy ITLS pages
+const CACHE_VERSION = 'smartcare-v1.2';           // v1.2: refreshed PWA icons from new22.png
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
