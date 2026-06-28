@@ -56,6 +56,9 @@ content_dcas_archive/
 .cursor/
 .opencode/
 
+# Design source files
+*.psd
+
 # Generated knowledge graph
 graphify-out/
 
