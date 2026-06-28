@@ -65,18 +65,355 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Privacy Policy – SmartCare Review App</title>
 <link rel="stylesheet" href="../styles.css">
+<style>
+    /* ━━ Page layout ━━ */
+    .legal-page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 16px 80px;
+        animation: fadeIn 0.6s ease forwards;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ━━ Hero header ━━ */
+    .privacy-hero {
+        text-align: center;
+        padding: 48px 20px 40px;
+        margin-bottom: 32px;
+        position: relative;
+        overflow: hidden;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 28px;
+        box-shadow: var(--glass-shadow);
+    }
+    .privacy-hero::before {
+        content: '';
+        position: absolute;
+        top: -60px; right: -60px;
+        width: 200px; height: 200px;
+        background: radial-gradient(circle, rgba(0,86,179,0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+    .privacy-hero::after {
+        content: '';
+        position: absolute;
+        bottom: -40px; left: -40px;
+        width: 140px; height: 140px;
+        background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+    .privacy-hero .hero-icon {
+        width: 56px; height: 56px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, #004e92, #00a8cc);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        box-shadow: 0 8px 24px rgba(0,86,179,0.3);
+        position: relative;
+        z-index: 1;
+    }
+    .privacy-hero h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 0 6px;
+        color: var(--text-primary);
+        position: relative;
+        z-index: 1;
+    }
+    .privacy-hero .effective {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+    .privacy-hero .effective strong { color: var(--primary-accent); }
+
+    /* ━━ Section cards (glassmorphism) ━━ */
+    .policy-section {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 24px 28px;
+        margin-bottom: 20px;
+        box-shadow: var(--glass-shadow);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        transition: transform 0.22s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.22s;
+        animation: cardIn 0.5s ease forwards;
+        opacity: 0;
+        transform: translateY(16px);
+        position: relative;
+        overflow: hidden;
+    }
+    .policy-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #004e92, #00d4ff);
+        border-radius: 4px 0 0 4px;
+        opacity: 0.6;
+    }
+    .policy-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px -8px rgba(0,0,0,0.18);
+    }
+    @keyframes cardIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .policy-section:nth-of-type(1) { animation-delay: 0.03s; }
+    .policy-section:nth-of-type(2) { animation-delay: 0.08s; }
+    .policy-section:nth-of-type(3) { animation-delay: 0.13s; }
+    .policy-section:nth-of-type(4) { animation-delay: 0.18s; }
+    .policy-section:nth-of-type(5) { animation-delay: 0.23s; }
+    .policy-section:nth-of-type(6) { animation-delay: 0.28s; }
+    .policy-section:nth-of-type(7) { animation-delay: 0.33s; }
+    .policy-section:nth-of-type(8) { animation-delay: 0.38s; }
+    .policy-section:nth-of-type(9) { animation-delay: 0.43s; }
+    .policy-section:nth-of-type(10) { animation-delay: 0.48s; }
+
+    /* ━━ Typography inside cards ━━ */
+    .policy-section h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 0 12px;
+        color: var(--primary-accent);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .policy-section h2 .section-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px; height: 28px;
+        background: linear-gradient(135deg, #004e92, #00a8cc);
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+    }
+    .policy-section h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 16px 0 8px;
+        color: var(--text-primary);
+    }
+    .policy-section p {
+        margin: 0 0 10px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul {
+        margin: 8px 0 0;
+        padding: 0 0 0 1.25rem;
+        list-style: none;
+    }
+    .policy-section li {
+        position: relative;
+        padding-left: 18px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+    }
+    .policy-section li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        background: linear-gradient(135deg, #004e92, #00d4ff);
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+    .policy-section li strong { color: var(--text-primary); }
+    .policy-section code {
+        background: rgba(0,86,179,0.1);
+        border: 1px solid rgba(0,86,179,0.2);
+        border-radius: 6px;
+        padding: 2px 8px;
+        font-size: 0.85em;
+        color: var(--primary-accent);
+    }
+
+    /* ━━ No-sell highlight ━━ */
+    .no-sell {
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(0,168,204,0.12), rgba(0,86,179,0.08));
+        border: 1px solid rgba(0,168,204,0.3);
+        border-radius: 10px;
+        padding: 10px 16px;
+        margin: 8px 0 0;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--primary-accent);
+    }
+
+    /* ━━ Contact card ━━ */
+    .policy-section address {
+        font-style: normal;
+        margin-top: 4px;
+        padding: 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+    }
+    .policy-section address strong { color: var(--text-primary); }
+    .policy-section address a {
+        color: var(--primary-accent);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+    .policy-section address a:hover { color: #00d4ff; text-decoration: underline; }
+
+    /* ━━ Responsive ━━ */
+    @media (max-width: 600px) {
+        .legal-page { padding: 16px 12px 60px; }
+        .privacy-hero { padding: 32px 16px 28px; border-radius: 20px; }
+        .privacy-hero h1 { font-size: 1.6rem; }
+        .privacy-hero .hero-icon { width: 48px; height: 48px; font-size: 1.3rem; }
+        .policy-section { padding: 18px 18px; border-radius: 16px; }
+        .policy-section h2 { font-size: 1.1rem; }
+    }
+</style>
 </head>
 <body>
 
 <main class="legal-page">
 
-<h1>Privacy Policy</h1>
+<div class="privacy-hero">
+    <div class="hero-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="effective"><strong>Effective Date:</strong> June 28, 2026</p>
+</div>
 
-<p>This application does not collect, store, or transmit personal data.</p>
+<div class="policy-section">
+    <p>
+    SmartCare ("the App," "we," "our," or "us") is a clinical learning platform designed for healthcare students and professionals. This Privacy Policy explains how we collect, use, store, and protect your information when you use the SmartCare application, website, and related services.
+    </p>
+    <p>
+    By creating an account or using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.
+    </p>
+</div>
 
-<p>All learning statistics are stored locally in your browser using localStorage.</p>
+<div class="policy-section">
+    <h2><span class="section-num">1</span> Information We Collect</h2>
 
-<p>No data is shared with third parties.</p>
+    <h3>1.1 Information You Provide to Us</h3>
+    <ul>
+        <li><strong>Account Registration:</strong> When you create an account, we collect your email address, a password (stored as a salted hash — we never store plain-text passwords), and optionally your full name and professional level (e.g., Paramedic, EMT, Physician).</li>
+        <li><strong>Google Sign-In:</strong> If you choose to sign in with Google, we receive the email address and name associated with your Google account. We do not receive or store your Google password.</li>
+    </ul>
+
+    <h3>1.2 Information Collected Automatically</h3>
+    <ul>
+        <li><strong>Usage Data:</strong> We log basic server-side audit records for security purposes, including login attempts, registration events, and administrative actions. These logs include a timestamp, the action performed, the email address involved, and the IP address of the request. Audit logs are retained for security monitoring and are not used for analytics or advertising.</li>
+        <li><strong>Local Storage:</strong> The App stores your study progress, quiz attempts, accuracy scores, theme preferences, and PWA install state locally in your browser using <code>localStorage</code>. This data stays on your device and is not transmitted to our servers unless you voluntarily sync it.</li>
+    </ul>
+
+    <h3>1.3 Information from Third-Party Services</h3>
+    <ul>
+        <li><strong>Google OAuth:</strong> We use Google Sign-In as an optional authentication method. Google shares your email address and name with us solely for account creation and authentication. Google's privacy policy applies to the initial OAuth flow.</li>
+        <li><strong>Chart.js (CDN):</strong> The App loads the Chart.js library from a content delivery network (jsdelivr.net). Your browser may communicate with the CDN to fetch this library. No personal data is sent to the CDN as part of this request.</li>
+        <li><strong>Google Fonts:</strong> The App loads font files from Google Fonts (fonts.googleapis.com, fonts.gstatic.com). Your browser may share your IP address with Google as part of the font request. Google's privacy policy governs this interaction.</li>
+    </ul>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">2</span> How We Use Your Information</h2>
+    <ul>
+        <li>To create and maintain your account.</li>
+        <li>To authenticate you when you sign in.</li>
+        <li>To display your study progress and performance analytics (stored locally in your browser).</li>
+        <li>To respond to support inquiries (contact email only).</li>
+        <li>To monitor and maintain the security and integrity of the service (audit logs).</li>
+    </ul>
+    <div class="no-sell">We do <strong>not</strong> use your information for advertising, marketing, profiling, or automated decision-making.</div>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">3</span> Data Storage and Retention</h2>
+    <ul>
+        <li><strong>User Accounts:</strong> Account information (email, hashed password, name, role) is stored in a database on our server. We retain this data for as long as your account is active. You may request deletion of your account at any time (see Section 7).</li>
+        <li><strong>Audit Logs:</strong> Server audit logs are retained for a period of up to 90 days for security analysis, after which they are automatically deleted.</li>
+        <li><strong>Local Storage Data:</strong> Study progress, quiz results, and preferences stored in your browser's localStorage remain on your device. You can clear this data at any time through your browser settings or by using the "Clear Cache" option within the App. This data is not accessible to us unless you explicitly share it.</li>
+    </ul>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">4</span> Data Sharing and Disclosure</h2>
+    <p>We do <strong>not</strong> sell, rent, or trade your personal information to third parties. We do not share your information with third parties except:</p>
+    <ul>
+        <li><strong>Service Providers:</strong> We use Google OAuth for authentication. Google receives only the data necessary to complete the OAuth flow (no SmartCare-specific data is sent to Google beyond the OAuth token exchange).</li>
+        <li><strong>Legal Compliance:</strong> We may disclose information if required to do so by law or in response to valid legal process (e.g., a court order or subpoena).</li>
+    </ul>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">5</span> Data Security</h2>
+    <p>We implement industry-standard security measures to protect your information:</p>
+    <ul>
+        <li>Passwords are hashed using <code>werkzeug.security.generate_password_hash</code> (PBKDF2-based). Plain-text passwords are never stored.</li>
+        <li>All API communication occurs over HTTPS (TLS) in production.</li>
+        <li>CSRF protection is enforced on all state-changing API requests.</li>
+        <li>Rate limiting is applied to authentication endpoints to mitigate brute-force attacks.</li>
+        <li>Server audit logs track security-relevant events for incident response.</li>
+    </ul>
+    <p>While we take these precautions, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security.</p>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">6</span> Children's Privacy</h2>
+    <p>The App is intended for use by healthcare students and professionals aged 16 and older. We do not knowingly collect personal information from children under the age of 13 (or under the age of 16 in jurisdictions where that is the applicable threshold). If we become aware that a child has provided us with personal information without parental consent, we will delete that information promptly. If you believe a child has provided us with personal data, please contact us.</p>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">7</span> Your Rights and Choices</h2>
+    <ul>
+        <li><strong>Account Deletion:</strong> You may request deletion of your account and associated data by contacting us at the email address below. We will process your request within 30 days.</li>
+        <li><strong>Data Access:</strong> You may request a copy of the personal data we hold about your account.</li>
+        <li><strong>Local Data:</strong> You can manage or clear your local storage data at any time through your browser settings or the App's cache-clearing feature.</li>
+        <li><strong>Cookies:</strong> The App does not use tracking cookies. Session cookies may be used for authentication purposes when you are logged in. These are strictly necessary for the functioning of the App.</li>
+    </ul>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">8</span> Third-Party Links</h2>
+    <p>The App may contain links to external websites or resources (e.g., educational references). We are not responsible for the privacy practices of those third parties. We encourage you to review the privacy policies of any external services you visit.</p>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">9</span> Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Material changes will be communicated by updating the effective date at the top of this policy and, where appropriate, by displaying a notice within the App. Your continued use of the App after changes take effect constitutes your acceptance of the revised policy.</p>
+</div>
+
+<div class="policy-section">
+    <h2><span class="section-num">10</span> Contact Us</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
+    <address>
+        <strong>SmartCare</strong><br>
+        Attn: Privacy<br>
+        Soliman Anas<br>
+        Email: <a href="mailto:soliman.anas@smartcare-learning.net">soliman.anas@smartcare-learning.net</a><br>
+        Website: <a href="https://smartcare-learning.net">https://smartcare-learning.net</a>
+    </address>
+</div>
 
 </main>
 
