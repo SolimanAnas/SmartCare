@@ -6,5 +6,5 @@
  * (Supabase dashboard -> Project Settings -> API -> Project URL). It was not present
  * in the secrets file, so it must be filled in for cloud sync to work.
  */
-window.SUPABASE_URL = "";
+window.SUPABASE_URL = "https://zltfrrudihrtrxutvdqq.supabase.co";
 window.SUPABASE_ANON_KEY = "sb_publishable_H5Byadfpe5DH0rdkkX35hg_tagb3sMY";
