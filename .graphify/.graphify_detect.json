@@ -47,20 +47,22 @@
       "tests/prometric.spec.js",
       "tests/test_api.py"
     ],
-    "document": [],
+    "document": [
+      "graphify.yaml"
+    ],
     "paper": [],
     "image": [],
     "video": []
   },
-  "total_files": 45,
-  "total_words": 404369,
+  "total_files": 46,
+  "total_words": 404438,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [],
   "graphifyignore_patterns": 30,
   "git": {
     "source_owner": "git",
-    "source_hash": "1a56d75fd8f004df1227b903f4968fce222bd55f",
+    "source_hash": "39cc6bba95ea026c09c42c0f51d4637430307b0a",
     "branches": [
       "dependabot/github_actions/actions/checkout-7",
       "dependabot/github_actions/actions/setup-node-6",
@@ -80,11 +82,11 @@
     "source": "default-auto",
     "root": ".",
     "git_root": ".",
-    "head": "1a56d75fd8f004df1227b903f4968fce222bd55f",
-    "candidate_count": 563,
-    "included_count": 45,
-    "excluded_untracked_count": 16,
-    "excluded_ignored_count": 14528,
+    "head": "39cc6bba95ea026c09c42c0f51d4637430307b0a",
+    "candidate_count": 579,
+    "included_count": 46,
+    "excluded_untracked_count": 1,
+    "excluded_ignored_count": 14536,
     "excluded_sensitive_count": 0,
     "missing_committed_count": 0,
     "warnings": [],

@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.3';           // v2.3: nested index + prometric planner
+const CACHE_VERSION = 'smartcare-v2.4';           // v2.4: + Ultimate ECG Course (ECG-study) & ecg-engine
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
@@ -53,6 +53,8 @@ const PRE_CACHE = [
   'pages/drug-calculator.js',
   'pages/drug-data.json',
   'pages/ecg.html',
+  'pages/ECG-study.html',
+  'pages/ecg-engine.js',
   'pages/aha.html',
   'pages/courses.html',
   'pages/prometric-planner.html',

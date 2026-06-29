@@ -169,7 +169,10 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .mon-rate{position:absolute;top:7px;right:12px;font-family:var(--mono);font-size:1rem;font-weight:500;color:rgba(0,230,120,.55);z-index:3;transition:color .3s;letter-spacing:-0.5px}
 .mon-rate.crit{color:#ef4444;animation:rFlash 1s infinite}
 @keyframes rFlash{0%,100%{opacity:1}50%{opacity:.3}}
-#ecgCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#ecgCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+.monitor-wrap::before{content:'⏸ tap to pause';position:absolute;bottom:7px;left:12px;font-family:var(--mono);font-size:.55rem;font-weight:600;color:rgba(0,230,120,.4);background:rgba(0,0,0,.35);padding:2px 7px;border-radius:5px;z-index:4;opacity:0;transition:.15s;pointer-events:none}
+.monitor-wrap:hover::before{opacity:1}
+.monitor-wrap.paused::before{content:'▶ tap to play';opacity:1}
 
 /* ── MONITOR CONTROLS ─────────────────────────────────── */
 .mon-ctrl{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:rgba(0,0,0,.2);border-radius:14px;border:1px solid var(--br)}
@@ -513,10 +516,10 @@ const RDB = {
       {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>',n:'Dopamine Infusion',d:'5–20 mcg/kg/min IV — if pacing unavailable',c:''}
     ],arrest:false,stemi:false},
 
-  svt:{lbl:'Paroxysmal SVT',cat:'atrial',rn:180,pri:'RED',
-    pMsg:'SVT — Supraventricular Tachycardia',
-    pSub:'URGENT. Abrupt onset/offset. Rate ≥ 150. No visible P waves. Adenosine first line.',
-    char:'Rapid regular narrow complex · Rate 150–250 bpm · P waves: OFTEN NOT VISIBLE — buried inside or just after the QRS complex (retrograde conduction) · Abrupt onset &amp; termination · No R-R variation · Retrograde P may produce a small notch at the terminal end of the T wave · No distinct P wave before QRS',
+  psvt:{lbl:'Paroxysmal SVT',cat:'atrial',rn:200,pri:'RED',
+    pMsg:'PSVT — Paroxysmal Supraventricular Tachycardia',
+    pSub:'URGENT. Abrupt onset from sinus. Rate ≥ 150. No visible P waves. Adenosine first line.',
+    char:'Begins as NORMAL SINUS, then abrupt PAROXYSMAL onset into a rapid regular narrow-complex tachycardia · Rate 150–250 bpm (≈200) · No visible P waves during the tachycardia — buried in the QRS · Each sharp QRS followed by a broad rounded dome (fused T / retrograde P) · Perfectly regular R-R · Abrupt onset &amp; termination',
     pr:'Often not visible — buried in QRS (retrograde)',qrs:'Narrow < 120 ms',
     drugs:[
       {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>',n:'Vagal Manoeuvres',d:'Modified Valsalva — legs raised 45° · Carotid sinus massage',c:'pri'},
@@ -829,6 +832,8 @@ function initCanvas() {
   dpr    = window.devicePixelRatio || 1;
   resize();
   window.addEventListener('resize', resize);
+  canvas.title = 'Tap to pause / resume';
+  canvas.addEventListener('click', togglePause);   // tap the rhythm to pause / resume
   ecgState = ECGEngine.createState();
   // Pre-fill buffer with 2 seconds of NSR to avoid empty start
   for (let i = 0; i < bufferSize; i++) {
@@ -982,6 +987,7 @@ function togglePause() {
   btn.innerHTML = isPaused ? '▶ Resume' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pause"/></svg> Pause';
   btn.classList.toggle('playing', !isPaused);
   document.getElementById('liveDot').style.opacity = isPaused ? '0.2' : '1';
+  document.querySelector('.monitor-wrap').classList.toggle('paused', isPaused);
 }
 
 function calPulse() {
@@ -1108,7 +1114,7 @@ const PICKER_RHYTHMS = [
   {key:'nsr',   name:'Normal Sinus Rhythm (NSR)',   cat:'SINUS',   catCls:'pch-sinus',   pri:'GREEN',  dot:'#22c55e'},
   {key:'stach', name:'Sinus Tachycardia',            cat:'SINUS',   catCls:'pch-sinus',   pri:'YELLOW', dot:'#22c55e'},
   {key:'sbrady',name:'Sinus Bradycardia',            cat:'SINUS',   catCls:'pch-sinus',   pri:'YELLOW', dot:'#22c55e'},
-  {key:'svt',   name:'Paroxysmal SVT',               cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
+  {key:'psvt',  name:'Paroxysmal SVT',               cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'afib',  name:'Atrial Fibrillation',          cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'aflutter',name:'Atrial Flutter (3:1)',       cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'vtach', name:'Ventricular Tachycardia',      cat:'VENTRICULAR',catCls:'pch-vent', pri:'RED',    dot:'#f97316'},
