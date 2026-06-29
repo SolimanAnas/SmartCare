@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="Sign in to SmartCare to sync your study progress across devices. Signing in is optional — everything works offline without an account.">
+    <meta name="keywords" content="SmartCare, sign in, cloud sync, EMS, NREMT, paramedic study, EMT exam, healthcare education">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartcare-learning.net/pages/login">
+    <meta property="og:title" content="SmartCare · Sign In">
+    <meta property="og:description" content="Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://smartcare-learning.net/pages/login">
+    <meta name="twitter:title" content="SmartCare · Sign In">
+    <meta name="twitter:description" content="Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartcare-learning.net/pages/login">
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SmartCare · Sign In",
+  "url": "https://smartcare-learning.net/pages/login",
+  "description": "Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.",
+  "image": "https://smartcare-learning.net/images/og.png",
+  "author": { "@type": "Person", "name": "Soliman Anas" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": { "@type": "ImageObject", "url": "https://smartcare-learning.net/icons/icon.png" }
+  },
+  "inLanguage": "en-US"
+}
+    </script>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SmartCare · Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --bg:        #060C14;
+      --surface:   rgba(10, 18, 32, 0.82);
+      --border:    rgba(56, 120, 220, 0.22);
+      --border-focus: rgba(59, 130, 246, 0.7);
+      --text:      #E8F0FE;
+      --muted:     #6B7FA3;
+      --accent:    #3B82F6;
+      --accent2:   #1D4ED8;
+      --err:       #F87171;
+      --ok:        #4ADE80;
+      --input-bg:  rgba(4, 10, 20, 0.8);
+      --radius:    1.1rem;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem; overflow: hidden; position: relative;
+    }
+
+    /* ── Layered ambient background ── */
+    .bg-layer { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .bg-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18; }
+    .orb-1 { width: 480px; height: 480px; background: #1D4ED8; top: -120px; left: -100px; animation: drift1 14s ease-in-out infinite alternate; }
+    .orb-2 { width: 360px; height: 360px; background: #0E7490; bottom: -80px; right: -80px; animation: drift2 18s ease-in-out infinite alternate; }
+    .orb-3 { width: 220px; height: 220px; background: #6D28D9; top: 40%; left: 60%; animation: drift3 22s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(30px, 40px); } }
+    @keyframes drift2 { to { transform: translate(-25px, -35px); } }
+    @keyframes drift3 { to { transform: translate(-40px, 20px); } }
+
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(56,120,220,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,120,220,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    /* ── Card ── */
+    .auth-wrap {
+      position: relative; z-index: 2; width: 100%; max-width: 440px;
+      animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(28px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid var(--border); border-radius: 1.75rem;
+      padding: 2.4rem 2rem 2rem;
+      box-shadow: 0 32px 64px -16px rgba(0,0,0,0.7), 0 0 0 0.5px rgba(56,120,220,0.12) inset;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(147,197,253,0.35), transparent);
+    }
+
+    /* ── Brand ── */
+    .brand { text-align: center; margin-bottom: 1.6rem; }
+    .logo-ring {
+      width: 62px; height: 62px; border-radius: 50%;
+      background: linear-gradient(145deg, #1E3A8A, #3B82F6);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.1rem;
+      box-shadow: 0 0 0 8px rgba(59,130,246,0.08), 0 12px 24px -8px rgba(30,58,138,0.6);
+      user-select: none;
+    }
+    .logo-ring i { font-size: 1.6rem; color: #fff; }
+    .brand h1 {
+      font-size: 1.75rem; font-weight: 700; letter-spacing: -0.6px;
+      background: linear-gradient(135deg, #DBEAFE 20%, #93C5FD 80%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand p { color: var(--muted); font-size: 0.88rem; margin-top: 0.35rem; font-weight: 400; }
+
+    /* ── Sync value prop ── */
+    .sync-intro { font-size: 0.9rem; color: #B5C6E0; text-align: center; line-height: 1.5; margin-bottom: 1.3rem; }
+    .sync-list { list-style: none; margin: 0 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 0.9rem; }
+    .sync-list li { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: #C9D6EC; }
+    .sync-list li i { color: #60A5FA; font-size: 0.8rem; width: 16px; text-align: center; flex-shrink: 0; }
+
+    /* ── Buttons ── */
+    .btn {
+      width: 100%; padding: 0.9rem 1rem; border: none; border-radius: 2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.97rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      cursor: pointer; transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+    }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .btn-google { background: #fff; color: #1f2937; box-shadow: 0 6px 20px -6px rgba(0,0,0,0.5); }
+    .btn-google:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(0,0,0,0.5); }
+    .btn-google img { width: 18px; height: 18px; }
+    .btn-primary {
+      background: linear-gradient(95deg, #2563EB, #1D4ED8); color: #fff;
+      box-shadow: 0 6px 20px -6px rgba(29, 78, 216, 0.7); margin-top: 0.6rem;
+    }
+    .btn-primary:hover:not(:disabled) { background: linear-gradient(95deg, #3B82F6, #1E40AF); transform: translateY(-2px); }
+    .btn-ghost {
+      background: var(--input-bg); color: var(--text); border: 1px solid rgba(56,120,220,0.25);
+      margin-top: 0.6rem; font-weight: 600; font-size: 0.9rem;
+    }
+    .btn-ghost:hover:not(:disabled) { border-color: var(--border-focus); }
+    .btn-danger { color: var(--err); }
+
+    .spinner {
+      width: 16px; height: 16px; border: 2.5px solid rgba(0,0,0,0.25);
+      border-top-color: currentColor; border-radius: 50%;
+      animation: spin 0.7s linear infinite; display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Signed-in panel ── */
+    .user-row {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--input-bg); border: 1px solid rgba(56,120,220,0.25);
+      border-radius: var(--radius); padding: 0.85rem 1rem; margin-bottom: 1.1rem;
+    }
+    .user-avatar {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(145deg, #1E3A8A, #3B82F6);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 1.1rem; overflow: hidden;
+    }
+    .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .user-meta { min-width: 0; }
+    .user-name { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sync-status {
+      font-family: 'DM Mono', monospace; font-size: 0.76rem; color: var(--muted);
+      text-align: center; margin: 0.4rem 0 0.9rem;
+    }
+    .sync-status b { color: #93C5FD; font-weight: 500; }
+
+    /* ── Feedback ── */
+    .feedback {
+      margin-top: 0.9rem; padding: 0.65rem 1rem; border-radius: 0.85rem;
+      font-size: 0.84rem; font-weight: 500; text-align: center; display: none;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(-4px); } to { opacity:1; transform:none; } }
+    .feedback.err { display: block; color: var(--err); background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.2); }
+    .feedback.ok  { display: block; color: var(--ok);  background: rgba(74,222,128,0.1);  border: 1px solid rgba(74,222,128,0.2); }
+    .feedback.info{ display: block; color: #93C5FD;     background: rgba(59,130,246,0.1);  border: 1px solid rgba(59,130,246,0.2); }
+
+    /* ── Divider / footer ── */
+    .divider { display: flex; align-items: center; gap: 12px; margin: 1.4rem 0; }
+    .div-line { flex: 1; height: 1px; background: rgba(56,120,220,0.18); }
+    .div-text { color: var(--muted); font-size: 0.74rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+    .card-footer { text-align: center; margin-top: 1.4rem; font-size: 0.85rem; color: var(--muted); }
+    .card-footer a { color: #60A5FA; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+    .card-footer a:hover { color: #93C5FD; }
+
+    .offline-badge {
+      display: none; align-items: center; gap: 5px; font-size: 0.72rem;
+      font-family: 'DM Mono', monospace; color: #FCD34D; background: rgba(252,211,77,0.1);
+      border: 1px solid rgba(252,211,77,0.2); padding: 3px 10px; border-radius: 20px;
+      margin: 0 auto 0.9rem; width: fit-content;
+    }
+    .offline-badge.show { display: flex; }
+    .offline-dot { width: 6px; height: 6px; border-radius: 50%; background: #FCD34D; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    .hidden { display: none !important; }
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.4rem 1.6rem; border-radius: 1.4rem; }
+      .brand h1 { font-size: 1.5rem; }
+      .sync-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-layer">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+</div>
+<div class="bg-grid"></div>
+
+<div class="auth-wrap">
+  <div class="card" id="mainCard">
+
+    <div class="brand">
+      <div class="logo-ring"><i class="fas fa-cloud"></i></div>
+      <h1>SmartCare Cloud</h1>
+      <p>Sync your progress across devices</p>
+    </div>
+
+    <div class="offline-badge" id="offlineBadge">
+      <div class="offline-dot"></div> Offline · cloud sync paused
+    </div>
+
+    <!-- ───────── SIGNED OUT ───────── -->
+    <div id="signedOut">
+      <p class="sync-intro">Signing in is <b>optional</b>. SmartCare works fully offline — sign in only to back up and sync your study data.</p>
+      <ul class="sync-list">
+        <li><i class="fas fa-star"></i> Favorites</li>
+        <li><i class="fas fa-book-open"></i> Reading progress</li>
+        <li><i class="fas fa-clipboard-list"></i> Quiz history</li>
+        <li><i class="fas fa-trophy"></i> Achievements</li>
+        <li><i class="fas fa-sliders"></i> Settings</li>
+        <li><i class="fas fa-cloud-arrow-down"></i> Offline list</li>
+      </ul>
+
+      <button class="btn btn-google" id="googleBtn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" aria-hidden="true">
+        <span id="googleLabel">Continue with Google</span>
+        <div class="spinner" id="googleSpinner"></div>
+      </button>
+
+      <a class="btn btn-ghost" href="../index.html">Continue without signing in</a>
+
+      <div class="feedback" id="feedbackOut" role="alert" aria-live="polite"></div>
+
+      <div class="card-footer">
+        Your data stays private and is protected by row-level security.
+      </div>
+    </div>
+
+    <!-- ───────── SIGNED IN ───────── -->
+    <div id="signedIn" class="hidden">
+      <div class="user-row">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <div class="user-meta">
+          <div class="user-name" id="userName">Signed in</div>
+          <div class="user-email" id="userEmail"></div>
+        </div>
+      </div>
+
+      <div class="sync-status" id="syncStatus">Last synced: <b>never</b></div>
+
+      <button class="btn btn-primary" id="syncBtn">
+        <i class="fas fa-arrows-rotate"></i> <span id="syncLabel">Sync now</span>
+        <div class="spinner" id="syncSpinner" style="border-color:rgba(255,255,255,0.3);border-top-color:#fff"></div>
+      </button>
+      <button class="btn btn-ghost" id="restoreBtn"><i class="fas fa-cloud-arrow-down"></i> Restore from cloud</button>
+      <a class="btn btn-ghost" href="../index.html"><i class="fas fa-arrow-left"></i> Back to app</a>
+      <button class="btn btn-ghost btn-danger" id="signoutBtn"><i class="fas fa-right-from-bracket"></i> Sign out</button>
+
+      <div class="feedback" id="feedbackIn" role="alert" aria-live="polite"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="supabase-config.js"></script>
+<script src="supabase-client.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var signedOut = $('signedOut'), signedIn = $('signedIn');
+  var offlineBadge = $('offlineBadge');
+
+  // ── Offline indicator ──
+  function syncOffline() { offlineBadge.classList.toggle('show', !navigator.onLine); }
+  window.addEventListener('online', syncOffline);
+  window.addEventListener('offline', syncOffline);
+  syncOffline();
+
+  function msg(el, text, type) {
+    el.innerHTML = text;
+    el.className = 'feedback ' + (type || 'info');
+  }
+  function clearMsg(el) { el.className = 'feedback'; }
+
+  function busy(btn, spinner, on) {
+    if (btn) btn.disabled = on;
+    if (spinner) spinner.style.display = on ? 'block' : 'none';
+  }
+
+  function fmtTime(iso) {
+    if (!iso) return 'never';
+    try { return new Date(iso).toLocaleString(); } catch (e) { return iso; }
+  }
+
+  function showSignedIn(user) {
+    signedOut.classList.add('hidden');
+    signedIn.classList.remove('hidden');
+    var meta = user.user_metadata || {};
+    var name = meta.full_name || meta.name || (user.email ? user.email.split('@')[0] : 'Signed in');
+    var email = user.email || '';
+    $('userName').textContent = name;
+    $('userEmail').textContent = email;
+    var avatar = $('userAvatar');
+    if (meta.avatar_url) {
+      avatar.innerHTML = '<img src="' + meta.avatar_url + '" alt="">';
+    } else {
+      avatar.textContent = (name[0] || '?').toUpperCase();
+    }
+    $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
+  }
+
+  function showSignedOut() {
+    signedIn.classList.add('hidden');
+    signedOut.classList.remove('hidden');
+  }
+
+  if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) {
+    msg($('feedbackOut'), 'Cloud sync isn’t configured on this build. The app still works fully offline.', 'info');
+    $('googleBtn').disabled = true;
+    return;
+  }
+
+  // ── Google sign-in (Supabase OAuth redirect) ──
+  $('googleBtn').addEventListener('click', function () {
+    clearMsg($('feedbackOut'));
+    if (!navigator.onLine) { msg($('feedbackOut'), 'You’re offline. Connect to sign in.', 'err'); return; }
+    busy($('googleBtn'), $('googleSpinner'), true);
+    $('googleLabel').textContent = 'Redirecting…';
+    SmartCareCloud.signInWithGoogle().catch(function (e) {
+      busy($('googleBtn'), $('googleSpinner'), false);
+      $('googleLabel').textContent = 'Continue with Google';
+      msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+    });
+  });
+
+  // ── Sync now (pull newest, then push merged) ──
+  $('syncBtn').addEventListener('click', function () {
+    clearMsg($('feedbackIn'));
+    busy($('syncBtn'), $('syncSpinner'), true);
+    $('syncLabel').textContent = 'Syncing…';
+    SmartCareCloud.sync().then(function () {
+      $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
+      msg($('feedbackIn'), '✓ Synced to the cloud.', 'ok');
+    }).catch(function (e) {
+      msg($('feedbackIn'), 'Sync failed: ' + (e && e.message ? e.message : 'unknown error') + '. Did you create the user_state table?', 'err');
+    }).then(function () {
+      busy($('syncBtn'), $('syncSpinner'), false);
+      $('syncLabel').textContent = 'Sync now';
+    });
+  });
+
+  // ── Restore (pull cloud → local, then reload) ──
+  $('restoreBtn').addEventListener('click', function () {
+    clearMsg($('feedbackIn'));
+    busy($('restoreBtn'), null, true);
+    SmartCareCloud.pull().then(function () {
+      msg($('feedbackIn'), '✓ Restored from cloud. Reloading…', 'ok');
+      setTimeout(function () { window.location.href = '../index.html'; }, 1100);
+    }).catch(function (e) {
+      busy($('restoreBtn'), null, false);
+      msg($('feedbackIn'), 'Restore failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+    });
+  });
+
+  // ── Sign out ──
+  $('signoutBtn').addEventListener('click', function () {
+    busy($('signoutBtn'), null, true);
+    SmartCareCloud.signOut().then(function () {
+      showSignedOut();
+    }).catch(function () {}).then(function () {
+      busy($('signoutBtn'), null, false);
+    });
+  });
+
+  // ── React to auth state + initial load ──
+  var didAutoSync = false;
+  SmartCareCloud.onChange(function (user) {
+    if (user) {
+      showSignedIn(user);
+      // Auto-merge once right after sign-in
+      if (!didAutoSync) {
+        didAutoSync = true;
+        SmartCareCloud.sync().then(function () {
+          $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
+        }).catch(function () {});
+      }
+    } else {
+      showSignedOut();
+    }
+  });
+
+  SmartCareCloud.ready.then(function (ok) {
+    if (!ok) {
+      msg($('feedbackOut'), 'Couldn’t reach the cloud service. The app still works offline.', 'info');
+      return;
+    }
+    return SmartCareCloud.getUser().then(function (user) {
+      if (user) showSignedIn(user); else showSignedOut();
+    });
+  });
+})();
+</script>
+</body>
+</html>

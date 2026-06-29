@@ -56,6 +56,8 @@ const PRE_CACHE = [
   'pages/aha.html',
   'pages/courses.html',
   'pages/prometric-planner.html',
+  'pages/supabase-config.js',
+  'pages/supabase-client.js',
   'courses/itls/index.html',
   'courses/itls/data/bundle.js'
 ];

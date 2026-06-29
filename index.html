@@ -10,22 +10,22 @@
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smartcare-learning.net">
-    <meta property="og:title" content="SmartCare Â· Clinical Learning Platform">
+    <meta property="og:title" content="SmartCare · Clinical Learning Platform">
     <meta property="og:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
     <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
-    <meta property="og:image:alt" content="SmartCare Â· Clinical Learning Platform">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
     <meta property="og:locale" content="en-US">
     <meta property="og:site_name" content="SmartCare">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://smartcare-learning.net">
-    <meta name="twitter:title" content="SmartCare Â· Clinical Learning Platform">
+    <meta name="twitter:title" content="SmartCare · Clinical Learning Platform">
     <meta name="twitter:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
     <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
-    <meta name="twitter:image:alt" content="SmartCare Â· Clinical Learning Platform">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://smartcare-learning.net">
@@ -42,7 +42,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "SmartCare Â· Clinical Learning Platform",
+  "name": "SmartCare · Clinical Learning Platform",
   "url": "https://smartcare-learning.net",
   "description": "SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.",
   "image": "https://smartcare-learning.net/images/og.png",
@@ -92,7 +92,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>SmartCare Â· Clinical Learning Platform</title>
+    <title>SmartCare · Clinical Learning Platform</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -558,7 +558,7 @@
         </div>
         <div class="pwa-banner-text">
             <strong class="pwa-banner-title">Install SmartCare</strong>
-            <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen Â· works offline</span>
+            <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen · works offline</span>
         </div>
         <div class="pwa-banner-actions">
             <button class="pwa-btn-install" id="pwaInstallBtn">Install</button>
@@ -640,6 +640,7 @@
         <button class="icon-btn" id="progressToggle" title="Progress"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#chart-no-axes-column"/></svg></button>
         <a href="pages/courses.html" class="icon-btn" id="headerCoursesBtn" title="Courses"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#graduation-cap"/></svg></a>
         <a href="chapters/c-index.html?view=summary" class="icon-btn" id="headerIndexBtn" title="Index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></a>
+        <a href="pages/login.html" class="icon-btn" id="headerCloudBtn" title="Cloud Sync"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#user"/></svg></a>
         <a href="pages/about.html" class="icon-btn" id="headerAboutBtn" title="About"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg></a>
     </div>
 </header>
@@ -658,7 +659,7 @@
 
 <footer>
     <div>Created & Maintained by Soliman Anas</div>
-    <div><a href="pages/about.html">About &amp; Disclaimer</a> Â· SmartCare is intended for educational and revision purposes.</div>
+    <div><a href="pages/about.html">About &amp; Disclaimer</a> · SmartCare is intended for educational and revision purposes.</div>
 </footer>
 
 <button class="float-btn hidden" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up"/></svg></button>
@@ -1105,7 +1106,7 @@
             <div class="hero-card" id="heroCard">
                 <div class="hero-text">
                     <div class="hero-greeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
-                    <div class="hero-sub">${completedCount}/${totalChaps} chapters Â· keep it up!</div>
+                    <div class="hero-sub">${completedCount}/${totalChaps} chapters · keep it up!</div>
                 </div>
                 <div class="hero-ring">
                     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -1265,7 +1266,7 @@
                                 </div>
                             </div>
                             <h2>${ch.shortTitle}</h2>
-                            <p>${ch.title}${s.attempts ? ` Â· ${s.attempts} attempts Â· Avg ${avg}%` : ''}</p>
+                            <p>${ch.title}${s.attempts ? ` · ${s.attempts} attempts · Avg ${avg}%` : ''}</p>
                             <div class="menu-sub-options">
 <a href="${ch.id === 'm1-38' ? 'pages/med-index.html' : `chapters/${baseFile}.html?view=summary${sec}`}" class="btn-action btn-summary"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg> Summary</a>                                <a href="chapters/${baseFile}.html?view=flashcards${sec}" class="btn-action btn-flash"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg> Flashcards</a>
                                 <a href="chapters/${baseFile}.html?view=quiz${sec}"       class="btn-action btn-quiz"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Quiz</a>
