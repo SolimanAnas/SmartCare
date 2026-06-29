@@ -315,7 +315,7 @@ const SCHEMA = [
 
   /* ── PHASE 2: PRIMARY ASSESSMENT ────────────────── */
   {
-    id:'primary', label:'Primary Assessment', icon:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#eye"/></svg>️',
+    id:'primary', label:'Primary Assessment', icon:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#eye"/></svg>',
     color:'#3b82f6', pill:'pill-primary',
     desc:'Rapid life-threat identification and intervention',
     items:[
@@ -423,7 +423,7 @@ function buildPage() {
     pill.style.color = phase.color;
     pill.style.borderColor = phase.color + '60';
     pill.style.background  = phase.color + '18';
-    pill.textContent = phase.icon + ' ' + phase.label;
+    pill.innerHTML = phase.icon + ' ' + phase.label;
     pill.onclick = () => document.getElementById('phase-' + phase.id)
         ?.scrollIntoView({ behavior:'smooth', block:'start' });
     pills.appendChild(pill);
@@ -855,8 +855,8 @@ function openSummary() {
     </div>`;
   }
 
-  html += `<button class="print-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg>️ Print / Save Report</button>`;
-  html += `<button class="reset-btn" onclick="if(confirm('Reset entire assessment?')){localStorage.removeItem('smartcare-med-assess');location.reload()}"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trash-2"/></svg>️ Reset Assessment</button>`;
+  html += `<button class="print-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg> Print / Save Report</button>`;
+  html += `<button class="reset-btn" onclick="if(confirm('Reset entire assessment?')){localStorage.removeItem('smartcare-med-assess');location.reload()}"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trash-2"/></svg> Reset Assessment</button>`;
 
   document.getElementById('bsContent').innerHTML = html;
   document.getElementById('bsOverlay').classList.add('open');

@@ -1,4 +1,4 @@
-# Node Description Batch 4 of 13
+# Node Description Batch 4 of 14
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write

@@ -1,0 +1,26 @@
+# Graphify config — focus on code, exclude git noise
+scope: all
+extract:
+  commits: false   # exclude git commit nodes
+  branches: false  # exclude git branch nodes
+inputs:
+  corpus:
+    - "**/*.js"
+    - "**/*.html"
+    - "**/*.css"
+    - "**/*.py"
+    - "**/*.json"
+    - "**/*.md"
+  exclude:
+    - content_starters_backup/**
+    - tests/**
+    - node_modules/**
+    - .git/**
+    - graphify-out/**
+    - .graphify/**
+    - .agents/**
+    - .omo/**
+    - .opencode/**
+    - TOC/**
+output:
+  dir: graphify-out
