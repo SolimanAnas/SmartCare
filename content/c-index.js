@@ -188,8 +188,18 @@ function generateIndexHTML() {
             display: flex; align-items: center; justify-content: space-between;
             gap: 12px; flex-wrap: wrap; margin: 0 4px 16px;
         }
-        .index-count { font-size: .85rem; color: var(--text-secondary); }
-        .index-count strong { color: var(--text-primary); font-weight: 700; }
+        .index-heading { font-size: 1.3rem; font-weight: 800; margin: 0 4px 16px; display: flex; align-items: center; gap: 10px; color: var(--text-primary); }
+        [data-theme="dark"] .index-heading,
+        [data-theme="amoled"] .index-heading { color: #ffffff; }
+        .index-heading svg { color: var(--primary-accent); }
+        [data-theme="dark"] .index-heading svg,
+        [data-theme="amoled"] .index-heading svg { color: #ffffff; }
+        .index-count { font-size: .85rem; color: var(--text-primary); }
+        [data-theme="dark"] .index-count,
+        [data-theme="amoled"] .index-count { color: #ffffff; }
+        .index-count strong { color: var(--primary-accent); font-weight: 700; }
+        [data-theme="dark"] .index-count strong,
+        [data-theme="amoled"] .index-count strong { color: #ffffff; }
         .index-actions { display: flex; gap: 8px; }
         .index-action-btn {
             display: inline-flex; align-items: center; gap: 6px;
@@ -285,7 +295,7 @@ function generateIndexHTML() {
     </style>
 
     <div class="index-wrap" id="indexRoot">
-        <h3>${svg('library')} SmartCare Table of Contents</h3>
+        <h3 class="index-heading">${svg('library')} SmartCare Table of Contents</h3>
 
         <div class="index-search-wrapper">
             <span>${svg('search')}</span>
