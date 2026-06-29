@@ -316,6 +316,7 @@
   </div>
 </div>
 
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="supabase-config.js"></script>
 <script src="supabase-client.js"></script>
 <script>
@@ -371,22 +372,63 @@
   }
 
   if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) {
-    msg($('feedbackOut'), 'Cloud sync isn’t configured on this build. The app still works fully offline.', 'info');
+    msg($('feedbackOut'), 'Cloud sync isn\'t configured on this build. The app still works fully offline.', 'info');
     $('googleBtn').disabled = true;
     return;
   }
 
-  // ── Google sign-in (Supabase OAuth redirect) ──
+  /* ── Google sign-in popup (shows "SmartCare" branding) ──
+   * Uses Google Identity Services (GIS) popup instead of Supabase
+   * redirect, so the Google account chooser shows "SmartCare"
+   * instead of the raw Supabase project URL.
+   *
+   * Falls back to Supabase redirect if GIS isn't loaded yet
+   * (e.g. on slow networks).                                */
+  var gisReady = typeof google !== 'undefined' && google.accounts;
+
   $('googleBtn').addEventListener('click', function () {
     clearMsg($('feedbackOut'));
-    if (!navigator.onLine) { msg($('feedbackOut'), 'You’re offline. Connect to sign in.', 'err'); return; }
-    busy($('googleBtn'), $('googleSpinner'), true);
-    $('googleLabel').textContent = 'Redirecting…';
-    SmartCareCloud.signInWithGoogle().catch(function (e) {
-      busy($('googleBtn'), $('googleSpinner'), false);
-      $('googleLabel').textContent = 'Continue with Google';
-      msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
-    });
+    if (!navigator.onLine) { msg($('feedbackOut'), 'You\'re offline. Connect to sign in.', 'err'); return; }
+
+    if (gisReady) {
+      busy($('googleBtn'), $('googleSpinner'), true);
+      $('googleLabel').textContent = 'Signing in…';
+      var client = google.accounts.oauth2.initTokenClient({
+        client_id: SmartCareCloud.GOOGLE_CLIENT_ID,
+        scope: 'openid email profile',
+        callback: function (tokenResponse) {
+          if (tokenResponse && tokenResponse.id_token) {
+            SmartCareCloud.signInWithGooglePopup(tokenResponse.id_token)
+              .then(function () { /* showSignedIn called by onChange */ })
+              .catch(function (e) {
+                busy($('googleBtn'), $('googleSpinner'), false);
+                $('googleLabel').textContent = 'Continue with Google';
+                msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+              });
+          } else {
+            busy($('googleBtn'), $('googleSpinner'), false);
+            $('googleLabel').textContent = 'Continue with Google';
+            msg($('feedbackOut'), 'Google sign-in cancelled or failed.', 'err');
+          }
+        },
+        error_callback: function () {
+          busy($('googleBtn'), $('googleSpinner'), false);
+          $('googleLabel').textContent = 'Continue with Google';
+          msg($('feedbackOut'), 'Google sign-in popup closed.', 'err');
+        }
+      });
+      client.requestAccessToken();
+    } else {
+      // Fallback: Supabase OAuth redirect
+      busy($('googleBtn'), $('googleSpinner'), true);
+      $('googleLabel').textContent = 'Redirecting…';
+      SmartCareCloud.signInWithGoogle().catch(function (e) {
+        busy($('googleBtn'), $('googleSpinner'), false);
+        $('googleLabel').textContent = 'Continue with Google';
+        msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+      });
+    }
+  });
   });
 
   // ── Sync now (pull newest, then push merged) ──
@@ -398,7 +440,7 @@
       $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
       msg($('feedbackIn'), '✓ Synced to the cloud.', 'ok');
     }).catch(function (e) {
-      msg($('feedbackIn'), 'Sync failed: ' + (e && e.message ? e.message : 'unknown error') + '. Did you create the user_state table?', 'err');
+        msg($('feedbackIn'), 'Sync failed: ' + (e && e.message ? e.message : 'unknown error') + '. Try signing out and back in.', 'err');
     }).then(function () {
       busy($('syncBtn'), $('syncSpinner'), false);
       $('syncLabel').textContent = 'Sync now';

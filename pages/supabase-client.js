@@ -105,12 +105,29 @@
         .catch(function () { return null; });
     },
 
+    /** @private Google OAuth client ID (from secrets) */
+    GOOGLE_CLIENT_ID: '413832763437-a7ofrk4ce3k2m145k25hg4qov7rqahjq.apps.googleusercontent.com',
+
     signInWithGoogle: function () {
       var redirectTo = window.location.origin + window.location.pathname;
       return requireClient().then(function (c) {
         return c.auth.signInWithOAuth({
           provider: 'google',
           options: { redirectTo: redirectTo, queryParams: { prompt: 'select_account' } }
+        });
+      });
+    },
+
+    /** Sign in via Google Identity Services popup — shows "SmartCare" brand. */
+    signInWithGooglePopup: function (idToken) {
+      if (!idToken) return Promise.reject(new Error('No Google ID token'));
+      return requireClient().then(function (c) {
+        return c.auth.signInWithIdToken({
+          provider: 'google',
+          token: idToken
+        }).then(function (r) {
+          if (r.error) throw r.error;
+          return r.data;
         });
       });
     },
