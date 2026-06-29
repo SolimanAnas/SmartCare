@@ -4,8 +4,8 @@
     "hash": "5b89b4817ef6dd0c681b3f9af902662e"
   },
   "D:/Apps/SmartCare/content/c-index.js": {
-    "mtime": 1782509861561.9055,
-    "hash": "a12bb10da1e6ae36a5e787c3a589bfe5"
+    "mtime": 1782734862400.411,
+    "hash": "4305bdaff3bdc6835c0b8750b905f5da"
   },
   "D:/Apps/SmartCare/content/c0.js": {
     "mtime": 1782503227396.505,
@@ -144,8 +144,8 @@
     "hash": "3f34a7be0db0822fdca28673d03d3559"
   },
   "D:/Apps/SmartCare/sw.js": {
-    "mtime": 1782578424156.921,
-    "hash": "cb99486b636060b3461511e8a124dfb8"
+    "mtime": 1782735175163.7822,
+    "hash": "462d7b29603d7d635a0d492eccbfd537"
   },
   "D:/Apps/SmartCare/tests/__init__.py": {
     "mtime": 1782501980234.9783,
@@ -176,7 +176,11 @@
     "hash": "8c80bd08e40869469fc8ee97246d4ac3"
   },
   "D:/Apps/SmartCare/server.py": {
-    "mtime": 1782503227431.5066,
-    "hash": "cd531b619a5edd501a0ca95add116502"
+    "mtime": 1782641543822.863,
+    "hash": "6c081e233394560869ede26c7fffe598"
+  },
+  "D:/Apps/SmartCare/graphify.yaml": {
+    "mtime": 1782734410231.896,
+    "hash": "dfb22322dcaa3ddcbaa387fc47199b42"
   }
 }

@@ -53,14 +53,14 @@
     "video": []
   },
   "total_files": 45,
-  "total_words": 403384,
+  "total_words": 404364,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [],
   "graphifyignore_patterns": 30,
   "git": {
     "source_owner": "git",
-    "source_hash": "6c55b58a08f87310c2157a2ecec18a123b5f5594",
+    "source_hash": "40d423a44d417ace48a649708990f8a719c1eb22",
     "branches": [
       "dependabot/github_actions/actions/checkout-7",
       "dependabot/github_actions/actions/setup-node-6",
@@ -80,13 +80,13 @@
     "source": "default-auto",
     "root": ".",
     "git_root": ".",
-    "head": "6c55b58a08f87310c2157a2ecec18a123b5f5594",
-    "candidate_count": 531,
+    "head": "40d423a44d417ace48a649708990f8a719c1eb22",
+    "candidate_count": 562,
     "included_count": 45,
-    "excluded_untracked_count": 0,
-    "excluded_ignored_count": 14496,
+    "excluded_untracked_count": 7,
+    "excluded_ignored_count": 14513,
     "excluded_sensitive_count": 0,
-    "missing_committed_count": 0,
+    "missing_committed_count": 15,
     "warnings": [],
     "recommendation": "Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder."
   }

@@ -64,3 +64,6 @@ graphify-out/
 
 # Large copyrighted source files / generated section fragments
 TOC/
+
+# Temp / backup
+.gitignored/

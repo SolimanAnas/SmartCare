@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.2';           // v2.2: initial public release
+const CACHE_VERSION = 'smartcare-v2.3';           // v2.3: nested index + prometric planner
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
@@ -55,6 +55,7 @@ const PRE_CACHE = [
   'pages/ecg.html',
   'pages/aha.html',
   'pages/courses.html',
+  'pages/prometric-planner.html',
   'courses/itls/index.html',
   'courses/itls/data/bundle.js'
 ];
