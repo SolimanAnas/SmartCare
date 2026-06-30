@@ -11,11 +11,7 @@
       "sections": [
         {
           "id": "c1s1",
-          "title": "EMS & Healthcare Systems"
-        },
-        {
-          "id": "c1s2",
-          "title": "Roles, Responsibilities & Professionalism"
+          "title": "EMS, Systems & Professionalism"
         },
         {
           "id": "c1s3",
@@ -48,10 +44,6 @@
         {
           "id": "c1s10",
           "title": "Lifting, Moving & Positioning"
-        },
-        {
-          "id": "c1s11",
-          "title": "Evidence-Based Practice & Quality Improvement"
         }
       ]
     },

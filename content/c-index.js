@@ -23,17 +23,15 @@ function generateIndexHTML() {
        ────────────────────────────────────────────────────────────── */
     const INDEX_DATA = [
         { id:"c1",  num:"1",  file:"c1",  title:"Foundations of Emergency Care", icon:"shield",      accent:"var(--accent-universal)", sections:[
-            ["c1s1","1.1 EMS & Healthcare Systems"],
-            ["c1s2","1.2 Roles, Responsibilities & Professionalism"],
-            ["c1s3","1.3 Workforce Safety & Wellness"],
-            ["c1s4","1.4 Infection Prevention & PPE"],
-            ["c1s5","1.5 Medical, Legal & Ethical Issues"],
-            ["c1s6","1.6 Consent, Refusal & Advance Directives"],
-            ["c1s7","1.7 Communication & Handoff"],
-            ["c1s8","1.8 Documentation & the Patient Care Report"],
-            ["c1s9","1.9 Medical Terminology"],
-            ["c1s10","1.10 Lifting, Moving & Positioning"],
-            ["c1s11","1.11 Evidence-Based Practice & Quality Improvement"]
+            ["c1s1","1.1 EMS, Systems & Professionalism"],
+            ["c1s3","1.2 Workforce Safety & Wellness"],
+            ["c1s4","1.3 Infection Prevention & PPE"],
+            ["c1s5","1.4 Medical, Legal & Ethical Issues"],
+            ["c1s6","1.5 Consent, Refusal & Advance Directives"],
+            ["c1s7","1.6 Communication & Handoff"],
+            ["c1s8","1.7 Documentation & the Patient Care Report"],
+            ["c1s9","1.8 Medical Terminology"],
+            ["c1s10","1.9 Lifting, Moving & Positioning"]
         ]},
         { id:"c2",  num:"2",  file:"c2",  title:"Patient Assessment", icon:"search",          accent:"var(--accent-universal)", sections:[
             ["c2s1","2.1 Anatomy & Physiology Essentials"],
@@ -295,7 +293,7 @@ function generateIndexHTML() {
     </style>
 
     <div class="index-wrap" id="indexRoot">
-        <h3 class="index-heading">${svg('library')} SmartCare Table of Contents</h3>
+        <h3 class="index-heading">${svg('library')} Table of Contents</h3>
 
         <div class="index-search-wrapper">
             <span>${svg('search')}</span>
