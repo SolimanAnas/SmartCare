@@ -102,7 +102,9 @@
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <script src="pages/supabase-config.js"></script>
+    <script src="pages/supabase-client.js"></script>
+
     <style>
         /* ━━ Search ━━ */
         .search-container {
@@ -140,7 +142,13 @@
             animation: fadeInUp 0.5s ease forwards;
             overflow: hidden;
             position: relative;
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
+        .hero-card:active { transform: scale(0.99); }
+        .hero-card.hero-guest { border-color: rgba(0,86,179,0.35); }
         .hero-card::before {
             content: '';
             position: absolute;
@@ -153,6 +161,7 @@
         .hero-text { flex: 1; min-width: 0; }
         .hero-greeting { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px; }
         .hero-sub { font-size: 0.82rem; color: #94a3b8; }
+        .hero-card.hero-guest .hero-sub { color: var(--primary-accent); font-weight: 600; }
         .hero-ring { position: relative; flex-shrink: 0; width: 72px; height: 72px; }
         .hero-ring svg { width: 72px; height: 72px; transform: rotate(-90deg); }
         .ring-track { fill: none; stroke: rgba(0,0,0,0.08); stroke-width: 6; }
@@ -466,18 +475,22 @@
         .drawer-overlay.active { opacity: 1; pointer-events: auto; }
         .notification-drawer { position: fixed; top: -600px; left: 0; right: 0; width: 100%; box-sizing: border-box; overflow: hidden; background: rgba(20,30,40,0.4); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.15); box-shadow: 0 15px 40px rgba(0,0,0,0.4); z-index: 2001; padding: 25px 16px 35px; border-radius: 0 0 30px 30px; transition: top 0.4s cubic-bezier(0.25,1,0.5,1); display: flex; flex-direction: column; gap: 20px; }
         .notification-drawer.open { top: 0; }
+        .drawer-section-title { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.55); margin-bottom: -10px; }
         .toggles-grid { display: grid; gap: 10px; width: 100%; }
         .toggle-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .toggle-btn { width: 100%; aspect-ratio: 1; max-width: 60px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.08); color: white; font-size: 1.35rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 0 auto; }
-        .toggle-btn.active { background: var(--primary-accent); border-color: var(--primary-accent); color: white; box-shadow: 0 0 15px var(--primary-accent); }
+        .toggle-btn { width: 100%; aspect-ratio: 1; max-width: 56px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.08); color: white; font-size: 1.35rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s cubic-bezier(0.2,0.8,0.2,1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 0 auto; }
+        .toggle-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.14); }
+        .toggle-btn.active { background: var(--primary-accent); border-color: var(--primary-accent); color: white; box-shadow: 0 8px 20px rgba(0,86,179,0.45); }
         .toggle-btn:active { transform: scale(0.92); }
         .toggle-label { font-size: 0.75rem; color: rgba(255,255,255,0.85); margin-top: 8px; font-weight: 500; letter-spacing: 0.3px; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
         .drawer-stats { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 15px 20px; display: flex; justify-content: space-around; align-items: center; }
         .stat-item { display: flex; flex-direction: column; align-items: center; }
         .stat-num { font-size: 1.3rem; font-weight: 700; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .stat-text { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-        .close-drawer-btn { width: 100%; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0.5; margin-top: -10px; }
-        .drawer-trigger { position: absolute; left: 50%; bottom: -35px; transform: translateX(-50%); width: 60px; height: 35px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; z-index: 999; background: rgba(255,255,255,0.01); border-radius: 0 0 30px 30px; animation: floatDown 3s ease-in-out infinite; }
+        .close-drawer-btn { width: 100%; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0.5; margin-top: -10px; transition: opacity 0.2s; }
+        .close-drawer-btn:hover, .close-drawer-btn:active { opacity: 1; }
+        .drawer-trigger { position: absolute; left: 50%; bottom: -35px; transform: translateX(-50%); width: 60px; height: 35px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; z-index: 999; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-top: none; border-radius: 0 0 22px 22px; box-shadow: 0 8px 18px -8px rgba(0,0,0,0.4); animation: floatDown 3s ease-in-out infinite; transition: background 0.25s ease, border-color 0.25s ease; }
+        .drawer-trigger:hover { background: rgba(0,86,179,0.18); border-color: rgba(0,86,179,0.35); }
         .trigger-line { height: 3px; background: var(--primary-accent); border-radius: 3px; margin: 3px 0; box-shadow: 0 0 8px var(--primary-accent); }
         .trigger-line.top { width: 30px; }
         .trigger-line.bottom { width: 20px; }
@@ -580,30 +593,30 @@
 <div class="drawer-overlay" id="drawerOverlay"></div>
 
 <div class="notification-drawer" id="notificationDrawer">
+    <div class="drawer-section-title">Select Theme</div>
     <div class="toggles-grid theme-row" style="grid-template-columns: repeat(5, 1fr);">
-        <div class="toggle-item"><button class="toggle-btn" id="toggleDark"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#moon"/></svg></button><div class="toggle-label">Dark</div></div>
-        <div class="toggle-item"><button class="toggle-btn amoled-btn" id="toggleAmoled">⬛</button><div class="toggle-label">AMOLED</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="toggleLight"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#sun"/></svg></button><div class="toggle-label">Light</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="toggleSepia"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#scroll"/></svg></button><div class="toggle-label">Sepia</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="toggleForest"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#tree-pine"/></svg></button><div class="toggle-label">Forest</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="toggleDark" title="Dark theme" aria-label="Dark theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#moon"/></svg></button><div class="toggle-label">Dark</div></div>
+        <div class="toggle-item"><button class="toggle-btn amoled-btn" id="toggleAmoled" title="AMOLED theme" aria-label="AMOLED theme">⬛</button><div class="toggle-label">AMOLED</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="toggleLight" title="Light theme" aria-label="Light theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#sun"/></svg></button><div class="toggle-label">Light</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="toggleSepia" title="Sepia theme" aria-label="Sepia theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#scroll"/></svg></button><div class="toggle-label">Sepia</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="toggleForest" title="Forest theme" aria-label="Forest theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#tree-pine"/></svg></button><div class="toggle-label">Forest</div></div>
     </div>
 
+    <div class="drawer-section-title">Quick Actions</div>
     <div class="toggles-grid shortcut-row" style="grid-template-columns: repeat(5, 1fr);">
-        <div class="toggle-item"><button class="toggle-btn" id="qsIndex"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></button><div class="toggle-label">Index</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="qsAbout"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg></button><div class="toggle-label">About</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="qsInstall"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#smartphone"/></svg></button><div class="toggle-label">Install</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="qsClearCache" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.3);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#brush"/></svg></button><div class="toggle-label">Cache</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="qsLogout" style="background:rgba(239,68,68,0.2);border-color:rgba(239,68,68,0.3);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#door-open"/></svg></button><div class="toggle-label">Logout</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="qsIndex" title="Full chapter index" aria-label="Full chapter index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></button><div class="toggle-label">Index</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="qsAbout" title="About SmartCare" aria-label="About SmartCare"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg></button><div class="toggle-label">About</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="qsInstall" title="Install app" aria-label="Install app"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#smartphone"/></svg></button><div class="toggle-label">Install</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="qsClearCache" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.3);" title="Clear cache &amp; reset progress" aria-label="Clear cache and reset progress"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#brush"/></svg></button><div class="toggle-label">Cache</div></div>
+        <div class="toggle-item"><button class="toggle-btn" id="qsLogout" style="background:rgba(239,68,68,0.2);border-color:rgba(239,68,68,0.3);" title="Log out" aria-label="Log out"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#door-open"/></svg></button><div class="toggle-label">Logout</div></div>
     </div>
 
+    <div class="drawer-section-title">Text Size</div>
     <div class="font-size-row">
-        <span class="font-size-label">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="18" font-size="14" fill="currentColor" stroke="none" font-weight="700">Aa</text></svg>
-        </span>
-        <button class="font-btn" data-size="small"  id="fontSmall"  title="Small">A</button>
-        <button class="font-btn" data-size="medium" id="fontMedium" title="Normal">A</button>
-        <button class="font-btn" data-size="large"  id="fontLarge"  title="Large">A</button>
-        <button class="font-btn" data-size="xl"     id="fontXL"     title="Extra large">A</button>
+        <button class="font-btn" data-size="small"  id="fontSmall"  title="Small"       aria-label="Small text size">A</button>
+        <button class="font-btn" data-size="medium" id="fontMedium" title="Normal"      aria-label="Normal text size">A</button>
+        <button class="font-btn" data-size="large"  id="fontLarge"  title="Large"       aria-label="Large text size">A</button>
+        <button class="font-btn" data-size="xl"     id="fontXL"     title="Extra large" aria-label="Extra large text size">A</button>
     </div>
 
     <div class="drawer-stats">
@@ -612,7 +625,7 @@
         <div class="stat-item"><span class="stat-num" id="drawerAcc">0%</span><span class="stat-text">Accuracy</span></div>
     </div>
 
-    <div class="close-drawer-btn" id="closeDrawerBtn">
+    <div class="close-drawer-btn" id="closeDrawerBtn" role="button" tabindex="0" title="Close panel" aria-label="Close panel">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </div>
 </div>
@@ -628,7 +641,7 @@
         </div>
     </div>
 
-    <div class="drawer-trigger" id="drawerTrigger">
+    <div class="drawer-trigger" id="drawerTrigger" role="button" tabindex="0" title="Open settings panel" aria-label="Open settings panel">
         <div class="trigger-line top"></div>
         <div class="trigger-line bottom"></div>
     </div>
@@ -860,9 +873,14 @@
 
     function openDrawer()  { drawer.classList.add('open');    overlay.classList.add('active'); }
     function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('active'); }
+    function onKeyActivate(fn) { return e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(); } }; }
 
-    if (trigger) trigger.addEventListener('click', openDrawer);
+    if (trigger) {
+        trigger.addEventListener('click', openDrawer);
+        trigger.addEventListener('keydown', onKeyActivate(openDrawer));
+    }
     closeBtn.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('keydown', onKeyActivate(closeDrawer));
     overlay.addEventListener('click', closeDrawer);
 
     document.getElementById('qsIndex').addEventListener('click', () => { window.location.href = 'chapters/c-index.html?view=summary'; });
@@ -1084,6 +1102,47 @@
         return 'Good evening';
     }
 
+    // ━━ Hero greeting: sign-in aware ━━
+    function firstNameFromUser(user) {
+        const meta = (user && user.user_metadata) || {};
+        const name = meta.full_name || meta.name || (user && user.email ? user.email.split('@')[0] : '');
+        return name ? name.trim().split(/\s+/)[0] : '';
+    }
+
+    function updateHeroGreeting(user) {
+        const cardEl     = document.getElementById('heroCard');
+        const greetingEl = document.getElementById('heroGreeting');
+        const subEl      = document.getElementById('heroSub');
+        if (!cardEl || !greetingEl || !subEl) return;
+
+        const handSvg = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg>';
+        const firstName = user ? firstNameFromUser(user) : '';
+
+        cardEl.classList.toggle('hero-guest', !user);
+
+        if (user) {
+            const completion     = loadStorage(COMPLETION_KEY, {});
+            const totalChaps     = CHAPTERS.filter(c => c.id !== 'c0' && c.id !== 'c-index').length;
+            const completedCount = Object.values(completion).filter(v => v).length;
+            greetingEl.innerHTML = `${getGreeting()}${firstName ? ', ' + firstName : ''} ${handSvg}`;
+            subEl.textContent = `${completedCount}/${totalChaps} chapters · keep it up!`;
+        } else {
+            greetingEl.innerHTML = `${getGreeting()}, Guest ${handSvg}`;
+            subEl.textContent = 'Tap to sign in & sync your progress →';
+        }
+    }
+
+    function initHeroGreeting() {
+        if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) {
+            updateHeroGreeting(null);
+            return;
+        }
+        SmartCareCloud.getUser()
+            .then(updateHeroGreeting)
+            .catch(function () { updateHeroGreeting(null); });
+        SmartCareCloud.onChange(updateHeroGreeting);
+    }
+
     function buildRingPath(pct) {
         // SVG circle r=28, circumference = 2π×28 ≈ 175.93
         const C = 2 * Math.PI * 28;
@@ -1103,10 +1162,10 @@
 
         // ━━ Hero progress card ━━
         const heroHtml = `
-            <div class="hero-card" id="heroCard">
+            <a href="pages/login.html" class="hero-card" id="heroCard" aria-label="Sign in and sync your progress">
                 <div class="hero-text">
-                    <div class="hero-greeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
-                    <div class="hero-sub">${completedCount}/${totalChaps} chapters · keep it up!</div>
+                    <div class="hero-greeting" id="heroGreeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
+                    <div class="hero-sub" id="heroSub">${completedCount}/${totalChaps} chapters · keep it up!</div>
                 </div>
                 <div class="hero-ring">
                     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -1120,7 +1179,7 @@
                         <span class="ring-done">done</span>
                     </div>
                 </div>
-            </div>`;
+            </a>`;
 
         // ━━ Search bar ━━
         const searchHtml = `
@@ -1622,6 +1681,7 @@
     renderMenu();
     updateFloatButtons();
     updateAllProgress();
+    initHeroGreeting();
 })();
 </script>
 
