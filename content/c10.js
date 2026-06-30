@@ -21,7 +21,7 @@ window.CPG_DATA = {
                 <p>Every airway intervention begins with two foundational maneuvers. The <strong>head-tilt chin-lift</strong> is the primary method for opening the airway in an unresponsive patient with no suspected spinal injury. Place one hand on the forehead and apply firm backward pressure to tilt the head back; place the fingertips of the other hand under the bony part of the chin and lift the chin forward. This lifts the tongue and epiglottis away from the posterior pharyngeal wall, opening the airway.</p>
                 <p>The <strong>jaw-thrust maneuver</strong> is used when a cervical spine injury is suspected. Kneel at the patient's head, place your elbows on the surface (or ground), grasp the angles of the lower jaw with both hands (index and middle fingers behind the mandibular rami), and lift the jaw forward <em>without</em> tilting the head or neck. The jaw-thrust is the <strong>only</strong> airway maneuver recommended for patients with suspected C-spine injury because it opens the airway without manipulating the cervical spine.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Technique</th><th>Indication</th><th>Contraindication</th></tr>
                     </thead>
@@ -29,14 +29,14 @@ window.CPG_DATA = {
                         <tr><td><strong>Head-tilt chin-lift</strong></td><td>Unresponsive patient, no suspected C-spine injury</td><td>Suspected cervical spine injury</td></tr>
                         <tr><td><strong>Jaw-thrust</strong></td><td>Suspected C-spine injury with any responsiveness concern</td><td>None in trauma setting — maintain manual stabilization throughout</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Oropharyngeal Airway (OPA)</h4>
                 <p>The <strong>OPA</strong> is a curved, rigid plastic device that holds the tongue and soft tissues away from the posterior pharyngeal wall. It is used <strong>only in unconscious patients with no gag reflex</strong>. If the patient has an intact gag reflex, an OPA will stimulate vomiting and laryngospasm, worsening the airway.</p>
                 <p><strong>Sizing:</strong> Measure from the <strong>corner of the mouth to the earlobe</strong> (or from the central incisors to the angle of the jaw). An incorrectly sized OPA is dangerous: too small pushes the tongue back into the airway; too large may obstruct the larynx or cause trauma.</p>
                 <p><strong>Insertion:</strong> For an adult, insert the OPA <strong>upside down</strong> (tip pointing toward the roof of the mouth) until you reach the soft palate, then rotate it 180° into the correct position as it slides into the oropharynx. For a child or infant, insert the OPA <strong>right-side up</strong> (in the anatomical position) using a tongue depressor to avoid damaging the delicate oral mucosa and palate.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Adult OPA Insertion</th><th>Pediatric OPA Insertion</th></tr>
                     </thead>
@@ -46,7 +46,7 @@ window.CPG_DATA = {
                         <tr><td>Gag reflex</td><td>Must be absent — will induce vomiting if present</td><td>Must be absent — same principle</td></tr>
                         <tr><td>Patient position</td><td>Supine, head-tilt chin-lift or neutral (if C-spine)</td><td>Supine with neutral positioning; avoid hyperextension in infants (airway more anterior)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl:</strong> If the patient gags when you insert an OPA, <strong>remove it immediately</strong> and switch to an NPA or jaw-thrust. An OPA in a patient with an intact gag reflex will induce vomiting and aspiration — making the airway situation dramatically worse.
@@ -75,8 +75,8 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Oxygen Delivery Systems</h4>
-                <p>Each oxygen delivery device has a specific flow range and FiO₂ delivery range. EMTs must select the right device for the patient's oxygenation needs.</p>
-                <table>
+                <p>Each oxygen delivery device has a specific flow range and FiO₂ delivery range. EMS providers must select the right device for the patient's oxygenation needs.</p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Device</th><th>Flow Rate</th><th>FiO₂ Delivered</th><th>Indications</th></tr>
                     </thead>
@@ -84,10 +84,10 @@ window.CPG_DATA = {
                         <tr><td><strong>Nasal Cannula</strong></td><td>1-6 L/min</td><td>~24-44%</td><td>Mild hypoxia, patients who cannot tolerate a mask, postoperative, chronic hypoxia (COPD)</td></tr>
                         <tr><td><strong>Simple Face Mask</strong></td><td>6-10 L/min</td><td>~35-55%</td><td>Moderate hypoxia, patients who need higher FiO₂ than NC can provide</td></tr>
                         <tr><td><strong>Partial Rebreather</strong></td><td>10-12 L/min</td><td>~50-70%</td><td>Moderate-to-severe hypoxia; reservoir bag should collapse <sup>1</sup>/<sub>3</sub> on inspiration</td></tr>
-                        <tr><td><strong>Non-Rebreather (NRB)</strong></td><td>12-15 L/min</td><td>~80-95%</td><td>Severe hypoxia, trauma, shock, respiratory distress (most common high-flow device used by EMTs)</td></tr>
+                        <tr><td><strong>Non-Rebreather (NRB)</strong></td><td>12-15 L/min</td><td>~80-95%</td><td>Severe hypoxia, trauma, shock, respiratory distress (most common high-flow device used by EMS providers)</td></tr>
                         <tr><td><strong>BVM with Reservoir</strong></td><td>15 L/min (at O₂ source)</td><td>~100%</td><td>Apnea, respiratory failure, during CPR, pre/post intubation</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>Rule of thumb:</strong> For a nasal cannula, each liter per minute of O₂ flow adds approximately <strong>3-4% FiO₂</strong> above room air (21%). So 2 L/min ≈ 28-29% FiO₂, 4 L/min ≈ 35-37%, 6 L/min ≈ 42-44%.</p>
                 <p><strong>Flow minimums:</strong> A simple face mask requires <strong>at least 6 L/min</strong> to flush exhaled CO₂ from the mask. An NRB requires <strong>at least 12 L/min</strong> to keep the reservoir bag inflated. Running an NRB at lower flow rates causes CO₂ rebreathing and hypoxia.</p>
 
@@ -155,7 +155,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT is preparing to insert an OPA in an unresponsive 45-year-old male. Which measurement determines the correct OPA size?",
+                    q: "An EMS provider is preparing to insert an OPA in an unresponsive 45-year-old male. Which measurement determines the correct OPA size?",
                     options: [
                         "Nostril to earlobe",
                         "Corner of the mouth to earlobe",
@@ -177,7 +177,7 @@ window.CPG_DATA = {
                     explanation: "For suspected C-spine injury, use jaw-thrust (not head-tilt). Suction is needed to clear vomit. Assess for basilar skull fracture before considering NPA. Always prioritize C-spine stabilization in trauma."
                 },
                 {
-                    q: "[HARD] An EMT is ventilating an adult patient with a BVM at a rate of 20 breaths per minute. Each breath is delivered over 1.5 seconds with a large volume. What complications is this EMT MOST likely to cause?",
+                    q: "[HARD] An EMS provider is ventilating an adult patient with a BVM at a rate of 20 breaths per minute. Each breath is delivered over 1.5 seconds with a large volume. What complications is this EMS provider MOST likely to cause?",
                     options: [
                         "Hyperoxia and oxygen toxicity",
                         "Gastric inflation, hypotension from decreased venous return, and possible barotrauma",
@@ -242,7 +242,7 @@ window.CPG_DATA = {
 
                 <h4>Medical Oxygen Cylinders</h4>
                 <p>Medical oxygen is stored as a compressed gas in color-coded cylinders. The cylinders are painted <strong>green</strong> in the US (white in some international systems) and marked with "O₂" or "Oxygen — Medical" and a U.S.P. label. Cylinders must be handled with extreme care — oxygen supports combustion.</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Cylinder Size</th><th>Capacity</th><th>Height</th><th>Common Use</th></tr>
                     </thead>
@@ -252,13 +252,13 @@ window.CPG_DATA = {
                         <tr><td><strong>M</strong></td><td>3,000 L</td><td>~36 in</td><td>Medium cylinder, some ambulance onboard systems</td></tr>
                         <tr><td><strong>H</strong></td><td>6,900 L</td><td>~52 in</td><td>Large stationary cylinders, hospital use, ambulance onboard supply</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Cylinder Pressure and Duration Calculation</h4>
                 <p>A full oxygen cylinder has a pressure of approximately <strong>2,000 psi</strong> (pounds per square inch). As oxygen is used, the pressure drops proportionally to the remaining volume. To calculate how many minutes of oxygen remain at a given flow rate, use this formula:</p>
                 <p style="text-align:center; font-size:1.1em;"><strong>(Tank Pressure in psi × Cylinder Factor) ÷ Flow Rate in L/min = Minutes Remaining</strong></p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Cylinder</th><th>Capacity</th><th>Cylinder Factor</th></tr>
                     </thead>
@@ -268,7 +268,7 @@ window.CPG_DATA = {
                         <tr><td>M</td><td>3,000 L</td><td><strong>1.56</strong></td></tr>
                         <tr><td>H</td><td>6,900 L</td><td><strong>3.14</strong></td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>Example:</strong> An E cylinder at 2,000 psi running a non-rebreather at 15 L/min: (2,000 × 0.28) ÷ 15 = 560 ÷ 15 = <strong>37.3 minutes</strong> of oxygen remaining.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -276,7 +276,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Safe Use of Oxygen</h4>
-                <p>Oxygen is a safe but highly reactive gas that supports combustion. EMTs must follow these safety rules at all times:</p>
+                <p>Oxygen is a safe but highly reactive gas that supports combustion. EMS providers must follow these safety rules at all times:</p>
                 <ul>
                     <li><strong>No smoking</strong> — Post "OXYGEN IN USE — NO SMOKING" signs. Ensure no patient, family, or provider smokes or uses any open flame within the treatment area.</li>
                     <li><strong>No petroleum-based products</strong> — Do not use petroleum jelly (Vaseline), oil-based lubricants, or alcohol-based hand sanitizers near oxygen equipment. Petroleum products can react violently with oxygen under pressure.</li>
@@ -333,7 +333,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Complications of Positive Pressure Ventilation</h4>
-                <p>Positive pressure ventilation is life-saving but carries three major complications that EMTs must recognize and prevent:</p>
+                <p>Positive pressure ventilation is life-saving but carries three major complications that EMS providers must recognize and prevent:</p>
                 <ul>
                     <li><strong>Gastric inflation:</strong> When ventilation pressure exceeds the opening pressure of the lower esophageal sphincter, air enters the stomach instead of the lungs. This distends the abdomen, restricts diaphragmatic movement (worsening ventilation), and can cause vomiting with aspiration. <strong>Prevention:</strong> Use correct volumes, deliver over 1 second, use two-person BVM for better seal, apply cricoid pressure (Sellick maneuver) per local protocol.</li>
                     <li><strong>Decreased venous return (hypotension):</strong> Positive intrathoracic pressure compresses the vena cava, reducing preload to the heart, which reduces cardiac output and blood pressure. <strong>Prevention:</strong> Avoid over-ventilation (excessive rate or volume), use the lowest effective ventilation rate, monitor blood pressure closely.</li>
@@ -352,7 +352,7 @@ window.CPG_DATA = {
                     category: "Oxygen — Duration Calculation"
                 },
                 {
-                    question: "What are the oxygen safety rules EMTs must follow?",
+                    question: "What are the oxygen safety rules EMS providers must follow?",
                     answer: "No smoking, no petroleum jelly/products near O₂ (can ignite), secure cylinders upright (projectile risk), no oil/grease on fittings, replace at 200 psi reserve, open valves slowly, store away from heat.",
                     category: "Oxygen — Safety"
                 },
@@ -384,7 +384,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT is using an E cylinder with 1,600 psi to power a non-rebreather at 15 L/min. Approximately how many minutes of oxygen remain?",
+                    q: "An EMS provider is using an E cylinder with 1,600 psi to power a non-rebreather at 15 L/min. Approximately how many minutes of oxygen remain?",
                     options: [
                         "15 minutes",
                         "30 minutes",
@@ -501,7 +501,7 @@ window.CPG_DATA = {
                 </div>
 
                 <p><strong>Anatomic tourniquet locations</strong> — where a tourniquet can be effectively placed:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Bleeding Site</th><th>Tourniquet Location</th><th>Notes</th></tr>
                     </thead>
@@ -511,7 +511,7 @@ window.CPG_DATA = {
                         <tr><td>Thigh (femoral artery)</td><td>Upper thigh, as proximal as possible</td><td>Apply 2-3" above wound; if junctional (groin level), wound packing + hemostatics may be needed</td></tr>
                         <tr><td>Lower leg</td><td>Above knee, on the thigh</td><td>Do NOT place over the lower leg — tibia/fibula prevent deep artery compression; place on the thigh</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>Improvised tourniquets:</strong> Use a bandana, cravat, triangular bandage, or belt at least 1-2 inches wide (narrow material like wire or string causes tissue damage). Apply with a windlass (stick or pen) to tighten. Improvised tourniquets are less effective than commercial devices — transport rapidly to definitive care.</p>
 
                 <h4>Junctional Hemorrhage</h4>
@@ -519,7 +519,7 @@ window.CPG_DATA = {
                 <ol>
                     <li><strong>Wound packing</strong> with hemostatic gauze — pack deeply into the wound tract, directly over the source</li>
                     <li><strong>Direct pressure</strong> — hold firm, sustained pressure for a full 3 minutes (minimum)</li>
-                    <li><strong>Specialized junctional tourniquets</strong> (e.g., SAM Junctional Tourniquet, Combat Ready Clamp) — some services carry these for groin and axillary hemorrhage, but they require training and are not standard EMT equipment</li>
+                    <li><strong>Specialized junctional tourniquets</strong> (e.g., SAM Junctional Tourniquet, Combat Ready Clamp) — some services carry these for groin and axillary hemorrhage, but they require training and are not standard EMS provider equipment</li>
                     <li><strong>Rapid transport</strong> — these patients need surgical control of bleeding</li>
                 </ol>
 
@@ -530,7 +530,7 @@ window.CPG_DATA = {
                 <h4>Wound Care and Irrigation</h4>
                 <p>Wound care in the prehospital setting focuses on <strong>hemorrhage control</strong> and <strong>gross contamination removal</strong>. Definitive cleaning and closure occur in the emergency department.</p>
                 <p><strong>Wound irrigation:</strong> Use <strong>sterile saline</strong> or clean water to irrigate wounds. <strong>High-pressure irrigation</strong> is preferred for contaminated wounds (e.g., road rash, animal bites, wounds with dirt/gravel) to reduce bacterial load. Use a 30-60 mL syringe with an 18-gauge catheter or splash shield to generate adequate pressure. Irrigation does NOT substitute for hemorrhage control — stop the bleeding first.</p>
-                <p><strong>Wound closure:</strong> EMTs may apply <strong>steri-strips</strong> or butterfly bandages for <strong>superficial, clean, non-contaminated wounds</strong> under medical director approval. Do NOT close deep wounds, large wounds, contaminated wounds, or wounds at high risk for infection (puncture wounds, bites, crush injuries). Closing these wounds traps bacteria inside and promotes abscess formation.</p>
+                <p><strong>Wound closure:</strong> EMS providers may apply <strong>steri-strips</strong> or butterfly bandages for <strong>superficial, clean, non-contaminated wounds</strong> under medical director approval. Do NOT close deep wounds, large wounds, contaminated wounds, or wounds at high risk for infection (puncture wounds, bites, crush injuries). Closing these wounds traps bacteria inside and promotes abscess formation.</p>
 
                 <h4>Bite Wound Management</h4>
                 <p>Animal and human bites have a <strong>high risk of infection</strong> due to the bacterial flora of the mouth. Management priorities:</p>
@@ -701,7 +701,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Types of Splints</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Splint Type</th><th>Examples</th><th>Best For</th></tr>
                     </thead>
@@ -713,7 +713,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Air splants</strong></td><td>Inflatable plastic splints</td><td>Forearm, wrist, ankle, lower leg. Provide pneumatic compression. Contraindicated in open fractures (cannot observe wound). Risk of over-inflation causing neurovascular compromise.</td></tr>
                         <tr><td><strong>Ladder splints</strong></td><td>Wire ladder splints (malleable metal with padding)</td><td>Can be bent to fit any body part. Versatile for wrist, ankle, arm, or even as a cervical collar substitute in resource-limited settings.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Traction Splint for Femur Fracture</h4>
                 <p>A <strong>traction splint</strong> applies longitudinal traction to stabilize an isolated midshaft femur fracture, reducing pain, preventing bone ends from damaging neurovascular structures, and controlling hemorrhage (the femur can bleed up to 1,000-1,500 mL into the thigh).</p>
@@ -732,7 +732,7 @@ window.CPG_DATA = {
                 <ol>
                     <li>Expose the injured leg — cut away clothing to visualize the entire limb</li>
                     <li>Check and document PMS (pulse at dorsalis pedis/posterior tibial, motor — toe movement, sensation — touch over foot)</li>
-                    <li>Manually apply inline traction — one EMT grasps the ankle, another grasps the foot, and gently pulls to realign the limb and reduce muscle spasm</li>
+                    <li>Manually apply inline traction — one EMS provider grasps the ankle, another grasps the foot, and gently pulls to realign the limb and reduce muscle spasm</li>
                     <li>Secure the ankle hitch (use the provided ankle strap) and connect it to the splint's traction mechanism</li>
                     <li>Position the splint along the medial aspect of the injured leg (for Hare) or between the legs (for Sager)</li>
                     <li>Secure the ischial strap (pad for the groin/perineum) — this is the "counter-traction" anchor for the proximal end</li>
@@ -825,7 +825,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT is applying a splint to a 34-year-old male with a closed midshaft forearm fracture. Which of the following is CORRECT splinting technique?",
+                    q: "An EMS provider is applying a splint to a 34-year-old male with a closed midshaft forearm fracture. Which of the following is CORRECT splinting technique?",
                     options: [
                         "Apply the splint directly over the fracture site and secure it tightly to prevent any movement",
                         "Immobilize the joint above (elbow) and the joint below (wrist), pad bony prominences, check PMS before and after, splint in the position found",
@@ -888,11 +888,11 @@ window.CPG_DATA = {
                     scenario: "You arrive at a high school football game where a 17-year-old player was tackled and landed awkwardly on his right shoulder. He is sitting on the sideline holding his right arm with his left hand. His right shoulder appears 'squared off' with a prominent acromion. He complains of severe pain and cannot move his arm. His arm is held in slight abduction. His distal pulse is strong, his fingers move normally, and he has normal sensation to touch. He wants you to 'pop it back in' because he has dislocated this shoulder twice before and knows what it feels like.",
                     question: "Despite the patient's request, what is the appropriate management?",
                     options: [
-                        {t: "He has dislocated this shoulder before and knows his body — attempt gentle traction to reduce the dislocation per his request", f: "Incorrect. Even for recurrent dislocations, field reduction is not standard EMT practice. Without X-ray, you cannot confirm there is not an associated fracture (Hill-Sachs lesion, Bankart lesion, or greater tuberosity fracture)."},
+                        {t: "He has dislocated this shoulder before and knows his body — attempt gentle traction to reduce the dislocation per his request", f: "Incorrect. Even for recurrent dislocations, field reduction is not standard EMS provider practice. Without X-ray, you cannot confirm there is not an associated fracture (Hill-Sachs lesion, Bankart lesion, or greater tuberosity fracture)."},
                         {t: "Explain that you cannot reduce the dislocation in the field. Apply a sling and swath to splint the shoulder in the position found, pad generously (axilla padding), reassess PMS, apply ice, and transport for X-ray and physician-assisted reduction", f: "Correct. Do NOT reduce dislocations in the field. Splint in position found, pad, ice, and transport. Document PMS carefully — the receiving physician will need pre-reduction neurovascular status."}
                     ],
                     correct: 1,
-                    explanation: "EMTs do not reduce dislocations in the field — regardless of whether it is a first-time or recurrent injury. The risk of associated fracture (Hill-Sachs, Bankart, greater tuberosity) cannot be ruled out without X-ray. Splint, sling/swath, ice, transport, and document PMS.",
+                    explanation: "EMS providers do not reduce dislocations in the field — regardless of whether it is a first-time or recurrent injury. The risk of associated fracture (Hill-Sachs, Bankart, greater tuberosity) cannot be ruled out without X-ray. Splint, sling/swath, ice, transport, and document PMS.",
                     kpi: "Field management of shoulder dislocation — contraindication to reduction"
                 },
                 {
@@ -924,7 +924,7 @@ window.CPG_DATA = {
 
                 <h4>NEXUS Criteria — Clinical Clearance of the Spine</h4>
                 <p>The <strong>NEXUS (National Emergency X-Radiography Utilization Study)</strong> criteria are the most widely used decision rules for determining if spinal imaging is needed. <strong>If ALL NEXUS criteria are negative, SMR is not needed.</strong></p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Criterion</th><th>When It Is Satisfied (No SMR Needed)</th></tr>
                     </thead>
@@ -935,7 +935,7 @@ window.CPG_DATA = {
                         <tr><td><strong>No intoxication</strong></td><td>No evidence of alcohol, drugs, or medication that impairs sensorium.</td></tr>
                         <tr><td><strong>No distracting injury</strong></td><td>No painful injury that distracts the patient from reporting spine pain (femur fracture, large laceration, significant burn, etc.).</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Indications for Spinal Motion Restriction</h4>
                 <ul>
@@ -1030,7 +1030,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wrench"/></svg> Patient Movement & Lifting</h3>
 
-                <h4>Body Mechanics for EMTs — Protecting Your Most Important Tool</h4>
+                <h4>Body Mechanics for EMS Providers — Protecting Your Most Important Tool</h4>
                 <p>Musculoskeletal injuries are the <strong>most common occupational injury</strong> among EMS providers. Lifting, moving, and carrying patients — often in awkward positions, confined spaces, or with heavy patients — puts immense strain on the spine. Proper body mechanics are not optional; they are essential for a long, injury-free career. The principles are simple but must be practiced until automatic:</p>
                 <ul>
                     <li><strong>Lift with your legs, not your back:</strong> The powerful quadriceps and gluteal muscles are designed for lifting. The lower back muscles are not. Let your legs do the work.</li>
@@ -1052,7 +1052,7 @@ window.CPG_DATA = {
 
                 <h4>Team Lifting Communication</h4>
                 <ul>
-                    <li><strong>Designate a leader</strong> — typically the EMT at the head of the stretcher.</li>
+                    <li><strong>Designate a leader</strong> — typically the EMS provider at the head of the stretcher.</li>
                     <li><strong>Use a countdown:</strong> On three — one, two, three — <strong>lift</strong>! Everyone lifts on lift, not three.</li>
                     <li><strong>Confirm readiness</strong> before the count — each rescuer responds ready.</li>
                     <li><strong>Lower together</strong> using the same countdown pattern.</li>
@@ -1060,7 +1060,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Equipment for Lifting and Moving</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Device</th><th>Best Use</th><th>Special Considerations</th></tr>
                     </thead>
@@ -1072,13 +1072,13 @@ window.CPG_DATA = {
                         <tr><td><strong>Stair Chair</strong></td><td>Moving up/down stairs</td><td>Patient must sit upright. Secure all straps. Never bariatric with only 2 rescuers.</td></tr>
                         <tr><td><strong>Long Backboard</strong></td><td>Spinal immobilization, extrication</td><td>Now used less for transport (pressure points, respiratory restriction). Pad generously.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Stair Chair — Proper Technique</h4>
                 <p>Moving patients up or down stairs is one of the most physically demanding and hazardous EMS operations. Going <strong>DOWN</strong> stairs: patient goes <strong>feet first</strong>, the rescuer at the foot bears the majority of the weight, the rescuer at the head controls the descent, both keep backs straight and use legs. Going <strong>UP</strong> stairs: patient goes <strong>head first</strong>, the head rescuer bears more weight. Coordinate every step: Next step — ready, step. Never attempt bariatric stair transport with only two rescuers.</p>
 
                 <h4>Helicopter / Air Medical Landing Zone</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Requirement</th><th>Specification</th></tr>
                     </thead>
@@ -1092,7 +1092,7 @@ window.CPG_DATA = {
                         <tr><td>Sloped terrain</td><td>Approach from downhill side. Pilot can see you better from uphill side.</td></tr>
                         <tr><td>Patient handoff</td><td>Bring patient only when signaled. Never walk under tail boom. Follow pilot directions.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Helicopter Safety:</strong> <strong>NEVER approach a helicopter from behind.</strong> The tail rotor is nearly invisible when spinning, especially at night. It has no guard. It will kill you. Always approach from the front at a 45° angle toward the pilot, making eye contact. Crouch low when approaching. Do not carry anything above your head. Secure all loose equipment.
@@ -1115,9 +1115,9 @@ window.CPG_DATA = {
                 { question: "What is correct team lifting communication?", answer: "Designate leader. Confirm readiness. Countdown: On three — one, two, three — lift! Lift on lift. Same pattern for lowering.", category: "Team Communication" }
             ],
             quiz: [
-                { q: "An EMT lifts a backboard bending at the waist, legs straight, palm-down finger grip. Which injury prevention principles is he violating?", options: ["All three: not using legs, not straight back, not power grip", "Only the power grip principle", "Bending at waist is acceptable if back is straight", "None this is proper technique"], correct: 0 },
+                { q: "An EMS provider lifts a backboard bending at the waist, legs straight, palm-down finger grip. Which injury prevention principles is he violating?", options: ["All three: not using legs, not straight back, not power grip", "Only the power grip principle", "Bending at waist is acceptable if back is straight", "None this is proper technique"], correct: 0 },
                 { q: "Transporting 90 kg patient down three flights of narrow stairs in stair chair. Which statement is MOST accurate?", options: ["Going down, patient head first so head rescuer can see", "Going down, patient feet first. Foot rescuer bears most weight. Both use leg-driven lifting", "Both rescuers face same direction toward patient", "Only two rescuers needed regardless of patient weight"], correct: 1 },
-                { q: "[HARD] Night helicopter LZ. Wind shifts 180 degrees from original direction. Pilot needs to approach into wind. What should the EMT do?", options: ["Leave cones, pilot can see LZ regardless of wind", "Relocate cones if needed, radio current wind direction. Step clear of LZ during landing", "Run to center of LZ with flashlight to guide pilot", "Turn on all vehicle headlights pointed at LZ"], correct: 1 },
+                { q: "[HARD] Night helicopter LZ. Wind shifts 180 degrees from original direction. Pilot needs to approach into wind. What should the EMS provider do?", options: ["Leave cones, pilot can see LZ regardless of wind", "Relocate cones if needed, radio current wind direction. Step clear of LZ during landing", "Run to center of LZ with flashlight to guide pilot", "Turn on all vehicle headlights pointed at LZ"], correct: 1 },
                 { q: "A bariatric patient weighing 180 kg needs supine transport down narrow stairs. Patient cannot sit upright. What is the BEST approach?", options: ["Stair chair with 4 rescuers", "Reeves sleeve or bariatric dragging device with 4-6 rescuers. Stair chair not appropriate for supine patient. Call fire department", "Patient can walk downstairs with assistance", "Two rescuers can manage with reinforced backboard"], correct: 1 }
             ],
             critical: [
@@ -1148,7 +1148,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_10_6_3",
                     scenario: "Third floor. 72-year-old male fell, no trauma, stable vitals, ~75 kg. Building has elevator. Halfway to elevator with stair chair, your partner feels sharp back pain and cannot continue lifting.",
-                    question: "What should the EMT do?",
+                    question: "What should the EMS provider do?",
                     options: [
                         {t: "Continue alone carefully lower stair chair and drag patient to elevator. Partner can rest and recover", f: "Incorrect Continuing alone puts both you and patient at risk. Cannot safely manage 100+ kg patient+chair alone in narrow hallway."},
                         {t: "Stop immediately. Lower stair chair to stabilize it. Assess partner injury. Call dispatch for additional resources. Reassure patient help is coming. Wait for additional personnel", f: "Correct When lifting partner becomes injured mid-transport: stop unsafe lift, lower and stabilize chair, assess partner, call for resources, reassure patient, wait for additional crew."}
@@ -1165,8 +1165,8 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wrench"/></svg> ECG Acquisition — 12-Lead</h3>
 
-                <h4>Why 12-Lead ECG Matters for EMTs</h4>
-                <p>Acquiring a <strong>diagnostic-quality 12-lead ECG</strong> is a foundational EMT skill. While interpretation is typically a paramedic/physician responsibility, the EMT who obtains a clean, artifact-free tracing enables accurate STEMI recognition, timely cath lab activation, and better patient outcomes. A poor-quality ECG delays care.</p>
+                <h4>Why 12-Lead ECG Matters for EMS Providers</h4>
+                <p>Acquiring a <strong>diagnostic-quality 12-lead ECG</strong> is a foundational EMS provider skill. While interpretation is typically a paramedic/physician responsibility, the EMS provider who obtains a clean, artifact-free tracing enables accurate STEMI recognition, timely cath lab activation, and better patient outcomes. A poor-quality ECG delays care.</p>
 
                 <div class="highlight-box" style="background:#e8f4f8; border-left-color:#17a2b8;">
                     <strong>NREMT Tip:</strong> You will not be asked to interpret 12-lead ECGs at the EMT level. You WILL be expected to know: correct lead placement, skin preparation, artifact reduction, and when to obtain a 12-lead (chest pain, SOB, syncope, suspected ACS).
@@ -1181,7 +1181,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Lead Placement — Anatomical Landmarks (Critical)</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Lead</th><th>Placement</th><th>Bony/Landmark Reference</th></tr>
                     </thead>
@@ -1197,7 +1197,7 @@ window.CPG_DATA = {
                         <tr><td><strong>V5</strong></td><td>Anterior axillary line, same horizontal level as V4</td><td>Same horizontal plane as V4 — follow the intercostal space laterally.</td></tr>
                         <tr><td><strong>V6</strong></td><td>Midaxillary line, same horizontal level as V4 and V5</td><td>Same plane — continue lateral to midaxillary line.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#ffc107;">
                     <strong>Critically Common Error — V1 and V2:</strong> The #1 most common 12-lead placement error is placing V1 and V2 <strong>too high</strong> (in the 2nd or 3rd intercostal space instead of the 4th). Use the <strong>Angle of Louis</strong> (sternal angle at 2nd rib) — feel it at the top of the sternum where the manubrium meets the body. The 2nd rib is there. Count down <strong>two more</strong> intercostal spaces. V1 goes in the 4th space, right of sternum.
@@ -1207,7 +1207,7 @@ window.CPG_DATA = {
                 <p>Poor skin prep is the #1 cause of artifact and tracing that cannot be interpreted by the receiving physician. Steps: shave hair if it prevents electrode adhesion; clean skin with alcohol or abrasive prep pad to remove oils and dead skin; allow to dry completely (alcohol is conductive when wet); apply electrode with gentle pressure and rub firmly for 10 seconds to ensure gel contact and adhesion. Good skin prep is the single most important factor in obtaining a diagnostic-quality 12-lead.</p>
 
                 <h4>Artifact — Types and Troubleshooting</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Artifact Type</th><th>Appearance</th><th>Common Cause</th><th>Fix</th></tr>
                     </thead>
@@ -1217,7 +1217,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Muscle tremor / somatic tremor</strong></td><td>Irregular, coarse, chaotic pattern</td><td>Patient shivering, tense, Parkinsonian tremor, cold</td><td>Warm patient, reassure, have patient relax arms, place electrodes away from major muscles</td></tr>
                         <tr><td><strong>Lead off / Lead fail</strong></td><td>Flatline or straight line on one lead</td><td>Electrode fell off or lead wire disconnected</td><td>Check connections, reapply electrode</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Right-Sided ECG and Posterior Leads</h4>
                 <p><strong>Right-sided ECG (V1R-V6R):</strong> Mirror placement of precordial leads onto right chest (V1R 4th ICS left of sternum, V2R 4th ICS right of sternum, V3R-R, V4R midclavicular 5th ICS right, V5R/V6R right anterior/midaxillary). Indicated for <strong>inferior STEMI</strong> (ST elevation in II, III, aVF) to evaluate for <strong>right ventricular involvement</strong>. <strong>Posterior leads (V7-V9):</strong> V7 posterior axillary line, V8 mid-scapular line, V9 paraspinal. Indicated when anterior leads show <strong>ST depression</strong> (reciprocal change suggesting posterior infarction). Check local protocol — these may be paramedic-level skills.</p>
@@ -1245,7 +1245,7 @@ window.CPG_DATA = {
                 { question: "When are posterior leads (V7-V9) indicated?", answer: "When anterior leads show ST depression (possible posterior MI — reciprocal change).", category: "Posterior Leads" }
             ],
             quiz: [
-                { q: "EMT obtains 12-lead. Tracing shows wandering baseline on multiple leads. What is the BEST first step?", options: ["Replace monitor battery", "Re-prepare skin, reapply electrodes with firm adhesion. Also reduce patient movement", "Change lead select filter to diagnostic mode", "Reposition patient flat"], correct: 1 },
+                { q: "EMS provider obtains 12-lead. Tracing shows wandering baseline on multiple leads. What is the BEST first step?", options: ["Replace monitor battery", "Re-prepare skin, reapply electrodes with firm adhesion. Also reduce patient movement", "Change lead select filter to diagnostic mode", "Reposition patient flat"], correct: 1 },
                 { q: "Patient V1 placed at left 2nd intercostal space, V2 at left 4th intercostal space. What error occurred?", options: ["None. V1 is correctly in 2nd ICS left", "V1 placed at 2nd ICS instead of 4th ICS right of sternum. V2 placement correct. Also V1 must be right of sternum", "Both V1 and V2 must be in 5th ICS", "V1 and V2 are both correct. Only precordial leads need intercostal counting"], correct: 1 },
                 { q: "[HARD] 55-year-old with crushing substernal chest pain and diaphoresis. Inferior leads II, III, aVF show ST elevation. V3-V4 show ST depression. What additional leads should be considered?", options: ["No additional leads needed — standard 12-lead sufficient", "Right-sided V4R for RV involvement (due to inferior STEMI). Posterior V7-V9 for posterior involvement (due to ST depression in V3-V4)", "Only V7 is needed. V8-V9 are not used prehospital", "Posterior leads only. V4R is not indicated"], correct: 1 },
                 { q: "AHA guideline for 12-lead acquisition time in suspected STEMI?", options: ["Within 30 minutes of patient contact", "Within 10 minutes of patient contact (door-to-ECG or first medical contact-to-ECG)", "Within 5 minutes only if chest pain present", "No specific time goal exists for prehospital acquisition"], correct: 1 }
@@ -1266,7 +1266,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_10_7_2",
                     scenario: "72-year-old female with syncope, no chest pain. Normal sinus rhythm by monitor. Vital signs stable. You decide to obtain 12-lead per syncope protocol. On exam: bilateral mastectomy with breast prostheses. V3 and V4 landmarks are unclear.",
-                    question: "How should the EMT adjust lead placement?",
+                    question: "How should the EMS provider adjust lead placement?",
                     options: [
                         {t: "Place V3 and V4 where the inframammary fold would be. Use scar lines as anatomic guides. Document alternative placement on the tracing. Notify receiving hospital", f: "Correct In patients with mastectomy, use inframammary fold, scar lines, and remaining tissue to approximate standard interspaces. Do NOT place electrodes on prostheses (distorts tracing). Document that placement was modified."},
                         {t: "Skip precordial leads. Only limb leads can be accurately placed. Receiving hospital can obtain full 12-lead", f: "Incorrect Modified placement with documentation is standard. A 12-lead with documented modified placement is valuable and preferred."}
@@ -1281,7 +1281,7 @@ window.CPG_DATA = {
                     question: "What is the MOST efficient approach to meet the 10-minute ECG goal?",
                     options: [
                         {t: "Do not start ECG until you complete history and physical exam to ensure patient stability", f: "Incorrect While history/exam is essential, it does not need to delay ECG. Best practice integrates both."},
-                        {t: "Ask partner to set up monitor and prepare leads while you obtain history. Expose chest efficiently maintaining privacy. Prep skin as you talk to patient. Goal: 12-lead acquired within 10 min of patient contact. Defer detailed history questions that are not immediately relevant", f: "Correct Parallel processing: partner preps gear, EMT takes focused history simultaneously, lead placement during secondary assessment. 10-min goal is achievable with teamwork."}
+                        {t: "Ask partner to set up monitor and prepare leads while you obtain history. Expose chest efficiently maintaining privacy. Prep skin as you talk to patient. Goal: 12-lead acquired within 10 min of patient contact. Defer detailed history questions that are not immediately relevant", f: "Correct Parallel processing: partner preps gear, EMS provider takes focused history simultaneously, lead placement during secondary assessment. 10-min goal is achievable with teamwork."}
                     ],
                     correct: 1,
                     explanation: "Meet 10-min goal by parallel processing: partner preps monitor, focused history and lead placement simultaneous. Defer non-urgent history until after tracing. Bundle questions with actions. If environment is cold/unsafe for ECG (patient on metal surface), move to stretcher first. Document time of acquisition.",
@@ -1295,8 +1295,8 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wrench"/></svg> Medication Administration Skills</h3>
 
-                <h4>EMT Medication Administration — Scope and Responsibility</h4>
-                <p>Medication administration is one of the highest-risk skills EMTs perform. The <strong>Six Rights</strong> of medication administration apply regardless of practice level. EMTs must know: which medications they can administer per state protocol, correct dose/route/indications/contraindications, proper administration technique, and how to document. Errors are the most common cause of EMS malpractice claims.</p>
+                <h4>EMS Provider Medication Administration — Scope and Responsibility</h4>
+                <p>Medication administration is one of the highest-risk skills EMS providers perform. The <strong>Six Rights</strong> of medication administration apply regardless of practice level. EMS providers must know: which medications they can administer per state protocol, correct dose/route/indications/contraindications, proper administration technique, and how to document. Errors are the most common cause of EMS malpractice claims.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Never give a medication you cannot identify.</strong> If the vial/packaging is unclear, the label is damaged, or the medication is not what you expected — <strong>do not administer</strong>. Verify with your partner, consult medical direction, or use the medication package insert. When in doubt, leave it out.
@@ -1313,7 +1313,7 @@ window.CPG_DATA = {
                 </ol>
 
                 <h4>Common EMT-Authorized Medications</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Medication</th><th>Class</th><th>Route</th><th>Indication</th><th>Key Contraindications</th></tr>
                     </thead>
@@ -1329,9 +1329,9 @@ window.CPG_DATA = {
                         <tr><td><strong>MDI (Metered Dose Inhaler)</strong></td><td>Bronchodilator</td><td>Inhalation (MDI + spacer)</td><td>Patient own inhaler, asthma/COPD exacerbation</td><td>Assist patient with own inhaler per protocol. Ensure correct technique (slow deep inhalation, breath hold 10 sec).</td></tr>
                         <tr><td><strong>CPAP/BiPAP</strong></td><td>Non-invasive ventilation</td><td>Mask inhalation</td><td>Pulmonary edema, severe COPD, respiratory distress with adequate respiratory drive</td><td>Decreased LOC, unable to protect airway, hypotension, facial trauma, pneumothorax (suspect). Monitor for vomiting.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
-                <h4>Routes of Administration for EMTs</h4>
+                <h4>Routes of Administration for EMS Providers</h4>
                 <ul>
                     <li><strong>Oral (PO):</strong> Swallowed. Slowest onset. Patient must have intact gag and swallow.</li>
                     <li><strong>Buccal:</strong> Between cheek and gum. Absorbed through oral mucosa (oral glucose).</li>
@@ -1357,15 +1357,15 @@ window.CPG_DATA = {
                 { question: "What is the dose and route of epinephrine auto-injector?", answer: "IM lateral thigh (vastus lateralis). Adult: 0.3 mg. Junior (&lt;25 kg): 0.15 mg.", category: "Epinephrine" },
                 { question: "What are contraindications for nitroglycerin?", answer: "SBP &lt;100 mmHg, HR &lt;50 or &gt;100, inferior STEMI w/ RV involvement, recent PDE-5 inhibitor (Viagra/Cialis within 24-48 hr).", category: "Nitroglycerin" },
                 { question: "What are contraindications for activated charcoal?", answer: "Decreased LOC, unable to protect airway, caustic ingestion, hydrocarbon ingestion. Not given without medical direction.", category: "Activated Charcoal" },
-                { question: "What are the routes of administration EMTs commonly use?", answer: "Oral (PO), buccal, sublingual (SL), intramuscular (IM), intranasal (IN), inhalation.", category: "Routes" },
+                { question: "What are the routes of administration EMS providers commonly use?", answer: "Oral (PO), buccal, sublingual (SL), intramuscular (IM), intranasal (IN), inhalation.", category: "Routes" },
                 { question: "What special considerations for pediatric medication dosing?", answer: "Weight-based (mg/kg). Use Broselow tape for weight/dose/equipment size. Have partner independently verify all pediatric doses.", category: "Pediatric" },
                 { question: "What documentation is required for medication administration?", answer: "Time, medication name, dose, route, site, patient response (pre/post), adverse effects, authorizing physician name.", category: "Documentation" }
             ],
             quiz: [
-                { q: "EMT preparing to give NTG. Patient reports Viagra use 12 hours ago. What should the EMT do?", options: ["Give NTG. Viagra is only a contraindication within 4 hours", "Hold NTG. PDE-5 inhibitor within 24-48 hours is contraindicated with NTG. Contact medical direction for alternative", "Give half-dose NTG to reduce risk", "Give NTG but monitor BP every 2 minutes"], correct: 1 },
+                { q: "EMS provider preparing to give NTG. Patient reports Viagra use 12 hours ago. What should the EMS provider do?", options: ["Give NTG. Viagra is only a contraindication within 4 hours", "Hold NTG. PDE-5 inhibitor within 24-48 hours is contraindicated with NTG. Contact medical direction for alternative", "Give half-dose NTG to reduce risk", "Give NTG but monitor BP every 2 minutes"], correct: 1 },
                 { q: "Unresponsive hypoglycemic patient with BGL 42 mg/dL. Patient cannot swallow. What is the next step?", options: ["Place oral glucose inside cheek. Risk of aspiration acceptable given severe hypoglycemia", "Do NOT administer oral glucose (aspiration risk). Administer IM glucagon if available per protocol, or transport rapidly", "Give oral glucose under tongue — sublingual route bypasses swallow", "Administer D50 IV if IV access protocol"], correct: 1 },
                 { q: "[HARD] Pediatric patient (estimated 20 kg) with anaphylaxis (urticaria, stridor, hypotension). Which epinephrine dose?", options: ["0.3 mg IM (adult auto-injector) regardless of weight", "0.15 mg IM (junior auto-injector, &lt;25 kg) vastus lateralis", "0.15 mg IM deltoid", "0.3 mg IM (junior). Deltoid preferred in pediatrics"], correct: 1 },
-                { q: "EMT administers 324 mg aspirin to 62-year-old with chest pain, diaphoresis, nausea. What is the MOST important follow-up action?", options: ["Document time, dose, and patient response to ASA. Reassess for chest pain relief and side effects (GI upset, bleeding)", "Give NTG next regardless of BP", "Place patient supine", "Obtain 12-lead only after medication"], correct: 0 }
+                { q: "EMS provider administers 324 mg aspirin to 62-year-old with chest pain, diaphoresis, nausea. What is the MOST important follow-up action?", options: ["Document time, dose, and patient response to ASA. Reassess for chest pain relief and side effects (GI upset, bleeding)", "Give NTG next regardless of BP", "Place patient supine", "Obtain 12-lead only after medication"], correct: 0 }
             ],
             critical: [
                 {

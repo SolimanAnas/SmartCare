@@ -14,9 +14,9 @@ window.CPG_DATA = {
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Principles of Pharmacology & Drug Classes</h3>
 
                 <h4>Drug Naming - Generic vs. Trade vs. Chemical</h4>
-                <p>Every medication has three names. The <strong>chemical name</strong> describes the drug molecular structure (e.g., <em>N-acetyl-para-aminophenol</em>). The <strong>generic name</strong> is the official, non-proprietary name assigned by the United States Adopted Names (USAN) Council this is the name used in NREMT exams and EMS protocols (e.g., <em>acetaminophen</em>). The <strong>trade (brand) name</strong> is the proprietary name given by the manufacturer (e.g., Tylenol). EMTs must know the generic name of every medication they carry and administer NREMT tests generic names exclusively.</p>
+                <p>Every medication has three names. The <strong>chemical name</strong> describes the drug molecular structure (e.g., <em>N-acetyl-para-aminophenol</em>). The <strong>generic name</strong> is the official, non-proprietary name assigned by the United States Adopted Names (USAN) Council this is the name used in NREMT exams and EMS protocols (e.g., <em>acetaminophen</em>). The <strong>trade (brand) name</strong> is the proprietary name given by the manufacturer (e.g., Tylenol). EMS providers must know the generic name of every medication they carry and administer NREMT tests generic names exclusively.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Generic Name</th><th>Trade/Brand Name</th></tr>
                     </thead>
@@ -28,7 +28,7 @@ window.CPG_DATA = {
                         <tr><td>Ondansetron</td><td>Ondansetron</td><td>Zofran</td></tr>
                         <tr><td>Diphenhydramine</td><td>Diphenhydramine</td><td>Benadryl</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Pharmacodynamics - How Drugs Produce Their Effects</h4>
                 <p><strong>Pharmacodynamics</strong> is the study of how drugs interact with the body to produce a biochemical or physiological effect. Most drugs act by binding to <strong>receptors</strong> specialised protein molecules on cell surfaces or within cells that trigger a response. Key receptor interaction types include:</p>
@@ -46,9 +46,9 @@ window.CPG_DATA = {
 
                 <h4>Pharmacokinetics - What the Body Does to the Drug (ADME)</h4>
                 <p><strong>Pharmacokinetics</strong> describes the movement of a drug through the body over time, summarised by the acronym <strong>ADME</strong>:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
-                        <tr><th>Phase</th><th>Description</th><th>Clinical Relevance for EMTs</th></tr>
+                        <tr><th>Phase</th><th>Description</th><th>Clinical Relevance for EMS providers</th></tr>
                     </thead>
                     <tbody>
                         <tr><td><strong>A</strong>bsorption</td><td>Movement of drug from administration site into the bloodstream</td><td>Route determines speed: IV/IO (immediate), inhalation (rapid), IM (moderate), PO (slow, variable)</td></tr>
@@ -56,7 +56,7 @@ window.CPG_DATA = {
                         <tr><td><strong>M</strong>etabolism</td><td>Chemical conversion of drug into metabolites (primarily in the liver)</td><td>First-pass metabolism reduces bioavailability of oral drugs. Liver disease impairs metabolism drug accumulation</td></tr>
                         <tr><td><strong>E</strong>xcretion</td><td>Removal of drug and metabolites from the body</td><td>Primarily renal (urine). Renal impairment drug accumulation. Also: bile, sweat, breast milk, exhaled air</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>First-Pass Metabolism</h4>
                 <p><strong>First-pass metabolism</strong> refers to the metabolism of a drug by the liver <em>before</em> it reaches the systemic circulation. When a drug is taken <strong>orally (PO)</strong>, it is absorbed from the gastrointestinal tract into the portal vein, which carries it directly to the liver. The liver may metabolise a significant portion of the drug before it ever reaches the general circulation, reducing the <strong>bioavailability</strong> (the fraction of the administered dose that reaches systemic circulation unchanged). This is why some drugs require much higher oral doses than IV doses to achieve the same effect and why certain drugs (e.g., naloxone, epinephrine) cannot be given orally because they would be completely metabolised before reaching their target. Routes that <strong>bypass first-pass metabolism</strong> include IV, SL (sublingual), IN (intranasal), inhaled, IM, and PR (rectal though some rectal dosing may partially bypass first-pass).</p>
@@ -71,25 +71,25 @@ window.CPG_DATA = {
                 <p><strong>Onset</strong> is the time from administration until the drug begins to produce its therapeutic effect. <strong>Peak</strong> is the time at which the drug reaches its maximum concentration in the bloodstream and produces its maximum effect. <strong>Duration</strong> is the length of time the drug produces its therapeutic effect. These parameters vary significantly by route: IV epinephrine has an onset of seconds and duration of ~5-10 minutes; IM epinephrine has an onset of ~5-10 minutes and duration of ~1 hour.</p>
 
                 <h4>DEA Drug Schedules - Controlled Substances Act</h4>
-                <p>The <strong>Controlled Substances Act (CSA)</strong> classifies drugs into five schedules (I-V) based on their medical use, abuse potential, and safety profile. EMTs must understand the scheduling of the medications they carry for proper storage, documentation, and security:</p>
-                <table>
+                <p>The <strong>Controlled Substances Act (CSA)</strong> classifies drugs into five schedules (I-V) based on their medical use, abuse potential, and safety profile. EMS providers must understand the scheduling of the medications they carry for proper storage, documentation, and security:</p>
+                <div class="table-scroll"><table>
                     <thead>
-                        <tr><th>Schedule</th><th>Definition</th><th>Examples</th><th>EMT Relevance</th></tr>
+                        <tr><th>Schedule</th><th>Definition</th><th>Examples</th><th>EMS provider Relevance</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>C-I</strong></td><td>High abuse potential, NO accepted medical use</td><td>Heroin, LSD, marijuana (federal), ecstasy, peyote</td><td>Never carried by EMTs. No legitimate medical prescription</td></tr>
-                        <tr><td><strong>C-II</strong></td><td>High abuse potential, accepted medical use with severe restrictions</td><td>Morphine, fentanyl, oxycodone, hydromorphone, cocaine, methamphetamine, methylphenidate</td><td>Some EMT services carry morphine or fentanyl under paramedic-level protocols. Strict inventory requirements</td></tr>
-                        <tr><td><strong>C-III</strong></td><td>Moderate abuse potential, accepted medical use</td><td>Tylenol with codeine, buprenorphine (Suboxone), ketamine, anabolic steroids</td><td>Less commonly carried by EMTs. Ketamine may be used for analgesia/dissociation at ALS level</td></tr>
+                        <tr><td><strong>C-I</strong></td><td>High abuse potential, NO accepted medical use</td><td>Heroin, LSD, marijuana (federal), ecstasy, peyote</td><td>Never carried by EMS providers. No legitimate medical prescription</td></tr>
+                        <tr><td><strong>C-II</strong></td><td>High abuse potential, accepted medical use with severe restrictions</td><td>Morphine, fentanyl, oxycodone, hydromorphone, cocaine, methamphetamine, methylphenidate</td><td>Some EMS provider services carry morphine or fentanyl under paramedic-level protocols. Strict inventory requirements</td></tr>
+                        <tr><td><strong>C-III</strong></td><td>Moderate abuse potential, accepted medical use</td><td>Tylenol with codeine, buprenorphine (Suboxone), ketamine, anabolic steroids</td><td>Less commonly carried by EMS providers. Ketamine may be used for analgesia/dissociation at ALS level</td></tr>
                         <tr><td><strong>C-IV</strong></td><td>Low abuse potential, accepted medical use</td><td>Diazepam (Valium), midazolam (Versed), lorazepam (Ativan), alprazolam (Xanax), zolpidem (Ambien)</td><td>Benzodiazepines may be carried for seizures (diazepam, midazolam). Moderate documentation requirements</td></tr>
-                        <tr><td><strong>C-V</strong></td><td>Lowest abuse potential, accepted medical use</td><td>Codeine-containing cough syrups (with &le;200 mg codeine/100 mL), pregabalin (Lyrica), lacosamide</td><td>Rarely carried by EMTs. Some states allow dispensing without prescription for certain C-V preparations</td></tr>
+                        <tr><td><strong>C-V</strong></td><td>Lowest abuse potential, accepted medical use</td><td>Codeine-containing cough syrups (with &le;200 mg codeine/100 mL), pregabalin (Lyrica), lacosamide</td><td>Rarely carried by EMS providers. Some states allow dispensing without prescription for certain C-V preparations</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>Clinical Pearl:</strong> EMTs must follow <strong>controlled substance protocols</strong> meticulously. Controlled medications (typically C-II through C-IV on EMS units) require: <strong>dual documentation</strong> (two providers witness administration and count), <strong>secure storage</strong> (locked box or compartment on the rig), <strong>wasting documentation</strong> (partially used controlled substances are wasted with a witness), and <strong>inventory counts</strong> at every shift change. Any discrepancy must be reported immediately.
+                    <strong>Clinical Pearl:</strong> EMS providers must follow <strong>controlled substance protocols</strong> meticulously. Controlled medications (typically C-II through C-IV on EMS units) require: <strong>dual documentation</strong> (two providers witness administration and count), <strong>secure storage</strong> (locked box or compartment on the rig), <strong>wasting documentation</strong> (partially used controlled substances are wasted with a witness), and <strong>inventory counts</strong> at every shift change. Any discrepancy must be reported immediately.
                 </div>
 
-                <h4>EMT Medication Classes</h4>
+                <h4>EMS Provider Medication Classes</h4>
                 <p>Below are the major drug classes relevant to the EMT scope of practice. Know the <strong>indication, contraindication, dose, route, and side effects</strong> for each medication your service carries:</p>
 
                 <h5>Sympathomimetics (Adrenergic Agonists)</h5>
@@ -140,8 +140,8 @@ window.CPG_DATA = {
                     <li><strong>Methylprednisolone (Solu-Medrol):</strong> Intermediate-acting glucocorticoid. Indication: severe asthma/COPD exacerbation, allergic reactions, spinal cord injury (controversial). Route: IV, IM.</li>
                 </ul>
 
-                <h4>Drug References for EMTs</h4>
-                <p>EMTs should be familiar with the following drug reference resources. In the field, always follow your <strong>local protocols</strong> (medical director approved drug list) they supersede all other references:</p>
+                <h4>Drug References for EMS Providers</h4>
+                <p>EMS providers should be familiar with the following drug reference resources. In the field, always follow your <strong>local protocols</strong> (medical director approved drug list) they supersede all other references:</p>
                 <ul>
                     <li><strong>Physicians Desk Reference (PDR):</strong> Comprehensive print/digital reference of FDA-approved drug information. Contains full prescribing information, including indications, contraindications, dosing, and adverse effects.</li>
                     <li><strong>Lexicomp:</strong> Regularly updated digital drug database available through many EMS subscription services. Provides concise monographs, dosing calculators, and IV compatibility information.</li>
@@ -165,13 +165,13 @@ window.CPG_DATA = {
                 { question: "What is first-pass metabolism and which routes bypass it?", answer: "First-pass metabolism is the liver metabolism of an orally absorbed drug before it reaches systemic circulation. Routes that bypass it: IV, IO, SL, IN, inhaled, IM, and PR (partial).", category: "Pharmacokinetics" },
                 { question: "How many half-lives are required to reach steady state?", answer: "Approximately 4-5 half-lives of regular dosing are required to reach steady state, where drug administration equals elimination.", category: "Half-Life" },
                 { question: "What is a narrow therapeutic index and which drugs have one?", answer: "A narrow TI means the toxic dose is close to the effective dose small errors can be dangerous. Examples: digoxin, lithium, warfarin, phenytoin, theophylline.", category: "Therapeutic Index" },
-                { question: "What are the five DEA drug schedules (I-V) and which do EMTs most commonly encounter?", answer: "C-I: no medical use, high abuse (heroin). C-II: high abuse, medical use (morphine, fentanyl). C-III: moderate (codeine, ketamine). C-IV: low abuse (diazepam, midazolam). C-V: lowest (codeine cough syrups). EMTs encounter C-II through C-IV.", category: "Drug Schedules" },
-                { question: "What is the primary indication, route, and contraindication of nitroglycerin?", answer: "Indication: angina/ACS. Route: SL tablet or spray. Contraindications: SBP <90-100 mmHg, recent PDE-5 inhibitor use (Viagra/Cialis within 24-48 hours), RV infarction.", category: "EMT Drug Classes" }
+                { question: "What are the five DEA drug schedules (I-V) and which do EMS providers most commonly encounter?", answer: "C-I: no medical use, high abuse (heroin). C-II: high abuse, medical use (morphine, fentanyl). C-III: moderate (codeine, ketamine). C-IV: low abuse (diazepam, midazolam). C-V: lowest (codeine cough syrups). EMS providers encounter C-II through C-IV.", category: "Drug Schedules" },
+                { question: "What is the primary indication, route, and contraindication of nitroglycerin?", answer: "Indication: angina/ACS. Route: SL tablet or spray. Contraindications: SBP <90-100 mmHg, recent PDE-5 inhibitor use (Viagra/Cialis within 24-48 hours), RV infarction.", category: "EMS provider Drug Classes" }
             ],
 
             quiz: [
                 {
-                    q: "A patient with chest pain has been prescribed nitroglycerin. Which instruction is MOST important for the EMT to give the patient about how to take this medication?",
+                    q: "A patient with chest pain has been prescribed nitroglycerin. Which instruction is MOST important for the EMS provider to give the patient about how to take this medication?",
                     options: [
                         "Swallow the tablet with a full glass of water for fastest absorption",
                         "Place the tablet under the tongue (sublingual) and allow it to dissolve do NOT swallow it",
@@ -220,22 +220,22 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_1_1",
                     scenario: "You are called to a skilled nursing facility for an 80-year-old female with altered mental status. Her medications include digoxin, warfarin, furosemide, and lisinopril. Staff report she has been nauseous and vomiting for two days, and this morning she is confused and weak. Vital signs: HR 44 (irregular), BP 100/62, RR 16, SpO2 95% on room air. The staff suspect she may have missed a few doses of her medications due to the vomiting. The nurse asks, Do you think she needs more digoxin her heart rate is very low?",
-                    question: "How should the EMT respond to this question, and what is the MOST appropriate prehospital management?",
+                    question: "How should the EMS provider respond to this question, and what is the MOST appropriate prehospital management?",
                     options: [
-                        {t: "Do NOT administer digoxin the patient presentation (bradycardia, nausea/vomiting, confusion, altered mental status) is highly suspicious for digoxin toxicity, not under-dosing. Digoxin has a narrow therapeutic index and these are classic signs of toxicity. Transport for cardiac monitoring and electrolyte evaluation", f: "Correct Digoxin toxicity classically presents with GI symptoms (nausea, vomiting, anorexia) followed by neurological symptoms (confusion, weakness, visual disturbances yellow-green halos) and cardiac effects (bradycardia, heart blocks, ventricular dysrhythmias). Dehydration and electrolyte disturbances (hypokalaemia from furosemide) worsen toxicity. The EMT should NOT administer more digoxin. Provide cardiac monitoring, IV access, and transport."},
-                        {t: "The patient likely needs her digoxin a heart rate of 44 is dangerously low and digoxin is prescribed for heart rate control. Administer the missed dose from the medication cart and transport for evaluation", f: "Incorrect Bradycardia in a patient on digoxin with nausea/vomiting and confusion is a red flag for digoxin toxicity, not under-treatment. Digoxin slows heart rate giving more would worsen the bradycardia. The patient presentation with the classic triad of GI symptoms, neurological changes, and bradycardia should immediately alert the EMT to toxicity. Transport with monitoring; do NOT administer additional digoxin."}
+                        {t: "Do NOT administer digoxin the patient presentation (bradycardia, nausea/vomiting, confusion, altered mental status) is highly suspicious for digoxin toxicity, not under-dosing. Digoxin has a narrow therapeutic index and these are classic signs of toxicity. Transport for cardiac monitoring and electrolyte evaluation", f: "Correct Digoxin toxicity classically presents with GI symptoms (nausea, vomiting, anorexia) followed by neurological symptoms (confusion, weakness, visual disturbances yellow-green halos) and cardiac effects (bradycardia, heart blocks, ventricular dysrhythmias). Dehydration and electrolyte disturbances (hypokalaemia from furosemide) worsen toxicity. The EMS provider should NOT administer more digoxin. Provide cardiac monitoring, IV access, and transport."},
+                        {t: "The patient likely needs her digoxin a heart rate of 44 is dangerously low and digoxin is prescribed for heart rate control. Administer the missed dose from the medication cart and transport for evaluation", f: "Incorrect Bradycardia in a patient on digoxin with nausea/vomiting and confusion is a red flag for digoxin toxicity, not under-treatment. Digoxin slows heart rate giving more would worsen the bradycardia. The patient presentation with the classic triad of GI symptoms, neurological changes, and bradycardia should immediately alert the EMS provider to toxicity. Transport with monitoring; do NOT administer additional digoxin."}
                     ],
                     correct: 0,
-                    explanation: "This scenario highlights the critical concept of therapeutic index. Digoxin has a narrow TI the toxic dose is very close to the therapeutic dose. Any patient on digoxin presenting with nausea/vomiting + bradycardia + altered mental status has digoxin toxicity until proven otherwise. Risk factors: dehydration (vomiting, diuretics), hypokalaemia (furosemide), renal impairment, advanced age. The EMT should: 1) NOT administer digoxin. 2) Cardiac monitor watch for bradycardia, heart blocks, ventricular ectopy. 3) IV access. 4) Transport. 5) Report suspected toxicity to the receiving facility.",
+                    explanation: "This scenario highlights the critical concept of therapeutic index. Digoxin has a narrow TI the toxic dose is very close to the therapeutic dose. Any patient on digoxin presenting with nausea/vomiting + bradycardia + altered mental status has digoxin toxicity until proven otherwise. Risk factors: dehydration (vomiting, diuretics), hypokalaemia (furosemide), renal impairment, advanced age. The EMS provider should: 1) NOT administer digoxin. 2) Cardiac monitor watch for bradycardia, heart blocks, ventricular ectopy. 3) IV access. 4) Transport. 5) Report suspected toxicity to the receiving facility.",
                     kpi: "Recognises digoxin toxicity presentation and avoids administering a drug with a narrow therapeutic index when toxicity is suspected"
                 },
                 {
                     id: "crit_9_1_2",
                     scenario: "You are working a 12-lead ECG on a 62-year-old male with chest pressure radiating to his left arm. He is pale and diaphoretic. HR 96, BP 148/92, RR 18, SpO2 97%. The ECG shows ST-elevation in leads II, III, and aVF (inferior STEMI). Per protocol, you may administer aspirin and assist the patient with his prescribed nitroglycerin. After the NTG 0.4 mg SL, the patient BP drops to 82/58 and his chest pressure worsens. The rhythm now shows bradycardia at 48/min. The patient becomes lightheaded.",
-                    question: "What is the MOST likely cause of this deterioration, and what should the EMT do next?",
+                    question: "What is the MOST likely cause of this deterioration, and what should the EMS provider do next?",
                     options: [
                         {t: "The patient likely has a right ventricular (RV) infarction complicating his inferior STEMI. NTG reduced preload, which is critical for RV preload-dependent cardiac output. Stop NTG, give a 250-500 mL NS fluid bolus, and prepare for possible transcutaneous pacing for the bradycardia", f: "Correct Inferior STEMI often involves the right ventricle. RV infarction makes the patient preload-dependent (the RV cannot pump against high resistance). NTG reduces venous return (preload), which can cause severe hypotension in RV infarction. Treatment: stop NTG, give IV fluids aggressively (500 mL-1 L NS bolus to restore preload), monitor for worsening bradycardia, and transport to a PCI centre."},
-                        {t: "The NTG was too strong for this patient. The EMT should have started with a lower dose. Administer epinephrine 0.3 mg IM to raise the blood pressure and continue transport per protocol", f: "Incorrect The BP drop after NTG in a patient with an inferior STEMI is classic for RV infarction until proven otherwise. Inferior STEMI + NTG-induced hypotension = suspect RV infarction. The appropriate response is to stop NTG, give IV fluids, and notify the receiving facility. Epinephrine would increase myocardial oxygen demand and could worsen the infarction size."}
+                        {t: "The NTG was too strong for this patient. The EMS provider should have started with a lower dose. Administer epinephrine 0.3 mg IM to raise the blood pressure and continue transport per protocol", f: "Incorrect The BP drop after NTG in a patient with an inferior STEMI is classic for RV infarction until proven otherwise. Inferior STEMI + NTG-induced hypotension = suspect RV infarction. The appropriate response is to stop NTG, give IV fluids, and notify the receiving facility. Epinephrine would increase myocardial oxygen demand and could worsen the infarction size."}
                     ],
                     correct: 0,
                     explanation: "This scenario tests understanding of pharmacodynamics and contraindications. NTG reduces preload (venous dilation) and afterload (arterial dilation). In RV infarction (common with inferior STEMI), the right ventricle cannot generate enough pressure to pump against resistance it relies on adequate preload (venous return). NTG removes that preload, causing catastrophic hypotension. The 3 signs of RV infarction: 1) Inferior STEMI on ECG, 2) Hypotension after NTG, 3) Clear lung fields (no pulmonary oedema). Treatment: fluids, stop NTG, consider pacing, transport to PCI centre.",
@@ -266,11 +266,11 @@ window.CPG_DATA = {
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Routes of Administration</h3>
 
                 <h4>Overview - Matching Route to Clinical Need</h4>
-                <p>The <strong>route of administration</strong> determines how quickly a drug takes effect, what dose is needed, and which clinical situations it is appropriate for. EMTs must select the correct route based on the patient condition a patient in cardiac arrest cannot take oral medication, and a patient with anaphylaxis needs IM epinephrine immediately, not a slow IV infusion. The route affects <strong>bioavailability</strong>, <strong>onset of action</strong>, <strong>peak concentration</strong>, and <strong>duration of effect</strong>.</p>
+                <p>The <strong>route of administration</strong> determines how quickly a drug takes effect, what dose is needed, and which clinical situations it is appropriate for. EMS providers must select the correct route based on the patient condition a patient in cardiac arrest cannot take oral medication, and a patient with anaphylaxis needs IM epinephrine immediately, not a slow IV infusion. The route affects <strong>bioavailability</strong>, <strong>onset of action</strong>, <strong>peak concentration</strong>, and <strong>duration of effect</strong>.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
-                        <tr><th>Route</th><th>Speed of Onset</th><th>Bypasses First-Pass?</th><th>Common EMT Uses</th></tr>
+                        <tr><th>Route</th><th>Speed of Onset</th><th>Bypasses First-Pass?</th><th>Common EMS provider Uses</th></tr>
                     </thead>
                     <tbody>
                         <tr><td><strong>IV</strong> (Intravenous)</td><td>Immediate (15-60 sec)</td><td>Yes</td><td>Cardiac arrest, severe shock, any critical medication</td></tr>
@@ -281,19 +281,19 @@ window.CPG_DATA = {
                         <tr><td><strong>IM</strong> (Intramuscular)</td><td>Moderate (5-15 min)</td><td>Yes</td><td>Epinephrine for anaphylaxis, glucagon for hypoglycaemia</td></tr>
                         <tr><td><strong>PO</strong> (Oral)</td><td>Slow (15-60 min)</td><td>No</td><td>Aspirin for ACS, activated charcoal (rare)</td></tr>
                         <tr><td><strong>PR</strong> (Rectal)</td><td>Moderate (5-15 min)</td><td>Partial</td><td>Diazepam for seizure (if IV/IN not available)</td></tr>
-                        <tr><td><strong>Topical/Transdermal</strong></td><td>Slow (30 min-hours)</td><td>Yes</td><td>Not commonly used by EMTs; patient may have a patch (NTG, fentanyl, nicotine)</td></tr>
+                        <tr><td><strong>Topical/Transdermal</strong></td><td>Slow (30 min-hours)</td><td>Yes</td><td>Not commonly used by EMS providers; patient may have a patch (NTG, fentanyl, nicotine)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Oral (PO) Route</h4>
-                <p>The oral route is the most common medication route in medicine but the <strong>least desirable in most prehospital emergencies</strong>. Absorption is slow and variable because the drug must pass through the GI tract and undergo <strong>first-pass metabolism in the liver</strong>. The patient must be conscious, alert, and able to swallow safely aspiration risk is significant in patients with altered mental status, seizures, or vomiting. <strong>EMT uses:</strong> aspirin for chest pain (chewed for faster buccal absorption, not swallowed whole), oral glucose for hypoglycaemia (buccal route between cheek and gum).</p>
+                <p>The oral route is the most common medication route in medicine but the <strong>least desirable in most prehospital emergencies</strong>. Absorption is slow and variable because the drug must pass through the GI tract and undergo <strong>first-pass metabolism in the liver</strong>. The patient must be conscious, alert, and able to swallow safely aspiration risk is significant in patients with altered mental status, seizures, or vomiting. <strong>EMS provider uses:</strong> aspirin for chest pain (chewed for faster buccal absorption, not swallowed whole), oral glucose for hypoglycaemia (buccal route between cheek and gum).</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl:</strong> When giving aspirin for ACS, instruct the patient to <strong>chew the tablet(s)</strong> rather than swallowing them whole. Chewing breaks the tablet into small particles, increasing the surface area for absorption through the buccal mucosa and stomach. This achieves therapeutic antiplatelet effect in ~10-15 minutes versus ~30 minutes for whole tablets.
                 </div>
 
                 <h4>Inhaled / Nebulised Route</h4>
-                <p>Drugs delivered by inhalation are absorbed directly through the alveolar-capillary membrane in the lungs, providing <strong>rapid systemic absorption equivalent to IV</strong> for some drugs (e.g., albuterol). The drug is mixed with normal saline in a nebuliser compressed oxygen or air creates a fine mist that the patient breathes in over 5-15 minutes. <strong>Benefits:</strong> delivers drug directly to the site of action (lungs) for respiratory conditions, rapid absorption, minimal systemic side effects compared to systemic administration. <strong>EMT uses:</strong> albuterol (beta-2 agonist) for asthma, COPD exacerbation, and anaphylaxis-associated wheezing. <strong>Metered-dose inhalers (MDIs)</strong> with a spacer or holding chamber may also be used per protocol (assist patient with their own inhaler).</p>
+                <p>Drugs delivered by inhalation are absorbed directly through the alveolar-capillary membrane in the lungs, providing <strong>rapid systemic absorption equivalent to IV</strong> for some drugs (e.g., albuterol). The drug is mixed with normal saline in a nebuliser compressed oxygen or air creates a fine mist that the patient breathes in over 5-15 minutes. <strong>Benefits:</strong> delivers drug directly to the site of action (lungs) for respiratory conditions, rapid absorption, minimal systemic side effects compared to systemic administration. <strong>EMS provider uses:</strong> albuterol (beta-2 agonist) for asthma, COPD exacerbation, and anaphylaxis-associated wheezing. <strong>Metered-dose inhalers (MDIs)</strong> with a spacer or holding chamber may also be used per protocol (assist patient with their own inhaler).</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Important:</strong> Nebulised albuterol is a <strong>beta-2 selective agonist</strong>, but at high doses it can cross-stimulate beta-1 receptors, causing tachycardia, palpitations, and tremors. Monitor the patient heart rate and cardiac rhythm during administration. In patients with known cardiac disease, use caution and be prepared to stop if significant tachycardia or dysrhythmias develop.
@@ -314,9 +314,9 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Intramuscular (IM) Route</h4>
-                <p>The IM route delivers medication into a <strong>skeletal muscle belly</strong>, which has a rich blood supply providing moderate absorption speed (faster than SQ/PO but slower than IV/IO). <strong>Needle size for IM:</strong> 22-25 gauge, length varies by injection site and patient size 1 inch for deltoid (average adult), 1-1.5 inches for vastus lateralis, 1.5-2 inches for ventrogluteal (larger patients may need longer needles to reach muscle). Volume limit: deltoid up to 1 mL, vastus lateralis up to 2 mL, ventrogluteal up to 3-4 mL in adults. <strong>Sites:</strong> deltoid (upper arm epinephrine auto-injectors, vaccines), vastus lateralis (lateral thigh preferred in children, glucagon IM), ventrogluteal (hip large muscle, minimal risk of hitting nerves/vessels, preferred for larger volumes). <strong>EMT uses:</strong> epinephrine 1:1000 for anaphylaxis, glucagon for hypoglycaemia (if no IV access), diphenhydramine for allergic reactions, naloxone IM (if IN not available).</p>
+                <p>The IM route delivers medication into a <strong>skeletal muscle belly</strong>, which has a rich blood supply providing moderate absorption speed (faster than SQ/PO but slower than IV/IO). <strong>Needle size for IM:</strong> 22-25 gauge, length varies by injection site and patient size 1 inch for deltoid (average adult), 1-1.5 inches for vastus lateralis, 1.5-2 inches for ventrogluteal (larger patients may need longer needles to reach muscle). Volume limit: deltoid up to 1 mL, vastus lateralis up to 2 mL, ventrogluteal up to 3-4 mL in adults. <strong>Sites:</strong> deltoid (upper arm epinephrine auto-injectors, vaccines), vastus lateralis (lateral thigh preferred in children, glucagon IM), ventrogluteal (hip large muscle, minimal risk of hitting nerves/vessels, preferred for larger volumes). <strong>EMS provider uses:</strong> epinephrine 1:1000 for anaphylaxis, glucagon for hypoglycaemia (if no IV access), diphenhydramine for allergic reactions, naloxone IM (if IN not available).</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>IM Site</th><th>Location</th><th>Needle Length (Adult)</th><th>Max Volume</th><th>Best For</th></tr>
                     </thead>
@@ -325,19 +325,19 @@ window.CPG_DATA = {
                         <tr><td>Vastus Lateralis</td><td>Lateral mid-thigh, midpoint between greater trochanter and lateral knee</td><td>1-1.5 inch / 25-38 mm</td><td>2 mL</td><td>Children, glucagon, large-volume IM</td></tr>
                         <tr><td>Ventrogluteal</td><td>Gluteus medius locate with palm on greater trochanter, index finger on ASIS, middle finger on iliac crest</td><td>1.5-2 inch / 38-50 mm</td><td>3-4 mL</td><td>Largest volume, safest (avoids sciatic nerve)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Sublingual (SL) Route</h4>
-                <p>The sublingual route places the medication <strong>under the tongue</strong>, where it is absorbed directly through the sublingual mucosa into the systemic circulation. This route <strong>bypasses first-pass metabolism</strong> because venous drainage from the sublingual area goes directly into the superior vena cava, avoiding the portal circulation. Onset is rapid (2-5 minutes). The patient must have an intact oral mucosa and be able to cooperate (hold the medication under the tongue without swallowing). <strong>EMT use:</strong> nitroglycerin tablets or spray for angina/ACS. The spray is administered onto or under the tongue. Advise the patient not to swallow or rinse the mouth after administration.</p>
+                <p>The sublingual route places the medication <strong>under the tongue</strong>, where it is absorbed directly through the sublingual mucosa into the systemic circulation. This route <strong>bypasses first-pass metabolism</strong> because venous drainage from the sublingual area goes directly into the superior vena cava, avoiding the portal circulation. Onset is rapid (2-5 minutes). The patient must have an intact oral mucosa and be able to cooperate (hold the medication under the tongue without swallowing). <strong>EMS provider use:</strong> nitroglycerin tablets or spray for angina/ACS. The spray is administered onto or under the tongue. Advise the patient not to swallow or rinse the mouth after administration.</p>
 
                 <h4>Intranasal (IN) Route</h4>
-                <p>The intranasal route delivers medication <strong>onto the nasal mucosa</strong>, which is rich in blood vessels, allowing rapid absorption directly into the systemic circulation. It <strong>bypasses first-pass metabolism</strong> and provides an onset nearly as fast as IV for some drugs (1-5 minutes). <strong>Advantages:</strong> no needles required, easy to administer, rapid absorption, no IV access needed. <strong>Limitations:</strong> volume-limited (max ~1 mL per nostril in adults, less in children), may be less effective in patients with nasal congestion, epistaxis, or facial trauma. <strong>EMT uses:</strong> naloxone (Narcan) for opioid overdose, midazolam for seizures, fentanyl for pain. <strong>Administration technique:</strong> use a mucosal atomisation device (MAD) attached to a syringe the atomiser creates fine droplets that coat the nasal mucosa. Administer half the dose in each nostril. Gently close the nostril after administration to minimise runoff.</p>
+                <p>The intranasal route delivers medication <strong>onto the nasal mucosa</strong>, which is rich in blood vessels, allowing rapid absorption directly into the systemic circulation. It <strong>bypasses first-pass metabolism</strong> and provides an onset nearly as fast as IV for some drugs (1-5 minutes). <strong>Advantages:</strong> no needles required, easy to administer, rapid absorption, no IV access needed. <strong>Limitations:</strong> volume-limited (max ~1 mL per nostril in adults, less in children), may be less effective in patients with nasal congestion, epistaxis, or facial trauma. <strong>EMS provider uses:</strong> naloxone (Narcan) for opioid overdose, midazolam for seizures, fentanyl for pain. <strong>Administration technique:</strong> use a mucosal atomisation device (MAD) attached to a syringe the atomiser creates fine droplets that coat the nasal mucosa. Administer half the dose in each nostril. Gently close the nostril after administration to minimise runoff.</p>
 
                 <h4>Rectal (PR) Route</h4>
-                <p>The rectal route is used when <strong>no other route is available</strong> the patient is actively seizing (cannot take PO/IN), has no IV access, and IM is not appropriate. The rectal mucosa is vascular and provides moderate absorption. Some (but not all) rectal absorption bypasses first-pass metabolism (approximately 50% of rectal venous drainage goes into the systemic circulation directly). <strong>EMT use:</strong> diazepam rectal gel (Diastat) for status epilepticus typically used in paediatric patients or when IV/IN/IM routes are not feasible. <strong>Administration:</strong> lubricate the rectal tip, insert 2-4 cm (less in children), administer the dose, and hold the buttocks together for 3-5 minutes to retain the medication.</p>
+                <p>The rectal route is used when <strong>no other route is available</strong> the patient is actively seizing (cannot take PO/IN), has no IV access, and IM is not appropriate. The rectal mucosa is vascular and provides moderate absorption. Some (but not all) rectal absorption bypasses first-pass metabolism (approximately 50% of rectal venous drainage goes into the systemic circulation directly). <strong>EMS provider use:</strong> diazepam rectal gel (Diastat) for status epilepticus typically used in paediatric patients or when IV/IN/IM routes are not feasible. <strong>Administration:</strong> lubricate the rectal tip, insert 2-4 cm (less in children), administer the dose, and hold the buttocks together for 3-5 minutes to retain the medication.</p>
 
                 <h4>Topical / Transdermal Route</h4>
-                <p>The topical/transdermal route delivers medication through the skin for <strong>slow, sustained absorption</strong>. This route bypasses first-pass metabolism but has a very slow onset (30 minutes to hours). It is not commonly used by EMTs for medication administration, but EMTs must be aware of <strong>transdermal patches</strong> that patients may be wearing: nitroglycerin (angina), fentanyl (chronic pain), nicotine (smoking cessation), scopolamine (motion sickness), clonidine (hypertension), estrogen (HRT). <strong>Key warning:</strong> if a patient becomes unstable, check for transdermal patches and <strong>remove them</strong> a patient with an NTG patch on during cardiac arrest or hypotension may have excessive vasodilation contributing to shock. Wear gloves when removing patches to avoid absorbing the medication yourself.</p>
+                <p>The topical/transdermal route delivers medication through the skin for <strong>slow, sustained absorption</strong>. This route bypasses first-pass metabolism but has a very slow onset (30 minutes to hours). It is not commonly used by EMS providers for medication administration, but EMS providers must be aware of <strong>transdermal patches</strong> that patients may be wearing: nitroglycerin (angina), fentanyl (chronic pain), nicotine (smoking cessation), scopolamine (motion sickness), clonidine (hypertension), estrogen (HRT). <strong>Key warning:</strong> if a patient becomes unstable, check for transdermal patches and <strong>remove them</strong> a patient with an NTG patch on during cardiac arrest or hypotension may have excessive vasodilation contributing to shock. Wear gloves when removing patches to avoid absorbing the medication yourself.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical for NREMT - Route Comparison:</strong><br/>
@@ -385,7 +385,7 @@ window.CPG_DATA = {
                     explanation: "The AHA recommends moving to IO access after 2 failed IV attempts or 90 seconds in cardiac arrest. The IO route is equivalent to IV for both medications and fluids same drugs, same doses. Benefits: non-collapsible vein (bone marrow), rapid absorption, high success rate. The endotracheal route is no longer recommended for routine medication administration in cardiac arrest (inconsistent absorption, higher doses required)."
                 },
                 {
-                    q: "[HARD] A 72-year-old female with known CAD presents with chest pressure. She has a prescription for nitroglycerin 0.4 mg SL spray. The patient tells you, I always just spray it on top of my tongue and swallow it it works best that way. What should the EMT do?",
+                    q: "[HARD] A 72-year-old female with known CAD presents with chest pressure. She has a prescription for nitroglycerin 0.4 mg SL spray. The patient tells you, I always just spray it on top of my tongue and swallow it it works best that way. What should the EMS provider do?",
                     options: [
                         "Instruct the patient that NTG must be sprayed ONTO or UNDER the tongue (sublingually) and not swallowed the sublingual route bypasses first-pass metabolism in the liver, which would otherwise inactivate the drug",
                         "The patient method is acceptable any contact with oral mucosa will provide absorption. Reassure the patient and continue",
@@ -436,7 +436,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_2_3",
                     scenario: "Your unit is called to a 22-year-old male found unresponsive with suspected opioid overdose. Bystanders report he shot up about 15 minutes ago. The patient has a respiratory rate of 4-6/min, pinpoint pupils, and is minimally responsive to sternal rub. SpO2 is 85% and dropping. Your protocol allows naloxone via IN, IM, or IV. You have a MAD (mucosal atomisation device) and a vial of naloxone (2 mg/2 mL). The patient has visible injection sites in both antecubital fossae but you cannot find a suitable vein for IV access quickly.",
-                    question: "Which route and technique should the EMT choose for naloxone administration?",
+                    question: "Which route and technique should the EMS provider choose for naloxone administration?",
                     options: [
                         {t: "Administer intranasal (IN) naloxone using the MAD device 1 mg (1 mL) in each nostril. This route is needle-free, rapid (1-5 min onset), and bypasses first-pass metabolism. It is ideal for opioid overdose where speed is critical and IV access is not immediately available", f: "Correct IN naloxone is an excellent first-line choice for suspected opioid overdose. The MAD atomiser creates a fine mist for rapid absorption across the nasal mucosa. Advantages: no needle stick (important for a patient with known IV drug use reduces bloodborne pathogen risk), rapid onset, easy administration, no IV access needed. Dose: 2 mg total (1 mg/nostril). If no response in 2-3 minutes, repeat per protocol (may need higher doses for fentanyl)."},
                         {t: "Attempt IV access in a foot vein or external jugular IV naloxone has the fastest onset and allows precise dose titration. IO access should be established if IV is not quickly obtainable", f: "Incorrect While IV would provide the fastest onset, the question states IV access is not quickly obtainable. In the patient with respiratory rate of 4/min, spending time trying to access a difficult vein delays life-saving treatment. IN naloxone is rapid enough (1-5 min) and can be administered within seconds. IM is also an option (5-15 min onset) but IN is generally preferred for first-line treatment in uncomplicated opioid overdose. Begin BVM ventilation while the naloxone takes effect."}
@@ -460,7 +460,7 @@ window.CPG_DATA = {
                 <h4>The 5 Original Rights (and Their Expanded Versions)</h4>
                 <p>Medication administration is one of the highest-risk skills in EMS. Errors can cause patient harm, legal liability, and loss of certification. The <strong>Rights of Medication Administration</strong> form a systematic framework that, when followed consistently, prevents the vast majority of medication errors. There are <strong>5 original rights</strong>, and modern practice recognises <strong>10 expanded rights</strong>:</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>#</th><th>Right</th><th>Original</th><th>Expanded What This Really Means</th></tr>
                     </thead>
@@ -472,11 +472,11 @@ window.CPG_DATA = {
                         <tr><td>5</td><td><strong>Right Time</strong></td><td>Administer at the correct time</td><td>Document the time of administration accurately. Note: document AFTER giving the medication, not before pre-documentation can lead to double-dosing if the administration is interrupted</td></tr>
                         <tr><td>6</td><td><strong>Right Indication</strong></td><td>Verify the medication is indicated</td><td>Confirm the patient condition matches the drug indication per protocol. Does this patient meet the criteria for this medication?</td></tr>
                         <tr><td>7</td><td><strong>Right Documentation</strong></td><td>Record the administration accurately</td><td>Complete the medication administration record (MAR) and patient care report (PCR) with drug name, dose, route, time, patient response, and any adverse effects</td></tr>
-                        <tr><td>8</td><td><strong>Right to Refuse</strong></td><td>Respect patient autonomy</td><td>A patient with capacity has the right to refuse any medication. The EMT must: ensure the patient has capacity, explain the risks of refusal, obtain informed refusal, and document thoroughly</td></tr>
+                        <tr><td>8</td><td><strong>Right to Refuse</strong></td><td>Respect patient autonomy</td><td>A patient with capacity has the right to refuse any medication. The EMS provider must: ensure the patient has capacity, explain the risks of refusal, obtain informed refusal, and document thoroughly</td></tr>
                         <tr><td>9</td><td><strong>Right Assessment</strong></td><td>Assess BEFORE giving the drug</td><td>Obtain baseline vital signs and perform protocol-specific assessments: BP before NTG, lung sounds before albuterol, blood glucose before glucagon/glucose</td></tr>
                         <tr><td>10</td><td><strong>Right Evaluation</strong></td><td>Reassess AFTER giving the drug</td><td>Monitor for therapeutic response AND adverse effects. Recheck vital signs at appropriate intervals. Document the patient response</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical NREMT Concept The Three-Check System:</strong> The single most effective error-prevention strategy in EMS is the <strong>3-check system</strong>. Every time you pick up a medication, CHECK THE LABEL. This means three separate label checks:<br/>
@@ -525,8 +525,8 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Right Assessment - BEFORE Medication Administration</h4>
-                <p>Assessment before medication administration is a safety check AND a legal requirement. The EMT must confirm that the drug is safe and indicated for this specific patient at this specific time. <strong>Pre-administration assessments by medication:</strong></p>
-                <table>
+                <p>Assessment before medication administration is a safety check AND a legal requirement. The EMS provider must confirm that the drug is safe and indicated for this specific patient at this specific time. <strong>Pre-administration assessments by medication:</strong></p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Medication</th><th>Required Pre-Assessment</th><th>What You Must Verify</th></tr>
                     </thead>
@@ -539,7 +539,7 @@ window.CPG_DATA = {
                         <tr><td>Aspirin</td><td>Chest pain history, allergies, bleeding</td><td>Symptoms consistent with ACS. No active bleeding, no known allergy, no recent GI bleed, no suspected aortic dissection</td></tr>
                         <tr><td>Ondansetron</td><td>Nausea/vomiting assessment, ECG (if available)</td><td>Known QT prolongation is a relative contraindication. Nausea/vomiting present</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Right Evaluation - AFTER Medication Administration</h4>
                 <p>Medication administration is not complete when the drug enters the patient it is complete when you have <strong>evaluated the patient response</strong>. This reassessment provides critical information about the drug effectiveness and any adverse effects:</p>
@@ -551,7 +551,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Right to Refuse</h4>
-                <p>A patient with decision-making capacity has the legal and ethical right to refuse any medical treatment, including life-saving medications. The EMT role is not to force treatment but to <strong>ensure the patient is making an informed decision</strong>:</p>
+                <p>A patient with decision-making capacity has the legal and ethical right to refuse any medical treatment, including life-saving medications. The EMS provider role is not to force treatment but to <strong>ensure the patient is making an informed decision</strong>:</p>
                 <ul>
                     <li><strong>Assess capacity:</strong> Does the patient understand their situation, the proposed treatment, the risks of refusal, and the alternatives? Can they communicate a reasoned decision? Patients with altered mental status, dementia, intoxication, or severe hypoxia may lack capacity.</li>
                     <li><strong>Inform the patient:</strong> Explain in clear terms what the medication is, what it is for, what happens if they do not take it, and what alternatives exist (if any).</li>
@@ -565,7 +565,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Summary - The Medication Administration Checklist</h4>
-                <p>Before giving any medication, the EMT should mentally (or verbally, with a partner) run through this checklist:</p>
+                <p>Before giving any medication, the EMS provider should mentally (or verbally, with a partner) run through this checklist:</p>
                 <ol>
                     <li><strong>Right patient:</strong> Verified identity using >=2 identifiers</li>
                     <li><strong>Right drug:</strong> 3-check system completed (label checked x 3)</li>
@@ -585,7 +585,7 @@ window.CPG_DATA = {
                 { question: "What are the 5 original rights of medication administration?", answer: "Right patient, right drug, right dose, right route, right time.", category: "5 Rights" },
                 { question: "What are the 5 additional expanded rights of medication administration?", answer: "Right indication, right documentation, right to refuse, right assessment (before), and right evaluation (after).", category: "Expanded Rights" },
                 { question: "What is the 3-check system and when are the three checks performed?", answer: "Check 1: when removing medication from storage. Check 2: when preparing the medication. Check 3: immediately before administering. Each check verifies drug name, concentration, dose, expiration date.", category: "3-Check System" },
-                { question: "How should an EMT verify patient identity before giving a medication?", answer: "Use at least 2 patient identifiers: check the ID band, ask the patient to state name and DOB, or verify with family/caregiver. Do NOT use room number or bed number.", category: "Right Patient" },
+                { question: "How should an EMS provider verify patient identity before giving a medication?", answer: "Use at least 2 patient identifiers: check the ID band, ask the patient to state name and DOB, or verify with family/caregiver. Do NOT use room number or bed number.", category: "Right Patient" },
                 { question: "What pre-administration assessments are required before giving nitroglycerin, albuterol, and glucagon?", answer: "NTG: BP (must be >=90-100 mmHg), no PDE-5 inhibitor use. Albuterol: lung sounds (wheezing), heart rate, SpO2. Glucagon: confirmed blood glucose level <70 mg/dL.", category: "Right Assessment" },
                 { question: "What is the correct timing for documenting a medication on the PCR?", answer: "Document AFTER administering the medication, not before. Pre-documentation can lead to double-dosing if the administration is interrupted.", category: "Right Documentation" },
                 { question: "What are the three components of an informed medication refusal?", answer: "1) Patient has decision-making capacity. 2) Patient understands the risks of refusal and benefits of treatment. 3) Refusal is documented thoroughly on the PCR with the patient stated reasons.", category: "Right to Refuse" },
@@ -594,7 +594,7 @@ window.CPG_DATA = {
 
             quiz: [
                 {
-                    q: "An EMT is preparing to administer albuterol to a 6-year-old child with asthma. Which of the following represents the CORRECT application of the 3-check system?",
+                    q: "An EMS provider is preparing to administer albuterol to a 6-year-old child with asthma. Which of the following represents the CORRECT application of the 3-check system?",
                     options: [
                         "Check the label once when selecting the medication from the drug box since you are familiar with albuterol, additional checks are unnecessary",
                         "Check the label when removing from storage, again when preparing the nebuliser, and a third time at the patient bedside before administration verbalising the drug name and concentration each time",
@@ -605,7 +605,7 @@ window.CPG_DATA = {
                     explanation: "The 3-check system requires THREE independent label verifications: 1) when removing from storage, 2) when preparing, and 3) before administration. Verbalising each check out loud with a partner (read back) is a best practice that improves accuracy. Checking only once or relying on familiarity is a common source of medication errors even experienced providers make mistakes when they skip checks."
                 },
                 {
-                    q: "You are called to a 55-year-old male with chest pain. He has a prescription for nitroglycerin 0.4 mg SL. His SBP is 96 mmHg. He tells you he took Viagra (sildenafil) about 36 hours ago for erectile dysfunction. What should the EMT do?",
+                    q: "You are called to a 55-year-old male with chest pain. He has a prescription for nitroglycerin 0.4 mg SL. His SBP is 96 mmHg. He tells you he took Viagra (sildenafil) about 36 hours ago for erectile dysfunction. What should the EMS provider do?",
                     options: [
                         "Administer NTG the SBP is above 90 and 36 hours is long enough since the Viagra",
                         "Do NOT administer NTG PDE-5 inhibitors (sildenafil, tadalafil) are contraindicated with NTG. Even 36 hours may be within the window (tadalafil up to 48 hours). Contact medical control for guidance",
@@ -624,10 +624,10 @@ window.CPG_DATA = {
                         "Call medical control to confirm the order, but administer the medication while waiting time is brain"
                     ],
                     correct: 1,
-                    explanation: "Multiple rights are being violated: 1) Right patient verify identity independently. 2) Right indication the patient is not currently seizing. 3) Right dose 10 mg exceeds the weight-based protocol (0.1 mg/kg x 70 kg = 7 mg). 4) Right assessment no confirmation of active seizure activity. The EMT must independently verify all rights before administering. The fact that a nurse handed you the medication does not relieve you of your responsibility to perform the checks yourself."
+                    explanation: "Multiple rights are being violated: 1) Right patient verify identity independently. 2) Right indication the patient is not currently seizing. 3) Right dose 10 mg exceeds the weight-based protocol (0.1 mg/kg x 70 kg = 7 mg). 4) Right assessment no confirmation of active seizure activity. The EMS provider must independently verify all rights before administering. The fact that a nurse handed you the medication does not relieve you of your responsibility to perform the checks yourself."
                 },
                 {
-                    q: "After administering nebulised albuterol to a 10-year-old with asthma, what is the MOST important post-administration assessment the EMT should perform?",
+                    q: "After administering nebulised albuterol to a 10-year-old with asthma, what is the MOST important post-administration assessment the EMS provider should perform?",
                     options: [
                         "Check the blood glucose level albuterol can cause hypoglycaemia",
                         "Reassess lung sounds, respiratory rate, SpO2, and heart rate evaluate for improvement in air movement AND for adverse effects (tachycardia, tremor)",
@@ -645,7 +645,7 @@ window.CPG_DATA = {
                     scenario: "You and your partner respond to a 77-year-old female with shortness of breath at a skilled nursing facility. The nurse reports the patient has COPD and is having a flare-up. As you assess the patient, your partner opens the drug box and takes out the albuterol nebuliser. Without checking the patient identity or vital signs, he hands you the nebuliser and says, Get this going. The patient is confused and cannot confirm her name. The nurse points and says, That Mrs. Garcia.",
                     question: "What is the MOST appropriate response to this situation?",
                     options: [
-                        {t: "Before administering, STOP and perform the required checks: verify the patient identity using at least 2 identifiers (check ID band, ask the nurse to confirm name/DOB from the chart), assess lung sounds to confirm wheezing, and obtain baseline vital signs (HR, RR, SpO2, BP). If wheezing is present, administer albuterol. If not present or unknown, hold the medication and reassess", f: "Correct The EMT must independently verify all 10 rights before administering any medication. The partner speed is not an excuse to skip safety checks. Even in a routine COPD patient, the nurse could be wrong about the patient identity or condition. The patient confusion makes identification even more critical check the ID band and the chart. Assess lung sounds if no wheezing is present, albuterol is not indicated."},
+                        {t: "Before administering, STOP and perform the required checks: verify the patient identity using at least 2 identifiers (check ID band, ask the nurse to confirm name/DOB from the chart), assess lung sounds to confirm wheezing, and obtain baseline vital signs (HR, RR, SpO2, BP). If wheezing is present, administer albuterol. If not present or unknown, hold the medication and reassess", f: "Correct The EMS provider must independently verify all 10 rights before administering any medication. The partner speed is not an excuse to skip safety checks. Even in a routine COPD patient, the nurse could be wrong about the patient identity or condition. The patient confusion makes identification even more critical check the ID band and the chart. Assess lung sounds if no wheezing is present, albuterol is not indicated."},
                         {t: "Administer the albuterol as your partner instructed time is critical in a COPD exacerbation and the nurse has confirmed the identity. You can document the vitals after starting the treatment", f: "Incorrect Skipping patient identification and pre-administration assessment is a medication error waiting to happen. The nurse may be mistaken, the patient may have had a different condition (CHF exacerbation sounds similar but requires different treatment), and giving albuterol without confirming wheezing is against protocol. Always perform the rights in order: identify the patient, assess the indication, then administer."}
                     ],
                     correct: 0,
@@ -655,10 +655,10 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_3_2",
                     scenario: "You are treating a 42-year-old male with severe abdominal pain. Per protocol, you may administer ondansetron (Zofran) ODT 4 mg for nausea and fentanyl 50 mcg IV for pain. The patient weight is approximately 80 kg. You have established IV access. As you draw up the fentanyl, you note the vial says Fentanyl 100 mcg/2 mL (50 mcg/mL). You plan to give 1 mL (50 mcg). Your partner says, That bag says 100 mcg per 2 mL you only need 1 mL, so that 50 mcg. Looks good. However, you note that you accidentally grabbed a vial labelled Fentanyl 250 mcg/5 mL (50 mcg/mL) both concentrations are 50 mcg/mL, just different total volumes. You originally thought the concentration was different.",
-                    question: "What does this near-miss scenario teach about medication safety, and what should the EMT do?",
+                    question: "What does this near-miss scenario teach about medication safety, and what should the EMS provider do?",
                     options: [
                         {t: "Recalculate: 50 mcg dose at 50 mcg/mL concentration = 1 mL. While the total vial volume differs, the concentration is the same, so the prepared volume (1 mL) is correct. However, this near-miss highlights why reading the LABEL CONCENTRATION (not just the total dose on the bag) during the 3-check system is critical always verify both concentration AND total volume", f: "Correct In this case, the dose calculation is still correct because both vials have the same concentration (50 mcg/mL). However, the near-miss demonstrates a common error pattern: checking only the total drug amount on the vial (Fentanyl 100 mcg) without noting the concentration and volume. If the concentration had been different (e.g., 100 mcg/mL vs. 50 mcg/mL), the same volume would have delivered double the intended dose. Always verify: concentration + volume = total dose."},
-                        {t: "Discard the drawn-up medication and start over you used the wrong vial. Administering medication from a vial you accidentally grabbed is unsafe, even if the dose calculation works out. Document the near-miss in your PCR", f: "Incorrect While acknowledging the near-miss is good, discarding the correctly prepared medication is unnecessary in this specific case because the concentration is identical (50 mcg/mL in both vials). The real lesson is about the 3-check system: the EMT must verify the label during preparation (check 2) and notice not just the drug name but the concentration. The near-miss should reinforce the read every word on the label habit."}
+                        {t: "Discard the drawn-up medication and start over you used the wrong vial. Administering medication from a vial you accidentally grabbed is unsafe, even if the dose calculation works out. Document the near-miss in your PCR", f: "Incorrect While acknowledging the near-miss is good, discarding the correctly prepared medication is unnecessary in this specific case because the concentration is identical (50 mcg/mL in both vials). The real lesson is about the 3-check system: the EMS provider must verify the label during preparation (check 2) and notice not just the drug name but the concentration. The near-miss should reinforce the read every word on the label habit."}
                     ],
                     correct: 0,
                     explanation: "This scenario tests understanding of the 3-check system and near-miss analysis. The key learning point: when checking a medication label, verify ALL of the following: 1) Drug name. 2) Concentration (mg/mL, mcg/mL). 3) Total volume in the vial/ampule. 4) Total dose (concentration x volume). 5) Expiration date. 6) Route compatibility. A common error is looking only at the large-print drug name and total dose while ignoring the concentration. Different vials of the same drug may have different concentrations, and confusing them is a frequent cause of medication errors.",
@@ -667,13 +667,13 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_3_3",
                     scenario: "You are called to a private residence for a 60-year-old male with chest pain. He describes substernal chest pressure radiating to his left arm, which started 2 hours ago during yard work. He is pale and diaphoretic. HR 98, BP 146/90, RR 18, SpO2 97%. The patient has no known drug allergies. He refuses aspirin, saying I do not want to take any pills. I will be fine. Just take me to the hospital. He is alert and oriented x 3, understands the risks of not taking aspirin (increased chance of heart damage), and firmly states he prefers not to take medication. He correctly repeats back that aspirin reduces the risk of death from heart attack.",
-                    question: "How should the EMT manage this patient refusal of aspirin?",
+                    question: "How should the EMS provider manage this patient refusal of aspirin?",
                     options: [
-                        {t: "Respect the patient right to refuse he has decision-making capacity (alert, oriented, understands the risks, can communicate a reasoned decision). Explain the risks once more, document the refusal including capacity assessment and the patient stated reasons, transport, and notify the receiving facility of the refusal", f: "Correct This patient demonstrates decision-making capacity: he can understand his situation and the proposed treatment, he understands the risks of refusal (cardiac damage, death), and he can communicate a consistent decision. The EMT cannot force treatment on a capacitated patient. Document thoroughly: capacity assessment, education provided, risks explained, patient response, and time of refusal. Transport and notify the ED of the refusal."},
+                        {t: "Respect the patient right to refuse he has decision-making capacity (alert, oriented, understands the risks, can communicate a reasoned decision). Explain the risks once more, document the refusal including capacity assessment and the patient stated reasons, transport, and notify the receiving facility of the refusal", f: "Correct This patient demonstrates decision-making capacity: he can understand his situation and the proposed treatment, he understands the risks of refusal (cardiac damage, death), and he can communicate a consistent decision. The EMS provider cannot force treatment on a capacitated patient. Document thoroughly: capacity assessment, education provided, risks explained, patient response, and time of refusal. Transport and notify the ED of the refusal."},
                         {t: "The patient clearly lacks capacity because he is refusing a life-saving treatment. Activate implied consent and administer the aspirin. A reasonable person would want aspirin for a heart attack. Document the implied consent on the PCR", f: "Incorrect Refusing a recommended treatment does NOT mean the patient lacks capacity. Capacity is determined by the patient ability to understand, appreciate, reason, and express a choice not by whether they agree with you. This patient is alert, oriented, understands the risks, and can articulate a decision. Implied consent applies only when the patient is unable to consent (unconscious, altered mental status, severe cognitive impairment). A capacitated refusal must be honoured."}
                     ],
                     correct: 0,
-                    explanation: "The right to refuse is one of the 10 expanded rights. Key principles: 1) Capacity is decision-specific a patient may have capacity to refuse aspirin but lack capacity to refuse intubation. 2) A bad decision is not the same as incapacity. 3) The EMT job is to ensure informed refusal, not to coerce compliance. 4) Document: capacity assessment findings, risks explained in terms the patient understood, patient stated reasons, conversations with medical control (if any), and the final disposition. 5) Transport for evaluation the patient may change their mind en route.",
+                    explanation: "The right to refuse is one of the 10 expanded rights. Key principles: 1) Capacity is decision-specific a patient may have capacity to refuse aspirin but lack capacity to refuse intubation. 2) A bad decision is not the same as incapacity. 3) The EMS provider job is to ensure informed refusal, not to coerce compliance. 4) Document: capacity assessment findings, risks explained in terms the patient understood, patient stated reasons, conversations with medical control (if any), and the final disposition. 5) Transport for evaluation the patient may change their mind en route.",
                     kpi: "Correctly assesses decision-making capacity and honours a capacitated patient right to refuse medication"
                 }
             ]
@@ -704,7 +704,7 @@ window.CPG_DATA = {
 
                 <h4>Metric System - Essential Conversions</h4>
                 <p>The metric system is used for all medication calculations in EMS. Memorise these conversions you will use them on every call involving drug calculations.</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Category</th><th>Conversion</th><th>Example</th></tr>
                     </thead>
@@ -714,7 +714,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Household</strong></td><td>1 tsp = 5 mL<br/>1 tbsp = 15 mL<br/>1 cup = 240 mL</td><td>2 tsp = 10 mL (paediatric suspension dosing)</td></tr>
                         <tr><td><strong>Length</strong></td><td>1 inch = 2.54 cm<br/>1 cm = 10 mm</td><td>Catheter length markings, Broselow tape</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Memory Aid - Metric Prefixes:</strong> <strong>KHD</strong> (kilo, hecto, deca) base unit (gram, litre, metre) <strong>dcm</strong> (deci, centi, milli, micro).<br/>
@@ -790,7 +790,7 @@ window.CPG_DATA = {
                 </p>
 
                 <p>The <strong>drop factor</strong> (also called drip factor) is the number of drops (gtts) per millilitre delivered by the IV tubing. It is printed on the IV tubing package. Common drop factors:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Type</th><th>Drop Factor</th><th>Use</th></tr>
                     </thead>
@@ -800,7 +800,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Macrodrip</strong></td><td>20 gtts/mL</td><td>Standard in some systems</td></tr>
                         <tr><td><strong>Microdrip</strong></td><td>60 gtts/mL</td><td>Paediatric infusions, precise low-rate infusions</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <p><strong>Example - Macrodrip (15 gtts/mL):</strong> Infuse 1000 mL NS over 8 hours. Drop factor = 15 gtts/mL.</p>
                 <ul>
@@ -846,16 +846,16 @@ window.CPG_DATA = {
 
                 <h4>IV Bolus vs. IV Piggyback vs. Continuous Infusion</h4>
                 <p>Understanding the difference between these methods of IV drug delivery is important for proper administration:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
-                        <tr><th>Method</th><th>Description</th><th>Rate</th><th>EMT Examples</th></tr>
+                        <tr><th>Method</th><th>Description</th><th>Rate</th><th>EMS provider Examples</th></tr>
                     </thead>
                     <tbody>
                         <tr><td><strong>IV Bolus</strong></td><td>Concentrated drug given rapidly via syringe into the IV port</td><td>Over 1-5 minutes (varies by drug some must be given slowly)</td><td>Ondansetron 4 mg IV push, fentanyl 50 mcg slow IV push</td></tr>
                         <tr><td><strong>IV Piggyback</strong></td><td>Small-volume (50-250 mL) infusion piggybacked into the main IV line via a secondary port</td><td>Over 15-60 minutes (per protocol)</td><td>Antibiotics (not common at EMT level), some medications that require slower infusion</td></tr>
                         <tr><td><strong>Continuous Infusion</strong></td><td>Ongoing infusion of medication diluted in IV fluid, run at a specific rate (mL/hr)</td><td>Continuous, rate set by pump or drip rate</td><td>Fluid resuscitation (NS bolus at 20 mL/kg), medication drips (higher level of care)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>NREMT Focus - Calculation Safety:</strong><br/>
@@ -881,7 +881,7 @@ window.CPG_DATA = {
 
             quiz: [
                 {
-                    q: "A 68-year-old male with chest pain is prescribed aspirin 324 mg. You have 81 mg chewable tablets. How many tablets should the EMT administer?",
+                    q: "A 68-year-old male with chest pain is prescribed aspirin 324 mg. You have 81 mg chewable tablets. How many tablets should the EMS provider administer?",
                     options: [
                         "2 tablets",
                         "3 tablets",
@@ -892,7 +892,7 @@ window.CPG_DATA = {
                     explanation: "Using the desired dose formula: 324 mg / 81 mg/tablet x 1 tablet = 4 tablets. Aspirin 324 mg = four 81 mg baby aspirin. This is a standard antiplatelet dose for ACS (which ranges from 162-324 mg per protocol)."
                 },
                 {
-                    q: "An 8 kg infant has been seizing for 12 minutes. Your protocol orders midazolam 0.1 mg/kg IN. The midazolam vial is labelled 5 mg/mL. How many mL should the EMT administer intranasally?",
+                    q: "An 8 kg infant has been seizing for 12 minutes. Your protocol orders midazolam 0.1 mg/kg IN. The midazolam vial is labelled 5 mg/mL. How many mL should the EMS provider administer intranasally?",
                     options: [
                         "0.08 mL",
                         "0.16 mL",
@@ -914,7 +914,7 @@ window.CPG_DATA = {
                     explanation: "Drops/min = (Volume x Drop Factor) / Time in minutes = (500 mL x 15 gtts/mL) / (4 hrs x 60 min/hr) = 7500 / 240 = 31.25 gtts/min (round to 31 gtts/min). To verify: count drops for 15 seconds you should see approximately 7-8 drops (31 / 4 = 7.75)."
                 },
                 {
-                    q: "[HARD] A confused nursing home patient requires 1 mg of epinephrine IV during a cardiac arrest resuscitation. Your drug box contains two epinephrine vials: Vial A is labelled Epinephrine 1:1000 (1 mg/mL) and Vial B is labelled Epinephrine 1:10,000 (0.1 mg/mL). Which vial should the EMT use and how much should be drawn up?",
+                    q: "[HARD] A confused nursing home patient requires 1 mg of epinephrine IV during a cardiac arrest resuscitation. Your drug box contains two epinephrine vials: Vial A is labelled Epinephrine 1:1000 (1 mg/mL) and Vial B is labelled Epinephrine 1:10,000 (0.1 mg/mL). Which vial should the EMS provider use and how much should be drawn up?",
                     options: [
                         "Use Vial A (1:1000) and draw up 1 mL it contains 1 mg/mL, which is 1 mg in 1 mL",
                         "Use Vial B (1:10,000) and draw up 10 mL it contains 0.1 mg/mL, so you need 10 mL to get 1 mg. This is the correct concentration for IV cardiac arrest epinephrine",
@@ -930,9 +930,9 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_4_1",
                     scenario: "Your unit is dispatched to a 5-year-old child having a seizure. On arrival, the child is actively convulsing generalised tonic-clonic activity with eyes rolled back. The mother reports the seizure started approximately 8 minutes ago. The child has no known medical history and takes no medications. Vital signs: HR 140, BP 100/68, RR laboured, SpO2 92% on room air. The child appears to weigh approximately 18 kg (Mom reports about 40 pounds). Your protocol states: Midazolam 0.1 mg/kg IM for status epilepticus. You have a 5 mL vial of midazolam 5 mg/mL.",
-                    question: "What is the correct dose to administer, and what calculation steps should the EMT perform?",
+                    question: "What is the correct dose to administer, and what calculation steps should the EMS provider perform?",
                     options: [
-                        {t: "Dose = 18 kg x 0.1 mg/kg = 1.8 mg. Volume to draw up = 1.8 mg / 5 mg/mL = 0.36 mL. Administer 0.36 mL IM into the vastus lateralis. Double-check: 18 kg / 2.2 = 40 lbs (matches Mom report). Always confirm patient weight before calculating", f: "Correct The calculation is: 18 kg (weight) x 0.1 mg/kg (protocol dose) = 1.8 mg (total dose). Then convert mg to mL: 1.8 mg / 5 mg/mL (concentration) = 0.36 mL. Administer IM into the vastus lateralis. The EMT should: 1) Verify weight (confirm with Mom + estimate by observation). 2) Calculate dose. 3) Have partner independently calculate. 4) Draw up using the 3-check system. 5) Administer."},
+                        {t: "Dose = 18 kg x 0.1 mg/kg = 1.8 mg. Volume to draw up = 1.8 mg / 5 mg/mL = 0.36 mL. Administer 0.36 mL IM into the vastus lateralis. Double-check: 18 kg / 2.2 = 40 lbs (matches Mom report). Always confirm patient weight before calculating", f: "Correct The calculation is: 18 kg (weight) x 0.1 mg/kg (protocol dose) = 1.8 mg (total dose). Then convert mg to mL: 1.8 mg / 5 mg/mL (concentration) = 0.36 mL. Administer IM into the vastus lateralis. The EMS provider should: 1) Verify weight (confirm with Mom + estimate by observation). 2) Calculate dose. 3) Have partner independently calculate. 4) Draw up using the 3-check system. 5) Administer."},
                         {t: "The child weighs 40 lbs, so the dose is 40 x 0.1 = 4 mg. Volume = 4 / 5 = 0.8 mL. This is a standard paediatric dose for seizure", f: "Incorrect The weight-based formula uses kilograms, not pounds. 40 lbs / 2.2 = ~18 kg, not 40 kg. Using 40 as the weight in kg would overestimate the dose by more than double (4 mg instead of 1.8 mg). This is a classic calculation error failing to convert from pounds to kilograms. Always convert to kg before calculating mg/kg doses."}
                     ],
                     correct: 0,
@@ -944,7 +944,7 @@ window.CPG_DATA = {
                     scenario: "You are treating a 45-year-old female with severe dehydration from vomiting and diarrhoea. She is lethargic, tachycardic (HR 118), and has dry mucous membranes. Her BP is 94/58. Her estimated weight is 70 kg. Your protocol allows a 20 mL/kg NS bolus for signs of hypovolaemic shock. Your IV pump is not working, so you need to use gravity with a macrodrip set (15 gtts/mL).",
                     question: "How much fluid does the patient need, and what is the drip rate if you plan to infuse the bolus over 1 hour?",
                     options: [
-                        {t: "Total volume: 70 kg x 20 mL/kg = 1400 mL. Drip rate: (1400 mL x 15 gtts/mL) / 60 min = 21,000 / 60 = 350 gtts/min. This is very fast use a pressure bag or squeeze the bag to deliver the bolus more rapidly (permissive hypotension, target SBP ~90). For a 20 mL/kg bolus in shock, run it wide open time is not 1 hour but as fast as possible", f: "Correct The 20 mL/kg bolus should be given rapidly, not over 1 hour. Total volume = 1400 mL. While the drip rate calculation for 1 hour is 350 gtts/min, for a shock bolus the EMT should open the roller clamp fully (wide open) or use a pressure bag and monitor the patient. The goal is rapid volume expansion to restore perfusion. Reassess after the bolus: if still hypotensive, a second bolus may be indicated per protocol."},
+                        {t: "Total volume: 70 kg x 20 mL/kg = 1400 mL. Drip rate: (1400 mL x 15 gtts/mL) / 60 min = 21,000 / 60 = 350 gtts/min. This is very fast use a pressure bag or squeeze the bag to deliver the bolus more rapidly (permissive hypotension, target SBP ~90). For a 20 mL/kg bolus in shock, run it wide open time is not 1 hour but as fast as possible", f: "Correct The 20 mL/kg bolus should be given rapidly, not over 1 hour. Total volume = 1400 mL. While the drip rate calculation for 1 hour is 350 gtts/min, for a shock bolus the EMS provider should open the roller clamp fully (wide open) or use a pressure bag and monitor the patient. The goal is rapid volume expansion to restore perfusion. Reassess after the bolus: if still hypotensive, a second bolus may be indicated per protocol."},
                         {t: "Total volume: 1400 mL. Drip rate: 1400 / 60 = 23 mL/hr, which with 15 gtts/mL tubing = 23 gtts/min. Set the drip at 23 drops per minute for 1 hour", f: "Incorrect 1400 mL / 60 min gives the rate in mL/min (23.3 mL/min), not mL/hr. The correct drip rate calculation is (Volume x Drop Factor) / Time in minutes. More importantly, a 20 mL/kg bolus is a rapid infusion it should be given wide open over 15-30 minutes, not slowly over 1 hour. The calculated drip rate of 23 gtts/min would take much too long (over 60 minutes) and fail to treat the shock state."}
                     ],
                     correct: 0,
@@ -954,13 +954,13 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_4_3",
                     scenario: "Your paramedic partner asks you to draw up ondansetron 4 mg IV from a vial labelled Ondansetron 2 mg/mL. After drawing up the medication, your partner says, Actually, the protocol just changed our new ondansetron vials are 4 mg/2 mL. Let me see what you drew up. You show her the 2 mL you have drawn up. She says, That looks about right for 4 mg. You both realise the new concentration (4 mg/2 mL = 2 mg/mL) is the SAME concentration as the old vials your 2 mL draw contains 4 mg. However, at shift change, you hear that another crew accidentally gave a patient 8 mg (the full 4 mg/2 mL vial) because they thought the vial contained 4 mg in total rather than 4 mg per 2 mL.",
-                    question: "What safety system failed, and what can EMTs do to prevent this type of error?",
+                    question: "What safety system failed, and what can EMS providers do to prevent this type of error?",
                     options: [
                         {t: "The label was misread: 4 mg/2 mL means 4 mg per 2 mL (concentration = 2 mg/mL). The crew mistakenly read it as 4 mg total in vial. The 3-check system should catch this: each check must verify the CONCENTRATION, not just the total drug amount. Read the label as 4 mg in 2 mL so 2 mg per mL. Always check: What is the concentration (mg per mL)? What volume do I need for the ordered dose?", f: "Correct This is a classic concentration error. The label 4 mg/2 mL means 4 mg in every 2 mL, equalling a concentration of 2 mg/mL. The crew that misread it thought the entire 2 mL vial contained 4 mg total which was correct! But the dangerous scenario would be if the protocol called for 4 mg and they had a vial labelled 4 mg/mL then a full vial (1 mL) is correct, but the 2 mg/mL concentration requires 2 mL. ALWAYS verify concentration, not just total vial content."},
                         {t: "The crew should have asked the paramedic to draw up the medication rather than doing it themselves. EMTs should never prepare medications this prevents errors", f: "Incorrect EMTs can and should prepare medications under their scope of practice when properly trained. The issue is not who prepares it but HOW it is prepared. The 3-check system applies to everyone: EMT, AEMT, and paramedic alike. The solution is better label reading habits, not restricting who can prepare medications."}
                     ],
                     correct: 0,
-                    explanation: "This scenario highlights a common and dangerous medication error pattern: confusing total vial content with concentration. When a label says 4 mg/2 mL, it means 4 mg per 2 mL (concentration 2 mg/mL). The EMT must calculate: I need 4 mg. The concentration is 2 mg/mL. Volume = 4 mg / 2 mg/mL = 2 mL. The 3-check system should include verifying the concentration, not just the drug name. Best practice: read the label as X mg per Y mL and calculate the needed volume. Never assume the entire vial is a single dose.",
+                    explanation: "This scenario highlights a common and dangerous medication error pattern: confusing total vial content with concentration. When a label says 4 mg/2 mL, it means 4 mg per 2 mL (concentration 2 mg/mL). The EMS provider must calculate: I need 4 mg. The concentration is 2 mg/mL. Volume = 4 mg / 2 mg/mL = 2 mL. The 3-check system should include verifying the concentration, not just the drug name. Best practice: read the label as X mg per Y mL and calculate the needed volume. Never assume the entire vial is a single dose.",
                     kpi: "Identifies concentration labelling errors and applies the correct 3-check system to verify both drug name and concentration"
                 }
             ]
@@ -974,14 +974,14 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Emergency Drug Formulary</h3>
 
-                <p>Every EMT must have a working knowledge of the medications they are authorized to carry and administer. This section provides a comprehensive reference for ALL drugs an EMT may administer or assist with — from foundational BLS drugs like oxygen and oral glucose to advanced medications carried at the ALS level that the EMT may need to assist with or understand. <strong>The NREMT expects you to know the generic name, class, indication, contraindications, dose, route, and key side effects for every drug on your scope.</strong></p>
+                <p>Every EMS provider must have a working knowledge of the medications they are authorized to carry and administer. This section provides a comprehensive reference for ALL drugs an EMS provider may administer or assist with — from foundational BLS drugs like oxygen and oral glucose to advanced medications carried at the ALS level that the EMS provider may need to assist with or understand. <strong>The NREMT expects you to know the generic name, class, indication, contraindications, dose, route, and key side effects for every drug on your scope.</strong></p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Key Point:</strong> Know the <strong>5–10 drugs most commonly used at the EMT scope level</strong>: oxygen, aspirin, nitroglycerin, epinephrine, albuterol, naloxone, oral glucose, and glucagon. For each drug, you must understand <strong>WHY</strong> it is given (indication), <strong>WHEN</strong> it should NOT be given (contraindication), and <strong>WHAT</strong> to monitor for after administration (side effects / adverse effects).
                 </div>
 
                 <h4>Drug Administration — The "Seven Rights"</h4>
-                <p>Before administering ANY medication, the EMT must verify the <strong>Seven Rights</strong> of medication administration. These are the foundation of safe medication practice:</p>
+                <p>Before administering ANY medication, the EMS provider must verify the <strong>Seven Rights</strong> of medication administration. These are the foundation of safe medication practice:</p>
                 <ol>
                     <li><strong>Right Patient</strong> — Confirm patient identity using two identifiers (e.g., name + date of birth). Do NOT rely on room number or bed position.</li>
                     <li><strong>Right Drug</strong> — Check the medication label THREE times (when removing from storage, when preparing, and before administration). Read the label aloud.</li>
@@ -993,10 +993,10 @@ window.CPG_DATA = {
                 </ol>
 
                 <h4>Emergency Drug Formulary — Complete Reference Table</h4>
-                <p>The following table provides comprehensive information for every drug an EMT may encounter in the field. Drugs are organized by category. <strong>Bold text</strong> indicates the generic name; trade names are in parentheses.</p>
+                <p>The following table provides comprehensive information for every drug an EMS provider may encounter in the field. Drugs are organized by category. <strong>Bold text</strong> indicates the generic name; trade names are in parentheses.</p>
 
                 <h4>Oxygen &amp; Respiratory Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1022,10 +1022,10 @@ window.CPG_DATA = {
                             <td><strong>Tachycardia (most common), palpitations, tremors, nervousness, headache</strong>. Hypokalemia (dose-dependent, usually mild). Hyperglycemia at high doses. Paradoxical bronchospasm (rare but serious — discontinue if occurs).</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Cardiovascular Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1061,10 +1061,10 @@ window.CPG_DATA = {
                             <td><strong>Tachycardia, dry mouth/skin, blurred vision (mydriasis), urinary retention, decreased GI motility, flushing, hyperthermia.</strong> CNS: agitation, hallucinations, delirium at high doses. Central anticholinergic syndrome (rare).</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Anaphylaxis &amp; Allergic Reaction Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1090,10 +1090,10 @@ window.CPG_DATA = {
                             <td><strong>Sedation/drowsiness (very common — crosses BBB), dry mouth, blurred vision, urinary retention, constipation.</strong> Overdose: anticholinergic toxidrome (hyperthermia, flushing, dilated pupils, agitation, hallucinations, seizures, coma).</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Opioid Reversal</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1109,10 +1109,10 @@ window.CPG_DATA = {
                             <td><strong>Precipitated opioid withdrawal (N/V/D, piloerection, myalgias, agitation, hypertension, tachycardia).</strong> Pulmonary oedema (rare). <strong>DURATION SHORTER THAN MOST OPIOIDS — patient may re-narcotise.</strong> Do NOT give large boluses to opioid-tolerant patients unnecessarily.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Glucose Management Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1158,10 +1158,10 @@ window.CPG_DATA = {
                             <td>Local irritation at IV site (less than D50). Hyperglycemia, hypokalemia.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Antiemetic</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1177,10 +1177,10 @@ window.CPG_DATA = {
                             <td><strong>Headache, dizziness, constipation, fatigue.</strong> QT prolongation (dose-dependent). Serotonin syndrome (rare, with other serotonergic drugs).</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Sedation, Seizure &amp; Psychiatric Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1236,10 +1236,10 @@ window.CPG_DATA = {
                             <td><strong>Emergence phenomenon (hallucinations, vivid dreams — mitigate with BZD).</strong> Hypertension, tachycardia, laryngospasm (rare — jaw thrust, PPV), increased salivation, nystagmus, myoclonus.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Analgesic Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1265,10 +1265,10 @@ window.CPG_DATA = {
                             <td><strong>Respiratory depression (peak effect delayed 20–30 min after IV — watch for delayed decompensation), hypotension (histamine release — especially with rapid IV push), N/V, constipation, pruritus, miosis.</strong> Histamine release can cause urticaria along the vein — NOT allergy, treat by slowing rate.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Other Important Drugs</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug</th><th>Class</th><th>Indications</th><th>Contraindications</th><th>Dose (Adult)</th><th>Route</th><th>Onset / Peak / Duration</th><th>Key Side Effects</th></tr>
                     </thead>
@@ -1304,12 +1304,12 @@ window.CPG_DATA = {
                             <td><strong>Flushing, warmth (rapid IV push), hypotension, bradycardia, muscle weakness, areflexia (loss of DTRs — monitor patellar reflex), respiratory depression (at high levels), cardiac arrest (extreme levels — give calcium gluconate as antidote).</strong></td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                    <strong>Critical — Drug Formulary Rules for EMTs:</strong>
+                    <strong>Critical — Drug Formulary Rules for EMS providers:</strong>
                     <ul>
-                        <li><strong>Know your scope:</strong> BLS drugs (oxygen, aspirin, oral glucose, IM epinephrine for anaphylaxis, naloxone, albuterol) are carried by most EMT services. ALS drugs (narcotics, paralytics, sedatives, vasopressors) vary by state and local protocol.</li>
+                        <li><strong>Know your scope:</strong> BLS drugs (oxygen, aspirin, oral glucose, IM epinephrine for anaphylaxis, naloxone, albuterol) are carried by most EMS provider services. ALS drugs (narcotics, paralytics, sedatives, vasopressors) vary by state and local protocol.</li>
                         <li><strong>When in doubt, do NOT give:</strong> If you are unsure about the drug, dose, route, or indication — STOP. Ask your partner, contact medical control, or consult your drug reference. It is perfectly acceptable to say "I don't know — let me check."</li>
                         <li><strong>Read the label THREE times:</strong> when you pick up the drug, when you prepare it, and before administration. Read it ALOUD — this engages another sense and catches look-alike errors.</li>
                         <li><strong>Document everything:</strong> Drug name, dose, route, time, patient response, any adverse effects. If you did not document it, it did not happen.</li>
@@ -1330,7 +1330,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "A 62-year-old male with chest pain radiating to his left arm rates his pain 7/10. He has a history of hypertension and angina. Vital signs: HR 98, BP 132/84, RR 18, SpO₂ 97%. He took sildenafil (Viagra) approximately 18 hours ago. The EMT should:",
+                    q: "A 62-year-old male with chest pain radiating to his left arm rates his pain 7/10. He has a history of hypertension and angina. Vital signs: HR 98, BP 132/84, RR 18, SpO₂ 97%. He took sildenafil (Viagra) approximately 18 hours ago. The EMS provider should:",
                     options: [
                         "Administer nitroglycerin 0.4 mg SL and aspirin 324 mg PO (chewed)",
                         "Administer aspirin 324 mg PO chewed but withhold nitroglycerin — sildenafil within 24-48 hours is an absolute contraindication to nitrates due to risk of severe refractory hypotension",
@@ -1341,7 +1341,7 @@ window.CPG_DATA = {
                     explanation: "The use of PDE-5 inhibitors within 24-48 hours is an ABSOLUTE contraindication to nitroglycerin. The interaction potentiates NO-mediated vasodilation causing severe refractory hypotension. Aspirin should still be given — 162-324 mg PO chewed — because it reduces mortality in ACS. Oxygen given only if SpO₂ < 94% (patient is 97%). Always ask about PDE-5 inhibitor use before giving nitroglycerin."
                 },
                 {
-                    q: "A 28-year-old female with asthma is in respiratory distress after eating shellfish. She has urticaria, audible wheezing, facial oedema, and SpO₂ 88% on room air. BP 88/54, HR 122. What is the FIRST medication the EMT should administer?",
+                    q: "A 28-year-old female with asthma is in respiratory distress after eating shellfish. She has urticaria, audible wheezing, facial oedema, and SpO₂ 88% on room air. BP 88/54, HR 122. What is the FIRST medication the EMS provider should administer?",
                     options: [
                         "Albuterol 2.5 mg nebulized for bronchodilation",
                         "Diphenhydramine 50 mg IM for the allergic reaction",
@@ -1352,7 +1352,7 @@ window.CPG_DATA = {
                     explanation: "This is anaphylaxis: allergen + cutaneous + respiratory + haemodynamic involvement. Epinephrine IM is FIRST-LINE and should NOT be delayed. Epi works on alpha-1 (vasoconstriction), beta-1 (positive inotrope/chronotrope), and beta-2 (bronchodilation, decreased mediator release). Albuterol is beta-2 only — helps wheezing but does NOT treat anaphylaxis or hypotension. Diphenhydramine is an adjunct, NOT a replacement. Oxygen should be given but AFTER/DURING epinephrine — do NOT delay epinephrine."
                 },
                 {
-                    q: "[HARD] A 55-year-old homeless male is found unresponsive with pinpoint pupils and RR 6. Friends report he 'does heroin sometimes.' EMT administers naloxone 2 mg IN. Two minutes later, he wakes up extremely agitated, tries to pull out the IV, and attempts to punch the EMT. HR 132, BP 164/98. What is the explanation and appropriate action?",
+                    q: "[HARD] A 55-year-old homeless male is found unresponsive with pinpoint pupils and RR 6. Friends report he 'does heroin sometimes.' EMS provider administers naloxone 2 mg IN. Two minutes later, he wakes up extremely agitated, tries to pull out the IV, and attempts to punch the EMS provider. HR 132, BP 164/98. What is the explanation and appropriate action?",
                     options: [
                         "The patient is seizing — administer diazepam 5 mg IV",
                         "This is precipitated opioid withdrawal from rapid reversal. Use verbal de-escalation, provide reassurance, consider additional naloxone only if respiratory depression recurs. Withdrawal is expected and self-limited",
@@ -1363,7 +1363,7 @@ window.CPG_DATA = {
                     explanation: "Precipitated opioid withdrawal — sudden displacement of heroin from mu-receptors by naloxone causes acute withdrawal (agitation, hypertension, tachycardia). Extremely unpleasant but NOT life-threatening (unless combativeness causes injury). Naloxone should be TITRATED in opioid-dependent patients — start with 0.04-0.1 mg IV and titrate to RR > 12. Once awake and breathing adequately, no MORE naloxone is needed. Key: withdrawal is awful but hypoxia kills."
                 },
                 {
-                    q: "A 7-year-old child with type 1 diabetes is found lethargic and confused. He is sweaty and tachycardic. Blood glucose is 'LOW.' He has a gag reflex and can swallow. The EMT should FIRST:",
+                    q: "A 7-year-old child with type 1 diabetes is found lethargic and confused. He is sweaty and tachycardic. Blood glucose is 'LOW.' He has a gag reflex and can swallow. The EMS provider should FIRST:",
                     options: [
                         "Administer oral glucose 15 g buccal and transport",
                         "Establish IV and give D50 25 g IV",
@@ -1378,7 +1378,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_5_1",
                     scenario: "You are called to a nursing home for a 78-year-old male with altered mental status. Staff reports he has CAD, hypertension, type 2 diabetes, and COPD. Meds: metformin, lisinopril, metoprolol, aspirin. He was found confused and diaphoretic. Vitals: HR 88, BP 142/78, RR 14, SpO₂ 94%. Blood glucose 56 mg/dL. Patient is awake but confused, follows commands, and has palpable gag reflex. He has a peripheral IV in place.",
-                    question: "How should the EMT manage this hypoglycemic patient?",
+                    question: "How should the EMS provider manage this hypoglycemic patient?",
                     options: [
                         {t: "Give oral glucose 15 g buccal since he has a gag reflex and can swallow — he is confused but follows commands and can protect airway. Recheck BG in 15 min. If not improved, consider glucagon 1 mg IM or D50 25 g IV", f: "Correct — This patient has mild hypoglycemia with intact airway reflexes. Oral glucose is safest: 15 g buccal. He follows commands and has a gag reflex — prerequisites for PO glucose. If mental status worsens, switch to IM glucagon or IV D50. Giving D50 to a patient who can take PO is 'overkill' with IV site risks."},
                         {t: "Do NOT give oral glucose — a confused patient with BG 56 should get D50 25 g IV immediately through the existing IV", f: "Incorrect — While D50 works quickly, this patient follows commands with intact gag reflex. Oral glucose is appropriate and less invasive. D50 is for unconscious/seizing patients or those who cannot take PO. Confused but follows commands = try PO first."}
@@ -1402,7 +1402,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_5_3",
                     scenario: "A 66-year-old male with altered mental status and history of AFib, hypertension, and heart failure. Meds: warfarin, metoprolol, lisinopril, digoxin. Family reports diarrhoea for 3 days, poor PO intake. Vitals: HR 52 (irregular), BP 82/56, RR 16, SpO₂ 95%. Confused, unable to follow commands. EKG: AFib with slow ventricular response, multiple PVCs. Glucose 132 mg/dL.",
-                    question: "Most likely cause of bradycardia and hypotension? What medication should the EMT consider?",
+                    question: "Most likely cause of bradycardia and hypotension? What medication should the EMS provider consider?",
                     options: [
                         {t: "Cardiogenic shock from acute MI — give aspirin 324 mg, oxygen, transport emergently", f: "Incorrect — Presentation is more consistent with toxic/metabolic cause. Multiple risk factors for digoxin toxicity: dehydration (diarrhoea, poor PO), advanced age, concurrent meds that slow AV conduction. Digoxin toxicity: bradycardia, AV block, PVCs, GI symptoms, altered mental status."},
                         {t: "Suspect digoxin toxicity due to dehydration causing prerenal azotemia → elevated digoxin levels. Toxicity causes bradycardia, AV block, ventricular ectopy, and altered MS. Management: supportive care (O₂, IV, monitor), atropine 0.5-1 mg IV if symptomatic bradycardia. Notify hospital — Digibind is definitive antidote", f: "Correct — Classic digoxin toxicity: elderly, dehydrated, on digoxin + beta-blocker. Signs: bradyarrhythmias + PVCs (hallmark), altered MS, GI symptoms. Management: supportive care, atropine for symptomatic bradycardia, transport. Do NOT give calcium for hyperkalemia in digoxin toxicity (stone heart risk)."}
@@ -1423,14 +1423,14 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Medication-Assisted Treatment</h3>
 
-                <p><strong>Medication-Assisted Treatment (MAT)</strong> is the use of FDA-approved medications, in combination with counselling and behavioural therapies, to treat substance use disorders (SUDs). MAT is considered the <strong>gold standard</strong> for opioid use disorder (OUD) and alcohol use disorder (AUD). It reduces mortality, decreases illicit drug use, improves treatment retention, and reduces infectious disease transmission (HIV, hepatitis C). As an EMT, you will increasingly encounter patients on MAT — understanding these medications is essential for safe and effective care.</p>
+                <p><strong>Medication-Assisted Treatment (MAT)</strong> is the use of FDA-approved medications, in combination with counselling and behavioural therapies, to treat substance use disorders (SUDs). MAT is considered the <strong>gold standard</strong> for opioid use disorder (OUD) and alcohol use disorder (AUD). It reduces mortality, decreases illicit drug use, improves treatment retention, and reduces infectious disease transmission (HIV, hepatitis C). As an EMS provider, you will increasingly encounter patients on MAT — understanding these medications is essential for safe and effective care.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Key Point:</strong> MAT medications are NOT 'replacing one addiction with another' — they are evidence-based treatments for a chronic medical condition. <strong>Patients on buprenorphine can still experience pain and can still suffer an overdose.</strong> Naloxone should still be given for respiratory depression regardless of MAT status. Do NOT withhold pain management from a patient on MAT — they may need HIGHER doses of opioids to achieve adequate analgesia.
                 </div>
 
                 <h4>Opioid Use Disorder (OUD) — The Three FDA-Approved Medications</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Medication</th><th>Mechanism</th><th>How It Works</th><th>Regulation</th><th>EMS Considerations</th></tr>
                     </thead>
@@ -1457,7 +1457,7 @@ window.CPG_DATA = {
                             <td><strong>Patients cannot get opioid analgesia from standard doses.</strong> Need non-opioid modalities (ketamine, regional anaesthesia, NSAIDs) or very high opioid doses under monitoring. Naltrexone does NOT block naloxone.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — Precipitated Withdrawal:</strong> Occurs when naloxone or buprenorphine displaces a full agonist from mu-receptors. Results: N/V/D, severe myalgias, abdominal cramping, agitation, hypertension, tachycardia. Not directly life-threatening but can cause aspiration, dehydration, hyperthermia. Management: supportive care — IV fluids, antiemetics, benzodiazepines for agitation. Prevention: use LOWEST effective naloxone dose, titrated to RR, not full arousal.
@@ -1466,13 +1466,13 @@ window.CPG_DATA = {
                 <h4>Naloxone Distribution — Take-Home Naloxone Programs</h4>
                 <ul>
                     <li><strong>OTC availability:</strong> Naloxone (Narcan nasal spray 4 mg) available OTC in most US states without prescription.</li>
-                    <li><strong>Family education:</strong> EMTs should teach recognition of opioid OD signs, naloxone administration (IN preferred for laypersons), and importance of calling 911 (naloxone wears off in 30-90 min — re-narcotisation risk).</li>
+                    <li><strong>Family education:</strong> EMS providers should teach recognition of opioid OD signs, naloxone administration (IN preferred for laypersons), and importance of calling 911 (naloxone wears off in 30-90 min — re-narcotisation risk).</li>
                     <li><strong>EMS:</strong> If bystander already gave naloxone, assess how much, time of administration, and response. May need MORE naloxone (especially for synthetic opioids like fentanyl). Monitor for re-narcotisation during transport.</li>
-                    <li><strong>Good Samaritan Laws:</strong> Most states provide limited legal protection from prosecution for the person who calls 911. EMTs should be aware of these laws.</li>
+                    <li><strong>Good Samaritan Laws:</strong> Most states provide limited legal protection from prosecution for the person who calls 911. EMS providers should be aware of these laws.</li>
                 </ul>
 
                 <h4>Alcohol Use Disorder (AUD) Medications</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Medication</th><th>Mechanism</th><th>Effect on Drinking</th><th>EMS Considerations</th></tr>
                     </thead>
@@ -1496,7 +1496,7 @@ window.CPG_DATA = {
                             <td>Same OUD considerations. Do NOT give opioids for pain (ineffective). Monitor for hepatotoxicity (black box warning). No disulfiram-like reaction with alcohol.</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — MAT and Pain Management:</strong> A common EMS dilemma: patient on buprenorphine (Suboxone) with acute severe pain. <strong>Do NOT withhold pain management.</strong> Buprenorphine occupies but partially activates mu-receptors — full agonists can still work but may need HIGHER doses. Options: fentanyl (titrated to effect), ketamine (sub-dissociative 0.1-0.3 mg/kg), regional anaesthesia. Never tell a patient on MAT 'I can't give you pain medication because you're on Suboxone' — this is incorrect and cruel.
@@ -1515,7 +1515,7 @@ window.CPG_DATA = {
 
                 <h4>Stigma Reduction in EMS — Person-First Language</h4>
                 <p>Substance use disorder is a <strong>chronic medical condition</strong>, not a moral failing. Stigma in healthcare leads to patients concealing drug use, avoiding care, and providers providing substandard care.</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Stigmatising Language</th><th>Person-First Alternative</th></tr>
                     </thead>
@@ -1526,10 +1526,10 @@ window.CPG_DATA = {
                         <tr><td>"Drug-seeking behaviour"</td><td>"Requesting pain relief" (describe neutrally)</td></tr>
                         <tr><td>"Relapse" / "Failed treatment"</td><td>"Return to use" / "Disease exacerbation"</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                    <strong>Critical — Stigma Kills:</strong> Studies show patients with SUD receive LESS aggressive pain management, LESS diagnostic testing, and WORSE care. An EMT's job is to treat the medical condition in front of them — not to judge. A patient with SUD is entitled to the SAME standard of care as any other patient.
+                    <strong>Critical — Stigma Kills:</strong> Studies show patients with SUD receive LESS aggressive pain management, LESS diagnostic testing, and WORSE care. An EMS provider's job is to treat the medical condition in front of them — not to judge. A patient with SUD is entitled to the SAME standard of care as any other patient.
                 </div>
 
                 <h4>NREMT Key Points — MAT Summary</h4>
@@ -1554,7 +1554,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "A 38-year-old male on Suboxone (buprenorphine/naloxone) for OUD is found unresponsive with RR 8 and SpO₂ 86%. He 'relapsed and used heroin.' The EMT should:",
+                    q: "A 38-year-old male on Suboxone (buprenorphine/naloxone) for OUD is found unresponsive with RR 8 and SpO₂ 86%. He 'relapsed and used heroin.' The EMS provider should:",
                     options: [
                         "Withhold naloxone — buprenorphine already provides protection against respiratory depression, and naloxone would precipitate withdrawal",
                         "Administer naloxone — he has opioid-induced respiratory depression. Higher/repeated doses may be needed. Be prepared for precipitated withdrawal, but do NOT withhold naloxone — respiratory depression kills",
@@ -1565,7 +1565,7 @@ window.CPG_DATA = {
                     explanation: "A patient on buprenorphine CAN suffer life-threatening respiratory depression from additional opioids. Naloxone MUST be given. Higher/repeated doses may be needed because buprenorphine occupies mu-receptors. Precipitated withdrawal is likely but NOT a reason to withhold naloxone — hypoxia kills, withdrawal does not."
                 },
                 {
-                    q: "A 45-year-old female on Vivitrol (naltrexone injection) presents with severe abdominal pain from suspected kidney stone. She asks for pain relief. The EMT knows:",
+                    q: "A 45-year-old female on Vivitrol (naltrexone injection) presents with severe abdominal pain from suspected kidney stone. She asks for pain relief. The EMS provider knows:",
                     options: [
                         "Morphine 5 mg IV will not be effective — naltrexone blocks mu-receptors. Use non-opioid alternatives (ketamine 0.1-0.3 mg/kg, NSAIDs per protocol) and notify the hospital",
                         "Give morphine 10 mg IV — a double dose will overcome the block",
@@ -1587,7 +1587,7 @@ window.CPG_DATA = {
                     explanation: "Classic precipitated withdrawal from aggressive naloxone (8 mg). Priority: AIRWAY PROTECTION — patient vomiting, at risk of aspiration. Recovery position, suction, antiemetics. Do NOT give more naloxone unless respiratory depression recurs. Diazepam may be considered for severe agitation but weigh risks. This highlights why naloxone should be TITRATED: give lowest dose that restores RR > 12, not largest dose that fully reverses the opioid."
                 },
                 {
-                    q: "A 55-year-old male with AUD presents with confusion, ataxia, slurred speech. Strong alcohol odour. Family reports he started a 'new medication for drinking.' Vitals: HR 104, BP 138/86, RR 16, SpO₂ 97%, BG 98 mg/dL. What is MOST important for the EMT to determine?",
+                    q: "A 55-year-old male with AUD presents with confusion, ataxia, slurred speech. Strong alcohol odour. Family reports he started a 'new medication for drinking.' Vitals: HR 104, BP 138/86, RR 16, SpO₂ 97%, BG 98 mg/dL. What is MOST important for the EMS provider to determine?",
                     options: [
                         "Whether he is on disulfiram (Antabuse) — if he has been drinking, he may have a disulfiram reaction. However, his presentation is more consistent with alcohol intoxication than a disulfiram reaction. Rule out other causes of AMS and provide supportive care",
                         "Whether he is on naltrexone — this affects pain management",
@@ -1602,7 +1602,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_9_6_1",
                     scenario: "A 28-year-old female on Suboxone for OUD (stable 2 years) presents with severe RLQ abdominal pain, N/V, fever 38.5°C. She is in significant distress, HR 118, BP 106/72, RR 20, SpO₂ 98%. Rebound tenderness and guarding in RLQ. Suspected appendicitis. She rates pain 9/10 and is asking for pain relief.",
-                    question: "EMT's approach to pain management in a patient on buprenorphine with acute severe abdominal pain?",
+                    question: "EMS provider's approach to pain management in a patient on buprenorphine with acute severe abdominal pain?",
                     options: [
                         {t: "Tell her she cannot receive opioids because the buprenorphine will block it. She should not be in severe pain because the buprenorphine provides baseline analgesia", f: "Incorrect — Both clinically wrong and stigmatising. Buprenorphine does NOT provide adequate analgesia for acute severe pain (partial agonist with ceiling effect). Patients on MAT CAN and DO experience severe pain. Withholding pain medication is discriminatory and substandard."},
                         {t: "This patient needs pain relief. Buprenorphine does NOT eliminate opioid analgesia. Ketamine (sub-dissociative 0.1-0.3 mg/kg) is an excellent non-opioid option. If opioids needed, fentanyl (titrated to effect — may need higher doses). Do NOT withhold pain management. Notify receiving hospital about MAT status", f: "Correct — Patients on MAT are entitled to the SAME standard of pain management. Buprenorphine does NOT contraindicate opioid analgesia — higher doses of full agonists may be needed. Never deny pain medication to a patient because of SUD history."}
@@ -1647,7 +1647,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Medication Safety &amp; Error Prevention</h3>
 
-                <p>Medication errors are a leading cause of preventable morbidity and mortality in healthcare. In the United States, <strong>medication errors affect at least 1.5 million people per year</strong> and cause thousands of deaths annually. The majority of these errors are PREVENTABLE by following standard safety protocols, maintaining situational awareness, and fostering a culture where safety is prioritised over speed. For the EMT, medication safety is especially critical because EMS operates in chaotic, uncontrolled environments with limited supervision, time pressure, and high patient acuity — a perfect storm for errors.</p>
+                <p>Medication errors are a leading cause of preventable morbidity and mortality in healthcare. In the United States, <strong>medication errors affect at least 1.5 million people per year</strong> and cause thousands of deaths annually. The majority of these errors are PREVENTABLE by following standard safety protocols, maintaining situational awareness, and fostering a culture where safety is prioritised over speed. For the EMS provider, medication safety is especially critical because EMS operates in chaotic, uncontrolled environments with limited supervision, time pressure, and high patient acuity — a perfect storm for errors.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — The Reality of Medication Errors:</strong> Medication errors are NOT rare — studies suggest that EMS medication errors occur in 1-5% of all medication administrations. Common types: wrong dose (decimal errors — 0.1 vs 1 mg is a 10× difference), wrong drug (look-alike packaging), wrong route, and wrong patient. The good news: MOST errors are preventable with simple, consistent safety habits. The bad news: when an error occurs, it can be fatal — especially with high-alert medications like epinephrine, narcotics, and insulin.
@@ -1663,7 +1663,7 @@ window.CPG_DATA = {
 
                 <h4>High-Alert Medications</h4>
                 <p><strong>High-alert medications</strong> are drugs that bear a heightened risk of causing significant patient harm when used in error. Special safeguards are required for these medications. The Institute for Safe Medication Practices (ISMP) identifies the following high-alert drug classes relevant to EMS:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Category</th><th>Examples</th><th>Why High-Alert</th></tr>
                     </thead>
@@ -1675,36 +1675,36 @@ window.CPG_DATA = {
                         <tr><td><strong>Anticoagulants</strong></td><td>Heparin, enoxaparin (Lovenox), warfarin, apixaban (Eliquis), rivaroxaban (Xarelto)</td><td>Haemorrhage risk. Heparin is measured in units — verify concentration carefully. Decimal errors with weight-based dosing are common.</td></tr>
                         <tr><td><strong>Vasopressors</strong></td><td>Epinephrine, norepinephrine, vasopressin, dopamine</td><td>Potent cardiovascular effects — wrong dose can cause hypertensive crisis, arrhythmia, or cardiac arrest. Epinephrine is the most common high-alert drug involved in EMS errors.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Key Point — LASA Drugs:</strong> <strong>Look-alike, sound-alike drug names are a leading cause of medication errors.</strong> Examples you MUST know: <em>epinephrine vs ephedrine</em>, <em>dobutamine vs dopamine</em>, <em>hydralazine vs hydroxyzine</em>, <em>NTG vs GTN</em>. Never rely on memory or packaging colour alone — <strong>read the label three times and read it aloud.</strong> When in doubt, ask a partner to verify.
                 </div>
 
-                <h4>Common EMT Medication Errors — Case Examples</h4>
+                <h4>Common EMS Provider Medication Errors — Case Examples</h4>
 
                 <h5>Right Patient Errors</h5>
-                <p><strong>Case:</strong> An EMT is called to a residence for a '54-year-old male with chest pain.' On arrival, two men of similar age are in the living room. The EMT asks 'Are you the patient?' One nods yes. The EMT administers aspirin and nitroglycerin. Only later does he discover he treated the wrong person — the actual patient was the other man, who had a different history and had not given consent.</p>
+                <p><strong>Case:</strong> An EMS provider is called to a residence for a '54-year-old male with chest pain.' On arrival, two men of similar age are in the living room. The EMS provider asks 'Are you the patient?' One nods yes. The EMS provider administers aspirin and nitroglycerin. Only later does he discover he treated the wrong person — the actual patient was the other man, who had a different history and had not given consent.</p>
                 <p><strong>Prevention:</strong> Always verify the patient's identity using <strong>two identifiers</strong> — ask for name AND date of birth, or check a wristband. Do NOT rely on a nod or a pointing finger. 'Mr. Jones, can you confirm your name and date of birth for me?' In multi-patient scenarios (MCI, nursing home), this is especially critical.</p>
 
                 <h5>Right Drug Errors</h5>
-                <p><strong>Case:</strong> An EMT reaches for 'epinephrine' for a patient in anaphylaxis but grabs the look-alike vial of ephedrine instead. The patient does not improve. The error is caught when the EMT goes to document and notices the wrong vial.</p>
+                <p><strong>Case:</strong> An EMS provider reaches for 'epinephrine' for a patient in anaphylaxis but grabs the look-alike vial of ephedrine instead. The patient does not improve. The error is caught when the EMS provider goes to document and notices the wrong vial.</p>
                 <p><strong>Prevention:</strong> <strong>Read the label THREE times:</strong> when removing from storage, when drawing up/preparing, and before administration. Read it <strong>aloud</strong>. Use tall-man lettering on medication labels. Organize your drug kit so look-alike drugs are not stored next to each other.</p>
 
                 <h5>Right Dose Errors — The Decimal Danger</h5>
-                <p><strong>Case:</strong> An order reads 'morphine 2 mg IV.' The EMT reads the syringe — 10 mg/mL — and draws up 2 mL, thinking '2 mL = 2 mg.' But 2 mL × 10 mg/mL = <strong>20 mg</strong> — a tenfold overdose. The patient develops respiratory depression requiring naloxone and bag-valve-mask ventilation.</p>
+                <p><strong>Case:</strong> An order reads 'morphine 2 mg IV.' The EMS provider reads the syringe — 10 mg/mL — and draws up 2 mL, thinking '2 mL = 2 mg.' But 2 mL × 10 mg/mL = <strong>20 mg</strong> — a tenfold overdose. The patient develops respiratory depression requiring naloxone and bag-valve-mask ventilation.</p>
                 <p><strong>Prevention:</strong> ALWAYS calculate the dose BEFORE drawing up the medication. Use the formula: <strong>Dose = (Ordered Dose / Concentration)</strong>. For morphine 2 mg from a 10 mg/mL vial: 2 mg ÷ 10 mg/mL = 0.2 mL (NOT 2 mL). <strong>Never use 'one syringe = one dose' logic</strong> — always verify the actual volume needed. Be especially vigilant with paediatric doses (weight-based) and decimal placement (0.1 mg vs 1.0 mg).</p>
 
                 <h5>Right Route Errors</h5>
-                <p><strong>Case:</strong> An EMT is asked to give 'D50 25 g IV' for severe hypoglycemia. He is distracted, grabs the D50 syringe, and administers it into the patient's deltoid muscle (IM). The result: severe tissue necrosis at the injection site requiring surgical debridement.</p>
+                <p><strong>Case:</strong> An EMS provider is asked to give 'D50 25 g IV' for severe hypoglycemia. He is distracted, grabs the D50 syringe, and administers it into the patient's deltoid muscle (IM). The result: severe tissue necrosis at the injection site requiring surgical debridement.</p>
                 <p><strong>Prevention:</strong> Confirm the route BEFORE administration. D50 is hypertonic — IV ONLY. Never give hypertonic solutions IM or SC. Other route-specific dangers: epinephrine 1:1,000 IV (can cause hypertensive crisis — used SC/IM), KCl IV push (cardiac arrest — must be diluted and infused), PO meds via IV (particulate matter can cause emboli). If you are unsure about the route, STOP and verify.</p>
 
                 <h5>Right Time Errors</h5>
-                <p><strong>Case:</strong> A patient with chest pain receives nitroglycerin 0.4 mg SL. After 5 minutes, pain is unchanged. The EMT administers a second dose. Then a third dose at 10 minutes. At 12 minutes, pain is still 5/10 and the EMT considers giving a FOURTH dose — exceeding protocol (max 3 doses).</p>
+                <p><strong>Case:</strong> A patient with chest pain receives nitroglycerin 0.4 mg SL. After 5 minutes, pain is unchanged. The EMS provider administers a second dose. Then a third dose at 10 minutes. At 12 minutes, pain is still 5/10 and the EMS provider considers giving a FOURTH dose — exceeding protocol (max 3 doses).</p>
                 <p><strong>Prevention:</strong> Know the maximum dose and interval for every drug. Set timers/alarms. Document each dose immediately after administration (including time and response). Never exceed protocol maximums without medical control authorization.</p>
 
                 <h4>Error Prevention Strategies — The Three-Check System</h4>
-                <p>The <strong>three-check system</strong> is the cornerstone of medication safety. It requires the EMT to check the medication label at three distinct points:</p>
+                <p>The <strong>three-check system</strong> is the cornerstone of medication safety. It requires the EMS provider to check the medication label at three distinct points:</p>
                 <ol>
                     <li><strong>Check 1 — When removing the medication from storage:</strong> Verify the drug name, concentration, expiry date, and appearance. Is this the right drug for the patient's condition?</li>
                     <li><strong>Check 2 — When preparing the medication:</strong> Check the label again. Calculate the dose. Draw up the correct volume. Verify the dose with the label.</li>
@@ -1718,15 +1718,15 @@ window.CPG_DATA = {
                 <h4>Second Person Verification for High-Alert Drugs</h4>
                 <p>For <strong>high-alert medications</strong> (opioids, insulin, vasopressors, concentrated electrolytes), a <strong>second person verification</strong> is strongly recommended. This means:</p>
                 <ul>
-                    <li>Another EMT or paramedic independently reads the medication label, calculates the dose, and confirms it is correct for the patient</li>
+                    <li>Another EMS provider or paramedic independently reads the medication label, calculates the dose, and confirms it is correct for the patient</li>
                     <li>The second person does NOT simply watch — they independently verify: 'I confirm this is epinephrine 0.3 mg IM for anaphylaxis. The dose is appropriate for this patient.'</li>
                     <li>If a second person is not available (single-provider unit), call medical control for a verbal verification</li>
                     <li>NEVER be rushed into skipping the verification — 'We need the drug NOW!' is exactly when errors happen. Take the extra 15 seconds to verify.</li>
                 </ul>
 
-                <h4>Drug Interactions — What EMTs Need to Know</h4>
+                <h4>Drug Interactions — What EMS Providers Need to Know</h4>
                 <p><strong>Polypharmacy</strong> (use of multiple medications) is especially common in elderly patients and significantly increases the risk of drug interactions. Key interactions relevant to EMS:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Drug Combination</th><th>Interaction</th><th>Clinical Effect</th></tr>
                     </thead>
@@ -1738,7 +1738,7 @@ window.CPG_DATA = {
                         <tr><td>Warfarin + NSAIDs (aspirin, ibuprofen, ketorolac)</td><td>NSAIDs impair platelet function + gastritis</td><td><strong>Increased bleeding risk.</strong> Avoid NSAIDs in patients on warfarin if possible. Aspirin for ACS is still indicated (benefit outweighs risk).</td></tr>
                         <tr><td>CYP450 interactions (many drugs)</td><td>Drugs metabolised by CYP3A4, CYP2D6, etc. can be induced or inhibited by other drugs</td><td>Common interactions: azole antifungals, macrolide antibiotics, anticonvulsants, St. John's Wort can increase/decrease levels of opioids, benzodiazepines, and other drugs.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Error Reporting — If an Error Occurs</h4>
                 <p>Despite all precautions, errors can still happen. When a medication error is discovered:</p>
@@ -1767,7 +1767,7 @@ window.CPG_DATA = {
 
                 <h4>Workplace Culture — The Just Culture Model</h4>
                 <p>The <strong>Just Culture</strong> model balances accountability with learning. It distinguishes three types of errors:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Type</th><th>Definition</th><th>Response</th></tr>
                     </thead>
@@ -1776,7 +1776,7 @@ window.CPG_DATA = {
                         <tr><td><strong>At-risk behaviour</strong></td><td>Behavioural choice that increases risk where risk is not recognised or is mistakenly believed to be justified (e.g., skipping the three-check because 'we're in a hurry')</td><td><strong>Coach, educate, and remove incentives for risky behaviour.</strong> Ask: 'What led you to believe this was acceptable?'</td></tr>
                         <tr><td><strong>Reckless behaviour</strong></td><td>Conscious disregard for a substantial and unjustifiable risk (e.g., intentionally giving the wrong drug, falsifying records, working under the influence)</td><td><strong>Disciplinary action.</strong> This is the only category where individual blame is appropriate.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <p>The Just Culture model is essential because: (1) <strong>Punishing human error discourages reporting</strong> — if you fear punishment, you will hide your error, and the system will never improve. (2) <strong>Most errors are system problems</strong> — look-alike packaging, confusing labels, inadequate lighting, excessive workload, fatigue. Fix the system, prevent the error. (3) <strong>Reporting is essential for learning</strong> — every reported error is an opportunity to prevent the same error from happening to another patient.</p>
 
@@ -1788,7 +1788,7 @@ window.CPG_DATA = {
                 { question: "What are the 'Seven Rights' of medication administration?", answer: "Right Patient, Right Drug, Right Dose, Right Route, Right Time, Right Documentation, Right to Refuse.", category: "Medication Safety" },
                 { question: "What are LASA drugs and why are they dangerous?", answer: "Look-Alike Sound-Alike drugs (e.g., epinephrine vs ephedrine, dobutamine vs dopamine). Similar names/packaging lead to wrong drug selection. Read labels carefully — use tall-man lettering.", category: "High-Alert Medications" },
                 { question: "What is the three-check system for medication administration?", answer: "Check 1: When removing from storage. Check 2: When preparing. Check 3: Before administration. Read the label aloud each time.", category: "Error Prevention" },
-                { question: "What should an EMT do if a medication error occurs?", answer: "STOP, assess patient, notify medical control (be honest), document accurately, complete incident report, debrief. Transparency and learning — not punishment.", category: "Error Reporting" },
+                { question: "What should an EMS provider do if a medication error occurs?", answer: "STOP, assess patient, notify medical control (be honest), document accurately, complete incident report, debrief. Transparency and learning — not punishment.", category: "Error Reporting" },
                 { question: "What is the decimal danger in medication dosing?", answer: "Confusing 0.1 mg vs 1.0 mg = TENFOLD difference. Always calculate dose using formula: Dose / Concentration = Volume. Verify calculations with a partner.", category: "Right Dose" },
                 { question: "What is the Just Culture model for error management?", answer: "Distinguishes: Human Error (support + system fix), At-Risk Behaviour (coach), Reckless Behaviour (discipline). Encourages reporting to improve safety.", category: "Workplace Culture" },
                 { question: "What are examples of high-alert medications in EMS?", answer: "LASA drugs, concentrated electrolytes (KCl), opioids, insulin, anticoagulants (heparin/warfarin), vasopressors (epinephrine). Special safeguards required.", category: "High-Alert Medications" },
@@ -1796,7 +1796,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT has just administered epinephrine 0.3 mg IM to a patient in anaphylaxis. The patient's condition improves. On documenting the medication, the EMT realises she accidentally grabbed a vial of ephedrine instead of epinephrine — the vials look nearly identical. What should she do NEXT?",
+                    q: "An EMS provider has just administered epinephrine 0.3 mg IM to a patient in anaphylaxis. The patient's condition improves. On documenting the medication, the EMS provider realises she accidentally grabbed a vial of ephedrine instead of epinephrine — the vials look nearly identical. What should she do NEXT?",
                     options: [
                         "Nothing — the patient improved, so no harm done. Documenting the error would only cause problems",
                         "Immediately notify medical control, inform the receiving hospital, document the error accurately in the PCR, and complete an incident report. The patient improved but needs monitoring as ephedrine has different effects (longer duration, more CNS stimulation)",
@@ -1804,10 +1804,10 @@ window.CPG_DATA = {
                         "Discard the ephedrine vial so nobody knows — no evidence, no problem"
                     ],
                     correct: 1,
-                    explanation: "Even though the patient improved, a medication error occurred (wrong drug). The EMT must: (1) Notify medical control immediately — be honest about the error. (2) Inform the receiving hospital so they can monitor for the different effects of ephedrine (longer duration, more CNS stimulation vs epinephrine). (3) Document exactly what happened in the PCR — do NOT alter records. (4) Complete an incident report for system improvement. Concealing an error is misconduct and deprives the system of a learning opportunity. Transparency and patient safety come first."
+                    explanation: "Even though the patient improved, a medication error occurred (wrong drug). The EMS provider must: (1) Notify medical control immediately — be honest about the error. (2) Inform the receiving hospital so they can monitor for the different effects of ephedrine (longer duration, more CNS stimulation vs epinephrine). (3) Document exactly what happened in the PCR — do NOT alter records. (4) Complete an incident report for system improvement. Concealing an error is misconduct and deprives the system of a learning opportunity. Transparency and patient safety come first."
                 },
                 {
-                    q: "An EMT is preparing to give morphine 4 mg IV for a patient with severe pain. The morphine vial is 10 mg/mL. What volume should the EMT draw up?",
+                    q: "An EMS provider is preparing to give morphine 4 mg IV for a patient with severe pain. The morphine vial is 10 mg/mL. What volume should the EMS provider draw up?",
                     options: [
                         "0.4 mL — Dose ÷ Concentration = Volume. 4 mg ÷ 10 mg/mL = 0.4 mL",
                         "4 mL — the dose ordered is 4 mg, so draw up 4 mL",
@@ -1818,32 +1818,32 @@ window.CPG_DATA = {
                     explanation: "The correct calculation: Ordered Dose / Concentration = Volume. 4 mg / (10 mg/mL) = 0.4 mL. The common error is confusing the volume with the dose — '4 mg ordered = draw up 4 mL' would result in a 40 mg dose (10× the intended amount). Always calculate: Dose ÷ Concentration = Volume. Verify with a partner. Decimal placement errors are among the most common and dangerous medication errors in EMS."
                 },
                 {
-                    q: "[HARD] An EMT is called to the scene of a nightclub where a 22-year-old female is found unresponsive with suspected overdose. The scene is dark, loud, and crowded. The EMT's partner is holding a flashlight while the EMT prepares naloxone. The drug kit has both naloxone (2 mg prefilled syringe) and ondansetron (4 mg vial) — the packaging is similar in size and colour. The EMT picks up a syringe and administers it IN. After 2 minutes, the patient is still unresponsive with RR 6. What most likely happened and what should the EMT do now?",
+                    q: "[HARD] An EMS provider is called to the scene of a nightclub where a 22-year-old female is found unresponsive with suspected overdose. The scene is dark, loud, and crowded. The EMS provider's partner is holding a flashlight while the EMS provider prepares naloxone. The drug kit has both naloxone (2 mg prefilled syringe) and ondansetron (4 mg vial) — the packaging is similar in size and colour. The EMS provider picks up a syringe and administers it IN. After 2 minutes, the patient is still unresponsive with RR 6. What most likely happened and what should the EMS provider do now?",
                     options: [
-                        "The EMT likely grabbed ondansetron instead of naloxone due to similar packaging in a dark, chaotic environment. Immediately re-check the drug kit, confirm the drug administered, and give naloxone now. Report the error to medical control. This illustrates why look-alike packaging should be separated, and why medication preparation should never be done in poor lighting",
+                        "The EMS provider likely grabbed ondansetron instead of naloxone due to similar packaging in a dark, chaotic environment. Immediately re-check the drug kit, confirm the drug administered, and give naloxone now. Report the error to medical control. This illustrates why look-alike packaging should be separated, and why medication preparation should never be done in poor lighting",
                         "Give another dose of naloxone — sometimes two doses are needed",
                         "The patient's overdose is not opioid-related — consider other causes",
                         "The naloxone was expired — check the expiration date"
                     ],
                     correct: 0,
-                    explanation: "This scenario illustrates several contributing factors to medication errors: poor lighting (dark nightclub), chaotic scene (loud, crowded), look-alike packaging (naloxone and ondansetron syringes similar in size/colour), and rushing. Ondansetron will NOT reverse an opioid overdose. The EMT should: (1) Immediately re-check the drug kit to confirm what was given. (2) Administer the correct drug (naloxone). (3) Report the error to medical control. Prevention: (a) Never prepare medications in poor lighting — move to a well-lit area or use a headlamp. (b) Separate look-alike drugs in the drug kit. (c) Read the label aloud three times. (d) Use a second person to verify in high-stress situations."
+                    explanation: "This scenario illustrates several contributing factors to medication errors: poor lighting (dark nightclub), chaotic scene (loud, crowded), look-alike packaging (naloxone and ondansetron syringes similar in size/colour), and rushing. Ondansetron will NOT reverse an opioid overdose. The EMS provider should: (1) Immediately re-check the drug kit to confirm what was given. (2) Administer the correct drug (naloxone). (3) Report the error to medical control. Prevention: (a) Never prepare medications in poor lighting — move to a well-lit area or use a headlamp. (b) Separate look-alike drugs in the drug kit. (c) Read the label aloud three times. (d) Use a second person to verify in high-stress situations."
                 },
                 {
-                    q: "A paramedic tells an EMT, 'Just grab me a 10 mL syringe of epinephrine — the patient is coding, hurry!' The EMT reaches into the drug box, quickly grabs a prefilled syringe labelled 'Epinephrine 1:10,000,' and hands it to the paramedic. The paramedic administers it. Later, they realise the syringe was actually 'Epinephrine 1:1,000' — a tenfold concentration difference. Which of the following safety steps would have MOST likely prevented this error?",
+                    q: "A paramedic tells an EMS provider, 'Just grab me a 10 mL syringe of epinephrine — the patient is coding, hurry!' The EMS provider reaches into the drug box, quickly grabs a prefilled syringe labelled 'Epinephrine 1:10,000,' and hands it to the paramedic. The paramedic administers it. Later, they realise the syringe was actually 'Epinephrine 1:1,000' — a tenfold concentration difference. Which of the following safety steps would have MOST likely prevented this error?",
                     options: [
                         "Waiting for the paramedic to retrieve their own drugs",
                         "Reading the label aloud when picking up the syringe — 'Epinephrine 1 colon 10,000' — before handing it to the paramedic. This would have caught the error before administration",
-                        "The EMT should have refused to hand over any medication without a written order",
+                        "The EMS provider should have refused to hand over any medication without a written order",
                         "Having a 'no verbal orders' policy in the drug box"
                     ],
                     correct: 1,
-                    explanation: "Reading the label ALOUD would have caught the concentration error. The prefilled syringes for epinephrine 1:1,000 and 1:10,000 look similar — the difference is subtle on the label. Reading aloud ('Epinephrine ONE colon TEN THOUSAND' vs 'Epinephrine ONE colon ONE THOUSAND') engages auditory processing and makes the concentration difference more apparent. The 'hurry-up' factor is high in cardiac arrest — this is exactly when errors happen. The three-check system (including reading aloud) is most critical when you feel rushed. If an EMT is asked to retrieve a drug, they are still responsible for verifying the drug before handing it over."
+                    explanation: "Reading the label ALOUD would have caught the concentration error. The prefilled syringes for epinephrine 1:1,000 and 1:10,000 look similar — the difference is subtle on the label. Reading aloud ('Epinephrine ONE colon TEN THOUSAND' vs 'Epinephrine ONE colon ONE THOUSAND') engages auditory processing and makes the concentration difference more apparent. The 'hurry-up' factor is high in cardiac arrest — this is exactly when errors happen. The three-check system (including reading aloud) is most critical when you feel rushed. If an EMS provider is asked to retrieve a drug, they are still responsible for verifying the drug before handing it over."
                 }
             ],
             critical: [
                 {
                     id: "crit_9_7_1",
-                    scenario: "You are a newly certified EMT working your first week on a busy 911 ambulance. Your paramedic partner asks you to 'grab a tube of oral glucose' for a diabetic patient with mild hypoglycemia. The drug box is disorganised — medications are not separated, and several tubes and vials are mixed together. You find a tube that looks like oral glucose (same size, similar label) and hand it to your partner, who administers it to the patient. After 10 minutes, the patient's blood glucose has not improved. Your partner looks at the tube and says, 'This isn't oral glucose — it's KY jelly.' Both you and your partner missed the label. The patient is still awake but confused. BG is still 62 mg/dL.",
+                    scenario: "You are a newly certified EMS provider working your first week on a busy 911 ambulance. Your paramedic partner asks you to 'grab a tube of oral glucose' for a diabetic patient with mild hypoglycemia. The drug box is disorganised — medications are not separated, and several tubes and vials are mixed together. You find a tube that looks like oral glucose (same size, similar label) and hand it to your partner, who administers it to the patient. After 10 minutes, the patient's blood glucose has not improved. Your partner looks at the tube and says, 'This isn't oral glucose — it's KY jelly.' Both you and your partner missed the label. The patient is still awake but confused. BG is still 62 mg/dL.",
                     question: "What should happen now, and what system failures contributed to this error?",
                     options: [
                         {t: "Retrieve the correct oral glucose and administer it now. The patient is stable and will be fine. Do NOT report the error — it was a minor mistake and no harm was done. Just be more careful next time", f: "Incorrect — Even though no direct harm occurred (KY jelly is not toxic), this is a medication error that should be reported. A 'near miss' that could have been much worse (imagine if it was a concentrated electrolyte or a paralytic instead of KY jelly). System failures: (1) Disorganised drug box — non-medical items mixed with medications. (2) No three-check system used. (3) Labels not read aloud. (4) The drug box should not contain non-medication items that look like medication packaging."},
@@ -1859,10 +1859,10 @@ window.CPG_DATA = {
                     question: "Which medications are indicated and which are contraindicated? What safety checks should you perform?",
                     options: [
                         {t: "Give aspirin 324 mg PO chewed, nitroglycerin 0.4 mg SL, and oxygen 4 L/min NC. All three are standard for ACS", f: "Incorrect — Nitroglycerin is potentially contraindicated. She took tadalafil (Cialis) 2 days ago. Tadalafil has a longer half-life than sildenafil — the PDE-5 inhibition can last up to 48-96 hours (depending on dose and renal function). The standard 24-hour rule for sildenafil does NOT apply to tadalafil — many protocols extend the window to 48-96 hours for tadalafil. Giving NTG could cause severe refractory hypotension."},
-                        {t: "Aspirin 324 mg PO chewed is indicated (reduces mortality in ACS). Oxygen 4 L/min NC is indicated (SpO₂ 93% < 94%). Nitroglycerin is LIKELY CONTRAINDICATED due to tadalafil use 2 days ago. Tadalafil has a longer half-life than sildenafil and can interact with nitrates for up to 48-96 hours. The EMT should: (1) Confirm the exact timing of the tadalafil dose, (2) Consult medical control before giving NTG, (3) Ask about any other nitroglycerin or NTG spray use before EMS arrival, (4) If NTG is given despite the interaction risk (rare, with medical control approval), monitor BP closely every 2 minutes", f: "Correct — This requires knowledge of both the standard ACS protocol AND the nuances of PDE-5 inhibitor interactions. Sildenafil (Viagra): 24-hour window. Tadalafil (Cialis): 48-96 hour window (longer half-life 17.5 hrs vs 4 hrs). The EMT must: (1) Identify the drug interaction risk by asking about ED medications. (2) Know the specific timing windows for different PDE-5 inhibitors. (3) Consult medical control before giving NTG if there is any concern. (4) Document the interaction risk and medical control decision. Aspirin and oxygen (for SpO₂ < 94%) are still indicated."}
+                        {t: "Aspirin 324 mg PO chewed is indicated (reduces mortality in ACS). Oxygen 4 L/min NC is indicated (SpO₂ 93% < 94%). Nitroglycerin is LIKELY CONTRAINDICATED due to tadalafil use 2 days ago. Tadalafil has a longer half-life than sildenafil and can interact with nitrates for up to 48-96 hours. The EMS provider should: (1) Confirm the exact timing of the tadalafil dose, (2) Consult medical control before giving NTG, (3) Ask about any other nitroglycerin or NTG spray use before EMS arrival, (4) If NTG is given despite the interaction risk (rare, with medical control approval), monitor BP closely every 2 minutes", f: "Correct — This requires knowledge of both the standard ACS protocol AND the nuances of PDE-5 inhibitor interactions. Sildenafil (Viagra): 24-hour window. Tadalafil (Cialis): 48-96 hour window (longer half-life 17.5 hrs vs 4 hrs). The EMS provider must: (1) Identify the drug interaction risk by asking about ED medications. (2) Know the specific timing windows for different PDE-5 inhibitors. (3) Consult medical control before giving NTG if there is any concern. (4) Document the interaction risk and medical control decision. Aspirin and oxygen (for SpO₂ < 94%) are still indicated."}
                     ],
                     correct: 1,
-                    explanation: "This scenario tests knowledge of drug interactions and the importance of medication reconciliation. Tadalafil (Cialis) has a much longer half-life (~17.5 hours) than sildenafil (Viagra, ~4 hours) — the interaction window is longer (48-96 hours depending on dose and renal function). The EMT must: (1) Ask about ALL medications, including PRN/occasional use drugs like ED medications. (2) Know that different PDE-5 inhibitors have different interaction windows. (3) Consult medical control if any concern exists. (4) Monitor BP closely if NTG is given after medical control approval. Aspirin and oxygen are still indicated. This highlights why the 'Right Drug' check includes checking for drug-drug interactions.",
+                    explanation: "This scenario tests knowledge of drug interactions and the importance of medication reconciliation. Tadalafil (Cialis) has a much longer half-life (~17.5 hours) than sildenafil (Viagra, ~4 hours) — the interaction window is longer (48-96 hours depending on dose and renal function). The EMS provider must: (1) Ask about ALL medications, including PRN/occasional use drugs like ED medications. (2) Know that different PDE-5 inhibitors have different interaction windows. (3) Consult medical control if any concern exists. (4) Monitor BP closely if NTG is given after medical control approval. Aspirin and oxygen are still indicated. This highlights why the 'Right Drug' check includes checking for drug-drug interactions.",
                     kpi: "Identifies drug-drug interaction risk between NTG and tadalafil with extended half-life"
                 },
                 {
@@ -1874,7 +1874,7 @@ window.CPG_DATA = {
                         {t: "This is a crucial 'near miss' that reveals several safety vulnerabilities. The team should: (1) Immediately treat the patient with the correct dose (2.5 mg albuterol neb). (2) After the call, debrief the incident — discuss fatigue, lighting, and the risk of having multiple concentrations of the same drug in the box. (3) Report a 'good catch' — many services have a system to report near misses so the organisation can address systemic issues. (4) Consider systemic changes: separate 2.5 mg and 5 mg albuterol vials with different labelling/coding, improve lighting in the medication preparation area, and encourage the routine use of the 'second person verification' for all paediatric doses", f: "Correct — This scenario illustrates multiple classic factors contributing to medication errors: (1) Fatigue (3 AM shift). (2) Poor lighting (ambulance dim light). (3) Multiple concentrations of the same drug. (4) Time pressure (sick child). (5) Paediatric dosing (weight-based calculations add complexity). The 'near miss' was caught by a second-person verification — this is exactly why double-checking is so important, especially for paediatric patients and high-alert drugs. After the call, the team should debrief and report the 'good catch' so systemic fixes can be implemented."}
                     ],
                     correct: 1,
-                    explanation: "This 'good catch' (near miss caught before administration) is a textbook example of why second-person verification is critical. Contributing factors: (1) Fatigue — 3 AM shift, the EMT's cognitive function is impaired. (2) Poor lighting — dimly lit ambulance. (3) Multiple concentrations of the same drug in the box. (4) High-acuity patient causing time pressure. (5) Paediatric case adds complexity (weight-based dosing). The partner's verification prevented a potential overdose of a 6-year-old (5 mg vs 2.5 mg = double dose). After the call: debrief the team, report the 'good catch' to the quality/safety department, and consider system changes (separating concentrations, improving lighting, making second-person verification mandatory for paediatric doses). A 'good catch' is a success of the safety system — it shows safety barriers working as intended.",
+                    explanation: "This 'good catch' (near miss caught before administration) is a textbook example of why second-person verification is critical. Contributing factors: (1) Fatigue — 3 AM shift, the EMS provider's cognitive function is impaired. (2) Poor lighting — dimly lit ambulance. (3) Multiple concentrations of the same drug in the box. (4) High-acuity patient causing time pressure. (5) Paediatric case adds complexity (weight-based dosing). The partner's verification prevented a potential overdose of a 6-year-old (5 mg vs 2.5 mg = double dose). After the call: debrief the team, report the 'good catch' to the quality/safety department, and consider system changes (separating concentrations, improving lighting, making second-person verification mandatory for paediatric doses). A 'good catch' is a success of the safety system — it shows safety barriers working as intended.",
                     kpi: "Recognises fatigue, lighting, and multi-concentration drugs as error contributors; promotes near-miss reporting"
                 }
             ]

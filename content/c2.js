@@ -13,7 +13,7 @@ window.CPG_DATA = {
             <h4>Anatomical Position</h4>
             <p>The <strong>anatomical position</strong> is the universal reference posture used to describe the location and relationship of body structures. In this position, the patient stands upright, facing forward, with arms at the sides and palms facing forward. All directional terms — superior, inferior, anterior, posterior, medial, lateral, proximal, distal — are defined relative to this position. Mastering these terms is essential for clear communication with other healthcare providers and for accurate documentation of assessment findings.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Directional Term</th><th>Definition</th><th>Example</th></tr>
                 </thead>
@@ -27,7 +27,7 @@ window.CPG_DATA = {
                     <tr><td>Proximal</td><td>Closer to the point of attachment or trunk</td><td>The shoulder is proximal to the elbow</td></tr>
                     <tr><td>Distal</td><td>Farther from the point of attachment or trunk</td><td>The wrist is distal to the elbow</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Body Planes</h4>
             <p>Body planes are imaginary flat surfaces used to divide the body for anatomical description. Three major planes are essential in EMS assessment:</p>
@@ -39,7 +39,7 @@ window.CPG_DATA = {
 
             <h4>Body Cavities</h4>
             <p>The body is organized into cavities — fluid-filled spaces that house and protect internal organs. Understanding these cavities helps you localize injuries and anticipate which organ systems may be affected:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Cavity</th><th>Boundaries</th><th>Major Organs</th></tr>
                 </thead>
@@ -50,7 +50,7 @@ window.CPG_DATA = {
                     <tr><td>Abdominal Cavity</td><td>Below the diaphragm, above the pelvis</td><td>Stomach, liver, spleen, pancreas, intestines, kidneys</td></tr>
                     <tr><td>Pelvic Cavity</td><td>Within the bony pelvis</td><td>Bladder, rectum, reproductive organs</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> The thoracic and abdominal cavities are separated by the diaphragm — a dome-shaped muscle essential for breathing. Injury to the diaphragm can allow abdominal organs to herniate into the chest, compromising ventilation and circulation. Always consider diaphragmatic injury in penetrating trauma to the lower chest or upper abdomen.
@@ -68,7 +68,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Major Organ Systems</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>System</th><th>Major Components</th><th>Primary Functions</th></tr>
                 </thead>
@@ -84,7 +84,7 @@ window.CPG_DATA = {
                     <tr><td>Reproductive</td><td>Ovaries/testes, associated structures</td><td>Production of gametes and sex hormones</td></tr>
                     <tr><td>Lymphatic/Immune</td><td>Lymph nodes, spleen, thymus, lymph vessels</td><td>Immune defense, fluid balance, waste removal from tissues</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Abdominopelvic Regions (Quadrants)</h4>
             <p>In the prehospital setting, we use <strong>four quadrants</strong> to describe the location of abdominal findings. The quadrants are formed by two imaginary lines — one vertical (midline) and one horizontal (at the umbilicus) — dividing the abdomen into four sections:</p>
@@ -116,7 +116,7 @@ window.CPG_DATA = {
             { q: "The spleen is located in which abdominal quadrant?", options: ["Right Upper Quadrant", "Left Upper Quadrant", "Right Lower Quadrant", "Left Lower Quadrant"], correct: 1 },
             { q: "The correct hierarchy of structural organization from simplest to most complex is:", options: ["Cells → Tissues → Organs → Systems → Organism", "Cells → Organs → Tissues → Systems → Organism", "Tissues → Cells → Organs → Systems → Organism", "Cells → Tissues → Systems → Organs → Organism"], correct: 0 },
             { q: "Which organ system includes the brain and spinal cord?", options: ["Cardiovascular", "Endocrine", "Nervous", "Musculoskeletal"], correct: 2 },
-            { q: "[HARD] An EMT documents a wound as being 'proximal to the left wrist.' Where is the wound located?", options: ["On the left hand", "Between the left wrist and the shoulder", "On the left wrist itself", "Distal to the left elbow but closer to the trunk than the wrist"], correct: 1 },
+            { q: "[HARD] An EMS provider documents a wound as being 'proximal to the left wrist.' Where is the wound located?", options: ["On the left hand", "Between the left wrist and the shoulder", "On the left wrist itself", "Distal to the left elbow but closer to the trunk than the wrist"], correct: 1 },
             { q: "[HARD] A patient sustained blunt trauma to the left upper quadrant. Which organ is at HIGHEST risk for injury?", options: ["The appendix", "The liver", "The spleen", "The sigmoid colon"], correct: 2 }
         ],
         critical: [
@@ -153,7 +153,7 @@ window.CPG_DATA = {
                     {t: "The urinary system — flank pain radiating to the back suggests a kidney stone or pyelonephritis", f: "Incorrect — While the right kidney is also in the RUQ, kidney pain typically presents as flank pain (posterior/lateral), not right shoulder radiation. Postprandial onset is more consistent with biliary disease than renal colic."}
                 ],
                 correct: 0,
-                explanation: "The gallbladder sits in the right upper quadrant beneath the liver. Acute cholecystitis typically presents with severe RUQ pain that may radiate to the right shoulder or scapula (referred pain via the phrenic nerve), often occurring after a fatty meal. Guarding (involuntary muscle contraction) indicates peritoneal irritation. The patient's fever, tachycardia, and history of gallstones further support this diagnosis. Understanding referred pain patterns helps EMTs differentiate between abdominal emergencies.",
+                explanation: "The gallbladder sits in the right upper quadrant beneath the liver. Acute cholecystitis typically presents with severe RUQ pain that may radiate to the right shoulder or scapula (referred pain via the phrenic nerve), often occurring after a fatty meal. Guarding (involuntary muscle contraction) indicates peritoneal irritation. The patient's fever, tachycardia, and history of gallstones further support this diagnosis. Understanding referred pain patterns helps EMS providers differentiate between abdominal emergencies.",
                 kpi: "Applies knowledge of referred pain patterns and organ location to differential assessment"
             }
         ]
@@ -183,7 +183,7 @@ window.CPG_DATA = {
             <h4>Stages of Shock</h4>
             <p>Shock is a progressive condition. Recognizing the stage of shock is critical for determining the urgency of intervention:</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Stage</th><th>Pathophysiology</th><th>Clinical Findings</th><th>Outlook</th></tr>
                 </thead>
@@ -192,7 +192,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Decompensated Shock</strong></td><td>Compensatory mechanisms are overwhelmed. Blood pressure drops as perfusion to vital organs fails. Anaerobic metabolism produces lactic acidosis.</td><td><strong>Hypotension</strong> (systolic BP < 90 mmHg or drop of > 30 mmHg), tachycardia, tachypnea, weak/thready pulses, altered mental status (confusion → unresponsiveness), shallow breathing, oliguria.</td><td>Guarded — aggressive intervention required. End-organ damage begins. The body can no longer compensate.</td></tr>
                     <tr><td><strong>Irreversible Shock</strong></td><td>Prolonged hypoperfusion causes widespread cell death, multi-organ dysfunction, and failure. The damage is no longer reversible even with aggressive medical intervention.</td><td>Profound hypotension unresponsive to treatment, severe acidosis, anuria, unconsciousness, agonal breathing, pulselessness, cardiac arrest.</td><td>Nearly always fatal. Irreversible organ damage has occurred.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning:</strong> <strong>Blood pressure is a LATE sign of shock.</strong> In compensated shock, the body maintains a normal BP through tachycardia and vasoconstriction. Do not wait for hypotension to recognize shock. Tachycardia, cool/pale skin, and anxiety are EARLY warning signs that must be reported and treated immediately.
@@ -219,7 +219,7 @@ window.CPG_DATA = {
             <p>Cause: A physical obstruction prevents adequate blood flow, despite a functioning heart and adequate volume. The most common prehospital examples are <strong>tension pneumothorax</strong> (air trapped in the pleural space shifts the mediastinum, compressing the heart and great vessels) and <strong>cardiac tamponade</strong> (fluid accumulates in the pericardial sac, compressing the heart and preventing filling). Both present with hypotension, JVD, and muffled heart sounds — though in tension pneumothorax you will also find absent breath sounds and tracheal deviation away from the affected side.</p>
 
             <h4>Summary: Differentiating Shock Types</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Shock Type</th><th>Skin</th><th>Heart Rate</th><th>JVD</th><th>Lungs</th><th>Key Differentiator</th></tr>
                 </thead>
@@ -231,7 +231,7 @@ window.CPG_DATA = {
                     <tr><td>Distributive — Anaphylactic</td><td>Warm, flushed, hives</td><td>Tachycardia</td><td>Variable</td><td>Wheezing/stridor</td><td>Allergen exposure + respiratory involvement</td></tr>
                     <tr><td>Obstructive</td><td>Cool, pale</td><td>Tachycardia</td><td>↑ Distended</td><td>↓ or absent breath sounds</td><td>Unilateral breath sounds + tracheal shift</td></tr>
                 </tbody>
-            </table>
+            </table></div>
         </div>`,
         flashcards: [
             { question: "What are the three components of the perfusion triangle?", answer: "The pump (heart), the fluid (blood volume), and the container (blood vessels). All three must function for adequate perfusion.", category: "Perfusion" },
@@ -240,7 +240,7 @@ window.CPG_DATA = {
             { question: "Why is blood pressure a LATE sign of shock in the compensated stage?", answer: "Because the body compensates by increasing heart rate and constricting peripheral blood vessels — maintaining BP until compensatory mechanisms fail.", category: "Shock Stages" },
             { question: "What are the five categories of shock?", answer: "Hypovolemic (fluid loss), Cardiogenic (pump failure), Distributive (vasodilation — septic, neurogenic, anaphylactic), and Obstructive (physical blockage).", category: "Shock Types" },
             { question: "How does neurogenic shock differ from other types of shock?", answer: "Neurogenic shock presents with warm/dry skin and BRADYCARDIA due to loss of sympathetic tone — most other shock types present with tachycardia and cool/clammy skin.", category: "Shock Types" },
-            { question: "What are early signs of compensated shock that an EMT should recognize?", answer: "Tachycardia, pale/cool skin, delayed capillary refill, diaphoresis, anxiety/restlessness, with normal blood pressure.", category: "Shock Recognition" },
+            { question: "What are early signs of compensated shock that an EMS provider should recognize?", answer: "Tachycardia, pale/cool skin, delayed capillary refill, diaphoresis, anxiety/restlessness, with normal blood pressure.", category: "Shock Recognition" },
             { question: "What is the classic presentation of cardiogenic shock?", answer: "Cool/clammy skin, hypotension, pulmonary congestion (crackles/rales), and jugular venous distention — described as 'wet and cold.'", category: "Shock Types" }
         ],
         quiz: [
@@ -263,13 +263,13 @@ window.CPG_DATA = {
                     {t: "The patient's vital signs are within normal limits, so shock is not present. He may simply be anxious from the accident", f: "Incorrect — A normal blood pressure in the setting of tachycardia, anxiety, and a high-energy mechanism does NOT rule out shock. Waiting for hypotension to develop would delay critical intervention. Compensated shock has a narrow window before decompensation."}
                 ],
                 correct: 0,
-                explanation: "This patient is in compensated hypovolemic shock. His body is maintaining blood pressure through increased heart rate (118 bpm) and peripheral vasoconstriction (pale/cool skin). The mechanism (unrestrained, high-speed MVC), LUQ tenderness, and restlessness are concerning for splenic rupture with intra-abdominal hemorrhage. Prompt recognition of compensated shock — before hypotension develops — is a critical EMT skill. The patient needs high-priority transport to a trauma center with IV access en route.",
+                explanation: "This patient is in compensated hypovolemic shock. His body is maintaining blood pressure through increased heart rate (118 bpm) and peripheral vasoconstriction (pale/cool skin). The mechanism (unrestrained, high-speed MVC), LUQ tenderness, and restlessness are concerning for splenic rupture with intra-abdominal hemorrhage. Prompt recognition of compensated shock — before hypotension develops — is a critical EMS provider skill. The patient needs high-priority transport to a trauma center with IV access en route.",
                 kpi: "Recognizes compensated shock despite normal blood pressure using tachycardia, skin signs, and mental status"
             },
             {
                 id: "crit_2_2_2",
                 scenario: "You are called to a nursing home for a 78-year-old female with altered mental status. The nursing staff reports she has been 'more confused than usual' since this morning and has not eaten or drank much in the past 24 hours due to nausea. She has a history of hypertension, diabetes, and congestive heart failure. Her medications include lisinopril, metformin, and furosemide. Vital signs: BP 88/56, P 104, R 20, SpO₂ 95%, temperature 100.4°F. Her skin is cool and pale. Lung sounds are clear bilaterally. The nursing home staff report she had two episodes of diarrhea this morning but no vomiting. There is no obvious bleeding. The patient's daughter arrives and says, 'Her blood pressure is always low — that's normal for her.'",
-                question: "How should the EMT interpret the blood pressure finding in this patient?",
+                question: "How should the EMS provider interpret the blood pressure finding in this patient?",
                 options: [
                     {t: "The blood pressure of 88/56 is concerning for shock — even if 'normal for her,' the presence of tachycardia, altered mental status, and cool skin indicates hypoperfusion. This is likely hypovolemic shock from decreased intake and fluid loss.", f: "Correct — A 'low normal' BP does not account for the other findings of hypoperfusion: tachycardia (104), altered mental status (increased confusion), cool/pale skin, and possible low-grade fever. The history of decreased intake, nausea, diarrhea, and diuretic use (furosemide) all contribute to volume depletion."},
                     {t: "Since the daughter states low BP is normal for her and lung sounds are clear, this is not shock. The confusion is likely from her baseline dementia and age", f: "Incorrect — While some elderly patients have lower baseline BP, the CHANGE from baseline combined with tachycardia, altered mental status, and cool skin indicates acute hypoperfusion. Clear lung rules out cardiogenic shock, making hypovolemic shock most likely."}
@@ -287,7 +287,7 @@ window.CPG_DATA = {
                     {t: "Apply a CPAP device for respiratory support and start IV fluids — this is primarily a respiratory emergency, not shock", f: "Incorrect — While this patient has a respiratory component (wheezing, stridor, hypoxia), the hypotension (88/52) confirms distributive/anaphylactic shock. CPAP and IV fluids are secondary. Epinephrine is the first-line treatment for anaphylaxis and must be given without delay. Airway management and fluids follow epinephrine administration."}
                 ],
                 correct: 0,
-                explanation: "Anaphylactic shock is a distributive shock subtype. The pathophysiology includes massive vasodilation (causing hypotension), increased capillary permeability (causing tissue edema and hives), and bronchoconstriction (causing wheezing and respiratory distress). Stridor indicates upper airway edema — a life-threatening finding. Epinephrine 0.3 mg IM (0.15 mg for children) into the anterolateral thigh is the first-line treatment. The EMT should administer the patient's prescribed auto-injector (or agency-supplied epinephrine per protocol), provide high-flow oxygen, support ventilation, and transport emergently. Repeat epinephrine may be given after 5-15 minutes if symptoms persist.",
+                explanation: "Anaphylactic shock is a distributive shock subtype. The pathophysiology includes massive vasodilation (causing hypotension), increased capillary permeability (causing tissue edema and hives), and bronchoconstriction (causing wheezing and respiratory distress). Stridor indicates upper airway edema — a life-threatening finding. Epinephrine 0.3 mg IM (0.15 mg for children) into the anterolateral thigh is the first-line treatment. The EMS provider should administer the patient's prescribed auto-injector (or agency-supplied epinephrine per protocol), provide high-flow oxygen, support ventilation, and transport emergently. Repeat epinephrine may be given after 5-15 minutes if symptoms persist.",
                 kpi: "Identifies anaphylactic shock and initiates epinephrine as the priority intervention"
             }
         ]
@@ -385,9 +385,9 @@ window.CPG_DATA = {
             { question: "What are the five essential questions answered during scene size-up?", answer: "1) Is the scene safe? 2) What is the MOI/NOI? 3) How many patients? 4) Do we need additional resources? 5) What BSI/PPE is needed?", category: "Scene Size-up" },
             { question: "What is the leading cause of on-duty death among EMS providers?", answer: "Being struck by a vehicle while working on a roadway (struck-by incidents). High-visibility vests and proper apparatus positioning are critical preventive measures.", category: "Scene Safety" },
             { question: "What is the difference between MOI and NOI?", answer: "MOI (Mechanism of Injury) describes how a traumatic injury occurred. NOI (Nature of Illness) is the medical complaint for a non-traumatic emergency.", category: "Scene Size-up" },
-            { question: "When should an EMT NOT enter a scene?", answer: "When the scene is unsafe — violence/threats, HazMat, fire, downed power lines, unstable structures, or any hazard that cannot be mitigated. Stage safely and wait for appropriate resources.", category: "Scene Safety" },
+            { question: "When should an EMS provider NOT enter a scene?", answer: "When the scene is unsafe — violence/threats, HazMat, fire, downed power lines, unstable structures, or any hazard that cannot be mitigated. Stage safely and wait for appropriate resources.", category: "Scene Safety" },
             { question: "List at least four criteria that raise suspicion for spinal injury.", answer: "Significant MOI, altered mental status, neurologic deficit (numbness/weakness), distracting injury, intoxication, inability to communicate, or midline spinal pain/tenderness.", category: "Spinal Precautions" },
-            { question: "When should an EMT consider declaring a mass casualty incident (MCI)?", answer: "When the number of patients exceeds available resources to treat and transport. Scan the entire scene for all patients before focusing on any individual.", category: "Scene Size-up" },
+            { question: "When should an EMS provider consider declaring a mass casualty incident (MCI)?", answer: "When the number of patients exceeds available resources to treat and transport. Scan the entire scene for all patients before focusing on any individual.", category: "Scene Size-up" },
             { question: "What is the minimum BSI requirement for every patient contact?", answer: "Gloves. Additional PPE (eye protection, mask, gown) is added based on the anticipated exposure to body fluids or infectious agents.", category: "BSI/PPE" },
             { question: "What should you do if you find downed power lines at the scene of an MVC?", answer: "Maintain a minimum clearance of at least one full span (30+ feet), do not approach, have dispatch contact the utility company to disconnect power, and establish a danger zone perimeter.", category: "Scene Safety" }
         ],
@@ -395,9 +395,9 @@ window.CPG_DATA = {
             { q: "The scene size-up begins:", options: ["When you arrive at the patient's side", "When you exit the ambulance", "When you receive the call from dispatch", "After the primary assessment is complete"], correct: 2 },
             { q: "The leading cause of on-duty death among EMS providers is:", options: ["Heart attack", "Needlestick injury", "Struck by a vehicle", "Violence from patients"], correct: 2 },
             { q: "Which of the following is NOT part of the scene size-up?", options: ["Determining the mechanism of injury", "Taking a full set of vital signs", "Evaluating the need for additional resources", "Identifying the number of patients"], correct: 1 },
-            { q: "A patient was involved in a high-speed rollover MVC. Based on this MOI, the EMT should:", options: ["Assume there are no injuries if the patient is ambulatory", "Apply spinal precautions and perform a thorough assessment for hidden injuries", "Only assess areas where the patient reports pain", "Transport without assessment since the patient is awake"], correct: 1 },
+            { q: "A patient was involved in a high-speed rollover MVC. Based on this MOI, the EMS provider should:", options: ["Assume there are no injuries if the patient is ambulatory", "Apply spinal precautions and perform a thorough assessment for hidden injuries", "Only assess areas where the patient reports pain", "Transport without assessment since the patient is awake"], correct: 1 },
             { q: "When should BSI/PPE be applied during a call?", options: ["After the primary assessment", "Before patient contact, during scene size-up", "Only if the patient appears infectious", "At the hospital during handoff"], correct: 1 },
-            { q: "An EMT arrives at a scene and suspects violence. The most appropriate action is:", options: ["Enter cautiously with your partner for safety", "Stage at a safe distance and request law enforcement to secure the scene", "Announce your presence loudly before entering", "Call medical direction for guidance"], correct: 1 },
+            { q: "An EMS provider arrives at a scene and suspects violence. The most appropriate action is:", options: ["Enter cautiously with your partner for safety", "Stage at a safe distance and request law enforcement to secure the scene", "Announce your presence loudly before entering", "Call medical direction for guidance"], correct: 1 },
             { q: "[HARD] A 45-year-old male fell approximately 8 feet from a ladder while trimming trees. He is awake and alert, denies any neck or back pain, and has full motor and sensory function in all extremities. Which of the following BEST describes the appropriate spinal precautions decision?", options: ["No immobilization needed — the patient has no symptoms", "Immobilize the patient — the fall height (> 6 feet), mechanism, and inability to clinically clear in the field meet spinal precaution criteria", "Apply a cervical collar only without a backboard", "Have the patient walk to the ambulance to prove they are not injured"], correct: 1 },
             { q: "[HARD] You arrive at a two-car MVC. As you approach, you see one patient walking on the sidewalk and another still in a vehicle. A bystander tells you there is a third person in the back seat of the second car that you cannot see from your approach. Your partner begins assessing the ambulatory patient. What should you do FIRST?", options: ["Help your partner with the ambulatory patient since they are closer", "Visually confirm the number and condition of ALL patients, including the one reported in the back seat, before focusing on any single patient", "Begin extricating the patient in the vehicle since they may be more seriously injured", "Call for additional resources immediately since you have multiple patients"], correct: 1 }
         ],
@@ -411,7 +411,7 @@ window.CPG_DATA = {
                     {t: "Approach cautiously and try to calm the situation by speaking to the individuals from a distance", f: "Incorrect — While approaching cautiously is better than rushing in, the scene is clearly unsafe. Law enforcement has not arrived. EMS providers are not trained to de-escalate violent domestic situations. Staging safely and awaiting police is the correct action."}
                 ],
                 correct: 0,
-                explanation: "Scene safety is the first priority. This scene has multiple red flags: dispatch reported a domestic disturbance (high-risk for violence), shouting is audible, broken glass indicates physical altercation, blood is visible, and a potential weapon (baseball bat) is present. Without law enforcement on scene, the EMT must stage at a safe location and request police to secure the scene before any patient contact is made. No patient outcome justifies EMS becoming victims of violence. The DOT's 'Scene Safety' guidelines emphasize that EMTs should never enter scenes where violence is occurring or imminent.",
+                explanation: "Scene safety is the first priority. This scene has multiple red flags: dispatch reported a domestic disturbance (high-risk for violence), shouting is audible, broken glass indicates physical altercation, blood is visible, and a potential weapon (baseball bat) is present. Without law enforcement on scene, the EMS provider must stage at a safe location and request police to secure the scene before any patient contact is made. No patient outcome justifies EMS becoming victims of violence. The DOT's 'Scene Safety' guidelines emphasize that EMS providers should never enter scenes where violence is occurring or imminent.",
                 kpi: "Recognizes an unsafe scene and stages for law enforcement before entering"
             },
             {
@@ -429,13 +429,13 @@ window.CPG_DATA = {
             {
                 id: "crit_2_3_3",
                 scenario: "You are dispatched to a 'person down' behind a grocery store at 11:00 PM. Dispatch advises limited information — a store employee called and reported seeing someone lying on the ground behind the dumpster and then hung up. As you approach the area from the parking lot, you can see a person's legs visible behind the dumpster. The lighting is very poor. There are no other people visible, and the area is secluded. Your partner says, 'Let me run up there and check on them while you get the equipment.'",
-                question: "Before approaching the patient, what scene size-up considerations should the EMT prioritize?",
+                question: "Before approaching the patient, what scene size-up considerations should the EMS provider prioritize?",
                 options: [
                     {t: "Request law enforcement to respond and assist before approaching — this is a high-risk scene with limited information, poor lighting, a secluded location, and an unknown situation. Scene safety cannot be assured.", f: "Correct — Limited dispatch information, night hours, poor lighting, a secluded location (behind a dumpster), and the caller hung up without details all raise the index of suspicion for an unsafe scene. The safest approach is to request law enforcement and stage until the scene is secured."},
                     {t: "Approach together with a handheld flashlight, staying alert and communicating with each other — waiting for law enforcement delays patient care", f: "Incorrect — While approaching together is safer than one person going alone, the combination of poor lighting, a secluded location at night, limited dispatch information, and the caller hanging up makes this scene unsuitable for EMS to enter without law enforcement. Staging is the appropriate response."}
                 ],
                 correct: 0,
-                explanation: "Scene safety assessment must consider all available information. This scene has multiple safety concerns: the call is at night (poor visibility), the location is secluded (behind a dumpster), dispatch information is incomplete (caller hung up), and the situation is unknown (unresponsive person could be medical — or could be a trap, a crime scene, or a HazMat situation involving drug paraphernalia). In such scenarios, the EMT should request law enforcement backup and not approach until the scene is declared safe. EMS protocol universally prioritizes provider safety over rapid patient access when scene safety is uncertain. If the patient is truly in cardiac arrest, minutes matter — but not at the cost of EMS becoming additional patients.",
+                explanation: "Scene safety assessment must consider all available information. This scene has multiple safety concerns: the call is at night (poor visibility), the location is secluded (behind a dumpster), dispatch information is incomplete (caller hung up), and the situation is unknown (unresponsive person could be medical — or could be a trap, a crime scene, or a HazMat situation involving drug paraphernalia). In such scenarios, the EMS provider should request law enforcement backup and not approach until the scene is declared safe. EMS protocol universally prioritizes provider safety over rapid patient access when scene safety is uncertain. If the patient is truly in cardiac arrest, minutes matter — but not at the cost of EMS becoming additional patients.",
                 kpi: "Recognizes high-risk scene indicators (secluded location, poor lighting, limited dispatch info) and stages for law enforcement"
             }
         ]
@@ -483,7 +483,7 @@ window.CPG_DATA = {
 
             <h4>B — Breathing</h4>
             <p>After establishing a patent airway, assess the adequacy of breathing. Key assessments include:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Assessment</th><th>Normal Findings</th><th>Concerning Findings</th></tr>
                 </thead>
@@ -495,7 +495,7 @@ window.CPG_DATA = {
                     <tr><td>Oxygen Saturation</td><td>SpO₂ ≥ 95% (at sea level)</td><td>&lt; 94% indicates hypoxemia; &lt; 90% is critical</td></tr>
                     <tr><td>Skin Color</td><td>Pink (adequate oxygenation)</td><td>Cyanosis (late sign of hypoxia), pallor</td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <p>If breathing is inadequate, ventilate with a bag-valve mask (BVM) with high-flow oxygen. If breathing is adequate but oxygenation is low, administer supplemental oxygen. Be prepared to assist ventilation if the rate, depth, or effort is insufficient.</p>
             <p>Critical breathing conditions to identify during the primary assessment: tension pneumothorax (tracheal deviation, absent breath sounds, JVD, hypotension), open pneumothorax (sucking chest wound), flail chest (paradoxical chest wall movement), and massive hemothorax.</p>
 
@@ -567,19 +567,19 @@ window.CPG_DATA = {
             {
                 id: "crit_2_4_1",
                 scenario: "You are called to a construction site where a 34-year-old male worker caught his right arm in a piece of heavy machinery. On arrival, you find the patient lying on the ground with coworkers around him. His right forearm has a traumatic amputation at the mid-forearm level with active arterial bleeding — bright red blood is spurting from the wound with each heartbeat. There is a large pool of blood on the ground beneath the arm. The patient is awake, anxious, and screaming in pain. His skin is pale and diaphoretic. One coworker is applying a belt as a tourniquet proximal to the wound, but blood is still actively spurting. The patient's airway is patent and he is breathing rapidly at 24 breaths per minute.",
-                question: "According to the XABCDE primary assessment approach, what is the EMT's priority action?",
+                question: "According to the XABCDE primary assessment approach, what is the EMS provider's priority action?",
                 options: [
                     {t: "Immediately take over hemorrhage control — apply a properly placed commercial tourniquet 2-3 inches above the wound, tighten until bleeding stops, and note the application time. This is the 'X' step and takes priority over everything else.", f: "Correct — X (Exsanguinating Hemorrhage) is the absolute first priority. The patient has life-threatening arterial bleeding with a traumatic amputation. The improvised belt tourniquet is not controlling bleeding. A commercial tourniquet properly placed and tightened takes priority over all other interventions. After bleeding is controlled, proceed through A, B, C, D, E."},
                     {t: "Begin assessing the airway first and apply high-flow oxygen — the rapid breathing rate and anxiety suggest hypoxia, which must be addressed before bleeding control", f: "Incorrect — While this patient will eventually need oxygen, exsanguinating hemorrhage is the immediate life threat. A patient can die from blood loss in minutes. The X (hemorrhage control) step always comes before A (airway) in the XABCDE sequence. Control the bleeding first."}
                 ],
                 correct: 0,
-                explanation: "This patient has an immediately life-threatening hemorrhage (traumatic amputation with arterial spurting, large blood pool, pale/diaphoretic skin). XABCDE places 'X' — exsanguinating hemorrhage — as the #1 priority before airway, breathing, or circulation. The improvised belt tourniquet was not effective; the EMT must apply a properly placed commercial tourniquet 2-3 inches above the wound (over single bone — forearm), tighten until bleeding stops completely, and document the application time. Only after hemorrhage is controlled should the EMT proceed through the remaining XABCDE steps. This patient will also need rapid transport to a trauma center.",
+                explanation: "This patient has an immediately life-threatening hemorrhage (traumatic amputation with arterial spurting, large blood pool, pale/diaphoretic skin). XABCDE places 'X' — exsanguinating hemorrhage — as the #1 priority before airway, breathing, or circulation. The improvised belt tourniquet was not effective; the EMS provider must apply a properly placed commercial tourniquet 2-3 inches above the wound (over single bone — forearm), tighten until bleeding stops completely, and document the application time. Only after hemorrhage is controlled should the EMS provider proceed through the remaining XABCDE steps. This patient will also need rapid transport to a trauma center.",
                 kpi: "Prioritizes exsanguinating hemorrhage control (X) above all other primary assessment steps"
             },
             {
                 id: "crit_2_4_2",
                 scenario: "You are dispatched to a home for a 6-year-old child who is 'not breathing right.' On arrival, you find the child sitting on the floor, leaning forward with hands on knees (tripod position). The child has audible wheezing, nasal flaring, and intercostal retractions. The parents state the child has asthma and has been using an inhaler every 2 hours for the past 6 hours without relief. The child is awake but cannot speak in full sentences. Respiratory rate is 38, heart rate is 140, SpO₂ is 88% on room air, and skin is pale with central cyanosis noted around the lips. There is no external bleeding. You identify this as a severe asthma exacerbation with respiratory failure.",
-                question: "How should the EMT prioritize interventions using the XABCDE approach?",
+                question: "How should the EMS provider prioritize interventions using the XABCDE approach?",
                 options: [
                     {t: "X (no hemorrhage), then A — maintain airway patency. B — begin high-flow oxygen via non-rebreathing mask (or BVM if breathing becomes inadequate), assist with the child's prescribed inhaler or a nebulized bronchodilator per protocol, and transport promptly", f: "Correct — After ruling out hemorrhage (X), assess airway (A). The child's airway is patent but breathing is inadequate (B): tachypnea, accessory muscle use, hypoxia, cyanosis. Administer high-flow oxygen and bronchodilator therapy. The tripod position maintains airway patency — do not force the child flat. Be prepared to assist ventilations if the child deteriorates."},
                     {t: "Start with circulation (C) — the tachycardia of 140 indicates cardiovascular compromise, so IV access should be established before focusing on the respiratory problem", f: "Incorrect — While the tachycardia is concerning, it is likely secondary to respiratory distress and hypoxia, not a primary circulatory problem. The XABCDE sequence prioritizes X → A → B before C. The primary problem is inadequate breathing and severe hypoxia. Oxygen and bronchodilators are the priority. IV access can be obtained en route if needed."}
@@ -591,13 +591,13 @@ window.CPG_DATA = {
             {
                 id: "crit_2_4_3",
                 scenario: "You and your partner respond to a single-vehicle MVC where a 55-year-old male struck a tree at approximately 40 mph. Upon arrival, you find the patient seated in the driver's seat, restrained, with airbag deployment. The windshield is starred on the driver's side. He is awake but confused, answering questions slowly and inappropriately. His airway is patent with snoring respirations. His respiratory rate is 10 and shallow, breath sounds are clear bilaterally, and SpO₂ is 91%. You note a large contusion on his chest from the steering wheel. His radial pulse is weak and rapid at 116. His skin is pale, cool, and diaphoretic. He has an obvious deformed and angulated right femur. Your partner says, 'Let's get him on the backboard and out of here — this is a trauma center run.'",
-                question: "During the primary assessment, what is the MOST important intervention the EMT should perform before moving the patient to the backboard?",
+                question: "During the primary assessment, what is the MOST important intervention the EMS provider should perform before moving the patient to the backboard?",
                 options: [
                     {t: "Open the airway using a jaw-thrust maneuver (maintaining inline stabilization) — the patient has snoring respirations indicating partial airway obstruction from the tongue. Manage the airway FIRST before proceeding with B, C, D, E.", f: "Correct — Go through XABCDE sequentially. X: scan for hemorrhage (no visible active bleeding noted). A: the patient has snoring respirations (tongue obstruction) with an altered mental status — the airway is compromised. Use jaw-thrust with manual inline stabilization (MVC mechanism). If the airway cannot be maintained, insert an NPA (patient has some responsiveness). After airway is secured, proceed to B (ventilatory support for the low rate and shallow depth), C (shock signs), D (GCS/AVPU), and E (expose, immobilize, transport)."},
                     {t: "Splint the deformed right femur — femur fractures can cause significant internal blood loss and must be stabilized before moving the patient", f: "Incorrect — While the femur fracture is important, airway compromise takes priority. The snoring respirations indicate a partially obstructed airway. In the XABCDE sequence, A (Airway) comes before any musculoskeletal injury management. The femur can be splinted during extrication or en route. Failure to address the airway first could result in complete obstruction and cardiac arrest."}
                 ],
                 correct: 0,
-                explanation: "This patient has a high-mechanism MVC with concerning findings: altered mental status, snoring respirations (airway compromise), bradypnea (rate 10) with shallow breathing (inadequate ventilation), signs of shock (tachycardia, pale/cool/diaphoretic), and a femur fracture. Following XABCDE: X — no active external bleeding noted. A — snoring respirations indicate the tongue is partially obstructing the airway, likely due to the decreased mental status. The EMT must open the airway using jaw-thrust (maintaining cervical spine inline stabilization), insert an NPA if tolerated, and position the patient appropriately. After airway patency is confirmed, proceed to B — assist ventilations with BVM (rate 10 is too low, shallow depth = inadequate minute ventilation). Then C — manage shock. The femur can be splinted during movement. This patient requires rapid transport to a trauma center.",
+                explanation: "This patient has a high-mechanism MVC with concerning findings: altered mental status, snoring respirations (airway compromise), bradypnea (rate 10) with shallow breathing (inadequate ventilation), signs of shock (tachycardia, pale/cool/diaphoretic), and a femur fracture. Following XABCDE: X — no active external bleeding noted. A — snoring respirations indicate the tongue is partially obstructing the airway, likely due to the decreased mental status. The EMS provider must open the airway using jaw-thrust (maintaining cervical spine inline stabilization), insert an NPA if tolerated, and position the patient appropriately. After airway patency is confirmed, proceed to B — assist ventilations with BVM (rate 10 is too low, shallow depth = inadequate minute ventilation). Then C — manage shock. The femur can be splinted during movement. This patient requires rapid transport to a trauma center.",
                 kpi: "Prioritizes airway management (A) over extremity injuries in the XABCDE sequence"
             }
         ]
@@ -608,7 +608,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Vital Signs</h3>
 
-            <p>Vital signs are objective measurements of the body's basic physiological functions. They are the cornerstone of patient assessment — providing critical information about the patient's current condition, helping you identify life threats, and serving as a baseline to track changes over time. Every EMT must master the measurement, interpretation, and trending of vital signs across all age groups.</p>
+            <p>Vital signs are objective measurements of the body's basic physiological functions. They are the cornerstone of patient assessment — providing critical information about the patient's current condition, helping you identify life threats, and serving as a baseline to track changes over time. Every EMS provider must master the measurement, interpretation, and trending of vital signs across all age groups.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> A single set of vital signs is a snapshot. Trending vital signs over time — comparing serial measurements — reveals the patient's trajectory (improving, stable, or deteriorating). This is far more valuable than any single reading.
@@ -617,7 +617,7 @@ window.CPG_DATA = {
             <h4>Normal Vital Sign Ranges by Age Group</h4>
             <p>The following ranges are the accepted NREMT reference standards. Remember that normal ranges vary with age, and individual patients may fall outside these ranges for benign reasons (e.g., an athlete's resting heart rate may be 45–50 bpm). Always interpret vital signs in the context of the patient's overall presentation.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Vital Sign</th><th>Adult (≥12 yr)</th><th>Child (1–11 yr)</th><th>Infant (0–12 mo)</th></tr>
                 </thead>
@@ -628,7 +628,7 @@ window.CPG_DATA = {
                     <tr><td>SpO₂ (%)</td><td>94–100</td><td>94–100</td><td>94–100</td></tr>
                     <tr><td>Temperature (°F / °C)</td><td>97.0–99.6°F (36.1–37.5°C)</td><td>96.8–99.6°F (36.0–37.5°C)</td><td>97.0–100.4°F (36.1–38.0°C)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>NREMT Tip:</strong> You will be expected to recall normal ranges for testing. A useful memory aid: <strong>"60–100 for the big one (adult HR), 80–120 for the middle one (child HR), 100–160 for the little one (infant HR)."</strong> For respiratory rates, remember rates roughly double the heart rate expectation: adult 12–20, child 15–30, infant 30–60.
@@ -677,7 +677,7 @@ window.CPG_DATA = {
 
             <h4>Factors That Affect Vital Signs</h4>
             <p>Many non-pathological factors can alter vital signs. Always consider these when interpreting your readings:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Factor</th><th>Effect on Vital Signs</th></tr>
                 </thead>
@@ -692,7 +692,7 @@ window.CPG_DATA = {
                     <tr><td>Pregnancy</td><td>HR increases 10–20 bpm; BP decreases in 2nd trimester, normalizes by term.</td></tr>
                     <tr><td>Fitness Level</td><td>Well-conditioned athletes often have lower resting HR and BP.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>When to Recheck Vital Signs</h4>
             <p>Serial vital sign measurements are essential for tracking the patient's status. Follow these general guidelines:</p>
@@ -704,7 +704,7 @@ window.CPG_DATA = {
                 <li><strong>Before and after any significant movement:</strong> Moving a trauma patient, standing a patient up, or transferring to a hospital bed should be preceded and followed by vital sign assessment.</li>
             </ul>
 
-            <p>Document all vital signs with the time they were obtained. Trend analysis — looking at how vital signs change over time — is one of the most powerful diagnostic tools you have as an EMT. A patient who starts with HR 110, BP 100/70, RR 22 and over 15 minutes progresses to HR 130, BP 88/50, RR 28 is clearly deteriorating, even if the initial vital signs were not alarming in isolation.</p>
+            <p>Document all vital signs with the time they were obtained. Trend analysis — looking at how vital signs change over time — is one of the most powerful diagnostic tools you have as an EMS provider. A patient who starts with HR 110, BP 100/70, RR 22 and over 15 minutes progresses to HR 130, BP 88/50, RR 28 is clearly deteriorating, even if the initial vital signs were not alarming in isolation.</p>
         </div>`,
         flashcards: [
             { question: "What is the normal heart rate range for an adult?", answer: "60–100 beats per minute at rest", category: "Vital Signs" },
@@ -718,7 +718,7 @@ window.CPG_DATA = {
         ],
         quiz: [
             { q: "What is the most common cause of a falsely elevated blood pressure reading in the field?", options: ["Stethoscope placed incorrectly", "BP cuff that is too small for the patient's arm", "BP cuff that is too large for the patient's arm", "Taking the pressure over a vein"], correct: 1 },
-            { q: "A 6-month-old infant has a heart rate of 150 bpm. The EMT should:", options: ["Consider this normal for an infant and assess other vital signs", "Immediately start CPR", "Administer oxygen and request ALS", "Suspect sepsis and transport emergently"], correct: 0 },
+            { q: "A 6-month-old infant has a heart rate of 150 bpm. The EMS provider should:", options: ["Consider this normal for an infant and assess other vital signs", "Immediately start CPR", "Administer oxygen and request ALS", "Suspect sepsis and transport emergently"], correct: 0 },
             { q: "A patient with a suspected opioid overdose would most likely exhibit which pattern of vital sign abnormality?", options: ["Tachypnea and tachycardia", "Bradypnea and bradycardia", "Hypertension and tachypnea", "Hyperthermia and tachycardia"], correct: 1 },
             { q: "[HARD] A trauma patient has an initial BP of 118/72 and HR of 96. Fifteen minutes later, the BP is 96/62 and HR is 122. The skin is cool and clammy. This trend most likely indicates:", options: ["The patient is stabilizing and improving", "Compensated shock progressing toward decompensation — intervene immediately", "A normal stress response to injury", "Medication side effects from pain medication"], correct: 1, explanation: "Falling BP with rising HR and cool, clammy skin is the classic progression from compensated to decompensated (hypotensive) shock." }
         ],
@@ -767,7 +767,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Monitoring Devices</h3>
 
-            <p>Modern prehospital care depends on monitoring devices that provide real-time data about the patient's physiological status. These devices supplement — but never replace — your clinical assessment. Understanding how each device works, what the numbers mean, and when to trust them (or be suspicious) is essential for safe patient care. This section covers the four monitoring devices you will use most as an EMT: pulse oximetry, capnography, blood glucose monitoring, and cardiac monitoring (ECG).</p>
+            <p>Modern prehospital care depends on monitoring devices that provide real-time data about the patient's physiological status. These devices supplement — but never replace — your clinical assessment. Understanding how each device works, what the numbers mean, and when to trust them (or be suspicious) is essential for safe patient care. This section covers the four monitoring devices you will use most as an EMS provider: pulse oximetry, capnography, blood glucose monitoring, and cardiac monitoring (ECG).</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Rule:</strong> Monitoring devices provide <strong>data points</strong>, not <strong>diagnoses</strong>. Use them to support your clinical assessment, not to replace it. A normal SpO₂ does not rule out respiratory failure. A normal EtCO₂ does not rule out a pulmonary embolism. Always treat the patient, not the monitor.
@@ -779,7 +779,7 @@ window.CPG_DATA = {
             <p>Pulse oximetry uses <strong>spectrophotometry</strong> — light-emitting diodes (LEDs) shine two wavelengths of light (red and infrared) through a perfused tissue bed (typically a fingertip, toe, or earlobe). <strong>Oxyhemoglobin</strong> and <strong>deoxyhemoglobin</strong> absorb these wavelengths differently. The device calculates the ratio of oxygenated to total hemoglobin and displays it as a percentage. It also displays a <strong>plethysmographic waveform (pleth)</strong> — a visual representation of the pulse that confirms the device is detecting a pulsatile signal.</p>
 
             <h5>Normal Values and Targets</h5>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Patient Category</th><th>Target SpO₂</th><th>Action if Below Target</th></tr>
                 </thead>
@@ -790,11 +790,11 @@ window.CPG_DATA = {
                     <tr><td>Acute MI / cardiac patient</td><td>≥94%</td><td>Supplement O₂ only if hypoxic</td></tr>
                     <tr><td>Neonatal / infant</td><td>90–95%</td><td>More cautious — avoid hyperoxia toxicity</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h5>Pitfalls and Common Errors</h5>
-            <p>Pulse oximetry has important limitations that every EMT must know:</p>
-            <table>
+            <p>Pulse oximetry has important limitations that every EMS provider must know:</p>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Problem</th><th>Effect on Reading</th><th>Solution</th></tr>
                 </thead>
@@ -807,7 +807,7 @@ window.CPG_DATA = {
                     <tr><td>Bright ambient light (sunlight, surgical lights)</td><td>May interfere with sensor</td><td>Cover the sensor site with opaque material</td></tr>
                     <tr><td>Hypothermia</td><td>Poor perfusion → unreliable reading</td><td>Restore perfusion, use core temperature probe site</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> Always check the <strong>pleth waveform</strong> before trusting a SpO₂ number. If the waveform is weak, erratic, or absent, the number is unreliable. The pleth is your confirmation that the device is detecting pulsatile blood flow.
@@ -828,7 +828,7 @@ window.CPG_DATA = {
                 <li><strong>Increasing EtCO₂:</strong> Hypoventilation, rising metabolic rate (fever, seizure), or rebreathing CO₂.</li>
             </ul>
 
-            <h5>EMT Applications of Capnography</h5>
+            <h5>EMS Provider Applications of Capnography</h5>
             <ul>
                 <li><strong>Confirming and monitoring advanced airway placement:</strong> Waveform capnography is the <strong>gold standard</strong> for confirming endotracheal tube placement and monitoring for displacement. Six exhaled breaths with a consistent waveform confirms placement in the trachea.</li>
                 <li><strong>Monitoring CPR quality:</strong> EtCO₂ ≥10–20 mmHg during CPR indicates adequate chest compressions. A sudden increase in EtCO₂ during CPR often signals <strong>return of spontaneous circulation (ROSC)</strong> before a pulse is palpable.</li>
@@ -847,7 +847,7 @@ window.CPG_DATA = {
             <h5>How It Works</h5>
             <p>A <strong>glucometer</strong> measures the concentration of glucose in a small capillary blood sample (usually from a fingertip). The device applies the blood to a test strip containing glucose oxidase; an electrochemical reaction produces a current proportional to the glucose level. Normal fasting blood glucose is <strong>70–110 mg/dL</strong>, though postprandial (after eating) levels may be slightly higher.</p>
 
-            <h5>EMT Indications for Blood Glucose Testing</h5>
+            <h5>EMS Provider Indications for Blood Glucose Testing</h5>
             <ul>
                 <li><strong>Altered mental status of unknown cause</strong> — this is the most critical indication. Hypoglycemia (&lt;60 mg/dL) is a rapidly reversible cause of AMS that can mimic stroke, intoxication, seizure, head injury, and psychiatric conditions.</li>
                 <li><strong>Known diabetic with suspected hypoglycemia or hyperglycemia</strong> — symptoms of hypoglycemia (sweating, tachycardia, confusion, seizure, coma) require immediate glucose administration if the patient can safely take oral glucose or has an order for IM glucagon or IV dextrose.</li>
@@ -857,7 +857,7 @@ window.CPG_DATA = {
             </ul>
 
             <h5>Interpreting Results</h5>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Result</th><th>Interpretation</th><th>Action</th></tr>
                 </thead>
@@ -868,7 +868,7 @@ window.CPG_DATA = {
                     <tr><td>&gt;180 mg/dL</td><td>Hyperglycemia</td><td>May be associated with DKA/HHS. Check for ketones, provide transport. Do NOT give glucose.</td></tr>
                     <tr><td>&gt;400–500 mg/dL</td><td>Severe hyperglycemia</td><td>Usually indicates DKA or HHS. Provide transport; monitor ABCs.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> In hypoglycemia, the brain runs out of fuel. Minutes matter. If a patient with altered mental status has a blood glucose &lt;60 mg/dL, administer glucose immediately per your protocol. Do not wait for a doctor's order if standing orders authorize it. Brain cells can suffer irreversible damage within 30 minutes of severe hypoglycemia.
@@ -883,23 +883,23 @@ window.CPG_DATA = {
                 <li><strong>Reagent strip vs. photometric devices:</strong> Know which type your agency uses. Reagent strips (visually read) are less accurate than electronic meters.</li>
             </ul>
 
-            <h4>4. Cardiac Monitoring (ECG Basics for EMTs)</h4>
+            <h4>4. Cardiac Monitoring (ECG Basics for EMS Providers)</h4>
 
             <h5>How It Works</h5>
-            <p>An <strong>electrocardiogram (ECG or EKG)</strong> records the electrical activity of the heart through electrodes placed on the patient's skin. The heart's electrical conduction system — SA node → AV node → Bundle of His → Purkinje fibers — generates a characteristic waveform that can be analyzed for rate, rhythm, and ischemia. As an EMT, your role in cardiac monitoring focuses on <strong>lead placement</strong>, <strong>basic rhythm interpretation</strong>, and <strong>recognition of life-threatening arrhythmias</strong>.</p>
+            <p>An <strong>electrocardiogram (ECG or EKG)</strong> records the electrical activity of the heart through electrodes placed on the patient's skin. The heart's electrical conduction system — SA node → AV node → Bundle of His → Purkinje fibers — generates a characteristic waveform that can be analyzed for rate, rhythm, and ischemia. As an EMS provider, your role in cardiac monitoring focuses on <strong>lead placement</strong>, <strong>basic rhythm interpretation</strong>, and <strong>recognition of life-threatening arrhythmias</strong>.</p>
 
             <h5>EMT Scope — Cardiac Monitoring</h5>
             <p>The EMT scope of practice for cardiac monitoring generally includes:</p>
             <ul>
                 <li>Applying ECG electrodes correctly and obtaining a <strong>3-lead or 4-lead tracing</strong> for rhythm monitoring.</li>
-                <li>Obtaining a <strong>12-lead ECG</strong> (in some systems — know your local protocol). In most systems, paramedics or trained EMTs obtain 12-leads, but the skill of proper lead placement is valuable.</li>
+                <li>Obtaining a <strong>12-lead ECG</strong> (in some systems — know your local protocol). In most systems, paramedics or trained EMS providers obtain 12-leads, but the skill of proper lead placement is valuable.</li>
                 <li>Identifying the <strong>basic rhythm</strong>: normal sinus rhythm, sinus tachycardia, sinus bradycardia, and the life-threatening rhythms listed below.</li>
                 <li>Assisting with <strong>AED analysis and defibrillation</strong>.</li>
                 <li>Recognizing <strong>artifacts</strong> (patient movement, loose leads, 60-cycle interference) that can mimic dangerous rhythms.</li>
             </ul>
 
             <h5>Life-Threatening Rhythms to Recognize</h5>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Rhythm</th><th>Characteristics</th><th>Treatment</th></tr>
                 </thead>
@@ -910,7 +910,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Pulseless Electrical Activity (PEA)</strong></td><td>Organized electrical activity seen on monitor but NO pulse. The heart has electrical function but no mechanical output.</td><td>CPR + epinephrine + treat the underlying cause</td></tr>
                     <tr><td><strong>Third-Degree (Complete) Heart Block</strong></td><td>Atria and ventricles beat independently — P waves with no relationship to QRS complexes. Rate is often slow.</td><td>Treat causes, external pacing if severely symptomatic</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h5>Lead Placement for 3-Lead/4-Lead Monitoring</h5>
             <ul>
@@ -946,7 +946,7 @@ window.CPG_DATA = {
         flashcards: [
             { question: "What is the normal end-tidal CO₂ (EtCO₂) range for a healthy adult?", answer: "35–45 mmHg", category: "Monitoring Devices" },
             { question: "What does a 'shark-fin' capnography waveform indicate?", answer: "Bronchospasm — seen in asthma and COPD exacerbations due to air trapping and incomplete exhalation", category: "Monitoring Devices" },
-            { question: "What is the most critical EMT indication for blood glucose monitoring?", answer: "Altered mental status of unknown cause — hypoglycemia is a rapidly reversible cause of AMS", category: "Monitoring Devices" },
+            { question: "What is the most critical EMS provider indication for blood glucose monitoring?", answer: "Altered mental status of unknown cause — hypoglycemia is a rapidly reversible cause of AMS", category: "Monitoring Devices" },
             { question: "What is the treatment threshold for hypoglycemia in a patient with altered mental status?", answer: "Blood glucose <60 mg/dL — administer oral glucose (if conscious/swallowing) or IM glucagon per protocol", category: "Monitoring Devices" },
             { question: "What does a sudden increase in EtCO₂ during CPR typically indicate?", answer: "Return of spontaneous circulation (ROSC) — a rise in EtCO₂ indicates that cardiac output has returned and CO₂ is being delivered to the lungs", category: "Monitoring Devices" },
             { question: "What is the mnemonic for ECG lead placement?", answer: "'White on right, smoke over fire' — White (RA) on right clavicle, Black (LA) on left clavicle, Red (LL) below the heart", category: "Monitoring Devices" },
@@ -1004,7 +1004,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> History Taking (SAMPLE / OPQRST)</h3>
 
-            <p>Patient history taking is one of the most important skills you will develop as an EMT. The information you gather from the patient — and from family members, bystanders, and the scene — often determines the diagnosis, the treatment you provide, and the destination you choose. Unlike vital signs and physical exam findings, the history provides the <strong>context</strong> for everything else you observe. A well-taken history can distinguish between a stroke and hypoglycemia, between cardiac chest pain and GERD, between anaphylaxis and a panic attack.</p>
+            <p>Patient history taking is one of the most important skills you will develop as an EMS provider. The information you gather from the patient — and from family members, bystanders, and the scene — often determines the diagnosis, the treatment you provide, and the destination you choose. Unlike vital signs and physical exam findings, the history provides the <strong>context</strong> for everything else you observe. A well-taken history can distinguish between a stroke and hypoglycemia, between cardiac chest pain and GERD, between anaphylaxis and a panic attack.</p>
 
             <p>Two structured mnemonic tools — <strong>SAMPLE</strong> and <strong>OPQRST</strong> — help you gather a complete and organized history every time. They are not checklists to be recited robotically; they are frameworks that ensure you do not miss critical information while allowing the conversation to flow naturally.</p>
 
@@ -1015,7 +1015,7 @@ window.CPG_DATA = {
             <h4>The SAMPLE History</h4>
             <p>The <strong>SAMPLE</strong> mnemonic is used to obtain a comprehensive medical history. It is indicated for <strong>every patient</strong>, regardless of the nature of the call — medical or trauma.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Letter</th><th>Stands For</th><th>Key Questions / Details to Gather</th></tr>
                 </thead>
@@ -1070,7 +1070,7 @@ window.CPG_DATA = {
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> When a patient tells you "I'm allergic to everything," ask: "What specific medication caused a reaction, and what happened?" True anaphylaxis (hives, swelling, breathing difficulty) is different from nausea or headache — which may be a side effect, not a true allergy. Document the specific reaction.
@@ -1079,7 +1079,7 @@ window.CPG_DATA = {
             <h4>The OPQRST Pain/Discomfort Assessment</h4>
             <p>When the chief complaint involves <strong>pain or discomfort</strong> — chest pain, abdominal pain, headache, back pain — the <strong>OPQRST</strong> mnemonic helps you characterize the pain in detail. This information is critical for differential diagnosis and for communicating effectively with the receiving hospital.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Letter</th><th>Stands For</th><th>Questions to Ask</th></tr>
                 </thead>
@@ -1121,7 +1121,7 @@ window.CPG_DATA = {
                         Constant vs. intermittent is a key distinction. <strong>Constant, unrelenting pain</strong> suggests ischemia, infarction, or surgical abdomen. <strong>Intermittent/colicky</strong> suggests hollow-organ obstruction (kidney stones, gallstones, bowel obstruction).</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning:</strong> Never lower the severity of a pain assessment because the patient appears comfortable or is not "acting" like they are in pain. Patient presentations vary widely — some patients with myocardial infarction have a "silent" presentation (especially diabetics, women, and the elderly). Their pain score is their truth. Document it accurately.
@@ -1141,14 +1141,14 @@ window.CPG_DATA = {
             <h5>Active Listening Techniques</h5>
             <ul>
                 <li><strong>Facilitation:</strong> Use neutral prompts to encourage the patient to continue: "Go on…" "Tell me more about that." "Mm-hmm." Nodding and maintaining eye contact communicates that you are listening.</li>
-                <li><strong>Reflection/Repetition:</strong> Repeat the patient's last few words back as a question: Patient: "The pain started after I ate lunch." EMT: "After you ate lunch…?" This encourages elaboration without leading.</li>
+                <li><strong>Reflection/Repetition:</strong> Repeat the patient's last few words back as a question: Patient: "The pain started after I ate lunch." EMS provider: "After you ate lunch…?" This encourages elaboration without leading.</li>
                 <li><strong>Clarification:</strong> When the patient uses vague terms: "What do you mean by 'feeling funny'?" "You said the medication was 'a little blue pill' — do you know the name on the bottle?"</li>
                 <li><strong>Summarization:</strong> Periodically summarize what you have heard to confirm accuracy: "Let me make sure I understand — the chest pain started about 2 hours ago while you were watching TV, it's a dull pressure that radiates to your left shoulder, and it's about a 6 out of 10. Did I get that right?"</li>
                 <li><strong>Empathic statements:</strong> "This sounds very scary. I'm here to help you." "I can see you are in a lot of pain — we are going to do everything we can to help you." Empathy builds trust and encourages more honest disclosure.</li>
             </ul>
 
             <h5>Interviewing Patients with Special Needs</h5>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Patient Population</th><th>Strategies</th></tr>
                 </thead>
@@ -1161,7 +1161,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Visually Impaired</strong></td><td>Identify yourself by name and role immediately. Describe what you are doing before you do it: "I am going to take your blood pressure now — you'll feel the cuff squeeze your arm." Guide the patient's hand to your arm or equipment so they know what is happening.</td></tr>
                     <tr><td><strong>Emotionally Distressed / Crying</strong></td><td>Allow the patient to express emotion — do not rush to "fix it" with false reassurance. Use empathic silence. Acknowledge their distress: "This is a very difficult situation. Take your time." Then gently redirect to the history.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Dealing with Difficult Patients</h4>
             <p>Not every patient encounter is cooperative. You will encounter patients who are angry, combative, intoxicated, in denial, or simply frightened in ways that manifest as hostility. Your approach to these patients can mean the difference between gaining their cooperation and escalating the situation.</p>
@@ -1176,7 +1176,7 @@ window.CPG_DATA = {
             </ul>
 
             <h5>The Difficult Patient by Type</h5>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Patient Type</th><th>Characteristics</th><th>Approach</th></tr>
                 </thead>
@@ -1186,9 +1186,9 @@ window.CPG_DATA = {
                     <tr><td><strong>Intoxicated / Substance-Impaired</strong></td><td>Slurred speech, unsteady gait, erratic behavior, denial of intoxication</td><td>Speak slowly and clearly. Be patient — they may not process information quickly. Do not lecture about substance use. Maintain safety — intoxicated patients can become violent unpredictably. Assume co-existing medical problem (head injury, hypoglycemia, overdose) until proven otherwise.</td></tr>
                     <tr><td><strong>Denies Illness / Refuses Care</strong></td><td>States "I'm fine," minimizes symptoms, refuses transport</td><td>Do not argue. Explain your concerns in simple terms: "Your blood pressure is very low and your heart rate is very fast — these are signs your body is under stress." Describe what could happen without care. Offer alternatives: "You don't have to go to the ER, but let me at least check your blood pressure again before I leave." Document refusal thoroughly if they still refuse.</td></tr>
                     <tr><td><strong>Manipulative / Demanding</strong></td><td>Makes excessive requests, uses flattery or threats, demands specific treatments (e.g., "Give me morphine" or "Take me to the hospital across town")</td><td>Be professional and consistent. Do not reward demanding behavior — explain what you can and cannot do within your protocol. Do not argue. "I understand you would like to go to City Hospital. Our protocol requires us to transport to the closest appropriate facility, which is County General. I will document your request."</td></tr>
-                    <tr><td><strong>Confused / Demented</strong></td><td>Disoriented, unable to give coherent history, may be agitated</td><td>Orient the patient gently: "My name is John, I'm an EMT, and I'm here to help you." Use short, simple sentences. Avoid asking multiple questions at once. Gather history from family/caregivers. Look for medical causes of sudden confusion (infection, hypoxia, hypoglycemia, stroke, medication change).</td></tr>
+                    <tr><td><strong>Confused / Demented</strong></td><td>Disoriented, unable to give coherent history, may be agitated</td><td>Orient the patient gently: "My name is John, I'm an EMS provider, and I'm here to help you." Use short, simple sentences. Avoid asking multiple questions at once. Gather history from family/caregivers. Look for medical causes of sudden confusion (infection, hypoxia, hypoglycemia, stroke, medication change).</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> When a patient refuses care, <strong>do not argue</strong>. Arguing damages rapport and makes the patient more resistant. Instead: (1) acknowledge their autonomy ("I understand you do not want to go to the hospital"), (2) explain your concerns ("I am worried because your blood pressure is low and you passed out"), (3) offer alternatives ("Will you let me check your blood pressure one more time?"), (4) if they still refuse, document thoroughly and have them sign a refusal (or document witnessed verbal refusal). Leave the door open: "If you change your mind, call 9-1-1 again. We will come back."
@@ -1255,7 +1255,7 @@ window.CPG_DATA = {
                     { t: "Use OPQRST for the fall mechanism, gather collateral from what you can observe (empty fridge suggests poor nutrition/hydration; empty lisinopril bottle suggests she may have stopped her BP medication), notice her confusion may indicate the cause rather than the result of the fall, and explain why transport is needed: 'You seem a bit confused, which may be a sign of an infection or other medical problem. I'd like to have a doctor check you to make sure you're safe'", f: "Correct. The patient's confusion, poor recall, and empty house suggest systemic illness (UTI, dehydration, medication issue) that caused the fall. Refusing transport is not appropriate for a patient who may lack the capacity to make that decision due to underlying AMS." }
                 ],
                 correct: 1,
-                explanation: "When a patient's decision-making capacity is questionable (confusion, poor recall, inability to understand their situation), allowing them to refuse transport is unsafe. The EMT has a duty to act and should proceed with transport, explaining concerns to the patient calmly and clearly. The 'E' in SAMPLE (Events) — why she actually fell — is the key question.",
+                explanation: "When a patient's decision-making capacity is questionable (confusion, poor recall, inability to understand their situation), allowing them to refuse transport is unsafe. The EMS provider has a duty to act and should proceed with transport, explaining concerns to the patient calmly and clearly. The 'E' in SAMPLE (Events) — why she actually fell — is the key question.",
                 kpi: "Capacity assessment and refusal management"
             }
         ]
@@ -1274,7 +1274,7 @@ window.CPG_DATA = {
 
             <h4>When to Perform a Secondary Assessment</h4>
             <p>Not every patient receives a full head-to-toe exam. The decision depends on the patient's condition and the clinical context:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Assessment Type</th><th>When Performed</th><th>Patient Examples</th></tr>
                 </thead>
@@ -1283,11 +1283,11 @@ window.CPG_DATA = {
                     <tr><td>Focused Physical Exam</td><td>Stable medical patients; isolated injury with no significant mechanism; responsive patients with a clear chief complaint</td><td>Isolated ankle injury, chest pain patient, allergic reaction</td></tr>
                     <tr><td>No Secondary Assessment</td><td>Critical patients requiring immediate transport; cardiac arrest with ongoing resuscitation</td><td>Traumatic arrest, ongoing CPR</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>DCAP-BTLS — The Systematic Search Pattern</h4>
             <p>As you assess each body region, you are looking for the same nine findings. Memorize this mnemonic — you will use it on every call requiring a head-to-toe exam:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Letter</th><th>Finding</th><th>What to Look For</th></tr>
                 </thead>
@@ -1301,7 +1301,7 @@ window.CPG_DATA = {
                     <tr><td><strong>L</strong></td><td>Lacerations</td><td>Cuts, slicing injuries, flap lacerations; assess depth, bleeding severity, and involvement of underlying structures</td></tr>
                     <tr><td><strong>S</strong></td><td>Swelling</td><td>Edema, distension, enlargement of a body part — may indicate fracture, hematoma, or inflammation</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#e2f0d9; border-left-color:#28a745;">
                 <strong>Clinical Pearl:</strong> Use the same mnemonic for every body region — it creates a consistent search pattern that prevents missed injuries. "Look at the head — D, C, A, P, B, T, L, S. Look at the neck — D, C, A, P, B, T, L, S." Train this repetition.
@@ -1481,7 +1481,7 @@ window.CPG_DATA = {
 
             <h4>Reassessment Frequency</h4>
             <p>The frequency of reassessment is determined by the patient's stability — this is a NREMT core standard:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Patient Category</th><th>Reassessment Interval</th><th>What It Includes</th></tr>
                 </thead>
@@ -1489,7 +1489,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Unstable</strong> (any abnormal vital sign, altered LOC, active bleeding, respiratory distress, shock)</td><td><strong>Every 5 minutes</strong></td><td>Primary assessment (ABCs), vital signs, interventions check, pain assessment, mental status</td></tr>
                     <tr><td><strong>Stable</strong> (normal vital signs, intact LOC, no significant mechanism, improving condition)</td><td><strong>Every 15 minutes</strong></td><td>Vital signs, mental status, interventions check, focused reassessment of chief complaint</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#e2f0d9; border-left-color:#28a745;">
                 <strong>Clinical Pearl:</strong> If your patient is unstable enough to require 5-minute reassessments, consider whether your transport is urgent enough that you should be moving toward the hospital rather than staying on scene. Reassessment intervals guide both clinical care and scene time decisions.
@@ -1526,7 +1526,7 @@ window.CPG_DATA = {
             <h4>Trending — Reading the Story in the Numbers</h4>
             <p>A single set of vital signs tells you the patient's status at one moment. A series of reassessments tells you the <strong>trajectory</strong>. Trending is the clinical skill of comparing serial assessments to determine whether the patient is improving (good), stable (monitor), or deteriorating (intervene or expedite). Here are key trends to recognize:</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Trend Pattern</th><th>Example Values Over Time</th><th>What It Suggests</th></tr>
                 </thead>
@@ -1536,7 +1536,7 @@ window.CPG_DATA = {
                     <tr><td>⚠️ Deteriorating</td><td>HR 88 → 104 → 124; BP 110/70 → 102/64 → 90/56; SpO₂ dropping; mentation declining</td><td>Hemorrhage, shock, or other decompensation — escalate interventions and transport urgently</td></tr>
                     <tr><td>🔄 Compensating (then crashing)</td><td>Initially tachycardic, vasoconstricted, narrowing pulse pressure; then sudden bradycardia and hypotension</td><td>Patient was compensating in shock and has now exhausted compensatory mechanisms — impending arrest</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning:</strong> A sudden drop in heart rate in a trauma patient who was tachycardic is a <strong>pre-arrest sign</strong> — not a sign of improvement. The patient's compensatory mechanisms have failed. This is called "catching the crash" and requires immediate intervention and expedited transport.
@@ -1665,7 +1665,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Clinical Decision Making</h3>
 
-            <p>Clinical decision making is the cognitive process by which EMTs gather information, interpret findings, form a field impression, and take appropriate action. It is the bridge between knowledge (what you know) and action (what you do). In the field, you rarely have complete information — you make decisions with the data available, under time pressure, and often in chaotic environments. Developing strong clinical reasoning skills is what separates a proficient EMT from one who merely follows checklists.</p>
+            <p>Clinical decision making is the cognitive process by which EMS providers gather information, interpret findings, form a field impression, and take appropriate action. It is the bridge between knowledge (what you know) and action (what you do). In the field, you rarely have complete information — you make decisions with the data available, under time pressure, and often in chaotic environments. Developing strong clinical reasoning skills is what separates a proficient EMS provider from one who merely follows checklists.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Key Concept:</strong> Protocols are your foundation — they tell you what to do for specific presentations. Clinical decision making tells you <em>which protocol to apply</em>, <em>when to deviate</em>, and <em>when to ask for help</em>. Protocols cannot cover every situation; your clinical judgment fills the gaps.
@@ -1683,11 +1683,11 @@ window.CPG_DATA = {
             </ol>
 
             <h4>Forming a Field Impression</h4>
-            <p>EMTs do not diagnose — EMTs form <strong>field impressions</strong> that guide treatment and transport. The field impression is a differential-based working hypothesis. It answers the question: "What is the most likely problem causing this patient's presentation, and what is the safest thing to do right now?" Your field impression should be supported by your assessment findings and documented clearly.</p>
+            <p>EMS providers do not diagnose — EMS providers form <strong>field impressions</strong> that guide treatment and transport. The field impression is a differential-based working hypothesis. It answers the question: "What is the most likely problem causing this patient's presentation, and what is the safest thing to do right now?" Your field impression should be supported by your assessment findings and documented clearly.</p>
 
-            <p><strong>Using Differential Diagnosis as an EMT:</strong> While paramedics and physicians use differential diagnosis formally, EMTs benefit from the same thinking process. When you encounter a patient, generate a short mental list of possible causes for their presentation, then use your assessment to rule in or rule out each possibility:</p>
+            <p><strong>Using Differential Diagnosis as an EMS provider:</strong> While paramedics and physicians use differential diagnosis formally, EMS providers benefit from the same thinking process. When you encounter a patient, generate a short mental list of possible causes for their presentation, then use your assessment to rule in or rule out each possibility:</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Presentation</th><th>Possible Causes (Differential)</th><th>Key Differentiating Findings</th></tr>
                 </thead>
@@ -1697,7 +1697,7 @@ window.CPG_DATA = {
                     <tr><td>Chest pain</td><td>ACS (heart attack), angina, pericarditis, pulmonary embolism, pneumothorax, costochondritis, GERD, musculoskeletal</td><td>Quality (crushing vs. sharp vs. tearing), radiation, associated symptoms (diaphoresis, nausea), lung sounds, ECG findings, response to nitroglycerin</td></tr>
                     <tr><td>Abdominal pain</td><td>Appendicitis, cholecystitis, pancreatitis, bowel obstruction, AAA, ectopic pregnancy, gastritis, kidney stone, diverticulitis</td><td>Location and radiation, quality, guarding, rigidity, fever, vomiting, last menstrual period (females of childbearing age), age</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#e2f0d9; border-left-color:#28a745;">
                 <strong>Clinical Pearl:</strong> Always ask yourself: "What is the worst-case scenario for this patient?" Then manage for that while working up to better possibilities. For chest pain, manage as ACS until proven otherwise. For abdominal pain in a woman of childbearing age, consider ectopic pregnancy. For altered mental status, check blood glucose and oxygen first.
@@ -1716,7 +1716,7 @@ window.CPG_DATA = {
             </ul>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                <strong>Legal Warning:</strong> Unauthorized deviation from protocol is a leading cause of EMT discipline, license revocation, and civil liability. If you deviate without medical direction authorization and the patient is harmed, you are legally exposed. Always contact OLMC when possible.
+                <strong>Legal Warning:</strong> Unauthorized deviation from protocol is a leading cause of EMS provider discipline, license revocation, and civil liability. If you deviate without medical direction authorization and the patient is harmed, you are legally exposed. Always contact OLMC when possible.
             </div>
 
             <h4>Documenting Your Clinical Reasoning</h4>
@@ -1732,7 +1732,7 @@ window.CPG_DATA = {
             <h4>Error Reduction Strategies — Cognitive Biases in EMS</h4>
             <p>Human factors and cognitive biases are the most common cause of medical errors — not lack of knowledge. Being aware of these biases helps you recognize when your thinking might be flawed:</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Cognitive Bias</th><th>What It Is</th><th>How to Counter It</th></tr>
                 </thead>
@@ -1743,7 +1743,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Premature closure</strong></td><td>Stopping the assessment once you think you have the answer</td><td>Complete the full assessment before making a final field impression. Do not stop early.</td></tr>
                     <tr><td><strong>Diagnostic momentum</strong></td><td>Once a "label" is given (by dispatch, bystander, or first responder), it sticks regardless of evidence</td><td>Form your own independent impression. Verify information from others through your own assessment.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <p><strong>Systematic error reduction strategies include:</strong></p>
             <ul>
@@ -1761,7 +1761,7 @@ window.CPG_DATA = {
         flashcards: [
             {
                 question: "What is a field impression and how does it differ from a medical diagnosis?",
-                answer: "A field impression is an EMT's working hypothesis about the patient's condition that guides treatment and transport decisions. It is not a definitive diagnosis — it is a differential-based clinical impression used to select the appropriate protocol.",
+                answer: "A field impression is an EMS provider's working hypothesis about the patient's condition that guides treatment and transport decisions. It is not a definitive diagnosis — it is a differential-based clinical impression used to select the appropriate protocol.",
                 category: "Clinical Decision Making"
             },
             {
@@ -1812,11 +1812,11 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                q: "[HARD] An EMT forms a field impression of CHF in a dyspneic patient based on crackles and pedal edema. However, the patient also has unilateral leg swelling and recently returned from a long flight. The EMT fails to consider pulmonary embolism. Which cognitive bias is MOST demonstrated here?",
+                q: "[HARD] An EMS provider forms a field impression of CHF in a dyspneic patient based on crackles and pedal edema. However, the patient also has unilateral leg swelling and recently returned from a long flight. The EMS provider fails to consider pulmonary embolism. Which cognitive bias is MOST demonstrated here?",
                 options: [
-                    "Anchoring — the EMT locked onto the initial CHF impression and failed to consider alternative causes despite conflicting evidence",
+                    "Anchoring — the EMS provider locked onto the initial CHF impression and failed to consider alternative causes despite conflicting evidence",
                     "Availability bias — CHF is more common than PE",
-                    "Confirmation bias — the EMT found crackles which confirmed CHF",
+                    "Confirmation bias — the EMS provider found crackles which confirmed CHF",
                     "Diagnostic momentum — the family said it was CHF"
                 ],
                 correct: 0
@@ -1886,7 +1886,7 @@ window.CPG_DATA = {
             <h4>The START Triage System</h4>
             <p>START is designed for rapid assessment — it takes approximately 30-60 seconds per patient. It uses the <strong>RPM</strong> mnemonic: <strong>R</strong>espirations, <strong>P</strong>erfusion, <strong>M</strong>ental status. Assessment is done in this exact order:</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Step</th><th>Assessment</th><th>Finding</th><th>Triage Category</th></tr>
                 </thead>
@@ -1895,10 +1895,10 @@ window.CPG_DATA = {
                     <tr><td><strong>P — Perfusion</strong></td><td>Check for radial pulse OR capillary refill</td><td>No radial pulse OR capillary refill &gt;2 seconds<br>Radial pulse present AND capillary refill ≤2 seconds</td><td>Red (Immediate)<br>Proceed to Mental Status</td></tr>
                     <tr><td><strong>M — Mental Status</strong></td><td>Can the patient follow simple commands? ("Squeeze my hand" or "Open your eyes")</td><td>Cannot follow commands<br>Can follow commands</td><td>Red (Immediate)<br>Yellow (Delayed) / Green (Minor)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Triage Categories — The Four Colors</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Category</th><th>Color</th><th>Meaning</th><th>Examples</th><th>Treatment Priority</th></tr>
                 </thead>
@@ -1908,7 +1908,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Minor / Minimal</strong></td><td style="color:#28a745;font-weight:bold;">GREEN</td><td>"Walking wounded" — ambulatory patients with minor injuries who can wait or assist</td><td>Minor cuts, bruises, sprains, superficial abrasions, psychological distress with no physical injury</td><td>Lowest — may be asked to assist with light tasks or walk to a collection point</td></tr>
                     <tr><td><strong>Deceased / Expectant</strong></td><td style="color:#000;font-weight:bold;">BLACK</td><td>Dead or injuries so severe that survival is unlikely even with maximal treatment</td><td>Apneic after airway opening, decapitation, massive evisceration, obvious signs of death</td><td>No treatment — resources are diverted to salvageable patients</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Concept:</strong> "Black" (expectant) does not mean the patient is dead — it means they are so critically injured that survival is unlikely with available resources. In a different setting with more resources, they might have been Red. This is the hardest triage decision for new providers. Follow the algorithm, not your emotions.
@@ -1943,7 +1943,7 @@ window.CPG_DATA = {
             <h4>Pediatric Triage — JumpSTART</h4>
             <p>Children are not small adults. Their physiology differs in important ways: they have higher metabolic rates, faster respiratory rates, and different compensatory mechanisms. The <strong>JumpSTART</strong> system modifies START for children ages 1-8 years (or up to puberty/pediatric size):</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Step</th><th>START (Adult)</th><th>JumpSTART (Pediatric 1-8 yrs)</th></tr>
                 </thead>
@@ -1954,7 +1954,7 @@ window.CPG_DATA = {
                     <tr><td>Perfusion</td><td>Capillary refill &gt;2 sec = Red</td><td>No palpable peripheral pulse = Red (same, but use palmar pulse for infants)</td></tr>
                     <tr><td>Mental Status</td><td>AVPU — Cannot follow commands = Red</td><td>AVPU — "P" (responds to Pain only) or "U" (unresponsive) = Red. Use age-appropriate commands.</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#e2f0d9; border-left-color:#28a745;">
                 <strong>Clinical Pearl:</strong> The most important difference in JumpSTART is the <strong>5 rescue breaths</strong> for an apneic child with a pulse. In START, apneic adults are immediately Black. In JumpSTART, give 5 rescue breaths — if the child starts breathing, they are Red (not Black). This reflects the fact that children often arrest from respiratory causes (reversible) rather than cardiac causes.
@@ -1983,7 +1983,7 @@ window.CPG_DATA = {
 
             <p><strong>T — Treatment/Transport:</strong> Assign category (Red/Yellow/Green/Black) based on the assessment after life-saving interventions are performed. Patients who need LSIs and survive are typically Red. Patients who need no LSIs and follow commands are Green or Yellow.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>SALT Category</th><th>Description</th><th>Equivalent START Color</th></tr>
                 </thead>
@@ -1993,7 +1993,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Minimal</strong></td><td>Minor injuries; ambulatory; can self-evacuate or assist</td><td>Green</td></tr>
                     <tr><td><strong>Dead / Expectant</strong></td><td>Obviously dead or injuries incompatible with survival despite LSIs</td><td>Black</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Triage Tags</h4>
             <p>Triage tags are physical tags attached to patients during MCI to communicate their triage category at a glance. Common systems include the <strong>METTAG</strong> (four-color fold-over tags), <strong>SMART Tag</strong>, and <strong>START Tag</strong>. Key information typically recorded on a triage tag includes:</p>

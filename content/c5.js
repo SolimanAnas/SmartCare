@@ -29,7 +29,7 @@ window.CPG_DATA = {
 
             <h4>COPD Exacerbation</h4>
             <p><strong>Chronic Obstructive Pulmonary Disease (COPD)</strong> is a progressive lung disease encompassing emphysema and chronic bronchitis. Patients have chronic dyspnea and may retain carbon dioxide (CO₂), blunting their hypoxic respiratory drive. An <strong>acute exacerbation</strong> presents with a sudden worsening of baseline dyspnea, increased sputum volume, and/or purulent sputum. Differentiating chronic from acute dyspnea is critical:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Feature</th><th>Chronic (Baseline)</th><th>Acute Exacerbation</th></tr>
                 </thead>
@@ -40,7 +40,7 @@ window.CPG_DATA = {
                     <tr><td>Oxygen requirement</td><td>Stable baseline SpO₂</td><td>Declining SpO₂ requiring increased FiO₂</td></tr>
                     <tr><td>Response to bronchodilators</td><td>Minimal change</td><td>May show some improvement</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Pneumonia</h4>
             <p><strong>Pneumonia</strong> is an infection of the lung parenchyma caused by bacteria, viruses, or fungi. It inflames the alveoli, filling them with fluid and inflammatory cells, impairing gas exchange. The classic presentation includes:</p>
@@ -53,7 +53,7 @@ window.CPG_DATA = {
                 <li><strong>Dullness to percussion</strong> — Over consolidated lung tissue</li>
                 <li><strong>Bronchial breath sounds</strong> — Heard over consolidated areas</li>
             </ul>
-            <p>EMT management: place in position of comfort, titrate oxygen to SpO₂ ≥94%, assist ventilations if deteriorating, and transport. Be alert for sepsis criteria (altered mental status, fever, hypotension, tachycardia).</p>
+            <p>EMS provider management: place in position of comfort, titrate oxygen to SpO₂ ≥94%, assist ventilations if deteriorating, and transport. Be alert for sepsis criteria (altered mental status, fever, hypotension, tachycardia).</p>
 
             <h4>Pulmonary Embolism</h4>
             <p>A <strong>pulmonary embolism (PE)</strong> occurs when a thrombus (usually from the deep veins of the legs) travels to the pulmonary circulation, obstructing blood flow and causing ventilation-perfusion mismatch. PE can be rapidly fatal if massive. Classic presentation:</p>
@@ -66,7 +66,7 @@ window.CPG_DATA = {
                 <li><strong>Risk factors</strong> — Include prolonged immobility (long flights, bed rest), recent surgery, pregnancy, cancer, oral contraceptive use, obesity, smoking, and history of DVT</li>
                 <li><strong>Signs of DVT</strong> — Unilateral leg swelling, warmth, erythema, and calf tenderness</li>
             </ul>
-            <p><strong>Saddle embolus</strong> — a massive PE lodged at the bifurcation of the pulmonary artery — can cause abrupt cardiovascular collapse, syncope, and cardiac arrest (PEA). EMT management: high-flow oxygen, position of comfort, rapid transport, and be prepared to perform CPR.</p>
+            <p><strong>Saddle embolus</strong> — a massive PE lodged at the bifurcation of the pulmonary artery — can cause abrupt cardiovascular collapse, syncope, and cardiac arrest (PEA). EMS provider management: high-flow oxygen, position of comfort, rapid transport, and be prepared to perform CPR.</p>
 
             <h4>Hyperventilation Syndrome</h4>
             <p><strong>Hyperventilation syndrome (HVS)</strong> is a pattern of rapid, deep breathing driven by anxiety or panic, not by a physiological need to increase oxygenation. The increased respiratory rate blows off excessive CO₂, leading to <strong>respiratory alkalosis</strong>, which causes:</p>
@@ -78,11 +78,11 @@ window.CPG_DATA = {
             </ul>
             <p><strong>Critical:</strong> Hyperventilation syndrome is a DIAGNOSIS OF EXCLUSION. You must first rule out life-threatening causes of tachypnea including PE, asthma exacerbation, DKA, pneumonia, and hypoxia. <span style="color:var(--danger);font-weight:600;">NEVER use the "paper bag" rebreathing technique</span> — it is dangerous and has caused deaths from hypoxia. Management: calm reassurance, encourage the patient to slow their breathing, rule out organic causes, and transport if symptoms persist or diagnosis is uncertain.</p>
 
-            <h4>EMT Management of Respiratory Emergencies</h4>
+            <h4>EMS Provider Management of Respiratory Emergencies</h4>
             <ul>
                 <li><strong>Position of comfort:</strong> Sitting upright (tripod position) optimizes diaphragmatic excursion and air movement. Avoid supine positioning in patients with respiratory distress.</li>
                 <li><strong>Oxygen titration:</strong> General patients: titrate to SpO₂ ≥94%. Known COPD patients: titrate to 88-92% to avoid blunting hypoxic drive. Use nasal cannula, simple mask, or non-rebreather as needed.</li>
-                <li><strong>Bronchodilator administration:</strong> EMTs may administer a nebulized bronchodilator (e.g., albuterol 2.5 mg in 3 mL normal saline via small-volume nebulizer with O₂ at 6-8 L/min). Monitor for tachycardia and tremor. Repeat doses per protocol.</li>
+                <li><strong>Bronchodilator administration:</strong> EMS providers may administer a nebulized bronchodilator (e.g., albuterol 2.5 mg in 3 mL normal saline via small-volume nebulizer with O₂ at 6-8 L/min). Monitor for tachycardia and tremor. Repeat doses per protocol.</li>
                 <li><strong>CPAP (Continuous Positive Airway Pressure):</strong> Used for pulmonary edema and COPD exacerbation. CPAP splints open alveoli, improves oxygenation, reduces work of breathing, and can decrease the need for intubation. Contraindications: apnea, hypotension, facial trauma, vomiting, altered mental status.</li>
                 <li><strong>Assisted ventilation:</strong> If the patient deteriorates into respiratory failure (falling SpO₂, decreasing respiratory rate, declining mental status), begin BVM ventilation with supplemental oxygen and prepare for rapid transport.</li>
             </ul>
@@ -114,7 +114,7 @@ window.CPG_DATA = {
                 category: "Respiratory — PE"
             },
             {
-                question: "What is hyperventilation syndrome and how should an EMT manage it?",
+                question: "What is hyperventilation syndrome and how should an EMS provider manage it?",
                 answer: "A pattern of rapid breathing driven by anxiety causing respiratory alkalosis (paresthesias, tetany, lightheadedness). It is a diagnosis of exclusion — rule out PE, asthma, DKA, and hypoxia first. NEVER use paper bag rebreathing. Manage with calm reassurance.",
                 category: "Respiratory — Hyperventilation"
             },
@@ -235,7 +235,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Status Epilepticus</h4>
-            <p><strong>Status epilepticus</strong> is defined as a single seizure lasting <strong>>5 minutes</strong> or two or more seizures without a return to baseline consciousness in between. It is a <strong>life-threatening medical emergency</strong> — prolonged seizure activity can cause brain damage, rhabdomyolysis, hyperthermia, and respiratory failure. EMT management:</p>
+            <p><strong>Status epilepticus</strong> is defined as a single seizure lasting <strong>>5 minutes</strong> or two or more seizures without a return to baseline consciousness in between. It is a <strong>life-threatening medical emergency</strong> — prolonged seizure activity can cause brain damage, rhabdomyolysis, hyperthermia, and respiratory failure. EMS provider management:</p>
             <ul>
                 <li>Protect the airway — position the patient on their side (recovery position) if possible</li>
                 <li>Do NOT restrain the patient or put anything in their mouth</li>
@@ -263,7 +263,7 @@ window.CPG_DATA = {
 
             <h4>Altered Mental Status — The Differential (AEIOU-TIPS)</h4>
             <p>When confronted with a patient with altered mental status, use the <strong>AEIOU-TIPS</strong> mnemonic to systematically consider causes:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Letter</th><th>Causes</th></tr>
                 </thead>
@@ -278,7 +278,7 @@ window.CPG_DATA = {
                     <tr><td><strong>P</strong></td><td>Psychiatric (acute psychosis, catatonia), Poison</td></tr>
                     <tr><td><strong>S</strong></td><td>Stroke (ischemic/hemorrhagic), Shock (hypoperfusion), Subarachnoid hemorrhage, SAH</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Meningitis</h4>
             <p><strong>Meningitis</strong> is inflammation of the meninges (the protective layers surrounding the brain and spinal cord), usually caused by bacterial or viral infection. Bacterial meningitis is a medical emergency. Key signs include:</p>
@@ -292,10 +292,10 @@ window.CPG_DATA = {
                 <li><strong>Kernig sign</strong> — Pain with knee extension when the hip is flexed to 90 degrees</li>
                 <li><strong>Brudzinski sign</strong> — Involuntary hip/knee flexion when the neck is flexed supine</li>
             </ul>
-            <p>EMT management: rapid transport, droplet precautions (mask the patient and yourself), supportive care, and monitoring for deterioration.</p>
+            <p>EMS provider management: rapid transport, droplet precautions (mask the patient and yourself), supportive care, and monitoring for deterioration.</p>
 
             <h4>Hypoglycemia and Altered Mental Status</h4>
-            <p>Hypoglycemia (blood glucose <70 mg/dL) is a common and reversible cause of altered mental status. It can mimic stroke, seizure, or intoxication. Always check blood glucose in any patient with altered mental status, focal neurological deficits, or seizure activity. Signs include diaphoresis, tachycardia, tremors, confusion, combativeness, or unconsciousness. EMT management: if the patient is awake and can swallow, administer oral glucose. If unconscious or unable to swallow, administer glucagon IM (per protocol) and transport.</p>
+            <p>Hypoglycemia (blood glucose <70 mg/dL) is a common and reversible cause of altered mental status. It can mimic stroke, seizure, or intoxication. Always check blood glucose in any patient with altered mental status, focal neurological deficits, or seizure activity. Signs include diaphoresis, tachycardia, tremors, confusion, combativeness, or unconsciousness. EMS provider management: if the patient is awake and can swallow, administer oral glucose. If unconscious or unable to swallow, administer glucagon IM (per protocol) and transport.</p>
         </div>`,
         flashcards: [
             {
@@ -334,14 +334,14 @@ window.CPG_DATA = {
                 category: "Neurological — Meningitis"
             },
             {
-                question: "How should an EMT manage a hypoglycemic patient with altered mental status who is unconscious?",
+                question: "How should an EMS provider manage a hypoglycemic patient with altered mental status who is unconscious?",
                 answer: "Ensure airway patency, check blood glucose (<70 mg/dL confirms), administer glucagon IM (per protocol), position in recovery position, monitor for seizure activity, and transport. Do NOT attempt oral glucose in an unconscious patient.",
                 category: "Neurological — Hypoglycemia"
             }
         ],
         quiz: [
             {
-                q: "An EMT uses the Cincinnati Prehospital Stroke Scale to assess a patient. Which three findings are evaluated?",
+                q: "An EMS provider uses the Cincinnati Prehospital Stroke Scale to assess a patient. Which three findings are evaluated?",
                 options: [
                     "Balance, vision changes, and headache",
                     "Facial droop, arm drift, and speech abnormalities",
@@ -427,7 +427,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Hypoglycemia vs Hyperglycemia — Comparison</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Feature</th><th>Hypoglycemia (Low Blood Sugar)</th><th>Hyperglycemia (High Blood Sugar)</th></tr>
                 </thead>
@@ -442,7 +442,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Heart rate</strong></td><td>Tachycardia (sympathetic response)</td><td>Tachycardia (dehydration)</td></tr>
                     <tr><td><strong>Common triggers</strong></td><td>Missed meal, excess insulin, exercise</td><td>Infection, missed insulin, illness (sick day)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> If you cannot differentiate hypoglycemia from hyperglycemia in an altered patient with diabetes, <em>treat for hypoglycemia</em>. It is more immediately dangerous (brain damage can occur within 30 minutes) and can be rapidly corrected. Hyperglycemia develops slowly and is less immediately life-threatening.
@@ -472,7 +472,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Blood Glucose Monitoring</h4>
-            <p>EMTs are trained to measure capillary blood glucose using a glucometer. Technique matters:</p>
+            <p>EMS providers are trained to measure capillary blood glucose using a glucometer. Technique matters:</p>
             <ul>
                 <li>Use the side of the fingertip (fewer nerve endings, less painful)</li>
                 <li>Wipe away the first drop of blood (contains interstitial fluid that may dilute the sample)</li>
@@ -482,7 +482,7 @@ window.CPG_DATA = {
                 <li>Check blood glucose in ALL patients with: altered mental status, seizure, stroke-like symptoms, or known diabetes with any complaint</li>
             </ul>
 
-            <h4>EMT Management of Diabetic Emergencies</h4>
+            <h4>EMS Provider Management of Diabetic Emergencies</h4>
             <p><strong>Hypoglycemia — awake and able to swallow:</strong></p>
             <ul>
                 <li>Administer oral glucose (15-20 grams) — typically a single tube of glucose gel squeezed into the buccal pouch (between cheek and gum)</li>
@@ -517,7 +517,7 @@ window.CPG_DATA = {
                 <li>Have a plan for ketone testing if prescribed</li>
                 <li>Know when to call the healthcare provider — worsening symptoms, fever >101°F, persistent vomiting</li>
             </ul>
-            <p>EMTs should be aware that non-adherence to sick day rules is a common precipitant for DKA and HHS.</p>
+            <p>EMS providers should be aware that non-adherence to sick day rules is a common precipitant for DKA and HHS.</p>
 
             <h4>Altered Mental Status and Diabetes</h4>
             <p>Altered mental status in a patient with diabetes is a diabetic emergency until proven otherwise. Key assessment points:</p>
@@ -585,7 +585,7 @@ window.CPG_DATA = {
                 explanation: "Warm dry skin, fruity breath, and deep rapid (Kussmaul) respirations in a Type 1 diabetic are classic for DKA with compensation for metabolic acidosis."
             },
             {
-                q: "An EMT administers oral glucose to a confused but conscious diabetic patient. Ten minutes later, the patient becomes unconscious. What is the EMT's next action?",
+                q: "An EMS provider administers oral glucose to a confused but conscious diabetic patient. Ten minutes later, the patient becomes unconscious. What is the EMS provider's next action?",
                 options: [
                     "Wait another 10 minutes for the glucose to take effect",
                     "Administer oral glucose again since the first dose may have been insufficient",
@@ -653,7 +653,7 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#syringe"/></svg> Allergy & Anaphylaxis</h3>
 
             <h4>Allergic Reaction vs. Anaphylaxis</h4>
-            <p>Differentiating a mild allergic reaction from life-threatening anaphylaxis is a critical EMT skill. The key distinction is <strong>organ system involvement</strong>:</p>
+            <p>Differentiating a mild allergic reaction from life-threatening anaphylaxis is a critical EMS provider skill. The key distinction is <strong>organ system involvement</strong>:</p>
             <ul>
                 <li><strong>Mild allergic reaction:</strong> Limited to one organ system — typically skin only (urticaria/hives, itching, localized angioedema). No respiratory or cardiovascular compromise.</li>
                 <li><strong>Anaphylaxis:</strong> A severe, potentially fatal systemic hypersensitivity reaction involving <strong>two or more organ systems</strong> (skin/mucosal, respiratory, cardiovascular, gastrointestinal) <strong>OR</strong> hypotension alone after exposure to a known allergen. Onset is usually rapid (minutes to hours after exposure).</li>
@@ -664,7 +664,7 @@ window.CPG_DATA = {
             </div>
 
             <h4>Signs and Symptoms — The ABCs of Anaphylaxis</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Category</th><th>Findings</th></tr>
                 </thead>
@@ -676,7 +676,7 @@ window.CPG_DATA = {
                     <tr><td><strong>E — Exposure/Skin</strong></td><td>Urticaria (hives), flushing, erythema, pruritus (itching), angioedema (periorbital, perioral), diaphoresis</td></tr>
                     <tr><td><strong>GI</strong></td><td>Nausea, vomiting, abdominal cramps, diarrhea (from mast cell mediators in the gut)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Common Triggers</h4>
             <ul>
@@ -712,7 +712,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Biphasic Anaphylaxis</h4>
-            <p><strong>Biphasic anaphylaxis</strong> is the recurrence of anaphylactic symptoms 4-12 hours after the initial reaction, even after complete resolution of the first episode. It occurs in up to 20% of cases. This is why ALL patients with anaphylaxis must be transported to the hospital and observed for a minimum of 6-12 hours, even if symptoms resolve completely after treatment. EMTs should monitor for recurrence during transport and be prepared to administer a second dose of epinephrine.</p>
+            <p><strong>Biphasic anaphylaxis</strong> is the recurrence of anaphylactic symptoms 4-12 hours after the initial reaction, even after complete resolution of the first episode. It occurs in up to 20% of cases. This is why ALL patients with anaphylaxis must be transported to the hospital and observed for a minimum of 6-12 hours, even if symptoms resolve completely after treatment. EMS providers should monitor for recurrence during transport and be prepared to administer a second dose of epinephrine.</p>
 
             <h4>Transport Priority</h4>
             <p>Anaphylaxis is a high-priority transport (emergency / lights-and-siren when appropriate). Key points:</p>
@@ -769,7 +769,7 @@ window.CPG_DATA = {
         ],
         quiz: [
             {
-                q: "A 36-year-old male was stung by a bee 10 minutes ago. He has generalized urticaria, audible wheezing, and is hypotensive (BP 88/50). What is the FIRST treatment the EMT should administer?",
+                q: "A 36-year-old male was stung by a bee 10 minutes ago. He has generalized urticaria, audible wheezing, and is hypotensive (BP 88/50). What is the FIRST treatment the EMS provider should administer?",
                 options: [
                     "Diphenhydramine (Benadryl) IM",
                     "Epinephrine 0.3 mg IM in the anterolateral thigh",
@@ -791,7 +791,7 @@ window.CPG_DATA = {
                 explanation: "Anaphylaxis is defined by 2+ organ systems (skin + respiratory), not by vital sign severity. Even with stable vitals, this meets the definition and requires epinephrine."
             },
             {
-                q: "[HARD] A 30-year-old male with anaphylaxis received epinephrine 0.3 mg IM and improved significantly. Ten minutes later, his wheezing returns and his SpO₂ drops to 89%. His BP is now 96/60. What should the EMT do?",
+                q: "[HARD] A 30-year-old male with anaphylaxis received epinephrine 0.3 mg IM and improved significantly. Ten minutes later, his wheezing returns and his SpO₂ drops to 89%. His BP is now 96/60. What should the EMS provider do?",
                 options: [
                     "Administer diphenhydramine and wait 15 minutes",
                     "Repeat epinephrine 0.3 mg IM immediately",
@@ -847,11 +847,11 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Toxicology & Overdose</h3>
 
-            <p>Toxicologic emergencies occur when a patient is exposed to a substance — medication, drug of abuse, toxin, or poison — in a quantity that causes harmful effects. The EMT's priority in all overdose and poisoning situations is <strong>airway, breathing, and circulation (ABCs)</strong>. Identify the substance if possible, but never delay life-saving interventions to identify a toxin.</p>
+            <p>Toxicologic emergencies occur when a patient is exposed to a substance — medication, drug of abuse, toxin, or poison — in a quantity that causes harmful effects. The EMS provider's priority in all overdose and poisoning situations is <strong>airway, breathing, and circulation (ABCs)</strong>. Identify the substance if possible, but never delay life-saving interventions to identify a toxin.</p>
 
             <h4>Opioid Overdose</h4>
             <p>Opioids (heroin, fentanyl, morphine, oxycodone, hydrocodone) bind to mu-opioid receptors in the central nervous system, causing respiratory depression, CNS depression, and miosis (pinpoint pupils). The classic opioid overdose triad is: <strong>respiratory depression, CNS depression (unconsciousness), and pinpoint pupils</strong>. Opioid-induced respiratory depression is the primary cause of death — patients may be breathing as slowly as 2–4 breaths per minute or be completely apneic.</p>
-            <p><strong>Naloxone (Narcan)</strong> is a competitive antagonist at mu-opioid receptors. It reverses opioid effects within 1–3 minutes of administration. EMT doses typically range from <strong>0.4–2 mg</strong> administered via IM (intramuscular), IN (intranasal), or IV (intravenous) routes. IN administration is common in the prehospital setting because it avoids needle stick risk. The half-life of naloxone (30–90 minutes) is shorter than that of many opioids (hours), so patients may relapse into respiratory depression after the naloxone wears off — transport is mandatory even if the patient awakens.</p>
+            <p><strong>Naloxone (Narcan)</strong> is a competitive antagonist at mu-opioid receptors. It reverses opioid effects within 1–3 minutes of administration. EMS provider doses typically range from <strong>0.4–2 mg</strong> administered via IM (intramuscular), IN (intranasal), or IV (intravenous) routes. IN administration is common in the prehospital setting because it avoids needle stick risk. The half-life of naloxone (30–90 minutes) is shorter than that of many opioids (hours), so patients may relapse into respiratory depression after the naloxone wears off — transport is mandatory even if the patient awakens.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Key Concept:</strong> Airway management comes FIRST. Before administering naloxone, ensure the airway is open and ventilate with a BVM if respirations are inadequate. Naloxone is not a substitute for ventilation — it treats the cause of respiratory depression, but the patient needs oxygen and ventilation support until the medication takes effect.
@@ -868,7 +868,7 @@ window.CPG_DATA = {
             <p>Benzodiazepines (diazepam, lorazepam, alprazolam), barbiturates, and other sedative-hypnotics cause CNS depression, respiratory depression, drowsiness, slurred speech, ataxia, and coma. Unlike opioid overdose, pupils are usually normal or small (not pinpoint), and the patient may be hypotensive due to peripheral vasodilation. Management is supportive: airway, breathing, circulation. There is no reversal agent for benzodiazepines in the EMT scope (flumazenil is used by advanced providers but is relatively contraindicated in chronic users due to seizure risk).</p>
 
             <h4>Antidepressant Overdose — TCA (Tricyclic Antidepressants)</h4>
-            <p>Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine) are among the most dangerous overdoses an EMT may encounter. They cause <strong>sodium channel blockade</strong> in the heart, producing <strong>wide QRS complex</strong> on ECG (>100 ms), ventricular arrhythmias, hypotension, seizures, and anticholinergic effects (hyperthermia, dilated pupils, flushed skin, urinary retention). A classic sign is the patient seizing and then arresting — <strong>seizure followed by cardiac arrest</strong> is characteristic of severe TCA toxicity. Aggressive airway management and rapid transport to a facility capable of sodium bicarbonate therapy are critical.</p>
+            <p>Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine) are among the most dangerous overdoses an EMS provider may encounter. They cause <strong>sodium channel blockade</strong> in the heart, producing <strong>wide QRS complex</strong> on ECG (>100 ms), ventricular arrhythmias, hypotension, seizures, and anticholinergic effects (hyperthermia, dilated pupils, flushed skin, urinary retention). A classic sign is the patient seizing and then arresting — <strong>seizure followed by cardiac arrest</strong> is characteristic of severe TCA toxicity. Aggressive airway management and rapid transport to a facility capable of sodium bicarbonate therapy are critical.</p>
 
             <h4>Acetaminophen (Tylenol) Overdose</h4>
             <p>Acetaminophen is the most common pharmaceutical overdose in the United States. Early symptoms (first 24 hours) are non-specific: nausea, vomiting, malaise, anorexia. The patient may appear deceptively well. Hepatic toxicity develops 24–72 hours post-ingestion and can progress to fulminant liver failure. The antidote is <strong>N-acetylcysteine (NAC)</strong>, which is most effective when given within 8 hours of ingestion. EMS role: obtain the time and amount of ingestion, transport to a facility with NAC availability, and provide supportive care.</p>
@@ -878,7 +878,7 @@ window.CPG_DATA = {
 
             <h4>Toxidrome Recognition</h4>
             <p>A <strong>toxidrome</strong> is a constellation of signs and symptoms that suggests a particular class of poison. Recognizing toxidromes helps you anticipate complications and communicate effectively with the receiving physician:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Toxidrome</th><th>Vital Signs</th><th>Pupils</th><th>Skin</th><th>Mental Status</th><th>Common Causes</th></tr>
                 </thead>
@@ -889,7 +889,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Anticholinergic</strong></td><td>↑ HR, ↑ Temp</td><td>Dilated</td><td>Flushed, dry skin</td><td>Agitation, delirium, hallucinations</td><td>Antihistamines, TCA, antispasmodics</td></tr>
                     <tr><td><strong>Sedative-Hypnotic</strong></td><td>↓ RR, ↓ HR, ↓ BP</td><td>Normal to small</td><td>Normal</td><td>Somnolence, coma</td><td>Benzodiazepines, barbiturates, alcohol</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>General Approach to the Overdose Patient</h4>
             <p>Follow the <strong>ABCDE</strong> approach: Airway (open and maintain), Breathing (assess, assist with BVM if inadequate), Circulation (pulse, BP, ECG monitoring if available), Disability (mental status, pupils, glucose), Exposure (full body assessment for patches, injection sites, pills, containers). Contact <strong>medical direction</strong> or <strong>poison control (1-800-222-1222)</strong> for specific guidance on unusual toxins. Bring all medications, pill bottles, syringes, and suspected substances to the hospital. Never induce vomiting — activated charcoal is rarely indicated in the prehospital setting and is not in the EMT scope of practice.</p>
@@ -900,7 +900,7 @@ window.CPG_DATA = {
         </div>`,
         flashcards: [
             { question: "What is the classic opioid overdose triad?", answer: "Respiratory depression (bradypnea/apnea), CNS depression (unconsciousness), and pinpoint pupils (miosis).", category: "Opioid Overdose" },
-            { question: "What is the EMT dose range and routes for naloxone?", answer: "0.4–2 mg via IM (intramuscular), IN (intranasal), or IV (intravenous). IN is common in prehospital settings to avoid needle sticks.", category: "Opioid Overdose" },
+            { question: "What is the EMS provider dose range and routes for naloxone?", answer: "0.4–2 mg via IM (intramuscular), IN (intranasal), or IV (intravenous). IN is common in prehospital settings to avoid needle sticks.", category: "Opioid Overdose" },
             { question: "Why must an opioid overdose patient be transported even if they awaken after naloxone?", answer: "Naloxone's half-life (30–90 min) is shorter than most opioids (hours). Patients can relapse into respiratory depression when naloxone wears off.", category: "Opioid Overdose" },
             { question: "What are the signs and symptoms of alcohol withdrawal delirium tremens (DTs)?", answer: "Severe confusion, autonomic hyperactivity (fever, tachycardia, hypertension), and visual/tactile hallucinations. Mortality up to 5% if untreated.", category: "Alcohol Emergencies" },
             { question: "How does stimulant overdose (cocaine/methamphetamine) typically present?", answer: "Hypertension, tachycardia, tachypnea, hyperthermia, dilated pupils, diaphoresis, agitation, and potential seizures, myocardial ischemia, or intracranial hemorrhage.", category: "Stimulant Overdose" },
@@ -909,7 +909,7 @@ window.CPG_DATA = {
         ],
         quiz: [
             {
-                q: "An EMT arrives to find a 28-year-old male unresponsive with shallow breathing at 6 breaths per minute and pinpoint pupils. What is the FIRST intervention?",
+                q: "An EMS provider arrives to find a 28-year-old male unresponsive with shallow breathing at 6 breaths per minute and pinpoint pupils. What is the FIRST intervention?",
                 options: [
                     "Administer naloxone immediately",
                     "Open the airway and begin BVM ventilation at 10–12 breaths per minute, then administer naloxone",
@@ -955,7 +955,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_5_2",
                 scenario: "You are called to a house party for a 22-year-old male who is agitated, hot to the touch, and confused. Bystanders report he 'did a line of cocaine about 30 minutes ago and then started acting crazy.' Vital signs: BP 180/104, P 138, R 24, SpO₂ 96%, temperature 103.2°F rectally. His skin is flushed and diaphoretic, pupils are 6 mm bilaterally. He is yelling incoherently, thrashing on the bed, and has pulled off his shirt. As you attempt to assess him, he becomes more agitated and tries to get off the bed to leave. His friends are trying to hold him down.",
-                question: "How should the EMT manage this patient?",
+                question: "How should the EMS provider manage this patient?",
                 options: [
                     {t: "Have the friends physically restrain the patient's arms and legs to enable IV access and cooling measures", f: "Incorrect — physical restraint in stimulant overdose, especially against resistance, causes isometric muscle contraction that increases heat production, lactic acidosis, and the risk of rhabdomyolysis and cardiac arrest. The patient already has severe hyperthermia (103.2°F), tachycardia (138), and hypertension (180/104) — restraint will worsen all of these."},
                     {t: "Request law enforcement assistance for safety, clear the room of excessive bystanders, attempt verbal de-escalation from a calm distance, apply cool packs to the neck/axillae/groin for cooling, and transport with lights and sirens to the emergency department", f: "Correct — management priorities are: scene safety (request law enforcement), reducing stimulation, active cooling (evaporative cooling with mist and fan, cold packs to major vessels), monitoring for seizures, and rapid transport. Avoid physical restraint. Consider high-flow oxygen and cardiac monitoring if available."}
@@ -967,13 +967,13 @@ window.CPG_DATA = {
             {
                 id: "crit_5_5_3",
                 scenario: "You are transporting a 45-year-old female who intentionally ingested an unknown quantity of her husband's heart medications 90 minutes ago. She is awake, alert, and denies any symptoms — 'I feel fine, I just want to go to sleep.' She admits to taking 'some of his pills' but cannot identify them. Her vital signs are currently: BP 112/74, P 72, R 16, SpO₂ 99%. You locate several empty pill bottles: metoprolol (beta blocker), lisinopril (ACE inhibitor), and amiodarone (antiarrhythmic). The patient is now becoming drowsy and her heart rate has dropped to 58.",
-                question: "What is the EMT's concern and appropriate action?",
+                question: "What is the EMS provider's concern and appropriate action?",
                 options: [
                     {t: "The patient appears to be relaxing after the emotional stress of the overdose — drowsiness is expected. Continue transport without intervention since vital signs are stable", f: "Incorrect — beta blocker and amiodarone overdoses can cause delayed cardiac toxicity including severe bradycardia, heart block, and hypotension. The patient's report of 'feeling fine' in the first 90 minutes is deceptive — deterioration can occur rapidly. The decreasing heart rate (72 → 58) is a red flag."},
-                    {t: "The patient may be developing toxicity from beta blocker overdose (metoprolol), which can cause bradycardia, hypotension, and altered mental status. Closely monitor vital signs every 5 minutes, prepare for possible deterioration, contact medical direction, and ensure rapid transport to a cardiac-capable emergency department", f: "Correct — beta blocker overdose causes bradycardia and negative inotropy, with delayed toxicity possible. Amiodarone also has negative chronotropic effects. The combination of multiple cardiac medications is especially dangerous. The EMT should monitor for hypotension, worsening bradycardia, and altered mental status; have atropine available if in scope; and provide early notification to the receiving hospital."}
+                    {t: "The patient may be developing toxicity from beta blocker overdose (metoprolol), which can cause bradycardia, hypotension, and altered mental status. Closely monitor vital signs every 5 minutes, prepare for possible deterioration, contact medical direction, and ensure rapid transport to a cardiac-capable emergency department", f: "Correct — beta blocker overdose causes bradycardia and negative inotropy, with delayed toxicity possible. Amiodarone also has negative chronotropic effects. The combination of multiple cardiac medications is especially dangerous. The EMS provider should monitor for hypotension, worsening bradycardia, and altered mental status; have atropine available if in scope; and provide early notification to the receiving hospital."}
                 ],
                 correct: 1,
-                explanation: "Patients with beta blocker and calcium channel blocker overdoses can appear well initially before decompensating into profound bradycardia and shock. Polypharmacy overdoses involving cardiac medications warrant a high index of suspicion. The EMT should continuously reassess ABCs, obtain a 12-lead ECG if available, monitor blood pressure frequently, and alert the receiving hospital early. All pill bottles must be brought to the hospital. Contact medical direction or poison control (1-800-222-1222) for specific management guidance.",
+                explanation: "Patients with beta blocker and calcium channel blocker overdoses can appear well initially before decompensating into profound bradycardia and shock. Polypharmacy overdoses involving cardiac medications warrant a high index of suspicion. The EMS provider should continuously reassess ABCs, obtain a 12-lead ECG if available, monitor blood pressure frequently, and alert the receiving hospital early. All pill bottles must be brought to the hospital. Contact medical direction or poison control (1-800-222-1222) for specific management guidance.",
                 kpi: "Recognizes delayed toxicity in polypharmacy overdose despite initial normal vital signs"
             }
         ]
@@ -984,7 +984,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Gastrointestinal & Abdominal Emergencies</h3>
 
-            <p>Abdominal complaints are among the most common reasons patients call 9-1-1. The abdominal cavity contains multiple organ systems, and pain can arise from the gastrointestinal, hepatobiliary, genitourinary, vascular, and reproductive systems. A systematic approach to abdominal pain assessment helps the EMT identify life-threatening conditions and provide appropriate care.</p>
+            <p>Abdominal complaints are among the most common reasons patients call 9-1-1. The abdominal cavity contains multiple organ systems, and pain can arise from the gastrointestinal, hepatobiliary, genitourinary, vascular, and reproductive systems. A systematic approach to abdominal pain assessment helps the EMS provider identify life-threatening conditions and provide appropriate care.</p>
 
             <h4>Abdominal Pain Assessment — Location, Quality, Timing</h4>
             <p>When assessing abdominal pain, use the <strong>OPQRST</strong> and <strong>SAMPLE</strong> frameworks with attention to:</p>
@@ -1011,7 +1011,7 @@ window.CPG_DATA = {
 
             <h4>Gastrointestinal Bleeding</h4>
             <p>GI bleeding ranges from minor to immediately life-threatening. The source and appearance guide assessment:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Type</th><th>Appearance</th><th>Likely Source</th><th>Concern</th></tr>
                 </thead>
@@ -1020,7 +1020,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Melena</strong></td><td>Black, tarry, foul-smelling stools</td><td>Upper GI bleeding (blood digested as it passes through intestines)</td><td>Indicates at least 50–100 mL of blood loss; may be slow or brisk</td></tr>
                     <tr><td><strong>Hematochezia</strong></td><td>Bright red or maroon blood per rectum</td><td>Lower GI bleeding (hemorrhoids, diverticulitis, colon cancer, AV malformation)</td><td>May be massive in diverticular bleeding</td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <p><strong>Management:</strong> Establish IV access (if in scope), administer oxygen if signs of shock or hypoxia, monitor vitals closely, and transport promptly. Patients with GI bleeding can deteriorate rapidly — the first sign of significant bleeding may be orthostatic hypotension (dizziness upon sitting/standing) or syncope. Do not give anything by mouth.</p>
 
             <h4>Acute Abdomen Conditions</h4>
@@ -1059,7 +1059,7 @@ window.CPG_DATA = {
             { question: "How does acute cholecystitis typically present?", answer: "Severe right upper quadrant (RUQ) pain radiating to the right shoulder/scapula, often after a fatty meal. Associated with nausea, vomiting, and fever. More common in women.", category: "Cholecystitis" },
             { question: "What are the signs and symptoms of pancreatitis?", answer: "Severe epigastric pain radiating to the back, worsened by lying supine (relieved by leaning forward), with nausea, vomiting, and fever. Most common causes: gallstones and alcohol.", category: "Pancreatitis" },
             { question: "What is the most specific physical finding for an abdominal aortic aneurysm (AAA)?", answer: "A pulsatile abdominal mass on palpation above the umbilicus. However, do NOT palpate deeply if AAA is suspected — this may precipitate rupture.", category: "AAA" },
-            { question: "How should an EMT manage a patient with signs of GI bleeding and shock?", answer: "Establish IV access if in scope, administer oxygen, monitor vitals closely, keep NPO, transport promptly. Do not give anything by mouth. Patients can deteriorate rapidly from GI bleeding.", category: "GI Bleeding" }
+            { question: "How should an EMS provider manage a patient with signs of GI bleeding and shock?", answer: "Establish IV access if in scope, administer oxygen, monitor vitals closely, keep NPO, transport promptly. Do not give anything by mouth. Patients can deteriorate rapidly from GI bleeding.", category: "GI Bleeding" }
         ],
         quiz: [
             {
@@ -1109,7 +1109,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_6_2",
                 scenario: "You respond to a nursing home for an 82-year-old male with weakness and near-syncope. The staff report he has been complaining of abdominal discomfort for two days and had a dark, tarry stool this morning. He has a history of hypertension, coronary artery disease, and osteoarthritis for which he takes 'anti-inflammatory medication' (naproxen, an NSAID). Vital signs: BP 100/64 sitting, P 104, R 18, SpO₂ 96%. When you sit him up for transport, he becomes dizzy and his BP drops to 84/50. He then vomits approximately 300 mL of dark material that resembles coffee grounds.",
-                question: "What is the likely source of bleeding and how should the EMT manage this?",
+                question: "What is the likely source of bleeding and how should the EMS provider manage this?",
                 options: [
                     {t: "The dark tarry stool and coffee-ground emesis suggest an upper GI bleed — likely a gastric ulcer exacerbated by NSAID use. This patient has orthostatic hypotension indicating significant blood loss. Place supine, high-flow O₂, IV access en route, and transport emergently", f: "Correct — NSAIDs (naproxen) inhibit mucosal prostaglandins, predisposing to gastric ulcer formation and bleeding. Melena (tarry stool) indicates at least 50–100 mL of blood loss. Coffee-ground emesis (hematemesis) confirms upper GI source. Orthostatic hypotension (>20 mmHg systolic drop upon sitting) indicates significant volume loss and need for rapid transport."},
                     {t: "The patient likely has a lower GI bleed from hemorrhoids — the coffee-ground emesis is unrelated. Give oral fluids and transport non-emergently", f: "Incorrect — melena is almost always from an upper GI source (blood must traverse the small intestine to become black and tarry). Coffee-ground emesis confirms upper GI bleeding. Lower GI bleeds (e.g., hemorrhoids) produce bright red blood (hematochezia), not melena. NSAID-induced gastric ulcers are a common cause of upper GI bleeding in the elderly."}
@@ -1138,7 +1138,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Genitourinary & Renal Emergencies</h3>
 
-            <p>Genitourinary (GU) and renal emergencies involve the kidneys, ureters, bladder, urethra, and the male and female reproductive organs. These conditions are common in both the prehospital and emergency department settings. EMTs must be able to differentiate between minor infections and life-threatening conditions such as sepsis from pyelonephritis or dialysis emergencies.</p>
+            <p>Genitourinary (GU) and renal emergencies involve the kidneys, ureters, bladder, urethra, and the male and female reproductive organs. These conditions are common in both the prehospital and emergency department settings. EMS providers must be able to differentiate between minor infections and life-threatening conditions such as sepsis from pyelonephritis or dialysis emergencies.</p>
 
             <h4>Urinary Tract Infection (UTI)</h4>
             <p>UTIs are infections of the lower urinary tract (urethra, bladder). Common presenting symptoms include <strong>dysuria (painful urination), urinary frequency, urgency, suprapubic discomfort, and cloudy or foul-smelling urine</strong>. In otherwise healthy adults, UTIs are uncomfortable but not life-threatening. However, in <strong>elderly patients, UTIs often present atypically</strong> — instead of urinary symptoms, they may present with <strong>acute confusion, altered mental status, falls, or generalized weakness</strong>. An altered elderly patient with a suspected UTI requires transport for evaluation — UTI is a common cause of sepsis in the elderly population.</p>
@@ -1151,7 +1151,7 @@ window.CPG_DATA = {
             </div>
 
             <h4>Kidney Stones (Renal Colic/Urolithiasis)</h4>
-            <p>Kidney stones form when minerals crystallize in the urinary tract. The hallmark presentation is: <strong>sudden onset of severe, colicky (waxing and waning) flank pain that radiates to the groin or lower abdomen</strong>. The pain is often described as "the worst pain of my life." Associated symptoms include <strong>nausea/vomiting, hematuria (blood in urine), and urinary urgency</strong>. The patient cannot sit still — they writhe in pain, pacing and attempting to find a comfortable position (in contrast to peritonitis, where the patient lies still). Most stones pass spontaneously if ≤5 mm in diameter. EMT management includes transport, supportive care, and position of comfort.</p>
+            <p>Kidney stones form when minerals crystallize in the urinary tract. The hallmark presentation is: <strong>sudden onset of severe, colicky (waxing and waning) flank pain that radiates to the groin or lower abdomen</strong>. The pain is often described as "the worst pain of my life." Associated symptoms include <strong>nausea/vomiting, hematuria (blood in urine), and urinary urgency</strong>. The patient cannot sit still — they writhe in pain, pacing and attempting to find a comfortable position (in contrast to peritonitis, where the patient lies still). Most stones pass spontaneously if ≤5 mm in diameter. EMS provider management includes transport, supportive care, and position of comfort.</p>
 
             <h4>Acute Renal Failure (ARF)</h4>
             <p>Acute renal failure (also called acute kidney injury, AKI) is a sudden decline in kidney function. Prehospital signs include <strong>oliguria (decreased urine output), edema (peripheral or pulmonary), hypertension, metabolic disturbances (hyperkalemia), and altered mental status</strong>. Causes are classified as:</p>
@@ -1162,7 +1162,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Dialysis Patients — Special Considerations</h4>
-            <p>Patients with end-stage renal disease (ESRD) on dialysis have unique medical needs and complications. The EMT should understand these common dialysis-related emergencies:</p>
+            <p>Patients with end-stage renal disease (ESRD) on dialysis have unique medical needs and complications. The EMS provider should understand these common dialysis-related emergencies:</p>
 
             <h5>Dialysis Access Complications</h5>
             <p>Dialysis access (arteriovenous fistula, AV graft, or central venous catheter) is the patient's lifeline. Complications include:</p>
@@ -1187,14 +1187,14 @@ window.CPG_DATA = {
             { question: "How does a UTI typically present in an elderly patient, and why is this important?", answer: "Elderly patients with UTIs may present with only confusion, altered mental status, or falls — without classic urinary symptoms. Always consider UTI as a cause of AMS in the elderly.", category: "UTI" },
             { question: "What are the classic signs of pyelonephritis?", answer: "Fever, flank pain (CVA tenderness), and nausea/vomiting. Patients may have rigors and appear toxic. Can progress to urosepsis.", category: "Pyelonephritis" },
             { question: "How does renal colic (kidney stone pain) typically present?", answer: "Sudden onset of severe, colicky flank pain radiating to the groin, with nausea/vomiting and hematuria. The patient is restless and cannot find a comfortable position.", category: "Kidney Stones" },
-            { question: "On which arm should an EMT NOT take a blood pressure or start an IV in a dialysis patient?", answer: "The arm with the dialysis fistula or AV graft. Use the opposite arm. If both arms have fistula/grafts, use a lower extremity.", category: "Dialysis" },
+            { question: "On which arm should an EMS provider NOT take a blood pressure or start an IV in a dialysis patient?", answer: "The arm with the dialysis fistula or AV graft. Use the opposite arm. If both arms have fistula/grafts, use a lower extremity.", category: "Dialysis" },
             { question: "What are the signs of fluid overload in a dialysis patient who has missed treatment?", answer: "Dyspnea, crackles in lungs, hypoxia, JVD, peripheral edema, and hypertension. Can progress to pulmonary edema. High-flow O₂, upright position, transport.", category: "Dialysis" },
             { question: "Why is hyperkalemia immediately life-threatening in dialysis patients?", answer: "Hyperkalemia causes cardiac arrhythmias (bradycardia, heart block, VF, asystole). ECG progresses from peaked T waves → wide QRS → sine wave → arrest.", category: "Dialysis" },
             { question: "What are the three categories of acute renal failure causes?", answer: "Pre-renal (decreased blood flow: dehydration, hemorrhage, heart failure), Renal (direct kidney damage: toxins, NSAIDs), and Post-renal (obstruction: stones, enlarged prostate).", category: "Renal Failure" }
         ],
         quiz: [
             {
-                q: "A 78-year-old female from a nursing home is confused and has a fever of 101.8°F. She does not complain of dysuria or frequency. Her family says she was 'fine this morning.' What should the EMT suspect?",
+                q: "A 78-year-old female from a nursing home is confused and has a fever of 101.8°F. She does not complain of dysuria or frequency. Her family says she was 'fine this morning.' What should the EMS provider suspect?",
                 options: [
                     "A stroke — confusion with fever is classic for CVA",
                     "A UTI presenting atypically with confusion — elderly patients often lack urinary symptoms. Transport for evaluation",
@@ -1204,7 +1204,7 @@ window.CPG_DATA = {
                 correct: 1
             },
             {
-                q: "A 65-year-old male with end-stage renal disease who missed his last two dialysis sessions complains of weakness, nausea, and palpitations. His ECG shows peaked T waves. He is awake with a BP of 138/82 and P 58. What is the EMT's priority?",
+                q: "A 65-year-old male with end-stage renal disease who missed his last two dialysis sessions complains of weakness, nausea, and palpitations. His ECG shows peaked T waves. He is awake with a BP of 138/82 and P 58. What is the EMS provider's priority?",
                 options: [
                     "This is a non-urgent situation — he can wait for his next scheduled dialysis session tomorrow",
                     "This is a hyperkalemic emergency with ECG changes — transport emergently. Hyperkalemia from missed dialysis can cause cardiac arrest within hours",
@@ -1230,7 +1230,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_7_2",
                 scenario: "You are called for a 58-year-old female with end-stage renal disease on hemodialysis who missed her last three dialysis sessions. She is extremely short of breath and cannot speak in full sentences. She is sitting upright on the edge of the bed, using accessory muscles to breathe. Vital signs: BP 178/96, P 112, R 32, SpO₂ 86% on room air. You hear widespread crackles in both lungs, and her neck veins are distended at 45 degrees. Her lower extremities have 3+ pitting edema to the knees. She has a left forearm AV fistula with a palpable thrill.",
-                question: "What is the primary problem and what is the EMT's management plan?",
+                question: "What is the primary problem and what is the EMS provider's management plan?",
                 options: [
                     {t: "This is congestive heart failure exacerbation — the patient is fluid overloaded from missed dialysis. Apply high-flow O₂, position upright, consider CPAP if in scope, do NOT start an IV in the left arm (fistula arm), and transport emergently for dialysis", f: "Correct — missed dialysis causes fluid and electrolyte accumulation. This patient has pulmonary edema from fluid overload: dyspnea, crackles, JVD, hypertension, hypoxia. CPAP (if in scope) can improve oxygenation and reduce preload. Protect the fistula arm."},
                     {t: "The patient is having an asthma exacerbation — apply a non-rebreather mask and administer nebulized albuterol", f: "Incorrect — while the patient is in respiratory distress, the widespread crackles, JVD, hypertension, and peripheral edema indicate fluid overload, not bronchoconstriction. Wheezing, not crackles, would be expected in asthma. This is cardiac/pulmonary congestion from hypervolemia due to missed dialysis."}
@@ -1285,7 +1285,7 @@ window.CPG_DATA = {
             <p>Patients receiving blood transfusions can develop reactions ranging from mild allergic reactions to life-threatening hemolytic reactions. Signs of a transfusion reaction include: <strong>fever, chills, urticaria (hives), hypotension, dyspnea, chest pain, back pain, dark urine (hemoglobinuria), and anxiety</strong>. An acute hemolytic transfusion reaction (usually from ABO incompatibility) is a medical emergency causing intravascular hemolysis, DIC, renal failure, and shock. Management: <strong>stop the transfusion immediately</strong>, maintain IV access (new tubing, do not transfuse through old tubing), administer oxygen, monitor vital signs, and transport emergently. Bring the blood bag and all transfusion documentation to the hospital.</p>
 
             <h4>Thrombophilia</h4>
-            <p>Thrombophilia refers to inherited or acquired conditions that increase the risk of abnormal blood clotting. Common inherited thrombophilias include Factor V Leiden mutation (most common), prothrombin gene mutation, and deficiencies of protein C, protein S, or antithrombin. These patients are at increased risk for DVT, PE, and recurrent miscarriages. They are typically maintained on long-term anticoagulation. The EMT's role is to recognize the signs of thrombotic complications (DVT, PE, stroke) and manage accordingly.</p>
+            <p>Thrombophilia refers to inherited or acquired conditions that increase the risk of abnormal blood clotting. Common inherited thrombophilias include Factor V Leiden mutation (most common), prothrombin gene mutation, and deficiencies of protein C, protein S, or antithrombin. These patients are at increased risk for DVT, PE, and recurrent miscarriages. They are typically maintained on long-term anticoagulation. The EMS provider's role is to recognize the signs of thrombotic complications (DVT, PE, stroke) and manage accordingly.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning:</strong> Any patient on anticoagulant therapy who sustains a fall or head trauma — no matter how minor — requires transport and CT evaluation. Intracranial hemorrhage can develop gradually and may not be immediately apparent. Anticoagulated patients with a headache, vomiting, or any alteration in mental status after head trauma are in a high-risk category.
@@ -1297,12 +1297,12 @@ window.CPG_DATA = {
             { question: "What are the triggers for a sickle cell vaso-occlusive crisis?", answer: "Infection, dehydration, cold exposure, hypoxia, stress, high altitude, and alcohol consumption. Prevention includes hydration, warmth, and avoiding hypoxia.", category: "Sickle Cell Disease" },
             { question: "Why must an anticoagulated patient with a minor head injury be transported for evaluation?", answer: "Anticoagulants significantly increase the risk of intracranial hemorrhage. Signs may be delayed. Any head trauma in an anticoagulated patient requires CT evaluation.", category: "Anticoagulant Complications" },
             { question: "What is the classic presentation of a deep vein thrombosis (DVT)?", answer: "Unilateral leg swelling, warmth, redness, and pain/tenderness. Do not massage the affected leg — this can dislodge the clot and cause pulmonary embolism.", category: "DVT" },
-            { question: "What is the EMT's first action when a patient has a suspected transfusion reaction?", answer: "STOP the transfusion immediately. Maintain IV access with new tubing, administer oxygen, monitor vitals, and transport emergently. Bring the blood bag to the hospital.", category: "Transfusion Reactions" },
+            { question: "What is the EMS provider's first action when a patient has a suspected transfusion reaction?", answer: "STOP the transfusion immediately. Maintain IV access with new tubing, administer oxygen, monitor vitals, and transport emergently. Bring the blood bag to the hospital.", category: "Transfusion Reactions" },
             { question: "What is the critical concern in a hemophilia patient with head trauma?", answer: "Intracranial hemorrhage from even minor head trauma. Hemophilia patients lack clotting factors and can bleed uncontrollably. Transport emergently; bring factor replacement if available.", category: "Hemophilia" }
         ],
         quiz: [
             {
-                q: "A 16-year-old male with sickle cell disease complains of severe bone pain in his arms and legs. He has a low-grade fever of 100.2°F and SpO₂ of 94% on room air. What is the EMT's priority intervention?",
+                q: "A 16-year-old male with sickle cell disease complains of severe bone pain in his arms and legs. He has a low-grade fever of 100.2°F and SpO₂ of 94% on room air. What is the EMS provider's priority intervention?",
                 options: [
                     "Administer aspirin for pain and fever",
                     "Apply cold packs to the painful areas to reduce inflammation",
@@ -1312,7 +1312,7 @@ window.CPG_DATA = {
                 correct: 2
             },
             {
-                q: "[HARD] A 75-year-old male on warfarin for atrial fibrillation tripped and struck his head on a table edge 30 minutes ago. He has a 2 cm scalp laceration with bleeding that stopped with direct pressure. He is alert and oriented, with no headache, vomiting, or neurological deficits. What should the EMT do?",
+                q: "[HARD] A 75-year-old male on warfarin for atrial fibrillation tripped and struck his head on a table edge 30 minutes ago. He has a 2 cm scalp laceration with bleeding that stopped with direct pressure. He is alert and oriented, with no headache, vomiting, or neurological deficits. What should the EMS provider do?",
                 options: [
                     "Suture the laceration, apply a bandage, and allow the patient to refuse transport if he wishes since he is asymptomatic",
                     "Control bleeding, perform a thorough neurological assessment, and transport for CT evaluation — anticoagulated patients with head trauma require imaging even if asymptomatic",
@@ -1338,19 +1338,19 @@ window.CPG_DATA = {
             {
                 id: "crit_5_8_2",
                 scenario: "You respond to a 70-year-old male who fell down three stairs and struck his head on a concrete floor. He is on apixaban (Eliquis) for atrial fibrillation. He is alert and oriented, with a GCS of 15, and denies any headache, nausea, or visual changes. He has a small bruise on the back of his head but no bleeding. Vital signs: BP 148/86, P 76, R 16, SpO₂ 97%. His wife says, 'He seems fine — he just wants to go to bed and sleep it off. He doesn't want to go to the hospital for a little bump.' The patient states he feels fine and wishes to refuse transport.",
-                question: "How should the EMT manage this situation?",
+                question: "How should the EMS provider manage this situation?",
                 options: [
                     {t: "The patient appears well and has no signs of head injury — allow him to refuse transport after explaining the risks of refusal and documenting thoroughly", f: "Incorrect — a patient on a DOAC (apixaban/Eliquis) anticoagulant who has fallen and struck their head, even with normal mental status, is at high risk for delayed intracranial hemorrhage. The anticoagulant prevents clot formation, allowing even a small bleed to expand. DOACs do not have simple reversal agents that are available in the prehospital setting."},
-                    {t: "The patient is on a DOAC anticoagulant and has sustained head trauma — this is a high-risk situation for delayed intracranial hemorrhage. Explain that the anticoagulant masks symptoms of bleeding and that CT evaluation is medically necessary. If he still refuses, involve medical direction and document extensively. Transport is strongly recommended", f: "Correct — anticoagulated patients with head trauma require CT evaluation regardless of symptoms. The EMT should explain that the medication (apixaban) prevents blood from clotting, so even a small head bleed can become dangerous. If the patient continues to refuse, contact medical direction for guidance. Document the mechanism, medication, assessment, explanation of risks, and the patient's decision."}
+                    {t: "The patient is on a DOAC anticoagulant and has sustained head trauma — this is a high-risk situation for delayed intracranial hemorrhage. Explain that the anticoagulant masks symptoms of bleeding and that CT evaluation is medically necessary. If he still refuses, involve medical direction and document extensively. Transport is strongly recommended", f: "Correct — anticoagulated patients with head trauma require CT evaluation regardless of symptoms. The EMS provider should explain that the medication (apixaban) prevents blood from clotting, so even a small head bleed can become dangerous. If the patient continues to refuse, contact medical direction for guidance. Document the mechanism, medication, assessment, explanation of risks, and the patient's decision."}
                 ],
                 correct: 1,
-                explanation: "Anticoagulant therapy (especially DOACs like apixaban) dramatically increases the risk of intracranial hemorrhage after head trauma. Intracranial bleeding can develop insidiously — the patient may be asymptomatic initially and then deteriorate rapidly as the bleed expands. The EMT has a duty to inform the patient of this specific risk. The safest course is transport for CT evaluation. If the patient refuses, contact medical direction (online medical direction may authorize transport or provide additional reasoning to convince the patient). Document all findings, the specific risks explained, the patient's response, and any physician contact clearly on the PCR.",
+                explanation: "Anticoagulant therapy (especially DOACs like apixaban) dramatically increases the risk of intracranial hemorrhage after head trauma. Intracranial bleeding can develop insidiously — the patient may be asymptomatic initially and then deteriorate rapidly as the bleed expands. The EMS provider has a duty to inform the patient of this specific risk. The safest course is transport for CT evaluation. If the patient refuses, contact medical direction (online medical direction may authorize transport or provide additional reasoning to convince the patient). Document all findings, the specific risks explained, the patient's response, and any physician contact clearly on the PCR.",
                 kpi: "Recognizes the danger of seemingly minor head trauma in anticoagulated patients"
             },
             {
                 id: "crit_5_8_3",
                 scenario: "A 68-year-old female, post-operative day 1 from hip replacement surgery, complains of sudden-onset shortness of breath and left-sided chest pain that started approximately 20 minutes ago. She is visibly anxious and diaphoretic. Vital signs: BP 102/68, P 118, R 28, SpO₂ 88% on room air. Her left lower extremity is notably swollen, warm, and red compared to the right. The patient's husband mentions she was immobilized for most of yesterday after surgery and just started walking today. He asks, 'Could this be a blood clot?'",
-                question: "What is the likely sequence of events and how should the EMT manage this?",
+                question: "What is the likely sequence of events and how should the EMS provider manage this?",
                 options: [
                     {t: "The patient likely has a DVT in the left leg that has dislodged and traveled to the lungs (pulmonary embolism). This is a life-threatening emergency. Apply high-flow oxygen, position the patient upright, and transport emergently. Do not massage the leg", f: "Correct — post-surgical immobilization is a major risk factor for DVT. The unilateral leg swelling/warmth/redness suggests DVT, and the sudden dyspnea, chest pain, tachycardia, and hypoxia suggest the clot has embolized to the pulmonary circulation. This is a pulmonary embolism — a high-mortality condition requiring prompt hospital management."},
                     {t: "The leg swelling is normal after hip surgery. The shortness of breath is likely from post-operative pain and anxiety. Reassure the patient and transport non-emergently", f: "Incorrect — While mild leg swelling can be normal post-operatively, the sudden onset of dyspnea, chest pain, hypoxia (88%), and tachycardia in the setting of unilateral leg findings strongly suggests pulmonary embolism. This is not 'just anxiety' — it is a potentially fatal condition that requires rapid assessment and transport with high-flow oxygen."}
@@ -1367,10 +1367,10 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Infectious Disease & Sepsis</h3>
 
-            <p>Infectious diseases are caused by pathogenic microorganisms — bacteria, viruses, fungi, or parasites — that invade the body and cause illness. EMTs must recognise both the systemic response to infection (sepsis) and protect themselves and others from transmission through standard precautions.</p>
+            <p>Infectious diseases are caused by pathogenic microorganisms — bacteria, viruses, fungi, or parasites — that invade the body and cause illness. EMS providers must recognise both the systemic response to infection (sepsis) and protect themselves and others from transmission through standard precautions.</p>
 
             <h4>Sepsis — Definition and Recognition</h4>
-            <p><strong>Sepsis</strong> is a life-threatening organ dysfunction caused by a dysregulated host response to infection. Early recognition by EMTs is critical — sepsis is a time-sensitive emergency where every hour of delayed treatment increases mortality by 4–8%. The <strong>qSOFA (quick Sequential Organ Failure Assessment)</strong> is a bedside screening tool that identifies patients at high risk of poor outcomes. A positive qSOFA screen requires <strong>2 or more</strong> of the following three criteria:</p>
+            <p><strong>Sepsis</strong> is a life-threatening organ dysfunction caused by a dysregulated host response to infection. Early recognition by EMS providers is critical — sepsis is a time-sensitive emergency where every hour of delayed treatment increases mortality by 4–8%. The <strong>qSOFA (quick Sequential Organ Failure Assessment)</strong> is a bedside screening tool that identifies patients at high risk of poor outcomes. A positive qSOFA screen requires <strong>2 or more</strong> of the following three criteria:</p>
             <ul>
                 <li><strong>Altered mental status</strong> — Glasgow Coma Scale (GCS) <15 or any new confusion, disorientation, or decreased level of consciousness</li>
                 <li><strong>Respiratory rate ≥22 breaths per minute</strong> — Tachypnoea is a compensatory response to metabolic acidosis from tissue hypoperfusion</li>
@@ -1380,7 +1380,7 @@ window.CPG_DATA = {
 
             <h4>SIRS Criteria (Systemic Inflammatory Response Syndrome)</h4>
             <p>While qSOFA is now preferred for prehospital sepsis screening, understanding the <strong>SIRS criteria</strong> provides context for recognising systemic inflammation. SIRS is diagnosed when two or more of the following are present:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Parameter</th><th>Criterion</th></tr>
                 </thead>
@@ -1390,7 +1390,7 @@ window.CPG_DATA = {
                     <tr><td>Respiratory rate</td><td>&gt;20 breaths per minute OR PaCO₂ &lt;32 mmHg</td></tr>
                     <tr><td>White blood cell count</td><td>&gt;12,000/mm³ or &lt;4,000/mm³ or &gt;10% bands (immature forms)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <p>SIRS can be triggered by infection (sepsis) or non-infectious causes (trauma, burns, pancreatitis, autoimmune disease). The presence of SIRS criteria plus a suspected infection defines <strong>sepsis</strong>.</p>
 
             <h4>Septic Shock</h4>
@@ -1401,14 +1401,14 @@ window.CPG_DATA = {
                 <li><strong>Signs of end-organ hypoperfusion:</strong> Altered mental status, decreased urine output, cool/ mottled extremities, delayed cap refill</li>
                 <li><strong>Elevated lactate:</strong> &gt;2 mmol/L (measured in the hospital; suspect in patients with severe metabolic acidosis)</li>
             </ul>
-            <p>Septic shock carries a mortality rate of 40% or higher. EMTs must identify these patients and transport rapidly to a facility capable of early goal-directed therapy (IV fluids, antibiotics, vasopressors, source control).</p>
+            <p>Septic shock carries a mortality rate of 40% or higher. EMS providers must identify these patients and transport rapidly to a facility capable of early goal-directed therapy (IV fluids, antibiotics, vasopressors, source control).</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Warning:</strong> Sepsis can progress to septic shock rapidly — within hours. Do not be falsely reassured by a normal blood pressure in the presence of infection with tachycardia, tachypnoea, or altered mental status. Hypotension is a LATE sign in sepsis, just as in haemorrhagic shock.
             </div>
 
             <h4>Common Sources of Infection Leading to Sepsis</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Source</th><th>Signs to Identify</th><th>High-Risk Populations</th></tr>
                 </thead>
@@ -1418,7 +1418,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Skin / Soft Tissue</strong></td><td>Cellulitis: erythema, warmth, swelling, purulent drainage; necrotising fasciitis: severe pain out of proportion, crepitus, rapid spread</td><td>Diabetics, IV drug users, immunocompromised, post-surgical</td></tr>
                     <tr><td><strong>Abdominal</strong></td><td>Abdominal pain, guarding, rigidity, nausea/vomiting, fever</td><td>Elderly, post-operative, cirrhosis, immunocompromised</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Fever Management</h4>
             <p>Fever is the body's natural response to infection — it enhances immune function and inhibits pathogen growth. In most patients, fever does not require aggressive prehospital treatment. However, consider cooling measures (remove excessive clothing, tepid sponging, cool packs to the neck/axillae/groin) in:</p>
@@ -1428,10 +1428,10 @@ window.CPG_DATA = {
                 <li><strong>Patients with known cardiovascular compromise</strong> — Fever increases metabolic demand and heart rate</li>
                 <li><strong>Patients with altered mental status and hyperthermia</strong> — To distinguish sepsis-associated encephalopathy from heat stroke</li>
             </ul>
-            <p>Avoid aggressive cooling that causes shivering — shivering increases metabolic demand and core temperature. Antipyretic medications (acetaminophen, ibuprofen) are not typically administered by EMTs in the prehospital setting but should be documented if the patient has taken them prior to arrival.</p>
+            <p>Avoid aggressive cooling that causes shivering — shivering increases metabolic demand and core temperature. Antipyretic medications (acetaminophen, ibuprofen) are not typically administered by EMS providers in the prehospital setting but should be documented if the patient has taken them prior to arrival.</p>
 
             <h4>Standard Precautions and PPE</h4>
-            <p><strong>Body Substance Isolation (BSI)</strong> precautions are the foundation of infection prevention in EMS. EMTs must assume that <strong>all patients and all body substances are potentially infectious</strong>. Standard precautions include:</p>
+            <p><strong>Body Substance Isolation (BSI)</strong> precautions are the foundation of infection prevention in EMS. EMS providers must assume that <strong>all patients and all body substances are potentially infectious</strong>. Standard precautions include:</p>
             <ul>
                 <li><strong>Hand hygiene:</strong> Wash with soap and water or use alcohol-based hand rub before and after every patient contact</li>
                 <li><strong>Gloves:</strong> Wear non-sterile examination gloves for any contact with blood, body fluids, mucous membranes, or non-intact skin. Change gloves between patients and between different procedures on the same patient.</li>
@@ -1446,7 +1446,7 @@ window.CPG_DATA = {
             </div>
 
             <h4>Additional Transmission-Based Precautions</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Precaution Type</th><th>When to Use</th><th>Examples</th></tr>
                 </thead>
@@ -1455,7 +1455,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Droplet</strong></td><td>Infections transmitted by large respiratory droplets (&gt;5 microns, travel &le;3–6 feet)</td><td>Meningococcal meningitis, influenza, COVID-19, pertussis, mumps, rubella</td></tr>
                     <tr><td><strong>Airborne</strong></td><td>Infections transmitted by small droplet nuclei (&lt;5 microns, remain suspended in air)</td><td>Tuberculosis (TB), measles (rubeola), chickenpox (varicella), disseminated zoster</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Transport to Appropriate Facility</h4>
             <p>Patients with suspected sepsis or septic shock should be transported to a hospital capable of providing early goal-directed therapy: IV fluids, broad-spectrum antibiotics, lactate measurement, blood cultures, and intensive care. Consider the following when making destination decisions:</p>
@@ -1491,7 +1491,7 @@ window.CPG_DATA = {
             { question: "Which infectious disease requires airborne precautions (N95 respirator)?", answer: "Tuberculosis (TB), measles (rubeola), and chickenpox (varicella) require airborne precautions with an N95 or higher respirator.", category: "Infection Control" },
             { question: "Why is hand washing with soap and water required instead of alcohol-based hand rub for C. difficile?", answer: "C. difficile spores are not killed by alcohol-based hand rubs. Soap and water physically remove the spores from the hands.", category: "Infection Control" },
             { question: "What are the classic signs of meningococcal meningitis?", answer: "Fever, nuchal rigidity (neck stiffness), altered mental status, severe headache, photophobia, and a non-blanching petechial/purpuric rash. Droplet precautions are essential.", category: "Infectious Diseases" },
-            { question: "What is the EMT's role in managing a patient with suspected sepsis?", answer: "Early recognition using qSOFA, supporting ABCs (oxygen, IV access if in scope), fluid resuscitation per protocol, monitoring for deterioration, and rapid transport with early hospital notification.", category: "Sepsis Management" }
+            { question: "What is the EMS provider's role in managing a patient with suspected sepsis?", answer: "Early recognition using qSOFA, supporting ABCs (oxygen, IV access if in scope), fluid resuscitation per protocol, monitoring for deterioration, and rapid transport with early hospital notification.", category: "Sepsis Management" }
         ],
         quiz: [
             {
@@ -1556,7 +1556,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_9_3",
                 scenario: "You are called to a homeless shelter for a 55-year-old male with a chronic cough and difficulty breathing. The shelter manager states he has been coughing for approximately 6 weeks with night sweats and has lost a significant amount of weight. The patient appears thin and pale, coughing frequently with scant blood-tinged sputum. He is using a tissue to cover his mouth. His temperature is 38.5°C (101.3°F), HR 104, RR 22, SpO₂ 92% on room air, BP 118/74. He has no known medical history and has been living at the shelter for 3 months.",
-                question: "What is the most likely diagnosis and what precautions should the EMT take?",
+                question: "What is the most likely diagnosis and what precautions should the EMS provider take?",
                 options: [
                     {t: "This is likely pneumonia from poor living conditions — apply oxygen, standard precautions, and transport", f: "Incorrect — While pneumonia is possible, the 6-week duration of cough, night sweats, weight loss, and haemoptysis are classic for active tuberculosis. TB requires airborne precautions, not just standard or droplet precautions."},
                     {t: "Suspected active tuberculosis — apply an N95 respirator on yourself, place a surgical mask on the patient, apply supplemental oxygen to target SpO₂ ≥94%, limit time in the enclosed ambulance compartment, and transport to a respiratory isolation-capable facility", f: "Correct — The classic TB presentation includes: chronic cough (≥3 weeks), night sweats, weight loss, haemoptysis, and low-grade fever. This patient has multiple risk factors (homeless shelter, poor nutrition). Airborne precautions are essential: N95 respirator for provider, surgical mask on patient, maximise ventilation in the patient compartment."}
@@ -1573,7 +1573,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Behavioral & Psychiatric Emergencies</h3>
 
-            <p>A <strong>behavioural emergency</strong> is a situation in which a patient's behaviour is so unusual, bizarre, threatening, or dangerous that it interferes with their ability to function safely or presents a risk to themselves or others. Behavioural emergencies can have <strong>primary psychiatric causes</strong> (mental illness) or <strong>secondary medical causes</strong> (an underlying medical condition presenting with psychiatric symptoms). As an EMT, your first priority is to rule out life-threatening medical causes before assuming a psychiatric aetiology.</p>
+            <p>A <strong>behavioural emergency</strong> is a situation in which a patient's behaviour is so unusual, bizarre, threatening, or dangerous that it interferes with their ability to function safely or presents a risk to themselves or others. Behavioural emergencies can have <strong>primary psychiatric causes</strong> (mental illness) or <strong>secondary medical causes</strong> (an underlying medical condition presenting with psychiatric symptoms). As an EMS provider, your first priority is to rule out life-threatening medical causes before assuming a psychiatric aetiology.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Critical Rule:</strong> <em>"There is no such thing as a psychiatric patient until you have ruled out medical causes."</em> Hypoglycaemia, hypoxia, intoxication, head injury, and infection can all present with agitated, confused, or psychotic behaviour. Always check blood glucose, SpO₂, vital signs, and perform a focused physical exam.
@@ -1581,7 +1581,7 @@ window.CPG_DATA = {
 
             <h4>Medical Causes of Psychiatric Symptoms (The "Must Not Miss" Differential)</h4>
             <p>Before labelling a patient's behaviour as psychiatric, consider and rule out these medical causes — often recalled by the mnemonic <strong>NEW MOP</strong> or similar frameworks:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Cause</th><th>Key Features</th><th>Screening Tool</th></tr>
                 </thead>
@@ -1595,7 +1595,7 @@ window.CPG_DATA = {
                     <tr><td><strong>Seizure (postictal)</strong></td><td>Confusion, drowsiness, incontinence, tongue biting</td><td>History from bystanders, check for injury</td></tr>
                     <tr><td><strong>Stroke</strong></td><td>Acute focal neurological deficit, confusion, aphasia</td><td>BEFAST / CPSS screening</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Mental Status Assessment</h4>
             <p>A systematic assessment of a patient's mental status helps differentiate psychiatric from medical causes and establishes a baseline for monitoring. The <strong>AVPU</strong> scale (Alert, Verbal, Painful, Unresponsive) is a quick screening tool, but a more thorough mental status exam should include:</p>
@@ -1611,7 +1611,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>Danger to Self or Others — Suicidal Ideation</h4>
-            <p>Assessing the risk of self-harm is a critical EMT responsibility. Suicidal ideation ranges from passive thoughts of death to active plans with lethal means. Use a direct, non-judgemental approach:</p>
+            <p>Assessing the risk of self-harm is a critical EMS provider responsibility. Suicidal ideation ranges from passive thoughts of death to active plans with lethal means. Use a direct, non-judgemental approach:</p>
             <ul>
                 <li><strong>Ask directly:</strong> "Are you thinking about hurting yourself or killing yourself?" Research shows asking about suicide does NOT plant the idea — it opens communication.</li>
                 <li><strong>Assess lethality:</strong> Do you have a plan? What is the method? Do you have access to the means? When do you plan to do it?</li>
@@ -1654,7 +1654,7 @@ window.CPG_DATA = {
 
             <h4>De-escalation Techniques</h4>
             <p>Verbal de-escalation is the safest and most effective tool for managing agitated patients. It avoids physical confrontation, reduces the risk of injury to all parties, and preserves patient dignity. The following approach — summarised as <strong>DE-ESCALATE</strong> — is recommended:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Step</th><th>Action</th><th>Example</th></tr>
                 </thead>
@@ -1670,14 +1670,14 @@ window.CPG_DATA = {
                     <tr><td><strong>T</strong> — Transport</td><td>Transport to an appropriate facility even if symptoms resolve</td><td>"Let's go together to the hospital to make sure you're safe."</td></tr>
                     <tr><td><strong>E</strong> — Exit strategy</td><td>Always maintain a clear path to the exit for yourself</td><td>Position yourself between the patient and the door</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Involuntary Holds and Transport Considerations</h4>
             <p>When a patient poses a danger to themselves or others due to a mental health condition, they may be placed on an <strong>involuntary hold</strong> (also called a psychiatric hold, 5150, Section 12, etc. — the name varies by jurisdiction). Key points:</p>
             <ul>
                 <li><strong>Criteria</strong> for involuntary hold typically include: danger to self, danger to others, or grave disability (unable to provide for basic needs — food, shelter, safety)</li>
-                <li><strong>EMT-initiated holds:</strong> In some jurisdictions, an EMT may initiate an emergency hold to transport a patient against their will for psychiatric evaluation. Know your local protocols.</li>
-                <li><strong>Law enforcement:</strong> If a patient is violent or refuses transport despite meeting hold criteria, law enforcement should be involved. EMTs should not physically force a patient into an ambulance unless trained and authorised.</li>
+                <li><strong>EMT-initiated holds:</strong> In some jurisdictions, an EMS provider may initiate an emergency hold to transport a patient against their will for psychiatric evaluation. Know your local protocols.</li>
+                <li><strong>Law enforcement:</strong> If a patient is violent or refuses transport despite meeting hold criteria, law enforcement should be involved. EMS providers should not physically force a patient into an ambulance unless trained and authorised.</li>
                 <li><strong>Documentation:</strong> Meticulously document the patient's behaviour, statements (verbatim quotes are powerful), your assessment, the rationale for the hold/transport, and the receiving facility (if known).</li>
                 <li><strong>Transport destination:</strong> Most emergency departments can initiate a psychiatric hold and provide a medical clearance evaluation before transfer to a psychiatric facility. Alternatively, transport directly to a psychiatric receiving centre if your system has one and the patient is medically cleared.</li>
             </ul>
@@ -1701,15 +1701,15 @@ window.CPG_DATA = {
             { question: "What medical causes must be ruled out before assuming a behavioural emergency is psychiatric?", answer: "Hypoglycaemia, hypoxia, intoxication/overdose, head injury, infection (CNS/sepsis), electrolyte imbalance, postictal state, and stroke. Always check blood glucose, SpO₂, and vital signs.", category: "Medical Causes" },
             { question: "What is hyperactive (agitated) delirium and why is it a medical emergency?", answer: "A severe state of agitation with hyperthermia, tachycardia, hypertension, diaphoresis, and bizarre behaviour. It can rapidly progress to cardiorespiratory arrest due to hyperthermia, acidosis, and catecholamine excess.", category: "Excited Delirium" },
             { question: "What is the MOST important safety consideration when restraining a patient?", answer: "NEVER restrain in a prone (face-down) position — this causes positional asphyxia. Always place the patient on their side (lateral recumbent) and monitor breathing continuously.", category: "Restraints" },
-            { question: "What questions should an EMT ask when assessing suicidal ideation?", answer: "Ask directly: 'Are you thinking about hurting yourself?' Assess plan, method, access to means, and timing. Identify risk factors (prior attempts, male, >65, access to firearms) and protective factors.", category: "Suicidal Ideation" },
-            { question: "How should an EMT approach a patient experiencing psychosis?", answer: "Speak calmly and respectfully, acknowledge feelings without arguing with delusions, do not validate false content, maintain safe distance, keep an exit path clear, and rule out medical causes.", category: "Psychosis" },
+            { question: "What questions should an EMS provider ask when assessing suicidal ideation?", answer: "Ask directly: 'Are you thinking about hurting yourself?' Assess plan, method, access to means, and timing. Identify risk factors (prior attempts, male, >65, access to firearms) and protective factors.", category: "Suicidal Ideation" },
+            { question: "How should an EMS provider approach a patient experiencing psychosis?", answer: "Speak calmly and respectfully, acknowledge feelings without arguing with delusions, do not validate false content, maintain safe distance, keep an exit path clear, and rule out medical causes.", category: "Psychosis" },
             { question: "What is the difference between a panic attack and a life-threatening medical emergency?", answer: "Panic attack is a diagnosis of exclusion — PE, ACS, asthma, anaphylaxis, and hypoglycaemia can all mimic panic. Rule out medical causes before attributing symptoms to anxiety.", category: "Panic Attack" },
             { question: "What is the DE-ESCALATE framework for managing agitated patients?", answer: "Distance, Eye contact, Empathy, Slow down, Choices, Active listening, Low stimulation, Ask for help, Transport, Exit strategy.", category: "De-escalation" },
             { question: "What are the criteria for an involuntary psychiatric hold?", answer: "Typically: danger to self, danger to others, or grave disability (unable to provide for basic needs like food, shelter, safety). Criteria vary by jurisdiction.", category: "Involuntary Holds" }
         ],
         quiz: [
             {
-                q: "A 45-year-old male is found wandering in the street, agitated and shouting at unseen people. He is diaphoretic, tachycardic (HR 124), and his skin is warm and flushed. He pulls off his shirt despite the cold weather. His blood glucose is 82 mg/dL and SpO₂ is 96% on room air. What condition should the EMT suspect as the HIGHEST priority?",
+                q: "A 45-year-old male is found wandering in the street, agitated and shouting at unseen people. He is diaphoretic, tachycardic (HR 124), and his skin is warm and flushed. He pulls off his shirt despite the cold weather. His blood glucose is 82 mg/dL and SpO₂ is 96% on room air. What condition should the EMS provider suspect as the HIGHEST priority?",
                 options: [
                     "Acute psychosis from schizophrenia — transport for psychiatric evaluation",
                     "Hypoglycaemia — despite the normal reading, symptoms suggest low blood sugar",
@@ -1731,7 +1731,7 @@ window.CPG_DATA = {
                 explanation: "Panic attack is a diagnosis of exclusion. Before attributing symptoms to anxiety, systematically rule out PE (sudden dyspnoea, pleuritic pain), ACS (chest pain, risk factors), asthma (wheezes, cough), and anaphylaxis (rash, oedema). The paper bag technique is dangerous and should NEVER be used. If medical causes are excluded, calm reassurance and slow breathing are appropriate."
             },
             {
-                q: "[HARD] An EMT crew and law enforcement are managing a highly agitated 32-year-old male suspected of methamphetamine intoxication. He is combative, profusely diaphoretic, and has pulled off his shirt. Law enforcement has subdued him and placed him prone on the ground with handcuffs. He is still struggling against the restraints. What is the EMT's MOST important immediate concern and action?",
+                q: "[HARD] An EMS crew and law enforcement are managing a highly agitated 32-year-old male suspected of methamphetamine intoxication. He is combative, profusely diaphoretic, and has pulled off his shirt. Law enforcement has subdued him and placed him prone on the ground with handcuffs. He is still struggling against the restraints. What is the EMS provider's MOST important immediate concern and action?",
                 options: [
                     "The patient needs chemical sedation — request ALS for benzodiazepine administration; this is the only way to safely calm a methamphetamine-intoxicated patient",
                     "The patient is at imminent risk of positional asphyxia from the prone restraint — request immediate repositioning to a side-lying (lateral recumbent) position, and monitor breathing and SpO₂ continuously",
@@ -1746,7 +1746,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_10_1",
                 scenario: "You are called to a community centre for a 38-year-old male who is yelling at staff and other patrons. On arrival, he is standing in the middle of the room, gesturing wildly, and shouting that 'the government is watching me through the lights.' He is pacing back and forth and will not let any staff approach him. A crowd of approximately 15 people is watching. He is well-known to the centre's staff as having a history of paranoid schizophrenia but has not taken his medication in several weeks. The centre manager asks you to 'come and calm him down' so he can be removed from the premises.",
-                question: "What is the safest initial approach for the EMT?",
+                question: "What is the safest initial approach for the EMS provider?",
                 options: [
                     {t: "Approach the patient directly with your partner, speaking firmly and telling him he needs to leave the premises or the police will be called", f: "Incorrect — A direct, confrontational approach with a paranoid patient can escalate the situation rapidly. The patient perceives authority figures as threatening. Speaking firmly and issuing ultimatums is likely to increase his agitation."},
                     {t: "Clear the room of bystanders to reduce stimulation, maintain a safe distance, position yourself between the patient and the exit, speak with a calm low voice, introduce yourself, acknowledge his distress without challenging his delusions, and offer choices (such as sitting down or walking to a quieter area). Request law enforcement as a safety backup before engaging", f: "Correct — This is a textbook application of de-escalation principles: 1) Reduce stimulation (clear bystanders, dim/noise reduction), 2) Maintain safe distance and exit path, 3) Calm, non-threatening tone, 4) Acknowledge feelings without arguing about delusions, 5) Offer choices to restore a sense of control, 6) Have law enforcement staged nearby in case the situation escalates."}
@@ -1758,7 +1758,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_10_2",
                 scenario: "You are called to a private residence where a 55-year-old female is found sitting on her bed crying. She tells you she 'just can't do this anymore' and that she has been thinking about 'ending it all.' She states she has a plan — she has been saving her blood pressure pills to take all at once, and there are 30 tablets in her bedside drawer. Her husband died 6 months ago and she lives alone. She has no family nearby. Her vital signs are stable and she is alert and oriented. She is willing to come to the hospital 'if you think it will help.' Her son lives in another state and she does not want to call him.",
-                question: "What are the EMT's priorities in managing this suicidal patient?",
+                question: "What are the EMS provider's priorities in managing this suicidal patient?",
                 options: [
                     {t: "The patient is willing to come to the hospital voluntarily — there is no immediate danger. Place her in the ambulance and transport without further intervention. No need to involve the son or remove the pills since she is coming voluntarily", f: "Incorrect — Voluntary cooperation does not eliminate the need for safety precautions. The patient has a clear plan (overdose), the means (30 tablets), and significant risk factors (recent loss, social isolation, living alone). She must be under constant observation, dangerous items must be removed, and family should be notified."},
                     {t: "This patient is at high risk for suicide — she has a plan and the means, significant risk factors (widow, isolated, living alone), and expressed intent. Do not leave her alone. Remove the pills from her environment with her permission. Maintain constant observation during transport. Notify her son as a protective contact. Document her verbatim statements", f: "Correct — This patient has multiple high-risk features: suicidal ideation with a clear plan, access to means (30 tablets), recent loss (husband), social isolation, and living alone. Management includes: 1) Constant observation — never leave her alone, 2) Remove means (the pills) with her permission or by involving law enforcement if needed, 3) Notify family (son) as a protective resource, 4) Transport for psychiatric evaluation, 5) Document her verbatim statements — this is critical medical-legal documentation."}
@@ -1776,7 +1776,7 @@ window.CPG_DATA = {
                     {t: "The presenting signs (pinpoint pupils, bradycardia, respiratory depression, altered mental status) are classic for opioid overdose, despite the seizure history. Open the airway, begin BVM ventilation at 10–12 breaths/min with high-flow oxygen attached, and administer naloxone 0.4–2 mg IM/IN per protocol while ventilating. Transport for ongoing monitoring", f: "Correct — This is a case where the presenting signs override the medical history. The toxidrome (opioid triad: respiratory depression, CNS depression, pinpoint pupils) is unmistakable. The medical alert bracelet may be a red herring, or the patient may have both conditions. Follow the ABC approach: airway/BVM first (the patient is hypoventilating at 8/min with SpO₂ 88%), then administer naloxone. Transport is mandatory even if he awakens — naloxone's half-life is shorter than most opioids."}
                 ],
                 correct: 1,
-                explanation: "Never let the medical history override the presenting clinical picture. The classic opioid toxidrome is present. The seizure history may be coincidental or the patient may have taken opioids recreationally or accidentally. The EMT's priority is managing the ABC threat — the hypoventilation is immediately life-threatening. BVM ventilation with high-flow oxygen provides immediate support. Naloxone is administered while ventilating. The pill on the ground should be brought to the hospital for identification. After naloxone, monitor for return of spontaneous breathing and prepare for possible agitation during withdrawal.",
+                explanation: "Never let the medical history override the presenting clinical picture. The classic opioid toxidrome is present. The seizure history may be coincidental or the patient may have taken opioids recreationally or accidentally. The EMS provider's priority is managing the ABC threat — the hypoventilation is immediately life-threatening. BVM ventilation with high-flow oxygen provides immediate support. Naloxone is administered while ventilating. The pill on the ground should be brought to the hospital for identification. After naloxone, monitor for return of spontaneous breathing and prepare for possible agitation during withdrawal.",
                 kpi: "Prioritises presenting toxidrome over medical history when managing altered mental status"
             }
         ]
@@ -1787,7 +1787,7 @@ window.CPG_DATA = {
         summary: `<div class="sum-card">
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg> Pain Management</h3>
 
-            <p>Pain is one of the most common reasons patients seek emergency care. It is a complex, subjective experience that involves both sensory and emotional components. Effective pain management is a core EMT responsibility — unrelieved pain causes unnecessary suffering, increases physiological stress (tachycardia, hypertension, increased oxygen demand), impairs immune function, and can prolong recovery. The EMT's goal is to assess pain systematically, provide appropriate interventions within the scope of practice, and reassess the patient's response.</p>
+            <p>Pain is one of the most common reasons patients seek emergency care. It is a complex, subjective experience that involves both sensory and emotional components. Effective pain management is a core EMS provider responsibility — unrelieved pain causes unnecessary suffering, increases physiological stress (tachycardia, hypertension, increased oxygen demand), impairs immune function, and can prolong recovery. The EMS provider's goal is to assess pain systematically, provide appropriate interventions within the scope of practice, and reassess the patient's response.</p>
 
             <p>Pain is often described as the <strong>"fifth vital sign"</strong> — along with temperature, pulse, respiration, and blood pressure — and should be assessed and documented in every patient encounter where pain is present.</p>
 
@@ -1809,7 +1809,7 @@ window.CPG_DATA = {
 
             <h5>FLACC Scale — Non-Verbal Patients (Infants, Dementia, Intubated)</h5>
             <p>The <strong>FLACC</strong> scale assesses pain in patients who cannot self-report. It evaluates five categories, each scored 0–2, for a total of 0–10:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Category</th><th>0</th><th>1</th><th>2</th></tr>
                 </thead>
@@ -1820,7 +1820,7 @@ window.CPG_DATA = {
                     <tr><td><strong>C</strong> — Cry</td><td>No cry (awake or asleep)</td><td>Moans or whimpers, occasional complaint</td><td>Crying steadily, screams or sobs, frequent complaints</td></tr>
                     <tr><td><strong>CC</strong> — Consolability</td><td>Content, relaxed</td><td>Reassured by occasional touching, hugging, or being talked to; distractible</td><td>Difficult to console or comfort</td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <p>FLACC is widely used in paediatric, geriatric, and critical care settings. A score ≥4 indicates moderate-to-severe pain requiring intervention.</p>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -1850,11 +1850,11 @@ window.CPG_DATA = {
                 <li><strong>Duration:</strong> Short — 3–5 minutes after the last inhalation (titratable)</li>
                 <li><strong>Contraindications:</strong> Known hypersensitivity; patients with clinically significant renal impairment; history of malignant hyperthermia; concurrent use of tetracycline antibiotics; patients who are unconscious or unable to follow commands (requires patient cooperation to self-administer)</li>
                 <li><strong>Side effects:</strong> Drowsiness, dizziness, metallic taste, headache. Less common: nausea/vomiting.</li>
-                <li><strong>EMT responsibility:</strong> Explain use to the patient, supervise self-administration, monitor for side effects, document pain scores before and after.</li>
+                <li><strong>EMS provider responsibility:</strong> Explain use to the patient, supervise self-administration, monitor for side effects, document pain scores before and after.</li>
             </ul>
 
             <h5>Paracetamol (Acetaminophen) — Oral Analgesic</h5>
-            <p>Paracetamol is a non-opioid analgesic commonly given orally for mild-to-moderate pain. It can be administered by EMTs under standing orders in many systems:</p>
+            <p>Paracetamol is a non-opioid analgesic commonly given orally for mild-to-moderate pain. It can be administered by EMS providers under standing orders in many systems:</p>
             <ul>
                 <li><strong>Indications:</strong> Mild-to-moderate pain (NRS 1–6), headache, musculoskeletal pain, as an adjunct to other analgesics</li>
                 <li><strong>Dose (adult):</strong> 500–1000 mg orally (tablets or liquid suspension)</li>
@@ -1881,7 +1881,7 @@ window.CPG_DATA = {
             </div>
 
             <h4>Contraindications to EMT-Level Analgesics</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Medication</th><th>Contraindications / Cautions</th></tr>
                 </thead>
@@ -1890,10 +1890,10 @@ window.CPG_DATA = {
                     <tr><td><strong>Paracetamol</strong></td><td>Known liver disease, allergy, already taken paracetamol-containing medications, caution with chronic alcohol use</td></tr>
                     <tr><td><strong>Nitrous Oxide</strong></td><td>Altered mental status, pneumothorax, bowel obstruction, decompression sickness, head injury, maxillofacial injury (cannot seal), inability to self-administer</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Reassessment After Intervention</h4>
-            <p>After any pain management intervention — pharmacological or non-pharmacological — the EMT must <strong>reassess</strong> the patient's pain level and vital signs. This is not optional; it is standard of care. The reassessment should include:</p>
+            <p>After any pain management intervention — pharmacological or non-pharmacological — the EMS provider must <strong>reassess</strong> the patient's pain level and vital signs. This is not optional; it is standard of care. The reassessment should include:</p>
             <ul>
                 <li><strong>Pain score:</strong> Re-assess using the same scale as the initial assessment. A reduction of ≥2 points (or to NRS ≤4) is a typical target.</li>
                 <li><strong>Qualitative change:</strong> "Is the pain better, worse, or the same?" "What is your pain level now?"</li>
@@ -1923,7 +1923,7 @@ window.CPG_DATA = {
                 <li><strong>Substance use history:</strong> Patients with a history of substance use disorder are often undertreated due to concerns about drug-seeking behaviour or addiction. All patients deserve appropriate pain management regardless of their history.</li>
                 <li><strong>Provider bias:</strong> Unconscious bias related to race, ethnicity, gender, age, or socioeconomic status can affect pain assessment and treatment decisions. Awareness of these biases is the first step to overcoming them.</li>
                 <li><strong>Logistical barriers:</strong> Protocol restrictions, medication availability, lack of appropriate pain assessment tools, and short transport times may limit pain management options.</li>
-                <li><strong>Knowledge and training gaps:</strong> Some EMTs may not be trained in available pain management options or may not know how to use pain assessment scales effectively.</li>
+                <li><strong>Knowledge and training gaps:</strong> Some EMS providers may not be trained in available pain management options or may not know how to use pain assessment scales effectively.</li>
             </ul>
             <p>Overcoming these barriers requires a systematic approach: assess pain in every patient, use validated tools, provide both pharmacological and non-pharmacological interventions, reassess, and document. Every patient deserves adequate pain management.</p>
         </div>`,
@@ -1931,7 +1931,7 @@ window.CPG_DATA = {
             { question: "What is the Numeric Rating Scale (NRS) for pain and how is it interpreted?", answer: "Patient rates pain 0–10 (0 = no pain, 10 = worst imaginable). Mild = 1–3, Moderate = 4–6, Severe = 7–10. A reduction of ≥2 points is clinically meaningful.", category: "Pain Assessment" },
             { question: "What is the Wong-Baker FACES scale and when is it used?", answer: "A pain scale using six cartoon faces (0–10) for children aged 3–8 or patients with limited language/cognitive ability. The child points to the face that matches their pain.", category: "Pain Assessment" },
             { question: "What does the FLACC scale assess and when should it be used?", answer: "FLACC assesses Face, Legs, Activity, Cry, Consolability — each scored 0–2 (total 0–10). Used for non-verbal patients: infants, advanced dementia, or intubated/sedated patients.", category: "Pain Assessment" },
-            { question: "What non-pharmacological pain management techniques are available to EMTs?", answer: "Splinting/immobilisation, ice (cold therapy with barrier), position of comfort, calm reassurance, distraction, and smooth transport technique.", category: "Non-Pharmacological" },
+            { question: "What non-pharmacological pain management techniques are available to EMS providers?", answer: "Splinting/immobilisation, ice (cold therapy with barrier), position of comfort, calm reassurance, distraction, and smooth transport technique.", category: "Non-Pharmacological" },
             { question: "What is Penthrox (methoxyflurane) and what are its contraindications?", answer: "A self-administered inhalational analgesic ('green whistle') for moderate-to-severe trauma pain. Contraindications: renal impairment, malignant hyperthermia, tetracycline use, unconscious patients.", category: "Penthrox" },
             { question: "What are the contraindications to nitrous oxide (Entonox) administration?", answer: "Altered mental status, inability to self-administer, pneumothorax, bowel obstruction, decompression sickness, head injury, and maxillofacial injuries preventing a mask seal.", category: "Nitrous Oxide" },
             { question: "What are common barriers to adequate pain management in the prehospital setting?", answer: "Oligoanalgesia (under-treatment), age disparities (children/elderly undertreated), cultural/language barriers, provider bias, substance use stigma, protocol restrictions, and knowledge gaps.", category: "Barriers" },
@@ -1950,7 +1950,7 @@ window.CPG_DATA = {
                 explanation: "The Wong-Baker FACES scale is validated for children aged 3–8. It uses cartoon faces to help children communicate their pain level without needing to understand numbers. Numeric scales are appropriate for age ≥8. FLACC is for non-verbal patients who cannot self-report at all."
             },
             {
-                q: "An EMT applies a rigid splint to a patient's fractured forearm. Before splinting, the patient rated their pain as 8/10. After splinting, the patient reports the pain is now 5/10. What does this change indicate?",
+                q: "An EMS provider applies a rigid splint to a patient's fractured forearm. Before splinting, the patient rated their pain as 8/10. After splinting, the patient reports the pain is now 5/10. What does this change indicate?",
                 options: [
                     "The splint was applied incorrectly — a properly applied splint should eliminate all pain",
                     "The patient's pain has reduced by 3 points, which is a clinically meaningful improvement — the splint is effective",
@@ -1961,7 +1961,7 @@ window.CPG_DATA = {
                 explanation: "A reduction of ≥2 points on the NRS is considered a clinically meaningful improvement. Splinting reduces pain by immobilising the fracture and preventing movement at the injury site. A 3-point reduction (8 → 5) is an excellent response. Continue to monitor and consider additional interventions (ice, pharmacological) if indicated."
             },
             {
-                q: "[HARD] Which of the following patients is an appropriate candidate for nitrous oxide (Entonox) administration by an EMT?",
+                q: "[HARD] Which of the following patients is an appropriate candidate for nitrous oxide (Entonox) administration by an EMS provider?",
                 options: [
                     "A 32-year-old male with a pneumothorax after a stabbing who needs pain relief for transport",
                     "A 24-year-old female in active labour with severe pain who is alert, oriented, and able to follow commands",
@@ -1976,7 +1976,7 @@ window.CPG_DATA = {
             {
                 id: "crit_5_11_1",
                 scenario: "You are called to a playground for a 4-year-old girl who fell from the monkey bars and is holding her left arm. She is crying and will not let anyone touch her arm. Her mother is present and very anxious. The arm appears angulated at the mid-forearm, suggesting a fracture of the radius and ulna. The child cannot describe her pain using numbers. Your partner suggests 'just splinting it quickly while she's distracted.' The mother asks you to 'do something for the pain.'",
-                question: "How should the EMT assess this child's pain and manage the injury?",
+                question: "How should the EMS provider assess this child's pain and manage the injury?",
                 options: [
                     {t: "Assess pain using the Wong-Baker FACES scale by showing the child the faces and asking her to point to one. Use calm reassurance and distraction (let her hold a stuffed toy or phone with a video). Apply a well-padded rigid splint with gentle handling. Apply a cold pack (with a barrier) to the fracture site. Reassess pain using FACES after splinting", f: "Correct — Pain assessment in a 4-year-old should use the FACES scale (validated for ages 3–8). Management combines pharmacological and non-pharmacological approaches: distraction (toy, video), calm reassurance, gentle handling during splint application, cold therapy for pain and swelling, and reassessment using the same scale. If available and per protocol, consider Penthrox (self-administered inhalational analgesic) for procedural pain during splinting."},
                     {t: "The child is too young for pain assessment — paediatric pain is difficult to measure. Apply the splint quickly and transport. The pain will stop once the arm is immobilised", f: "Incorrect — Children at age 4 CAN self-report pain using the FACES scale. Paediatric pain is systematically undertreated ('oligoanalgesia'), and this child deserves appropriate assessment and management. 'Splinting quickly' without preparation, distraction, or pain control causes unnecessary suffering and may make the child uncooperative for the rest of the assessment."}

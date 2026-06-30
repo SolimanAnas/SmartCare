@@ -28,7 +28,7 @@ window.CPG_DATA = {
 
                     <h4 style="color:#004e92; margin:25px 0 10px;">🆕 New and highlighted topics added in CPG 2025</h4>
                     <div style="background:#e3f2fd; padding:15px; border-radius:12px; margin-bottom:15px;">
-                        <table style="width:100%; border-collapse: collapse;">
+                        <div class="table-scroll"><table style="width:100%; border-collapse: collapse;">
                             <tr style="border-bottom:1px solid #90caf9;">
                                 <th style="text-align:left; padding:8px 0;">Topic</th>
                                 <th style="text-align:left; padding:8px 0;">Status</th>
@@ -65,7 +65,7 @@ window.CPG_DATA = {
                                 <td style="padding:8px 0;">Newborn and pre‑term infant resuscitation</td>
                                 <td style="padding:8px 0;"><span style="background:#004e92; color:white; padding:2px 10px; border-radius:20px;">NEW</span> included in Resuscitation</td>
                             </tr>
-                        </table>
+                        </table></div>
                     </div>
 
                     <h4 style="color:#004e92; margin:25px 0 10px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#landmark"/></svg>️ Structure and design updates</h4>

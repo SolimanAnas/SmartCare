@@ -27,7 +27,7 @@ window.CPG_DATA = {
             <li><strong>Alveoli</strong> are the site of gas exchange (O₂ in, CO₂ out) across a thin capillary membrane.</li>
         </ul>
 
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Feature</th><th>Adult</th><th>Pediatric (key differences)</th></tr></thead>
             <tbody>
                 <tr><td>Tongue</td><td>Proportionate</td><td>Proportionally larger → obstructs more easily</td></tr>
@@ -35,7 +35,7 @@ window.CPG_DATA = {
                 <tr><td>Occiput</td><td>Neutral when supine</td><td>Large → flexes the neck; pad under shoulders to keep neutral</td></tr>
                 <tr><td>Narrowest point</td><td>Vocal cords (glottis)</td><td>Cricoid cartilage (in young children)</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>Clinical Pearl:</strong> In an unresponsive patient, the tongue is the most common airway obstruction. A simple head-tilt/chin-lift (or jaw-thrust if trauma is suspected) lifts the tongue off the posterior pharynx and may be all that is needed to restore a patent airway.
@@ -57,7 +57,7 @@ window.CPG_DATA = {
     ],
     critical: [
         {id: "crit_3_1_1", scenario: "An unresponsive adult is supine and making loud snoring sounds with each breath. SpO₂ is 90%.", question: "What is the most likely cause and your first action?", options: [{t: "Fluid in the airway — suction immediately", f: "Incorrect. Snoring indicates soft-tissue (tongue) obstruction, not fluid (which gurgles)."}, {t: "The tongue obstructing the airway — open it with a head-tilt/chin-lift", f: "Correct. Snoring = the tongue; a manual airway maneuver lifts it off the pharynx."}], correct: 1, explanation: "Snoring respirations indicate partial obstruction by the tongue. Reposition the airway first; insert an adjunct if needed.", kpi: "Recognizes tongue obstruction and performs a manual airway maneuver"},
-        {id: "crit_3_1_2", scenario: "A 2-year-old is unresponsive. A new EMT places a folded towel under the head as they would for an adult.", question: "What is the problem?", options: [{t: "Nothing — head padding is correct for all ages", f: "Incorrect. A child's large occiput already flexes the neck."}, {t: "Padding under the head flexes the child's neck and can obstruct the airway; pad under the shoulders instead", f: "Correct. The large occiput means shoulder padding keeps the airway neutral."}], correct: 1, explanation: "Children have a proportionally large occiput. Padding the head worsens flexion; pad the shoulders to maintain a neutral, open airway.", kpi: "Applies age-appropriate airway positioning"},
+        {id: "crit_3_1_2", scenario: "A 2-year-old is unresponsive. A new EMS provider places a folded towel under the head as they would for an adult.", question: "What is the problem?", options: [{t: "Nothing — head padding is correct for all ages", f: "Incorrect. A child's large occiput already flexes the neck."}, {t: "Padding under the head flexes the child's neck and can obstruct the airway; pad under the shoulders instead", f: "Correct. The large occiput means shoulder padding keeps the airway neutral."}], correct: 1, explanation: "Children have a proportionally large occiput. Padding the head worsens flexion; pad the shoulders to maintain a neutral, open airway.", kpi: "Applies age-appropriate airway positioning"},
         {id: "crit_3_1_3", scenario: "After an intubation attempt by a paramedic, breath sounds are heard only over the right chest and the left chest is silent.", question: "What is the most likely explanation?", options: [{t: "The tube is in the esophagus", f: "Incorrect. Esophageal placement produces no breath sounds and gurgling over the stomach."}, {t: "The tube was advanced too far into the right mainstem bronchus", f: "Correct. The right mainstem is straighter; over-insertion ventilates only the right lung."}], correct: 1, explanation: "Right-sided-only breath sounds suggest right mainstem intubation. The tube should be withdrawn slightly until bilateral sounds return.", kpi: "Recognizes right mainstem intubation from unilateral breath sounds"}
     ]
 },
@@ -70,7 +70,7 @@ window.CPG_DATA = {
         <p>Assess the airway by <strong>looking, listening, and feeling</strong> for adequate air movement. The sounds a patient makes are a fast, reliable guide to both the problem and its solution. Act on early signs — cyanosis is a late and ominous finding.</p>
 
         <h4>Airway Sounds → Cause → Action</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Sound</th><th>Indicates</th><th>Action</th></tr></thead>
             <tbody>
                 <tr><td>Snoring</td><td>Partial obstruction by the tongue</td><td>Reposition airway; insert an adjunct (OPA/NPA)</td></tr>
@@ -79,7 +79,7 @@ window.CPG_DATA = {
                 <tr><td>Wheezing</td><td>Lower-airway narrowing (bronchospasm)</td><td>Bronchodilator per protocol; assist ventilation if inadequate</td></tr>
                 <tr><td>Crowing / hoarseness</td><td>Laryngeal irritation or edema</td><td>Treat as an airway threat; rapid transport</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Signs of Inadequate Breathing</h4>
         <ul>
@@ -122,13 +122,13 @@ window.CPG_DATA = {
         <p>FBAO is a sudden mechanical blockage of the airway by food or an object. It is a leading cause of preventable death, especially in young children and the elderly. Rapid recognition of severity and the correct age-appropriate technique can be immediately lifesaving.</p>
 
         <h4>Recognize Severity</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Mild (good air exchange)</th><th>Severe (poor/no air exchange)</th></tr></thead>
             <tbody>
                 <tr><td>Forceful cough, able to speak, wheeze between coughs</td><td>Silent or weak cough, unable to speak/breathe, stridor, cyanosis</td></tr>
                 <tr><td><strong>Encourage coughing — do NOT interfere</strong></td><td><strong>Act immediately</strong> (thrusts)</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Technique by Patient</h4>
         <ul>
@@ -170,7 +170,7 @@ window.CPG_DATA = {
 
         <p>Airway adjuncts hold the airway open after a manual maneuver by keeping the tongue off the posterior pharynx. They <strong>maintain</strong> an airway but do <strong>not protect against aspiration</strong> — keep suction ready.</p>
 
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th></th><th>Oropharyngeal Airway (OPA)</th><th>Nasopharyngeal Airway (NPA)</th></tr></thead>
             <tbody>
                 <tr><td>Use when</td><td>Unresponsive, <strong>no gag reflex</strong></td><td>Gag reflex intact / semi-conscious</td></tr>
@@ -178,7 +178,7 @@ window.CPG_DATA = {
                 <tr><td>Insertion</td><td>Upside-down then rotate 180° (adult); sideways with tongue blade (child)</td><td>Lubricate; bevel toward the septum; insert into the larger nostril</td></tr>
                 <tr><td>Avoid when</td><td>Gag reflex present (causes vomiting)</td><td>Suspected basal skull fracture / major facial trauma</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Key Principles</h4>
         <ul>
@@ -226,7 +226,7 @@ window.CPG_DATA = {
         </ul>
 
         <h4>Delivery Devices</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Device</th><th>Flow Rate</th><th>Approx. O₂ Delivered</th><th>Use</th></tr></thead>
             <tbody>
                 <tr><td>Nasal cannula</td><td>1–6 L/min</td><td>~24–44%</td><td>Mild hypoxia; patient who won't tolerate a mask</td></tr>
@@ -234,7 +234,7 @@ window.CPG_DATA = {
                 <tr><td>Non-rebreather mask (NRB)</td><td>10–15 L/min</td><td>~60–90%</td><td>Severe hypoxia; critically ill (keep the reservoir bag inflated)</td></tr>
                 <tr><td>Bag-valve mask (BVM)</td><td>15 L/min</td><td>~100%</td><td>Inadequate/absent breathing — delivers ventilation</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Hazards</h4>
         <ul>
@@ -264,7 +264,7 @@ window.CPG_DATA = {
     critical: [
         {id: "crit_3_4_1", scenario: "A known COPD patient is short of breath with SpO₂ 86%. A colleague applies an NRB at 15 L/min; minutes later the patient becomes drowsy with a slowing respiratory rate.", question: "What is the concern and action?", options: [{t: "Nothing — more oxygen is always better", f: "Incorrect. In some COPD patients, excess O₂ can reduce respiratory drive and ventilation."}, {t: "Possible CO₂ retention/over-oxygenation; titrate toward 88–92% and be ready to assist ventilation", f: "Correct. Titrate down and support ventilation if the rate falls."}], correct: 1, explanation: "A small subset of COPD patients hypoventilate with high-flow O₂. Titrate to 88–92% and assist ventilation if the rate/mental status decline.", kpi: "Titrates oxygen and monitors ventilation in COPD"},
         {id: "crit_3_4_2", scenario: "A critically ill trauma patient with SpO₂ 80% has an NRB applied, but the reservoir bag collapses completely with each breath.", question: "What is wrong?", options: [{t: "The mask is working normally", f: "Incorrect. The bag should stay partially inflated."}, {t: "Flow is too low — increase O₂ until the reservoir stays inflated", f: "Correct. Raise the flow (10–15 L/min) so the bag does not fully collapse on inspiration."}], correct: 1, explanation: "If the reservoir collapses, flow is inadequate and the patient rebreathes exhaled air. Increase the flow to keep the bag inflated.", kpi: "Recognizes and corrects inadequate NRB flow"},
-        {id: "crit_3_4_3", scenario: "An alert chest-pain patient has an SpO₂ of 97% on room air. A new EMT wants to apply high-flow oxygen 'because it's a heart attack.'", question: "What is the best approach?", options: [{t: "Apply a non-rebreather at 15 L/min", f: "Incorrect. Routine high-flow O₂ in normoxic ACS offers no benefit and may cause harm."}, {t: "Withhold supplemental oxygen and monitor, since SpO₂ is ≥94%", f: "Correct. Give oxygen only if SpO₂ falls below 94% or distress develops."}], correct: 1, explanation: "Current evidence does not support routine oxygen in normoxic ACS; give it only for SpO₂ <94% or respiratory distress.", kpi: "Avoids unnecessary oxygen in a normoxic patient"}
+        {id: "crit_3_4_3", scenario: "An alert chest-pain patient has an SpO₂ of 97% on room air. A new EMS provider wants to apply high-flow oxygen 'because it's a heart attack.'", question: "What is the best approach?", options: [{t: "Apply a non-rebreather at 15 L/min", f: "Incorrect. Routine high-flow O₂ in normoxic ACS offers no benefit and may cause harm."}, {t: "Withhold supplemental oxygen and monitor, since SpO₂ is ≥94%", f: "Correct. Give oxygen only if SpO₂ falls below 94% or distress develops."}], correct: 1, explanation: "Current evidence does not support routine oxygen in normoxic ACS; give it only for SpO₂ <94% or respiratory distress.", kpi: "Avoids unnecessary oxygen in a normoxic patient"}
     ]
 },
 {
@@ -273,7 +273,7 @@ window.CPG_DATA = {
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg> Assisted Ventilation</h3>
 
-        <p>When breathing is absent or inadequate, the EMT must provide positive-pressure ventilation, most often with a <strong>bag-valve mask (BVM)</strong> connected to high-flow oxygen and a reservoir. Good ventilation is gentle, controlled, and well-sealed.</p>
+        <p>When breathing is absent or inadequate, the EMS provider must provide positive-pressure ventilation, most often with a <strong>bag-valve mask (BVM)</strong> connected to high-flow oxygen and a reservoir. Good ventilation is gentle, controlled, and well-sealed.</p>
 
         <h4>BVM Principles</h4>
         <ul>
@@ -284,14 +284,14 @@ window.CPG_DATA = {
         </ul>
 
         <h4>Hazards & Troubleshooting</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Problem</th><th>Cause</th><th>Fix</th></tr></thead>
             <tbody>
                 <tr><td>Gastric distension</td><td>Ventilating too fast / too much volume</td><td>Slow down; smaller volumes; reassess airway</td></tr>
                 <tr><td>Poor chest rise</td><td>Inadequate mask seal</td><td>Two-rescuer BVM; reposition airway; insert adjunct</td></tr>
                 <tr><td>Falling blood pressure</td><td>Excessive rate/volume reduces venous return</td><td>Ventilate at the correct rate, not faster</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>Clinical Pearl:</strong> The most common and most fixable BVM error is a poor mask seal. If the chest is not rising, the answer is almost always a better seal (two-rescuer technique) and airway repositioning — <em>not</em> squeezing harder or faster.
@@ -332,7 +332,7 @@ window.CPG_DATA = {
         </ul>
 
         <h4>Technique & Time Limits</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Step</th><th>Key point</th></tr></thead>
             <tbody>
                 <tr><td>Measure depth</td><td>Corner of the mouth to the earlobe; do not insert past the base of the visible tongue</td></tr>
@@ -340,7 +340,7 @@ window.CPG_DATA = {
                 <tr><td>Time limit</td><td>≤15 s adult, ≤10 s child, ≤5 s infant per attempt</td></tr>
                 <tr><td>Oxygenate</td><td>Pre-oxygenate before and re-oxygenate/ventilate between attempts</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>Clinical Pearl:</strong> Suctioning removes oxygen along with fluid and can trigger a vagal response (bradycardia) — especially in children. Keep attempts brief, monitor the heart rate and SpO₂, and re-oxygenate between passes.
@@ -374,13 +374,13 @@ window.CPG_DATA = {
         <p>When basic measures (positioning, adjuncts, BVM) are inadequate, a trained provider may place an advanced airway. At the EMT level the role is often to <strong>assist</strong>: prepare equipment, pre-oxygenate, monitor, and help confirm placement.</p>
 
         <h4>Device Types</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Type</th><th>Examples</th><th>Notes</th></tr></thead>
             <tbody>
                 <tr><td>Supraglottic</td><td>i-gel, King LT, LMA</td><td>Sit above the cords; faster, blind insertion, fewer CPR interruptions</td></tr>
                 <tr><td>Endotracheal tube (ETT)</td><td>Direct/video laryngoscopy</td><td>Definitive airway through the cords; advanced scope of practice</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Confirming & Monitoring Placement</h4>
         <ul>
@@ -409,7 +409,7 @@ window.CPG_DATA = {
     critical: [
         {id: "crit_3_7_1", scenario: "After moving an intubated patient onto the stretcher, the capnography waveform suddenly disappears.", question: "What does this most likely mean?", options: [{t: "The capnography monitor needs recalibration", f: "Incorrect. Assume an airway problem until proven otherwise."}, {t: "Tube displacement — reassess placement and breath sounds immediately", f: "Correct. A lost waveform after movement signals displacement (the 'D' in DOPE)."}], correct: 1, explanation: "A sudden loss of EtCO₂ waveform after movement indicates displacement until proven otherwise; reconfirm placement at once.", kpi: "Recognizes loss of capnography waveform as airway displacement"},
         {id: "crit_3_7_2", scenario: "An intubated patient suddenly becomes harder to ventilate, with high resistance and falling SpO₂. Breath sounds are absent on the right with tracheal deviation to the left.", question: "Which DOPE cause is most likely?", options: [{t: "Obstruction from mucus", f: "Incorrect. Unilateral absent sounds with deviation suggest pneumothorax."}, {t: "Pneumothorax (tension) — the 'P' in DOPE", f: "Correct. Absent unilateral sounds, high resistance, and tracheal deviation indicate tension pneumothorax."}], correct: 1, explanation: "Absent breath sounds on one side with tracheal deviation and rising resistance point to a (tension) pneumothorax — escalate immediately.", kpi: "Differentiates DOPE causes of post-intubation deterioration"},
-        {id: "crit_3_7_3", scenario: "A paramedic asks you (EMT) to assist with intubation. Just before the attempt, the SpO₂ is 88%.", question: "What is the most appropriate assisting action first?", options: [{t: "Proceed with the attempt to save time", f: "Incorrect. Intubating a hypoxic patient risks dangerous desaturation."}, {t: "Pre-oxygenate with BVM/NRB to raise the SpO₂ before the attempt", f: "Correct. Optimize oxygenation first to extend the safe apnea time."}], correct: 1, explanation: "Pre-oxygenation before an intubation attempt extends safe apnea time and reduces peri-intubation hypoxia. Optimize SpO₂ first.", kpi: "Pre-oxygenates before an advanced airway attempt"}
+        {id: "crit_3_7_3", scenario: "A paramedic asks you (EMS provider) to assist with intubation. Just before the attempt, the SpO₂ is 88%.", question: "What is the most appropriate assisting action first?", options: [{t: "Proceed with the attempt to save time", f: "Incorrect. Intubating a hypoxic patient risks dangerous desaturation."}, {t: "Pre-oxygenate with BVM/NRB to raise the SpO₂ before the attempt", f: "Correct. Optimize oxygenation first to extend the safe apnea time."}], correct: 1, explanation: "Pre-oxygenation before an intubation attempt extends safe apnea time and reduces peri-intubation hypoxia. Optimize SpO₂ first.", kpi: "Pre-oxygenates before an advanced airway attempt"}
     ]
 },
 {
@@ -420,7 +420,7 @@ window.CPG_DATA = {
 
         <p>Respiratory <strong>distress</strong> is the body compensating to maintain oxygenation. Respiratory <strong>failure</strong> is when those mechanisms fail and the patient can no longer oxygenate or ventilate adequately. Recognizing the transition early — and acting before arrest — saves lives.</p>
 
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th></th><th>Distress (compensating)</th><th>Failure (decompensating)</th></tr></thead>
             <tbody>
                 <tr><td>Mental status</td><td>Alert, anxious</td><td>Drowsy, confused, unresponsive</td></tr>
@@ -430,7 +430,7 @@ window.CPG_DATA = {
                 <tr><td>SpO₂</td><td>Maintained on oxygen</td><td>Falling despite oxygen</td></tr>
                 <tr><td>Treatment</td><td>Oxygen, position, treat cause</td><td><strong>Assist ventilation (BVM) now</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#f8d7da; border-left-color:#721c24;">
             <strong>Act Early:</strong> Do not wait for apnea. A patient with a declining mental status, a slowing respiratory rate, or a falling SpO₂ despite oxygen has entered respiratory failure — begin assisted ventilation with a BVM immediately and prepare for rapid transport.

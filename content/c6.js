@@ -15,7 +15,7 @@ window.CPG_DATA = {
                 <h4>Trauma System Overview</h4>
                 <p>A <strong>trauma system</strong> is an organized, coordinated effort in a defined geographic area to deliver the full spectrum of care to injured patients — from prevention and prehospital care through definitive rehabilitation. The trauma system is anchored by <strong>trauma centers</strong>, which are hospitals verified by the American College of Surgeons (ACS) and designated by state or local authorities to provide specific levels of trauma care.</p>
                 <h4>Trauma Center Levels</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Level</th><th>Resources &amp; Capabilities</th><th>Key Requirements</th></tr>
                     </thead>
@@ -25,7 +25,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Level III</strong></td><td>Assessment, resuscitation, emergency surgery, stabilization &amp; transfer to Level I/II</td><td>24/7 ED coverage; general surgery available; transfer agreements with higher-level centers</td></tr>
                         <tr><td><strong>Level IV</strong></td><td>ATLS stabilization and transfer; typically in rural/remote areas</td><td>24/7 emergency provider coverage; ATLS-trained; transfer protocols</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Exam Pearl:</strong> You will NOT be asked to distinguish Level I vs Level II in detail. However, you MUST know the <strong>trauma center criteria</strong> — the "when to transport to a trauma center" decision based on physiology, anatomy, mechanism of injury, and special considerations. This is high-yield for the NREMT cognitive exam.
                 </div>
@@ -78,15 +78,15 @@ window.CPG_DATA = {
                 <h4>Laws of Physics in Trauma</h4>
                 <p>KE = ½mv² — velocity dominates. Doubling speed <strong>quadruples</strong> energy. Rapid deceleration (<0.1 s) = massive force. Airbags and crumple zones extend deceleration time.</p>
                 <h4>Blunt vs Penetrating Trauma</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Feature</th><th>Blunt</th><th>Penetrating</th></tr></thead>
                     <tbody>
                         <tr><td>Mechanism</td><td>Force over broad area (MVC, fall)</td><td>Force concentrated at entry (GSW, stab)</td></tr>
                         <tr><td>External findings</td><td>Subtle — "tip of the iceberg"</td><td>Obvious wound(s), extent hidden</td></tr>
                         <tr><td>Common injuries</td><td>Solid organ laceration, pelvic fx, TBI</td><td>Vascular injury, hollow viscus perf, hemo/pneumothorax</td></tr>
-                        <tr><td>EMT approach</td><td>High suspicion based on MOI; assume hidden injuries</td><td>Wound assessment (entrance AND exit); control hemorrhage; do not remove impaled objects</td></tr>
+                        <tr><td>EMS provider approach</td><td>High suspicion based on MOI; assume hidden injuries</td><td>Wound assessment (entrance AND exit); control hemorrhage; do not remove impaled objects</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <h4>Predicting Injury Patterns by MOI</h4>
                 <p><strong>Frontal MVC:</strong> Up-and-over (head→chest→abdomen) vs down-and-under (knees→lumbar→viscus). Restrained: seat belt syndrome (clavicle/rib fx, hollow viscus injury).<br/>
                 <strong>Lateral MVC:</strong> Less crumple zone → more energy. Spleen (left) / liver (right) compressed against spine. Pelvic fracture common.<br/>
@@ -232,14 +232,14 @@ window.CPG_DATA = {
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Bleeding Control</h3>
 
                 <h4>Types of Hemorrhage</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Type</th><th>Vessel</th><th>Character</th><th>Severity</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Arterial</strong></td><td>Artery (high-pressure, oxygenated blood away from heart)</td><td>Bright red, <strong>spurts/pulsates</strong> with pulse; difficult to control</td><td>Life-threatening — can exsanguinate in minutes from femoral, brachial, carotid, or aorta</td></tr>
                         <tr><td><strong>Venous</strong></td><td>Vein (low-pressure, deoxygenated blood toward heart)</td><td>Dark red/maroon, <strong>steady flow</strong> (not spurting); controlled with direct pressure typically</td><td>Can be life-threatening from large veins; air embolism risk in neck veins</td></tr>
                         <tr><td><strong>Capillary</strong></td><td>Capillaries (microscopic gas/nutrient exchange)</td><td>Dark red, <strong>oozes slowly</strong>; self-limiting or minimal direct pressure</td><td>Generally minor unless coagulopathy (anticoagulants, hemophilia, liver disease)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl:</strong> Bright red + spurting = arterial. Dark red + steady flow = venous. Oozing = capillary. However, bright red can appear in well-oxygenated venous bleeding (e.g., pulmonary vein). Treat the severity, not just the color.
@@ -297,7 +297,7 @@ window.CPG_DATA = {
                 <h4>Internal Bleeding Assessment</h4>
                 <p>Internal bleeding is a <strong>hidden killer</strong> — cannot be seen, measured directly, or packed. High index of suspicion based on mechanism, anatomy, and subtle signs.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Sign/Symptom</th><th>Relevance</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Abdominal distention</strong></td><td>Abdomen can hold 3-4 L before distention is obvious. Progressive distention + hypotension = massive hemorrhage</td></tr>
@@ -309,7 +309,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Pallor / Cool clammy skin</strong></td><td>Peripheral vasoconstriction shunts blood to core — catecholamine-mediated</td></tr>
                         <tr><td><strong>Thirst / Anxiety / AMS</strong></td><td>Cerebral hypoperfusion causes restlessness, confusion, lethargy</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl: Kehr's Sign</strong> — In blunt abdominal trauma (especially left-sided), left shoulder pain = splenic injury until proven otherwise. Blood tracks to left hemidiaphragm, irritating phrenic nerve. High-yield NREMT topic.
@@ -469,7 +469,7 @@ window.CPG_DATA = {
                 <p><strong>Shock</strong> is a state of inadequate tissue perfusion and oxygen delivery to meet cellular metabolic demands. It is <strong>not</strong> simply low blood pressure — it is circulatory failure at the cellular level. By the time hypotension develops, the patient has exhausted compensatory mechanisms and is in <strong>decompensated shock</strong>.</p>
 
                 <h4>Four Types of Shock</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Type</th><th>Primary Defect</th><th>Trauma Causes</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Hypovolemic</strong></td><td>Loss of circulating blood volume</td><td>Hemorrhage (most common in trauma), burns (fluid shift)</td></tr>
@@ -477,7 +477,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Cardiogenic</strong></td><td>Pump failure</td><td>Cardiac contusion, MI, tension pneumothorax, cardiac tamponade</td></tr>
                         <tr><td><strong>Obstructive</strong></td><td>Physical obstruction of blood flow</td><td>Tension pneumothorax, cardiac tamponade</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#d4edda; border-left-color:#155724;">
                     <strong>Key Concept:</strong> In trauma, <strong>hypovolemic shock from hemorrhage</strong> is most common. But always consider tension pneumothorax (obstructive) and spinal cord injury (neurogenic) — their treatment is completely different.
@@ -485,7 +485,7 @@ window.CPG_DATA = {
 
                 <h4>Hemorrhagic Shock Classification (ATLS)</h4>
                 <p>Average adult blood volume ≈ 5 L (70 mL/kg). Classification by % blood loss:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Parameter</th><th>Class I</th><th>Class II</th><th>Class III</th><th>Class IV</th></tr>
                     </thead>
@@ -499,7 +499,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Cap Refill</strong></td><td>&lt;2 sec</td><td>2-3 sec</td><td>&gt;3 sec</td><td>Absent</td></tr>
                         <tr><td><strong>Urine Output</strong></td><td>&gt;30 mL/hr</td><td>20-30 mL/hr</td><td>5-15 mL/hr</td><td>&lt;5 mL/hr</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Exam Pearl:</strong> Know <strong>Class III</strong> (30-40% loss, 1,500-2,000 mL) — the threshold where compensation fails and <strong>hypotension develops</strong>. Class I and II = compensated shock. Class III = decompensated shock.
@@ -526,7 +526,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Shock Differential in Trauma</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Feature</th><th>Hypovolemic</th><th>Neurogenic</th><th>Tension PTX</th><th>Tamponade</th></tr></thead>
                     <tbody>
                         <tr><td>Skin</td><td>Pale, cool, clammy</td><td>Warm, dry, flushed</td><td>Pale, cool</td><td>Pale, cool</td></tr>
@@ -537,9 +537,9 @@ window.CPG_DATA = {
                         <tr><td>JVD</td><td>Flat</td><td>Flat</td><td>Distended</td><td>Distended</td></tr>
                         <tr><td>Key</td><td>Bleeding source</td><td>SCI + brady + warm skin</td><td>Tracheal deviation + unilateral BS + JVD</td><td>Muffled hearts + JVD + hypotension (Beck's triad)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
-                <h4>EMT Management of Shock</h4>
+                <h4>EMS Provider Management of Shock</h4>
                 <ol>
                     <li>Hemorrhage control FIRST — tourniquets, pressure dressings, wound packing before anything else</li>
                     <li>High-flow O₂ — titrate to SpO₂ ≥94%</li>
@@ -667,8 +667,8 @@ window.CPG_DATA = {
 
                 <h4>Wound Classification</h4>
                 <p>Soft-tissue injuries are classified by the condition of the overlying skin and the mechanism of injury.</p>
-                <table>
-                    <thead><tr><th>Type</th><th>Description</th><th>Common Causes</th><th>EMT Priority</th></tr></thead>
+                <div class="table-scroll"><table>
+                    <thead><tr><th>Type</th><th>Description</th><th>Common Causes</th><th>EMS provider Priority</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Closed Wound</strong></td><td>Skin intact; damage beneath surface</td><td>Blunt trauma (MVC, fall, assault)</td><td>Assess for internal bleeding, compartment syndrome, injury to underlying organs</td></tr>
                         <tr><td><strong>Contusion (Bruise)</strong></td><td>Capillary rupture → ecchymosis</td><td>Blunt impact</td><td>Ice, monitor for expanding hematoma</td></tr>
@@ -681,7 +681,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Avulsion</strong></td><td>Tissue torn away or pulled off (flap or full loss)</td><td>Bites, degloving injuries, machinery</td><td>Preserve avulsed tissue (moist, cool); do NOT remove if still attached by pedicle</td></tr>
                         <tr><td><strong>Amputation</strong></td><td>Complete severing of a body part</td><td>Trauma, machinery, explosion</td><td>Control bleeding; preserve severed part (dry/cool method)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Exam Pearl:</strong> Know the difference between <strong>abrasion</strong> (superficial, scraped skin), <strong>laceration</strong> (jagged tear), <strong>incision</strong> (clean cut), <strong>puncture</strong> (small entry, deep), <strong>avulsion</strong> (torn flap or complete loss), and <strong>amputation</strong> (complete severing).
@@ -727,7 +727,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Wound Dressing Types</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead><tr><th>Type</th><th>Use</th><th>Example</th></tr></thead>
                     <tbody>
                         <tr><td>Non-adherent (Telfa)</td><td>Low-exudate wounds, donor sites</td><td>Minor abrasions, clean laceration covering</td></tr>
@@ -741,14 +741,14 @@ window.CPG_DATA = {
                         <tr><td>Pressure Dressing</td><td>Control bleeding; maintain compression</td><td>Lacerations, after suture removal, overpressure bandage</td></tr>
                         <tr><td>Burn Dressing</td><td>Cool, relieve pain, prevent infection</td><td>Partial-thickness burns; never use occlusive/plastic for burns</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Tetanus (Lockjaw)</h4>
                 <p><strong>Clostridium tetani</strong> — toxin travels via motor nerve axons to CNS, blocks glycine/GABA release in spinal cord, causing <strong>unopposed muscle spasm</strong>.<br/>
                 <strong>Risk factors:</strong> Puncture wounds, contaminated wounds (dirt, manure, saliva), tissue necrosis, delayed wound care.<br/>
                 <strong>Signs:</strong> Trismus (lockjaw = masseter spasm), risus sardonicus (fixed smile), opisthotonos (back arching), autonomic instability (HTN, tachyarrythmias).<br/>
                 <strong>Tdap vaccine:</strong> Every 10 years adults; wound management: if last dose >5 years and wound is high-risk → give booster. Clean minor wounds: >10 years = booster.<br/>
-                <strong>EMT role:</strong> Clean wound, document vaccination history, transport for Tdap/TIG as needed.</p>
+                <strong>EMS provider role:</strong> Clean wound, document vaccination history, transport for Tdap/TIG as needed.</p>
 
                 <h4>Wound Infection Signs</h4>
                 <p><strong>Early (cellulitis):</strong> Erythema, warmth, swelling, tenderness, purulent drainage.<br/>
@@ -759,7 +759,7 @@ window.CPG_DATA = {
                 <p>Increased pressure within a closed fascial compartment → reduced capillary perfusion → muscle/nerve ischemia.<br/>
                 <strong>Causes:</strong> Crush injury, prolonged compression, tight casts/splints, hemorrhage into compartment, reperfusion after ischemia.<br/>
                 <strong>Signs (6 P's):</strong> Pain (disproportionate, with passive stretch), Paresthesia (tingling/numbness), Pallor, Paralysis (late), Poikilothermia (cold), Pulselessness (very late — irreversible damage).<br/>
-                <strong>EMT management:</strong> Remove constrictive dressings/casts, keep limb at heart level (not elevated), expedite transport for fasciotomy.</p>
+                <strong>EMS provider management:</strong> Remove constrictive dressings/casts, keep limb at heart level (not elevated), expedite transport for fasciotomy.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#721c24;">
                     <strong>Critical NREMT Point:</strong> <strong>Pain with passive stretch</strong> is the earliest and most reliable sign of compartment syndrome. <strong>Pulselessness</strong> is a LATE sign (irreversible damage). Do not wait for pulse loss to intervene.
@@ -857,7 +857,7 @@ window.CPG_DATA = {
                     scenario: "A 60-year-old male diabetic with a foot wound caught in a farming auger 2 hours ago. The wound is contaminated with soil. BP 148/90, HR 96, GCS 15. He cannot recall his last tetanus shot. The crew asks you about tetanus risk and prophylaxis.",
                     question: "What is the appropriate approach to tetanus management?",
                     options: [
-                        {t: "Clean wound with saline, apply dry sterile dressing, transport. Tetanus is a hospital concern, not prehospital", f: "Incorrect. Tetanus is a life-threatening emergency (50% mortality in elderly). The wound is high-risk (contaminated, diabetic foot, delayed care). The EMT should document the wound as high-risk and advise the hospital about vaccination urgency."},
+                        {t: "Clean wound with saline, apply dry sterile dressing, transport. Tetanus is a hospital concern, not prehospital", f: "Incorrect. Tetanus is a life-threatening emergency (50% mortality in elderly). The wound is high-risk (contaminated, diabetic foot, delayed care). The EMS provider should document the wound as high-risk and advise the hospital about vaccination urgency."},
                         {t: "Clean wound thoroughly, cover with sterile dressing, document wound as high-risk (contaminated + diabetic + delay), advise transport staff of Tdap urgency. Since >5 years since last booster (unknown), this patient needs Tdap booster in the ED. Document vaccination history carefully. Monitor for trismus/opisthotonos en route", f: "Correct. High-risk wound + unknown vaccination status = Tdap + TIG. Prehospital: clean/document, note high-risk features, expedite transport. Do not delay transport for vaccine administration — that is an ED function."}
                     ],
                     correct: 1,
@@ -887,7 +887,7 @@ window.CPG_DATA = {
                 summary: `<div class="sum-card">
                     <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Burns</h3>
 
-                    <p>Burn injuries are among the most devastating traumatic injuries an EMT will encounter. The severity of a burn is determined by the depth of tissue destruction, the percentage of total body surface area (%TBSA) involved, the location of the burn, the patient's age, and the presence of inhalation injury or other comorbidities. Burns require systematic assessment of both local tissue damage and systemic effects.</p>
+                    <p>Burn injuries are among the most devastating traumatic injuries an EMS provider will encounter. The severity of a burn is determined by the depth of tissue destruction, the percentage of total body surface area (%TBSA) involved, the location of the burn, the patient's age, and the presence of inhalation injury or other comorbidities. Burns require systematic assessment of both local tissue damage and systemic effects.</p>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                         <strong>Scene Safety First:</strong> Before approaching any burn patient, ensure the scene is safe. For electrical burns, confirm the power source is de-energized. For chemical burns, wear appropriate PPE. For fires, ensure the fire department has declared the scene safe. Do not become a patient yourself.
@@ -895,7 +895,7 @@ window.CPG_DATA = {
 
                     <h4>Burn Depth Classification</h4>
                     <p>Burn depth is classified by the layers of skin and underlying tissue involved. Depth determines healing potential, pain level, and treatment approach:</p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Depth</th><th>Former Name</th><th>Tissue Involved</th><th>Appearance</th><th>Sensation</th><th>Healing</th></tr>
                         </thead>
@@ -906,7 +906,7 @@ window.CPG_DATA = {
                             <tr><td><strong>Full-Thickness</strong></td><td>Third-degree</td><td>All skin layers (epidermis + dermis + subcutaneous)</td><td>White, waxy, leathery, charred, or translucent</td><td>Insensate (nerve endings destroyed)</td><td>Requires skin grafting; does not heal spontaneously</td></tr>
                             <tr><td><strong>Fourth-Degree</strong></td><td>Fourth-degree</td><td>All skin + muscle, fascia, tendon, bone</td><td>Charred, blackened, possibly exposing bone</td><td>Insensate</td><td>Requires surgical debridement, amputation likely</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                         <strong>Clinical Pearl:</strong> A patient in severe pain from a burn is actually a positive sign — it indicates the burn is partial-thickness with intact nerve endings. A painless, full-thickness burn that is surrounded by a very painful partial-thickness burn is more dangerous but the patient may not complain of the worst area.
@@ -914,7 +914,7 @@ window.CPG_DATA = {
 
                     <h4>Burn Size Estimation — Rule of Nines</h4>
                     <p>The <strong>Rule of Nines</strong> is a rapid method to estimate %TBSA in adults. Each body region represents 9% (or a multiple of 9%). <strong>Important pediatric differences:</strong> the head and neck account for a larger proportion (18% in infants vs 9% in adults), and the legs account for less (13.5% each in infants vs 18% each in adults).</p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Body Region</th><th>Adult (%)</th><th>Infant/Child (%)</th></tr>
                         </thead>
@@ -926,13 +926,13 @@ window.CPG_DATA = {
                             <tr><td>Each leg</td><td>18%</td><td>13.5%</td></tr>
                             <tr><td>Genitalia/perineum</td><td>1%</td><td>1%</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
                     <p><strong>Lund-Browder Chart:</strong> A more precise method that accounts for age-related changes in body proportions. Preferred for pediatric burns and in-hospital use. The chart adjusts the head and lower extremity percentages by age.</p>
                     <p><strong>Palmer Method:</strong> The patient's palm (including fingers) represents approximately <strong>1% TBSA</strong>. Useful for estimating scattered, irregularly shaped burns. The palm of the patient (not the rescuer) should be used.</p>
 
                     <h4>Burn Severity Criteria — Critical vs Moderate vs Minor</h4>
-                    <p>NREMT requires EMTs to classify burn severity to guide transport decisions. Severity is based on depth, %TBSA, location, age, inhalation injury, and comorbidities:</p>
-                    <table>
+                    <p>NREMT requires EMS providers to classify burn severity to guide transport decisions. Severity is based on depth, %TBSA, location, age, inhalation injury, and comorbidities:</p>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Severity</th><th>Criteria (Any One)</th><th>Transport</th></tr>
                         </thead>
@@ -941,7 +941,7 @@ window.CPG_DATA = {
                             <tr><td><strong>Moderate Burn</strong></td><td>• Partial-thickness 15–25% TBSA (adult) or 10–20% (child)<br>• Full-thickness 2–10% TBSA<br>• Burns not involving critical areas<br>• No inhalation injury</td><td>Burn center or ED capable of burn management</td></tr>
                             <tr><td><strong>Minor Burn</strong></td><td>• Partial-thickness <15% TBSA (adult) or <10% (child)<br>• Full-thickness <2% TBSA<br>• No critical area involvement<br>• No inhalation injury</td><td>May be treated as outpatient; transport if needed</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                         <strong>Burn Center Referral Criteria (American Burn Association):</strong> Partial-thickness burns >10% TBSA any age; full-thickness burns; burns to face, hands, feet, genitalia, perineum, or over joints; circumferential burns; electrical or chemical burns; inhalation injury; burns with concomitant trauma; burns in patients with pre-existing conditions that complicate management; burns in patients who require special psychosocial support (suspected abuse, neglect). These patients should be transported to a verified burn center.
@@ -966,7 +966,7 @@ window.CPG_DATA = {
                         <li><strong>Extremity:</strong> Loss of distal pulses, increased pain with passive motion, paresthesias, pallor, paralysis (late signs)</li>
                         <li><strong>Chest:</strong> Difficulty ventilating, high airway pressures if intubated, inadequate chest rise</li>
                     </ul>
-                    <p><strong>Escharotomy</strong> — a surgical incision through the eschar to relieve pressure — is the definitive treatment. This is performed by a physician. The EMT should recognize the need, document distal neurovascular status, and transport emergently.</p>
+                    <p><strong>Escharotomy</strong> — a surgical incision through the eschar to relieve pressure — is the definitive treatment. This is performed by a physician. The EMS provider should recognize the need, document distal neurovascular status, and transport emergently.</p>
 
                     <h4>Burn Management — General Principles</h4>
                     <ol>
@@ -975,7 +975,7 @@ window.CPG_DATA = {
                         <li><strong>Dry sterile dressing:</strong> Cover burn wounds with clean, dry, sterile dressings. Do NOT apply ointments, butter, toothpaste, ice, or any home remedies.</li>
                         <li><strong>Cooling:</strong> Small burns (<10% TBSA) can be cooled with cool (not cold) water for 10–15 minutes — this reduces pain and limits tissue damage. For large burns, avoid aggressive cooling — it causes hypothermia and shivering, which increases metabolic demand.</li>
                         <li><strong>Pain management:</strong> Burn pain is severe. Manage per protocol (usually cold packs on small burns, analgesia if in scope).</li>
-                        <li><strong>Fluid resuscitation:</strong> EMTs do not initiate fluid resuscitation for burns, but recognition of burn shock is important. Large burns (>20% TBSA) cause massive fluid shifts (third-spacing) leading to hypovolemic shock.</li>
+                        <li><strong>Fluid resuscitation:</strong> EMS providers do not initiate fluid resuscitation for burns, but recognition of burn shock is important. Large burns (>20% TBSA) cause massive fluid shifts (third-spacing) leading to hypovolemic shock.</li>
                         <li><strong>Transport:</strong> To the appropriate facility — burn center for major burns.</li>
                     </ol>
 
@@ -1031,7 +1031,7 @@ window.CPG_DATA = {
                     { question: "List the American Burn Association burn center referral criteria.", answer: "Partial-thickness >10% TBSA; full-thickness any size; burns to face/hands/feet/genitalia/perineum/joints; circumferential; electrical/chemical; inhalation injury; concomitant trauma; pre-existing complicating conditions; suspected abuse.", category: "Burn Severity" },
                     { question: "What are the signs of inhalation injury in a burn patient?", answer: "Facial burns, singed nasal hairs, carbonaceous sputum, hoarseness, stridor (pre-arrest sign — impending airway obstruction), dyspnea, and hypoxia. High-flow O₂ and early definitive airway management.", category: "Inhalation Injury" },
                     { question: "Why is a circumferential burn on an extremity dangerous?", answer: "As edema forms under the non-elastic eschar, pressure increases (compartment syndrome), compromising distal circulation. Loss of pulses, pain with passive motion, paresthesias indicate need for escharotomy.", category: "Circumferential Burns" },
-                    { question: "How should an EMT manage an electrical burn patient differently from a thermal burn patient?", answer: "Electrical burns have hidden deep tissue damage. ALL electrical burn patients require cardiac monitoring due to risk of arrhythmias. Assess for entry/exit wounds, rhabdomyolysis (cola urine), and fractures from violent muscle contractions.", category: "Electrical Burns" },
+                    { question: "How should an EMS provider manage an electrical burn patient differently from a thermal burn patient?", answer: "Electrical burns have hidden deep tissue damage. ALL electrical burn patients require cardiac monitoring due to risk of arrhythmias. Assess for entry/exit wounds, rhabdomyolysis (cola urine), and fractures from violent muscle contractions.", category: "Electrical Burns" },
                     { question: "How do you manage a dry chemical (powder) burn vs a liquid chemical burn?", answer: "Dry chemicals: BRUSH OFF first, then irrigate — mixing with water can cause exothermic reaction (thermal burn). Liquid chemicals: irrigate copiously for ≥20 minutes. Remove contaminated clothing. Use appropriate PPE.", category: "Chemical Burns" }
                 ],
                 quiz: [
@@ -1056,7 +1056,7 @@ window.CPG_DATA = {
                         correct: 1
                     },
                     {
-                        q: "[HARD] A construction worker is found after contacting a high-voltage power line. He has a small, charred wound on his right hand and a larger explosive wound on his left foot. He is awake and confused, with a pulse of 110, BP 102/68, and respirations 22. His ECG shows sinus tachycardia with frequent premature ventricular contractions (PVCs). What is the EMT's priority concern?",
+                        q: "[HARD] A construction worker is found after contacting a high-voltage power line. He has a small, charred wound on his right hand and a larger explosive wound on his left foot. He is awake and confused, with a pulse of 110, BP 102/68, and respirations 22. His ECG shows sinus tachycardia with frequent premature ventricular contractions (PVCs). What is the EMS provider's priority concern?",
                         options: [
                             "The visible burns on the hand and foot need immediate cooling and dressing",
                             "This is an electrical burn with entry and exit wounds; there may be extensive deep tissue damage along the current path. The PVCs indicate cardiac irritability — the patient requires cardiac monitoring, IV access, and rapid transport to a burn center",
@@ -1080,7 +1080,7 @@ window.CPG_DATA = {
                     {
                         id: "crit_6_5_1",
                         scenario: "You are dispatched to a residential structure fire. Firefighters bring out a 52-year-old male who was found in the kitchen, unconscious, with burns on his face, arms, and anterior chest. The patient is awake now but confused. He has obvious facial burns, singed nasal hairs, and soot visible in his mouth. His voice is hoarse. Vital signs: BP 130/84, P 118, R 26, SpO₂ 91% on room air. Estimated burns: face (full-thickness on nose/cheeks), anterior chest (partial-thickness, ~9%), and both arms (partial-thickness, ~9% each) for an estimated 27% TBSA partial-thickness plus facial full-thickness.",
-                        question: "What is the most immediate threat to this patient's life, and what should the EMT prioritize?",
+                        question: "What is the most immediate threat to this patient's life, and what should the EMS provider prioritize?",
                         options: [
                             {t: "Pain management — burn pain is excruciating; apply cold packs and administer analgesia before transport", f: "Incorrect — while pain is significant, this patient has clear signs of inhalation injury (facial burns, singed nasal hairs, carbonaceous sputum, hoarseness) and is hypoxic (91%). Airway edema can progress rapidly, making intubation impossible. Pain management is secondary to securing the airway."},
                             {t: "Inhalation injury with impending airway obstruction — the hoarseness, facial burns, carbonaceous sputum, and hypoxia indicate upper airway edema. Apply high-flow O₂ via NRB at 15 L/min, position sitting upright, prepare suction and airway equipment, expedite transport, and request ALS for advanced airway if needed", f: "Correct — airway compromise is the #1 cause of death in burn patients within the first hours. Hoarseness progressing to stridor signals critical narrowing of the upper airway. High-flow oxygen is essential, but the patient must be transported to a facility capable of definitive airway management before the airway closes completely. Early intubation (before edema peaks) is the standard of care for significant inhalation injury."}
@@ -1125,7 +1125,7 @@ window.CPG_DATA = {
                 summary: `<div class="sum-card">
                     <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Head & Brain Injury</h3>
 
-                    <p>Head injuries range from minor scalp lacerations to catastrophic traumatic brain injury (TBI). The EMT's goal is to identify life-threatening intracranial pathology early, prevent secondary brain injury, and transport to the appropriate facility. Head injury is the leading cause of traumatic death and disability in patients under 45 years old.</p>
+                    <p>Head injuries range from minor scalp lacerations to catastrophic traumatic brain injury (TBI). The EMS provider's goal is to identify life-threatening intracranial pathology early, prevent secondary brain injury, and transport to the appropriate facility. Head injury is the leading cause of traumatic death and disability in patients under 45 years old.</p>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                         <strong>Critical Concept:</strong> The brain has no energy reserves. It depends entirely on continuous delivery of oxygen and glucose. Hypotension (SBP <90 mmHg) and hypoxia (SpO₂ <90%) are the two most important preventable causes of secondary brain injury. Even a brief episode of hypotension or hypoxia can permanently worsen neurological outcomes in a TBI patient.
@@ -1135,7 +1135,7 @@ window.CPG_DATA = {
                     <p>The scalp is highly vascular — even small lacerations can bleed profusely. A scalp laceration can produce enough blood loss to cause hypovolemic shock in children. However, scalp lacerations are rarely life-threatening in isolation in adults. <strong>Management:</strong> Apply direct pressure with a sterile dressing. Do not remove impaled objects. Assess for underlying skull fracture (swelling, crepitus, deformity) before applying firm pressure.</p>
 
                     <h4>Skull Fractures</h4>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Type</th><th>Description</th><th>Key Signs</th><th>Concern</th></tr>
                         </thead>
@@ -1144,14 +1144,14 @@ window.CPG_DATA = {
                             <tr><td><strong>Depressed</strong></td><td>Bone fragment pushed inward toward the brain</td><td>Visible depression on palpation, possible focal neurological deficits</td><td>Direct brain compression; increased risk of underlying contusion and hemorrhage; may require surgical elevation</td></tr>
                             <tr><td><strong>Basilar</strong></td><td>Fracture of the skull base (floor of cranium)</td><td>Battle's sign (ecchymosis over mastoid process, usually delayed hours to days), Raccoon eyes (periorbital ecchymosis), CSF rhinorrhea (clear fluid from nose — check for halo sign), CSF otorrhea (clear fluid from ear), Hemotympanum (blood behind tympanic membrane)</td><td>High-energy mechanism; associated with significant brain injury; risk of meningitis from CSF leak; do NOT insert anything into the nose or ear</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                         <strong>Clinical Pearl — Halo Sign:</strong> When clear fluid is draining from the nose or ear (suspected CSF), test it with a piece of gauze or a bed sheet. CSF separates from blood and forms a clear halo or ring around the blood stain. This is the "halo sign" and suggests a basilar skull fracture with CSF leak. If a basilar skull fracture is suspected, do NOT insert nasogastric tubes, nasal airways, or suction catheters through the nose — they can pass through the fracture into the brain.
                     </div>
 
                     <h4>Traumatic Brain Injury (TBI) Pathophysiology</h4>
-                    <p><strong>Primary brain injury</strong> occurs at the moment of impact — it is the direct mechanical damage to brain tissue (contusion, laceration, diffuse axonal injury). This is irreversible and cannot be treated by the EMT — it can only be prevented (through helmets, seat belts, fall prevention).</p>
+                    <p><strong>Primary brain injury</strong> occurs at the moment of impact — it is the direct mechanical damage to brain tissue (contusion, laceration, diffuse axonal injury). This is irreversible and cannot be treated by the EMS provider — it can only be prevented (through helmets, seat belts, fall prevention).</p>
                     <p><strong>Secondary brain injury</strong> evolves over hours to days after the initial injury. It is caused by physiologic insults that worsen the primary injury:</p>
                     <ul>
                         <li><strong>Hypotension</strong> (SBP <90 mmHg) — reduced cerebral perfusion pressure leading to cerebral ischemia</li>
@@ -1162,7 +1162,7 @@ window.CPG_DATA = {
                         <li><strong>Hyperthermia</strong> — increases metabolic demand of injured brain tissue</li>
                         <li><strong>Seizures</strong> — increase metabolic demand and ICP; can cause additional brain injury</li>
                     </ul>
-                    <p><strong>The EMT's job: minimize secondary brain injury.</strong> Maintain SBP ≥90 mmHg, SpO₂ ≥94%, avoid hyperventilation (except for herniation), protect the airway, and provide rapid transport.</p>
+                    <p><strong>The EMS provider's job: minimize secondary brain injury.</strong> Maintain SBP ≥90 mmHg, SpO₂ ≥94%, avoid hyperventilation (except for herniation), protect the airway, and provide rapid transport.</p>
 
                     <h4>Increased Intracranial Pressure (ICP) & Cushing's Triad</h4>
                     <p>The skull is a fixed-volume container (Monro-Kellie doctrine). As the brain swells (cerebral edema), blood accumulates (hematoma), or CSF accumulates, pressure inside the skull increases. When compensatory mechanisms are exhausted, ICP rises, reducing cerebral perfusion pressure (CPP = MAP − ICP). <strong>Cushing's triad</strong> is the body's attempt to maintain cerebral perfusion:</p>
@@ -1182,11 +1182,11 @@ window.CPG_DATA = {
                         <li><strong>Decreased level of consciousness</strong> — progressive decline in GCS</li>
                         <li><strong>Respiratory arrest</strong> — from brainstem compression</li>
                     </ul>
-                    <p><strong>Management:</strong> If herniation is suspected, the EMT may need to <strong>hyperventilate</strong> at a rate of 20–25 breaths per minute (adult) to reduce PaCO₂, which causes cerebral vasoconstriction and reduces ICP. This is a <strong>BRIDGE therapy</strong> — prolonged hyperventilation can cause cerebral ischemia. Only use it when there are clear signs of herniation (unilateral blown pupil, posturing, Cushing's triad).</p>
+                    <p><strong>Management:</strong> If herniation is suspected, the EMS provider may need to <strong>hyperventilate</strong> at a rate of 20–25 breaths per minute (adult) to reduce PaCO₂, which causes cerebral vasoconstriction and reduces ICP. This is a <strong>BRIDGE therapy</strong> — prolonged hyperventilation can cause cerebral ischemia. Only use it when there are clear signs of herniation (unilateral blown pupil, posturing, Cushing's triad).</p>
 
                     <h4>Glasgow Coma Scale (GCS) Scoring</h4>
                     <p>The GCS is a standardized, objective measure of a patient's level of consciousness. It is used to assess severity of brain injury and track changes over time. <strong>Score range: 3 (worst) to 15 (best).</strong></p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Component</th><th>Response</th><th>Score</th></tr>
                         </thead>
@@ -1207,11 +1207,11 @@ window.CPG_DATA = {
                             <tr><td>Decerebrate (abnormal extension) — extends all four extremities, arches back (opisthotonos)</td><td>2</td></tr>
                             <tr><td>None — no motor response to pain (flaccid)</td><td>1</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
                     <p><strong>GCS Scoring by Component:</strong> Write as E___ V___ M___ = total (e.g., E3 V4 M5 = GCS 12).</p>
 
                     <h4>GCS Severity Categories</h4>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>GCS Score</th><th>Severity</th><th>Airway Management</th><th>Transport</th></tr>
                         </thead>
@@ -1220,7 +1220,7 @@ window.CPG_DATA = {
                             <tr><td>9–12</td><td><strong>Moderate</strong> TBI</td><td>May need airway support; close monitoring</td><td>Transport to trauma center; CT and neurosurgical evaluation</td></tr>
                             <tr><td>3–8</td><td><strong>Severe</strong> TBI</td><td><strong>GCS ≤8 = intubate</strong> — the patient cannot protect their airway; consider definitive airway management</td><td>Transport to Level I or II trauma center with neurosurgery capability</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                         <strong>Critical Rule:</strong> GCS ≤ 8 = the patient cannot protect their airway. Establish a definitive airway (endotracheal intubation if in scope, or aggressive BVM ventilation with airway adjuncts) and transport to a trauma center with neurosurgical capability. The GCS motor score is the strongest predictor of outcomes — a motor score of ≤5 (not obeying commands) is significant.
@@ -1228,7 +1228,7 @@ window.CPG_DATA = {
 
                     <h4>Intracranial Hemorrhage Types — Comparison</h4>
                     <p>Differentiating intracranial hemorrhage types is critical for appropriate neurosurgical management:</p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Type</th><th>Location</th><th>Vessel</th><th>Blood Source</th><th>Key Feature</th><th>CT Appearance</th><th>Typical Presentation</th></tr>
                         </thead>
@@ -1238,7 +1238,7 @@ window.CPG_DATA = {
                             <tr><td><strong>Subarachnoid Hemorrhage (SAH)</strong></td><td>Subarachnoid space (between arachnoid and pia)</td><td>Arterial (circle of Willis aneurysm)</td><td>Arterial bleed into CSF</td><td><strong>Thunderclap headache</strong> — worst headache of life, sudden onset</td><td>Sulcal hyperdensity (blood fills cortical sulci)</td><td>Sudden severe headache, neck stiffness, photophobia, vomiting, possible loss of consciousness</td></tr>
                             <tr><td><strong>Intracerebral Hemorrhage (ICH)</strong></td><td>Within brain parenchyma</td><td>Small intraparenchymal vessels</td><td>Bleeding into brain tissue itself</td><td>Associated with hypertension and trauma</td><td>Round/irregular dense mass within brain</td><td>Sudden focal neurological deficit; may mimic ischemic stroke but with more rapid progression</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h4>Seizure After Head Injury</h4>
                     <p>Post-traumatic seizures (PTS) can occur immediately after head injury or hours/days later. Immediate post-traumatic seizures (within 24 hours) do not necessarily mean the patient has epilepsy but require investigation for the underlying cause of the seizure (expanding bleed, increasing ICP). Management: protect the airway, administer oxygen, check blood glucose, and transport. Status epilepticus after head injury is a neurosurgical emergency — the seizure increases ICP and metabolic demand, worsening secondary brain injury.</p>
@@ -1255,12 +1255,12 @@ window.CPG_DATA = {
                     <p><strong style="color:var(--danger);">Key NREMT point:</strong> In head injury, hypotension is NEVER from the head injury alone (except in infants where the scalp can hold significant blood). If a head-injured patient is hypotensive, look for a source of bleeding elsewhere (chest, abdomen, pelvis, long bones) or consider spinal shock.</p>
 
                     <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                        <strong>Key Concept:</strong> The brain is the one organ you CANNOT rest, repair, or replace. Everything the EMT does — or fails to do — in the first hour after TBI has a direct impact on the patient's long-term neurological outcome. Every episode of hypotension and hypoxia is a permanent insult to an already-injured brain.
+                        <strong>Key Concept:</strong> The brain is the one organ you CANNOT rest, repair, or replace. Everything the EMS provider does — or fails to do — in the first hour after TBI has a direct impact on the patient's long-term neurological outcome. Every episode of hypotension and hypoxia is a permanent insult to an already-injured brain.
                     </div>
                 </div>`,
                 flashcards: [
                     { question: "What are the three types of skull fractures and the key signs of a basilar skull fracture?", answer: "Linear (simple crack), Depressed (bone pushed inward), Basilar (skull base). Basilar signs: Battle's sign (mastoid ecchymosis), raccoon eyes (periorbital ecchymosis), CSF rhinorrhea/otorrhea (halo sign), hemotympanum.", category: "Skull Fractures" },
-                    { question: "What is the difference between primary and secondary brain injury?", answer: "Primary: direct mechanical damage at the moment of impact (irreversible). Secondary: evolving damage from hypotension, hypoxia, increased ICP, seizures, etc. — the EMT can PREVENT this.", category: "TBI Pathophysiology" },
+                    { question: "What is the difference between primary and secondary brain injury?", answer: "Primary: direct mechanical damage at the moment of impact (irreversible). Secondary: evolving damage from hypotension, hypoxia, increased ICP, seizures, etc. — the EMS provider can PREVENT this.", category: "TBI Pathophysiology" },
                     { question: "What is Cushing's triad and what does it indicate?", answer: "Hypertension (widening pulse pressure) + Bradycardia + Irregular respirations. It is a LATE sign of severely increased ICP and impending brain herniation — a neurosurgical emergency.", category: "Increased ICP" },
                     { question: "How do you calculate and interpret the GCS score? What is the severe TBI threshold?", answer: "GCS = Eye (1-4) + Verbal (1-5) + Motor (1-6) = 3 to 15. Severe TBI = GCS 3-8 (cannot protect airway — intubate). Moderate = 9-12. Mild = 13-15.", category: "GCS Scoring" },
                     { question: "Describe the 'lucid interval' and what intracranial hemorrhage type it is associated with.", answer: "A period of normal consciousness after head injury followed by rapid deterioration. Classic for epidural hematoma (arterial bleed from middle meningeal artery). The patient seems fine initially, then crashes as the hematoma expands.", category: "Intracranial Hemorrhage" },
@@ -1290,7 +1290,7 @@ window.CPG_DATA = {
                         correct: 1
                     },
                     {
-                        q: "[HARD] A 72-year-old female on warfarin for atrial fibrillation slips and falls in her bathroom, hitting her head on the sink. She did not lose consciousness and is alert and oriented. Her son calls 9-1-1 because she seems 'a little confused, which is not like her.' Her GCS is 14 (E4 V4 M6). What is the EMT's management?",
+                        q: "[HARD] A 72-year-old female on warfarin for atrial fibrillation slips and falls in her bathroom, hitting her head on the sink. She did not lose consciousness and is alert and oriented. Her son calls 9-1-1 because she seems 'a little confused, which is not like her.' Her GCS is 14 (E4 V4 M6). What is the EMS provider's management?",
                         options: [
                             "The patient appears well — allow refusal of transport if she wishes since she is awake and talking",
                             "This is likely a minor head injury — no transport needed; have her son watch for symptoms overnight",
@@ -1329,7 +1329,7 @@ window.CPG_DATA = {
                         question: "This patient has an altered mental status and hypotension after blunt trauma. What is the differential diagnosis and the correct management priority?",
                         options: [
                             {t: "The GCS decline is from the head injury he must have sustained in the crash. Treat for TBI — hyperventilate to reduce ICP, elevate the head, and continue transport", f: "Incorrect — while TBI could cause GCS decline, this patient is HYPOTENSIVE (84/56). TBI alone does NOT cause hypotension (except in infants or terminal herniation). Hypotension + altered mental status after trauma = hemorrhagic shock until proven otherwise. The declining GCS is likely from CEREBRAL HYPOPERFUSION due to blood loss, not from a primary brain injury. The patient needs fluid resuscitation and bleeding control, not hyperventilation."},
-                            {t: "Hypotension (84/56) in a trauma patient is NEVER from head injury alone. The declining GCS is likely due to cerebral hypoperfusion from hemorrhagic shock — the brain is not getting enough blood flow. Priority: identify the source of bleeding (chest, abdomen, pelvis, retroperitoneum), treat for shock (high-flow O₂, IV access, fluid per protocol, pelvic binder if indicated), and expedite transport to a trauma center. Do NOT hyperventilate — the brain needs oxygen and perfusion, not vasoconstriction", f: "Correct — this is a classic EMT trap: a patient with both head injury and hemorrhagic shock. The hypotension MUST be assumed to be from bleeding until proven otherwise. The brain is suffering from low perfusion pressure (CPP = MAP − ICP). If MAP is low, CPP is low even if ICP is normal. The treatment is to restore perfusion, not reduce ICP. Hyperventilation would further reduce cerebral blood flow and worsen the brain injury. Look for chest, abdominal, pelvic, or long-bone sources of blood loss."}
+                            {t: "Hypotension (84/56) in a trauma patient is NEVER from head injury alone. The declining GCS is likely due to cerebral hypoperfusion from hemorrhagic shock — the brain is not getting enough blood flow. Priority: identify the source of bleeding (chest, abdomen, pelvis, retroperitoneum), treat for shock (high-flow O₂, IV access, fluid per protocol, pelvic binder if indicated), and expedite transport to a trauma center. Do NOT hyperventilate — the brain needs oxygen and perfusion, not vasoconstriction", f: "Correct — this is a classic EMS provider trap: a patient with both head injury and hemorrhagic shock. The hypotension MUST be assumed to be from bleeding until proven otherwise. The brain is suffering from low perfusion pressure (CPP = MAP − ICP). If MAP is low, CPP is low even if ICP is normal. The treatment is to restore perfusion, not reduce ICP. Hyperventilation would further reduce cerebral blood flow and worsen the brain injury. Look for chest, abdominal, pelvic, or long-bone sources of blood loss."}
                         ],
                         correct: 1,
                         explanation: "This is a critical concept for NREMT: Head injury alone does not cause hypotension (except in infants with significant scalp bleeding, or in the terminal stages of brainstem failure). Hypotension in a multi-trauma patient with altered mental status is HEMORRHAGIC SHOCK until proven otherwise. The altered mental status is from inadequate cerebral perfusion (the brain is not receiving enough oxygenated blood), not from intracranial pathology. Management: (1) Identify and control external bleeding, (2) Maintain SBP ≥90 mmHg with fluid per protocol, (3) Apply a pelvic binder if pelvic fracture is suspected (common in T-bone MVCs), (4) High-flow oxygen, (5) Rapid transport to a trauma center. Do NOT hyperventilate — this patient needs cerebral PERFUSION, not vasoconstriction. The GCS may improve once blood pressure is restored.",
@@ -1338,7 +1338,7 @@ window.CPG_DATA = {
                     {
                         id: "crit_6_6_3",
                         scenario: "You are called to a high school football field for a 17-year-old male who collided with another player during a tackle. He was helmet-to-helmet and was down on the field for about 30 seconds before getting up with assistance. He is now sitting on the sideline with trainers. He is confused, asking repetitive questions ('What happened? Did we score?'), and cannot remember the play. His GCS is 14 (E4 V4 M6). He has no focal neurological deficits, pupils are equal and reactive, and vital signs are normal. His helmet is still on. The coach says he wants to 'walk it off and go back in the game.'",
-                        question: "How should the EMT manage this athlete with a suspected concussion?",
+                        question: "How should the EMS provider manage this athlete with a suspected concussion?",
                         options: [
                             {t: "He looks fine — no loss of consciousness, normal vitals, and the confusion is improving. Allow him to return to play with trainer observation", f: "Incorrect — any athlete with suspected concussion should be REMOVED FROM PLAY immediately. Second-impact syndrome (catastrophic brain swelling from a second concussion before the first has resolved) can be fatal. A GCS of 14 with confusion and amnesia is a concussion that requires medical evaluation. The helmet must remain on until cleared for removal by trained personnel."},
                             {t: "This athlete has a suspected concussion: confusion, retrograde amnesia (no memory of the play), and repetitive questioning. Remove from play IMMEDIATELY — do NOT allow return to play. Perform a focused neurological exam (pupils, motor function, GCS, balance), monitor for deterioration, and transport for medical evaluation. Keep the helmet in place; do not remove it unless absolutely necessary for airway management. Follow your specific sport concussion protocol", f: "Correct — any athlete with signs of concussion must be removed from play and evaluated by a physician before returning. Second-impact syndrome is a rare but catastrophic complication where a second head injury before the first has resolved causes massive cerebral edema and herniation. The helmet should remain on — removing it improperly can worsen an undiagnosed cervical spine injury. Transport for medical clearance and neurocognitive testing."}
@@ -1387,7 +1387,7 @@ window.CPG_DATA = {
                     <p>The <strong>spinal cord</strong> runs through the spinal canal and ends around L1–L2 (conus medullaris). Below L2, the nerve roots form the <strong>cauda equina</strong> (horsetail). The cord is surrounded by meninges (dura, arachnoid, pia) and bathed in CSF.</p>
 
                     <h4>Complete vs Incomplete Spinal Cord Syndromes</h4>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Syndrome</th><th>Description</th><th>Mechanism</th><th>Key Findings</th></tr>
                         </thead>
@@ -1397,11 +1397,11 @@ window.CPG_DATA = {
                             <tr><td><strong>Anterior Cord Syndrome</strong></td><td>Injury to the anterior 2/3 of the cord (spinothalamic and corticospinal tracts)</td><td>Flexion injury with cord compression, or ischemia from anterior spinal artery occlusion</td><td>Loss of motor function (corticospinal tracts) AND loss of pain/temperature sensation (spinothalamic tracts) BELOW the level of injury. PRESERVED proprioception/vibration (dorsal columns are spared)</td></tr>
                             <tr><td><strong>Brown-Séquard Syndrome</strong></td><td>Hemisection of one side of the cord</td><td>Penetrating trauma, tumor, disc herniation</td><td><strong>Ipsilateral:</strong> loss of motor function (corticospinal tract) and vibration/proprioception (dorsal columns) at/ below the level. <strong>Contralateral:</strong> loss of pain/temperature sensation (spinothalamic tract) ~2 segments below the lesion. This is a <strong>dissociated sensory loss</strong></td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h4>Spinal Shock vs Neurogenic Shock</h4>
                     <p>These are two DIFFERENT conditions that are frequently confused. Know the difference for NREMT:</p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Feature</th><th>Spinal Shock</th><th>Neurogenic Shock</th></tr>
                         </thead>
@@ -1416,7 +1416,7 @@ window.CPG_DATA = {
                             <tr><td><strong>Skin</strong></td><td>Normal</td><td><strong>Warm, dry, pink</strong> (vasodilation — blood pools in periphery, does not reach vital organs)</td></tr>
                             <tr><td><strong>Differentiation from hypovolemic shock</strong></td><td>N/A — it is not a shock state</td><td>In hypovolemic shock: patient is tachycardic, cool/clammy, pale. In neurogenic shock: patient is BRADYCARDIC, warm/dry/pink. This is the key distinguishing feature</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                         <strong>Key Concept — Hypovolemic vs Neurogenic Shock:</strong> Both have hypotension. The difference: Hypovolemic = tachycardia + cool/pale/diaphoretic skin. Neurogenic = bradycardia + warm/dry/pink skin. Spinal cord injury above T1 causes loss of sympathetic tone, leaving unopposed vagal tone → bradycardia + vasodilation. This is a DISTRIBUTIVE shock, not a HYPOVOLEMIC shock.
@@ -1507,7 +1507,7 @@ window.CPG_DATA = {
                 ],
                 quiz: [
                     {
-                        q: "A 28-year-old male is involved in a low-speed rear-end collision (<10 mph). He is alert and oriented (GCS 15), denies neck pain or tenderness, has no neurological symptoms, and has no distracting injuries. He has not been drinking. According to NEXUS criteria, what should the EMT do?",
+                        q: "A 28-year-old male is involved in a low-speed rear-end collision (<10 mph). He is alert and oriented (GCS 15), denies neck pain or tenderness, has no neurological symptoms, and has no distracting injuries. He has not been drinking. According to NEXUS criteria, what should the EMS provider do?",
                         options: [
                             "Apply a cervical collar and long backboard since he was in a motor vehicle collision",
                             "No spinal motion restriction is needed — all NEXUS criteria are negative. He can be clinically cleared without spinal immobilization",
@@ -1541,13 +1541,13 @@ window.CPG_DATA = {
                     {
                         id: "crit_6_7_1",
                         scenario: "You respond to a single-vehicle MVC on the highway. A 35-year-old male restrained driver struck a guardrail at approximately 45 mph. He is awake, alert, and oriented ×3. He denies neck pain, back pain, or any neurological symptoms. He has a superficial laceration on his forehead from hitting the steering wheel (minor, bleeding controlled), and airbag deployment occurred. His vital signs are stable. He has no distracting injuries, is not intoxicated, and has no midline spinal tenderness on palpation. He asks, 'Do I really need to be strapped to a board? A guy at work said they don't do that anymore.'",
-                        question: "How should the EMT apply current evidence-based guidelines to this patient?",
+                        question: "How should the EMS provider apply current evidence-based guidelines to this patient?",
                         options: [
                             {t: "Protocol is protocol — everyone in an MVC at highway speed gets a collar and a board. The patient's opinion is irrelevant", f: "Incorrect — modern guidelines support selective spinal immobilization based on validated criteria. NEXUS-negative patients (no tenderness, no intoxication, normal alertness, no neuro deficits, no distracting injuries) do NOT require SMR. Applying unnecessary SMR causes pain, anxiety, and respiratory compromise without benefit."},
                             {t: "This patient meets ALL NEXUS criteria for clinical clearance: GCS 15, no intoxication, no midline tenderness, no neurological deficits, and no distracting injury. According to current evidence, spinal motion restriction is NOT indicated. Document the NEXUS assessment and transport without collar/board. The patient's concern about unnecessary immobilization is valid and reflects current best practices", f: "Correct — this patient is NEXUS-negative and can be clinically cleared. The distracting injury criterion requires a truly painful injury (long bone fracture, large burn, etc.) — a superficial forehead laceration does not qualify. Selective spinal immobilization is the standard of care. Explaining this to the patient demonstrates competence and builds trust."}
                         ],
                         correct: 1,
-                        explanation: "Current evidence supports selective spinal immobilization using validated criteria. The NEXUS criteria (or Canadian C-Spine Rule) should guide decision-making, not mechanism alone. This patient is NEXUS-negative — he does not require SMR. Key points for the EMT: (1) Document the NEXUS assessment on the PCR — this shows that a clinical decision was made, not an omission. (2) If in doubt or if protocols require SMR for certain mechanisms, follow your local protocols. (3) Painful distracting injury is defined as a condition that could distract the patient from reporting spinal pain — a superficial forehead laceration does not meet this threshold. (4) The patient should still be transported for evaluation (airbag deployment + frontal impact may still have caused internal injuries, and the forehead laceration needs assessment).",
+                        explanation: "Current evidence supports selective spinal immobilization using validated criteria. The NEXUS criteria (or Canadian C-Spine Rule) should guide decision-making, not mechanism alone. This patient is NEXUS-negative — he does not require SMR. Key points for the EMS provider: (1) Document the NEXUS assessment on the PCR — this shows that a clinical decision was made, not an omission. (2) If in doubt or if protocols require SMR for certain mechanisms, follow your local protocols. (3) Painful distracting injury is defined as a condition that could distract the patient from reporting spinal pain — a superficial forehead laceration does not meet this threshold. (4) The patient should still be transported for evaluation (airbag deployment + frontal impact may still have caused internal injuries, and the forehead laceration needs assessment).",
                         kpi: "Applies NEXUS criteria for selective spinal immobilization in a low-risk patient"
                     },
                     {
@@ -1586,14 +1586,14 @@ window.CPG_DATA = {
                 summary: `<div class="sum-card">
                     <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Chest Trauma</h3>
 
-                    <p>Chest trauma is second only to head trauma as a cause of traumatic death. It can be blunt (MVCs, falls, assaults) or penetrating (gunshot wounds, stab wounds, impalement). Many chest injuries are immediately life-threatening and must be recognized and treated during the primary survey. The <strong>lethal six</strong> chest injuries that can kill within minutes must be identified during the EMT assessment.</p>
+                    <p>Chest trauma is second only to head trauma as a cause of traumatic death. It can be blunt (MVCs, falls, assaults) or penetrating (gunshot wounds, stab wounds, impalement). Many chest injuries are immediately life-threatening and must be recognized and treated during the primary survey. The <strong>lethal six</strong> chest injuries that can kill within minutes must be identified during the EMS provider assessment.</p>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                         <strong>The Lethal Six — Immediate Life-Threatening Chest Injuries:</strong> (1) Tension pneumothorax, (2) Open pneumothorax (sucking chest wound), (3) Massive hemothorax, (4) Cardiac tamponade, (5) Flail chest, and (6) Traumatic asphyxia. The first three are treatable by needle decompression and occlusive dressings — interventions within the EMT scope.
                     </div>
 
                     <h4>Blunt vs Penetrating Chest Trauma</h4>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Feature</th><th>Blunt Trauma</th><th>Penetrating Trauma</th></tr>
                         </thead>
@@ -1604,7 +1604,7 @@ window.CPG_DATA = {
                             <tr><td><strong>Assessment</strong></td><td>External signs may not reflect internal injury severity</td><td>Wound location helps predict internal injuries</td></tr>
                             <tr><td><strong>Management</strong></td><td>Supportive, transport to trauma center</td><td>Wound management (occlusive dressing, wound sealing), rapid transport</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h4>Rib Fractures</h4>
                     <p>Rib fractures are the <strong>most common chest injury</strong>. They are painful but rarely life-threatening in isolation. The danger is not the fracture itself — it is the <strong>physiologic consequences</strong>:</p>
@@ -1637,7 +1637,7 @@ window.CPG_DATA = {
                         <li><strong>Tachypnea, tachycardia</strong> — compensatory responses</li>
                         <li>Trachea is MIDLINE (unlike tension pneumothorax where it deviates)</li>
                     </ul>
-                    <p>EMT management: high-flow oxygen, position of comfort, monitor for tension physiology (tracheal deviation, JVD, hypotension), and transport. Small pneumothoraces may not require tube thoracostomy but all require hospital evaluation.</p>
+                    <p>EMS provider management: high-flow oxygen, position of comfort, monitor for tension physiology (tracheal deviation, JVD, hypotension), and transport. Small pneumothoraces may not require tube thoracostomy but all require hospital evaluation.</p>
 
                     <h4>Open Pneumothorax (Sucking Chest Wound)</h4>
                     <p>An open pneumothorax occurs when a penetrating injury creates a defect in the chest wall, allowing air to enter the pleural space directly through the wound. The classic finding is a <strong>sucking chest wound</strong> — you can hear air moving in and out through the wound with each breath.</p>
@@ -1653,7 +1653,7 @@ window.CPG_DATA = {
                     <p>Tension pneumothorax is a <strong>TRUE LIFE-THREATENING EMERGENCY</strong> requiring immediate intervention. It occurs when air enters the pleural space but cannot escape (ball-valve mechanism), progressively increasing intrapleural pressure. This pressure shifts the mediastinum to the opposite side, compressing the heart, great vessels, and the contralateral lung. <strong>It is a clinical diagnosis — do not wait for a chest X-ray.</strong></p>
 
                     <p><strong>Signs and Symptoms (Progressive):</strong></p>
-                    <table>
+                    <div class="table-scroll"><table>
                         <thead>
                             <tr><th>Sign</th><th>Mechanism</th></tr>
                         </thead>
@@ -1667,10 +1667,10 @@ window.CPG_DATA = {
                             <tr><td><strong>Tachycardia → bradycardia (pre-arrest)</strong></td><td>Initial compensation → then decompensation as cardiac output falls</td></tr>
                             <tr><td><strong>Cyanosis</strong></td><td>Late sign of severe hypoxia</td></tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                        <strong>Critical Intervention — Needle Decompression:</strong> Tension pneumothorax requires immediate <strong>needle decompression</strong>. The EMT must recognize the signs and perform this life-saving intervention (per protocol). Sites: <strong>2nd intercostal space, midclavicular line</strong> (traditional site) OR <strong>5th intercostal space, anterior axillary line</strong> (alternative — may be safer in obese patients and reduces risk of great vessel injury). Use a large-bore (14g or 16g) angiocatheter, insert just above the rib (to avoid the intercostal nerve and artery that run below each rib), and listen for a rush of air. The catheter is left in place (open to air or with a flutter valve). If the tension re-accumulates, repeat the procedure.
+                        <strong>Critical Intervention — Needle Decompression:</strong> Tension pneumothorax requires immediate <strong>needle decompression</strong>. The EMS provider must recognize the signs and perform this life-saving intervention (per protocol). Sites: <strong>2nd intercostal space, midclavicular line</strong> (traditional site) OR <strong>5th intercostal space, anterior axillary line</strong> (alternative — may be safer in obese patients and reduces risk of great vessel injury). Use a large-bore (14g or 16g) angiocatheter, insert just above the rib (to avoid the intercostal nerve and artery that run below each rib), and listen for a rush of air. The catheter is left in place (open to air or with a flutter valve). If the tension re-accumulates, repeat the procedure.
                     </div>
 
                     <h4>Hemothorax</h4>
@@ -1693,7 +1693,7 @@ window.CPG_DATA = {
                     </ol>
                     <p><strong>Additional signs:</strong> Pulsus paradoxus (exaggerated drop in BP during inspiration >10 mmHg), electrical alternans on ECG (alternating QRS amplitude — caused by the heart swinging in a fluid-filled pericardium), narrowing pulse pressure, Kussmaul's sign (JVD INCREASES with inspiration — normally JVD decreases).</p>
                     <p><strong>Differentiation from tension pneumothorax:</strong> Both cause JVD + hypotension. In tension pneumothorax, you will find absent breath sounds, hyperresonance, and tracheal deviation on ONE side. In cardiac tamponade, breath sounds are PRESENT and equal bilaterally, and the trachea is midline.</p>
-                    <p><strong>Management:</strong> High-flow oxygen, rapid transport to a trauma center. The definitive treatment is <strong>pericardiocentesis</strong> (needle drainage of the pericardial sac), performed by a physician. Some ALS systems may perform pericardiocentesis, but the EMT's role is recognition and rapid transport.</p>
+                    <p><strong>Management:</strong> High-flow oxygen, rapid transport to a trauma center. The definitive treatment is <strong>pericardiocentesis</strong> (needle drainage of the pericardial sac), performed by a physician. Some ALS systems may perform pericardiocentesis, but the EMS provider's role is recognition and rapid transport.</p>
 
                     <h4>Traumatic Asphyxia</h4>
                     <p>Traumatic asphyxia occurs from <strong>severe, sudden compression of the chest</strong> (e.g., crushing injury, heavy object falling on the chest, crowd crush). The sudden compression forces blood from the right heart and great veins retrograde into the veins of the head, neck, and upper chest, causing:</p>
@@ -1734,7 +1734,7 @@ window.CPG_DATA = {
                     </ul>
 
                     <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                        <strong>Critical NREMT Warning:</strong> Tension pneumothorax is a CLINICAL diagnosis. Do NOT wait for a chest X-ray, CT scan, or any imaging. In a trauma patient with respiratory distress, hypotension, and absent breath sounds on one side — you have a tension pneumothorax until proven otherwise. If you suspect it, TREAT IT. Needle decompression is a life-saving intervention that can be performed by an EMT.
+                        <strong>Critical NREMT Warning:</strong> Tension pneumothorax is a CLINICAL diagnosis. Do NOT wait for a chest X-ray, CT scan, or any imaging. In a trauma patient with respiratory distress, hypotension, and absent breath sounds on one side — you have a tension pneumothorax until proven otherwise. If you suspect it, TREAT IT. Needle decompression is a life-saving intervention that can be performed by an EMS provider.
                     </div>
                 </div>`,
                 flashcards: [
@@ -1743,7 +1743,7 @@ window.CPG_DATA = {
                     { question: "Describe the three-sided occlusive dressing for an open pneumothorax.", answer: "Cover the wound with a sterile occlusive dressing. Tape THREE sides, leaving one side untaped. This creates a flutter valve — prevents air entry during inspiration, allows air escape during expiration. Monitor for tension (burp the dressing if needed).", category: "Open Pneumothorax" },
                     { question: "What are the signs of tension pneumothorax and the immediate intervention?", answer: "Tracheal deviation away, JVD, hypotension, absent breath sounds, hyperresonance, respiratory distress. CLINICAL diagnosis — do NOT wait for imaging. Needle decompression: 2nd ICS MCL or 5th ICS AAL, 14g/16g angiocatheter, above the rib.", category: "Tension Pneumothorax" },
                     { question: "What is Beck's triad and what condition does it indicate?", answer: "JVD (jugular venous distention) + Hypotension + Muffled heart sounds = cardiac tamponade. Caused by blood accumulating in the pericardial sac compressing the heart. Differentiate from tension ptx by checking breath sounds (equal in tamponade) and trachea (midline).", category: "Cardiac Tamponade" },
-                    { question: "How can the EMT differentiate cardiac tamponade from tension pneumothorax at the bedside?", answer: "Both have JVD + hypotension. KEY difference: Tension ptx = absent breath sounds + hyperresonance + tracheal deviation on one side. Tamponade = breath sounds EQUAL bilaterally + trachea MIDLINE + muffled heart sounds. Both need rapid transport, but the treatment differs (needle decompression vs pericardiocentesis).", category: "Cardiac Tamponade vs Tension Ptx" },
+                    { question: "How can the EMS provider differentiate cardiac tamponade from tension pneumothorax at the bedside?", answer: "Both have JVD + hypotension. KEY difference: Tension ptx = absent breath sounds + hyperresonance + tracheal deviation on one side. Tamponade = breath sounds EQUAL bilaterally + trachea MIDLINE + muffled heart sounds. Both need rapid transport, but the treatment differs (needle decompression vs pericardiocentesis).", category: "Cardiac Tamponade vs Tension Ptx" },
                     { question: "What is flail chest and what is the pathophysiologic significance?", answer: "Flail chest = ≥2 adjacent ribs fractured in ≥2 places → paradoxical movement of the chest wall segment. The underlying pulmonary contusion is often more dangerous than the mechanical instability. Management: positive pressure ventilation (splints the segment internally), O₂, transport.", category: "Flail Chest" },
                     { question: "What is commotio cordis and how is it managed?", answer: "Cardiac arrest from a blunt blow to the chest during the T-wave of the cardiac cycle, causing V-fib. Most common in young male athletes (baseball, hockey). Management: immediate CPR and defibrillation. No structural heart damage — the rhythm is the problem.", category: "Commotio Cordis" }
                 ],
@@ -1837,11 +1837,11 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Abdominal & Pelvic Trauma</h3>
 
-                <p>Abdominal trauma is a high-risk injury pattern because bleeding and organ damage can be concealed within the abdominal cavity — the EMT cannot "see" inside. The abdominal examination in trauma is notoriously unreliable; therefore, the EMT must maintain a <strong>high index of suspicion based on the mechanism of injury (MOI)</strong> rather than relying solely on physical findings. Abdominal injuries are classified by mechanism (blunt vs. penetrating) and by the organs involved (solid vs. hollow).</p>
+                <p>Abdominal trauma is a high-risk injury pattern because bleeding and organ damage can be concealed within the abdominal cavity — the EMS provider cannot "see" inside. The abdominal examination in trauma is notoriously unreliable; therefore, the EMS provider must maintain a <strong>high index of suspicion based on the mechanism of injury (MOI)</strong> rather than relying solely on physical findings. Abdominal injuries are classified by mechanism (blunt vs. penetrating) and by the organs involved (solid vs. hollow).</p>
 
                 <h4>Solid Organ vs. Hollow Organ Injury — A Critical Distinction</h4>
                 <p>The abdominal organs are divided into two categories, each with a distinct injury pattern, pathophysiology, and clinical presentation:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Solid Organs</th><th>Hollow Organs</th></tr>
                     </thead>
@@ -1852,7 +1852,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Time course</strong></td><td>Signs of shock develop within minutes to hours (depending on the vessel injured)</td><td>Signs of peritonitis develop over hours (perforation leads to gradual spillage; gastric ruptures are faster due to acidity)</td></tr>
                         <tr><td><strong>Key findings</strong></td><td>Distended, rigid abdomen; signs of shock; Kehr's sign (spleen); Grey Turner sign (retroperitoneal); Cullen's sign (intra-abdominal bleed)</td><td>Board-like rigidity; rebound tenderness; guarding; absent bowel sounds; referred pain; eventually fever and sepsis</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Specific Solid Organ Injuries</h4>
 
@@ -1866,7 +1866,7 @@ window.CPG_DATA = {
                 <p>The kidneys are retroperitoneal organs (behind the peritoneum), located in the flanks. They are well-protected by the back muscles and lower rib cage, but significant blunt force (flank strike, fall onto the back, motor vehicle collision) can cause renal contusion, laceration, or avulsion (tearing of the renal pedicle). The classic presentation is <strong>flank pain, ecchymosis (flank bruising), and haematuria (blood in the urine)</strong>. In penetrating trauma (especially back or flank wounds), the kidneys are at risk. Significant renal lacerations can cause retroperitoneal haemorrhage — blood loss into the retroperitoneal space can be substantial and is often concealed because the peritoneum does not distend.</p>
 
                 <h5>Pancreas</h5>
-                <p>The pancreas is a retroperitoneal organ lying across the upper abdomen. It is relatively protected by its position, but it can be injured in high-energy blunt trauma (e.g., steering wheel impact, bicycle handlebar injury in children). Pancreatic injury is particularly dangerous because: 1) The pancreas contains digestive enzymes that, when released, digest surrounding tissues (autodigestion), 2) Pancreatic injury is difficult to detect — pain may be vague and delayed for 6–24 hours, 3) Diagnosis requires CT scan, and 4) Complications include pancreatitis, pseudocyst formation, and fistula. The EMT should suspect pancreatic injury in any patient with upper abdominal pain after a high-energy blunt mechanism, especially with epigastric tenderness and bruising.</p>
+                <p>The pancreas is a retroperitoneal organ lying across the upper abdomen. It is relatively protected by its position, but it can be injured in high-energy blunt trauma (e.g., steering wheel impact, bicycle handlebar injury in children). Pancreatic injury is particularly dangerous because: 1) The pancreas contains digestive enzymes that, when released, digest surrounding tissues (autodigestion), 2) Pancreatic injury is difficult to detect — pain may be vague and delayed for 6–24 hours, 3) Diagnosis requires CT scan, and 4) Complications include pancreatitis, pseudocyst formation, and fistula. The EMS provider should suspect pancreatic injury in any patient with upper abdominal pain after a high-energy blunt mechanism, especially with epigastric tenderness and bruising.</p>
 
                 <h5>Bowel (Hollow Viscus Injury)</h5>
                 <p>Bowel perforation from blunt trauma typically results from a sudden rise in intraluminal pressure (like bursting a balloon) or a shearing injury at points of fixation (e.g., the duodenum at the ligament of Treitz, the jejunum near the ileocaecal valve). The small bowel is the most commonly injured hollow organ in both blunt and penetrating trauma. Initially, bowel contents (which are relatively sterile in the small bowel) leak into the peritoneal cavity, causing chemical peritonitis. Over hours, bacterial contamination leads to bacterial peritonitis, sepsis, and septic shock. The abdominal exam may initially be unremarkable — this is why <strong>serial abdominal exams</strong> (reassessment every 5–15 minutes) are critical in trauma patients with a significant MOI. Classic signs of peritonitis include: board-like rigidity (the abdomen feels as hard as a board), guarding (voluntary or involuntary), rebound tenderness (pain when the examiner's hand is released rapidly), referred pain (pain at the umbilicus or shoulder from diaphragmatic irritation), and absent bowel sounds.</p>
@@ -1875,8 +1875,8 @@ window.CPG_DATA = {
                 <p>Diaphragm rupture occurs when a sudden increase in intra-abdominal pressure (blunt trauma) or a penetrating injury (stab or gunshot) tears the diaphragm — the muscle separating the thoracic and abdominal cavities. Blunt diaphragm rupture is more common on the <strong>left side</strong> because the liver protects the right side. The negative intrathoracic pressure during inspiration can pull abdominal organs (most commonly the stomach, omentum, colon, or small bowel) into the chest cavity — this is called <strong>herniation</strong>. This can cause: 1) Respiratory compromise (the herniated organs compress the lung), 2) Bowel obstruction or strangulation, and 3) A confusing clinical picture (breath sounds may be absent on the affected side — mimicking a pneumothorax). Suspect diaphragm rupture in any patient with: blunt torso trauma plus respiratory distress, penetrating trauma to the lower chest or upper abdomen, or auscultation of bowel sounds in the chest (rare but pathognomonic).</p>
 
                 <h4>Abdominal Assessment in Trauma</h4>
-                <p>The EMT's abdominal assessment follows the sequence: <strong>Inspect → Auscultate → Palpate</strong>. Auscultating before palpation is important because palpation can change bowel sounds. The steps of the abdominal assessment:</p>
-                <table>
+                <p>The EMS provider's abdominal assessment follows the sequence: <strong>Inspect → Auscultate → Palpate</strong>. Auscultating before palpation is important because palpation can change bowel sounds. The steps of the abdominal assessment:</p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Step</th><th>What to Look For</th><th>Clinical Significance</th></tr>
                     </thead>
@@ -1885,10 +1885,10 @@ window.CPG_DATA = {
                         <tr><td><strong>Auscultate</strong></td><td>Bowel sounds (present, absent, hyperactive)</td><td>Absent bowel sounds suggest peritonitis, ileus, or ischaemia. Hyperactive sounds suggest early obstruction or gastroenteritis.</td></tr>
                         <tr><td><strong>Palpate</strong></td><td>Tenderness, guarding, rigidity, rebound tenderness</td><td>Gentle palpation in all four quadrants. Palpate the painful area LAST. Rigidity + tenderness + guarding = peritonitis until proven otherwise.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Classic Signs of Specific Injuries</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Sign</th><th>Description</th><th>Suggests</th></tr>
                     </thead>
@@ -1899,12 +1899,12 @@ window.CPG_DATA = {
                         <tr><td><strong>Seat belt sign</strong></td><td>Linear ecchymosis across the abdomen or chest from the seat belt</td><td>High risk of intra-abdominal injury (bowel perforation, liver/spleen laceration) and lumbar spine fractures (Chance fracture)</td></tr>
                         <tr><td><strong>Ballance's sign</strong></td><td>Dullness to percussion in the left flank with a palpable mass; shifting dullness</td><td>Splenic rupture with surrounding haematoma</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Penetrating Abdominal Trauma</h4>
                 <p>Penetrating trauma (stabbings, gunshot wounds, impalements) creates a wound track from the skin into the abdominal cavity. The management differs by location and wound characteristics:</p>
                 <ul>
-                    <li><strong>Anterior abdominal wounds:</strong> Bounded by the costal margins (top), the inguinal ligaments/groin (bottom), and the anterior axillary lines (sides). Any penetrating wound in this area can enter the peritoneal cavity and injure any abdominal organ. A stab wound to the anterior abdomen may or may not penetrate the peritoneum — but the EMT must assume it does until proven otherwise.</li>
+                    <li><strong>Anterior abdominal wounds:</strong> Bounded by the costal margins (top), the inguinal ligaments/groin (bottom), and the anterior axillary lines (sides). Any penetrating wound in this area can enter the peritoneal cavity and injure any abdominal organ. A stab wound to the anterior abdomen may or may not penetrate the peritoneum — but the EMS provider must assume it does until proven otherwise.</li>
                     <li><strong>Flank wounds:</strong> The flank lies between the anterior and posterior axillary lines. Wounds here can penetrate the retroperitoneum (kidneys, ureters, pancreas, duodenum, colon). Flank wounds are challenging to assess because retroperitoneal injuries can be clinically silent for hours.</li>
                     <li><strong>Back wounds:</strong> Penetrating wounds to the back can injure the kidneys, spine, spinal cord, and the posterior portions of the colon and diaphragm. Always check the back in penetrating trauma — exit wounds are commonly missed.</li>
                     <li><strong>Thoracoabdominal wounds:</strong> Penetrating wounds at or below the nipple line (anteriorly) or the tip of the scapula (posteriorly) can injure both thoracic and abdominal organs. The diaphragm rises to the level of the nipple during expiration — a wound at this level can enter the abdomen.</li>
@@ -1915,7 +1915,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h5>Evisceration — A Surgical Emergency</h5>
-                <p><strong>Evisceration</strong> occurs when abdominal organs (typically loops of bowel) protrude through an open wound in the abdominal wall. This is a surgical emergency. The EMT's management is simple and specific:</p>
+                <p><strong>Evisceration</strong> occurs when abdominal organs (typically loops of bowel) protrude through an open wound in the abdominal wall. This is a surgical emergency. The EMS provider's management is simple and specific:</p>
                 <ul>
                     <li><strong>DO NOT attempt to replace (push back) the organs</strong> — this increases the risk of infection and can cause further injury to the bowel</li>
                     <li><strong>Cover the organs with a moist, sterile dressing</strong> — use sterile gauze soaked in normal saline (or sterile water if NS is unavailable). The moisture prevents the organs from drying out, which can cause tissue death (necrosis)</li>
@@ -1952,13 +1952,13 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Pregnancy and Abdominal Trauma</h4>
-                <p>Trauma in pregnancy presents unique challenges because the EMT is managing <strong>two patients</strong> — the mother and the foetus. The mother's physiology changes throughout pregnancy, affecting the assessment and management of trauma:</p>
+                <p>Trauma in pregnancy presents unique challenges because the EMS provider is managing <strong>two patients</strong> — the mother and the foetus. The mother's physiology changes throughout pregnancy, affecting the assessment and management of trauma:</p>
                 <ul>
                     <li><strong>First and second trimester:</strong> The uterus is protected by the bony pelvis and is relatively small. The foetus is well-cushioned by amniotic fluid. Abdominal trauma in early pregnancy often does not directly injure the foetus, but maternal shock (hypoperfusion) can harm foetal oxygenation.</li>
                     <li><strong>Third trimester:</strong> The uterus rises out of the pelvis and becomes an abdominal organ. It is now vulnerable to direct blunt or penetrating trauma. The foetus is less protected and more vulnerable to injury. The uterus also compresses the maternal vena cava when the mother lies supine — causing <strong>supine hypotensive syndrome</strong>.</li>
                     <li><strong>Placental abruption:</strong> The most common cause of foetal death after trauma. The placenta separates from the uterine wall, disrupting oxygen and nutrient delivery to the foetus. Signs include vaginal bleeding (may be concealed), abdominal pain, uterine tenderness or rigidity, and foetal distress (bradycardia). Abruption can occur with relatively minor trauma — <strong>any pregnant patient with a significant MOI should be evaluated for placental abruption</strong>.</li>
                     <li><strong>Uterine rupture:</strong> A rare but catastrophic injury — the uterus tears, expelling the foetus into the abdominal cavity. Both mother and foetus will die without immediate surgical intervention. Signs include severe abdominal pain, loss of uterine contour, easily palpable foetal parts, and maternal shock out of proportion to apparent injury.</li>
-                    <li><strong>Foetal assessment:</strong> The EMT should assess foetal heart tones (if a Doppler is available and within scope), the presence and frequency of contractions, vaginal bleeding, and the mother's perception of foetal movement. Report all findings to the receiving hospital.</li>
+                    <li><strong>Foetal assessment:</strong> The EMS provider should assess foetal heart tones (if a Doppler is available and within scope), the presence and frequency of contractions, vaginal bleeding, and the mother's perception of foetal movement. Report all findings to the receiving hospital.</li>
                 </ul>
 
                 <h5>Supine Hypotensive Syndrome</h5>
@@ -1976,7 +1976,7 @@ window.CPG_DATA = {
             flashcards: [
                 { question: "What is the difference between solid organ injury and hollow organ injury in abdominal trauma?", answer: "Solid organs (liver, spleen, kidney, pancreas) → laceration → haemorrhage (shock). Hollow organs (bowel, stomach, bladder) → rupture/perforation → spillage of contents → peritonitis (develops over hours).", category: "Abdominal Injury Patterns" },
                 { question: "What is Kehr's sign and what does it indicate?", answer: "Left shoulder pain (referred) when lying supine, caused by blood irritating the phrenic nerve under the diaphragm. Highly suggestive of splenic injury.", category: "Abdominal Assessment" },
-                { question: "How should an EMT manage an evisceration (protruding abdominal organs)?", answer: "DO NOT replace organs. Cover with a moist sterile dressing (NS-soaked gauze), then cover with an occlusive dressing to retain moisture. Transport immediately for emergency surgery.", category: "Penetrating Abdominal Trauma" },
+                { question: "How should an EMS provider manage an evisceration (protruding abdominal organs)?", answer: "DO NOT replace organs. Cover with a moist sterile dressing (NS-soaked gauze), then cover with an occlusive dressing to retain moisture. Transport immediately for emergency surgery.", category: "Penetrating Abdominal Trauma" },
                 { question: "Why are pelvic fractures high-mortality injuries?", answer: "The pelvis contains major vascular structures. Disruption can cause massive haemorrhage into the retroperitoneal space, which can hold 2–3 litres of blood before tamponade occurs.", category: "Pelvic Trauma" },
                 { question: "What is the correct position for the pelvic binder?", answer: "Centred over the greater trochanters (the widest part of the pelvis), NOT over the iliac crests. It reduces pelvic volume and may tamponade bleeding.", category: "Pelvic Trauma" },
                 { question: "What is supine hypotensive syndrome and how is it managed in a pregnant trauma patient?", answer: "After ~20 weeks, the gravid uterus compresses the IVC when supine, reducing venous return. Manage with left uterine displacement (wedge under right hip or manual displacement of uterus to the left).", category: "Trauma in Pregnancy" },
@@ -1996,9 +1996,9 @@ window.CPG_DATA = {
                     explanation: "This patient has a classic presentation of intra-abdominal haemorrhage from solid organ injury: tachycardia, hypotension, abdominal distension, and altered mental status (cerebral hypoperfusion). The seat belt sign is a red flag for intra-abdominal injury. Rigidity may not be present with bleeding alone (it is more associated with peritonitis from hollow organ perforation). This patient needs rapid transport to a trauma centre with a trauma alert."
                 },
                 {
-                    q: "A 22-year-old male is stabbed in the left lower chest at the anterior axillary line. He has absent breath sounds on the left and is hypotensive. What injuries should the EMT suspect?",
+                    q: "A 22-year-old male is stabbed in the left lower chest at the anterior axillary line. He has absent breath sounds on the left and is hypotensive. What injuries should the EMS provider suspect?",
                     options: [
-                        "The wound is in the chest — the EMT should consider only a pneumothorax or haemothorax",
+                        "The wound is in the chest — the EMS provider should consider only a pneumothorax or haemothorax",
                         "The wound is thoracoabdominal — it can injure the lung, diaphragm, spleen, stomach, colon, and left kidney. Assume both chest and abdominal injuries until proven otherwise",
                         "The wound only injured the diaphragm because the rib cage protects the abdominal organs",
                         "The wound is above the abdomen, so no abdominal organs are at risk"
@@ -2033,7 +2033,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_6_9_1",
                     scenario: "You are called to a construction site where a 40-year-old male fell approximately 15 feet, landing on a protruding piece of rebar that entered his right lower abdomen. The rebar is still impaled, with approximately 6 inches of metal visible outside the abdomen. There is moderate bleeding around the penetration site. The patient is awake, anxious, and in severe pain. Vital signs: HR 124, BP 106/68, RR 24, SpO₂ 96%. The construction foreman is asking if you should 'pull the bar out.'",
-                    question: "What is the appropriate management of this impaled object and how should the EMT manage this patient's abdominal injury?",
+                    question: "What is the appropriate management of this impaled object and how should the EMS provider manage this patient's abdominal injury?",
                     options: [
                         {t: "Secure the rebar in place with bulky dressings to prevent movement — do NOT remove it. Apply high-flow oxygen, establish IV access, start fluid resuscitation for signs of shock, cover the wound around the rebar with sterile dressings, and transport immediately to a trauma centre", f: "Correct — Impaled objects are NEVER removed in the prehospital setting (unless they obstruct the airway or interfere with CPR). The rebar is likely tamponading (plugging) bleeding vessels — removing it could cause exsanguination. The management: 1) Manually stabilise the rebar, 2) Secure it in place with bulky dressings, 3) Do not attempt to cut the rebar unless it prevents transport, 4) Cover the wound site with sterile dressings, 5) Administer high-flow oxygen, 6) IV access and fluids as indicated, 7) Transport to a trauma centre. The patient is showing early signs of shock (tachycardia, borderline BP, anxiety)."},
                         {t: "Remove the rebar immediately — the bleeding needs to be controlled and the wound needs direct pressure. Removing the object allows you to apply a pressure dressing to the wound", f: "Incorrect — Removing an impaled object can cause torrential haemorrhage from vessels that are currently compressed by the object itself. This is especially true in the abdomen where major vessels (aorta, IVC, iliac vessels) may be involved. The impaled object should be left in place, stabilised, and the patient transported for surgical removal in a controlled operative setting."}
@@ -2045,7 +2045,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_6_9_2",
                     scenario: "You respond to a motor vehicle collision involving a 35-year-old female who was the unrestrained driver in a head-on collision at approximately 50 mph. The steering wheel is deformed. She is complaining of severe lower abdominal and pelvic pain. Her vital signs: HR 118, BP 102/72, RR 22, SpO₂ 96%. Visual inspection reveals a seat belt sign across the lower abdomen and ecchymosis over the left flank. Her left leg is shortened and externally rotated. She has not yet been moved from the vehicle. Fire/rescue is extricating the vehicle.",
-                    question: "What injuries should the EMT suspect and in what order should assessment and interventions be performed?",
+                    question: "What injuries should the EMS provider suspect and in what order should assessment and interventions be performed?",
                     options: [
                         {t: "Suspect pelvic fracture, left femur fracture or hip dislocation, and possible intra-abdominal solid organ injury. Before moving the patient: apply a cervical collar, apply a pelvic binder (at the greater trochanters), apply a traction splint to the left leg, then coordinate with fire/rescue for extrication using a scoop stretcher or long spine board with minimal movement", f: "Correct — This patient has a classic dashboard injury pattern: knee strikes the dashboard → femoral shaft fracture or posterior hip dislocation → force transmitted through the femur to the pelvis → pelvic fracture. The seat belt sign and flank ecchymosis suggest intra-abdominal injury (spleen or kidney on the left). Management sequence: 1) C-spine immobilisation, 2) Pelvic binder (BEFORE movement — this reduces haemorrhage risk during extrication), 3) Assess the left leg — is it a femur fracture (traction splint) or hip dislocation (splint in position found)? 4) Coordinate extrication with minimal movement, 5) Scoop stretcher or log roll with adequate personnel, 6). Transport to trauma centre. Note: a traction splint is contraindicated if there is a pelvic fracture or hip dislocation — assess carefully."},
                         {t: "Suspect only a femur fracture — the shortened, externally rotated leg is classic. Apply a traction splint and transport. The pelvic pain is likely referred from the femur fracture. No pelvic binder is needed if the pelvis is stable on exam", f: "Incorrect — The mechanism (unrestrained head-on with deformed steering wheel, leg shortened/externally rotated) plus pelvic pain, seat belt sign, and flank ecchymosis suggests a multisystem injury pattern. Relying on pelvic 'stability' exam is dangerous — in an awake patient with pelvic pain, you do NOT need to compress the pelvis to confirm a fracture. The mechanism alone warrants a pelvic binder. Also, a traction splint may be contraindicated if there is a pelvic fracture or hip dislocation — always assess for these contraindications first."}
@@ -2078,10 +2078,10 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#bone"/></svg> Musculoskeletal Injuries & Splinting</h3>
 
-                <p>Musculoskeletal injuries are among the most common reasons patients call EMS. While rarely immediately life-threatening (with the notable exception of exsanguinating haemorrhage from open fractures or pelvic fractures), these injuries cause significant pain, disability, and morbidity if mismanaged. The EMT's role is to <strong>assess, immobilise, and transport</strong> — splinting an injured extremity reduces pain, prevents further injury to surrounding tissues (nerves, blood vessels), and minimises the risk of converting a closed fracture to an open fracture.</p>
+                <p>Musculoskeletal injuries are among the most common reasons patients call EMS. While rarely immediately life-threatening (with the notable exception of exsanguinating haemorrhage from open fractures or pelvic fractures), these injuries cause significant pain, disability, and morbidity if mismanaged. The EMS provider's role is to <strong>assess, immobilise, and transport</strong> — splinting an injured extremity reduces pain, prevents further injury to surrounding tissues (nerves, blood vessels), and minimises the risk of converting a closed fracture to an open fracture.</p>
 
                 <h4>Types of Musculoskeletal Injuries</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Injury Type</th><th>Definition</th><th>Common Examples</th></tr>
                     </thead>
@@ -2092,11 +2092,11 @@ window.CPG_DATA = {
                         <tr><td><strong>Strain</strong></td><td>Injury to a muscle or tendon (muscle-to-bone connective tissue)</td><td>Hamstring strain, lower back strain (lumbar paraspinal muscles), rotator cuff strain</td></tr>
                         <tr><td><strong>Contusion</strong></td><td>Bruise — blunt trauma causing bleeding into soft tissue without a break in the skin</td><td>Direct blow to a muscle, bone contusion</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Signs of a Fracture — The "Fracture Signs"</h4>
                 <p>The presence of one or more of these signs suggests a fracture. The more signs present, the greater the likelihood:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Sign</th><th>Description</th><th>Reliability</th></tr>
                     </thead>
@@ -2109,7 +2109,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Loss of function</strong></td><td>Inability or unwillingness to use the injured extremity (guarding)</td><td>Moderately reliable — functional impairment is common but not universal</td></tr>
                         <tr><td><strong>PMS changes</strong></td><td>Abnormal pulse, motor function, or sensation distal to the injury</td><td>Critical — indicates nerve or vascular compromise requiring urgent reduction</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Closed vs. Open Fractures</h4>
                 <p>A <strong>closed fracture</strong> is one in which the skin overlying the fracture is intact. An <strong>open fracture</strong> (formerly called a "compound fracture") is one in which the bone has broken through the skin OR there is a wound that communicates with the fracture site. The distinction is critical because open fractures carry a high risk of infection (osteomyelitis), are frequently associated with greater blood loss, and require urgent surgical irrigation and debridement. Management of an open fracture:</p>
@@ -2143,7 +2143,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Types of Splints</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Splint Type</th><th>Best For</th><th>Key Considerations</th></tr>
                     </thead>
@@ -2157,7 +2157,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Pillow/soft splint</strong></td><td>Ankle injuries, distal extremity injuries</td><td>Pillow wrapped around the injury and taped; provides comfort and mild immobilisation</td></tr>
                         <tr><td><strong>Buddy taping</strong></td><td>Finger or toe fractures/dislocations</td><td>Tap the injured digit to an adjacent uninjured digit; padding between digits to prevent maceration</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Traction Splinting — Femur Fractures</h4>
                 <p>The femur is the largest bone in the body, and a mid-shaft femur fracture is a significant injury. The femoral artery can be torn by sharp bone fragments, and the thigh can sequester 1–2 litres of blood. Traction splinting provides inline traction that reduces muscle spasm (the powerful quadriceps and hamstring muscles pull the bone fragments into overlapping positions), aligns the bone, reduces pain, and may reduce bleeding. The two most common traction splints are the <strong>Hare traction splint</strong> (used by one rescuer) and the <strong>Sager splint</strong> (bilateral, can be used on one or both legs). Indications for traction splinting: <strong>isolated, closed, mid-shaft femur fracture</strong>.</p>
@@ -2179,11 +2179,11 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>PASG / MAST (Historical)</h4>
-                <p>The <strong>Pneumatic Anti-Shock Garment (PASG)</strong>, also known as Military Anti-Shock Trousers (MAST), is a historical device that was once used to treat haemorrhagic shock by wrapping the legs and abdomen in inflatable compartments, thereby increasing peripheral vascular resistance and autotransfusing blood to the core. <strong>PASG/MAST is generally no longer recommended for trauma patients in modern EMS practice</strong>. Evidence has shown that PASG increases mortality in some patient populations (thoracic trauma, cardiac tamponade) and does not improve outcomes in haemorrhagic shock. However, it may still have limited applications in some protocols for: stabilising pelvic fractures (as a temporary measure), and treating profound hypotension refractory to other measures (rare). EMTs should know what PASG/MAST is for historical and examination purposes but follow their local protocol regarding its use.</p>
+                <p>The <strong>Pneumatic Anti-Shock Garment (PASG)</strong>, also known as Military Anti-Shock Trousers (MAST), is a historical device that was once used to treat haemorrhagic shock by wrapping the legs and abdomen in inflatable compartments, thereby increasing peripheral vascular resistance and autotransfusing blood to the core. <strong>PASG/MAST is generally no longer recommended for trauma patients in modern EMS practice</strong>. Evidence has shown that PASG increases mortality in some patient populations (thoracic trauma, cardiac tamponade) and does not improve outcomes in haemorrhagic shock. However, it may still have limited applications in some protocols for: stabilising pelvic fractures (as a temporary measure), and treating profound hypotension refractory to other measures (rare). EMS providers should know what PASG/MAST is for historical and examination purposes but follow their local protocol regarding its use.</p>
 
                 <h4>Compartment Syndrome — A True Emergency</h4>
                 <p><strong>Compartment syndrome</strong> occurs when increased pressure within a closed anatomical compartment (a group of muscles, nerves, and blood vessels surrounded by fascia) compromises circulation and tissue perfusion. Without prompt treatment (fasciotomy — surgical release of the fascia), compartment syndrome leads to muscle necrosis, nerve damage, and permanent loss of limb function. Compartment syndrome can develop after: fractures (especially tibial, forearm), crush injuries, prolonged compression of a limb, reperfusion after ischaemia, burns, or tight splints/casts. The classic signs are remembered by the <strong>5 P's</strong>:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Sign</th><th>Description</th><th>Clinical Significance</th></tr>
                     </thead>
@@ -2194,7 +2194,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Poikilothermia</strong></td><td>The affected limb feels cool or cold compared to the uninjured side (takes on the temperature of the environment)</td><td>Sign of reduced perfusion</td></tr>
                         <tr><td><strong>Pulselessness</strong></td><td>Loss of distal pulse</td><td><strong>LATE and ominous sign</strong> — irreversible tissue damage is likely imminent. Do NOT wait for pulselessness to diagnose compartment syndrome</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical Warning:</strong> Pulselessness is a <strong>LATE sign</strong> of compartment syndrome — by the time the pulse is lost, irreversible tissue damage (muscle necrosis, nerve damage) has likely already occurred. The earliest and most important sign is <strong>pain out of proportion</strong> to the injury combined with <strong>pain on passive stretch</strong>. If a patient with a splinted extremity complains of increasing pain despite adequate analgesia, suspect compartment syndrome. <strong>Loosen or remove the splint</strong> and reassess. Do NOT elevate the extremity above heart level — this reduces perfusion pressure to the compartment.
@@ -2257,7 +2257,7 @@ window.CPG_DATA = {
                     explanation: "This is a classic case where a pelvic fracture mimics a femur fracture (or coexists with one). The tenderness over the pubic ramus, flank ecchymosis (Grey Turner sign), groin pain, and haemodynamic instability (tachycardia, borderline hypotension) suggest a pelvic fracture with retroperitoneal haemorrhage. A 'stable' pelvic exam does NOT rule out a pelvic fracture — especially in an awake patient with pelvic pain. Applying traction to a pelvis that may have a fracture could worsen haemorrhage. Management: pelvic binder, immobilise the leg in the position found with a rigid splint (or pillow splint), and transport to a trauma centre. Do not use a traction splint."
                 },
                 {
-                    q: "A 45-year-old male with a tibial fracture that was splinted 2 hours ago now reports rapidly worsening pain in his lower leg that he describes as 'deep, intense pressure.' His pain is 10/10 despite having received analgesia. The splint looks appropriately applied. Passive toe movement causes excruciating pain. The toes are pale and the patient reports tingling. The dorsalis pedis pulse is weak but present. What is the MOST likely diagnosis and the EMT's immediate action?",
+                    q: "A 45-year-old male with a tibial fracture that was splinted 2 hours ago now reports rapidly worsening pain in his lower leg that he describes as 'deep, intense pressure.' His pain is 10/10 despite having received analgesia. The splint looks appropriately applied. Passive toe movement causes excruciating pain. The toes are pale and the patient reports tingling. The dorsalis pedis pulse is weak but present. What is the MOST likely diagnosis and the EMS provider's immediate action?",
                     options: [
                         "The patient is experiencing normal fracture pain — administer additional analgesia and reassure the patient",
                         "Compartment syndrome — loosen or remove the splint immediately, reassess PMS every 5 minutes, and transport emergently with hospital notification for possible fasciotomy",
@@ -2278,31 +2278,31 @@ window.CPG_DATA = {
                         {t: "Apply the splint as quickly as possible — a traction splint is always indicated for any leg deformity. No need to check for hip dislocation — that is a hospital diagnosis. Apply traction until the leg length is fully restored, then secure and transport", f: "Incorrect — Traction splinting requires careful assessment before application. Applying traction to a hip dislocation can cause avascular necrosis. The 'shortened + externally rotated' leg is classic for femur fracture, but you must assess for the less common hip dislocation (shortened + internally rotated) and for pelvic tenderness. Traction should align the leg, not over-distract. Over-traction can cause neurovascular injury and pain."}
                     ],
                     correct: 0,
-                    explanation: "Traction splint application is a step-by-step process that requires careful verification before and after. The most common prehospital error is failing to recognise a contraindication (especially a subtle hip dislocation or pelvic fracture). The distinguishing exam: femur fracture = shortened + externally rotated; hip dislocation = shortened + internally rotated. Manual inline traction before mechanical splint application is critical — it reduces pain from muscle spasm and allows the EMT to feel if there is resistance that suggests a dislocation. After splinting, reassess PMS and document. The patient should be transported to a trauma centre (femur fractures can bleed significantly — 1–2 L into the thigh).",
+                    explanation: "Traction splint application is a step-by-step process that requires careful verification before and after. The most common prehospital error is failing to recognise a contraindication (especially a subtle hip dislocation or pelvic fracture). The distinguishing exam: femur fracture = shortened + externally rotated; hip dislocation = shortened + internally rotated. Manual inline traction before mechanical splint application is critical — it reduces pain from muscle spasm and allows the EMS provider to feel if there is resistance that suggests a dislocation. After splinting, reassess PMS and document. The patient should be transported to a trauma centre (femur fractures can bleed significantly — 1–2 L into the thigh).",
                     kpi: "Correctly applies traction splint with appropriate pre- and post-PMS assessment and contraindication screening"
                 },
                 {
                     id: "crit_6_10_2",
                     scenario: "You are called to a basketball game for an 18-year-old male who fell on an outstretched hand and now has severe right shoulder pain. He is holding his right arm slightly away from his body with his left hand. The right shoulder looks 'squared off' — the normal rounded contour is missing. You can palpate the humeral head anteriorly below the clavicle. He has normal sensation over the lateral aspect of his shoulder (the 'regimental badge' area) and can move his fingers and wrist. His radial pulse is strong.",
-                    question: "What is the most likely injury and how should the EMT manage this patient?",
+                    question: "What is the most likely injury and how should the EMS provider manage this patient?",
                     options: [
                         {t: "Anterior shoulder dislocation — apply a sling and swathe to immobilise the arm in the position found, check PMS (specifically the axillary nerve: sensation over the lateral shoulder/deltoid), apply a cold pack to the shoulder, transport, and do NOT attempt reduction", f: "Correct — This is a classic anterior shoulder dislocation. The management is: 1) Assess and document PMS — specifically the axillary nerve (sensation over the deltoid in the 'regimental badge' area — the patient in this case has normal axillary nerve function, which is a good prognostic sign), 2) Apply a sling to support the arm and a swathe to secure it to the chest, 3) Apply a cold pack to the shoulder for analgesia and swelling reduction, 4) Transport for reduction (usually closed reduction in the ED, often with procedural sedation), 5) Do NOT attempt to reduce the dislocation — this requires specific training and is outside the EMT scope."},
-                        {t: "Apply a traction splint to the arm to reduce the humeral head back into the glenoid — this is an orthopaedic emergency that needs immediate reduction in the field", f: "Incorrect — Shoulder dislocations are not reduced in the prehospital setting by EMTs (though some paramedics may perform reduction under medical direction). A traction splint is for femur fractures — not shoulders. The correct management is immobilisation (sling and swathe), cold therapy, and transport. Axillary nerve function (lateral shoulder sensation) should always be documented — nerve injury is the most common complication."}
+                        {t: "Apply a traction splint to the arm to reduce the humeral head back into the glenoid — this is an orthopaedic emergency that needs immediate reduction in the field", f: "Incorrect — Shoulder dislocations are not reduced in the prehospital setting by EMS providers (though some paramedics may perform reduction under medical direction). A traction splint is for femur fractures — not shoulders. The correct management is immobilisation (sling and swathe), cold therapy, and transport. Axillary nerve function (lateral shoulder sensation) should always be documented — nerve injury is the most common complication."}
                     ],
                     correct: 0,
-                    explanation: "Anterior shoulder dislocation is common in young athletes and can be recurrent. The hallmark physical findings are: squared-off shoulder appearance, palpable humeral head anteriorly, and the patient holding the arm abducted and externally rotated. The EMT's role: immobilise (sling and swathe), apply cold, perform and document a thorough PMS exam (especially the axillary nerve — sensation over the deltoid muscle), and transport. Do NOT attempt reduction. Recurrent dislocators may be able to self-reduce — do not stop them, but document their self-reduction carefully. Transport is still warranted to confirm reduction, assess for fractures, and evaluate for rotator cuff injury.",
+                    explanation: "Anterior shoulder dislocation is common in young athletes and can be recurrent. The hallmark physical findings are: squared-off shoulder appearance, palpable humeral head anteriorly, and the patient holding the arm abducted and externally rotated. The EMS provider's role: immobilise (sling and swathe), apply cold, perform and document a thorough PMS exam (especially the axillary nerve — sensation over the deltoid muscle), and transport. Do NOT attempt reduction. Recurrent dislocators may be able to self-reduce — do not stop them, but document their self-reduction carefully. Transport is still warranted to confirm reduction, assess for fractures, and evaluate for rotator cuff injury.",
                     kpi: "Correctly identifies anterior shoulder dislocation and manages with sling/swathe/PMS assessment"
                 },
                 {
                     id: "crit_6_10_3",
                     scenario: "You respond to a construction site for a 42-year-old male who was pinned between a concrete wall and a forklift for approximately 20 minutes before being freed. His right lower leg is swollen, tense, and very painful. He is awake and in extreme distress, rating his pain as 10/10. The leg is deformed at the mid-tibia level and there is an open wound 3 cm long over the deformity with bone visible. A rigid splint was applied by a first responder 30 minutes ago. Since then, the patient reports his pain has gone from 'bad' to 'unbearable.' The toes on the right foot are now pale and the patient reports tingling and numbness. The dorsalis pedis pulse is absent. The patient is screaming when anyone touches his foot or moves his toes even slightly.",
-                    question: "What is the most likely complication and what must the EMT do immediately?",
+                    question: "What is the most likely complication and what must the EMS provider do immediately?",
                     options: [
                         {t: "This is likely normal fracture pain and vascular spasm from the initial injury — the splint is appropriate. Administer analgesia, elevate the leg, and transport emergently", f: "Incorrect — The combination of rapidly escalating pain (out of proportion), pain on passive stretch, paresthesia, pallor, and now pulselessness is a classic and advanced presentation of compartment syndrome. This patient has progressed through the 5 P's and now has pulselessness, which indicates imminent irreversible tissue damage. This is NOT 'normal fracture pain.' The splint that was appropriate when applied may now be contributing to the compartment syndrome if swelling has increased."},
                         {t: "Suspect acute compartment syndrome — immediately remove or loosen the splint and all circumferential dressings. Reassess the extremity — if the pulse does not return, note the time of pulselessness onset. Keep the extremity at heart level (do NOT elevate or lower). Transport emergently with hospital notification for possible fasciotomy. Document the sequence of PMS findings", f: "Correct — This patient has compartment syndrome that has progressed to the late stage (pulselessness). Immediate actions: 1) Remove the splint and ALL circumferential dressings/bandages — swelling may have made the splint too tight, 2) Reassess PMS — if the pulse returns after loosening, the compartment pressure may be relieved enough to restore perfusion, 3) Keep the leg at heart level — do NOT elevate (this reduces perfusion pressure) and do NOT lower (this increases oedema), 4) Note the time of pulselessness onset — this is critical for surgical decision-making, 5) Transport emergently to a trauma centre capable of fasciotomy, 6) Notify the receiving hospital that you have a compartment syndrome patient with pulselessness — the surgical team needs to be ready to perform fasciotomy immediately."}
                     ],
                     correct: 1,
-                    explanation: "This patient has acute compartment syndrome following a severe tibial fracture with crush mechanism. The progression through the 5 P's is textbook: pain out of proportion → paresthesia → pallor → poikilothermia → pulselessness. The absence of the dorsalis pedis pulse is a LATE sign — irreversible muscle and nerve damage is occurring. The EMT must: 1) Remove the splint and ALL dressings immediately, 2) Reassess PMS, 3) Position at heart level, 4) Note the time of pulselessness, 5) Transport emergently to a facility with orthopaedic surgery capabilities, 6) The receiving hospital needs to prepare for emergent fasciotomy — the surgical release of the fascial compartments to restore perfusion. Fasciotomy is the definitive treatment and must be performed within 4–6 hours of symptom onset to prevent permanent damage. Every minute counts.",
+                    explanation: "This patient has acute compartment syndrome following a severe tibial fracture with crush mechanism. The progression through the 5 P's is textbook: pain out of proportion → paresthesia → pallor → poikilothermia → pulselessness. The absence of the dorsalis pedis pulse is a LATE sign — irreversible muscle and nerve damage is occurring. The EMS provider must: 1) Remove the splint and ALL dressings immediately, 2) Reassess PMS, 3) Position at heart level, 4) Note the time of pulselessness, 5) Transport emergently to a facility with orthopaedic surgery capabilities, 6) The receiving hospital needs to prepare for emergent fasciotomy — the surgical release of the fascial compartments to restore perfusion. Fasciotomy is the definitive treatment and must be performed within 4–6 hours of symptom onset to prevent permanent damage. Every minute counts.",
                     kpi: "Recognises advanced compartment syndrome and implements emergency interventions including splint removal and emergent transport for fasciotomy"
                 }
             ]
@@ -2320,8 +2320,8 @@ window.CPG_DATA = {
                 <p><strong>Multisystem trauma</strong> refers to injury involving more than one body system — for example, a patient with both a head injury and intra-abdominal bleeding, or a patient with a chest injury, a pelvic fracture, and a leg fracture. These patients are at high risk for rapid deterioration because the physiological burden of multiple injuries is synergistic (the sum is greater than the parts). Managing multisystem trauma requires a disciplined, systematic approach — the <strong>ABCDE assessment with simultaneous interventions</strong> — where life threats are addressed as they are identified, not sequentially.</p>
 
                 <h4>ABCDE Assessment with Simultaneous Interventions</h4>
-                <p>In the single-system trauma patient, the ABCDE assessment is typically performed sequentially: assess A, then address A, then assess B, then address B, etc. In multisystem trauma — especially the unstable patient — this linear approach is too slow. The EMT must be prepared to <strong>assess and intervene simultaneously</strong>:</p>
-                <table>
+                <p>In the single-system trauma patient, the ABCDE assessment is typically performed sequentially: assess A, then address A, then assess B, then address B, etc. In multisystem trauma — especially the unstable patient — this linear approach is too slow. The EMS provider must be prepared to <strong>assess and intervene simultaneously</strong>:</p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Step</th><th>Assessment</th><th>Simultaneous Intervention</th></tr>
                     </thead>
@@ -2332,9 +2332,9 @@ window.CPG_DATA = {
                         <tr><td><strong>D</strong> — Disability</td><td>AVPU, GCS, pupil exam, motor/sensory assessment</td><td>Spinal motion restriction, blood glucose check, seizure management</td></tr>
                         <tr><td><strong>E</strong> — Exposure / Environment</td><td>Remove clothing to fully assess the patient; log roll to assess back</td><td>Maintain spinal precautions, prevent hypothermia (cover patient, warm ambulance, warm fluids)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
-                <p>The key to simultaneous interventions is <strong>team coordination</strong>. While one EMT manages the airway, another controls haemorrhage, a third obtains vital signs, and a fourth prepares the stretcher and notifies the hospital. The team leader (usually the most experienced EMT) coordinates these parallel efforts and ensures nothing is missed.</p>
+                <p>The key to simultaneous interventions is <strong>team coordination</strong>. While one EMS provider manages the airway, another controls haemorrhage, a third obtains vital signs, and a fourth prepares the stretcher and notifies the hospital. The team leader (usually the most experienced EMS provider) coordinates these parallel efforts and ensures nothing is missed.</p>
 
                 <h4>Trauma Arrest Management</h4>
                 <p>A <strong>traumatic cardiac arrest</strong> is a cardiac arrest caused by trauma (blunt or penetrating), not by a primary cardiac cause. The survival rate for traumatic arrest is low (approximately 5–15% for penetrating trauma to the torso, lower for blunt trauma), but immediate, aggressive intervention can save some patients. The key difference from medical cardiac arrest: traumatic arrest has <strong>reversible causes</strong> that can be treated in the field. The mnemonic for the reversible causes of traumatic arrest is:</p>
@@ -2351,11 +2351,11 @@ window.CPG_DATA = {
                     <strong>Critical Concept:</strong> In traumatic cardiac arrest, the heart is often empty (from haemorrhage) or compressed (tension pneumothorax/tamponade). Chest compressions alone will not generate adequate perfusion. The priority is to <strong>identify and treat the reversible cause</strong>. If the patient is in PEA (pulseless electrical activity — the most common rhythm in traumatic arrest), the question is not "shock or no shock" — it is "what is causing the PEA?" Treat the cause.
                 </div>
 
-                <h4>Resuscitative Thoracotomy (Not an EMT Procedure)</h4>
+                <h4>Resuscitative Thoracotomy (Not an EMS Provider Procedure)</h4>
                 <p><strong>Resuscitative thoracotomy</strong> (also called "emergency department thoracotomy" or "ED thoracotomy") is a surgical procedure in which the chest is opened to directly access the heart and thoracic aorta. Indications include: penetrating cardiac injury with signs of life within the past 15 minutes, and blunt trauma with witnessed arrest with signs of life within the past 10 minutes (rare/controversial). The goal is to: 1) Relieve cardiac tamponade (by opening the pericardium), 2) Control intrathoracic haemorrhage, 3) Cross-clamp the descending aorta (to redirect blood to the heart and brain), and 4) Perform internal cardiac massage. This is a <strong>hospital procedure</strong> — not within the EMT scope. However, the EMT must understand the indications so you can: recognise which patients may benefit from this heroic intervention, minimise scene time and transport rapidly for patients who meet criteria, and notify the receiving ED so the surgical team is prepared.</p>
 
                 <h4>Secondary Survey — Head-to-Toe After ABCs Stabilised</h4>
-                <p>After the primary assessment has identified and managed all immediate life threats, the EMT performs a <strong>secondary survey</strong> — a systematic head-to-toe physical examination. The secondary survey should not interrupt ongoing resuscitation and may be performed en route. Key components:</p>
+                <p>After the primary assessment has identified and managed all immediate life threats, the EMS provider performs a <strong>secondary survey</strong> — a systematic head-to-toe physical examination. The secondary survey should not interrupt ongoing resuscitation and may be performed en route. Key components:</p>
                 <ul>
                     <li><strong>Head and face:</strong> DCAP-BTLS; pupils (PERRL); periorbital ecchymosis (raccoon eyes — basilar skull fracture); Battle's sign (mastoid ecchymosis — basilar skull fracture); CSF leak from nose (rhinorrhea) or ears (otorrhea); facial instability or step-offs</li>
                     <li><strong>Neck:</strong> Midline cervical spine tenderness; tracheal deviation; JVD; subcutaneous emphysema; medical alert tags; stoma</li>
@@ -2368,7 +2368,7 @@ window.CPG_DATA = {
 
                 <h4>SAMPLE / OPQRST / AMPLE History</h4>
                 <p>History gathering follows the ABCDEs and is done en route or during the secondary survey. Three mnemonics are used:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Mnemonic</th><th>Stands For</th><th>Clinical Application</th></tr>
                     </thead>
@@ -2377,13 +2377,13 @@ window.CPG_DATA = {
                         <tr><td><strong>OPQRST</strong></td><td>Onset, Provocation/Palliation, Quality, Region/Radiation, Severity, Time</td><td>Pain assessment specifically — used to characterise the nature of painful complaints</td></tr>
                         <tr><td><strong>AMPLE</strong></td><td>Allergies, Medications, Past medical history, Last oral intake, Events leading to injury/illness</td><td>Abbreviated version of SAMPLE (no Signs/Symptoms — those are from the physical exam). Often preferred in trauma because it is faster</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Trauma in Pregnancy — Unique Considerations</h4>
-                <p>Trauma affects approximately 6–8% of all pregnancies and is the <strong>leading cause of non-obstetric maternal death</strong>. The EMT must understand the anatomic and physiologic changes of pregnancy that alter the assessment and management of trauma:</p>
+                <p>Trauma affects approximately 6–8% of all pregnancies and is the <strong>leading cause of non-obstetric maternal death</strong>. The EMS provider must understand the anatomic and physiologic changes of pregnancy that alter the assessment and management of trauma:</p>
 
                 <h5>Anatomic Changes relevant to trauma</h5>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Change</th><th>Clinical Implication</th></tr>
                     </thead>
@@ -2395,7 +2395,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Ligaments relax</strong> (hormonal changes — relaxin)</td><td>Joint laxity can make musculoskeletal injury more likely; pelvic pain may be from ligament relaxation rather than fracture — but assume the worst</td></tr>
                         <tr><td><strong>IVC compression</strong> in the supine position (supine hypotensive syndrome)</td><td>After ~20 weeks, the gravid uterus compresses the IVC when supine, reducing venous return by up to 30%. Left uterine displacement is essential</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h5>Supine Hypotensive Syndrome — Left Uterine Displacement</h5>
                 <p>This is one of the most important trauma considerations in pregnancy. When a pregnant patient >20 weeks lies supine, the uterus compresses the inferior vena cava (IVC), reducing venous return, stroke volume, and cardiac output. This causes hypotension that can be mistaken for haemorrhagic shock. The management is simple and effective:</p>
@@ -2406,7 +2406,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h5>Placental Abruption — Leading Cause of Foetal Death After Trauma</h5>
-                <p>Placental abruption is the premature separation of the placenta from the uterine wall. It is the <strong>leading cause of foetal death after maternal trauma</strong>. The mechanism: shearing forces between the elastic uterus and the inelastic placenta cause the placenta to detach. Abruption can occur after relatively minor trauma (a fall, a punch, a minor MVC) — the EMT should maintain a high index of suspicion in ANY pregnant trauma patient. Signs and symptoms include:</p>
+                <p>Placental abruption is the premature separation of the placenta from the uterine wall. It is the <strong>leading cause of foetal death after maternal trauma</strong>. The mechanism: shearing forces between the elastic uterus and the inelastic placenta cause the placenta to detach. Abruption can occur after relatively minor trauma (a fall, a punch, a minor MVC) — the EMS provider should maintain a high index of suspicion in ANY pregnant trauma patient. Signs and symptoms include:</p>
                 <ul>
                     <li><strong>Vaginal bleeding</strong> — may be present, but ~20% of abruptions are concealed (no visible bleeding — blood is trapped behind the placenta)</li>
                     <li><strong>Abdominal or uterine pain</strong> — the uterus is tender, firm, or 'board-like' (woody) to palpation</li>
@@ -2422,12 +2422,12 @@ window.CPG_DATA = {
                 <p>A rare, catastrophic complication where amniotic fluid enters the maternal bloodstream (usually during labour or delivery, or after trauma to the uterus), causing an anaphylactic-like reaction, disseminated intravascular coagulation (DIC), and cardiorespiratory collapse. Signs: sudden onset of respiratory distress, cyanosis, hypotension, seizures, and cardiac arrest. Management: supportive — high-flow oxygen, CPR, and rapid transport. The condition has a mortality rate of 20–60% and requires intensive care.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>NREMT Key Point — Pregnant Trauma:</strong> In a pregnant trauma patient >20 weeks, <strong>manually displace the uterus to the left</strong> to prevent aortocaval compression (supine hypotensive syndrome). Blood loss is poorly tolerated by the foetus — maternal compensation (increased blood volume) can mask haemorrhage. A pregnant patient may lose 30% of her volume before her vital signs change — by then, uterine/foetal perfusion is significantly compromised. <strong>Perimortem C-section</strong> is a last-resort delivery performed to save the foetus when a pregnant patient is in cardiac arrest — if no ROSC after 4 minutes of arrest in a visibly pregnant uterus, immediate C-section (by a physician/surgeon) may be considered. The EMT's role is to recognise the situation, perform CPR, maintain left uterine displacement, and transport rapidly to a facility capable of perimortem C-section.
+                    <strong>NREMT Key Point — Pregnant Trauma:</strong> In a pregnant trauma patient >20 weeks, <strong>manually displace the uterus to the left</strong> to prevent aortocaval compression (supine hypotensive syndrome). Blood loss is poorly tolerated by the foetus — maternal compensation (increased blood volume) can mask haemorrhage. A pregnant patient may lose 30% of her volume before her vital signs change — by then, uterine/foetal perfusion is significantly compromised. <strong>Perimortem C-section</strong> is a last-resort delivery performed to save the foetus when a pregnant patient is in cardiac arrest — if no ROSC after 4 minutes of arrest in a visibly pregnant uterus, immediate C-section (by a physician/surgeon) may be considered. The EMS provider's role is to recognise the situation, perform CPR, maintain left uterine displacement, and transport rapidly to a facility capable of perimortem C-section.
                 </div>
 
                 <h4>Trauma in the Elderly</h4>
-                <p>Elderly patients (age ≥65) are the fastest-growing segment of the trauma population and have significantly worse outcomes than younger patients with equivalent injuries. The EMT must understand the physiologic changes of aging that increase vulnerability:</p>
-                <table>
+                <p>Elderly patients (age ≥65) are the fastest-growing segment of the trauma population and have significantly worse outcomes than younger patients with equivalent injuries. The EMS provider must understand the physiologic changes of aging that increase vulnerability:</p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Change</th><th>Clinical Implications in Trauma</th></tr>
                     </thead>
@@ -2440,10 +2440,10 @@ window.CPG_DATA = {
                         <tr><td><strong>Skin fragility</strong> — thinning, fragile skin</td><td>Shearing injuries from tape, bandages, and spinal immobilisation can cause significant skin tears. Pad all straps and bandages carefully. Handle the patient gently to avoid iatrogenic injury</td></tr>
                         <tr><td><strong>Pre-existing cognitive impairment</strong> (dementia, delirium)</td><td>History and assessment may be unreliable. Collateral information from family, caregivers, and nursing home staff is essential. Baseline mental status must be established — a patient with dementia may have altered mental status that is 'normal' for them</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Trauma Scoring</h4>
-                <p>Trauma scoring systems help quantify injury severity, predict outcomes, and guide triage decisions. While these scores are typically calculated in the hospital, understanding them helps the EMT recognise which patients have the highest risk:</p>
+                <p>Trauma scoring systems help quantify injury severity, predict outcomes, and guide triage decisions. While these scores are typically calculated in the hospital, understanding them helps the EMS provider recognise which patients have the highest risk:</p>
                 <ul>
                     <li><strong>Revised Trauma Score (RTS):</strong> The RTS uses three physiologic parameters: Glasgow Coma Scale (GCS), systolic blood pressure (SBP), and respiratory rate (RR). Each parameter is scored from 0–4, and the sum (RTS) predicts survival. An RTS <12 is considered high risk and warrants transport to a trauma centre. Components:
                         <ul>
@@ -2457,8 +2457,8 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Transport Decision-Making — Trauma Centre Criteria</h4>
-                <p>The decision to transport a trauma patient to a trauma centre (rather than the closest ED) is guided by the <strong>CDC Field Triage Guidelines</strong> (updated periodically). These guidelines help EMTs identify patients who will benefit from trauma centre care. The criteria are organised in a stepwise manner — if ANY criterion in a step is positive, the patient should be transported to a trauma centre:</p>
-                <table>
+                <p>The decision to transport a trauma patient to a trauma centre (rather than the closest ED) is guided by the <strong>CDC Field Triage Guidelines</strong> (updated periodically). These guidelines help EMS providers identify patients who will benefit from trauma centre care. The criteria are organised in a stepwise manner — if ANY criterion in a step is positive, the patient should be transported to a trauma centre:</p>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Step</th><th>Criteria</th><th>Example</th></tr>
                     </thead>
@@ -2468,7 +2468,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Step 3 — Mechanism of Injury</strong></td><td>Falls >20 ft (adult) or >10 ft (paediatric) or 2–3× height of child; high-risk auto crash (intrusion >12 in. occupant site or >18 in. any site; ejection; death in same passenger compartment; vehicle telemetry data consistent with high risk); auto vs. pedestrian/bicyclist thrown or run over; motorcycle crash >20 mph</td><td>Ejection from vehicle; fall from 25 feet; pedestrian struck and thrown 15 feet</td></tr>
                         <tr><td><strong>Step 4 — Special Considerations</strong></td><td>Age >55 (higher risk of death from same injury); anticoagulation (bleeding disorder or taking blood thinners); burns (without other trauma → burn centre, with other trauma → trauma centre); pregnancy >20 weeks; EMS provider judgment</td><td>Fall from standing in an 80-year-old on warfarin; pregnant trauma patient at 30 weeks; burns with associated blunt trauma</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#e2f0d9; border-left-color:#28a745;">
                     <strong>Clinical Pearl:</strong> <strong>EMS provider judgment</strong> (Step 4) is an official criterion for trauma centre transport. If you feel that a patient needs a trauma centre — even if they do not meet any of the other criteria — your clinical judgment is a valid reason to bypass the closest ED and transport to a trauma centre. Do not override your gut feeling.
@@ -2550,7 +2550,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_6_11_2",
                     scenario: "You are called to a private residence for a 78-year-old female who fell from standing height while walking to the bathroom. She is on the floor and cannot get up. She has a history of hypertension, atrial fibrillation (on warfarin), and osteoporosis. She is alert and oriented to person, place, and time, but cannot remember exactly what happened. Her husband states she 'just fell' and did not hit her head. There is no visible head injury. Vital signs: HR 92 (irregularly irregular — known A-fib), BP 144/88, RR 16, SpO₂ 96%. She complains of pain in her left hip and groin. The left leg is shortened and externally rotated. PMS is intact distally.",
-                    question: "What injuries should the EMT suspect and what is the appropriate transport decision?",
+                    question: "What injuries should the EMS provider suspect and what is the appropriate transport decision?",
                     options: [
                         {t: "Suspect a left hip fracture (likely femoral neck or intertrochanteric) based on the shortened, externally rotated leg after a low-energy fall. The patient has had no head strike and is neurologically intact — the fall was mechanical (tripped). However, anticoagulation (warfarin) is a Step 4 special consideration. Manage: immobilise the left leg with a pillow or long spine board splint, apply a cold pack, gentle handling, and transport to a trauma centre (or closest ED capable of managing anticoagulated patients with hip fractures — some require a 'hip fracture protocol')", f: "Correct — This patient likely has a hip fracture (shortened, externally rotated leg after a fall in an elderly patient with osteoporosis). The fact that she is on warfarin with any fall — even without a clear head strike — requires careful consideration. Per CDC Step 4, anticoagulation is a special consideration that warrants transport to a facility that can manage both the fracture and the anticoagulation (haematology/orthopaedic co-management). Even without meeting Step 1–3 criteria, her age (>55) and anticoagulation use together make a strong case for trauma centre evaluation. Immobilise the leg, pad all areas well, handle gently (fragile skin), and transport."},
                         {t: "The patient is stable, alert, and has a simple hip fracture — transport to the closest ED for X-ray and orthopaedic referral. The warfarin is not an emergency concern — the hospital will manage it. No need for a trauma centre or special precautions", f: "Incorrect — Anticoagulation in an elderly trauma patient is a significant concern. While this patient appears stable, the combination of age >55, anticoagulation use, and a fall with fracture meets Step 4 special considerations. Additionally, the patient cannot remember if she hit her head (her memory of the event is unclear) — a brief loss of consciousness or amnesia for the event cannot be ruled out. Anticoagulated patients can develop delayed intracranial haemorrhage. This patient warrants transport to a facility capable of managing both orthopaedic trauma and anticoagulation-related complications."}
@@ -2568,7 +2568,7 @@ window.CPG_DATA = {
                         {t: "Treat as a standard cardiac arrest — CPR and defibrillation. There is no need for special positioning or consideration for pregnancy — the AED does not need modification and pregnancy does not change the resuscitation algorithm", f: "Incorrect — Pregnancy significantly alters cardiac arrest management. The gravid uterus compresses the IVC, reducing the effectiveness of chest compressions (which already produce only 20–30% of normal cardiac output). Without left uterine displacement, CPR may be ineffective. Additionally, after 4 minutes of arrest without ROSC in a visibly pregnant uterus, perimortem C-section is a critical intervention that improves maternal and foetal survival chances. The standard ACLS algorithm applies, but these pregnancy-specific modifications are essential."}
                     ],
                     correct: 0,
-                    explanation: "Cardiac arrest in pregnancy requires a modified approach. The key principles: 1) Left uterine displacement is essential — manual displacement or a wedge under the right hip relieves IVC compression, allowing chest compressions to generate meaningful cardiac output. 2) Early intubation — pregnant patients have decreased functional residual capacity and increased oxygen consumption, causing rapid desaturation. 3) Defibrillation is safe — standard energy levels do not harm the foetus. 4) After 4 minutes of arrest without ROSC, perimortem C-section should be performed at the site of arrest (hospital or ED) — this improves maternal survival (relieves aortocaval compression, allowing ROSC) and provides an opportunity to save the foetus. The EMT's role: perform high-quality CPR with left uterine displacement, defibrillate as indicated, ventilate with 100% O₂, establish IV access, administer epinephrine per protocol, and transport rapidly to a facility capable of perimortem C-section. If a physician is available on scene, the C-section should be initiated after 4 minutes of arrest.",
+                    explanation: "Cardiac arrest in pregnancy requires a modified approach. The key principles: 1) Left uterine displacement is essential — manual displacement or a wedge under the right hip relieves IVC compression, allowing chest compressions to generate meaningful cardiac output. 2) Early intubation — pregnant patients have decreased functional residual capacity and increased oxygen consumption, causing rapid desaturation. 3) Defibrillation is safe — standard energy levels do not harm the foetus. 4) After 4 minutes of arrest without ROSC, perimortem C-section should be performed at the site of arrest (hospital or ED) — this improves maternal survival (relieves aortocaval compression, allowing ROSC) and provides an opportunity to save the foetus. The EMS provider's role: perform high-quality CPR with left uterine displacement, defibrillate as indicated, ventilate with 100% O₂, establish IV access, administer epinephrine per protocol, and transport rapidly to a facility capable of perimortem C-section. If a physician is available on scene, the C-section should be initiated after 4 minutes of arrest.",
                     kpi: "Manages cardiac arrest in pregnancy with left uterine displacement and understands perimortem C-section indications"
                 }
             ]
