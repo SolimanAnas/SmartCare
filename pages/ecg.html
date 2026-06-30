@@ -516,6 +516,18 @@ const RDB = {
       {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>',n:'Dopamine Infusion',d:'5–20 mcg/kg/min IV — if pacing unavailable',c:''}
     ],arrest:false,stemi:false},
 
+  svt:{lbl:'Supraventricular Tachycardia',cat:'atrial',rn:200,pri:'RED',
+    pMsg:'SVT — Supraventricular Tachycardia',
+    pSub:'URGENT. Regular narrow-complex tachycardia. No visible P waves. Vagal manoeuvres then adenosine.',
+    char:'Rapid, perfectly regular, narrow-complex tachycardia · Rate 150–250 bpm (≈200) · Sharp QRS spikes "march" closely across the strip · No visible P waves — buried in the QRS · Each QRS followed by a broad rounded dome (fused T / retrograde P) · Very short ST segment · No R-R variation',
+    pr:'Not measurable — P waves buried in QRS',qrs:'Narrow 70–100 ms',
+    drugs:[
+      {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg>',n:'Vagal Manoeuvres',d:'Modified Valsalva — legs raised 45° · Carotid sinus massage',c:'pri'},
+      {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>',n:'Adenosine — 1st dose',d:'6 mg IV RAPID bolus + 20 mL NS flush immediately',c:'crit'},
+      {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>',n:'Adenosine — 2nd dose',d:'12 mg IV RAPID bolus — if 1st fails after 1–2 min',c:'crit'},
+      {i:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#zap"/></svg>',n:'Synchronized Cardioversion',d:'50–100 J — if haemodynamically unstable',c:'warn'}
+    ],arrest:false,stemi:false},
+
   psvt:{lbl:'Paroxysmal SVT',cat:'atrial',rn:200,pri:'RED',
     pMsg:'PSVT — Paroxysmal Supraventricular Tachycardia',
     pSub:'URGENT. Abrupt onset from sinus. Rate ≥ 150. No visible P waves. Adenosine first line.',
@@ -1114,6 +1126,7 @@ const PICKER_RHYTHMS = [
   {key:'nsr',   name:'Normal Sinus Rhythm (NSR)',   cat:'SINUS',   catCls:'pch-sinus',   pri:'GREEN',  dot:'#22c55e'},
   {key:'stach', name:'Sinus Tachycardia',            cat:'SINUS',   catCls:'pch-sinus',   pri:'YELLOW', dot:'#22c55e'},
   {key:'sbrady',name:'Sinus Bradycardia',            cat:'SINUS',   catCls:'pch-sinus',   pri:'YELLOW', dot:'#22c55e'},
+  {key:'svt',   name:'Supraventricular Tachycardia', cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'psvt',  name:'Paroxysmal SVT',               cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'afib',  name:'Atrial Fibrillation',          cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},
   {key:'aflutter',name:'Atrial Flutter (3:1)',       cat:'ATRIAL',  catCls:'pch-atrial',  pri:'RED', dot:'#ef4444'},

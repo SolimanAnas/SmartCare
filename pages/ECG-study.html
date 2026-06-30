@@ -775,14 +775,13 @@ const ECGEngine = (() => {
       }
       case 'psvt': {
         // Paroxysmal SVT: a few NORMAL SINUS beats, then an abrupt onset into SVT
-        // (the "paroxysm"). Loops so the sinus→SVT transition is always visible on the strip.
-        const sinusRR=0.80, sinusDur=sinusRR*3;   // 3 sinus beats (~75 bpm) = 2.40s
-        const svtRR=0.30, svtDur=2.40;            // SVT run = 2.40s
-        const tm=t%(sinusDur+svtDur);
-        if(tm<sinusDur){
-          v=sinus(tm%sinusRR,{pr:0.16,rAmp:1.6}); // normal sinus WITH P waves
+        // (the "paroxysm"). One-shot — once SVT starts it STAYS in SVT (no return to sinus).
+        const sinusRR=0.80, sinusDur=sinusRR*3;   // ~3 sinus beats then SVT forever (~2.40s)
+        const svtRR=0.30;                         // SVT cycle 0.30s (~200 bpm)
+        if(t<sinusDur){
+          v=sinus(t%sinusRR,{pr:0.16,rAmp:1.6});  // normal sinus onset (with P waves)
         } else {
-          const p=(tm-sinusDur)%svtRR;            // SVT run: narrow QRS, no P, dome
+          const p=(t-sinusDur)%svtRR;             // SVT continues indefinitely: narrow QRS, no P, dome
           v =G(p,0.016,0.007,-0.09);
           v+=G(p,0.036,0.0085,1.55);
           v+=G(p,0.058,0.011,-0.32);

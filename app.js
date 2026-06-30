@@ -323,8 +323,8 @@ const utils = {
 
 // ---------- HEADER ----------  
 function updateHeader(title, subtitle = '', showBack = true) {  
-    if (dom.pageTitle) dom.pageTitle.innerText = title || 'SmartCare';  
-    if (dom.pageSubtitle) dom.pageSubtitle.innerText = subtitle || '';  
+    if (dom.pageTitle) dom.pageTitle.innerHTML = title || 'SmartCare';
+    if (dom.pageSubtitle) dom.pageSubtitle.innerHTML = subtitle || '';
     if (dom.homeBtn) dom.homeBtn.style.display = showBack ? 'block' : 'none';  
 
     const statsBadge = document.getElementById('liveStatsBadge');

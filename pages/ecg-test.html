@@ -241,7 +241,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 <div id="selectScreen">
   <div class="hero">
     <h1><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trending-up"/></svg> ECG Tests</h1>
-    <p>Two 30-question practice tests covering ECG interpretation,<br>arrhythmias, ischaemia, and advanced ECG patterns.</p>
+    <p>Four 30-question practice tests (120 questions) covering ECG interpretation,<br>arrhythmias, ischaemia, ACLS management, and advanced 12-lead patterns.</p>
   </div>
   <div class="test-cards">
     <div class="test-card" onclick="startTest('../src/ECG/ecg-test-1.json','ECG Test 1')">
@@ -260,6 +260,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
         <span class="meta-chip">30 Questions</span>
         <span class="meta-chip">60 min</span>
         <span class="meta-chip">STEMI • Electrolytes • Advanced</span>
+      </div>
+    </div>
+    <div class="test-card" onclick="startTest('../src/ECG/ecg-test-3.json','ECG Test 3')">
+      <h2>Test 3 — ACLS Rhythm Management</h2>
+      <p>Cardiac arrest (VF, pulseless VT, PEA, asystole), the H's &amp; T's, tachycardia &amp; bradycardia algorithms, drug doses, cardioversion vs defibrillation, and transcutaneous pacing.</p>
+      <div class="test-meta">
+        <span class="meta-chip">30 Questions</span>
+        <span class="meta-chip">60 min</span>
+        <span class="meta-chip">Arrest • Algorithms • Drugs</span>
+      </div>
+    </div>
+    <div class="test-card" onclick="startTest('../src/ECG/ecg-test-4.json','ECG Test 4')">
+      <h2>Test 4 — 12-Lead, Axis & Chambers</h2>
+      <p>Lead territories &amp; reciprocal change, axis deviation, LVH/RVH &amp; atrial enlargement, fascicular and bundle branch blocks, ECG mimics (PE, pericarditis, hypothermia), and integrated vignettes.</p>
+      <div class="test-meta">
+        <span class="meta-chip">30 Questions</span>
+        <span class="meta-chip">60 min</span>
+        <span class="meta-chip">12-Lead • Axis • Integration</span>
       </div>
     </div>
   </div>
@@ -315,7 +333,7 @@ async function startTest(file, title){
   try {
     const r = await fetch(file);
     const db = await r.json();
-    questions = shuffle([...db.questions]);
+    questions = shuffle([...db.questions]).map(shuffleOptions);
     answers = new Array(questions.length).fill(null);
     submitted = new Array(questions.length).fill(false);
     currentQ = 0;
@@ -330,6 +348,15 @@ async function startTest(file, title){
 }
 
 function shuffle(arr){return arr.sort(()=>Math.random()-.5);}
+
+// Shuffle a question's options and remap correct_answer so the answer key
+// is never positionally predictable (different on every attempt).
+function shuffleOptions(q){
+  const letters=['A','B','C','D','E','F'];
+  const correctText = q.options[letters.indexOf(q.correct_answer)];
+  const opts = shuffle([...q.options]);
+  return {...q, options:opts, correct_answer:letters[opts.indexOf(correctText)]};
+}
 
 // ── Render Question ──
 function renderQuestion(){

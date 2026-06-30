@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.4';           // v2.4: + Ultimate ECG Course (ECG-study) & ecg-engine
+const CACHE_VERSION = 'smartcare-v2.6';           // v2.6: trimmed Chapter 1 (9 sub-chapters); header escaping fix
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
