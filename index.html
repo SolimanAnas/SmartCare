@@ -102,7 +102,9 @@
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <script src="pages/supabase-config.js"></script>
+    <script src="pages/supabase-client.js"></script>
+
     <style>
         /* ━━ Search ━━ */
         .search-container {
@@ -140,7 +142,13 @@
             animation: fadeInUp 0.5s ease forwards;
             overflow: hidden;
             position: relative;
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
+        .hero-card:active { transform: scale(0.99); }
+        .hero-card.hero-guest { border-color: rgba(0,86,179,0.35); }
         .hero-card::before {
             content: '';
             position: absolute;
@@ -153,6 +161,7 @@
         .hero-text { flex: 1; min-width: 0; }
         .hero-greeting { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 2px; }
         .hero-sub { font-size: 0.82rem; color: #94a3b8; }
+        .hero-card.hero-guest .hero-sub { color: var(--primary-accent); font-weight: 600; }
         .hero-ring { position: relative; flex-shrink: 0; width: 72px; height: 72px; }
         .hero-ring svg { width: 72px; height: 72px; transform: rotate(-90deg); }
         .ring-track { fill: none; stroke: rgba(0,0,0,0.08); stroke-width: 6; }
@@ -1084,6 +1093,47 @@
         return 'Good evening';
     }
 
+    // ━━ Hero greeting: sign-in aware ━━
+    function firstNameFromUser(user) {
+        const meta = (user && user.user_metadata) || {};
+        const name = meta.full_name || meta.name || (user && user.email ? user.email.split('@')[0] : '');
+        return name ? name.trim().split(/\s+/)[0] : '';
+    }
+
+    function updateHeroGreeting(user) {
+        const cardEl     = document.getElementById('heroCard');
+        const greetingEl = document.getElementById('heroGreeting');
+        const subEl      = document.getElementById('heroSub');
+        if (!cardEl || !greetingEl || !subEl) return;
+
+        const handSvg = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg>';
+        const firstName = user ? firstNameFromUser(user) : '';
+
+        cardEl.classList.toggle('hero-guest', !user);
+
+        if (user) {
+            const completion     = loadStorage(COMPLETION_KEY, {});
+            const totalChaps     = CHAPTERS.filter(c => c.id !== 'c0' && c.id !== 'c-index').length;
+            const completedCount = Object.values(completion).filter(v => v).length;
+            greetingEl.innerHTML = `${getGreeting()}${firstName ? ', ' + firstName : ''} ${handSvg}`;
+            subEl.textContent = `${completedCount}/${totalChaps} chapters · keep it up!`;
+        } else {
+            greetingEl.innerHTML = `${getGreeting()}, Guest ${handSvg}`;
+            subEl.textContent = 'Tap to sign in & sync your progress →';
+        }
+    }
+
+    function initHeroGreeting() {
+        if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) {
+            updateHeroGreeting(null);
+            return;
+        }
+        SmartCareCloud.getUser()
+            .then(updateHeroGreeting)
+            .catch(function () { updateHeroGreeting(null); });
+        SmartCareCloud.onChange(updateHeroGreeting);
+    }
+
     function buildRingPath(pct) {
         // SVG circle r=28, circumference = 2π×28 ≈ 175.93
         const C = 2 * Math.PI * 28;
@@ -1103,10 +1153,10 @@
 
         // ━━ Hero progress card ━━
         const heroHtml = `
-            <div class="hero-card" id="heroCard">
+            <a href="pages/login.html" class="hero-card" id="heroCard" aria-label="Sign in and sync your progress">
                 <div class="hero-text">
-                    <div class="hero-greeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
-                    <div class="hero-sub">${completedCount}/${totalChaps} chapters · keep it up!</div>
+                    <div class="hero-greeting" id="heroGreeting">${getGreeting()} <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#hand"/></svg></div>
+                    <div class="hero-sub" id="heroSub">${completedCount}/${totalChaps} chapters · keep it up!</div>
                 </div>
                 <div class="hero-ring">
                     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -1120,7 +1170,7 @@
                         <span class="ring-done">done</span>
                     </div>
                 </div>
-            </div>`;
+            </a>`;
 
         // ━━ Search bar ━━
         const searchHtml = `
@@ -1622,6 +1672,7 @@
     renderMenu();
     updateFloatButtons();
     updateAllProgress();
+    initHeroGreeting();
 })();
 </script>
 
