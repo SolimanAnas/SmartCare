@@ -451,6 +451,34 @@ main {
 .sum-card ul { margin-left: 25px; margin-bottom: 20px; }
 .sum-card li { margin-bottom: 8px; color: var(--text-secondary); line-height: 1.5; }
 .sum-card strong { color: var(--text-primary); }
+.sum-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0 20px;
+    border: 1px solid var(--glass-border);
+}
+.sum-card th,
+.sum-card td {
+    border: 1px solid var(--glass-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+.sum-card th {
+    background: rgba(0, 86, 179, 0.12);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+.sum-card td { color: var(--text-secondary); }
+.sum-card tbody tr:nth-child(even) { background: rgba(127, 127, 127, 0.08); }
+.sum-card .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 15px 0 20px;
+}
+.sum-card .table-scroll table { margin: 0; }
 .highlight-box {
     background: rgba(0, 123, 255, 0.1);
     color: #004085;

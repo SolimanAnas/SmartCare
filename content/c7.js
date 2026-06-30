@@ -30,9 +30,9 @@ window.CPG_DATA = {
 
                 <h4>Stages of Labor</h4>
                 <p>Labor is the process by which the fetus, placenta, and membranes are expelled through the birth canal. It is divided into four stages:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
-                        <tr><th>Stage</th><th>Duration</th><th>Description</th><th>EMT Role</th></tr>
+                        <tr><th>Stage</th><th>Duration</th><th>Description</th><th>EMS provider Role</th></tr>
                     </thead>
                     <tbody>
                         <tr><td><strong>1st Stage</strong> — Dilation</td><td>Variable (hours); typically longest stage. Primiparous: 8–12 h. Multiparous: 4–8 h.</td><td>Onset of regular contractions to full dilation of the cervix (10 cm). Contractions become stronger, more frequent, and closer together. The amniotic sac may rupture spontaneously ("water breaking").</td><td>Assess frequency and duration of contractions. Determine if delivery is imminent (crowning, urge to push). Transport if delivery is NOT imminent. Keep patient comfortable.</td></tr>
@@ -40,7 +40,7 @@ window.CPG_DATA = {
                         <tr><td><strong>3rd Stage</strong> — Placenta</td><td>5–30 min after delivery of baby</td><td>Delivery of the placenta and fetal membranes. Signs of placental separation include: a gush of blood from the vagina, lengthening of the umbilical cord, and the uterus becoming firm and globular (rising in the abdomen).</td><td>DO NOT pull on the cord to expedite placental delivery. Allow spontaneous delivery. Place the placenta in a plastic bag and transport it with the patient for hospital inspection of completeness.</td></tr>
                         <tr><td><strong>4th Stage</strong> — Recovery</td><td>1–2 hours after delivery</td><td>Immediate postpartum period. The uterus contracts to control bleeding at the placental site. Close monitoring for postpartum hemorrhage is essential.</td><td>Continue fundal massage to promote uterine contraction. Monitor vital signs, vaginal bleeding, and uterine tone. Transport for ongoing monitoring.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Normal Delivery Steps</h4>
                 <p>When delivery is imminent (crowning, mother feels urge to push, contractions 1–2 minutes apart, or the presenting part is visible), prepare for field delivery. <strong>Never delay transport for delivery unless birth is imminent</strong> — if you can see the presenting part and delivery is clearly about to happen, stay and deliver.</p>
@@ -63,7 +63,7 @@ window.CPG_DATA = {
 
                 <h4>APGAR Scoring</h4>
                 <p>The <strong>APGAR score</strong> is a rapid assessment tool used to evaluate the newborn's transition to extrauterine life at 1 minute and 5 minutes after birth. A score of <strong>7–10 is reassuring</strong>, 4–6 indicates moderate depression requiring intervention, and <strong><7 requires intervention</strong>. Each of five categories is scored 0, 1, or 2 (maximum total: 10):</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Component</th><th>0 Points</th><th>1 Point</th><th>2 Points</th></tr>
                     </thead>
@@ -74,7 +74,7 @@ window.CPG_DATA = {
                         <tr><td><strong>A</strong>ctivity (Muscle tone)</td><td>Limp, floppy</td><td>Some flexion of extremities</td><td>Active motion, well-flexed</td></tr>
                         <tr><td><strong>R</strong>espiration (Breathing)</td><td>Absent (apneic)</td><td>Slow, irregular, weak cry</td><td>Strong cry, normal rate and rhythm</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>APGAR &lt; 7 at 1 minute indicates need for intervention:</strong> stimulate, dry, warm, clear airway, and provide oxygen. APGAR &lt; 7 at 5 minutes indicates significant depression and a higher risk of neurologic impairment — initiate resuscitation per NRP algorithm. The 5-minute score is more predictive of long-term outcomes than the 1-minute score.</p>
 
                 <h4>Abnormal Delivery Complications</h4>
@@ -124,7 +124,7 @@ window.CPG_DATA = {
                 <p><strong>Eclamptic seizure management:</strong> Protect the airway (position lateral recumbent), administer oxygen, protect from injury (pad surroundings), check blood glucose, monitor for postictal state. ALS may administer magnesium sulfate (MgSO₄) — the standard medication for seizure prophylaxis and treatment in eclampsia. <strong>Left lateral positioning</strong> improves placental perfusion and reduces IVC compression. Transport emergently — eclampsia is a life-threatening emergency for both mother and fetus.</p>
 
                 <h4>Emergency Childbirth Kit Contents</h4>
-                <p>An EMT should be familiar with the contents of an OB delivery kit. Common items include: sterile gloves (multiple pairs), sterile towels and drapes, umbilical cord clamps (2) or hemostats, sterile scissors or scalpel for cord cutting, bulb syringe (for suctioning the newborn's mouth and nose), sterile gauze pads, plastic bag for the placenta, and a hat or cap for the newborn (to prevent heat loss). Many kits also include a disposable blanket for wrapping the newborn, sanitary pads for the mother, and identification bands. In addition to the OB kit, prepare: a warm environment (crank the heat in the ambulance), extra towels for drying and warming the baby, and oxygen equipment with a neonatal mask.</p>
+                <p>An EMS provider should be familiar with the contents of an OB delivery kit. Common items include: sterile gloves (multiple pairs), sterile towels and drapes, umbilical cord clamps (2) or hemostats, sterile scissors or scalpel for cord cutting, bulb syringe (for suctioning the newborn's mouth and nose), sterile gauze pads, plastic bag for the placenta, and a hat or cap for the newborn (to prevent heat loss). Many kits also include a disposable blanket for wrapping the newborn, sanitary pads for the mother, and identification bands. In addition to the OB kit, prepare: a warm environment (crank the heat in the ambulance), extra towels for drying and warming the baby, and oxygen equipment with a neonatal mask.</p>
             </div>`,
             flashcards: [
                 {
@@ -148,12 +148,12 @@ window.CPG_DATA = {
                     category: "Obstetrics — Delivery"
                 },
                 {
-                    question: "How should an EMT manage a prolapsed umbilical cord?",
+                    question: "How should an EMS provider manage a prolapsed umbilical cord?",
                     answer: "Place the mother in knee-chest position (or extreme Trendelenburg), insert a gloved hand to elevate the presenting part off the cord with two fingers, keep the cord moist and warm with saline-soaked gauze, and transport emergently for cesarean delivery.",
                     category: "Obstetrics — Abnormal Delivery"
                 },
                 {
-                    question: "What is the most common cause of postpartum hemorrhage and what is the EMT's primary intervention?",
+                    question: "What is the most common cause of postpartum hemorrhage and what is the EMS provider's primary intervention?",
                     answer: "Uterine atony (failure of the uterus to contract after delivery). Management: fundal (uterine) massage to stimulate contraction, administer oxytocin per protocol, high-flow oxygen, IV access, and rapid transport. PPH is the leading cause of maternal mortality.",
                     category: "Obstetrics — Postpartum"
                 },
@@ -163,14 +163,14 @@ window.CPG_DATA = {
                     category: "Obstetrics — Third Stage"
                 },
                 {
-                    question: "How does an EMT manage a nuchal cord?",
+                    question: "How does an EMS provider manage a nuchal cord?",
                     answer: "Gently attempt to reduce the cord over the baby's head. If too tight, clamp the cord in two places and cut between the clamps, then unwrap from the baby's neck. The baby must be delivered quickly after cutting.",
                     category: "Obstetrics — Delivery"
                 }
             ],
             quiz: [
                 {
-                    q: "A 28-year-old female at 38 weeks gestation is in active labor. She reports her contractions are 2 minutes apart and she feels an urge to push. On examination, you see the baby's head crowning. What should the EMT do?",
+                    q: "A 28-year-old female at 38 weeks gestation is in active labor. She reports her contractions are 2 minutes apart and she feels an urge to push. On examination, you see the baby's head crowning. What should the EMS provider do?",
                     options: [
                         "Immediately transport with the mother supine to the hospital for delivery",
                         "Prepare for field delivery — stay and deliver since birth is imminent; position the mother, establish a sterile field, and assist with delivery",
@@ -178,7 +178,7 @@ window.CPG_DATA = {
                         "Tell the mother to cross her legs and not push until you reach the hospital"
                     ],
                     correct: 1,
-                    explanation: "When delivery is imminent (crowning, urge to push with contractions 1–2 min apart), the EMT should stay and deliver. Never delay transport for delivery unless birth is imminent — but once crowning is visible, delivery will occur before you reach the hospital."
+                    explanation: "When delivery is imminent (crowning, urge to push with contractions 1–2 min apart), the EMS provider should stay and deliver. Never delay transport for delivery unless birth is imminent — but once crowning is visible, delivery will occur before you reach the hospital."
                 },
                 {
                     q: "A 32-year-old female at 34 weeks gestation complains of severe headache, blurred vision, and epigastric pain. Her blood pressure is 172/108 mmHg. She has significant facial and hand edema. What is the MOST likely diagnosis?",
@@ -271,7 +271,7 @@ window.CPG_DATA = {
 
                 <h4>Vaginal Bleeding — Differential Diagnosis</h4>
                 <p>Vaginal bleeding can have many causes, ranging from benign to immediately life-threatening. The differential diagnosis varies significantly by pregnancy status:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Category</th><th>Condition</th><th>Key Features</th></tr>
                     </thead>
@@ -285,12 +285,12 @@ window.CPG_DATA = {
                         <tr><td><strong>Non-pregnancy</strong></td><td>Infection (PID, cervicitis)</td><td>Bleeding often post-coital or intermenstrual. Associated with discharge, fever, cervical motion tenderness.</td></tr>
                         <tr><td><strong>Non-pregnancy</strong></td><td>Cancer (cervical, endometrial, ovarian)</td><td>Post-coital bleeding, postmenopausal bleeding, or chronic, progressive symptoms. Less common in reproductive-age women.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Ectopic Pregnancy</h4>
                 <p>An <strong>ectopic pregnancy</strong> occurs when a fertilized ovum implants outside the uterine cavity — most commonly in the <strong>fallopian tube</strong> (~95%), but can also occur in the cervix, ovary, or abdominal cavity. It is a <strong>leading cause of maternal death in the first trimester</strong> and a true surgical emergency when ruptured. Risk factors include: previous ectopic pregnancy, pelvic inflammatory disease (PID), tubal surgery, IVF, IUD in place, smoking, and age >35. However, <strong>50% of ectopic pregnancies occur in patients with no identifiable risk factors</strong>.</p>
                 <p><strong>Classic triad:</strong> (1) Amenorrhea or missed period, (2) Abdominal or pelvic pain, (3) Vaginal bleeding. The pain is often unilateral, sharp, and may radiate to the shoulder (<strong>Kehr's sign</strong> — referred pain to the shoulder from diaphragmatic irritation by intra-abdominal blood). Rupture of an ectopic pregnancy causes intra-abdominal hemorrhage, presenting with sudden severe pain, hypotension, syncope, and signs of shock. The bleeding can be massive and rapidly fatal — the peritoneum can accommodate several liters of blood with minimal visible external bleeding.</p>
-                <p><strong>EMT management:</strong> High index of suspicion in any reproductive-age female with abdominal pain or syncope. High-flow oxygen, IV access en route, position supine (Trendelenburg if hypotensive), monitor vital signs closely, and transport emergently. Do not give anything by mouth — the patient will likely need emergency surgery.</p>
+                <p><strong>EMS provider management:</strong> High index of suspicion in any reproductive-age female with abdominal pain or syncope. High-flow oxygen, IV access en route, position supine (Trendelenburg if hypotensive), monitor vital signs closely, and transport emergently. Do not give anything by mouth — the patient will likely need emergency surgery.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — Kehr's Sign:</strong> Left shoulder pain in a patient with suspected ectopic pregnancy indicates diaphragmatic irritation from intra-abdominal blood (a ruptured ectopic). This is a sign of significant intra-abdominal hemorrhage and mandates immediate surgical intervention. Kehr's sign is also seen in splenic rupture.
@@ -332,7 +332,7 @@ window.CPG_DATA = {
                 <p><strong>Management:</strong> Position of comfort, transport emergently. Surgical intervention is needed urgently to detorse the ovary and assess viability.</p>
 
                 <h4>Sexual Assault — Patient-Centered Care</h4>
-                <p>Caring for a sexual assault patient requires a trauma-informed, patient-centred approach. The EMT's role extends beyond medical care to include emotional support, forensic evidence preservation, and coordination with specialized resources.</p>
+                <p>Caring for a sexual assault patient requires a trauma-informed, patient-centred approach. The EMS provider's role extends beyond medical care to include emotional support, forensic evidence preservation, and coordination with specialized resources.</p>
 
                 <p><strong>Medical management:</strong></p>
                 <ul>
@@ -353,7 +353,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>Mandatory Reporting:</strong> EMTs are mandatory reporters in most jurisdictions. If the patient is a minor (<18 years old), an elder (>65), or a dependent adult, you are legally required to report suspected abuse or assault to law enforcement or child/adult protective services — even if the patient asks you not to. Know your local reporting requirements. For adult patients of legal age, respect their autonomy regarding reporting.
+                    <strong>Mandatory Reporting:</strong> EMS providers are mandatory reporters in most jurisdictions. If the patient is a minor (<18 years old), an elder (>65), or a dependent adult, you are legally required to report suspected abuse or assault to law enforcement or child/adult protective services — even if the patient asks you not to. Know your local reporting requirements. For adult patients of legal age, respect their autonomy regarding reporting.
                 </div>
 
                 <p><strong>Transport destination:</strong> Transport to a facility with a <strong>SANE (Sexual Assault Nurse Examiner)</strong> program when possible. SANE programs provide specialized forensic exams, emergency contraception, STI prophylaxis, and emotional support in a single setting. Notify the receiving hospital of the impending arrival of a sexual assault patient so they can prepare the SANE team.</p>
@@ -401,8 +401,8 @@ window.CPG_DATA = {
                     category: "Gynecologic — Miscarriage"
                 },
                 {
-                    question: "What is the EMT's role in mandatory reporting for sexual assault?",
-                    answer: "EMTs are mandatory reporters. If the patient is a minor (<18), elder (>65), or dependent adult, you must report suspected abuse/assault to law enforcement or protective services — even if the patient asks you not to. Know your local laws.",
+                    question: "What is the EMS provider's role in mandatory reporting for sexual assault?",
+                    answer: "EMS providers are mandatory reporters. If the patient is a minor (<18), elder (>65), or dependent adult, you must report suspected abuse/assault to law enforcement or protective services — even if the patient asks you not to. Know your local laws.",
                     category: "Gynecologic — Sexual Assault"
                 }
             ],
@@ -430,7 +430,7 @@ window.CPG_DATA = {
                     explanation: "Bilateral lower abdominal pain, fever, purulent discharge, and cervical motion tenderness (the classic 'chandelier sign') are diagnostic of PID. This is an STI-related infection requiring antibiotic therapy. Untreated PID causes tubal scarring, infertility, and ectopic pregnancy."
                 },
                 {
-                    q: "[HARD] You respond to a sexual assault call for a 22-year-old female who reports being assaulted 2 hours ago. She is crying, has visible bruising on her arms, and her clothing is torn and soiled. She asks you to 'help me clean up before we go to the hospital.' What should the EMT do?",
+                    q: "[HARD] You respond to a sexual assault call for a 22-year-old female who reports being assaulted 2 hours ago. She is crying, has visible bruising on her arms, and her clothing is torn and soiled. She asks you to 'help me clean up before we go to the hospital.' What should the EMS provider do?",
                     options: [
                         "Help the patient change into clean clothes and clean the visible blood from her arms — patient comfort is the priority",
                         "Explain that changing clothes or cleaning wounds will destroy forensic evidence. Offer a clean sheet or blanket to cover herself. Do NOT cut or remove clothing unless necessary for life-saving care. Transport to a SANE-capable facility",
@@ -451,7 +451,7 @@ window.CPG_DATA = {
                         {t: "This is clearly an ovarian cyst rupture — it will resolve on its own. Provide reassurance and transport non-emergently", f: "Incorrect — While ovarian cyst rupture is on the differential, the amenorrhea, guarding, rebound tenderness, and tachycardia make ectopic pregnancy the critical diagnosis to exclude. Never attribute RLQ pain in a reproductive-age female to a benign cause without first ruling out ectopic pregnancy."}
                     ],
                     correct: 0,
-                    explanation: "This patient has two potential surgical diagnoses: ectopic pregnancy and appendicitis. The amenorrhea (6-week LMP) is a critical red flag. Ectopic pregnancy must be ruled out first because it is immediately life-threatening (rupture causes intra-abdominal hemorrhage). A pregnancy test is essential. EMT management: high-flow O₂, IV access, position of comfort, and transport for surgical evaluation. Do not give anything by mouth. Notify the receiving hospital of a suspected ectopic pregnancy vs. appendicitis so they can prepare for surgical consultation and bedside ultrasound.",
+                    explanation: "This patient has two potential surgical diagnoses: ectopic pregnancy and appendicitis. The amenorrhea (6-week LMP) is a critical red flag. Ectopic pregnancy must be ruled out first because it is immediately life-threatening (rupture causes intra-abdominal hemorrhage). A pregnancy test is essential. EMS provider management: high-flow O₂, IV access, position of comfort, and transport for surgical evaluation. Do not give anything by mouth. Notify the receiving hospital of a suspected ectopic pregnancy vs. appendicitis so they can prepare for surgical consultation and bedside ultrasound.",
                     kpi: "Recognises ectopic pregnancy as a cannot-miss diagnosis in a reproductive-age female with abdominal pain"
                 },
                 {
@@ -503,7 +503,7 @@ window.CPG_DATA = {
 
                 <h4>Neonatal Assessment — APGAR and Gestational Age</h4>
                 <p>The <strong>APGAR score</strong> (see c7s1) is performed at 1 and 5 minutes. However, <strong>heart rate is the primary indicator</strong> of the newborn's status during resuscitation — APGAR is a scoring tool, not a resuscitation algorithm. Resuscitation decisions are based on: respirations, heart rate, and color (oxygenation).</p>
-                <p><strong>Gestational age estimation:</strong> Preterm newborns (<37 weeks) have unique vulnerabilities: immature lungs (surfactant deficiency → respiratory distress syndrome), immature thermoregulation (large surface area-to-weight ratio, thin skin, little brown fat), fragile germinal matrix in the brain (high risk of intraventricular hemorrhage), and immature immune systems (high risk of infection). The EMT should assess for signs of prematurity: <strong>visible veins through translucent skin, lack of breast buds, flat areolae, smooth soles (few creases), and limp ear cartilage</strong>. A preterm newborn (<34–36 weeks) is at high risk for hypothermia and respiratory distress and should be transported with careful temperature management and respiratory support.</p>
+                <p><strong>Gestational age estimation:</strong> Preterm newborns (<37 weeks) have unique vulnerabilities: immature lungs (surfactant deficiency → respiratory distress syndrome), immature thermoregulation (large surface area-to-weight ratio, thin skin, little brown fat), fragile germinal matrix in the brain (high risk of intraventricular hemorrhage), and immature immune systems (high risk of infection). The EMS provider should assess for signs of prematurity: <strong>visible veins through translucent skin, lack of breast buds, flat areolae, smooth soles (few creases), and limp ear cartilage</strong>. A preterm newborn (<34–36 weeks) is at high risk for hypothermia and respiratory distress and should be transported with careful temperature management and respiratory support.</p>
 
                 <h4>Thermoregulation — Hypothermia Prevention</h4>
                 <p>Newborns lose heat rapidly through four mechanisms: <strong>evaporation</strong> (wet skin → heat loss), <strong>conduction</strong> (contact with cold surfaces), <strong>convection</strong> (cold air currents), and <strong>radiation</strong> (heat radiating to cold surroundings). Cold stress increases metabolic rate and oxygen consumption, leading to hypoxia, metabolic acidosis, and hypoglycemia — a downward spiral that worsens every other problem.</p>
@@ -525,7 +525,7 @@ window.CPG_DATA = {
                 <h4>Neonatal Resuscitation Algorithm (NRP-based)</h4>
                 <p>The Neonatal Resuscitation Program (NRP) algorithm follows a sequence that differs from adult resuscitation. The emphasis is on <strong>airway, breathing, then circulation</strong> — but the specific steps and decision points are tailored to the newborn's unique physiology.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Step</th><th>Action</th><th>Decision Point</th></tr>
                     </thead>
@@ -537,7 +537,7 @@ window.CPG_DATA = {
                         <tr><td><strong>5. Chest compressions</strong></td><td>Begin chest compressions at a 3:1 ratio (3 compressions : 1 ventilation, 90 compressions + 30 breaths per minute). Use two-thumb technique with thumbs on the lower third of the sternum</td><td>HR ≥60? → Stop compressions, continue ventilations. HR still <60 → Go to Step 6</td></tr>
                         <tr><td><strong>6. Medications</strong></td><td>Epinephrine 0.01–0.03 mg/kg IO/IV (0.1–0.3 mL/kg of 1:10,000 solution). May repeat every 3–5 minutes. Consider volume expansion (normal saline 10 mL/kg IO/IV) if suspected blood loss</td><td>Persistent HR <60 → Continue CPR, repeat epinephrine, consider reversible causes</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical Difference from Adult Resuscitation:</strong> In neonatal resuscitation, ventilation is the priority — the most common cause of bradycardia in the newborn is HYPOXIA. Chest compressions are started only after effective ventilation has been established and HR remains <60. The 3:1 compression-to-ventilation ratio differs from adult CPR (30:2). Do NOT use adult ratios in newborns.
@@ -577,7 +577,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Resuscitation Medications</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Medication</th><th>Indication</th><th>Dose</th><th>Route</th><th>Notes</th></tr>
                     </thead>
@@ -587,7 +587,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Naloxone</strong></td><td>Respiratory depression from maternal opioid use (given within 4 hours of delivery)</td><td>0.1 mg/kg</td><td>IM / IV / IO</td><td>Only give AFTER ventilation has been established. Not recommended as part of initial resuscitation. The priority is ventilation, not naloxone.</td></tr>
                         <tr><td><strong>Dextrose (D10W)</strong></td><td>Hypoglycemia (confirmed by blood glucose)</td><td>2 mL/kg of D10W</td><td>IO / IV</td><td>Hypoglycemia is common in preterm, SGA, and infants of diabetic mothers. Check blood glucose if there is lethargy, jitteriness, or seizures.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Umbilical Cord Care</h4>
                 <p>After delivery, the umbilical cord should be clamped and cut with sterile instruments. The remaining stump should be kept clean and dry. In the prehospital setting, no additional care is needed beyond clamping. Do not apply any substances to the cord. Transport the placenta with the patient for inspection. Document the time of cord clamping (delayed cord clamping for 30–60 seconds is recommended for term and preterm newborns who do not need immediate resuscitation — it improves iron stores and transitional circulation).</p>
@@ -666,7 +666,7 @@ window.CPG_DATA = {
                         "Switch to an adult BVM — the neonatal BVM is not delivering enough pressure"
                     ],
                     correct: 1,
-                    explanation: "When HR remains <60 after 30 seconds of effective PPV, the algorithm progresses to chest compressions at a 3:1 ratio. The EMT should also establish IO access and prepare epinephrine. If HR still <60 after another 30–60 seconds of coordinated PPV + compressions, administer epinephrine 0.01–0.03 mg/kg IO/IV. Continue to assess for correctable causes: poor mask seal, airway obstruction, inadequate ventilation pressure, or pneumothorax."
+                    explanation: "When HR remains <60 after 30 seconds of effective PPV, the algorithm progresses to chest compressions at a 3:1 ratio. The EMS provider should also establish IO access and prepare epinephrine. If HR still <60 after another 30–60 seconds of coordinated PPV + compressions, administer epinephrine 0.01–0.03 mg/kg IO/IV. Continue to assess for correctable causes: poor mask seal, airway obstruction, inadequate ventilation pressure, or pneumothorax."
                 }
             ],
             critical: [
@@ -697,7 +697,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_7_3_3",
                     scenario: "You respond to a 32-week preterm delivery at home. The baby is born and after initial steps — drying, warming, stimulating — the baby is breathing spontaneously with a heart rate of 110. However, the baby's color is very pale, the chest is small with visible rib contours, and the baby's skin appears translucent with visible veins. The mother says she was not sure of her due date and had no prenatal care. The ambient temperature in the home is 62°F (17°C). The baby is not crying vigorously and seems to have only mild respiratory effort with slight nasal flaring.",
-                    question: "What are the greatest threats to this preterm newborn and what should the EMT prioritize?",
+                    question: "What are the greatest threats to this preterm newborn and what should the EMS provider prioritize?",
                     options: [
                         {t: "The baby is stable enough — HR ≥100 and breathing spontaneously. The priority is rapid transport to a neonatal intensive care unit (NICU) for monitoring", f: "Incorrect — While transport is essential, this preterm baby has multiple critical vulnerabilities: (1) Extreme risk of hypothermia from the cold environment, thin skin, and large surface area; (2) Possible respiratory distress syndrome (premature lungs lack surfactant); (3) Risk of hypoglycemia. Active warming and close monitoring are essential before and during transport."},
                         {t: "This is a preterm newborn with multiple vulnerabilities: (1) Hypothermia risk — actively warm with skin-to-skin contact (or plastic wrap if <28 wks), preheat the ambulance, hat, warm blankets; (2) Respiratory distress — monitor work of breathing, provide gentle stimulation, consider CPAP or PPV if distress worsens; (3) Hypoglycemia risk — check blood glucose; (4) Rapid transport to a NICU-capable facility. Provide all care gently to minimise stress", f: "Correct — The three greatest threats to this preterm newborn are hypothermia, respiratory distress/failure, and hypoglycemia — in that order. Preterm newborns cannot effectively thermoregulate (thin skin, little brown fat, large surface area). The ambient temperature of 62°F is dangerously cold. Respiratory distress syndrome from surfactant deficiency can progress rapidly. Transport gently and warmly to a NICU."}
@@ -718,10 +718,10 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Assessment & Emergencies</h3>
 
-                <p><strong>Children are not small adults.</strong> This fundamental principle underlies every aspect of pediatric emergency care. Anatomic, physiologic, and developmental differences across age groups significantly alter the presentation, assessment, and management of illness and injury in children. The most important concept for the EMT: <strong>respiratory arrest is the most common cause of cardiac arrest in children</strong> — early recognition and management of respiratory distress can prevent decompensation to respiratory failure and cardiac arrest.</p>
+                <p><strong>Children are not small adults.</strong> This fundamental principle underlies every aspect of pediatric emergency care. Anatomic, physiologic, and developmental differences across age groups significantly alter the presentation, assessment, and management of illness and injury in children. The most important concept for the EMS provider: <strong>respiratory arrest is the most common cause of cardiac arrest in children</strong> — early recognition and management of respiratory distress can prevent decompensation to respiratory failure and cardiac arrest.</p>
 
                 <h4>Anatomic & Physiologic Differences — Children vs. Adults</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Pediatric</th><th>Clinical Significance</th></tr>
                     </thead>
@@ -738,7 +738,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Fontanelles</strong></td><td>Anterior fontanelle closes at 12–18 months; posterior closes at 2–4 months</td><td>A sunken fontanelle indicates dehydration. A bulging fontanelle indicates increased intracranial pressure (meningitis, intracranial hemorrhage, hydrocephalus).</td></tr>
                         <tr><td><strong>Skin</strong></td><td>Thinner, less subcutaneous fat</td><td>More prone to hypothermia and rapid heat loss. Burns can be deeper with shorter exposure.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Pediatric Assessment Triangle (PAT)</h4>
                 <p>The <strong>Pediatric Assessment Triangle (PAT)</strong> is a rapid, hands-off assessment tool used to form an initial impression of the child's physiologic status. It takes 30–60 seconds and does NOT require touching the child. The PAT consists of three components:</p>
@@ -778,7 +778,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Pediatric Vital Signs by Age</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Age</th><th>Heart Rate (awake)</th><th>Respiratory Rate</th><th>Systolic BP (mmHg)</th><th>Minimum SBP (5th %ile)</th></tr>
                     </thead>
@@ -790,7 +790,7 @@ window.CPG_DATA = {
                         <tr><td><strong>School-age (6–12 years)</strong></td><td>75–118</td><td>18–25</td><td>97–120</td><td>80</td></tr>
                         <tr><td><strong>Adolescent (13+ years)</strong></td><td>60–100</td><td>12–20</td><td>110–131</td><td>90</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Pediatric Respiratory Emergencies</h4>
 
@@ -818,7 +818,7 @@ window.CPG_DATA = {
 
                 <h4>Dehydration Assessment</h4>
                 <p>Children dehydrate faster than adults due to higher BMR, larger BSA, and greater insensible fluid losses. The most common causes are <strong>vomiting, diarrhea, and poor oral intake</strong> (especially with gastroenteritis). Dehydration severity:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Sign</th><th>Mild (<5%)</th><th>Moderate (5–10%)</th><th>Severe (>10%)</th></tr>
                     </thead>
@@ -832,12 +832,12 @@ window.CPG_DATA = {
                         <tr><td><strong>Mental status</strong></td><td>Normal, alert</td><td>Irritable, fussy</td><td>Lethargic, obtunded</td></tr>
                         <tr><td><strong>Heart rate</strong></td><td>Normal</td><td>Tachycardic</td><td>Markedly tachycardic (then bradycardic — ominous)</td></tr>
                     </tbody>
-                </table>
-                <p><strong>EMT management:</strong> For mild-moderate dehydration, encourage oral rehydration (small frequent sips of an oral rehydration solution like Pedialyte). For severe dehydration with signs of shock (lethargy, tachycardia, delayed cap refill, hypotension — hypotension is a LATE sign in children), establish IV/IO access en route, administer 20 mL/kg bolus of normal saline, and transport emergently.</p>
+                </table></div>
+                <p><strong>EMS provider management:</strong> For mild-moderate dehydration, encourage oral rehydration (small frequent sips of an oral rehydration solution like Pedialyte). For severe dehydration with signs of shock (lethargy, tachycardia, delayed cap refill, hypotension — hypotension is a LATE sign in children), establish IV/IO access en route, administer 20 mL/kg bolus of normal saline, and transport emergently.</p>
 
                 <h4>SIDS / ALTE / BRUE</h4>
                 <p><strong>Sudden Infant Death Syndrome (SIDS)</strong> is the sudden, unexpected death of an infant <1 year (peak 2–4 months) that remains unexplained after thorough investigation. Risk factors: prone sleep position, soft bedding, maternal smoking, overheating, premature birth. Prevention (safe sleep): "Back to Sleep" — place infants supine on a firm sleep surface with no loose bedding, pillows, or stuffed animals.</p>
-                <p><strong>Apparent Life-Threatening Event (ALTE)</strong> — now called <strong>Brief Resolved Unexplained Event (BRUE)</strong> — is an episode in an infant <1 year characterized by one or more of: apnea (cessation of breathing), cyanosis or pallor, marked change in muscle tone (limpness or rigidity), and choking or gagging. The episode appears frightening to the caregiver (hence "apparent life-threatening"). Most BRUE episodes are benign and self-limited, but serious underlying causes (seizures, GERD, infection, metabolic disorders, child abuse) must be ruled out. All infants with a reported BRUE require transport for evaluation. <strong>EMT management:</strong> Obtain a detailed history of the episode from the caregiver (what happened, how long did it last, what color was the baby, was there movement, did the baby need stimulation to resume breathing), perform a thorough assessment, provide oxygen and monitoring, and transport.</p>
+                <p><strong>Apparent Life-Threatening Event (ALTE)</strong> — now called <strong>Brief Resolved Unexplained Event (BRUE)</strong> — is an episode in an infant <1 year characterized by one or more of: apnea (cessation of breathing), cyanosis or pallor, marked change in muscle tone (limpness or rigidity), and choking or gagging. The episode appears frightening to the caregiver (hence "apparent life-threatening"). Most BRUE episodes are benign and self-limited, but serious underlying causes (seizures, GERD, infection, metabolic disorders, child abuse) must be ruled out. All infants with a reported BRUE require transport for evaluation. <strong>EMS provider management:</strong> Obtain a detailed history of the episode from the caregiver (what happened, how long did it last, what color was the baby, was there movement, did the baby need stimulation to resume breathing), perform a thorough assessment, provide oxygen and monitoring, and transport.</p>
 
                 <h4>Medication Dosing in Children</h4>
                 <p>Drug dosing in children is <strong>weight-based</strong> — never estimate based on age alone. Use a <strong>Broselow tape</strong> (a length-based resuscitation tape) to estimate weight in children up to approximately 34 kg (12 kg is the standard cut-off). The Broselow tape provides pre-calculated drug doses, equipment sizes (ET tube, IO needle), and energy settings for defibrillation based on the child's length. If no Broselow tape is available, use the formula: <strong>weight in kg = (age in years × 2) + 8</strong> for children 1–12 years (approximate). <strong>Key point:</strong> A Broselow tape gives you the equipment sizes AND medication doses for a child of that length — use it for every pediatric resuscitation.</p>
@@ -874,7 +874,7 @@ window.CPG_DATA = {
                     category: "Pediatric — Medication"
                 },
                 {
-                    question: "What is BRUE (formerly ALTE) and how should an EMT manage it?",
+                    question: "What is BRUE (formerly ALTE) and how should an EMS provider manage it?",
                     answer: "Brief Resolved Unexplained Event — an episode of apnea, color change, tone change, or choking/gagging in an infant. Obtain a detailed history from the caregiver, perform a full assessment, provide oxygen if needed, and transport for evaluation to rule out serious underlying causes.",
                     category: "Pediatric — SIDS/BRUE"
                 },
@@ -961,7 +961,7 @@ window.CPG_DATA = {
                     question: "What are your priorities for this infant in cardiac arrest, considering the likely etiology?",
                     options: [
                         {t: "The infant has been down for an unknown period and is cold — this is likely SIDS. Begin neonatal/pediatric cardiac arrest protocol: start chest compressions (two-finger or two-thumb technique, at least 1/3 AP depth), provide BVM ventilation with 100% O₂, establish IO/IV access, administer epinephrine, and transport. Maintain a calm, professional demeanor while managing the family's emotional crisis", f: "Correct — This is a pediatric cardiac arrest with likely SIDS/SUID (sudden unexpected infant death). The priority is high-quality pediatric CPR with 15:2 ratio (single rescuer) or 15:2 (two rescuers for infant). The infant is already cold — continue resuscitation efforts per protocol but recognise that the prognosis is poor. The family needs compassionate, clear communication and emotional support."},
-                        {t: "The infant has been pulseless for an unknown period — resuscitation is futile. Pronounce death at the scene and focus on family support", f: "Incorrect — While the prognosis is poor for an infant found apneic and pulseless (especially with cold skin suggesting unknown downtime), EMTs do not have the authority to pronounce death outside of specific protocols (e.g., rigor mortis, dependent lividity, decapitation). Resuscitation should be initiated per protocol unless there are unequivocal signs of death."}
+                        {t: "The infant has been pulseless for an unknown period — resuscitation is futile. Pronounce death at the scene and focus on family support", f: "Incorrect — While the prognosis is poor for an infant found apneic and pulseless (especially with cold skin suggesting unknown downtime), EMS providers do not have the authority to pronounce death outside of specific protocols (e.g., rigor mortis, dependent lividity, decapitation). Resuscitation should be initiated per protocol unless there are unequivocal signs of death."}
                     ],
                     correct: 0,
                     explanation: "This is a pediatric cardiac arrest with suspected SIDS. Management: 1) Begin CPR immediately (15:2 ratio for infant, two-thumb technique for compressions, depth at least 1/3 AP chest diameter); 2) BVM ventilation with 100% O₂; 3) IO access (proximal tibia); 4) Epinephrine 0.01 mg/kg IO/IV every 3–5 minutes; 5) Cardiac monitoring — treat rhythm-appropriate (most pediatric arrests are PEA or asystole); 6) Transport with ongoing resuscitation. Recognize reversible causes (the 'H's and T's'). For SIDS/SUID cases, preserve the scene for law enforcement investigation (do not disturb the bedding, do not wash the infant, limit handling). Provide emotional support to the family — SIDS is a devastating, unexpected tragedy. If resuscitation is unsuccessful, follow local protocols for death notification and scene management.",
@@ -978,10 +978,10 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Child Abuse & Neglect Recognition</h3>
 
-                <p>Child abuse and neglect are a tragic reality of prehospital care. As an EMT, you are a <strong>mandated reporter</strong> — you are legally required to report <em>suspected</em> abuse to the appropriate authorities. You do NOT need proof; you only need <strong>reasonable suspicion</strong>. Understanding the patterns and indicators of abuse, neglect, and Munchausen by proxy is essential for protecting vulnerable children. This section covers the recognition, documentation, and reporting of child maltreatment.</p>
+                <p>Child abuse and neglect are a tragic reality of prehospital care. As an EMS provider, you are a <strong>mandated reporter</strong> — you are legally required to report <em>suspected</em> abuse to the appropriate authorities. You do NOT need proof; you only need <strong>reasonable suspicion</strong>. Understanding the patterns and indicators of abuse, neglect, and Munchausen by proxy is essential for protecting vulnerable children. This section covers the recognition, documentation, and reporting of child maltreatment.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                    <strong>Legal Obligation:</strong> Reporting suspected child abuse is NOT optional. Every EMT in every state is a mandated reporter. Failure to report suspected abuse can result in criminal charges, loss of certification, and civil liability. You do NOT need the child's or parent's consent to report, and you are immune from civil liability when reporting in good faith.
+                    <strong>Legal Obligation:</strong> Reporting suspected child abuse is NOT optional. Every EMS provider in every state is a mandated reporter. Failure to report suspected abuse can result in criminal charges, loss of certification, and civil liability. You do NOT need the child's or parent's consent to report, and you are immune from civil liability when reporting in good faith.
                 </div>
 
                 <h4>Physical Abuse Indicators</h4>
@@ -997,7 +997,7 @@ window.CPG_DATA = {
                     <li><strong>Bruises on non-mobile infants</strong> — Any bruise on an infant who is not yet crawling or walking is highly suspicious for abuse. Accidental bruising is rare in pre-ambulatory children.</li>
                 </ul>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Bruise Color</th><th>Approximate Age</th><th>Clinical Significance</th></tr>
                     </thead>
@@ -1008,7 +1008,7 @@ window.CPG_DATA = {
                         <tr><td>Yellow/ Brown</td><td>7-10+ days</td><td>Bilirubin pigment — bruise is resolving</td></tr>
                         <tr><td>Multiple colors present</td><td>Mixed ages</td><td><strong>RED FLAG</strong> — indicates repeated, ongoing abuse</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h5>Fractures</h5>
                 <p>Certain fracture patterns are highly suspicious for abuse, particularly in children who are not yet walking or who cannot explain the mechanism:</p>
@@ -1082,14 +1082,14 @@ window.CPG_DATA = {
                     <li><strong>Red flags:</strong> The child has a history of multiple unexplained illnesses, repeated hospitalizations, multiple surgeries, reported allergies or intolerances to multiple medications, and symptoms that occur only in the caregiver's presence.</li>
                     <li><strong>Common methods:</strong> Induced apnea (smothering), induced vomiting (ipecac or salt poisoning), contamination of IV lines with feces or bacteria, insulin or laxative administration, suffocation, and fabricated fevers (warming thermometers).</li>
                     <li><strong>Assessment:</strong> Note that the caregiver often refuses to leave the child's side, is overly knowledgeable about medical terminology, has a healthcare background, and seems to enjoy the relationship with medical staff. Symptoms may not match any known disease pattern, and the child may improve in the hospital only to deteriorate again shortly after discharge.</li>
-                    <li><strong>EMT role:</strong> Document the history as reported, including all details about previous medical evaluations. Be objective — do not accuse. Your documentation may be critical in identifying a pattern of unnecessary medical interventions.</li>
+                    <li><strong>EMS provider role:</strong> Document the history as reported, including all details about previous medical evaluations. Be objective — do not accuse. Your documentation may be critical in identifying a pattern of unnecessary medical interventions.</li>
                 </ul>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>NREMT Key Point:</strong> You do NOT need proof of abuse to report — only <strong>reasonable suspicion</strong>. If you suspect abuse, your legal duty is to report to Child Protective Services (CPS) or law enforcement. Do NOT confront the parents or accuse anyone. Your job is to document objectively, protect the child from immediate danger, and report. If the child is in <em>immediate danger</em>, do not leave them in that environment — involve law enforcement.
                 </div>
 
-                <h4>EMT Reporting Obligations</h4>
+                <h4>EMS Provider Reporting Obligations</h4>
                 <p>As a mandated reporter, you must adhere to the following principles:</p>
                 <ul>
                     <li><strong>Reasonable suspicion is enough</strong> — You are not a detective. You do not need conclusive evidence. If the injury pattern, history, or presentation raises concern, report it.</li>
@@ -1130,8 +1130,8 @@ window.CPG_DATA = {
                     category: "Child Abuse — Physical Indicators"
                 },
                 {
-                    question: "What is the EMT's legal obligation when they suspect child abuse?",
-                    answer: "As a mandated reporter, the EMT must report immediately to Child Protective Services or law enforcement. You DO NOT need proof — only reasonable suspicion. Do NOT accuse parents. Document objectively. You are immune from liability when reporting in good faith.",
+                    question: "What is the EMS provider's legal obligation when they suspect child abuse?",
+                    answer: "As a mandated reporter, the EMS provider must report immediately to Child Protective Services or law enforcement. You DO NOT need proof — only reasonable suspicion. Do NOT accuse parents. Document objectively. You are immune from liability when reporting in good faith.",
                     category: "Child Abuse — Reporting"
                 },
                 {
@@ -1145,7 +1145,7 @@ window.CPG_DATA = {
                     category: "Child Abuse — MBP"
                 },
                 {
-                    question: "How should an EMT document suspected abuse in the PCR?",
+                    question: "How should an EMS provider document suspected abuse in the PCR?",
                     answer: "Use objective findings only (describe, do not diagnose). Document the child's exact words in quotes. Record the caregiver's explanation alongside the injury description. Note to whom the report was made and the case number. Avoid speculation or accusations.",
                     category: "Child Abuse — Documentation"
                 },
@@ -1162,7 +1162,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT is called to a home for a 6-month-old infant who is irritable and vomiting. The mother states the infant 'rolled off the couch.' The infant has no visible external injuries but is lethargic and has a bulging fontanelle. What condition should the EMT suspect?",
+                    q: "An EMS provider is called to a home for a 6-month-old infant who is irritable and vomiting. The mother states the infant 'rolled off the couch.' The infant has no visible external injuries but is lethargic and has a bulging fontanelle. What condition should the EMS provider suspect?",
                     options: [
                         "Gastroenteritis",
                         "Abusive head trauma (shaken baby syndrome)",
@@ -1172,17 +1172,17 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "Which of the following is TRUE regarding an EMT's legal obligation to report suspected child abuse?",
+                    q: "Which of the following is TRUE regarding an EMS provider's legal obligation to report suspected child abuse?",
                     options: [
-                        "The EMT must have conclusive proof of abuse before reporting",
+                        "The EMS provider must have conclusive proof of abuse before reporting",
                         "Reporting is required only if the parent admits to abuse",
-                        "The EMT needs only reasonable suspicion — reporting is mandatory",
-                        "Reporting is optional and at the EMT's discretion"
+                        "The EMS provider needs only reasonable suspicion — reporting is mandatory",
+                        "Reporting is optional and at the EMS provider's discretion"
                     ],
                     correct: 2
                 },
                 {
-                    q: "A 3-year-old child presents with multiple bruises in various stages of healing, including a handprint-shaped bruise on the face. The parent states the child 'falls a lot.' What is the EMT's BEST action?",
+                    q: "A 3-year-old child presents with multiple bruises in various stages of healing, including a handprint-shaped bruise on the face. The parent states the child 'falls a lot.' What is the EMS provider's BEST action?",
                     options: [
                         "Accept the parent's explanation since toddlers are clumsy",
                         "Document the injuries as suspicious, report to CPS/law enforcement, and transport for evaluation",
@@ -1212,7 +1212,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "HARD: An EMT assesses a 4-year-old female with a history of multiple hospitalizations for 'breathing problems,' 'seizures,' and 'allergic reactions.' The mother is highly knowledgeable about medical terminology and refuses to leave the child's side. The child's symptoms have only occurred when the mother was present, and multiple specialists have been unable to find an organic cause. What condition should the EMT consider?",
+                    q: "HARD: An EMS provider assesses a 4-year-old female with a history of multiple hospitalizations for 'breathing problems,' 'seizures,' and 'allergic reactions.' The mother is highly knowledgeable about medical terminology and refuses to leave the child's side. The child's symptoms have only occurred when the mother was present, and multiple specialists have been unable to find an organic cause. What condition should the EMS provider consider?",
                     options: [
                         "Munchausen by proxy (factitious disorder imposed on another)",
                         "A genuinely complex medical child",
@@ -1222,10 +1222,10 @@ window.CPG_DATA = {
                     correct: 0
                 },
                 {
-                    q: "HARD: An EMT is transporting a 2-year-old with suspected physical abuse. The child's father is in the back of the ambulance and keeps asking, 'What did you write in your report? Are you going to call the police?' The father becomes increasingly agitated. What should the EMT do?",
+                    q: "HARD: An EMS provider is transporting a 2-year-old with suspected physical abuse. The child's father is in the back of the ambulance and keeps asking, 'What did you write in your report? Are you going to call the police?' The father becomes increasingly agitated. What should the EMS provider do?",
                     options: [
                         "Reassure the father that no report is being made to keep the scene calm",
-                        "Politely explain that the EMT is required by law to report suspected abuse, ask the father to ride in the front with the driver, and contact law enforcement if safety is a concern",
+                        "Politely explain that the EMS provider is required by law to report suspected abuse, ask the father to ride in the front with the driver, and contact law enforcement if safety is a concern",
                         "Stop the ambulance and refuse to transport until the father calms down",
                         "Hand the PCR to the father to show him what was written"
                     ],
@@ -1235,7 +1235,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     scenario: "You are dispatched to a residence for a 'fussy infant' call. Upon arrival, you find a 4-month-old male in the care of his mother's boyfriend. The boyfriend states the baby 'just won't stop crying' and has been 'spitting up everything.' The infant is lethargic, has a weak cry, and you note a bulging anterior fontanelle. There are no visible bruises on the infant's body. The boyfriend is evasive about what happened and changes his story from 'he just started doing this' to 'I had to shake him a little to get him to stop crying.' The mother is not home. The boyfriend says he doesn't want the baby to go to the hospital and offers to call the mother to take the baby to the pediatrician tomorrow instead.",
-                    question: "Given the infant's presentation (lethargy, bulging fontanelle, weak cry) and the caregiver's changing story and admission of shaking, what is the EMT's priority?",
+                    question: "Given the infant's presentation (lethargy, bulging fontanelle, weak cry) and the caregiver's changing story and admission of shaking, what is the EMS provider's priority?",
                     options: [
                         "Respect the boyfriend's request and document the mother's contact information for follow-up — the baby seems stable for now",
                         "Recognize this as suspected abusive head trauma: the infant is in immediate danger. Explain that the baby needs emergency evaluation. Transport immediately, contact law enforcement en route (the boyfriend admitted shaking), and document the exact statements made. Do NOT leave the infant with this caregiver",
@@ -1246,7 +1246,7 @@ window.CPG_DATA = {
                 },
                 {
                     scenario: "You respond to a 9-1-1 call for a 6-year-old boy with a 'burn injury.' The mother explains that the child was 'playing with matches' and burned his own hand. The child is quiet and avoids eye contact with you. As you examine the burn, you note a well-circumscribed, round, deep burn approximately 1 cm in diameter on the palm of his right hand with a central crater. There are three additional identical burns on his left forearm. The burns appear to be in different stages of healing — some are fresh with blisters, while others are healed scars. The mother's explanation about matches does not account for the pattern or distribution of the burns on both hands and forearm, and the child does not confirm or deny the mother's story.",
-                    question: "What is the most likely explanation for these burns and how should the EMT proceed?",
+                    question: "What is the most likely explanation for these burns and how should the EMS provider proceed?",
                     options: [
                         "The child was indeed playing with matches — document the mother's story and provide burn care",
                         "The burns appear consistent with cigarette burns (round, 1 cm, deep, uniform, multiple stages of healing, on the palm where sensation is high — a classic torture pattern). The mother's story does not match the injuries. Document objective findings, provide burn care, transport, and report suspected abuse to the hospital and CPS. Do NOT confront the mother",
@@ -1257,10 +1257,10 @@ window.CPG_DATA = {
                 },
                 {
                     scenario: "You and your partner are called to an elementary school for a 7-year-old girl who 'fell in gym class' and injured her arm. The school nurse meets you and tells you privately that she is concerned about this child. Over the past six months, the child has been seen in the nurse's office for multiple injuries — each time with a different explanation. Today, the child has obvious deformity of her left forearm. The nurse shows you her file, which documents: a black eye three months ago ('ran into a door'), facial bruising two months ago ('sister hit her with a toy'), and now a forearm fracture. The nurse says the child has also been coming to school hungry, wearing the same clothes repeatedly, and has missed 15 days of school this year. When you examine the child, she is withdrawn and does not make eye contact. She flinches when you touch her arm and looks toward the door as if she wants to escape. When you ask what happened, she whispers, 'I fell. I fall a lot.' Her teacher, who is standing nearby, mouths to you, 'Something is not right at home.'",
-                    question: "Given the pattern of multiple injuries, the concerning social indicators (hunger, poor hygiene, truancy, withdrawn behavior), and the school staff's concerns, what is the EMT's obligation?",
+                    question: "Given the pattern of multiple injuries, the concerning social indicators (hunger, poor hygiene, truancy, withdrawn behavior), and the school staff's concerns, what is the EMS provider's obligation?",
                     options: [
                         "Treat the fracture, transport to the hospital, but do not get involved with the social concerns — it is not your role",
-                        "Treat the fracture, transport the child. The EMT has reasonable suspicion of both physical abuse AND neglect based on the pattern of multiple injuries in various stages of healing, the indicators of nutritional neglect, and the child's behavior. Report to CPS and law enforcement before leaving the scene. Provide a thorough PCR documenting each injury, the child's statements verbatim, the nurse's documented concerns, and the teacher's observation. Let the school staff know the child is being transported so they can cooperate with the investigation",
+                        "Treat the fracture, transport the child. The EMS provider has reasonable suspicion of both physical abuse AND neglect based on the pattern of multiple injuries in various stages of healing, the indicators of nutritional neglect, and the child's behavior. Report to CPS and law enforcement before leaving the scene. Provide a thorough PCR documenting each injury, the child's statements verbatim, the nurse's documented concerns, and the teacher's observation. Let the school staff know the child is being transported so they can cooperate with the investigation",
                         "Call the parents to ask if they can explain the injuries before involving CPS",
                         "Tell the school nurse that since the child is at school, it is the school's responsibility to report — not yours"
                     ],
@@ -1283,7 +1283,7 @@ window.CPG_DATA = {
                 <h4>Physiologic Changes of Aging</h4>
                 <p>Aging affects every organ system, reducing the body's reserve capacity and ability to compensate for stressors. These changes alter how illness and injury present, how medications work, and how the body responds to treatment:</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>System</th><th>Physiologic Change</th><th>Clinical Implications for EMS</th></tr>
                     </thead>
@@ -1298,7 +1298,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Immune</strong></td><td>Impaired immune response, decreased fever response, decreased T-cell function</td><td>Infection may present without fever; higher risk of serious infections (pneumonia, sepsis); atypical or blunted presentation of illness</td></tr>
                         <tr><td><strong>Sensory</strong></td><td>Presbyopia (decreased near vision), cataracts, hearing loss (presbycusis — high-frequency loss), decreased sense of smell and taste</td><td>Communication challenges; medication non-adherence (cannot read labels); increased fall risk; food intake may decrease (loss of taste)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl:</strong> The aging cardiovascular system has a <em>blunted compensatory response</em>. An older patient may not mount a tachycardia in response to hypovolemia, infection, or hypoxia. A "normal" heart rate in a septic or dehydrated older adult should NOT be reassuring — it may indicate the patient cannot compensate any further.
@@ -1310,14 +1310,14 @@ window.CPG_DATA = {
                     <li><strong>Adverse drug reactions (ADRs)</strong> — Shown as a chief complaint. Many calls for AMS, weakness, dizziness, or falls are actually caused by medication side effects or interactions. Common culprit drugs include antihypertensives (orthostatic hypotension), diuretics (dehydration, electrolyte imbalances), anticholinergics (confusion, urinary retention, dry mouth), benzodiazepines (falls, respiratory depression), and opiates (constipation, respiratory depression, delirium).</li>
                     <li><strong>Medication interactions</strong> — The more medications a patient takes, the greater the probability of drug-drug interactions. Common dangerous interactions include: warfarin + NSAIDs (increased bleeding risk), ACE inhibitors + potassium-sparing diuretics (hyperkalemia), and digoxin + amiodarone (digoxin toxicity).</li>
                     <li><strong>Non-compliance</strong> — Complex medication regimens are difficult to follow, especially for patients with cognitive impairment or limited resources. Patients may skip doses, double-dose, or take medications at the wrong times. Bring ALL medication bottles to the hospital — including OTC and supplements.</li>
-                    <li><strong>Beers Criteria</strong> — A list of medications that are potentially inappropriate for older adults. While not directly an EMT tool, awareness of the Beers list helps in recognizing high-risk medications in your patient's history (e.g., diphenhydramine, benzodiazepines, muscle relaxants, NSAIDs).</li>
+                    <li><strong>Beers Criteria</strong> — A list of medications that are potentially inappropriate for older adults. While not directly an EMS provider tool, awareness of the Beers list helps in recognizing high-risk medications in your patient's history (e.g., diphenhydramine, benzodiazepines, muscle relaxants, NSAIDs).</li>
                 </ul>
-                <p><strong>EMT action:</strong> Bring every medication bottle, pill organizer, and supplement to the hospital. Document the names, doses, and frequencies of all medications. Ask about recent medication changes — this is frequently the cause of a new symptom.</p>
+                <p><strong>EMS provider action:</strong> Bring every medication bottle, pill organizer, and supplement to the hospital. Document the names, doses, and frequencies of all medications. Ask about recent medication changes — this is frequently the cause of a new symptom.</p>
 
                 <h4>Atypical Presentation of Illness</h4>
                 <p>One of the most important concepts in geriatric emergency care is that older adults <strong>rarely present with classic symptoms</strong>. The aging body's blunted compensatory response and altered pain perception mean that life-threatening conditions often present subtly or atypically. This is a leading cause of missed diagnoses in older ED patients.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Condition</th><th>Classic Presentation (Younger)</th><th>Atypical Presentation (Older)</th></tr>
                     </thead>
@@ -1330,7 +1330,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Hyperthyroidism</strong></td><td>Tachycardia, weight loss, heat intolerance, tremor, exophthalmos</td><td>"Apathetic hyperthyroidism" — lethargy, weakness, depression, atrial fibrillation. May not have typical hyperthyroid symptoms.</td></tr>
                         <tr><td><strong>Hypothyroidism</strong></td><td>Fatigue, weight gain, cold intolerance, constipation, bradycardia</td><td>Myxedema coma — altered mental status, hypothermia, bradycardia, hypotension — a life-threatening emergency triggered by infection or cold exposure.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>NREMT Key Point:</strong> Always consider the atypical presentation in older adults. A fall in an elderly patient is NOT a diagnosis — it is a SYMPTOM. The fall may be caused by an underlying medical condition (MI, infection, stroke, dysrhythmia, hypoglycemia). Always ask: <em>"Why did this patient fall?"</em>
@@ -1347,9 +1347,9 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Dementia vs. Delirium vs. Depression — The Three D's</h4>
-                <p>Differentiating dementia, delirium, and depression is a critical skill for EMTs caring for older adults. These three conditions can look similar but have vastly different implications — <strong>delirium is a medical emergency</strong>, dementia is a chronic condition, and depression is a treatable mental illness. Mistaking delirium for dementia can be fatal.</p>
+                <p>Differentiating dementia, delirium, and depression is a critical skill for EMS providers caring for older adults. These three conditions can look similar but have vastly different implications — <strong>delirium is a medical emergency</strong>, dementia is a chronic condition, and depression is a treatable mental illness. Mistaking delirium for dementia can be fatal.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Dementia</th><th>Delirium</th><th>Depression</th></tr>
                     </thead>
@@ -1363,7 +1363,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Hallucinations</strong></td><td>Rare in early stages; may occur in advanced (usually visual)</td><td><strong>Common</strong> — primarily visual hallucinations (bugs, animals, people) — often frightening</td><td>Rare; may have mood-congruent delusions (guilt, worthlessness)</td></tr>
                         <tr><td><strong>Reversibility</strong></td><td>Not reversible</td><td><strong>Reversible</strong> if underlying cause is treated</td><td>Treatable with medication and therapy</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical Distinction:</strong> Delirium is a MEDICAL EMERGENCY. An acute change in mental status in an older adult is caused by a medical problem until proven otherwise. Common causes include: infection (UTI is the #1 cause in older adults), electrolyte imbalance, hypoglycemia, hypoxia, medication toxicity, alcohol withdrawal, stroke, or head injury. <span style="color:var(--danger);font-weight:700;">NEVER assume an acute change in mental status is "just dementia."</span>
@@ -1421,8 +1421,8 @@ window.CPG_DATA = {
                     category: "Geriatrics — Polypharmacy"
                 },
                 {
-                    question: "What types of elder abuse must an EMT report?",
-                    answer: "Physical abuse (patterned bruising, fractures), emotional abuse (withdrawn, fearful), financial exploitation, neglect (pressure ulcers, dehydration, poor hygiene, unsafe conditions), and sexual abuse. EMTs are mandated reporters in most states — report to Adult Protective Services.",
+                    question: "What types of elder abuse must an EMS provider report?",
+                    answer: "Physical abuse (patterned bruising, fractures), emotional abuse (withdrawn, fearful), financial exploitation, neglect (pressure ulcers, dehydration, poor hygiene, unsafe conditions), and sexual abuse. EMS providers are mandated reporters in most states — report to Adult Protective Services.",
                     category: "Geriatrics — Elder Abuse"
                 },
                 {
@@ -1431,7 +1431,7 @@ window.CPG_DATA = {
                     category: "Geriatrics — Advance Directives"
                 },
                 {
-                    question: "A 78-year-old patient with a history of dementia presents with new-onset confusion that started 6 hours ago. Family says she was 'fine this morning.' What should the EMT suspect?",
+                    question: "A 78-year-old patient with a history of dementia presents with new-onset confusion that started 6 hours ago. Family says she was 'fine this morning.' What should the EMS provider suspect?",
                     answer: "DELIRIUM — acute onset of confusion in an older adult is a medical emergency until proven otherwise. Common causes include UTI (most common), electrolyte imbalance, hypoglycemia, hypoxia, medication toxicity, or stroke. Never assume this is 'just dementia.' Transport for evaluation.",
                     category: "Geriatrics — Delirium"
                 }
@@ -1448,7 +1448,7 @@ window.CPG_DATA = {
                     correct: 0
                 },
                 {
-                    q: "An EMT is called to a nursing home for an 82-year-old male with confusion. The nurse reports he was 'confused yesterday too' and has a history of Alzheimer's disease. The patient does not know where he is, is unable to follow commands, and is hallucinating (seeing bugs on the wall). The nurse says, 'He always gets like this — it's just his dementia.' What should the EMT do?",
+                    q: "An EMS provider is called to a nursing home for an 82-year-old male with confusion. The nurse reports he was 'confused yesterday too' and has a history of Alzheimer's disease. The patient does not know where he is, is unable to follow commands, and is hallucinating (seeing bugs on the wall). The nurse says, 'He always gets like this — it's just his dementia.' What should the EMS provider do?",
                     options: [
                         "Agree with the nurse and leave the patient at the facility since it is his baseline",
                         "Recognize that new hallucinations in a patient with dementia could indicate delirium from infection, electrolyte imbalance, or medication toxicity. Transport for medical evaluation — do not assume this is 'just dementia'",
@@ -1468,7 +1468,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "A 76-year-old man with a history of CHF, COPD, and atrial fibrillation presents with generalized weakness and 'just not feeling right.' His vital signs are: BP 96/58, HR 110 (irregular), RR 24, SpO₂ 89%, and he is afebrile. What should the EMT suspect?",
+                    q: "A 76-year-old man with a history of CHF, COPD, and atrial fibrillation presents with generalized weakness and 'just not feeling right.' His vital signs are: BP 96/58, HR 110 (irregular), RR 24, SpO₂ 89%, and he is afebrile. What should the EMS provider suspect?",
                     options: [
                         "This is likely normal aging — older people feel weak",
                         "Weakness + hypotension + tachycardia + hypoxia in an older adult is a red flag for sepsis, even without fever. Approximately 30-50% of older septic patients are afebrile. Transport rapidly",
@@ -1478,7 +1478,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "HARD: An 85-year-old female with a valid DNR order has a fever of 102°F, productive cough, and SpO₂ of 85%. She is in respiratory distress. The DNR clearly states 'No resuscitation.' The family asks you to 'do everything' for her. What should the EMT do?",
+                    q: "HARD: An 85-year-old female with a valid DNR order has a fever of 102°F, productive cough, and SpO₂ of 85%. She is in respiratory distress. The DNR clearly states 'No resuscitation.' The family asks you to 'do everything' for her. What should the EMS provider do?",
                     options: [
                         "Withhold all treatment because of the DNR",
                         "Provide oxygen and transport for the pneumonia — the DNR means do not resuscitate if she ARRESTS, not do not treat a reversible medical condition. Treat the infection and respiratory distress; only withhold CPR if she arrests",
@@ -1488,7 +1488,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "HARD: An EMT responds to a home where a 92-year-old woman is found by her son, who lives with her. The son reports she fell out of bed. The patient has bilateral wrist bruises (shaped like finger marks), a black eye, and is withdrawn. The son does most of the talking and becomes defensive when you ask to speak to his mother alone. What should the EMT suspect?",
+                    q: "HARD: An EMS provider responds to a home where a 92-year-old woman is found by her son, who lives with her. The son reports she fell out of bed. The patient has bilateral wrist bruises (shaped like finger marks), a black eye, and is withdrawn. The son does most of the talking and becomes defensive when you ask to speak to his mother alone. What should the EMS provider suspect?",
                     options: [
                         "The patient fell out of bed as reported — document the story",
                         "Elder physical abuse — the bilateral grip-mark bruises on the wrists, facial injury, withdrawn behavior, and a caregiver who is defensive and prevents private conversation are classic red flags. Interview the patient privately if possible. Report to Adult Protective Services",
@@ -1501,7 +1501,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     scenario: "You are dispatched to a private residence for an 80-year-old male with 'weakness.' Upon arrival, the patient's wife meets you and says, 'He's just not himself today. He's been in the bathroom all morning with diarrhea, and he can barely walk back to bed.' The patient is sitting on the edge of the bed, pale, and appears fatigued. He tells you, 'I just feel weak. I think I have a stomach bug.' His vital signs are: BP 88/54, HR 106, RR 22, SpO₂ 94% on room air, temp 98.1°F. He has no chest pain, no dyspnea, and no focal neurological deficits. His past medical history includes diabetes, hypertension, and coronary artery disease with a stent placed three years ago. He takes metformin, lisinopril, and aspirin. His wife mentions he seems 'a little confused' — he got lost walking to the bathroom in their home of 40 years.",
-                    question: "This patient has weakness, diarrhea, hypotension, tachycardia, and new confusion. Is this 'just a stomach bug' or something more serious? What should the EMT do?",
+                    question: "This patient has weakness, diarrhea, hypotension, tachycardia, and new confusion. Is this 'just a stomach bug' or something more serious? What should the EMS provider do?",
                     options: [
                         "This is likely viral gastroenteritis — provide oral rehydration and recommend he follow up with his PCP if symptoms persist",
                         "This presentation is highly concerning for an atypical presentation of acute MI or sepsis. In older adults, GI symptoms (diarrhea, nausea) can be the ONLY symptom of an MI, and infection may present with confusion and weakness without fever. The hypotension and tachycardia are concerning for cardiogenic or distributive shock. Apply oxygen, establish IV access if available, monitor ECG, and transport emergently. Do not be reassured by the absence of chest pain or fever",
@@ -1523,7 +1523,7 @@ window.CPG_DATA = {
                 },
                 {
                     scenario: "You are called to a home for a 79-year-old female who fell. She is on the floor in her living room, alert and oriented, with her left leg shortened and externally rotated. She reports she 'just tripped over the rug' but also admits she felt dizzy and lightheaded just before the fall. She tells you she has been feeling more tired than usual and has had some 'indigestion' over the past few days. Her past medical history includes diabetes, hypertension, and osteoporosis. Her medications include metformin, enalapril, hydrochlorothiazide, alendronate, and atorvastatin. When you try to sit her up, she experiences severe pain in her left hip. Vital signs: BP 100/62, HR 92, RR 18, SpO₂ 96%. You suspect a hip fracture and begin immobilizing her. While packaging her for transport, she says, 'I don't want to go to the hospital — I just need to rest and I'll be fine.' Her daughter, who just arrived, tells you, 'She always says that. Don't listen to her — she needs help.'",
-                    question: "This patient has a likely hip fracture, a reported prodrome of dizziness and fatigue, and a history of cardiac risk factors. What is the EMT's complete management plan?",
+                    question: "This patient has a likely hip fracture, a reported prodrome of dizziness and fatigue, and a history of cardiac risk factors. What is the EMS provider's complete management plan?",
                     options: [
                         "This is just a mechanical fall with a hip fracture. Splint the leg and transport for surgical repair. The dizziness is probably from getting up too fast",
                         "The fall may have been caused by a medical event (dizziness, fatigue, indigestion — which could be an atypical MI presentation). The patient has multiple cardiac risk factors and is on a diuretic (HCTZ) which can cause orthostasis and electrolyte abnormalities. Immobilize the hip fracture, transport the patient (she has a suspected fracture and requires treatment — this is not a refusal situation for a fracture). En route, monitor vitals, check blood glucose, and consider the possibility of an acute coronary syndrome or electrolyte imbalance causing the pre-fall dizziness. The hip fracture is the INJURY — the underlying cause of the fall still needs to be determined",
@@ -1544,7 +1544,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Patients with Special Challenges</h3>
 
-                <p>As an EMT, you will encounter patients with a wide range of physical, developmental, cognitive, and psychosocial challenges. Providing competent and compassionate care to these patients requires awareness of their unique needs, effective communication strategies, and adaptations to your standard assessment and treatment approach. The fundamental principle: <strong>treat the medical emergency first</strong>, even in patients with behavioral or developmental conditions. A change in behavior may be a sign of an underlying medical problem.</p>
+                <p>As an EMS provider, you will encounter patients with a wide range of physical, developmental, cognitive, and psychosocial challenges. Providing competent and compassionate care to these patients requires awareness of their unique needs, effective communication strategies, and adaptations to your standard assessment and treatment approach. The fundamental principle: <strong>treat the medical emergency first</strong>, even in patients with behavioral or developmental conditions. A change in behavior may be a sign of an underlying medical problem.</p>
 
                 <h4>Patients with Developmental/Intellectual Disabilities</h4>
 
@@ -1578,7 +1578,7 @@ window.CPG_DATA = {
                 <h4>Hearing and Vision Impairment</h4>
                 <p>Communication with patients who are deaf, hard of hearing, or blind requires specific adaptations:</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Impairment</th><th>Communication Techniques</th><th>Avoid</th></tr>
                     </thead>
@@ -1586,15 +1586,15 @@ window.CPG_DATA = {
                         <tr><td><strong>Hearing Impairment / Deafness</strong></td><td>Face the patient directly (lip-reading), ensure good lighting, use written aids (pen and paper, phone screen), use simple gestures, learn basic ASL signs if possible, use a sign language interpreter (in-person or video relay), speak in a normal tone (do not shout)</td><td>Shouting (distorts lip-reading and is ineffective), speaking with your back turned or in poor lighting, assuming the patient cannot communicate at all, using family members (especially children) as interpreters</td></tr>
                         <tr><td><strong>Vision Impairment / Blindness</strong></td><td>Identify yourself clearly by name and role when you enter, explain everything you are doing before you touch the patient, orient them to the environment, offer your arm for guidance, describe the surroundings, warn about steps or obstacles, use tactile cues, maintain verbal contact</td><td>Grabbing the patient without warning, assuming they need help walking (ask first), using visual references ("over there," "this"), leaving without saying you are leaving, rearranging their environment without telling them</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Patients with Mental Illness</h4>
-                <p>Mental illness affects millions of Americans, and EMTs frequently interact with patients experiencing psychiatric crises. The management of these patients requires a balance of compassion, de-escalation, and medical vigilance:</p>
+                <p>Mental illness affects millions of Americans, and EMS providers frequently interact with patients experiencing psychiatric crises. The management of these patients requires a balance of compassion, de-escalation, and medical vigilance:</p>
                 <ul>
                     <li><strong>De-escalation techniques:</strong> Maintain a calm, respectful tone. Use the patient's name. Acknowledge their feelings: "I can see you're very upset. I'm here to help you." Give clear, simple choices. Avoid arguing, threatening, or challenging delusions. Maintain a safe distance and keep an exit path clear.</li>
                     <li><strong>Medical causes first — always:</strong> <span style="color:var(--danger);font-weight:600;">Behavioral is not always behavioral.</span> A patient with new-onset psychosis, agitation, or altered behavior may have an underlying medical cause: hypoglycemia, hypoxia, infection (especially UTI in older adults), head injury, intoxication, withdrawal, medication side effect, stroke, or seizure. Assess vital signs, check blood glucose, and look for focal neurological signs before assuming a purely psychiatric cause.</li>
                     <li><strong>Suicide assessment:</strong> Ask directly about suicidal thoughts. Research shows that asking about suicide does NOT increase the risk — it reduces it. Use the mnemonic: "Have you had thoughts of hurting yourself or ending your life? Do you have a plan? Do you have the means to carry it out?" If the patient answers yes to all three, they are at high risk and should not be left alone. Involve law enforcement for a mental health hold if needed.</li>
-                    <li><strong>Psychiatric holds:</strong> Patients who are a danger to themselves or others due to mental illness may be placed on an involuntary psychiatric hold (varies by state). These patients cannot refuse transport. The EMT transports under the legal authority of the hold; law enforcement typically manages security and restraint decisions.</li>
+                    <li><strong>Psychiatric holds:</strong> Patients who are a danger to themselves or others due to mental illness may be placed on an involuntary psychiatric hold (varies by state). These patients cannot refuse transport. The EMS provider transports under the legal authority of the hold; law enforcement typically manages security and restraint decisions.</li>
                     <li><strong>Medication non-compliance:</strong> Many psychiatric patients have stopped taking their medications. Common withdrawal syndromes and relapse presentations include: antipsychotics (return of psychotic symptoms), antidepressants (mood relapse, discontinuation syndrome), mood stabilizers (mania or depression recurrence including lithium toxicity if dehydrated), and anxiolytics (anxiety recurrence, withdrawal seizures from benzodiazepines).</li>
                     <li><strong>Restraint considerations:</strong> If restraints are needed, they should be applied by law enforcement, not EMS, unless your protocols specifically allow it. If you must restrain, use the least restrictive method necessary. Monitor the restrained patient closely for respiratory compromise (positional asphyxia) — do not place the patient face-down, and monitor vital signs frequently.</li>
                 </ul>
@@ -1627,7 +1627,7 @@ window.CPG_DATA = {
                 <h4>Patients with Chronic Medical Conditions and Devices</h4>
                 <p>You will increasingly encounter patients living at home with medical devices that were once only found in hospitals. Understanding these devices is critical to providing safe care:</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Device/Condition</th><th>Key Considerations</th></tr>
                     </thead>
@@ -1639,7 +1639,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Ostomies (colostomy, ileostomy, urostomy)</strong></td><td>Ostomies are surgical openings for elimination. They have no nerve endings — they are not painful to touch. If the ostomy is bleeding or has prolapsed tissue, cover with a moist dressing and transport. Document stoma color (should be pink/red — pale or blue indicates ischemia).</td></tr>
                         <tr><td><strong>Shunts (VP shunt for hydrocephalus)</strong></td><td>A ventriculoperitoneal (VP) shunt drains CSF from the brain into the abdomen. Shunt malfunction presents with headache, vomiting, altered mental status, or seizures. The shunt tubing may be palpable under the skin behind the ear and down the neck. Do not put pressure on the shunt tubing.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Obesity (see also Section 7.8 — Bariatric Considerations)</h4>
                 <p>Obesity presents unique challenges in patient assessment and management. Key considerations include:</p>
@@ -1672,7 +1672,7 @@ window.CPG_DATA = {
                     category: "Special Challenges — Mental Illness"
                 },
                 {
-                    question: "How should an EMT communicate with a patient who is deaf or hard of hearing?",
+                    question: "How should an EMS provider communicate with a patient who is deaf or hard of hearing?",
                     answer: "Face the patient directly (lip-reading), ensure good lighting, use written aids (paper, phone screen), use gestures, use a sign language interpreter if available. Speak in a normal tone — do NOT shout. Do not use children as interpreters.",
                     category: "Special Challenges — Hearing Impairment"
                 },
@@ -1682,7 +1682,7 @@ window.CPG_DATA = {
                     category: "Special Challenges — Language"
                 },
                 {
-                    question: "Why should EMTs avoid taking blood pressure in the arm with an AV fistula or graft?",
+                    question: "Why should EMS providers avoid taking blood pressure in the arm with an AV fistula or graft?",
                     answer: "Taking BP or starting an IV in an arm with an AV fistula or graft can damage the access site, cause thrombosis, and compromise future dialysis access. Always use the other arm for BP, IVs, and blood draws.",
                     category: "Special Challenges — Chronic Conditions"
                 },
@@ -1699,7 +1699,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT is assessing a 5-year-old child with autism who is non-verbal. The child is crying, pulling at his ears, and hitting his head against the wall. What should the EMT consider FIRST?",
+                    q: "An EMS provider is assessing a 5-year-old child with autism who is non-verbal. The child is crying, pulling at his ears, and hitting his head against the wall. What should the EMS provider consider FIRST?",
                     options: [
                         "The child is having a behavioral tantrum — use restraint techniques",
                         "The child may be in pain from an ear infection or other medical cause — assess for fever, injury, and other signs of illness",
@@ -1719,7 +1719,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "A 42-year-old woman with Down syndrome is involved in a minor fender-bender. She has no visible injuries and is ambulatory. She has midline cervical spine tenderness. What is the EMT's priority concern?",
+                    q: "A 42-year-old woman with Down syndrome is involved in a minor fender-bender. She has no visible injuries and is ambulatory. She has midline cervical spine tenderness. What is the EMS provider's priority concern?",
                     options: [
                         "Down syndrome patients are always fine in minor accidents — clear her without immobilization",
                         "Atlantoaxial instability risk — apply a cervical collar and maintain spinal precautions despite the minor mechanism",
@@ -1729,7 +1729,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "An EMT is caring for a patient who is blind. Which communication technique is MOST appropriate?",
+                    q: "An EMS provider is caring for a patient who is blind. Which communication technique is MOST appropriate?",
                     options: [
                         "Take the patient's arm and guide them without speaking since they cannot see you",
                         "Identify yourself by name and role, explain what you are doing before touching, and provide verbal orientation to the environment",
@@ -1739,7 +1739,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "A homeless patient is found sleeping on a park bench in 35°F weather. The patient is awake but confused, has cold, mottled skin, and is shivering. What should the EMT do?",
+                    q: "A homeless patient is found sleeping on a park bench in 35°F weather. The patient is awake but confused, has cold, mottled skin, and is shivering. What should the EMS provider do?",
                     options: [
                         "Give the patient a warm blanket and let them sleep — they need rest",
                         "This is hypothermia — transport for evaluation and rewarming. Assess for concurrent conditions (malnutrition, infection, frostbite, alcohol use). Treat the patient with dignity",
@@ -1749,7 +1749,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "An EMT needs to start an IV on a 60-year-old female who is a dialysis patient. She has an AV fistula in her left arm that is visibly palpable. Where should the EMT attempt IV access?",
+                    q: "An EMS provider needs to start an IV on a 60-year-old female who is a dialysis patient. She has an AV fistula in her left arm that is visibly palpable. Where should the EMS provider attempt IV access?",
                     options: [
                         "In the left arm — the fistula has strong blood flow so the IV will work well",
                         "In the right arm — NEVER use the arm with an AV fistula for IV, BP, or blood draws",
@@ -1759,7 +1759,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "HARD: An EMT is transporting a 22-year-old autistic male who is agitated and trying to pull off his oxygen mask. His mother, who is in the ambulance, says, 'He hates being touched and he's terrified of the hospital. He's not having a medical emergency — he's scared. Can you just let him calm down at home?' The patient's SpO₂ is 89% on room air, he has diffuse wheezing, and he has a history of asthma. What should the EMT do?",
+                    q: "HARD: An EMS provider is transporting a 22-year-old autistic male who is agitated and trying to pull off his oxygen mask. His mother, who is in the ambulance, says, 'He hates being touched and he's terrified of the hospital. He's not having a medical emergency — he's scared. Can you just let him calm down at home?' The patient's SpO₂ is 89% on room air, he has diffuse wheezing, and he has a history of asthma. What should the EMS provider do?",
                     options: [
                         "Respect the mother's judgment — autistic patients do better at home with familiar routines",
                         "Explain that the patient has hypoxia and wheezing from an asthma exacerbation — this IS a medical emergency. The agitation is likely from respiratory distress AND anxiety. Reduce stimuli (dim lights, minimize touching), explain every step, and continue oxygen and transport. Involve the mother in calming techniques she knows work",
@@ -1782,7 +1782,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     scenario: "You are dispatched to a group home for a 28-year-old male with autism and intellectual disability who is 'aggressive.' Staff report he has been 'having a bad day' and is hitting staff and banging his head against the wall. They say, 'He does this sometimes when he's upset about schedule changes. He just needs to be left alone.' You find the patient in his room, rocking back and forth, hitting his head with his fist, and shouting. A staff member is trying to restrain him. You notice the patient is flushed, his skin is warm, and he is breathing rapidly. When you ask the staff if he has any medical problems, they say he has a history of seizures. The patient cannot tell you what is wrong.",
-                    question: "Given this patient's autism, self-injurious behavior, flushing, tachypnea, and seizure history, what is the EMT's priority?",
+                    question: "Given this patient's autism, self-injurious behavior, flushing, tachypnea, and seizure history, what is the EMS provider's priority?",
                     options: [
                         "The staff knows him best — leave him to calm down in a quiet room as they recommend",
                         "The patient's agitation may be caused by a medical problem (post-ictal state, infection, pain, or medication side effect). Do not assume this is purely behavioral. Obtain vital signs, check blood glucose, look for signs of injury or illness. Reduce environmental stimulation. If the patient cannot be safely assessed or is at risk of harming himself, transport for medical evaluation. If he is post-ictal, request ALS",
@@ -1804,7 +1804,7 @@ window.CPG_DATA = {
                 },
                 {
                     scenario: "You are called to a homeless encampment for a 55-year-old male with a 'leg wound.' You find the patient sitting on a mattress on the ground, with his pant leg rolled up. His right lower leg is swollen, red, warm, and has a foul-smelling, purulent wound approximately 4 cm in diameter on the anterior shin. The surrounding skin has blisters and dark discoloration extending up to the knee. The patient has a fever of 102.4°F, HR 112, and appears confused and lethargic. He has a strong smell of alcohol on his breath and empty liquor bottles nearby. When you tell him he needs to go to the hospital, he refuses, saying, 'I'm fine — I get these all the time. I'll just clean it up with some whiskey. You can't make me go anywhere.' The patient is alert enough to carry on a conversation but is clearly medically precarious with signs of severe infection and possible sepsis.",
-                    question: "This patient has a life-threatening wound infection with sepsis criteria (fever, tachycardia, confusion). He is homeless and refusing transport. How should the EMT manage this situation?",
+                    question: "This patient has a life-threatening wound infection with sepsis criteria (fever, tachycardia, confusion). He is homeless and refusing transport. How should the EMS provider manage this situation?",
                     options: [
                         "Honor his refusal since he is alert and conversational — have him sign an AMA form",
                         "Explain your specific concerns in plain language: 'This infection is spreading quickly up your leg and into your blood. Without treatment, you could die in the next 24 hours. The hospital can help — they will give you antibiotics through an IV and clean the wound properly.' Ask if there is anything you can do to make him more comfortable with the decision (call a friend, arrange for his belongings to be held). If he continues to refuse, involve law enforcement and medical direction. The patient's confusion (from sepsis) may impair his decision-making capacity, making his refusal invalid",
@@ -1834,7 +1834,7 @@ window.CPG_DATA = {
                 <h4>Epidemiology and Physiologic Changes</h4>
                 <p>Obesity is a chronic, progressive disease that affects virtually every organ system. Understanding the pathophysiology of obesity is essential to anticipating and managing the complications that arise in bariatric patients:</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>System</th><th>Pathophysiology</th><th>Clinical Implications for EMS</th></tr>
                     </thead>
@@ -1847,7 +1847,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Musculoskeletal</strong></td><td>Degenerative joint disease (osteoarthritis of knees, hips, spine); chronic low back pain; limited mobility; muscle deconditioning</td><td>Difficulty positioning for transport and assessment; chronic pain may complicate acute pain assessment; risk of further injury during lifting and moving</td></tr>
                         <tr><td><strong>Integumentary</strong></td><td>Intertrigo (skin breakdown in skin folds); lymphedema; chronic venous stasis; increased risk of cellulitis and pressure ulcers; fragile skin</td><td>Assess skin folds for rashes, infections, and wounds; careful handling to avoid skin tears; increased risk of pressure ulcers from long transports on hard surfaces</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — Oxygenation:</strong> Bariatric patients have a <strong>reduced functional residual capacity (FRC)</strong> and increased metabolic oxygen demand. This means they desaturate significantly faster during apnea than normal-weight patients — sometimes in less than 1-2 minutes. Pre-oxygenate aggressively (100% O₂ via non-rebreather for 3-5 minutes) and be prepared to intervene early if oxygenation drops.
@@ -1914,7 +1914,7 @@ window.CPG_DATA = {
                     <li><strong>Hydrophilic drugs</strong> (e.g., neuromuscular blockers, aminoglycosides, beta-blockers) distribute less into fat. The volume of distribution may be closer to lean body weight. Dosing based on IBW (ideal body weight) is common for these drugs.</li>
                     <li><strong>Weight-based medications:</strong> For drugs dosed by weight (e.g., epinephrine, naloxone, dextrose 50%), use the patient's actual body weight. For drugs with narrow therapeutic windows, be aware that the recommended dose may be adjusted based on specific protocols.</li>
                     <li><strong>Altered clearance:</strong> Hepatic and renal clearance may be increased (due to increased organ mass and blood flow) or decreased (due to fatty infiltration of the liver and decreased renal function from comorbidities). This variability makes drug response less predictable.</li>
-                    <li><strong>EMT implications:</strong> Do not change drug doses without specific protocol guidance. Be aware that bariatric patients may require more or less sedation than expected. Monitor for prolonged effects from benzodiazepines and opiates — they may accumulate in adipose tissue and cause delayed respiratory depression.</li>
+                    <li><strong>EMS provider implications:</strong> Do not change drug doses without specific protocol guidance. Be aware that bariatric patients may require more or less sedation than expected. Monitor for prolonged effects from benzodiazepines and opiates — they may accumulate in adipose tissue and cause delayed respiratory depression.</li>
                 </ul>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -1922,12 +1922,12 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Transport Considerations</h4>
-                <p>Transporting a bariatric patient requires planning, adequate personnel, and specialized equipment. Inadequate preparation can lead to patient injury, EMT injury, and significant delays:</p>
+                <p>Transporting a bariatric patient requires planning, adequate personnel, and specialized equipment. Inadequate preparation can lead to patient injury, EMS provider injury, and significant delays:</p>
                 <ul>
                     <li><strong>Team size:</strong> Proper lifting and moving of a bariatric patient typically requires 4-6+ personnel. Determine this number BEFORE attempting to lift. Use a mechanical lift or air-assisted lift device whenever available. Calling for additional resources early (fire department, second ambulance) is better than struggling and risking injury.</li>
                     <li><strong>Bariatric-specific equipment:</strong> Bariatric stretcher (higher width and weight capacity), bariatric stair chair, reinforced backboard or scoop stretcher, wide ambulance cot with power-load capability, and wide-door or bariatric ambulance for larger patients.</li>
                     <li><strong>Patient dignity and psychological care:</strong> Bariatric patients often experience embarrassment, stigma, and anxiety during EMS encounters. Be aware that previous healthcare experiences may have been negative. Use respectful, non-judgmental language. Do not make comments about the patient's weight — even in an attempt to "joke" or "relax" the patient. Cover the patient appropriately during transport. Use adequate-sized hospital gowns and sheets. Explain what is happening and why extra personnel or equipment may be needed without making the patient feel like a burden.</li>
-                    <li><strong>Mechanical lifts:</strong> When available, use powered mechanical lifts (e.g., Hoyer lift, ceiling-mounted lifts, or air-assisted transfer mattresses) to move bariatric patients. These reduce the risk of injury to both patient and EMTs. If not available, use a draw sheet and log-roll technique with sufficient personnel.</li>
+                    <li><strong>Mechanical lifts:</strong> When available, use powered mechanical lifts (e.g., Hoyer lift, ceiling-mounted lifts, or air-assisted transfer mattresses) to move bariatric patients. These reduce the risk of injury to both patient and EMS providers. If not available, use a draw sheet and log-roll technique with sufficient personnel.</li>
                     <li><strong>Access challenges:</strong> Assess the scene for obstacles before moving the patient. Narrow doorways, stairs, small elevators, and tight corners may all present barriers. Have a plan B if the primary egress does not accommodate the patient.</li>
                     <li><strong>Seatbelt considerations:</strong> Standard ambulance cot seatbelts and stretcher straps may be too short to secure a bariatric patient. Use extenders or longer straps. Secure the patient properly before transport — an unrestrained bariatric patient in a moving ambulance poses a safety risk to themselves and the crew.</li>
                     <li><strong>Vehicular considerations:</strong> Some bariatric patients may exceed the safe working load of standard ambulance cots or the cot fastener system. Know your vehicle's capacity. Consider using a bariatric transport vehicle if available for very large patients.</li>
@@ -1965,7 +1965,7 @@ window.CPG_DATA = {
                 },
                 {
                     question: "What is the recommended team size for moving a bariatric patient?",
-                    answer: "Typically 4-6+ personnel. Use mechanical lifts or air-assisted devices when available. Call for additional resources early — fire department or second ambulance. Proper lifting techniques are essential to prevent EMT injury.",
+                    answer: "Typically 4-6+ personnel. Use mechanical lifts or air-assisted devices when available. Call for additional resources early — fire department or second ambulance. Proper lifting techniques are essential to prevent EMS provider injury.",
                     category: "Bariatric — Transport"
                 },
                 {
@@ -1974,7 +1974,7 @@ window.CPG_DATA = {
                     category: "Bariatric — Assessment"
                 },
                 {
-                    question: "How should an EMT approach IM medication administration in a bariatric patient?",
+                    question: "How should an EMS provider approach IM medication administration in a bariatric patient?",
                     answer: "Use a longer needle (1.5-2 inches) to ensure intramuscular delivery rather than subcutaneous injection into adipose tissue. The preferred site is the anterolateral thigh — it provides the largest muscle mass with reliable absorption regardless of body habitus.",
                     category: "Bariatric — Medications"
                 }
@@ -1991,7 +1991,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "An EMT attempts to take a blood pressure on a bariatric patient using a standard adult cuff. The reading is 168/94. What is the MOST likely explanation?",
+                    q: "An EMS provider attempts to take a blood pressure on a bariatric patient using a standard adult cuff. The reading is 168/94. What is the MOST likely explanation?",
                     options: [
                         "The patient is hypertensive and needs emergency treatment",
                         "A standard cuff is too small for a large arm — this causes falsely elevated readings",
@@ -2021,7 +2021,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "An EMT needs to administer IM epinephrine to a bariatric patient in anaphylaxis. What needle length is MOST appropriate?",
+                    q: "An EMS provider needs to administer IM epinephrine to a bariatric patient in anaphylaxis. What needle length is MOST appropriate?",
                     options: [
                         "Standard 5/8-inch needle (it will reach the muscle in most patients)",
                         "A longer needle (1.5-2 inches) to ensure intramuscular delivery through the adipose tissue",
@@ -2041,7 +2041,7 @@ window.CPG_DATA = {
                     correct: 1
                 },
                 {
-                    q: "HARD: An EMT is assessing a bariatric patient with abdominal pain. The patient has a large abdominal girth and thick abdominal wall. Which of the following assessment limitations should the EMT anticipate?",
+                    q: "HARD: An EMS provider is assessing a bariatric patient with abdominal pain. The patient has a large abdominal girth and thick abdominal wall. Which of the following assessment limitations should the EMS provider anticipate?",
                     options: [
                         "The abdominal exam will be easier because the abdominal muscles are more relaxed",
                         "Abdominal palpation may be unreliable — guarding, rebound, and masses may not be appreciable despite significant intra-abdominal pathology. Auscultation of bowel and lung sounds may also be diminished",
@@ -2054,7 +2054,7 @@ window.CPG_DATA = {
             critical: [
                 {
                     scenario: "You and your partner respond to a home for a 55-year-old male with difficulty breathing. The patient weighs approximately 400 lbs (estimated BMI 55). He is sitting upright in a chair, using accessory muscles to breathe, and can only speak 2-3 words between breaths. His SpO₂ is 86% on room air. The patient has a history of CHF, hypertension, and severe obstructive sleep apnea. He uses CPAP at home but the machine is not working today. His wife is anxious and asking if you can help him. The patient lives in a second-floor walk-up apartment with narrow, winding stairs. The doorway to the apartment is a standard 32-inch door. Your ambulance has a standard cot (rated to 350 lbs) and standard equipment.",
-                    question: "This patient is in severe respiratory distress and needs immediate intervention and transport. He is also a bariatric patient with equipment and access challenges. What is the EMT's optimal management sequence?",
+                    question: "This patient is in severe respiratory distress and needs immediate intervention and transport. He is also a bariatric patient with equipment and access challenges. What is the EMS provider's optimal management sequence?",
                     options: [
                         "Start BVM ventilation immediately and try to get him down the stairs as fast as possible",
                         "Apply high-flow oxygen, position him upright (ramped position with blankets behind his head and shoulders), start CPAP if available, call for additional personnel (fire department) for lifting assistance and a bariatric-capable ambulance if available. If his SpO₂ does not improve or he deteriorates, begin BVM ventilation. Plan the extrication route carefully — the standard stair chair may not fit through doorways; consider using a reinforced backboard and slide him down stairs with sufficient personnel. Protect the patient's dignity throughout — do not discuss his weight in front of him",
@@ -2076,7 +2076,7 @@ window.CPG_DATA = {
                 },
                 {
                     scenario: "You are called to a skilled nursing facility for a 68-year-old female with altered mental status. The patient weighs approximately 380 lbs (BMI 50). She has a history of diabetes, hypertension, and a recent right hip replacement. The nursing staff reports she was confused this morning and her blood glucose is 52 mg/dL. She is awake but confused and cannot follow commands. The facility is on the third floor and has a standard elevator that measures 48 inches deep by 42 inches wide. The doorway to the patient's room is a standard 36-inch door. Your bariatric stretcher measures 32 inches wide and will fit through all doorways. The patient is currently lying in a standard hospital bed. The nursing staff has not attempted to move her. The patient's daughter arrives and is tearful, saying, 'Please be careful with her — she's so embarrassed about her weight and she hates when people stare.'",
-                    question: "This patient is hypoglycemic with AMS, needs IV dextrose or IM glucagon, and needs transport. There are equipment and dignity considerations. What is the EMT's best approach?",
+                    question: "This patient is hypoglycemic with AMS, needs IV dextrose or IM glucagon, and needs transport. There are equipment and dignity considerations. What is the EMS provider's best approach?",
                     options: [
                         "Treat the hypoglycemia immediately (IM glucagon since IV access may be difficult), then plan the move. Use a bariatric-rated stretcher. Call for additional personnel (4-6 people) for the transfer. Use a mechanical lift or slide board with a draw sheet to move the patient from the bed to the stretcher. Cover the patient with a sheet to maintain dignity. Be mindful of the daughter's request — speak respectfully, do not discuss the patient's weight. Treat the medical emergency first (hypoglycemia), then manage transport logistics",
                         "Treat the hypoglycemia and leave the patient at the facility since the staff should be able to manage hypoglycemia",

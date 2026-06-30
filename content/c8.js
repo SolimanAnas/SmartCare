@@ -13,11 +13,11 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cloud-lightning"/></svg> Heat-Related Illness</h3>
 
-                <p>Heat-related illnesses occur along a continuum — from minor heat cramps to life-threatening heat stroke. Understanding thermoregulation and recognizing when a patient has moved along this spectrum is critical for the EMT. <strong>Environmental hyperthermia is fundamentally different from fever:</strong> fever is a hypothalamic set-point elevation mediated by pyrogens, while hyperthermia is uncontrolled heat gain exceeding the body's ability to dissipate heat. <strong>Antipyretics do NOT work for environmental hyperthermia.</strong></p>
+                <p>Heat-related illnesses occur along a continuum — from minor heat cramps to life-threatening heat stroke. Understanding thermoregulation and recognizing when a patient has moved along this spectrum is critical for the EMS provider. <strong>Environmental hyperthermia is fundamentally different from fever:</strong> fever is a hypothalamic set-point elevation mediated by pyrogens, while hyperthermia is uncontrolled heat gain exceeding the body's ability to dissipate heat. <strong>Antipyretics do NOT work for environmental hyperthermia.</strong></p>
 
                 <h4>Thermoregulation Mechanisms</h4>
                 <p>The human body maintains core temperature within a narrow range (36.5–37.5°C / 97.7–99.5°F) through a balance of heat production and heat loss. The hypothalamus acts as the body's thermostat. Heat is lost through four primary mechanisms:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Mechanism</th><th>Definition</th><th>Example</th><th>Efficiency</th></tr>
                     </thead>
@@ -27,7 +27,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Radiation</strong></td><td>Emission of infrared electromagnetic energy from the body to cooler objects in the environment (without physical contact)</td><td>Body heat radiating to a cold room; standing near a cold wall</td><td>Accounts for ~60% of heat loss at rest in a cool environment; the dominant mechanism at normal room temperature</td></tr>
                         <tr><td><strong>Evaporation</strong></td><td>Heat loss through the conversion of sweat (liquid) to water vapor (gas) on the skin surface</td><td>Sweating; misting the skin with water followed by fanning</td><td>The <strong>primary cooling mechanism during exercise and in hot environments</strong>. Becomes ineffective at high humidity (>75%) because air is already saturated with water vapor</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>Key concept:</strong> When environmental temperature exceeds skin temperature (~35°C / 95°F), evaporation is the <em>only</em> effective cooling mechanism. High humidity dramatically reduces evaporative cooling — this is why humid heat is more dangerous than dry heat at the same temperature.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -88,7 +88,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h5>Exertional vs Classic Heat Stroke</h5>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Exertional Heat Stroke</th><th>Classic (Non-Exertional) Heat Stroke</th></tr>
                     </thead>
@@ -101,7 +101,7 @@ window.CPG_DATA = {
                         <tr><td><strong>DIC</strong></td><td>More common — disseminated intravascular coagulation from systemic inflammation</td><td>Less common but still occurs</td></tr>
                         <tr><td><strong>Best cooling method</strong></td><td><strong>Cold water immersion</strong> — the gold standard (ice water tub, 35–59°F / 2–15°C)</td><td>Evaporative cooling (mist + fan), ice packs to groin/axillae/neck, cold IV fluids</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Cooling Methods</h4>
                 <p>Rapid cooling is the cornerstone of heat stroke management. The goal is to reduce core temperature to <102°F (39°C) as quickly as possible. The method chosen depends on available resources, patient stability, and transport considerations:</p>
@@ -118,9 +118,9 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Malignant Hyperthermia & Neuroleptic Malignant Syndrome</h4>
-                <p>While NOT classic environmental emergencies, these two conditions cause severe hyperthermia that an EMT may encounter:</p>
+                <p>While NOT classic environmental emergencies, these two conditions cause severe hyperthermia that an EMS provider may encounter:</p>
                 <ul>
-                    <li><strong>Malignant hyperthermia (MH):</strong> A life-threatening genetic disorder triggered by depolarizing neuromuscular blocking agents (succinylcholine) and volatile anaesthetics (halothane, sevoflurane, desflurane, isoflurane). Presents with: masseter muscle rigidity, generalized rigidity, hyperthermia (rapid rise), tachycardia, hypercapnia (rising end-tidal CO₂), metabolic acidosis, and rhabdomyolysis. <strong>Treatment:</strong> Dantrolene (the specific antidote), aggressive cooling, and supportive care. <strong>Key for EMTs:</strong> ABCs, aggressive cooling, and rapid transport. Obtain a history of anaesthetic complications in the family.</li>
+                    <li><strong>Malignant hyperthermia (MH):</strong> A life-threatening genetic disorder triggered by depolarizing neuromuscular blocking agents (succinylcholine) and volatile anaesthetics (halothane, sevoflurane, desflurane, isoflurane). Presents with: masseter muscle rigidity, generalized rigidity, hyperthermia (rapid rise), tachycardia, hypercapnia (rising end-tidal CO₂), metabolic acidosis, and rhabdomyolysis. <strong>Treatment:</strong> Dantrolene (the specific antidote), aggressive cooling, and supportive care. <strong>Key for EMS providers:</strong> ABCs, aggressive cooling, and rapid transport. Obtain a history of anaesthetic complications in the family.</li>
                     <li><strong>Neuroleptic malignant syndrome (NMS):</strong> A rare but life-threatening reaction to antipsychotic medications (haloperidol, fluphenazine, risperidone) characterized by <strong>muscle rigidity, hyperthermia, altered mental status, and autonomic instability</strong> (labile BP, tachycardia, diaphoresis). Onset is slower than MH (days to weeks after starting or increasing the dose of an antipsychotic). <strong>Treatment:</strong> Discontinue the offending agent, aggressive cooling, hydration, and medications (bromocriptine, dantrolene) in the hospital. Recognise the difference: NMS has a slower onset and is associated with antipsychotic use; MH has a rapid onset and is associated with anaesthesia.</li>
                 </ul>
 
@@ -192,7 +192,7 @@ window.CPG_DATA = {
                     category: "Environmental — Heat"
                 },
                 {
-                    question: "Why should an EMT not give antipyretics for heat stroke?",
+                    question: "Why should an EMS provider not give antipyretics for heat stroke?",
                     answer: "Antipyretics (acetaminophen, NSAIDs) work by lowering the hypothalamic set point in fever. In environmental hyperthermia, the set point is normal — the body is simply overwhelmed by heat. Antipyretics have no physiologic effect and may worsen outcomes (liver toxicity, coagulopathy).",
                     category: "Environmental — Heat"
                 }
@@ -296,7 +296,7 @@ window.CPG_DATA = {
 
                 <h4>Stages of Hypothermia</h4>
                 <p>Hypothermia is staged by core temperature, with progressively worsening physiologic effects:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Stage</th><th>Core Temp</th><th>Clinical Findings</th><th>Key Features</th></tr>
                     </thead>
@@ -305,7 +305,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Moderate</strong></td><td>82–90°F (28–32°C)</td><td><strong>Shivering stops</strong> — this is a critical transition point; the body can no longer generate heat through muscle activity. Progressive decline in mental status (confusion, disorientation, paradoxical undressing — the patient feels warm and removes clothing, worsening exposure). Bradycardia, bradypnoea, dilated pupils, hyporeflexia, and loss of motor function. Atrial fibrillation (AFib) is common — do not treat the AFib, treat the hypothermia. The patient may appear obtunded or stuporous.</td><td>Shivering stops = the body has exhausted its primary heat-generating mechanism. The patient can no longer compensate. This marks the transition to severe physiologic compromise.</td></tr>
                         <tr><td><strong>Severe</strong></td><td>&lt;82°F (&lt;28°C)</td><td><strong>Coma, areflexia, pulseless, apneic.</strong> The classic signs of life may be absent. The patient appears dead (fixed and dilated pupils, no reflexes, no palpable pulse, no audible heart tones). Ventricular fibrillation (V-fib) is highly prone — the cold myocardium is irritable. All enzyme systems slow dramatically, decreasing oxygen demand. <strong>Prolonged CPR is warranted</strong> — successful resuscitations with good neurologic outcomes have been reported after >60 minutes of CPR with ECMO rewarming.</td><td>The patient may appear dead — ASSUME THEY ARE ALIVE. "You're not dead until you're warm and dead." Assess pulse for 30–45 seconds before starting CPR. Handle GENTLY — rough movement can precipitate V-fib.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical Warning — "You're Not Dead Until You're Warm and Dead":</strong> Patients with severe hypothermia (core temp &lt;82°F) can appear dead — no pulse, no respirations, fixed/dilated pupils, areflexia — but may be successfully resuscitated. The cold dramatically decreases metabolic oxygen demand, protecting vital organs from ischaemic injury. Death can only be declared after the patient has been rewarmed to near-normal core temperature and is still asystolic and apnoeic. <strong>Never pronounce death in a hypothermic patient until they have been rewarmed.</strong>
@@ -395,7 +395,7 @@ window.CPG_DATA = {
 
                 <p><strong>Chilblains (pernio):</strong> A milder cold injury caused by repeated exposure to cold (above freezing) with high humidity. Presents as tender, red-purple plaques, papules, or nodules on the fingers, toes, ears, or nose. Itching and burning are common. The lesions appear 12–24 hours after cold exposure and may last 1–3 weeks. Management: gentle rewarming, elevation, protect from further cold exposure. The condition is self-limiting but can be recurrent in susceptible individuals.</p>
 
-                <h4>EMT Assessment Pearls for Cold Exposure</h4>
+                <h4>EMS Provider Assessment Pearls for Cold Exposure</h4>
                 <ul>
                     <li><strong>History:</strong> Duration of cold exposure, environmental conditions (temperature, wind speed, wetness), clothing worn, alcohol or drug use, underlying medical conditions (hypothyroidism, diabetes, spinal cord injury), medications (sedatives, antipsychotics, beta-blockers).</li>
                     <li><strong>Vital signs:</strong> Use a low-reading thermometer — standard thermometers may not register below 94°F (34.4°C). Rectal temperature is the gold standard for core temperature measurement in hypothermia.</li>
@@ -457,7 +457,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "A 45-year-old homeless male is found in an alley on a 28°F night. He is unresponsive with no visible shivering. His skin is cold and his pupils are fixed and dilated. You palpate his carotid artery for 30 seconds and feel a weak, slow pulse at approximately 12 beats per minute. His respirations are shallow at 4–6 breaths per minute. What should the EMT do FIRST?",
+                    q: "A 45-year-old homeless male is found in an alley on a 28°F night. He is unresponsive with no visible shivering. His skin is cold and his pupils are fixed and dilated. You palpate his carotid artery for 30 seconds and feel a weak, slow pulse at approximately 12 beats per minute. His respirations are shallow at 4–6 breaths per minute. What should the EMS provider do FIRST?",
                     options: [
                         "Immediately begin CPR — the patient is in cardiac arrest with a slow pulse rate that will likely stop",
                         "Do not start CPR — a pulse is present. Begin gentle handling, passive external rewarming (remove wet clothes, warm blankets, heat packs to trunk), warm humidified oxygen, warm IV fluids, and transport. Handle EXTREMELY gently to avoid precipitating V-fib",
@@ -468,7 +468,7 @@ window.CPG_DATA = {
                     explanation: "A palpable pulse, even at 10–15 bpm, means the patient is NOT in cardiac arrest. CPR is contraindicated. Severe hypothermia causes extreme bradycardia as a protective mechanism (decreased metabolic demand). Key management: gentle handling (risk of V-fib), passive and active external rewarming (trunk only), warm humidified O₂, warm IV fluids, and rapid transport to a centre capable of active internal rewarming. Do NOT rough-handle or aggressively stimulate the patient."
                 },
                 {
-                    q: "A ski patrol brings you a 32-year-old male found unresponsive on the mountain. He is not wearing a jacket. Core temperature is 78°F (25.6°C). He has no pulse and is apnoeic. You begin CPR and attempt defibrillation for V-fib — no response after 2 shocks. The estimated transport time to the hospital is 45 minutes. What should the EMT do regarding further defibrillation attempts?",
+                    q: "A ski patrol brings you a 32-year-old male found unresponsive on the mountain. He is not wearing a jacket. Core temperature is 78°F (25.6°C). He has no pulse and is apnoeic. You begin CPR and attempt defibrillation for V-fib — no response after 2 shocks. The estimated transport time to the hospital is 45 minutes. What should the EMS provider do regarding further defibrillation attempts?",
                     options: [
                         "Continue defibrillation attempts every 2 minutes — persistent efforts may eventually work",
                         "Withhold further defibrillation — the core temp is <86°F (30°C), making defibrillation ineffective. Continue CPR, actively rewarm, and transport to an ECMO-capable centre. Rewarming is the priority — arrange for ECMO/CPB rewarming at the receiving hospital",
@@ -557,7 +557,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Pathophysiology of Drowning</h4>
-                <p>The drowning process follows a predictable sequence that, if uninterrupted, leads to cardiac arrest. Understanding this sequence helps the EMT understand the priority of interventions:</p>
+                <p>The drowning process follows a predictable sequence that, if uninterrupted, leads to cardiac arrest. Understanding this sequence helps the EMS provider understand the priority of interventions:</p>
 
                 <ol>
                     <li><strong>Panic and breath-holding:</strong> The victim submerges and instinctively holds their breath. During this phase, the patient may struggle at the surface, gasping and swallowing water. Breath-holding can last 30–90 seconds.</li>
@@ -569,7 +569,7 @@ window.CPG_DATA = {
 
                 <h4>Fresh Water vs Salt Water Drowning</h4>
                 <p>The classic teaching that fresh water and salt water drowning are fundamentally different conditions with different treatments is <strong>outdated and clinically irrelevant for prehospital care</strong>. While the initial pathophysiology differs slightly, <strong>the clinical management is IDENTICAL</strong>:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Feature</th><th>Fresh Water</th><th>Salt Water</th></tr>
                     </thead>
@@ -581,7 +581,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Electrolyte changes</strong></td><td>Clinically insignificant — would require >11 mL/kg of aspirated fresh water</td><td>Clinically insignificant — would require >22 mL/kg of aspirated salt water</td></tr>
                         <tr><td><strong>End result</strong></td><td colspan="2" style="text-align:center;"><strong>Both cause: hypoxemia, pulmonary oedema, V/Q mismatch, and metabolic acidosis</strong></td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>The bottom line:</strong> The type of water does NOT change prehospital management. In both cases, the primary problem is HYPOXEMIA from pulmonary injury. The treatment is: oxygen, ventilation, and transport. Do NOT waste time determining whether the water was fresh or salt — treat the hypoxemia.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -629,10 +629,10 @@ window.CPG_DATA = {
                     <li><strong>Peripheral vasoconstriction:</strong> Blood is shunted from the extremities and non-essential organs to the brain and heart (central circulation)</li>
                     <li><strong>Decreased metabolic rate:</strong> The cold body temperature rapidly slows all metabolic processes, reducing oxygen demand</li>
                 </ul>
-                <p>The diving reflex is most pronounced in <strong>children</strong> — their larger surface area-to-mass ratio cools more rapidly, and the reflex is stronger in the young. This is why children have survived prolonged ice-water submersion (up to 60 minutes or more in rare cases) with good neurologic outcomes. <strong>Key EMT takeaway:</strong> In cold water drowning, especially in children, <strong>initiate resuscitation even if the submersion time seems impossibly long</strong>. Do not assume the patient is dead. Begin CPR, actively rewarm, and transport to a centre with ECMO/CPB rewarming capability. "You're not dead until you're warm and dead" applies to cold water drowning as much as to primary hypothermia.</p>
+                <p>The diving reflex is most pronounced in <strong>children</strong> — their larger surface area-to-mass ratio cools more rapidly, and the reflex is stronger in the young. This is why children have survived prolonged ice-water submersion (up to 60 minutes or more in rare cases) with good neurologic outcomes. <strong>Key EMS provider takeaway:</strong> In cold water drowning, especially in children, <strong>initiate resuscitation even if the submersion time seems impossibly long</strong>. Do not assume the patient is dead. Begin CPR, actively rewarm, and transport to a centre with ECMO/CPB rewarming capability. "You're not dead until you're warm and dead" applies to cold water drowning as much as to primary hypothermia.</p>
 
                 <h4>Drowning Prevention Education</h4>
-                <p>Drowning is the <strong>leading cause of death in children aged 1–4 years</strong> and the second leading cause of unintentional injury death in children 1–14 years. EMTs are in a unique position to provide drowning prevention education to the community:</p>
+                <p>Drowning is the <strong>leading cause of death in children aged 1–4 years</strong> and the second leading cause of unintentional injury death in children 1–14 years. EMS providers are in a unique position to provide drowning prevention education to the community:</p>
                 <ul>
                     <li><strong>Supervision:</strong> Constant, focused adult supervision is the single most important prevention measure. Children can drown in seconds and in as little as 2 inches of water (bathtubs, buckets, toilets, wading pools). Drowning is SILENT — there is no splashing or calling for help (contrary to Hollywood depictions).</li>
                     <li><strong>Barriers:</strong> Four-sided isolation fencing around pools (separate from the house and yard) reduces drowning risk by 83%. Pool gates should be self-closing and self-latching.</li>
@@ -717,7 +717,7 @@ window.CPG_DATA = {
                     explanation: "In drowning-related cardiac arrest, the priority is ventilation. Open the airway, give 2 rescue breaths (look for chest rise), then begin CPR (15:2 for a child if two rescuers). The arrest is caused by hypoxia, not a primary cardiac event — effective ventilation is critical for ROSC. Do NOT perform abdominal thrusts. C-spine is only indicated if there is a clear traumatic mechanism (diving, fall, water slide) — pool drownings in a 3-year-old are usually from wandering into the pool, not from diving."
                 },
                 {
-                    q: "A 55-year-old male is rescued from a lake after being submerged for approximately 2 minutes. He is awake, alert, coughing, and producing frothy sputum. His SpO₂ is 91% on room air, HR 112, RR 26, BP 136/84. He says he is 'fine' and wants to go home and 'not make a big deal out of this.' What should the EMT do?",
+                    q: "A 55-year-old male is rescued from a lake after being submerged for approximately 2 minutes. He is awake, alert, coughing, and producing frothy sputum. His SpO₂ is 91% on room air, HR 112, RR 26, BP 136/84. He says he is 'fine' and wants to go home and 'not make a big deal out of this.' What should the EMS provider do?",
                     options: [
                         "Allow him to refuse transport — he is awake, alert, and his vital signs are stable",
                         "Explain that ALL drowning victims require hospital evaluation due to the risk of secondary drowning (delayed pulmonary oedema). He has signs of respiratory distress already (tachypnoea, tachycardia, low SpO₂, frothy sputum). Administer oxygen, monitor closely, and transport emergently",
@@ -728,7 +728,7 @@ window.CPG_DATA = {
                     explanation: "Every drowning victim requires hospital evaluation. This patient already has signs of pulmonary injury (tachypnoea, tachycardia, hypoxaemia, frothy sputum — a sign of pulmonary oedema). He is at high risk for secondary drowning with progressive respiratory deterioration. Management: high-flow oxygen (titrate to SpO₂ ≥94%), position of comfort (semi-Fowler's or upright), monitor SpO₂ and respiratory effort continuously, and transport. Do NOT allow him to refuse transport. Do NOT perform abdominal thrusts. Notify the receiving hospital of a potential drowning with pulmonary oedema."
                 },
                 {
-                    q: "[HARD] A 6-year-old child was pulled from an icy pond after approximately 20 minutes of submersion. Water temperature is estimated at 38°F (3°C). The child is unresponsive, apnoeic, and pulseless. Bystanders have started CPR. The nearest hospital is 25 minutes away. What should the EMT consider regarding the prognosis and management?",
+                    q: "[HARD] A 6-year-old child was pulled from an icy pond after approximately 20 minutes of submersion. Water temperature is estimated at 38°F (3°C). The child is unresponsive, apnoeic, and pulseless. Bystanders have started CPR. The nearest hospital is 25 minutes away. What should the EMS provider consider regarding the prognosis and management?",
                     options: [
                         "The submersion time is far too long — the child is not survivable. Only provide comfort care and transport",
                         "Ice-water submersion with the diving reflex can produce remarkable outcomes even after prolonged submersion. Continue full resuscitation (CPR, advanced airway, vascular access, active rewarming). Transport to a hospital with ECMO/CPB rewarming capability if available. Do NOT pronounce death until the child has been rewarmed",
@@ -798,7 +798,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cloud-lightning"/></svg> Diving & Altitude Emergencies</h3>
 
-                <p>Diving and altitude emergencies arise from the physics of gas behaviour under pressure. <strong>Boyle's Law</strong> (pressure × volume = constant at a fixed temperature) and <strong>Henry's Law</strong> (the amount of gas dissolved in a liquid is proportional to its partial pressure) govern most injury mechanisms. As an EMT, you must recognise dysbarism injuries (barotrauma, decompression sickness, arterial gas embolism) and altitude-related illness (acute mountain sickness, HACE, HAPE) — all of which can progress rapidly and require specific prehospital interventions.</p>
+                <p>Diving and altitude emergencies arise from the physics of gas behaviour under pressure. <strong>Boyle's Law</strong> (pressure × volume = constant at a fixed temperature) and <strong>Henry's Law</strong> (the amount of gas dissolved in a liquid is proportional to its partial pressure) govern most injury mechanisms. As an EMS provider, you must recognise dysbarism injuries (barotrauma, decompression sickness, arterial gas embolism) and altitude-related illness (acute mountain sickness, HACE, HAPE) — all of which can progress rapidly and require specific prehospital interventions.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Key Physics for Diving Emergencies:</strong> For every 33 feet (10 m) of sea water (fsw), pressure increases by 1 atmosphere (atm). At 33 fsw, the diver experiences 2 atm total pressure; at 66 fsw, 3 atm. Boyle's Law means that a given volume of gas at the surface occupies half the volume at 33 fsw and one-third at 66 fsw. During ascent, the reverse occurs — expanding gas can cause barotrauma if not vented. Henry's Law explains decompression sickness: under pressure, nitrogen dissolves into tissues; during rapid ascent, nitrogen comes out of solution forming bubbles.
@@ -824,7 +824,7 @@ window.CPG_DATA = {
 
                 <h5>Pulmonary Barotrauma (Lung Overexpansion Injury)</h5>
                 <p>The most dangerous barotrauma. During ascent, gas in the lungs expands (Boyle's Law). If the diver holds their breath during ascent (panic, running out of air, rapid emergency ascent), the expanding gas cannot escape — it overinflates the alveoli, which rupture. Pulmonary barotrauma is the <strong>second leading cause of death in recreational scuba diving</strong> (after drowning). There are three manifestations:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Injury</th><th>Mechanism</th><th>Presentation</th><th>Key Feature</th></tr>
                     </thead>
@@ -833,7 +833,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Pneumothorax</strong></td><td>Alveolar rupture into the pleural space. Can be simple or tension.</td><td>Pleuritic chest pain, dyspnoea, decreased breath sounds on the affected side, hyperresonance to percussion, tracheal deviation (if tension).</td><td>May occur alone or with AGE. Suspect whenever a diver surfaces with chest pain and respiratory distress.</td></tr>
                         <tr><td><strong>Mediastinal / Subcutaneous Emphysema</strong></td><td>Gas tracks along bronchovascular sheaths into the mediastinum and subcutaneous tissues of the neck.</td><td>Chest pressure or fullness, hoarseness, dysphagia, crepitus on palpation of the neck and supraclavicular areas, Hamman's sign (mediastinal crunch — a precordial crackling sound synchronous with the heartbeat).</td><td>Usually self-limiting but signals that lung overexpansion occurred — the patient is at risk for coexisting AGE.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — AGE vs DCS Timing:</strong> Arterial gas embolism presents <strong>within 1–10 minutes of surfacing</strong> (often immediately). Decompression sickness typically presents <strong>30 minutes to 24 hours</strong> after surfacing (most within 1–6 hours). Rapid onset after surfacing = AGE until proven otherwise.
@@ -904,7 +904,7 @@ window.CPG_DATA = {
                     <li><strong>Management:</strong> <strong>IMMEDIATE DESCENT IS THE PRIORITY.</strong> Even 1,000–2,000 ft (300–600 m) can produce dramatic improvement. If descent impossible, use Gamow bag. Supplemental O₂ (4–6 L/min, target SpO₂ >90%). Nifedipine ER 30 mg orally reduces pulmonary artery pressure — drug of choice for HAPE treatment. Keep warm (cold worsens HAPE). Dexamethasone less effective for HAPE but used if HACE coexists.</li>
                 </ul>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Condition</th><th>Onset</th><th>Key Feature</th><th>Definitive Treatment</th></tr>
                     </thead>
@@ -913,7 +913,7 @@ window.CPG_DATA = {
                         <tr><td><strong>HACE</strong></td><td>1–3 days</td><td>AMS + ataxia (WIDE-BASED GAIT / CANNOT TANDEM WALK) + AMS/changed mental status. Papilledema possible</td><td><strong>IMMEDIATE DESCENT.</strong> Dexamethasone, O₂, Gamow bag if descent impossible</td></tr>
                         <tr><td><strong>HAPE</strong></td><td>2–4 days</td><td>Dyspnoea at rest, cough (dry → pink frothy sputum), rales/crackles, low SpO₂. Comfortable lying flat</td><td><strong>IMMEDIATE DESCENT.</strong> O₂, nifedipine ER, Gamow bag if descent impossible. Keep warm.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Focus — Key Takeaways:</strong><br>
@@ -1051,7 +1051,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cloud-lightning"/></svg> Bites, Stings & Envenomation</h3>
 
-                <p>Bites and stings from venomous animals are relatively uncommon but potentially life-threatening emergencies. The EMT's priorities are: <strong>scene safety</strong> (identify the animal, avoid additional bites), <strong>recognition of envenomation signs</strong>, <strong>basic wound care</strong>, and <strong>rapid transport</strong> when systemic toxicity is suspected. The key principle across all envenomations is that <strong>most "traditional" first-aid measures (cutting, sucking, tourniquets, ice) are harmful and should NOT be performed.</strong> This section covers snakebites, spider bites, scorpion stings, Hymenoptera (bee/wasp) stings, and marine envenomations.</p>
+                <p>Bites and stings from venomous animals are relatively uncommon but potentially life-threatening emergencies. The EMS provider's priorities are: <strong>scene safety</strong> (identify the animal, avoid additional bites), <strong>recognition of envenomation signs</strong>, <strong>basic wound care</strong>, and <strong>rapid transport</strong> when systemic toxicity is suspected. The key principle across all envenomations is that <strong>most "traditional" first-aid measures (cutting, sucking, tourniquets, ice) are harmful and should NOT be performed.</strong> This section covers snakebites, spider bites, scorpion stings, Hymenoptera (bee/wasp) stings, and marine envenomations.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — Scene Safety First:</strong> Do NOT become a victim yourself. The same snake or animal that bit the patient can bite you. Maintain a safe distance. Do not attempt to capture, kill, or handle the animal. A photograph taken from a safe distance is helpful for identification but never risk a second bite. If the animal is dead, do NOT touch it — some snakes can envenomate reflexively even after death (bite reflex persists for up to an hour post-mortem).
@@ -1322,7 +1322,7 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Hazardous Materials & Radiation Emergencies</h3>
 
-                <p>Hazardous materials (HAZMAT) emergencies involve the release of substances that pose a risk to health, safety, or the environment. As an EMT, your primary role is <strong>scene safety, recognition, isolation, and decontamination</strong> — not active chemical mitigation. The <strong>Hazardous Materials/Weapons of Mass Destruction (HAZMAT/WMD) response framework</strong> guides your approach: recognise the hazard, establish scene safety, don appropriate PPE, perform decontamination, and provide medical care. <strong>Your safety and the safety of your crew is the top priority.</strong> A dead rescuer saves no one.</p>
+                <p>Hazardous materials (HAZMAT) emergencies involve the release of substances that pose a risk to health, safety, or the environment. As an EMS provider, your primary role is <strong>scene safety, recognition, isolation, and decontamination</strong> — not active chemical mitigation. The <strong>Hazardous Materials/Weapons of Mass Destruction (HAZMAT/WMD) response framework</strong> guides your approach: recognise the hazard, establish scene safety, don appropriate PPE, perform decontamination, and provide medical care. <strong>Your safety and the safety of your crew is the top priority.</strong> A dead rescuer saves no one.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Fundamental Rule — Scene Safety:</strong> In any suspected HAZMAT incident: <strong>STOP</strong> before entering. Survey the scene from a safe distance (at least 500 ft upwind/uphill). Look for placards, labels, containers, vapour clouds, unusual odours, multiple patients with similar symptoms, or dead animals/birds. If you cannot identify the substance or are unsure about the hazard — <strong>do NOT enter.</strong> Wait for a HAZMAT team. Your responsibility is to identify the hazard from a safe distance and communicate it to incoming resources.
@@ -1330,7 +1330,7 @@ window.CPG_DATA = {
 
                 <h4>HAZMAT Recognition — Placards, Labels, and Markings</h4>
                 <p>The <strong>DOT placard system</strong> (diamond-shaped, 10¾" × 10¾") uses a colour-coded numbering system to identify hazardous materials:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Colour</th><th>Division</th><th>Examples</th></tr>
                     </thead>
@@ -1347,15 +1347,15 @@ window.CPG_DATA = {
                         <tr><td><strong>White/Black</strong></td><td>Class 8 — Corrosives</td><td>Sulfuric acid, hydrochloric acid, sodium hydroxide</td></tr>
                         <tr><td><strong>Black/White</strong></td><td>Class 9 — Miscellaneous</td><td>Asbestos, dry ice, lithium batteries</td></tr>
                     </tbody>
-                </table>
-                <p>The <strong>UN/NA number</strong> (4-digit number on placards or orange panels) identifies the specific substance. The <strong>ERG (Emergency Response Guidebook)</strong> — available as a paper guide in the apparatus and as a mobile app — cross-references the UN/NA number or substance name to provide: initial isolation distances, protective action zones, fire/explosion hazards, health effects, and first aid. <strong>Every EMT should know how to use the ERG.</strong></p>
+                </table></div>
+                <p>The <strong>UN/NA number</strong> (4-digit number on placards or orange panels) identifies the specific substance. The <strong>ERG (Emergency Response Guidebook)</strong> — available as a paper guide in the apparatus and as a mobile app — cross-references the UN/NA number or substance name to provide: initial isolation distances, protective action zones, fire/explosion hazards, health effects, and first aid. <strong>Every EMS provider should know how to use the ERG.</strong></p>
 
                 <h4>HAZMAT Zones</h4>
                 <p>HAZMAT incidents are divided into three operational zones:</p>
                 <ul>
-                    <li><strong>HOT ZONE (Exclusion Zone / Red):</strong> The area immediately surrounding the release. Highest level of contamination. Only personnel in Level A or B PPE with appropriate training may enter. <strong>EMTs do NOT enter the hot zone</strong> unless they are part of a trained HAZMAT team with appropriate PPE. Medical care in the hot zone is limited to life-saving interventions (tourniquet, airway) — or the patient is removed to the warm zone.</li>
-                    <li><strong>WARM ZONE (Contamination Reduction Zone / Yellow):</strong> Where decontamination occurs. Personnel in Level C or B PPE (depending on the substance) perform decontamination. The EMT may work here with appropriate PPE and training. Patients are decontaminated before leaving the warm zone.</li>
-                    <li><strong>COLD ZONE (Support Zone / Green):</strong> The safe area where medical treatment and transport occur. <strong>This is where EMTs typically operate</strong> — receiving decontaminated patients and providing medical care. No contamination should reach the cold zone.</li>
+                    <li><strong>HOT ZONE (Exclusion Zone / Red):</strong> The area immediately surrounding the release. Highest level of contamination. Only personnel in Level A or B PPE with appropriate training may enter. <strong>EMS providers do NOT enter the hot zone</strong> unless they are part of a trained HAZMAT team with appropriate PPE. Medical care in the hot zone is limited to life-saving interventions (tourniquet, airway) — or the patient is removed to the warm zone.</li>
+                    <li><strong>WARM ZONE (Contamination Reduction Zone / Yellow):</strong> Where decontamination occurs. Personnel in Level C or B PPE (depending on the substance) perform decontamination. The EMS provider may work here with appropriate PPE and training. Patients are decontaminated before leaving the warm zone.</li>
+                    <li><strong>COLD ZONE (Support Zone / Green):</strong> The safe area where medical treatment and transport occur. <strong>This is where EMS providers typically operate</strong> — receiving decontaminated patients and providing medical care. No contamination should reach the cold zone.</li>
                 </ul>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
@@ -1373,17 +1373,17 @@ window.CPG_DATA = {
 
                 <h4>Levels of PPE</h4>
                 <p>The EPA defines four levels of personal protective equipment:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Level</th><th>Respiratory Protection</th><th>Skin Protection</th><th>When Used</th></tr>
                     </thead>
                     <tbody>
                         <tr><td><strong>Level A</strong></td><td>SCBA (positive pressure, self-contained)</td><td>Fully encapsulating, vapour-tight chemical-resistant suit (splash and vapour protection)</td><td>Highest respiratory and skin hazard; when the substance is unknown or known to be highly toxic by skin contact; when IDLH conditions are present</td></tr>
                         <tr><td><strong>Level B</strong></td><td>SCBA (positive pressure, self-contained)</td><td>Chemical-resistant clothing (hooded, one-piece, or two-piece splash suit), boots, gloves (not vapour-tight)</td><td>High respiratory hazard but lower skin hazard; splash protection is adequate; when the substance is not absorbed through skin but is dangerously airborne</td></tr>
-                        <tr><td><strong>Level C</strong></td><td>Air-purifying respirator (APR — full-face or half-face with appropriate cartridge)</td><td>Splash-protective chemical-resistant clothing (Tyvek suit), boots, gloves</td><td>When the substance is known AND the concentration is below IDLH AND the oxygen level is ≥19.5% AND the appropriate filter cartridge exists. An EMT working in the warm zone decontaminating patients might use Level C</td></tr>
+                        <tr><td><strong>Level C</strong></td><td>Air-purifying respirator (APR — full-face or half-face with appropriate cartridge)</td><td>Splash-protective chemical-resistant clothing (Tyvek suit), boots, gloves</td><td>When the substance is known AND the concentration is below IDLH AND the oxygen level is ≥19.5% AND the appropriate filter cartridge exists. An EMS provider working in the warm zone decontaminating patients might use Level C</td></tr>
                         <tr><td><strong>Level D</strong></td><td>None (no respiratory protection)</td><td>Standard work uniform (station wear, turnout gear)</td><td>No hazard present; routine operations; cold zone only</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — IDLH (Immediately Dangerous to Life and Health):</strong> An atmosphere is IDLH if it poses an immediate threat to life, would cause irreversible adverse health effects, or would interfere with an individual's ability to escape unaided. Examples: oxygen <19.5% or >23.5%, hydrogen cyanide >50 ppm, hydrogen sulfide >100 ppm, carbon monoxide >1,200 ppm. In IDLH atmospheres, ONLY Level A or B PPE with SCBA is acceptable — cartridge respirators (Level C) are NOT sufficient.
@@ -1402,7 +1402,7 @@ window.CPG_DATA = {
                 </ol>
 
                 <h5>Technical Decontamination</h5>
-                <p>Systematic, formal decontamination process conducted by the HAZMAT team. Includes a decontamination corridor with multiple stations (drop zone, primary wash, secondary wash, rinse, monitoring, dressing). The EMT is not typically involved in technical decon beyond assisting with patient transfer.</p>
+                <p>Systematic, formal decontamination process conducted by the HAZMAT team. Includes a decontamination corridor with multiple stations (drop zone, primary wash, secondary wash, rinse, monitoring, dressing). The EMS provider is not typically involved in technical decon beyond assisting with patient transfer.</p>
 
                 <h4>Specific Chemical Agents</h4>
 
@@ -1433,7 +1433,7 @@ window.CPG_DATA = {
                 </div>
 
                 <h4>Radiation Emergencies</h4>
-                <p>Radiation emergencies involve the release of <strong>ionising radiation</strong> — alpha particles, beta particles, gamma rays, or neutrons. The most common radiation emergency an EMT will encounter is a <strong>transportation accident</strong> involving radioactive materials (medical isotopes, industrial sources). A <strong>radiation dispersal device (RDD, "dirty bomb")</strong> — a conventional explosive wrapped in radioactive material — is a terrorism concern. An actual nuclear detonation is a mass casualty event requiring a federal response.</p>
+                <p>Radiation emergencies involve the release of <strong>ionising radiation</strong> — alpha particles, beta particles, gamma rays, or neutrons. The most common radiation emergency an EMS provider will encounter is a <strong>transportation accident</strong> involving radioactive materials (medical isotopes, industrial sources). A <strong>radiation dispersal device (RDD, "dirty bomb")</strong> — a conventional explosive wrapped in radioactive material — is a terrorism concern. An actual nuclear detonation is a mass casualty event requiring a federal response.</p>
 
                 <h5>Key Radiation Concepts</h5>
                 <ul>
@@ -1450,7 +1450,7 @@ window.CPG_DATA = {
                     <li><strong>Manifest illness phase:</strong> Depending on the dose: haematopoietic (bone marrow suppression → infection, bleeding), GI (sloughing of gut mucosa → severe diarrhoea, dehydration, sepsis), or CNS (confusion, seizures, coma — invariably fatal at high doses).</li>
                     <li><strong>Recovery or death:</strong> If the haematopoietic system recovers, survival is possible.</li>
                 </ol>
-                <p><strong>EMT management of radiation patients:</strong> 1) Scene safety — do NOT enter a known radiation area without a radiological monitor and training. 2) The radiation source (sealed container) is the hazard — not the irradiated patient. 3) Contaminated patients require decontamination (remove clothing, gentle soap/water wash). 4) Treat life threats first — a contaminated cardiac arrest patient still needs CPR (with appropriate PPE). 5) Transport to a hospital designated for radiation emergencies. 6) Document the patient's estimated exposure, time of exposure, and any symptoms (especially time of first vomiting — a critical triage tool).</p>
+                <p><strong>EMS provider management of radiation patients:</strong> 1) Scene safety — do NOT enter a known radiation area without a radiological monitor and training. 2) The radiation source (sealed container) is the hazard — not the irradiated patient. 3) Contaminated patients require decontamination (remove clothing, gentle soap/water wash). 4) Treat life threats first — a contaminated cardiac arrest patient still needs CPR (with appropriate PPE). 5) Transport to a hospital designated for radiation emergencies. 6) Document the patient's estimated exposure, time of exposure, and any symptoms (especially time of first vomiting — a critical triage tool).</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — The 'Time to Vomiting' Triage Tool:</strong> In radiation mass casualty triage, the time from exposure to first vomiting is the most useful field triage tool:
@@ -1483,7 +1483,7 @@ window.CPG_DATA = {
             flashcards: [
                 {
                     question: "What are the three operational zones in a HAZMAT incident?",
-                    answer: "Hot zone (exclusion/red) — contamination present, only Level A/B personnel enter; Warm zone (contamination reduction/yellow) — decontamination occurs; Cold zone (support/green) — safe area for medical treatment. EMTs typically operate in the cold zone only.",
+                    answer: "Hot zone (exclusion/red) — contamination present, only Level A/B personnel enter; Warm zone (contamination reduction/yellow) — decontamination occurs; Cold zone (support/green) — safe area for medical treatment. EMS providers typically operate in the cold zone only.",
                     category: "Environmental — HAZMAT"
                 },
                 {
@@ -1534,7 +1534,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "You arrive at a truck crash on the highway. The truck has a red and white striped diamond placard with the number 1005. You smell a strong bleach-like odour and see a greenish-yellow vapour cloud forming near the overturned tanker. The driver is walking away from the truck, coughing and holding his eyes. What should the EMT do FIRST?",
+                    q: "You arrive at a truck crash on the highway. The truck has a red and white striped diamond placard with the number 1005. You smell a strong bleach-like odour and see a greenish-yellow vapour cloud forming near the overturned tanker. The driver is walking away from the truck, coughing and holding his eyes. What should the EMS provider do FIRST?",
                     options: [
                         "Run toward the truck driver to help him — he is clearly injured and needs medical attention",
                         "Park the ambulance upwind and uphill at least 500 feet away, don appropriate PPE, and assess the situation from a safe distance. The placard indicates a toxic gas (chlorine, UN 1005). The greenish-yellow colour and bleach odour confirm chlorine. Do NOT enter the vapour cloud",
@@ -1542,7 +1542,7 @@ window.CPG_DATA = {
                         "Begin treating the driver immediately — his symptoms are likely from anxiety, not the chemical"
                     ],
                     correct: 1,
-                    explanation: "Chlorine gas (UN 1005, Class 2.3 toxic gas) is greenish-yellow with a bleach-like odour. It is a pulmonary irritant that causes coughing, eye irritation, and respiratory distress. The EMT's first priority is SCENE SAFETY: park upwind and uphill (the vapour cloud will move downwind), don appropriate PPE (SCBA at minimum), and approach from a safe direction. Do NOT enter the vapour cloud without respiratory protection. Chlorine is heavier than air and will settle in low-lying areas. Once safe, assess the driver, provide high-flow O₂, bronchodilators if wheezing, and transport."
+                    explanation: "Chlorine gas (UN 1005, Class 2.3 toxic gas) is greenish-yellow with a bleach-like odour. It is a pulmonary irritant that causes coughing, eye irritation, and respiratory distress. The EMS provider's first priority is SCENE SAFETY: park upwind and uphill (the vapour cloud will move downwind), don appropriate PPE (SCBA at minimum), and approach from a safe direction. Do NOT enter the vapour cloud without respiratory protection. Chlorine is heavier than air and will settle in low-lying areas. Once safe, assess the driver, provide high-flow O₂, bronchodilators if wheezing, and transport."
                 },
                 {
                     q: "During a HAZMAT incident, you are assigned to work in the warm zone assisting with decontamination. Several patients have been removed from the hot zone. They are walking and talking but covered in an oily liquid. What is the minimum level of PPE you should be wearing?",
@@ -1586,23 +1586,23 @@ window.CPG_DATA = {
                         "The placard is yellow with a 1971 number — that indicates Class 7 (Radioactive). Evacuate 1 mile immediately"
                     ],
                     correct: 2,
-                    explanation: "This is a trick question testing ERG knowledge. Yellow placards indicate an OXIDIZER (Class 5.1) or Organic Peroxide (5.2). UN 1971 is methane / compressed natural gas (a Class 2.1 flammable gas), so the placard colour and the UN number do not match — treat the placard as unreliable and verify with the ERG. The key point: an unknown placard with an invalid/unknown UN number requires the EMT to: 1) Maintain safe position upwind/uphill; 2) Consult the ERG with the placard class colour and any legible information; 3) NOT enter or approach; 4) Wait for the HAZMAT team to identify the substance. The multiple patients with respiratory symptoms confirm an inhalation hazard exists regardless of what the placard seems to indicate."
+                    explanation: "This is a trick question testing ERG knowledge. Yellow placards indicate an OXIDIZER (Class 5.1) or Organic Peroxide (5.2). UN 1971 is methane / compressed natural gas (a Class 2.1 flammable gas), so the placard colour and the UN number do not match — treat the placard as unreliable and verify with the ERG. The key point: an unknown placard with an invalid/unknown UN number requires the EMS provider to: 1) Maintain safe position upwind/uphill; 2) Consult the ERG with the placard class colour and any legible information; 3) NOT enter or approach; 4) Wait for the HAZMAT team to identify the substance. The multiple patients with respiratory symptoms confirm an inhalation hazard exists regardless of what the placard seems to indicate."
                 },
                 {
                     q: "You are at a mass casualty incident involving a suspected chemical release in a subway station. Multiple patients are streaming out of the station, coughing and complaining of eye irritation. Some are vomiting and have difficulty breathing. You see several patients collapsed near the exit. What is the correct approach to triage and treatment?",
                     options: [
                         "Enter the subway station immediately to rescue the collapsed patients — they are the highest priority",
-                        "Set up a triage and decontamination station outside the station (warm zone) in the upwind direction. Have patients remove clothing, rinse with water, and then be triaged by severity. The collapsed patients near the exit should be removed by trained HAZMAT personnel in Level A/B PPE, decontaminated, and brought to the treatment area. EMTs operate in the cold zone only",
+                        "Set up a triage and decontamination station outside the station (warm zone) in the upwind direction. Have patients remove clothing, rinse with water, and then be triaged by severity. The collapsed patients near the exit should be removed by trained HAZMAT personnel in Level A/B PPE, decontaminated, and brought to the treatment area. EMS providers operate in the cold zone only",
                         "Triage all patients inside the station to avoid spreading contamination",
                         "Direct all patients to the nearest hospital — the hospital will handle decontamination and treatment"
                     ],
                     correct: 1,
-                    explanation: "In a HAZMAT MCI: 1) EMTs do NOT enter the hot zone (contaminated area); 2) A decontamination corridor (warm zone) should be set up upwind of the hot zone; 3) Patients remove their own clothing (if able) in the warm zone and are rinsed with water; 4) After decontamination, patients enter the cold zone for medical triage and treatment; 5) Collapsed/unable patients require HAZMAT team extraction; 6) Hospitals must be notified in advance — they cannot receive contaminated patients. A patient who arrives at the ED without decontamination will contaminate the entire ED and force it to close. The decontamination corridor should be set up with patient privacy in mind (privacy screens, separate areas for men/women if possible)."
+                    explanation: "In a HAZMAT MCI: 1) EMS providers do NOT enter the hot zone (contaminated area); 2) A decontamination corridor (warm zone) should be set up upwind of the hot zone; 3) Patients remove their own clothing (if able) in the warm zone and are rinsed with water; 4) After decontamination, patients enter the cold zone for medical triage and treatment; 5) Collapsed/unable patients require HAZMAT team extraction; 6) Hospitals must be notified in advance — they cannot receive contaminated patients. A patient who arrives at the ED without decontamination will contaminate the entire ED and force it to close. The decontamination corridor should be set up with patient privacy in mind (privacy screens, separate areas for men/women if possible)."
                 },
                 {
                     q: "A worker at a manufacturing plant was exposed to a metal drum labelled 'Hydrogen Cyanide.' He was splashed on his arm and face. On your arrival, he is unconscious, seizing, and his skin is cherry-red. He has a strong odour of bitter almonds. What is the correct sequence of interventions?",
                     options: [
-                        "Wait for the HAZMAT team to arrive — EMTs cannot treat cyanide poisoning",
+                        "Wait for the HAZMAT team to arrive — EMS providers cannot treat cyanide poisoning",
                         "Scene safety first: don Level B PPE (SCBA + splash suit) — cyanide is rapidly lethal by inhalation and dermal absorption. Decontaminate: remove clothing, copious water rinse. Administer hydroxocobalamin (Cyanokit) 5 g IV over 15 minutes. Treat seizures with benzodiazepines. Support ABCs. Transport emergently to a hospital with cyanide antidote capability",
                         "Administer activated charcoal — it will absorb the cyanide in his stomach",
                         "Dilute the cyanide by giving the patient large amounts of water to drink"
@@ -1611,7 +1611,7 @@ window.CPG_DATA = {
                     explanation: "Hydrogen cyanide is a rapidly lethal cellular asphyxiant. It is toxic by inhalation (the gas) and dermal absorption (the liquid). Scene safety is priority: SCBA is mandatory (the gas is deadly to rescuers), and splash protection prevents dermal absorption. Decontamination (remove clothing + water) is essential. Antidote: hydroxocobalamin (Cyanokit) 5 g IV over 15 minutes — it binds cyanide to form cyanocobalamin (vitamin B12), which is excreted harmlessly in urine. Alternative: sodium nitrite + sodium thiosulfate (amyl nitrite pearls can be used initially if IV access is delayed). Seizures are treated with benzodiazepines. The bitter almond odour and cherry-red skin are classic signs. Note: do NOT use activated charcoal — cyanide acts too rapidly for charcoal to be effective, and the patient is seizing/unconscious which increases aspiration risk."
                 },
                 {
-                    q: "A patient was working in a lab and dropped a vial of radioactive iodine-131, which shattered on the floor. The patient has no visible contamination on his skin or clothing but was in the room when the vial broke. He is anxious and asking about his risk of cancer. He has no symptoms. What should the EMT do?",
+                    q: "A patient was working in a lab and dropped a vial of radioactive iodine-131, which shattered on the floor. The patient has no visible contamination on his skin or clothing but was in the room when the vial broke. He is anxious and asking about his risk of cancer. He has no symptoms. What should the EMS provider do?",
                     options: [
                         "This is a contamination event — the patient needs full decontamination with soap and water, and his clothing must be bagged",
                         "The vial broke but the patient has no visible contamination — this is likely irradiation (exposure to radiation without physical contamination). The patient is NOT a radiation hazard to rescuers. Provide reassurance, monitor for symptoms, and transport for medical evaluation. Document the exposure. No decontamination is needed unless a contamination survey with a Geiger counter shows otherwise",
@@ -1626,13 +1626,13 @@ window.CPG_DATA = {
                 {
                     id: "crit_8_6_1",
                     scenario: "You respond to a reported 'chemical exposure' at a small factory. Dispatch advises that a worker was exposed to an unknown chemical while cleaning industrial equipment. On arrival, you see a single-story building with no visible vapour clouds, no odours, and no other patients outside. A man is standing at the open loading dock door, waving you over. He is holding a chemical container and appears to be wearing a contaminated, unbuttoned Tyvek suit over his clothes. No other workers are visible. There are no placards on the building or on the container he is holding. He says 'my buddy got some chemical on himself — I think it's eating through his shirt. Come quick! I'll show you where he is.' He gestures for you to follow him inside.",
-                    question: "This is a potential HAZMAT scene with multiple red flags. What should the EMT do?",
+                    question: "This is a potential HAZMAT scene with multiple red flags. What should the EMS provider do?",
                     options: [
-                        {t: "STOP. Do NOT enter. The scene has multiple red flags: 1) Unknown substance — the chemical could be anything; 2) The worker approaching you is potentially contaminated (holding the container, wearing a contaminated Tyvek suit); 3) No PPE on the EMT — you are not protected; 4) The container is unlabeled — no placard, no UN number, no information; 5) The patient is inside the building — you cannot assess him from outside. Maintain a safe distance (at least 500 ft upwind). Request HAZMAT response. Tell the worker to leave the container outside and move away from the building to a safe area. Do NOT enter until the substance is identified, the scene is assessed by a HAZMAT team, and you are in appropriate PPE with decontamination set up", f: "Correct — This scene screams HAZMAT. The rescuer (the worker approaching you) may be contaminated. The substance is unknown. The EMT has NO PPE for chemical exposure. The absolute priority is scene safety. Do NOT enter the building. Do NOT approach the worker who may be contaminated. Maintain distance, request HAZMAT response, and establish a hot/warm/cold zone from a safe position."},
+                        {t: "STOP. Do NOT enter. The scene has multiple red flags: 1) Unknown substance — the chemical could be anything; 2) The worker approaching you is potentially contaminated (holding the container, wearing a contaminated Tyvek suit); 3) No PPE on the EMS provider — you are not protected; 4) The container is unlabeled — no placard, no UN number, no information; 5) The patient is inside the building — you cannot assess him from outside. Maintain a safe distance (at least 500 ft upwind). Request HAZMAT response. Tell the worker to leave the container outside and move away from the building to a safe area. Do NOT enter until the substance is identified, the scene is assessed by a HAZMAT team, and you are in appropriate PPE with decontamination set up", f: "Correct — This scene screams HAZMAT. The rescuer (the worker approaching you) may be contaminated. The substance is unknown. The EMS provider has NO PPE for chemical exposure. The absolute priority is scene safety. Do NOT enter the building. Do NOT approach the worker who may be contaminated. Maintain distance, request HAZMAT response, and establish a hot/warm/cold zone from a safe position."},
                         {t: "The worker is asking for help and his friend is injured inside — go in quickly, find the patient, drag him out, and then worry about decontamination outside. Seconds matter in a chemical exposure", f: "Incorrect — A dead or contaminated rescuer cannot help anyone. Entering a HAZMAT scene without: (1) knowing the substance, (2) having appropriate PPE, and (3) having a decontamination plan is one of the most common and most deadly EMS errors. The worker approaching you is potentially contaminated — being near him could expose you and your ambulance. Scene safety is the #1 priority in EMS, especially in HAZMAT incidents. Wait for the HAZMAT team."}
                     ],
                     correct: 0,
-                    explanation: "HAZMAT incidents are one of the few emergencies where the EMT's first action is to NOT act — but to assess from a safe distance and call for resources. Red flags in this scenario: 1) Unknown substance — no placard, no label, no MSDS (Safety Data Sheet) available; 2) The worker approaching you is potentially contaminated — he is holding the container and wearing a soiled Tyvek suit; 3) The EMT has no chemical PPE — no SCBA, no splash suit, no gloves capable of chemical protection; 4) The patient is inside a building you cannot see into — you have no information about the environment (air quality, vapour, spills); 5) No decontamination setup — there is no decon corridor, no water source, no containment. Correct actions: 1) Maintain a safe upwind/uphill distance (at least 500 ft); 2) Request HAZMAT team response (fire department HAZMAT unit, regional HAZMAT team); 3) Tell the worker to leave the container in a safe place away from the building, move to your location, and remove his contaminated outer clothing; 4) Set up decontamination if you have the training and equipment; 5) Do NOT enter until scene is declared safe by the HAZMAT team; 6) Contact dispatch to obtain the Safety Data Sheet (SDS) for any chemical used at that facility if the substance can be identified.",
+                    explanation: "HAZMAT incidents are one of the few emergencies where the EMS provider's first action is to NOT act — but to assess from a safe distance and call for resources. Red flags in this scenario: 1) Unknown substance — no placard, no label, no MSDS (Safety Data Sheet) available; 2) The worker approaching you is potentially contaminated — he is holding the container and wearing a soiled Tyvek suit; 3) The EMS provider has no chemical PPE — no SCBA, no splash suit, no gloves capable of chemical protection; 4) The patient is inside a building you cannot see into — you have no information about the environment (air quality, vapour, spills); 5) No decontamination setup — there is no decon corridor, no water source, no containment. Correct actions: 1) Maintain a safe upwind/uphill distance (at least 500 ft); 2) Request HAZMAT team response (fire department HAZMAT unit, regional HAZMAT team); 3) Tell the worker to leave the container in a safe place away from the building, move to your location, and remove his contaminated outer clothing; 4) Set up decontamination if you have the training and equipment; 5) Do NOT enter until scene is declared safe by the HAZMAT team; 6) Contact dispatch to obtain the Safety Data Sheet (SDS) for any chemical used at that facility if the substance can be identified.",
                     kpi: "Prioritises scene safety and refuses to enter an unknown HAZMAT scene without appropriate PPE and information"
                 },
                 {
@@ -1650,10 +1650,10 @@ window.CPG_DATA = {
                 {
                     id: "crit_8_6_3",
                     scenario: "You are in the cold zone of a HAZMAT incident where multiple patients have been decontaminated after exposure to an unknown white powder at a postal facility. The patients have been stripped, rinsed with water and soap, and are now wrapped in blankets in the treatment area. Your patient is a 35-year-old female who was in the room when a package burst, releasing a white powder into the air. She has no symptoms but is extremely anxious, crying, and asking if she is going to die. She has already been decontaminated (clothing removed, washed). Her vital signs are normal. The HAZMAT team has not yet identified the powder. Other patients from the same room are reporting similar lack of symptoms. A news crew is broadcasting live from the police perimeter 200 yards away.",
-                    question: "How should the EMT manage this patient and the situation?",
+                    question: "How should the EMS provider manage this patient and the situation?",
                     options: [
                         {t: "Provide reassurance. This patient is decontaminated and asymptomatic. The most likely explanation is a hoax or non-toxic substance (flour, sugar, talcum powder, or a harmless prank) — the majority of 'white powder' incidents are false alarms. Reassure her that she is safe, has been decontaminated, and medical evaluation will confirm. Monitor for any delayed symptoms. Transport to hospital for medical clearance. Manage the media carefully — do not speculate about the substance on camera, refer all media inquiries to the incident commander/PAO", f: "Correct — Most white powder incidents are hoaxes or non-toxic substances (the US Postal Service sees hundreds annually, nearly all harmless). The patient has been decontaminated and is asymptomatic. Her anxiety is understandable and should be addressed with calm reassurance. Do NOT dismiss her fears — acknowledge them and provide factual information. Transport to hospital for medical evaluation and clearance. For media: refer all inquiries to the Public Information Officer (PIO) — do not speculate or comment on camera."},
-                        {t: "Tell her she is probably going to be fine but that she needs to be quarantined for 2 weeks to make sure she doesn't develop symptoms. The white powder could be anthrax, and she should prepare for the worst", f: "Incorrect — While anthrax was a concern after the 2001 mail attacks, the vast majority of white powder incidents are harmless. Causing undue fear is harmful and unprofessional. Quarantine is not indicated — she has been decontaminated (removal of clothing + soap and water removes >99% of surface contamination). She needs medical evaluation and reassurance. Do not speculate about anthrax or other bioterror agents without evidence. If anthrax is confirmed, post-exposure prophylaxis with antibiotics is available — but this is not information for the EMT to provide without official confirmation."}
+                        {t: "Tell her she is probably going to be fine but that she needs to be quarantined for 2 weeks to make sure she doesn't develop symptoms. The white powder could be anthrax, and she should prepare for the worst", f: "Incorrect — While anthrax was a concern after the 2001 mail attacks, the vast majority of white powder incidents are harmless. Causing undue fear is harmful and unprofessional. Quarantine is not indicated — she has been decontaminated (removal of clothing + soap and water removes >99% of surface contamination). She needs medical evaluation and reassurance. Do not speculate about anthrax or other bioterror agents without evidence. If anthrax is confirmed, post-exposure prophylaxis with antibiotics is available — but this is not information for the EMS provider to provide without official confirmation."}
                     ],
                     correct: 0,
                     explanation: "White powder incidents are common and almost always non-toxic. The HAZMAT decontamination process (clothing removal + soap/water wash) effectively removes any surface contamination. This patient is asymptomatic after decontamination — a reassuring sign. Management: 1) Reassurance — calmly explain that she has been decontaminated and is being evaluated; 2) Empathy — her anxiety is a normal response to a frightening event; validate, don't dismiss; 3) Monitor — watch for any delayed symptoms during transport; 4) Transport to hospital for medical evaluation (even asymptomatic patients exposed to an unknown substance need medical clearance); 5) Documentation — document the type of exposure (white powder, airborne), decontamination performed, time of exposure, and any symptoms; 6) Media management — EMS personnel should not speculate or comment on the substance. Refer all media inquiries to the designated Public Information Officer. Never say 'it's probably harmless' on camera — the news will report that the substance was 'unknown.' Ethical principle: do no harm, including psychological harm from unnecessary fear or dismissive attitudes.",
@@ -1670,14 +1670,14 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cloud-lightning"/></svg> CBRNE & Terrorism Response</h3>
 
-                <p>CBRNE is an acronym for <strong>Chemical, Biological, Radiological, Nuclear, and Explosive</strong> agents — the five categories of weapons of mass destruction (WMD) that EMTs may encounter in a terrorist attack or industrial accident. The EMT's guiding principle in any suspected CBRNE event is: <strong>scene safety is paramount — do NOT become a victim yourself.</strong> Hazard identification, appropriate PPE, decontamination, and life-saving interventions must proceed in the correct order to protect both the rescuer and the patient.</p>
+                <p>CBRNE is an acronym for <strong>Chemical, Biological, Radiological, Nuclear, and Explosive</strong> agents — the five categories of weapons of mass destruction (WMD) that EMS providers may encounter in a terrorist attack or industrial accident. The EMS provider's guiding principle in any suspected CBRNE event is: <strong>scene safety is paramount — do NOT become a victim yourself.</strong> Hazard identification, appropriate PPE, decontamination, and life-saving interventions must proceed in the correct order to protect both the rescuer and the patient.</p>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                     <strong>Critical — Scene Safety in CBRNE:</strong> The single most important principle in CBRNE response is that you cannot help anyone if you become a victim yourself. Approach all suspected CBRNE scenes with extreme caution. Identify the agent (if possible), don appropriate PPE BEFORE entering the hot zone, and establish decontamination (decon) corridors before patient contact. If you smell something unusual, see dead animals, or encounter multiple patients with similar symptoms — STOP and reassess before proceeding.
                 </div>
 
                 <h4>CBRNE Categories — Overview</h4>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Category</th><th>Examples</th><th>Key Characteristics</th></tr>
                     </thead>
@@ -1688,7 +1688,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Nuclear</strong></td><td>Improvised nuclear device (IND), nuclear weapon detonation</td><td>Massive blast, thermal, and radiation effects; acute radiation syndrome; catastrophic infrastructure damage</td></tr>
                         <tr><td><strong>Explosive</strong></td><td>Conventional bombs (TNT, ammonium nitrate fuel oil), suicide bombers, IEDs</td><td>Most common terrorist weapon; blast, penetrating, blunt, and burn injuries; secondary devices target responders</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Chemical Agents</h4>
 
@@ -1742,7 +1742,7 @@ window.CPG_DATA = {
 
                 <h5>Pulmonary Agents — Chlorine and Phosgene</h5>
                 <p>Pulmonary agents (also called choking agents) primarily damage the respiratory tract. They are widely available in industrial settings and are a credible terrorist threat:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Agent</th><th>Source</th><th>Onset</th><th>Key Features</th></tr>
                     </thead>
@@ -1750,7 +1750,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Chlorine (Cl₂)</strong></td><td>Water treatment, industrial bleaching, swimming pools</td><td>Immediate</td><td>Greenish-yellow gas; bleach-like odour; immediate burning of eyes, nose, throat; coughing; chest tightness; dyspnea; pulmonary oedema can develop rapidly</td></tr>
                         <tr><td><strong>Phosgene (COCl₂)</strong></td><td>Industrial chemical (polyurethane, pesticides, dyes); also produced when chlorinated compounds burn</td><td>Delayed (6-24 hours)</td><td>Odour of freshly mown hay or corn; mild initial irritation followed by silent period; then sudden onset of fulminant <strong>pulmonary oedema</strong> (ARDS) hours later. This delayed onset is a TRAP — apparently well patients can deteriorate suddenly</td></tr>
                     </tbody>
-                </table>
+                </table></div>
                 <p><strong>Management:</strong> Remove from exposure, administer high-flow oxygen, monitor for respiratory distress, transport. Patients with phosgene exposure require observation even if asymptomatic — pulmonary oedema can develop hours later. Aggressive airway management may be needed for severe pulmonary oedema (CPAP, intubation).</p>
 
                 <h4>Biological Agents</h4>
@@ -1791,7 +1791,7 @@ window.CPG_DATA = {
                     <li>Rash: <strong>Synchronous (all lesions at the same stage) centrifugal distribution</strong> — meaning the rash is densest on the face, arms, and legs (centrifugal) and ALL lesions are the same stage of development (vesicles → pustules → scabs). This differs from chickenpox, which has lesions in different stages (asynchronous) concentrated on the trunk (centripetal).</li>
                     <li>Lesions are deep, firm, and well-circumscribed — "bullets under the skin"</li>
                 </ul>
-                <p>Smallpox is <strong>highly contagious</strong> via respiratory droplets and contact. Vaccination within 3-4 days of exposure can prevent or attenuate disease. Management: strict airborne and contact isolation, supportive care, vaccination of contacts (ring vaccination strategy). As an EMT, you would notify public health immediately and use airborne PPE (N95 or higher, gown, gloves, eye protection) for any suspected case.</p>
+                <p>Smallpox is <strong>highly contagious</strong> via respiratory droplets and contact. Vaccination within 3-4 days of exposure can prevent or attenuate disease. Management: strict airborne and contact isolation, supportive care, vaccination of contacts (ring vaccination strategy). As an EMS provider, you would notify public health immediately and use airborne PPE (N95 or higher, gown, gloves, eye protection) for any suspected case.</p>
 
                 <h5>Viral Hemorrhagic Fevers (Ebola, Marburg)</h5>
                 <p>Viral hemorrhagic fevers (VHFs) are severe multi-system illnesses caused by RNA viruses (filoviruses, arenaviruses, bunyaviruses). Ebola virus disease (EVD) is the prototypical VHF:</p>
@@ -1805,14 +1805,14 @@ window.CPG_DATA = {
                 <p>Ebola is transmitted through direct contact with blood, body fluids, and contaminated surfaces. It is <strong>not airborne</strong>. Strict isolation, full PPE (Tyvek suit, N95 or PAPR, double gloves, boot covers), and meticulous decontamination are essential. EMS should coordinate with public health and receiving hospitals before transport.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>NREMT Key Point:</strong> For most biological agents, the EMT's role is recognition (unusual clusters of illness, rapid progression), notification (public health, receiving facility), and supportive care with appropriate PPE. Decontamination of biological agents is less urgent than chemical agents — focus on infection control (hand hygiene, masks, gloves, isolation) rather than soap-and-water decon.
+                    <strong>NREMT Key Point:</strong> For most biological agents, the EMS provider's role is recognition (unusual clusters of illness, rapid progression), notification (public health, receiving facility), and supportive care with appropriate PPE. Decontamination of biological agents is less urgent than chemical agents — focus on infection control (hand hygiene, masks, gloves, isolation) rather than soap-and-water decon.
                 </div>
 
                 <h4>Radiological & Nuclear Agents</h4>
                 <p>Radiological emergencies involve exposure to ionizing radiation. The effects depend on the <strong>type of radiation, dose, duration of exposure, and whether contamination (radioactive material on or in the body) is present.</strong></p>
 
                 <h5>Types of Ionizing Radiation</h5>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Type</th><th>Penetration</th><th>Shielding</th><th>Hazard</th></tr>
                     </thead>
@@ -1821,11 +1821,11 @@ window.CPG_DATA = {
                         <tr><td><strong>Beta (β)</strong></td><td>Stops in plastic or a few cm of tissue</td><td>Plexiglass, aluminium, thick clothing</td><td>Can cause skin burns (beta burns). Hazardous if internalised. Can penetrate to the basal layer of the skin.</td></tr>
                         <tr><td><strong>Gamma (γ)</strong></td><td>Highly penetrating — passes through the body</td><td>Lead, thick concrete, water</td><td>External exposure is the primary hazard. Whole-body exposure causes acute radiation syndrome. Gamma radiation is the primary concern in most radiological incidents.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h5>Acute Radiation Syndrome (ARS)</h5>
                 <p>ARS occurs after a high-dose, whole-body radiation exposure (typically >1 Gray). It has three classic phases:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Phase</th><th>Timing</th><th>Manifestations</th></tr>
                     </thead>
@@ -1834,7 +1834,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Latent phase</strong></td><td>Hours to weeks (depending on dose)</td><td>The patient appears to improve — symptoms resolve. This is a FALSE recovery. The duration of the latent phase is inversely proportional to dose. At very high doses (>10 Gray), the latent phase may be absent entirely.</td></tr>
                         <tr><td><strong>Manifest illness</strong></td><td>Days to weeks after exposure</td><td>Sub-syndromes depending on which organ system is affected: <strong>Hematopoietic</strong> (bone marrow suppression → infection, bleeding), <strong>GI</strong> (severe nausea, vomiting, diarrhoea, mucosal sloughing, dehydration), <strong>Neurovascular</strong> (confusion, ataxia, seizures, coma — seen only with very high doses >10-20 Gray, universally fatal).</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h5>Radiological Principles — Time, Distance, Shielding</h5>
                 <p>The fundamental principles of radiation protection are:</p>
@@ -1854,7 +1854,7 @@ window.CPG_DATA = {
 
                 <h4>Explosive/Blast Injuries</h4>
                 <p>Explosives are the most commonly used terrorist weapon worldwide. Blast injuries are classified into four categories based on the mechanism of injury:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Category</th><th>Mechanism</th><th>Injuries</th><th>Notes</th></tr>
                     </thead>
@@ -1864,7 +1864,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Tertiary blast injury</strong></td><td>Victim is thrown by the blast wind</td><td><strong>Blunt trauma:</strong> Head injury (TBI, concussion), spinal injury, fractures, amputation, internal organ injury</td><td>Victim may strike stationary objects or be crushed by collapsing structures</td></tr>
                         <tr><td><strong>Quaternary blast injury</strong></td><td>All other blast effects</td><td><strong>Burns, crush injuries, inhalational injury, toxic exposure, psychological trauma</strong></td><td>Includes exacerbation of pre-existing conditions (e.g., exacerbation of COPD, MI from stress)</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h5>Secondary Devices</h5>
                 <p>Terrorists frequently place a <strong>secondary device</strong> (a second bomb) timed to detonate after the initial explosion — specifically targeting the responders (police, fire, EMS) who arrive to help. The <strong>secondary device is the most dangerous threat to EMS at a bombing scene.</strong> Never approach a blast scene until law enforcement has declared it safe. Staging areas must be positioned at a safe distance and continuously reassessed.</p>
@@ -1899,7 +1899,7 @@ window.CPG_DATA = {
             ],
             quiz: [
                 {
-                    q: "An EMT arrives at a suspected chemical exposure incident. Multiple patients are lying on the ground with excessive secretions, drooling, urinating, and defecating involuntarily. Their pupils are pinpoint. The scene smells faintly of something like 'sweet fruit.' What class of agent is most likely involved and what is the priority intervention?",
+                    q: "An EMS provider arrives at a suspected chemical exposure incident. Multiple patients are lying on the ground with excessive secretions, drooling, urinating, and defecating involuntarily. Their pupils are pinpoint. The scene smells faintly of something like 'sweet fruit.' What class of agent is most likely involved and what is the priority intervention?",
                     options: [
                         "Sarin (nerve agent) — initiate BLS decontamination, remove clothing, and administer atropine and pralidoxime per protocol",
                         "Mustard gas (vesicant) — apply burn dressings and transport",
@@ -1929,7 +1929,7 @@ window.CPG_DATA = {
                         "Treat patients only if they come to you — do not enter the blast zone at all"
                     ],
                     correct: 1,
-                    explanation: "The number one threat to EMS in a bombing incident is the secondary device — a second bomb timed to detonate when responders arrive. Until law enforcement has declared the scene safe, EMS must stage at a safe distance (minimum 1,000 feet). Entering the blast zone prematurely risks the lives of the entire crew. The woman with the amputation is a critical patient, but the EMT cannot help anyone if killed or injured by a secondary explosion. Scene safety is the FIRST priority in CBRNE and terrorism response. This is a key NREMT principle."
+                    explanation: "The number one threat to EMS in a bombing incident is the secondary device — a second bomb timed to detonate when responders arrive. Until law enforcement has declared the scene safe, EMS must stage at a safe distance (minimum 1,000 feet). Entering the blast zone prematurely risks the lives of the entire crew. The woman with the amputation is a critical patient, but the EMS provider cannot help anyone if killed or injured by a secondary explosion. Scene safety is the FIRST priority in CBRNE and terrorism response. This is a key NREMT principle."
                 },
                 {
                     q: "After a suspected smallpox outbreak, a patient presents with a high fever, severe headache, and a rash that is most concentrated on the face, arms, and legs. All the rash lesions appear to be in the same stage of development (all pustules). What distinguishes this from chickenpox?",
@@ -1947,7 +1947,7 @@ window.CPG_DATA = {
                 {
                     id: "crit_8_7_1",
                     scenario: "You are dispatched to a community centre where approximately 30 people have suddenly become ill during a large gathering. On arrival, you find multiple patients with excessive drooling, tearing, involuntary urination and defecation, vomiting, and what appear to be very small pupils. Some patients are seizing. Several people are lying on the ground not moving. A bystander reports that a man wearing heavy clothing walked through the crowd approximately 10 minutes ago and then left through a side exit. The room has a faintly sweet, fruity odour. Your partner is reaching for her jump bag and starting toward the nearest patient.",
-                    question: "What should the EMT do first, and what is the sequence of actions for managing this event?",
+                    question: "What should the EMS provider do first, and what is the sequence of actions for managing this event?",
                     options: [
                         {t: "Immediately start treating the nearest patient — open the airway, check breathing, and administer atropine for nerve agent poisoning. The sweet odour and SLUDGEM symptoms are classic for a nerve agent release. Every minute counts", f: "Incorrect — The sweet fruity odour and SLUDGEM symptoms strongly suggest a nerve agent (sarin). However, rushing into the scene without PPE is dangerous. The agent may still be in the air (sarin is volatile and inhalational). The first priority is scene safety — ensure the area is ventilated (open windows, evacuate if possible) and don appropriate PPE (SCBA or at minimum a chemical-resistant suit with N95/P100 respirator and nitrile gloves). Only THEN begin patient care. Also, consider that the perpetrator may still be on scene or a secondary device may be present."},
                         {t: "Stop your partner — scene safety first. The presentation is consistent with a nerve agent release. Ensure the area is well-ventilated (open doors/windows if safe), have all responders don appropriate PPE (chemical-resistant suits, SCBA if available, nitrile gloves). Establish incident command and call for HAZMAT resources, additional EMS units, and law enforcement. Set up a decontamination corridor (remove clothing, soap and water). Only then begin triage and treatment — administer atropine and pralidoxime to symptomatic patients, diazepam for seizures, and provide airway support", f: "Correct — This is a suspected chemical terrorism event with a nerve agent (sarin). The number one priority is provider safety — do NOT enter the hot zone without appropriate PPE. Sarin is a volatile liquid that evaporates into a vapour — it can be inhaled or absorbed through the skin. The sequence: 1) Scene safety — ventilate area, don PPE, 2) Establish command and call for resources, 3) Set up decon corridor, 4) Triage and treat — atropine, pralidoxime, diazepam, airway support, 5) Transport."}
@@ -1959,19 +1959,19 @@ window.CPG_DATA = {
                 {
                     id: "crit_8_7_2",
                     scenario: "You respond to a suburban home where a family of three is ill. The 45-year-old father, 42-year-old mother, and 8-year-old son all developed symptoms over the past 24 hours: fever, severe headache, muscle aches, and a non-productive cough. The father is now in severe respiratory distress with SpO₂ 82% on room air and is coughing up blood-tinged sputum. The mother is febrile to 104°F and also has cough and dyspnea. The son has fever and cough but is less severely affected. The family has no recent travel history but lives near a research laboratory. On your way to the scene, dispatch mentions that two other nearby homes have called 911 with similar symptoms in the past 4 hours. The father tells you he 'feels like he's dying' and that the cough came on 'like nothing I've ever felt before.' There are no dead animals, no unusual odours, and no signs of trauma or exposure.",
-                    question: "This rapidly progressive respiratory illness with haemoptysis in multiple members of different households suggests a possible biological attack. What agent is most likely and what actions should the EMT take?",
+                    question: "This rapidly progressive respiratory illness with haemoptysis in multiple members of different households suggests a possible biological attack. What agent is most likely and what actions should the EMS provider take?",
                     options: [
                         {t: "This appears to be a severe influenza outbreak — give symptomatic care, oxygen, and transport. Notify the hospital of multiple patients with flu-like symptoms", f: "Incorrect — While the initial symptoms are flu-like, the rapid progression to haemoptysis and severe respiratory distress in otherwise healthy individuals (especially in multiple households simultaneously) is highly suspicious for a bioterrorism agent. Influenza rarely causes this degree of haemoptysis and rapid deterioration in adults. The most likely agents are pneumonic plague or inhalational anthrax. The clustering in multiple nearby homes suggests an aerosol release."},
                         {t: "Suspect pneumonic plague or inhalational anthrax — both can present with rapid-onset severe pneumonia and haemoptysis. Apply airborne and droplet precautions (N95 or higher, gown, gloves, eye protection), administer high-flow oxygen, support respirations, transport to a facility capable of managing highly infectious diseases, and immediately notify public health authorities, the receiving hospital, and local law enforcement of a potential biological attack", f: "Correct — The presentation of rapidly progressive pneumonia with haemoptysis in multiple households simultaneously is a bioterrorism 'red flag.' Pneumonic plague and inhalational anthrax are the two most likely aerosolised biological weapons causing this syndrome. Critical actions: 1) PPE — airborne and contact precautions minimum, 2) Notify dispatch, hospital, and public health, 3) Supportive care, 4) Limit exposures — do not transport multiple patients in the same ambulance unless absolutely necessary, 5) Decontamination is less urgent — focus on infection control."}
                     ],
                     correct: 1,
-                    explanation: "This presentation should trigger a bioterrorism response: rapidly progressive respiratory failure with haemoptysis in multiple patients across multiple households. This is NOT seasonal influenza. The two most likely agents are: (1) Pneumonic plague — highly contagious via respiratory droplets, haemoptysis is common, and mortality approaches 100% without treatment within 24 hours. (2) Inhalational anthrax — non-contagious, but presents with severe haemoptysis, mediastinal widening, and high mortality. The EMT must use airborne/droplet PPE, notify public health and the receiving hospital immediately, and provide aggressive supportive care. Do NOT use nebulizer treatments (aerosolizes respiratory secretions and may increase transmission risk).",
+                    explanation: "This presentation should trigger a bioterrorism response: rapidly progressive respiratory failure with haemoptysis in multiple patients across multiple households. This is NOT seasonal influenza. The two most likely agents are: (1) Pneumonic plague — highly contagious via respiratory droplets, haemoptysis is common, and mortality approaches 100% without treatment within 24 hours. (2) Inhalational anthrax — non-contagious, but presents with severe haemoptysis, mediastinal widening, and high mortality. The EMS provider must use airborne/droplet PPE, notify public health and the receiving hospital immediately, and provide aggressive supportive care. Do NOT use nebulizer treatments (aerosolizes respiratory secretions and may increase transmission risk).",
                     kpi: "Recognises cluster of severe respiratory illness as potential biological attack and activates public health notification"
                 },
                 {
                     id: "crit_8_7_3",
                     scenario: "A 9-year-old boy is brought to a first aid station at a public event after a small 'explosion' in a trash can nearby. He has sustained a deep laceration to his left thigh from flying debris and is bleeding briskly. He is awake, crying, and in pain. There is no respiratory distress, his pulse is 110, and his skin is pink and warm. However, there is a grey-white powdery substance on his clothing and exposed skin. Several adults nearby also have the same substance on their clothing. Police have not yet cleared the scene, and the trash can is approximately 75 feet away with smoke rising from it. The boy's mother is frantic and begging you to 'do something.'",
-                    question: "How should the EMT manage this patient — balancing the wound, the unknown powder, scene safety concerns, and the mother's distress?",
+                    question: "How should the EMS provider manage this patient — balancing the wound, the unknown powder, scene safety concerns, and the mother's distress?",
                     options: [
                         {t: "The powder is likely harmless — focus on the bleeding leg wound. Apply direct pressure and a pressure dressing, reassure the mother, and transport the child to the hospital", f: "Incorrect — You cannot assume the powder is harmless. In a suspected bombing/terrorist event, any unknown powder or substance on patients must be treated as potentially hazardous (chemical or biological agent). Additionally, the scene has not been cleared by law enforcement — there may be a secondary device. Rushing into an uncleared zone to treat one patient risks the entire crew."},
                         {t: "Do NOT enter the scene until law enforcement clears it. Once cleared, don appropriate PPE (gloves, mask, eye protection, coverall). Before entering the patient care area, perform gross decontamination: remove the child's contaminated clothing (bag and label as hazardous waste), gently brush visible powder from his skin, then irrigate the leg wound with copious saline. Cover the wound with sterile dressings and control bleeding with pressure. Transport while monitoring for any signs of chemical or biological illness", f: "Correct — The sequence is: 1) Scene safety — wait for law enforcement to clear the scene and rule out a secondary device, 2) PPE — at minimum gloves, N95 mask, eye protection; HAZMAT suit if available, 3) Decontamination BEFORE patient care — remove contaminated clothing (cuts contamination by 80-90%), brush off visible powder, 4) THEN treat the leg wound — control haemorrhage with direct pressure, 5) Transport and monitor for symptoms. The powder could be anything from flour (intentional distractant) to anthrax spores to a chemical agent — treat it as hazardous until proven otherwise."}
@@ -2002,7 +2002,7 @@ window.CPG_DATA = {
                 <p>The <strong>START triage system</strong> (Simple Triage and Rapid Treatment) was developed in 1983 by the Newport Beach (CA) Fire Department and the Hoag Hospital Emergency Department. It is the most widely used triage system in the United States for adult patients. Triage is performed using the <strong>RPM</strong> assessment sequence: <strong>R</strong>espirations → <strong>P</strong>erfusion → <strong>M</strong>ental Status.</p>
 
                 <h5>Triage Categories — The Four Colours</h5>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Colour</th><th>Category</th><th>Tag Label</th><th>Definition</th><th>Time Goal</th></tr>
                     </thead>
@@ -2012,7 +2012,7 @@ window.CPG_DATA = {
                         <tr><td style="background:#28a745; color:white;"><strong>GREEN</strong></td><td><strong>Minor</strong></td><td>P3 / Priority 3</td><td>"Walking wounded" — minor injuries that do not require immediate attention. Can wait <strong>hours</strong> for treatment. These patients can also assist with light tasks (directing traffic, carrying supplies).</td><td>Hours</td></tr>
                         <tr><td style="background:#343a40; color:white;"><strong>BLACK</strong></td><td><strong>Deceased / Expectant</strong></td><td>P4 / Priority 4</td><td>Dead or injuries so severe that survival is impossible given available resources (e.g., cardiac arrest in an MCI, massive head trauma with brain matter exposed, decapitation). These patients receive <strong>comfort care only</strong> — do NOT expend resources on patients who cannot survive.</td><td>N/A</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>NREMT Key Point:</strong> In an MCI, <strong>the greatest good for the greatest number</strong> is the guiding principle. Triage is <strong>dynamic</strong> — a patient who is YELLOW now may decompensate to RED later. Reassess patients regularly. Your first duty is to establish command and request additional resources. Do NOT stop to provide prolonged care to any single patient during the primary triage pass.
@@ -2049,7 +2049,7 @@ window.CPG_DATA = {
                 <h6>Walking Wounded — The First Triage Step</h6>
                 <p>Before starting RPM, direct all patients who can walk to a designated <strong>collection area</strong>. These patients are tagged <strong>GREEN</strong> (minor). This simple step instantly reduces the pool of patients who need individual RPM assessment, allowing you to focus on the more critical patients. Patients who initially appear GREEN but later develop symptoms should be reassessed — triage is dynamic.</p>
 
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Step</th><th>Assessment</th><th>Finding</th><th>Tag</th></tr>
                     </thead>
@@ -2060,7 +2060,7 @@ window.CPG_DATA = {
                         <tr><td>3 — Mental Status</td><td>"Squeeze my hand."</td><td>Unable to follow commands</td><td><strong>RED</strong></td></tr>
                         <tr><td>Passes all RPM</td><td>All three normal</td><td>Resp < 30, radial pulse +, follows commands</td><td><strong>YELLOW</strong></td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — RPM Tips:</strong> Count respirations for 5-10 seconds. A rate of >30 in an adult is the single most sensitive indicator of shock and life-threatening injury — do not miss this. If you cannot find a radial pulse, check the carotid. If the carotid is absent, the patient is BLACK (apneic) or RED (needs immediate haemorrhage control). Use the sternal rub as a standardised painful stimulus for mental status assessment — it is reproducible and consistent across providers.
@@ -2107,11 +2107,11 @@ window.CPG_DATA = {
                     <li><strong>Logistics Section:</strong> Provides facilities, transportation, supplies, equipment, and personnel support (food, shelter, fuel).</li>
                     <li><strong>Finance/Administration Section:</strong> Tracks costs, processes claims, and manages procurement.</li>
                 </ul>
-                <p>As an EMT in an MCI, you will most likely report to the <strong>Medical Branch Director</strong>, <strong>Triage Officer</strong>, <strong>Treatment Unit Leader</strong>, or <strong>Staging Manager</strong> within the Operations Section. Always know who your supervisor is.</p>
+                <p>As an EMS provider in an MCI, you will most likely report to the <strong>Medical Branch Director</strong>, <strong>Triage Officer</strong>, <strong>Treatment Unit Leader</strong>, or <strong>Staging Manager</strong> within the Operations Section. Always know who your supervisor is.</p>
 
                 <h4>The Disaster Management Cycle</h4>
                 <p>Disasters are managed through a continuous four-phase cycle:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Phase</th><th>Definition</th><th>EMS Examples</th></tr>
                     </thead>
@@ -2121,7 +2121,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Response</strong></td><td>Immediate actions taken to save lives and property during the disaster</td><td>Activation of the EOC; MCI triage; medical treatment; shelter operations; resource mobilisation</td></tr>
                         <tr><td><strong>Recovery</strong></td><td>Long-term restoration of the community and infrastructure</td><td>Stress debriefing (CISD); equipment replacement; after-action reviews; rebuilding</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>Hospital Surge Capacity & Mutual Aid</h4>
                 <p><strong>Surge capacity</strong> is a hospital's ability to expand its resources (beds, staff, equipment) to handle a sudden influx of patients. In an MCI, the EMS system must distribute patients across multiple receiving hospitals to avoid overwhelming any single facility. <strong>Mutual aid agreements</strong> are pre-existing arrangements between neighbouring jurisdictions (cities, counties, states) to share resources — personnel, equipment, ambulances, and hospital beds — during a disaster. These agreements are essential for managing large-scale MCIs.</p>
@@ -2235,10 +2235,10 @@ window.CPG_DATA = {
             summary: `<div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#cloud-lightning"/></svg> Incident Command System (ICS)</h3>
 
-                <p>The <strong>Incident Command System (ICS)</strong> is a standardised, on-scene, all-hazards incident management framework. It provides a predictable organisational structure that can expand or contract as needed, ensuring effective coordination between multiple agencies and jurisdictions during any emergency — from a single-vehicle collision to a catastrophic natural disaster. As an EMT, understanding ICS is essential because <strong>you will operate within this framework during every significant incident</strong>.</p>
+                <p>The <strong>Incident Command System (ICS)</strong> is a standardised, on-scene, all-hazards incident management framework. It provides a predictable organisational structure that can expand or contract as needed, ensuring effective coordination between multiple agencies and jurisdictions during any emergency — from a single-vehicle collision to a catastrophic natural disaster. As an EMS provider, understanding ICS is essential because <strong>you will operate within this framework during every significant incident</strong>.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>NREMT Key Point:</strong> ICS provides a predictable structure in chaos. As an EMT, you will report to the <strong>Operations Section Chief</strong> or a designated <strong>Branch Director</strong> during an MCI. Always know who your supervisor is. If you don't know who you report to, you are not effectively integrated into the ICS structure — stop and ask.
+                    <strong>NREMT Key Point:</strong> ICS provides a predictable structure in chaos. As an EMS provider, you will report to the <strong>Operations Section Chief</strong> or a designated <strong>Branch Director</strong> during an MCI. Always know who your supervisor is. If you don't know who you report to, you are not effectively integrated into the ICS structure — stop and ask.
                 </div>
 
                 <h4>History of ICS</h4>
@@ -2246,7 +2246,7 @@ window.CPG_DATA = {
 
                 <h4>ICS Principles — The Foundation</h4>
                 <p>ICS is built on a set of core principles that ensure consistency and effectiveness across all incident types:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Principle</th><th>Definition</th><th>Why It Matters</th></tr>
                     </thead>
@@ -2260,7 +2260,7 @@ window.CPG_DATA = {
                         <tr><td><strong>Management by Objectives</strong></td><td>The IC defines specific, measurable objectives for each operational period (typically 12–24 hours)</td><td>Keeps the response focused and outcome-oriented; allows for assessment of progress</td></tr>
                         <tr><td><strong>Chain of Command</strong></td><td>Clear, unbroken line of authority from the IC down to every responder</td><td>Ensures orders flow through proper channels; prevents bypassing of supervisors</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                     <strong>Clinical Pearl — Span of Control:</strong> The 1:5 span of control ratio is a crucial ICS concept. If a supervisor has more than 7 people reporting to them, the ICS structure must be expanded (add branches, divisions, or groups). Effective span of control is maintained by <strong>delegation</strong> — the IC should NOT directly manage more than 3–7 people. If the IC finds themselves overwhelmed, they must delegate subordinate positions.
@@ -2268,7 +2268,7 @@ window.CPG_DATA = {
 
                 <h4>ICS Command Staff</h4>
                 <p>The Command Staff reports directly to the Incident Commander and provides specialised support in key functional areas:</p>
-                <table>
+                <div class="table-scroll"><table>
                     <thead>
                         <tr><th>Position</th><th>Abbreviation</th><th>Responsibilities</th></tr>
                     </thead>
@@ -2278,13 +2278,13 @@ window.CPG_DATA = {
                         <tr><td><strong>Public Information Officer</strong></td><td>PIO</td><td>Develops and releases accurate, coordinated information about the incident to the media and the public. All media releases are coordinated through the PIO — individual responders do NOT speak to the media without authorisation.</td></tr>
                         <tr><td><strong>Liaison Officer</strong></td><td>LOFR</td><td>Primary point of contact for assisting and coordinating agencies (e.g., Red Cross, Public Health, National Guard) not directly part of the incident command structure.</td></tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <h4>ICS General Staff — The Five Sections</h4>
                 <p>When the incident becomes complex enough that the IC cannot manage all functions directly, the four General Staff Sections are activated. Each section has a <strong>Chief</strong> who reports to the IC:</p>
 
                 <h5>Operations Section</h5>
-                <p>The <strong>Operations Section</strong> is the 'doers' — it manages the tactical response directly related to the incident objectives. This is the section where most EMTs will be assigned during an MCI. The Operations Section Chief (OSC) oversees:</p>
+                <p>The <strong>Operations Section</strong> is the 'doers' — it manages the tactical response directly related to the incident objectives. This is the section where most EMS providers will be assigned during an MCI. The Operations Section Chief (OSC) oversees:</p>
                 <ul>
                     <li><strong>Medical Branch</strong> — further divided into:
                         <ul>
@@ -2298,7 +2298,7 @@ window.CPG_DATA = {
                     <li><strong>Extrication/Rescue:</strong> Fire/rescue personnel who extract patients from entrapment.</li>
                 </ul>
 
-                <p>As an EMT, your most likely assignment in an MCI is within the <strong>Treatment Unit</strong> (providing care to triaged patients) or the <strong>Transport Unit</strong> (driving ambulances to hospitals). You may also be assigned to <strong>Staging</strong> — waiting for assignment. Always report to the person in charge of your assigned unit or group.</p>
+                <p>As an EMS provider, your most likely assignment in an MCI is within the <strong>Treatment Unit</strong> (providing care to triaged patients) or the <strong>Transport Unit</strong> (driving ambulances to hospitals). You may also be assigned to <strong>Staging</strong> — waiting for assignment. Always report to the person in charge of your assigned unit or group.</p>
 
                 <h5>Planning Section</h5>
                 <p>The <strong>Planning Section</strong> collects, evaluates, and disseminates information about the incident. It develops the <strong>Incident Action Plan (IAP)</strong> for each operational period. Key positions include:</p>
@@ -2330,7 +2330,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                    <strong>Critical — ICS Structure:</strong> Memorise the five sections: <strong>Operations</strong> (the doers), <strong>Planning</strong> (the thinkers), <strong>Logistics</strong> (the getters — supplies, food, fuel), <strong>Finance/Admin</strong> (the payers), and <strong>Command Staff</strong> (IC, Safety, PIO, Liaison). The mnemonic <strong>"O-P-L-F"</strong> in descending order of priority — Operations is ALWAYS the largest section in a response. As an EMT, you will almost always work under Operations.
+                    <strong>Critical — ICS Structure:</strong> Memorise the five sections: <strong>Operations</strong> (the doers), <strong>Planning</strong> (the thinkers), <strong>Logistics</strong> (the getters — supplies, food, fuel), <strong>Finance/Admin</strong> (the payers), and <strong>Command Staff</strong> (IC, Safety, PIO, Liaison). The mnemonic <strong>"O-P-L-F"</strong> in descending order of priority — Operations is ALWAYS the largest section in a response. As an EMS provider, you will almost always work under Operations.
                 </div>
 
                 <h4>Common Terms — EMS Branch</h4>
@@ -2344,7 +2344,7 @@ window.CPG_DATA = {
                 </ul>
 
                 <h4>Command Transfer Process</h4>
-                <p>The initial Incident Commander is typically the first arriving unit officer (e.g., the EMT or paramedic in the first ambulance, the captain of the first fire engine). As higher-ranking or more qualified personnel arrive, command is <strong>transferred</strong> through a formal process:</p>
+                <p>The initial Incident Commander is typically the first arriving unit officer (e.g., the EMS provider or paramedic in the first ambulance, the captain of the first fire engine). As higher-ranking or more qualified personnel arrive, command is <strong>transferred</strong> through a formal process:</p>
                 <ol>
                     <li>The current IC briefs the incoming IC on the incident status: what has been done, current objectives, resource status, and safety concerns</li>
                     <li>The incoming IC acknowledges the transfer — the transfer is announced to all personnel on the assigned tactical channel</li>
@@ -2353,7 +2353,7 @@ window.CPG_DATA = {
                 <p><strong>Key point:</strong> Command transfer must be CLEARLY announced to all personnel. Everyone must know who the IC is at all times. The IC's name and location should be included in every radio report.</p>
 
                 <h4>Area Command vs. Unified Command</h4>
-                <p>Two advanced ICS concepts that EMTs should understand:</p>
+                <p>Two advanced ICS concepts that EMS providers should understand:</p>
                 <ul>
                     <li><strong>Area Command:</strong> Used when there are multiple large incidents in a geographic area (e.g., multiple wildfires across a region) that each have their own IC. Area Command provides overall coordination but does NOT directly manage individual incidents — each incident retains its own IC.</li>
                     <li><strong>Unified Command:</strong> Used when an incident involves multiple jurisdictions or agencies with legal or functional responsibilities (e.g., a hazardous material spill that crosses a state line, a terrorist attack involving local, state, and federal agencies). In Unified Command, representative officials from each jurisdiction share command authority and jointly develop a single Incident Action Plan. There is still ONE plan — but multiple agencies contribute to it collaboratively.</li>
@@ -2369,7 +2369,7 @@ window.CPG_DATA = {
                     <li><strong>Medical Staff Director:</strong> Coordinates physician and nursing assignments</li>
                     <li><strong>EMS Liaison:</strong> Point of contact between the hospital and the EMS transport units arriving from the field</li>
                 </ul>
-                <p>As an EMT transporting a patient to a hospital during an MCI, you should report to the <strong>EMS Liaison</strong> or the <strong>Hospital Incident Commander</strong> for patient offloading instructions. Do NOT simply go to the ED — the ED may be overwhelmed and there may be a designated patient receiving area.</p>
+                <p>As an EMS provider transporting a patient to a hospital during an MCI, you should report to the <strong>EMS Liaison</strong> or the <strong>Hospital Incident Commander</strong> for patient offloading instructions. Do NOT simply go to the ED — the ED may be overwhelmed and there may be a designated patient receiving area.</p>
 
                 <h4>Resource Tracking — T-Card System</h4>
                 <p>The <strong>T-card system</strong> is a visual resource-tracking tool used in the Planning Section to track the status of all resources assigned to the incident. Resources are listed on colour-coded cards (T-cards) arranged on a magnetic or Velcro board. The status categories are:</p>
@@ -2378,10 +2378,10 @@ window.CPG_DATA = {
                     <li><strong>Assigned (red):</strong> Resource is currently deployed and working</li>
                     <li><strong>Out of Service (yellow):</strong> Resource is unavailable (maintenance, rest, personnel fatigue)</li>
                 </ul>
-                <p>As an EMT, you will 'check in' at the incident, and your resource status will be tracked. When you complete your assignment, you 'check out' through the Demobilisation Unit.</p>
+                <p>As an EMS provider, you will 'check in' at the incident, and your resource status will be tracked. When you complete your assignment, you 'check out' through the Demobilisation Unit.</p>
 
                 <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                    <strong>NREMT Key Point:</strong> ICS provides a <strong>predictable structure in chaos</strong>. As an EMT during an MCI, you will always know:
+                    <strong>NREMT Key Point:</strong> ICS provides a <strong>predictable structure in chaos</strong>. As an EMS provider during an MCI, you will always know:
                     <ul>
                         <li><strong>Who you report to</strong> (your direct supervisor within ICS)</li>
                         <li><strong>What your role is</strong> (based on your assignment within Operations, Logistics, etc.)</li>
@@ -2392,14 +2392,14 @@ window.CPG_DATA = {
 
                 <h4>Demobilisation & After-Action Reviews</h4>
                 <p><strong>Demobilisation</strong> is the orderly, safe, and efficient release of resources from the incident. The Demobilisation Unit develops a demobilisation plan that specifies: which resources are released first, travel routes, rest requirements, and equipment return procedures. No resource leaves the incident without proper demobilisation authorisation.</p>
-                <p><strong>After-action reviews (AARs)</strong> are structured debriefings conducted after the incident to identify what worked, what did not, and what should be improved for future responses. AARs are <strong>not punitive</strong> — they are learning opportunities. All responders, including EMTs, are encouraged to provide honest feedback. AARs are essential for continuous quality improvement in disaster response.</p>
+                <p><strong>After-action reviews (AARs)</strong> are structured debriefings conducted after the incident to identify what worked, what did not, and what should be improved for future responses. AARs are <strong>not punitive</strong> — they are learning opportunities. All responders, including EMS providers, are encouraged to provide honest feedback. AARs are essential for continuous quality improvement in disaster response.</p>
             </div>`,
             flashcards: [
                 { question: "What is the Incident Command System (ICS)?", answer: "A standardised, on-scene, all-hazards incident management framework that provides a predictable organisational structure for emergencies of any size.", category: "ICS Overview" },
                 { question: "What is the optimal span of control in ICS?", answer: "3–7 subordinates per supervisor (optimal 1:5). If a supervisor has more than 7 direct reports, the ICS structure must be expanded with additional branches or divisions.", category: "ICS Principles" },
                 { question: "Who are the four Command Staff positions that report directly to the Incident Commander?", answer: "Safety Officer (SOFR — has stop-work authority), Public Information Officer (PIO — manages media), Liaison Officer (LOFR — coordinates with assisting agencies).", category: "ICS Command Staff" },
                 { question: "What are the five General Staff Sections of ICS?", answer: "Operations (the doers), Planning (the thinkers — develops the IAP), Logistics (the getters — supplies, food, fuel), Finance/Admin (the payers — cost tracking, procurement). Mnemonic: O-P-L-F.", category: "ICS General Staff" },
-                { question: "As an EMT in an MCI, which ICS Section will you most likely be assigned to?", answer: "Operations Section — specifically the Medical Branch (Triage, Treatment, Transport, or Morgue Units) within the Operations Section.", category: "ICS in Practice" },
+                { question: "As an EMS provider in an MCI, which ICS Section will you most likely be assigned to?", answer: "Operations Section — specifically the Medical Branch (Triage, Treatment, Transport, or Morgue Units) within the Operations Section.", category: "ICS in Practice" },
                 { question: "What is the difference between Area Command and Unified Command?", answer: "Area Command oversees multiple separate incidents in a region (each with its own IC). Unified Command involves multiple agencies/jurisdictions sharing command authority over a SINGLE incident with one joint IAP.", category: "ICS Advanced" },
                 { question: "What is the Safety Officer's unique authority within ICS?", answer: "The Safety Officer has STOP-WORK AUTHORITY — they can halt any operation that presents an imminent life-threatening hazard, independent of the Operations chain of command.", category: "ICS Command Staff" },
                 { question: "What is the purpose of the Demobilisation Unit?", answer: "Develops a plan for the orderly, safe, and efficient release of resources from the incident. No resource leaves without proper demobilisation authorisation.", category: "ICS Demobilisation" }
@@ -2439,34 +2439,34 @@ window.CPG_DATA = {
                     explanation: "A Unified Command is appropriate when an incident involves multiple jurisdictions or agencies with legal or functional authority. In this case: County A (residential threat), County B (water supply threat), and the state environmental agency all have legitimate authority and responsibility. Unified Command allows all three to share command authority, develop one Incident Action Plan collaboratively, and speak with one voice. This prevents the 'tower of Babel' problem where multiple agencies issue conflicting directives. The key is ONE plan developed jointly, not multiple separate plans."
                 },
                 {
-                    q: "An EMT is assigned to the Staging Area during an MCI. What is the status of resources in staging and what should the EMT do while waiting?",
+                    q: "An EMS provider is assigned to the Staging Area during an MCI. What is the status of resources in staging and what should the EMS provider do while waiting?",
                     options: [
-                        "Resources in staging are 'out of service' — the EMT should rest and sleep while waiting for assignment",
-                        "Resources in staging are 'available' and ready for immediate deployment. The EMT should remain with their vehicle, maintain radio contact, and await assignment from the Staging Manager or Operations Section",
-                        "Resources in staging are 'assigned' — the EMT should proceed to the treatment area and begin working",
-                        "Resources in staging are demobilising — the EMT should leave the scene"
+                        "Resources in staging are 'out of service' — the EMS provider should rest and sleep while waiting for assignment",
+                        "Resources in staging are 'available' and ready for immediate deployment. The EMS provider should remain with their vehicle, maintain radio contact, and await assignment from the Staging Manager or Operations Section",
+                        "Resources in staging are 'assigned' — the EMS provider should proceed to the treatment area and begin working",
+                        "Resources in staging are demobilising — the EMS provider should leave the scene"
                     ],
                     correct: 1,
-                    explanation: "Staging is where resources (ambulances, personnel, equipment) are held in a state of readiness (AVAILABLE status), awaiting assignment. Resources in staging are not yet assigned to a specific task. The EMT should: (1) Report to the Staging Manager, (2) Stay with their vehicle/equipment, (3) Maintain readiness — ensure equipment is ready, vehicle is fuelled, (4) Monitor the radio for assignment, (5) When called, proceed to the assigned location and function. Staging ensures that resources are pre-positioned and can be deployed rapidly when needed, rather than having them arrive randomly and create congestion."
+                    explanation: "Staging is where resources (ambulances, personnel, equipment) are held in a state of readiness (AVAILABLE status), awaiting assignment. Resources in staging are not yet assigned to a specific task. The EMS provider should: (1) Report to the Staging Manager, (2) Stay with their vehicle/equipment, (3) Maintain readiness — ensure equipment is ready, vehicle is fuelled, (4) Monitor the radio for assignment, (5) When called, proceed to the assigned location and function. Staging ensures that resources are pre-positioned and can be deployed rapidly when needed, rather than having them arrive randomly and create congestion."
                 }
             ],
             critical: [
                 {
                     id: "crit_8_9_1",
-                    scenario: "You are an EMT assigned to the Treatment Unit in an MCI following a tornado that has damaged a large residential area. The treatment area is set up in a triage tent in a nearby school parking lot. You are working in the RED treatment zone, providing care to 5 critical patients. A volunteer firefighter who is not part of your chain of command approaches you and tells you to 'move all the RED patients to the other side of the parking lot because the Incident Commander wants the tent for logistics.' Neither you nor the Treatment Unit Leader have received any such order through the chain of command. You look around and see no Logistics personnel setting up in the tent.",
-                    question: "How should the EMT respond to this request, and what does this illustrate about ICS principles?",
+                    scenario: "You are an EMS provider assigned to the Treatment Unit in an MCI following a tornado that has damaged a large residential area. The treatment area is set up in a triage tent in a nearby school parking lot. You are working in the RED treatment zone, providing care to 5 critical patients. A volunteer firefighter who is not part of your chain of command approaches you and tells you to 'move all the RED patients to the other side of the parking lot because the Incident Commander wants the tent for logistics.' Neither you nor the Treatment Unit Leader have received any such order through the chain of command. You look around and see no Logistics personnel setting up in the tent.",
+                    question: "How should the EMS provider respond to this request, and what does this illustrate about ICS principles?",
                     options: [
-                        {t: "Comply with the volunteer firefighter's request — he is a first responder and may have direct communication with the IC. Moving the patients will only take a few minutes, and it is better to cooperate than cause conflict", f: "Incorrect — This violates multiple ICS principles. The volunteer is not in the EMT's chain of command (violation of Unity of Command). The order has not been communicated through the proper ICS channels (Treatment Unit Leader → Medical Branch Director → Operations Section Chief). Moving critical patients without a proper order and clinical assessment could harm them. The EMT should FOLLOW THE CHAIN OF COMMAND."},
-                        {t: "Do NOT comply with the unofficial order. Follow the chain of command: ask the volunteer which IC gave that order (to determine if it is legitimate), then confirm the order through your direct supervisor (Treatment Unit Leader). If the Treatment Unit Leader confirms the order, coordinate an orderly, safe movement of patients with clinical priority given to the most critical. This illustrates the ICS principles of Unity of Command (one supervisor) and Chain of Command (orders flow through proper channels)", f: "Correct — This scenario illustrates WHY Unity of Command and Chain of Command are essential ICS principles. An EMT must have ONE designated supervisor and receive orders only through the proper chain. Accepting orders from someone outside your chain creates chaos, conflicting priorities, and potential patient harm. The proper response is to politely decline and confirm through the established chain of command."}
+                        {t: "Comply with the volunteer firefighter's request — he is a first responder and may have direct communication with the IC. Moving the patients will only take a few minutes, and it is better to cooperate than cause conflict", f: "Incorrect — This violates multiple ICS principles. The volunteer is not in the EMS provider's chain of command (violation of Unity of Command). The order has not been communicated through the proper ICS channels (Treatment Unit Leader → Medical Branch Director → Operations Section Chief). Moving critical patients without a proper order and clinical assessment could harm them. The EMS provider should FOLLOW THE CHAIN OF COMMAND."},
+                        {t: "Do NOT comply with the unofficial order. Follow the chain of command: ask the volunteer which IC gave that order (to determine if it is legitimate), then confirm the order through your direct supervisor (Treatment Unit Leader). If the Treatment Unit Leader confirms the order, coordinate an orderly, safe movement of patients with clinical priority given to the most critical. This illustrates the ICS principles of Unity of Command (one supervisor) and Chain of Command (orders flow through proper channels)", f: "Correct — This scenario illustrates WHY Unity of Command and Chain of Command are essential ICS principles. An EMS provider must have ONE designated supervisor and receive orders only through the proper chain. Accepting orders from someone outside your chain creates chaos, conflicting priorities, and potential patient harm. The proper response is to politely decline and confirm through the established chain of command."}
                     ],
                     correct: 1,
-                    explanation: "This scenario demonstrates the importance of Unity of Command and Chain of Command in ICS. Key points: (1) The EMT's direct supervisor is the Treatment Unit Leader — no one else should be giving orders for treatment area operations. (2) Even a legitimate IC order would flow through the chain: IC → Operations Chief → Medical Branch Director → Treatment Unit Leader. (3) If the Treatment Unit Leader confirms the order, the move should be planned carefully — RED patients are critical and movement must be clinically coordinated. (4) If the order is not confirmed, the EMT should continue their assigned duties. Don't let anyone pressure you into bypassing the chain of command.",
+                    explanation: "This scenario demonstrates the importance of Unity of Command and Chain of Command in ICS. Key points: (1) The EMS provider's direct supervisor is the Treatment Unit Leader — no one else should be giving orders for treatment area operations. (2) Even a legitimate IC order would flow through the chain: IC → Operations Chief → Medical Branch Director → Treatment Unit Leader. (3) If the Treatment Unit Leader confirms the order, the move should be planned carefully — RED patients are critical and movement must be clinically coordinated. (4) If the order is not confirmed, the EMS provider should continue their assigned duties. Don't let anyone pressure you into bypassing the chain of command.",
                     kpi: "Demonstrates adherence to Unity of Command and Chain of Command in ICS"
                 },
                 {
                     id: "crit_8_9_2",
                     scenario: "You are the Staging Manager at a large MCI involving a factory explosion. You have 8 ambulances in Staging, all in AVAILABLE status — their crews are standing by, ready for assignment. The Operations Section Chief calls you on the radio: 'Staging, we need 4 ambulances to the RED treatment area for transport now.' You dispatch 4 ambulances. Five minutes later, the Medical Branch Director calls: 'Staging, send 3 more ambulances to the YELLOW treatment area.' You dispatch 3. Two minutes later, the Transport Unit Leader calls: 'Staging, I need 2 of those ambulances you sent to RED reassigned to me — I'm holding them at the transport loading point.' You now have 0 ambulances in Staging. Three RED patients are still waiting for transport. A fire captain walks up to your staging area and says, 'I need 4 ambulances right now — my crew has found 12 more victims in the collapsed section.'",
-                    question: "What is the EMT Staging Manager's appropriate response, and what ICS problem does this reveal?",
+                    question: "What is the EMS provider Staging Manager's appropriate response, and what ICS problem does this reveal?",
                     options: [
                         {t: "Tell the fire captain you have no ambulances available. This reveals that Staging has insufficient resources for the incident — the IC should have requested more ambulances. It is not the Staging Manager's problem to solve", f: "Incorrect — While it is true that more resources are needed (Operations should request more through Logistics), the Staging Manager should not simply refuse. The Staging Manager should communicate the resource shortage through proper channels: notify the Operations Section Chief that Staging is depleted and that additional resources are urgently needed. The fire captain's request must be processed through the chain of command — the fire captain reports to the Operations Section Chief, who would then task Staging with assigned resources."},
                         {t: "Inform the fire captain that staging is depleted. Immediately notify the Operations Section Chief: 'Operations, Staging — zero ambulances available. We have an additional 12 patients needing transport. Requesting 4+ additional ambulances immediately.' Also note the potential ICS communication issue — the Transport Unit Leader should not be contradicting the Operations Chief's assignments; this should be resolved at the Operations or Medical Branch level. This reveals a Resource Management and Coordination problem within Operations", f: "Correct — The Staging Manager's role is to track available resources and deploy them when ordered. When Staging is depleted, the Staging Manager must immediately notify Operations so more resources can be ordered. Additionally, the Transport Unit Leader reassigning ambulances already sent by Operations Chief's order reveals a coordination gap — this should be resolved by the Medical Branch Director or Operations Chief, not by the Staging Manager. The Staging Manager's job is to report, not to solve resource conflicts."}
@@ -2477,8 +2477,8 @@ window.CPG_DATA = {
                 },
                 {
                     id: "crit_8_9_3",
-                    scenario: "You are an EMT assigned to the Treatment Unit in an MCI after a large apartment fire. The Incident Commander has established a Unified Command with the Fire Department, Police Department, and Red Cross. The Operations Section Chief has assigned you to work in the YELLOW (delayed) treatment area under the Treatment Unit Leader. Approximately 45 minutes into the incident, a person who identifies themselves as a 'deputy chief from the city' approaches you and tries to give you orders to 'prioritize transporting the elderly residents first because the mayor is concerned about vulnerable populations.' The person does not appear to be part of the incident command structure — they are not wearing an ICS vest, and they do not have a radio. The Treatment Unit Leader is occupied with a critically ill patient nearby.",
-                    question: "How should the EMT handle this situation, and what ICS principle does it illustrate?",
+                    scenario: "You are an EMS provider assigned to the Treatment Unit in an MCI after a large apartment fire. The Incident Commander has established a Unified Command with the Fire Department, Police Department, and Red Cross. The Operations Section Chief has assigned you to work in the YELLOW (delayed) treatment area under the Treatment Unit Leader. Approximately 45 minutes into the incident, a person who identifies themselves as a 'deputy chief from the city' approaches you and tries to give you orders to 'prioritize transporting the elderly residents first because the mayor is concerned about vulnerable populations.' The person does not appear to be part of the incident command structure — they are not wearing an ICS vest, and they do not have a radio. The Treatment Unit Leader is occupied with a critically ill patient nearby.",
+                    question: "How should the EMS provider handle this situation, and what ICS principle does it illustrate?",
                     options: [
                         {t: "Follow the deputy chief's orders — he is a high-ranking city official and clearly has authority. The mayor's concern is valid, and prioritizing elderly patients is ethically appropriate", f: "Incorrect — This person is NOT part of the ICS structure (no vest, no radio, not in the chain of command). In ICS, authority comes from your position within the structure, not from your rank or title outside the incident. A person who is not integrated into the ICS has NO authority to give tactical orders. Additionally, implementing a 'prioritise elderly' order contradicts the triage system (which prioritises by medical acuity, not by age or social status). Taking orders from an unauthorised person violates Unity of Command."},
                         {t: "Politely but firmly decline the order: 'Sir, I am not able to take orders from outside the ICS chain of command. My direct supervisor is the Treatment Unit Leader. If you have operational concerns, please direct them to the Incident Commander through the Liaison Officer or the Public Information Officer — they are part of the Unified Command structure and can address the mayor's concerns without compromising our triage and treatment operations.' This illustrates the ICS principle that during an incident, ALL authority flows through the ICS structure — external officials (even high-ranking ones) must work through the Liaison Officer or Unified Command rather than issuing direct orders to field personnel", f: "Correct — This is a classic ICS scenario. During a declared incident, the ICS structure is the ONLY legitimate command and control framework. External officials (deputy chiefs, politicians, VIPs) must route their concerns through the Liaison Officer (who is the Command Staff position designed specifically for external coordination) or through their designated representative in a Unified Command structure. They CANNOT give orders directly to field personnel. Politely redirecting them to the Liaison Officer or Unified Command respects their position while maintaining ICS integrity."}

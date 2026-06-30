@@ -10,11 +10,11 @@ window.CPG_DATA = {
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg> Cardiac Anatomy & Physiology</h3>
 
-        <p>The heart is a four-chambered muscular pump about the size of a fist, located in the mediastinum between the lungs. It beats approximately 100,000 times per day, pumping blood through over 60,000 miles of blood vessels. Understanding cardiac anatomy and the conduction system is foundational to recognizing and managing every cardiovascular emergency you will encounter as an EMT.</p>
+        <p>The heart is a four-chambered muscular pump about the size of a fist, located in the mediastinum between the lungs. It beats approximately 100,000 times per day, pumping blood through over 60,000 miles of blood vessels. Understanding cardiac anatomy and the conduction system is foundational to recognizing and managing every cardiovascular emergency you will encounter as an EMS provider.</p>
 
         <h4>Heart Chambers</h4>
         <p>The heart contains four chambers that work in coordinated sequence. The upper chambers are the <strong>atria</strong> (receiving chambers), and the lower chambers are the <strong>ventricles</strong> (pumping chambers). The right side of the heart pumps deoxygenated blood to the lungs; the left side pumps oxygenated blood to the body.</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Chamber</th><th>Receives Blood From</th><th>Pumps Blood To</th><th>Wall Thickness</th></tr>
             </thead>
@@ -24,7 +24,7 @@ window.CPG_DATA = {
                 <tr><td>Left Atrium (LA)</td><td>Pulmonary veins (from lungs)</td><td>Left ventricle (via mitral valve)</td><td>Thin-walled</td></tr>
                 <tr><td>Left Ventricle (LV)</td><td>Left atrium</td><td>Aorta (via aortic valve) → entire body</td><td><strong>Thickest</strong> (pumps against high systemic resistance)</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>Clinical Pearl:</strong> The left ventricle has the thickest myocardial wall because it must generate enough pressure to pump blood to the entire body against high systemic resistance. This makes the LV the most common site of myocardial infarction — and the most common chamber to fail in cardiogenic shock.
@@ -32,7 +32,7 @@ window.CPG_DATA = {
 
         <h4>Cardiac Valves</h4>
         <p>Four valves ensure one-way blood flow through the heart. The <strong>atrioventricular (AV) valves</strong> separate the atria from the ventricles. The <strong>semilunar valves</strong> separate the ventricles from the great arteries.</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Valve</th><th>Location</th><th>Prevents Backflow Into</th></tr>
             </thead>
@@ -42,7 +42,7 @@ window.CPG_DATA = {
                 <tr><td><strong>Mitral Valve</strong> (bicuspid)</td><td>Between LA and LV</td><td>Left atrium during ventricular systole</td></tr>
                 <tr><td><strong>Aortic Valve</strong></td><td>Between LV and aorta</td><td>Left ventricle during diastole</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Coronary Arteries</h4>
         <p>The heart receives its own blood supply through the <strong>coronary arteries</strong>, which originate from the base of the aorta (just above the aortic valve). The coronary arteries fill during <strong>diastole</strong> (when the aortic valve is closed and the myocardium is relaxed).</p>
@@ -147,7 +147,7 @@ window.CPG_DATA = {
     summary: `<div class="sum-card">
         <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg> Chest Pain / Acute Coronary Syndrome</h3>
 
-        <p><strong>Acute Coronary Syndrome (ACS)</strong> is a term encompassing the spectrum of conditions caused by reduced blood flow to the myocardium due to coronary artery plaque rupture, thrombosis, and vasospasm. ACS is a time-critical emergency — every minute of delay in reperfusion results in irreversible myocardial cell death. As an EMT, your role in early recognition, aspirin administration, and appropriate destination selection directly impacts patient survival.</p>
+        <p><strong>Acute Coronary Syndrome (ACS)</strong> is a term encompassing the spectrum of conditions caused by reduced blood flow to the myocardium due to coronary artery plaque rupture, thrombosis, and vasospasm. ACS is a time-critical emergency — every minute of delay in reperfusion results in irreversible myocardial cell death. As an EMS provider, your role in early recognition, aspirin administration, and appropriate destination selection directly impacts patient survival.</p>
 
         <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
             <strong>Critical Concept:</strong> Time is muscle. Myocardial cells begin to die within 20-40 minutes of complete coronary occlusion. The goal of EMS is to identify potential STEMI patients, administer aspirin, and transport to a PCI-capable facility as rapidly as possible. Door-to-balloon time should be ≤90 minutes.
@@ -155,7 +155,7 @@ window.CPG_DATA = {
 
         <h4>The ACS Spectrum</h4>
         <p>ACS encompasses three conditions that differ in severity and the presence of myocardial damage:</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Condition</th><th>Pathophysiology</th><th>ECG Findings</th><th>Biomarkers</th></tr>
             </thead>
@@ -164,11 +164,11 @@ window.CPG_DATA = {
                 <tr><td><strong>NSTEMI</strong> (Non-ST-Elevation MI)</td><td>Subtotal occlusion — severe reduction in blood flow causing some myocardial necrosis, but not transmural (does not extend through full wall thickness).</td><td>ST depression, T-wave inversion, or normal; <strong>no ST elevation</strong></td><td>Positive (troponin elevated)</td></tr>
                 <tr><td><strong>STEMI</strong> (ST-Elevation MI)</td><td>Complete occlusion of a coronary artery causing transmural myocardial infarction (full wall thickness necrosis).</td><td><strong>ST-segment elevation</strong> ≥1 mm in two or more contiguous leads; new LBBB</td><td>Positive (troponin elevated)</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Typical vs. Atypical Chest Pain Presentation</h4>
         <p>Not all ACS presents with classic crushing chest pain. Be alert for atypical presentations, especially in certain populations:</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Presentation Type</th><th>Characteristics</th><th>Population at Risk</th></tr>
             </thead>
@@ -176,7 +176,7 @@ window.CPG_DATA = {
                 <tr><td><strong>Typical</strong></td><td>Substernal chest pressure, squeezing, heaviness, or tightness; may radiate to left arm, jaw, neck, back, or epigastrium; associated with dyspnea, diaphoresis, nausea, and/or lightheadedness; often brought on by exertion and relieved by rest or nitroglycerin</td><td>General population</td></tr>
                 <tr><td><strong>Atypical</strong></td><td>Epigastric pain, indigestion, sharp/stabbing pain, pleuritic pain, isolated dyspnea, extreme fatigue, syncope, or 'just not feeling right.' Pain may be absent. May present as flu-like symptoms or anxiety.</td><td><strong>Women</strong>, elderly (>75 years), diabetics (autonomic neuropathy blunts pain perception), and patients with dementia</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>Clinical Pearl:</strong> Diabetics often have silent ischemia or atypical presentations due to autonomic neuropathy that blunts cardiac pain perception. In a diabetic patient with unexplained dyspnea, nausea, fatigue, or altered mental status — suspect ACS until proven otherwise.
@@ -195,7 +195,7 @@ window.CPG_DATA = {
 
         <h4>Cardiac Risk Factors</h4>
         <p>Risk factors increase the likelihood that a patient's chest pain is cardiac in origin. They are divided into modifiable and non-modifiable:</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Non-Modifiable</th><th>Modifiable</th></tr>
             </thead>
@@ -208,19 +208,19 @@ window.CPG_DATA = {
                 <tr><td></td><td>Sedentary lifestyle</td></tr>
                 <tr><td></td><td>Cocaine or amphetamine use (can cause coronary vasospasm)</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
             <strong>NREMT Tip:</strong> The presence of multiple risk factors increases clinical suspicion for ACS, but the ABSENCE of risk factors does NOT rule out ACS, especially in young patients with cocaine use or patients with atypical presentations. Always err on the side of caution.
         </div>
 
         <h4>EMS Management of Chest Pain / Suspected ACS</h4>
-        <p>The following steps represent the standard EMT approach to suspected ACS (follow your local protocols):</p>
+        <p>The following steps represent the standard EMS provider approach to suspected ACS (follow your local protocols):</p>
         <ul>
             <li><strong>Oxygen:</strong> Administer only if SpO₂ &lt;94% or if the patient is in respiratory distress. Routine oxygen for all chest pain patients is no longer recommended — oxygen can cause vasoconstriction and may increase infarct size in normoxic patients.</li>
             <li><strong>Aspirin:</strong> 160-325 mg (usually 2-4 baby aspirin 81 mg or 1 adult aspirin 325 mg) chewed and swallowed. Aspirin inhibits platelet aggregation, reducing thrombus propagation. It is the single most important prehospital intervention for ACS. Do not give if the patient has a true allergy (not just upset stomach) or active GI bleeding. <strong>Chewing, not swallowing whole, speeds absorption.</strong></li>
-            <li><strong>Nitroglycerin (GTN):</strong> If the patient has a prescribed nitroglycerin (sublingual spray or tablet) and the EMT is authorized by protocol and/or medical direction to assist. Check for contraindications: hypotension (SBP &lt;90-100 mmHg per protocol), severe bradycardia or tachycardia, suspected right ventricular infarction, or recent PDE-5 inhibitor use (sildenafil, tadalafil, vardenafil within 24-48 hours — can cause severe refractory hypotension).</li>
-            <li><strong>12-Lead ECG:</strong> Obtain per local protocol. Many EMS systems allow EMTs to apply leads and obtain a 12-lead for transmission to the receiving hospital. Early ECG acquisition reduces door-to-balloon time.</li>
+            <li><strong>Nitroglycerin (GTN):</strong> If the patient has a prescribed nitroglycerin (sublingual spray or tablet) and the EMS provider is authorized by protocol and/or medical direction to assist. Check for contraindications: hypotension (SBP &lt;90-100 mmHg per protocol), severe bradycardia or tachycardia, suspected right ventricular infarction, or recent PDE-5 inhibitor use (sildenafil, tadalafil, vardenafil within 24-48 hours — can cause severe refractory hypotension).</li>
+            <li><strong>12-Lead ECG:</strong> Obtain per local protocol. Many EMS systems allow EMS providers to apply leads and obtain a 12-lead for transmission to the receiving hospital. Early ECG acquisition reduces door-to-balloon time.</li>
             <li><strong>Transport Decision:</strong> Patients with suspected STEMI should be transported directly to a <strong>PCI-capable (percutaneous coronary intervention) center</strong> — often called a STEMI receiving center or cardiac catheterization lab facility — bypassing closer hospitals that cannot perform PCI. Know your local STEMI network and destination protocols.</li>
         </ul>
 
@@ -299,7 +299,7 @@ window.CPG_DATA = {
 
         <h4>Left-Sided vs. Right-Sided Heart Failure</h4>
         <p>Heart failure is classified by which ventricle is primarily affected. While both can occur together (biventricular failure), the distinction guides assessment and treatment:</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Feature</th><th>Left-Sided Heart Failure</th><th>Right-Sided Heart Failure</th></tr>
             </thead>
@@ -309,7 +309,7 @@ window.CPG_DATA = {
                 <tr><td><strong>Lung Sounds</strong></td><td><strong>Crackles/rales</strong> (bilateral, starting at bases) — the hallmark of pulmonary edema. May also have wheezing ('cardiac asthma')</td><td>Clear (unless concurrent left-sided failure)</td></tr>
                 <tr><td><strong>JVD</strong></td><td>May be present (if left-sided pressure is transmitted backward)</td><td><strong>Prominent JVD</strong> — distended neck veins when the patient is at 45°</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
             <strong>Critical Recognition:</strong> Acute pulmonary edema is a life-threatening emergency. The patient will appear anxious, pale, and diaphoretic — sitting upright, gasping for air, using accessory muscles, with audible crackles and possibly pink frothy sputum. This is the heart failing as a pump, and the lungs are drowning. Immediate CPAP/BiPAP and aggressive management are required.
@@ -348,7 +348,7 @@ window.CPG_DATA = {
         </div>
 
         <h5>3. Medication Considerations</h5>
-        <p>The following medications may be administered per local protocol or by ALS providers. As an EMT, you should understand their purpose:</p>
+        <p>The following medications may be administered per local protocol or by ALS providers. As an EMS provider, you should understand their purpose:</p>
         <ul>
             <li><strong>Nitroglycerin (sublingual or topical):</strong> Venodilator that reduces preload (venous pooling) and, at higher doses, reduces afterload (arterial dilation). Given if SBP >100 mmHg (or per local protocol). Contraindications: hypotension, severe bradycardia, RV infarction, recent PDE-5 inhibitor use.</li>
             <li><strong>Furosemide (Lasix):</strong> Loop diuretic that reduces intravascular volume by increasing urine output. Traditionally given IV in the ED; some ALS protocols allow prehospital administration. Note that furosemide takes 20-30 minutes to begin working and primarily reduces preload through venodilation before it produces diuresis. Over-diuresis can cause hypokalemia and hypotension.</li>
@@ -392,7 +392,7 @@ window.CPG_DATA = {
         {
             id: "crit_4_3_2",
             scenario: "You are called to a 72-year-old male with respiratory distress. He is sitting upright in a chair, breathing rapidly, and appears exhausted. His wife states he has been increasingly short of breath over the past 2 days and cannot lie flat. He has a history of CHF, COPD, and hypertension. On exam, he has bilateral wheezes throughout all lung fields with some fine crackles at the bases. He has mild JVD and 1+ ankle edema. Vital signs: BP 148/88, HR 104, RR 28, SpO₂ 89% on room air. He is alert but can only speak 2-3 words between breaths. You note he uses a home oxygen concentrator at 2 L/min at baseline.",
-            question: "The presence of both wheezes and crackles in this patient presents a diagnostic challenge. How should the EMT interpret these findings and proceed?",
+            question: "The presence of both wheezes and crackles in this patient presents a diagnostic challenge. How should the EMS provider interpret these findings and proceed?",
             options: [
                 {t: "This is likely a CHF exacerbation with secondary 'cardiac asthma' from bronchial wall edema — the crackles and JVD point to fluid overload as the primary problem. Apply CPAP, which will treat both the pulmonary edema and the bronchospasm by reducing preload and pneumatic splinting of airways", f: "Correct. In patients with both HF and COPD, distinguishing exacerbations can be difficult. Crackles and JVD point to ADHF as the primary driver. CPAP/BiPAP is beneficial for both conditions and is the appropriate initial intervention."},
                 {t: "This is a COPD exacerbation — the wheezes are predominant and the crackles are minimal. Give albuterol nebulizer treatments first and reassess. CPAP may cause pneumothorax in COPD patients", f: "Incorrect. While COPD and CHF frequently coexist, the presence of crackles (even if mild), JVD, ankle edema, and orthopnea suggests ADHF as at least a component. Albuterol alone will not address the fluid overload. CPAP is safe and effective in COPD exacerbations as well (it reduces air trapping and work of breathing). The risk of pneumothorax from CPAP is very low and does not outweigh the benefit."}
@@ -428,7 +428,7 @@ window.CPG_DATA = {
         </div>
 
         <h4>Hypertensive Urgency vs. Hypertensive Emergency</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Feature</th><th>Hypertensive Urgency</th><th>Hypertensive Emergency</th></tr>
             </thead>
@@ -439,11 +439,11 @@ window.CPG_DATA = {
                 <tr><td><strong>EMS Urgency</strong></td><td>Non-emergent transport — the patient should be evaluated by a physician but treatment can be gradual (hours to days of oral medication adjustment)</td><td><strong>Emergency transport</strong> — immediate intervention required to prevent irreversible organ damage. Rapid transport with continuous monitoring</td></tr>
                 <tr><td><strong>Prehospital Tx</strong></td><td>Supportive care, reassurance, transport for medical evaluation. Do NOT attempt to rapidly lower BP prehospitally</td><td>Supportive care, treat the presenting symptoms (chest pain, dyspnea, etc.), rapid transport. Rapidly lowering BP is an in-hospital intervention</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>End-Organ Damage in Hypertensive Emergency</h4>
         <p>Extremely high blood pressure can damage blood vessels throughout the body, leading to dysfunction in multiple organ systems. The specific symptoms depend on which organs are affected:</p>
-        <table>
+        <div class="table-scroll"><table>
             <thead>
                 <tr><th>Organ System</th><th>Condition</th><th>Signs and Symptoms</th></tr>
             </thead>
@@ -453,7 +453,7 @@ window.CPG_DATA = {
                 <tr><td><strong>Renal</strong></td><td>Acute kidney injury</td><td>Decreased urine output (oliguria), flank pain, hematuria (usually silent — detected by lab work, not field assessment)</td></tr>
                 <tr><td><strong>Ocular</strong></td><td>Hypertensive retinopathy (papilledema)</td><td>Blurred vision, visual scotomata (blind spots), headache — often noted by the patient as 'sudden vision change'</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
             <strong>Critical Warning — Aortic Dissection:</strong> Aortic dissection is a catastrophic complication of hypertensive emergency. Suspect it when a patient presents with sudden, severe, tearing or ripping chest pain that radiates to the back, between the shoulder blades, or into the abdomen. A BP differential (>20 mmHg difference between arms) or a pulse deficit is a critical diagnostic clue. These patients are extremely unstable and need immediate surgical intervention.
@@ -479,7 +479,7 @@ window.CPG_DATA = {
         </ul>
 
         <h4>Prehospital Management and Transport Considerations</h4>
-        <p>Crucially, the role of the EMT in hypertensive emergencies is <strong>recognition, supportive care, and transport</strong> — not aggressive BP reduction. Rapidly lowering blood pressure in the prehospital setting can actually worsen outcomes by reducing perfusion to vital organs that have become accustomed to high pressures (the brain's autoregulation curve has shifted rightward in chronic hypertension).</p>
+        <p>Crucially, the role of the EMS provider in hypertensive emergencies is <strong>recognition, supportive care, and transport</strong> — not aggressive BP reduction. Rapidly lowering blood pressure in the prehospital setting can actually worsen outcomes by reducing perfusion to vital organs that have become accustomed to high pressures (the brain's autoregulation curve has shifted rightward in chronic hypertension).</p>
         <ul>
             <li><strong>Recognition:</strong> Identify that the patient has a hypertensive emergency (high BP + end-organ damage), not just high numbers.</li>
             <li><strong>Supportive care:</strong> Position of comfort (usually semi-Fowler's to avoid increasing ICP), high-flow oxygen if hypoxic, treat specific symptoms per protocol (e.g., chest pain → aspirin, dyspnea → CPAP).</li>
@@ -497,10 +497,10 @@ window.CPG_DATA = {
         { question: "What is the difference between hypertensive urgency and hypertensive emergency?", answer: "Both have severely elevated BP (SBP >180 or DBP >110). Urgency has NO acute end-organ damage. Emergency HAS acute end-organ damage affecting CNS, cardiovascular, renal, or ocular systems.", category: "HTN Classification" },
         { question: "List the signs and symptoms of end-organ damage in hypertensive emergency.", answer: "CNS: severe headache, vision changes, altered mental status, seizures, focal neuro deficits. CV: chest pain, dyspnea, tearing back pain (aortic dissection). Renal: decreased urine output.", category: "HTN Emergency Recognition" },
         { question: "What is the most common trigger for a hypertensive crisis?", answer: "Medication non-compliance — patients who stop their antihypertensives (especially beta-blockers or clonidine) can experience severe rebound hypertension.", category: "HTN Causes" },
-        { question: "Should an EMT attempt to aggressively lower a patient's blood pressure in the field?", answer: "No. Rapidly lowering BP can reduce perfusion to vital organs and worsen outcomes. The EMT's role is recognition, supportive care, and transport — not BP reduction.", category: "HTN Management" },
+        { question: "Should an EMS provider attempt to aggressively lower a patient's blood pressure in the field?", answer: "No. Rapidly lowering BP can reduce perfusion to vital organs and worsen outcomes. The EMS provider's role is recognition, supportive care, and transport — not BP reduction.", category: "HTN Management" },
         { question: "What is Cushing's triad, and why is it important?", answer: "Cushing's triad: hypertension (widening pulse pressure), bradycardia, and irregular respirations. It indicates increased ICP and impending brain herniation. Do NOT lower the BP — it is protecting cerebral perfusion.", category: "HTN Recognition" },
         { question: "What are the key features of aortic dissection on history and exam?", answer: "Sudden, severe, tearing/ripping chest pain radiating to the back; BP differential >20 mmHg between arms; pulse deficits; history of hypertension. Requires immediate surgical evaluation.", category: "HTN Emergency" },
-        { question: "How should an EMT manage a patient with hypertensive emergency?", answer: "Supportive care, position of comfort, oxygen if hypoxic, treat presenting symptoms per protocol (aspirin for chest pain, CPAP for pulmonary edema), calm the patient, and transport to an appropriate facility. Do NOT lower BP prehospitally.", category: "HTN Management" },
+        { question: "How should an EMS provider manage a patient with hypertensive emergency?", answer: "Supportive care, position of comfort, oxygen if hypoxic, treat presenting symptoms per protocol (aspirin for chest pain, CPAP for pulmonary edema), calm the patient, and transport to an appropriate facility. Do NOT lower BP prehospitally.", category: "HTN Management" },
         { question: "What is preeclampsia/eclampsia and how is it defined in terms of blood pressure?", answer: "Preeclampsia is pregnancy-induced hypertension (BP ≥160/110 with proteinuria) in the 2nd/3rd trimester or postpartum. Eclampsia = preeclampsia + seizures. A true obstetric and hypertensive emergency.", category: "HTN Special Populations" }
     ],
     quiz: [
@@ -524,7 +524,7 @@ window.CPG_DATA = {
         {
             id: "crit_4_4_2",
             scenario: "You are dispatched to a 30-year-old female who is 32 weeks pregnant complaining of a severe headache and 'spots in her vision.' She states the headache began this morning and has progressively worsened. She has had no prenatal care and is not sure if she has had high blood pressure before. Vital signs: BP 178/112, HR 104, RR 20, SpO₂ 97%. She is awake, alert, and oriented but appears anxious. She has 2+ pitting edema in both lower extremities. Her husband states she has been more irritable than usual. She denies chest pain or dyspnea. She denies any seizure activity.",
-            question: "What is the most likely diagnosis, and what specific risks must the EMT consider during transport?",
+            question: "What is the most likely diagnosis, and what specific risks must the EMS provider consider during transport?",
             options: [
                 {t: "Preeclampsia — a hypertensive emergency of pregnancy (BP ≥160/110 with proteinuria/symptoms). The patient is at risk for progression to eclampsia (seizures), stroke, and placental abruption. Transport emergently with lights dimmed, minimize stimulation, position left lateral recumbent to optimize uterine blood flow, and have seizure precautions ready", f: "Correct. BP ≥160/110 with symptoms (headache, visual changes, edema) in a pregnant patient in the 2nd/3rd trimester meets criteria for preeclampsia. Eclampsia (seizures) can develop suddenly. Magnesium sulfate is the in-hospital treatment for seizure prophylaxis."},
                 {t: "This is a normal pregnancy finding — BP can be slightly elevated in the third trimester, and the headache and vision changes are likely from fatigue and stress. Transport without priority", f: "Incorrect. BP ≥160/110 in pregnancy with headache, visual changes, and edema is NOT normal. Preeclampsia is a life-threatening condition for both mother and fetus and requires urgent evaluation. Delayed recognition can lead to eclampsia, stroke, or maternal death."}
@@ -536,13 +536,13 @@ window.CPG_DATA = {
         {
             id: "crit_4_4_3",
             scenario: "You are called to a 63-year-old male found unresponsive by his wife. She states he was watching television and suddenly collapsed to the floor about 10 minutes ago. On arrival, he is lying supine on the floor. He is unconscious with snoring respirations. You open his airway with a jaw thrust and note that his left side is flaccid — his left arm and leg do not move and his left facial droop is present. Vital signs: BP 198/118, HR 52 (regular), RR 8 (irregular with periodic pauses), SpO₂ 88% on room air. Pupils: right pupil is 5 mm and reactive, left pupil is 2 mm and sluggish.",
-            question: "What does the combination of hypertension, bradycardia, and irregular respirations (Cushing's triad) suggest, and what is the EMT's priority?",
+            question: "What does the combination of hypertension, bradycardia, and irregular respirations (Cushing's triad) suggest, and what is the EMS provider's priority?",
             options: [
-                {t: "Cushing's triad indicates significantly increased intracranial pressure from a likely intracerebral hemorrhage — the hypertension is compensatory to maintain cerebral perfusion. The EMT's priority is airway management (ventilate at 10/min with BVM to maintain mild hyperventilation if signs of herniation), elevate the head of the stretcher 30°, and transport rapidly to a stroke center with neurosurgical capability. Do NOT treat the hypertension", f: "Correct. Cushing's triad = hypertension, bradycardia, irregular breathing = rising ICP. The high BP is protecting brain perfusion. Lowering it could cause brain death. The flaccid left side, anisocoria (unequal pupils), and decreased LOC confirm a catastrophic intracranial event."},
+                {t: "Cushing's triad indicates significantly increased intracranial pressure from a likely intracerebral hemorrhage — the hypertension is compensatory to maintain cerebral perfusion. The EMS provider's priority is airway management (ventilate at 10/min with BVM to maintain mild hyperventilation if signs of herniation), elevate the head of the stretcher 30°, and transport rapidly to a stroke center with neurosurgical capability. Do NOT treat the hypertension", f: "Correct. Cushing's triad = hypertension, bradycardia, irregular breathing = rising ICP. The high BP is protecting brain perfusion. Lowering it could cause brain death. The flaccid left side, anisocoria (unequal pupils), and decreased LOC confirm a catastrophic intracranial event."},
                 {t: "The patient is having a heart attack with cardiogenic shock — the hypertension is from pain and the bradycardia is from the inferior wall MI. Treat with aspirin and transport to a PCI-capable center", f: "Incorrect. The focal neurological findings (left-sided weakness, facial droop, anisocoria) point to a neurological cause, not a primary cardiac cause. Cushing's triad is a classic finding of elevated ICP. Aspirin would be contraindicated if there is intracranial hemorrhage. The hypertension is compensatory, not a primary problem."}
             ],
             correct: 0,
-            explanation: "Cushing's triad (hypertension with widening pulse pressure, bradycardia, irregular respirations) is a late and ominous sign of elevated intracranial pressure. It represents the body's desperate attempt to maintain cerebral perfusion pressure (CPP) against rising ICP (CPP = MAP - ICP). As ICP rises, the body increases MAP to keep blood flowing to the brain. This patient likely has a large intracerebral hemorrhage (hypertensive bleed) causing mass effect and brainstem compression (anisocoria suggests third nerve compression from uncal herniation). The EMT's priorities: protect the airway (the patient is unconscious with irregular, inadequate breathing — BVM ventilation is indicated), mild hyperventilation (not aggressive — 16-20/min can be considered if signs of herniation are present, though this is controversial), elevate the head 30° to promote venous drainage, and transport emergently to a stroke center with neurosurgery. Do NOT lower the BP. The combination of hypertension + bradycardia in this context is a neurological emergency, not a primary cardiac problem.",
+            explanation: "Cushing's triad (hypertension with widening pulse pressure, bradycardia, irregular respirations) is a late and ominous sign of elevated intracranial pressure. It represents the body's desperate attempt to maintain cerebral perfusion pressure (CPP) against rising ICP (CPP = MAP - ICP). As ICP rises, the body increases MAP to keep blood flowing to the brain. This patient likely has a large intracerebral hemorrhage (hypertensive bleed) causing mass effect and brainstem compression (anisocoria suggests third nerve compression from uncal herniation). The EMS provider's priorities: protect the airway (the patient is unconscious with irregular, inadequate breathing — BVM ventilation is indicated), mild hyperventilation (not aggressive — 16-20/min can be considered if signs of herniation are present, though this is controversial), elevate the head 30° to promote venous drainage, and transport emergently to a stroke center with neurosurgery. Do NOT lower the BP. The combination of hypertension + bradycardia in this context is a neurological emergency, not a primary cardiac problem.",
             kpi: "Recognizes Cushing's triad as a sign of elevated ICP and prioritizes neurological management over BP control"
         }
     ]
@@ -572,7 +572,7 @@ window.CPG_DATA = {
             <p><strong>Sinus Bradycardia:</strong> Rate <60/min with all other features of NSR. Common in athletes at rest, during sleep, or from medications (beta-blockers, calcium channel blockers). <em>Symptomatic</em> bradycardia — hypotension, altered mental status, chest pain, or signs of shock — requires treatment. Atropine 0.5 mg IV is the first-line ACLS drug for symptomatic bradycardia.</p>
             <p><strong>Sinus Tachycardia:</strong> Rate >100/min with all other normal features. Usually a physiological response to stress, pain, fever, dehydration, anxiety, blood loss, or hypoxia. Treat the underlying cause rather than the rate itself.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Rhythm</th><th>Rate</th><th>Regularity</th><th>P Waves</th><th>QRS</th><th>Clinical Significance</th></tr>
                 </thead>
@@ -581,7 +581,7 @@ window.CPG_DATA = {
                     <tr><td>Sinus Brady</td><td><60</td><td>Regular</td><td>Normal, 1:1</td><td>Narrow</td><td>Treat only if symptomatic (atropine/pacing)</td></tr>
                     <tr><td>Sinus Tachy</td><td>>100</td><td>Regular</td><td>Normal, 1:1</td><td>Narrow</td><td>Treat underlying cause (fever, pain, bleeding, hypoxia)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Atrial Rhythms</h4>
             <p><strong>Atrial Fibrillation (A-Fib):</strong> Chaotic, disorganized electrical activity in the atria. The atria quiver rather than contract effectively. ECG shows <strong>no discernible P waves</strong> — the baseline has irregular, rapid fibrillation waves (f waves). The ventricular response is irregularly irregular. Rate can be controlled (60–100) or rapid (>100 = A-fib with RVR). Clinical concerns include loss of atrial "kick" (reducing cardiac output by 10–20%) and thromboembolic stroke risk from blood stasis in the atria. Patients may need anticoagulation and rate/rhythm control.</p>
@@ -593,7 +593,7 @@ window.CPG_DATA = {
             <p><strong>Asystole:</strong> The absence of any electrical activity — a flat line. ECG shows <strong>no P waves, no QRS complexes</strong> — a straight baseline (confirm by checking gain, leads, and power). Asystole is <strong>not a shockable rhythm</strong>. Treatment is high-quality CPR, airway management, IV/IO access, and epinephrine 1 mg q3–5 min. Consider reversible causes (the Hs and Ts).</p>
             <p><strong>Pulseless Electrical Activity (PEA):</strong> Organized electrical activity on the monitor <em>without</em> a palpable pulse. The heart has electrical rhythm but no mechanical contraction. PEA can look like any organized rhythm (sinus, atrial, even wide-complex). <strong>PEA is not shockable.</strong> Treatment focuses on identifying and correcting the underlying cause (the Hs and Ts: hypovolemia, hypoxia, hydrogen ion [acidosis], hypo-/hyperkalemia, hypothermia, tension pneumothorax, tamponade [cardiac], toxins, thrombosis [pulmonary or coronary]).</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Rhythm</th><th>Shockable?</th><th>Rate</th><th>Key ECG Feature</th><th>Initial Action</th></tr>
                 </thead>
@@ -603,7 +603,7 @@ window.CPG_DATA = {
                     <tr><td>Asystole</td><td>No</td><td>0</td><td>Flat line</td><td>CPR, epinephrine, treat cause</td></tr>
                     <tr><td>PEA</td><td>No</td><td>Variable</td><td>Organized rhythm, no pulse</td><td>CPR, epinephrine, identify/treat cause (Hs & Ts)</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Heart Blocks (AV Blocks)</h4>
             <p><strong>First-Degree AV Block:</strong> A prolonged PR interval (>0.20 seconds) — every P wave still conducts to the ventricles. The delay is in the AV node. Usually benign and asymptomatic. Can be caused by increased vagal tone, medications (beta-blockers, calcium channel blockers), or underlying heart disease. No specific treatment is needed for the block itself — monitor and treat the patient.</p>
@@ -611,7 +611,7 @@ window.CPG_DATA = {
             <p><strong>Second-Degree AV Block Type II (Mobitz II):</strong> Fixed PR interval with <em>intermittent non-conducted P waves</em> — a QRS drops out without preceding PR lengthening. This block is below the AV node (infranodal — in the bundle of His/Purkinje system) and indicates significant conduction system disease. Type II often progresses suddenly to complete heart block and is <strong>less stable</strong> than Type I. Requires transcutaneous pacing and cardiology consultation — often a pacemaker is indicated.</p>
             <p><strong>Third-Degree AV Block (Complete Heart Block):</strong> <strong>No atrial impulses conduct to the ventricles</strong>. The atria and ventricles beat independently (AV dissociation). P waves appear regularly at one rate, and QRS complexes appear regularly at a slower, independent rate (escape rhythm). If the escape rhythm originates in the AV junction, QRS may be narrow at 40–60/min. If it originates in the ventricles (ventricular escape), QRS is wide at 20–40/min. Complete heart block is hemodynamically significant — patients are often hypotensive, altered, and symptomatic. Treatment is transcutaneous pacing and/or IV infusion of chronotropic agents (e.g., dopamine, epinephrine). This is a true emergency.</p>
 
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Block</th><th>PR Interval</th><th>Pattern</th><th>QRS</th><th>Treatment</th></tr>
                 </thead>
@@ -621,10 +621,10 @@ window.CPG_DATA = {
                     <tr><td>2nd II (Mobitz II)</td><td>Fixed, normal</td><td>Intermittent dropped QRS</td><td>Often wide</td><td>Pacing indicated</td></tr>
                     <tr><td>3rd Degree</td><td>None (AV dissociation)</td><td>P & QRS independent</td><td>Wide (ventricular escape)</td><td>Pacing — emergency!</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Clinical Significance at the EMT Level</h4>
-            <p>As an EMT, you are not expected to diagnose every dysrhythmia — but you must recognize <strong>lethal rhythms</strong> (V-fib, pulseless V-tach, asystole, third-degree block with instability) and know when to apply the AED, start CPR, and expedite transport. You should also recognize stable tachycardias and bradycardias and report your findings to ALS providers or the receiving physician. Always correlate the monitor with the patient's clinical status — <em>treat the patient, not the monitor</em>.</p>
+            <p>As an EMS provider, you are not expected to diagnose every dysrhythmia — but you must recognize <strong>lethal rhythms</strong> (V-fib, pulseless V-tach, asystole, third-degree block with instability) and know when to apply the AED, start CPR, and expedite transport. You should also recognize stable tachycardias and bradycardias and report your findings to ALS providers or the receiving physician. Always correlate the monitor with the patient's clinical status — <em>treat the patient, not the monitor</em>.</p>
         </div>`,
         flashcards: [
             {
@@ -722,7 +722,7 @@ window.CPG_DATA = {
                     {t: "Monomorphic ventricular tachycardia — stable with a pulse. ALS may administer amiodarone 150 mg IV or perform synchronized cardioversion per protocol.", f: "Correct. Monomorphic V-tach with a pulse is stable. Treatment options include amiodarone 150 mg IV over 10 minutes or synchronized cardioversion (start at 100 J biphasic). This patient needs ALS-level care and rapid transport."}
                 ],
                 correct: 1,
-                explanation: "A wide-complex tachycardia in a patient with known structural heart disease (CAD, prior MI) is V-tach until proven otherwise. While the patient is currently stable with a pulse, V-tach can degenerate into V-fib. An EMT should recognize this rhythm, monitor closely, provide oxygen, and transport rapidly to an ALS-intercept or STEMI-capable facility.",
+                explanation: "A wide-complex tachycardia in a patient with known structural heart disease (CAD, prior MI) is V-tach until proven otherwise. While the patient is currently stable with a pulse, V-tach can degenerate into V-fib. An EMS provider should recognize this rhythm, monitor closely, provide oxygen, and transport rapidly to an ALS-intercept or STEMI-capable facility.",
                 kpi: "Wide-complex tachycardia recognition"
             },
             {
@@ -807,7 +807,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>MI Patterns by Territory</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Location</th><th>Leads with ST Elevation</th><th>Coronary Artery</th><th>Clinical Notes</th></tr>
                 </thead>
@@ -818,7 +818,7 @@ window.CPG_DATA = {
                     <tr><td>Posterior</td><td>V7–V9 (reciprocal: tall R, ST depression V1–V2)</td><td>LCx or RCA</td><td>Suspected when V1–V2 show tall R waves and horizontal ST depression; obtain posterior leads V7–V9</td></tr>
                     <tr><td>Right Ventricular</td><td>V4R (right-sided V4)</td><td>RCA proximal</td><td>Suspected in inferior MI with hypotension; do NOT give nitroglycerin — preload dependent</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>STEMI Mimics</h4>
             <p>Not all ST elevation is STEMI. Conditions that can cause ST elevation include:</p>
@@ -832,11 +832,11 @@ window.CPG_DATA = {
             </ul>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
-                <strong>Clinical Pearl for EMTs:</strong> Do not try to interpret every 12-lead yourself. Your role is to acquire a high-quality 12-lead, transmit it to the receiving hospital (if your system has that capability), and recognize whether the tracing shows obvious ST elevation. If there is any concern for STEMI, expedite transport to a PCI-capable center. Time is muscle.
+                <strong>Clinical Pearl for EMS providers:</strong> Do not try to interpret every 12-lead yourself. Your role is to acquire a high-quality 12-lead, transmit it to the receiving hospital (if your system has that capability), and recognize whether the tracing shows obvious ST elevation. If there is any concern for STEMI, expedite transport to a PCI-capable center. Time is muscle.
             </div>
 
             <h4>Prehospital 12-Lead Acquisition</h4>
-            <p>Prehospital 12-lead ECG acquisition is a powerful tool that reduces door-to-balloon time for STEMI patients. Key points for EMTs:</p>
+            <p>Prehospital 12-lead ECG acquisition is a powerful tool that reduces door-to-balloon time for STEMI patients. Key points for EMS providers:</p>
             <ul>
                 <li>Acquire and transmit the 12-lead <strong>within 10 minutes</strong> of patient contact for chest pain / suspected ACS</li>
                 <li>The goal is to identify STEMI early so the receiving hospital can activate the catheterization lab team before the patient arrives</li>
@@ -931,13 +931,13 @@ window.CPG_DATA = {
             {
                 id: "crit_4_6_2",
                 scenario: "A 42-year-old previously healthy female presents with sharp, pleuritic chest pain that is worse when lying flat and better when leaning forward. She had an upper respiratory infection about 10 days ago. Her BP is 122/78, HR 92, RR 16, temperature 99.8°F, SpO2 99%. The 12-lead ECG shows diffuse, concave ST elevation in leads I, II, III, aVF, and V2–V6. There is PR depression in lead II. There is no reciprocal ST depression. The computerized interpretation reads '***ACUTE MI***'.",
-                question: "What is the most likely diagnosis and what should the EMT do?",
+                question: "What is the most likely diagnosis and what should the EMS provider do?",
                 options: [
                     {t: "Acute STEMI — activate the cath lab, administer aspirin, and transport emergently to a PCI center", f: "Incorrect. While the computer reads STEMI, the diffuse, concave ST elevation with PR depression, the absence of reciprocal changes, the clinical history of preceding URI, and the positional pleuritic pain pattern strongly suggest pericarditis, not STEMI."},
                     {t: "Acute pericarditis — notify the hospital of your suspicion, transport to an appropriate facility, and administer aspirin per protocol for pain. Recognize this as a STEMI mimic.", f: "Correct. Pericarditis causes diffuse concave ST elevation and PR depression — often with a preceding viral illness. The pain is positional and pleuritic. While the computer may flag it as STEMI, the pattern and history are classic for pericarditis. Aspirin treats both the pain and inflammation. Transport to an ED for further evaluation is still appropriate."}
                 ],
                 correct: 1,
-                explanation: "Pericarditis is a classic STEMI mimic. Key distinguishing features: diffuse concave ST elevation (vs. regional in STEMI), PR depression (vs. PR isoelectric in STEMI), no reciprocal changes, pleuritic/positional pain, history of preceding viral illness, and often a pericardial friction rub on auscultation. While the EMT should not definitively diagnose, recognizing this pattern helps ensure the right triage. The patient still needs ED evaluation to rule out MI.",
+                explanation: "Pericarditis is a classic STEMI mimic. Key distinguishing features: diffuse concave ST elevation (vs. regional in STEMI), PR depression (vs. PR isoelectric in STEMI), no reciprocal changes, pleuritic/positional pain, history of preceding viral illness, and often a pericardial friction rub on auscultation. While the EMS provider should not definitively diagnose, recognizing this pattern helps ensure the right triage. The patient still needs ED evaluation to rule out MI.",
                 kpi: "STEMI vs. mimic differentiation"
             }
         ]
@@ -1241,7 +1241,7 @@ window.CPG_DATA = {
             </ul>
 
             <h4>AED Troubleshooting</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Problem</th><th>Cause</th><th>Solution</th></tr>
                 </thead>
@@ -1254,7 +1254,7 @@ window.CPG_DATA = {
                     <tr><td>AED does not power on</td><td>Dead battery or expired battery</td><td>Replace battery immediately; have a backup AED available</td></tr>
                     <tr><td>Sparks/smoke during shock</td><td>Pads touching, poor adhesion, or arcing</td><td>Stop — ensure pads are separated and fully adhered; check for metal jewelry or pacemaker</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
                 <strong>Safety Warning:</strong> Never defibrillate a patient in a moving vehicle. The vehicle motion can cause the AED pad connection to intermittently lose contact, creating arcing and fire risk. If defibrillation is required, stop the vehicle, confirm pad adhesion, deliver the shock, then resume CPR and transport.
@@ -1378,7 +1378,7 @@ window.CPG_DATA = {
             </div>
 
             <h4>Post-ROSC: The "H's and T's" Prevention Phase</h4>
-            <p>Once ROSC is achieved, the focus shifts to preventing rearrest and preserving end-organ function. Post-cardiac-arrest syndrome involves four key pathological processes: post-arrest brain injury, myocardial dysfunction, systemic ischaemia/reperfusion injury, and the underlying precipitating pathology. The EMT's goal is to stabilise the patient and transport to an appropriate facility while avoiding three common pitfalls: <strong>hypotension, hypoxia, and hyperoxia</strong>.</p>
+            <p>Once ROSC is achieved, the focus shifts to preventing rearrest and preserving end-organ function. Post-cardiac-arrest syndrome involves four key pathological processes: post-arrest brain injury, myocardial dysfunction, systemic ischaemia/reperfusion injury, and the underlying precipitating pathology. The EMS provider's goal is to stabilise the patient and transport to an appropriate facility while avoiding three common pitfalls: <strong>hypotension, hypoxia, and hyperoxia</strong>.</p>
 
             <h4>Oxygenation and Ventilation Targets</h4>
             <p>Titrate oxygen delivery carefully. Both hypoxia AND hyperoxia are harmful in the post-arrest patient:</p>
@@ -1412,7 +1412,7 @@ window.CPG_DATA = {
 
             <h4>Transport Decision: Cardiac Arrest Centre vs. Closest ED</h4>
             <p>After ROSC, the transport destination decision significantly affects outcomes:</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Factor</th><th>Go to Cardiac Arrest Centre</th><th>Go to Closest ED</th></tr>
                 </thead>
@@ -1422,7 +1422,7 @@ window.CPG_DATA = {
                     <tr><td>Rearrest during transport</td><td>Consider closest ED</td><td>Yes — rearrest requires immediate ED care</td></tr>
                     <tr><td>No ROSC in the field</td><td>Follow local termination / transport protocol</td><td>Per local protocol</td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <p>In general, post-ROSC patients benefit from transport to a comprehensive cardiac arrest centre with PCI, TTM, and critical care capabilities. However, prolonged transport times (&gt;30 minutes) in haemodynamically unstable patients may favour the closest ED for initial stabilisation.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
@@ -1490,10 +1490,10 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg> Shock & Hemorrhage</h3>
 
             <h4>What Is Shock?</h4>
-            <p><strong>Shock</strong> (hypoperfusion) is a life-threatening condition in which the circulatory system fails to deliver enough oxygen and nutrients to meet the metabolic demands of the body's tissues. It is not a single disease — it is a final common pathway resulting from various underlying causes. If untreated, shock progresses through three stages: <strong>compensated</strong> (the body activates mechanisms to maintain perfusion), <strong>decompensated</strong> (compensatory mechanisms fail and vital signs deteriorate), and <strong>irreversible</strong> (cell death and organ failure occur despite intervention). Early recognition by the EMT is critical because <strong>shock is easier to treat in its compensated stage than in decompensation</strong>.</p>
+            <p><strong>Shock</strong> (hypoperfusion) is a life-threatening condition in which the circulatory system fails to deliver enough oxygen and nutrients to meet the metabolic demands of the body's tissues. It is not a single disease — it is a final common pathway resulting from various underlying causes. If untreated, shock progresses through three stages: <strong>compensated</strong> (the body activates mechanisms to maintain perfusion), <strong>decompensated</strong> (compensatory mechanisms fail and vital signs deteriorate), and <strong>irreversible</strong> (cell death and organ failure occur despite intervention). Early recognition by the EMS provider is critical because <strong>shock is easier to treat in its compensated stage than in decompensation</strong>.</p>
 
             <h4>The Four Categories of Shock</h4>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Category</th><th>Mechanism</th><th>Common Causes</th></tr>
                 </thead>
@@ -1503,11 +1503,11 @@ window.CPG_DATA = {
                     <tr><td><strong>Distributive</strong></td><td>Severe vasodilation with relative hypovolaemia</td><td>Sepsis, anaphylaxis, spinal cord injury (neurogenic shock), adrenal crisis</td></tr>
                     <tr><td><strong>Obstructive</strong></td><td>Mechanical obstruction preventing cardiac output</td><td>Tension pneumothorax, cardiac tamponade, pulmonary embolism, restrictive pericarditis</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>Haemorrhagic Shock: Classes of Blood Loss</h4>
             <p>Haemorrhagic shock is a subset of hypovolaemic shock caused specifically by blood loss. The <strong>ATLS classification</strong> divides haemorrhagic shock into four classes based on the percentage of blood volume lost (total adult blood volume ≈ 70 mL/kg or about 5 litres in a 70 kg male):</p>
-            <table>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Class</th><th>Blood Loss</th><th>Volume Lost (70 kg)</th><th>Clinical Signs</th></tr>
                 </thead>
@@ -1517,13 +1517,13 @@ window.CPG_DATA = {
                     <tr><td><strong>III</strong></td><td>30–40%</td><td>~1500–2000 mL</td><td>Severe tachycardia (HR >120), marked tachypnoea, hypotension (SBP drops), confusion/agitation, pallor, cool extremities. <strong>This is the decompensation threshold.</strong></td></tr>
                     <tr><td><strong>IV</strong></td><td>&gt;40%</td><td>&gt;2000 mL</td><td>Extreme tachycardia, marked hypotension, depressed mental status to unconsciousness, absent peripheral pulses, cold/clammy skin. <strong>Immediate surgical intervention required.</strong></td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box" style="background:#fff3cd; border-left-color:#856404;">
                 <strong>Clinical Pearl:</strong> Hypotension is a <strong>LATE sign of shock</strong>. By the time the systolic BP drops below 90 mmHg, the patient has lost at least 30% of their blood volume (Class III). Do not rely on a normal blood pressure to rule out shock — look for tachycardia, delayed cap refill, skin changes, and altered mental status as EARLY warning signs.
             </div>
 
-            <h4>Recognition of Shock — What the EMT Looks For</h4>
+            <h4>Recognition of Shock — What the EMS Provider Looks For</h4>
             <p>The signs of shock reflect the body's attempt to compensate and the eventual failure of those mechanisms:</p>
             <ul>
                 <li><strong>Tachycardia:</strong> The first measurable sign. The heart rate increases to maintain cardiac output as stroke volume drops. However, an elderly patient or those on beta-blockers may not mount a tachycardia — the absence of tachycardia does NOT rule out shock.</li>
@@ -1536,7 +1536,7 @@ window.CPG_DATA = {
                 <li><strong>Increased respiratory rate:</strong> Tachypnoea compensates for metabolic acidosis caused by anaerobic metabolism.</li>
             </ul>
 
-            <h4>Treatment of Shock — The EMT's Priorities</h4>
+            <h4>Treatment of Shock — The EMS Provider's Priorities</h4>
             <p>The management of shock focuses on identifying and treating the underlying cause while supporting the circulation. The following steps apply to all shock patients and are within the EMT scope:</p>
             <p><strong>1. Scene safety and BSI:</strong> Ensure scene safety, wear appropriate PPE, and control any external haemorrhage immediately upon arrival — bleeding control takes priority over everything else.</p>
             <p><strong>2. Airway and Breathing:</strong> Open the airway, suction if needed, and administer <strong>high-flow oxygen</strong> via non-rebreather at 12–15 L/min. Assist ventilations with BVM if the respiratory rate is inadequate or the patient is in respiratory failure. In haemorrhagic shock, oxygen delivery is limited by blood loss — supplemental oxygen maximises the oxygen content of the remaining circulating volume.</p>
@@ -1547,7 +1547,7 @@ window.CPG_DATA = {
             <p><strong>7. Transport:</strong> Rapid transport to the appropriate facility — trauma centre for haemorrhagic shock, STEMI centre for cardiogenic shock, etc. Notify the receiving hospital of the patient's condition and estimated time of arrival. Reassess every 5 minutes, including vital signs and mental status.</p>
 
             <div class="highlight-box" style="background:#f8d7da; border-left-color:#dc3545;">
-                <strong>Critical — "Shock is a Symptom, Not a Diagnosis":</strong> Identifying that a patient is in shock is only the first step. The EMT must determine the <em>type</em> of shock to guide treatment. A patient with cardiogenic shock should not receive the same fluid volume as one with hypovolaemic shock. A patient with anaphylactic shock needs epinephrine. Always identify and treat the underlying cause while providing general shock care.
+                <strong>Critical — "Shock is a Symptom, Not a Diagnosis":</strong> Identifying that a patient is in shock is only the first step. The EMS provider must determine the <em>type</em> of shock to guide treatment. A patient with cardiogenic shock should not receive the same fluid volume as one with hypovolaemic shock. A patient with anaphylactic shock needs epinephrine. Always identify and treat the underlying cause while providing general shock care.
             </div>
 
             <h4>Special Considerations</h4>
@@ -1555,7 +1555,7 @@ window.CPG_DATA = {
                 <li><strong>Cardiogenic shock:</strong> Fluid restriction (may have pulmonary oedema), position patient upright if tolerated, cautious fluid bolus (e.g. 250 mL and reassess), and transport to a PCI centre.</li>
                 <li><strong>Neurogenic shock:</strong> Hypotension with bradycardia (paradoxical — most shock causes tachycardia). Occurs after spinal cord injury above T6. Treatment: fluid resuscitation and vasopressors (ALS). The patient may also need spinal motion restriction.</li>
                 <li><strong>Septic shock:</strong> History suggestive of infection (fever, chills). Early goal is fluid resuscitation and transport. The skin may be warm and flushed (early distributive) rather than cool and pale.</li>
-                <li><strong>Obstructive shock:</strong> Identify and treat tension pneumothorax (needle decompression), cardiac tamponade (pericardiocentesis), or massive PE — all are ALS interventions; EMT's role is recognition, oxygen, and rapid transport.</li>
+                <li><strong>Obstructive shock:</strong> Identify and treat tension pneumothorax (needle decompression), cardiac tamponade (pericardiocentesis), or massive PE — all are ALS interventions; EMS provider's role is recognition, oxygen, and rapid transport.</li>
             </ul>
         </div>`,
         flashcards: [
@@ -1570,20 +1570,20 @@ window.CPG_DATA = {
         ],
         quiz: [
             { q: "Which of the following clinical findings is MOST consistent with Class III haemorrhagic shock?", options: ["Normal blood pressure, mild anxiety, capillary refill <2 seconds", "Hypotension, confusion, tachycardia >120, and delayed cap refill", "Bradycardia, warm flushed skin, and normal mental status", "SBP >160, bounding pulses, and respiratory rate 14"], correct: 1 },
-            { q: "A 45-year-old male is found lying on the ground after falling from a ladder. He is awake but confused, with cool clammy skin, HR 124, BP 88/60, and a deformed right femur. The EMT should FIRST:", options: ["Apply a traction splint to the femur", "Administer high-flow oxygen and begin fluid resuscitation en route to a trauma centre", "Elevate the legs to 45 degrees and apply pelvic binder", "Insert an NPA and hyperventilate with BVM"], correct: 1 },
+            { q: "A 45-year-old male is found lying on the ground after falling from a ladder. He is awake but confused, with cool clammy skin, HR 124, BP 88/60, and a deformed right femur. The EMS provider should FIRST:", options: ["Apply a traction splint to the femur", "Administer high-flow oxygen and begin fluid resuscitation en route to a trauma centre", "Elevate the legs to 45 degrees and apply pelvic binder", "Insert an NPA and hyperventilate with BVM"], correct: 1 },
             { q: "[HARD] A patient with spinal cord injury at the T3 level presents with hypotension (SBP 82), bradycardia (HR 52), and warm, flushed skin below the level of injury. This presentation is MOST consistent with which type of shock?", options: ["Hypovolaemic shock from occult haemorrhage", "Cardiogenic shock from neurogenic myocardial depression", "Neurogenic shock caused by loss of sympathetic tone — treat with fluids and vasopressors", "Distributive shock from sepsis secondary to the injury"], correct: 2 }
         ],
         critical: [
             {
                 id: "crit_4_10_1",
                 scenario: "Your ambulance is flagged down by a bystander at a construction site. A 38-year-old male worker has fallen approximately 12 feet onto rebar, causing a large open wound to his right upper thigh. There is significant bright red blood spurting from the wound with each heartbeat. The patient is pale, diaphoretic, and agitated. HR is approximately 130, and you cannot palpate a radial pulse. Your partner is preparing the stretcher.",
-                question: "What is the FIRST intervention the EMT should perform upon reaching this patient?",
+                question: "What is the FIRST intervention the EMS provider should perform upon reaching this patient?",
                 options: [
                     {t: "Apply direct pressure to the wound, then apply a tourniquet 2–3 inches proximal to the wound if direct pressure does not control the bleeding — haemorrhage control takes priority over everything else", f: "Correct — This patient has arterial haemorrhage with signs of decompensated shock (absent radial pulse, tachycardia, altered mental status). The immediate priority is haemorrhage control. Apply direct pressure with gauze (consider haemostatic gauze if available). If the bleeding continues, apply a tourniquet high on the thigh. Do not delay haemorrhage control for oxygen, fluids, or vitals — the patient is bleeding out."},
                     {t: "Administer high-flow oxygen via NRB and obtain a full set of vital signs to quantify the severity of shock", f: "Incorrect — Oxygen and vitals are important but haemorrhage control is the absolute priority for a patient with active arterial bleeding. Every second of ongoing haemorrhage worsens the shock state. Control the bleeding first, then apply oxygen, obtain vitals, and initiate transport."}
                 ],
                 correct: 0,
-                explanation: "Exsanguinating extremity haemorrhage is the number one preventable cause of death in trauma. The EMT must control the haemorrhage immediately. Direct pressure is the first step; if bleeding is arterial and not controlled, a tourniquet should be applied. Once haemorrhage is controlled: high-flow oxygen, fluid resuscitation per protocol (permissive hypotension), rapid transport to a trauma centre. The patient's agitation is cerebral hypoperfusion — not a 'personality issue.'",
+                explanation: "Exsanguinating extremity haemorrhage is the number one preventable cause of death in trauma. The EMS provider must control the haemorrhage immediately. Direct pressure is the first step; if bleeding is arterial and not controlled, a tourniquet should be applied. Once haemorrhage is controlled: high-flow oxygen, fluid resuscitation per protocol (permissive hypotension), rapid transport to a trauma centre. The patient's agitation is cerebral hypoperfusion — not a 'personality issue.'",
                 kpi: "Prioritises haemorrhage control over other interventions in exsanguinating extremity injury"
             },
             {
@@ -1619,7 +1619,7 @@ window.CPG_DATA = {
             <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg> Fluid Resuscitation</h3>
 
             <h4>IV Access Basics for the EMT-A Scope</h4>
-            <p>Intravenous (IV) access is a fundamental skill for administering fluids and medications in the prehospital setting. While the specific scope of IV access varies by state and local protocol, many EMT-A (EMT-Basic) levels are now permitted to <strong>establish peripheral IV access</strong> and administer crystalloid fluids under standing orders or online medical direction. Even where EMTs do not start IVs, understanding IV basics is essential because you will assist ALS providers and need to monitor IV sites during transport.</p>
+            <p>Intravenous (IV) access is a fundamental skill for administering fluids and medications in the prehospital setting. While the specific scope of IV access varies by state and local protocol, many EMT-A (EMT-Basic) levels are now permitted to <strong>establish peripheral IV access</strong> and administer crystalloid fluids under standing orders or online medical direction. Even where EMS providers do not start IVs, understanding IV basics is essential because you will assist ALS providers and need to monitor IV sites during transport.</p>
             <ul>
                 <li><strong>Cannula selection:</strong> Larger-gauge catheters (14–18 gauge) are preferred for trauma and resuscitation because they allow faster flow rates. Smaller gauges (20–22 gauge) may be used for patients with small or fragile veins (elderly, paediatric).</li>
                 <li><strong>Preferred sites:</strong> The <strong>antecubital fossa</strong> (AC) and <strong>forearm</strong> are the most common sites, followed by the dorsal hand veins. In critical patients, the AC provides the largest access for rapid fluid administration.</li>
@@ -1677,11 +1677,11 @@ window.CPG_DATA = {
                 <li>Worsening hypoxia despite increasing oxygen delivery</li>
                 <li>Peripheral oedema (a later sign in acute overload)</li>
             </ul>
-            <p>If you suspect cardiogenic shock (history of heart disease, chest pain, crackles, JVD, ST-elevation on ECG): <strong>give fluids cautiously</strong> — a 250–500 mL challenge rather than a full 20 mL/kg bolus — and reassess frequently. The EMT's best tool in cardiogenic shock is <strong>recognition and rapid transport to a PCI centre</strong>.</p>
+            <p>If you suspect cardiogenic shock (history of heart disease, chest pain, crackles, JVD, ST-elevation on ECG): <strong>give fluids cautiously</strong> — a 250–500 mL challenge rather than a full 20 mL/kg bolus — and reassess frequently. The EMS provider's best tool in cardiogenic shock is <strong>recognition and rapid transport to a PCI centre</strong>.</p>
 
             <h4>Reassessment After Each Bolus</h4>
-            <p>Fluid resuscitation is not a 'set and forget' intervention. After <strong>every</strong> fluid bolus, the EMT must reassess:</p>
-            <table>
+            <p>Fluid resuscitation is not a 'set and forget' intervention. After <strong>every</strong> fluid bolus, the EMS provider must reassess:</p>
+            <div class="table-scroll"><table>
                 <thead>
                     <tr><th>Parameter</th><th>What to Look For</th><th>Action</th></tr>
                 </thead>
@@ -1693,7 +1693,7 @@ window.CPG_DATA = {
                     <tr><td>Peripheral pulses</td><td>Radial pulse strength</td><td>Return of strong radial pulse = good response</td></tr>
                     <tr><td>Skin</td><td>Warmth, colour, moisture</td><td>Pink, warm, dry = improved perfusion</td></tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h4>MAST / PASG — Historical Context</h4>
             <p>The <strong>Military Anti-Shock Trousers (MAST)</strong> — also called Pneumatic Anti-Shock Garment (PASG) — were large inflatable trousers that wrapped around the patient's legs and abdomen. They were hypothesised to: 1) Autotransfuse blood from the lower extremities to the core (adding approximately 250–500 mL of circulating volume), and 2) Splint pelvic and lower extremity fractures. However, large studies found that MAST/PASG did NOT improve survival and, in some cases, increased mortality (by increasing bleeding in thoracic injuries, causing compartment syndrome, and delaying other care). Modern EMS guidelines have largely abandoned their use. The current standard is <strong>haemorrhage control, judicious crystalloid resuscitation, and rapid transport to definitive care</strong>.</p>
@@ -1706,7 +1706,7 @@ window.CPG_DATA = {
             { question: "What is the standard initial fluid bolus volume per kilogram for a hypotensive patient?", answer: "20 mL/kg of isotonic crystalloid (normal saline or lactated Ringer's)", category: "Fluid Dosing" },
             { question: "What is the primary difference between normal saline and lactated Ringer's?", answer: "LR has a composition closer to plasma and contains lactate as a buffer; NS has higher chloride content, and large volumes may cause hyperchloraemic metabolic acidosis", category: "Crystalloids" },
             { question: "What are three clinical signs that indicate a patient is responding to fluid resuscitation?", answer: "Improving mental status, decreasing heart rate, and rising blood pressure (also: stronger peripheral pulses, faster cap refill, warmer skin)", category: "Fluid Assessment" },
-            { question: "What are two signs of fluid overload that should cause the EMT to slow or stop fluid administration?", answer: "Worsening respiratory distress with new crackles (pulmonary oedema) and increasing jugular venous distension (JVD)", category: "Fluid Assessment" },
+            { question: "What are two signs of fluid overload that should cause the EMS provider to slow or stop fluid administration?", answer: "Worsening respiratory distress with new crackles (pulmonary oedema) and increasing jugular venous distension (JVD)", category: "Fluid Assessment" },
             { question: "What is intraosseous (IO) access and when is it indicated?", answer: "Vascular access through the bone marrow cavity, used when IV access fails in critical patients (cardiac arrest, severe shock, paediatric emergencies)", category: "IO Access" },
             { question: "What is the primary concern when administering large fluid volumes to a patient with suspected cardiogenic shock?", answer: "Iatrogenic pulmonary oedema — the failing heart cannot pump the volume forward, causing fluid to back up into the lungs", category: "Cardiogenic Shock" },
             { question: "Why was the MAST/PASG device largely abandoned in modern EMS?", answer: "Studies showed it did not improve survival and could increase mortality by worsening bleeding, causing compartment syndrome, and delaying other care", category: "Historical" }
@@ -1738,7 +1738,7 @@ window.CPG_DATA = {
                     {t: "Establish IV access and administer a 250 mL NS challenge — the patient is tachycardic with a normal BP but needs a small fluid challenge to see if there is a hypovolaemic component", f: "Incorrect — While a 250 mL challenge is theoretically less dangerous than a full bolus, this patient's presentation is unequivocally cardiogenic pulmonary oedema. The crackles throughout all fields and pink frothy sputum indicate severe left heart failure. Any additional fluid will worsen gas exchange. Establish a saline lock for medication access but do not administer a fluid bolus. CPAP and nitroglycerin are the indicated treatments."}
                 ],
                 correct: 0,
-                explanation: "Acute cardiogenic pulmonary oedema is a state of fluid overload, not hypovolaemia. Administering fluids — even small amounts — can precipitate respiratory failure requiring intubation. The EMT's priorities: 1) CPAP/BiPAP to improve oxygenation and reduce preload. 2) Nitroglycerin per protocol (vasodilation reduces preload and afterload). 3) Position patient upright. 4) Transport. IV access is for medication administration, not fluid resuscitation.",
+                explanation: "Acute cardiogenic pulmonary oedema is a state of fluid overload, not hypovolaemia. Administering fluids — even small amounts — can precipitate respiratory failure requiring intubation. The EMS provider's priorities: 1) CPAP/BiPAP to improve oxygenation and reduce preload. 2) Nitroglycerin per protocol (vasodilation reduces preload and afterload). 3) Position patient upright. 4) Transport. IV access is for medication administration, not fluid resuscitation.",
                 kpi: "Identifies cardiogenic pulmonary oedema and appropriately withholds fluids"
             }
         ]
@@ -1753,7 +1753,7 @@ window.CPG_DATA = {
         <p>Unlike adults (usually a primary cardiac/electrical event), most pediatric arrests result from <strong>respiratory failure and progressive hypoxia</strong>. The priority is therefore high-quality compressions <em>and</em> effective oxygenation/ventilation. Recognize and treat respiratory distress early to prevent arrest.</p>
 
         <h4>High-Quality CPR Parameters by Age</h4>
-        <table>
+        <div class="table-scroll"><table>
             <thead><tr><th>Parameter</th><th>Infant (&lt;1 yr)</th><th>Child (1 yr–puberty)</th><th>Adult</th></tr></thead>
             <tbody>
                 <tr><td>Rate</td><td>100–120/min</td><td>100–120/min</td><td>100–120/min</td></tr>
@@ -1762,7 +1762,7 @@ window.CPG_DATA = {
                 <tr><td>Ratio (single rescuer)</td><td>30:2</td><td>30:2</td><td>30:2</td></tr>
                 <tr><td>Ratio (2 rescuers)</td><td><strong>15:2</strong></td><td><strong>15:2</strong></td><td>30:2</td></tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h4>Key Points</h4>
         <ul>
@@ -1790,7 +1790,7 @@ window.CPG_DATA = {
         {q: "You should begin CPR on an infant who has a pulse when the heart rate is:", options: ["Below 100/min", "Below 80/min", "Below 60/min with poor perfusion", "Below 40/min only"], correct: 2, explanation: "A heart rate under 60 with poor perfusion despite oxygenation/ventilation is treated as arrest in infants and children."}
     ],
     critical: [
-        {id: "crit_4_12_1", scenario: "A 6-month-old is unresponsive and not breathing. Two EMTs are present and begin CPR.", question: "Which technique and ratio are correct?", options: [{t: "Heel of one hand, 30:2", f: "Incorrect. That is adult technique; 2-rescuer infant CPR differs."}, {t: "2-thumb encircling-hands technique at a 15:2 ratio", f: "Correct. Two rescuers use the 2-thumb technique and a 15:2 ratio for infants."}], correct: 1, explanation: "Two-rescuer infant CPR uses the 2-thumb encircling-hands technique with a 15:2 compression-to-ventilation ratio.", kpi: "Applies correct pediatric 2-rescuer CPR technique and ratio"},
+        {id: "crit_4_12_1", scenario: "A 6-month-old is unresponsive and not breathing. Two EMS providers are present and begin CPR.", question: "Which technique and ratio are correct?", options: [{t: "Heel of one hand, 30:2", f: "Incorrect. That is adult technique; 2-rescuer infant CPR differs."}, {t: "2-thumb encircling-hands technique at a 15:2 ratio", f: "Correct. Two rescuers use the 2-thumb technique and a 15:2 ratio for infants."}], correct: 1, explanation: "Two-rescuer infant CPR uses the 2-thumb encircling-hands technique with a 15:2 compression-to-ventilation ratio.", kpi: "Applies correct pediatric 2-rescuer CPR technique and ratio"},
         {id: "crit_4_12_2", scenario: "A 3-year-old in respiratory distress becomes limp; the heart rate is 40/min with mottled skin and no central pulse improvement despite good BVM ventilation with oxygen.", question: "What is the next step?", options: [{t: "Continue ventilations only and reassess in 2 minutes", f: "Incorrect. A HR <60 with poor perfusion despite ventilation requires compressions."}, {t: "Begin chest compressions (CPR) now", f: "Correct. HR <60 with poor perfusion despite oxygenation/ventilation is treated as arrest."}], correct: 1, explanation: "In children, a heart rate below 60/min with poor perfusion despite adequate oxygenation and ventilation is an indication to start CPR.", kpi: "Initiates CPR for pediatric bradycardia with poor perfusion"},
         {id: "crit_4_12_3", scenario: "You must defibrillate a 5-year-old in ventricular fibrillation, but your AED has only adult pads and no pediatric attenuator.", question: "What should you do?", options: [{t: "Withhold defibrillation because pediatric pads are unavailable", f: "Incorrect. Defibrillation should not be delayed; an adult AED is acceptable if pediatric equipment is unavailable."}, {t: "Use the standard adult AED, ensuring pads do not touch each other (anterior-posterior placement if needed)", f: "Correct. A standard AED is preferred over no defibrillation when pediatric equipment is unavailable."}], correct: 1, explanation: "If a pediatric attenuator/pads are unavailable, use a standard adult AED rather than withhold defibrillation; position pads so they do not touch.", kpi: "Defibrillates a child appropriately when pediatric equipment is unavailable"}
     ]
@@ -1825,7 +1825,7 @@ window.CPG_DATA = {
         </ul>
 
         <div class="highlight-box" style="background:#f8d7da; border-left-color:#721c24;">
-            <strong>Protocol First:</strong> EMT authority to withhold or terminate resuscitation varies by jurisdiction and usually requires medical direction. When in doubt, begin resuscitation and contact medical control.
+            <strong>Protocol First:</strong> EMS provider authority to withhold or terminate resuscitation varies by jurisdiction and usually requires medical direction. When in doubt, begin resuscitation and contact medical control.
         </div>
     </div>`,
     flashcards: [
@@ -1837,8 +1837,8 @@ window.CPG_DATA = {
         {question: "What must you preserve if a death may involve a crime?", answer: "The scene and evidence — minimize disturbance of the body and surroundings and notify law enforcement.", category: "TOR"}
     ],
     quiz: [
-        {q: "Which finding allows an EMT to withhold resuscitation?", options: ["Cool skin", "Rigor mortis with dependent lividity", "A weak pulse", "Agonal breathing"], correct: 1, explanation: "Rigor mortis and dependent lividity are signs of obvious, irreversible death."},
-        {q: "Before terminating resuscitation in the field, an EMT generally must:", options: ["Decide alone", "Obtain medical direction per protocol", "Wait 60 minutes", "Transport regardless"], correct: 1, explanation: "Field termination typically requires online medical direction and follows local protocol."},
+        {q: "Which finding allows an EMS provider to withhold resuscitation?", options: ["Cool skin", "Rigor mortis with dependent lividity", "A weak pulse", "Agonal breathing"], correct: 1, explanation: "Rigor mortis and dependent lividity are signs of obvious, irreversible death."},
+        {q: "Before terminating resuscitation in the field, an EMS provider generally must:", options: ["Decide alone", "Obtain medical direction per protocol", "Wait 60 minutes", "Transport regardless"], correct: 1, explanation: "Field termination typically requires online medical direction and follows local protocol."},
         {q: "A patient presents a valid DNR order during a cardiac arrest. You should:", options: ["Begin full resuscitation anyway", "Honor the DNR and provide comfort/supportive care", "Ignore it without family present", "Transport with CPR"], correct: 1, explanation: "A valid DNR directs that resuscitation be withheld; provide comfort care and follow protocol."}
     ],
     critical: [
