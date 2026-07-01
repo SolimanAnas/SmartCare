@@ -5,6 +5,7 @@ import re
 import secrets
 from datetime import datetime, timezone
 
+import requests
 from flask import Flask, abort, jsonify, redirect, request, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -153,13 +154,65 @@ def _admin_emails():
     return {e.strip().lower() for e in raw.split(",") if e.strip()}
 
 
-def _is_admin(user):
-    """A user is an admin if their role is 'Admin' or they are allow-listed."""
-    if not user or not user.is_authenticated:
-        return False
-    if (user.role or "").strip().lower() == "admin":
-        return True
-    return (user.username or "").strip().lower() in _admin_emails()
+# ── Supabase-backed admin API (Secure SDLC §4.4(c)) ─────────────────────────
+# The admin console manages real app users (Supabase/Google sign-ins), not the
+# legacy SQLAlchemy `User` table above. The service_role key stays server-side
+# only — see docs/SUPABASE_SETUP.md §4 for the required Supabase-side setup.
+SUPABASE_URL = os.getenv("SUPABASE_URL", "").rstrip("/")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
+
+
+def _supabase_admin_configured():
+    return bool(SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY)
+
+
+def _supabase_service_headers(prefer=None):
+    headers = {
+        "apikey": SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}",
+        "Content-Type": "application/json",
+    }
+    if prefer:
+        headers["Prefer"] = prefer
+    return headers
+
+
+def _supabase_user_from_token(token):
+    """Resolve a Supabase access token (from the browser's session) to
+    {id, email}, or None if the token is missing/invalid/expired."""
+    if not token or not _supabase_admin_configured():
+        return None
+    try:
+        resp = requests.get(
+            f"{SUPABASE_URL}/auth/v1/user",
+            headers={"Authorization": f"Bearer {token}", "apikey": SUPABASE_SERVICE_ROLE_KEY},
+            timeout=5,
+        )
+    except requests.RequestException:
+        return None
+    if resp.status_code != 200:
+        return None
+    data = resp.json()
+    email = (data.get("email") or "").strip().lower()
+    if not data.get("id") or not email:
+        return None
+    return {"id": data["id"], "email": email}
+
+
+def _require_supabase_admin():
+    """Abort with 503/401/403 unless the caller is a signed-in, allow-listed
+    admin. Returns {id, email} for the caller on success."""
+    if not _supabase_admin_configured():
+        abort(503, description="Admin API is not configured on this server.")
+    auth_header = request.headers.get("Authorization", "")
+    token = auth_header[7:] if auth_header.lower().startswith("bearer ") else ""
+    user = _supabase_user_from_token(token)
+    if not user:
+        abort(401, description="Sign in required.")
+    if user["email"] not in _admin_emails():
+        _audit("admin_access", "denied", actor=user["email"])
+        abort(403)
+    return user
 
 
 # ==========================================
@@ -296,74 +349,104 @@ def _register_routes(app):
         _audit("logout", "success", actor=actor)
         return redirect("/login.html")
 
-    # ── Admin API (Secure SDLC §4.4(c): authn + authz required) ─────────────
+    # ── Admin API (Secure SDLC §4.4(c): authn + authz required) ──────────────
+    # Backed by Supabase (the real, live user base) rather than the legacy
+    # SQLAlchemy `User` table — see _require_supabase_admin() above. Callers
+    # authenticate with their Supabase session token (Authorization: Bearer …),
+    # which the server verifies directly with Supabase before checking the
+    # ADMIN_EMAILS allow-list. The service_role key never reaches the browser.
     @app.route("/api/admin/users", methods=["GET"])
-    @login_required
+    @limiter.limit("30 per minute")
     def get_all_users():
-        if not _is_admin(current_user):
-            _audit("admin_list_users", "denied", actor=current_user.username)
-            abort(403)
+        admin = _require_supabase_admin()
+        try:
+            resp = requests.get(
+                f"{SUPABASE_URL}/rest/v1/profiles",
+                params={"select": "id,email,full_name,role,created_at", "order": "created_at.desc"},
+                headers=_supabase_service_headers(),
+                timeout=8,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            _audit("admin_list_users", "error", actor=admin["email"])
+            return jsonify({"error": "Could not reach Supabase"}), 502
 
-        users = User.query.all()
-        _audit("admin_list_users", "success", actor=current_user.username)
+        _audit("admin_list_users", "success", actor=admin["email"])
         return jsonify(
             [
                 {
-                    "id": u.id,
-                    "full_name": u.full_name or "Google User",
-                    "email": u.username,
-                    "role": u.role or "Unassigned",
+                    "id": u.get("id"),
+                    "full_name": u.get("full_name") or "Google User",
+                    "email": u.get("email") or "",
+                    "role": u.get("role") or "Unassigned",
                 }
-                for u in users
+                for u in resp.json()
             ]
         )
 
-    @app.route("/api/admin/users/<int:user_id>/role", methods=["PATCH"])
-    @login_required
+    @app.route("/api/admin/users/<user_id>/role", methods=["PATCH"])
+    @limiter.limit("30 per minute")
     def update_user_role(user_id):
-        if not _is_admin(current_user):
-            _audit("admin_update_role", "denied", actor=current_user.username)
-            abort(403)
+        admin = _require_supabase_admin()
 
         data = request.get_json(silent=True) or {}
         new_role = (data.get("role") or "").strip()
         if not new_role:
             return jsonify({"error": "Role is required"}), 400
+        if len(new_role) > 50:
+            return jsonify({"error": "Role name is too long"}), 400
 
-        user = db.session.get(User, user_id)
-        if not user:
+        try:
+            resp = requests.patch(
+                f"{SUPABASE_URL}/rest/v1/profiles",
+                params={"id": f"eq.{user_id}"},
+                json={"role": new_role},
+                headers=_supabase_service_headers(prefer="return=representation"),
+                timeout=8,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            _audit("admin_update_role", "error", actor=admin["email"], detail=f"user={user_id}")
+            return jsonify({"error": "Update failed"}), 502
+
+        rows = resp.json()
+        if not rows:
             return jsonify({"error": "User not found"}), 404
 
-        old_role = user.role
-        user.role = new_role
-        db.session.commit()
         _audit(
             "admin_update_role",
             "success",
-            actor=current_user.username,
-            detail=f"user={user.username} {old_role!r}→{new_role!r}",
+            actor=admin["email"],
+            detail=f"user={user_id} -> {new_role!r}",
         )
-        return jsonify({"message": "Role updated", "id": user.id, "role": user.role})
+        return jsonify({"message": "Role updated", "id": user_id, "role": new_role})
 
-    @app.route("/api/admin/users/<int:user_id>", methods=["DELETE"])
-    @login_required
+    @app.route("/api/admin/users/<user_id>", methods=["DELETE"])
+    @limiter.limit("30 per minute")
     def delete_user(user_id):
-        if not _is_admin(current_user):
-            _audit("admin_delete_user", "denied", actor=current_user.username)
-            abort(403)
+        admin = _require_supabase_admin()
 
-        user = db.session.get(User, user_id)
-        if not user:
-            return jsonify({"error": "User not found"}), 404
+        if user_id == admin["id"]:
+            return jsonify({"error": "You cannot delete your own account"}), 400
 
-        deleted_email = user.username
-        db.session.delete(user)
-        db.session.commit()
+        try:
+            resp = requests.delete(
+                f"{SUPABASE_URL}/auth/v1/admin/users/{user_id}",
+                headers=_supabase_service_headers(),
+                timeout=8,
+            )
+        except requests.RequestException:
+            _audit("admin_delete_user", "error", actor=admin["email"], detail=f"user={user_id}")
+            return jsonify({"error": "Delete failed"}), 502
+
+        if resp.status_code not in (200, 204):
+            return jsonify({"error": "User not found or delete failed"}), 404
+
         _audit(
             "admin_delete_user",
             "success",
-            actor=current_user.username,
-            detail=f"deleted={deleted_email}",
+            actor=admin["email"],
+            detail=f"deleted={user_id}",
         )
         return jsonify({"message": "User deleted", "id": user_id})
 
@@ -372,9 +455,17 @@ def _register_routes(app):
         _audit("rate_limit", "blocked", detail=str(e.description))
         return jsonify({"error": "Too many requests. Please try again later."}), 429
 
+    @app.errorhandler(401)
+    def unauthorized(e):
+        return jsonify({"error": "Sign in required."}), 401
+
     @app.errorhandler(403)
     def forbidden(e):
         return jsonify({"error": "Forbidden"}), 403
+
+    @app.errorhandler(503)
+    def service_unavailable(e):
+        return jsonify({"error": str(e.description) or "Service unavailable"}), 503
 
     @app.route("/api/health")
     @limiter.exempt

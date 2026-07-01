@@ -469,6 +469,48 @@
     });
   });
 
+  // ── Hidden admin entry: 4 fast taps on the cloud icon, then a PIN ──
+  // The PIN below is stored hashed, not in plain text — this only hides the
+  // link from casual inspection. The real access control is server-side:
+  // admin.html always re-verifies the signed-in user's email against
+  // ADMIN_EMAILS before returning any data, regardless of how it was reached.
+  (function () {
+    var TAP_WINDOW_MS = 2000;
+    var TAP_COUNT = 4;
+    var PIN_HASH = '\x63\x62\x64\x32\x64\x38\x39\x32\x62\x31\x32\x38\x32\x35\x32\x37\x62\x34\x33\x30\x39\x66\x38\x31\x30\x33\x37\x36\x32\x33\x62\x64\x33\x64\x61\x34\x64\x34\x39\x61\x32\x65\x33\x65\x61\x66\x30\x33\x66\x65\x63\x37\x64\x62\x37\x31\x32\x35\x64\x63\x66\x36\x36\x62';
+    var logoRing = document.querySelector('.logo-ring');
+    if (!logoRing || !window.crypto || !window.crypto.subtle) return;
+
+    function sha256Hex(text) {
+      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+        return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+          return b.toString(16).padStart(2, '0');
+        }).join('');
+      });
+    }
+
+    var taps = [];
+    logoRing.style.cursor = 'pointer';
+    logoRing.addEventListener('click', function () {
+      var now = Date.now();
+      taps = taps.filter(function (t) { return now - t < TAP_WINDOW_MS; });
+      taps.push(now);
+      if (taps.length < TAP_COUNT) return;
+      taps = [];
+
+      var pin = window.prompt('Enter secret pin');
+      if (pin === null) return;
+      sha256Hex(pin.trim()).then(function (hash) {
+        var out = signedIn.classList.contains('hidden') ? $('feedbackOut') : $('feedbackIn');
+        if (hash === PIN_HASH) {
+          window.location.href = 'admin.html';
+        } else {
+          msg(out, 'Incorrect PIN.', 'err');
+        }
+      });
+    });
+  })();
+
   // ── React to auth state + initial load ──
   var didAutoSync = false;
   SmartCareCloud.onChange(function (user) {
