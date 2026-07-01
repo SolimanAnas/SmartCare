@@ -236,7 +236,9 @@ class TestAdminUsers:
 
     def test_admin_role_update(self, client, supabase_admin):
         supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        supabase_admin.add_user("tok-x", "uid-target", "promote-me@smartcare.org", role="Unassigned")
+        supabase_admin.add_user(
+            "tok-x", "uid-target", "promote-me@smartcare.org", role="Unassigned"
+        )
         resp = client.patch(
             "/api/admin/users/uid-target/role",
             json={"role": "Paramedic"},
