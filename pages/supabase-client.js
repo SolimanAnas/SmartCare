@@ -12,6 +12,7 @@
  *   SmartCareCloud.ready            -> Promise<boolean>  resolves true if usable
  *   SmartCareCloud.isConfigured()   -> boolean
  *   SmartCareCloud.getUser()        -> Promise<user|null>
+ *   SmartCareCloud.getAccessToken() -> Promise<string|null>  JWT for server API calls
  *   SmartCareCloud.signInWithGoogle()
  *   SmartCareCloud.signOut()
  *   SmartCareCloud.onChange(cb)     -> cb(user|null) on auth state change
@@ -102,6 +103,14 @@
       return requireClient()
         .then(function (c) { return c.auth.getUser(); })
         .then(function (r) { return (r && r.data && r.data.user) || null; })
+        .catch(function () { return null; });
+    },
+
+    /** Current session's access token (JWT), for calling authenticated server APIs. */
+    getAccessToken: function () {
+      return requireClient()
+        .then(function (c) { return c.auth.getSession(); })
+        .then(function (r) { return (r && r.data && r.data.session && r.data.session.access_token) || null; })
         .catch(function () { return null; });
     },
 

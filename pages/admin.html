@@ -66,6 +66,8 @@
   <title>SmartCare | Admin Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="supabase-config.js"></script>
+  <script src="supabase-client.js"></script>
   <style>
     * {
       margin: 0;
@@ -199,7 +201,9 @@
       border-radius: 40px;
       color: #F1F5F9;
       text-decoration: none;
+      font-family: inherit;
       font-size: 0.85rem;
+      cursor: pointer;
       transition: 0.2s;
     }
 
@@ -338,6 +342,7 @@
       font-weight: 600;
     }
 
+    .role-admin { background: rgba(245, 158, 11, 0.2); color: #FCD34D; border: 1px solid #F59E0B; }
     .role-physician { background: rgba(139, 92, 246, 0.2); color: #C4B5FD; border: 1px solid #A78BFA; }
     .role-paramedic { background: rgba(59, 130, 246, 0.2); color: #93C5FD; border: 1px solid #60A5FA; }
     .role-emt { background: rgba(16, 185, 129, 0.2); color: #6EE7B7; border: 1px solid #34D399; }
@@ -445,12 +450,13 @@
         <h1>Provider Management</h1>
         <p>Monitor and manage all registered clinical staff</p>
       </div>
-      <a href="/api/logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
     </div>
 
     <!-- Stats Cards -->
     <div class="stats-grid" id="statsGrid">
       <div class="stat-card"><div class="stat-title">Total Providers</div><div class="stat-number" id="totalUsers">0</div></div>
+      <div class="stat-card"><div class="stat-title">Admins</div><div class="stat-number" id="adminCount">0</div></div>
       <div class="stat-card"><div class="stat-title">Physicians</div><div class="stat-number" id="physicianCount">0</div></div>
       <div class="stat-card"><div class="stat-title">Paramedics</div><div class="stat-number" id="paramedicCount">0</div></div>
       <div class="stat-card"><div class="stat-title">EMT / EMT-A</div><div class="stat-number" id="emtCount">0</div></div>
@@ -465,6 +471,7 @@
       <div class="role-filter">
         <select id="roleFilter">
           <option value="all">All Roles</option>
+          <option value="admin">Admin</option>
           <option value="physician">Physician</option>
           <option value="paramedic">Paramedic / Adv. Paramedic</option>
           <option value="emt">EMT / EMT-A</option>
@@ -510,6 +517,7 @@
   // Get role badge class
   function getRoleClass(role) {
     const r = (role || 'Unassigned').toLowerCase();
+    if (r === 'admin') return 'role-admin';
     if (r.includes('physician')) return 'role-physician';
     if (r.includes('paramedic')) return 'role-paramedic';
     if (r.includes('emt')) return 'role-emt';
@@ -519,14 +527,16 @@
   // Update stats
   function updateStats(users) {
     const total = users.length;
-    let physicians = 0, paramedics = 0, emt = 0;
+    let admins = 0, physicians = 0, paramedics = 0, emt = 0;
     users.forEach(u => {
       const role = (u.role || 'Unassigned').toLowerCase();
-      if (role.includes('physician')) physicians++;
+      if (role === 'admin') admins++;
+      else if (role.includes('physician')) physicians++;
       else if (role.includes('paramedic')) paramedics++;
       else if (role.includes('emt')) emt++;
     });
     document.getElementById('totalUsers').innerText = total;
+    document.getElementById('adminCount').innerText = admins;
     document.getElementById('physicianCount').innerText = physicians;
     document.getElementById('paramedicCount').innerText = paramedics;
     document.getElementById('emtCount').innerText = emt;
@@ -548,6 +558,7 @@
     if (roleFilter !== 'all') {
       filtered = filtered.filter(u => {
         const role = (u.role || 'Unassigned').toLowerCase();
+        if (roleFilter === 'admin') return role === 'admin';
         if (roleFilter === 'physician') return role.includes('physician');
         if (roleFilter === 'paramedic') return role.includes('paramedic');
         if (roleFilter === 'emt') return role.includes('emt');
@@ -575,12 +586,13 @@
         <td>${escapeHtml(user.email)}</td>
         <td>
           <select class="role-select" data-userid="${user.id}" id="roleSelect-${user.id}">
+            <option value="Unassigned" ${roleDisplay === 'Unassigned' ? 'selected' : ''}>Unassigned</option>
             <option value="EMT" ${roleDisplay === 'EMT' ? 'selected' : ''}>EMT</option>
             <option value="EMT-A" ${roleDisplay === 'EMT-A' ? 'selected' : ''}>EMT-A</option>
             <option value="Paramedic" ${roleDisplay === 'Paramedic' ? 'selected' : ''}>Paramedic</option>
             <option value="Advanced paramedic" ${roleDisplay === 'Advanced paramedic' ? 'selected' : ''}>Advanced Paramedic</option>
             <option value="Physician" ${roleDisplay === 'Physician' ? 'selected' : ''}>Physician</option>
-            <option value="Unassigned" ${roleDisplay === 'Unassigned' ? 'selected' : ''}>Unassigned</option>
+            <option value="Admin" ${roleDisplay === 'Admin' ? 'selected' : ''}>Admin</option>
           </select>
         </td>
         <td class="action-buttons">
@@ -636,6 +648,21 @@
     setTimeout(() => toast.remove(), 3000);
   }
   
+  // ---------- AUTH (Supabase) ----------
+  // The admin console manages real app users, so it authenticates the same
+  // way the rest of the app does: a Supabase session. The access token is
+  // sent to the server on every /api/admin/* call; the server independently
+  // verifies it and checks the caller's email against ADMIN_EMAILS — the
+  // client-side check here is only a UX shortcut, not the security boundary.
+  async function authHeader() {
+    const token = window.SmartCareCloud ? await SmartCareCloud.getAccessToken() : null;
+    return token ? { 'Authorization': `Bearer ${token}` } : {};
+  }
+
+  function sendToLogin() {
+    window.location.replace('login.html');
+  }
+
   // API: update user role
   async function updateUserRole(userId, newRole) {
     try {
@@ -644,9 +671,11 @@
         headers: {
           'Content-Type': 'application/json',
           'X-Requested-With': 'XMLHttpRequest',
+          ...(await authHeader()),
         },
         body: JSON.stringify({ role: newRole })
       });
+      if (res.status === 401) { sendToLogin(); return; }
       if (res.ok) {
         showToast(`Role updated to ${newRole}`);
         await fetchUsers(); // reload
@@ -658,14 +687,15 @@
       showToast('Server error', true);
     }
   }
-  
+
   // API: delete user
   async function deleteUser(userId) {
     try {
       const res = await fetch(`/api/admin/users/${userId}`, {
         method: 'DELETE',
-        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        headers: { 'X-Requested-With': 'XMLHttpRequest', ...(await authHeader()) },
       });
+      if (res.status === 401) { sendToLogin(); return; }
       if (res.ok) {
         showToast('User deleted successfully');
         await fetchUsers();
@@ -677,19 +707,19 @@
       showToast('Server error', true);
     }
   }
-  
+
   // Fetch users from backend
   async function fetchUsers() {
     const tbody = document.getElementById('userTableBody');
     tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;"><i class="fas fa-circle-notch fa-spin"></i> Syncing...</td></tr>';
     try {
       const res = await fetch('/api/admin/users', {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        headers: { 'X-Requested-With': 'XMLHttpRequest', ...(await authHeader()) },
       });
-      // Access control is enforced by the server. A non-admin (or signed-out)
-      // user receives 401/403 — send them to the login page.
+      // Access control is enforced by the server. A signed-out user, or one
+      // whose email isn't in ADMIN_EMAILS, gets 401/403 — send them back.
       if (res.status === 401 || res.status === 403) {
-        window.location.replace('/login.html');
+        sendToLogin();
         return;
       }
       if (!res.ok) throw new Error('HTTP error');
@@ -701,12 +731,16 @@
       showToast('Could not fetch users', true);
     }
   }
-  
+
   // Event listeners
   document.getElementById('refreshBtn').addEventListener('click', fetchUsers);
   document.getElementById('searchInput').addEventListener('input', renderTable);
   document.getElementById('roleFilter').addEventListener('change', renderTable);
-  
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    if (window.SmartCareCloud) { try { await SmartCareCloud.signOut(); } catch (e) {} }
+    sendToLogin();
+  });
+
   // Modal controls
   document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
     if (pendingDeleteId) {
@@ -720,9 +754,16 @@
     pendingDeleteId = null;
   });
   window.addEventListener('click', (e) => { if (e.target === document.getElementById('deleteModal')) document.getElementById('deleteModal').style.display = 'none'; });
-  
-  // Initial load
-  fetchUsers();
+
+  // Initial load — bounce straight to login if there's no Supabase session at
+  // all, so we never show a "Loading providers..." flash for signed-out users.
+  (async () => {
+    if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) { sendToLogin(); return; }
+    const ok = await SmartCareCloud.ready;
+    const user = ok ? await SmartCareCloud.getUser() : null;
+    if (!user) { sendToLogin(); return; }
+    fetchUsers();
+  })();
 </script>
 </body>
 </html>

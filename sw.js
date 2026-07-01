@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.7';           // v2.7: chapter table borders/scroll fix, EMS-provider tone pass, sign-in greeting, drawer UI
+const CACHE_VERSION = 'smartcare-v2.8';           // v2.8: admin console wired to real Supabase users + hidden login-page entry
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
