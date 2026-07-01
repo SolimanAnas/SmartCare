@@ -179,6 +179,7 @@
     .policy-section:nth-of-type(8) { animation-delay: 0.38s; }
     .policy-section:nth-of-type(9) { animation-delay: 0.43s; }
     .policy-section:nth-of-type(10) { animation-delay: 0.48s; }
+    .policy-section:nth-of-type(11) { animation-delay: 0.53s; }
 
     /* ━━ Typography inside cards ━━ */
     .policy-section h2 {
@@ -279,6 +280,25 @@
         transition: color 0.2s;
     }
     .policy-section address a:hover { color: #00d4ff; text-decoration: underline; }
+
+    /* ━━ License text block ━━ */
+    .license-box {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin-top: 12px;
+        white-space: pre-wrap;
+        overflow-x: auto;
+    }
+    [data-theme="light"] .license-box {
+        background: rgba(0, 0, 0, 0.05);
+        color: #444;
+    }
 
     /* ━━ Responsive ━━ */
     @media (max-width: 600px) {
@@ -403,8 +423,22 @@
     <p>We may update this Privacy Policy from time to time. Material changes will be communicated by updating the effective date at the top of this policy and, where appropriate, by displaying a notice within the App. Your continued use of the App after changes take effect constitutes your acceptance of the revised policy.</p>
 </div>
 
+<div class="policy-section" id="license">
+    <h2><span class="section-num">10</span> Open Source License</h2>
+    <p>SmartCare's source code is released under the MIT License — free for the clinical education community to study, adapt, and build on.</p>
+    <div class="license-box">MIT License
+
+Copyright (c) 2026 Soliman Anas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</div>
+</div>
+
 <div class="policy-section">
-    <h2><span class="section-num">10</span> Contact Us</h2>
+    <h2><span class="section-num">11</span> Contact Us</h2>
     <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
     <address>
         <strong>SmartCare</strong><br>

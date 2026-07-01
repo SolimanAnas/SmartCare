@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.8';           // v2.8: admin console wired to real Supabase users + hidden login-page entry
+const CACHE_VERSION = 'smartcare-v2.9';           // v2.9: about.html copy cleanup, MIT license moved to privacy.html
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
