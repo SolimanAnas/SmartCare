@@ -9,10 +9,10 @@
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smartcare-learning.net/pages/ecg">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/pages/ecg">
     <meta property="og:title" content="SmartCare · ECG Trainer">
     <meta property="og:description" content="ECG trainer and rhythm interpreter — learn to read electrocardiograms with interactive practice for ACLS and cardiology.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -21,14 +21,14 @@
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smartcare-learning.net/pages/ecg">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/pages/ecg">
     <meta name="twitter:title" content="SmartCare · ECG Trainer">
     <meta name="twitter:description" content="ECG trainer and rhythm interpreter — learn to read electrocardiograms with interactive practice for ACLS and cardiology.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://smartcare-learning.net/pages/ecg">
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/pages/ecg">
 
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -43,9 +43,9 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "SmartCare · ECG Trainer",
-  "url": "https://smartcare-learning.net/pages/ecg",
+  "url": "https://solimananas.github.io/SmartCare/pages/ecg",
   "description": "ECG trainer and rhythm interpreter — learn to read electrocardiograms with interactive practice for ACLS and cardiology.",
-  "image": "https://smartcare-learning.net/images/og.jpg",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
   "author": {
     "@type": "Person",
     "name": "Soliman Anas"
@@ -55,7 +55,7 @@
     "name": "SmartCare",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://smartcare-learning.net/icons/icon.png"
+      "url": "https://solimananas.github.io/SmartCare/icons/icon.png"
     }
   },
   "inLanguage": "en-US"
@@ -109,6 +109,7 @@
 }
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
 html{height:100%}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-height:100%;display:flex;flex-direction:column;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(ellipse 80% 50% at 10% 0%,rgba(239,68,68,.07),transparent),radial-gradient(ellipse 70% 60% at 90% 100%,rgba(15,39,68,.8),transparent);pointer-events:none;z-index:-1}
@@ -130,7 +131,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 /* Theme pills in header */
 .theme-pills{display:flex;gap:4px}
-.tp{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .18s;flex-shrink:0}
+.tp{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .18s;flex-shrink:0;padding:0;-webkit-appearance:none;appearance:none}
 .tp:hover{transform:scale(1.2)}
 .tp:active{transform:scale(.9)}
 .tp.act{border-color:var(--tx)!important;box-shadow:0 0 0 2px rgba(59,130,246,.35)}
@@ -378,7 +379,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 
 <!-- HEADER -->
 <header class="app-header">
-  <a class="hdr-back" href="../index.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg></a>
+  <a class="hdr-back" href="../index.html" aria-label="Back to home"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg></a>
   <div class="hdr-badge"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg></div>
   <div class="hdr-info">
     <div class="hdr-title">ECG Trainer</div>
@@ -386,10 +387,10 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
   </div>
   <div class="hdr-right">
     <div class="theme-pills">
-      <div class="tp tp-dark"  id="tp-dark"  onclick="setTheme('dark')"  title="Dark"></div>
-      <div class="tp tp-light" id="tp-light" onclick="setTheme('light')" title="Light"></div>
-      <div class="tp tp-sepia" id="tp-sepia" onclick="setTheme('sepia')" title="Sepia"></div>
-      <div class="tp tp-green" id="tp-green" onclick="setTheme('green')" title="Green"></div>
+      <button type="button" class="tp tp-dark"  id="tp-dark"  onclick="setTheme('dark')"  title="Dark"  aria-label="Dark theme"></button>
+      <button type="button" class="tp tp-light" id="tp-light" onclick="setTheme('light')" title="Light" aria-label="Light theme"></button>
+      <button type="button" class="tp tp-sepia" id="tp-sepia" onclick="setTheme('sepia')" title="Sepia" aria-label="Sepia theme"></button>
+      <button type="button" class="tp tp-green" id="tp-green" onclick="setTheme('green')" title="Green" aria-label="Green theme"></button>
     </div>
     <div class="hdr-live" id="liveDot"></div>
   </div>
@@ -463,18 +464,18 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
       <div class="ps-handle-wrap" onclick="closePicker()"><div class="ps-handle"></div></div>
       <div class="ps-head">
         <span class="ps-title">Select Rhythm</span>
-        <div class="ps-close" onclick="closePicker()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg></div>
+        <button type="button" class="ps-close" onclick="closePicker()" aria-label="Close rhythm picker"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg></button>
       </div>
       <div class="ps-search-wrap">
         <div class="ps-search-box">
           <span class="ps-search-ico"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg></span>
           <input class="ps-search-inp" id="psSearchInp" type="text"
-                 placeholder="Search rhythms…"
+                 placeholder="Search rhythms…" aria-label="Search rhythms"
                  autocomplete="off" oninput="filterPicker(this.value)">
           <span class="ps-search-count" id="psCount">23</span>
         </div>
       </div>
-      <div class="ps-list" id="psList"></div>
+      <div class="ps-list" id="psList" role="radiogroup" aria-label="Rhythm"></div>
     </div>
   </div>
 
@@ -1173,14 +1174,22 @@ function buildPickerList() {
     item.id = 'pi-' + r.key;
     item.dataset.key  = r.key;
     item.dataset.name = r.name.toLowerCase();
+    item.setAttribute('role', 'radio');
+    item.setAttribute('aria-checked', r.key === currentKey ? 'true' : 'false');
+    item.setAttribute('aria-label', r.name + ', ' + r.pri + ' priority');
+    item.tabIndex = 0;
     item.innerHTML =
       '<span class="pi-dot" style="background:' + r.dot + ';color:' + r.dot + '"></span>' +
       '<span class="pi-name">' + r.name + '</span>' +
       '<span class="pi-pri ' + (PRI_CLS[r.pri]||'pi-g') + '">' + r.pri + '</span>' +
       '<span class="pi-radio"><span class="pi-radio-inner"></span></span>';
-    item.onclick = () => {
+    const choose = () => {
       pickRhythm(r.key, r.name, r.cat);
       closePicker();
+    };
+    item.onclick = choose;
+    item.onkeydown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(); }
     };
     list.appendChild(item);
   });

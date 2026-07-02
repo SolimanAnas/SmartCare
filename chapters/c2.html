@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
+         its own header, but Pages can't send headers, so it lives here. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'">
     <!-- General SEO Meta Tags -->
     <meta name="description" content="Patient assessment for EMS — scene size-up, primary assessment, history taking, secondary assessment, and reassessment techniques.">
     <meta name="keywords" content="SmartCare, chapters, c2, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -9,10 +12,10 @@
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smartcare-learning.net/chapters/c2">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/chapters/c2">
     <meta property="og:title" content="SmartCare · Patient Assessment">
     <meta property="og:description" content="Patient assessment for EMS — scene size-up, primary assessment, history taking, secondary assessment, and reassessment techniques.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -21,14 +24,14 @@
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smartcare-learning.net/chapters/c2">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/chapters/c2">
     <meta name="twitter:title" content="SmartCare · Patient Assessment">
     <meta name="twitter:description" content="Patient assessment for EMS — scene size-up, primary assessment, history taking, secondary assessment, and reassessment techniques.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://smartcare-learning.net/chapters/c2">
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/chapters/c2">
 
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -43,9 +46,9 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "SmartCare · Patient Assessment",
-  "url": "https://smartcare-learning.net/chapters/c2",
+  "url": "https://solimananas.github.io/SmartCare/chapters/c2",
   "description": "Patient assessment for EMS — scene size-up, primary assessment, history taking, secondary assessment, and reassessment techniques.",
-  "image": "https://smartcare-learning.net/images/og.jpg",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
   "author": {
     "@type": "Person",
     "name": "Soliman Anas"
@@ -55,7 +58,7 @@
     "name": "SmartCare",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://smartcare-learning.net/icons/icon.png"
+      "url": "https://solimananas.github.io/SmartCare/icons/icon.png"
     }
   },
   "inLanguage": "en-US"

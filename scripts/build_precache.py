@@ -44,7 +44,12 @@ GLOB_DIRS = [
     ("chapters", (".html",)),
     ("pages", (".html", ".js", ".json")),
     ("fonts", (".css", ".woff2")),
-    ("vendor", (".mjs", ".js")),
+]
+
+# Walked recursively (vendored packages keep their own directory layout,
+# e.g. vendor/fontawesome/css/ + vendor/fontawesome/webfonts/).
+RECURSIVE_GLOB_DIRS = [
+    ("vendor", (".mjs", ".js", ".css", ".woff2")),
 ]
 
 
@@ -91,6 +96,14 @@ def collect_globs():
             full = os.path.join(dirpath, f)
             if os.path.isfile(full) and f.endswith(exts):
                 out.append(rel(full))
+    for dirname, exts in RECURSIVE_GLOB_DIRS:
+        dirpath = os.path.join(ROOT, dirname)
+        if not os.path.isdir(dirpath):
+            continue
+        for root, _dirs, files in sorted(os.walk(dirpath)):
+            for f in sorted(files):
+                if f.endswith(exts):
+                    out.append(rel(os.path.join(root, f)))
     return out
 
 

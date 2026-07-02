@@ -75,7 +75,6 @@ served from to **Redirect URLs** (the client redirects back to the current login
 
 ```
 https://solimananas.github.io/SmartCare/pages/login.html
-https://smartcare-learning.net/pages/login.html
 http://localhost:8000/pages/login.html      (local dev — match your port)
 ```
 

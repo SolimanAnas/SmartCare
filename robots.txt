@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# pages/admin.html is deliberately NOT disallowed here: listing it would
+# advertise the path, and a robots block would stop crawlers from ever
+# seeing its <meta name="robots" content="noindex"> tag — the meta tag is
+# the mechanism that actually keeps it out of search results.
+
+Sitemap: https://solimananas.github.io/SmartCare/sitemap.xml

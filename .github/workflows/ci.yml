@@ -62,11 +62,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
 
-      # ESLint is pinned to v8 because the project uses the legacy
-      # .eslintrc.json config format (ESLint v9 removed --no-eslintrc).
-      - name: Install ESLint & Prettier
-        run: npm install --save-dev eslint@8 prettier
+      # ESLint is pinned to v8 in package.json because the project uses the
+      # legacy .eslintrc.json config format (ESLint v9 removed --no-eslintrc).
+      - name: Install Node dependencies
+        run: npm ci
 
       - name: Lint JavaScript with ESLint
         run: npx eslint --no-eslintrc -c .eslintrc.json "*.js" "src/**/*.js"
@@ -74,3 +75,10 @@ jobs:
       - name: Check JS formatting with Prettier
         run: npx prettier --check "*.js" "src/**/*.js"
         continue-on-error: true
+
+      # ── End-to-end (Playwright) ────────────────────────────
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: npm test

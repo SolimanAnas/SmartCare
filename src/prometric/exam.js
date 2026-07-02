@@ -52,11 +52,9 @@ class ExamEngine {
         if (typeof Chart === 'undefined') {
             await new Promise((resolve, reject) => {
                 const script = document.createElement('script');
-                // Pinned to an exact version — see index.html for the SRI TODO
-                // (this sandbox's network policy blocks cdn.jsdelivr.net, so the
-                // integrity hash couldn't be computed here).
-                script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js';
-                script.crossOrigin = 'anonymous';
+                // Vendored locally (byte-for-byte from the npm package) — under
+                // service-worker control, works offline, no CDN trust needed.
+                script.src = '../../vendor/chart-4.5.1.umd.min.js';
                 script.onload = resolve;
                 script.onerror = reject;
                 document.head.appendChild(script);

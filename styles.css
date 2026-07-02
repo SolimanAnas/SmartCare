@@ -1981,6 +1981,23 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     .chapter-layout .section-tab {
         width: 100%;
         text-align: left;
+        white-space: normal;    /* mobile pills nowrap-scroll; sidebar entries wrap */
+        line-height: 1.35;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+/* Respect the OS-level "reduce motion" preference: near-zero out every
+   animation/transition duration instead of disabling animation-*
+   properties outright, so state changes (fade-ins, the loading shimmer,
+   theme swaps) still resolve to their end state — just without the motion
+   — rather than getting stuck mid-transition or never firing at all. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
