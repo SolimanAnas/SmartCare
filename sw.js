@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v2.9';           // v2.9: about.html copy cleanup, MIT license moved to privacy.html
+const CACHE_VERSION = 'smartcare-v3.0';           // v3.0: critical fixes — dead precache entries, null-safe accept header, safe cache/logout, viewport zoom, deploy allow-list, admin noindex
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────
@@ -34,7 +34,6 @@ const PRE_CACHE = [
   'chapters/c8.html',
   'chapters/c9.html',
   'chapters/c10.html',
-  'chapters/s1.html',
   'chapters/m1-38.html',
   'content/c-index.js',
   'content/c0.js',
@@ -48,7 +47,6 @@ const PRE_CACHE = [
   'content/c8.js',
   'content/c9.js',
   'content/c10.js',
-  'content/s1.js',
   'content/m1-38.js',
   'pages/drug-calculator.js',
   'pages/drug-data.json',
@@ -172,8 +170,11 @@ function networkFirst(req) {
           });
       }
 
-      // FIX: Only return the HTML error page if the browser is explicitly asking for a webpage
-      if (req.headers.get('accept').includes('text/html') || req.mode === 'navigate') {
+      // FIX: Only return the HTML error page if the browser is explicitly asking for a webpage.
+      // `accept` can be null (some fetches / browser extensions don't set it) — guard it so
+      // this branch doesn't throw and take down the whole offline fallback.
+      const acceptHeader = req.headers.get('accept') || '';
+      if (acceptHeader.includes('text/html') || req.mode === 'navigate') {
           return caches.match('index.html', { ignoreSearch: true }).then(function(fallback) {
             return fallback || new Response(
               '<h2 style="font-family:sans-serif;text-align:center;margin-top:40px">' +

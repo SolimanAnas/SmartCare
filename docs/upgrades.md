@@ -19,7 +19,7 @@
 
 ## 1. Stop deploying the entire repository to GitHub Pages
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 `static.yml` uploads `path: '.'` — all 202 MB — to public GitHub Pages. That
@@ -56,7 +56,7 @@ Security, legal exposure, deploy speed, bandwidth, professionalism.
 
 ## 2. De-index and strip SEO metadata from the admin console
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 `pages/admin.html` is meant to be hidden behind a 4-tap + PIN gesture, yet it ships
@@ -93,7 +93,7 @@ Security (attack-surface discoverability), professionalism.
 
 ## 3. Fix the service-worker `accept` header crash and dead pre-cache entries
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 Two latent bugs: (a) `sw.js:176` calls `req.headers.get('accept').includes(...)` —
@@ -131,7 +131,7 @@ Reliability (offline correctness — this is the core promise of the app).
 
 ## 4. "Clear Cache" wipes the user's Supabase session and all progress with one tap
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 The drawer's Cache button runs `localStorage.clear()` (`index.html` drawer logic),
@@ -169,7 +169,7 @@ User retention (data loss is the #1 uninstall trigger), reliability.
 
 ## 5. The drawer "Logout" button doesn't log out of the real auth system
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 `qsLogout` removes `smartcare_local_auth` — a key from the *retired* Flask local-auth
@@ -205,7 +205,7 @@ Security (shared devices), trust, UX coherence.
 
 ## 6. Remove `user-scalable=no` from all ~30 pages (WCAG failure)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 `maximum-scale=1.0, user-scalable=no` blocks pinch-zoom on ~30 pages (index, all 13

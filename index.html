@@ -91,7 +91,7 @@
   */
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SmartCare · Clinical Learning Platform</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -887,17 +887,47 @@
     document.getElementById('qsAbout').addEventListener('click', () => { window.location.href = 'pages/about.html'; });
 
     document.getElementById('qsClearCache').addEventListener('click', async () => {
-        if (!confirm('Clear cache and reload? Your progress will be reset.')) return;
+        // Step 1: clear cached app files (fixes "stuck on an old version" glitches).
+        // This never touches localStorage, so it can't sign you out or lose progress.
+        if (!confirm('Clear cached app files and reload? Your sign-in and study progress are kept.')) return;
         if ('caches' in window) {
             const names = await caches.keys();
             await Promise.all(names.map(n => caches.delete(n)));
         }
-        localStorage.clear();
-        window.location.reload(true);
+        if ('serviceWorker' in navigator) {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(regs.map(r => r.unregister()));
+        }
+
+        // Step 2: separate, opt-in confirmation before wiping local study data.
+        // Deliberately a second dialog — clearing cached files and resetting
+        // progress are two different intents and must never be bundled.
+        const alsoReset = confirm('Also reset local study progress (quiz history, completion, favorites)? This is separate from clearing the cache — say Cancel to just reload with a fresh cache.');
+        if (alsoReset) {
+            if (window.SmartCareCloud) {
+                try {
+                    const user = await SmartCareCloud.getUser();
+                    if (user) {
+                        await SmartCareCloud.push();
+                        alert('Backed up your progress to the cloud before resetting.');
+                    }
+                } catch (e) { /* offline or not configured — proceed without backup */ }
+            }
+            Object.keys(localStorage)
+                .filter(k => k.startsWith('smartcare_') || k.startsWith('smartcare-'))
+                .forEach(k => localStorage.removeItem(k));
+        }
+
+        window.location.reload();
     });
 
-    // Logout
-    document.getElementById('qsLogout').addEventListener('click', () => {
+    // Logout — signs out of the real (Supabase) session. Removing only the
+    // legacy smartcare_local_auth key left the actual session active, so
+    // "Logout" silently didn't log out.
+    document.getElementById('qsLogout').addEventListener('click', async () => {
+        if (window.SmartCareCloud) {
+            try { await SmartCareCloud.signOut(); } catch (e) { /* offline or not configured */ }
+        }
         localStorage.removeItem('smartcare_local_auth');
         window.location.replace('pages/login.html');
     });
