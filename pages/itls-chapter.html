@@ -69,6 +69,8 @@
     <link rel="stylesheet" href="../fonts/fonts.css">
     
     <link rel="stylesheet" href="../styles.css">
+    <script src="../src/theme.js"></script>
+    <script>SmartTheme.init();</script>
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#EA580C">
     <link rel="apple-touch-icon" href="../icons/icon.png">
@@ -105,34 +107,14 @@
 
 <footer>
     <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="about.html">About & Disclaimer</a> · Intended for educational and clinical revision purposes.</div>
+    <div><a href="about.html">About & Disclaimer</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Intended for educational and clinical revision purposes.</div>
 </footer>
 
 <script>
     (function() {
-        // Theme initialization and toggle
+        // Theme initialization and toggle (src/theme.js — window.SmartTheme)
         const themeBtn = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const themes = ['dark', 'amoled', 'light', 'sepia', 'forest'];
-        
-        function initTheme() {
-            const saved = localStorage.getItem('theme') || 'dark';
-            html.setAttribute('data-theme', saved);
-        }
-
-        function nextTheme() {
-            const current = html.getAttribute('data-theme') || 'dark';
-            const currentIndex = themes.indexOf(current);
-            const nextIndex = (currentIndex + 1) % themes.length;
-            const next = themes[nextIndex];
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        }
-
-        if (themeBtn) {
-            themeBtn.addEventListener('click', nextTheme);
-        }
-        initTheme();
+        if (themeBtn) themeBtn.addEventListener('click', () => SmartTheme.next());
 
         // Parse query params to load active chapter
         const urlParams = new URLSearchParams(window.location.search);

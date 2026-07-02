@@ -76,6 +76,8 @@
     <link rel="preload" href="/SmartCare/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/SmartCare/fonts/fonts.css">
     <link rel="stylesheet" href="/SmartCare/styles.css">
+    <script src="/SmartCare/src/theme.js"></script>
+    <script>SmartTheme.init();</script>
     <link rel="manifest" href="/SmartCare/manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="/SmartCare/icons/icon.png">
@@ -618,7 +620,7 @@
 
 <footer>
     <div>Created & Maintained by Soliman Anas</div>
-    <div><a href="/SmartCare/pages/about.html">About &amp; Disclaimer</a> · SmartCare is intended for educational and revision purposes.</div>
+    <div><a href="/SmartCare/pages/about.html">About &amp; Disclaimer</a> · <a href="/SmartCare/pages/privacy.html">Privacy</a> · <a href="/SmartCare/pages/terms.html">Terms</a> · SmartCare is intended for educational and revision purposes.</div>
 </footer>
 
 <script>
@@ -640,23 +642,9 @@
     const homeBtn = document.getElementById('homeBtn');
     if (homeBtn) homeBtn.addEventListener('click', () => window.location.href = '/SmartCare/');
 
-    // Theme toggle
+    // Theme toggle (src/theme.js — window.SmartTheme)
     const themeBtn = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const themes = ['dark', 'light', 'sepia', 'forest'];
-
-    function initTheme() {
-        html.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
-    }
-
-    function nextTheme() {
-        const current = html.getAttribute('data-theme') || 'dark';
-        html.setAttribute('data-theme', themes[(themes.indexOf(current) + 1) % themes.length]);
-        localStorage.setItem('theme', html.getAttribute('data-theme'));
-    }
-
-    if (themeBtn) themeBtn.addEventListener('click', nextTheme);
-    initTheme();
+    if (themeBtn) themeBtn.addEventListener('click', () => SmartTheme.next());
 })();
 </script>
 

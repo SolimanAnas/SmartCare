@@ -76,6 +76,9 @@
     <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="src/theme.js"></script>
+    <script>SmartTheme.init();</script>
+    <script src="src/render-state.js"></script>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
@@ -651,7 +654,7 @@
 
 <footer>
     <div>Created & Maintained by Soliman Anas</div>
-    <div><a href="pages/about.html">About &amp; Disclaimer</a> · SmartCare is intended for educational and revision purposes.</div>
+    <div><a href="pages/about.html">About &amp; Disclaimer</a> · <a href="pages/privacy.html">Privacy</a> · <a href="pages/terms.html">Terms</a> · SmartCare is intended for educational and revision purposes.</div>
 </footer>
 
 <button class="float-btn hidden" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-up"/></svg></button>
@@ -813,16 +816,12 @@
     });
 
     // ══════════════════════════════════════════════════════════
-    //  THEME SYSTEM
+    //  THEME SYSTEM (src/theme.js — window.SmartTheme is the source of truth)
     // ══════════════════════════════════════════════════════════
     const themeBtn = document.getElementById('themeToggle');
     const html     = document.documentElement;
-    const themes   = ['dark', 'amoled', 'light', 'sepia', 'forest'];
 
-    function setTheme(theme) {
-        if (!themes.includes(theme)) theme = 'dark';
-        html.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+    function syncThemeUI(theme) {
         document.querySelectorAll('.toggle-btn[id^="toggle"]').forEach(b => b.classList.remove('active'));
         const activeBtn = document.getElementById('toggle' + theme.charAt(0).toUpperCase() + theme.slice(1));
         if (activeBtn) activeBtn.classList.add('active');
@@ -830,17 +829,14 @@
         if (amoledBadge) amoledBadge.style.display = theme === 'amoled' ? 'inline-flex' : 'none';
     }
 
-    themeBtn.addEventListener('click', function() {
-        const cur = html.getAttribute('data-theme') || 'dark';
-        setTheme(themes[(themes.indexOf(cur) + 1) % themes.length]);
-    });
+    themeBtn.addEventListener('click', () => syncThemeUI(SmartTheme.next()));
 
-    setTheme(localStorage.getItem('theme') || 'dark');
-    document.getElementById('toggleDark').addEventListener('click',   () => setTheme('dark'));
-    document.getElementById('toggleAmoled').addEventListener('click', () => setTheme('amoled'));
-    document.getElementById('toggleLight').addEventListener('click',  () => setTheme('light'));
-    document.getElementById('toggleSepia').addEventListener('click',  () => setTheme('sepia'));
-    document.getElementById('toggleForest').addEventListener('click', () => setTheme('forest'));
+    syncThemeUI(html.getAttribute('data-theme') || 'dark');
+    document.getElementById('toggleDark').addEventListener('click',   () => syncThemeUI(SmartTheme.set('dark')));
+    document.getElementById('toggleAmoled').addEventListener('click', () => syncThemeUI(SmartTheme.set('amoled')));
+    document.getElementById('toggleLight').addEventListener('click',  () => syncThemeUI(SmartTheme.set('light')));
+    document.getElementById('toggleSepia').addEventListener('click',  () => syncThemeUI(SmartTheme.set('sepia')));
+    document.getElementById('toggleForest').addEventListener('click', () => syncThemeUI(SmartTheme.set('forest')));
 
     // ══════════════════════════════════════════════════════════
     //  DRAWER
@@ -1544,9 +1540,7 @@
                     </div>
                     ${examStats.length > 1 ? `
                     <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#trending-up"/></svg> Progress Chart</h3>
-                    <div class="stats-chart-container">
-                        <canvas id="progress-chart"></canvas>
-                    </div>
+                    <div class="stats-chart-container" id="statsChartContainer"></div>
                     ` : ''}
                     <h3>Recent Exams</h3>
                     <table class="stats-table">
@@ -1561,10 +1555,28 @@
 
         // Render chart if data exists
         if (examStats.length > 1) {
-            loadChartJs()
-                .then(() => setTimeout(() => renderProgressChart(chartLabels, chartData, chartColors), 100))
-                .catch(err => console.warn('[SmartCare] Chart.js failed to load:', err));
+            loadProgressChart(chartLabels, chartData, chartColors);
         }
+    }
+
+    function loadProgressChart(chartLabels, chartData, chartColors) {
+        const container = document.getElementById('statsChartContainer');
+        if (!container) return;
+        renderState(container, 'loading', { lines: 1 });
+        loadChartJs()
+            .then(() => {
+                container.innerHTML = '<canvas id="progress-chart"></canvas>';
+                setTimeout(() => renderProgressChart(chartLabels, chartData, chartColors), 100);
+            })
+            .catch(err => {
+                console.warn('[SmartCare] Chart.js failed to load:', err);
+                renderState(container, 'error', {
+                    title: "Couldn't load the chart",
+                    message: 'Check your connection and try again.',
+                    iconHref: 'icons/sprite.svg#triangle-alert',
+                    onRetry: () => loadProgressChart(chartLabels, chartData, chartColors),
+                });
+            });
     }
 
     // Pinned to an exact version (was floating "latest") so this can never change

@@ -69,6 +69,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="../src/theme.js"></script>
+    <script>SmartTheme.init();</script>
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#0891b2">
     <link rel="apple-touch-icon" href="../icons/icon.png">
@@ -1472,7 +1474,7 @@
 
 <footer>
     <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="about.html">About &amp; Disclaimer</a></div>
+    <div><a href="about.html">About &amp; Disclaimer</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
 </footer>
 
 <button class="float-btn" id="scrollToTopBtn" title="Go to top"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-up"/></svg></button>
@@ -1908,15 +1910,11 @@
         document.getElementById('drawerOverlay').classList.remove('active');
     });
 
-    // ── Theme System ──
+    // ── Theme System (src/theme.js — window.SmartTheme is the source of truth) ──
     const themeBtn = document.getElementById('themeToggle');
     const html     = document.documentElement;
-    const themes   = ['dark', 'amoled', 'light', 'sepia', 'forest'];
 
-    function setTheme(theme) {
-        if (!themes.includes(theme)) theme = 'dark';
-        html.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+    function syncThemeUI(theme) {
         document.querySelectorAll('.toggle-btn[id^="toggle"]').forEach(b => b.classList.remove('active'));
         const activeBtn = document.getElementById('toggle' + theme.charAt(0).toUpperCase() + theme.slice(1));
         if (activeBtn) activeBtn.classList.add('active');
@@ -1924,17 +1922,14 @@
         if (amoledBadge) amoledBadge.style.display = theme === 'amoled' ? 'inline-flex' : 'none';
     }
 
-    themeBtn.addEventListener('click', function() {
-        const cur = html.getAttribute('data-theme') || 'dark';
-        setTheme(themes[(themes.indexOf(cur) + 1) % themes.length]);
-    });
+    themeBtn.addEventListener('click', () => syncThemeUI(SmartTheme.next()));
 
-    setTheme(localStorage.getItem('theme') || 'dark');
-    document.getElementById('toggleDark').addEventListener('click',   () => setTheme('dark'));
-    document.getElementById('toggleAmoled').addEventListener('click', () => setTheme('amoled'));
-    document.getElementById('toggleLight').addEventListener('click',  () => setTheme('light'));
-    document.getElementById('toggleSepia').addEventListener('click',  () => setTheme('sepia'));
-    document.getElementById('toggleForest').addEventListener('click', () => setTheme('forest'));
+    syncThemeUI(html.getAttribute('data-theme') || 'dark');
+    document.getElementById('toggleDark').addEventListener('click',   () => syncThemeUI(SmartTheme.set('dark')));
+    document.getElementById('toggleAmoled').addEventListener('click', () => syncThemeUI(SmartTheme.set('amoled')));
+    document.getElementById('toggleLight').addEventListener('click',  () => syncThemeUI(SmartTheme.set('light')));
+    document.getElementById('toggleSepia').addEventListener('click',  () => syncThemeUI(SmartTheme.set('sepia')));
+    document.getElementById('toggleForest').addEventListener('click', () => syncThemeUI(SmartTheme.set('forest')));
 
     // ── Drawer ──
     const drawer  = document.getElementById('notificationDrawer');

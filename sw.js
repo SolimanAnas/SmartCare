@@ -4,7 +4,7 @@
 //  for app-shell assets, network-first for /api/
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v3.2';           // v3.2: Performance — stale-while-revalidate for app-shell assets, update toast, algorithms cache-first, faster network-first timeout
+const CACHE_VERSION = 'smartcare-v3.3';           // v3.3: UI/UX — shared theme + loading/empty/error state modules, tablet two-pane chapter layout, footer link fixes
 const CACHE_TIMEOUT = 2500;
 
 // ── Files cached immediately on install ─────────────────────
@@ -19,6 +19,8 @@ const PRE_CACHE = [
   'pages/terms.html',
   'styles.css',
   'app.js',
+  'src/theme.js',
+  'src/render-state.js',
   'manifest.json',
   'icons/icon.png',
   'icons/sprite.svg',

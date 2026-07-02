@@ -168,6 +168,10 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .mon-info{position:absolute;top:7px;left:12px;font-family:var(--mono);font-size:.56rem;color:rgba(0,230,120,.35);z-index:3;letter-spacing:1px}
 .mon-rate{position:absolute;top:7px;right:12px;font-family:var(--mono);font-size:1rem;font-weight:500;color:rgba(0,230,120,.55);z-index:3;transition:color .3s;letter-spacing:-0.5px}
 .mon-rate.crit{color:#ef4444;animation:rFlash 1s infinite}
+.engine-err{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;background:var(--ecg-bg);color:var(--tx);z-index:5}
+.engine-err .ee-icon{font-size:1.8rem;opacity:.6}
+.engine-err span{font-size:.8rem;color:var(--mu)}
+.engine-err button{margin-top:4px;padding:8px 16px;border-radius:10px;border:1.5px solid var(--br2);background:var(--card);color:var(--tx);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer}
 @keyframes rFlash{0%,100%{opacity:1}50%{opacity:.3}}
 #ecgCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
 .monitor-wrap::before{content:'⏸ tap to pause';position:absolute;bottom:7px;left:12px;font-family:var(--mono);font-size:.55rem;font-weight:600;color:rgba(0,230,120,.4);background:rgba(0,0,0,.35);padding:2px 7px;border-radius:5px;z-index:4;opacity:0;transition:.15s;pointer-events:none}
@@ -1234,6 +1238,14 @@ document.addEventListener('keydown', e => {
 
 // ── Init ────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  if (typeof ECGEngine === 'undefined') {
+    document.querySelector('.monitor-wrap').insertAdjacentHTML('beforeend',
+      '<div class="engine-err"><div class="ee-icon">⚠️</div>' +
+      '<strong>Simulator failed to load</strong>' +
+      '<span>Check your connection and reload the page.</span>' +
+      '<button type="button" onclick="location.reload()">Reload</button></div>');
+    return;
+  }
   initCanvas();
   updateUI('nsr');
 });

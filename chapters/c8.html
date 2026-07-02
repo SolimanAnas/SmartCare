@@ -106,37 +106,17 @@
 
 <footer>
     <div>Created & Maintained by Soliman Anas · for study aid only</div>
-    <div><a href="../pages/about.html">About & Disclaimer</a> · Intended for educational and clinical revision purposes.</div>
+    <div><a href="../pages/about.html">About & Disclaimer</a> · <a href="../pages/privacy.html">Privacy</a> · <a href="../pages/terms.html">Terms</a> · Intended for educational and clinical revision purposes.</div>
 </footer>
 
 <!-- Load chapter content data first, then app.js to render it -->
 <script src="../content/c8.meta.js"></script>
+<script src="../src/theme.js"></script>
+<script src="../src/render-state.js"></script>
 <script src="../app.js"></script>
 
 <script>
     (function() {
-        const themeBtn = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const themes = ['dark', 'light', 'sepia', 'forest'];
-        
-        function initTheme() {
-            const saved = localStorage.getItem('theme') || 'dark';
-            html.setAttribute('data-theme', saved);
-        }
-
-        function nextTheme() {
-            const current = html.getAttribute('data-theme') || 'dark';
-            const currentIndex = themes.indexOf(current);
-            const nextIndex = (currentIndex + 1) % themes.length;
-            const next = themes[nextIndex];
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        }
-
-        if (themeBtn) {
-            themeBtn.addEventListener('click', nextTheme);
-        }
-        initTheme();
 
         // Home button
         document.getElementById('homeBtn').addEventListener('click', () => {
@@ -157,15 +137,5 @@
     })();
 </script>
 
-<!-- Service Worker Registration -->
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('../sw.js')
-                .then(reg => console.log('PWA Ready!', reg))
-                .catch(err => console.log('PWA Failed', err));
-        });
-    }
-</script>
 </body>
 </html>

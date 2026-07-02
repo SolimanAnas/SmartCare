@@ -756,7 +756,23 @@ Performance, privacy, offline robustness.
 
 ## 1. Give privacy.html and terms.html a header/back navigation
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Added the standard app `<header>` (back arrow + title + theme
+> toggle + index link, copied from `about.html`'s pattern) and a
+> `footerBackBtn` + `<footer>` to both pages. Added the theme-init snippet so
+> both respect the saved theme (previously neither page even set
+> `data-theme`, so they ignored it entirely) and self-hosted font links
+> (previously missing — both pages were silently falling back to a system
+> font). The pre-existing `.privacy-hero`/`.policy-section` heading was `<h1>`
+> and now collides with the new header's `<h1>`; retargeted it to `<h2>` so
+> each page has exactly one `<h1>`. `terms.html` had zero working styles
+> (its `.legal-page`/`.policy-section` classes were only ever defined inside
+> `privacy.html`'s own scoped `<style>` block, so it rendered as unstyled
+> browser-default text) — brought over the matching card styling so it's
+> visually consistent with `privacy.html` rather than fixing the nav only on
+> top of a broken page. Verified via Playwright: header/back-nav/theme-cycle
+> work on both, exactly one `<h1>` each, zero console errors.
 
 ### Why this matters
 Both legal pages have **zero** `<header>` and no back link. In the installed PWA
@@ -792,7 +808,65 @@ UX (dead-end removal), store review (reviewers hit legal pages).
 
 ## 2. Unify theme switching — one shared module, consistent theme list
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `src/theme.js` (`window.SmartTheme = { init, next, set, THEMES }`)
+> is the single source of truth for the canonical 5-theme list
+> (`dark, amoled, light, sepia, forest`). Replaced every duplicated
+> `const themes = [...]` block across 22 files (`index.html`, `404.html`,
+> all 13 `chapters/*.html`, `courses/itls/index.html`, `pages/about.html`,
+> `pages/courses.html`, `pages/ITLS-course.html`, `pages/ITLS-reviewer.html`,
+> `pages/itls-chapter.html`, `pages/privacy.html`, `pages/terms.html`) —
+> `grep -rl "const themes\s*=\s*\[" | grep -v src/theme.js` now returns
+> nothing. Pages with a discrete theme-picker UI (`index.html`,
+> `pages/courses.html`) keep their own `syncThemeUI()` for the
+> active-button-highlighting/AMOLED-badge behavior, but now call
+> `SmartTheme.set()`/`.next()` instead of re-declaring the list.
+>
+> **Found and fixed while doing this (same root cause, same files touched):**
+> app.js had a second, entirely dead `initChapterPage()` function (140
+> lines) — never called by any HTML file — that happened to contain the
+> *only* copy of the service-worker registration + update-toast logic for
+> chapter pages, plus `recordLastVisited()` and `initBatteryIndicator()`
+> calls. This meant **all 13 chapter pages never actually registered the
+> service worker** (offline support silently broken) despite Performance
+> §2 documenting it as working — that item's own testing covered
+> `index.html`/`pages/courses.html`/`404.html` but not a real chapter page,
+> and this session's app.js edit unknowingly landed inside the dead
+> function. Deleted the dead function, moved the SW-registration/toast
+> logic and `recordLastVisited()` into the live `DOMContentLoaded`
+> bootstrap. `initBatteryIndicator()` was deleted outright — its target
+> `#batteryIndicator` element doesn't exist in any real chapter header
+> (only in the dead function's own unused HTML template), so there was
+> nothing to wire it back up to. Each chapter page also had its own
+> redundant, toast-less service-worker registration `<script>` block
+> (harmless — registering the same SW twice is idempotent — but dead
+> weight); removed all 13.
+>
+> **Scope call:** left the "exam review" pages (`acls.html`, `bdls.html`,
+> `bls.html`, `ecg.html`, `empact.html`, `itls.html`, `medical.html`,
+> `pals.html`, `pepp.html`, `ppet.html`) untouched — they use a
+> fundamentally different theme system (a discrete `setTheme('dark'|
+> 'light'|'sepia'|'green')` picker with individual buttons, a *different*
+> 4-theme set with `green` instead of `forest`/`amoled`, no cycle-toggle
+> button) rather than the cycle-through-a-shared-list pattern this item is
+> about unifying. Forcing them into `SmartTheme` would mean either
+> redesigning their picker UI or extending the shared module to support a
+> second, incompatible theme set — flagged as a separate follow-up rather
+> than conflated with this fix. `pages/ecg-test.html` has no active theme
+> switcher at all (nothing to unify).
+>
+> Added `src/theme.js` to `sw.js`'s `PRE_CACHE`. Verified via Playwright
+> across all 22 converted pages: `window.SmartTheme` present, the toggle
+> button correctly cycles through the exact 5-theme order, and (for the
+> picker-UI pages) the active-button-highlight/AMOLED-badge behavior still
+> works. `pages/courses.html` and `index.html` needed a longer settle time
+> in this sandbox specifically — both hit a page reload while a
+> render-blocking Google Fonts `<link>` hangs for ~13s against this
+> sandbox's blocked-host network policy before failing; confirmed via
+> `git stash` that this reload happens on the pre-existing, unmodified code
+> too, so it's a sandbox-network artifact rather than a regression — theme
+> cycling works correctly once that settles.
 
 ### Why this matters
 `const themes = [...]` is re-declared in **17+ files** with *different* lists:
@@ -829,7 +903,64 @@ UX consistency, maintainability (removes ~17 duplicated blocks).
 
 ## 3. Consistent loading / empty / error states across fetch-driven views
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New shared module `src/render-state.js`
+> (`window.renderState(container, 'loading'|'empty'|'error', options)`) plus
+> `.skeleton-line`/`.state-block` shimmer CSS appended to `styles.css`. Wired
+> into every fetch/render path that could previously go blank on failure:
+> - **Chapter pages** (`app.js`): `switchSection`, the `popstate` handler, and
+>   `bootApp`'s deep-link branch now show a skeleton while
+>   `utils.ensureSectionData()` lazy-loads a section's JSON. That function now
+>   marks `section._loadFailed = true` when both the primary fetch and the
+>   full-chapter-bundle fallback fail; a new `render.loadFailed()` check (with
+>   retry via `switchSection`) runs first in `render.summary`,
+>   `render.flashcards`, `render.quizSetup`, and `render.criticalGame` so a
+>   dead network shows a real error+retry instead of a silent "No X
+>   available" empty state. All 13 `chapters/*.html` now load
+>   `src/render-state.js`.
+> - **`index.html`**: the stats modal's Chart.js load (already deferred per
+>   Performance §3) now shows a loading skeleton in the chart area and, on
+>   failure, an error state with a retry button that re-attempts
+>   `loadChartJs()` — previously a failed CDN load just `console.warn`'d and
+>   left the modal chart area blank.
+> - **`pages/drug-calculator.html`**: this page is a self-contained design
+>   system (no `styles.css`, no shared header/theme — correctly excluded from
+>   §1/§2 for the same reason), so it got its own local equivalents instead of
+>   forcing in the shared classes: a `.drug-skel` shimmer row style and
+>   `showListSkeleton()` (8 skeleton rows in `#drugList` while
+>   `drug-data.json` loads), plus the existing `boot()` override's `catch`
+>   now renders a real error (with message + `.de-retry` button calling
+>   `boot()` again) into `#drugList` using the page's own `.dose-empty`/
+>   `.de-icon` convention, instead of leaving the list empty with only the
+>   dose panel showing a raw `e.message`.
+> - **`pages/ecg.html`**: added a defensive `typeof ECGEngine === 'undefined'`
+>   check in the `load` handler — previously if `ecg-engine.js` failed to
+>   load, `initCanvas()` would throw on `ECGEngine.createState()` with no
+>   user-facing indication anything was wrong. Now shows an `.engine-err`
+>   overlay in the monitor area with a reload button.
+> - **`pages/admin.html`**: `renderErrorState()` already existed (Admin
+>   side-task) but had no way to retry short of a full page reload; added a
+>   `.btn-primary` "Retry" button that re-calls `fetchUsers()`.
+>
+> **Scope call:** `pages/courses.html` was listed in the roadmap's "files to
+> modify" but investigation showed it isn't fetch-driven — its course list is
+> a static in-file array, not a network call — so there was nothing to wire
+> up; left unchanged.
+>
+> Verified via Playwright: skeleton renders within 50ms of a section-tab
+> click under an injected 1-2s network delay; simulated total-failure
+> (primary + fallback fetch both rejected) renders the error state with a
+> working retry button that re-fetches and recovers; drug-calculator's list
+> skeleton/error paths and ecg.html's defensive check exercised directly.
+> While testing the skeleton wiring, found and fixed a pre-existing bug: all
+> dynamically-rendered icons in `app.js` (`icons/sprite.svg#...`) resolved
+> relative to the chapter page's own directory (`chapters/icons/sprite.svg`,
+> a 404) instead of the site root — every icon rendered by JS on every
+> chapter page (bottom nav, back-home button, coming-soon screen, and now
+> the new error-state icon) was invisible. Fixed all 33 occurrences to
+> `../icons/sprite.svg#...`; confirmed fixed via isolated single-icon test
+> pages plus a full pass over a real chapter page.
 
 ### Why this matters
 States are inconsistent: `admin.html` has a spinner row; index search has an empty
@@ -865,7 +996,45 @@ UX polish, perceived reliability, fewer "it's blank" bug reports.
 
 ## 4. Tablet layout pass (two-pane study mode)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `@media (min-width: 900px)` block in `styles.css`: `main`
+> widens to 920px (was a flat 800px at every width, including 13" tablets);
+> `.menu-grid` (home page category grids) goes 2-column; and chapter pages
+> get a real two-pane layout — `.chapter-layout { display:grid;
+> grid-template-columns: 220px 1fr; }` turns the horizontal section-tab pill
+> bar into a sticky vertical sidebar (`.chapter-layout .section-tabs {
+> flex-direction: column; position: sticky; }`) next to the content pane,
+> instead of stacking tabs above content.
+>
+> The markup side required more than pure CSS: the section tabs and the rest
+> of a view's content weren't consistently siblings under one parent across
+> the 5 `render.*` functions that emit them (`summary` wrapped everything in
+> `.section.active`; `_renderFlashcard`/`quizSetup`/`quizGame`/
+> `_renderCriticalQuestion` had no wrapper at all — tabs and content were
+> direct children of `#mainContent`). Standardized all 5 to
+> `<div class="chapter-layout">${tabs}<div class="section-body">...rest...
+> </div></div>` so the grid has a consistent two-item target. Click handling
+> is fully delegated at `document` level via `.closest()` (app.js:1055), so
+> adding wrapper divs didn't touch any event-binding logic. Single-section
+> chapters (e.g. `c0`) render `tabs` as `''`, so the wrapper conditionally
+> omits the `chapter-layout` class (`${tabs ? 'chapter-layout' : ''}`) — such
+> chapters keep the plain block layout instead of squeezing content into the
+> narrow sidebar column that would otherwise appear with no tabs to fill it.
+> `renderBottomNav()`'s output stays outside `.chapter-layout` (it's a fixed
+> bottom bar, not part of the two-pane content).
+>
+> **Scope call:** did not re-take the `tab*.png` manifest screenshots — that
+> requires a real tablet/emulator capture step outside what can be produced
+> here; flagging as a follow-up for whoever next updates the store listing.
+>
+> Verified via Playwright at a 1024×900 viewport: `.chapter-layout` renders
+> as `display:grid` with sticky vertical tabs on `summary`/`flashcards`/
+> `quiz`/`critical` views, section-tab clicks still switch sections
+> correctly, `index.html`'s `.menu-grid` sections go 2-column, and the
+> single-section `c0.html` correctly gets no grid wrapper. At a 390px mobile
+> viewport `.chapter-layout` correctly falls back to `display:block` (no
+> regression). Zero console errors across all checks.
 
 ### Why this matters
 The manifest ships 8 tablet screenshots, but layouts are single-column with a
@@ -902,7 +1071,43 @@ UX on tablets, store-listing honesty, session length.
 
 ## 5. Fix the self-referencing footer link and standardize footers
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `pages/about.html`'s footer linked "Legal & Disclaimer" to
+> `about.html` — itself, a dead click while already on that page. Replaced
+> with `<a href="privacy.html">Privacy Policy</a> · <a
+> href="terms.html">Terms of Use</a>`, matching the no-self-link convention
+> `privacy.html`/`terms.html` already established in §1 (each links to the
+> *other* two legal pages, never itself).
+>
+> Every other footered page only linked to About, with no way to reach
+> Privacy/Terms short of navigating through About first — added `· <a
+> href="...privacy.html">Privacy</a> · <a href="...terms.html">Terms</a>`
+> after the existing About link, preserving each page's existing wording and
+> trailing disclaimer text otherwise. Covered every footer in the repo:
+> `404.html`, `index.html`, `pages/ITLS-course.html`,
+> `pages/ITLS-reviewer.html`, `pages/courses.html`, `pages/itls-chapter.html`,
+> `pages/ECG-study.html`, and all 13 `chapters/*.html` (their footer markup
+> was byte-identical across all 13, confirmed via checksum, so this was one
+> mechanical, low-risk change applied uniformly). Relative path depth
+> respected per page (`privacy.html` from `pages/`, `../pages/privacy.html`
+> from `chapters/`, `/SmartCare/pages/privacy.html` from the root-served
+> `404.html`).
+>
+> **Scope call:** did not touch the "exam review" pages (`acls.html`,
+> `bdls.html`, `bls.html`, `ecg.html`, `empact.html`, `itls.html`,
+> `medical.html`, `pals.html`, `pepp.html`, `ppet.html`) — none of them have
+> a `<footer>` at all, so there was nothing to standardize. Did not pursue
+> the roadmap's `vX.Y.Z` version-string suggestion — that's Code Quality §5
+> (single source of truth for the version string), a separate, unstarted
+> item; bolting an ad-hoc version string into footers now would just create
+> another place to update when that item lands.
+>
+> Verified: grepped every footer in the repo for any `href` whose basename
+> matches its own page's filename — zero self-references remain. Resolved
+> every new `href` against the filesystem relative to each file's own
+> directory (handling the `/SmartCare/`-absolute case for `404.html`
+> separately) — all point to real files.
 
 ### Why this matters
 `about.html`'s footer links "Legal & Disclaimer" → `about.html` (itself). Footers
