@@ -175,7 +175,47 @@ function initChapterPage() {
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('../sw.js').catch(() => {});
+            navigator.serviceWorker.register('../sw.js')
+                .then((reg) => initSWUpdateToast(reg))
+                .catch(() => {});
+        });
+
+        let swRefreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (swRefreshing) return;
+            swRefreshing = true;
+            window.location.reload();
+        });
+    }
+
+    function initSWUpdateToast(reg) {
+        function showToast(worker) {
+            if (document.getElementById('sw-update-toast')) return;
+            const toast = document.createElement('div');
+            toast.id = 'sw-update-toast';
+            toast.setAttribute('role', 'status');
+            toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
+                'background:#1e293b;color:#fff;padding:12px 16px;border-radius:10px;' +
+                'box-shadow:0 4px 20px rgba(0,0,0,.35);z-index:99999;display:flex;' +
+                'align-items:center;gap:12px;font:14px/1.4 system-ui,-apple-system,sans-serif;';
+            toast.innerHTML = '<span>Update ready</span>' +
+                '<button id="sw-update-btn" style="background:#3b82f6;color:#fff;border:none;' +
+                'padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit;font-weight:600;">Refresh</button>';
+            document.body.appendChild(toast);
+            document.getElementById('sw-update-btn').addEventListener('click', () => {
+                worker.postMessage({ type: 'SKIP_WAITING' });
+                toast.remove();
+            });
+        }
+        if (reg.waiting) showToast(reg.waiting);
+        reg.addEventListener('updatefound', () => {
+            const newWorker = reg.installing;
+            if (!newWorker) return;
+            newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    showToast(newWorker);
+                }
+            });
         });
     }
 
@@ -252,14 +292,50 @@ const utils = {
             return c;  
         });
     },  
-    getSection: (id) => {  
-        if (!state.sections) return null;  
-        return state.sections.find(s => s.id === id);  
-    },  
-    getSectionIndex: (id) => {  
-        if (!state.sections) return -1;  
-        return state.sections.findIndex(s => s.id === id);  
-    },  
+    getSection: (id) => {
+        if (!state.sections) return null;
+        return state.sections.find(s => s.id === id);
+    },
+    getSectionIndex: (id) => {
+        if (!state.sections) return -1;
+        return state.sections.findIndex(s => s.id === id);
+    },
+    // Split chapter bundles (content/cN.meta.js) only carry {id, shortTitle}
+    // per section — fetch the full section JSON on first use and cache it by
+    // mutating the section object in place (state.sections holds the same
+    // references, so repeat visits are free). Flat/unsplit chapters already
+    // have `summary` present and skip the fetch entirely.
+    ensureSectionData: (section) => {
+        if (!section) return Promise.resolve(section);
+        if (section.summary !== undefined) return Promise.resolve(section);
+        if (!chapterData || !chapterData.id) return Promise.resolve(section);
+        return fetch(`../content/${chapterData.id}/${section.id}.json`)
+            .then((r) => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+            .then((full) => { Object.assign(section, full); return section; })
+            .catch(() => utils.loadFullChapterFallback()
+                .then((fullData) => {
+                    const full = fullData && fullData.sections
+                        ? fullData.sections.find((s) => s.id === section.id) : null;
+                    if (full) Object.assign(section, full);
+                    return section;
+                })
+                .catch(() => section));
+    },
+    // Last-resort fallback: dynamically load the original, unsplit
+    // content/cN.js (still shipped as the offline source of truth) if a
+    // per-section fetch fails — e.g. offline and that section wasn't cached.
+    loadFullChapterFallback: () => {
+        if (utils._fullChapterFallbackPromise) return utils._fullChapterFallbackPromise;
+        utils._fullChapterFallbackPromise = new Promise((resolve, reject) => {
+            if (!chapterData || !chapterData.id) return reject(new Error('no chapter id'));
+            const script = document.createElement('script');
+            script.src = `../content/${chapterData.id}.js`;
+            script.onload = () => resolve(window.CPG_DATA);
+            script.onerror = () => reject(new Error('Fallback chapter bundle failed to load'));
+            document.head.appendChild(script);
+        });
+        return utils._fullChapterFallbackPromise;
+    },
     getQueryParam: (param) => {  
         const urlParams = new URLSearchParams(window.location.search);  
         return urlParams.get(param);  
@@ -476,44 +552,46 @@ function initFooterAwareNav() {
     nav.dataset.footerInit = 'true';
 }
 
-// ---------- SWITCH SECTION ----------  
-function switchSection(sectionId, updateUrl = true) {  
-    const section = utils.getSection(sectionId);  
-    if (!section) return false;  
-      
-    state.activeSectionId = sectionId;  
-    state.activeSection = section;  
-      
-    state.quizData = [];  
-    state.mistakes = [];  
-    state.qIndex = 0;  
-    state.score = 0;  
-    state.flashData = section.flashcards || [];  
-    state.fIndex = 0;  
-    state.criticalData = section.critical || [];  
-    state.criticalIndex = 0;  
-    state.criticalScore = 0;  
+// ---------- SWITCH SECTION ----------
+async function switchSection(sectionId, updateUrl = true) {
+    const section = utils.getSection(sectionId);
+    if (!section) return false;
 
-    if (updateUrl) {  
-        const url = new URL(window.location.href);  
-        url.searchParams.set('section', sectionId);  
+    state.activeSectionId = sectionId;
+    state.activeSection = section;
+
+    state.quizData = [];
+    state.mistakes = [];
+    state.qIndex = 0;
+    state.score = 0;
+    state.fIndex = 0;
+    state.criticalIndex = 0;
+    state.criticalScore = 0;
+
+    if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('section', sectionId);
         // FIX #1: use replaceState instead of pushState
-        window.history.replaceState({}, '', url);  
-    }  
+        window.history.replaceState({}, '', url);
+    }
 
-    const currentView = utils.getQueryParam('view') || 'summary';  
-    if (currentView === 'summary') render.summary();  
-    else if (currentView === 'flashcards') render.flashcards();  
-    else if (currentView === 'quiz') render.quizSetup();  
-    else if (currentView === 'critical') render.criticalGame();  
-    else render.summary();  
+    await utils.ensureSectionData(section);
+    state.flashData = section.flashcards || [];
+    state.criticalData = section.critical || [];
+
+    const currentView = utils.getQueryParam('view') || 'summary';
+    if (currentView === 'summary') render.summary();
+    else if (currentView === 'flashcards') render.flashcards();
+    else if (currentView === 'quiz') render.quizSetup();
+    else if (currentView === 'critical') render.criticalGame();
+    else render.summary();
 
     initBottomNav();
     initFooterAwareNav();
     handleScroll();
-      
-    return true;  
-}  
+
+    return true;
+}
 
 // ============================================================
 // SAFE CONTENT SETTER (replaces innerHTML override)
@@ -1173,7 +1251,7 @@ document.addEventListener('click', function(e) {
 });
 
 // FIX #5: safer popstate handler
-window.addEventListener('popstate', function () {
+window.addEventListener('popstate', async function () {
     const sectionId = utils.getQueryParam('section');
     const view = utils.getQueryParam('view') || 'summary';
 
@@ -1188,6 +1266,10 @@ window.addEventListener('popstate', function () {
         state.activeSectionId = state.sections[0].id;
         state.activeSection = state.sections[0];
     }
+
+    await utils.ensureSectionData(state.activeSection);
+    state.flashData = (state.activeSection && state.activeSection.flashcards) || [];
+    state.criticalData = (state.activeSection && state.activeSection.critical) || [];
 
     if (view === 'flashcards') render.flashcards();
     else if (view === 'quiz') render.quizSetup();
@@ -1256,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', function() {
     refreshStatsBadge();
 
     // ── Chapter page boot ───────────────────────────────────
-    function bootApp() {
+    async function bootApp() {
         if (isChapterMissing) {
             renderComingSoon();
             return;
@@ -1270,6 +1352,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (section) {
                 state.activeSectionId = urlSection;
                 state.activeSection   = section;
+                await utils.ensureSectionData(section);
                 state.flashData       = section.flashcards || [];
                 state.criticalData    = section.critical   || [];
                 if      (urlView === 'flashcards') render.flashcards();

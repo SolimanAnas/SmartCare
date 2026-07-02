@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://smartcare-learning.net/pages/aha">
     <meta property="og:title" content="SmartCare · AHA Algorithms">
     <meta property="og:description" content="AHA algorithm reference — American Heart Association ACLS, BLS, and PALS algorithms for emergency cardiovascular care.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -24,7 +24,7 @@
     <meta name="twitter:url" content="https://smartcare-learning.net/pages/aha">
     <meta name="twitter:title" content="SmartCare · AHA Algorithms">
     <meta name="twitter:description" content="AHA algorithm reference — American Heart Association ACLS, BLS, and PALS algorithms for emergency cardiovascular care.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
@@ -45,7 +45,7 @@
   "name": "SmartCare · AHA Algorithms",
   "url": "https://smartcare-learning.net/pages/aha",
   "description": "AHA algorithm reference — American Heart Association ACLS, BLS, and PALS algorithms for emergency cardiovascular care.",
-  "image": "https://smartcare-learning.net/images/og.png",
+  "image": "https://smartcare-learning.net/images/og.jpg",
   "author": {
     "@type": "Person",
     "name": "Soliman Anas"
@@ -70,8 +70,8 @@
     document.documentElement.setAttribute('data-theme',t);
   })();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
 /* ═══════════════════════════════════════════════════════
    SmartCare AHA Algorithms  —  App Design System
@@ -404,10 +404,10 @@ const CATEGORIES = [
     badgeColor:'#86efac',
     dot:'#22c55e',
     algos:[
-      { file:'BLS-Adult-Healthcare.png',       title:'Adult BLS',                   sub:'Healthcare Provider Algorithm' },
-      { file:'BLS-Adult-FBAO.png',             title:'Adult FBAO',                  sub:'Foreign Body Airway Obstruction' },
-      { file:'Pediatric-BLS-Single-Rescuer.png',title:'Pediatric BLS',              sub:'Single Rescuer Algorithm' },
-      { file:'BLS-Termination-of-Resusc.png',  title:'Termination of Resuscitation',sub:'BLS — Out-of-Hospital' },
+      { file:'BLS-Adult-Healthcare.webp',       title:'Adult BLS',                   sub:'Healthcare Provider Algorithm' },
+      { file:'BLS-Adult-FBAO.webp',             title:'Adult FBAO',                  sub:'Foreign Body Airway Obstruction' },
+      { file:'Pediatric-BLS-Single-Rescuer.webp',title:'Pediatric BLS',              sub:'Single Rescuer Algorithm' },
+      { file:'BLS-Termination-of-Resusc.webp',  title:'Termination of Resuscitation',sub:'BLS — Out-of-Hospital' },
     ]
   },
   {
@@ -420,12 +420,12 @@ const CATEGORIES = [
     badgeColor:'#fca5a5',
     dot:'#ef4444',
     algos:[
-      { file:'ACLS-CA.png',                    title:'Cardiac Arrest',              sub:'Adult VF / pVT / Asystole / PEA' },
-      { file:'ACLS-CA-Circular.png',           title:'Cardiac Arrest (Circular)',   sub:'Systems of Care Approach' },
-      { file:'ACLS-Bradycardia.png',           title:'Bradycardia',                 sub:'Adult — With Pulse' },
-      { file:'ACLS-Tachycardia.png',           title:'Tachycardia',                 sub:'Adult — With Pulse' },
-      { file:'ACLS-Electrical-Cardioversion.png',title:'Electrical Cardioversion',  sub:'Adult Cardioversion Algorithm' },
-      { file:'ALS-Termination-of-Resusc.png',  title:'Termination of Resuscitation',sub:'ALS — Out-of-Hospital' },
+      { file:'ACLS-CA.webp',                    title:'Cardiac Arrest',              sub:'Adult VF / pVT / Asystole / PEA' },
+      { file:'ACLS-CA-Circular.webp',           title:'Cardiac Arrest (Circular)',   sub:'Systems of Care Approach' },
+      { file:'ACLS-Bradycardia.webp',           title:'Bradycardia',                 sub:'Adult — With Pulse' },
+      { file:'ACLS-Tachycardia.webp',           title:'Tachycardia',                 sub:'Adult — With Pulse' },
+      { file:'ACLS-Electrical-Cardioversion.webp',title:'Electrical Cardioversion',  sub:'Adult Cardioversion Algorithm' },
+      { file:'ALS-Termination-of-Resusc.webp',  title:'Termination of Resuscitation',sub:'ALS — Out-of-Hospital' },
     ]
   },
   {
@@ -438,10 +438,10 @@ const CATEGORIES = [
     badgeColor:'#93c5fd',
     dot:'#3b82f6',
     algos:[
-      { file:'PALS-CA.png',                    title:'Pediatric Cardiac Arrest',    sub:'PALS — VF / pVT / Asystole / PEA' },
-      { file:'PALS-Bradycardia.png',           title:'Pediatric Bradycardia',       sub:'PALS — With Pulse' },
-      { file:'PALS-Tachyarrhythmia.png',       title:'Pediatric Tachyarrhythmia',   sub:'PALS — With Pulse' },
-      { file:'Neonatal-Resuscitation.png',     title:'Neonatal Resuscitation',      sub:'Newborn Algorithm' },
+      { file:'PALS-CA.webp',                    title:'Pediatric Cardiac Arrest',    sub:'PALS — VF / pVT / Asystole / PEA' },
+      { file:'PALS-Bradycardia.webp',           title:'Pediatric Bradycardia',       sub:'PALS — With Pulse' },
+      { file:'PALS-Tachyarrhythmia.webp',       title:'Pediatric Tachyarrhythmia',   sub:'PALS — With Pulse' },
+      { file:'Neonatal-Resuscitation.webp',     title:'Neonatal Resuscitation',      sub:'Newborn Algorithm' },
     ]
   },
   {
@@ -454,9 +454,9 @@ const CATEGORIES = [
     badgeColor:'#fde047',
     dot:'#eab308',
     algos:[
-      { file:'SC-ACLS-CA-in-Pregnancy.png',    title:'Cardiac Arrest in Pregnancy', sub:'Special Circumstance — ACLS' },
-      { file:'SC-ACLS-LVAD.png',               title:'LVAD Cardiac Arrest',         sub:'Special Circumstance — ACLS' },
-      { file:'PCAC-Algorithm-ACLS-PCAC.png',   title:'Post-Cardiac Arrest Care',    sub:'PCAC — ACLS Algorithm' },
+      { file:'SC-ACLS-CA-in-Pregnancy.webp',    title:'Cardiac Arrest in Pregnancy', sub:'Special Circumstance — ACLS' },
+      { file:'SC-ACLS-LVAD.webp',               title:'LVAD Cardiac Arrest',         sub:'Special Circumstance — ACLS' },
+      { file:'PCAC-Algorithm-ACLS-PCAC.webp',   title:'Post-Cardiac Arrest Care',    sub:'PCAC — ACLS Algorithm' },
     ]
   }
 ];

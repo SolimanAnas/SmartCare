@@ -461,7 +461,28 @@ Security, maintainability, ~500 lines of dead code removed.
 
 ## 1. Compress and resize all images (39 MB images + 37 MB icons + 12 MB algorithms)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Deleted 16 confirmed-unused image files with zero code references
+> (`icons/courses/*.png` cover icons — the app already uses the much smaller
+> `icons/courses/thumb/*.png` — plus `images/featured.png`, `featured2.png`,
+> `featured22.png`, `bls.png`, `pdf.png`), removing ~35 MB with no functional
+> risk. Converted all 17 `algorithms/*.png` files to WebP (q90, visually
+> verified indistinguishable from source on the densest chart,
+> `Pediatric-BLS-Single-Rescuer`, including a full-res lightbox render check)
+> — 11.1 MB → 3.2 MB, updated all `file:'*.png'` references in `pages/aha.html`.
+> Converted `images/og.png` (1.7 MB) to `images/og.jpg` (q85, 222 KB) and
+> updated all ~45 files referencing it (`og:image`/`twitter:image`/JSON-LD)
+> across two canonical domains; the embedded QR code was pixel-checked at full
+> resolution pre/post-conversion to confirm no scan-breaking artifacts.
+> `icons/courses/thumb/*.png` (actively used, ~35–54 KB each) were already
+> reasonably optimized and left as-is. `images/screenshots/*.png` (18 files,
+> ~27 MB, referenced by `manifest.json`'s install-prompt `screenshots` array)
+> are deferred: they load only once during the PWA install flow rather than on
+> every page view, and converting them would require updating each entry's
+> `type` field with no reliable way in this environment to visually confirm
+> the browser's native install-prompt UI still renders them correctly — flagged
+> as a follow-up rather than risked in this pass.
 
 ### Why this matters
 Course icons rendered at ~100 px are shipped as 2–3 MB PNGs (`icons/courses/PEPP.png`
@@ -502,7 +523,21 @@ Performance (~80 MB → ~8 MB asset payload), offline install time, mobile data 
 
 ## 2. Smarter service-worker strategy: stale-while-revalidate for app-shell assets + update toast
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `sw.js` now routes same-origin `.js/.css/.html/.json/.svg` GETs
+> and navigations through a new `staleWhileRevalidate()` strategy (serves
+> cache instantly, refreshes in the background); `/api/` stays network-first;
+> `/algorithms/` was added to `CACHE_FIRST_PATTERNS`; `CACHE_TIMEOUT` dropped
+> 5000ms → 2500ms; `skipWaiting()` was removed from the install handler.
+> Added an "Update ready — Refresh" toast (`initSWUpdateToast()`) wired to
+> `registration.waiting`/`updatefound` in all 4 places the SW is registered
+> (`index.html`, `app.js` — covers all chapter pages, `pages/courses.html`,
+> `404.html`); clicking Refresh posts `SKIP_WAITING` and reloads on
+> `controllerchange`. Verified end-to-end with a persistent-profile Playwright
+> test: installed v3.2, swapped in a modified `sw.js`, confirmed the toast
+> appeared, and confirmed clicking Refresh activated the new worker and cache.
+> Bumped `CACHE_VERSION` to `smartcare-v3.2`.
 
 ### Why this matters
 Everything except icons/images/fonts is **network-first with a 5 s timeout**. On a
@@ -543,7 +578,16 @@ Performance (instant repeat loads), reliability, perceived speed offline.
 
 ## 3. Defer Chart.js (and load it only when the stats modal opens)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Removed the eager `<script src=".../chart.js@4.5.1/...">` tag
+> from `index.html`'s `<head>`. Added `loadChartJs()`, which injects the same
+> pinned-version script tag on first use and memoizes the load promise
+> (`window.Chart` / in-flight promise checks avoid double-loading). Wired into
+> `showGlobalStatsModal()`'s existing `examStats.length > 1` branch so it only
+> fires when the stats modal actually renders a chart. Verified via Playwright:
+> zero network requests to `chart.js` on initial page load; exactly one
+> request fires only after opening the Statistics card with ≥2 exam records.
 
 ### Why this matters
 `index.html` loads Chart.js from CDN in `<head>` on every home-page visit; it is
@@ -577,7 +621,37 @@ Performance (First Contentful Paint on the most-visited page).
 
 ## 4. Split mega chapter bundles and lazy-load per section
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Wrote `scripts/split_content.js` (Node, uses `vm` to safely
+> evaluate each `content/cN.js` rather than regex/eval-parsing HTML-bearing
+> template literals). It splits the 10 multi-section chapters (`c1`–`c10`)
+> into `content/cN.meta.js` (TOC only — `id`/`shortTitle` per section, ~700
+> bytes–1 KB) + `content/cN/<sectionId>.json` (full section: summary, quiz,
+> flashcards, critical). Original `content/cN.js` files are untouched and
+> stay checked in as the offline source of truth / fallback. `c0.js` and
+> `m1-38.js` (flat, single-section — no per-tab win) and `c-index.js` (calls
+> `generateIndexHTML()` at load time, not a static data file) were
+> deliberately excluded.
+>
+> `chapters/c1.html`–`c10.html` now load `content/cN.meta.js` instead of the
+> full bundle (2439 KB → 7 KB parsed synchronously across all 10 chapters).
+> `app.js` gained `utils.ensureSectionData(section)`, called from the three
+> places a section becomes active (`switchSection`, the `popstate` handler,
+> `bootApp`) — it fetches `content/cN/<sectionId>.json` on first use and
+> memoizes by mutating the section object in place (subsequent visits reuse
+> it for free); flat chapters already have `summary` populated and skip the
+> fetch entirely. If the fetch fails, `utils.loadFullChapterFallback()`
+> dynamically injects the original `content/cN.js` `<script>` tag and reads
+> the matching section from `window.CPG_DATA` — verified working via
+> Playwright with the section-JSON route blocked. Added the 10 `.meta.js`
+> files and each chapter's first section JSON to `sw.js`'s `PRE_CACHE` so the
+> default view still works instantly offline before any tab is visited;
+> remaining section JSONs are picked up on first visit via the
+> stale-while-revalidate strategy from item 2. Verified all 10 split chapters
+> render (summary/flashcards/quiz/critical views), tab switching fetches only
+> the clicked section, deep links (`?section=`) and browser back/forward work,
+> and the 3 flat/unsplit chapter pages (c0, m1-38, c-index) are unaffected.
 
 ### Why this matters
 `content/c8.js` is 402 KB, `c6.js` 373 KB — each a single synchronous `<script>`
@@ -616,7 +690,34 @@ Performance (chapter open time on low-end devices), memory.
 
 ## 5. Self-host fonts (Google Fonts round-trips + privacy)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Downloaded Inter as Google's **variable** woff2 (one 47 KB file
+> covers the full 100–900 weight range — cheaper than shipping 7 static
+> weights) plus DM Mono 400/500 (15 KB each, used alongside Inter on many
+> pages), latin subset only, into `fonts/` + `fonts/fonts.css`
+> (`font-display: swap`). Replaced the `fonts.googleapis.com` preconnect +
+> `css2?family=Inter...` `<link>` with a self-hosted preload + `fonts.css`
+> link across all 37 files that reference Inter (`index.html`, all 13
+> `chapters/*.html`, 23 `pages/*.html`) — two link patterns existed
+> (double-preconnect and single-preconnect-with-combined-family) and both
+> were converted; verified zero `fonts.googleapis.com`/`fonts.gstatic.com`
+> requests fire on `index.html` afterward. `404.html` was standardized onto
+> Inter per the plan (dropped its JetBrains Mono + DM Sans Google Fonts link
+> and 9 `font-family` declarations, using its `/SmartCare/`-absolute path
+> convention since it's a GitHub Pages 404 fallback); verified rendering.
+>
+> **Scope call:** left `pages/ITLS-course.html`, `ITLS-reviewer.html`,
+> `courses.html` (Figtree/Plus Jakarta Sans), `pages/login.html` (DM Sans),
+> `pages/medical-asm.html` (DM Sans/JetBrains Mono), and
+> `src/prometric/exam.html` on Google Fonts — these are distinct, self-
+> contained visual designs outside this item's explicit scope ("self-host
+> Inter... standardize 404.html"), not the app-shell font. Because those
+> pages still load Google Fonts, the `privacy.html §1.3` Google Fonts
+> disclosure remains accurate and was **not** removed, despite the roadmap
+> step suggesting it — removing it would have been a false privacy claim.
+> Added `/fonts/` to `sw.js`'s `CACHE_FIRST_PATTERNS` and pre-cached
+> `fonts.css` + all 3 woff2 files.
 
 ### Why this matters
 Every page hits `fonts.googleapis.com` + `fonts.gstatic.com` (render-blocking CSS
