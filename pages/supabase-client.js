@@ -24,7 +24,12 @@
 (function () {
   'use strict';
 
-  var SDK_URL = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  // Pinned to an exact version (was floating "@2", i.e. latest 2.x) so a CDN-side
+  // update can never change what code runs here without a deliberate bump.
+  // Dynamic import() doesn't support integrity= in current browsers, so this
+  // can't be pinned with SRI — see docs/upgrades.md "Offline & PWA #3" for the
+  // self-hosting alternative that would close that gap.
+  var SDK_URL = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.0/+esm';
   var TABLE = 'user_state';            // see docs/SUPABASE_SETUP.md
   var LAST_SYNC_KEY = 'smartcare_last_sync';
 
@@ -34,7 +39,7 @@
   var SYNC_EXACT = ['theme', 'smartcare-theme', 'smartcare_font_size'];
   var SYNC_PREFIX = ['smartcare_', 'smartcare-'];
   var SYNC_SUFFIX = ['-theme', '-mode', '-hints-enabled'];
-  var SYNC_BLOCK = ['smartcare_local_auth', 'smartcare_last_sync'];
+  var SYNC_BLOCK = ['smartcare_last_sync'];
 
   function isSyncable(key) {
     if (SYNC_BLOCK.indexOf(key) !== -1) return false;

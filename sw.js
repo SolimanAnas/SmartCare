@@ -3,7 +3,7 @@
 //  Strategy: NETWORK FIRST → cache fallback
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v3.0';           // v3.0: critical fixes — dead precache entries, null-safe accept header, safe cache/logout, viewport zoom, deploy allow-list, admin noindex
+const CACHE_VERSION = 'smartcare-v3.1';           // v3.1: Security fixes — pinned CDN versions, retired legacy Flask auth, self-service account deletion, courses.html logout fix
 const CACHE_TIMEOUT = 5000;                    
 
 // ── Files cached immediately on install ─────────────────────

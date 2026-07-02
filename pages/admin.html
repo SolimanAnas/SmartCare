@@ -18,7 +18,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>SmartCare Admin</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Pinned from the 6.0.0-beta3 pre-release to the latest stable 6.x (icon
+       class names are unchanged across the 6.x line). TODO(security): add
+       integrity= — this sandbox's network policy blocks cdnjs.cloudflare.com,
+       so the SRI hash couldn't be computed here:
+         curl -sSL https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css | openssl dgst -sha384 -binary | openssl base64 -A -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
   <script src="supabase-config.js"></script>
   <script src="supabase-client.js"></script>
   <style>

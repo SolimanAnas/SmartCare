@@ -6,22 +6,6 @@ import types
 import pytest
 import requests as requests_lib
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-STRONG_PW = "SmartCare2025!Secure"  # meets all policy requirements
-
-
-def _register(client, email, password=STRONG_PW, role="Paramedic"):
-    return client.post("/api/register", json={
-        "username": email,
-        "password": password,
-        "full_name": "Test User",
-        "professional_level": role,
-    })
-
-
-def _login(client, email, password=STRONG_PW):
-    return client.post("/api/login", json={"username": email, "password": password})
-
 
 # ── Fake Supabase backend for the admin API (server.py talks to Supabase over
 # HTTP; these tests stub `requests.get/patch/delete` so no network is needed) ──
@@ -102,113 +86,12 @@ class TestIndex:
         assert resp.content_type.startswith("text/html")
 
 
-# ── Registration ──────────────────────────────────────────────────────────────
-class TestRegister:
-    def test_register_creates_user(self, client):
-        resp = _register(client, "test@smartcare.org")
-        assert resp.status_code == 201
-        assert "Account created successfully" in resp.get_json()["message"]
-
-    def test_register_duplicate_email(self, client):
-        _register(client, "dup@smartcare.org")
-        resp = _register(client, "dup@smartcare.org")
-        assert resp.status_code == 400
-        assert "already exists" in resp.get_json()["error"]
-
-    def test_register_missing_password(self, client):
-        resp = client.post("/api/register", json={"username": "x@x.ae"})
-        assert resp.status_code == 400
-
-    # ── Password policy (P2-1, ISR 5.2.1.5) ──────────────────────────────────
-    def test_password_too_short(self, client):
-        resp = _register(client, "short@smartcare.org", password="Ab1short")
-        assert resp.status_code == 400
-        assert "10 characters" in resp.get_json()["error"]
-
-    def test_password_no_uppercase(self, client):
-        resp = _register(client, "noupper@smartcare.org", password="alllower1234")
-        assert resp.status_code == 400
-        assert "uppercase" in resp.get_json()["error"]
-
-    def test_password_no_lowercase(self, client):
-        resp = _register(client, "nolower@smartcare.org", password="ALLUPPER1234")
-        assert resp.status_code == 400
-        assert "lowercase" in resp.get_json()["error"]
-
-    def test_password_no_digit(self, client):
-        resp = _register(client, "nodigit@smartcare.org", password="NoDigitAtAll")
-        assert resp.status_code == 400
-        assert "digit" in resp.get_json()["error"]
-
-    def test_common_password_blocked(self, client):
-        resp = _register(client, "common@smartcare.org", password="Password123")
-        assert resp.status_code == 400
-        assert "common" in resp.get_json()["error"].lower()
-
-    def test_invalid_email_rejected(self, client):
-        resp = _register(client, "not-an-email", password=STRONG_PW)
-        assert resp.status_code == 400
-        assert "email" in resp.get_json()["error"].lower()
-
-    def test_invalid_professional_level_rejected(self, client):
-        resp = client.post("/api/register", json={
-            "username": "badlevel@smartcare.org",
-            "password": STRONG_PW,
-            "professional_level": "Hacker",
-        })
-        assert resp.status_code == 400
-
-
-# ── Login ─────────────────────────────────────────────────────────────────────
-class TestLogin:
-    def test_login_success(self, client):
-        _register(client, "login@smartcare.org")
-        resp = _login(client, "login@smartcare.org")
-        assert resp.status_code == 200
-        data = resp.get_json()
-        assert "Logged in successfully" in data["message"]
-        assert data["redirect"] == "/index.html"
-
-    def test_login_wrong_password(self, client):
-        _register(client, "bad@smartcare.org")
-        resp = _login(client, "bad@smartcare.org", password="WrongPass99!")
-        assert resp.status_code == 401
-
-    def test_login_nonexistent_user(self, client):
-        resp = _login(client, "nobody@smartcare.org")
-        assert resp.status_code == 401
-
-    def test_login_generic_error_message(self, client):
-        """Both bad-user and bad-password return the same message (anti-enumeration)."""
-        _register(client, "enum@smartcare.org")
-        r1 = _login(client, "enum@smartcare.org", password="WrongPass99!")
-        r2 = _login(client, "noone@smartcare.org", password="WrongPass99!")
-        assert r1.get_json()["error"] == r2.get_json()["error"]
-
-
-# ── Google login ──────────────────────────────────────────────────────────────
-class TestGoogleLogin:
-    def test_google_login_missing_token(self, client):
-        resp = client.post("/api/google-login", json={})
-        assert resp.status_code == 400
-        assert "No token provided" in resp.get_json()["error"]
-
-    def test_google_login_bad_token(self, client):
-        resp = client.post("/api/google-login", json={"credential": "totally-fake-token"})
-        assert resp.status_code == 401
-
-
-# ── Logout ────────────────────────────────────────────────────────────────────
-class TestLogout:
-    def test_logout_requires_auth(self, client):
-        resp = client.get("/api/logout")
-        assert resp.status_code == 302
-
-
 # ── Admin (access-control regression, P0-1/P0-2) ─────────────────────────────
-# Backed by Supabase (real Google sign-ins), not the legacy SQLAlchemy `User`
-# table — see server.py's _require_supabase_admin(). The `supabase_admin`
-# fixture stubs the Supabase HTTP calls so these tests need no network.
+# Backed by Supabase (real Google sign-ins) — see server.py's
+# _require_supabase_admin(). The `supabase_admin` fixture stubs the Supabase
+# HTTP calls so these tests need no network. This is the only account system
+# left in server.py; the legacy Flask-Login/SQLAlchemy email+password system
+# was retired since nothing in the live app ever called it.
 class TestAdminUsers:
     def test_admin_users_requires_auth(self, client, supabase_admin):
         """No/invalid Supabase token must be denied (no PII leak)."""
@@ -277,6 +160,44 @@ class TestAdminUsers:
         assert resp.status_code == 403
 
 
+# ── Self-service account deletion (Security #4, GDPR Art. 17) ───────────────
+class TestAccountSelfDelete:
+    def test_requires_auth(self, client, supabase_admin):
+        resp = client.delete(
+            "/api/account", headers={"X-Requested-With": "XMLHttpRequest"}
+        )
+        assert resp.status_code == 401
+
+    def test_not_configured_returns_503(self, client):
+        resp = client.delete(
+            "/api/account",
+            headers={**_auth("whatever"), "X-Requested-With": "XMLHttpRequest"},
+        )
+        assert resp.status_code == 503
+
+    def test_self_delete_works_no_admin_required(self, client, supabase_admin):
+        """A completely ordinary (non-admin) signed-in user can delete themself."""
+        supabase_admin.add_user("tok-jane", "uid-jane", "jane@example.com")
+        resp = client.delete(
+            "/api/account",
+            headers={**_auth("tok-jane"), "X-Requested-With": "XMLHttpRequest"},
+        )
+        assert resp.status_code == 200
+        assert "uid-jane" not in supabase_admin.profiles
+
+    def test_only_deletes_the_caller_own_account(self, client, supabase_admin):
+        """There is no id parameter on this route — it can only ever delete
+        the account the caller's own token resolves to, never someone else's."""
+        supabase_admin.add_user("tok-jane", "uid-jane", "jane@example.com")
+        supabase_admin.add_user("tok-bob", "uid-bob", "bob@example.com")
+        client.delete(
+            "/api/account",
+            headers={**_auth("tok-jane"), "X-Requested-With": "XMLHttpRequest"},
+        )
+        assert "uid-jane" not in supabase_admin.profiles
+        assert "uid-bob" in supabase_admin.profiles
+
+
 # ── Security headers (P0-7, §3.5) ────────────────────────────────────────────
 class TestSecurityHeaders:
     REQUIRED_HEADERS = [
@@ -301,28 +222,19 @@ class TestHealthCheck:
     def test_health_returns_ok(self, client):
         resp = client.get("/api/health")
         assert resp.status_code == 200
-        data = resp.get_json()
-        assert data["status"] == "healthy"
-        assert data["database"] == "up"
+        assert resp.get_json()["status"] == "healthy"
 
 
 # ── Audit logging (P2-5, §4.7(b)) ────────────────────────────────────────────
 class TestAuditLogging:
-    def test_successful_login_is_audited(self, client, caplog):
-        _register(client, "audit@smartcare.org")
+    def test_admin_access_denied_is_audited(self, client, caplog, supabase_admin):
+        supabase_admin.add_user("tok-regular", "uid-regular", "regular@smartcare.org")
         with caplog.at_level(logging.INFO, logger="smartcare.audit"):
-            _login(client, "audit@smartcare.org")
+            client.get("/api/admin/users", headers=_auth("tok-regular"))
         records = [r for r in caplog.records if r.name == "smartcare.audit"]
         events = [json.loads(r.message) for r in records]
-        login_events = [e for e in events if e["event"] == "login"]
-        assert any(e["outcome"] == "success" for e in login_events)
-
-    def test_failed_login_is_audited(self, client, caplog):
-        with caplog.at_level(logging.INFO, logger="smartcare.audit"):
-            _login(client, "ghost@smartcare.org", password="WrongPass99!")
-        records = [r for r in caplog.records if r.name == "smartcare.audit"]
-        events = [json.loads(r.message) for r in records]
-        assert any(e["event"] == "login" and e["outcome"] == "fail" for e in events)
+        assert any(e["event"] == "admin_access" and e["outcome"] == "denied"
+                   for e in events)
 
     def test_admin_action_is_audited(self, client, caplog, supabase_admin):
         supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
@@ -335,34 +247,37 @@ class TestAuditLogging:
 
 
 # ── CSRF guard (P2-7, §4.2(b)) ───────────────────────────────────────────────
+# Exercised against the admin role-update route (the only PATCH endpoint left
+# in server.py) rather than the retired /api/login. The guard is a
+# before_request hook, so it fires regardless of which route it protects.
 class TestCsrfGuard:
-    def test_post_without_json_content_type_rejected(self, client):
-        """A plain-form POST to an API endpoint must be rejected (CSRF)."""
-        resp = client.post(
-            "/api/login",
-            data="username=x&password=y",
+    def test_post_without_json_content_type_rejected(self, client, supabase_admin):
+        """A plain-form request to an API endpoint must be rejected (CSRF)."""
+        resp = client.patch(
+            "/api/admin/users/uid-1/role",
+            data="role=Admin",
             content_type="application/x-www-form-urlencoded",
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
         assert resp.status_code == 400
 
-    def test_post_without_xrw_header_rejected(self, client):
-        """A POST missing X-Requested-With must be rejected."""
-        resp = client.post(
-            "/api/login",
-            json={"username": "x@x.ae", "password": "y"},
+    def test_post_without_xrw_header_rejected(self, client, supabase_admin):
+        """A request missing X-Requested-With must be rejected."""
+        resp = client.patch(
+            "/api/admin/users/uid-1/role",
+            json={"role": "Admin"},
             headers={"X-Requested-With": ""},  # blank — override the fixture default
         )
         assert resp.status_code == 400
 
-    def test_valid_json_post_allowed(self, client):
-        """A well-formed JSON POST with the CSRF headers must reach the handler."""
-        resp = client.post(
-            "/api/login",
-            json={"username": "noone@smartcare.org", "password": "whatever"},
+    def test_valid_json_request_allowed(self, client, supabase_admin):
+        """A well-formed JSON request with the CSRF headers must reach the handler."""
+        resp = client.patch(
+            "/api/admin/users/uid-1/role",
+            json={"role": "Admin"},
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
-        # Handler reached — 401 from wrong credentials, not 400 from CSRF guard.
+        # Handler reached — 401 from missing auth, not 400 from the CSRF guard.
         assert resp.status_code == 401
 
     def test_get_requests_not_blocked(self, client, supabase_admin):

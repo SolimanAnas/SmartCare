@@ -61,26 +61,6 @@
   "inLanguage": "en-US"
 }
     </script>
-<script>
-  // ── SmartCare Security Guard: runs before anything else renders ──
-  // [TEMPORARILY DISABLED FOR TESTING]
-  /*
-  (function() {
-    const AUTH_KEY = 'smartcare_local_auth';
-    try {
-      const sessionRaw = localStorage.getItem(AUTH_KEY);
-      if (!sessionRaw) { window.location.replace('login.html'); return; }
-      const session = JSON.parse(sessionRaw);
-      if (!session.loggedIn || Date.now() > session.expiresAt) {
-        localStorage.removeItem(AUTH_KEY);
-        window.location.replace('login.html');
-      }
-    } catch (e) {
-      window.location.replace('login.html');
-    }
-  })();
-  */
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SmartCare · Medical Courses</title>
@@ -1364,6 +1344,8 @@
             .drawer-trigger:hover .trigger-line.bottom { width: 14px; }
         }
     </style>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-client.js"></script>
 </head>
 <body>
 
@@ -1969,8 +1951,10 @@
 
     document.getElementById('qsHome').addEventListener('click', () => { window.location.href = '../index.html'; });
     document.getElementById('qsAbout').addEventListener('click', () => { window.location.href = 'about.html'; });
-    document.getElementById('qsLogout').addEventListener('click', () => {
-        localStorage.removeItem('smartcare_local_auth');
+    document.getElementById('qsLogout').addEventListener('click', async () => {
+        if (window.SmartCareCloud) {
+            try { await SmartCareCloud.signOut(); } catch (e) { /* offline or not configured */ }
+        }
         window.location.replace('login.html');
     });
 

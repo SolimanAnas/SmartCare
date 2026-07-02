@@ -1,9 +1,10 @@
 Flask==3.1.3
-Flask-SQLAlchemy==3.1.1
-Flask-Login==0.6.3
 Flask-Limiter==4.1.1
 Werkzeug==3.1.8
-google-auth==2.53.0
 requests==2.34.2
 gunicorn==26.0.0
 pytest==9.0.3
+# Flask-Limiter's redis:// storage backend — required in production with
+# more than one gunicorn worker (see DEPLOYMENT.md §2, RATELIMIT_STORAGE_URI).
+# Harmless if unused: falls back to memory:// storage when the env var is unset.
+redis==8.0.1

@@ -52,7 +52,11 @@ class ExamEngine {
         if (typeof Chart === 'undefined') {
             await new Promise((resolve, reject) => {
                 const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+                // Pinned to an exact version — see index.html for the SRI TODO
+                // (this sandbox's network policy blocks cdn.jsdelivr.net, so the
+                // integrity hash couldn't be computed here).
+                script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js';
+                script.crossOrigin = 'anonymous';
                 script.onload = resolve;
                 script.onerror = reject;
                 document.head.appendChild(script);

@@ -69,27 +69,6 @@
   }
 }
     </script>
-<script>
-  // ━━ SmartCare Security Guard: runs before anything else renders ━━
-  // Redirects to login if no valid session exists.
-  // [TEMPORARILY DISABLED FOR TESTING]
-  /*
-  (function() {
-    const AUTH_KEY = 'smartcare_local_auth';
-    try {
-      const sessionRaw = localStorage.getItem(AUTH_KEY);
-      if (!sessionRaw) { window.location.replace('pages/login.html'); return; }
-      const session = JSON.parse(sessionRaw);
-      if (!session.loggedIn || Date.now() > session.expiresAt) {
-        localStorage.removeItem(AUTH_KEY);
-        window.location.replace('pages/login.html');
-      }
-    } catch (e) {
-      window.location.replace('pages/login.html');
-    }
-  })();
-  */
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SmartCare · Clinical Learning Platform</title>
@@ -101,7 +80,12 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Pinned to an exact version (was floating "latest") so this can never change
+         out from under us. TODO(security): add integrity=. This sandbox's network
+         policy blocks cdn.jsdelivr.net, so the SRI hash couldn't be computed here —
+         run this from anywhere with CDN access and paste the result:
+           curl -sSL https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js | openssl dgst -sha384 -binary | openssl base64 -A -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
     <script src="pages/supabase-config.js"></script>
     <script src="pages/supabase-client.js"></script>
 
@@ -921,14 +905,11 @@
         window.location.reload();
     });
 
-    // Logout — signs out of the real (Supabase) session. Removing only the
-    // legacy smartcare_local_auth key left the actual session active, so
-    // "Logout" silently didn't log out.
+    // Logout — signs out of the real (Supabase) session.
     document.getElementById('qsLogout').addEventListener('click', async () => {
         if (window.SmartCareCloud) {
             try { await SmartCareCloud.signOut(); } catch (e) { /* offline or not configured */ }
         }
-        localStorage.removeItem('smartcare_local_auth');
         window.location.replace('pages/login.html');
     });
 

@@ -241,7 +241,19 @@ Accessibility, App Store/Play review compliance, medical safety (dose tables mus
 
 ## 1. Add Subresource Integrity (SRI) to all CDN scripts
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** Chart.js, Font Awesome, and the Supabase SDK are now pinned to
+> exact, verified-to-exist versions (was: floating "latest" for Chart.js/
+> Supabase, a stale 6.0.0-beta3 for Font Awesome). `crossorigin="anonymous"`
+> is in place wherever `integrity=` will attach. The `integrity=` hash values
+> themselves are still outstanding — this sandbox's egress policy blocks
+> `cdn.jsdelivr.net` and `cdnjs.cloudflare.com` directly (confirmed via the
+> proxy's `/__agentproxy/status`; `registry.npmjs.org`/`pypi.org` are
+> whitelisted and were used to pick real versions), so the hash couldn't be
+> computed here. Each pinned tag has an inline comment with the exact
+> one-line command to run from anywhere with CDN access — paste the output
+> into `integrity="sha384-…"` on that tag and check this off.
 
 ### Why this matters
 Zero `integrity=` attributes exist in the repo. Chart.js, Font Awesome (cdnjs), the
@@ -315,7 +327,14 @@ Security (XSS defense-in-depth).
 
 ## 3. Production-grade rate-limit storage
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `redis` added to `requirements.txt` and confirmed installable
+> alongside the rest of the stack; `DEPLOYMENT.md` already documented
+> `RATELIMIT_STORAGE_URI` thoroughly (§2, §5, §6) before this pass. The code
+> is entirely ready — provisioning an actual Redis instance and setting
+> `RATELIMIT_STORAGE_URI=redis://…` on the Render deployment is an
+> infrastructure action outside what I can do from here.
 
 ### Why this matters
 `limiter` uses `memory://` storage. `DEPLOYMENT.md` runs gunicorn with 2 workers —
@@ -350,7 +369,7 @@ Security (real brute-force protection), reliability.
 
 ## 4. Self-service account deletion (also a Play Store requirement)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
 ### Why this matters
 `privacy.html §7` promises deletion "within 30 days" via email. Google Play now
@@ -389,7 +408,17 @@ Store readiness, privacy compliance (GDPR Art. 17), trust.
 
 ## 5. Retire the legacy Flask local-auth system (dead attack surface)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Removed `/api/register`, `/api/login`, `/api/google-login`,
+> `/api/logout`, the `User` model, and Flask-Login/Flask-SQLAlchemy/
+> google-auth entirely (verified the app still imports and all tests pass
+> with those packages *uninstalled*, not just absent from requirements.txt).
+> `/api/health` no longer pings a database that no longer exists. While
+> chasing every `smartcare_local_auth` reference, found `pages/courses.html`
+> had the exact same "Logout doesn't actually sign out" bug as Critical
+> Fixes #5 (missed there since that page didn't load `supabase-client.js`
+> at all) — fixed it the same way and removed its dormant guard block too.
 
 ### Why this matters
 Two auth systems coexist: the live Supabase/Google flow and a dormant Flask

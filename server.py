@@ -1,29 +1,14 @@
 import json
 import logging
 import os
-import re
 import secrets
 from datetime import datetime, timezone
 
 import requests
-from flask import Flask, abort, jsonify, redirect, request, send_from_directory
+from flask import Flask, abort, jsonify, request, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from flask_login import (
-    LoginManager,
-    UserMixin,
-    current_user,
-    login_required,
-    login_user,
-    logout_user,
-)
-from flask_sqlalchemy import SQLAlchemy
-from google.auth.transport import requests as google_requests
-from google.oauth2 import id_token
-from werkzeug.security import check_password_hash, generate_password_hash
 
-db = SQLAlchemy()
-login_manager = LoginManager()
 limiter = Limiter(key_func=get_remote_address)
 
 # ── Audit logger (Secure SDLC §4.7(b), §3.9) ─────────────────────────────────
@@ -45,43 +30,6 @@ def _audit(event: str, outcome: str, actor: str = "anonymous", detail: str = "")
     _audit_log.info(json.dumps(record))
 
 
-# ── Password policy (Secure SDLC §4.2(b), ISR 5.2.1.5) ─────────────────────
-_MIN_PW_LEN = 10
-_EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-# Top common passwords to block at registration (sampled from NCSC/HIBP top-1k).
-_COMMON_PASSWORDS = {
-    "password", "password1", "password123", "passw0rd",
-    "123456789", "1234567890", "12345678", "123456",
-    "qwerty123", "qwertyuiop", "iloveyou", "welcome1",
-    "admin1234", "letmein1", "monkey123", "dragon123",
-    "superman", "batman123", "football", "baseball",
-}
-
-
-def _validate_email(email: str) -> str | None:
-    """Return an error string, or None if valid."""
-    if not email or not _EMAIL_RE.match(email):
-        return "A valid email address is required."
-    if len(email) > 254:
-        return "Email address is too long."
-    return None
-
-
-def _validate_password(pw: str) -> str | None:
-    """Return an error string, or None if the password meets policy."""
-    if len(pw) < _MIN_PW_LEN:
-        return f"Password must be at least {_MIN_PW_LEN} characters."
-    if not re.search(r"[A-Z]", pw):
-        return "Password must include at least one uppercase letter."
-    if not re.search(r"[a-z]", pw):
-        return "Password must include at least one lowercase letter."
-    if not re.search(r"\d", pw):
-        return "Password must include at least one digit."
-    if pw.lower() in _COMMON_PASSWORDS:
-        return "Password is too common. Please choose a stronger password."
-    return None
-
-
 def create_app(test_config=None):
     app = Flask(__name__, static_folder=".", static_url_path="")
 
@@ -94,9 +42,6 @@ def create_app(test_config=None):
             "survive a restart. Set SECRET_KEY in the environment for production."
         )
     app.config["SECRET_KEY"] = secret_key
-
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///users.db")
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # ── Secure session cookies (Secure SDLC §3.5, §4.6) ─────────────────────
     is_production = os.getenv("APP_ENV", "development").lower() == "production"
@@ -116,36 +61,13 @@ def create_app(test_config=None):
     if test_config:
         app.config.update(test_config)
 
-    db.init_app(app)
-    login_manager.init_app(app)
-    login_manager.login_view = "index"
     limiter.init_app(app)
-
-    with app.app_context():
-        db.create_all()
 
     _register_routes(app)
     _register_csrf_guard(app)
     _register_security_headers(app)
 
     return app
-
-
-# ==========================================
-# DATABASE MODEL
-# ==========================================
-class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(150), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    full_name = db.Column(db.String(150), nullable=True)
-    role = db.Column(db.String(50), nullable=True)
-    progress = db.Column(db.Text, default="{}")
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    return db.session.get(User, int(user_id))
 
 
 def _admin_emails():
@@ -155,9 +77,9 @@ def _admin_emails():
 
 
 # ── Supabase-backed admin API (Secure SDLC §4.4(c)) ─────────────────────────
-# The admin console manages real app users (Supabase/Google sign-ins), not the
-# legacy SQLAlchemy `User` table above. The service_role key stays server-side
-# only — see docs/SUPABASE_SETUP.md §4 for the required Supabase-side setup.
+# The admin console manages real app users (Supabase/Google sign-ins). The
+# service_role key stays server-side only — see docs/SUPABASE_SETUP.md §4 for
+# the required Supabase-side setup.
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").rstrip("/")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
 
@@ -199,16 +121,23 @@ def _supabase_user_from_token(token):
     return {"id": data["id"], "email": email}
 
 
-def _require_supabase_admin():
-    """Abort with 503/401/403 unless the caller is a signed-in, allow-listed
-    admin. Returns {id, email} for the caller on success."""
+def _require_supabase_user():
+    """Abort with 503/401 unless the caller has a valid Supabase session.
+    Returns {id, email} for the caller on success."""
     if not _supabase_admin_configured():
-        abort(503, description="Admin API is not configured on this server.")
+        abort(503, description="This API is not configured on this server.")
     auth_header = request.headers.get("Authorization", "")
     token = auth_header[7:] if auth_header.lower().startswith("bearer ") else ""
     user = _supabase_user_from_token(token)
     if not user:
         abort(401, description="Sign in required.")
+    return user
+
+
+def _require_supabase_admin():
+    """Abort with 503/401/403 unless the caller is a signed-in, allow-listed
+    admin. Returns {id, email} for the caller on success."""
+    user = _require_supabase_user()
     if user["email"] not in _admin_emails():
         _audit("admin_access", "denied", actor=user["email"])
         abort(403)
@@ -220,8 +149,6 @@ def _require_supabase_admin():
 # ==========================================
 def _register_routes(app):
 
-    GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
-
     @app.route("/")
     def index():
         return send_from_directory(".", "index.html")
@@ -230,129 +157,10 @@ def _register_routes(app):
     def serve_static(path):
         return send_from_directory(".", path)
 
-    # ── Auth endpoints ────────────────────────────────────────────────────────
-    @app.route("/api/register", methods=["POST"])
-    @limiter.limit("5 per minute; 20 per hour")
-    def register():
-        data = request.get_json(silent=True) or {}
-        email = (data.get("username") or "").strip()
-        password = (data.get("password") or "").strip()
-        full_name = (data.get("full_name") or "").strip()
-        professional_level = (data.get("professional_level") or "").strip()
-
-        # ── Input validation (Secure SDLC §4.2(b), ISR 8.3.1) ───────────────
-        err = _validate_email(email)
-        if err:
-            _audit("register", "fail", detail=f"invalid email: {err}")
-            return jsonify({"error": err}), 400
-
-        err = _validate_password(password)
-        if err:
-            _audit("register", "fail", actor=email, detail=f"weak password: {err}")
-            return jsonify({"error": err}), 400
-
-        if len(full_name) > 150:
-            return jsonify({"error": "Name is too long."}), 400
-
-        allowed_levels = {"Physician", "Paramedic", "EMT", "Admin", ""}
-        if professional_level and professional_level not in allowed_levels:
-            return jsonify({"error": "Invalid professional level."}), 400
-
-        if User.query.filter_by(username=email).first():
-            _audit("register", "fail", actor=email, detail="duplicate email")
-            return jsonify({"error": "An account with that email already exists"}), 400
-
-        hashed_pw = generate_password_hash(password)
-        new_user = User(
-            username=email,
-            password=hashed_pw,
-            full_name=full_name,
-            role=professional_level,
-        )
-        db.session.add(new_user)
-        db.session.commit()
-
-        _audit("register", "success", actor=email)
-        return jsonify({"message": "Account created successfully! You can now log in."}), 201
-
-    @app.route("/api/login", methods=["POST"])
-    @limiter.limit("10 per minute; 50 per hour")
-    def login():
-        data = request.get_json(silent=True) or {}
-        username = (data.get("username") or "").strip()
-        password = data.get("password") or ""
-
-        user = User.query.filter_by(username=username).first()
-
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            _audit("login", "success", actor=username)
-            return jsonify(
-                {
-                    "message": "Logged in successfully",
-                    "redirect": "/index.html",
-                    "role": user.role or "user",
-                    "email": user.username,
-                }
-            )
-
-        # Generic message — do not reveal whether the user exists (anti-enumeration).
-        _audit("login", "fail", actor=username or "unknown")
-        return jsonify({"error": "Invalid username or password"}), 401
-
-    @app.route("/api/google-login", methods=["POST"])
-    @limiter.limit("10 per minute; 50 per hour")
-    def google_login():
-        data = request.get_json(silent=True) or {}
-        token = data.get("credential")
-
-        if not token:
-            return jsonify({"error": "No token provided"}), 400
-
-        if not GOOGLE_CLIENT_ID:
-            return jsonify({"error": "Google login is not configured"}), 503
-
-        try:
-            idinfo = id_token.verify_oauth2_token(
-                token, google_requests.Request(), GOOGLE_CLIENT_ID
-            )
-            email = idinfo["email"]
-            name = idinfo.get("name", "")
-
-            user = User.query.filter_by(username=email).first()
-            if not user:
-                random_pw = generate_password_hash(secrets.token_hex(16))
-                user = User(username=email, password=random_pw, full_name=name)
-                db.session.add(user)
-                db.session.commit()
-                _audit("google_register", "success", actor=email)
-
-            login_user(user)
-            _audit("google_login", "success", actor=email)
-            return jsonify(
-                {
-                    "message": "Logged in successfully",
-                    "redirect": "/index.html",
-                    "role": user.role or "user",
-                    "email": user.username,
-                }
-            )
-        except ValueError:
-            _audit("google_login", "fail", detail="invalid token")
-            return jsonify({"error": "Google authentication failed."}), 401
-
-    @app.route("/api/logout")
-    @login_required
-    def logout():
-        actor = current_user.username if current_user.is_authenticated else "unknown"
-        logout_user()
-        _audit("logout", "success", actor=actor)
-        return redirect("/login.html")
-
     # ── Admin API (Secure SDLC §4.4(c): authn + authz required) ──────────────
-    # Backed by Supabase (the real, live user base) rather than the legacy
-    # SQLAlchemy `User` table — see _require_supabase_admin() above. Callers
-    # authenticate with their Supabase session token (Authorization: Bearer …),
+    # Backed by Supabase (the real, live user base) — see
+    # _require_supabase_admin() above. Callers authenticate with their
+    # Supabase session token (Authorization: Bearer …),
     # which the server verifies directly with Supabase before checking the
     # ADMIN_EMAILS allow-list. The service_role key never reaches the browser.
     @app.route("/api/admin/users", methods=["GET"])
@@ -450,6 +258,38 @@ def _register_routes(app):
         )
         return jsonify({"message": "User deleted", "id": user_id})
 
+    # ── Self-service account deletion (Secure SDLC §4.4(c), GDPR Art. 17) ────
+    # Any signed-in user may delete their OWN account — no ADMIN_EMAILS check,
+    # unlike the /api/admin/* routes above (a user is always authorized to
+    # delete themself). Deletes the Supabase auth user directly; the
+    # `profiles`/`user_state` rows cascade via their FK `on delete cascade`.
+    @app.route("/api/account", methods=["DELETE"])
+    @limiter.limit("5 per hour")
+    def delete_own_account():
+        user = _require_supabase_user()
+
+        try:
+            resp = requests.delete(
+                f"{SUPABASE_URL}/auth/v1/admin/users/{user['id']}",
+                headers=_supabase_service_headers(),
+                timeout=8,
+            )
+        except requests.RequestException:
+            _audit("account_self_delete", "error", actor=user["email"])
+            return jsonify({"error": "Delete failed"}), 502
+
+        if resp.status_code not in (200, 204):
+            _audit(
+                "account_self_delete",
+                "error",
+                actor=user["email"],
+                detail=f"status={resp.status_code}",
+            )
+            return jsonify({"error": "Account deletion failed"}), 502
+
+        _audit("account_self_delete", "success", actor=user["email"])
+        return jsonify({"message": "Account deleted"})
+
     @app.errorhandler(429)
     def rate_limit_exceeded(e):
         _audit("rate_limit", "blocked", detail=str(e.description))
@@ -470,18 +310,11 @@ def _register_routes(app):
     @app.route("/api/health")
     @limiter.exempt
     def health_check():
-        # Liveness/readiness probe for monitoring. Verifies DB connectivity.
-        try:
-            db.session.execute(db.text("SELECT 1"))
-            db_ok = True
-        except Exception:
-            _audit("health_check", "db_probe_failed")
-            db_ok = False
-        status = "healthy" if db_ok else "degraded"
-        return (
-            jsonify({"status": status, "database": "up" if db_ok else "down"}),
-            200 if db_ok else 503,
-        )
+        # Liveness probe for monitoring — the server has no local database of
+        # its own (see docs/upgrades.md "Security #5"); the process responding
+        # at all is the signal. Admin API reachability to Supabase is a
+        # separate concern, checked per-request by _require_supabase_admin().
+        return jsonify({"status": "healthy"}), 200
 
     @app.errorhandler(404)
     def not_found(e):
