@@ -77,6 +77,7 @@
   --mono:"DM Mono",monospace;--hdr:60px;--r:18px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
 html{height:100%}
 body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100%;display:flex;flex-direction:column;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(ellipse 90% 50% at 15% 0%,rgba(15,39,68,.8),transparent),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(40,10,70,.5),transparent);pointer-events:none;z-index:-1}
@@ -266,7 +267,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 <body>
 
 <header class="app-header">
-  <a class="hdr-back" href="../index.html">&#8592;</a>
+  <a class="hdr-back" href="../index.html" aria-label="Back to home">&#8592;</a>
   <div class="hdr-badge">&#x1F6A8;</div>
   <div class="hdr-info">
     <div class="hdr-title">EMS Tools</div>
@@ -279,55 +280,55 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
   <p class="sec-hdr">Clinical Calculators</p>
 
   <div class="tool-grid">
-	<div class="tool-card" onclick="window.location.href='medical-asm.html'">
+	<div class="tool-card" role="button" tabindex="0" onclick="window.location.href='medical-asm.html'">
       <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg></div>
       <div class="tc-title">Medical Assessment</div>
       <div class="tc-desc">Primary &amp; secondary survey</div>
       <span class="tc-tag tag-cardio">Medical</span>
     </div>
 
-    <div class="tool-card" onclick="window.location.href='trauma.html'">
+    <div class="tool-card" role="button" tabindex="0" onclick="window.location.href='trauma.html'">
       <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
       <div class="tc-title">Trauma Assessment</div>
       <div class="tc-desc">Rapid trauma survey checklist</div>
       <span class="tc-tag tag-trauma">Trauma</span>
     </div>
     
-    <div class="tool-card" onclick="window.location.href='GCS.html'">
+    <div class="tool-card" role="button" tabindex="0" onclick="window.location.href='GCS.html'">
       <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
       <div class="tc-title">GCS Score</div>
       <div class="tc-desc">Glasgow Coma Scale Assessment</div>
       <span class="tc-tag tag-neuro">Neuro</span>
     </div>
-    <div class="tool-card" onclick="openApgar()">
+    <div class="tool-card" role="button" tabindex="0" onclick="openApgar()">
       <div class="tc-icon">&#x1F476;</div>
       <div class="tc-title">APGAR Score</div>
       <div class="tc-desc">Neonatal assessment at 1 &amp; 5 min</div>
       <span class="tc-tag tag-neo">Neonatal</span>
     </div>
 
-    <div class="tool-card" onclick="openBurns()">
+    <div class="tool-card" role="button" tabindex="0" onclick="openBurns()">
       <div class="tc-icon">&#x1F525;</div>
       <div class="tc-title">Burn Surface Area</div>
       <div class="tc-desc">Rule of Nines + Parkland formula</div>
       <span class="tc-tag tag-trauma">Trauma</span>
     </div>
 
-    <div class="tool-card" onclick="openRts()">
+    <div class="tool-card" role="button" tabindex="0" onclick="openRts()">
       <div class="tc-icon">&#x1F4CA;</div>
       <div class="tc-title">Revised Trauma Score</div>
       <div class="tc-desc">GCS + SBP + RR triage calculator</div>
       <span class="tc-tag tag-trauma">Trauma</span>
     </div>
 
-    <div class="tool-card" onclick="openStart()">
+    <div class="tool-card" role="button" tabindex="0" onclick="openStart()">
       <div class="tc-icon">&#x1F6A8;</div>
       <div class="tc-title">START Triage</div>
       <div class="tc-desc">MCI step-by-step triage flow</div>
       <span class="tc-tag tag-mci">MCI</span>
     </div>
 	
-    <div class="tool-card" onclick="window.location.href='Carevent.html'">
+    <div class="tool-card" role="button" tabindex="0" onclick="window.location.href='Carevent.html'">
       <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
       <div class="tc-title">O₂ Calculator</div>
       <div class="tc-desc">Cylinder duration &amp; planning</div>
@@ -341,12 +342,13 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 
 <div class="bs-overlay" id="bsOverlay" onclick="if(event.target===this)closeSheet()">
   <div class="bs-panel">
-    <div class="bs-handle-wrap" onclick="closeSheet()">
+    <div class="bs-handle-wrap" role="button" tabindex="0" aria-label="Close"
+         onclick="closeSheet()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();closeSheet();}">
       <div class="bs-handle"></div>
     </div>
     <div class="bs-head">
       <div class="bs-htitle" id="bsTitle">Tool</div>
-      <div class="bs-hclose" onclick="closeSheet()">&#x2715;</div>
+      <button type="button" class="bs-hclose" onclick="closeSheet()" aria-label="Close">&#x2715;</button>
     </div>
     <div class="bs-scroll" id="bsContent"></div>
   </div>
@@ -366,6 +368,16 @@ function closeSheet(){
   document.getElementById("bsOverlay").classList.remove("open");
 }
 document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeSheet(); });
+
+// .tool-card launcher cards are divs (their onclick can be a navigation or
+// an in-page modal opener), so they need role="button" + a keydown handler
+// to be reachable/activatable without a mouse — see docs/upgrades.md
+// "Accessibility #1".
+document.querySelectorAll('.tool-card[role="button"]').forEach(card => {
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+  });
+});
 
 function cls(v){ return v>=7?"g": v>=4?"y":"r"; }
 function sColor(c){ return {g:"var(--green)",y:"var(--yellow)",r:"var(--red)",k:"#6b7280"}[c]; }
@@ -534,7 +546,7 @@ function renderBurns(){
   html += `<div class="cat-card">
     <div class="cat-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg> Parkland Formula</div>
     <div class="wt-row">
-     <input class="wt-input" id="burnWt" type="number" inputmode="decimal" placeholder="Patient weight" min="1" max="300" oninput="burnWeight=this.value;updateParkland()" onkeydown="if(event.key==='Enter'){this.blur();if(navigator.vibrate)navigator.vibrate(10);}" value="${burnWeight || ''}">
+     <input class="wt-input" id="burnWt" type="number" inputmode="decimal" placeholder="Patient weight" aria-label="Patient weight in kilograms" min="1" max="300" oninput="burnWeight=this.value;updateParkland()" onkeydown="if(event.key==='Enter'){this.blur();if(navigator.vibrate)navigator.vibrate(10);}" value="${burnWeight || ''}">
       <span class="wt-lbl">kg</span>
     </div>
     ${tbsa>0 ? `<div class="parkland-box">

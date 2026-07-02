@@ -94,6 +94,7 @@
   --r:18px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
 html{height:100%}
 body{
   font-family:'Inter',sans-serif;
@@ -442,7 +443,7 @@ body::before{
 
 <!-- ── HEADER ──────────────────────────────────────────── -->
 <header class="app-header">
-  <a class="hdr-back" href="ems-tools.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg></a>
+  <a class="hdr-back" href="ems-tools.html" aria-label="Back to EMS tools"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg></a>
   <div class="hdr-badge"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
   <div class="hdr-info">
     <div class="hdr-title">GCS Calculator</div>
@@ -643,7 +644,8 @@ body::before{
 <!-- ── BOTTOM SHEET ──────────────────────────────────────── -->
 <div class="bs-overlay" id="bsOverlay" onclick="if(event.target===this)closeSheet()">
   <div class="bs-panel">
-    <div class="bs-handle" onclick="closeSheet()"></div>
+    <div class="bs-handle" role="button" tabindex="0" aria-label="Close results"
+         onclick="closeSheet()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();closeSheet();}"></div>
 
     <!-- Score Hero -->
     <div class="bs-hero">

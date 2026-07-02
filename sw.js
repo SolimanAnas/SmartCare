@@ -39,7 +39,11 @@ const CACHE_FIRST_PATTERNS = [
 ];
 
 // ── Same-origin app-shell assets served stale-while-revalidate ──
-const SWR_PATTERN = /\.(?:js|css|html|json|svg)(?:\?|$)/;
+// .mjs (the vendored Supabase SDK) previously fell through this pattern —
+// "\.js$" doesn't match "...supabase-js-2.110.0.mjs" (no literal ".js" at
+// the end) — so it hit network-first-with-a-2.5s-timeout instead of the
+// instant cache hit every other app-shell file gets.
+const SWR_PATTERN = /\.(?:js|mjs|css|html|json|svg)(?:\?|$)/;
 
 // ============================================================
 //  INSTALL  

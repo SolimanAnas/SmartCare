@@ -1706,41 +1706,24 @@ Android install polish, Play (TWA) readiness, power-user UX.
 
 ## 5. App Store / Play Store packaging track
 
-- [x] Planned  - [x] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
 
-> **Status:** Not closeable from here — genuinely blocked on things this
-> environment doesn't have: a Play Console developer account (to generate a
-> real app-signing certificate — `assetlinks.json` needs that certificate's
-> actual SHA-256 fingerprint, which doesn't exist until an app is created
-> there) and an Apple Developer account (for the iOS PWABuilder/TestFlight
-> path). Deliberately did **not** commit a placeholder
-> `.well-known/assetlinks.json` — a file with a fake fingerprint would look
-> like a real trust assertion to any TWA client and would just silently fail
-> Digital Asset Links verification once someone actually tried to use it;
-> not shipping the file at all is more honest than shipping a wrong one
-> someone has to remember to replace.
+> **Status:** Correction from the previous status block (which assumed
+> `assetlinks.json`/TWA packaging were unstarted): the app is **already on
+> Google Play in closed testing**, packaged from a separate Android/TWA
+> repo that owns the signing certificate and `assetlinks.json` — correctly
+> so, since a TWA wrapper is its own Android project with its own signing
+> key, not something that belongs in this web repo. Every prerequisite this
+> web repo is actually responsible for is now met: HTTPS, manifest + SW,
+> privacy policy, fresh screenshots, account deletion, real maskable icons,
+> and (this pass) a stable canonical domain. Nothing further is blocked on
+> this side; any remaining Play Store work (data-safety form, listing copy,
+> promoting out of closed testing) lives in the Play Console / the TWA repo,
+> not here.
 >
-> What *did* move: of the four prerequisites this item was blocked on, two
-> are now done as of this same "Offline & PWA" pass — maskable icons (§4
-> above) and, from an earlier session, account deletion (Security §4, marked
-> `[x] Completed`). Updated the prerequisites line below to reflect that.
-> Still open: a stable canonical domain (SEO §2 — the repo currently has a
-> split between an `smartcare-learning.net` custom-domain reference in
-> `index.html`'s Open Graph/canonical tags and `/SmartCare/`-absolute paths
-> elsewhere, e.g. `404.html`; a TWA's `assetlinks.json` has to live at a
-> single, final domain, so this needs resolving first) and the actual
-> `assetlinks.json` generation, which can only happen after someone with
-> Play Console access runs `pwabuilder.com` or Bubblewrap against a real
-> signing key.
->
-> **Concrete next steps for whoever has that access:** (1) resolve SEO §2;
-> (2) create the Play Console app, get its signing fingerprint; (3) generate
-> the TWA via PWABuilder or Bubblewrap; (4) commit
-> `.well-known/assetlinks.json` with the real fingerprint; (5) submit with
-> the "Medical" category + education disclaimer, reusing the manifest
-> screenshots already in place. Everything else this item depends on —
-> manifest, service worker, privacy policy, account deletion, maskable
-> icons, offline completeness — is in place.
+> iOS packaging (PWABuilder + Apple Developer account + TestFlight) is a
+> separate, still-unstarted track — the iOS install metadata (Offline §1)
+> and device-verification caveat noted there still apply.
 
 ### Why this matters
 The manifest, screenshots, privacy policy, and offline behavior are near
@@ -1748,7 +1731,7 @@ store-ready. Packaging as a **TWA (Bubblewrap/PWABuilder)** for Play and a
 PWABuilder iOS wrapper unlocks distribution where clinicians actually search.
 
 ### Current implementation
-Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots (regenerated + compressed, July 2026), ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ✅ stable canonical domain (SEO §2 — GitHub Pages), ❌ `assetlinks.json` (needs the Play signing certificate).
+Already shipping: Android via TWA, in closed testing on Google Play (packaged from a separate repo). Prerequisites this repo owns: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots (regenerated + compressed, July 2026), ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ✅ stable canonical domain (SEO §2 — GitHub Pages). iOS: ❌ not started.
 
 ### Recommended upgrade
 Play first (TWA is genuinely a PWA wrapper): fix prerequisites, run
@@ -1982,7 +1965,48 @@ Admin UX.
 
 ## 1. ARIA + keyboard pass on the tool pages (0 aria-labels today)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Covered all four pages the audit named
+> (`pages/drug-calculator.html`, `pages/GCS.html`, `pages/ecg.html`,
+> `pages/ems-tools.html`) — an early draft of this note said `ems-tools.html`
+> had "no custom interactive controls to audit"; that was checked and was
+> wrong (it's an 862-line page with 8 launcher cards plus APGAR/Burns/RTS/
+> START mini-calculators), caught and fixed before writing the final status.
+>
+> Found more than missing labels — several controls were **not keyboard
+> operable at all**, which is the more serious class of bug (a label on an
+> unreachable control doesn't help anyone): the GCS and ems-tools results
+> bottom-sheets' only close affordance was a bare `<div onclick>` drag
+> handle (not focusable, no keyboard handler) — now `role="button"
+> tabindex="0"` with an Enter/Space handler on both. ECG's 4 theme-switcher
+> swatches were `<div onclick>` color dots with only a `title` attribute —
+> converted to real `<button>` elements (title→aria-label). ECG's rhythm
+> picker — the page's core interaction — rendered its entire list of
+> selectable rhythms as `<div onclick>` items with no keyboard path in or
+> out; rebuilt as a proper `role="radiogroup"`/`role="radio"` list with
+> `aria-checked` and Enter/Space selection. `ems-tools.html`'s 8 launcher
+> cards (the page's entire navigation surface — every tool on the page
+> starts from one of these) were the same `<div onclick>` pattern; each got
+> `role="button" tabindex="0"` plus one delegated keydown listener for
+> Enter/Space. Every icon-only `<div onclick>` close button across all four
+> pages (GCS's, ECG's rhythm-picker's, ems-tools') is now a real `<button>`
+> with an `aria-label`.
+>
+> Also added labels to icon-only controls that *were* already real elements
+> (back links, search clear buttons, search/weight inputs) across all four
+> pages, and a page-scoped `:focus-visible{outline:2px solid #3b82f6}` rule
+> on each — all four had `outline:none` on at least one interactive element
+> with **no replacement focus indicator**, meaning a keyboard user tabbing
+> through lost all visual track of focus.
+>
+> Verified via Playwright: every new `aria-label` resolves to the intended
+> string; the GCS and ems-tools sheets close via `Tab` + `Enter` on the
+> handle; ECG's theme buttons are real `<button>` elements that change the
+> theme on click; the rhythm picker's radiogroup renders with `role="radio"`
+> + `tabindex="0"` items and both selects a rhythm and closes the sheet via
+> keyboard alone; an ems-tools launcher card opens its bottom sheet via
+> `Tab` + `Enter` alone. Zero console/page errors across all four pages.
 
 ### Why this matters
 `pages/ems-tools.html`, `drug-calculator.html`, `ecg.html` contain **zero**
@@ -2050,7 +2074,27 @@ Accessibility, readability during night shifts (AMOLED users).
 
 ## 3. `prefers-reduced-motion` support
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Added the standard universal-override snippet to `styles.css`:
+> `@media (prefers-reduced-motion: reduce) { *, *::before, *::after {
+> animation-duration: 0.01ms !important; animation-iteration-count: 1
+> !important; transition-duration: 0.01ms !important; scroll-behavior: auto
+> !important; } }`. Chose this over hand-picking individual animations
+> (`fadeInUp`, `bat-pulse`, `floatDown`, the loading skeleton shimmer) for
+> the same reason it's the industry-standard pattern: it can't miss a future
+> animation someone adds later, and it collapses durations to near-zero
+> rather than disabling `animation`/`transition` outright — so elements
+> still reach their end state (a card still becomes visible, a flip still
+> completes) instead of getting stuck mid-transition. This only covers the
+> app shell (`styles.css`); the 5 standalone exam-review pages already had
+> their own `@media print` + reduced-motion-adjacent handling from before
+> this pass and weren't touched.
+>
+> Verified via Playwright with `page.emulate_media(reduced_motion="reduce")`:
+> a `.menu-card`'s computed `animation-duration` drops from `0.6s` to
+> `0.00001s` under the preference and stays `0.6s` without it, zero page
+> errors either way.
 
 ### Why this matters
 Cards animate in, the drawer trigger bobs infinitely (`floatDown 3s infinite`),
@@ -2437,7 +2481,50 @@ Consistency, offline reliability, one less CDN, drops a beta dependency.
 
 ## 4. Delete dead weight: `_archive/`, `content_starters_backup/`, junk icons, `graphify.html`
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** Grep-verified zero live references to each target (no HTML,
+> JS, Python, or CI workflow touches them), then removed: `_archive/`
+> (1.1 MB), `content_starters_backup/` (196 KB), the 6 orphaned icon files
+> (`icons/image (4).png`, `image ( 4).png`, `new.png`, `new2.png`,
+> `new22.png`, `new222.png` — 4+ MB), and `graphify.html` (the standalone
+> visualizer page).
+>
+> **Correction mid-task:** initially deleted `graphify.yaml` too, assuming
+> it was part of the same dev-tool cruft as `graphify.html` — it isn't.
+> `graphify.yaml` is the *active config* for the `graphify` CLI this project
+> uses for codebase queries (see `CLAUDE.md`'s graphify instructions); it's
+> deploy-excluded via `.pagesignore` already (correctly — a config file has
+> no business being served) but is very much alive. Caught this before
+> committing and restored it via `git checkout HEAD -- graphify.yaml`.
+>
+> **Scope call — `pdf_sections/` (103 MB) deliberately NOT touched:** unlike
+> the items above, this is genuinely ambiguous rather than obviously dead —
+> 107 raw source PDFs (presumably the original CPG material this app's
+> content was authored from) with zero programmatic references, but no way
+> to confirm from the repo alone whether they're still used as a human
+> reference when updating chapter content. More importantly, actually
+> shrinking the repository (not just the working tree — `.git` itself is
+> 122 MB, and `pdf_sections/` accounts for most of that) requires a git
+> **history rewrite** (`git filter-repo`/BFG), which rewrites every commit
+> SHA, breaks any existing clones/forks, and requires a coordinated
+> force-push. That's a fundamentally different risk class from a normal
+> `git rm` — destructive, hard-to-reverse, and affects shared history — and
+> not something to do unilaterally without the repo owner's explicit
+> go-ahead. Recommendation stands from the audit: move the source PDFs to
+> external storage (they're already excluded from the deployed site via
+> `.pagesignore`) and rewrite history separately, as its own deliberate,
+> owner-approved operation.
+>
+> `reports/` (112 KB) was left alone too — small enough that the
+> risk/reward of investigating and removing it didn't clear the bar this
+> pass; flagged for a future cleanup pass, not because it's meaningfully
+> "dead weight" at that size.
+>
+> Verified: pytest/ruff/bandit clean after the deletions; grepped for
+> residual references to every deleted path — none found (the one
+> incidental hit, in the new `scripts/generate_sitemap.py`'s own exclude
+> list, is a harmless no-op now that the file it names doesn't exist).
 
 ### Why this matters
 1.1 MB `_archive/`, 196 KB `content_starters_backup/`, junk assets with broken names
@@ -2494,7 +2581,59 @@ Supportability, professionalism.
 
 ## 6. Wire the existing Playwright tests into CI + fix the npm test script
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `package.json`'s `test` script is now `playwright test`
+> (previously the `exit 1` stub). `playwright.config.js` gained a
+> `webServer` block (`python3 -m http.server 8899`, `reuseExistingServer:
+> !process.env.CI`) so Playwright manages the static server itself instead
+> of needing a manually-started one — works identically locally and in CI.
+> `.github/workflows/ci.yml`'s JavaScript section now does a real `npm ci`
+> (replacing an ad-hoc `npm install --save-dev eslint@8 prettier` that only
+> ever installed two of the project's declared dependencies) followed by
+> `npx playwright install --with-deps chromium` and `npm test`.
+>
+> Along the way, actually **ran** the existing 17 specs
+> (`tests/prometric.spec.js`, `tests/_check_exam_flow.spec.js`) for the
+> first time this session and confirmed all 17 pass — they'd never been
+> exercised in CI before, so this was the first real verification they
+> still reflect the app's current behavior.
+>
+> New `tests/offline.spec.js` (3 specs) — the "smoke specs" step below,
+> scoped to the thing this roadmap has spent the most effort on this cycle:
+> registers the service worker and asserts (1) zero `[SW] Pre-cache failed`
+> warnings across all `precache-manifest.js` entries, (2) a representative
+> page set — including `pages/GCS.html`, the exact page that was silently
+> missing from the old hand-maintained `PRE_CACHE` list — returns 200 with
+> the network cut, (3) all three vendored third-party assets (Chart.js,
+> the Supabase SDK, Font Awesome) are servable offline. This directly
+> regression-tests the two real incidents from earlier this session
+> (missing pages, CDN-dependent SDK) instead of just checking generic page
+> renders.
+>
+> **Found and fixed a real bug while writing test #3:** `sw.js`'s
+> `SWR_PATTERN` regex (`/\.(?:js|css|html|json|svg)(?:\?|$)/`) doesn't match
+> `.mjs` — `"supabase-js-2.110.0.mjs"` has no literal `".js"` substring
+> immediately before the end of the string, so the vendored Supabase SDK
+> fell through to `networkFirst`'s 2.5s-timeout-then-cache-fallback path
+> instead of the instant stale-while-revalidate hit every other app-shell
+> file gets. Added `mjs` to the pattern; still served correctly before the
+> fix (via the fallback), so this was a latency bug, not a correctness one
+> — but a real one, caught by writing a test that actually measured "is
+> this fast" territory rather than just "does this eventually 200".
+>
+> **Scope call:** did not add the additional smoke specs the roadmap
+> suggested (home renders, chapter opens, quiz scores, login renders) —
+> `tests/prometric.spec.js` already covers equivalent ground for the exam
+> engine, and the UI/UX section's Playwright verification (done manually,
+> per-item, throughout this and the prior session) covers the rest; adding
+> parallel automated specs for all of it is real, separate work better
+> scoped as its own item than folded into "fix the test runner."
+>
+> Verified: 20/20 specs pass locally (`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-
+> browsers/chromium npx playwright test` — that env var is a
+> sandbox-only override for a pre-installed browser and does not affect
+> normal CI runs, which use `npx playwright install` unmodified).
 
 ### Why this matters
 `tests/prometric.spec.js` and `playwright.config.js` exist but CI never runs them;

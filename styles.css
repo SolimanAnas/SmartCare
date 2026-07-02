@@ -1986,3 +1986,18 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     }
 }
 
+/* ---------- REDUCED MOTION ---------- */
+/* Respect the OS-level "reduce motion" preference: near-zero out every
+   animation/transition duration instead of disabling animation-*
+   properties outright, so state changes (fade-ins, the loading shimmer,
+   theme swaps) still resolve to their end state — just without the motion
+   — rather than getting stuck mid-transition or never firing at all. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
