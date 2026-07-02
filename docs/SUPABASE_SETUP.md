@@ -12,6 +12,8 @@ The frontend is wired in:
 | `pages/supabase-client.js` | Loads the Supabase SDK lazily, exposes `window.SmartCareCloud` (auth + sync). |
 | `pages/login.html` | Google sign-in + sync/backup/restore UI. |
 | `pages/signup.html` | Redirects to `login.html` (Google sign-in == sign-up). |
+| `pages/admin.html` | Hidden admin console — calls the Supabase Edge Functions below. |
+| `supabase/functions/admin-*` | Serverless admin API (list/update-role/delete users) — holds the `service_role` key server-side. See §4. |
 
 To make sign-in actually work you must complete the **3 dashboard steps** below
 (these can't be done from code).
@@ -89,6 +91,14 @@ reached via a secret gesture on the login page (tap the cloud icon 4× fast, ent
 PIN) and is protected server-side — the PIN only reveals the link, it does not grant
 API access.
 
+Reads/writes are handled by three **Supabase Edge Functions**
+(`supabase/functions/admin-list-users`, `admin-update-role`, `admin-delete-user`) —
+serverless, deployed straight to your Supabase project, no separate app server to
+host or keep alive. This replaced the old Flask (`server.py`) `/api/admin/*` routes,
+which required `server.py` to be deployed and reachable at the same origin as
+`pages/admin.html`; `server.py` now only serves the self-service account-deletion
+endpoint (`/api/account`), which every signed-in user is always authorized to call.
+
 ### 4a. Create the `profiles` table + auto-sync trigger
 
 Dashboard → **SQL Editor** → run:
@@ -109,9 +119,9 @@ grant usage on schema public to authenticated;
 grant select on public.profiles to authenticated;
 
 -- Each user can read (only) their own profile row from the client.
--- Admin reads/writes go through the server using the service_role key,
--- which bypasses RLS entirely — this policy only matters for direct
--- client-side queries, which the app doesn't currently make.
+-- Admin reads/writes go through the admin-* Edge Functions using the
+-- service_role key, which bypasses RLS entirely — this policy only matters
+-- for direct client-side queries, which the app doesn't currently make.
 create policy "own profile - select" on public.profiles
   for select using (auth.uid() = id);
 
@@ -154,29 +164,50 @@ from auth.users
 on conflict (id) do nothing;
 ```
 
-### 4b. Give the server a service-role key (admin-only, never shipped to the browser)
+### 4b. Deploy the admin Edge Functions
 
-Dashboard → **Project Settings → API** → copy the **`service_role`** secret key (NOT
-the anon/publishable one). Set these as environment variables on your **server**
-(Render/wherever `server.py` runs) — never in a file under version control:
+Requires the [Supabase CLI](https://supabase.com/docs/guides/cli) (`npm install -g
+supabase` or your platform's package manager), logged in and linked to your project:
 
+```bash
+supabase login
+supabase link --project-ref zltfrrudihtrtxutvdqq
+
+supabase functions deploy admin-list-users
+supabase functions deploy admin-update-role
+supabase functions deploy admin-delete-user
 ```
-SUPABASE_URL=https://zltfrrudihtrtxutvdqq.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=<the service_role secret from the dashboard>
-ADMIN_EMAILS=you@example.com,teammate@example.com
+
+Each function reads `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` automatically —
+Supabase injects both into every Edge Function's environment, so you don't set them
+yourself. You only need to set the admin allow-list, as a **secret** (not a file in
+this repo):
+
+```bash
+supabase secrets set ADMIN_EMAILS=you@example.com,teammate@example.com
 ```
 
-`ADMIN_EMAILS` is the same allow-list mechanism already used elsewhere in
-`server.py` — a comma-separated list of emails allowed to reach `/api/admin/*`.
-The server verifies the caller's Supabase session token first, then checks their
-email against this list; the `service_role` key itself never leaves the server.
+`ADMIN_EMAILS` is a comma-separated list of emails allowed to reach the admin
+functions — each function verifies the caller's Supabase session token first
+(`supabase/functions/_shared/admin.ts`'s `requireAdmin()`), then checks their email
+against this list. The `service_role` key never leaves the function's server-side
+environment; it is not reachable from `pages/admin.html` or any other browser code.
+
+To test a deployed function directly:
+
+```bash
+curl -i "$SUPABASE_URL/functions/v1/admin-list-users" \
+  -H "Authorization: Bearer <your-own-supabase-access-token>" \
+  -H "apikey: $SUPABASE_ANON_KEY"
+```
 
 ### 4c. Reaching the admin console
 
 On `pages/login.html`, tap the cloud icon above "SmartCare Cloud" **4 times within
 ~2 seconds** to trigger a PIN prompt. You must already be signed in with an email
 from `ADMIN_EMAILS` — the PIN only unlocks navigation to `admin.html`; the page
-itself will bounce you back to login if your account isn't allow-listed.
+itself will bounce you back to login if your account isn't allow-listed (the
+admin-list-users function returns `403`, which the page treats the same as `401`).
 
 ---
 

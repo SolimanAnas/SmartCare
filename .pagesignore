@@ -25,6 +25,10 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 
+# ── Supabase Edge Function source (deployed via `supabase functions deploy`,
+#    not served as static files — see docs/SUPABASE_SETUP.md §4) ────────────
+supabase/
+
 # ── Secrets (belt-and-braces; these should never be tracked at all) ────────
 .env
 .env.*

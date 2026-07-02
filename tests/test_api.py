@@ -7,8 +7,11 @@ import pytest
 import requests as requests_lib
 
 
-# ── Fake Supabase backend for the admin API (server.py talks to Supabase over
-# HTTP; these tests stub `requests.get/patch/delete` so no network is needed) ──
+# ── Fake Supabase backend (server.py talks to Supabase over HTTP for the
+# self-service account-deletion endpoint; these tests stub `requests.get/
+# delete` so no network is needed). The admin console (pages/admin.html) is
+# served by Supabase Edge Functions now — see supabase/functions/ — so its
+# tests live outside this Flask test suite. ─────────────────────────────────
 class _FakeResp:
     def __init__(self, status_code=200, json_data=None):
         self.status_code = status_code
@@ -23,14 +26,13 @@ class _FakeResp:
 
 
 @pytest.fixture
-def supabase_admin(monkeypatch):
-    """Stubs server.py's Supabase admin integration with an in-memory fake.
+def supabase_backend(monkeypatch):
+    """Stubs server.py's Supabase integration with an in-memory fake.
     Returns a namespace with add_user(token, id, email, ...) to seed fixtures."""
     import server
 
     monkeypatch.setattr(server, "SUPABASE_URL", "https://fake.supabase.co")
     monkeypatch.setattr(server, "SUPABASE_SERVICE_ROLE_KEY", "fake-service-role-key")
-    monkeypatch.setenv("ADMIN_EMAILS", "admin@smartcare.org")
 
     tokens = {}    # access token -> {id, email}
     profiles = {}  # user id -> profile dict
@@ -48,17 +50,7 @@ def supabase_admin(monkeypatch):
             token = headers.get("Authorization", "").replace("Bearer ", "")
             user = tokens.get(token)
             return _FakeResp(200, user) if user else _FakeResp(401, {})
-        if url.endswith("/rest/v1/profiles"):
-            return _FakeResp(200, list(profiles.values()))
         return _FakeResp(404, {})
-
-    def fake_patch(url, headers=None, params=None, json=None, timeout=None):
-        target_id = (params or {}).get("id", "").replace("eq.", "")
-        profile = profiles.get(target_id)
-        if not profile:
-            return _FakeResp(200, [])
-        profile["role"] = (json or {}).get("role", profile["role"])
-        return _FakeResp(200, [profile])
 
     def fake_delete(url, headers=None, timeout=None):
         user_id = url.rsplit("/", 1)[-1]
@@ -68,7 +60,6 @@ def supabase_admin(monkeypatch):
         return _FakeResp(404, {})
 
     monkeypatch.setattr(server.requests, "get", fake_get)
-    monkeypatch.setattr(server.requests, "patch", fake_patch)
     monkeypatch.setattr(server.requests, "delete", fake_delete)
 
     return types.SimpleNamespace(add_user=add_user, tokens=tokens, profiles=profiles)
@@ -86,83 +77,15 @@ class TestIndex:
         assert resp.content_type.startswith("text/html")
 
 
-# ── Admin (access-control regression, P0-1/P0-2) ─────────────────────────────
+# ── Self-service account deletion (Security #4, GDPR Art. 17) ───────────────
 # Backed by Supabase (real Google sign-ins) — see server.py's
-# _require_supabase_admin(). The `supabase_admin` fixture stubs the Supabase
+# _require_supabase_user(). The `supabase_backend` fixture stubs the Supabase
 # HTTP calls so these tests need no network. This is the only account system
 # left in server.py; the legacy Flask-Login/SQLAlchemy email+password system
-# was retired since nothing in the live app ever called it.
-class TestAdminUsers:
-    def test_admin_users_requires_auth(self, client, supabase_admin):
-        """No/invalid Supabase token must be denied (no PII leak)."""
-        resp = client.get("/api/admin/users")
-        assert resp.status_code == 401
-
-    def test_admin_users_not_configured_returns_503(self, client):
-        """Without SUPABASE_SERVICE_ROLE_KEY set, the admin API fails closed."""
-        resp = client.get("/api/admin/users", headers=_auth("whatever"))
-        assert resp.status_code == 503
-
-    def test_admin_users_forbidden_for_regular_user(self, client, supabase_admin):
-        """A signed-in, non-allow-listed user must be forbidden."""
-        supabase_admin.add_user("tok-regular", "uid-regular", "regular@smartcare.org")
-        resp = client.get("/api/admin/users", headers=_auth("tok-regular"))
-        assert resp.status_code == 403
-
-    def test_admin_can_list_users(self, client, supabase_admin):
-        """An allow-listed (ADMIN_EMAILS) signed-in user can list users."""
-        supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        resp = client.get("/api/admin/users", headers=_auth("tok-admin"))
-        assert resp.status_code == 200
-        data = resp.get_json()
-        assert any(u["email"] == "admin@smartcare.org" for u in data)
-
-    def test_admin_role_update(self, client, supabase_admin):
-        supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        supabase_admin.add_user(
-            "tok-x", "uid-target", "promote-me@smartcare.org", role="Unassigned"
-        )
-        resp = client.patch(
-            "/api/admin/users/uid-target/role",
-            json={"role": "Paramedic"},
-            headers=_auth("tok-admin"),
-        )
-        assert resp.status_code == 200
-        assert resp.get_json()["role"] == "Paramedic"
-
-    def test_admin_delete_user(self, client, supabase_admin):
-        supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        supabase_admin.add_user("tok-x", "uid-target", "todelete@smartcare.org")
-        resp = client.delete(
-            "/api/admin/users/uid-target",
-            headers={**_auth("tok-admin"), "X-Requested-With": "XMLHttpRequest"},
-        )
-        assert resp.status_code == 200
-        users_after = client.get("/api/admin/users", headers=_auth("tok-admin")).get_json()
-        assert not any(u["email"] == "todelete@smartcare.org" for u in users_after)
-
-    def test_admin_cannot_delete_own_account(self, client, supabase_admin):
-        supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        resp = client.delete(
-            "/api/admin/users/uid-admin",
-            headers={**_auth("tok-admin"), "X-Requested-With": "XMLHttpRequest"},
-        )
-        assert resp.status_code == 400
-
-    def test_non_admin_cannot_update_role(self, client, supabase_admin):
-        supabase_admin.add_user("tok-attacker", "uid-attacker", "attacker@smartcare.org")
-        supabase_admin.add_user("tok-victim", "uid-victim", "victim@smartcare.org")
-        resp = client.patch(
-            "/api/admin/users/uid-victim/role",
-            json={"role": "Admin"},
-            headers=_auth("tok-attacker"),
-        )
-        assert resp.status_code == 403
-
-
-# ── Self-service account deletion (Security #4, GDPR Art. 17) ───────────────
+# was retired since nothing in the live app ever called it, and the admin
+# console's CRUD API moved to Supabase Edge Functions (supabase/functions/).
 class TestAccountSelfDelete:
-    def test_requires_auth(self, client, supabase_admin):
+    def test_requires_auth(self, client, supabase_backend):
         resp = client.delete(
             "/api/account", headers={"X-Requested-With": "XMLHttpRequest"}
         )
@@ -175,27 +98,27 @@ class TestAccountSelfDelete:
         )
         assert resp.status_code == 503
 
-    def test_self_delete_works_no_admin_required(self, client, supabase_admin):
+    def test_self_delete_works_no_admin_required(self, client, supabase_backend):
         """A completely ordinary (non-admin) signed-in user can delete themself."""
-        supabase_admin.add_user("tok-jane", "uid-jane", "jane@example.com")
+        supabase_backend.add_user("tok-jane", "uid-jane", "jane@example.com")
         resp = client.delete(
             "/api/account",
             headers={**_auth("tok-jane"), "X-Requested-With": "XMLHttpRequest"},
         )
         assert resp.status_code == 200
-        assert "uid-jane" not in supabase_admin.profiles
+        assert "uid-jane" not in supabase_backend.profiles
 
-    def test_only_deletes_the_caller_own_account(self, client, supabase_admin):
+    def test_only_deletes_the_caller_own_account(self, client, supabase_backend):
         """There is no id parameter on this route — it can only ever delete
         the account the caller's own token resolves to, never someone else's."""
-        supabase_admin.add_user("tok-jane", "uid-jane", "jane@example.com")
-        supabase_admin.add_user("tok-bob", "uid-bob", "bob@example.com")
+        supabase_backend.add_user("tok-jane", "uid-jane", "jane@example.com")
+        supabase_backend.add_user("tok-bob", "uid-bob", "bob@example.com")
         client.delete(
             "/api/account",
             headers={**_auth("tok-jane"), "X-Requested-With": "XMLHttpRequest"},
         )
-        assert "uid-jane" not in supabase_admin.profiles
-        assert "uid-bob" in supabase_admin.profiles
+        assert "uid-jane" not in supabase_backend.profiles
+        assert "uid-bob" in supabase_backend.profiles
 
 
 # ── Security headers (P0-7, §3.5) ────────────────────────────────────────────
@@ -226,63 +149,61 @@ class TestHealthCheck:
 
 
 # ── Audit logging (P2-5, §4.7(b)) ────────────────────────────────────────────
+# The admin-* audit events (admin_access, admin_list_users, ...) now come from
+# the Supabase Edge Functions in supabase/functions/ (see their `audit()`
+# helper, which logs to the Supabase Functions dashboard instead of this
+# Flask logger). Only the self-delete audit trail remains here.
 class TestAuditLogging:
-    def test_admin_access_denied_is_audited(self, client, caplog, supabase_admin):
-        supabase_admin.add_user("tok-regular", "uid-regular", "regular@smartcare.org")
+    def test_self_delete_is_audited(self, client, caplog, supabase_backend):
+        supabase_backend.add_user("tok-jane", "uid-jane", "jane@example.com")
         with caplog.at_level(logging.INFO, logger="smartcare.audit"):
-            client.get("/api/admin/users", headers=_auth("tok-regular"))
+            client.delete(
+                "/api/account",
+                headers={**_auth("tok-jane"), "X-Requested-With": "XMLHttpRequest"},
+            )
         records = [r for r in caplog.records if r.name == "smartcare.audit"]
         events = [json.loads(r.message) for r in records]
-        assert any(e["event"] == "admin_access" and e["outcome"] == "denied"
-                   for e in events)
-
-    def test_admin_action_is_audited(self, client, caplog, supabase_admin):
-        supabase_admin.add_user("tok-admin", "uid-admin", "admin@smartcare.org")
-        with caplog.at_level(logging.INFO, logger="smartcare.audit"):
-            client.get("/api/admin/users", headers=_auth("tok-admin"))
-        records = [r for r in caplog.records if r.name == "smartcare.audit"]
-        events = [json.loads(r.message) for r in records]
-        assert any(e["event"] == "admin_list_users" and e["outcome"] == "success"
+        assert any(e["event"] == "account_self_delete" and e["outcome"] == "success"
                    for e in events)
 
 
 # ── CSRF guard (P2-7, §4.2(b)) ───────────────────────────────────────────────
-# Exercised against the admin role-update route (the only PATCH endpoint left
-# in server.py) rather than the retired /api/login. The guard is a
-# before_request hook, so it fires regardless of which route it protects.
+# The guard is a before_request hook keyed on method + the /api/ path prefix,
+# so it fires before route dispatch regardless of whether a route exists —
+# exercised here against /api/account (the only body-carrying endpoint left
+# in server.py) plus a synthetic /api/ path for the POST/PUT content-type
+# check, since no POST/PUT route remains in this Flask app at all.
 class TestCsrfGuard:
-    def test_post_without_json_content_type_rejected(self, client, supabase_admin):
-        """A plain-form request to an API endpoint must be rejected (CSRF)."""
-        resp = client.patch(
-            "/api/admin/users/uid-1/role",
+    def test_post_without_json_content_type_rejected(self, client):
+        """A plain-form request to an /api/ endpoint must be rejected (CSRF)."""
+        resp = client.post(
+            "/api/whatever",
             data="role=Admin",
             content_type="application/x-www-form-urlencoded",
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
         assert resp.status_code == 400
 
-    def test_post_without_xrw_header_rejected(self, client, supabase_admin):
+    def test_delete_without_xrw_header_rejected(self, client, supabase_backend):
         """A request missing X-Requested-With must be rejected."""
-        resp = client.patch(
-            "/api/admin/users/uid-1/role",
-            json={"role": "Admin"},
+        resp = client.delete(
+            "/api/account",
             headers={"X-Requested-With": ""},  # blank — override the fixture default
         )
         assert resp.status_code == 400
 
-    def test_valid_json_request_allowed(self, client, supabase_admin):
-        """A well-formed JSON request with the CSRF headers must reach the handler."""
-        resp = client.patch(
-            "/api/admin/users/uid-1/role",
-            json={"role": "Admin"},
+    def test_valid_delete_request_allowed(self, client, supabase_backend):
+        """A well-formed request with the CSRF headers must reach the handler."""
+        resp = client.delete(
+            "/api/account",
             headers={"X-Requested-With": "XMLHttpRequest"},
         )
         # Handler reached — 401 from missing auth, not 400 from the CSRF guard.
         assert resp.status_code == 401
 
-    def test_get_requests_not_blocked(self, client, supabase_admin):
+    def test_get_requests_not_blocked(self, client):
         """GET requests are never subject to the CSRF guard (only auth applies)."""
-        assert client.get("/api/admin/users").status_code == 401
+        assert client.get("/api/health").status_code == 200
 
 
 # ── Static files ──────────────────────────────────────────────────────────────

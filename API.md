@@ -56,24 +56,37 @@ Requires session. Redirects (`302`) to `/login.html`.
 
 ## Admin API
 
-All require session **and** admin role; non-admins get `403`.
+Not part of this Flask app — served by Supabase Edge Functions
+(`supabase/functions/admin-*`), deployed separately from `server.py`. See
+`docs/SUPABASE_SETUP.md` §4 for deployment. All require a Supabase session
+token (`Authorization: Bearer <token>`) **and** an email in the `ADMIN_EMAILS`
+Supabase secret; non-admins get `403`.
 
 | Method | Path | Description |
 |--------|------|-------------|
-| GET    | `/api/admin/users` | List all users |
-| PATCH  | `/api/admin/users/<id>/role` | Update a user's role (`{ "role": "..." }`) |
-| DELETE | `/api/admin/users/<id>` | Delete a user |
+| GET    | `<SUPABASE_URL>/functions/v1/admin-list-users` | List all users |
+| PATCH  | `<SUPABASE_URL>/functions/v1/admin-update-role` | Update a user's role (`{ "userId", "role" }`) |
+| DELETE | `<SUPABASE_URL>/functions/v1/admin-delete-user` | Delete a user (`{ "userId" }`) |
 
-`GET /api/admin/users` returns `[{ "id", "full_name", "email", "role" }]`.
+`GET admin-list-users` returns `[{ "id", "full_name", "email", "role", "created_at" }]`.
+
+## Account API
+
+### DELETE `/api/account`
+
+Requires a Supabase session token. Deletes the caller's **own** account — no
+admin role required, any signed-in user may always delete themself.
+
+Responses: `200` success · `401` no/invalid session · `503` not configured.
 
 ## Operations
 
 ### GET `/api/health`
 
-Liveness/readiness probe (rate-limit exempt). Verifies DB connectivity.
+Liveness probe (rate-limit exempt). `server.py` has no database of its own —
+the process responding at all is the signal.
 
-- `200` — `{ "status": "healthy", "database": "up" }`
-- `503` — `{ "status": "degraded", "database": "down" }`
+- `200` — `{ "status": "healthy" }`
 
 ## Error format
 
