@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
+         its own header, but Pages can't send headers, so it lives here. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; img-src 'self' data: https://www.gstatic.com https://*.googleusercontent.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://accounts.google.com; frame-src https://accounts.google.com; object-src 'none'; base-uri 'self'">
     <!-- General SEO Meta Tags -->
     <meta name="description" content="Sign in to SmartCare to sync your study progress across devices. Signing in is optional — everything works offline without an account.">
     <meta name="keywords" content="SmartCare, sign in, cloud sync, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -9,10 +12,10 @@
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smartcare-learning.net/pages/login">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/pages/login">
     <meta property="og:title" content="SmartCare · Sign In">
     <meta property="og:description" content="Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -21,14 +24,14 @@
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smartcare-learning.net/pages/login">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/pages/login">
     <meta name="twitter:title" content="SmartCare · Sign In">
     <meta name="twitter:description" content="Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://smartcare-learning.net/pages/login">
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/pages/login">
 
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -43,14 +46,14 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "SmartCare · Sign In",
-  "url": "https://smartcare-learning.net/pages/login",
+  "url": "https://solimananas.github.io/SmartCare/pages/login",
   "description": "Sign in to sync your study progress across devices. Optional — SmartCare works fully without an account.",
-  "image": "https://smartcare-learning.net/images/og.jpg",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
   "author": { "@type": "Person", "name": "Soliman Anas" },
   "publisher": {
     "@type": "Organization",
     "name": "SmartCare",
-    "logo": { "@type": "ImageObject", "url": "https://smartcare-learning.net/icons/icon.png" }
+    "logo": { "@type": "ImageObject", "url": "https://solimananas.github.io/SmartCare/icons/icon.png" }
   },
   "inLanguage": "en-US"
 }
@@ -59,12 +62,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>SmartCare · Sign In</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Pinned from the 6.0.0-beta3 pre-release to the latest stable 6.x (icon
-       class names are unchanged across the 6.x line). TODO(security): add
-       integrity= — this sandbox's network policy blocks cdnjs.cloudflare.com,
-       so the SRI hash couldn't be computed here:
-         curl -sSL https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css | openssl dgst -sha384 -binary | openssl base64 -A -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+  <!-- Font Awesome 6.7.2, vendored locally (vendor/fontawesome/, from the npm
+       package) — no CDN trust or SRI needed, and the page works offline. -->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
 
   <style>
     :root {

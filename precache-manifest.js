@@ -68,7 +68,13 @@ self.__PRECACHE = [
   "fonts/dm-mono-500.woff2",
   "fonts/fonts.css",
   "fonts/inter-var.woff2",
+  "vendor/chart-4.5.1.umd.min.js",
   "vendor/supabase-js-2.110.0.mjs",
+  "vendor/fontawesome/css/all.min.css",
+  "vendor/fontawesome/webfonts/fa-brands-400.woff2",
+  "vendor/fontawesome/webfonts/fa-regular-400.woff2",
+  "vendor/fontawesome/webfonts/fa-solid-900.woff2",
+  "vendor/fontawesome/webfonts/fa-v4compatibility.woff2",
   "content/c-index.js",
   "content/c0.js",
   "content/c1.meta.js",
@@ -93,4 +99,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "905483bf62";
+self.__PRECACHE_VERSION = "950ca339ca";

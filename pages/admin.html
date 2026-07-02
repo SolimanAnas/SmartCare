@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
+         its own header, but Pages can't send headers, so it lives here. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'">
     <!-- This page is a hidden admin console — deliberately not indexed, not
          shared on social media, and not described to crawlers. See
          docs/upgrades.md "Critical Fixes #2" for rationale. -->
@@ -19,12 +22,9 @@
   <title>SmartCare Admin</title>
   <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts/fonts.css">
-  <!-- Pinned from the 6.0.0-beta3 pre-release to the latest stable 6.x (icon
-       class names are unchanged across the 6.x line). TODO(security): add
-       integrity= — this sandbox's network policy blocks cdnjs.cloudflare.com,
-       so the SRI hash couldn't be computed here:
-         curl -sSL https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css | openssl dgst -sha384 -binary | openssl base64 -A -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
+  <!-- Font Awesome 6.7.2, vendored locally (vendor/fontawesome/, from the npm
+       package) — no CDN trust or SRI needed, and the console works offline. -->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <script src="supabase-config.js"></script>
   <script src="supabase-client.js"></script>
   <style>
@@ -895,8 +895,7 @@
     if (chartJsPromise) return chartJsPromise;
     chartJsPromise = new Promise((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js';
-      script.crossOrigin = 'anonymous';
+      script.src = '../vendor/chart-4.5.1.umd.min.js';
       script.onload = () => resolve();
       script.onerror = () => { chartJsPromise = null; reject(new Error('Chart.js failed to load')); };
       document.head.appendChild(script);

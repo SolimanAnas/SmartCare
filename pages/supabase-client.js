@@ -36,6 +36,7 @@
   var SDK_URL = '../vendor/supabase-js-2.110.0.mjs';
   var TABLE = 'user_state';            // see docs/SUPABASE_SETUP.md
   var LAST_SYNC_KEY = 'smartcare_last_sync';
+  var SNAPSHOT_KEY = 'smartcare_last_sync_snapshot';
 
   /* Local data we treat as "cloud-syncable". Anything matching an exact key
    * or a prefix is included; the blocklist is always excluded. Forward-
@@ -43,7 +44,7 @@
   var SYNC_EXACT = ['theme', 'smartcare-theme', 'smartcare_font_size'];
   var SYNC_PREFIX = ['smartcare_', 'smartcare-'];
   var SYNC_SUFFIX = ['-theme', '-mode', '-hints-enabled'];
-  var SYNC_BLOCK = ['smartcare_last_sync'];
+  var SYNC_BLOCK = ['smartcare_last_sync', 'smartcare_last_sync_snapshot'];
 
   function isSyncable(key) {
     if (SYNC_BLOCK.indexOf(key) !== -1) return false;
@@ -70,6 +71,59 @@
         try { localStorage.setItem(k, data[k]); } catch (e) {}
       }
     });
+  }
+
+  /* ── Three-way per-key merge ──────────────────────────────────────────
+   * The old design was whole-blob newest-wins: pull() overwrote every local
+   * key with the cloud copy, so a device that studied offline could have its
+   * fresh progress replaced by another device's stale snapshot of the same
+   * keys — silent data loss. Instead, we keep a client-side snapshot of the
+   * entries as of the last successful sync (the merge "base") and merge
+   * per key:
+   *   - key unchanged locally since base  -> take the cloud value
+   *   - key unchanged in cloud since base -> keep the local value
+   *   - changed on both sides (true concurrent edit of the same key)
+   *     -> keep LOCAL: sync() pushes right after merging, making this
+   *        device canonical, and the value the user just produced on the
+   *        device in their hand beats a background copy losing silently.
+   * First sync on a device (no base yet): cloud wins for overlapping keys
+   * (the account's accumulated data beats a fresh install's defaults), and
+   * keys that exist on only one side are always kept.
+   */
+  function loadSnapshot() {
+    try { return JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || 'null'); }
+    catch (e) { return null; }
+  }
+
+  function saveSnapshot(entries) {
+    try { localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(entries)); } catch (e) {}
+  }
+
+  function mergeForSync(local, cloud, base) {
+    local = local || {};
+    cloud = cloud || {};
+    var merged = {};
+    var keys = {};
+    Object.keys(local).forEach(function (k) { keys[k] = true; });
+    Object.keys(cloud).forEach(function (k) { keys[k] = true; });
+
+    Object.keys(keys).forEach(function (k) {
+      var inLocal = Object.prototype.hasOwnProperty.call(local, k);
+      var inCloud = Object.prototype.hasOwnProperty.call(cloud, k);
+      if (!inCloud) { merged[k] = local[k]; return; }
+      if (!inLocal) { merged[k] = cloud[k]; return; }
+      if (local[k] === cloud[k]) { merged[k] = local[k]; return; }
+
+      if (base && Object.prototype.hasOwnProperty.call(base, k)) {
+        if (local[k] === base[k]) { merged[k] = cloud[k]; return; } // only cloud changed
+        if (cloud[k] === base[k]) { merged[k] = local[k]; return; } // only local changed
+        merged[k] = local[k];                                       // concurrent: local wins
+        return;
+      }
+      // No base for this key: first sync (or pre-upgrade device) — cloud wins.
+      merged[k] = cloud[k];
+    });
+    return merged;
   }
 
   var configured = !!(window.SUPABASE_URL && window.SUPABASE_ANON_KEY);
@@ -154,25 +208,30 @@
       return requireClient().then(function (c) { return c.auth.signOut(); });
     },
 
+    /** @private exposed for tests — pure three-way merge (local, cloud, base). */
+    _mergeForSync: mergeForSync,
+
     /** Upload local syncable data to the user's cloud row. */
     push: function () {
       return Promise.all([requireClient(), api.getUser()]).then(function (res) {
         var c = res[0], user = res[1];
         if (!user) throw new Error('Not signed in');
         var now = new Date().toISOString();
+        var entries = collectLocal();
         return c.from(TABLE).upsert({
           user_id: user.id,
-          data: { entries: collectLocal(), updated_at: now },
+          data: { entries: entries, updated_at: now },
           updated_at: now
         }, { onConflict: 'user_id' }).then(function (r) {
           if (r.error) throw r.error;
           localStorage.setItem(LAST_SYNC_KEY, now);
+          saveSnapshot(entries);   // what the cloud now holds = the next merge base
           return now;
         });
       });
     },
 
-    /** Download the cloud row and merge it into local storage. */
+    /** Download the cloud row and three-way-merge it into local storage. */
     pull: function () {
       return Promise.all([requireClient(), api.getUser()]).then(function (res) {
         var c = res[0], user = res[1];
@@ -182,7 +241,12 @@
             if (r.error) throw r.error;
             var row = r.data;
             if (row && row.data && row.data.entries) {
-              applyLocal(row.data.entries);
+              var merged = mergeForSync(collectLocal(), row.data.entries, loadSnapshot());
+              applyLocal(merged);
+              // Snapshot is NOT updated here: until the merged state is
+              // pushed, the cloud still holds its pre-merge blob, and the
+              // base must keep describing what cloud and local last agreed
+              // on. push() (called by sync()) updates it.
               localStorage.setItem(LAST_SYNC_KEY, new Date().toISOString());
             }
             return row ? (row.updated_at || null) : null;
@@ -190,7 +254,7 @@
       });
     },
 
-    /** Newest-wins: pull cloud first, then push the merged local state back. */
+    /** Merge cloud into local (per key, see mergeForSync), then push the result. */
     sync: function () {
       return api.pull().then(function () { return api.push(); });
     },

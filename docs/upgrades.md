@@ -241,7 +241,25 @@ Accessibility, App Store/Play review compliance, medical safety (dose tables mus
 
 ## 1. Add Subresource Integrity (SRI) to all CDN scripts
 
-- [x] Planned  - [x] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status (resolved differently — better):** instead of computing SRI
+> hashes for the remaining CDN resources, they were **vendored locally**,
+> which is strictly stronger (the bytes are pinned in git and under
+> service-worker control): Chart.js 4.5.1 → `vendor/chart-4.5.1.umd.min.js`
+> (byte-for-byte from the npm package; all three loaders updated —
+> `index.html`, `pages/admin.html`, `src/prometric/exam.js` — and the stats
+> charts now work offline), Font Awesome 6.7.2 → `vendor/fontawesome/`
+> (css + woff2, `pages/admin.html` + `pages/login.html` updated). Combined
+> with the earlier Supabase SDK vendoring (Offline §3), **zero third-party
+> script/style CDN references remain in the deployed app** — `grep` for
+> `cdn.jsdelivr.net|cdnjs.cloudflare.com` returns only the deploy-excluded
+> `graphify.html` dev tool. SRI is therefore moot: there is nothing left to
+> hash. The only remaining third-party script is Google's GSI client on
+> `login.html`, which cannot be self-hosted (Google requires loading it
+> live) and is now pinned by CSP (§2) instead. Verified via Playwright:
+> vendored Chart.js loads (v4.5.1 reports itself) and FA font-family
+> resolves, both under the new CSP with zero violations.
 
 > **Status:** Chart.js, Font Awesome, and the Supabase SDK are now pinned to
 > exact, verified-to-exist versions (was: floating "latest" for Chart.js/
@@ -291,7 +309,27 @@ Security (supply chain), reliability (no surprise breaking CDN updates).
 
 ## 2. Tighten CSP: remove `'unsafe-inline'` for scripts (long-term), add CSP to GitHub Pages via meta
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** the deliverable half is done: `<meta http-equiv=
+> "Content-Security-Policy">` added to the pages that matter — `index.html`
+> and `pages/admin.html` (`default-src 'self'` + Supabase connect),
+> `pages/login.html` (adds the Google GSI/fonts origins it genuinely
+> needs: `accounts.google.com` script/frame/connect, `fonts.googleapis.com`
+> style, `fonts.gstatic.com` font, `gstatic.com`/`googleusercontent.com`
+> img), and all 13 `chapters/*.html` (strictest: no third-party origins at
+> all). Because Critical-4 vendored every CDN script/style, no CDN origins
+> appear in any policy. `object-src 'none'` and `base-uri 'self'`
+> everywhere; `frame-ancestors` omitted deliberately (ignored in meta CSP —
+> the Flask header still carries it for backend-served responses).
+> Verified via Playwright: zero CSP violations across index, chapter
+> summary/quiz views, and admin, with vendored Chart.js + FA loading
+> correctly under the policies.
+>
+> **Remaining (the "long-term" half, unchanged):** `'unsafe-inline'` still
+> required for both scripts and styles — removing it means extracting
+> ~1,100 inline JS lines from `index.html` and inline handlers everywhere
+> (Code Quality §1 is the prerequisite). Not attempted here by design.
 
 ### Why this matters
 `server.py` sends a decent CSP but with `script-src 'unsafe-inline'`, which
@@ -1710,7 +1748,7 @@ store-ready. Packaging as a **TWA (Bubblewrap/PWABuilder)** for Play and a
 PWABuilder iOS wrapper unlocks distribution where clinicians actually search.
 
 ### Current implementation
-Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots, ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ❌ stable canonical domain (SEO §2), ❌ `assetlinks.json`.
+Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots (regenerated + compressed, July 2026), ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ✅ stable canonical domain (SEO §2 — GitHub Pages), ❌ `assetlinks.json` (needs the Play signing certificate).
 
 ### Recommended upgrade
 Play first (TWA is genuinely a PWA wrapper): fix prerequisites, run
@@ -1742,7 +1780,22 @@ Distribution, credibility, user acquisition.
 
 ## 1. Run the `profiles` migration + set server env (activation blocker)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** the schema now exists **as code**: `supabase/migrations/`
+> holds `20260702000001_create_user_state.sql` +
+> `20260702000002_create_profiles.sql` (tables, RLS policies, grants, the
+> `handle_new_user` trigger, and the backfill), written idempotently
+> (`drop policy if exists` before every `create policy`) so `supabase db
+> push` is safe even where the dashboard SQL was already run by hand.
+> `docs/SUPABASE_SETUP.md` remains the human-readable companion; the
+> migration files are now the source of truth (see
+> `supabase/migrations/README.md`).
+>
+> **Remaining — cannot be done from this environment:** actually running
+> `supabase db push` (needs project credentials) and setting the Edge
+> Function secrets (`ADMIN_EMAILS` etc.). Until someone with project access
+> runs it, the live database schema is whatever was last applied manually.
 
 ### Why this matters
 The admin console (PR #10) is code-complete but **inert** until the one-time
@@ -1773,7 +1826,30 @@ Feature activation.
 
 ## 2. Sync conflict hardening: per-key merge instead of whole-blob newest-wins
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `pages/supabase-client.js` now does a snapshot-based
+> **three-way per-key merge**. A client-side snapshot of the entries as of
+> the last successful sync (`smartcare_last_sync_snapshot`, added to
+> `SYNC_BLOCK` so it never syncs itself) serves as the merge base; on
+> `pull()`, each key resolves as: unchanged-locally → take cloud;
+> unchanged-in-cloud → keep local; changed on both sides → **local wins**
+> (sync() pushes immediately after, making the device in the user's hand
+> canonical — the value they just produced beats a background copy losing
+> silently). First sync on a device (no base): cloud wins for overlapping
+> keys, one-sided keys always survive. `push()` refreshes the snapshot on
+> success; `pull()` deliberately does not (until pushed, the cloud still
+> holds its pre-merge blob, so the base must keep describing the last
+> agreed state). The cloud row shape is unchanged — old and new clients
+> interoperate; pre-upgrade devices simply behave like first-sync until
+> their first successful push.
+>
+> The merge is exposed as `SmartCareCloud._mergeForSync(local, cloud,
+> base)` for testability. Verified via Playwright with five scenarios,
+> including the exact data-loss case from the audit: device A's fresh
+> offline chapter progress now survives device B's later push of a stale
+> copy (previously A's work was silently overwritten, then the regression
+> was re-uploaded).
 
 ### Why this matters
 `sync()` = pull (overwrite local from cloud blob) then push (overwrite cloud with
@@ -2579,7 +2655,20 @@ Market expansion, future-proofing.
 
 ## 1. Add robots.txt + sitemap.xml
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `robots.txt` (allow all + `Sitemap:` line) and `sitemap.xml`
+> (45 URLs, generated by the new `scripts/generate_sitemap.py`) committed,
+> both unblocked by the canonical-domain decision (§2 below). Deliberate
+> deviation from the recommended steps: `pages/admin.html` is **not**
+> `Disallow:`ed — a robots block would stop crawlers from ever *seeing* the
+> `noindex` meta that actually keeps it out of results, while advertising
+> the path to anyone reading robots.txt; the noindex meta (Critical Fixes
+> §2) is the correct mechanism and stays. `/_archive/`, `/pdf_sections/`
+> need no robots entries — they're already excluded from the deploy itself
+> via `.pagesignore`, so they don't exist on the served site. Auth pages,
+> `resume.html`, and `404.html` are excluded from the sitemap by the
+> generator.
 
 ### Why this matters
 Neither exists. Search engines crawl blind (including `pdf_sections/` and
@@ -2606,7 +2695,19 @@ SEO, discoverability, keeps private-ish pages out of the index.
 
 ## 2. Resolve the canonical-domain split
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Decided (owner call, July 2026): the canonical domain is the
+> GitHub Pages URL, `https://solimananas.github.io/SmartCare` — no custom
+> domain exists right now, so canonicalizing on the one that actually serves
+> the site beats canonicalizing on one that doesn't. One pass normalized
+> every `canonical`, `og:url`, `og:image`, `twitter:*`, and JSON-LD `url`
+> across all 45 HTML files (`smartcare-learning.net` no longer appears
+> anywhere outside historical docs); removed the stale custom-domain
+> redirect URL from `docs/SUPABASE_SETUP.md` §3. `404.html`'s
+> `/SmartCare/`-absolute internal paths were already consistent with this
+> choice. If a custom domain is added later, this becomes one `sed` pass +
+> a `CNAME` file + re-running `scripts/generate_sitemap.py`.
 
 ### Why this matters
 Pages disagree about where the site lives: `about.html`/`admin.html`/`index.html`

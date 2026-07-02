@@ -2,7 +2,9 @@
   "name": "SmartCare – Study Aid",
   "short_name": "SmartCare",
   "description": "Generic clinical learning platform for healthcare professionals.",
-  "categories": ["education"],
+  "categories": [
+    "education"
+  ],
   "lang": "en",
   "dir": "ltr",
   "start_url": "index.html",
@@ -13,22 +15,102 @@
   "background_color": "#0f2027",
   "theme_color": "#0056b3",
   "icons": [
-    { "src": "icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-72x72-maskable.png", "sizes": "72x72", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-96x96-maskable.png", "sizes": "96x96", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-128x128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-128x128-maskable.png", "sizes": "128x128", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-144x144-maskable.png", "sizes": "144x144", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-152x152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-152x152-maskable.png", "sizes": "152x152", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-192x192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-384x384-maskable.png", "sizes": "384x384", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512x512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-72x72-maskable.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96x96-maskable.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128x128-maskable.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144x144-maskable.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152x152-maskable.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384x384-maskable.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
     {
@@ -36,149 +118,104 @@
       "short_name": "Resume",
       "description": "Jump back into the last chapter you studied",
       "url": "resume.html",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Prometric EMT Exam",
       "short_name": "Exam",
       "description": "NREMT-style practice questions with analytics",
       "url": "src/prometric/exam.html",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Drug Calculator",
       "short_name": "Drug Calc",
       "description": "Calculate medication doses, drip rates, and infusions",
       "url": "pages/drug-calculator.html",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "screenshots": [
     {
-      "src": "images/screenshots/00.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Home"
-    },
-    {
-      "src": "images/screenshots/1.png",
-      "sizes": "941x1672",
+      "src": "images/screenshots/phone-home.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 1"
+      "label": "Home — chapter library & progress"
     },
     {
-      "src": "images/screenshots/2.png",
-      "sizes": "941x1672",
+      "src": "images/screenshots/phone-chapter.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 2"
+      "label": "Chapter summary study view"
     },
     {
-      "src": "images/screenshots/3.png",
-      "sizes": "941x1672",
+      "src": "images/screenshots/phone-flashcards.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 3"
+      "label": "Flashcard practice"
     },
     {
-      "src": "images/screenshots/4.png",
-      "sizes": "941x1672",
+      "src": "images/screenshots/phone-quiz.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 4"
+      "label": "Quiz setup"
     },
     {
-      "src": "images/screenshots/5.png",
-      "sizes": "1024x1536",
+      "src": "images/screenshots/phone-drugcalc.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 5"
+      "label": "Drug dose calculator"
     },
     {
-      "src": "images/screenshots/6.png",
-      "sizes": "1024x1536",
+      "src": "images/screenshots/phone-ecg.png",
+      "sizes": "780x1688",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Screenshot 6"
+      "label": "ECG rhythm simulator"
     },
     {
-      "src": "images/screenshots/7.png",
-      "sizes": "1024x1536",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Screenshot 7"
-    },
-    {
-      "src": "images/screenshots/8.png",
-      "sizes": "1536x1024",
+      "src": "images/screenshots/tablet-home.png",
+      "sizes": "1920x1200",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Screenshot 8"
+      "label": "Home on tablet"
     },
     {
-      "src": "images/screenshots/9.png",
-      "sizes": "1536x1024",
+      "src": "images/screenshots/tablet-chapter.png",
+      "sizes": "1920x1200",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Screenshot 9"
+      "label": "Two-pane study mode on tablet"
     },
     {
-      "src": "images/screenshots/tab1.png",
-      "sizes": "1672x941",
+      "src": "images/screenshots/tablet-drugcalc.png",
+      "sizes": "1920x1200",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Tablet View 1"
-    },
-    {
-      "src": "images/screenshots/tab2.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 2"
-    },
-    {
-      "src": "images/screenshots/tab3.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 3"
-    },
-    {
-      "src": "images/screenshots/tab4.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 4"
-    },
-    {
-      "src": "images/screenshots/tab5.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 5"
-    },
-    {
-      "src": "images/screenshots/tab6.png",
-      "sizes": "1672x941",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 6"
-    },
-    {
-      "src": "images/screenshots/tab7.png",
-      "sizes": "1536x1024",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 7"
-    },
-    {
-      "src": "images/screenshots/tab8.png",
-      "sizes": "1536x1024",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Tablet View 8"
+      "label": "Drug calculator split view"
     }
   ]
 }

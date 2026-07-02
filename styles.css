@@ -1981,6 +1981,8 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     .chapter-layout .section-tab {
         width: 100%;
         text-align: left;
+        white-space: normal;    /* mobile pills nowrap-scroll; sidebar entries wrap */
+        line-height: 1.35;
     }
 }
 
