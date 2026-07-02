@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://smartcare-learning.net">
     <meta property="og:title" content="SmartCare · Clinical Learning Platform">
     <meta property="og:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -24,7 +24,7 @@
     <meta name="twitter:url" content="https://smartcare-learning.net">
     <meta name="twitter:title" content="SmartCare · Clinical Learning Platform">
     <meta name="twitter:description" content="SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
@@ -45,7 +45,7 @@
   "name": "SmartCare · Clinical Learning Platform",
   "url": "https://smartcare-learning.net",
   "description": "SmartCare is an interactive clinical learning platform and study aid for EMS, nursing, and healthcare professionals. Practice NREMT-style questions, flashcards, and clinical scenarios offline.",
-  "image": "https://smartcare-learning.net/images/og.png",
+  "image": "https://smartcare-learning.net/images/og.jpg",
   "author": {
     "@type": "Person",
     "name": "Soliman Anas"
@@ -73,19 +73,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SmartCare · Clinical Learning Platform</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <!-- Pinned to an exact version (was floating "latest") so this can never change
-         out from under us. TODO(security): add integrity=. This sandbox's network
-         policy blocks cdn.jsdelivr.net, so the SRI hash couldn't be computed here —
-         run this from anywhere with CDN access and paste the result:
-           curl -sSL https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js | openssl dgst -sha384 -binary | openssl base64 -A -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <!-- Chart.js is loaded lazily (see loadChartJs()) only when the stats modal
+         renders a progress chart, instead of blocking every page load. -->
     <script src="pages/supabase-config.js"></script>
     <script src="pages/supabase-client.js"></script>
 
@@ -1563,11 +1558,33 @@
             </div>
         `;
         document.body.appendChild(modal);
-        
+
         // Render chart if data exists
         if (examStats.length > 1) {
-            setTimeout(() => renderProgressChart(chartLabels, chartData, chartColors), 100);
+            loadChartJs()
+                .then(() => setTimeout(() => renderProgressChart(chartLabels, chartData, chartColors), 100))
+                .catch(err => console.warn('[SmartCare] Chart.js failed to load:', err));
         }
+    }
+
+    // Pinned to an exact version (was floating "latest") so this can never change
+    // out from under us. TODO(security): add integrity=. This sandbox's network
+    // policy blocks cdn.jsdelivr.net, so the SRI hash couldn't be computed here —
+    // run this from anywhere with CDN access and paste the result:
+    //   curl -sSL https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js | openssl dgst -sha384 -binary | openssl base64 -A
+    let chartJsPromise = null;
+    function loadChartJs() {
+        if (window.Chart) return Promise.resolve();
+        if (chartJsPromise) return chartJsPromise;
+        chartJsPromise = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js';
+            script.crossOrigin = 'anonymous';
+            script.onload = () => resolve();
+            script.onerror = () => { chartJsPromise = null; reject(new Error('Chart.js failed to load')); };
+            document.head.appendChild(script);
+        });
+        return chartJsPromise;
     }
 
     function renderProgressChart(labels, data, colors) {
@@ -1719,8 +1736,49 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('sw.js')
-            .then(r => console.log('PWA Ready', r))
+            .then(function(r) {
+                console.log('PWA Ready', r);
+                initSWUpdateToast(r);
+            })
             .catch(e => console.log('SW failed', e));
+    });
+
+    let swRefreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+        if (swRefreshing) return;
+        swRefreshing = true;
+        window.location.reload();
+    });
+}
+
+function initSWUpdateToast(reg) {
+    function showToast(worker) {
+        if (document.getElementById('sw-update-toast')) return;
+        const toast = document.createElement('div');
+        toast.id = 'sw-update-toast';
+        toast.setAttribute('role', 'status');
+        toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
+            'background:#1e293b;color:#fff;padding:12px 16px;border-radius:10px;' +
+            'box-shadow:0 4px 20px rgba(0,0,0,.35);z-index:99999;display:flex;' +
+            'align-items:center;gap:12px;font:14px/1.4 system-ui,-apple-system,sans-serif;';
+        toast.innerHTML = '<span>Update ready</span>' +
+            '<button id="sw-update-btn" style="background:#3b82f6;color:#fff;border:none;' +
+            'padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit;font-weight:600;">Refresh</button>';
+        document.body.appendChild(toast);
+        document.getElementById('sw-update-btn').addEventListener('click', function() {
+            worker.postMessage({ type: 'SKIP_WAITING' });
+            toast.remove();
+        });
+    }
+    if (reg.waiting) showToast(reg.waiting);
+    reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', function() {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                showToast(newWorker);
+            }
+        });
     });
 }
 </script>

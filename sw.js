@@ -1,10 +1,11 @@
 ﻿// ============================================================
 //  SmartCare – Service Worker
-//  Strategy: NETWORK FIRST → cache fallback
+//  Strategy: cache-first for media/fonts, stale-while-revalidate
+//  for app-shell assets, network-first for /api/
 // ============================================================
 
-const CACHE_VERSION = 'smartcare-v3.1';           // v3.1: Security fixes — pinned CDN versions, retired legacy Flask auth, self-service account deletion, courses.html logout fix
-const CACHE_TIMEOUT = 5000;                    
+const CACHE_VERSION = 'smartcare-v3.2';           // v3.2: Performance — stale-while-revalidate for app-shell assets, update toast, algorithms cache-first, faster network-first timeout
+const CACHE_TIMEOUT = 2500;
 
 // ── Files cached immediately on install ─────────────────────
 const PRE_CACHE = [
@@ -37,17 +38,29 @@ const PRE_CACHE = [
   'chapters/m1-38.html',
   'content/c-index.js',
   'content/c0.js',
-  'content/c1.js',
-  'content/c2.js',
-  'content/c3.js',
-  'content/c4.js',
-  'content/c5.js',
-  'content/c6.js',
-  'content/c7.js',
-  'content/c8.js',
-  'content/c9.js',
-  'content/c10.js',
+  'content/c1.meta.js',
+  'content/c2.meta.js',
+  'content/c3.meta.js',
+  'content/c4.meta.js',
+  'content/c5.meta.js',
+  'content/c6.meta.js',
+  'content/c7.meta.js',
+  'content/c8.meta.js',
+  'content/c9.meta.js',
+  'content/c10.meta.js',
   'content/m1-38.js',
+  // First section of each split chapter, so the default view (no ?section=)
+  // still works instantly offline before any tab has been visited.
+  'content/c1/c1s1.json',
+  'content/c2/c2s1.json',
+  'content/c3/c3s1.json',
+  'content/c4/c4s1.json',
+  'content/c5/c5s1.json',
+  'content/c6/c6s1.json',
+  'content/c7/c7s1.json',
+  'content/c8/c8s1.json',
+  'content/c9/c9s1.json',
+  'content/c10/c10s1.json',
   'pages/drug-calculator.js',
   'pages/drug-data.json',
   'pages/ecg.html',
@@ -59,17 +72,26 @@ const PRE_CACHE = [
   'pages/supabase-config.js',
   'pages/supabase-client.js',
   'courses/itls/index.html',
-  'courses/itls/data/bundle.js'
+  'courses/itls/data/bundle.js',
+  'fonts/fonts.css',
+  'fonts/inter-var.woff2',
+  'fonts/dm-mono-400.woff2',
+  'fonts/dm-mono-500.woff2'
 ];
 
 // ── File type routing ────────────────────────────────────────
 const CACHE_FIRST_PATTERNS = [
   /\/icons\//,
   /\/images\//,
+  /\/algorithms\//,
+  /\/fonts\//,
   /fonts\.googleapis\.com/,
   /fonts\.gstatic\.com/,
   /cdnjs\.cloudflare\.com/,
 ];
+
+// ── Same-origin app-shell assets served stale-while-revalidate ──
+const SWR_PATTERN = /\.(?:js|css|html|json|svg)(?:\?|$)/;
 
 // ============================================================
 //  INSTALL  
@@ -90,8 +112,7 @@ self.addEventListener('install', function(event) {
         })
       );
     }).then(function() {
-      console.log('[SW] Pre-cache complete. Skipping waiting.');
-      return self.skipWaiting();
+      console.log('[SW] Pre-cache complete. Waiting for activation signal.');
     })
   );
 });
@@ -135,6 +156,18 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
+  // API calls always need fresh data — network-first with a short timeout.
+  if (req.url.includes('/api/')) {
+    event.respondWith(networkFirst(req));
+    return;
+  }
+
+  // Same-origin app-shell assets: serve from cache instantly, refresh in background.
+  if (!isCrossOrigin && (SWR_PATTERN.test(req.url) || req.mode === 'navigate')) {
+    event.respondWith(staleWhileRevalidate(req));
+    return;
+  }
+
   event.respondWith(networkFirst(req));
 });
 
@@ -156,37 +189,83 @@ function networkFirst(req) {
     }
     return networkResponse;
   }).catch(function() {
-    // FIX: ignoreSearch ensures styles.css matches even if the browser adds hidden parameters
-    return caches.match(req, { ignoreSearch: true }).then(function(cached) {
+    return offlineFallback(req);
+  });
+}
+
+// ============================================================
+//  STRATEGY: Stale While Revalidate
+// ============================================================
+function staleWhileRevalidate(req) {
+  return caches.open(CACHE_VERSION).then(function(cache) {
+    return cache.match(req, { ignoreSearch: true }).then(function(cached) {
+      var fetchReq;
+      try {
+        fetchReq = req.clone();
+      } catch (e) {
+        return cached || networkFirst(req);
+      }
+
+      var networkUpdate = fetch(fetchReq).then(function(response) {
+        if (response && response.ok) {
+          try {
+            cache.put(req, response.clone());
+          } catch (e) {}
+        }
+        return response;
+      }).catch(function() {
+        return null;
+      });
+
       if (cached) {
-        console.log('[SW] Offline fallback for:', req.url);
+        console.log('[SW] Stale-while-revalidate serving cached:', req.url);
         return cached;
       }
-      
-      if (req.url.includes('/api/')) {
-          return new Response(JSON.stringify({ error: 'Server offline or unreachable.' }), {
-              status: 503,
-              headers: { 'Content-Type': 'application/json' }
-          });
-      }
 
-      // FIX: Only return the HTML error page if the browser is explicitly asking for a webpage.
-      // `accept` can be null (some fetches / browser extensions don't set it) — guard it so
-      // this branch doesn't throw and take down the whole offline fallback.
-      const acceptHeader = req.headers.get('accept') || '';
-      if (acceptHeader.includes('text/html') || req.mode === 'navigate') {
-          return caches.match('index.html', { ignoreSearch: true }).then(function(fallback) {
-            return fallback || new Response(
-              '<h2 style="font-family:sans-serif;text-align:center;margin-top:40px">' +
-              '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#phone-off"/></svg> You are offline and this page is not cached yet.</h2>',
-              { headers: { 'Content-Type': 'text/html' } }
-            );
-          });
-      }
-
-      // If a CSS or JS file is missing offline, silently fail instead of poisoning the DOM
-      return new Response('', { status: 404, statusText: 'Offline' });
+      // Nothing cached yet — wait for the network, then fall back to the offline UX.
+      return networkUpdate.then(function(response) {
+        return response || offlineFallback(req);
+      });
     });
+  }).catch(function() {
+    return fetch(req).catch(function() { return offlineFallback(req); });
+  });
+}
+
+// ============================================================
+//  OFFLINE FALLBACK
+// ============================================================
+function offlineFallback(req) {
+  // FIX: ignoreSearch ensures styles.css matches even if the browser adds hidden parameters
+  return caches.match(req, { ignoreSearch: true }).then(function(cached) {
+    if (cached) {
+      console.log('[SW] Offline fallback for:', req.url);
+      return cached;
+    }
+
+    if (req.url.includes('/api/')) {
+        return new Response(JSON.stringify({ error: 'Server offline or unreachable.' }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/json' }
+        });
+    }
+
+    // FIX: Only return the HTML error page if the browser is explicitly asking for a webpage.
+    // `accept` can be null (some fetches / browser extensions don't set it) — guard it so
+    // this branch doesn't throw and take down the whole offline fallback.
+    const acceptHeader = req.headers.get('accept') || '';
+    if (acceptHeader.includes('text/html') || req.mode === 'navigate') {
+        return caches.match('index.html', { ignoreSearch: true }).then(function(fallback) {
+          return fallback || new Response(
+            '<h2 style="font-family:sans-serif;text-align:center;margin-top:40px">' +
+            '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#phone-off"/></svg> You are offline and this page is not cached yet.</h2>',
+            { headers: { 'Content-Type': 'text/html' } }
+          );
+        });
+    }
+
+    // If a CSS or JS file is missing offline, silently fail instead of poisoning the DOM
+    return new Response('', { status: 404, statusText: 'Offline' });
   });
 }
 

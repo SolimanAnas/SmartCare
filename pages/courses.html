@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://smartcare-learning.net/pages/courses">
     <meta property="og:title" content="SmartCare · Medical Courses">
     <meta property="og:description" content="Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
+    <meta property="og:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
     <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
@@ -24,7 +24,7 @@
     <meta name="twitter:url" content="https://smartcare-learning.net/pages/courses">
     <meta name="twitter:title" content="SmartCare · Medical Courses">
     <meta name="twitter:description" content="Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
+    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
     <!-- Canonical URL -->
@@ -45,7 +45,7 @@
   "name": "SmartCare · Medical Courses",
   "url": "https://smartcare-learning.net/pages/courses",
   "description": "Medical courses and study programs — EMS, nursing, and healthcare professional development with NREMT-style practice exams.",
-  "image": "https://smartcare-learning.net/images/og.png",
+  "image": "https://smartcare-learning.net/images/og.jpg",
   "author": {
     "@type": "Person",
     "name": "Soliman Anas"
@@ -2007,7 +2007,46 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('../sw.js')
+            .then(function(r) { initSWUpdateToast(r); })
             .catch(e => console.log('SW failed', e));
+    });
+
+    let swRefreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+        if (swRefreshing) return;
+        swRefreshing = true;
+        window.location.reload();
+    });
+}
+
+function initSWUpdateToast(reg) {
+    function showToast(worker) {
+        if (document.getElementById('sw-update-toast')) return;
+        const toast = document.createElement('div');
+        toast.id = 'sw-update-toast';
+        toast.setAttribute('role', 'status');
+        toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
+            'background:#1e293b;color:#fff;padding:12px 16px;border-radius:10px;' +
+            'box-shadow:0 4px 20px rgba(0,0,0,.35);z-index:99999;display:flex;' +
+            'align-items:center;gap:12px;font:14px/1.4 system-ui,-apple-system,sans-serif;';
+        toast.innerHTML = '<span>Update ready</span>' +
+            '<button id="sw-update-btn" style="background:#3b82f6;color:#fff;border:none;' +
+            'padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit;font-weight:600;">Refresh</button>';
+        document.body.appendChild(toast);
+        document.getElementById('sw-update-btn').addEventListener('click', function() {
+            worker.postMessage({ type: 'SKIP_WAITING' });
+            toast.remove();
+        });
+    }
+    if (reg.waiting) showToast(reg.waiting);
+    reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', function() {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                showToast(newWorker);
+            }
+        });
     });
 }
 </script>
