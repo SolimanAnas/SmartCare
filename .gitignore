@@ -24,8 +24,9 @@ venv/
 env/
 
 # ── Node / tooling ─────────────────────────────────────────────────────────
+# package-lock.json is intentionally committed (not ignored) — `npm ci` in
+# CI (.github/workflows/ci.yml) requires it to exist in the checked-out repo.
 node_modules/
-package-lock.json
 npm-debug.log*
 
 # ── Playwright ─────────────────────────────────────────────────────────────
