@@ -1369,7 +1369,34 @@ Content velocity with a human-in-the-loop safety gate.
 
 ## 1. iOS PWA metadata (Apple install experience is currently broken-ish)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Added `apple-mobile-web-app-capable`, `mobile-web-app-capable`,
+> `apple-mobile-web-app-status-bar-style` (`black-translucent`), and
+> `apple-mobile-web-app-title` to `index.html`. Generated 15
+> `apple-touch-startup-image` splash screens covering the device-width ×
+> device-height × pixel-ratio breakpoints from iPhone SE through iPad Pro
+> 12.9, via a new `scripts/generate_splash.py` (Pillow: composite
+> `icons/icon-512x512.png` centered on a `#0f2027` background — matches
+> `manifest.json`'s `background_color`) rather than `npx
+> pwa-asset-generator`, which needs a headless-browser render pipeline this
+> sandbox can't run reliably; Pillow compositing is simpler and gives the
+> same result for a flat-color splash. Script is re-runnable whenever the
+> icon or background color changes.
+>
+> **Scope call on caching:** did *not* add the 15 splash images to `sw.js`'s
+> eager `PRE_CACHE` — that would add ~3MB to every install regardless of
+> platform, for an asset only iOS ever requests. Added `/\/splash\//` to
+> `CACHE_FIRST_PATTERNS` instead, so each splash image gets cached the first
+> time Safari actually requests it (at install/launch) and served from cache
+> on every subsequent offline launch — same offline guarantee, without
+> penalizing Android/desktop users' first-load payload.
+>
+> Verified the meta tags and all 15 `<link>` tags are present and every
+> `href` resolves to a real file; couldn't verify actual iOS install/splash
+> rendering since that requires a physical device or Xcode simulator, neither
+> available here — flagging as a follow-up for whoever next has iOS hardware
+> to confirm against.
 
 ### Why this matters
 Zero `apple-mobile-web-app-*` meta tags exist. On iOS: no proper standalone status
@@ -1405,7 +1432,61 @@ iOS install quality — a prerequisite for App Store PWA wrapping.
 
 ## 2. Generate `PRE_CACHE` at build time instead of hand-maintaining it
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `scripts/build_precache.py` derives the precache list from
+> the actual repo tree using the same curation rules a human was applying by
+> hand (app shell; every `chapters/*.html`; every `pages/*.html`/`*.js`/
+> `*.json`; `content/*.meta.js` plus each split chapter's first section
+> `content/{id}/{id}s1.json`; full `content/*.js` bundles only for chapters
+> that *aren't* split, since a split chapter's full bundle is a lazy-loaded
+> fallback, not something to precache) — so a file matching those rules is
+> included automatically, with no PR to hand-edit a list. This directly
+> fixes the drift the roadmap called out: `pages/GCS.html` and
+> `pages/ems-tools.html` (and, from this session's own §1, `pages/terms.html`)
+> were never in the old hand list; the generated manifest now has all 32
+> `pages/*.html` (up from 10 hand-picked ones), 89 entries total vs. the old
+> 82.
+>
+> Output is `precache-manifest.js` at the repo root:
+> `self.__PRECACHE = [...]` plus `self.__PRECACHE_VERSION` — a SHA-1 (`
+> usedforsecurity=False`, this is a fingerprint, not a security hash) over
+> every precached file's actual bytes, not mtimes (git checkouts don't
+> preserve original commit mtimes, so an mtime-based hash would falsely
+> "change" on every fresh CI checkout regardless of real content — a known
+> footgun for this exact pattern). `sw.js` now does `importScripts
+> ('precache-manifest.js')` and derives `CACHE_VERSION` from
+> `self.__PRECACHE_VERSION`, so the cache only busts when a precached file's
+> content actually changes — no more manually bumping a `v3.x` string (the
+> old hand-maintained comment stays as a human-readable changelog, but
+> nothing programmatic reads it anymore).
+>
+> Wired into both CI paths: `.github/workflows/static.yml` regenerates
+> `precache-manifest.js` immediately before the `rsync` deploy step, so a
+> contributor who forgot to regenerate locally still ships a correct
+> manifest; `.github/workflows/ci.yml` regenerates it and `git diff
+> --exit-code`s the result, failing the build if the committed copy is
+> stale. Added `npm run precache` as the local pre-commit convenience the
+> roadmap asked for. `bandit -r scripts/` flagged the SHA-1 call by default
+> (`B324`) — fixed with the `usedforsecurity=False` flag rather than
+> suppressing the finding, since that's the actual correct annotation for a
+> non-cryptographic use.
+>
+> **Scope call:** did not literally "walk the whole deployable tree" —
+> `images/`, `algorithms/`, `splash/`, and the raw `courses/itls/data/itls/`
+> source JSON (superseded by the committed `bundle.js` build artifact) are
+> deliberately excluded by the rules above, same as the old hand list
+> intended; those stay cache-first-on-demand (`CACHE_FIRST_PATTERNS`) rather
+> than blocking install with megabytes of media. A truly generic tree-walk
+> would have needed to reinvent that exclusion logic anyway, so encoding it
+> as explicit, documented rules seemed more honest than a walk that
+> silently special-cases half the tree.
+>
+> Verified via Playwright: SW installs cleanly against the new manifest with
+> zero `[SW] Pre-cache failed` warnings across all 89 entries; offline reload
+> of `pages/GCS.html` (previously uncached, now fixed) returns 200; the
+> manifest is byte-for-byte reproducible (`python3 scripts/build_precache.py`
+> twice in a row emits the same version hash).
 
 ### Why this matters
 The hand-written list already drifted (dead `s1` entries; `pages/GCS.html`,
@@ -1442,7 +1523,40 @@ Reliability (offline completeness), maintainability (kills the "bump SW" ritual)
 
 ## 3. Self-host the Supabase SDK for offline-resilient auth checks
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `vendor/supabase-js-2.110.0.mjs` is now a committed,
+> self-contained ESM bundle of `@supabase/supabase-js@2.110.0` (bundled with
+> esbuild: `--bundle --format=esm --minify --platform=browser
+> --target=es2020`), replacing the `import('https://cdn.jsdelivr.net/...')`
+> in `pages/supabase-client.js`. `jsdelivr.net` is unreachable from this
+> sandbox's network policy, so the jsdelivr `+esm` on-the-fly bundling
+> endpoint itself couldn't be used to produce this file — instead wrote
+> `scripts/vendor_supabase.sh`, which does the equivalent locally:
+> `npm install @supabase/supabase-js@<version>` from the (reachable)
+> `registry.npmjs.org`, then bundles it with esbuild. Re-run with
+> `SUPABASE_JS_VERSION=<new-version> bash scripts/vendor_supabase.sh` to
+> upgrade; the version is in the filename per the roadmap's "upgrade
+> discipline" ask, and the old file should be deleted when bumping so only
+> one vendored copy ever ships.
+>
+> `scripts/build_precache.py`'s glob rules now include `vendor/*.mjs`, so the
+> bundle is pre-cached automatically (90 entries now, was 89) — no manual
+> `sw.js` edit needed, consistent with §2. `pages/supabase-client.js`'s
+> `SDK_URL` is now the relative path `../vendor/supabase-js-2.110.0.mjs`
+> (relative to the *file's own* location in `pages/`, not whichever page's
+> `<script src>` loaded it — verified this resolves correctly from all 4
+> pages that load it: `index.html`, `pages/admin.html`, `pages/login.html`,
+> `pages/courses.html`).
+>
+> Verified via Playwright: `SmartCareCloud.ready` resolves `true` with zero
+> requests to any `jsdelivr` host and zero console errors — both on a normal
+> load and, after registering the service worker once online, on a full page
+> reload with the browser context set offline (the vendored module comes
+> back from Cache Storage, not the network). Also load-tested the bundle in
+> isolation before vendoring it: `createClient()` returns a working client
+> (`typeof client.auth.getSession === 'function'`, `typeof client.from ===
+> 'function'`) with no console errors.
 
 ### Why this matters
 `supabase-client.js` dynamically imports the SDK from jsdelivr. First visit offline
@@ -1475,7 +1589,49 @@ Reliability, security (pinning), offline coherence.
 
 ## 4. Manifest upgrades: shortcuts, proper maskable icons, lang/dir/scope
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Confirmed the anti-pattern was real before fixing it: the
+> existing 512px icon's actual content fills ~90% of the canvas, way outside
+> a maskable icon's safe zone (an 80%-diameter circle centered in the icon —
+> content outside it gets clipped by Android's adaptive-icon masks). New
+> `scripts/generate_maskable_icons.py` crops each of the 8 existing icon
+> sizes to its real (non-transparent) content, shrinks it to 55% of the
+> canvas, and centers it on a solid `#0f2027` background (manifest's
+> `background_color` — maskable icons can't rely on transparency, platforms
+> render it as unpredictable black/white) to produce `icon-{size}-maskable
+> .png`. Verified by drawing the actual 80%-diameter safe-zone circle over
+> the output: the logo sits comfortably inside it. The original files are
+> unchanged and now serve only `purpose: "any"`; `manifest.json`'s `icons`
+> array is 16 entries (8 sizes × `any`/`maskable`, was 8 dual-purpose).
+>
+> Added `"lang": "en"`, `"dir": "ltr"`, `"scope": "./"` — `scope` as a
+> relative path deliberately, not an absolute `/`, since the app's canonical
+> deployment domain isn't settled yet (see SEO §2, a separate, still-open
+> roadmap item); a relative scope resolves correctly against the manifest's
+> own URL regardless of which domain/subpath ends up hosting it, so this
+> doesn't need to wait on that item.
+>
+> Added a 3-entry `shortcuts` array (Resume last chapter, Prometric EMT Exam,
+> Drug Calculator), each reusing `icons/icon-96x96.png` rather than
+> generating dedicated shortcut badges — valid per spec and avoids 3 more
+> throwaway image variants for icons a long-press menu shows at a tiny size.
+> New root-level `resume.html` (11 lines) is the "Resume" shortcut's target:
+> reads the same `smartcare_last_visited` localStorage list `app.js`'s
+> `recordLastVisited()` already writes (most-recent-first, each entry's
+> `url` is a full `location.href`) and `location.replace()`s straight there,
+> falling back to `index.html` if the list is empty. Added to
+> `scripts/build_precache.py`'s `CORE_FILES` so it's precached like
+> `index.html` (91 entries now, was 90).
+>
+> Verified via Playwright: `manifest.json` parses with 16 icons and 3
+> shortcuts; `resume.html` redirects to the stored last-visited URL when one
+> exists and falls back to `index.html` when the list is empty; the service
+> worker still installs cleanly against the updated precache manifest.
+> Couldn't run this through an actual `maskable.app`/Lighthouse audit (no
+> browser extension environment here) — the safe-zone-circle overlay check
+> is the verification available in this sandbox; flagging a real Lighthouse
+> PWA audit as a good pre-launch step for whoever next has that tooling.
 
 ### Why this matters
 All icons declare `"purpose": "any maskable"` — a known anti-pattern: maskable needs
@@ -1512,7 +1668,41 @@ Android install polish, Play (TWA) readiness, power-user UX.
 
 ## 5. App Store / Play Store packaging track
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** Not closeable from here — genuinely blocked on things this
+> environment doesn't have: a Play Console developer account (to generate a
+> real app-signing certificate — `assetlinks.json` needs that certificate's
+> actual SHA-256 fingerprint, which doesn't exist until an app is created
+> there) and an Apple Developer account (for the iOS PWABuilder/TestFlight
+> path). Deliberately did **not** commit a placeholder
+> `.well-known/assetlinks.json` — a file with a fake fingerprint would look
+> like a real trust assertion to any TWA client and would just silently fail
+> Digital Asset Links verification once someone actually tried to use it;
+> not shipping the file at all is more honest than shipping a wrong one
+> someone has to remember to replace.
+>
+> What *did* move: of the four prerequisites this item was blocked on, two
+> are now done as of this same "Offline & PWA" pass — maskable icons (§4
+> above) and, from an earlier session, account deletion (Security §4, marked
+> `[x] Completed`). Updated the prerequisites line below to reflect that.
+> Still open: a stable canonical domain (SEO §2 — the repo currently has a
+> split between an `smartcare-learning.net` custom-domain reference in
+> `index.html`'s Open Graph/canonical tags and `/SmartCare/`-absolute paths
+> elsewhere, e.g. `404.html`; a TWA's `assetlinks.json` has to live at a
+> single, final domain, so this needs resolving first) and the actual
+> `assetlinks.json` generation, which can only happen after someone with
+> Play Console access runs `pwabuilder.com` or Bubblewrap against a real
+> signing key.
+>
+> **Concrete next steps for whoever has that access:** (1) resolve SEO §2;
+> (2) create the Play Console app, get its signing fingerprint; (3) generate
+> the TWA via PWABuilder or Bubblewrap; (4) commit
+> `.well-known/assetlinks.json` with the real fingerprint; (5) submit with
+> the "Medical" category + education disclaimer, reusing the manifest
+> screenshots already in place. Everything else this item depends on —
+> manifest, service worker, privacy policy, account deletion, maskable
+> icons, offline completeness — is in place.
 
 ### Why this matters
 The manifest, screenshots, privacy policy, and offline behavior are near
@@ -1520,7 +1710,7 @@ store-ready. Packaging as a **TWA (Bubblewrap/PWABuilder)** for Play and a
 PWABuilder iOS wrapper unlocks distribution where clinicians actually search.
 
 ### Current implementation
-Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots, ❌ account deletion (Security §4), ❌ maskable icons (§4 above), ❌ stable canonical domain (SEO §2), ❌ `assetlinks.json`.
+Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots, ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ❌ stable canonical domain (SEO §2), ❌ `assetlinks.json`.
 
 ### Recommended upgrade
 Play first (TWA is genuinely a PWA wrapper): fix prerequisites, run

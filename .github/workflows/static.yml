@@ -33,6 +33,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Regenerate precache-manifest.js
+        # sw.js's offline file list is derived from the repo tree (see
+        # scripts/build_precache.py) rather than hand-maintained, so it can
+        # never silently drift out of date the way the old hard-coded list
+        # did. Regenerating here — instead of trusting the committed copy —
+        # means a contributor who forgot to run the script locally still
+        # ships a correct, up-to-date manifest.
+        run: python3 scripts/build_precache.py
       - name: Prepare deploy directory
         # Only publish the runtime app — never the backend source, docs,
         # scripts, tests, PDFs, or archives. See .pagesignore for the list.

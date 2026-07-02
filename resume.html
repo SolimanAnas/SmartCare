@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SmartCare · Resume</title>
+</head>
+<body>
+<script>
+  // Target of the manifest.json "Resume last chapter" shortcut — reads the
+  // same smartcare_last_visited list app.js's recordLastVisited() writes
+  // (most recent first) and jumps straight there, skipping the home screen.
+  (function () {
+    var url = 'index.html';
+    try {
+      var list = JSON.parse(localStorage.getItem('smartcare_last_visited') || '[]');
+      if (list.length && list[0] && list[0].url) url = list[0].url;
+    } catch (e) {}
+    location.replace(url);
+  })();
+</script>
+</body>
+</html>
