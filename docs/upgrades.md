@@ -2659,6 +2659,77 @@ Reliability (regression safety for the actual product surface).
 
 ---
 
+## 7. Deduplicate the 8 standalone exam-review pages
+
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `pages/acls.html`, `bdls.html`, `bls.html`, `itls.html`,
+> `medical.html`, `pals.html`, `pepp.html`, `ppet.html` each carried their
+> own ~650-line `<style>` block and ~920-line inline exam engine —
+> ~97% identical across all 8. Extracted the shared parts into
+> `pages/exam-review.css` and `pages/exam-review.js`; each page now keeps
+> only its unique SEO `<head>` plus a small `window.EXAM_CONFIG = { id,
+> qCountFallback }` block and two `<link>`/`<script src>` references.
+> Net: ~12,700 duplicated lines removed, replaced by 1,475 shared lines.
+> `pages/empact.html` (structurally different) and `pages/ecg.html`
+> (already deduplicated in prior UI/UX work) were left out of scope.
+>
+> **Found and removed two entirely dead features while extracting the
+> engine.** Checked every page for actual call sites before assuming
+> either was worth preserving:
+> - **Pearls screen** (`#pearlsScreen`, `openPearls()`): no `onclick` in
+>   any of the 8 pages ever called it — 100% unreachable. Of the 8 exam
+>   directories, only `src/PEPP/` and `src/ITLS/` even have a
+>   `pearls.json`; the other 6 pages pointed at data that never existed.
+>   Rather than author medical content for the missing 6, removed the
+>   dead feature everywhere.
+> - **Settings modal / hint toggle** (`#settingsModal`, `openSettings()`,
+>   `toggleHints()`): same story — zero call sites on any page. Also
+>   collapses a `hints-enabled` `localStorage` key that collided across
+>   all 8 exam types (toggling hints off in one exam silently affected
+>   the other 7).
+>
+> **Fixed a real markup bug in `ppet.html`** while rewriting it: the
+> `.exam-cards` grid container closed after the first card, so "PPET
+> Exam — Form 2" rendered as a sibling of the grid instead of a child —
+> it fell outside the card-grid layout entirely. Fixed the nesting so
+> both cards render inside `.exam-cards`.
+>
+> `scripts/build_precache.py`'s `pages` glob tuple was `(".html", ".js",
+> ".json")` — missing `.css`, so the new shared stylesheet wouldn't have
+> been precached for offline use. Added `.css`; manifest regenerates
+> cleanly (`git diff --exit-code precache-manifest.js` passes).
+>
+> Verified: full Playwright suite (20 pre-existing specs) still passes;
+> added and ran an ad-hoc deep-flow regression pass (theme switching,
+> exam start, answer/flag/nav, submit → results, and DOM assertions that
+> Pearls/Settings are completely absent) across all 8 pages with zero
+> console/page errors, then removed the scratch spec — this was a
+> one-time verification pass, not a permanent addition to `tests/`.
+> `node --check`, `pytest` (16/16), `ruff`, and `bandit` all clean.
+
+### Why this matters
+Eight near-duplicate 1,780–1,890-line pages meant every engine bug (like the
+`ppet.html` card-nesting issue above) had to be independently rediscovered
+and fixed per page, and every real engine change meant 8 near-identical edits.
+
+### Files modified
+New `pages/exam-review.css`, `pages/exam-review.js`; rewrote all 8 exam
+pages to reference them; `scripts/build_precache.py` (`.css` glob),
+`precache-manifest.js` (regenerated).
+
+### Difficulty
+Medium
+
+### Priority
+Medium
+
+### Estimated impact
+Maintainability (one engine instead of 8), bug surface reduction (two dead
+features and one broken-markup page found and removed/fixed in the process).
+
+---
+
 # Technical Debt
 
 ## 1. Consolidate storage keys behind one module

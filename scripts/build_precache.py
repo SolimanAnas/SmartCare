@@ -42,7 +42,7 @@ CORE_FILES = [
 GLOB_DIRS = [
     ("src", (".js",)),
     ("chapters", (".html",)),
-    ("pages", (".html", ".js", ".json")),
+    ("pages", (".html", ".js", ".json", ".css")),
     ("fonts", (".css", ".woff2")),
 ]
 

@@ -48,6 +48,8 @@ self.__PRECACHE = [
   "pages/ecg.html",
   "pages/empact.html",
   "pages/ems-tools.html",
+  "pages/exam-review.css",
+  "pages/exam-review.js",
   "pages/itls-chapter.html",
   "pages/itls.html",
   "pages/login.html",
@@ -99,4 +101,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "399b05af17";
+self.__PRECACHE_VERSION = "b523244d3c";
