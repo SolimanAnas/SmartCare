@@ -10,15 +10,20 @@ Covers local development and production deployment.
 
 ## 2. Environment Variables
 
+server.py has no database of its own — real users live in Supabase (the same
+account system the frontend uses for sign-in). It only serves static files
+plus a small Supabase-backed admin API.
+
 | Variable | Required | Default | Purpose |
 |----------|----------|---------|---------|
 | `SECRET_KEY` | Strongly recommended | ephemeral random (logs a warning) | Flask session signing. Without it, sessions don't survive a restart. Generate: `python -c "import secrets; print(secrets.token_hex(32))"` |
 | `APP_ENV` | Prod | `development` | Set to `production` to enable `Secure` session cookies + HSTS |
-| `DATABASE_URL` | No | `sqlite:///users.db` | SQLAlchemy connection string |
-| `GOOGLE_CLIENT_ID` | For Google login | — | OAuth client ID; if unset, `/api/google-login` returns `503` |
+| `SUPABASE_URL` | For the admin console | — | Same project URL as `pages/supabase-config.js`. Without it, `/api/admin/*` returns `503` |
+| `SUPABASE_SERVICE_ROLE_KEY` | For the admin console | — | Supabase dashboard → Project Settings → API → `service_role` secret. **Never** put this in a file shipped to the browser — see `docs/SUPABASE_SETUP.md` §4 |
+| `ADMIN_EMAILS` | For the admin console | — | Comma-separated allow-list of emails permitted to reach `/api/admin/*` |
 | `RATELIMIT_STORAGE_URI` | Multi-worker prod | `memory://` | Set to `redis://...` so rate limits are shared across workers |
 
-> Never commit secrets. `instance/`, `*.db`, and `.env` are gitignored.
+> Never commit secrets. `.env` is gitignored.
 
 ## 3. Local Development
 
@@ -35,7 +40,7 @@ Alternatively, run `server.bat` on Windows to launch and open the app in your br
 ## 4. Running Tests
 
 ```bash
-SECRET_KEY=test DATABASE_URL=sqlite:///:memory: python -m pytest tests/ -v
+SECRET_KEY=test python -m pytest tests/ -v
 ```
 
 ## 5. Production (Gunicorn)
@@ -59,18 +64,15 @@ APP_ENV=production SECRET_KEY=... gunicorn server:app --bind 0.0.0.0:$PORT --wor
 
 1. **TLS / HTTPS** — terminate TLS at the host/load balancer. Setting
    `APP_ENV=production` makes session cookies `Secure` and emits HSTS.
-2. **Database** — set `DATABASE_URL` to the managed database. SQLite is
-   single-instance only; see `reports/database-roadmap.md`.
-3. **Rate-limit storage** — Redis via `RATELIMIT_STORAGE_URI` for multi-worker.
-4. **Backups** — schedule automated database backups.
-5. **Audit log sink** — route the `smartcare.audit` logger to a monitored sink
+2. **Rate-limit storage** — Redis via `RATELIMIT_STORAGE_URI` for multi-worker.
+3. **Audit log sink** — route the `smartcare.audit` logger to a monitored sink
    (CloudWatch/Datadog/etc.).
-6. **Health checks** — point the monitor at `GET /api/health`
-   (`200` healthy, `503` degraded).
+4. **Health checks** — point the monitor at `GET /api/health` (`200` = alive;
+   this is a liveness probe only — there's no local database to be "down").
 
 ## 7. Post-Deploy Verification
 
 ```bash
-curl -fsS https://<host>/api/health        # {"status":"healthy",...}
+curl -fsS https://<host>/api/health        # {"status":"healthy"}
 curl -sI https://<host>/ | grep -iE "content-security-policy|x-frame-options|strict-transport-security"
 ```

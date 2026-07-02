@@ -33,11 +33,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Prepare deploy directory
+        # Only publish the runtime app — never the backend source, docs,
+        # scripts, tests, PDFs, or archives. See .pagesignore for the list.
+        run: |
+          mkdir -p _site
+          rsync -a --exclude-from='.pagesignore' ./ _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

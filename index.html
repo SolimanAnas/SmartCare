@@ -69,29 +69,8 @@
   }
 }
     </script>
-<script>
-  // ━━ SmartCare Security Guard: runs before anything else renders ━━
-  // Redirects to login if no valid session exists.
-  // [TEMPORARILY DISABLED FOR TESTING]
-  /*
-  (function() {
-    const AUTH_KEY = 'smartcare_local_auth';
-    try {
-      const sessionRaw = localStorage.getItem(AUTH_KEY);
-      if (!sessionRaw) { window.location.replace('pages/login.html'); return; }
-      const session = JSON.parse(sessionRaw);
-      if (!session.loggedIn || Date.now() > session.expiresAt) {
-        localStorage.removeItem(AUTH_KEY);
-        window.location.replace('pages/login.html');
-      }
-    } catch (e) {
-      window.location.replace('pages/login.html');
-    }
-  })();
-  */
-</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>SmartCare · Clinical Learning Platform</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +80,12 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Pinned to an exact version (was floating "latest") so this can never change
+         out from under us. TODO(security): add integrity=. This sandbox's network
+         policy blocks cdn.jsdelivr.net, so the SRI hash couldn't be computed here —
+         run this from anywhere with CDN access and paste the result:
+           curl -sSL https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js | openssl dgst -sha384 -binary | openssl base64 -A -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
     <script src="pages/supabase-config.js"></script>
     <script src="pages/supabase-client.js"></script>
 
@@ -887,18 +871,45 @@
     document.getElementById('qsAbout').addEventListener('click', () => { window.location.href = 'pages/about.html'; });
 
     document.getElementById('qsClearCache').addEventListener('click', async () => {
-        if (!confirm('Clear cache and reload? Your progress will be reset.')) return;
+        // Step 1: clear cached app files (fixes "stuck on an old version" glitches).
+        // This never touches localStorage, so it can't sign you out or lose progress.
+        if (!confirm('Clear cached app files and reload? Your sign-in and study progress are kept.')) return;
         if ('caches' in window) {
             const names = await caches.keys();
             await Promise.all(names.map(n => caches.delete(n)));
         }
-        localStorage.clear();
-        window.location.reload(true);
+        if ('serviceWorker' in navigator) {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(regs.map(r => r.unregister()));
+        }
+
+        // Step 2: separate, opt-in confirmation before wiping local study data.
+        // Deliberately a second dialog — clearing cached files and resetting
+        // progress are two different intents and must never be bundled.
+        const alsoReset = confirm('Also reset local study progress (quiz history, completion, favorites)? This is separate from clearing the cache — say Cancel to just reload with a fresh cache.');
+        if (alsoReset) {
+            if (window.SmartCareCloud) {
+                try {
+                    const user = await SmartCareCloud.getUser();
+                    if (user) {
+                        await SmartCareCloud.push();
+                        alert('Backed up your progress to the cloud before resetting.');
+                    }
+                } catch (e) { /* offline or not configured — proceed without backup */ }
+            }
+            Object.keys(localStorage)
+                .filter(k => k.startsWith('smartcare_') || k.startsWith('smartcare-'))
+                .forEach(k => localStorage.removeItem(k));
+        }
+
+        window.location.reload();
     });
 
-    // Logout
-    document.getElementById('qsLogout').addEventListener('click', () => {
-        localStorage.removeItem('smartcare_local_auth');
+    // Logout — signs out of the real (Supabase) session.
+    document.getElementById('qsLogout').addEventListener('click', async () => {
+        if (window.SmartCareCloud) {
+            try { await SmartCareCloud.signOut(); } catch (e) { /* offline or not configured */ }
+        }
         window.location.replace('pages/login.html');
     });
 

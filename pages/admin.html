@@ -1,34 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- General SEO Meta Tags -->
-    <meta name="description" content="SmartCare admin dashboard — manage users, content, and platform settings for the clinical learning platform.">
-    <meta name="keywords" content="SmartCare, pages, admin, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
-    <meta name="author" content="Soliman Anas">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://smartcare-learning.net/pages/admin">
-    <meta property="og:title" content="SmartCare | Admin Dashboard">
-    <meta property="og:description" content="SmartCare admin dashboard — manage users, content, and platform settings for the clinical learning platform.">
-    <meta property="og:image" content="https://smartcare-learning.net/images/og.png">
-    <meta property="og:image:width" content="1538">
-    <meta property="og:image:height" content="1022">
-    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
-    <meta property="og:locale" content="en-US">
-    <meta property="og:site_name" content="SmartCare">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://smartcare-learning.net/pages/admin">
-    <meta name="twitter:title" content="SmartCare | Admin Dashboard">
-    <meta name="twitter:description" content="SmartCare admin dashboard — manage users, content, and platform settings for the clinical learning platform.">
-    <meta name="twitter:image" content="https://smartcare-learning.net/images/og.png">
-    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://smartcare-learning.net/pages/admin">
+    <!-- This page is a hidden admin console — deliberately not indexed, not
+         shared on social media, and not described to crawlers. See
+         docs/upgrades.md "Critical Fixes #2" for rationale. -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -38,34 +14,16 @@
     <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
     <link rel="apple-touch-icon" href="../icons/icon.png">
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "SmartCare | Admin Dashboard",
-  "url": "https://smartcare-learning.net/pages/admin",
-  "description": "SmartCare admin dashboard — manage users, content, and platform settings for the clinical learning platform.",
-  "image": "https://smartcare-learning.net/images/og.png",
-  "author": {
-    "@type": "Person",
-    "name": "Soliman Anas"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "SmartCare",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://smartcare-learning.net/icons/icon.png"
-    }
-  },
-  "inLanguage": "en-US"
-}
-    </script>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SmartCare | Admin Dashboard</title>
+  <title>SmartCare Admin</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Pinned from the 6.0.0-beta3 pre-release to the latest stable 6.x (icon
+       class names are unchanged across the 6.x line). TODO(security): add
+       integrity= — this sandbox's network policy blocks cdnjs.cloudflare.com,
+       so the SRI hash couldn't be computed here:
+         curl -sSL https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css | openssl dgst -sha384 -binary | openssl base64 -A -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
   <script src="supabase-config.js"></script>
   <script src="supabase-client.js"></script>
   <style>

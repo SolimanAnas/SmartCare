@@ -1,0 +1,75 @@
+# ============================================================================
+# SmartCare — GitHub Pages deploy exclude list
+# ----------------------------------------------------------------------------
+# Used by .github/workflows/static.yml to build a filtered copy of the repo
+# before upload-pages-artifact runs. Anything matched here is NEVER published
+# to the public site. Keep this in sync when new top-level dev-only files or
+# folders are added — when in doubt, exclude it and add it back explicitly.
+# rsync --exclude-from syntax (gitignore-style patterns).
+# ============================================================================
+
+# ── VCS / CI ──────────────────────────────────────────────────────────────
+.git/
+.github/
+.pagesignore
+
+# ── Backend source & config (never serve server-side code) ─────────────────
+server.py
+requirements.txt
+pyproject.toml
+Procfile
+*.py
+instance/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ── Secrets (belt-and-braces; these should never be tracked at all) ────────
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# ── Tooling / dev dependencies ──────────────────────────────────────────────
+tests/
+scripts/
+playwright.config.js
+package.json
+package-lock.json
+node_modules/
+.eslintrc.json
+playwright-report/
+test-results/
+
+# ── Internal docs, audits, and roadmaps (not user-facing) ───────────────────
+docs/
+AGENTS.md
+API.md
+CLAUDE.md
+DEPLOYMENT.md
+SECURITY.md
+
+# ── Copyrighted / oversized source material not meant for public hosting ────
+pdf_sections/
+reports/
+
+# ── Superseded / backup content ─────────────────────────────────────────────
+_archive/
+content_starters_backup/
+
+# ── Dev tooling artifacts ────────────────────────────────────────────────────
+graphify.html
+graphify.yaml
+.graphify/
+.graphify_describe_pending
+.graphify_detect.json
+.graphify_labels.json
+
+# ── OS / editor cruft ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

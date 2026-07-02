@@ -59,7 +59,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>SmartCare · Sign In</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Pinned from the 6.0.0-beta3 pre-release to the latest stable 6.x (icon
+       class names are unchanged across the 6.x line). TODO(security): add
+       integrity= — this sandbox's network policy blocks cdnjs.cloudflare.com,
+       so the SRI hash couldn't be computed here:
+         curl -sSL https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css | openssl dgst -sha384 -binary | openssl base64 -A -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 
   <style>
     :root {
@@ -311,6 +316,13 @@
       <button class="btn btn-ghost btn-danger" id="signoutBtn"><i class="fas fa-right-from-bracket"></i> Sign out</button>
 
       <div class="feedback" id="feedbackIn" role="alert" aria-live="polite"></div>
+
+      <div class="divider"><div class="div-line"></div><span class="div-text">Danger Zone</span><div class="div-line"></div></div>
+      <button class="btn btn-ghost btn-danger" id="deleteAccountBtn" style="font-size:0.82rem; padding:0.7rem 1rem;">
+        <i class="fas fa-trash-alt"></i> <span id="deleteAccountLabel">Delete my account</span>
+        <div class="spinner" id="deleteAccountSpinner" style="border-color:rgba(248,113,113,0.3);border-top-color:var(--err)"></div>
+      </button>
+      <p style="text-align:center; font-size:0.74rem; color:var(--muted); margin-top:0.5rem;">Permanently deletes your account and cloud-synced data. This cannot be undone.</p>
     </div>
 
   </div>
@@ -466,6 +478,52 @@
       showSignedOut();
     }).catch(function () {}).then(function () {
       busy($('signoutBtn'), null, false);
+    });
+  });
+
+  // ── Delete my account (self-service, GDPR Art. 17) ──
+  // Calls the Flask-backed DELETE /api/account (server.py), which only exists
+  // on the Flask-served deployment, not the static GitHub Pages mirror — the
+  // fetch fails clearly with a feedback message there rather than doing
+  // nothing silently.
+  $('deleteAccountBtn').addEventListener('click', function () {
+    var typed = window.prompt('This permanently deletes your account and all cloud-synced data. This cannot be undone.\n\nType DELETE to confirm:');
+    if (typed === null) return;
+    if (typed.trim() !== 'DELETE') {
+      msg($('feedbackIn'), 'Account not deleted — you must type DELETE exactly.', 'info');
+      return;
+    }
+
+    busy($('deleteAccountBtn'), $('deleteAccountSpinner'), true);
+    $('deleteAccountLabel').textContent = 'Deleting…';
+
+    SmartCareCloud.getAccessToken().then(function (token) {
+      if (!token) throw new Error('No active session.');
+      return fetch('/api/account', {
+        method: 'DELETE',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+      });
+    }).then(function (res) {
+      if (!res.ok) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          throw new Error(body.error || ('Server returned ' + res.status));
+        });
+      }
+      return SmartCareCloud.signOut().catch(function () {});
+    }).then(function () {
+      Object.keys(localStorage)
+        .filter(function (k) { return k.indexOf('smartcare_') === 0 || k.indexOf('smartcare-') === 0; })
+        .forEach(function (k) { localStorage.removeItem(k); });
+      msg($('feedbackIn'), 'Your account has been deleted.', 'ok');
+      showSignedOut();
+    }).catch(function (e) {
+      msg($('feedbackIn'), 'Could not delete account: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+    }).then(function () {
+      busy($('deleteAccountBtn'), $('deleteAccountSpinner'), false);
+      $('deleteAccountLabel').textContent = 'Delete my account';
     });
   });
 
