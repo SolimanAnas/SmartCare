@@ -11,16 +11,18 @@ Covers local development and production deployment.
 ## 2. Environment Variables
 
 server.py has no database of its own — real users live in Supabase (the same
-account system the frontend uses for sign-in). It only serves static files
-plus a small Supabase-backed admin API.
+account system the frontend uses for sign-in). It only serves static files plus
+one endpoint: self-service account deletion (`DELETE /api/account`). The admin
+console's API (list/update-role/delete users) runs as Supabase Edge Functions
+instead — see `docs/SUPABASE_SETUP.md` §4 — so it has no server.py dependency
+and no separate env vars to set here.
 
 | Variable | Required | Default | Purpose |
 |----------|----------|---------|---------|
 | `SECRET_KEY` | Strongly recommended | ephemeral random (logs a warning) | Flask session signing. Without it, sessions don't survive a restart. Generate: `python -c "import secrets; print(secrets.token_hex(32))"` |
 | `APP_ENV` | Prod | `development` | Set to `production` to enable `Secure` session cookies + HSTS |
-| `SUPABASE_URL` | For the admin console | — | Same project URL as `pages/supabase-config.js`. Without it, `/api/admin/*` returns `503` |
-| `SUPABASE_SERVICE_ROLE_KEY` | For the admin console | — | Supabase dashboard → Project Settings → API → `service_role` secret. **Never** put this in a file shipped to the browser — see `docs/SUPABASE_SETUP.md` §4 |
-| `ADMIN_EMAILS` | For the admin console | — | Comma-separated allow-list of emails permitted to reach `/api/admin/*` |
+| `SUPABASE_URL` | For account self-deletion | — | Same project URL as `pages/supabase-config.js`. Without it, `/api/account` returns `503` |
+| `SUPABASE_SERVICE_ROLE_KEY` | For account self-deletion | — | Supabase dashboard → Project Settings → API → `service_role` secret. **Never** put this in a file shipped to the browser — see `docs/SUPABASE_SETUP.md` §4 |
 | `RATELIMIT_STORAGE_URI` | Multi-worker prod | `memory://` | Set to `redis://...` so rate limits are shared across workers |
 
 > Never commit secrets. `.env` is gitignored.

@@ -14,7 +14,7 @@ A secure, high-performance Progressive Web Application (PWA) designed to serve a
 ### 🔐 Secure Authentication & User Management
 * **Google OAuth 2.0 Integration:** Seamless single-tap login utilizing Google Cloud credentials.
 * **Encrypted Standard Login:** Secure email/password registration utilizing `Werkzeug` SHA-256 password hashing.
-* **IT Admin Console:** A hidden, protected directory dashboard (`/api/admin/users`) allowing IT and management to monitor registered clinical users and track professional levels (Physician, Paramedic, EMT).
+* **IT Admin Console:** A hidden, protected dashboard (`pages/admin.html`, backed by Supabase Edge Functions) allowing IT and management to monitor registered clinical users and track professional levels (Physician, Paramedic, EMT).
 
 ### ⚡ 100% Offline Capability (PWA)
 Built for the field where cellular service is unreliable. 

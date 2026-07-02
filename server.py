@@ -70,16 +70,12 @@ def create_app(test_config=None):
     return app
 
 
-def _admin_emails():
-    """Allow-list of admin emails sourced from the environment (no hard-coding)."""
-    raw = os.getenv("ADMIN_EMAILS", "")
-    return {e.strip().lower() for e in raw.split(",") if e.strip()}
-
-
-# ── Supabase-backed admin API (Secure SDLC §4.4(c)) ─────────────────────────
-# The admin console manages real app users (Supabase/Google sign-ins). The
-# service_role key stays server-side only — see docs/SUPABASE_SETUP.md §4 for
-# the required Supabase-side setup.
+# ── Supabase-backed self-service account API (Secure SDLC §4.4(c)) ──────────
+# The admin console (pages/admin.html) is served by Supabase Edge Functions
+# now (see supabase/functions/) rather than this Flask backend — see
+# docs/SUPABASE_SETUP.md §4. server.py keeps only the self-deletion endpoint
+# below, which every signed-in user (not just admins) is always authorized to
+# call on themself. The service_role key stays server-side only.
 SUPABASE_URL = os.getenv("SUPABASE_URL", "").rstrip("/")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY", "")
 
@@ -134,16 +130,6 @@ def _require_supabase_user():
     return user
 
 
-def _require_supabase_admin():
-    """Abort with 503/401/403 unless the caller is a signed-in, allow-listed
-    admin. Returns {id, email} for the caller on success."""
-    user = _require_supabase_user()
-    if user["email"] not in _admin_emails():
-        _audit("admin_access", "denied", actor=user["email"])
-        abort(403)
-    return user
-
-
 # ==========================================
 # ROUTES
 # ==========================================
@@ -157,112 +143,11 @@ def _register_routes(app):
     def serve_static(path):
         return send_from_directory(".", path)
 
-    # ── Admin API (Secure SDLC §4.4(c): authn + authz required) ──────────────
-    # Backed by Supabase (the real, live user base) — see
-    # _require_supabase_admin() above. Callers authenticate with their
-    # Supabase session token (Authorization: Bearer …),
-    # which the server verifies directly with Supabase before checking the
-    # ADMIN_EMAILS allow-list. The service_role key never reaches the browser.
-    @app.route("/api/admin/users", methods=["GET"])
-    @limiter.limit("30 per minute")
-    def get_all_users():
-        admin = _require_supabase_admin()
-        try:
-            resp = requests.get(
-                f"{SUPABASE_URL}/rest/v1/profiles",
-                params={"select": "id,email,full_name,role,created_at", "order": "created_at.desc"},
-                headers=_supabase_service_headers(),
-                timeout=8,
-            )
-            resp.raise_for_status()
-        except requests.RequestException:
-            _audit("admin_list_users", "error", actor=admin["email"])
-            return jsonify({"error": "Could not reach Supabase"}), 502
-
-        _audit("admin_list_users", "success", actor=admin["email"])
-        return jsonify(
-            [
-                {
-                    "id": u.get("id"),
-                    "full_name": u.get("full_name") or "Google User",
-                    "email": u.get("email") or "",
-                    "role": u.get("role") or "Unassigned",
-                }
-                for u in resp.json()
-            ]
-        )
-
-    @app.route("/api/admin/users/<user_id>/role", methods=["PATCH"])
-    @limiter.limit("30 per minute")
-    def update_user_role(user_id):
-        admin = _require_supabase_admin()
-
-        data = request.get_json(silent=True) or {}
-        new_role = (data.get("role") or "").strip()
-        if not new_role:
-            return jsonify({"error": "Role is required"}), 400
-        if len(new_role) > 50:
-            return jsonify({"error": "Role name is too long"}), 400
-
-        try:
-            resp = requests.patch(
-                f"{SUPABASE_URL}/rest/v1/profiles",
-                params={"id": f"eq.{user_id}"},
-                json={"role": new_role},
-                headers=_supabase_service_headers(prefer="return=representation"),
-                timeout=8,
-            )
-            resp.raise_for_status()
-        except requests.RequestException:
-            _audit("admin_update_role", "error", actor=admin["email"], detail=f"user={user_id}")
-            return jsonify({"error": "Update failed"}), 502
-
-        rows = resp.json()
-        if not rows:
-            return jsonify({"error": "User not found"}), 404
-
-        _audit(
-            "admin_update_role",
-            "success",
-            actor=admin["email"],
-            detail=f"user={user_id} -> {new_role!r}",
-        )
-        return jsonify({"message": "Role updated", "id": user_id, "role": new_role})
-
-    @app.route("/api/admin/users/<user_id>", methods=["DELETE"])
-    @limiter.limit("30 per minute")
-    def delete_user(user_id):
-        admin = _require_supabase_admin()
-
-        if user_id == admin["id"]:
-            return jsonify({"error": "You cannot delete your own account"}), 400
-
-        try:
-            resp = requests.delete(
-                f"{SUPABASE_URL}/auth/v1/admin/users/{user_id}",
-                headers=_supabase_service_headers(),
-                timeout=8,
-            )
-        except requests.RequestException:
-            _audit("admin_delete_user", "error", actor=admin["email"], detail=f"user={user_id}")
-            return jsonify({"error": "Delete failed"}), 502
-
-        if resp.status_code not in (200, 204):
-            return jsonify({"error": "User not found or delete failed"}), 404
-
-        _audit(
-            "admin_delete_user",
-            "success",
-            actor=admin["email"],
-            detail=f"deleted={user_id}",
-        )
-        return jsonify({"message": "User deleted", "id": user_id})
-
     # ── Self-service account deletion (Secure SDLC §4.4(c), GDPR Art. 17) ────
-    # Any signed-in user may delete their OWN account — no ADMIN_EMAILS check,
-    # unlike the /api/admin/* routes above (a user is always authorized to
-    # delete themself). Deletes the Supabase auth user directly; the
-    # `profiles`/`user_state` rows cascade via their FK `on delete cascade`.
+    # Any signed-in user may delete their OWN account — a user is always
+    # authorized to delete themself, no admin allow-list needed. Deletes the
+    # Supabase auth user directly; the `profiles`/`user_state` rows cascade
+    # via their FK `on delete cascade`.
     @app.route("/api/account", methods=["DELETE"])
     @limiter.limit("5 per hour")
     def delete_own_account():
@@ -312,8 +197,7 @@ def _register_routes(app):
     def health_check():
         # Liveness probe for monitoring — the server has no local database of
         # its own (see docs/upgrades.md "Security #5"); the process responding
-        # at all is the signal. Admin API reachability to Supabase is a
-        # separate concern, checked per-request by _require_supabase_admin().
+        # at all is the signal.
         return jsonify({"status": "healthy"}), 200
 
     @app.errorhandler(404)

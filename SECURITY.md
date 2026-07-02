@@ -23,9 +23,9 @@ Committee (DCASISSC).
 
 | Component | Notes |
 |-----------|-------|
-| Backend API (`server.py`) | Authentication, admin user management. |
-| Authentication | Email/password (hashed) + Google OAuth 2.0. |
-| Admin endpoints (`/api/admin/*`) | Require an authenticated **admin** session. |
+| Backend API (`server.py`) | Self-service account deletion only (`/api/account`). |
+| Authentication | Google OAuth 2.0 via Supabase. |
+| Admin API (`supabase/functions/admin-*`) | Supabase Edge Functions — require a Supabase session token **and** an allow-listed email (`ADMIN_EMAILS` secret). |
 
 ## Security Controls in CI
 
