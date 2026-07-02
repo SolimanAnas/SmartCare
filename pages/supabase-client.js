@@ -5,8 +5,10 @@
  * only enables optional cloud backup/sync of local study data across devices.
  *
  * Requires window.SUPABASE_URL and window.SUPABASE_ANON_KEY to be defined
- * first (see pages/supabase-config.js). The Supabase SDK is loaded lazily
- * from a CDN, so this file is a no-op offline / when not configured.
+ * first (see pages/supabase-config.js). The Supabase SDK is vendored locally
+ * (see vendor/) and served/cached by the service worker, so this file works
+ * offline (after first load) and isn't a no-op when not configured — it's a
+ * no-op only when SUPABASE_URL/ANON_KEY aren't set.
  *
  * Public API (all promise-based unless noted):
  *   SmartCareCloud.ready            -> Promise<boolean>  resolves true if usable
@@ -24,12 +26,14 @@
 (function () {
   'use strict';
 
-  // Pinned to an exact version (was floating "@2", i.e. latest 2.x) so a CDN-side
-  // update can never change what code runs here without a deliberate bump.
-  // Dynamic import() doesn't support integrity= in current browsers, so this
-  // can't be pinned with SRI — see docs/upgrades.md "Offline & PWA #3" for the
-  // self-hosting alternative that would close that gap.
-  var SDK_URL = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.0/+esm';
+  // Vendored locally (vendor/supabase-js-2.110.0.mjs, bundled with esbuild —
+  // see scripts/vendor_supabase.sh) instead of loaded from a CDN. Closes two
+  // gaps a CDN import had: it's now under service-worker control (works
+  // offline / survives a CDN hiccup), and the exact bytes that run are
+  // pinned in git — no more trusting jsdelivr to keep serving the same
+  // content for an already-published version. Path is relative to this
+  // file's own location (pages/), not the page that <script src>'d it.
+  var SDK_URL = '../vendor/supabase-js-2.110.0.mjs';
   var TABLE = 'user_state';            // see docs/SUPABASE_SETUP.md
   var LAST_SYNC_KEY = 'smartcare_last_sync';
 

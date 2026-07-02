@@ -1895,6 +1895,92 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
 }
 
 .sum-card ul ul ul {
-    padding-left: 14px !important; 
+    padding-left: 14px !important;
+}
+
+/* ============================================================
+   SHARED LOADING / EMPTY / ERROR STATES
+   Used via src/render-state.js (window.renderState) across
+   fetch-driven views — chapter sections, drug calculator, stats
+   modal chart, etc. — so every view fails the same recognizable
+   way instead of silently rendering nothing. See UI/UX §3.
+   ============================================================ */
+@keyframes rs-shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.skeleton-line {
+    height: 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg,
+        var(--glass-border) 0%,
+        rgba(128, 128, 128, 0.25) 50%,
+        var(--glass-border) 100%);
+    background-size: 800px 100%;
+    animation: rs-shimmer 1.4s infinite linear;
+}
+.skeleton-line:last-child { margin-bottom: 0; }
+.skeleton-line.sm { width: 40%; }
+.skeleton-line.md { width: 70%; }
+.skeleton-line.lg { width: 100%; }
+
+.state-block {
+    text-align: center;
+    padding: 2.5rem 1.25rem;
+    color: var(--text-secondary);
+}
+.state-block .state-icon {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    display: block;
+    opacity: 0.5;
+}
+.state-block.error .state-icon { color: #e03131; opacity: 0.85; }
+.state-block .state-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.state-block .state-sub {
+    font-size: 0.85rem;
+    max-width: 380px;
+    margin: 0 auto;
+}
+.state-block .state-retry {
+    margin-top: 1rem;
+}
+
+/* ---------- TABLET LAYOUT (>=900px) ---------- */
+@media (min-width: 900px) {
+    main {
+        max-width: 920px;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Chapter pages: turn the horizontal section-tab pill bar into a
+       persistent sidebar next to the content instead of stacking above it.
+       .chapter-layout wraps `${tabs}` + `.section-body` (see app.js) so this
+       is layout-only — the tab markup/behavior is unchanged. */
+    .chapter-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        align-items: start;
+        gap: 28px;
+    }
+    .chapter-layout .section-tabs {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
+        position: sticky;
+        top: calc(var(--header-height) + 20px);
+    }
+    .chapter-layout .section-tab {
+        width: 100%;
+        text-align: left;
+    }
 }
 

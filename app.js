@@ -19,10 +19,12 @@ const storage = (function() {
 })();  
 
 // ---------- EARLY INIT: theme + font-size applied BEFORE render to prevent flash ----------
+// Theme list/cycling lives in src/theme.js (window.SmartTheme), loaded before
+// this script on every page that needs it — single source of truth instead
+// of a copy-pasted `themes` array per page.
 (function() {
+    if (window.SmartTheme) window.SmartTheme.init();
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
     const savedSize = localStorage.getItem('smartcare_font_size') || 'medium';
     html.setAttribute('data-font-size', savedSize);
 })();
@@ -61,177 +63,55 @@ function timeAgo(ts) {
 }
 
 // ============================================================
-// BATTERY INDICATOR (AMOLED mode only)
+// SERVICE WORKER — registration + "Update ready" toast
 // ============================================================
-function initBatteryIndicator() {
-    const indicator = document.getElementById('batteryIndicator');
-    if (!indicator) return;
-    if (!('getBattery' in navigator)) return;
+function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
 
-    navigator.getBattery().then(battery => {
-        function updateBattery() {
-            const pct = Math.round(battery.level * 100);
-            const fill = indicator.querySelector('.battery-fill');
-            const pctEl = indicator.querySelector('.battery-pct');
-            if (fill) {
-                fill.style.width = pct + '%';
-                fill.className = 'battery-fill' +
-                    (battery.charging ? ' charging' : pct < 20 ? ' low' : '');
-            }
-            if (pctEl) pctEl.textContent = pct + '%';
-        }
-        battery.addEventListener('levelchange', updateBattery);
-        battery.addEventListener('chargingchange', updateBattery);
-        updateBattery();
-    }).catch(() => {});
-}
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('../sw.js')
+            .then((reg) => initSWUpdateToast(reg))
+            .catch(() => {});
+    });
 
-// ============================================================
-// initChapterPage()
-// Called by every chapter HTML after CPG_DATA and app.js load.
-// ============================================================
-function initChapterPage() {
-    const html   = document.documentElement;
-    const themes = ['dark', 'light', 'sepia', 'forest', 'amoled'];
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    const savedSize = localStorage.getItem('smartcare_font_size') || 'medium';
-    html.setAttribute('data-font-size', savedSize);
-
-    const headerEl = document.querySelector('header');
-    if (headerEl && chapterData) {
-        const title    = chapterData.shortTitle || chapterData.title || 'SmartCare';
-        const subtitle = 'SmartCare';
-        headerEl.innerHTML = `
-            <div class="header-left">
-                <button class="icon-btn" id="homeBtn" title="Home" aria-label="Home">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2.2"
-                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/>
-                        <path d="M9 21V12h6v9"/>
-                    </svg>
-                </button>
-                <div class="header-text">
-                    <h1 id="pageTitle">${title}</h1>
-                    <p id="pageSubtitle">${subtitle}</p>
-                </div>
-            </div>
-            <div class="header-right" id="headerRight">
-                <div class="battery-indicator" id="batteryIndicator">
-                    <span class="battery-icon"><span class="battery-fill"></span></span>
-                    <span class="battery-pct">--%</span>
-                </div>
-                <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#palette"/></svg></button>
-                <div class="stats-badge" id="liveStatsBadge">
-                    <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#chart-no-axes-column"/></svg> <span id="statsAttempts">0</span></span>
-                    <div class="stats-divider"></div>
-                    <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#target"/></svg> <span id="statsCritical">0%</span></span>
-                </div>
-                <a href="c-index.html?view=summary" class="icon-btn" id="headerIndexBtn" title="Index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></a>
-                <a href="../pages/about.html" class="icon-btn" id="headerAboutBtn" title="About"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg></a>
-            </div>
-        `;
-    }
-
-    const footerEl = document.querySelector('footer');
-    if (footerEl) {
-        footerEl.innerHTML = `
-            <div>Created & Maintained by Soliman Anas · Generic clinical learning platform</div>
-            <div><a href="../pages/about.html">About &amp; Disclaimer</a> · Refer to SmartCare and memo for procedures and protocols.</div>
-        `;
-    }
-
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            const current = html.getAttribute('data-theme') || 'dark';
-            const idx = themes.indexOf(current);
-            const next = themes[(idx + 1) % themes.length];
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            initBatteryIndicator();
-        });
-    }
-
-    function loadStats() {
-        try {
-            const data  = localStorage.getItem('smartcare_cpg_stats');
-            const stats = data ? JSON.parse(data) : { totalAttempts: 0, critical: { total: 0, correct: 0 } };
-            const critAcc = stats.critical && stats.critical.total
-                ? Math.round((stats.critical.correct / stats.critical.total) * 100)
-                : 0;
-            const attEl  = document.getElementById('statsAttempts');
-            const critEl = document.getElementById('statsCritical');
-            if (attEl)  attEl.textContent  = stats.totalAttempts || 0;
-            if (critEl) critEl.textContent = critAcc + '%';
-        } catch(e) {}
-    }
-    loadStats();
-
-    initBatteryIndicator();
-    recordLastVisited();
-
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('../sw.js')
-                .then((reg) => initSWUpdateToast(reg))
-                .catch(() => {});
-        });
-
-        let swRefreshing = false;
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (swRefreshing) return;
-            swRefreshing = true;
-            window.location.reload();
-        });
-    }
-
-    function initSWUpdateToast(reg) {
-        function showToast(worker) {
-            if (document.getElementById('sw-update-toast')) return;
-            const toast = document.createElement('div');
-            toast.id = 'sw-update-toast';
-            toast.setAttribute('role', 'status');
-            toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
-                'background:#1e293b;color:#fff;padding:12px 16px;border-radius:10px;' +
-                'box-shadow:0 4px 20px rgba(0,0,0,.35);z-index:99999;display:flex;' +
-                'align-items:center;gap:12px;font:14px/1.4 system-ui,-apple-system,sans-serif;';
-            toast.innerHTML = '<span>Update ready</span>' +
-                '<button id="sw-update-btn" style="background:#3b82f6;color:#fff;border:none;' +
-                'padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit;font-weight:600;">Refresh</button>';
-            document.body.appendChild(toast);
-            document.getElementById('sw-update-btn').addEventListener('click', () => {
-                worker.postMessage({ type: 'SKIP_WAITING' });
-                toast.remove();
-            });
-        }
-        if (reg.waiting) showToast(reg.waiting);
-        reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing;
-            if (!newWorker) return;
-            newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    showToast(newWorker);
-                }
-            });
-        });
-    }
-
-    document.addEventListener('smartcare:rendered', () => {
-        const main = document.getElementById('mainContent');
-        if (main) {
-            main.classList.add('content-entering');
-            requestAnimationFrame(() => requestAnimationFrame(() => {
-                main.classList.remove('content-entering');
-                main.classList.add('content-visible');
-            }));
-        }
+    let swRefreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (swRefreshing) return;
+        swRefreshing = true;
+        window.location.reload();
     });
 }
 
-window.initChapterPage = initChapterPage;
+function initSWUpdateToast(reg) {
+    function showToast(worker) {
+        if (document.getElementById('sw-update-toast')) return;
+        const toast = document.createElement('div');
+        toast.id = 'sw-update-toast';
+        toast.setAttribute('role', 'status');
+        toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
+            'background:#1e293b;color:#fff;padding:12px 16px;border-radius:10px;' +
+            'box-shadow:0 4px 20px rgba(0,0,0,.35);z-index:99999;display:flex;' +
+            'align-items:center;gap:12px;font:14px/1.4 system-ui,-apple-system,sans-serif;';
+        toast.innerHTML = '<span>Update ready</span>' +
+            '<button id="sw-update-btn" style="background:#3b82f6;color:#fff;border:none;' +
+            'padding:6px 14px;border-radius:6px;cursor:pointer;font:inherit;font-weight:600;">Refresh</button>';
+        document.body.appendChild(toast);
+        document.getElementById('sw-update-btn').addEventListener('click', () => {
+            worker.postMessage({ type: 'SKIP_WAITING' });
+            toast.remove();
+        });
+    }
+    if (reg.waiting) showToast(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                showToast(newWorker);
+            }
+        });
+    });
+}
 
 // ---------- CHAPTER DATA ----------  
 const chapterData = window.CPG_DATA;  
@@ -311,15 +191,16 @@ const utils = {
         if (!chapterData || !chapterData.id) return Promise.resolve(section);
         return fetch(`../content/${chapterData.id}/${section.id}.json`)
             .then((r) => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-            .then((full) => { Object.assign(section, full); return section; })
+            .then((full) => { Object.assign(section, full); delete section._loadFailed; return section; })
             .catch(() => utils.loadFullChapterFallback()
                 .then((fullData) => {
                     const full = fullData && fullData.sections
                         ? fullData.sections.find((s) => s.id === section.id) : null;
-                    if (full) Object.assign(section, full);
+                    if (full) { Object.assign(section, full); delete section._loadFailed; }
+                    else section._loadFailed = true;
                     return section;
                 })
-                .catch(() => section));
+                .catch(() => { section._loadFailed = true; return section; }));
     },
     // Last-resort fallback: dynamically load the original, unsplit
     // content/cN.js (still shipped as the offline source of truth) if a
@@ -368,33 +249,33 @@ function updateHeader(title, subtitle = '', showBack = true) {
 // ---------- RENDER COMING SOON ----------  
 function renderComingSoon() {
     const view = utils.getQueryParam('view') || 'summary';
-    let title = 'Coming Soon', subtitle = '', message = '', icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#construction"/></svg>';
+    let title = 'Coming Soon', subtitle = '', message = '', icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#construction"/></svg>';
     switch(view) {
         case 'critical':
             title = 'Critical Scenarios';
             subtitle = 'Coming Soon';
             message = 'High‑acuity decision‑making cases are being developed for this chapter.';
-            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#siren"/></svg>';
+            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg>';
             break;
         case 'flashcards':
             title = 'Flashcards';
             subtitle = 'Coming Soon';
             message = 'Interactive flashcards for this chapter are under construction.';
-            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#contact"/></svg>';
+            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#contact"/></svg>';
             break;
         case 'quiz':
             title = 'Quiz';
             subtitle = 'Coming Soon';
             message = 'Practice questions for this chapter are being prepared.';
-            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg>';
+            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg>';
             break;
         default:
             title = 'Coming Soon';
             subtitle = 'Stay tuned.....';
             message = 'This clinical chapter is under construction.';
-            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#construction"/></svg>';
+            icon = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#construction"/></svg>';
     }
-    const html = `<div class="coming-soon-card" style="text-align:center; background: var(--glass-bg); backdrop-filter: blur(16px); border-radius: 60px; padding: 40px 20px; box-shadow: var(--glass-shadow);">   <div style="font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; background: linear-gradient(145deg, #0a3b4e, #1e6f8f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 15px 30px rgba(0,0,0,0.2); margin-bottom: 15px; line-height: 1.2; font-family: Georgia, serif;">${icon} ${title}</div>   <div style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.5rem, 5vw, 2.2rem); font-style: italic; font-weight: 600; color: #0a3b4e; text-shadow: 0 2px 5px rgba(255,255,255,0.7); border-top: 3px solid rgba(0,86,179,0.3); border-bottom: 3px solid rgba(0,86,179,0.3); display: inline-block; padding: 10px 30px; margin-top: 10px; letter-spacing: 2px;">${subtitle}</div>   <div style="font-size: clamp(1rem, 4vw, 1.4rem); font-weight: 500; color: #1a3a4a; background: rgba(255,255,255,0.5); padding: 12px 20px; border-radius: 50px; display: inline-block; margin-top: 25px; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">   ${message}   </div>   <div style="margin-top: 40px;">   <button class="control-btn" data-action="backHome" style="padding: 12px 30px; border-radius: 40px; font-weight: 700; font-size: clamp(0.9rem, 4vw, 1.1rem); color: white; background: linear-gradient(to bottom, #00b4db, #0083b0); box-shadow: 0 8px 20px rgba(0, 131, 176, 0.5); border: none; cursor: pointer; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button>   </div>   </div>`;
+    const html = `<div class="coming-soon-card" style="text-align:center; background: var(--glass-bg); backdrop-filter: blur(16px); border-radius: 60px; padding: 40px 20px; box-shadow: var(--glass-shadow);">   <div style="font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; background: linear-gradient(145deg, #0a3b4e, #1e6f8f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 15px 30px rgba(0,0,0,0.2); margin-bottom: 15px; line-height: 1.2; font-family: Georgia, serif;">${icon} ${title}</div>   <div style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.5rem, 5vw, 2.2rem); font-style: italic; font-weight: 600; color: #0a3b4e; text-shadow: 0 2px 5px rgba(255,255,255,0.7); border-top: 3px solid rgba(0,86,179,0.3); border-bottom: 3px solid rgba(0,86,179,0.3); display: inline-block; padding: 10px 30px; margin-top: 10px; letter-spacing: 2px;">${subtitle}</div>   <div style="font-size: clamp(1rem, 4vw, 1.4rem); font-weight: 500; color: #1a3a4a; background: rgba(255,255,255,0.5); padding: 12px 20px; border-radius: 50px; display: inline-block; margin-top: 25px; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 4px 10px rgba(0,0,0,0.05);">   ${message}   </div>   <div style="margin-top: 40px;">   <button class="control-btn" data-action="backHome" style="padding: 12px 30px; border-radius: 40px; font-weight: 700; font-size: clamp(0.9rem, 4vw, 1.1rem); color: white; background: linear-gradient(to bottom, #00b4db, #0083b0); box-shadow: 0 8px 20px rgba(0, 131, 176, 0.5); border: none; cursor: pointer; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>   </div>   </div>`;
     setMainContent(html);
     updateHeader(title, subtitle, true);
     utils.safeScrollTop();
@@ -415,13 +296,13 @@ function renderSectionTabs(activeId) {
     `;  
 }  
 
-// ---------- <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#smartphone"/></svg> STICKY BOTTOM NAVIGATION ----------
+// ---------- <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smartphone"/></svg> STICKY BOTTOM NAVIGATION ----------
 function renderBottomNav(currentView) {
     const views = [
-        { id: 'summary', label: 'Summary', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg>' },
-        { id: 'flashcards', label: 'Cards', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg>' },
-        { id: 'quiz', label: 'Quiz', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg>' },
-        { id: 'critical', label: 'Scenario', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#ambulance"/></svg>' }
+        { id: 'summary', label: 'Summary', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg>' },
+        { id: 'flashcards', label: 'Cards', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#zap"/></svg>' },
+        { id: 'quiz', label: 'Quiz', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg>' },
+        { id: 'critical', label: 'Scenario', icon: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ambulance"/></svg>' }
     ];
     return `
         <nav class="bottom-nav">
@@ -455,7 +336,7 @@ function renderSectionNavigation() {
                     ${utils.escapeHTML(nextSection.shortTitle)} ▶  
                 </button>` :   
                 (isLastSection ? 
-                    `<button class="finish-chapter" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-check-big"/></svg> Finish</button>` : 
+                    `<button class="finish-chapter" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Finish</button>` : 
                     `<button disabled>▶</button>`)
             }  
         </div>  
@@ -575,6 +456,12 @@ async function switchSection(sectionId, updateUrl = true) {
         window.history.replaceState({}, '', url);
     }
 
+    // Only flash a loading skeleton when this section actually needs a
+    // network round-trip — already-fetched sections resolve instantly.
+    if (section.summary === undefined && dom.main && typeof renderState === 'function') {
+        renderState(dom.main, 'loading', { lines: 4 });
+    }
+
     await utils.ensureSectionData(section);
     state.flashData = section.flashcards || [];
     state.criticalData = section.critical || [];
@@ -609,31 +496,55 @@ function setMainContent(html) {
 // ============================================================
 // RENDER FUNCTIONS
 // ============================================================
-const render = {  
-    summary: function() {  
-        if (isChapterMissing) { renderComingSoon(); return; }  
-        const section = state.activeSection;  
-        if (!section) {   
-            console.error('No active section');  
-            return;  
-        }  
-        const tabs = renderSectionTabs(section.id);  
-        // FIX #3: exclude c-index from special pages so bottom nav appears
-        const isSpecialPage = chapterData && (chapterData.id === 'c0');  
-        const summaryContent = section.summary || '<div class="sum-card">No summary available.</div>';  
-        const nav = renderSectionNavigation();  
+const render = {
+    // A fetch failure (see utils.ensureSectionData) leaves a section object
+    // still missing summary/quiz/flashcards/critical — without this check,
+    // every view function's "No X available" branch would fire and quietly
+    // mask the failure as if the section were legitimately empty. Shown
+    // instead of the normal view; Retry re-runs switchSection to fetch again.
+    loadFailed: function() {
+        if (!dom.main || typeof renderState !== 'function') return false;
+        const section = state.activeSection;
+        if (!section || !section._loadFailed) return false;
+        renderState(dom.main, 'error', {
+            title: "Couldn't load this section",
+            message: 'Check your connection and try again.',
+            iconHref: '../icons/sprite.svg#triangle-alert',
+            onRetry: () => {
+                delete section._loadFailed;
+                switchSection(state.activeSectionId, false);
+            },
+        });
+        return true;
+    },
 
-        const html = `  
-            <div class="section active">  
-                ${tabs}  
-                ${summaryContent}  
-                ${nav}  
-                <div class="back-home-ghost">
-                    <button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button>
+    summary: function() {
+        if (isChapterMissing) { renderComingSoon(); return; }
+        const section = state.activeSection;
+        if (!section) {
+            console.error('No active section');
+            return;
+        }
+        if (this.loadFailed()) return;
+        const tabs = renderSectionTabs(section.id);
+        // FIX #3: exclude c-index from special pages so bottom nav appears
+        const isSpecialPage = chapterData && (chapterData.id === 'c0');
+        const summaryContent = section.summary || '<div class="sum-card">No summary available.</div>';
+        const nav = renderSectionNavigation();
+
+        const html = `
+            <div class="section active${tabs ? ' chapter-layout' : ''}">
+                ${tabs}
+                <div class="section-body">
+                    ${summaryContent}
+                    ${nav}
+                    <div class="back-home-ghost">
+                        <button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>
+                    </div>
                 </div>
-            </div>  
-            ${!isSpecialPage ? renderBottomNav('summary') : ''}  
-        `;  
+            </div>
+            ${!isSpecialPage ? renderBottomNav('summary') : ''}
+        `;
         setMainContent(html);  
         updateHeader(utils.escapeHTML(section.shortTitle), 'Summary', true);  
         utils.safeScrollTop();  
@@ -643,14 +554,15 @@ const render = {
         }  
     },  
 
-    flashcards: function() {  
-        if (isChapterMissing) { renderComingSoon(); return; }  
-        const section = state.activeSection;  
-        if (!section) {   
-            console.error('No active section');  
-            return;  
-        }  
-        if (!state.flashData.length) {  
+    flashcards: function() {
+        if (isChapterMissing) { renderComingSoon(); return; }
+        const section = state.activeSection;
+        if (!section) {
+            console.error('No active section');
+            return;
+        }
+        if (this.loadFailed()) return;
+        if (!state.flashData.length) {
             setMainContent('<div class="sum-card">No flashcards available.</div>');  
             return;  
         }  
@@ -669,32 +581,36 @@ const render = {
         const question = utils.escapeHTML(card.question);
         const safeAnswer = utils.escapeHTML(card.answer || '').replace(/\n/g, '<br>');
         
-        const html = `  
-            ${tabs}  
-            <div class="fc-progress">Card ${state.fIndex+1} of ${state.flashData.length}</div>  
-            <div class="scene" id="cardScene">  
-                <div class="card" id="flashcard">  
-                    <div class="card__face card__face--front">  
-                        <span class="category-badge">${category}</span>  
-                        ${card.image ? `<div style="margin-bottom:15px;">  
-                            <img src="${utils.escapeHTML(card.image)}" alt="ECG" style="max-width:100%; max-height:150px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">  
-                        </div>` : ''}  
-                        <div style="white-space: pre-wrap; font-size:1.3rem;">${question}</div>  
-                        <div style="font-size:0.8rem; color:#888; margin-top:20px;">Tap to flip</div>  
-                    </div>  
-                    <div class="card__face card__face--back">  
-                        <div style="white-space: pre-wrap;">${safeAnswer}</div>  
-                    </div>  
-                </div>  
-            </div>  
-            <div class="nav-row">  
-                <button class="control-btn" data-flash="prev">◀ Previous</button>  
-                <button class="control-btn" data-flash="next">Next ▶</button>  
-            </div>  
-            ${nav}  
-            <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button></div>  
-            ${renderBottomNav('flashcards')}  
-        `;  
+        const html = `
+            <div class="${tabs ? 'chapter-layout' : ''}">
+                ${tabs}
+                <div class="section-body">
+                    <div class="fc-progress">Card ${state.fIndex+1} of ${state.flashData.length}</div>
+                    <div class="scene" id="cardScene">
+                        <div class="card" id="flashcard">
+                            <div class="card__face card__face--front">
+                                <span class="category-badge">${category}</span>
+                                ${card.image ? `<div style="margin-bottom:15px;">
+                                    <img src="${utils.escapeHTML(card.image)}" alt="ECG" style="max-width:100%; max-height:150px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                                </div>` : ''}
+                                <div style="white-space: pre-wrap; font-size:1.3rem;">${question}</div>
+                                <div style="font-size:0.8rem; color:#888; margin-top:20px;">Tap to flip</div>
+                            </div>
+                            <div class="card__face card__face--back">
+                                <div style="white-space: pre-wrap;">${safeAnswer}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-row">
+                        <button class="control-btn" data-flash="prev">◀ Previous</button>
+                        <button class="control-btn" data-flash="next">Next ▶</button>
+                    </div>
+                    ${nav}
+                    <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button></div>
+                </div>
+            </div>
+            ${renderBottomNav('flashcards')}
+        `;
         setMainContent(html);  
         const cardEl = document.getElementById('flashcard');  
         const scene = document.getElementById('cardScene');  
@@ -707,14 +623,15 @@ const render = {
         utils.safeScrollTop();  
     },  
 
-    quizSetup: function() {  
-        if (isChapterMissing) { renderComingSoon(); return; }  
-        const section = state.activeSection;  
-        if (!section) {   
-            console.error('No active section');  
-            return;  
-        }  
-        if (!section.quiz || !section.quiz.length) {  
+    quizSetup: function() {
+        if (isChapterMissing) { renderComingSoon(); return; }
+        const section = state.activeSection;
+        if (!section) {
+            console.error('No active section');
+            return;
+        }
+        if (this.loadFailed()) return;
+        if (!section.quiz || !section.quiz.length) {
             setMainContent('<div class="sum-card">No quiz questions available.</div>');  
             return;  
         }  
@@ -725,25 +642,29 @@ const render = {
         const possibleSizes = [10, 20, 30];
         const sizeButtons = possibleSizes
             .filter(size => size <= totalQuestions)
-            .map(size => `<button class="setup-btn" data-quiz-size="${size}">${size} Questions <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-right"/></svg></span></button>`)
+            .map(size => `<button class="setup-btn" data-quiz-size="${size}">${size} Questions <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></span></button>`)
             .join('');
         
-        const allButton = `<button class="setup-btn challenge" data-quiz-size="${totalQuestions}">All (${totalQuestions}) <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-right"/></svg></span></button>`;
+        const allButton = `<button class="setup-btn challenge" data-quiz-size="${totalQuestions}">All (${totalQuestions}) <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></span></button>`;
         const buttonsHtml = sizeButtons + allButton;
         
-        const html = `  
-            ${tabs}  
-            <div class="quiz-setup-container">  
-                <h2 style="color:var(--primary-accent);">Quiz: ${utils.escapeHTML(section.shortTitle)}</h2>  
-                <p style="color:var(--text-secondary);">Select number of questions</p>  
-                <div class="setup-grid">  
-                    ${buttonsHtml}
-                </div>  
-            </div>  
-            ${nav}  
-            <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button></div>  
-            ${renderBottomNav('quiz')}  
-        `;  
+        const html = `
+            <div class="${tabs ? 'chapter-layout' : ''}">
+                ${tabs}
+                <div class="section-body">
+                    <div class="quiz-setup-container">
+                        <h2 style="color:var(--primary-accent);">Quiz: ${utils.escapeHTML(section.shortTitle)}</h2>
+                        <p style="color:var(--text-secondary);">Select number of questions</p>
+                        <div class="setup-grid">
+                            ${buttonsHtml}
+                        </div>
+                    </div>
+                    ${nav}
+                    <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button></div>
+                </div>
+            </div>
+            ${renderBottomNav('quiz')}
+        `;
         setMainContent(html);  
         updateHeader('Quiz Setup', utils.escapeHTML(section.shortTitle), true);  
         utils.safeScrollTop();  
@@ -763,39 +684,44 @@ const render = {
         }).join('');  
         const tabs = renderSectionTabs(state.activeSectionId);  
         const nav = renderSectionNavigation();  
-        const html = `  
-            ${tabs}  
-            <div class="quiz-container">  
-                <div style="display:flex; justify-content:space-between; margin-bottom:15px;">  
-                    <span class="fc-progress">${progress}</span>  
-                    <span class="stats-badge" style="background:var(--glass-bg); color:var(--text-primary);">  
-                        Score: <strong>${state.score}</strong>  
-                    </span>  
-                </div>  
-                ${q.image ? `<div style="text-align:center; margin-bottom:20px;">  
-                    <img src="${utils.escapeHTML(q.image)}" alt="ECG" style="max-width:100%; max-height:200px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">  
-                </div>` : ''}  
-                <div style="font-size:1.15rem; font-weight:600; margin-bottom:20px; color:var(--text-primary);">${utils.escapeHTML(q.q)}</div>  
-                <div class="quiz-options" id="quizOptionsContainer">${optionsHtml}</div>  
-                <div class="quiz-feedback" id="quizFeedback" style="display:none;"></div>  
-                <button class="control-btn" id="nextQuizBtn" style="width:100%; margin-top:25px; display:none;">Next Question</button>  
-            </div>  
-            ${nav}  
-            <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button></div>  
-            ${renderBottomNav('quiz')}  
-        `;  
+        const html = `
+            <div class="${tabs ? 'chapter-layout' : ''}">
+                ${tabs}
+                <div class="section-body">
+                    <div class="quiz-container">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+                            <span class="fc-progress">${progress}</span>
+                            <span class="stats-badge" style="background:var(--glass-bg); color:var(--text-primary);">
+                                Score: <strong>${state.score}</strong>
+                            </span>
+                        </div>
+                        ${q.image ? `<div style="text-align:center; margin-bottom:20px;">
+                            <img src="${utils.escapeHTML(q.image)}" alt="ECG" style="max-width:100%; max-height:200px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+                        </div>` : ''}
+                        <div style="font-size:1.15rem; font-weight:600; margin-bottom:20px; color:var(--text-primary);">${utils.escapeHTML(q.q)}</div>
+                        <div class="quiz-options" id="quizOptionsContainer">${optionsHtml}</div>
+                        <div class="quiz-feedback" id="quizFeedback" style="display:none;"></div>
+                        <button class="control-btn" id="nextQuizBtn" style="width:100%; margin-top:25px; display:none;">Next Question</button>
+                    </div>
+                    ${nav}
+                    <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button></div>
+                </div>
+            </div>
+            ${renderBottomNav('quiz')}
+        `;
         setMainContent(html);  
         utils.safeScrollTop();  
     },  
 
-    criticalGame: function() {  
-        if (isChapterMissing) { renderComingSoon(); return; }  
-        const section = state.activeSection;  
-        if (!section) {   
-            console.error('No active section');  
-            return;  
-        }  
-        if (!state.criticalData || !state.criticalData.length) {  
+    criticalGame: function() {
+        if (isChapterMissing) { renderComingSoon(); return; }
+        const section = state.activeSection;
+        if (!section) {
+            console.error('No active section');
+            return;
+        }
+        if (this.loadFailed()) return;
+        if (!state.criticalData || !state.criticalData.length) {
             setMainContent('<div class="sum-card">No critical scenarios available.</div>');  
             return;  
         }  
@@ -813,28 +739,32 @@ const render = {
         }).join('');  
         const tabs = renderSectionTabs(state.activeSectionId);  
         const nav = renderSectionNavigation();  
-        const html = `  
-            ${tabs}  
-            <div class="critical-card">  
-                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">  
-                    <span class="fc-progress">Scenario ${state.criticalIndex+1}/${state.criticalData.length}</span>  
-                    <span class="stats-badge" style="background:var(--glass-bg); color:var(--text-primary);">  
-                        Score: <strong>${state.criticalScore}</strong>  
-                    </span>  
-                </div>  
-                <div style="background: var(--btn-grad-scen); padding:15px; border-radius:12px; margin-bottom:20px; border:1px solid var(--border-scen);">  
-                    <strong style="color:var(--text-scen);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#siren"/></svg> Scenario</strong>  
-                    <p style="margin-top:8px; color:var(--text-primary);">${utils.escapeHTML(q.scenario)}</p>  
-                </div>  
-                <div style="font-weight:600; margin-bottom:15px;">${utils.escapeHTML(q.question)}</div>  
-                <div class="quiz-options" id="criticalOptionsContainer">${optionsHtml}</div>  
-                <div class="critical-feedback" id="criticalFeedback" style="display:none;"></div>  
-                <button class="control-btn" id="nextCriticalBtn" style="width:100%; margin-top:25px; display:none;">Next Scenario</button>  
-            </div>  
-            ${nav}  
-            <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button></div>  
-            ${renderBottomNav('critical')}  
-        `;  
+        const html = `
+            <div class="${tabs ? 'chapter-layout' : ''}">
+                ${tabs}
+                <div class="section-body">
+                    <div class="critical-card">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                            <span class="fc-progress">Scenario ${state.criticalIndex+1}/${state.criticalData.length}</span>
+                            <span class="stats-badge" style="background:var(--glass-bg); color:var(--text-primary);">
+                                Score: <strong>${state.criticalScore}</strong>
+                            </span>
+                        </div>
+                        <div style="background: var(--btn-grad-scen); padding:15px; border-radius:12px; margin-bottom:20px; border:1px solid var(--border-scen);">
+                            <strong style="color:var(--text-scen);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg> Scenario</strong>
+                            <p style="margin-top:8px; color:var(--text-primary);">${utils.escapeHTML(q.scenario)}</p>
+                        </div>
+                        <div style="font-weight:600; margin-bottom:15px;">${utils.escapeHTML(q.question)}</div>
+                        <div class="quiz-options" id="criticalOptionsContainer">${optionsHtml}</div>
+                        <div class="critical-feedback" id="criticalFeedback" style="display:none;"></div>
+                        <button class="control-btn" id="nextCriticalBtn" style="width:100%; margin-top:25px; display:none;">Next Scenario</button>
+                    </div>
+                    ${nav}
+                    <div class="back-home-ghost"><button data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button></div>
+                </div>
+            </div>
+            ${renderBottomNav('critical')}
+        `;
         setMainContent(html);  
         utils.safeScrollTop();  
     },  
@@ -857,7 +787,7 @@ const render = {
         const critAcc = s.critical.total ? Math.round((s.critical.correct / s.critical.total) * 100) : 0;  
         const html = `  
             <div class="stats-card">  
-                <h2 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#chart-no-axes-column"/></svg> Your Performance</h2>  
+                <h2 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg> Your Performance</h2>  
                 <div class="progress-header">  
                     <span class="progress-title">Overall Progress</span>  
                     <span style="font-weight:700;">${overallPct}%</span>  
@@ -876,9 +806,9 @@ const render = {
                     </div>  
                 </div>  
                 ${chapStatsHtml || '<p style="margin-top:10px;">No chapter data yet.</p>'}  
-                <div class="encouragement"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#lightbulb"/></svg> Keep up the great work!</div>  
+                <div class="encouragement"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Keep up the great work!</div>  
                 <div class="nav-row">  
-                    <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button>  
+                    <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>  
                 </div>  
             </div>  
         `;  
@@ -894,12 +824,12 @@ const render = {
         }  
         let items = state.mistakes.map(m => `  
             <div class="mistake-item">  
-                <div class="mistake-question"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg> ${utils.escapeHTML(m.question)}</div>  
-                <div class="mistake-answer"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-check-big"/></svg> Correct: ${utils.escapeHTML(m.correctAnswer)}</div>  
-                <div class="mistake-rationale"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg> ${utils.escapeHTML(m.rationale)}</div>  
+                <div class="mistake-question"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg> ${utils.escapeHTML(m.question)}</div>  
+                <div class="mistake-answer"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Correct: ${utils.escapeHTML(m.correctAnswer)}</div>  
+                <div class="mistake-rationale"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> ${utils.escapeHTML(m.rationale)}</div>  
             </div>  
         `).join('');  
-        const html = `<div class="sum-card"><h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Mistakes Review</h3>${items}<div class="nav-row"><button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button></div></div>`;  
+        const html = `<div class="sum-card"><h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Mistakes Review</h3>${items}<div class="nav-row"><button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button></div></div>`;  
         setMainContent(html);  
         updateHeader('Mistakes', '', true);  
         utils.safeScrollTop();  
@@ -1001,7 +931,7 @@ const quizEngine = {
         const fb = document.getElementById('quizFeedback');  
         if (fb) {  
             fb.style.display = 'block';  
-            fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
+            fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
                             <p style="margin-top:8px;">${utils.escapeHTML(q.explanation)}</p>`;  
         }  
         const nextBtn = document.getElementById('nextQuizBtn');  
@@ -1029,7 +959,7 @@ const quizEngine = {
             if (percentage >= 80) msg = 'Excellent!';  
             else if (percentage >= 60) msg = 'Good effort.';  
             const reviewBtn = state.mistakes.length ?   
-                `<button class="control-btn" data-action="reviewMistakes" style="margin-top:15px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Review ${state.mistakes.length} Mistakes</button>` : '';  
+                `<button class="control-btn" data-action="reviewMistakes" style="margin-top:15px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Review ${state.mistakes.length} Mistakes</button>` : '';  
             const html = `  
                 <div class="quiz-setup-container" style="text-align:center;">  
                     <h2 style="color:var(--primary-accent);">Quiz Complete!</h2>  
@@ -1037,7 +967,7 @@ const quizEngine = {
                     <p style="color:var(--text-secondary);">${msg}</p>  
                     ${reviewBtn}  
                     <div class="nav-row">  
-                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button>  
+                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>  
                     </div>  
                 </div>  
             `;  
@@ -1069,9 +999,9 @@ const criticalEngine = {
         const fb = document.getElementById('criticalFeedback');  
         if (fb) {  
             fb.style.display = 'block';  
-            fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
+            fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
                             <p style="margin-top:8px;">${utils.escapeHTML(q.explanation)}</p>  
-                            ${q.kpi ? `<div class="highlight-box" style="margin-top:10px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#target"/></svg> KPI: ${utils.escapeHTML(q.kpi)}</div>` : ''}`;  
+                            ${q.kpi ? `<div class="highlight-box" style="margin-top:10px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#target"/></svg> KPI: ${utils.escapeHTML(q.kpi)}</div>` : ''}`;  
         }  
         const nextBtn = document.getElementById('nextCriticalBtn');  
         if (nextBtn) nextBtn.style.display = 'block';  
@@ -1089,7 +1019,7 @@ const criticalEngine = {
                     <div style="font-size:3rem; font-weight:bold; color:var(--primary-accent); margin:20px 0;">${accuracy}%</div>  
                     <p>Correct: ${state.criticalScore}/${state.criticalData.length}</p>  
                     <div class="nav-row">  
-                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#house"/></svg> Home</button>  
+                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>  
                     </div>  
                 </div>  
             `;  
@@ -1267,6 +1197,10 @@ window.addEventListener('popstate', async function () {
         state.activeSection = state.sections[0];
     }
 
+    if (state.activeSection && state.activeSection.summary === undefined && dom.main && typeof renderState === 'function') {
+        renderState(dom.main, 'loading', { lines: 4 });
+    }
+
     await utils.ensureSectionData(state.activeSection);
     state.flashData = (state.activeSection && state.activeSection.flashcards) || [];
     state.criticalData = (state.activeSection && state.activeSection.critical) || [];
@@ -1300,24 +1234,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 30);
     }
 
-    // ── Theme cycling ───────────────────────────────────────
-    const themeBtn  = document.getElementById('themeToggle');
-    const htmlEl    = document.documentElement;
-    const ALL_THEMES = ['dark', 'amoled', 'light', 'sepia', 'forest'];
-
-    function applyTheme(t) {
-        if (!ALL_THEMES.includes(t)) t = 'dark';
-        htmlEl.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
+    // ── Theme cycling (src/theme.js — window.SmartTheme) ────
+    const themeBtn = document.getElementById('themeToggle');
+    const htmlEl   = document.documentElement;
+    if (themeBtn && window.SmartTheme) {
+        themeBtn.addEventListener('click', () => window.SmartTheme.next());
     }
-    if (themeBtn) {
-        themeBtn.addEventListener('click', function() {
-            const cur = htmlEl.getAttribute('data-theme') || 'dark';
-            const idx = ALL_THEMES.indexOf(cur);
-            applyTheme(ALL_THEMES[(idx + 1) % ALL_THEMES.length]);
-        });
-    }
-    applyTheme(localStorage.getItem('theme') || 'dark');
 
     // ── Font size ───────────────────────────────────────────
     const savedFont = localStorage.getItem('smartcare_font_size') || 'medium';
@@ -1337,6 +1259,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     refreshStatsBadge();
 
+    // ── Offline support + last-visited tracking ─────────────
+    registerServiceWorker();
+    recordLastVisited();
+
     // ── Chapter page boot ───────────────────────────────────
     async function bootApp() {
         if (isChapterMissing) {
@@ -1352,6 +1278,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (section) {
                 state.activeSectionId = urlSection;
                 state.activeSection   = section;
+                if (section.summary === undefined && dom.main && typeof renderState === 'function') {
+                    renderState(dom.main, 'loading', { lines: 4 });
+                }
                 await utils.ensureSectionData(section);
                 state.flashData       = section.flashcards || [];
                 state.criticalData    = section.critical   || [];

@@ -184,6 +184,13 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 }
 .drug-item.hidden, .cat-hdr.hidden{display:none}
 
+.drug-skel{
+  height:38px;border-radius:12px;margin:6px 10px;
+  background:linear-gradient(90deg,var(--sf) 0%,var(--sf2) 50%,var(--sf) 100%);
+  background-size:400px 100%;animation:drugSkelShimmer 1.3s infinite linear;
+}
+@keyframes drugSkelShimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+
 /* ── DOSE DISPLAY ELEMENTS ──────────────────────────── */
 .dose-panel::-webkit-scrollbar{display:none;}
 
@@ -216,6 +223,11 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
   gap:10px;color:var(--muted);text-align:center;padding:40px 20px;font-size:.9rem; min-height:300px;
 }
 .de-icon{font-size:3rem;opacity:.28;margin-bottom:8px}
+.de-retry{
+  margin-top:4px;padding:9px 18px;border-radius:10px;border:1.5px solid var(--br);
+  background:var(--sf);color:var(--text);font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;
+}
+.de-retry:active{background:var(--sf2)}
 
 .dose-result{display:flex;flex-direction:column;gap:16px; margin-top: 16px; animation:slideUp .28s ease}
 @keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -315,8 +327,10 @@ if (!document.getElementById('pickerModal')) document.body.insertAdjacentHTML('b
    Override boot() from drug-calculator.js
 ────────────────────────────────────────────────────── */
 async function boot() {
+  showListSkeleton();
   try {
     const res  = await fetch('drug-data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     state.data = await res.json();
     buildInlineList();
     // Deep-link: ?drug=DrugName auto-selects on load
@@ -326,9 +340,21 @@ async function boot() {
       if (btn) { inlinePick(btn); btn.scrollIntoView({block:'center'}); }
     }
   } catch(e) {
+    document.getElementById('drugList').innerHTML =
+      '<div class="dose-empty"><div class="de-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg></div>' +
+      '<span>Could not load medication list<br><small>' + esc(e.message) + '</small></span>' +
+      '<button type="button" class="de-retry" onclick="boot()">Retry</button></div>';
     document.getElementById('doseArea').innerHTML =
-      '<div class="dose-empty"><div class="de-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg></div><span>' + e.message + '</span></div>';
+      '<div class="dose-empty"><div class="de-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg></div><span>Could not load medication data</span></div>';
   }
+}
+
+/* Skeleton rows shown in the drug list while drug-data.json is loading */
+function showListSkeleton() {
+  var list = document.getElementById('drugList');
+  var html = '';
+  for (var i = 0; i < 8; i++) html += '<div class="drug-skel"></div>';
+  list.innerHTML = html;
 }
 
 // Escape helper

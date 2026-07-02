@@ -1070,8 +1070,11 @@
           <i class="fas fa-triangle-exclamation state-icon"></i>
           <p class="state-title">Couldn't load providers</p>
           <p class="state-sub">${escapeHtml(message)}</p>
+          <button type="button" class="btn-primary" style="margin-top:1rem;" id="stateRetryBtn"><i class="fas fa-rotate-right"></i> Retry</button>
         </div>
       </td></tr>`;
+    const retryBtn = document.getElementById('stateRetryBtn');
+    if (retryBtn) retryBtn.addEventListener('click', fetchUsers, { once: true });
   }
 
   // ---------- AUTH (Supabase) ----------

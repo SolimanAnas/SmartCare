@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="SmartCare terms of use — conditions governing the use of our clinical learning platform and study resources.">
@@ -64,56 +64,183 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Terms of Use – SmartCare Review App</title>
+<link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <link rel="stylesheet" href="../styles.css">
+<script src="../src/theme.js"></script>
+<script>SmartTheme.init();</script>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0056b3">
+<link rel="apple-touch-icon" href="../icons/icon.png">
+<style>
+    /* ━━ Page layout (mirrors pages/privacy.html) ━━ */
+    .legal-page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 16px 80px;
+        animation: fadeIn 0.6s ease forwards;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ━━ Section cards (glassmorphism) ━━ */
+    .policy-section {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 24px 28px;
+        margin-bottom: 20px;
+        box-shadow: var(--glass-shadow);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        transition: transform 0.22s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.22s;
+        animation: cardIn 0.5s ease forwards;
+        opacity: 0;
+        transform: translateY(16px);
+        position: relative;
+        overflow: hidden;
+    }
+    .policy-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #004e92, #00d4ff);
+        border-radius: 4px 0 0 4px;
+        opacity: 0.6;
+    }
+    .policy-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px -8px rgba(0,0,0,0.18);
+    }
+    @keyframes cardIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .policy-section:nth-of-type(1) { animation-delay: 0.03s; }
+    .policy-section:nth-of-type(2) { animation-delay: 0.08s; }
+    .policy-section:nth-of-type(3) { animation-delay: 0.13s; }
+    .policy-section:nth-of-type(4) { animation-delay: 0.18s; }
+    .policy-section:nth-of-type(5) { animation-delay: 0.23s; }
+    .policy-section:nth-of-type(6) { animation-delay: 0.28s; }
+    .policy-section:nth-of-type(7) { animation-delay: 0.33s; }
+
+    /* ━━ Typography inside cards ━━ */
+    .policy-section h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 0 12px;
+        color: var(--primary-accent);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .policy-section h2 .section-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px; height: 28px;
+        background: linear-gradient(135deg, #004e92, #00a8cc);
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+    }
+    .policy-section p {
+        margin: 0 0 10px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section .effective {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+    .policy-section .effective strong { color: var(--primary-accent); }
+
+    @media (max-width: 600px) {
+        .legal-page { padding: 16px 12px 60px; }
+    }
+</style>
 </head>
 <body>
 
+<header>
+    <div class="header-left">
+        <button class="icon-btn" id="homeBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="header-text">
+            <h1>Terms of Use</h1>
+            <p>SmartCare Review</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
+        <a href="../chapters/c-index.html?view=summary" class="icon-btn" id="headerIndexBtn" title="Index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></a>
+    </div>
+</header>
+
 <main class="legal-page">
 
-<h1>Terms of Use</h1>
+<div class="policy-section">
+    <p class="effective"><strong>Effective Date:</strong> 2025</p>
+</div>
 
-<p>Effective Date: 2025</p>
+<div class="policy-section">
+    <h2><span class="section-num">1</span> Educational Purpose</h2>
+    <p>This application is provided solely as an educational study aid. It does not replace official SmartCare Clinical Practice Guidelines, policies, or medical direction.</p>
+</div>
 
-<h2>1. Educational Purpose</h2>
-<p>
-This application is provided solely as an educational study aid.
-It does not replace official SmartCare Clinical Practice Guidelines,
-policies, or medical direction.
-</p>
+<div class="policy-section">
+    <h2><span class="section-num">2</span> No Medical Authority</h2>
+    <p>This platform is not an official SmartCare publication. Clinical decisions must always follow official guidelines, medical control, and local protocols.</p>
+</div>
 
-<h2>2. No Medical Authority</h2>
-<p>
-This platform is not an official SmartCare publication.
-Clinical decisions must always follow official guidelines,
-medical control, and local protocols.
-</p>
+<div class="policy-section">
+    <h2><span class="section-num">3</span> Intellectual Property</h2>
+    <p>All original design, structure, interface, and compiled content within this application are © 2025 Soliman Anas. Unauthorized reproduction, redistribution, or commercial use is prohibited.</p>
+</div>
 
-<h2>3. Intellectual Property</h2>
-<p>
-All original design, structure, interface, and compiled content
-within this application are © 2025 Soliman Anas.
-Unauthorized reproduction, redistribution, or commercial use
-is prohibited.
-</p>
+<div class="policy-section">
+    <h2><span class="section-num">4</span> No Warranty</h2>
+    <p>This software is provided "as is" without warranty of any kind. The author assumes no liability for clinical use or interpretation.</p>
+</div>
 
-<h2>4. No Warranty</h2>
-<p>
-This software is provided "as is" without warranty of any kind.
-The author assumes no liability for clinical use or interpretation.
-</p>
+<div class="policy-section">
+    <h2><span class="section-num">5</span> Limitation of Liability</h2>
+    <p>The author shall not be held liable for any direct, indirect, incidental, or consequential damages arising from use of this app.</p>
+</div>
 
-<h2>5. Limitation of Liability</h2>
-<p>
-The author shall not be held liable for any direct, indirect,
-incidental, or consequential damages arising from use of this app.
-</p>
+<div class="policy-section">
+    <h2><span class="section-num">6</span> Changes</h2>
+    <p>Terms may be updated at any time without notice.</p>
+</div>
 
-<h2>6. Changes</h2>
-<p>
-Terms may be updated at any time without notice.
-</p>
+<div style="text-align:center; margin-top:40px;">
+    <button class="control-btn" id="footerBackBtn" style="width: 100%; max-width: 300px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back to Home</button>
+</div>
 
 </main>
+
+<footer>
+    <div>Created & Maintained by Soliman Anas · Clinical Reference Project</div>
+    <div><a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · Not for Clinical Use</div>
+</footer>
+
+<script>
+    (function() {
+        // --- 1. Navigation Logic ---
+        const goHome = () => window.location.href = '../index.html';
+
+        document.getElementById('homeBtn')?.addEventListener('click', goHome);
+        document.getElementById('footerBackBtn')?.addEventListener('click', goHome);
+
+        // --- 2. Theme Logic (src/theme.js — window.SmartTheme) ---
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) themeBtn.addEventListener('click', () => SmartTheme.next());
+    })();
+</script>
 
 </body>
 </html>

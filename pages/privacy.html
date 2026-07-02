@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="SmartCare privacy policy — how we collect, use, and protect your personal data when you use our clinical learning platform.">
@@ -64,7 +64,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Privacy Policy – SmartCare Review App</title>
+<link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <link rel="stylesheet" href="../styles.css">
+<script src="../src/theme.js"></script>
+<script>SmartTheme.init();</script>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0056b3">
+<link rel="apple-touch-icon" href="../icons/icon.png">
 <style>
     /* ━━ Page layout ━━ */
     .legal-page {
@@ -118,7 +125,7 @@
         position: relative;
         z-index: 1;
     }
-    .privacy-hero h1 {
+    .privacy-hero h2 {
         font-size: 2rem;
         font-weight: 800;
         margin: 0 0 6px;
@@ -304,7 +311,7 @@
     @media (max-width: 600px) {
         .legal-page { padding: 16px 12px 60px; }
         .privacy-hero { padding: 32px 16px 28px; border-radius: 20px; }
-        .privacy-hero h1 { font-size: 1.6rem; }
+        .privacy-hero h2 { font-size: 1.6rem; }
         .privacy-hero .hero-icon { width: 48px; height: 48px; font-size: 1.3rem; }
         .policy-section { padding: 18px 18px; border-radius: 16px; }
         .policy-section h2 { font-size: 1.1rem; }
@@ -313,13 +320,29 @@
 </head>
 <body>
 
+<header>
+    <div class="header-left">
+        <button class="icon-btn" id="homeBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="header-text">
+            <h1>Privacy Policy</h1>
+            <p>SmartCare Review</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
+        <a href="../chapters/c-index.html?view=summary" class="icon-btn" id="headerIndexBtn" title="Index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></a>
+    </div>
+</header>
+
 <main class="legal-page">
 
 <div class="privacy-hero">
     <div class="hero-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     </div>
-    <h1>Privacy Policy</h1>
+    <h2>Privacy Policy</h2>
     <p class="effective"><strong>Effective Date:</strong> June 28, 2026</p>
 </div>
 
@@ -449,7 +472,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </address>
 </div>
 
+<div style="text-align:center; margin-top:40px;">
+    <button class="control-btn" id="footerBackBtn" style="width: 100%; max-width: 300px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back to Home</button>
+</div>
+
 </main>
+
+<footer>
+    <div>Created & Maintained by Soliman Anas · Clinical Reference Project</div>
+    <div><a href="about.html">About</a> · <a href="terms.html">Terms of Use</a> · Not for Clinical Use</div>
+</footer>
+
+<script>
+    (function() {
+        // --- 1. Navigation Logic ---
+        const goHome = () => window.location.href = '../index.html';
+
+        document.getElementById('homeBtn')?.addEventListener('click', goHome);
+        document.getElementById('footerBackBtn')?.addEventListener('click', goHome);
+
+        // --- 2. Theme Logic (src/theme.js — window.SmartTheme) ---
+        const themeBtn = document.getElementById('themeToggle');
+        if (themeBtn) themeBtn.addEventListener('click', () => SmartTheme.next());
+    })();
+</script>
 
 </body>
 </html>

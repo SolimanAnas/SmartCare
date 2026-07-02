@@ -756,7 +756,23 @@ Performance, privacy, offline robustness.
 
 ## 1. Give privacy.html and terms.html a header/back navigation
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Added the standard app `<header>` (back arrow + title + theme
+> toggle + index link, copied from `about.html`'s pattern) and a
+> `footerBackBtn` + `<footer>` to both pages. Added the theme-init snippet so
+> both respect the saved theme (previously neither page even set
+> `data-theme`, so they ignored it entirely) and self-hosted font links
+> (previously missing — both pages were silently falling back to a system
+> font). The pre-existing `.privacy-hero`/`.policy-section` heading was `<h1>`
+> and now collides with the new header's `<h1>`; retargeted it to `<h2>` so
+> each page has exactly one `<h1>`. `terms.html` had zero working styles
+> (its `.legal-page`/`.policy-section` classes were only ever defined inside
+> `privacy.html`'s own scoped `<style>` block, so it rendered as unstyled
+> browser-default text) — brought over the matching card styling so it's
+> visually consistent with `privacy.html` rather than fixing the nav only on
+> top of a broken page. Verified via Playwright: header/back-nav/theme-cycle
+> work on both, exactly one `<h1>` each, zero console errors.
 
 ### Why this matters
 Both legal pages have **zero** `<header>` and no back link. In the installed PWA
@@ -792,7 +808,65 @@ UX (dead-end removal), store review (reviewers hit legal pages).
 
 ## 2. Unify theme switching — one shared module, consistent theme list
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `src/theme.js` (`window.SmartTheme = { init, next, set, THEMES }`)
+> is the single source of truth for the canonical 5-theme list
+> (`dark, amoled, light, sepia, forest`). Replaced every duplicated
+> `const themes = [...]` block across 22 files (`index.html`, `404.html`,
+> all 13 `chapters/*.html`, `courses/itls/index.html`, `pages/about.html`,
+> `pages/courses.html`, `pages/ITLS-course.html`, `pages/ITLS-reviewer.html`,
+> `pages/itls-chapter.html`, `pages/privacy.html`, `pages/terms.html`) —
+> `grep -rl "const themes\s*=\s*\[" | grep -v src/theme.js` now returns
+> nothing. Pages with a discrete theme-picker UI (`index.html`,
+> `pages/courses.html`) keep their own `syncThemeUI()` for the
+> active-button-highlighting/AMOLED-badge behavior, but now call
+> `SmartTheme.set()`/`.next()` instead of re-declaring the list.
+>
+> **Found and fixed while doing this (same root cause, same files touched):**
+> app.js had a second, entirely dead `initChapterPage()` function (140
+> lines) — never called by any HTML file — that happened to contain the
+> *only* copy of the service-worker registration + update-toast logic for
+> chapter pages, plus `recordLastVisited()` and `initBatteryIndicator()`
+> calls. This meant **all 13 chapter pages never actually registered the
+> service worker** (offline support silently broken) despite Performance
+> §2 documenting it as working — that item's own testing covered
+> `index.html`/`pages/courses.html`/`404.html` but not a real chapter page,
+> and this session's app.js edit unknowingly landed inside the dead
+> function. Deleted the dead function, moved the SW-registration/toast
+> logic and `recordLastVisited()` into the live `DOMContentLoaded`
+> bootstrap. `initBatteryIndicator()` was deleted outright — its target
+> `#batteryIndicator` element doesn't exist in any real chapter header
+> (only in the dead function's own unused HTML template), so there was
+> nothing to wire it back up to. Each chapter page also had its own
+> redundant, toast-less service-worker registration `<script>` block
+> (harmless — registering the same SW twice is idempotent — but dead
+> weight); removed all 13.
+>
+> **Scope call:** left the "exam review" pages (`acls.html`, `bdls.html`,
+> `bls.html`, `ecg.html`, `empact.html`, `itls.html`, `medical.html`,
+> `pals.html`, `pepp.html`, `ppet.html`) untouched — they use a
+> fundamentally different theme system (a discrete `setTheme('dark'|
+> 'light'|'sepia'|'green')` picker with individual buttons, a *different*
+> 4-theme set with `green` instead of `forest`/`amoled`, no cycle-toggle
+> button) rather than the cycle-through-a-shared-list pattern this item is
+> about unifying. Forcing them into `SmartTheme` would mean either
+> redesigning their picker UI or extending the shared module to support a
+> second, incompatible theme set — flagged as a separate follow-up rather
+> than conflated with this fix. `pages/ecg-test.html` has no active theme
+> switcher at all (nothing to unify).
+>
+> Added `src/theme.js` to `sw.js`'s `PRE_CACHE`. Verified via Playwright
+> across all 22 converted pages: `window.SmartTheme` present, the toggle
+> button correctly cycles through the exact 5-theme order, and (for the
+> picker-UI pages) the active-button-highlight/AMOLED-badge behavior still
+> works. `pages/courses.html` and `index.html` needed a longer settle time
+> in this sandbox specifically — both hit a page reload while a
+> render-blocking Google Fonts `<link>` hangs for ~13s against this
+> sandbox's blocked-host network policy before failing; confirmed via
+> `git stash` that this reload happens on the pre-existing, unmodified code
+> too, so it's a sandbox-network artifact rather than a regression — theme
+> cycling works correctly once that settles.
 
 ### Why this matters
 `const themes = [...]` is re-declared in **17+ files** with *different* lists:
@@ -829,7 +903,64 @@ UX consistency, maintainability (removes ~17 duplicated blocks).
 
 ## 3. Consistent loading / empty / error states across fetch-driven views
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New shared module `src/render-state.js`
+> (`window.renderState(container, 'loading'|'empty'|'error', options)`) plus
+> `.skeleton-line`/`.state-block` shimmer CSS appended to `styles.css`. Wired
+> into every fetch/render path that could previously go blank on failure:
+> - **Chapter pages** (`app.js`): `switchSection`, the `popstate` handler, and
+>   `bootApp`'s deep-link branch now show a skeleton while
+>   `utils.ensureSectionData()` lazy-loads a section's JSON. That function now
+>   marks `section._loadFailed = true` when both the primary fetch and the
+>   full-chapter-bundle fallback fail; a new `render.loadFailed()` check (with
+>   retry via `switchSection`) runs first in `render.summary`,
+>   `render.flashcards`, `render.quizSetup`, and `render.criticalGame` so a
+>   dead network shows a real error+retry instead of a silent "No X
+>   available" empty state. All 13 `chapters/*.html` now load
+>   `src/render-state.js`.
+> - **`index.html`**: the stats modal's Chart.js load (already deferred per
+>   Performance §3) now shows a loading skeleton in the chart area and, on
+>   failure, an error state with a retry button that re-attempts
+>   `loadChartJs()` — previously a failed CDN load just `console.warn`'d and
+>   left the modal chart area blank.
+> - **`pages/drug-calculator.html`**: this page is a self-contained design
+>   system (no `styles.css`, no shared header/theme — correctly excluded from
+>   §1/§2 for the same reason), so it got its own local equivalents instead of
+>   forcing in the shared classes: a `.drug-skel` shimmer row style and
+>   `showListSkeleton()` (8 skeleton rows in `#drugList` while
+>   `drug-data.json` loads), plus the existing `boot()` override's `catch`
+>   now renders a real error (with message + `.de-retry` button calling
+>   `boot()` again) into `#drugList` using the page's own `.dose-empty`/
+>   `.de-icon` convention, instead of leaving the list empty with only the
+>   dose panel showing a raw `e.message`.
+> - **`pages/ecg.html`**: added a defensive `typeof ECGEngine === 'undefined'`
+>   check in the `load` handler — previously if `ecg-engine.js` failed to
+>   load, `initCanvas()` would throw on `ECGEngine.createState()` with no
+>   user-facing indication anything was wrong. Now shows an `.engine-err`
+>   overlay in the monitor area with a reload button.
+> - **`pages/admin.html`**: `renderErrorState()` already existed (Admin
+>   side-task) but had no way to retry short of a full page reload; added a
+>   `.btn-primary` "Retry" button that re-calls `fetchUsers()`.
+>
+> **Scope call:** `pages/courses.html` was listed in the roadmap's "files to
+> modify" but investigation showed it isn't fetch-driven — its course list is
+> a static in-file array, not a network call — so there was nothing to wire
+> up; left unchanged.
+>
+> Verified via Playwright: skeleton renders within 50ms of a section-tab
+> click under an injected 1-2s network delay; simulated total-failure
+> (primary + fallback fetch both rejected) renders the error state with a
+> working retry button that re-fetches and recovers; drug-calculator's list
+> skeleton/error paths and ecg.html's defensive check exercised directly.
+> While testing the skeleton wiring, found and fixed a pre-existing bug: all
+> dynamically-rendered icons in `app.js` (`icons/sprite.svg#...`) resolved
+> relative to the chapter page's own directory (`chapters/icons/sprite.svg`,
+> a 404) instead of the site root — every icon rendered by JS on every
+> chapter page (bottom nav, back-home button, coming-soon screen, and now
+> the new error-state icon) was invisible. Fixed all 33 occurrences to
+> `../icons/sprite.svg#...`; confirmed fixed via isolated single-icon test
+> pages plus a full pass over a real chapter page.
 
 ### Why this matters
 States are inconsistent: `admin.html` has a spinner row; index search has an empty
@@ -865,7 +996,45 @@ UX polish, perceived reliability, fewer "it's blank" bug reports.
 
 ## 4. Tablet layout pass (two-pane study mode)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `@media (min-width: 900px)` block in `styles.css`: `main`
+> widens to 920px (was a flat 800px at every width, including 13" tablets);
+> `.menu-grid` (home page category grids) goes 2-column; and chapter pages
+> get a real two-pane layout — `.chapter-layout { display:grid;
+> grid-template-columns: 220px 1fr; }` turns the horizontal section-tab pill
+> bar into a sticky vertical sidebar (`.chapter-layout .section-tabs {
+> flex-direction: column; position: sticky; }`) next to the content pane,
+> instead of stacking tabs above content.
+>
+> The markup side required more than pure CSS: the section tabs and the rest
+> of a view's content weren't consistently siblings under one parent across
+> the 5 `render.*` functions that emit them (`summary` wrapped everything in
+> `.section.active`; `_renderFlashcard`/`quizSetup`/`quizGame`/
+> `_renderCriticalQuestion` had no wrapper at all — tabs and content were
+> direct children of `#mainContent`). Standardized all 5 to
+> `<div class="chapter-layout">${tabs}<div class="section-body">...rest...
+> </div></div>` so the grid has a consistent two-item target. Click handling
+> is fully delegated at `document` level via `.closest()` (app.js:1055), so
+> adding wrapper divs didn't touch any event-binding logic. Single-section
+> chapters (e.g. `c0`) render `tabs` as `''`, so the wrapper conditionally
+> omits the `chapter-layout` class (`${tabs ? 'chapter-layout' : ''}`) — such
+> chapters keep the plain block layout instead of squeezing content into the
+> narrow sidebar column that would otherwise appear with no tabs to fill it.
+> `renderBottomNav()`'s output stays outside `.chapter-layout` (it's a fixed
+> bottom bar, not part of the two-pane content).
+>
+> **Scope call:** did not re-take the `tab*.png` manifest screenshots — that
+> requires a real tablet/emulator capture step outside what can be produced
+> here; flagging as a follow-up for whoever next updates the store listing.
+>
+> Verified via Playwright at a 1024×900 viewport: `.chapter-layout` renders
+> as `display:grid` with sticky vertical tabs on `summary`/`flashcards`/
+> `quiz`/`critical` views, section-tab clicks still switch sections
+> correctly, `index.html`'s `.menu-grid` sections go 2-column, and the
+> single-section `c0.html` correctly gets no grid wrapper. At a 390px mobile
+> viewport `.chapter-layout` correctly falls back to `display:block` (no
+> regression). Zero console errors across all checks.
 
 ### Why this matters
 The manifest ships 8 tablet screenshots, but layouts are single-column with a
@@ -902,7 +1071,43 @@ UX on tablets, store-listing honesty, session length.
 
 ## 5. Fix the self-referencing footer link and standardize footers
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `pages/about.html`'s footer linked "Legal & Disclaimer" to
+> `about.html` — itself, a dead click while already on that page. Replaced
+> with `<a href="privacy.html">Privacy Policy</a> · <a
+> href="terms.html">Terms of Use</a>`, matching the no-self-link convention
+> `privacy.html`/`terms.html` already established in §1 (each links to the
+> *other* two legal pages, never itself).
+>
+> Every other footered page only linked to About, with no way to reach
+> Privacy/Terms short of navigating through About first — added `· <a
+> href="...privacy.html">Privacy</a> · <a href="...terms.html">Terms</a>`
+> after the existing About link, preserving each page's existing wording and
+> trailing disclaimer text otherwise. Covered every footer in the repo:
+> `404.html`, `index.html`, `pages/ITLS-course.html`,
+> `pages/ITLS-reviewer.html`, `pages/courses.html`, `pages/itls-chapter.html`,
+> `pages/ECG-study.html`, and all 13 `chapters/*.html` (their footer markup
+> was byte-identical across all 13, confirmed via checksum, so this was one
+> mechanical, low-risk change applied uniformly). Relative path depth
+> respected per page (`privacy.html` from `pages/`, `../pages/privacy.html`
+> from `chapters/`, `/SmartCare/pages/privacy.html` from the root-served
+> `404.html`).
+>
+> **Scope call:** did not touch the "exam review" pages (`acls.html`,
+> `bdls.html`, `bls.html`, `ecg.html`, `empact.html`, `itls.html`,
+> `medical.html`, `pals.html`, `pepp.html`, `ppet.html`) — none of them have
+> a `<footer>` at all, so there was nothing to standardize. Did not pursue
+> the roadmap's `vX.Y.Z` version-string suggestion — that's Code Quality §5
+> (single source of truth for the version string), a separate, unstarted
+> item; bolting an ad-hoc version string into footers now would just create
+> another place to update when that item lands.
+>
+> Verified: grepped every footer in the repo for any `href` whose basename
+> matches its own page's filename — zero self-references remain. Resolved
+> every new `href` against the filesystem relative to each file's own
+> directory (handling the `/SmartCare/`-absolute case for `404.html`
+> separately) — all point to real files.
 
 ### Why this matters
 `about.html`'s footer links "Legal & Disclaimer" → `about.html` (itself). Footers
@@ -1164,7 +1369,34 @@ Content velocity with a human-in-the-loop safety gate.
 
 ## 1. iOS PWA metadata (Apple install experience is currently broken-ish)
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Added `apple-mobile-web-app-capable`, `mobile-web-app-capable`,
+> `apple-mobile-web-app-status-bar-style` (`black-translucent`), and
+> `apple-mobile-web-app-title` to `index.html`. Generated 15
+> `apple-touch-startup-image` splash screens covering the device-width ×
+> device-height × pixel-ratio breakpoints from iPhone SE through iPad Pro
+> 12.9, via a new `scripts/generate_splash.py` (Pillow: composite
+> `icons/icon-512x512.png` centered on a `#0f2027` background — matches
+> `manifest.json`'s `background_color`) rather than `npx
+> pwa-asset-generator`, which needs a headless-browser render pipeline this
+> sandbox can't run reliably; Pillow compositing is simpler and gives the
+> same result for a flat-color splash. Script is re-runnable whenever the
+> icon or background color changes.
+>
+> **Scope call on caching:** did *not* add the 15 splash images to `sw.js`'s
+> eager `PRE_CACHE` — that would add ~3MB to every install regardless of
+> platform, for an asset only iOS ever requests. Added `/\/splash\//` to
+> `CACHE_FIRST_PATTERNS` instead, so each splash image gets cached the first
+> time Safari actually requests it (at install/launch) and served from cache
+> on every subsequent offline launch — same offline guarantee, without
+> penalizing Android/desktop users' first-load payload.
+>
+> Verified the meta tags and all 15 `<link>` tags are present and every
+> `href` resolves to a real file; couldn't verify actual iOS install/splash
+> rendering since that requires a physical device or Xcode simulator, neither
+> available here — flagging as a follow-up for whoever next has iOS hardware
+> to confirm against.
 
 ### Why this matters
 Zero `apple-mobile-web-app-*` meta tags exist. On iOS: no proper standalone status
@@ -1200,7 +1432,61 @@ iOS install quality — a prerequisite for App Store PWA wrapping.
 
 ## 2. Generate `PRE_CACHE` at build time instead of hand-maintaining it
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** New `scripts/build_precache.py` derives the precache list from
+> the actual repo tree using the same curation rules a human was applying by
+> hand (app shell; every `chapters/*.html`; every `pages/*.html`/`*.js`/
+> `*.json`; `content/*.meta.js` plus each split chapter's first section
+> `content/{id}/{id}s1.json`; full `content/*.js` bundles only for chapters
+> that *aren't* split, since a split chapter's full bundle is a lazy-loaded
+> fallback, not something to precache) — so a file matching those rules is
+> included automatically, with no PR to hand-edit a list. This directly
+> fixes the drift the roadmap called out: `pages/GCS.html` and
+> `pages/ems-tools.html` (and, from this session's own §1, `pages/terms.html`)
+> were never in the old hand list; the generated manifest now has all 32
+> `pages/*.html` (up from 10 hand-picked ones), 89 entries total vs. the old
+> 82.
+>
+> Output is `precache-manifest.js` at the repo root:
+> `self.__PRECACHE = [...]` plus `self.__PRECACHE_VERSION` — a SHA-1 (`
+> usedforsecurity=False`, this is a fingerprint, not a security hash) over
+> every precached file's actual bytes, not mtimes (git checkouts don't
+> preserve original commit mtimes, so an mtime-based hash would falsely
+> "change" on every fresh CI checkout regardless of real content — a known
+> footgun for this exact pattern). `sw.js` now does `importScripts
+> ('precache-manifest.js')` and derives `CACHE_VERSION` from
+> `self.__PRECACHE_VERSION`, so the cache only busts when a precached file's
+> content actually changes — no more manually bumping a `v3.x` string (the
+> old hand-maintained comment stays as a human-readable changelog, but
+> nothing programmatic reads it anymore).
+>
+> Wired into both CI paths: `.github/workflows/static.yml` regenerates
+> `precache-manifest.js` immediately before the `rsync` deploy step, so a
+> contributor who forgot to regenerate locally still ships a correct
+> manifest; `.github/workflows/ci.yml` regenerates it and `git diff
+> --exit-code`s the result, failing the build if the committed copy is
+> stale. Added `npm run precache` as the local pre-commit convenience the
+> roadmap asked for. `bandit -r scripts/` flagged the SHA-1 call by default
+> (`B324`) — fixed with the `usedforsecurity=False` flag rather than
+> suppressing the finding, since that's the actual correct annotation for a
+> non-cryptographic use.
+>
+> **Scope call:** did not literally "walk the whole deployable tree" —
+> `images/`, `algorithms/`, `splash/`, and the raw `courses/itls/data/itls/`
+> source JSON (superseded by the committed `bundle.js` build artifact) are
+> deliberately excluded by the rules above, same as the old hand list
+> intended; those stay cache-first-on-demand (`CACHE_FIRST_PATTERNS`) rather
+> than blocking install with megabytes of media. A truly generic tree-walk
+> would have needed to reinvent that exclusion logic anyway, so encoding it
+> as explicit, documented rules seemed more honest than a walk that
+> silently special-cases half the tree.
+>
+> Verified via Playwright: SW installs cleanly against the new manifest with
+> zero `[SW] Pre-cache failed` warnings across all 89 entries; offline reload
+> of `pages/GCS.html` (previously uncached, now fixed) returns 200; the
+> manifest is byte-for-byte reproducible (`python3 scripts/build_precache.py`
+> twice in a row emits the same version hash).
 
 ### Why this matters
 The hand-written list already drifted (dead `s1` entries; `pages/GCS.html`,
@@ -1237,7 +1523,40 @@ Reliability (offline completeness), maintainability (kills the "bump SW" ritual)
 
 ## 3. Self-host the Supabase SDK for offline-resilient auth checks
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** `vendor/supabase-js-2.110.0.mjs` is now a committed,
+> self-contained ESM bundle of `@supabase/supabase-js@2.110.0` (bundled with
+> esbuild: `--bundle --format=esm --minify --platform=browser
+> --target=es2020`), replacing the `import('https://cdn.jsdelivr.net/...')`
+> in `pages/supabase-client.js`. `jsdelivr.net` is unreachable from this
+> sandbox's network policy, so the jsdelivr `+esm` on-the-fly bundling
+> endpoint itself couldn't be used to produce this file — instead wrote
+> `scripts/vendor_supabase.sh`, which does the equivalent locally:
+> `npm install @supabase/supabase-js@<version>` from the (reachable)
+> `registry.npmjs.org`, then bundles it with esbuild. Re-run with
+> `SUPABASE_JS_VERSION=<new-version> bash scripts/vendor_supabase.sh` to
+> upgrade; the version is in the filename per the roadmap's "upgrade
+> discipline" ask, and the old file should be deleted when bumping so only
+> one vendored copy ever ships.
+>
+> `scripts/build_precache.py`'s glob rules now include `vendor/*.mjs`, so the
+> bundle is pre-cached automatically (90 entries now, was 89) — no manual
+> `sw.js` edit needed, consistent with §2. `pages/supabase-client.js`'s
+> `SDK_URL` is now the relative path `../vendor/supabase-js-2.110.0.mjs`
+> (relative to the *file's own* location in `pages/`, not whichever page's
+> `<script src>` loaded it — verified this resolves correctly from all 4
+> pages that load it: `index.html`, `pages/admin.html`, `pages/login.html`,
+> `pages/courses.html`).
+>
+> Verified via Playwright: `SmartCareCloud.ready` resolves `true` with zero
+> requests to any `jsdelivr` host and zero console errors — both on a normal
+> load and, after registering the service worker once online, on a full page
+> reload with the browser context set offline (the vendored module comes
+> back from Cache Storage, not the network). Also load-tested the bundle in
+> isolation before vendoring it: `createClient()` returns a working client
+> (`typeof client.auth.getSession === 'function'`, `typeof client.from ===
+> 'function'`) with no console errors.
 
 ### Why this matters
 `supabase-client.js` dynamically imports the SDK from jsdelivr. First visit offline
@@ -1270,7 +1589,49 @@ Reliability, security (pinning), offline coherence.
 
 ## 4. Manifest upgrades: shortcuts, proper maskable icons, lang/dir/scope
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [x] Completed
+
+> **Status:** Confirmed the anti-pattern was real before fixing it: the
+> existing 512px icon's actual content fills ~90% of the canvas, way outside
+> a maskable icon's safe zone (an 80%-diameter circle centered in the icon —
+> content outside it gets clipped by Android's adaptive-icon masks). New
+> `scripts/generate_maskable_icons.py` crops each of the 8 existing icon
+> sizes to its real (non-transparent) content, shrinks it to 55% of the
+> canvas, and centers it on a solid `#0f2027` background (manifest's
+> `background_color` — maskable icons can't rely on transparency, platforms
+> render it as unpredictable black/white) to produce `icon-{size}-maskable
+> .png`. Verified by drawing the actual 80%-diameter safe-zone circle over
+> the output: the logo sits comfortably inside it. The original files are
+> unchanged and now serve only `purpose: "any"`; `manifest.json`'s `icons`
+> array is 16 entries (8 sizes × `any`/`maskable`, was 8 dual-purpose).
+>
+> Added `"lang": "en"`, `"dir": "ltr"`, `"scope": "./"` — `scope` as a
+> relative path deliberately, not an absolute `/`, since the app's canonical
+> deployment domain isn't settled yet (see SEO §2, a separate, still-open
+> roadmap item); a relative scope resolves correctly against the manifest's
+> own URL regardless of which domain/subpath ends up hosting it, so this
+> doesn't need to wait on that item.
+>
+> Added a 3-entry `shortcuts` array (Resume last chapter, Prometric EMT Exam,
+> Drug Calculator), each reusing `icons/icon-96x96.png` rather than
+> generating dedicated shortcut badges — valid per spec and avoids 3 more
+> throwaway image variants for icons a long-press menu shows at a tiny size.
+> New root-level `resume.html` (11 lines) is the "Resume" shortcut's target:
+> reads the same `smartcare_last_visited` localStorage list `app.js`'s
+> `recordLastVisited()` already writes (most-recent-first, each entry's
+> `url` is a full `location.href`) and `location.replace()`s straight there,
+> falling back to `index.html` if the list is empty. Added to
+> `scripts/build_precache.py`'s `CORE_FILES` so it's precached like
+> `index.html` (91 entries now, was 90).
+>
+> Verified via Playwright: `manifest.json` parses with 16 icons and 3
+> shortcuts; `resume.html` redirects to the stored last-visited URL when one
+> exists and falls back to `index.html` when the list is empty; the service
+> worker still installs cleanly against the updated precache manifest.
+> Couldn't run this through an actual `maskable.app`/Lighthouse audit (no
+> browser extension environment here) — the safe-zone-circle overlay check
+> is the verification available in this sandbox; flagging a real Lighthouse
+> PWA audit as a good pre-launch step for whoever next has that tooling.
 
 ### Why this matters
 All icons declare `"purpose": "any maskable"` — a known anti-pattern: maskable needs
@@ -1307,7 +1668,41 @@ Android install polish, Play (TWA) readiness, power-user UX.
 
 ## 5. App Store / Play Store packaging track
 
-- [ ] Planned  - [ ] In Progress  - [ ] Completed
+- [x] Planned  - [x] In Progress  - [ ] Completed
+
+> **Status:** Not closeable from here — genuinely blocked on things this
+> environment doesn't have: a Play Console developer account (to generate a
+> real app-signing certificate — `assetlinks.json` needs that certificate's
+> actual SHA-256 fingerprint, which doesn't exist until an app is created
+> there) and an Apple Developer account (for the iOS PWABuilder/TestFlight
+> path). Deliberately did **not** commit a placeholder
+> `.well-known/assetlinks.json` — a file with a fake fingerprint would look
+> like a real trust assertion to any TWA client and would just silently fail
+> Digital Asset Links verification once someone actually tried to use it;
+> not shipping the file at all is more honest than shipping a wrong one
+> someone has to remember to replace.
+>
+> What *did* move: of the four prerequisites this item was blocked on, two
+> are now done as of this same "Offline & PWA" pass — maskable icons (§4
+> above) and, from an earlier session, account deletion (Security §4, marked
+> `[x] Completed`). Updated the prerequisites line below to reflect that.
+> Still open: a stable canonical domain (SEO §2 — the repo currently has a
+> split between an `smartcare-learning.net` custom-domain reference in
+> `index.html`'s Open Graph/canonical tags and `/SmartCare/`-absolute paths
+> elsewhere, e.g. `404.html`; a TWA's `assetlinks.json` has to live at a
+> single, final domain, so this needs resolving first) and the actual
+> `assetlinks.json` generation, which can only happen after someone with
+> Play Console access runs `pwabuilder.com` or Bubblewrap against a real
+> signing key.
+>
+> **Concrete next steps for whoever has that access:** (1) resolve SEO §2;
+> (2) create the Play Console app, get its signing fingerprint; (3) generate
+> the TWA via PWABuilder or Bubblewrap; (4) commit
+> `.well-known/assetlinks.json` with the real fingerprint; (5) submit with
+> the "Medical" category + education disclaimer, reusing the manifest
+> screenshots already in place. Everything else this item depends on —
+> manifest, service worker, privacy policy, account deletion, maskable
+> icons, offline completeness — is in place.
 
 ### Why this matters
 The manifest, screenshots, privacy policy, and offline behavior are near
@@ -1315,7 +1710,7 @@ store-ready. Packaging as a **TWA (Bubblewrap/PWABuilder)** for Play and a
 PWABuilder iOS wrapper unlocks distribution where clinicians actually search.
 
 ### Current implementation
-Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots, ❌ account deletion (Security §4), ❌ maskable icons (§4 above), ❌ stable canonical domain (SEO §2), ❌ `assetlinks.json`.
+Web-only. Prerequisites status: ✅ HTTPS, ✅ manifest+SW, ✅ privacy policy, ✅ screenshots, ✅ account deletion (Security §4), ✅ maskable icons (§4 above), ❌ stable canonical domain (SEO §2), ❌ `assetlinks.json`.
 
 ### Recommended upgrade
 Play first (TWA is genuinely a PWA wrapper): fix prerequisites, run

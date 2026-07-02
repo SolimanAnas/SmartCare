@@ -69,6 +69,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="../src/theme.js"></script>
+    <script>SmartTheme.init();</script>
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#EA580C">
 
@@ -346,29 +348,13 @@
 
 <footer>
     <div>Created by Soliman Anas · for study aid only</div>
-    <div><a href="about.html">About &amp; Disclaimer</a></div>
+    <div><a href="about.html">About &amp; Disclaimer</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
 </footer>
 
 <script>
     (function() {
         const themeBtn = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        const themes = ['dark', 'amoled', 'light', 'sepia', 'forest'];
-        
-        function applyTheme(t) {
-            if (!themes.includes(t)) t = 'dark';
-            html.setAttribute('data-theme', t);
-            localStorage.setItem('theme', t);
-        }
-
-        if (themeBtn) {
-            themeBtn.addEventListener('click', function() {
-                const cur = html.getAttribute('data-theme') || 'dark';
-                const idx = themes.indexOf(cur);
-                applyTheme(themes[(idx + 1) % themes.length]);
-            });
-        }
-        applyTheme(localStorage.getItem('theme') || 'dark');
+        if (themeBtn) themeBtn.addEventListener('click', () => SmartTheme.next());
 
         document.getElementById('backBtn').addEventListener('click', () => {
             window.location.href = 'courses.html';

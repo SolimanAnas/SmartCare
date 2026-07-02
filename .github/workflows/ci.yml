@@ -34,6 +34,18 @@ jobs:
           DATABASE_URL: "sqlite:///:memory:"
           GOOGLE_CLIENT_ID: ci-test-id
 
+      # precache-manifest.js is generated, not hand-written (see
+      # scripts/build_precache.py) — fail the build if someone added/removed
+      # a file the script covers without regenerating the committed copy,
+      # so sw.js's offline file list can't silently drift again.
+      - name: Verify precache-manifest.js is up to date
+        run: |
+          python3 scripts/build_precache.py
+          git diff --exit-code precache-manifest.js || {
+            echo "::error::precache-manifest.js is stale — run 'python3 scripts/build_precache.py' and commit the result.";
+            exit 1;
+          }
+
       # ── Security scanning (Secure SDLC §5/§7: Static Source Code Scanning) ─
       - name: SAST — Bandit (Python static analysis)
         run: |

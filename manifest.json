@@ -3,60 +3,54 @@
   "short_name": "SmartCare",
   "description": "Generic clinical learning platform for healthcare professionals.",
   "categories": ["education"],
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "index.html",
+  "scope": "./",
   "id": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0f2027",
   "theme_color": "#0056b3",
   "icons": [
+    { "src": "icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-72x72-maskable.png", "sizes": "72x72", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-96x96-maskable.png", "sizes": "96x96", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-128x128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-128x128-maskable.png", "sizes": "128x128", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-144x144-maskable.png", "sizes": "144x144", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-152x152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-152x152-maskable.png", "sizes": "152x152", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192x192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-384x384-maskable.png", "sizes": "384x384", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512x512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
     {
-      "src": "icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "name": "Resume last chapter",
+      "short_name": "Resume",
+      "description": "Jump back into the last chapter you studied",
+      "url": "resume.html",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
-      "src": "icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "name": "Prometric EMT Exam",
+      "short_name": "Exam",
+      "description": "NREMT-style practice questions with analytics",
+      "url": "src/prometric/exam.html",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
-      "src": "icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "name": "Drug Calculator",
+      "short_name": "Drug Calc",
+      "description": "Calculate medication doses, drip rates, and infusions",
+      "url": "pages/drug-calculator.html",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
     }
   ],
   "screenshots": [
