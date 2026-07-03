@@ -55,6 +55,13 @@ jobs:
       - name: Validate clinical content banks + governance manifest
         run: python3 scripts/validate_content.py
 
+      # Regression guard for a real bug (July 2026): pages/exam-review.css's
+      # --muted token failed WCAG AA contrast against every background in
+      # all 4 themes, making hint/helper text on all 8 exam-review pages
+      # genuinely hard to read. See scripts/check_contrast.py.
+      - name: Check exam-review.css text contrast (WCAG AA)
+        run: python3 scripts/check_contrast.py
+
       # ── Security scanning (Secure SDLC §5/§7: Static Source Code Scanning) ─
       - name: SAST — Bandit (Python static analysis)
         run: |
