@@ -40,16 +40,21 @@ CORE_FILES = [
 ]
 
 GLOB_DIRS = [
-    ("src", (".js",)),
     ("chapters", (".html",)),
     ("pages", (".html", ".js", ".json", ".css")),
     ("fonts", (".css", ".woff2")),
 ]
 
-# Walked recursively (vendored packages keep their own directory layout,
-# e.g. vendor/fontawesome/css/ + vendor/fontawesome/webfonts/).
+# Walked recursively (vendored packages and per-exam src/ subdirectories
+# keep their own directory layout, e.g. vendor/fontawesome/css/ +
+# vendor/fontawesome/webfonts/, or src/ACLS/acls.json, src/prometric/*).
 RECURSIVE_GLOB_DIRS = [
     ("vendor", (".mjs", ".js", ".css", ".woff2")),
+    # src/ holds both top-level modules (theme.js, render-state.js) and,
+    # per subdirectory, one question bank + engine per exam type — all of
+    # it is core offline content, not lazily-fetched extras, so it's walked
+    # recursively rather than globbed one level deep like the others above.
+    ("src", (".js", ".json", ".css", ".html")),
 ]
 
 

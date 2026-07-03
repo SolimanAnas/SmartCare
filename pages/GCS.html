@@ -141,6 +141,8 @@ body::before{
 .hdr-info{flex:1}
 .hdr-title{font-size:.93rem;font-weight:800;letter-spacing:-.3px}
 .hdr-sub{font-size:.62rem;color:var(--muted)}
+.hdr-disclaimer{font-size:.6rem;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.hdr-disclaimer:hover{color:var(--text)}
 .hdr-reset{
   background:rgba(239,68,68,.15);
   border:1px solid rgba(239,68,68,.3);
@@ -448,6 +450,7 @@ body::before{
   <div class="hdr-info">
     <div class="hdr-title">GCS Calculator</div>
     <div class="hdr-sub">Glasgow Coma Scale · SmartCare</div>
+    <a class="hdr-disclaimer" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
   </div>
   <button class="hdr-reset" onclick="resetAll()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#rotate-ccw"/></svg> Reset</button>
 </header>

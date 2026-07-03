@@ -1,0 +1,4 @@
+{
+  "_comment": "Pre-existing content defects found by scripts/validate_content.py on 2026-07-03, before the validator existed. Grandfathered so CI can turn the validator on today without blocking on unrelated content-authoring work, and so these 34 real single-option (no-distractor) questions stay tracked instead of silently disappearing into a passing build. Any NEWLY introduced question with the same defect will still fail CI \u2014 entries must name an exact (file, id), not a pattern. Removing an entry here (after fixing the question's distractors) is expected and encouraged.",
+  "single_option_questions": []
+}

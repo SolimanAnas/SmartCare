@@ -417,6 +417,18 @@ body {
     font-weight: 400;
 }
 
+.disclaimer-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.disclaimer-link:hover {
+    color: var(--text-primary);
+}
+
 /* ── Wizard Steps ──────────────────────────────────────────── */
 .wizard-steps {
     display: flex;

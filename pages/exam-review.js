@@ -855,6 +855,18 @@ function escapeHtml(s) {
   }[m]));
 }
 
+// Educational-use disclaimer, injected once so all 8 exam-review pages stay
+// in sync from this one place rather than 8 near-identical HTML edits.
+(function addDisclaimerLink() {
+  const sub = document.querySelector('.sel-sub');
+  if (!sub || document.querySelector('.sel-disclaimer')) return;
+  const a = document.createElement('a');
+  a.className = 'sel-disclaimer';
+  a.href = 'about.html#disclaimer';
+  a.textContent = 'Study aid only — not for direct patient care';
+  sub.insertAdjacentElement('afterend', a);
+})();
+
 // Initialize
 showScreen('sel');
 

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SmartCare content governance manifest",
+  "type": "object",
+  "required": ["banks"],
+  "properties": {
+    "banks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "exam_id",
+          "title",
+          "guideline_source",
+          "content_version",
+          "review_status",
+          "reviewer",
+          "review_date"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "file": {
+            "type": "string",
+            "pattern": "^src/.+\\.json$"
+          },
+          "exam_id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "guideline_source": { "type": "string", "minLength": 1 },
+          "content_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+          "review_status": {
+            "type": "string",
+            "enum": ["unreviewed", "in_review", "reviewed"]
+          },
+          "reviewer": { "type": ["string", "null"] },
+          "review_date": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "review_status": { "const": "reviewed" } } },
+            "then": {
+              "properties": {
+                "reviewer": { "type": "string", "minLength": 1 },
+                "review_date": { "type": "string" }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
