@@ -73,6 +73,14 @@
 
 /* Base & Accessibility */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+/* <button> doesn't inherit color/font from the page by default in any
+   browser (it uses UA-stylesheet system colors instead) — without this,
+   any button class that forgets to set its own `color` silently renders
+   near-black text, invisible against every dark theme. Real bug: Show
+   Hint, Sure/Maybe/Guessed, modal Cancel buttons, and the sidebar toggle
+   icon all had this exact problem. Class-specific color rules elsewhere
+   in this file still win via specificity, so this only fills the gap. */
+button{color:inherit;font:inherit}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
