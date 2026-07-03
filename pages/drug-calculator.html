@@ -86,6 +86,8 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .hdr-info{flex:1}
 .hdr-title{font-size:.95rem;font-weight:800;letter-spacing:-.3px}
 .hdr-sub{font-size:.65rem;color:var(--muted);font-weight:400}
+.hdr-disclaimer{font-size:.6rem;color:var(--muted);text-decoration:underline;text-underline-offset:2px;font-weight:400}
+.hdr-disclaimer:hover{color:var(--text)}
 
 /* ── TRUE RESPONSIVE SPLIT LAYOUT ───────────────────── */
 .split {
@@ -269,6 +271,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
   <div class="hdr-info">
     <div class="hdr-title"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Drug Calculator</div>
     <div class="hdr-sub">SmartCare · Medication Matrix</div>
+    <a class="hdr-disclaimer" href="about.html#disclaimer">Reference only — verify all doses independently before use</a>
   </div>
 </header>
 

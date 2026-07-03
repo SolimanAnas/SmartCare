@@ -1,0 +1,260 @@
+{
+  "$schema": "../scripts/schemas/content-manifest.schema.json",
+  "_comment": "Governance metadata for every clinical question bank in src/. This is a sidecar, not embedded in the question-bank files themselves, because those files have several divergent shapes already consumed by different engines (exam-review.js, prometric's ExamEngine, the ECG test viewer, EMPACT's inline script) and retrofitting a shared 'meta' key into each would risk breaking a parser somewhere for no functional gain. review_status is honest, not aspirational: everything starts 'unreviewed' because no clinician has signed off on this content yet in this repository's history. Do not flip a bank to 'reviewed' without an actual named reviewer and date — see docs/content-governance.md.",
+  "banks": [
+    {
+      "file": "src/ACLS/acls.json",
+      "exam_id": "acls",
+      "title": "ACLS Exam",
+      "guideline_source": "AHA ACLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/BDLS/BDLS.json",
+      "exam_id": "bdls",
+      "title": "BDLS Exam",
+      "guideline_source": "NDLSF Basic Disaster Life Support",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/BLS/bls.json",
+      "exam_id": "bls",
+      "title": "BLS Exam",
+      "guideline_source": "AHA BLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/BLS/bls-post-test.json",
+      "exam_id": "bls",
+      "title": "BLS Post-Test",
+      "guideline_source": "AHA BLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null,
+      "skip_validation": true,
+      "_note": "Not currently linked from any page — orphaned content. Also structurally incomplete (every question is missing correct_answer, and it uses a 'question'/dict-options shape no engine in this repo reads), which is almost certainly why it was never wired up. Flagged skip_validation so CI doesn't fail on dead content; fix or delete before ever linking this from a page."
+    },
+    {
+      "file": "src/ECG/ecg-test-1.json",
+      "exam_id": "ecg",
+      "title": "ECG Test 1",
+      "guideline_source": "AHA ECG / Rhythm Recognition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ECG/ecg-test-2.json",
+      "exam_id": "ecg",
+      "title": "ECG Test 2",
+      "guideline_source": "AHA ECG / Rhythm Recognition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ECG/ecg-test-3.json",
+      "exam_id": "ecg",
+      "title": "ECG Test 3",
+      "guideline_source": "AHA ECG / Rhythm Recognition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ECG/ecg-test-4.json",
+      "exam_id": "ecg",
+      "title": "ECG Test 4",
+      "guideline_source": "AHA ECG / Rhythm Recognition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/EMPACT/exam1.json",
+      "exam_id": "empact",
+      "title": "EMPACT Mock Exam",
+      "guideline_source": "EMPACT Certification Domains",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/EMPACT/pearls.json",
+      "exam_id": "empact",
+      "title": "EMPACT Clinical Pearls",
+      "guideline_source": "EMPACT Certification Domains",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ITLS/itls-pre.json",
+      "exam_id": "itls",
+      "title": "ITLS Pre-Test — 8th Edition",
+      "guideline_source": "ITLS 8th Edition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ITLS/itls-pre-9th.json",
+      "exam_id": "itls",
+      "title": "ITLS Pre-Test — 9th Edition",
+      "guideline_source": "ITLS 9th Edition",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ITLS/itls-post-A.json",
+      "exam_id": "itls",
+      "title": "ITLS Post-Test — Form A",
+      "guideline_source": "ITLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ITLS/itls-post-B.json",
+      "exam_id": "itls",
+      "title": "ITLS Post-Test — Form B",
+      "guideline_source": "ITLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/ITLS/pearls.json",
+      "exam_id": "itls",
+      "title": "ITLS Clinical Pearls",
+      "guideline_source": "ITLS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null,
+      "_note": "Not currently linked from any page — the Pearls feature was removed from itls.html as dead code in the exam-review dedup; kept for a possible future revival or removal."
+    },
+    {
+      "file": "src/Medical/medical.json",
+      "exam_id": "medical",
+      "title": "Medical Exam",
+      "guideline_source": "General EMS Medical",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PALS/pals.json",
+      "exam_id": "pals",
+      "title": "PALS Exam",
+      "guideline_source": "AHA PALS",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PEPP/exam_a.json",
+      "exam_id": "pepp",
+      "title": "PEPP Exam — Form A",
+      "guideline_source": "AAP/ACEP PEPP",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PEPP/exam_b.json",
+      "exam_id": "pepp",
+      "title": "PEPP Exam — Form B",
+      "guideline_source": "AAP/ACEP PEPP",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PEPP/exam_c.json",
+      "exam_id": "pepp",
+      "title": "PEPP Exam — Form C",
+      "guideline_source": "AAP/ACEP PEPP",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PEPP/exam_d.json",
+      "exam_id": "pepp",
+      "title": "PEPP Exam — Form D",
+      "guideline_source": "AAP/ACEP PEPP",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PEPP/pearls.json",
+      "exam_id": "pepp",
+      "title": "PEPP Clinical Pearls",
+      "guideline_source": "AAP/ACEP PEPP",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null,
+      "_note": "Not currently linked from any page — the Pearls feature was removed from pepp.html as dead code in the exam-review dedup; kept for a possible future revival or removal."
+    },
+    {
+      "file": "src/PPET/ppet.json",
+      "exam_id": "ppet",
+      "title": "PPET Exam",
+      "guideline_source": "Prehospital Pediatric Emergency Training",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/PPET/exam2.json",
+      "exam_id": "ppet",
+      "title": "PPET Exam — Form 2",
+      "guideline_source": "Prehospital Pediatric Emergency Training",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/prometric/exam-db.json",
+      "exam_id": "prometric",
+      "title": "NREMT-Style Practice Exam",
+      "guideline_source": "NREMT Cognitive Exam Domains",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    }
+  ]
+}

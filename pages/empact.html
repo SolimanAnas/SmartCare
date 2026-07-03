@@ -147,7 +147,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
 }
 .sel-logo{font-size:2rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:4px}
 .sel-logo .brand-empact{color:var(--blue)}
-.sel-sub{color:var(--muted);font-size:.88rem;margin-bottom:28px}
+.sel-sub{color:var(--muted);font-size:.88rem;margin-bottom:6px}
+.sel-disclaimer{color:var(--muted);font-size:.72rem;margin-bottom:22px;text-decoration:underline;text-underline-offset:2px;display:block}
+.sel-disclaimer:hover{color:var(--text)}
 .sel-theme-row{
   display:flex;align-items:center;gap:8px;
   background:var(--card);border:1px solid var(--border2);
@@ -379,6 +381,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
 <div id="selectorScreen">
   <div class="sel-logo"><span class="brand-empact">EMPACT</span> Review</div>
   <div class="sel-sub">Clinical pearls & mock exam</div>
+  <a class="sel-disclaimer" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
   <div class="sel-theme-row">
     <span class="sel-theme-lbl">Theme</span>
     <div class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')"></div>

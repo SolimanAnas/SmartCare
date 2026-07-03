@@ -4,6 +4,44 @@
 
 This is a from-scratch audit, deliberately independent of `docs/upgrades.md` and `docs/audit-v2-2026-07.md` — it judges the current implementation only, not progress against any prior roadmap. Method note: it was produced by six parallel deep-audit passes (architecture/state, security/Supabase, offline/PWA, testing/CI, accessibility/medical content, dead code) that read the actual files — every finding below has file:line evidence behind it.
 
+> **Addendum (same day):** the top 4 items were prioritized and shipped:
+> 1. **Precache gap fixed** — `scripts/build_precache.py`'s `src` glob was one
+>    level deep and `.js`-only; it's now walked recursively across all
+>    extensions, so every question bank and the entire prometric engine
+>    (including the manifest.json shortcut target) are precached. Added
+>    `tests/offline.spec.js`'s 4th test as a permanent regression guard.
+> 2. **Content governance added** — new `src/content-manifest.json` tracks
+>    `guideline_source`, `content_version`, `review_status`, `reviewer`, and
+>    `review_date` per question bank, as a sidecar rather than embedded in
+>    the banks themselves (their shapes diverge too much across engines to
+>    retrofit safely). Every field is honestly `"unreviewed"` / `null` — no
+>    clinical review has actually happened yet in this repo's history, and
+>    inventing reviewer names or guideline editions would be worse than
+>    leaving them blank. **This needs real clinician sign-off to become
+>    meaningful — it's infrastructure, not a substitute for that review.**
+> 3. **Schema validation wired into CI** — new `scripts/validate_content.py`
+>    checks every bank is governed, structurally valid, and that
+>    `correct_answer` actually resolves to a real option. It immediately
+>    found **36 real single-option questions with no distractors** across
+>    `src/BLS/bls.json`, `src/PEPP/exam_c.json`, `src/PEPP/exam_d.json`, and
+>    `src/prometric/exam-db.json` (looks like a systematic authoring/import
+>    defect, not random noise), plus one fully malformed orphaned bank
+>    (`src/BLS/bls-post-test.json`, missing `correct_answer` entirely, never
+>    linked from any page). Pre-existing defects are grandfathered in
+>    `scripts/schemas/content-known-issues.json` so CI is green today
+>    without hiding them — any *new* malformed question still fails the
+>    build. **The 36 grandfathered questions are broken and need real
+>    distractor authoring; this audit surfaced them, it didn't fix them.**
+> 4. **Disclaimers added** to every clinical tool/exam page that lacked one:
+>    `drug-calculator.html`, `GCS.html`, `ecg.html`, `ecg-test.html`,
+>    `empact.html`, `src/prometric/exam.html`, and all 8 exam-review pages
+>    (via one change in `exam-review.js`, injected at load rather than
+>    duplicated 8×). Each links to a new `about.html#disclaimer` anchor.
+>
+> Verified: full Playwright suite (21 specs) + an ad-hoc pass confirming
+> all 8 disclaimer links render and navigate correctly, `pytest` (16/16),
+> `ruff`, `bandit` all clean.
+
 ---
 
 ## Phase 2 — Production Readiness Scores

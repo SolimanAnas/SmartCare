@@ -46,6 +46,15 @@ jobs:
             exit 1;
           }
 
+      # Every clinical question bank under src/ must be listed in
+      # src/content-manifest.json with real governance fields, and every
+      # question must structurally resolve (options present, correct_answer
+      # matches a real option). Pre-existing defects are grandfathered in
+      # scripts/schemas/content-known-issues.json — see
+      # scripts/validate_content.py for how that allowlist works.
+      - name: Validate clinical content banks + governance manifest
+        run: python3 scripts/validate_content.py
+
       # ── Security scanning (Secure SDLC §5/§7: Static Source Code Scanning) ─
       - name: SAST — Bandit (Python static analysis)
         run: |

@@ -104,6 +104,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 .hero{text-align:center;margin-bottom:32px;}
 .hero h1{font-size:2rem;font-weight:900;margin-bottom:8px;}
 .hero p{color:var(--mu);font-size:.95rem;}
+.hero .disclaimer-link{display:inline-block;margin-top:10px;color:var(--mu);font-size:.72rem;text-decoration:underline;text-underline-offset:2px;}
+.hero .disclaimer-link:hover{color:var(--tx);}
 .test-cards{display:grid;gap:16px;}
 .test-card{background:var(--card);border:1px solid var(--border);
            border-radius:var(--radius);padding:24px;cursor:pointer;
@@ -242,6 +244,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   <div class="hero">
     <h1><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#trending-up"/></svg> ECG Tests</h1>
     <p>Four 30-question practice tests (120 questions) covering ECG interpretation,<br>arrhythmias, ischaemia, ACLS management, and advanced 12-lead patterns.</p>
+    <a class="disclaimer-link" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
   </div>
   <div class="test-cards">
     <div class="test-card" onclick="startTest('../src/ECG/ecg-test-1.json','ECG Test 1')">

@@ -22,6 +22,21 @@ const VENDORED_ASSETS = [
   'vendor/fontawesome/css/all.min.css',
 ];
 
+// Regression test for the precache gap found in the July 2026 production
+// audit: build_precache.py's src/ glob was one level deep and .js-only, so
+// every question bank (src/ACLS/acls.json, etc.) and the entire prometric
+// exam engine — including manifest.json's installed-app shortcut target —
+// silently never got cached. "Offline-first" was false for the app's core
+// content. src/ is now walked recursively; this asserts it stays that way.
+const EXAM_CONTENT_ASSETS = [
+  'src/ACLS/acls.json',
+  'src/BLS/bls.json',
+  'src/PALS/pals.json',
+  'src/prometric/exam.html',
+  'src/prometric/exam.js',
+  'src/prometric/exam-db.json',
+];
+
 test.describe('offline completeness', () => {
   test('service worker installs every precached entry with zero failures', async ({ page, context }) => {
     const swWarnings = [];
@@ -78,6 +93,32 @@ test.describe('offline completeness', () => {
       }
       return out;
     }, VENDORED_ASSETS);
+
+    for (const [url, status] of Object.entries(results)) {
+      expect(status, `${url} was not servable offline (got ${status})`).toBe(200);
+    }
+  });
+
+  test('exam question banks and the prometric engine are servable offline', async ({ page, context }) => {
+    await page.goto('/');
+    await page.evaluate(async () => {
+      await navigator.serviceWorker.register('sw.js');
+      await navigator.serviceWorker.ready;
+    });
+    await page.waitForTimeout(3000);
+
+    await context.setOffline(true);
+    const results = await page.evaluate(async (assets) => {
+      const out = {};
+      for (const url of assets) {
+        try {
+          out[url] = (await fetch(url)).status;
+        } catch (e) {
+          out[url] = 'FETCH_FAILED';
+        }
+      }
+      return out;
+    }, EXAM_CONTENT_ASSETS);
 
     for (const [url, status] of Object.entries(results)) {
       expect(status, `${url} was not servable offline (got ${status})`).toBe(200);
