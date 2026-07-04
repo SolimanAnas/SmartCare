@@ -1,119 +1,63 @@
 {
   "D:/Apps/SmartCare/app.js": {
-    "mtime": 1782512668164.7986,
-    "hash": "5b89b4817ef6dd0c681b3f9af902662e"
+    "mtime": 1783178916682.2573,
+    "hash": "14ab19db37c59bb9cf72d562710c88d9"
   },
   "D:/Apps/SmartCare/content/c-index.js": {
-    "mtime": 1782737194736.9211,
-    "hash": "674445f7cd21df4172c6c488066f2afc"
+    "mtime": 1782816899318.0105,
+    "hash": "f1d2cf570cc7068f1883f66e744afd5c"
   },
   "D:/Apps/SmartCare/content/c0.js": {
-    "mtime": 1782503227396.505,
-    "hash": "8f19b953ed08c50af435b2ff27562cf2"
+    "mtime": 1783173629898.583,
+    "hash": "65d4b6b811afb7ef990b96054ac1159c"
   },
   "D:/Apps/SmartCare/content/c1.js": {
-    "mtime": 1782509896413.4578,
-    "hash": "1786f787980bcf195d9ac19ff88e4ff2"
+    "mtime": 1783173629899.6428,
+    "hash": "386a9221415f31527d24b0a8bc83a6ed"
   },
   "D:/Apps/SmartCare/content/c10.js": {
-    "mtime": 1782509896426.9707,
-    "hash": "c7e4c3f654074835895c212283eb6177"
+    "mtime": 1783173629902.6558,
+    "hash": "2c349b14069e39a9bdadc1ef930e8404"
   },
   "D:/Apps/SmartCare/content/c2.js": {
-    "mtime": 1782506701524.5508,
-    "hash": "289d2cd4b3ede3beda1f976c30f8af9d"
+    "mtime": 1783173629905.6423,
+    "hash": "a1baba67368d2af09b817dd9e40660dd"
   },
   "D:/Apps/SmartCare/content/c3.js": {
-    "mtime": 1782506323282.0232,
-    "hash": "cc47bdda07ac2acdbf4af939f07ffe5d"
+    "mtime": 1783173629909.148,
+    "hash": "3e1d0dcdfbee8684e2903fc5edc9cece"
   },
   "D:/Apps/SmartCare/content/c4.js": {
-    "mtime": 1782509896415.4578,
-    "hash": "749ce3eb93a8d526f11045df41bd7c1f"
+    "mtime": 1783173629912.1614,
+    "hash": "8042d2a5e26f07c677984ab8e2acfce6"
   },
   "D:/Apps/SmartCare/content/c5.js": {
-    "mtime": 1782509896417.456,
-    "hash": "4c16b8c5f769fdca8abb2cd83f10e7e0"
+    "mtime": 1783173629916.1482,
+    "hash": "5d9c6f8dd74a5926448f5e8fdc2e5091"
   },
   "D:/Apps/SmartCare/content/c6.js": {
-    "mtime": 1782586300633.873,
-    "hash": "7877d707b6d06c131f78eddc5ee1b956"
+    "mtime": 1783173629921.2268,
+    "hash": "3504de8f072a1ef038447b8835bf1c9f"
   },
   "D:/Apps/SmartCare/content/c7.js": {
-    "mtime": 1782509896422.9707,
-    "hash": "4f7695d5ae5a586c044b1c8e63fbec68"
+    "mtime": 1783173629926.2212,
+    "hash": "39878d1ab530a175da61124f3c5714a6"
   },
   "D:/Apps/SmartCare/content/c8.js": {
-    "mtime": 1782510027209.559,
-    "hash": "e26e0dc29525c02736dfb9d292300292"
+    "mtime": 1783173629930.7356,
+    "hash": "dbdd339b81fe20d963ea9f5463fde5bd"
   },
   "D:/Apps/SmartCare/content/c9.js": {
-    "mtime": 1782503247673.4358,
-    "hash": "e173fea62193fd9cee1e321710f90bd1"
+    "mtime": 1783173629935.513,
+    "hash": "81abbe568cebb575c1e9967e2bcc0343"
   },
   "D:/Apps/SmartCare/content/m1-38.js": {
     "mtime": 1782503227401.505,
     "hash": "7eb47f41dc0bc6bf2b7e7f7b18c0af26"
   },
-  "D:/Apps/SmartCare/content_starters_backup/c-index.js": {
-    "mtime": 1782503227402.505,
-    "hash": "f4e26fea6cd62041d727a0930230acc9"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c0.js": {
-    "mtime": 1782503227402.505,
-    "hash": "8f19b953ed08c50af435b2ff27562cf2"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c1.js": {
-    "mtime": 1782503227402.505,
-    "hash": "fcc8636db691ee21912e6c9236b06247"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c10.js": {
-    "mtime": 1782503227403.505,
-    "hash": "48b6bba76334413ef65f45abda775ee4"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c2.js": {
-    "mtime": 1782503227403.505,
-    "hash": "8858d428917a66e12453f0731a753b85"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c3.js": {
-    "mtime": 1782503227403.505,
-    "hash": "c6a1c463602a9d9f1f93847ade8b2cce"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c4.js": {
-    "mtime": 1782503227403.505,
-    "hash": "c3870813d1f5482f38344112984c633d"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c5.js": {
-    "mtime": 1782503227404.5063,
-    "hash": "95c83685f8a3a35e227dd367189ef0fa"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c6.js": {
-    "mtime": 1782503227404.5063,
-    "hash": "880e47ec91764b6ecfa598b3977b3522"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c7.js": {
-    "mtime": 1782503227404.5063,
-    "hash": "7f36cc473e06d8958aa3b72b7384d457"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c8.js": {
-    "mtime": 1782503227404.5063,
-    "hash": "8765f3f36fbed95e89b200c3f61901ef"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/c9.js": {
-    "mtime": 1782503227405.5059,
-    "hash": "61eb52ad71b6efab2126c4f0a2e6ed55"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/m1-38.js": {
-    "mtime": 1782503227405.5059,
-    "hash": "7eb47f41dc0bc6bf2b7e7f7b18c0af26"
-  },
-  "D:/Apps/SmartCare/content_starters_backup/s1.js": {
-    "mtime": 1782503227405.5059,
-    "hash": "140c9198e06a99217e1687ee3833225d"
-  },
   "D:/Apps/SmartCare/playwright.config.js": {
-    "mtime": 1782503206543.5042,
-    "hash": "783c657e1d82a3922dc00d41fbafd28d"
+    "mtime": 1783173629976.1338,
+    "hash": "3574a4d6dbdaa4eb92bef55a4950db7d"
   },
   "D:/Apps/SmartCare/scripts/assemble_chapters.py": {
     "mtime": 1782505218079.1855,
@@ -140,12 +84,12 @@
     "hash": "d95a3b02d882c18d21b68e558f081ef9"
   },
   "D:/Apps/SmartCare/src/prometric/exam.js": {
-    "mtime": 1782503227438.507,
-    "hash": "3f34a7be0db0822fdca28673d03d3559"
+    "mtime": 1783173630010.087,
+    "hash": "bc2845f3097de07c51d09a79681c8535"
   },
   "D:/Apps/SmartCare/sw.js": {
-    "mtime": 1782759799312.777,
-    "hash": "8a553443a91ddbd44576ce731a2d64a2"
+    "mtime": 1783173630014.0872,
+    "hash": "963d7b5bbd9f0a8f856e870fef2b1d94"
   },
   "D:/Apps/SmartCare/tests/__init__.py": {
     "mtime": 1782501980234.9783,
@@ -156,16 +100,16 @@
     "hash": "c89ba6516f8ba289151975b63a130d8f"
   },
   "D:/Apps/SmartCare/tests/conftest.py": {
-    "mtime": 1782585554885.744,
-    "hash": "1721b91e47415ab8cc34ddc0fe79944f"
+    "mtime": 1783173630014.0872,
+    "hash": "b9f2a858818f1e786369f9203ed630cb"
   },
   "D:/Apps/SmartCare/tests/prometric.spec.js": {
     "mtime": 1782503227439.5066,
     "hash": "ebe4a1e79257ed453858f75eb5ac1102"
   },
   "D:/Apps/SmartCare/tests/test_api.py": {
-    "mtime": 1782503227440.5066,
-    "hash": "af3a000bfb243b7c7c7d383d83021a56"
+    "mtime": 1783173630015.088,
+    "hash": "54f88a46bf522d8800dea1b2ad580c13"
   },
   "D:/Apps/SmartCare/courses/itls/build.py": {
     "mtime": 1782585415900.2659,
@@ -182,5 +126,197 @@
   "D:/Apps/SmartCare/graphify.yaml": {
     "mtime": 1782737214189.5989,
     "hash": "9b7a704a816ad765f63a1d86165b84f5"
+  },
+  "D:/Apps/SmartCare/content/c1.meta.js": {
+    "mtime": 1783173629899.6428,
+    "hash": "c0c233300955a423c68224b10949225b"
+  },
+  "D:/Apps/SmartCare/content/c10.meta.js": {
+    "mtime": 1783173629902.6558,
+    "hash": "d6100a2d058a5b24858eb7022922b92a"
+  },
+  "D:/Apps/SmartCare/content/c2.meta.js": {
+    "mtime": 1783173629905.6423,
+    "hash": "99c3e4cc545a58fe7a9f71750906988e"
+  },
+  "D:/Apps/SmartCare/content/c3.meta.js": {
+    "mtime": 1783173629909.148,
+    "hash": "5612f24a30a48ca331dc70f705151c33"
+  },
+  "D:/Apps/SmartCare/content/c4.meta.js": {
+    "mtime": 1783173629912.1614,
+    "hash": "3bf6e6496e0f6290f2e58ffe6688e1a6"
+  },
+  "D:/Apps/SmartCare/content/c5.meta.js": {
+    "mtime": 1783173629916.1482,
+    "hash": "e61dcdc3f3505c4eaa5d816d6f11eed4"
+  },
+  "D:/Apps/SmartCare/content/c6.meta.js": {
+    "mtime": 1783173629921.2268,
+    "hash": "bec789c88ac140f478a10c6c6b3eefa9"
+  },
+  "D:/Apps/SmartCare/content/c7.meta.js": {
+    "mtime": 1783173629926.2212,
+    "hash": "19121ae71fa5ce7f1a02de031d76cc46"
+  },
+  "D:/Apps/SmartCare/content/c8.meta.js": {
+    "mtime": 1783173629930.7356,
+    "hash": "f615842a781e6bdb6b0efd296f5b9d41"
+  },
+  "D:/Apps/SmartCare/content/c9.meta.js": {
+    "mtime": 1783173629935.513,
+    "hash": "63d2da66e2fc4c4a474641acf14772e4"
+  },
+  "D:/Apps/SmartCare/precache-manifest.js": {
+    "mtime": 1783173629977.1333,
+    "hash": "531159f29a7f08145f8d4408e126bbb6"
+  },
+  "D:/Apps/SmartCare/scripts/build_precache.py": {
+    "mtime": 1783173629977.1333,
+    "hash": "eaad5fb6d44733450a2672b2d213092b"
+  },
+  "D:/Apps/SmartCare/scripts/check_contrast.py": {
+    "mtime": 1783173629978.1333,
+    "hash": "29d3ea611628e544660bb74189bef1c6"
+  },
+  "D:/Apps/SmartCare/scripts/generate_maskable_icons.py": {
+    "mtime": 1783173629978.1333,
+    "hash": "34befeb682dd89edcde94d8fedb3c20a"
+  },
+  "D:/Apps/SmartCare/scripts/generate_screenshots.py": {
+    "mtime": 1783173629978.1333,
+    "hash": "2af14cbdc09b96b2516e15ea14b48c6c"
+  },
+  "D:/Apps/SmartCare/scripts/generate_sitemap.py": {
+    "mtime": 1783173629978.1333,
+    "hash": "76a3e53ca712e5609ffc198d6252a4bd"
+  },
+  "D:/Apps/SmartCare/scripts/generate_splash.py": {
+    "mtime": 1783173629978.1333,
+    "hash": "25d679723027d97860c7178061c44f95"
+  },
+  "D:/Apps/SmartCare/scripts/split_content.js": {
+    "mtime": 1783173629979.157,
+    "hash": "3ca1ab3a51a3ad94b9ba2668c584cb0f"
+  },
+  "D:/Apps/SmartCare/scripts/validate_content.py": {
+    "mtime": 1783173629980.037,
+    "hash": "1f4bd99456a8f51140e0fb3287e078cc"
+  },
+  "D:/Apps/SmartCare/src/render-state.js": {
+    "mtime": 1783173630010.087,
+    "hash": "93be81d33d4d638191891cca42beb19d"
+  },
+  "D:/Apps/SmartCare/src/theme.js": {
+    "mtime": 1783173630010.087,
+    "hash": "ea78166273e5a31491da342a4500753a"
+  },
+  "D:/Apps/SmartCare/supabase/functions/_shared/admin.ts": {
+    "mtime": 1783173630011.0872,
+    "hash": "2aacee8bac6fbb26b3c038a422d5403d"
+  },
+  "D:/Apps/SmartCare/supabase/functions/admin-delete-user/index.ts": {
+    "mtime": 1783173630012.0872,
+    "hash": "5fe8bcbf6baf8ebd5f5933663f1702aa"
+  },
+  "D:/Apps/SmartCare/supabase/functions/admin-list-users/index.ts": {
+    "mtime": 1783173630012.0872,
+    "hash": "7647db40dc18e9f8584f04fb2cef608c"
+  },
+  "D:/Apps/SmartCare/supabase/functions/admin-update-role/index.ts": {
+    "mtime": 1783173630012.0872,
+    "hash": "b41287ad4cdfddce10022ab1dcdaa09e"
+  },
+  "D:/Apps/SmartCare/supabase/migrations/20260702000001_create_user_state.sql": {
+    "mtime": 1783173630013.0908,
+    "hash": "8f0b07667a87581280ffb437c22a53e8"
+  },
+  "D:/Apps/SmartCare/supabase/migrations/20260702000002_create_profiles.sql": {
+    "mtime": 1783173630013.0908,
+    "hash": "4a4427293ede763b9989ddd2a44e443c"
+  },
+  "D:/Apps/SmartCare/tests/exam-review-a11y.spec.js": {
+    "mtime": 1783173630014.0872,
+    "hash": "7660215b8cc42aa9c889cc3097740c51"
+  },
+  "D:/Apps/SmartCare/tests/offline.spec.js": {
+    "mtime": 1783173630014.0872,
+    "hash": "8a531c4e235a6011fa39cc20e23d427a"
+  },
+  "D:/Apps/SmartCare/vendor/chart-4.5.1.umd.min.js": {
+    "mtime": 1783173630016.088,
+    "hash": "3cf395c5f5e4c79e91a28f3ce30aba73"
+  },
+  "D:/Apps/SmartCare/vendor/supabase-js-2.110.0.mjs": {
+    "mtime": 1783173630019.7913,
+    "hash": "ae8be7dc329e46219c404140dd87dcee"
+  },
+  "D:/Apps/SmartCare/algorithms/ACLS-Bradycardia.webp": {
+    "mtime": 1783173629880.7751,
+    "hash": "ef8136b4c58a9eb57b5d690bffe2cd81"
+  },
+  "D:/Apps/SmartCare/algorithms/ACLS-CA-Circular.webp": {
+    "mtime": 1783173629881.7766,
+    "hash": "83ee14b63c8085c0e0631f74fe3615c2"
+  },
+  "D:/Apps/SmartCare/algorithms/ACLS-CA.webp": {
+    "mtime": 1783173629883.3494,
+    "hash": "cd25bcad85fe368848417b1b98cc8b1b"
+  },
+  "D:/Apps/SmartCare/algorithms/ACLS-Electrical-Cardioversion.webp": {
+    "mtime": 1783173629883.3494,
+    "hash": "9c09d089d0fc845a9d9244a26fcbbed6"
+  },
+  "D:/Apps/SmartCare/algorithms/ACLS-Tachycardia.webp": {
+    "mtime": 1783173629884.3567,
+    "hash": "9b8af50980714f2882b778f3ab866a5a"
+  },
+  "D:/Apps/SmartCare/algorithms/ALS-Termination-of-Resusc.webp": {
+    "mtime": 1783173629884.3567,
+    "hash": "a1ea5c51d3276026e3a8f263c806cc1d"
+  },
+  "D:/Apps/SmartCare/algorithms/BLS-Adult-FBAO.webp": {
+    "mtime": 1783173629885.3552,
+    "hash": "1f08546b8299984a7b2e5615671ad3e4"
+  },
+  "D:/Apps/SmartCare/algorithms/BLS-Adult-Healthcare.webp": {
+    "mtime": 1783173629885.3552,
+    "hash": "7728faa2a5c8cd894f3fb73c8147d325"
+  },
+  "D:/Apps/SmartCare/algorithms/BLS-Termination-of-Resusc.webp": {
+    "mtime": 1783173629886.356,
+    "hash": "9ebe889ae0476ae046d99f8b82ce70d9"
+  },
+  "D:/Apps/SmartCare/algorithms/Neonatal-Resuscitation.webp": {
+    "mtime": 1783173629886.356,
+    "hash": "9b1c27b4568fd3a8820fd6ac78f639ee"
+  },
+  "D:/Apps/SmartCare/algorithms/PALS-Bradycardia.webp": {
+    "mtime": 1783173629887.3552,
+    "hash": "cede9b6b505883da11ec5726f3a470ed"
+  },
+  "D:/Apps/SmartCare/algorithms/PALS-CA.webp": {
+    "mtime": 1783173629888.3672,
+    "hash": "9de98c8e2f5249a14f3d4b68afbd38fb"
+  },
+  "D:/Apps/SmartCare/algorithms/PALS-Tachyarrhythmia.webp": {
+    "mtime": 1783173629888.3672,
+    "hash": "277512d5a07c7f795ea3f4f3f1fdab18"
+  },
+  "D:/Apps/SmartCare/algorithms/PCAC-Algorithm-ACLS-PCAC.webp": {
+    "mtime": 1783173629889.582,
+    "hash": "2ce9feaa8b8840e85df63a37c06154a6"
+  },
+  "D:/Apps/SmartCare/algorithms/Pediatric-BLS-Single-Rescuer.webp": {
+    "mtime": 1783173629892.5894,
+    "hash": "f195d4959ee992a2a9e3302b6e13792d"
+  },
+  "D:/Apps/SmartCare/algorithms/SC-ACLS-CA-in-Pregnancy.webp": {
+    "mtime": 1783173629893.582,
+    "hash": "d8902f4b10c9106de7635efd20783886"
+  },
+  "D:/Apps/SmartCare/algorithms/SC-ACLS-LVAD.webp": {
+    "mtime": 1783173629893.582,
+    "hash": "81ddef299cfc290ad00f941d101cb30e"
   }
 }

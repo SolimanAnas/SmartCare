@@ -438,6 +438,18 @@ async function switchSection(sectionId, updateUrl = true) {
     const section = utils.getSection(sectionId);
     if (!section) return false;
 
+    // Direction-aware transition: compare the target's position in the section
+    // list against the current one. Forward (deeper) slides in from the right,
+    // back slides in from the left. Same-section view changes get a plain fade.
+    try {
+        const list = state.sections || [];
+        const prevIdx = list.findIndex(s => s.id === state.activeSectionId);
+        const nextIdx = list.findIndex(s => s.id === sectionId);
+        state.navDirection = (prevIdx !== -1 && nextIdx !== -1 && prevIdx !== nextIdx)
+            ? (nextIdx > prevIdx ? 'slide-fwd' : 'slide-back')
+            : null;
+    } catch (_) { state.navDirection = null; }
+
     state.activeSectionId = sectionId;
     state.activeSection = section;
 
@@ -485,13 +497,171 @@ async function switchSection(sectionId, updateUrl = true) {
 // ============================================================
 function setMainContent(html) {
     dom.main.innerHTML = html;
-    dom.main.classList.remove('content-enter');
-    void dom.main.offsetWidth;
-    dom.main.classList.add('content-enter');
+
+    // Direction-aware slide is applied to the content WRAPPER (first child), never
+    // to #mainContent itself — a transform there re-anchors its position:fixed
+    // bottom-nav (see the #mainContent comment in styles.css). The wrapper is a
+    // sibling of the bottom-nav, so it carries the motion cleanly.
+    const dir = state.navDirection;
+    state.navDirection = null;
+    const wrap = dom.main.firstElementChild;
+    if (wrap && (dir === 'slide-fwd' || dir === 'slide-back')) {
+        wrap.classList.add(dir);
+    } else {
+        dom.main.classList.remove('content-enter');
+        void dom.main.offsetWidth;      // reflow so the opacity-only fade replays
+        dom.main.classList.add('content-enter');
+    }
+
     initBottomNav();
     initFooterAwareNav();
     handleScroll();
+    if (typeof initScrollReveal === 'function') initScrollReveal();
 }
+
+// ============================================================
+// MOTION SYSTEM — scroll reveal, toasts, modal
+// (vanilla, transform/opacity only, reduced-motion handled in CSS)
+// ============================================================
+
+// Sprite path mirrors the rest of app.js templates (runs from /chapters/*).
+const SPRITE_BASE = window.location.pathname.includes('/chapters/') ? '../icons/sprite.svg' : 'icons/sprite.svg';
+
+// ---- Scroll reveal: section headers wipe open on entering the viewport ----
+let _revealObserver = null;
+function initScrollReveal() {
+    if (typeof IntersectionObserver === 'undefined' || !dom.main) return;
+    const headers = dom.main.querySelectorAll('.sum-card h3, .sum-card h4');
+    if (!headers.length) return;
+
+    if (!_revealObserver) {
+        _revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-in');
+                    obs.unobserve(entry.target);   // reveal once, then stop watching
+                }
+            });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+    }
+
+    headers.forEach(h => {
+        if (h.classList.contains('reveal-clip')) return;
+        h.classList.add('reveal-clip');
+        _revealObserver.observe(h);   // in-view headers fire on the next frame
+    });
+}
+
+// ---- Toasts: slide in top-right, stack, swipe-to-dismiss with momentum ----
+const SmartToast = (function () {
+    let region = null;
+    function ensureRegion() {
+        region = document.getElementById('sc-toast-region');
+        if (!region) {
+            region = document.createElement('div');
+            region.id = 'sc-toast-region';
+            region.setAttribute('role', 'status');
+            region.setAttribute('aria-live', 'polite');
+            document.body.appendChild(region);
+        }
+        return region;
+    }
+    function dismiss(el) {
+        if (!el || el._dismissing) return;
+        el._dismissing = true;
+        clearTimeout(el._timer);
+        el.removeAttribute('data-enter');
+        el.setAttribute('data-exit', '');
+        const done = () => el.remove();
+        el.addEventListener('transitionend', done, { once: true });
+        setTimeout(done, 400);   // fallback if transitionend is missed
+    }
+    function enableSwipe(el) {
+        let startX = 0, startT = 0, dx = 0, dragging = false, pid = null;
+        el.addEventListener('pointerdown', (e) => {
+            if (dragging) return;                     // ignore extra fingers mid-drag
+            dragging = true; pid = e.pointerId;
+            startX = e.clientX; startT = Date.now(); dx = 0;
+            el.setAttribute('data-swiping', '');
+            try { el.setPointerCapture(pid); } catch (_) {}
+        });
+        el.addEventListener('pointermove', (e) => {
+            if (!dragging || e.pointerId !== pid) return;
+            dx = e.clientX - startX;
+            if (dx < 0) dx *= 0.35;                   // resistance dragging left (away from exit)
+            el.style.setProperty('--tx', dx + 'px');
+        });
+        function end(e) {
+            if (!dragging || (e && e.pointerId !== pid)) return;
+            dragging = false;
+            el.removeAttribute('data-swiping');
+            const dt = Date.now() - startT;
+            const velocity = Math.abs(dx) / Math.max(dt, 1);
+            const width = el.offsetWidth || 320;
+            // Flick (velocity > 0.11) or drag past 40% → dismiss; else snap back.
+            if (dx > width * 0.4 || (dx > 24 && velocity > 0.11)) {
+                dismiss(el);
+            } else {
+                el.style.setProperty('--tx', '0px');
+            }
+        }
+        el.addEventListener('pointerup', end);
+        el.addEventListener('pointercancel', end);
+    }
+    function show(opts) {
+        const o = opts || {};
+        ensureRegion();
+        const el = document.createElement('div');
+        el.className = 'sc-toast' + (o.type ? ' sc-toast--' + o.type : '');
+        el.setAttribute('data-enter', '');
+        const icon = o.type === 'correct' ? '#circle-check-big'
+                   : o.type === 'wrong'   ? '#circle-x'
+                   : '#info';
+        el.innerHTML =
+            '<span class="sc-toast-icon"><svg class="lucide" aria-hidden="true" focusable="false"><use href="' +
+            SPRITE_BASE + icon + '"/></svg></span><span class="sc-toast-msg"></span>';
+        el.querySelector('.sc-toast-msg').textContent = o.message || '';
+        region.prepend(el);          // newest on top; stack spacing from CSS gap
+        enableSwipe(el);
+        const ttl = o.duration || 3200;
+        el._timer = setTimeout(() => dismiss(el), ttl);
+        el.addEventListener('pointerenter', () => clearTimeout(el._timer));   // pause on hover
+        el.addEventListener('pointerleave', () => { el._timer = setTimeout(() => dismiss(el), 1200); });
+        return el;
+    }
+    return { show, dismiss };
+})();
+window.SmartToast = SmartToast;
+
+// ---- Modal: backdrop blur fade-in, panel scales up from 0.95 (origin center) ----
+const SmartModal = (function () {
+    let backdrop = null;
+    function close() {
+        if (!backdrop) return;
+        const bd = backdrop; backdrop = null;
+        bd.setAttribute('data-closing', '');
+        bd.removeAttribute('data-open');
+        const done = () => bd.remove();
+        bd.addEventListener('transitionend', (e) => { if (e.target === bd) done(); }, { once: true });
+        setTimeout(done, 300);
+    }
+    function open(innerHTML, onMount) {
+        close();
+        backdrop = document.createElement('div');
+        backdrop.className = 'sc-modal-backdrop';
+        backdrop.innerHTML = '<div class="sc-modal" role="dialog" aria-modal="true">' + innerHTML + '</div>';
+        document.body.appendChild(backdrop);
+        backdrop.addEventListener('click', (e) => { if (e.target === backdrop) close(); });
+        // Flip to the open state next frame so the enter transition actually plays.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (backdrop) backdrop.setAttribute('data-open', '');
+        }));
+        if (typeof onMount === 'function') onMount(backdrop);
+        return backdrop;
+    }
+    return { open, close };
+})();
+window.SmartModal = SmartModal;
 
 // ============================================================
 // RENDER FUNCTIONS
@@ -792,9 +962,9 @@ const render = {
                     <span class="progress-title">Overall Progress</span>  
                     <span style="font-weight:700;">${overallPct}%</span>  
                 </div>  
-                <div class="progress-container">  
-                    <div class="progress-bar" style="width: ${overallPct}%;"></div>  
-                </div>  
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 0%;" data-fill="${overallPct}"></div>
+                </div>
                 <div class="stats-grid">  
                     <div class="stat-box">  
                         <span class="stat-label">Total Attempts</span>  
@@ -812,10 +982,13 @@ const render = {
                 </div>  
             </div>  
         `;  
-        setMainContent(html);  
-        updateHeader('Statistics', '', true);  
-        utils.safeScrollTop();  
-    },  
+        setMainContent(html);
+        updateHeader('Statistics', '', true);
+        utils.safeScrollTop();
+        // Fill the bar from 0 with the custom curve once painted (perceived count-up).
+        const bar = dom.main && dom.main.querySelector('.progress-bar[data-fill]');
+        if (bar) requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = bar.dataset.fill + '%'; }));
+    },
 
     reviewMistakes: function() {  
         if (!state.mistakes.length) {  
@@ -922,13 +1095,17 @@ const quizEngine = {
                 rationale: q.explanation  
             });  
         }  
-        document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);  
-        btn.classList.add(isCorrect ? 'correct' : 'wrong');  
-        if (!isCorrect) {  
-            const correctBtn = document.querySelectorAll('.option-btn')[q.correct];  
-            if (correctBtn) correctBtn.classList.add('correct');  
-        }  
-        const fb = document.getElementById('quizFeedback');  
+        document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+        btn.classList.add(isCorrect ? 'correct' : 'wrong');
+        if (!isCorrect) {
+            const correctBtn = document.querySelectorAll('.option-btn')[q.correct];
+            if (correctBtn) correctBtn.classList.add('correct');
+        }
+        SmartToast.show({
+            type: isCorrect ? 'correct' : 'wrong',
+            message: isCorrect ? 'Correct' : 'Incorrect — see the explanation',
+        });
+        const fb = document.getElementById('quizFeedback');
         if (fb) {  
             fb.style.display = 'block';  
             fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
@@ -958,24 +1135,28 @@ const quizEngine = {
             let msg = 'Keep studying!';  
             if (percentage >= 80) msg = 'Excellent!';  
             else if (percentage >= 60) msg = 'Good effort.';  
-            const reviewBtn = state.mistakes.length ?   
-                `<button class="control-btn" data-action="reviewMistakes" style="margin-top:15px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Review ${state.mistakes.length} Mistakes</button>` : '';  
-            const html = `  
-                <div class="quiz-setup-container" style="text-align:center;">  
-                    <h2 style="color:var(--primary-accent);">Quiz Complete!</h2>  
-                    <div style="font-size:3.5rem; font-weight:bold; color:var(--primary-accent); margin:20px 0;">${percentage}%</div>  
-                    <p style="color:var(--text-secondary);">${msg}</p>  
-                    ${reviewBtn}  
-                    <div class="nav-row">  
-                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>  
-                    </div>  
-                </div>  
-            `;  
-            setMainContent(html);  
-            utils.safeScrollTop();  
-        }  
-    }  
-};  
+            const reviewBtn = state.mistakes.length ?
+                `<button class="control-btn" id="scQuizReview"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Review ${state.mistakes.length} Mistakes</button>` : '';
+            // Results modal: backdrop blur fade + panel scale-up over the last
+            // graded question. The score ring fills from 0 with the custom curve.
+            SmartModal.open(`
+                <h2>Quiz Complete!</h2>
+                <div class="sc-modal-score">${percentage}%</div>
+                <div class="sc-modal-ring"><i></i></div>
+                <p>${msg}</p>
+                <div class="sc-modal-actions">
+                    ${reviewBtn}
+                    <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>
+                </div>
+            `, (bd) => {
+                const fill = bd.querySelector('.sc-modal-ring > i');
+                if (fill) requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = percentage + '%'; }));
+                const rev = bd.querySelector('#scQuizReview');
+                if (rev) rev.addEventListener('click', () => { SmartModal.close(); render.reviewMistakes(); });
+            });
+        }
+    }
+};
 
 // ---------- CRITICAL ENGINE ----------  
 const criticalEngine = {  
@@ -990,13 +1171,17 @@ const criticalEngine = {
         state.stats.critical.total = (state.stats.critical.total || 0) + 1;  
         storage.save(state.stats);  
 
-        document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);  
-        btn.classList.add(isCorrect ? 'correct' : 'wrong');  
-        if (!isCorrect) {  
-            const correctBtn = document.querySelectorAll('.option-btn')[q.correct];  
-            if (correctBtn) correctBtn.classList.add('correct');  
-        }  
-        const fb = document.getElementById('criticalFeedback');  
+        document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+        btn.classList.add(isCorrect ? 'correct' : 'wrong');
+        if (!isCorrect) {
+            const correctBtn = document.querySelectorAll('.option-btn')[q.correct];
+            if (correctBtn) correctBtn.classList.add('correct');
+        }
+        SmartToast.show({
+            type: isCorrect ? 'correct' : 'wrong',
+            message: isCorrect ? 'Correct' : 'Incorrect — see the explanation',
+        });
+        const fb = document.getElementById('criticalFeedback');
         if (fb) {  
             fb.style.display = 'block';  
             fb.innerHTML = `<strong style="color:${isCorrect?'#155724':'#721c24'};">${isCorrect?'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Correct':'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect'}</strong>  
@@ -1012,22 +1197,22 @@ const criticalEngine = {
         if (state.criticalIndex < state.criticalData.length) {  
             render._renderCriticalQuestion();  
         } else {  
-            const accuracy = Math.round((state.criticalScore / state.criticalData.length) * 100);  
-            const html = `  
-                <div class="quiz-setup-container" style="text-align:center;">  
-                    <h2 style="color:var(--primary-accent);">Critical scenarios finished</h2>  
-                    <div style="font-size:3rem; font-weight:bold; color:var(--primary-accent); margin:20px 0;">${accuracy}%</div>  
-                    <p>Correct: ${state.criticalScore}/${state.criticalData.length}</p>  
-                    <div class="nav-row">  
-                        <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>  
-                    </div>  
-                </div>  
-            `;  
-            setMainContent(html);  
-            utils.safeScrollTop();  
-        }  
-    }  
-};  
+            const accuracy = Math.round((state.criticalScore / state.criticalData.length) * 100);
+            SmartModal.open(`
+                <h2>Scenarios Finished</h2>
+                <div class="sc-modal-score">${accuracy}%</div>
+                <div class="sc-modal-ring"><i></i></div>
+                <p>Correct: ${state.criticalScore}/${state.criticalData.length}</p>
+                <div class="sc-modal-actions">
+                    <button class="control-btn" data-action="backHome"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#house"/></svg> Home</button>
+                </div>
+            `, (bd) => {
+                const fill = bd.querySelector('.sc-modal-ring > i');
+                if (fill) requestAnimationFrame(() => requestAnimationFrame(() => { fill.style.width = accuracy + '%'; }));
+            });
+        }
+    }
+};
 
 // ---------- WATER RIPPLE EFFECT ----------  
 function createRipple(event, target) {  

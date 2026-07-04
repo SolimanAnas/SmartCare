@@ -1,4 +1,4 @@
-# Node Description Batch 13 of 14
+# Node Description Batch 13 of 48
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -19,53 +19,51 @@ relations (neighbors) and the provided citations/evidence — e.g.
 Ground entity descriptions in the citations/evidence when present; do not
 speculate beyond the context, so a node with no supporting context may be
 left out of the reply.
-LANGUAGE: each entry has a `lang=` marker giving the language of its source.
-Write that entry's description in EXACTLY that language. Do not translate to
-a single common language — match each node's source language individually.
+Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "content_starters_backup_s1": "s1.js" | kind=code-symbol | source=content_starters_backup/s1.js:L1 | neighbors=[b791fda content: deploy chapters 4-5 (C…] | lang=en
-- "data_bundle": "bundle.js" | kind=code-symbol | source=courses/itls/data/bundle.js:L1 | neighbors=[1a00316 feat(itls): restructure itls co…] | lang=en
-- "playwright_config": "playwright.config.js" | kind=code-symbol | source=playwright.config.js:L1 | neighbors=[beb9c47 fix(ui): swap CSS to 0dad921 gl…] | lang=en
-- "prometric_exam_examengine_formattime": ".formatTime()" | kind=code-symbol | source=src/prometric/exam.js:L752 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_handletouchstart": ".handleTouchStart()" | kind=code-symbol | source=src/prometric/exam.js:L218 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_showmobilepanel": ".showMobilePanel()" | kind=code-symbol | source=src/prometric/exam.js:L238 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_togglefocusmode": ".toggleFocusMode()" | kind=code-symbol | source=src/prometric/exam.js:L234 | neighbors=[ExamEngine] | lang=en
-- "scripts_assemble_chapters_rationale_45": "Extract section objects from a TOC section file.      The file has the pattern:" | kind=entity | source=scripts/assemble_chapters.py:L45 | neighbors=[extract_sections()] | lang=en
-- "scripts_assemble_chapters_rationale_91": "Assemble a complete chapter JS file." | kind=entity | source=scripts/assemble_chapters.py:L91 | neighbors=[assemble()] | lang=pt
-- "scripts_build_courses_main": "main()" | kind=code-symbol | source=scripts/build_courses.py:L6 | neighbors=[build_courses.py] | lang=en
-- "scripts_extract_itls_toc_rationale_1": "Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in" | kind=entity | source=scripts/extract_itls_toc.py:L1 | neighbors=[extract_itls_toc.py] | lang=en
-- "scripts_gen_rationale_25": "Creates the necessary src/COURSE folders." | kind=entity | source=scripts/gen.py:L25 | neighbors=[create_src_folders()] | lang=en
-- "scripts_gen_rationale_33": "Replaces placeholders in the template with course-specific data." | kind=entity | source=scripts/gen.py:L33 | neighbors=[generate_course_page()] | lang=en
-- "scripts_generate_all_itls_data_main": "main()" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L975 | neighbors=[generate_all_itls_data.py] | lang=en
-- "server_load_user": "load_user()" | kind=code-symbol | source=server.py:L146 | neighbors=[server.py] | lang=en
-- "server_rationale_151": "Allow-list of admin emails sourced from the environment (no hard-coding)." | kind=entity | source=server.py:L151 | neighbors=[_admin_emails()] | lang=en
-- "server_rationale_157": "A user is an admin if their role is 'Admin' or they are allow-listed." | kind=entity | source=server.py:L157 | neighbors=[_is_admin()] | lang=en
-- "server_rationale_35": "Write a structured audit record for auth and admin events." | kind=entity | source=server.py:L35 | neighbors=[_audit()] | lang=en
-- "server_rationale_61": "Return an error string, or None if valid." | kind=entity | source=server.py:L61 | neighbors=[_validate_email()] | lang=en
-- "server_rationale_70": "Return an error string, or None if the password meets policy." | kind=entity | source=server.py:L70 | neighbors=[_validate_password()] | lang=en
-- "sw_cache_first_patterns": "CACHE_FIRST_PATTERNS" | kind=code-symbol | source=sw.js:L68 | neighbors=[sw.js] | lang=en
-- "sw_cachefirst": "cacheFirst()" | kind=code-symbol | source=sw.js:L195 | neighbors=[sw.js] | lang=en
-- "sw_iscacheable": "isCacheable()" | kind=code-symbol | source=sw.js:L237 | neighbors=[sw.js] | lang=en
-- "sw_networkfirst": "networkFirst()" | kind=code-symbol | source=sw.js:L146 | neighbors=[sw.js] | lang=en
-- "sw_pre_cache": "PRE_CACHE" | kind=code-symbol | source=sw.js:L10 | neighbors=[sw.js] | lang=en
-- "tests_check_exam_flow_spec_pages": "PAGES" | kind=code-symbol | source=tests/_check_exam_flow.spec.js:L3 | neighbors=[_check_exam_flow.spec.js] | lang=en
-- "tests_conftest_app": "app()" | kind=code-symbol | source=tests/conftest.py:L12 | neighbors=[conftest.py] | lang=en
-- "tests_conftest_client": "client()" | kind=code-symbol | source=tests/conftest.py:L32 | neighbors=[conftest.py] | lang=en
-- "tests_conftest_runner": "runner()" | kind=code-symbol | source=tests/conftest.py:L45 | neighbors=[conftest.py] | lang=en
-- "tests_prometric_spec_navigatewizard": "navigateWizard()" | kind=code-symbol | source=tests/prometric.spec.js:L54 | neighbors=[prometric.spec.js] | lang=en
-- "tests_test_api_rationale_1": "Smoke tests for the SmartCare Flask API." | kind=entity | source=tests/test_api.py:L1 | neighbors=[test_api.py] | lang=en
-- "tests_test_api_rationale_107": "Both bad-user and bad-password return the same message (anti-enumeration)." | kind=entity | source=tests/test_api.py:L107 | neighbors=[.test_login_generic_error_message()] | lang=en
-- "tests_test_api_rationale_136": "Anonymous access to the admin API must be denied (no PII leak)." | kind=entity | source=tests/test_api.py:L136 | neighbors=[.test_admin_users_requires_auth()] | lang=en
-- "tests_test_api_rationale_141": "A signed-in non-admin must be forbidden (broken-access-control fix)." | kind=entity | source=tests/test_api.py:L141 | neighbors=[.test_admin_users_forbidden_for_regular…] | lang=pt
-- "tests_test_api_rationale_147": "An authenticated admin (role == 'Admin') can list users." | kind=entity | source=tests/test_api.py:L147 | neighbors=[.test_admin_can_list_users()] | lang=en
-- "tests_test_api_rationale_250": "A plain-form POST to an API endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L250 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
-- "tests_test_api_rationale_260": "A POST missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L260 | neighbors=[.test_post_without_xrw_header_rejected()] | lang=pt
-- "tests_test_api_rationale_269": "A well-formed JSON POST with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L269 | neighbors=[.test_valid_json_post_allowed()] | lang=en
-- "tests_test_api_rationale_279": "GET requests are never subject to the CSRF guard." | kind=entity | source=tests/test_api.py:L279 | neighbors=[.test_get_requests_not_blocked()] | lang=en
-- "tests_test_api_testgooglelogin_test_google_login_bad_token": ".test_google_login_bad_token()" | kind=code-symbol | source=tests/test_api.py:L121 | neighbors=[TestGoogleLogin] | lang=en
+- "vendor_chart_4_5_1_umd_min_tn_eventhandler": "._eventHandler()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._handleEvent(), .isPointInArea(), .notifyPlugins(), .render(), .update()]
+- "vendor_chart_4_5_1_umd_min_tn_getdatavisibility": ".getDataVisibility()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[_calculateBarValuePixels(), .calculateTotal(), ._circumference(), tn, ._computeAngle(), .updateElements()]
+- "vendor_chart_4_5_1_umd_min_tn_initialize": "._initialize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .constructor(), ke(), .bindEvents(), .notifyPlugins(), .resize()]
+- "vendor_chart_4_5_1_umd_min_tn_ispointinarea": ".isPointInArea()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._eventHandler(), Re(), Ui(), Xi(), Yi()]
+- "vendor_chart_4_5_1_umd_min_tn_updatehoverstyles": "._updateHoverStyles()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._handleEvent(), .setActiveElements(), .update(), n(), .updateHoverStyle()]
+- "vendor_chart_4_5_1_umd_min_vi": "vi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, mi(), a(), o(), wi(), xn()]
+- "vendor_chart_4_5_1_umd_min_wt": "wt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .hslString(), .interpolate(), .rgb(), .rgbString(), _t()]
+- "vendor_chart_4_5_1_umd_min_ya_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, Ie(), Oi(), Si(), ._computeTitleHeight(), ze()]
+- "vendor_chart_4_5_1_umd_min_yi": "Yi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dataset(), index(), inRange(), Re(), .isPointInArea()]
+- "vendor_chart_4_5_1_umd_min_ze": "ze()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._drawDataset(), .drawLabels(), ua(), .draw(), je()]
+- "vendor_chart_4_5_1_umd_min_zn": "zn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _getRuler(), .getAllParsedValues(), l(), lt(), .getMatchingVisibleMetas()]
+- "vendor_supabase_js_2_110_0_ajax": "ajax()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, add(), endpointURL(), request(), batchSend(), poll()]
+- "vendor_supabase_js_2_110_0_binarydecode": "_binaryDecode()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, decodeBroadcast(), decodePush(), decodeReply(), _decodeUserBroadcast(), decode()]
+- "vendor_supabase_js_2_110_0_canpush": "canPush()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), isJoined(), leave(), push(), send()]
+- "vendor_supabase_js_2_110_0_ct": "ct()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, join(), dropNamespace(), listNamespaces(), loadNamespaceMetadata(), namespaceExists()]
+- "vendor_supabase_js_2_110_0_fn": "fn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, encode(), from(), join(), Me(), pn()]
+- "vendor_supabase_js_2_110_0_getauthenticatorassurancelevel": "_getAuthenticatorAssuranceLevel()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, getSession(), getUser(), _returnResult(), y(), Ye()]
+- "vendor_supabase_js_2_110_0_getfinalpath": "_getFinalPath()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, download(), exists(), getPublicUrl(), info(), uploadToSignedUrl()]
+- "vendor_supabase_js_2_110_0_geturlforprovider": "_getUrlForProvider()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, join(), push(), re(), toString(), _handleProviderSignIn()]
+- "vendor_supabase_js_2_110_0_listfactors": "_listFactors()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, G(), getUser(), m(), push(), y()]
+- "vendor_supabase_js_2_110_0_onclose": "onClose()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, constructor(), makeRef(), on(), push(), _setupConnectionHandlers()]
+- "vendor_supabase_js_2_110_0_onerror": "onError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback(), constructor(), makeRef(), on(), push()]
+- "vendor_supabase_js_2_110_0_onmessage": "onMessage()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, makeRef(), push(), ping(), _setupConnectionHandlers(), trigger()]
+- "vendor_supabase_js_2_110_0_onopen": "onOpen()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback(), constructor(), makeRef(), push(), _setupConnectionHandlers()]
+- "vendor_supabase_js_2_110_0_q": "Q()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, join(), Qr(), rr(), signInWithSolana(), sr()]
+- "vendor_supabase_js_2_110_0_receive": "receive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, constructor(), leave(), hasReceived(), push(), subscribe()]
+- "vendor_supabase_js_2_110_0_register": "_register()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge(), _enroll(), then(), _verify(), y()]
+- "vendor_supabase_js_2_110_0_signinanonymously": "signInAnonymously()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
+- "vendor_supabase_js_2_110_0_signinwithidtoken": "signInWithIdToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
+- "vendor_supabase_js_2_110_0_signinwithpassword": "signInWithPassword()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
+- "vendor_supabase_js_2_110_0_startpasskeyauthentication": "_startPasskeyAuthentication()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, signInWithPasskey(), L(), m(), _returnResult(), y()]
+- "vendor_supabase_js_2_110_0_startpasskeyregistration": "_startPasskeyRegistration()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, registerPasskey(), L(), _returnResult(), _useSession(), y()]
+- "vendor_supabase_js_2_110_0_stopautorefresh": "_stopAutoRefresh()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, dispose(), _onVisibilityChanged(), _startAutoRefresh(), _debug(), _removeVisibilityChangedCallback()]
+- "vendor_supabase_js_2_110_0_verifyotp": "verifyOtp()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
+- "vendor_supabase_js_2_110_0_verifypasskeyregistration": "_verifyPasskeyRegistration()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, registerPasskey(), L(), _returnResult(), _useSession(), y()]
+- "app_switchsection": "switchSection()" | kind=code-symbol | source=app.js:L437 | neighbors=[app.js, bootApp(), handleScroll(), initBottomNav(), initFooterAwareNav()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@03f6898862ab5b7297cba7df54116f3ce9035b9d": "03f6898 Update sw.js" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, c2479e9 Adding ECG & Drug calc 👍❤️💊, sw.js, d55c93d Update sw.js]
+- "commit:repo:github.com/SolimanAnas/SmartCare@1a00316819db35a82adaf7032ff8dccf28b57ecc": "1a00316 feat(itls): restructure itls course - replace static chapters with buil…" | kind=Commit | source=git | neighbors=[main, d641fa0 feat: improve SEO, Open Graph m…, bundle.js, build.py, c9276ae chore: update graphify knowledg…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@1a56d75fd8f004df1227b903f4968fce222bd55f": "1a56d75 feat: graphify rebuild with descriptions + interactive file map view" | kind=Commit | source=git | neighbors=[main, b0748c1 feat: Supabase integration, c-index.js, sw.js, 5b988aa Create .nojekyll]
+- "commit:repo:github.com/SolimanAnas/SmartCare@236ac266e44dc9ad03abd77ae10b7c21d5715dcd": "236ac26 local hashed authentication (SHA-256)✅" | kind=Commit | source=git | neighbors=[app.js, feat/lucide-svg-migration, fix/lucide-quote-consistency, 061bcae local hashed authentication (SH…, 707c033 Major Updates ✅]
 
 ## Instructions
 

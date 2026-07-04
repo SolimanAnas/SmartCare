@@ -617,7 +617,7 @@
         <div class="toggle-item"><button class="toggle-btn" id="qsIndex" title="Full chapter index" aria-label="Full chapter index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg></button><div class="toggle-label">Index</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="qsAbout" title="About SmartCare" aria-label="About SmartCare"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#circle-help"/></svg></button><div class="toggle-label">About</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="qsInstall" title="Install app" aria-label="Install app"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#smartphone"/></svg></button><div class="toggle-label">Install</div></div>
-        <div class="toggle-item"><button class="toggle-btn" id="qsClearCache" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.3);" title="Clear cache &amp; reset progress" aria-label="Clear cache and reset progress"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#brush"/></svg></button><div class="toggle-label">Cache</div></div>
+        <div class="toggle-item"><button class="toggle-btn hold-confirm" id="qsClearCache" style="background:rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.3);" title="Hold to clear cache &amp; reset progress" aria-label="Hold to clear cache and reset progress"><span class="hold-confirm-fill" aria-hidden="true"></span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#brush"/></svg></button><div class="toggle-label">Cache</div></div>
         <div class="toggle-item"><button class="toggle-btn" id="qsLogout" style="background:rgba(239,68,68,0.2);border-color:rgba(239,68,68,0.3);" title="Log out" aria-label="Log out"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#door-open"/></svg></button><div class="toggle-label">Logout</div></div>
     </div>
 
@@ -889,10 +889,10 @@
     document.getElementById('qsIndex').addEventListener('click', () => { window.location.href = 'chapters/c-index.html?view=summary'; });
     document.getElementById('qsAbout').addEventListener('click', () => { window.location.href = 'pages/about.html'; });
 
-    document.getElementById('qsClearCache').addEventListener('click', async () => {
-        // Step 1: clear cached app files (fixes "stuck on an old version" glitches).
-        // This never touches localStorage, so it can't sign you out or lose progress.
-        if (!confirm('Clear cached app files and reload? Your sign-in and study progress are kept.')) return;
+    // Hold-to-confirm: the 2s press *is* the confirmation for clearing cached
+    // files, so the first confirm() dialog is gone. The separate, higher-stakes
+    // "also wipe local study data" step keeps its own explicit confirm below.
+    async function runClearCache() {
         if ('caches' in window) {
             const names = await caches.keys();
             await Promise.all(names.map(n => caches.delete(n)));
@@ -922,7 +922,60 @@
         }
 
         window.location.reload();
-    });
+    }
+
+    // Wire the hold-to-confirm gesture to #qsClearCache.
+    (function initHoldToConfirm() {
+        const btn = document.getElementById('qsClearCache');
+        if (!btn) return;
+        const fill = btn.querySelector('.hold-confirm-fill');
+        const HOLD_MS = 2000;
+        let timer = null, armed = false;
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function start(e) {
+            if (armed) return;
+            // Keyboard/programmatic clicks have no pointer — never animate those.
+            if (e && e.pointerType === '') return;
+            armed = true;
+            if (fill) {
+                fill.classList.remove('releasing');
+                // reflow so re-adding .filling restarts the clip-path transition
+                void fill.offsetWidth;
+                fill.classList.add('filling');
+            }
+            timer = setTimeout(complete, reduceMotion ? 0 : HOLD_MS);
+        }
+        function cancel() {
+            if (!armed) return;
+            armed = false;
+            clearTimeout(timer);
+            if (fill) {
+                fill.classList.remove('filling');
+                fill.classList.add('releasing');   // snap back, fast ease-out
+            }
+        }
+        function complete() {
+            armed = false;
+            if (fill) fill.classList.remove('filling');
+            runClearCache();
+        }
+
+        btn.addEventListener('pointerdown', start);
+        btn.addEventListener('pointerup', cancel);
+        btn.addEventListener('pointerleave', cancel);
+        btn.addEventListener('pointercancel', cancel);
+        // Suppress the synthetic click so a plain tap can't fire the destructive flow.
+        btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); });
+        // Keyboard affordance: Enter/Space arms the same confirmation dialog path.
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (confirm('Clear cached app files and reload? Your sign-in and study progress are kept.')) runClearCache();
+            }
+        });
+    })();
 
     // Logout — signs out of the real (Supabase) session.
     document.getElementById('qsLogout').addEventListener('click', async () => {

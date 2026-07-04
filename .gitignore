@@ -33,8 +33,9 @@ npm-debug.log*
 playwright-report/
 test-results/
 
-# ── Dev server launcher ────────────────────────────────────────────────────
+# ── Dev server launcher (local testing only) ────────────────────────────────
 server.bat
+server.py
 
 # ── OS / editor ────────────────────────────────────────────────────────────
 .DS_Store

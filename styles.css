@@ -83,6 +83,21 @@
     --border-scen: #fee2e2; --text-scen: #991b1b;
     --primary-accent: #0056b3;
     --header-height: 72px;
+
+    /* ---------- MOTION TOKENS ---------- */
+    /* Strong ease-out for UI entrances / anything responding to the user */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    /* Strong ease-in-out for on-screen A→B movement */
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    /* iOS-style sheet/drawer curve */
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    /* Progress fill — decisive start, gentle settle */
+    --ease-fill: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Asymmetric durations — exit is always faster than enter */
+    --dur-press: 140ms;
+    --dur-enter: 240ms;
+    --dur-exit: 150ms;
 }
 
 /* ========== FONT SIZE ACCESSIBILITY ========== */
@@ -119,7 +134,7 @@ html[data-font-size="xl"]     { font-size: 22px; }
     color: white;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     text-align: center;
     line-height: 1;
 }
@@ -352,7 +367,7 @@ header.header-hidden {
     justify-content: center;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
 }
 .icon-btn:active {
     transform: scale(0.95);
@@ -413,8 +428,9 @@ main {
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
-    transition: all 0.2s;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
 }
+.section-tab:active { transform: scale(0.97); }
 .section-tab.active-tab {
     background: #0056b3;
     color: white;
@@ -518,7 +534,7 @@ main {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -558,24 +574,40 @@ main {
     color: #333;
     line-height: 1.4;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: all 0.2s;
+    /* Explicit properties only — background/color settle over 200ms ease-out,
+       press feedback is a faster transform. Never `all`. */
+    transition: background 0.2s var(--ease-out),
+                border-color 0.2s var(--ease-out),
+                color 0.2s var(--ease-out),
+                box-shadow 0.2s var(--ease-out),
+                transform var(--dur-press) var(--ease-out);
     cursor: pointer;
 }
-.option-btn:active {
+.option-btn:active:not(:disabled) {
     background: #f0f0f0;
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
+/* Momentary "chosen" state applied on tap before grading resolves */
+.option-btn.selected { transform: scale(0.98); }
 .option-btn.correct {
     background: #d4edda;
     border-color: #c3e6cb;
     color: #155724;
     box-shadow: inset 0 0 0 2px #c3e6cb;
+    animation: optionResolve var(--dur-enter) var(--ease-out);
 }
 .option-btn.wrong {
     background: #f8d7da;
     border-color: #f5c6cb;
     color: #721c24;
     box-shadow: inset 0 0 0 2px #f5c6cb;
+    animation: optionResolve var(--dur-enter) var(--ease-out);
+}
+/* Subtle settle so the graded state lands instead of snapping */
+@keyframes optionResolve {
+    0%   { transform: scale(0.98); }
+    60%  { transform: scale(1.01); }
+    100% { transform: scale(1); }
 }
 .quiz-feedback, .critical-feedback {
     margin-top: 25px;
@@ -703,7 +735,7 @@ main {
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -789,7 +821,9 @@ main {
     height: 100%;
     border-radius: 10px;
     background: linear-gradient(90deg, #3b82f6, #0056b3);
-    transition: width 1s ease-out;
+    /* Decisive start, gentle settle — reads as "counting up" to the value */
+    transition: width 900ms var(--ease-fill);
+    will-change: width;
 }
 .stats-grid {
     display: grid;
@@ -833,13 +867,37 @@ main {
     position: relative;
     overflow: hidden;
     box-shadow: var(--glass-shadow);
-    transform: translateZ(0);
-    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform 0.2s, box-shadow 0.2s;
+    /* Resting state. Entrance is driven by @starting-style below, so the same
+       transform channel stays free for hover — no animation/transition fight. */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--dur-enter) var(--ease-out),
+                transform var(--dur-enter) var(--ease-out),
+                box-shadow 0.2s var(--ease-out);
 }
-.menu-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
+/* Staggered entrance: each card fades + rises from 8px, 30ms behind the last.
+   Falls back to no entrance on browsers without @starting-style (graceful). */
+@starting-style {
+    .menu-card { opacity: 0; transform: translateY(8px); }
+}
+.menu-card:nth-child(1)  { transition-delay: 0ms; }
+.menu-card:nth-child(2)  { transition-delay: 30ms; }
+.menu-card:nth-child(3)  { transition-delay: 60ms; }
+.menu-card:nth-child(4)  { transition-delay: 90ms; }
+.menu-card:nth-child(5)  { transition-delay: 120ms; }
+.menu-card:nth-child(6)  { transition-delay: 150ms; }
+.menu-card:nth-child(7)  { transition-delay: 180ms; }
+.menu-card:nth-child(8)  { transition-delay: 210ms; }
+.menu-card:nth-child(n+9) { transition-delay: 240ms; }
+/* Hover lift is desktop-pointer only, and fires instantly (no stagger delay). */
+@media (hover: hover) and (pointer: fine) {
+    .menu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+        transition-delay: 0s;
+    }
+}
+.menu-card:active { transform: translateY(0) scale(0.995); transition-delay: 0s; }
 .menu-card[data-chapter] { border-left: 6px solid transparent; }
 .menu-card[data-chapter="universal"] { border-left-color: var(--accent-universal); }
 .menu-card[data-chapter="airway"] { border-left-color: var(--accent-airway); }
@@ -888,7 +946,7 @@ main {
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -1096,7 +1154,7 @@ footer a { color: inherit; text-decoration: underline; }
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1213,7 +1271,7 @@ footer a { color: inherit; text-decoration: underline; }
     font-size: 0.7rem;            /* smaller font */
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform var(--dur-press) var(--ease-out);
     cursor: pointer;
     backdrop-filter: blur(4px);
 }
@@ -1262,7 +1320,7 @@ footer a { color: inherit; text-decoration: underline; }
     background: transparent;
     color: var(--text-primary);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform var(--dur-press) var(--ease-out);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1561,7 +1619,7 @@ footer a { color: inherit; text-decoration: underline; }
     font-size: 1rem;
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     margin-right: 4px;
     padding: 0;
 }
@@ -1694,7 +1752,9 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     backdrop-filter: blur(2px);
     opacity: 0.8;
 }
-.float-btn:hover { transform: scale(1.1); background: var(--toggle-active); opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+    .float-btn:hover { transform: scale(1.1); background: var(--toggle-active); opacity: 1; }
+}
 .float-btn:active { transform: scale(0.95); }
 .float-btn.hidden { opacity: 0; pointer-events: none; }
 #scrollToBottomBtn { bottom: 20px; right: 15px; }
@@ -1761,7 +1821,7 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform var(--dur-press) var(--ease-out);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin: 0 auto;
 }
@@ -1999,5 +2059,232 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+
+/* ======================================================================
+   ===================  M O T I O N   S Y S T E M  ======================
+   Intentional, craft-level motion. Every value here is deliberate:
+   transform/opacity only, custom easing, exit faster than enter.
+   ====================================================================== */
+
+/* ---------- DIRECTION-AWARE VIEW/TAB SWITCHING ----------
+   switchSection() tags the freshly-rendered content WRAPPER (not #mainContent —
+   a transform there would re-anchor its position:fixed bottom-nav) with
+   .slide-fwd (in from the right, going deeper) or .slide-back (in from the left,
+   going back). Enter only: the old view is replaced synchronously. */
+.slide-fwd  { animation: slideInFwd  var(--dur-enter) var(--ease-out); }
+.slide-back { animation: slideInBack var(--dur-enter) var(--ease-out); }
+@keyframes slideInFwd {
+    from { opacity: 0; transform: translate3d(24px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes slideInBack {
+    from { opacity: 0; transform: translate3d(-24px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* ---------- SECTION-HEADER SCROLL REVEAL ----------
+   JS (IntersectionObserver) adds .reveal-in when the header enters the viewport.
+   clip-path wipes the header open from top→bottom; a small rise adds weight. */
+.reveal-clip {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: clip-path 520ms var(--ease-out),
+                opacity 400ms var(--ease-out),
+                transform 520ms var(--ease-out);
+    will-change: clip-path, transform;
+}
+.reveal-clip.reveal-in {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- TOASTS (answer feedback) ----------
+   Stack top-right. Enter from off-screen right (ease-out), exit faster.
+   Swipe-to-dismiss driven by JS via the --tx translate on the element. */
+#sc-toast-region {
+    position: fixed;
+    top: calc(var(--header-height) + 12px);
+    right: 12px;
+    z-index: 4000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: min(340px, calc(100vw - 24px));
+    pointer-events: none;
+}
+.sc-toast {
+    pointer-events: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+    background: rgba(30,41,59,0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.12);
+    touch-action: pan-y;
+    cursor: grab;
+    /* Resting transform is a var the drag handler writes to directly (no layout). */
+    transform: translate3d(var(--tx, 0), 0, 0);
+    transition: transform var(--dur-enter) var(--ease-out),
+                opacity var(--dur-exit) var(--ease-out);
+}
+.sc-toast[data-enter] { animation: toastIn var(--dur-enter) var(--ease-out); }
+@keyframes toastIn {
+    from { opacity: 0; transform: translate3d(110%, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+/* Exit — faster than enter, slides back out to the right */
+.sc-toast[data-exit] {
+    opacity: 0;
+    transform: translate3d(110%, 0, 0);
+    transition: transform var(--dur-exit) var(--ease-out),
+                opacity var(--dur-exit) var(--ease-out);
+}
+.sc-toast[data-swiping] { transition: none; cursor: grabbing; }
+.sc-toast.sc-toast--correct { background: linear-gradient(135deg, #16794f, #12603f); }
+.sc-toast.sc-toast--wrong   { background: linear-gradient(135deg, #b23241, #8f2733); }
+.sc-toast-icon { flex-shrink: 0; margin-top: 1px; }
+.sc-toast-icon svg { width: 1.15em; height: 1.15em; }
+
+/* ---------- RESULTS MODAL ----------
+   Backdrop blur fade-in; panel scales up from 0.95 + opacity, origin center
+   (modals are the transform-origin: center exception — not trigger-anchored). */
+.sc-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 3500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15,23,42,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background var(--dur-enter) var(--ease-out),
+                backdrop-filter var(--dur-enter) var(--ease-out),
+                -webkit-backdrop-filter var(--dur-enter) var(--ease-out);
+}
+.sc-modal-backdrop[data-open] {
+    background: rgba(15,23,42,0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.sc-modal {
+    width: min(440px, 100%);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    color: var(--text-primary);
+    text-align: center;
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity var(--dur-enter) var(--ease-out),
+                transform var(--dur-enter) var(--ease-out);
+}
+.sc-modal-backdrop[data-open] .sc-modal { opacity: 1; transform: scale(1); }
+/* Exit is faster than enter */
+.sc-modal-backdrop[data-closing] {
+    background: rgba(15,23,42,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition-duration: var(--dur-exit);
+}
+.sc-modal-backdrop[data-closing] .sc-modal {
+    opacity: 0;
+    transform: scale(0.97);
+    transition-duration: var(--dur-exit);
+}
+.sc-modal-score {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: var(--primary-accent);
+    margin: 8px 0 4px;
+    font-variant-numeric: tabular-nums;
+}
+.sc-modal h2 { color: var(--primary-accent); margin: 0; font-size: 1.4rem; }
+.sc-modal p  { color: var(--text-secondary); margin: 6px 0 0; }
+.sc-modal-ring {
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin: 18px 0 22px;
+}
+.sc-modal-ring > i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #3b82f6, #0056b3);
+    transition: width 900ms var(--ease-fill);
+}
+.sc-modal-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- HOLD-TO-CONFIRM (destructive actions) ----------
+   A clip-path overlay fills over 2s linear while the pointer is held; releasing
+   before it completes snaps it back in 200ms ease-out (see the framework:
+   slow where the user is deciding, fast where the system responds). */
+.hold-confirm { position: relative; overflow: hidden; isolation: isolate; }
+.hold-confirm-fill {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(220,53,69,0.85);
+    clip-path: inset(0 100% 0 0);
+    pointer-events: none;
+    border-radius: inherit;
+}
+.hold-confirm-fill.filling { clip-path: inset(0 0 0 0); transition: clip-path 2s linear; }
+.hold-confirm-fill.releasing { clip-path: inset(0 100% 0 0); transition: clip-path 200ms var(--ease-out); }
+.hold-confirm > *:not(.hold-confirm-fill) { position: relative; z-index: 1; }
+
+/* ---------- DRAWER TRIGGER PRESS POLISH ---------- */
+.drawer-trigger:active { transform: translateX(-50%) scale(0.9); }
+
+/* ======================================================================
+   REDUCED MOTION — keep opacity/colour fades that aid comprehension,
+   strip every movement/clip transform. Ordered after the global safety
+   net above so these targeted rules win.
+   ====================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    /* Presence still communicated via opacity; motion removed. */
+    .slide-fwd,
+    .slide-back { animation: contentFadeIn var(--dur-exit) ease both; }
+
+    .sc-toast,
+    .sc-toast[data-enter],
+    .sc-toast[data-exit] {
+        animation: none !important;
+        transform: none !important;
+        transition: opacity var(--dur-exit) ease !important;
+    }
+    .sc-toast[data-exit] { opacity: 0; }
+
+    .sc-modal { transform: none !important; }
+    .sc-modal-backdrop[data-closing] .sc-modal { transform: none !important; }
+
+    .reveal-clip {
+        clip-path: none !important;
+        transform: none !important;
+        transition: opacity 300ms ease !important;
+    }
+
+    /* Hold-to-confirm keeps its fill (it's a progress meter, not decoration),
+       but as an instant-arming step rather than a 2s motion. */
+    .hold-confirm-fill.filling { transition-duration: 0.01ms; }
 }
 

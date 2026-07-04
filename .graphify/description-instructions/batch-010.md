@@ -1,4 +1,4 @@
-# Node Description Batch 11 of 14
+# Node Description Batch 11 of 48
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,58 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "prometric_exam_examengine_gotoquestion": ".goToQuestion()" | kind=code-symbol | source=src/prometric/exam.js:L713 | neighbors=[ExamEngine, .renderQuestion()]
-- "prometric_exam_examengine_gotostep": ".goToStep()" | kind=code-symbol | source=src/prometric/exam.js:L112 | neighbors=[ExamEngine, .newExam()]
-- "prometric_exam_examengine_handletouchend": ".handleTouchEnd()" | kind=code-symbol | source=src/prometric/exam.js:L223 | neighbors=[ExamEngine, .navigate()]
-- "prometric_exam_examengine_initwizard": ".initWizard()" | kind=code-symbol | source=src/prometric/exam.js:L80 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loadchartjs": ".loadChartJS()" | kind=code-symbol | source=src/prometric/exam.js:L51 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loaddatabase": ".loadDatabase()" | kind=code-symbol | source=src/prometric/exam.js:L42 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loadquestionhistory": ".loadQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L318 | neighbors=[ExamEngine, .constructor()]
-- "prometric_exam_examengine_loadstats": ".loadStats()" | kind=code-symbol | source=src/prometric/exam.js:L1089 | neighbors=[ExamEngine, .constructor()]
-- "prometric_exam_examengine_pauseexam": ".pauseExam()" | kind=code-symbol | source=src/prometric/exam.js:L758 | neighbors=[ExamEngine, .showModal()]
-- "prometric_exam_examengine_renderheatmap": ".renderHeatmap()" | kind=code-symbol | source=src/prometric/exam.js:L1159 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_renderimprovementchart": ".renderImprovementChart()" | kind=code-symbol | source=src/prometric/exam.js:L1124 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_renderinsights": ".renderInsights()" | kind=code-symbol | source=src/prometric/exam.js:L883 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_renderstrengthsweaknesses": ".renderStrengthsWeaknesses()" | kind=code-symbol | source=src/prometric/exam.js:L1202 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_rendertopicperformance": ".renderTopicPerformance()" | kind=code-symbol | source=src/prometric/exam.js:L920 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_savequestionhistory": ".saveQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L326 | neighbors=[ExamEngine, .submitAnswer()]
-- "prometric_exam_examengine_savestats": ".saveStats()" | kind=code-symbol | source=src/prometric/exam.js:L1097 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_selectmode": ".selectMode()" | kind=code-symbol | source=src/prometric/exam.js:L124 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_selectsetting": ".selectSetting()" | kind=code-symbol | source=src/prometric/exam.js:L138 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_settheme": ".setTheme()" | kind=code-symbol | source=src/prometric/exam.js:L72 | neighbors=[ExamEngine, .initTheme()]
-- "prometric_exam_examengine_showresults": ".showResults()" | kind=code-symbol | source=src/prometric/exam.js:L942 | neighbors=[ExamEngine, .showScreen()]
-- "prometric_exam_examengine_showtoast": ".showToast()" | kind=code-symbol | source=src/prometric/exam.js:L1068 | neighbors=[ExamEngine, .toggleFlag()]
-- "prometric_exam_examengine_shuffleoptions": ".shuffleOptions()" | kind=code-symbol | source=src/prometric/exam.js:L344 | neighbors=[ExamEngine, .shuffleArray()]
-- "prometric_exam_examengine_updatelivescore": ".updateLiveScore()" | kind=code-symbol | source=src/prometric/exam.js:L498 | neighbors=[ExamEngine, .updateNavigator()]
-- "scripts_assemble_chapters_main": "main()" | kind=code-symbol | source=scripts/assemble_chapters.py:L122 | neighbors=[assemble_chapters.py, assemble()]
-- "scripts_build_toc_esc": "esc()" | kind=code-symbol | source=scripts/build_toc.py:L88 | neighbors=[build_toc.py, gen_chapter()]
-- "scripts_build_toc_main": "main()" | kind=code-symbol | source=scripts/build_toc.py:L131 | neighbors=[build_toc.py, gen_chapter()]
-- "server_audit": "_audit()" | kind=code-symbol | source=server.py:L34 | neighbors=[server.py, Write a structured audit record for aut…]
-- "server_register_csrf_guard": "_register_csrf_guard()" | kind=code-symbol | source=server.py:L409 | neighbors=[server.py, create_app()]
-- "server_register_routes": "_register_routes()" | kind=code-symbol | source=server.py:L168 | neighbors=[server.py, create_app()]
-- "server_register_security_headers": "_register_security_headers()" | kind=code-symbol | source=server.py:L431 | neighbors=[server.py, create_app()]
-- "server_user": "User" | kind=code-symbol | source=server.py:L136 | neighbors=[server.py, UserMixin]
-- "server_validate_email": "_validate_email()" | kind=code-symbol | source=server.py:L60 | neighbors=[server.py, Return an error string, or None if vali…]
-- "server_validate_password": "_validate_password()" | kind=code-symbol | source=server.py:L69 | neighbors=[server.py, Return an error string, or None if the …]
-- "tests_check_exam_flow_spec": "_check_exam_flow.spec.js" | kind=code-symbol | source=tests/_check_exam_flow.spec.js:L1 | neighbors=[99f095b fix: resolve mixed SVG quote mi…, PAGES]
-- "tests_init": "__init__.py" | kind=code-symbol | source=tests/__init__.py:L1 | neighbors=[67cb179 Add files via upload, 8f311cd Merge branch 'main' of https://…]
-- "tests_test_api_testadminusers_test_admin_users_requires_auth": ".test_admin_users_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L135 | neighbors=[Anonymous access to the admin API must …, TestAdminUsers]
-- "tests_test_api_testauditlogging_test_failed_login_is_audited": ".test_failed_login_is_audited()" | kind=code-symbol | source=tests/test_api.py:L229 | neighbors=[TestAuditLogging, _login()]
-- "tests_test_api_testcsrfguard_test_get_requests_not_blocked": ".test_get_requests_not_blocked()" | kind=code-symbol | source=tests/test_api.py:L278 | neighbors=[GET requests are never subject to the C…, TestCsrfGuard]
-- "tests_test_api_testcsrfguard_test_post_without_json_content_type_rejected": ".test_post_without_json_content_type_rejected()" | kind=code-symbol | source=tests/test_api.py:L249 | neighbors=[A plain-form POST to an API endpoint mu…, TestCsrfGuard]
-- "tests_test_api_testcsrfguard_test_post_without_xrw_header_rejected": ".test_post_without_xrw_header_rejected()" | kind=code-symbol | source=tests/test_api.py:L259 | neighbors=[A POST missing X-Requested-With must be…, TestCsrfGuard]
+- "vendor_chart_4_5_1_umd_min_ho_getlabeltimestamps": ".getLabelTimestamps()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[_getTimestampsForTable(), ho(), .buildTicks(), ._getLabelBounds(), .normalize(), .getLabels()]
+- "vendor_chart_4_5_1_umd_min_inrange": "inRange()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, co(), l(), .getProps(), tt(), Ui()]
+- "vendor_chart_4_5_1_umd_min_js_resolveelementoptions": "._resolveElementOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .resolveDataElementOptions(), .resolveDatasetElementOptions(), .getDataset(), .datasetElementScopeKeys(), .getOptionScopes()]
+- "vendor_chart_4_5_1_umd_min_js_setstyle": "._setStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._removeDatasetHoverStyle(), .removeHoverStyle(), ._setDatasetHoverStyle(), .setHoverStyle(), .getSharedOptions()]
+- "vendor_chart_4_5_1_umd_min_js_sync": "._sync()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._onDataPop(), ._onDataPush(), ._onDataShift(), ._onDataSplice(), ._onDataUnshift()]
+- "vendor_chart_4_5_1_umd_min_n_getoptionscopes": ".getOptionScopes()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.configure(), ._resolveAnimations(), ._resolveElementOptions(), n(), ._cachedScopes(), .has()]
+- "vendor_chart_4_5_1_umd_min_n_resolvenamedoptions": ".resolveNamedOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[._resolveElementOptions(), n(), .createResolver(), r(), s(), Ye()]
+- "vendor_chart_4_5_1_umd_min_ro_getdistancefromcenterforvalue": ".getDistanceFromCenterForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[da(), ro(), .drawBackground(), .drawGrid(), s(), .getPointPositionForValue()]
+- "vendor_chart_4_5_1_umd_min_ro_getpointposition": ".getPointPosition()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ao(), co(), eo(), ro(), .drawGrid(), .getIndexAngle()]
+- "vendor_chart_4_5_1_umd_min_tn_callhooks": "._callHooks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .afterBuildTicks(), .afterDataLimits(), .beforeBuildTicks(), .beforeDataLimits(), d()]
+- "vendor_chart_4_5_1_umd_min_tn_computegridlineitems": "._computeGridLineItems()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, Ae(), Gs(), l(), o(), x()]
+- "vendor_chart_4_5_1_umd_min_tn_drawtitle": ".drawTitle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ki(), n(), o(), p(), Qs()]
+- "vendor_chart_4_5_1_umd_min_tn_getlabelsizes": "._getLabelSizes()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .calculateLabelRotation(), ._computeLabelItems(), .fit(), ._computeLabelSizes(), ._getYAxisLabelAlignment()]
+- "vendor_chart_4_5_1_umd_min_tn_isvisible": "._isVisible()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .calculateLabelRotation(), .draw(), .fit(), .getLineWidthForValue(), .getMatchingVisibleMetas()]
+- "vendor_chart_4_5_1_umd_min_tn_render": ".render()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._eventHandler(), .notifyPlugins(), .has(), .running(), .resize()]
+- "vendor_chart_4_5_1_umd_min_tn_resize": ".resize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._initialize(), d(), ke(), .notifyPlugins(), .render()]
+- "vendor_chart_4_5_1_umd_min_tn_resolvetickfontoptions": "._resolveTickFontOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[._getLabelSize(), .computeTickLimit(), tn, ._computeLabelItems(), ._computeLabelSizes(), ._maxDigits()]
+- "vendor_chart_4_5_1_umd_min_ui": "Ui()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, getCenterPoint(), inRange(), o(), r(), .isPointInArea()]
+- "vendor_chart_4_5_1_umd_min_vo": "Vo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getLabelTimestamps(), .parse(), a(), n(), .startOf()]
+- "vendor_chart_4_5_1_umd_min_wa_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, ki(), Si(), ._drawArgs(), .drawBody(), .drawFooter()]
+- "vendor_chart_4_5_1_umd_min_wa_drawcolorbox": "._drawColorBox()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .drawBody(), Le(), o(), Si(), wi()]
+- "vendor_chart_4_5_1_umd_min_ya_computetitleheight": "._computeTitleHeight()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, .adjustHitBoxes(), ki(), Si(), .draw(), .drawTitle()]
+- "vendor_chart_4_5_1_umd_min_ys": "Ys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .update(), e(), n(), s(), ._tickSize()]
+- "vendor_supabase_js_2_110_0_clonerequeststate": "cloneRequestState()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, toString(), delete(), insert(), select(), update()]
+- "vendor_supabase_js_2_110_0_disconnect": "disconnect()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, _cancelPendingDisconnect(), isDisconnecting(), reset(), teardown(), removeAllChannels()]
+- "vendor_supabase_js_2_110_0_exchangecodeforsession": "exchangeCodeForSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), m(), _notifyAllSubscribers(), _returnResult(), _saveSession()]
+- "vendor_supabase_js_2_110_0_getsession": "getSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback(), _getAccessToken(), _getAuthenticatorAssuranceLevel(), getClaims(), _acquireLock()]
+- "vendor_supabase_js_2_110_0_getsessionfromurl": "_getSessionFromURL()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _debug(), delete(), _returnResult(), toString(), y()]
+- "vendor_supabase_js_2_110_0_heartbeattimeout": "heartbeatTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, hasLogger(), heartbeatCallback(), log(), teardown(), triggerChanError()]
+- "vendor_supabase_js_2_110_0_onconnclose": "onConnClose()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, clearHeartbeats(), hasLogger(), log(), scheduleTimeout(), triggerChanError()]
+- "vendor_supabase_js_2_110_0_onvisibilitychanged": "_onVisibilityChanged()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _handleVisibilityChange(), _acquireLock(), _debug(), _recoverAndRefresh(), _startAutoRefresh()]
+- "vendor_supabase_js_2_110_0_removesession": "_removeSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _callRefreshToken(), getUser(), __loadSession(), _recoverAndRefresh(), _debug()]
+- "vendor_supabase_js_2_110_0_sendheartbeat": "sendHeartbeat()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, heartbeatCallback(), heartbeatTimeout(), isConnected(), log(), makeRef()]
+- "vendor_supabase_js_2_110_0_signout": "signOut()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, _handleTokenChanged(), _acquireLock(), join(), m(), _useSession()]
+- "vendor_supabase_js_2_110_0_signup": "signUp()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), re(), _returnResult(), _saveSession()]
+- "vendor_supabase_js_2_110_0_starttimeout": "startTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, push(), send(), cancelTimeout(), makeRef(), on()]
+- "vendor_supabase_js_2_110_0_teardown": "teardown()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, disconnect(), heartbeatTimeout(), removeChannel(), destroy(), reset()]
+- "vendor_supabase_js_2_110_0_x": "x()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, constructor(), _initRealtimeClient(), _initSupabaseAuthClient(), bs(), ki()]
+- "app_setmaincontent": "setMainContent()" | kind=code-symbol | source=app.js:L498 | neighbors=[app.js, renderComingSoon(), handleScroll(), initBottomNav(), initFooterAwareNav(), initScrollReveal()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@4ccb8df39beb29a7be104defbab78a78df578875": "4ccb8df Merge pull request #9 from SolimanAnas/claude/chapters-html-summary-fix…" | kind=Commit | source=git | neighbors=[main, 95f6363 Merge pull request #10 from Sol…, c4f8810 Wire admin.html to real app use…, sw.js, a4deb03 Merge pull request #8 from Soli…, b1f4385 Bump service worker cache to v2…]
 
 ## Instructions
 
