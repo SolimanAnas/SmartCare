@@ -132,7 +132,9 @@ def content_hash(file_list):
         path = os.path.join(ROOT, f)
         h.update(f.encode("utf-8"))
         with open(path, "rb") as fh:
-            h.update(fh.read())
+            # Normalize CRLF → LF so the hash is identical regardless of
+            # the platform's line-ending convention (Windows CRLF vs Linux LF).
+            h.update(fh.read().replace(b"\r\n", b"\n"))
     return h.hexdigest()[:10]
 
 
@@ -154,7 +156,7 @@ def main():
         "self.__PRECACHE_VERSION = " + repr(version).replace("'", "\"") + ";",
         "",
     ]
-    with open(OUT_PATH, "w") as fh:
+    with open(OUT_PATH, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(lines))
     print(f"wrote {rel(OUT_PATH)}: {len(file_list)} entries, version {version}")
 
