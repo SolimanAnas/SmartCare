@@ -1078,7 +1078,7 @@
                 <div class="lv-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clock"/></svg></div>
                 <div class="lv-info">
                     <div class="lv-title">${escapeHtml(h.title)}</div>
-                    <div class="lv-time">${timeAgo(h.ts)}</div>
+                    <div class="lv-time">${timeAgo(h.timestamp ?? h.ts)}</div>
                 </div>
                 <div class="lv-arrow">›</div>
             </a>`).join('');
