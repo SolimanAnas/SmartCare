@@ -651,7 +651,7 @@
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/SmartCare/sw.js')
             .then(r => { console.log('PWA Ready', r); initSWUpdateToast(r); })
             .catch(e => console.log('SW failed', e));
     });
