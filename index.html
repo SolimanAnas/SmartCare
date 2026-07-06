@@ -82,6 +82,9 @@
     <script src="src/theme.js"></script>
     <script>SmartTheme.init();</script>
     <script src="src/render-state.js"></script>
+    <!-- Chapter/sub-chapter topic data — used to expand homepage search past
+         chapter titles into the topics inside each chapter (see filterCards). -->
+    <script src="content/curriculum-index.js"></script>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
     <link rel="apple-touch-icon" href="icons/icon.png">
@@ -1056,7 +1059,14 @@
 
     function escapeHtml(s) {
         if (!s) return '';
-        return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+        // Strip any tags before escaping: a chapter's shortTitle is meant to be
+        // plain text, but a past bug (content/c-index.js) embedded an <svg>
+        // icon directly in one, which then showed up as literal tag text once
+        // escaped. Stripping first means any stale localStorage entry (or a
+        // future version of the same mistake) degrades to plain text instead
+        // of broken markup, without needing every caller to know about it.
+        const stripped = s.replace(/<[^>]*>/g, '').trim();
+        return stripped.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
     }
     function timeAgo(ts) {
         const d = Math.floor((Date.now() - ts) / 1000);
@@ -1391,10 +1401,17 @@
                     const isChecked = completion[ch.id] || false;
                     const delay = Math.min(idx * 0.025, 0.4);
                     idx++;
+                    // Extend search past the chapter's own title into every
+                    // sub-chapter/topic it contains, so e.g. "STEMI" or
+                    // "tourniquet" surfaces the chapter that covers it
+                    // instead of only matching chapters whose top-level
+                    // title happens to contain the search text.
+                    const curriculumEntry = (window.CURRICULUM_INDEX || []).find(c => c.id === ch.id);
+                    const topicSearch = curriculumEntry ? curriculumEntry.sections.map(([, label]) => label).join(' ') : '';
                     chaptersHtml += `
                         <div class="chapter-card" data-chapter="${ch.chapterGroup||'none'}"
                              style="animation-delay:${delay}s;"
-                             data-search="${ch.shortTitle} ${ch.title} ${ch.id}">
+                             data-search="${ch.shortTitle} ${ch.title} ${ch.id} ${topicSearch}">
                             <div class="card-header">
                                 <span class="status-badge">${ch.id.toUpperCase()}</span>
                                 <div class="toggle-wrapper">

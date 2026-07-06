@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 //  SmartCare – Service Worker
 //  Strategy: cache-first for media/fonts, stale-while-revalidate
 //  for app-shell assets, network-first for /api/
@@ -104,29 +104,29 @@ self.addEventListener('fetch', function(event) {
   if (isCrossOrigin && !isCacheable(req.url)) return;
 
   if (CACHE_FIRST_PATTERNS.some(function(p) { return p.test(req.url); })) {
-    event.respondWith(cacheFirst(req));
+    event.respondWith(cacheFirst(req, event));
     return;
   }
 
   // API calls always need fresh data — network-first with a short timeout.
   if (req.url.includes('/api/')) {
-    event.respondWith(networkFirst(req));
+    event.respondWith(networkFirst(req, event));
     return;
   }
 
   // Same-origin app-shell assets: serve from cache instantly, refresh in background.
   if (!isCrossOrigin && (SWR_PATTERN.test(req.url) || req.mode === 'navigate')) {
-    event.respondWith(staleWhileRevalidate(req));
+    event.respondWith(staleWhileRevalidate(req, event));
     return;
   }
 
-  event.respondWith(networkFirst(req));
+  event.respondWith(networkFirst(req, event));
 });
 
 // ============================================================
 //  STRATEGY: Network First
 // ============================================================
-function networkFirst(req) {
+function networkFirst(req, event) {
   return Promise.race([
     fetch(req.clone()),
     new Promise(function(_, reject) {
@@ -135,9 +135,14 @@ function networkFirst(req) {
   ]).then(function(networkResponse) {
     if (networkResponse && networkResponse.ok) {
       const responseToCache = networkResponse.clone();
-      caches.open(CACHE_VERSION).then(function(cache) {
-        cache.put(req, responseToCache);
+      // Without waitUntil(), this write races the browser's freedom to kill
+      // the worker right after the response is sent — a fast subsequent
+      // offline read could still see the old cached copy. waitUntil() keeps
+      // the fetch event (and the worker) alive until the write finishes.
+      const cacheWrite = caches.open(CACHE_VERSION).then(function(cache) {
+        return cache.put(req, responseToCache);
       });
+      if (event) event.waitUntil(cacheWrite);
     }
     return networkResponse;
   }).catch(function() {
@@ -148,14 +153,14 @@ function networkFirst(req) {
 // ============================================================
 //  STRATEGY: Stale While Revalidate
 // ============================================================
-function staleWhileRevalidate(req) {
+function staleWhileRevalidate(req, event) {
   return caches.open(CACHE_VERSION).then(function(cache) {
     return cache.match(req, { ignoreSearch: true }).then(function(cached) {
       var fetchReq;
       try {
         fetchReq = req.clone();
       } catch (e) {
-        return cached || networkFirst(req);
+        return cached || networkFirst(req, event);
       }
 
       var networkUpdate = fetch(fetchReq).then(function(response) {
@@ -171,6 +176,10 @@ function staleWhileRevalidate(req) {
 
       if (cached) {
         console.log('[SW] Stale-while-revalidate serving cached:', req.url);
+        // The revalidation fetch+cache.put keeps running after `cached` is
+        // returned below — waitUntil() ensures the browser doesn't tear the
+        // worker down mid-write, same reasoning as networkFirst's cache write.
+        if (event) event.waitUntil(networkUpdate);
         return cached;
       }
 
@@ -224,7 +233,7 @@ function offlineFallback(req) {
 // ============================================================
 //  STRATEGY: Cache First
 // ============================================================
-function cacheFirst(req) {
+function cacheFirst(req, event) {
   // Never cache non-GET or non-http requests
   if (req.method !== 'GET' || !req.url.startsWith('http')) {
     return fetch(req);
@@ -239,12 +248,13 @@ function cacheFirst(req) {
       return cached || fetch(req);
     }
 
+    var cachePutDone;
     var networkUpdate = fetch(fetchReq).then(function(response) {
       if (response && response.ok && response.clone) {
         try {
           var copy = response.clone();
-          caches.open(CACHE_VERSION).then(function(cache) {
-            cache.put(req, copy);
+          cachePutDone = caches.open(CACHE_VERSION).then(function(cache) {
+            return cache.put(req, copy);
           });
         } catch (e) {
           // Clone failed — cache skipped, response still returned
@@ -256,7 +266,13 @@ function cacheFirst(req) {
       return null;
     });
 
-    return cached || networkUpdate;
+    if (cached) {
+      // Background revalidation — keep the worker alive until the cache
+      // write actually finishes, same reasoning as the other two strategies.
+      if (event) event.waitUntil(networkUpdate.then(function() { return cachePutDone; }));
+      return cached;
+    }
+    return networkUpdate;
   }).catch(function() {
     // cache.match itself failed — fall back to network
     return fetch(req);
@@ -273,40 +289,14 @@ function isCacheable(url) {
 // ============================================================
 //  MESSAGE HANDLER
 // ============================================================
+// SKIP_WAITING is the only message type any page actually sends (app.js,
+// 404.html, index.html, pages/courses.html — all for the "Update ready"
+// toast). The client-side "Clear Cache" feature (index.html's
+// runClearCache()) does its own caches.delete() + unregister() directly
+// instead of messaging the worker, so a previous CACHE_URLS/CLEAR_CACHE
+// pair here had no caller anywhere in the codebase — removed rather than
+// kept as unreachable surface area.
 self.addEventListener('message', function(event) {
   if (!event.data) return;
-
-  switch (event.data.type) {
-    case 'SKIP_WAITING':
-      self.skipWaiting();
-      break;
-
-    case 'CACHE_URLS':
-      if (Array.isArray(event.data.urls)) {
-        caches.open(CACHE_VERSION).then(function(cache) {
-          return Promise.allSettled(
-            event.data.urls.map(function(url) {
-              return fetch(url, { credentials: 'same-origin' })
-                .then(function(r) { if (r.ok) return cache.put(url, r); })
-                .catch(function() {});
-            })
-          );
-        }).then(function() {
-          if (event.source) {
-            event.source.postMessage({ type: 'CACHE_COMPLETE' });
-          }
-        });
-      }
-      break;
-
-    case 'CLEAR_CACHE':
-      caches.keys().then(function(keys) {
-        return Promise.all(keys.map(function(k) { return caches.delete(k); }));
-      }).then(function() {
-        if (event.source) {
-          event.source.postMessage({ type: 'CACHE_CLEARED' });
-        }
-      });
-      break;
-  }
+  if (event.data.type === 'SKIP_WAITING') self.skipWaiting();
 });

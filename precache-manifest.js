@@ -118,6 +118,7 @@ self.__PRECACHE = [
   "content/c7.meta.js",
   "content/c8.meta.js",
   "content/c9.meta.js",
+  "content/curriculum-index.js",
   "content/m1-38.js",
   "content/c1/c1s1.json",
   "content/c10/c10s1.json",
@@ -130,4 +131,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "40af12c31a";
+self.__PRECACHE_VERSION = "e9dcfaa283";
