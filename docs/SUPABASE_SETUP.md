@@ -95,8 +95,14 @@ Reads/writes are handled by three **Supabase Edge Functions**
 serverless, deployed straight to your Supabase project, no separate app server to
 host or keep alive. This replaced the old Flask (`server.py`) `/api/admin/*` routes,
 which required `server.py` to be deployed and reachable at the same origin as
-`pages/admin.html`; `server.py` now only serves the self-service account-deletion
-endpoint (`/api/account`), which every signed-in user is always authorized to call.
+`pages/admin.html`.
+
+Self-service account deletion (`pages/login.html`'s "Delete my account" button) works
+the same way, via a fourth Edge Function, `self-delete-account` — **not** via
+`server.py`'s `/api/account` route, which only works when Flask is deployed and
+reachable at the client's origin. The production build serves purely static pages
+(GitHub Pages), with no Flask backend deployed anywhere reachable from the client, so
+`self-delete-account` is the only path that actually works there.
 
 ### 4a. Create the `profiles` table + auto-sync trigger
 
@@ -175,7 +181,13 @@ supabase link --project-ref zltfrrudihtrtxutvdqq
 supabase functions deploy admin-list-users
 supabase functions deploy admin-update-role
 supabase functions deploy admin-delete-user
+supabase functions deploy self-delete-account
 ```
+
+`self-delete-account` is called by every signed-in user (not just admins) — it uses
+`requireUser()` rather than `requireAdmin()` in `_shared/admin.ts`, so it needs no
+`ADMIN_EMAILS` entry to work. Deploy it the same way as the admin functions above;
+it reads `SUPABASE_URL`/`SUPABASE_SERVICE_ROLE_KEY` the same automatic way too.
 
 Each function reads `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` automatically —
 Supabase injects both into every Edge Function's environment, so you don't set them
