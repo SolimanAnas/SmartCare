@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'">
     <!-- General SEO Meta Tags -->
     <meta name="description" content="SmartCare privacy policy — how we collect, use, and protect your personal data when you use our clinical learning platform.">
     <meta name="keywords" content="SmartCare, pages, privacy, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -357,6 +358,7 @@
 
 <div class="policy-section">
     <h2><span class="section-num">1</span> Information We Collect</h2>
+    <div class="no-sell">We do <strong>not</strong> collect protected health information (PHI) or patient data. SmartCare is a self-study reference and exam-practice tool for healthcare professionals — it is not used to document, store, or transmit information about any patient you treat.</div>
 
     <h3>1.1 Information You Provide to Us</h3>
     <ul>
@@ -373,8 +375,8 @@
     <h3>1.3 Information from Third-Party Services</h3>
     <ul>
         <li><strong>Google OAuth:</strong> We use Google Sign-In as an optional authentication method. Google shares your email address and name with us solely for account creation and authentication. Google's privacy policy applies to the initial OAuth flow.</li>
-        <li><strong>Chart.js (CDN):</strong> The App loads the Chart.js library from a content delivery network (jsdelivr.net). Your browser may communicate with the CDN to fetch this library. No personal data is sent to the CDN as part of this request.</li>
-        <li><strong>Google Fonts:</strong> The App loads font files from Google Fonts (fonts.googleapis.com, fonts.gstatic.com). Your browser may share your IP address with Google as part of the font request. Google's privacy policy governs this interaction.</li>
+        <li><strong>Chart.js:</strong> The App's progress charts are rendered by the Chart.js library, which is bundled with the App itself (not loaded from a third-party CDN) — no request to an external server is made to use it.</li>
+        <li><strong>Google Fonts:</strong> Most pages bundle their fonts with the App. A small number of pages still load font files from Google Fonts (fonts.googleapis.com, fonts.gstatic.com); your browser may share your IP address with Google as part of that font request. Google's privacy policy governs this interaction.</li>
     </ul>
 </div>
 

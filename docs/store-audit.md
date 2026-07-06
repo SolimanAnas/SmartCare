@@ -119,9 +119,10 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 
 ## 8. Performance
 
-- **Oversized assets, not fixed:** several PWA splash/screenshot PNGs are 200-430KB (`splash/splash-2048x2732.png` 431KB, `images/screenshots/tablet-drugcalc.png` 405KB) — not multi-MB, but good compression/WebP candidates. `icons/icon.png` and `icons/icon-512x512.png` are byte-identical duplicates (294KB each) — one could be a symlink/reference to the other.
+- **Oversized assets, not fixed:** several PWA splash/screenshot PNGs are 200-430KB (`splash/splash-2048x2732.png` 431KB, `images/screenshots/tablet-drugcalc.png` 405KB) — not multi-MB, but good compression/WebP candidates.
+- **Duplicate icon file, FIXED:** `icons/icon.png` and `icons/icon-512x512.png` were byte-identical duplicates (294KB each). Deleted `icon-512x512.png` and repointed its two references (`manifest.json`, `scripts/generate_splash.py`) at `icons/icon.png`.
 - **Large per-page inline `<style>` blocks, not fixed:** `pages/courses.html` (1271 lines), `pages/admin.html` (638), `pages/GCS.html` (368), `pages/ecg.html` (308), `pages/drug-calculator.html` (197) — each duplicates common button/modal/theme rules rather than sharing `styles.css`. This is the same category of problem the `exam-review.css` extraction already solved for the 8 exam pages; these five are candidates for the same treatment.
-- **Render-blocking head scripts, not fixed:** `pages/ecg.html`, `pages/drug-calculator.html`, `pages/admin.html`, `pages/courses.html` load their main JS without `defer`/`async`.
+- **Render-blocking head scripts — partially fixed, rest investigated and left alone on purpose:** of the 4 pages flagged, only `pages/ecg.html`'s `ecg-engine.js` was genuinely a plain render-blocking head script with no ordering dependency — added `defer` there (verified live: simulator still initializes correctly, no console errors). The other 3 turned out unsafe or inapplicable to "fix" the same way: `pages/drug-calculator.html`'s script is actually placed at the end of `<body>`, not in `<head>`, and sits directly before an inline "safeguard" script that depends on it having already run synchronously — deferring it would invert that order. `pages/courses.html`'s `../src/theme.js` is immediately followed by an inline `SmartTheme.init()` call that depends on synchronous execution to avoid a flash-of-wrong-theme — deferring either would break init or reintroduce FOUC. `pages/admin.html`'s `supabase-config.js`/`supabase-client.js` feed a raw (non-deferred) IIFE at the bottom of the body that assumes `window.SmartCareCloud` already exists — deferring them would make every admin page load bounce to the login screen. Fixing those 3 properly needs restructuring the init flow, not just adding an attribute, so they're left as a scoped follow-up rather than risking a real regression for a minor performance item.
 - **`src/prometric/exam-db.json` is 1.83MB, loaded as a single file** — no chunking/lazy-loading found, unlike `content/*.json` which is already split per chapter/section (30-56KB each).
 - **Dependencies:** `package.json`/`requirements.txt` are lean and intentional — no unused dependencies found.
 
@@ -142,7 +143,7 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 | Finding | Severity | Evidence |
 |---|---|---|
 | 103MB `pdf_sections/` committed to git history | **New finding, reviewed, DEFERRED by owner** | `pdf_sections/7 BDLS EXAM.pdf` (3.16MB) and ~120 similar files are fully committed. Combined with large PNGs in history (`algorithms/Pediatric-BLS-Single-Rescuer.png` 5.37MB, `.graphify/graph.json` 4.15MB — a dev-tool cache file that shouldn't be tracked at all, several `icons/courses/*.png` at 2-3MB), this is most of why the git pack is ~109MB. Not a Pages/Play blocker per se, but worth a git-history cleanup and image compression pass eventually. Owner chose to skip any git-history rewrite for now, including the non-destructive `git rm --cached` option. |
-| Duplicate icon files | **Minor** | `icons/icon-512x512.png` and `icons/icon.png` are byte-identical. |
+| Duplicate icon files | **Minor, FIXED** | `icons/icon-512x512.png` and `icons/icon.png` were byte-identical. Deleted the duplicate, repointed `manifest.json`'s 512x512 icon entry and `scripts/generate_splash.py` at `icons/icon.png`. |
 | Orphaned page still in sitemap | **New finding, reviewed, DEFERRED by owner** | `sitemap.xml` lists `pages/drug-index.html` — a page with zero internal links (confirmed orphaned in a prior audit) — search engines are still being told to index a page nothing links to. `pages/signup.html` (the other known orphan) is correctly *not* in the sitemap. Owner chose to leave both the page and its sitemap entry as-is for now. |
 | `[SW] ...` console logging ships to every user | **Minor, not fixed** | `sw.js` has several intentional diagnostic `console.log` calls (install/activate/cache-hit logging) — reasonable for debugging, but will spam every production user's console. Consider gating behind a debug flag before submission. |
 | `.gitignore` / `.pagesignore` | **Already fine, verified** | Both comprehensive. `.pagesignore` correctly excludes `server.py`, `requirements.txt`, `instance/`, `supabase/` (edge functions), `tests/`, `scripts/`, `.env*`, secrets-adjacent files, **and `docs/`** — confirming this audit report and the other internal audit docs will **not** be published to the live site. |
@@ -168,11 +169,19 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 4. Fixed the footer contrast failure in `styles.css` (dark/default theme).
 5. Added `permissions: contents: read` to `.github/workflows/ci.yml`.
 
+**Fixed in a second follow-up pass:**
+1. Rolled CSP out to all 33 pages that previously had none, matched to each page's actual dependencies (base-strict, +Google Fonts, or +Google Fonts+Supabase) — verified live in a headless browser with zero CSP violations across all 33.
+2. `pages/privacy.html`: added an explicit "we do not collect PHI" statement; corrected stale claims that Chart.js is CDN-loaded (now vendored) and clarified the Google Fonts claim now only applies to a handful of pages.
+3. Added a visible "Unofficial practice exam" label (plus `(Unofficial)` in `<title>`/OG/Twitter tags) to `acls.html`, `bls.html`, `pals.html`, `bdls.html`, `itls.html`.
+4. `pages/ecg.html`: added `defer` to `ecg-engine.js`, the one page where the render-blocking-head-script finding was safe to fix as a one-line change (verified live: no regression). The other 3 pages flagged for this were investigated and found to have real ordering dependencies that make a blind `defer` unsafe — see § Performance for specifics; left as a scoped follow-up.
+5. Deleted the duplicate `icons/icon-512x512.png` (byte-identical to `icons/icon.png`); repointed `manifest.json` and `scripts/generate_splash.py` at `icons/icon.png`.
+
 **Explicitly reviewed and deferred by owner decision (not fixed):**
 - Remove `pages/drug-index.html` from `sitemap.xml`.
 - Git-history cleanup for `pdf_sections/` and oversized committed PNGs.
 
-**Larger, worth scoping separately:**
-- Roll CSP out to the remaining ~33 pages that have none.
-- Get at least the top 3 exam banks clinically reviewed and marked as such in `content-manifest.json`.
-- Extract the 5 remaining large inline `<style>` blocks the same way `exam-review.css` was extracted.
+**Larger, still worth scoping separately:**
+- Get at least the top 3 exam banks clinically reviewed and marked as such in `content-manifest.json` — needs an actual clinician, not something fixable in code.
+- Extract the 5 remaining large inline `<style>` blocks (`courses.html`, `admin.html`, `GCS.html`, `ecg.html`, `drug-calculator.html`) the same way `exam-review.css` was extracted.
+- Properly fix the 3 remaining render-blocking-script cases (needs restructuring each page's init flow, not just an attribute).
+- No SW cache eviction/quota handling; oversized splash/screenshot PNGs; `exam-db.json` not chunked.

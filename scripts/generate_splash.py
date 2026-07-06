@@ -3,7 +3,7 @@
 
 Usage: python3 scripts/generate_splash.py
 
-Regenerate this whenever icons/icon-512x512.png or manifest.json's
+Regenerate this whenever icons/icon.png or manifest.json's
 background_color changes. Each entry below is (css_width, css_height, dpr)
 matching Apple's documented device-pixel-ratio + orientation breakpoints for
 the devices SmartCare's manifest already targets; pixel dimensions and the
@@ -14,7 +14,7 @@ import os
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ICON_PATH = os.path.join(ROOT, "icons", "icon-512x512.png")
+ICON_PATH = os.path.join(ROOT, "icons", "icon.png")
 OUT_DIR = os.path.join(ROOT, "splash")
 BACKGROUND = (15, 32, 39)  # #0f2027 — manifest.json background_color
 
