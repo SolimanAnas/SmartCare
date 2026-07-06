@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'">
     <!-- General SEO Meta Tags -->
     <meta name="description" content="Medication index for EMS — comprehensive drug reference with dosages, indications, contraindications, and emergency protocols.">
     <meta name="keywords" content="SmartCare, pages, med-index, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -334,6 +335,14 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <script>
 let DRUGS={},CATS=[],activeCat='ALL',query='',sortAZ=false,azOpen=false;
 
+// The `?drug=` deep-link param and any fetch error message get interpolated
+// into innerHTML below — both are attacker-influenceable (a crafted link's
+// query string, or a spoofed/malformed response body reflected in an error),
+// so they must be escaped before going into markup. escHtml() is the guard.
+function escHtml(s){
+  return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
 /* THEME */
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
@@ -369,7 +378,7 @@ async function init(){
     const d=new URLSearchParams(location.search).get('drug');
     if(d){document.getElementById('searchInput').value=d;query=d.toLowerCase();document.getElementById('clearBtn').classList.add('visible');render();}
   }catch(err){
-    document.getElementById('drugList').innerHTML='<div class="empty-state"><span class="es-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️</span><div class="es-title">Failed to load</div><div class="es-sub">'+err.message+'</div></div>';
+    document.getElementById('drugList').innerHTML='<div class="empty-state"><span class="es-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️</span><div class="es-title">Failed to load</div><div class="es-sub">'+escHtml(err.message)+'</div></div>';
   }
 }
 
@@ -430,7 +439,7 @@ function render(){
   });
   const total=entries.length;
   document.getElementById('statsCount').innerHTML='<strong>'+total+'</strong> of <strong>'+Object.keys(DRUGS).length+'</strong> medications';
-  if(total===0){list.innerHTML='<div class="empty-state"><span class="es-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg></span><div class="es-title">No results for &ldquo;'+query+'&rdquo;</div><div class="es-sub">Try a different name, class, or indication</div></div>';return;}
+  if(total===0){list.innerHTML='<div class="empty-state"><span class="es-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg></span><div class="es-title">No results for &ldquo;'+escHtml(query)+'&rdquo;</div><div class="es-sub">Try a different name, class, or indication</div></div>';return;}
   if(sortAZ){
     entries.sort((a,b)=>a[0].localeCompare(b[0]));
     list.appendChild(buildSection({name:'All Medications',icon:'<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg>',color:'#3b82f6'},entries,true));
