@@ -36,7 +36,7 @@ All five items below were confirmed via user Q&A to prioritize before doing any 
 §3's one-line fix applied: `"id": "/"` → `"id": "/SmartCare/"`, matching the actual GitHub Pages project-site deploy path.
 
 ### "Official Pre/Post Exam" wording — FIXED
-§1's fix applied to `pages/ITLS-course.html:341-342`: "Official Pre/Post Exam" / "Complete the official certification-style examination" → "Practice Pre/Post Exam" / "Complete the unofficial, ITLS-style practice examination." Removes the unqualified affiliation claim against the trademarked ITLS program.
+§1's fix applied to `pages/ITLS-course.html:341-342`: "Official Pre/Post Exam" / "Complete the official certification-style examination" → "ITLS-Style Mock Exam" / "Complete the ITLS-style mock exam (pre/post) to assess your global ITLS competency." Removes the unqualified affiliation claim against the trademarked ITLS program.
 
 ### Footer contrast failure, default dark theme — FIXED
 §7's bug fixed: `styles.css`'s footer was reusing `--text-secondary` (a color tuned for the theme's opaque light glass cards), directly on the raw dark `--bg-gradient` it actually sits on, computing to ≈2.07:1. Added a dedicated `--footer-text` token (`#94a3b8`, matching the AMOLED theme's already-established value for text-on-dark) used only by the footer, leaving `--text-secondary` and every other consumer of it untouched. Verified ≥4.5:1 against all three `--bg-gradient` stops. Per explicit user decision, only the confirmed dark/default theme was fixed — the other 4 themes were not audited for the same class of bug in this pass. Extended `scripts/check_contrast.py` (already wired into CI) to guard this specific regression going forward, alongside its existing `exam-review.css` `--muted` check.
@@ -55,7 +55,7 @@ All five items below were confirmed via user Q&A to prioritize before doing any 
 
 | Finding | Severity | Evidence |
 |---|---|---|
-| "Official Pre/Post Exam" wording | **Policy-blocking, FIXED** | `pages/ITLS-course.html:341-342` — was "Complete the **official** certification-style examination," now "Complete the unofficial, ITLS-style practice examination." See "Fixed in this follow-up pass" above. |
+| "Official Pre/Post Exam" wording | **Policy-blocking, FIXED** | `pages/ITLS-course.html:341-342` — was "Complete the **official** certification-style examination," now "Complete the ITLS-style mock exam (pre/post)." See "Fixed in this follow-up pass" above. |
 | Certification names in page titles | **Should improve, not fixed** | `pages/acls.html:66`, `pages/bls.html:66`, `pages/pals.html:66`, `pages/bdls.html:66`, `pages/itls.html:66` all title the page as e.g. "ACLS Exam Review" with no "(Unofficial)" qualifier in the title/H1 itself (only in body copy). ACLS/BLS/PALS are AHA-trademarked. |
 | Course thumbnail icons | **Needs manual visual check** | `icons/courses/thumb/{acls,bls,itls,pals,pepp,bdls,ecg,empact}.png` — uniform custom-generated style, but a human should visually confirm none are stylized after real AHA/ITLS logos. |
 | Medical claims language | **Already fine, verified** | Marketing copy (index.html, about.html) consistently frames the app as a study aid; no diagnostic/treatment claims found in a repo-wide scan. |
