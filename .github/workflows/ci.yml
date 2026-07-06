@@ -5,6 +5,13 @@ on:
     branches: [main]
   pull_request:
 
+# Defense-in-depth: this workflow only reads the repo and runs
+# lint/test/build steps — it never needs to write anything back, unlike
+# static.yml's Pages deploy job (contents: read, pages: write, id-token:
+# write). Default GITHUB_TOKEN permissions are broader than this job needs.
+permissions:
+  contents: read
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

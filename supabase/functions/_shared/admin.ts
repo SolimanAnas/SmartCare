@@ -79,3 +79,22 @@ export async function requireAdmin(req: Request): Promise<AdminCaller | Response
   }
   return { id: data.user.id, email, client };
 }
+
+export type Caller = { id: string; email: string; client: SupabaseClient };
+
+/** Verifies the Authorization: Bearer <token> header against Supabase — no
+ *  ADMIN_EMAILS check, since not every caller needs to be an admin (e.g.
+ *  self-service account deletion, which every signed-in user is always
+ *  authorized to do to their own account). Returns the caller on success,
+ *  or a Response to return as-is on failure. */
+export async function requireUser(req: Request): Promise<Caller | Response> {
+  const authHeader = req.headers.get("Authorization") || "";
+  const token = authHeader.toLowerCase().startsWith("bearer ") ? authHeader.slice(7) : "";
+  if (!token) return json(req, { error: "Sign in required." }, 401);
+
+  const client = serviceClient();
+  const { data, error } = await client.auth.getUser(token);
+  if (error || !data?.user?.email) return json(req, { error: "Sign in required." }, 401);
+
+  return { id: data.user.id, email: data.user.email.toLowerCase(), client };
+}

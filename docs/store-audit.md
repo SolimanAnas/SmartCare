@@ -4,6 +4,8 @@
 
 **Headline result:** one confirmed, actively-exploitable reflected XSS was found and **fixed during this audit** (see §5). Everything else below is prioritized findings for you to triage — this report does not assume you want everything fixed unprompted.
 
+**Update:** the five highest-priority items from the original Priority Summary have since been fixed in a follow-up pass — see "Fixed in this follow-up pass" below. Two lower-priority items were reviewed and explicitly deferred by the app owner (also noted below, so they aren't silently dropped from this report).
+
 Context note: `.well-known/assetlinks.json` **does exist in this repo** (package `io.github.solimananas.smartcare`), correcting an earlier assumption in this project's history that it lived in a separate repo. It's present and correctly formatted.
 
 ---
@@ -21,11 +23,39 @@ executed arbitrary JavaScript in the victim's session — and this page had **no
 
 ---
 
+## Fixed in this follow-up pass
+
+All five items below were confirmed via user Q&A to prioritize before doing any implementation work (in particular, the account-deletion item below turned out to be worse than originally scored — see its entry).
+
+### Account deletion silently broken in production — was "risk," CONFIRMED, NOW FIXED
+§6 originally flagged this as a "deployment-dependent risk" contingent on which backend the shipped TWA build points at. Asked directly: **the actual Play Store build points at the static GitHub Pages mirror only — no Flask backend is deployed anywhere reachable from the client.** That means `server.py`'s `DELETE /api/account` (which `pages/login.html`'s delete-account button called) was **always unreachable in production** — every real-world account-deletion attempt has been silently failing. This is a genuine Google Play policy violation (apps offering account creation must offer working in-app account deletion) and a GDPR Art. 17 compliance gap, not just a theoretical risk.
+
+**Fix applied:** added a fourth Supabase Edge Function, `supabase/functions/self-delete-account`, following the exact pattern already established for the three `admin-*` functions (`_shared/admin.ts` gained a new `requireUser()` helper — same bearer-token verification as `requireAdmin()`, minus the `ADMIN_EMAILS` allow-list check, since every signed-in user is always authorized to delete their own account). `pages/login.html`'s delete handler now calls this Edge Function instead of the unreachable Flask route. `server.py`'s route is left in place unmodified — removing it would orphan `tests/test_api.py`'s `TestCsrfGuard` coverage (it explicitly relies on `/api/account` being "the only body-carrying endpoint left" to test CSRF protection against), and full Flask retirement is a separate, larger decision out of scope here. Documented the new function's deployment step in `docs/SUPABASE_SETUP.md` §4b. Added a permanent regression test: `tests/self-delete-account.spec.js` (stubs the network layer and asserts the delete button calls `/functions/v1/self-delete-account`, never `/api/account`).
+
+### `manifest.json` `id` field mismatch — FIXED
+§3's one-line fix applied: `"id": "/"` → `"id": "/SmartCare/"`, matching the actual GitHub Pages project-site deploy path.
+
+### "Official Pre/Post Exam" wording — FIXED
+§1's fix applied to `pages/ITLS-course.html:341-342`: "Official Pre/Post Exam" / "Complete the official certification-style examination" → "ITLS-Style Mock Exam" / "Complete the ITLS-style mock exam (pre/post) to assess your global ITLS competency." Removes the unqualified affiliation claim against the trademarked ITLS program.
+
+### Footer contrast failure, default dark theme — FIXED
+§7's bug fixed: `styles.css`'s footer was reusing `--text-secondary` (a color tuned for the theme's opaque light glass cards), directly on the raw dark `--bg-gradient` it actually sits on, computing to ≈2.07:1. Added a dedicated `--footer-text` token (`#94a3b8`, matching the AMOLED theme's already-established value for text-on-dark) used only by the footer, leaving `--text-secondary` and every other consumer of it untouched. Verified ≥4.5:1 against all three `--bg-gradient` stops. Per explicit user decision, only the confirmed dark/default theme was fixed — the other 4 themes were not audited for the same class of bug in this pass. Extended `scripts/check_contrast.py` (already wired into CI) to guard this specific regression going forward, alongside its existing `exam-review.css` `--muted` check.
+
+### `ci.yml` missing `permissions:` block — FIXED
+§12's one-line fix applied: added `permissions: contents: read` at the workflow level, matching the least-privilege pattern `static.yml` already uses (which additionally needs `pages: write`/`id-token: write` for its deploy job — `ci.yml` doesn't, since it only lints/tests/builds).
+
+## Explicitly reviewed and deferred (not fixed, by owner decision)
+
+- **Orphaned `pages/drug-index.html` still in `sitemap.xml`** (§11) — owner chose to leave both the page and its sitemap entry as-is for now.
+- **103MB of `pdf_sections/` PDFs + oversized PNGs in git history** (§11) — owner chose to skip any git-history rewrite (including the non-destructive `git rm --cached` option) for now.
+
+---
+
 ## 1. Google Play Policy Compliance
 
 | Finding | Severity | Evidence |
 |---|---|---|
-| "Official Pre/Post Exam" wording | **Policy-blocking, not fixed** | `pages/ITLS-course.html:341-342` — "Complete the **official** certification-style examination." ITLS is a trademarked certification program; unqualified "official" here reads as a claim of affiliation. Reword to "Practice Pre/Post Exam" or "unofficial, ITLS-style." |
+| "Official Pre/Post Exam" wording | **Policy-blocking, FIXED** | `pages/ITLS-course.html:341-342` — was "Complete the **official** certification-style examination," now "Complete the ITLS-style mock exam (pre/post)." See "Fixed in this follow-up pass" above. |
 | Certification names in page titles | **Should improve, not fixed** | `pages/acls.html:66`, `pages/bls.html:66`, `pages/pals.html:66`, `pages/bdls.html:66`, `pages/itls.html:66` all title the page as e.g. "ACLS Exam Review" with no "(Unofficial)" qualifier in the title/H1 itself (only in body copy). ACLS/BLS/PALS are AHA-trademarked. |
 | Course thumbnail icons | **Needs manual visual check** | `icons/courses/thumb/{acls,bls,itls,pals,pepp,bdls,ecg,empact}.png` — uniform custom-generated style, but a human should visually confirm none are stylized after real AHA/ITLS logos. |
 | Medical claims language | **Already fine, verified** | Marketing copy (index.html, about.html) consistently frames the app as a study aid; no diagnostic/treatment claims found in a repo-wide scan. |
@@ -41,7 +71,7 @@ executed arbitrary JavaScript in the victim's session — and this page had **no
 
 | Finding | Severity | Evidence |
 |---|---|---|
-| `id` vs. deploy scope mismatch | **Confirmed bug, not fixed** | `manifest.json:12` sets `"id": "/"` (absolute-path, resolves to domain root), while the app is actually deployed as a GitHub Pages *project* site at `https://solimananas.github.io/SmartCare/`. `start_url`/`scope` are relative and resolve correctly; `id` does not. This is a real app-identity mismatch for install/update tracking outside `scope`. **One-line fix:** set `"id": "/SmartCare/"` to match. |
+| `id` vs. deploy scope mismatch | **Confirmed bug, FIXED** | `manifest.json:12` now sets `"id": "/SmartCare/"`, matching the actual GitHub Pages project-site deploy path (`start_url`/`scope` were already correct, relative paths). See "Fixed in this follow-up pass" above. |
 | Static `theme_color` vs. 5 themes | **Minor polish** | `theme_color:"#0056b3"` matches only the default theme; the app has 5 CSS themes (dark/AMOLED/light/sepia/forest) with different accents, and the manifest/meta tag don't track the active one. Cosmetic only. |
 | Icons | **Already fine, verified** | All 8 sizes present with both `any` and `maskable` purposes, files confirmed to exist. |
 | Shortcuts | **Already fine, verified** | `resume.html`, `src/prometric/exam.html`, `pages/drug-calculator.html` all resolve to real, existing files, and all three are confirmed present in `precache-manifest.js` (the earlier "broken offline shortcut" bug from this project's history is fixed). |
@@ -73,14 +103,14 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 
 - **Already fine, verified:** `pages/privacy.html` is thorough — lists every collection point (account email/password, Google OAuth, server audit logs incl. IP, localStorage study data, third-party CDN/font loads), states data isn't sold/used for ad profiling, has a retention policy and children's-privacy section. Reachable at a stable URL suitable for the Play Console link.
 - **Should improve, not fixed:** the policy never explicitly states "we do not collect PHI/patient data." Given the health-worker audience, an explicit one-line statement would preempt reviewer scrutiny even though it's technically implied by the itemized list.
-- **Already fine, verified:** account creation is optional (`pages/login.html:289` "Continue without signing in"); in-app account deletion is real and functional (`pages/login.html:321-528`, backed by `server.py:151-176`, audit-logged) — satisfies Play's account-deletion requirement.
-- **Deployment-dependent risk, not fixed:** account deletion depends on the Flask backend. If the TWA build points at the static GitHub Pages mirror rather than a Flask-served instance, in-app deletion would be non-functional in production. **Verify which target the TWA build actually uses before submission** — this is the single most Play-relevant open question from this audit.
+- **Already fine, verified:** account creation is optional (`pages/login.html:289` "Continue without signing in"); in-app account deletion is real and functional (`pages/login.html`, audit-logged) — satisfies Play's account-deletion requirement.
+- **Was "deployment-dependent risk," CONFIRMED BROKEN IN PRODUCTION, NOW FIXED:** the shipped Play Store build points at the static GitHub Pages mirror only, with no Flask backend deployed anywhere reachable from the client — so account deletion (which called `server.py`'s `DELETE /api/account`) was silently failing for every real user. Fixed via a new `supabase/functions/self-delete-account` Edge Function; see "Fixed in this follow-up pass" above.
 
 ## 7. Accessibility
 
 | Finding | Severity | Evidence |
 |---|---|---|
-| Footer contrast failure, default dark theme | **New confirmed bug, not fixed** | `styles.css:1013-1019` — `footer{color:var(--text-secondary)}` with `--text-secondary:#475569` over the footer's actual composited background (`rgba(0,0,0,.35)` over the app's dark gradient) computes to **≈2.07:1** — fails WCAG AA (4.5:1) badly. This is the same class of bug already fixed in `exam-review.css`'s `--muted`, but in the main app shell's default theme, still present. |
+| Footer contrast failure, default dark theme | **New confirmed bug, FIXED** | `styles.css`'s footer computed to ≈2.07:1 against WCAG AA's 4.5:1 minimum. Fixed with a dedicated `--footer-text` token, dark/default theme only (per owner decision, the other 4 themes weren't audited for the same bug). See "Fixed in this follow-up pass" above. |
 | No `Escape`-to-close on the app-shell drawer/stats modal | **Real gap, not fixed** | `index.html`'s settings drawer (877-890) and stats modal (1579-1652) only close via click-outside or an explicit close button — no `Escape` handler, unlike most tool pages (GCS.html, ecg.html, etc., which do have one). No focus-trap either — Tab can move focus out of an open overlay into the page behind it. |
 | Touch targets under Play's ~48dp guideline | **Minor, not fixed** | `styles.css:1863` `.close-drawer-btn` is 20px tall; `pages/ecg.html` has several 20-28px controls (theme swatches, close buttons). |
 | `prefers-reduced-motion` inconsistently applied | **Minor, not fixed** | Implemented in `styles.css` only; the ~20 pages with large inline `<style>` blocks (drug-calculator, GCS, ecg, admin, courses, etc.) don't guard their own animations/transitions. |
@@ -89,9 +119,10 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 
 ## 8. Performance
 
-- **Oversized assets, not fixed:** several PWA splash/screenshot PNGs are 200-430KB (`splash/splash-2048x2732.png` 431KB, `images/screenshots/tablet-drugcalc.png` 405KB) — not multi-MB, but good compression/WebP candidates. `icons/icon.png` and `icons/icon-512x512.png` are byte-identical duplicates (294KB each) — one could be a symlink/reference to the other.
+- **Oversized assets, not fixed:** several PWA splash/screenshot PNGs are 200-430KB (`splash/splash-2048x2732.png` 431KB, `images/screenshots/tablet-drugcalc.png` 405KB) — not multi-MB, but good compression/WebP candidates.
+- **Duplicate icon file, FIXED:** `icons/icon.png` and `icons/icon-512x512.png` were byte-identical duplicates (294KB each). Deleted `icon-512x512.png` and repointed its two references (`manifest.json`, `scripts/generate_splash.py`) at `icons/icon.png`.
 - **Large per-page inline `<style>` blocks, not fixed:** `pages/courses.html` (1271 lines), `pages/admin.html` (638), `pages/GCS.html` (368), `pages/ecg.html` (308), `pages/drug-calculator.html` (197) — each duplicates common button/modal/theme rules rather than sharing `styles.css`. This is the same category of problem the `exam-review.css` extraction already solved for the 8 exam pages; these five are candidates for the same treatment.
-- **Render-blocking head scripts, not fixed:** `pages/ecg.html`, `pages/drug-calculator.html`, `pages/admin.html`, `pages/courses.html` load their main JS without `defer`/`async`.
+- **Render-blocking head scripts — partially fixed, rest investigated and left alone on purpose:** of the 4 pages flagged, only `pages/ecg.html`'s `ecg-engine.js` was genuinely a plain render-blocking head script with no ordering dependency — added `defer` there (verified live: simulator still initializes correctly, no console errors). The other 3 turned out unsafe or inapplicable to "fix" the same way: `pages/drug-calculator.html`'s script is actually placed at the end of `<body>`, not in `<head>`, and sits directly before an inline "safeguard" script that depends on it having already run synchronously — deferring it would invert that order. `pages/courses.html`'s `../src/theme.js` is immediately followed by an inline `SmartTheme.init()` call that depends on synchronous execution to avoid a flash-of-wrong-theme — deferring either would break init or reintroduce FOUC. `pages/admin.html`'s `supabase-config.js`/`supabase-client.js` feed a raw (non-deferred) IIFE at the bottom of the body that assumes `window.SmartCareCloud` already exists — deferring them would make every admin page load bounce to the login screen. Fixing those 3 properly needs restructuring the init flow, not just adding an attribute, so they're left as a scoped follow-up rather than risking a real regression for a minor performance item.
 - **`src/prometric/exam-db.json` is 1.83MB, loaded as a single file** — no chunking/lazy-loading found, unlike `content/*.json` which is already split per chapter/section (30-56KB each).
 - **Dependencies:** `package.json`/`requirements.txt` are lean and intentional — no unused dependencies found.
 
@@ -111,9 +142,9 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 
 | Finding | Severity | Evidence |
 |---|---|---|
-| 103MB `pdf_sections/` committed to git history | **New finding, not fixed** | `pdf_sections/7 BDLS EXAM.pdf` (3.16MB) and ~120 similar files are fully committed. Combined with large PNGs in history (`algorithms/Pediatric-BLS-Single-Rescuer.png` 5.37MB, `.graphify/graph.json` 4.15MB — a dev-tool cache file that shouldn't be tracked at all, several `icons/courses/*.png` at 2-3MB), this is most of why the git pack is ~109MB. Not a Pages/Play blocker per se (large PNGs ARE excluded from nothing — need to check `.pagesignore` doesn't exclude images — it doesn't, they're served), but worth a git-history cleanup and image compression pass. |
-| Duplicate icon files | **Minor** | `icons/icon-512x512.png` and `icons/icon.png` are byte-identical. |
-| Orphaned page still in sitemap | **New finding, trivial fix** | `sitemap.xml` lists `pages/drug-index.html` — a page with zero internal links (confirmed orphaned in a prior audit) — search engines are still being told to index a page nothing links to. `pages/signup.html` (the other known orphan) is correctly *not* in the sitemap. One-line removal candidate. |
+| 103MB `pdf_sections/` committed to git history | **New finding, reviewed, DEFERRED by owner** | `pdf_sections/7 BDLS EXAM.pdf` (3.16MB) and ~120 similar files are fully committed. Combined with large PNGs in history (`algorithms/Pediatric-BLS-Single-Rescuer.png` 5.37MB, `.graphify/graph.json` 4.15MB — a dev-tool cache file that shouldn't be tracked at all, several `icons/courses/*.png` at 2-3MB), this is most of why the git pack is ~109MB. Not a Pages/Play blocker per se, but worth a git-history cleanup and image compression pass eventually. Owner chose to skip any git-history rewrite for now, including the non-destructive `git rm --cached` option. |
+| Duplicate icon files | **Minor, FIXED** | `icons/icon-512x512.png` and `icons/icon.png` were byte-identical. Deleted the duplicate, repointed `manifest.json`'s 512x512 icon entry and `scripts/generate_splash.py` at `icons/icon.png`. |
+| Orphaned page still in sitemap | **New finding, reviewed, DEFERRED by owner** | `sitemap.xml` lists `pages/drug-index.html` — a page with zero internal links (confirmed orphaned in a prior audit) — search engines are still being told to index a page nothing links to. `pages/signup.html` (the other known orphan) is correctly *not* in the sitemap. Owner chose to leave both the page and its sitemap entry as-is for now. |
 | `[SW] ...` console logging ships to every user | **Minor, not fixed** | `sw.js` has several intentional diagnostic `console.log` calls (install/activate/cache-hit logging) — reasonable for debugging, but will spam every production user's console. Consider gating behind a debug flag before submission. |
 | `.gitignore` / `.pagesignore` | **Already fine, verified** | Both comprehensive. `.pagesignore` correctly excludes `server.py`, `requirements.txt`, `instance/`, `supabase/` (edge functions), `tests/`, `scripts/`, `.env*`, secrets-adjacent files, **and `docs/`** — confirming this audit report and the other internal audit docs will **not** be published to the live site. |
 | No merge-conflict markers, no temp files | **Already fine, verified** | Clean. |
@@ -121,7 +152,7 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 ## 12. GitHub Pages
 
 - **Already fine, verified:** `.github/workflows/static.yml`'s rsync + `.pagesignore` correctly excludes everything sensitive/internal (backend code, secrets, docs, dev tooling) from the published site.
-- **New finding, not fixed:** `.github/workflows/ci.yml` has no `permissions:` block at all (unlike `static.yml`, which explicitly sets `contents: read; pages: write; id-token: write`). The `GITHUB_TOKEN` for CI runs with default (broader) permissions rather than an explicit least-privilege grant. No secrets are used in a way that's currently exploitable from a fork PR (confirmed — only hardcoded dummy test values), but adding `permissions: contents: read` at the top level is a one-line defense-in-depth improvement.
+- **New finding, FIXED:** `.github/workflows/ci.yml` now has `permissions: contents: read` at the workflow level, matching `static.yml`'s least-privilege pattern (which additionally needs `pages: write`/`id-token: write` for its deploy job — `ci.yml` doesn't). See "Fixed in this follow-up pass" above.
 - **Already fine, verified:** `robots.txt` and `sitemap.xml` are internally consistent (robots.txt references the sitemap correctly; `pages/admin.html` is deliberately not disallowed, relying on its own noindex meta instead, which is a defensible, documented choice).
 
 ---
@@ -131,16 +162,26 @@ Full findings above under "Fixed during this audit." Beyond the XSS:
 **Fixed in this audit:**
 1. Reflected XSS in `pages/med-index.html` (critical) + added CSP to that page.
 
-**Recommended before Play submission (highest-value, lowest-effort):**
-1. Fix `manifest.json`'s `id` field (`/` → `/SmartCare/`) — one line.
-2. Remove "official" wording from `pages/ITLS-course.html` — one line.
-3. Fix the footer contrast failure in `styles.css` (same pattern already fixed once this session).
-4. Remove `pages/drug-index.html` from `sitemap.xml` — one line.
-5. Add `permissions: contents: read` to `.github/workflows/ci.yml` — one line.
-6. Confirm which backend the TWA build actually points at, so account deletion isn't silently broken in production.
+**Fixed in the follow-up pass:**
+1. Account deletion silently broken in production (turned out to be a confirmed bug, not just a risk) — moved to a Supabase Edge Function.
+2. Fixed `manifest.json`'s `id` field (`/` → `/SmartCare/`).
+3. Removed "official" wording from `pages/ITLS-course.html`.
+4. Fixed the footer contrast failure in `styles.css` (dark/default theme).
+5. Added `permissions: contents: read` to `.github/workflows/ci.yml`.
 
-**Larger, worth scoping separately:**
-- Roll CSP out to the remaining ~33 pages that have none.
-- Get at least the top 3 exam banks clinically reviewed and marked as such in `content-manifest.json`.
+**Fixed in a second follow-up pass:**
+1. Rolled CSP out to all 33 pages that previously had none, matched to each page's actual dependencies (base-strict, +Google Fonts, or +Google Fonts+Supabase) — verified live in a headless browser with zero CSP violations across all 33.
+2. `pages/privacy.html`: added an explicit "we do not collect PHI" statement; corrected stale claims that Chart.js is CDN-loaded (now vendored) and clarified the Google Fonts claim now only applies to a handful of pages.
+3. Added a visible "Unofficial practice exam" label (plus `(Unofficial)` in `<title>`/OG/Twitter tags) to `acls.html`, `bls.html`, `pals.html`, `bdls.html`, `itls.html`.
+4. `pages/ecg.html`: added `defer` to `ecg-engine.js`, the one page where the render-blocking-head-script finding was safe to fix as a one-line change (verified live: no regression). The other 3 pages flagged for this were investigated and found to have real ordering dependencies that make a blind `defer` unsafe — see § Performance for specifics; left as a scoped follow-up.
+5. Deleted the duplicate `icons/icon-512x512.png` (byte-identical to `icons/icon.png`); repointed `manifest.json` and `scripts/generate_splash.py` at `icons/icon.png`.
+
+**Explicitly reviewed and deferred by owner decision (not fixed):**
+- Remove `pages/drug-index.html` from `sitemap.xml`.
 - Git-history cleanup for `pdf_sections/` and oversized committed PNGs.
-- Extract the 5 remaining large inline `<style>` blocks the same way `exam-review.css` was extracted.
+
+**Larger, still worth scoping separately:**
+- Get at least the top 3 exam banks clinically reviewed and marked as such in `content-manifest.json` — needs an actual clinician, not something fixable in code.
+- Extract the 5 remaining large inline `<style>` blocks (`courses.html`, `admin.html`, `GCS.html`, `ecg.html`, `drug-calculator.html`) the same way `exam-review.css` was extracted.
+- Properly fix the 3 remaining render-blocking-script cases (needs restructuring each page's init flow, not just an attribute).
+- No SW cache eviction/quota handling; oversized splash/screenshot PNGs; `exam-db.json` not chunked.
