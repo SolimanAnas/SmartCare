@@ -24,7 +24,14 @@ bls/
 
 ## Content totals
 
-12 chapters covering the BLS Provider curriculum: Chain of Survival & systems of care,
+- 12 chapters
+- 190 flashcards
+- 220 quiz questions (with rationales and difficulty)
+- 36 clinical scenarios (with vitals, correct answer, explanation, clinical pearl)
+- 19 structured clinical algorithms
+- 26 structured comparison tables
+
+The chapters cover the BLS Provider curriculum: Chain of Survival & systems of care,
 assessment and recognition of arrest, adult 1- and 2-rescuer CPR, AED, ventilation and
 breaths, child and infant BLS, foreign-body airway obstruction, opioid-associated
 emergencies, and special circumstances (drowning, pregnancy, recovery, post-arrest care).
