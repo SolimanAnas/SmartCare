@@ -1732,7 +1732,13 @@
 
         const catColor = CAT_COLORS[course.category] || CAT_COLORS.general;
 
-        if (course.id === 'itls') {
+        // Courses that offer both a self-study Reviewer and an Exam get dual action buttons.
+        const REVIEWER_LINKS = {
+            itls: { review: '../courses/itls/index.html', exam: 'itls.html' },
+            bls:  { review: '../courses/bls/index.html',  exam: 'bls.html' }
+        };
+        if (REVIEWER_LINKS[course.id]) {
+            const links = REVIEWER_LINKS[course.id];
             return `
                 <div class="course-card" data-id="${course.id}" style="--cat-color:${catColor}; cursor: default;">
                     <div class="cc-header">
@@ -1751,10 +1757,10 @@
                         <span class="cc-pct">${progressLabel || (pct > 0 ? pct + '%' : '')}</span>
                     </div>
                     <div class="itls-actions">
-                        <a href="../courses/itls/index.html" class="itls-btn itls-btn-review">
+                        <a href="${links.review}" class="itls-btn itls-btn-review">
                             <span>📚 Review</span>
                         </a>
-                        <a href="itls.html" class="itls-btn itls-btn-exam">
+                        <a href="${links.exam}" class="itls-btn itls-btn-exam">
                             <span>📝 Exam</span>
                         </a>
                     </div>

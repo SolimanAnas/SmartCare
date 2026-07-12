@@ -37,6 +37,8 @@ CORE_FILES = [
     "images/image-01.png",
     "courses/itls/index.html",
     "courses/itls/data/bundle.js",
+    "courses/bls/index.html",
+    "courses/bls/data/bundle.js",
 ]
 
 GLOB_DIRS = [

@@ -12,6 +12,8 @@ self.__PRECACHE = [
   "images/image-01.png",
   "courses/itls/index.html",
   "courses/itls/data/bundle.js",
+  "courses/bls/index.html",
+  "courses/bls/data/bundle.js",
   "chapters/c-index.html",
   "chapters/c0.html",
   "chapters/c1.html",
@@ -131,4 +133,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "3f478c2570";
+self.__PRECACHE_VERSION = "561aab5a3a";

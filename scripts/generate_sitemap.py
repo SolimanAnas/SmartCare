@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://solimananas.github.io/SmartCare"
 OUT = os.path.join(ROOT, "sitemap.xml")
 
-SCAN_DIRS = ["", "pages", "chapters", "courses/itls", "src/prometric"]
+SCAN_DIRS = ["", "pages", "chapters", "courses/itls", "courses/bls", "src/prometric"]
 EXCLUDE = {
     "404.html",           # error page
     "resume.html",        # redirect stub (manifest shortcut target)

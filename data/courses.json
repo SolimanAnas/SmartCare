@@ -3,6 +3,7 @@
     { "id": "itls", "shortTitle": "ITLS", "title": "International Trauma Life Support", "link": "../courses/itls/index.html", "available": true, "icon": "🚑", "count": 455 },
     { "id": "empact", "shortTitle": "EMPACT", "title": "Emergency Medical Patients: Assessment, Care & Transport", "link": "empact.html", "available": true, "icon": "⚕️", "count": 50 },
     { "id": "bls", "shortTitle": "BLS", "title": "Basic Life Support", "link": "bls.html", "available": true, "icon": "🫀", "count": 284 },
+    { "id": "bls-reviewer", "shortTitle": "BLS Reviewer", "title": "Basic Life Support — Course Reviewer", "link": "../courses/bls/index.html", "available": true, "icon": "🫀", "count": 220 },
     { "id": "acls", "shortTitle": "ACLS", "title": "Advanced Cardiovascular Life Support", "link": "acls.html", "available": true, "icon": "❤️", "count": 33 },
     { "id": "bdls", "shortTitle": "BDLS", "title": "Basic Disaster Life Support", "link": "bdls.html", "available": true, "icon": "🌪️", "count": 40 },
     { "id": "pepp", "shortTitle": "PEPP", "title": "Pediatric Education for Prehospital Professionals", "link": "pepp.html", "available": true, "icon": "🧸", "count": 200 },
