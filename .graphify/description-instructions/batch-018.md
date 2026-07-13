@@ -1,4 +1,4 @@
-# Node Description Batch 19 of 48
+# Node Description Batch 19 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,6 +17,33 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "prometric_exam_examengine_navigate": ".navigate()" | kind=code-symbol | source=src/prometric/exam.js:L707 | neighbors=[ExamEngine, .handleKeyboard(), .handleTouchEnd(), .renderQuestion()]
+- "prometric_exam_examengine_newexam": ".newExam()" | kind=code-symbol | source=src/prometric/exam.js:L814 | neighbors=[ExamEngine, .goToStep(), .removeTouchListeners(), .showScreen()]
+- "prometric_exam_examengine_removetouchlisteners": ".removeTouchListeners()" | kind=code-symbol | source=src/prometric/exam.js:L789 | neighbors=[ExamEngine, .endExam(), .newExam(), .retryIncorrect()]
+- "prometric_exam_examengine_shufflearray": ".shuffleArray()" | kind=code-symbol | source=src/prometric/exam.js:L338 | neighbors=[ExamEngine, .retryIncorrect(), .shuffleOptions(), .startExam()]
+- "prometric_exam_examengine_starttimer": ".startTimer()" | kind=code-symbol | source=src/prometric/exam.js:L720 | neighbors=[ExamEngine, .resumeExam(), .retryIncorrect(), .startExam()]
+- "prometric_exam_examengine_toggleflag": ".toggleFlag()" | kind=code-symbol | source=src/prometric/exam.js:L699 | neighbors=[ExamEngine, .handleKeyboard(), .showToast(), .updateNavigator()]
+- "prometric_exam_examengine_updateavailablecount": ".updateAvailableCount()" | kind=code-symbol | source=src/prometric/exam.js:L150 | neighbors=[ExamEngine, .selectMode(), .selectSetting(), .filterQuestions()]
+- "scripts_assemble_chapters_assemble": "assemble()" | kind=code-symbol | source=scripts/assemble_chapters.py:L90 | neighbors=[assemble_chapters.py, extract_sections(), main(), Assemble a complete chapter JS file.]
+- "scripts_build_precache_build_list": "build_list()" | kind=code-symbol | source=scripts/build_precache.py:L121 | neighbors=[build_precache.py, collect_content_files(), collect_globs(), main()]
+- "scripts_build_precache_main": "main()" | kind=code-symbol | source=scripts/build_precache.py:L147 | neighbors=[build_precache.py, build_list(), content_hash(), rel()]
+- "scripts_build_precache_rel": "rel()" | kind=code-symbol | source=scripts/build_precache.py:L67 | neighbors=[build_precache.py, collect_content_files(), collect_globs(), main()]
+- "scripts_check_contrast_contrast": "contrast()" | kind=code-symbol | source=scripts/check_contrast.py:L46 | neighbors=[check_contrast.py, hex_to_rgb(), luminance(), main()]
+- "scripts_generate_screenshots": "generate_screenshots.py" | kind=code-symbol | source=scripts/generate_screenshots.py:L1 | neighbors=[53ec4c1 Merge pull request #16 ✅, 94235c6 Ship the critical hardening lis…, compress(), main()]
+- "scripts_generate_splash": "generate_splash.py" | kind=code-symbol | source=scripts/generate_splash.py:L1 | neighbors=[83a1ea8 Ship the Offline & PWA section …, d1b235f Merge pull request #15 Offline …, device_entry(), main()]
+- "server_create_app": "create_app()" | kind=code-symbol | source=server.py:L33 | neighbors=[server.py, _register_csrf_guard(), _register_routes(), _register_security_headers()]
+- "server_require_supabase_user": "_require_supabase_user()" | kind=code-symbol | source=server.py:L120 | neighbors=[server.py, Abort with 503/401 unless the caller ha…, _supabase_admin_configured(), _supabase_user_from_token()]
+- "server_supabase_user_from_token": "_supabase_user_from_token()" | kind=code-symbol | source=server.py:L98 | neighbors=[server.py, Resolve a Supabase access token (from t…, _require_supabase_user(), _supabase_admin_configured()]
+- "src_render_state_renderemptyorerror": "renderEmptyOrError()" | kind=code-symbol | source=src/render-state.js:L49 | neighbors=[render-state.js, escapeHtml(), icon(), renderState()]
+- "tests_bls_reviewer_spec": "bls-reviewer.spec.js" | kind=code-symbol | source=tests/bls-reviewer.spec.js:L1 | neighbors=[154f42d Merge pull request #25 BLS revi…, 5157b39 Fix horizontal overflow on phon…, 82ff814 Add Playwright smoke test for B…, f953366 PR #26 BLS-reviewer]
+- "tests_test_api_fakeresp": "_FakeResp" | kind=code-symbol | source=tests/test_api.py:L15 | neighbors=[test_api.py, .__init__(), .json(), .raise_for_status()]
+- "tests_test_api_testadminusers_test_admin_can_list_users": ".test_admin_can_list_users()" | kind=code-symbol | source=tests/test_api.py:L146 | neighbors=[An authenticated admin (role == 'Admin'…, TestAdminUsers, _login(), _register()]
+- "tests_test_api_testadminusers_test_admin_users_forbidden_for_regular_user": ".test_admin_users_forbidden_for_regular_user()" | kind=code-symbol | source=tests/test_api.py:L140 | neighbors=[A signed-in non-admin must be forbidden…, TestAdminUsers, _login(), _register()]
+- "tests_test_api_testlogin_test_login_generic_error_message": ".test_login_generic_error_message()" | kind=code-symbol | source=tests/test_api.py:L106 | neighbors=[Both bad-user and bad-password return t…, TestLogin, _login(), _register()]
+- "tests_test_api_teststaticfiles": "TestStaticFiles" | kind=code-symbol | source=tests/test_api.py:L210 | neighbors=[test_api.py, .test_manifest_json(), .test_nonexistent_file_returns_404(), .test_style_css()]
+- "vendor_chart_4_5_1_umd_min_ae": "Ae()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._computeGridLineItems(), .drawBorder(), .getPixelForDecimal()]
+- "vendor_chart_4_5_1_umd_min_as_cancel": ".cancel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[as(), .tick(), ._createAnimations(), .stop()]
+- "vendor_chart_4_5_1_umd_min_at": "at()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, a(), e(), ._dataCheck()]
 - "vendor_chart_4_5_1_umd_min_b": "b()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, x(), eo(), .init()]
 - "vendor_chart_4_5_1_umd_min_beforedatasetsdraw": "beforeDatasetsDraw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, oa(), .getSortedVisibleDatasetMetas(), ua()]
 - "vendor_chart_4_5_1_umd_min_beforedraw": "beforeDraw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .updateControlPoints(), .getSortedVisibleDatasetMetas(), ua()]
@@ -30,33 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_getcenterpoint": "getCenterPoint()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getProps(), tooltipPosition(), Ui()]
 - "vendor_chart_4_5_1_umd_min_getlabelandvalue": "getLabelAndValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Bn(), .getParsed(), .getLabels()]
 - "vendor_chart_4_5_1_umd_min_getstackcount": "_getStackCount()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getRuler(), _getStacks()]
-- "vendor_chart_4_5_1_umd_min_he": "he()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ce(), .get(), .route()]
-- "vendor_chart_4_5_1_umd_min_ho_tickformatfunction": "._tickFormatFunction()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho(), .generateTickLabels(), ._getLabelCapacity(), d()]
-- "vendor_chart_4_5_1_umd_min_initoffsets": "initOffsets()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, buildLookupTable(), _getTimestampsForTable(), jo()]
-- "vendor_chart_4_5_1_umd_min_io": "io()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, no(), .path(), .pathSegment()]
-- "vendor_chart_4_5_1_umd_min_je": "je()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ti(), yn(), ze()]
-- "vendor_chart_4_5_1_umd_min_ji": "ji()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _i(), getRange(), r()]
-- "vendor_chart_4_5_1_umd_min_jo": "jo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, getDecimalForValue(), getValueForPixel(), initOffsets()]
-- "vendor_chart_4_5_1_umd_min_js_getallparsedvalues": ".getAllParsedValues()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.getDataTimestamps(), js, a(), zn()]
-- "vendor_chart_4_5_1_umd_min_js_getcontext": ".getContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, Ci(), .getDataset(), .getParsed()]
-- "vendor_chart_4_5_1_umd_min_js_getminmax": ".getMinMax()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, g(), ._getOtherScale(), .getUserBounds()]
-- "vendor_chart_4_5_1_umd_min_js_parse": ".parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, a(), n(), o()]
-- "vendor_chart_4_5_1_umd_min_js_resolvedatasetelementoptions": ".resolveDatasetElementOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .getStyle(), ._resolveElementOptions(), update()]
-- "vendor_chart_4_5_1_umd_min_js_resyncelements": "._resyncElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .buildOrUpdateElements(), ._insertElements(), ._removeElements()]
-- "vendor_chart_4_5_1_umd_min_js_update": "._update()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, l(), Ls(), o()]
-- "vendor_chart_4_5_1_umd_min_kn": "kn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, qn(), .update(), ._updateMetasets()]
-- "vendor_chart_4_5_1_umd_min_ko": "ko()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, r(), wo(), .buildTicks()]
-- "vendor_chart_4_5_1_umd_min_kt": "kt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .hslString(), qt(), _t()]
-- "vendor_chart_4_5_1_umd_min_la": "la()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, da(), a(), ha()]
-- "vendor_chart_4_5_1_umd_min_le": "Le()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, draw(), Ee(), ._drawColorBox()]
-- "vendor_chart_4_5_1_umd_min_ln": "ln()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, u(), .buildOrUpdateControllers(), un()]
-- "vendor_chart_4_5_1_umd_min_lt": "lt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .normalize(), n(), zn()]
-- "vendor_chart_4_5_1_umd_min_ms": "ms()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ct(), e(), ge()]
-- "vendor_chart_4_5_1_umd_min_n_clearcache": ".clearCache()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .clear(), .update(), .destroy()]
-- "vendor_chart_4_5_1_umd_min_n_getmaxborderwidth": ".getMaxBorderWidth()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .getDatasetMeta(), .isDatasetVisible(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_getringweight": "._getRingWeight()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), l(), ._getRingWeightOffset(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_parse": ".parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .getDataset(), o(), r()]
-- "vendor_chart_4_5_1_umd_min_n_updateelements": ".updateElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .updateElement(), ._circumference(), ._getRotation()]
 
 ## Instructions
 

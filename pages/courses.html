@@ -1495,9 +1495,8 @@
         { id: 'ppet',      shortTitle: 'PPET',    title: 'Prehospital Pediatric Emergency Transport', link: 'ppet.html',    icon: 'ambulance',      count: 57,   category: 'pediatrics' },
         { id: 'pals',      shortTitle: 'PALS',    title: 'Pediatric Advanced Life Support',   link: 'pals.html',             icon: 'hand-heart',     count: 57,   category: 'pediatrics' },
         { id: 'medical',   shortTitle: 'Medical', title: 'Medical Emergencies Review',       link: 'medical.html',          icon: 'pill',           count: 45,   category: 'medical' },
-        { id: 'ecg-study', shortTitle: 'ECG Course',title: 'The Ultimate ECG Course',          link: 'ECG-study.html',        icon: 'activity',       count: 0,    category: 'ecg' },
-        { id: 'ecg',       shortTitle: 'ECG Sim',  title: 'ECG Rhythm Simulator',              link: 'ecg.html',              icon: 'activity',       count: 0,    category: 'ecg' },
-        { id: 'ecg-test',  shortTitle: 'ECG Test',title: 'ECG Interpretation Practice Tests', link: 'ecg-test.html',         icon: 'activity',       count: 120,  category: 'ecg' }
+        { id: 'ecg-course', shortTitle: 'ECG Course', title: 'ECG Interpretation & Practice Tests', link: '',                        icon: 'activity',       count: 120,  category: 'ecg' },
+        { id: 'ecg',        shortTitle: 'ECG Simulator',   title: 'ECG Rhythm Simulator',               link: 'ecg.html',               icon: 'activity',       count: 0,    category: 'ecg' }
     ];
 
     const CATEGORY_LABELS = {
@@ -1525,7 +1524,7 @@
     const COURSE_IMG = {
         prometric: 'prometric', itls: 'itls', empact: 'empact', bls: 'bls', acls: 'acls',
         bdls: 'bdls', pepp: 'pepp', ppet: 'ppet', pals: 'pals', medical: 'medical',
-        ecg: 'ecg', 'ecg-test': 'ecg', 'ecg-study': 'ecg'
+        ecg: 'ecg', 'ecg-course': 'ecg'
     };
     function courseIcon(course) {
         const key = COURSE_IMG[course.id];
@@ -1734,10 +1733,11 @@
 
         // Courses that offer both a self-study Reviewer and an Exam get dual action buttons.
         const REVIEWER_LINKS = {
-            itls: { review: '../courses/itls/index.html', exam: 'itls.html' },
-            bls:  { review: '../courses/bls/index.html',  exam: 'bls.html' },
-            pals: { review: '../courses/pals/index.html',  exam: 'pals.html' },
-            acls: { review: '../courses/acls/index.html',  exam: 'acls.html' }
+            itls:      { review: '../courses/itls/index.html', exam: 'itls.html' },
+            bls:       { review: '../courses/bls/index.html',  exam: 'bls.html' },
+            pals:      { review: '../courses/pals/index.html',  exam: 'pals.html' },
+            acls:      { review: '../courses/acls/index.html',  exam: 'acls.html' },
+            'ecg-course': { review: 'ECG-study.html', exam: 'ecg-test.html' }
         };
         if (REVIEWER_LINKS[course.id]) {
             const links = REVIEWER_LINKS[course.id];

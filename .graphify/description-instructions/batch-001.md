@@ -1,4 +1,4 @@
-# Node Description Batch 2 of 48
+# Node Description Batch 2 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -26,6 +26,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "commit:repo:github.com/SolimanAnas/SmartCare@323b8fc32a733a73bb6811945e79ce4a6eaaa493": "323b8fc feat: migrate to Lucide SVG sprite system" | kind=Commit | source=git | neighbors=[app.js, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1] | lang=en
 - "vendor_chart_4_5_1_umd_min_e": "e()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ._notify(), at(), Ye(), ei(), ho()] | lang=en
 - "vendor_chart_4_5_1_umd_min_jt": "jt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .alpha(), .clearer(), .clone(), .constructor(), .darken()] | lang=en
 - "vendor_chart_4_5_1_umd_min_r": "r()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .register(), fn(), ho(), ji(), ._dataCheck()] | lang=en
@@ -36,6 +37,7 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_si": "Si()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, co(), .drawGrid(), _i(), l(), Ta()] | lang=en
 - "vendor_chart_4_5_1_umd_min_u": "u()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ln(), Ta(), .bindUserEvents(), .buildOrUpdateScales(), ._computeLabelSizes()] | lang=en
 - "vendor_supabase_js_2_110_0_tostring": "toString()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, applyTransformOptsToQuery(), cloneRequestState(), download(), getPublicUrl(), _getSessionFromURL()] | lang=en
+- "scripts_build_precache": "build_precache.py" | kind=code-symbol | source=scripts/build_precache.py:L1 | neighbors=[154f42d Merge pull request #25 BLS revi…, 23060c0 Integrate BLS reviewer into pla…, 2e859ad Adding PALS Course, 3c15b4d V2 ⭐ : Question Review, All Que…, 53ec4c1 Merge pull request #16 ✅, 69ad055 Merge pull request #17 html Cle…] | lang=en
 - "vendor_chart_4_5_1_umd_min_da": "da()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, a(), ca, dataset(), l(), la()] | lang=en
 - "vendor_chart_4_5_1_umd_min_tn_notifyplugins": ".notifyPlugins()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[afterDraw(), sn, tn, ._callHooks(), .destroy(), .draw()] | lang=en
 - "vendor_supabase_js_2_110_0_request": "request()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, ajax(), createNamespace(), createTable(), dropNamespace(), dropTable()] | lang=en
@@ -50,6 +52,7 @@ one-sentence description — no prose, no markdown fences.
 - "commit:repo:github.com/SolimanAnas/SmartCare@53ec4c10f19fa97df5c5dedd1dd25bc8d9e3063f": "53ec4c1 Merge pull request #16 ✅" | kind=Commit | source=git | neighbors=[main, 69ad055 Merge pull request #17 html Cle…, c9e85ef Deduplicate the 8 standalone ex…, 20260702000001_create_user_state.sql, 20260702000002_create_profiles.sql, playwright.config.js] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@8f311cdee2c6f2992890795e6c835c4d237447f0": "8f311cd Merge branch 'main' of https://github.com/SolimanAnas/CPG-2025" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, feat/lucide-svg-migration] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@c7c9a6fb230ca2911ccf540f080007aa589b4fe0": "c7c9a6f fix: restore missing <style> tags and fix SVG quote mismatches in JS st…" | kind=Commit | source=git | neighbors=[77d4355 Merge pull request #21 from Sol…, app.js, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1] | lang=en
+- "content_c_index": "c-index.js" | kind=code-symbol | source=content/c-index.js:L1 | neighbors=[02bf7e6 fix: replace single-quoted SVG …, 1543337 Fix raw markup in Last Visited,…, 1a56d75 feat: graphify rebuild with des…, 26ac1b0 new index with pdf, 323b8fc feat: migrate to Lucide SVG spr…, 4e04344 feat: migrate to Lucide SVG spr…] | lang=en
 - "vendor_chart_4_5_1_umd_min_co": "co()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Do(), n(), Oe(), ro(), .getIndexAngle()] | lang=en
 - "vendor_chart_4_5_1_umd_min_ya": "ya" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, start(), .adjustHitBoxes(), .buildLabels(), ._computeTitleHeight(), .constructor()] | lang=en
 - "vendor_supabase_js_2_110_0_notifyallsubscribers": "_notifyAllSubscribers()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _callRefreshToken(), exchangeCodeForSession(), _debug(), from(), _recoverAndRefresh()] | lang=en
@@ -63,9 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_xt": "xt" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, Ft(), It(), .add(), .constructor(), ._getAnims()] | lang=en
 - "vendor_supabase_js_2_110_0_acquirelock": "_acquireLock()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _debug(), push(), _autoRefreshTokenTick(), _challenge(), exchangeCodeForSession()] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@1d86134cb4354c77c56508110db1b6214e8a63d7": "1d86134 Secure SDLC Phase 0: fix critical access-control, secrets & CI" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, feat/lucide-svg-migration] | lang=en
-- "commit:repo:github.com/SolimanAnas/SmartCare@beb9c47aec6456afedc3e4f0809372721f1143de": "beb9c47 fix(ui): swap CSS to 0dad921 glassmorphism; fix Chart.js colors; add wi…" | kind=Commit | source=git | neighbors=[0ac5f99 feat(ui): cherry-pick loading o…, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1] | lang=en
-- "content_c_index": "c-index.js" | kind=code-symbol | source=content/c-index.js:L1 | neighbors=[02bf7e6 fix: replace single-quoted SVG …, 1a56d75 feat: graphify rebuild with des…, 26ac1b0 new index with pdf, 323b8fc feat: migrate to Lucide SVG spr…, 4e04344 feat: migrate to Lucide SVG spr…, 5d23c19 fix: improve heading and index-…] | lang=en
-- "precache_manifest": "precache-manifest.js" | kind=code-symbol | source=precache-manifest.js:L1 | neighbors=[2ab1c09 Fix invisible Show Hint/confide…, 3c15b4d V2 ⭐ : Question Review, All Que…, 503d0e1 Fix 36 single-option questions …, 53ec4c1 Merge pull request #16 ✅, 5d2d46f Fix WCAG AA contrast failure in…, 69ad055 Merge pull request #17 html Cle…] | lang=en
 
 ## Instructions
 

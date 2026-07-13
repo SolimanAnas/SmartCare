@@ -4,9 +4,9 @@
     {
       "id": "c09_q01",
       "question": "What is the standard concentration of epinephrine for IV/IO administration in pediatric cardiac arrest?",
-      "options": ["A. 0.01 mg/mL (1:100,000)", "B. 0.1 mg/mL (1:1,000)", "C. 1 mg/mL (1:10,000)", "D. 10 mg/mL (1:100)"],
+      "options": ["A. 0.01 mg/mL (1:100,000)", "B. 0.1 mg/mL (1:10,000)", "C. 1 mg/mL (1:1,000)", "D. 10 mg/mL (1:100)"],
       "correct": 1,
-      "rationale": "The standard concentration for pediatric IV/IO epinephrine is 0.1 mg/mL (1:1000). The 1 mg/mL (1:10000) adult concentration must NOT be confused with this — using the wrong concentration causes a 10-fold overdose.",
+      "rationale": "The standard concentration for IV/IO epinephrine is 0.1 mg/mL (1:10,000). The 1 mg/mL (1:1,000) concentration used for intramuscular anaphylaxis treatment must NOT be confused with this — using the 1 mg/mL concentration for IV/IO delivery results in a 10-fold overdose.",
       "difficulty": "Easy"
     },
     {

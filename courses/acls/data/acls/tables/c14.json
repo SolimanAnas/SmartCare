@@ -8,7 +8,7 @@
       "rows": [
         ["MAP", "≥65 mmHg (SBP >90)", "Norepinephrine 0.1–0.5 mcg/kg/min, IV fluid bolus 250–500 mL", "Avoid MAP <60 or >100"],
         ["ETCO₂", "35–45 mmHg", "Mechanical ventilation adjustment", "Avoid hypo- and hyperventilation"],
-        ["Temperature", "≤37.5°C (minimum); 32–36°C if TTM", "Active cooling, antipyretics, cooling catheters/pads", "Continuous monitoring; treat fever >37.5°C immediately"],
+        ["Temperature", "≤37.5°C (minimum); 32–37.5°C if TTM", "Active cooling, antipyretics, cooling catheters/pads", "Continuous monitoring; treat fever >37.5°C immediately"],
         ["TTM duration", "≥36 hours", "Maintain target range", "Rewarm at ≤0.25°C/hr"],
         ["Glucose", "70–180 mg/dL", "Insulin protocol; dextrose if hypoglycemic", "Avoid both hypo- and hyperglycemia"],
         ["Oxygenation", "SpO₂ ≥94%", "Adjust FiO₂ as needed", "Avoid hyperoxia if possible"],

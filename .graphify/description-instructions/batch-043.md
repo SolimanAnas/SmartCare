@@ -1,4 +1,4 @@
-# Node Description Batch 44 of 48
+# Node Description Batch 44 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,58 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "vendor_chart_4_5_1_umd_min_hs_addeventlistener": ".addEventListener()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_getdevicepixelratio": ".getDevicePixelRatio()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_getmaximumsize": ".getMaximumSize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_isattached": ".isAttached()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_releasecontext": ".releaseContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_removeeventlistener": ".removeEventListener()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_hs_updateconfig": ".updateConfig()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
-- "vendor_chart_4_5_1_umd_min_ii": "ii()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_js_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_getdataelement": ".getDataElement()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_getmaxoverflow": ".getMaxOverflow()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_parsearraydata": ".parseArrayData()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_parseobjectdata": ".parseObjectData()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_reset": ".reset()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_updateelements": ".updateElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_js_updaterangefromparsed": ".updateRangeFromParsed()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js]
-- "vendor_chart_4_5_1_umd_min_jt_alpha": ".alpha()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_clearer": ".clearer()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_clone": ".clone()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_desaturate": ".desaturate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_lighten": ".lighten()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_mix": ".mix()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_negate": ".negate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_opaquer": ".opaquer()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_jt_valid": ".valid()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt()]
-- "vendor_chart_4_5_1_umd_min_k": "K()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_legend": "Legend()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_n_linkscales": ".linkScales()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n()]
-- "vendor_chart_4_5_1_umd_min_n_options": ".options()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n()]
-- "vendor_chart_4_5_1_umd_min_n_platform": ".platform()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n()]
-- "vendor_chart_4_5_1_umd_min_n_plugins": ".plugins()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n()]
-- "vendor_chart_4_5_1_umd_min_n_type": ".type()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n()]
-- "vendor_chart_4_5_1_umd_min_on_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[on]
-- "vendor_chart_4_5_1_umd_min_oo_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo]
-- "vendor_chart_4_5_1_umd_min_oo_last": ".last()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo]
-- "vendor_chart_4_5_1_umd_min_oo_points": ".points()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo]
-- "vendor_chart_4_5_1_umd_min_qe": "qe()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_qi": "qi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_qo": "qo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_reset": "reset()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "tests_test_api_rationale_30": "Stubs server.py's Supabase integration with an in-memory fake.\r     Returns a na" | kind=entity | source=tests/test_api.py:L30 | neighbors=[supabase_backend()]
+- "tests_test_api_testaccountselfdelete_test_requires_auth": ".test_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L88 | neighbors=[TestAccountSelfDelete]
+- "tests_test_api_testgooglelogin_test_google_login_bad_token": ".test_google_login_bad_token()" | kind=code-symbol | source=tests/test_api.py:L121 | neighbors=[TestGoogleLogin]
+- "tests_test_api_testgooglelogin_test_google_login_missing_token": ".test_google_login_missing_token()" | kind=code-symbol | source=tests/test_api.py:L116 | neighbors=[TestGoogleLogin]
+- "tests_test_api_testhealthcheck_test_health_returns_ok": ".test_health_returns_ok()" | kind=code-symbol | source=tests/test_api.py:L145 | neighbors=[TestHealthCheck]
+- "tests_test_api_testindex_test_index_serves_html": ".test_index_serves_html()" | kind=code-symbol | source=tests/test_api.py:L74 | neighbors=[TestIndex]
+- "tests_test_api_testlogout_test_logout_requires_auth": ".test_logout_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L128 | neighbors=[TestLogout]
+- "tests_test_api_testregister_test_invalid_professional_level_rejected": ".test_invalid_professional_level_rejected()" | kind=code-symbol | source=tests/test_api.py:L78 | neighbors=[TestRegister]
+- "tests_test_api_testregister_test_register_missing_password": ".test_register_missing_password()" | kind=code-symbol | source=tests/test_api.py:L43 | neighbors=[TestRegister]
+- "tests_test_api_testsecurityheaders_test_csp_blocks_framing": ".test_csp_blocks_framing()" | kind=code-symbol | source=tests/test_api.py:L138 | neighbors=[TestSecurityHeaders]
+- "tests_test_api_testsecurityheaders_test_security_headers_present": ".test_security_headers_present()" | kind=code-symbol | source=tests/test_api.py:L133 | neighbors=[TestSecurityHeaders]
+- "tests_test_api_teststaticfiles_test_manifest_json": ".test_manifest_json()" | kind=code-symbol | source=tests/test_api.py:L216 | neighbors=[TestStaticFiles]
+- "tests_test_api_teststaticfiles_test_nonexistent_file_returns_404": ".test_nonexistent_file_returns_404()" | kind=code-symbol | source=tests/test_api.py:L221 | neighbors=[TestStaticFiles]
+- "tests_test_api_teststaticfiles_test_style_css": ".test_style_css()" | kind=code-symbol | source=tests/test_api.py:L211 | neighbors=[TestStaticFiles]
+- "usermixin": "UserMixin" | kind=code-symbol | neighbors=[User]
+- "vendor_chart_4_5_1_umd_min_afterevent": "afterEvent()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_afterinit": "afterInit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_as_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[as()]
+- "vendor_chart_4_5_1_umd_min_as_update": ".update()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[as()]
+- "vendor_chart_4_5_1_umd_min_beforeupdate": "beforeUpdate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_bo_computeticklimit": ".computeTickLimit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
+- "vendor_chart_4_5_1_umd_min_bo_configure": ".configure()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
+- "vendor_chart_4_5_1_umd_min_bo_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
+- "vendor_chart_4_5_1_umd_min_bs": "bs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_ca_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
+- "vendor_chart_4_5_1_umd_min_ca_interpolate": ".interpolate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
+- "vendor_chart_4_5_1_umd_min_ca_pathsegment": ".pathSegment()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
+- "vendor_chart_4_5_1_umd_min_colors": "Colors()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_configure": "configure()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_constructor": "constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_cs_acquirecontext": ".acquireContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[cs]
+- "vendor_chart_4_5_1_umd_min_cs_updateconfig": ".updateConfig()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[cs]
+- "vendor_chart_4_5_1_umd_min_decimation": "Decimation()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_destroy": "destroy()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_en_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
+- "vendor_chart_4_5_1_umd_min_en_get": ".get()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
+- "vendor_chart_4_5_1_umd_min_en_unregister": ".unregister()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
+- "vendor_chart_4_5_1_umd_min_filler": "Filler()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_getbasepixel": "getBasePixel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_getlabelforvalue": "getLabelForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
 
 ## Instructions
 

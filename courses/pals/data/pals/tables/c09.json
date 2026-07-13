@@ -6,7 +6,7 @@
       "title": "Complete PALS Weight-Based Drug Reference",
       "headers": ["Drug", "Dose", "Concentration", "Route", "Max Single Dose", "Frequency", "Indication"],
       "rows": [
-        ["Epinephrine", "0.01 mg/kg (0.1 mL/kg)", "0.1 mg/mL (1:1000)", "IV/IO push", "1 mg", "Every 3–5 min (arrest)", "Cardiac arrest (all rhythms), severe bradycardia"],
+        ["Epinephrine", "0.01 mg/kg (0.1 mL/kg)", "0.1 mg/mL (1:10,000)", "IV/IO push", "1 mg", "Every 3–5 min (arrest)", "Cardiac arrest (all rhythms), severe bradycardia"],
         ["Amiodarone", "5 mg/kg", "50 mg/mL or dilute to 10 mg/mL", "IV/IO bolus", "300 mg (1st dose); 150 mg (subsequent)", "May repeat up to 3 times", "Refractory VF/pVT"],
         ["Lidocaine", "1 mg/kg", "10 mg/mL or 20 mg/mL", "IV/IO push", "N/A (weight-based)", "May repeat 0.5–1 mg/kg q5–10 min", "Alternative to amiodarone for VF/pVT"],
         ["Atropine", "0.02 mg/kg", "0.1 mg/mL or 0.5 mg/mL", "IV/IO push", "0.5 mg single dose", "May repeat q5 min (max 3 doses for arrest)", "Symptomatic bradycardia (vagal/AV block)"],

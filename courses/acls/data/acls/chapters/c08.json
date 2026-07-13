@@ -21,7 +21,7 @@
     },
     {
       "title": "Amiodarone: Antiarrhythmic for VF/pVT",
-      "content": "Amiodarone is the preferred antiarrhythmic for refractory VF/pVT. The first dose is 300 mg IV/IO as a rapid bolus, followed by a second dose of 150 mg IV/IO if VF/pVT persists. Amiodarone has combined Class I (sodium channel blockade), Class III (potassium channel blockade/prolonged repolarization), and Class IV (calcium channel blockade) antiarrhythmic properties. It stabilizes the myocardial membrane and suppresses ventricular arrhythmias. Side effects include hypotension (from the diluent's solvent — use normal saline, not dextrose) and bradycardia."
+      "content": "Amiodarone is the preferred antiarrhythmic for refractory VF/pVT. The first dose is 300 mg IV/IO as a rapid bolus, followed by a second dose of 150 mg IV/IO if VF/pVT persists. Amiodarone has combined Class I (sodium channel blockade), Class III (potassium channel blockade/prolonged repolarization), and Class IV (calcium channel blockade) antiarrhythmic properties. It stabilizes the myocardial membrane and suppresses ventricular arrhythmias. Side effects include hypotension (associated with the solvent polysorbate 80; standard amiodarone must be diluted in 5% dextrose in water [D5W], not normal saline, as it precipitates in saline) and bradycardia."
     },
     {
       "title": "Lidocaine: Alternative Antiarrhythmic",
@@ -50,14 +50,14 @@
   ],
   "clinicalPearls": [
     "Epinephrine 1:10,000 (NOT 1:1,000) — the wrong concentration can cause severe harm; always verify.",
-    "Amiodarone must be diluted in normal saline (D5W causes hypotension) and pushed rapidly during compressions.",
+    "Amiodarone must be diluted in 5% dextrose in water (D5W) for infusions; standard amiodarone is incompatible with normal saline and will precipitate.",
     "Sodium bicarbonate is not a routine arrest drug — reserve it for hyperkalemia, TCA overdose, and documented bicarbonate-responsive acidosis.",
     "Adenosine has zero role in pulseless arrest — it is only for SVT with a pulse.",
     "All arrest drugs can be given IV or IO; IO is faster to establish and has equivalent drug bioavailability."
   ],
   "redFlags": [
     "Using epinephrine 1:1,000 instead of 1:10,000 — this is a 10-fold overdose.",
-    "Diluting amiodarone in dextrose (D5W) instead of normal saline — D5W causes hypotension.",
+    "Diluting standard amiodarone in normal saline instead of dextrose (D5W) — normal saline causes drug precipitation.",
     "Administering sodium bicarbonate as a routine arrest drug without specific indications.",
     "Attempting adenosine in a pulseless rhythm — this is ineffective and wastes time."
   ],

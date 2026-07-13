@@ -61,15 +61,15 @@
     },
     {
       "id": "c08_q07",
-      "question": "Why should amiodarone NOT be diluted in dextrose (D5W)?",
+      "question": "Which diluent must be used for standard amiodarone infusions, and why?",
       "options": [
-        "A. D5W reduces the drug's effectiveness",
-        "B. The solvent in amiodarone preparations causes hypotension when mixed with dextrose",
-        "C. D5W causes the drug to precipitate",
-        "D. There is no difference between D5W and normal saline for amiodarone"
+        "A. Normal saline, because dextrose degrades the active drug",
+        "B. 5% Dextrose in water (D5W), because normal saline causes the drug to precipitate",
+        "C. Lactated Ringer's, to maintain electrolyte balance",
+        "D. Sterile water, to prevent volume overload"
       ],
       "correct": 1,
-      "rationale": "The polysorbate 80 solvent in amiodarone preparations causes hypotension when diluted in dextrose. Normal saline is the correct diluent.",
+      "rationale": "Standard amiodarone is incompatible with sodium chloride (normal saline) and will precipitate, forming crystals. Therefore, D5W must be used as the diluent. The solvent polysorbate 80 can cause hypotension during infusion, which is a known side effect of rapid administration and not a reaction to dextrose.",
       "difficulty": "Medium"
     },
     {

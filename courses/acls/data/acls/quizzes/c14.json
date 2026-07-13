@@ -7,11 +7,11 @@
       "options": [
         "A. 28–32°C",
         "B. 30–34°C",
-        "C. 32–36°C for at least 36 hours",
+        "C. 32–37.5°C for at least 36 hours",
         "D. 36–37°C (normothermia only)"
       ],
       "correct": 2,
-      "rationale": "If TTM is chosen, the 2025 AHA guidelines recommend 32–36°C for at least 36 hours. Maintaining ≤37.5°C is the minimum standard regardless of TTM approach.",
+      "rationale": "If TTM is chosen, the 2025 AHA guidelines recommend selecting and maintaining a constant temperature between 32–37.5°C for at least 36 hours. Maintaining ≤37.5°C is the minimum standard regardless of the TTM approach.",
       "difficulty": "Easy"
     },
     {
@@ -154,7 +154,7 @@
         "D. ≤38.0°C"
       ],
       "correct": 2,
-      "rationale": "Even if TTM at 32–36°C is not chosen, the minimum standard is maintaining temperature ≤37.5°C with continuous monitoring and immediate treatment of any fever.",
+      "rationale": "Even if TTM at 32–37.5°C is not chosen, the minimum standard is maintaining temperature ≤37.5°C with continuous monitoring and immediate treatment of any fever.",
       "difficulty": "Easy"
     },
     {

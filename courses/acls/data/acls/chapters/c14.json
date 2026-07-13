@@ -19,7 +19,7 @@
     },
     {
       "title": "Temperature Management After Cardiac Arrest",
-      "content": "The 2025 AHA guidelines recommend maintaining temperature ≤37.5°C after cardiac arrest. Continuous temperature monitoring is mandatory (using core probes: esophageal, bladder, or pulmonary artery). If targeted temperature management (TTM) is chosen as a therapeutic strategy, the recommended target range is 32–36°C, maintained for at least 36 hours. Fever (>37.5°C) must be treated aggressively and immediately with active cooling measures and antipyretics, as hyperthermia exacerbates ischemic brain injury. The 2025 guidelines support an approach of controlled normothermia (≤37.5°C) as the minimum standard, with 32–36°C TTM as an acceptable option — neither approach has been shown to be clearly superior, and the choice should be guided by institutional protocol and individual patient factors. Rewarming, if TTM was used, should be slow and controlled (rate ≤0.25°C per hour)."
+      "content": "The 2025 AHA guidelines recommend maintaining temperature ≤37.5°C after cardiac arrest. Continuous temperature monitoring is mandatory (using core probes: esophageal, bladder, or pulmonary artery). If targeted temperature management (TTM) is chosen as a therapeutic strategy, the recommended target range is 32–37.5°C, maintained for at least 36 hours. Fever (>37.5°C) must be treated aggressively and immediately with active cooling measures and antipyretics, as hyperthermia exacerbates ischemic brain injury. The 2025 guidelines support an approach of controlled normothermia (≤37.5°C) as the minimum standard, with 32–37.5°C TTM as an acceptable option — neither approach has been shown to be clearly superior, and the choice should be guided by institutional protocol and individual patient factors. Rewarming, if TTM was used, should be slow and controlled (rate ≤0.25°C per hour)."
     },
     {
       "title": "Hemodynamic Targets After ROSC",
@@ -41,7 +41,7 @@
   "clinicalPearls": [
     "ROSC is the start of a new resuscitation, not the end of the old one — the post-ROSC bundle must be initiated immediately.",
     "Obtain a 12-lead ECG immediately after ROSC — up to 50% of post-arrest patients have acute STEMI and need emergent PCI.",
-    "Temperature ≤37.5°C is the minimum standard; if TTM is used, 32–36°C for ≥36 hours.",
+    "Temperature ≤37.5°C is the minimum standard; if TTM is used, 32–37.5°C for ≥36 hours.",
     "Neuroprognostication before 72 hours is unreliable — sedation, paralysis, and metabolic derangements confound the exam.",
     "Use MULTIPLE modalities for neuroprognostication — no single test is sufficient.",
     "ECPR is a bridge, not a destination — it buys time for reversible causes to be treated.",
@@ -75,7 +75,7 @@
   "decisionTrees": [
     {
       "title": "Post-ROSC Management Bundle",
-      "content": "ROSC achieved\n  → Confirm and secure airway with waveform capnography (ETCO₂ 35–45 mmHg)\n  → IV fluid bolus (250–500 mL) + vasopressor (norepinephrine) to MAP ≥65 mmHg\n  → 12-lead ECG immediately\n     → STEMI identified → emergent coronary angiography + PCI\n     → No STEMI → continue monitoring\n  → Non-contrast CT head (exclude intracranial hemorrhage)\n  → Initiate temperature management\n     → Maintain ≤37.5°C at minimum\n     → If TTM chosen → 32–36°C for ≥36 hours\n     → Treat any fever >37.5°C immediately\n  → Continuous monitoring (arterial line, ETCO₂, temperature)\n  → Identify and treat reversible causes (H's and T's)\n  → Sedation/analgesia as needed for comfort and temperature management\n  → Neuroprognostication deferred ≥72 hours after ROSC (or after rewarming)\n     → Multimodal: clinical exam + SSEPs + EEG + NSE/S-100B + imaging\n  → Rehabilitation planning and family communication"
+      "content": "ROSC achieved\n  → Confirm and secure airway with waveform capnography (ETCO₂ 35–45 mmHg)\n  → IV fluid bolus (250–500 mL) + vasopressor (norepinephrine) to MAP ≥65 mmHg\n  → 12-lead ECG immediately\n     → STEMI identified → emergent coronary angiography + PCI\n     → No STEMI → continue monitoring\n  → Non-contrast CT head (exclude intracranial hemorrhage)\n  → Initiate temperature management\n     → Maintain ≤37.5°C at minimum\n     → If TTM chosen → 32–37.5°C for ≥36 hours\n     → Treat any fever >37.5°C immediately\n  → Continuous monitoring (arterial line, ETCO₂, temperature)\n  → Identify and treat reversible causes (H's and T's)\n  → Sedation/analgesia as needed for comfort and temperature management\n  → Neuroprognostication deferred ≥72 hours after ROSC (or after rewarming)\n     → Multimodal: clinical exam + SSEPs + EEG + NSE/S-100B + imaging\n  → Rehabilitation planning and family communication"
     },
     {
       "title": "ECPR Selection and Initiation",

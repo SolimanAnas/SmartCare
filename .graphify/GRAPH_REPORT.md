@@ -1,25 +1,24 @@
-# Graph Report - .  (2026-07-04)
+# Graph Report - .  (2026-07-13)
 
 ## Corpus Check
-- 80 files · ~470,819 words
-- Verdict: corpus is large enough that graph structure adds value.
+- Large corpus: 94 files · ~614,552 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1893 nodes · 5864 edges · 85 communities detected
+- 1941 nodes · 5989 edges · 84 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: calls: 1971 · ON_BRANCH: 1673 · contains: 910 · method: 550 · MODIFIES: 356 · PARENT_OF: 353 · rationale_for: 30 · imports: 12 · imports_from: 4 · references: 2 · inherits: 1 · reads_from: 1 · triggers: 1
+- Edge kinds: calls: 1977 · ON_BRANCH: 1696 · contains: 920 · method: 550 · MODIFIES: 411 · PARENT_OF: 380 · rationale_for: 34 · imports: 12 · imports_from: 4 · references: 2 · inherits: 1 · reads_from: 1 · triggers: 1
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 80 · Candidates: 685
-- Excluded: 0 untracked · 14494 ignored · 0 sensitive · 0 missing committed
+- Included files: 94 · Candidates: 1029
+- Excluded: 26 untracked · 14591 ignored · 0 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `9b12c84`
+- Built from Git commit: `bd7b1a9`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `tn` - 124 edges
@@ -37,259 +36,343 @@
 - `0245fab update: refresh PWA icons and favicon from new source image` --ON_BRANCH--> `main`  [EXTRACTED]
   git → git  _Bridges community 62 → community 0_
 - `02bf7e6 fix: replace single-quoted SVG attributes with double quotes` --ON_BRANCH--> `dependabot/github_actions/actions/checkout-7`  [EXTRACTED]
-  git → git  _Bridges community 36 → community 0_
+  git → git  _Bridges community 37 → community 0_
 - `0465774 feat: Google Identity Services popup sign-in (shows SmartCare brand) + fix sync error msg` --ON_BRANCH--> `main`  [EXTRACTED]
   git → git  _Bridges community 63 → community 0_
 - `074617f feat: update chapter files with SEO and accessibility improvements` --ON_BRANCH--> `main`  [EXTRACTED]
-  git → git  _Bridges community 38 → community 0_
+  git → git  _Bridges community 43 → community 0_
 - `0bee1e7 fix(ci): resolve ruff linting errors in scripts/ and tests/` --PARENT_OF--> `9b0bbbb content: deploy chapters 6-10 with assembled NREMT-aligned EMT curriculum`  [EXTRACTED]
-  git → git  _Bridges community 0 → community 27_
+  git → git  _Bridges community 0 → community 28_
 
 ## Communities
 
-### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (249): dependabot/github_actions/actions/checkout-7, dependabot/github_actions/actions/setup-node-6, dependabot/github_actions/actions/setup-python-6, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, feat/lucide-svg-migration, fix/lucide-quote-consistency, main (+241 more)
-
-### Community 1 - "Community 1"
-Cohesion: 0.06
-Nodes (93): _adminDeletePasskey(), _adminListPasskeys(), _approveAuthorization(), _authenticate(), _challenge(), _challengeAndVerify(), _createCustomProvider(), createNewAbortSignal() (+85 more)
-
-### Community 3 - "Community 3"
-Cohesion: 0.05
-Nodes (12): da(), dataset(), fn(), gn(), ln(), n(), pi(), rn() (+4 more)
-
-### Community 4 - "Community 4"
-Cohesion: 0.07
-Nodes (1): ExamEngine
-
-### Community 5 - "Community 5"
-Cohesion: 0.07
-Nodes (19): addBox(), afterDraw(), afterUpdate(), Ba(), f(), ki(), Oi(), p() (+11 more)
-
-### Community 6 - "Community 6"
-Cohesion: 0.06
-Nodes (2): onClick(), tn
-
-### Community 7 - "Community 7"
-Cohesion: 0.07
-Nodes (5): at(), Ci(), initialize(), js, rt()
-
-### Community 8 - "Community 8"
-Cohesion: 0.06
-Nodes (44): _binaryDecode(), binaryEncode(), _binaryEncodeUserBroadcastPush(), cloneRequestState(), containedBy(), contains(), decode(), decodeBroadcast() (+36 more)
-
-### Community 9 - "Community 9"
-Cohesion: 0.07
-Nodes (27): Ae(), Bn(), buildTicks(), _calculateBarIndexPixels(), _calculateBarValuePixels(), _getAxis(), _getAxisCount(), getFirstScaleIdForIndexAxis() (+19 more)
-
-### Community 10 - "Community 10"
-Cohesion: 0.06
-Nodes (13): beforeLayout(), cn(), getRange(), Go(), hn(), _i(), ji(), Nn() (+5 more)
-
-### Community 11 - "Community 11"
-Cohesion: 0.08
-Nodes (17): a(), aa(), afterDatasetsUpdate(), determineDataLimits(), g(), getValueForPixel(), gi(), Gs() (+9 more)
-
-### Community 12 - "Community 12"
-Cohesion: 0.08
-Nodes (15): Bt(), Ee(), Ft(), Gt(), It(), jt(), kt(), Le() (+7 more)
-
-### Community 13 - "Community 13"
-Cohesion: 0.07
-Nodes (34): copy(), createBucket(), createIndex(), createSignedUploadUrl(), createSignedUrl(), createSignedUrls(), deleteBucket(), deleteIndex() (+26 more)
-
-### Community 14 - "Community 14"
-Cohesion: 0.11
-Nodes (10): _login(), Both bad-user and bad-password return the same message (anti-enumeration)., Anonymous access to the admin API must be denied (no PII leak)., A signed-in non-admin must be forbidden (broken-access-control fix)., An authenticated admin (role == 'Admin') can list users., _register(), TestAdminUsers, TestAuditLogging (+2 more)
-
-### Community 15 - "Community 15"
-Cohesion: 0.09
-Nodes (11): Fs(), _generate(), _getTimestampsForTable(), ho(), lo(), lt(), nt(), pt() (+3 more)
-
-### Community 16 - "Community 16"
-Cohesion: 0.11
-Nodes (9): ao(), b(), co(), Do(), eo(), inXRange(), inYRange(), Oe() (+1 more)
-
-### Community 17 - "Community 17"
-Cohesion: 0.11
-Nodes (12): bootApp(), handleScroll(), initBatteryIndicator(), initBottomNav(), initChapterPage(), initFooterAwareNav(), initScrollReveal(), recordLastVisited() (+4 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.12
-Nodes (4): addElements(), en, sn, w()
-
 ### Community 19 - "Community 19"
-Cohesion: 0.10
-Nodes (4): as(), rs(), ts(), xt
-
-### Community 20 - "Community 20"
-Cohesion: 0.12
-Nodes (27): catch(), createNamespace(), createNamespaceIfNotExists(), createTable(), createTableIfNotExists(), ct(), dropNamespace(), dropTable() (+19 more)
-
-### Community 21 - "Community 21"
-Cohesion: 0.10
-Nodes (20): 2e2f605 Ship the Security section from the v2.0 roadmap audit, 5b68bae docs: add comprehensive v2.0 upgrade roadmap from full repository audit, 5f7c4f2 Merge pull request #12 Step 1&2 of V2 plan, eff053b Ship all six Critical Fixes from the v2.0 roadmap audit, _admin_emails(), _audit(), create_app(), _is_admin() (+12 more)
-
-### Community 22 - "Community 22"
-Cohesion: 0.09
-Nodes (15): 70a3f4d Clean up about.html copy and relocate MIT license to privacy.html, 95f6363 Merge pull request #10 from SolimanAnas/claude/chapters-html-summary-fixes-5lnmvu, acb0328 About ✅ Merge pull request #11 from SolimanAnas/claude/chapters-html-summary-fixes-5lnmvu, b7039e9 Bump service worker cache to v2.8, c4f8810 Wire admin.html to real app users via a hidden login-page gate, ee41524 fix: wrap long line in test_admin_role_update for ruff line-length limit, _FakeResp, Smoke tests for the SmartCare Flask API. (+7 more)
-
-### Community 23 - "Community 23"
-Cohesion: 0.15
-Nodes (25): _acquireLock(), _autoRefreshTokenTick(), bt(), _callRefreshToken(), _debug(), delete(), dispose(), _getSessionFromURL() (+17 more)
-
-### Community 24 - "Community 24"
-Cohesion: 0.10
-Nodes (24): bi(), bs(), constructor(), getChannel(), _initRealtimeClient(), _initSupabaseAuthClient(), ki(), _listenForAuthEvents() (+16 more)
-
-### Community 25 - "Community 25"
 Cohesion: 0.11
-Nodes (20): 18fb7dc Added ├── .well-known/, 1a56d75 feat: graphify rebuild with descriptions + interactive file map view, 40d423a Remove unused admin/login/signup pages, 4389d53 Improve drawer toggle panel identification on index.html, 4ccb8df Merge pull request #9 from SolimanAnas/claude/chapters-html-summary-fixes-5lnmvu, 5b988aa Create .nojekyll, 67cd1eb fix: update contact email and all URLs in privacy policy, 829a86d update: refresh PWA icons from new22.png + bump SW cache version (+12 more)
+Nodes (12): recordLastVisited(), updateHeader(), renderComingSoon(), handleScroll(), initBottomNav(), initFooterAwareNav(), switchSection(), setMainContent() (+4 more)
 
-### Community 26 - "Community 26"
-Cohesion: 0.11
-Nodes (10): Be(), bo, et(), H(), j(), ko(), ne(), s() (+2 more)
-
-### Community 27 - "Community 27"
-Cohesion: 0.25
-Nodes (13): 4663aec fix: Resolve unused variable and import lint errors in scripts/assemble_chapters.py and sync content/c3.js, 59a9f95 toc: implement prehospital (EMT) curriculum skeleton, 60c1782 chore: stop tracking TOC/ directory (now gitignored), 6acd5dc feat: add SVT rhythm, improve PSVT simulation, add ECG test data, 8541abe chore: Change index page title from landing page to clinical learning platform, 8a6ee0b Fix invisible table borders and EMT-only tone in chapter summaries, 92652ca feat: Update search placeholders, remove updates c0 tab, and debrand CPG reference in login/signup views, 98557d8 docs: Update curriculum content database for chapters 2, 3, 4, and 5 (+5 more)
-
-### Community 28 - "Community 28"
-Cohesion: 0.15
-Nodes (3): d(), Di(), Pn()
+### Community 37 - "Community 37"
+Cohesion: 0.31
+Nodes (9): Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in, 02bf7e6 fix: replace single-quoted SVG attributes with double quotes, 323b8fc feat: migrate to Lucide SVG sprite system, 4e04344 feat: migrate to Lucide SVG sprite system, 5d23c19 fix: improve heading and index-count visibility in dark/amoled themes, 65ac830 feat: restructure Chapter 1 — merge EMS sections, remove c1s11, slim TOC, 77d4355 Merge pull request #21 from SolimanAnas/fix/lucide-quote-consistency, b791fda content: deploy chapters 4-5 (Cardiovascular & Medical Emergencies) with NREMT-aligned curriculum (+1 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.15
-Nodes (21): clearHeartbeats(), flushSendBuffer(), hasLogger(), heartbeatCallback(), heartbeatTimeout(), isLeaving(), leaveOpenTopic(), log() (+13 more)
+Nodes (10): fs, path, vm, ROOT, CONTENT_DIR, CHAPTER_IDS, loadChapterData(), main() (+2 more)
 
-### Community 30 - "Community 30"
-Cohesion: 0.12
-Nodes (2): Ie(), Y()
-
-### Community 31 - "Community 31"
-Cohesion: 0.12
-Nodes (20): applyTransformOptsToQuery(), cr(), download(), execute(), exists(), ft(), _getFinalPath(), getPublicUrl() (+12 more)
-
-### Community 32 - "Community 32"
-Cohesion: 0.16
-Nodes (20): build(), connectWithFallback(), _i(), isJoining(), makeRef(), on(), onClose(), onError() (+12 more)
-
-### Community 33 - "Community 33"
-Cohesion: 0.15
-Nodes (13): 1ca0f65 Ship the High priority list from the mid-cycle audit, 53ec4c1 Merge pull request #16 ✅, 94235c6 Ship the critical hardening list from the mid-cycle audit, aa3705c Add mid-cycle v2.0 audit: verify roadmap status against code, re-prioritize, d7008b7 Add the actual content changes for the High priority list, d7918ff fix: commit package-lock.json — CI's npm ci can't run without it, auth.users, public.user_state (+5 more)
-
-### Community 34 - "Community 34"
-Cohesion: 0.15
-Nodes (14): getCenterPoint(), ha(), index(), inRange(), la(), nearest(), Re(), to() (+6 more)
-
-### Community 35 - "Community 35"
-Cohesion: 0.13
-Nodes (19): _cancelPendingDisconnect(), cancelRefEvent(), cancelTimeout(), channel(), close(), closeAndRetry(), destroy(), disconnect() (+11 more)
-
-### Community 36 - "Community 36"
-Cohesion: 0.31
-Nodes (9): 02bf7e6 fix: replace single-quoted SVG attributes with double quotes, 323b8fc feat: migrate to Lucide SVG sprite system, 4e04344 feat: migrate to Lucide SVG sprite system, 5d23c19 fix: improve heading and index-count visibility in dark/amoled themes, 65ac830 feat: restructure Chapter 1 — merge EMS sections, remove c1s11, slim TOC, 77d4355 Merge pull request #21 from SolimanAnas/fix/lucide-quote-consistency, b791fda content: deploy chapters 4-5 (Cardiovascular & Medical Emergencies) with NREMT-aligned curriculum, c7c9a6f fix: restore missing <style> tags and fix SVG quote mismatches in JS strings (+1 more)
-
-### Community 37 - "Community 37"
-Cohesion: 0.18
-Nodes (1): ke()
-
-### Community 38 - "Community 38"
-Cohesion: 0.16
-Nodes (10): 074617f feat: update chapter files with SEO and accessibility improvements, 1a00316 feat(itls): restructure itls course - replace static chapters with builder, 1fc629e fix(app.js): handle DOMContentLoaded race condition for dynamically injected chapters, 20fdfa2 feat(itls): complete itls reviewer page, chapter routing, builder, and generate all 22 chapters, a4df22b fix: resolve CI lint failure and remove orphaned files, c6c0a5c chore: update core app - service worker, landing page, exam page, and course assets, c9276ae chore: update graphify knowledge graph, d641fa0 feat: improve SEO, Open Graph metadata, and accessibility across all pages (+2 more)
-
-### Community 39 - "Community 39"
-Cohesion: 0.17
-Nodes (4): ca, ce(), de, he()
-
-### Community 40 - "Community 40"
-Cohesion: 0.14
-Nodes (10): e(), ei(), es(), generateLabels(), is(), Ni(), ns(), os() (+2 more)
-
-### Community 41 - "Community 41"
-Cohesion: 0.15
-Nodes (16): canPush(), _fetchWithTimeout(), hasReceived(), httpSend(), inPendingSyncState(), isJoined(), isMember(), joinRef() (+8 more)
-
-### Community 42 - "Community 42"
-Cohesion: 0.13
-Nodes (9): A plain-form request to an /api/ endpoint must be rejected (CSRF)., A request missing X-Requested-With must be rejected., A well-formed request with the CSRF headers must reach the handler., GET requests are never subject to the CSRF guard (only auth applies)., A plain-form POST to an API endpoint must be rejected (CSRF)., A POST missing X-Requested-With must be rejected., A well-formed JSON POST with the CSRF headers must reach the handler., GET requests are never subject to the CSRF guard. (+1 more)
-
-### Community 43 - "Community 43"
-Cohesion: 0.41
-Nodes (10): 7c821ae Merge pull request #14 Admin dashboard ✅, 85f0dc5 Rebuild the admin console on Supabase Edge Functions, redesign the UI, AdminCaller, adminEmails(), ALLOWED_ORIGINS, audit(), corsHeaders(), json() (+2 more)
-
-### Community 44 - "Community 44"
-Cohesion: 0.18
-Nodes (7): Bi(), Fi(), io(), na(), no(), oo, zi()
-
-### Community 45 - "Community 45"
-Cohesion: 0.14
-Nodes (14): add(), ajax(), batchSend(), eq(), gte(), ilike(), imatch(), is() (+6 more)
-
-### Community 46 - "Community 46"
-Cohesion: 0.22
-Nodes (7): 83a1ea8 Ship the Offline & PWA section from the v2.0 roadmap audit, d1b235f Merge pull request #15 Offline & PWA upgrades ✅, d708b15 Ship the UI/UX Improvements section from the v2.0 roadmap audit, device_entry(), main(), current(), next()
-
-### Community 47 - "Community 47"
-Cohesion: 0.28
-Nodes (12): load_json_lenient(), load_known_single_option(), main(), question_core_fields(), Extract (text, options, correct_answer) regardless of which of the     bank's s, Several banks were authored with a UTF-8 BOM; browsers' fetch().json()     tole, rel(), validate_bank_content() (+4 more)
-
-### Community 48 - "Community 48"
-Cohesion: 0.21
-Nodes (12): beforeDatasetDraw(), beforeDatasetsDraw(), ea(), fa(), ga(), ia(), ma(), oa() (+4 more)
-
-### Community 49 - "Community 49"
-Cohesion: 0.35
-Nodes (10): 2ab1c09 Fix invisible Show Hint/confidence/modal buttons on dark themes, 3c15b4d V2 ⭐ : Question Review, All Questions have 4 options ✅, 503d0e1 Fix 36 single-option questions across BLS, PEPP, and prometric banks, 5d2d46f Fix WCAG AA contrast failure in exam-review.css across all 4 themes, 69ad055 Merge pull request #17 html Clean-up🗑️, 9b12c84 Merge pull request #20, bb51308 Merge pull request #19  Exam themes fix ✅, c9e85ef Deduplicate the 8 standalone exam-review pages into a shared engine (+2 more)
-
-### Community 50 - "Community 50"
-Cohesion: 0.32
-Nodes (2): 662adfb Ship the Performance section from the v2.0 roadmap audit, 829493a Merge Merged: pull request #13 Performance ✅ V2 ⭐
-
-### Community 51 - "Community 51"
-Cohesion: 0.18
-Nodes (12): appendParams(), Ci(), endpointURL(), hs(), Ii(), Jn(), match(), Oi() (+4 more)
+### Community 28 - "Community 28"
+Cohesion: 0.25
+Nodes (13): 4663aec fix: Resolve unused variable and import lint errors in scripts/assemble_chapters.py and sync content/c3.js, 59a9f95 toc: implement prehospital (EMT) curriculum skeleton, 60c1782 chore: stop tracking TOC/ directory (now gitignored), 6acd5dc feat: add SVT rhythm, improve PSVT simulation, add ECG test data, 8541abe chore: Change index page title from landing page to clinical learning platform, 8a6ee0b Fix invisible table borders and EMT-only tone in chapter summaries, 92652ca feat: Update search placeholders, remove updates c0 tab, and debrand CPG reference in login/signup views, 98557d8 docs: Update curriculum content database for chapters 2, 3, 4, and 5 (+5 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.24
-Nodes (12): connect(), connectionState(), getSocket(), _handleNodeJsRaceCondition(), isClosed(), isConnected(), isConnecting(), isDisconnecting() (+4 more)
+Cohesion: 0.31
+Nodes (6): 1543337 Fix raw markup in Last Visited, extend homepage search to sub-chapters, harden sw.js, 301bb11 Fix NaN days ago — index.html reads h.timestamp (stored as 'timestamp' by app.js, not 'ts'), 817a4bf Merge pull request #23 Fixed: reflected XSS, 81d920a Fix reflected XSS in med-index.html, add Google Play production audit, 8c61be7 Merge pull request #22 raw markup code, SW, Extended search✅, f3382e1 Add agentic implementation plan for BLS course reviewer (docs/BLS.md)
+
+### Community 69 - "Community 69"
+Cohesion: 0.50
+Nodes (3): load(), main(), bd7b1a9 Completing ACLS Course Reviewer
+
+### Community 25 - "Community 25"
+Cohesion: 0.15
+Nodes (16): load(), main(), load(), main(), 154f42d Merge pull request #25 BLS reviewer, 23060c0 Integrate BLS reviewer into platform (courses page, precache, sitemap), 2e859ad Adding PALS Course, 33c9dd7 Author BLS chapters c04-c06 (2-rescuer/teams, AED, ventilation) (+8 more)
+
+### Community 43 - "Community 43"
+Cohesion: 0.17
+Nodes (10): load(), main(), 074617f feat: update chapter files with SEO and accessibility improvements, 1a00316 feat(itls): restructure itls course - replace static chapters with builder, 1fc629e fix(app.js): handle DOMContentLoaded race condition for dynamically injected chapters, 20fdfa2 feat(itls): complete itls reviewer page, chapter routing, builder, and generate all 22 chapters, a4df22b fix: resolve CI lint failure and remove orphaned files, c6c0a5c chore: update core app - service worker, landing page, exam page, and course assets (+2 more)
+
+### Community 27 - "Community 27"
+Cohesion: 0.13
+Nodes (17): compress(), main(), public.user_state, auth.users, public.profiles, auth.users, on_auth_user_created, public.handle_new_user() (+9 more)
+
+### Community 46 - "Community 46"
+Cohesion: 0.29
+Nodes (12): 2ab1c09 Fix invisible Show Hint/confidence/modal buttons on dark themes, 3c15b4d V2 ⭐ : Question Review, All Questions have 4 options ✅, 503d0e1 Fix 36 single-option questions across BLS, PEPP, and prometric banks, 5d2d46f Fix WCAG AA contrast failure in exam-review.css across all 4 themes, 69ad055 Merge pull request #17 html Clean-up🗑️, 9b12c84 Merge pull request #20, bb51308 Merge pull request #19  Exam themes fix ✅, bc0cb4e Regenerate precache-manifest.js after file changes (+4 more)
+
+### Community 66 - "Community 66"
+Cohesion: 0.47
+Nodes (5): extract_sections(), assemble(), main(), Extract section objects from a TOC section file.      The file has the pattern:, Assemble a complete chapter JS file.
+
+### Community 57 - "Community 57"
+Cohesion: 0.42
+Nodes (8): rel(), collect_content_files(), collect_globs(), build_list(), content_hash(), main(), content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c, content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c
+
+### Community 71 - "Community 71"
+Cohesion: 0.83
+Nodes (3): esc(), gen_chapter(), main()
+
+### Community 64 - "Community 64"
+Cohesion: 0.48
+Nodes (6): hex_to_rgb(), luminance(), contrast(), parse_themes(), main(), Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block.
+
+### Community 67 - "Community 67"
+Cohesion: 0.47
+Nodes (5): create_src_folders(), generate_course_page(), main(), Creates the necessary src/COURSE folders., Replaces placeholders in the template with course-specific data.
+
+### Community 35 - "Community 35"
+Cohesion: 0.17
+Nodes (12): device_entry(), main(), escapeHtml(), icon(), renderLoading(), renderEmptyOrError(), renderState(), current() (+4 more)
+
+### Community 48 - "Community 48"
+Cohesion: 0.28
+Nodes (12): rel(), load_json_lenient(), validate_manifest_shape(), validate_manifest_coverage(), question_core_fields(), validate_question(), validate_pearl(), validate_bank_content() (+4 more)
+
+### Community 20 - "Community 20"
+Cohesion: 0.10
+Nodes (24): _audit(), create_app(), _supabase_admin_configured(), _supabase_user_from_token(), _require_supabase_user(), _register_routes(), _register_csrf_guard(), _register_security_headers() (+16 more)
+
+### Community 0 - "Community 0"
+Cohesion: 0.06
+Nodes (249): PAGES, 006f9af Update requirements.txt, 0275018 layout fix 🔥, 0277cd5 feat(ui): redesign prometric page with Vital Signs medical-monitor aesthetic, 03d0cad Update ecg.html, 03f6898 Update sw.js, 0588b95 Update styles.css ✅, 059df1b SOP updated 🔥✅ (+241 more)
+
+### Community 3 - "Community 3"
+Cohesion: 0.07
+Nodes (1): ExamEngine
+
+### Community 45 - "Community 45"
+Cohesion: 0.41
+Nodes (10): ALLOWED_ORIGINS, corsHeaders(), json(), serviceClient(), adminEmails(), audit(), AdminCaller, requireAdmin() (+2 more)
+
+### Community 26 - "Community 26"
+Cohesion: 0.11
+Nodes (20): CACHE_FIRST_PATTERNS, networkFirst(), staleWhileRevalidate(), offlineFallback(), 18fb7dc Added ├── .well-known/, 1a56d75 feat: graphify rebuild with descriptions + interactive file map view, 40d423a Remove unused admin/login/signup pages, 4389d53 Improve drawer toggle panel identification on index.html (+12 more)
+
+### Community 17 - "Community 17"
+Cohesion: 0.08
+Nodes (18): supabase_backend(), TestIndex, TestSecurityHeaders, TestHealthCheck, Smoke tests for the SmartCare Flask API., Stubs server.py's Supabase integration with an in-memory fake.     Returns a na, 2e2f605 Ship the Security section from the v2.0 roadmap audit, 5b68bae docs: add comprehensive v2.0 upgrade roadmap from full repository audit (+10 more)
+
+### Community 72 - "Community 72"
+Cohesion: 0.50
+Nodes (1): _FakeResp
+
+### Community 58 - "Community 58"
+Cohesion: 0.28
+Nodes (4): _auth(), TestAccountSelfDelete, A completely ordinary (non-admin) signed-in user can delete themself., There is no id parameter on this route — it can only ever delete         the ac
+
+### Community 16 - "Community 16"
+Cohesion: 0.11
+Nodes (10): TestAuditLogging, _register(), _login(), TestRegister, TestLogin, TestAdminUsers, Both bad-user and bad-password return the same message (anti-enumeration)., Anonymous access to the admin API must be denied (no PII leak). (+2 more)
+
+### Community 44 - "Community 44"
+Cohesion: 0.13
+Nodes (9): TestCsrfGuard, A plain-form request to an /api/ endpoint must be rejected (CSRF)., A request missing X-Requested-With must be rejected., A well-formed request with the CSRF headers must reach the handler., GET requests are never subject to the CSRF guard (only auth applies)., A plain-form POST to an API endpoint must be rejected (CSRF)., A POST missing X-Requested-With must be rejected., A well-formed JSON POST with the CSRF headers must reach the handler. (+1 more)
+
+### Community 73 - "Community 73"
+Cohesion: 0.50
+Nodes (1): TestStaticFiles
+
+### Community 13 - "Community 13"
+Cohesion: 0.06
+Nodes (13): et(), removeBox(), vs(), ws(), hn(), cn(), wn(), Nn() (+5 more)
+
+### Community 56 - "Community 56"
+Cohesion: 0.20
+Nodes (8): e(), ct(), ei(), Ni(), ms(), ks(), Ys(), Us()
+
+### Community 18 - "Community 18"
+Cohesion: 0.08
+Nodes (9): s(), H(), j(), ne(), Be(), xo(), bo, So (+1 more)
+
+### Community 5 - "Community 5"
+Cohesion: 0.06
+Nodes (13): n(), r(), Ye(), pi(), _i(), ji(), ln(), un() (+5 more)
+
+### Community 9 - "Community 9"
+Cohesion: 0.07
+Nodes (24): o(), a(), g(), m(), v(), gi(), mi(), vi() (+16 more)
+
+### Community 12 - "Community 12"
+Cohesion: 0.07
+Nodes (27): l(), Ae(), Ls(), Vn(), Bn(), jn(), parsePrimitiveData(), parseArrayData() (+19 more)
+
+### Community 30 - "Community 30"
+Cohesion: 0.15
+Nodes (3): d(), Di(), Pn()
+
+### Community 4 - "Community 4"
+Cohesion: 0.07
+Nodes (20): u(), f(), p(), x(), wi(), ki(), Si(), Oi() (+12 more)
+
+### Community 8 - "Community 8"
+Cohesion: 0.07
+Nodes (13): b(), Z(), nt(), lt(), pt(), Fs(), rn(), zn() (+5 more)
+
+### Community 21 - "Community 21"
+Cohesion: 0.12
+Nodes (4): w(), en, sn, addElements()
+
+### Community 32 - "Community 32"
+Cohesion: 0.12
+Nodes (2): Y(), Ie()
 
 ### Community 53 - "Community 53"
-Cohesion: 0.25
-Nodes (3): an(), dt(), on
+Cohesion: 0.18
+Nodes (10): q(), ai(), ri(), li(), hi(), getMaxOverflow(), draw(), fo() (+2 more)
+
+### Community 11 - "Community 11"
+Cohesion: 0.08
+Nodes (20): tt(), ve(), Oe(), Re(), Yi(), Ui(), Xi(), index() (+12 more)
+
+### Community 7 - "Community 7"
+Cohesion: 0.07
+Nodes (5): at(), rt(), Ci(), js, initialize()
 
 ### Community 54 - "Community 54"
-Cohesion: 0.20
-Nodes (9): ai(), beforeDraw(), draw(), fo(), getMaxOverflow(), hi(), li(), q() (+1 more)
+Cohesion: 0.25
+Nodes (3): dt(), on, an()
+
+### Community 14 - "Community 14"
+Cohesion: 0.08
+Nodes (15): mt(), _t(), vt(), wt(), kt(), It(), zt(), Ft() (+7 more)
 
 ### Community 55 - "Community 55"
 Cohesion: 0.25
-Nodes (8): CHAPTER_IDS, CONTENT_DIR, fs, loadChapterData(), main(), path, ROOT, vm
+Nodes (1): xt
 
-### Community 56 - "Community 56"
-Cohesion: 0.28
-Nodes (4): _auth(), A completely ordinary (non-admin) signed-in user can delete themself., There is no id parameter on this route — it can only ever delete         the ac, TestAccountSelfDelete
+### Community 39 - "Community 39"
+Cohesion: 0.18
+Nodes (1): ke()
 
-### Community 57 - "Community 57"
-Cohesion: 0.22
-Nodes (7): ct(), ge(), ks(), ms(), pe(), we(), xe()
+### Community 40 - "Community 40"
+Cohesion: 0.17
+Nodes (3): ts(), as(), rs()
 
-### Community 58 - "Community 58"
+### Community 41 - "Community 41"
+Cohesion: 0.17
+Nodes (4): he(), ce(), de, ca
+
+### Community 75 - "Community 75"
+Cohesion: 0.50
+Nodes (3): fe(), ps(), dn()
+
+### Community 38 - "Community 38"
+Cohesion: 0.13
+Nodes (10): ge(), pe(), xe(), we(), es(), is(), ss(), ns() (+2 more)
+
+### Community 80 - "Community 80"
+Cohesion: 0.67
+Nodes (3): ze(), je(), ti()
+
+### Community 59 - "Community 59"
 Cohesion: 0.22
 Nodes (1): hs
 
-### Community 59 - "Community 59"
-Cohesion: 0.50
-Nodes (7): build_list(), collect_content_files(), collect_globs(), content_hash(), main(), content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c, rel()
+### Community 79 - "Community 79"
+Cohesion: 0.67
+Nodes (1): cs
 
 ### Community 60 - "Community 60"
 Cohesion: 0.29
 Nodes (2): kn(), qn()
 
+### Community 6 - "Community 6"
+Cohesion: 0.06
+Nodes (2): tn, onClick()
+
+### Community 49 - "Community 49"
+Cohesion: 0.21
+Nodes (12): ea(), ia(), sa(), oa(), ua(), fa(), ga(), pa() (+4 more)
+
+### Community 74 - "Community 74"
+Cohesion: 0.50
+Nodes (4): jo(), initOffsets(), buildLookupTable(), getDecimalForValue()
+
+### Community 76 - "Community 76"
+Cohesion: 0.50
+Nodes (4): ie(), fs(), er(), tr()
+
+### Community 33 - "Community 33"
+Cohesion: 0.12
+Nodes (20): cr(), invoke(), toString(), ln(), un(), ft(), execute(), uploadToSignedUrl() (+12 more)
+
+### Community 24 - "Community 24"
+Cohesion: 0.10
+Nodes (24): constructor(), normalizeEndpoint(), onJoin(), onLeave(), onSync(), updatePayloadTransform(), getChannel(), zs() (+16 more)
+
+### Community 10 - "Community 10"
+Cohesion: 0.06
+Nodes (44): toJSON(), select(), explain(), likeAllOf(), likeAnyOf(), ilikeAllOf(), ilikeAnyOf(), in() (+36 more)
+
+### Community 70 - "Community 70"
+Cohesion: 0.40
+Nodes (5): setAuth(), _isManualToken(), _performAuth(), _setAuthSafely(), _handleTokenChanged()
+
+### Community 15 - "Community 15"
+Cohesion: 0.07
+Nodes (34): setHeader(), update(), list(), Nr(), S(), ht(), handleOperation(), uploadOrUpdate() (+26 more)
+
+### Community 22 - "Community 22"
+Cohesion: 0.12
+Nodes (27): then(), request(), fetchRequest(), ct(), listNamespaces(), createNamespace(), dropNamespace(), loadNamespaceMetadata() (+19 more)
+
+### Community 50 - "Community 50"
+Cohesion: 0.18
+Nodes (12): processResponse(), match(), serialize(), appendParams(), endpointURL(), protocol(), os(), hs() (+4 more)
+
+### Community 47 - "Community 47"
+Cohesion: 0.14
+Nodes (14): eq(), neq(), gte(), lte(), like(), ilike(), is(), isDistinct() (+6 more)
+
+### Community 77 - "Community 77"
+Cohesion: 0.50
+Nodes (4): gt(), ts(), U(), zn()
+
+### Community 78 - "Community 78"
+Cohesion: 0.50
+Nodes (4): lt(), or(), onJoinPayload(), onLeavePayload()
+
+### Community 23 - "Community 23"
+Cohesion: 0.15
+Nodes (25): delete(), zr(), Kt(), ss(), bt(), us(), _debug(), initialize() (+17 more)
+
+### Community 68 - "Community 68"
+Cohesion: 0.40
+Nodes (6): Pe(), Cs(), Ps(), js(), pr(), rt()
+
 ### Community 61 - "Community 61"
 Cohesion: 0.25
-Nodes (8): an(), detectEnvironment(), getWebSocketConstructor(), _initializeOptions(), isWebSocketSupported(), nn(), onHeartbeat(), _wrapHeartbeatCallback()
+Nodes (8): detectEnvironment(), getWebSocketConstructor(), isWebSocketSupported(), onHeartbeat(), nn(), an(), _wrapHeartbeatCallback(), _initializeOptions()
+
+### Community 1 - "Community 1"
+Cohesion: 0.06
+Nodes (93): resend(), getSession(), xr(), y(), Jr(), ze(), ho(), fo() (+85 more)
+
+### Community 42 - "Community 42"
+Cohesion: 0.15
+Nodes (16): send(), receive(), hasReceived(), trigger(), canPush(), leave(), isMember(), joinRef() (+8 more)
+
+### Community 36 - "Community 36"
+Cohesion: 0.13
+Nodes (19): reset(), destroy(), cancelRefEvent(), cancelTimeout(), teardown(), off(), closeAndRetry(), ontimeout() (+11 more)
+
+### Community 34 - "Community 34"
+Cohesion: 0.16
+Nodes (20): startTimeout(), onClose(), onError(), on(), push(), onMessage(), replyEventName(), isJoining() (+12 more)
+
+### Community 31 - "Community 31"
+Cohesion: 0.15
+Nodes (21): scheduleTimeout(), rejoin(), isLeaving(), parseJSON(), log(), hasLogger(), clearHeartbeats(), onConnOpen() (+13 more)
+
+### Community 51 - "Community 51"
+Cohesion: 0.24
+Nodes (12): isClosed(), connect(), connectionState(), isConnected(), subscribe(), updateJoinPayload(), isConnecting(), isDisconnecting() (+4 more)
+
+### Community 81 - "Community 81"
+Cohesion: 1.00
+Nodes (3): syncState(), syncDiff(), clone()
+
+### Community 82 - "Community 82"
+Cohesion: 0.67
+Nodes (3): state(), transformState(), Gs()
+
+### Community 83 - "Community 83"
+Cohesion: 0.67
+Nodes (3): unsubscribe(), _updatePostgresBindings(), isFilterValueEqual()
+
+### Community 84 - "Community 84"
+Cohesion: 1.00
+Nodes (2): Dn(), es()
+
+### Community 65 - "Community 65"
+Cohesion: 0.29
+Nodes (7): fi(), gi(), yi(), mi(), vi(), wi(), Ri()
 
 ### Community 62 - "Community 62"
 Cohesion: 0.29
@@ -299,134 +382,46 @@ Nodes (7): 0245fab update: refresh PWA icons and favicon from new source image, 
 Cohesion: 0.29
 Nodes (7): 0465774 feat: Google Identity Services popup sign-in (shows SmartCare brand) + fix sync error msg, 24d0345 fix: correct SUPABASE_URL typo round 2 (missing r in htrtr), 39cc6bb fix: remove extra '})' causing syntax error in login.html, 4561a63 fix: correct SUPABASE_URL typo (zltfrrudihtrtxutvdqq.supabase.co), 5dddc2f feat: update ECG-study.html footer to match index.html branding, 7c988c0 chore: commit graphify auto-updates, 404.html /SmartCare/ paths, supabase docs, prometric planner, bae7406 chore: graphify auto-update, ECG study page, course data updates
 
-### Community 64 - "Community 64"
-Cohesion: 0.48
-Nodes (6): contrast(), hex_to_rgb(), luminance(), main(), parse_themes(), Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block.
-
-### Community 65 - "Community 65"
-Cohesion: 0.29
-Nodes (7): fi(), gi(), mi(), Ri(), vi(), wi(), yi()
-
-### Community 66 - "Community 66"
-Cohesion: 0.47
-Nodes (5): assemble(), extract_sections(), main(), Extract section objects from a TOC section file.      The file has the pattern:, Assemble a complete chapter JS file.
-
-### Community 67 - "Community 67"
-Cohesion: 0.47
-Nodes (5): create_src_folders(), generate_course_page(), main(), Creates the necessary src/COURSE folders., Replaces placeholders in the template with course-specific data.
-
-### Community 68 - "Community 68"
-Cohesion: 0.67
-Nodes (5): escapeHtml(), icon(), renderEmptyOrError(), renderLoading(), renderState()
-
-### Community 69 - "Community 69"
-Cohesion: 0.40
-Nodes (6): Cs(), js(), Pe(), pr(), Ps(), rt()
-
-### Community 70 - "Community 70"
-Cohesion: 0.70
-Nodes (4): auth.users, on_auth_user_created, public.handle_new_user(), public.profiles
-
-### Community 71 - "Community 71"
-Cohesion: 0.40
-Nodes (5): _handleTokenChanged(), _isManualToken(), _performAuth(), setAuth(), _setAuthSafely()
-
-### Community 72 - "Community 72"
-Cohesion: 0.83
-Nodes (3): esc(), gen_chapter(), main()
-
-### Community 73 - "Community 73"
-Cohesion: 0.50
-Nodes (1): TestStaticFiles
-
-### Community 74 - "Community 74"
-Cohesion: 0.50
-Nodes (4): buildLookupTable(), getDecimalForValue(), initOffsets(), jo()
-
-### Community 75 - "Community 75"
-Cohesion: 0.50
-Nodes (3): dn(), fe(), ps()
-
-### Community 76 - "Community 76"
-Cohesion: 0.50
-Nodes (4): er(), fs(), ie(), tr()
-
-### Community 77 - "Community 77"
-Cohesion: 0.50
-Nodes (4): gt(), ts(), U(), zn()
-
-### Community 78 - "Community 78"
-Cohesion: 0.50
-Nodes (4): lt(), onJoinPayload(), onLeavePayload(), or()
-
-### Community 79 - "Community 79"
-Cohesion: 0.67
-Nodes (1): cs
-
-### Community 80 - "Community 80"
-Cohesion: 0.67
-Nodes (3): je(), ti(), ze()
-
-### Community 81 - "Community 81"
-Cohesion: 0.67
-Nodes (2): Us(), Ys()
-
-### Community 82 - "Community 82"
-Cohesion: 1.00
-Nodes (3): clone(), syncDiff(), syncState()
-
-### Community 83 - "Community 83"
-Cohesion: 0.67
-Nodes (3): Gs(), state(), transformState()
-
-### Community 84 - "Community 84"
-Cohesion: 0.67
-Nodes (3): isFilterValueEqual(), unsubscribe(), _updatePostgresBindings()
-
-### Community 85 - "Community 85"
-Cohesion: 1.00
-Nodes (2): Dn(), es()
-
 ## Knowledge Gaps
-- **44 isolated node(s):** `Extract section objects from a TOC section file.      The file has the pattern:`, `Assemble a complete chapter JS file.`, `content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c`, `Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block.`, `Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in` (+39 more)
+- **48 isolated node(s):** `Extract section objects from a TOC section file.      The file has the pattern:`, `Assemble a complete chapter JS file.`, `content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c`, `Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block.`, `Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in` (+43 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 4`** (1 nodes): `ExamEngine`
+- **Thin community `Community 3`** (1 nodes): `ExamEngine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 6`** (2 nodes): `onClick()`, `tn`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (2 nodes): `Ie()`, `Y()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (1 nodes): `ke()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (2 nodes): `662adfb Ship the Performance section from the v2.0 roadmap audit`, `829493a Merge Merged: pull request #13 Performance ✅ V2 ⭐`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 58`** (1 nodes): `hs`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 60`** (2 nodes): `kn()`, `qn()`
+- **Thin community `Community 72`** (1 nodes): `_FakeResp`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 73`** (1 nodes): `TestStaticFiles`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 32`** (2 nodes): `Y()`, `Ie()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 55`** (1 nodes): `xt`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 39`** (1 nodes): `ke()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 59`** (1 nodes): `hs`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 79`** (1 nodes): `cs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 81`** (2 nodes): `Us()`, `Ys()`
+- **Thin community `Community 60`** (2 nodes): `kn()`, `qn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 85`** (2 nodes): `Dn()`, `es()`
+- **Thin community `Community 6`** (2 nodes): `tn`, `onClick()`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 84`** (2 nodes): `Dn()`, `es()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `tn` connect `Community 6` to `Community 10`, `Community 28`, `Community 26`, `Community 60`, `Community 30`, `Community 37`, `Community 11`, `Community 53`, `Community 9`, `Community 5`, `Community 7`, `Community 3`, `Community 15`, `Community 40`, `Community 34`, `Community 81`?**
-  _High betweenness centrality (0.086) - this node is a cross-community bridge._
-- **Why does `ExamEngine` connect `Community 4` to `Community 0`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `js` connect `Community 7` to `Community 10`, `Community 9`, `Community 3`, `Community 15`, `Community 11`, `Community 60`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `tn` connect `Community 6` to `Community 13`, `Community 30`, `Community 18`, `Community 60`, `Community 32`, `Community 39`, `Community 9`, `Community 54`, `Community 12`, `Community 4`, `Community 7`, `Community 5`, `Community 8`, `Community 38`, `Community 11`, `Community 56`?**
+  _High betweenness centrality (0.084) - this node is a cross-community bridge._
+- **Why does `ExamEngine` connect `Community 3` to `Community 0`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **Why does `js` connect `Community 7` to `Community 13`, `Community 12`, `Community 5`, `Community 8`, `Community 9`, `Community 60`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **What connects `Extract section objects from a TOC section file.      The file has the pattern:`, `Assemble a complete chapter JS file.`, `content/: *.meta.js + any full bundle that ISN'T superseded by a     meta.js (c` to the rest of the system?**
-  _44 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05729463099981028 - nodes in this community are weakly interconnected._
-- **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.0565684899485741 - nodes in this community are weakly interconnected._
-- **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.0273972602739726 - nodes in this community are weakly interconnected._
+  _48 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 19` be split into smaller, more focused modules?**
+  _Cohesion score 0.10582010582010581 - nodes in this community are weakly interconnected._
+- **Should `Community 25` be split into smaller, more focused modules?**
+  _Cohesion score 0.14624505928853754 - nodes in this community are weakly interconnected._
+- **Should `Community 27` be split into smaller, more focused modules?**
+  _Cohesion score 0.1341991341991342 - nodes in this community are weakly interconnected._

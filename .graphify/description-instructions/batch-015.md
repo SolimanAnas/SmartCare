@@ -1,4 +1,4 @@
-# Node Description Batch 16 of 48
+# Node Description Batch 16 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,6 +17,24 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_ro_getindexangle": ".getIndexAngle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[co(), ro(), .drawLabels(), .getPointPosition(), .updateElements()]
+- "vendor_chart_4_5_1_umd_min_sn_get": "._get()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, .getController(), .getElement(), .getPlugin(), .getScale()]
+- "vendor_chart_4_5_1_umd_min_tn_bindevents": ".bindEvents()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .bindResponsiveEvents(), .bindUserEvents(), ._checkEventBindings(), ._initialize()]
+- "vendor_chart_4_5_1_umd_min_tn_converttickstolabels": "._convertTicksToLabels()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, s(), .afterTickToLabelConversion(), .beforeTickToLabelConversion(), .update()]
+- "vendor_chart_4_5_1_umd_min_tn_destroydatasetmeta": "._destroyDatasetMeta()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .buildOrUpdateControllers(), ._destroy(), .stop(), ._updateMetasets()]
+- "vendor_chart_4_5_1_umd_min_tn_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .clear(), ._drawDatasets(), ._isVisible(), .notifyPlugins()]
+- "vendor_chart_4_5_1_umd_min_tn_drawdatasets": "._drawDatasets()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .draw(), ._drawDataset(), .getSortedVisibleDatasetMetas(), .notifyPlugins()]
+- "vendor_chart_4_5_1_umd_min_tn_drawlabels": ".drawLabels()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, Ie(), ._computeLabelArea(), .getLabelItems(), ze()]
+- "vendor_chart_4_5_1_umd_min_tn_fit": ".fit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._calculatePadding(), ._getLabelSizes(), ._handleMargins(), ._isVisible()]
+- "vendor_chart_4_5_1_umd_min_tn_getdecimalforpixel": ".getDecimalForPixel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[getValueForPixel(), .getValueForPixel(), .getValueForPixel(), .getValueForPixel(), tn]
+- "vendor_chart_4_5_1_umd_min_tn_handleevent": "._handleEvent()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._eventHandler(), d(), f(), ._updateHoverStyles()]
+- "vendor_chart_4_5_1_umd_min_tn_updatedatasets": "._updateDatasets()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .update(), .getDatasetMeta(), .notifyPlugins(), ._updateDataset()]
+- "vendor_chart_4_5_1_umd_min_tn_updatescales": "._updateScales()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .update(), .buildOrUpdateScales(), .ensureScalesHaveIDs(), u()]
+- "vendor_chart_4_5_1_umd_min_tn_updatevisibility": "._updateVisibility()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .hide(), .show(), .getDatasetMeta(), .setDatasetVisibility()]
+- "vendor_chart_4_5_1_umd_min_ts_createanimations": "._createAnimations()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ts(), ._animateOptions(), .active(), .cancel(), .update()]
+- "vendor_chart_4_5_1_umd_min_tt": "tt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, co(), ha(), inRange(), ._getLegendItemAt()]
+- "vendor_chart_4_5_1_umd_min_ve": "ve()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dataset(), index(), nearest(), l()]
+- "vendor_chart_4_5_1_umd_min_wa_drawfooter": ".drawFooter()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .draw(), Oi(), Si(), x()]
 - "vendor_chart_4_5_1_umd_min_ya_adjusthitboxes": ".adjustHitBoxes()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[afterUpdate(), ya, Oi(), x(), ._computeTitleHeight()]
 - "vendor_chart_4_5_1_umd_min_ya_drawtitle": ".drawTitle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, ki(), Oi(), Si(), ._computeTitleHeight()]
 - "vendor_chart_4_5_1_umd_min_ya_fit": ".fit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, Si(), ._computeTitleHeight(), ._fitCols(), ._fitRows()]
@@ -39,24 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_linkidentityoauth": "linkIdentityOAuth()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, linkIdentity(), _returnResult(), _useSession(), y()]
 - "vendor_supabase_js_2_110_0_listpasskeys": "_listPasskeys()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, L(), _returnResult(), _useSession(), y()]
 - "vendor_supabase_js_2_110_0_lt": "lt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add(), onJoinPayload(), onLeavePayload(), or()]
-- "vendor_supabase_js_2_110_0_ms": "ms()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, encode(), from(), join(), signInWithEthereum()]
-- "vendor_supabase_js_2_110_0_onconnerror": "onConnError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, hasLogger(), log(), triggerChanError(), triggerStateCallbacks()]
-- "vendor_supabase_js_2_110_0_ping": "ping()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), makeRef(), onMessage(), push()]
-- "vendor_supabase_js_2_110_0_reauthenticate": "reauthenticate()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _returnResult(), _useSession(), y()]
-- "vendor_supabase_js_2_110_0_refreshaccesstoken": "_refreshAccessToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _callRefreshToken(), _debug(), _returnResult(), y()]
-- "vendor_supabase_js_2_110_0_refreshsession": "refreshSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _returnResult(), _useSession(), y()]
-- "vendor_supabase_js_2_110_0_rejoin": "rejoin()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, join(), isLeaving(), leaveOpenTopic(), resend()]
-- "vendor_supabase_js_2_110_0_remove": "remove()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, handleOperation(), log(), off(), _schedulePendingDisconnect()]
-- "vendor_supabase_js_2_110_0_removevisibilitychangedcallback": "_removeVisibilityChangedCallback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, dispose(), _debug(), _startAutoRefresh(), _stopAutoRefresh()]
-- "vendor_supabase_js_2_110_0_resetpasswordforemail": "resetPasswordForEmail()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()]
-- "vendor_supabase_js_2_110_0_schedulependingdisconnect": "_schedulePendingDisconnect()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, remove(), _cancelPendingDisconnect(), disconnect(), log()]
-- "vendor_supabase_js_2_110_0_setauthsafely": "_setAuthSafely()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, connect(), catch(), _isManualToken(), setAuth()]
-- "vendor_supabase_js_2_110_0_setupconnectionhandlers": "_setupConnectionHandlers()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, connect(), onClose(), onMessage(), onOpen()]
-- "vendor_supabase_js_2_110_0_signinwithotp": "signInWithOtp()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()]
-- "vendor_supabase_js_2_110_0_signinwithsso": "signInWithSSO()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()]
-- "vendor_supabase_js_2_110_0_startautorefresh": "_startAutoRefresh()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _onVisibilityChanged(), _debug(), _removeVisibilityChangedCallback(), _stopAutoRefresh()]
-- "vendor_supabase_js_2_110_0_triggerstatecallbacks": "triggerStateCallbacks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, onConnClose(), onConnError(), onConnOpen(), log()]
-- "vendor_supabase_js_2_110_0_updatepasskey": "_updatePasskey()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, L(), _returnResult(), _useSession(), y()]
 
 ## Instructions
 

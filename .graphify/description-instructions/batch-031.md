@@ -1,4 +1,4 @@
-# Node Description Batch 32 of 48
+# Node Description Batch 32 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,58 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "acls_build_main": "main()" | kind=code-symbol | source=courses/acls/build.py:L29 | neighbors=[build.py, load()]
+- "app_initbatteryindicator": "initBatteryIndicator()" | kind=code-symbol | source=app.js:L110 | neighbors=[app.js, initChapterPage()]
+- "app_initscrollreveal": "initScrollReveal()" | kind=code-symbol | source=app.js:L532 | neighbors=[app.js, setMainContent()]
+- "app_recordlastvisited": "recordLastVisited()" | kind=code-symbol | source=app.js:L37 | neighbors=[app.js, initChapterPage()]
+- "app_updateheader": "updateHeader()" | kind=code-symbol | source=app.js:L238 | neighbors=[app.js, renderComingSoon()]
+- "bls_build_load": "load()" | kind=code-symbol | source=courses/bls/build.py:L24 | neighbors=[build.py, main()]
+- "bls_build_main": "main()" | kind=code-symbol | source=courses/bls/build.py:L29 | neighbors=[build.py, load()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@224ab831c8425237c6980236996ae43fb14d8737": "224ab83 deps(deps): bump google-auth from 2.53.0 to 2.55.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/google-auth-2.55.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@755284cd614315df67e3a15aaacb18093c6d8400": "755284c ci(deps)(deps): bump actions/checkout from 4 to 7" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/check…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cb7e171493f7f62d600c7ed42b359f525dead499": "cb7e171 deps(deps): bump pytest from 9.0.3 to 9.1.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/pytest-9.1.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cd24feaf092b8444f058985570e0a18082d74874": "cd24fea ci(deps)(deps): bump actions/setup-python from 5 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@f95455824d4bb69e3f52741aca22ca53609903bb": "f954558 ci(deps)(deps): bump actions/setup-node from 4 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "content_c1_meta": "c1.meta.js" | kind=code-symbol | source=content/c1.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c10_meta": "c10.meta.js" | kind=code-symbol | source=content/c10.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c2_meta": "c2.meta.js" | kind=code-symbol | source=content/c2.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c3_meta": "c3.meta.js" | kind=code-symbol | source=content/c3.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c4_meta": "c4.meta.js" | kind=code-symbol | source=content/c4.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c5_meta": "c5.meta.js" | kind=code-symbol | source=content/c5.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c6_meta": "c6.meta.js" | kind=code-symbol | source=content/c6.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c7_meta": "c7.meta.js" | kind=code-symbol | source=content/c7.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c8_meta": "c8.meta.js" | kind=code-symbol | source=content/c8.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c9_meta": "c9.meta.js" | kind=code-symbol | source=content/c9.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_curriculum_index": "curriculum-index.js" | kind=code-symbol | source=content/curriculum-index.js:L1 | neighbors=[1543337 Fix raw markup in Last Visited,…, 8c61be7 Merge pull request #22 raw mark…]
+- "itls_build_load": "load()" | kind=code-symbol | source=courses/itls/build.py:L24 | neighbors=[build.py, main()]
+- "itls_build_main": "main()" | kind=code-symbol | source=courses/itls/build.py:L29 | neighbors=[build.py, load()]
+- "migrations_20260702000001_create_user_state_auth_users": "auth.users" | kind=code-symbol | source=supabase/migrations/20260702000001_create_user_state.sql:L7 | neighbors=[20260702000001_create_user_state.sql, public.user_state]
+- "migrations_20260702000001_create_user_state_public_user_state": "public.user_state" | kind=code-symbol | source=supabase/migrations/20260702000001_create_user_state.sql:L6 | neighbors=[20260702000001_create_user_state.sql, auth.users]
+- "migrations_20260702000002_create_profiles_on_auth_user_created": "on_auth_user_created" | kind=code-symbol | source=supabase/migrations/20260702000002_create_profiles.sql:L52 | neighbors=[20260702000002_create_profiles.sql, auth.users]
+- "migrations_20260702000002_create_profiles_public_handle_new_user": "public.handle_new_user()" | kind=code-symbol | source=supabase/migrations/20260702000002_create_profiles.sql:L31 | neighbors=[20260702000002_create_profiles.sql, public.profiles]
+- "pals_build_load": "load()" | kind=code-symbol | source=courses/pals/build.py:L24 | neighbors=[build.py, main()]
+- "pals_build_main": "main()" | kind=code-symbol | source=courses/pals/build.py:L29 | neighbors=[build.py, load()]
+- "prometric_exam_examengine_adjustcatdifficulty": ".adjustCatDifficulty()" | kind=code-symbol | source=src/prometric/exam.js:L657 | neighbors=[ExamEngine, .submitAnswer()]
+- "prometric_exam_examengine_bindevents": ".bindEvents()" | kind=code-symbol | source=src/prometric/exam.js:L157 | neighbors=[ExamEngine, .init()]
+- "prometric_exam_examengine_calculatetopicaccuracy": ".calculateTopicAccuracy()" | kind=code-symbol | source=src/prometric/exam.js:L300 | neighbors=[ExamEngine, .filterQuestions()]
+- "prometric_exam_examengine_confirmend": ".confirmEnd()" | kind=code-symbol | source=src/prometric/exam.js:L781 | neighbors=[ExamEngine, .showModal()]
+- "prometric_exam_examengine_getselectedtopics": ".getSelectedTopics()" | kind=code-symbol | source=src/prometric/exam.js:L253 | neighbors=[ExamEngine, .filterQuestions()]
+- "prometric_exam_examengine_gotoquestion": ".goToQuestion()" | kind=code-symbol | source=src/prometric/exam.js:L715 | neighbors=[ExamEngine, .renderQuestion()]
+- "prometric_exam_examengine_gotostep": ".goToStep()" | kind=code-symbol | source=src/prometric/exam.js:L114 | neighbors=[ExamEngine, .newExam()]
+- "prometric_exam_examengine_handletouchend": ".handleTouchEnd()" | kind=code-symbol | source=src/prometric/exam.js:L225 | neighbors=[ExamEngine, .navigate()]
 - "prometric_exam_examengine_initwizard": ".initWizard()" | kind=code-symbol | source=src/prometric/exam.js:L82 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loadchartjs": ".loadChartJS()" | kind=code-symbol | source=src/prometric/exam.js:L51 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loaddatabase": ".loadDatabase()" | kind=code-symbol | source=src/prometric/exam.js:L42 | neighbors=[ExamEngine, .init()]
-- "prometric_exam_examengine_loadquestionhistory": ".loadQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L320 | neighbors=[ExamEngine, .constructor()]
-- "prometric_exam_examengine_loadstats": ".loadStats()" | kind=code-symbol | source=src/prometric/exam.js:L1091 | neighbors=[ExamEngine, .constructor()]
-- "prometric_exam_examengine_pauseexam": ".pauseExam()" | kind=code-symbol | source=src/prometric/exam.js:L760 | neighbors=[ExamEngine, .showModal()]
-- "prometric_exam_examengine_renderheatmap": ".renderHeatmap()" | kind=code-symbol | source=src/prometric/exam.js:L1161 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_renderimprovementchart": ".renderImprovementChart()" | kind=code-symbol | source=src/prometric/exam.js:L1126 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_renderinsights": ".renderInsights()" | kind=code-symbol | source=src/prometric/exam.js:L885 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_renderstrengthsweaknesses": ".renderStrengthsWeaknesses()" | kind=code-symbol | source=src/prometric/exam.js:L1204 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_rendertopicperformance": ".renderTopicPerformance()" | kind=code-symbol | source=src/prometric/exam.js:L922 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_savequestionhistory": ".saveQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L328 | neighbors=[ExamEngine, .submitAnswer()]
-- "prometric_exam_examengine_savestats": ".saveStats()" | kind=code-symbol | source=src/prometric/exam.js:L1099 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_selectmode": ".selectMode()" | kind=code-symbol | source=src/prometric/exam.js:L126 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_selectsetting": ".selectSetting()" | kind=code-symbol | source=src/prometric/exam.js:L140 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_settheme": ".setTheme()" | kind=code-symbol | source=src/prometric/exam.js:L74 | neighbors=[ExamEngine, .initTheme()]
-- "prometric_exam_examengine_showresults": ".showResults()" | kind=code-symbol | source=src/prometric/exam.js:L944 | neighbors=[ExamEngine, .showScreen()]
-- "prometric_exam_examengine_showtoast": ".showToast()" | kind=code-symbol | source=src/prometric/exam.js:L1070 | neighbors=[ExamEngine, .toggleFlag()]
-- "prometric_exam_examengine_shuffleoptions": ".shuffleOptions()" | kind=code-symbol | source=src/prometric/exam.js:L346 | neighbors=[ExamEngine, .shuffleArray()]
-- "prometric_exam_examengine_updatelivescore": ".updateLiveScore()" | kind=code-symbol | source=src/prometric/exam.js:L500 | neighbors=[ExamEngine, .updateNavigator()]
-- "scripts_assemble_chapters_main": "main()" | kind=code-symbol | source=scripts/assemble_chapters.py:L122 | neighbors=[assemble_chapters.py, assemble()]
-- "scripts_build_precache_content_hash": "content_hash()" | kind=code-symbol | source=scripts/build_precache.py:L127 | neighbors=[build_precache.py, main()]
-- "scripts_build_toc_esc": "esc()" | kind=code-symbol | source=scripts/build_toc.py:L88 | neighbors=[build_toc.py, gen_chapter()]
-- "scripts_build_toc_main": "main()" | kind=code-symbol | source=scripts/build_toc.py:L131 | neighbors=[build_toc.py, gen_chapter()]
-- "scripts_check_contrast_hex_to_rgb": "hex_to_rgb()" | kind=code-symbol | source=scripts/check_contrast.py:L30 | neighbors=[check_contrast.py, contrast()]
-- "scripts_check_contrast_luminance": "luminance()" | kind=code-symbol | source=scripts/check_contrast.py:L37 | neighbors=[check_contrast.py, contrast()]
-- "scripts_generate_screenshots_compress": "compress()" | kind=code-symbol | source=scripts/generate_screenshots.py:L54 | neighbors=[generate_screenshots.py, main()]
-- "scripts_generate_screenshots_main": "main()" | kind=code-symbol | source=scripts/generate_screenshots.py:L60 | neighbors=[generate_screenshots.py, compress()]
-- "scripts_generate_splash_device_entry": "device_entry()" | kind=code-symbol | source=scripts/generate_splash.py:L41 | neighbors=[generate_splash.py, main()]
-- "scripts_generate_splash_main": "main()" | kind=code-symbol | source=scripts/generate_splash.py:L51 | neighbors=[generate_splash.py, device_entry()]
-- "scripts_split_content_loadchapterdata": "loadChapterData()" | kind=code-symbol | source=scripts/split_content.js:L24 | neighbors=[split_content.js, main()]
-- "scripts_split_content_main": "main()" | kind=code-symbol | source=scripts/split_content.js:L37 | neighbors=[split_content.js, loadChapterData()]
-- "scripts_validate_content_load_known_single_option": "load_known_single_option()" | kind=code-symbol | source=scripts/validate_content.py:L199 | neighbors=[validate_content.py, main()]
-- "scripts_validate_content_validate_manifest_shape": "validate_manifest_shape()" | kind=code-symbol | source=scripts/validate_content.py:L57 | neighbors=[validate_content.py, main()]
-- "scripts_validate_content_validate_pearl": "validate_pearl()" | kind=code-symbol | source=scripts/validate_content.py:L149 | neighbors=[validate_content.py, validate_bank_content()]
-- "server_audit": "_audit()" | kind=code-symbol | source=server.py:L34 | neighbors=[server.py, Write a structured audit record for aut…]
-- "server_register_csrf_guard": "_register_csrf_guard()" | kind=code-symbol | source=server.py:L409 | neighbors=[server.py, create_app()]
-- "server_register_routes": "_register_routes()" | kind=code-symbol | source=server.py:L168 | neighbors=[server.py, create_app()]
-- "server_register_security_headers": "_register_security_headers()" | kind=code-symbol | source=server.py:L431 | neighbors=[server.py, create_app()]
-- "server_user": "User" | kind=code-symbol | source=server.py:L136 | neighbors=[server.py, UserMixin]
 
 ## Instructions
 

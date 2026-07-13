@@ -50,20 +50,20 @@
     }
   ],
   "clinicalPearls": [
-    "Always double-check the epinephrine concentration: 0.1 mg/mL (1:1000) for IV/IO, NOT 1 mg/mL (1:10000) — using the wrong concentration can result in a 10-fold overdose.",
+    "Always double-check the epinephrine concentration: 0.1 mg/mL (1:10,000) for IV/IO, NOT 1 mg/mL (1:1,000) — using the wrong concentration (1 mg/mL) can result in a 10-fold overdose.",
     "IO access is NOT a last resort — in pediatric cardiac arrest, it is the recommended first-line vascular access when IV cannot be established within 1–2 attempts.",
     "Adenosine must be given as a RAPID IV push through a proximal IV site and flushed immediately — slow administration or peripheral distal IV delivery will inactivate the drug before it reaches the heart.",
     "The minimum dose of atropine is 0.1 mg (not lower) — doses below this can cause paradoxical bradycardia through central vagal stimulation.",
     "D50 (50% dextrose) is NOT recommended for neonates and young infants — use D10W to avoid chemical phlebitis and vein sclerosis."
   ],
   "redFlags": [
-    "Giving the wrong epinephrine concentration — 1 mg/mL (1:10000) instead of 0.1 mg/mL (1:1000) delivers a 10x overdose that can cause severe hypertension and arrhythmias.",
+    "Giving the wrong epinephrine concentration — 1 mg/mL (1:1,000) instead of 0.1 mg/mL (1:10,000) delivers a 10x overdose that can cause severe hypertension and arrhythmias.",
     "Delaying epinephrine to establish peripheral IV access — IO access should be attempted immediately if IV is not available within 1–2 minutes in cardiac arrest.",
     "Using atropine for bradycardia caused by hypoxia — atropine does not treat the underlying cause; always identify and treat the source of bradycardia.",
     "Administering adenosine through a distal peripheral IV without rapid flush — the drug will be degraded before reaching the AV node."
   ],
   "commonMistakes": [
-    "Confusing the cardiac arrest epinephrine dose (0.01 mg/kg) with the adult concentration (1:10,000) — pediatric PALS uses the 1:1000 concentration at 0.1 mL/kg to achieve the same dose.",
+    "Confusing the cardiac arrest IV/IO epinephrine concentration (0.1 mg/mL or 1:10,000) with the anaphylaxis/IM concentration (1 mg/mL or 1:1,000) — using the 1 mg/mL concentration for IV/IO delivery results in a 10-fold overdose.",
     "Using age-based weight formulas when the Broselow tape or actual weight is available — more accurate weight means safer dosing.",
     "Forgetting the minimum atropine dose (0.1 mg) — giving less than 0.1 mg can paradoxically slow the heart rate.",
     "Attempting more than 2 peripheral IV sticks in a cardiac arrest — switch to IO access after 2 failed attempts to minimize delay.",

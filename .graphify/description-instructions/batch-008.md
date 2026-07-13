@@ -1,4 +1,4 @@
-# Node Description Batch 9 of 48
+# Node Description Batch 9 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -26,6 +26,11 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "commit:repo:github.com/SolimanAnas/SmartCare@05fc83d2e47f1b864e8248891326212642bfe399": "05fc83d fix: re-disable auth guard on courses page (was accidentally uncommente…" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@11207b469453f62b79397d9f0287b64664aca701": "11207b4 chore: add playwright-report and test-results to .gitignore" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@2146843fa7789f566266d1e8f68117e049ec4413": "2146843 chore: untrack playwright-report and test-results artifacts" | kind=Commit | source=git | neighbors=[11207b4 chore: add playwright-report an…, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@2521a89396aa1120fac9807949e1c0969d2f00b9": "2521a89 style: resize action-button Lucide icons to 1.5em inline accent size" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=pt
+- "commit:repo:github.com/SolimanAnas/SmartCare@26da0f4742a4dd8bcbbcbad4de6634e1b5b0d865": "26da0f4 Add read-only question database audit report" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=pt
 - "commit:repo:github.com/SolimanAnas/SmartCare@273600ccdbcd63b668fe861156fb74bf307686eb": "273600c chore: ignore run-debug.mjs scratch script" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@2875fd1a0c08a5946a3b04042371cbb90034e978": "2875fd1 feat: continue learning card, thicker progress bars, meaningful progres…" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@39ba2028bcd67279de8a7be079316c8ac45119cd": "39ba202 fix: restore encoding and apply textContent→innerHTML in all 9 exam pag…" | kind=Commit | source=git | neighbors=[dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1, main] | lang=en
@@ -61,11 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_s_getprops": ".getProps()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ao(), getCenterPoint(), ho(), inRange(), ro(), s()] | lang=en
 - "vendor_chart_4_5_1_umd_min_tn_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, dt(), n(), .chartOptionScopes(), .createResolver(), on] | lang=en
 - "vendor_chart_4_5_1_umd_min_tn_getpixelfordecimal": ".getPixelForDecimal()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[_calculateBarValuePixels(), getPixelForValue(), .getPixelForValue(), .getPixelForValue(), .getPixelForValue(), tn] | lang=en
-- "vendor_chart_4_5_1_umd_min_ts": "ts()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e(), ._animateOptions(), .configure(), .constructor(), ._createAnimations()] | lang=en
-- "vendor_chart_4_5_1_umd_min_wa_drawbody": ".drawBody()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .draw(), Oi(), p(), Si(), u()] | lang=en
-- "vendor_chart_4_5_1_umd_min_wi": "wi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ho(), lo(), ra(), .drawBackground(), ._drawColorBox()] | lang=en
-- "vendor_chart_4_5_1_umd_min_xi": "Xi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dataset(), index(), nearest(), n(), .getProps()] | lang=en
-- "vendor_chart_4_5_1_umd_min_yn_updateelements": ".updateElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), .getParsed(), .updateElement(), .getDistanceFromCenterForValue(), .getIndexAngle(), .getDataVisibility()] | lang=en
 
 ## Instructions
 

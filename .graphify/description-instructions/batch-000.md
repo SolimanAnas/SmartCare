@@ -1,4 +1,4 @@
-# Node Description Batch 1 of 48
+# Node Description Batch 1 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -39,11 +39,11 @@ one-sentence description — no prose, no markdown fences.
 - "prometric_exam_examengine": "ExamEngine" | kind=code-symbol | source=src/prometric/exam.js:L1 | neighbors=[exam.js, .adjustCatDifficulty(), .bindEvents(), .buildNavigator(), .calculateResults(), .calculateTopicAccuracy()]
 - "vendor_chart_4_5_1_umd_min_n": "n()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ca, co(), fn(), g(), .parse()]
 - "vendor_chart_4_5_1_umd_min_js": "js" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .addElements(), .applyStack(), .buildOrUpdateElements(), .configure(), .constructor()]
-- "sw": "sw.js" | kind=code-symbol | source=sw.js:L1 | neighbors=[02bf7e6 fix: replace single-quoted SVG …, 03f6898 Update sw.js, 1a56d75 feat: graphify rebuild with des…, 2e2f605 Ship the Security section from …, 323b8fc feat: migrate to Lucide SVG spr…, 4ccb8df Merge pull request #9 from Soli…]
+- "sw": "sw.js" | kind=code-symbol | source=sw.js:L1 | neighbors=[02bf7e6 fix: replace single-quoted SVG …, 03f6898 Update sw.js, 1543337 Fix raw markup in Last Visited,…, 1a56d75 feat: graphify rebuild with des…, 2e2f605 Ship the Security section from …, 323b8fc feat: migrate to Lucide SVG spr…]
 - "app": "app.js" | kind=code-symbol | source=app.js:L1 | neighbors=[bootApp(), createRipple(), handleScroll(), initBottomNav(), initFooterAwareNav(), initIndexSearch()]
+- "server": "server.py" | kind=code-symbol | source=server.py:L1 | neighbors=[1d86134 Secure SDLC Phase 0: fix critic…, 20fdfa2 feat(itls): complete itls revie…, 2520f22 Secure SDLC Phase 2 cont.: XSS …, 266c2ed Add server.py and server.bat to…, 2e2f605 Ship the Security section from …, 354c93e fix: restore server.py to repo …]
 - "vendor_supabase_js_2_110_0_returnresult": "_returnResult()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _approveAuthorization(), _challengeAndVerify(), _deletePasskey(), _denyAuthorization(), _enroll()]
 - "vendor_supabase_js_2_110_0_m": "m()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, _adminDeletePasskey(), _adminListPasskeys(), _createCustomProvider(), _createOAuthClient(), createUser()]
-- "server": "server.py" | kind=code-symbol | source=server.py:L1 | neighbors=[1d86134 Secure SDLC Phase 0: fix critic…, 20fdfa2 feat(itls): complete itls revie…, 2520f22 Secure SDLC Phase 2 cont.: XSS …, 266c2ed Add server.py and server.bat to…, 2e2f605 Ship the Security section from …, 354c93e fix: restore server.py to repo …]
 - "tests_test_api": "test_api.py" | kind=code-symbol | source=tests/test_api.py:L1 | neighbors=[1d86134 Secure SDLC Phase 0: fix critic…, 2520f22 Secure SDLC Phase 2 cont.: XSS …, 2e2f605 Ship the Security section from …, 4999b7f swot-its-compliance-GaiuJ, 5f7c4f2 Merge pull request #12 Step 1&2…, 67cb179 Add files via upload]
 - "vendor_chart_4_5_1_umd_min_s": "s()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .buildTicks(), .parse(), _calculateBarIndexPixels(), _calculateBarValuePixels(), co()]
 - "vendor_chart_4_5_1_umd_min_o": "o()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .handleTickRangeOptions(), da(), g(), Gt(), ho()]
@@ -55,6 +55,7 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_join": "join()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, batchSend(), build(), constructor(), containedBy(), contains()]
 - "vendor_chart_4_5_1_umd_min_wa": "wa" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, start(), .constructor(), ._createItems(), .draw(), ._drawArgs()]
 - "prometric_exam": "exam.js" | kind=code-symbol | source=src/prometric/exam.js:L1 | neighbors=[0277cd5 feat(ui): redesign prometric pa…, 093fcc2 fix(ui): remove auto-advance, s…, 0ac5f99 feat(ui): cherry-pick loading o…, 0e6242c Add files via upload, 1041e6c major updates ✅🔥🧠, 1eee11b create exam-2.html — redesigned…]
+- "precache_manifest": "precache-manifest.js" | kind=code-symbol | source=precache-manifest.js:L1 | neighbors=[1543337 Fix raw markup in Last Visited,…, 154f42d Merge pull request #25 BLS revi…, 23060c0 Integrate BLS reviewer into pla…, 2ab1c09 Fix invisible Show Hint/confide…, 2e859ad Adding PALS Course, 301bb11 Fix NaN days ago — index.html r…]
 - "vendor_chart_4_5_1_umd_min_l": "l()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), da(), fn(), _getAxis(), .determineDataLimits()]
 - "vendor_supabase_js_2_110_0_push": "push()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), add(), channel(), constructor(), _getUrlForProvider()]
 - "vendor_supabase_js_2_110_0_usesession": "_useSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _approveAuthorization(), _autoRefreshTokenTick(), _deletePasskey(), _denyAuthorization(), _emitInitialSession()]
@@ -63,7 +64,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_sn": "sn" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, d(), .add(), .addControllers(), .addElements(), .addPlugins()]
 - "commit:repo:github.com/SolimanAnas/SmartCare@b791fda62e041ca6d3c20a155e4cd309f7f10a90": "b791fda content: deploy chapters 4-5 (Cardiovascular & Medical Emergencies) wit…" | kind=Commit | source=git | neighbors=[602ffdf chore: gitignore copyrighted so…, app.js, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1]
 - "vendor_supabase_js_2_110_0_debug": "_debug()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _autoRefreshTokenTick(), _callRefreshToken(), _logPrefix(), _getSessionFromURL()]
-- "commit:repo:github.com/SolimanAnas/SmartCare@323b8fc32a733a73bb6811945e79ce4a6eaaa493": "323b8fc feat: migrate to Lucide SVG sprite system" | kind=Commit | source=git | neighbors=[app.js, dependabot/github_actions/actions/check…, dependabot/github_actions/actions/setup…, dependabot/github_actions/actions/setup…, dependabot/pip/google-auth-2.55.1, dependabot/pip/pytest-9.1.1]
 
 ## Instructions
 

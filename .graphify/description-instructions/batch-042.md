@@ -1,4 +1,4 @@
-# Node Description Batch 43 of 48
+# Node Description Batch 43 of 49
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,60 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-Write every description in English (en). Do not switch languages.
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
+LANGUAGE: each entry has a `lang=` marker giving the language of its source.
+Write that entry's description in EXACTLY that language. Do not translate to
+a single common language — match each node's source language individually.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "tests_test_api_testregister_test_register_missing_password": ".test_register_missing_password()" | kind=code-symbol | source=tests/test_api.py:L43 | neighbors=[TestRegister]
-- "tests_test_api_testsecurityheaders_test_csp_blocks_framing": ".test_csp_blocks_framing()" | kind=code-symbol | source=tests/test_api.py:L138 | neighbors=[TestSecurityHeaders]
-- "tests_test_api_testsecurityheaders_test_security_headers_present": ".test_security_headers_present()" | kind=code-symbol | source=tests/test_api.py:L133 | neighbors=[TestSecurityHeaders]
-- "tests_test_api_teststaticfiles_test_manifest_json": ".test_manifest_json()" | kind=code-symbol | source=tests/test_api.py:L216 | neighbors=[TestStaticFiles]
-- "tests_test_api_teststaticfiles_test_nonexistent_file_returns_404": ".test_nonexistent_file_returns_404()" | kind=code-symbol | source=tests/test_api.py:L221 | neighbors=[TestStaticFiles]
-- "tests_test_api_teststaticfiles_test_style_css": ".test_style_css()" | kind=code-symbol | source=tests/test_api.py:L211 | neighbors=[TestStaticFiles]
-- "usermixin": "UserMixin" | kind=code-symbol | neighbors=[User]
-- "vendor_chart_4_5_1_umd_min_afterevent": "afterEvent()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_afterinit": "afterInit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_as_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[as()]
-- "vendor_chart_4_5_1_umd_min_as_update": ".update()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[as()]
-- "vendor_chart_4_5_1_umd_min_beforeupdate": "beforeUpdate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_bo_computeticklimit": ".computeTickLimit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
-- "vendor_chart_4_5_1_umd_min_bo_configure": ".configure()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
-- "vendor_chart_4_5_1_umd_min_bo_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo]
-- "vendor_chart_4_5_1_umd_min_bs": "bs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_ca_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
-- "vendor_chart_4_5_1_umd_min_ca_interpolate": ".interpolate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
-- "vendor_chart_4_5_1_umd_min_ca_pathsegment": ".pathSegment()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca]
-- "vendor_chart_4_5_1_umd_min_colors": "Colors()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_configure": "configure()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_constructor": "constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_cs_acquirecontext": ".acquireContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[cs]
-- "vendor_chart_4_5_1_umd_min_cs_updateconfig": ".updateConfig()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[cs]
-- "vendor_chart_4_5_1_umd_min_decimation": "Decimation()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_destroy": "destroy()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_en_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
-- "vendor_chart_4_5_1_umd_min_en_get": ".get()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
-- "vendor_chart_4_5_1_umd_min_en_unregister": ".unregister()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en]
-- "vendor_chart_4_5_1_umd_min_filler": "Filler()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_getbasepixel": "getBasePixel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_getlabelforvalue": "getLabelForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_getpixelfortick": "getPixelForTick()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
-- "vendor_chart_4_5_1_umd_min_ho_afterautoskip": ".afterAutoSkip()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_ho_beforelayout": ".beforeLayout()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_ho_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_ho_format": ".format()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_ho_getdecimalforvalue": ".getDecimalForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_ho_getlabelforvalue": ".getLabelForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho()]
-- "vendor_chart_4_5_1_umd_min_hs_acquirecontext": ".acquireContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[hs]
+- "server_rationale_61": "Return an error string, or None if valid." | kind=entity | source=server.py:L61 | neighbors=[_validate_email()] | lang=en
+- "server_rationale_70": "Return an error string, or None if the password meets policy." | kind=entity | source=server.py:L70 | neighbors=[_validate_password()] | lang=en
+- "server_rationale_99": "Resolve a Supabase access token (from the browser's session) to\r     {id, email}" | kind=entity | source=server.py:L99 | neighbors=[_supabase_user_from_token()] | lang=en
+- "server_supabase_service_headers": "_supabase_service_headers()" | kind=code-symbol | source=server.py:L87 | neighbors=[server.py] | lang=en
+- "shared_admin_admincaller": "AdminCaller" | kind=code-symbol | source=supabase/functions/_shared/admin.ts:L60 | neighbors=[admin.ts] | lang=en
+- "shared_admin_allowed_origins": "ALLOWED_ORIGINS" | kind=code-symbol | source=supabase/functions/_shared/admin.ts:L10 | neighbors=[admin.ts] | lang=en
+- "src_theme_init": "init()" | kind=code-symbol | source=src/theme.js:L34 | neighbors=[theme.js] | lang=en
+- "src_theme_set": "set()" | kind=code-symbol | source=src/theme.js:L27 | neighbors=[theme.js] | lang=en
+- "sw_cache_first_patterns": "CACHE_FIRST_PATTERNS" | kind=code-symbol | source=sw.js:L30 | neighbors=[sw.js] | lang=en
+- "sw_cachefirst": "cacheFirst()" | kind=code-symbol | source=sw.js:L236 | neighbors=[sw.js] | lang=en
+- "sw_iscacheable": "isCacheable()" | kind=code-symbol | source=sw.js:L285 | neighbors=[sw.js] | lang=en
+- "sw_pre_cache": "PRE_CACHE" | kind=code-symbol | source=sw.js:L10 | neighbors=[sw.js] | lang=en
+- "tests_acls_reviewer_spec": "acls-reviewer.spec.js" | kind=code-symbol | source=tests/acls-reviewer.spec.js:L1 | neighbors=[bd7b1a9 Completing ACLS Course Reviewer] | lang=en
+- "tests_check_exam_flow_spec_pages": "PAGES" | kind=code-symbol | source=tests/_check_exam_flow.spec.js:L3 | neighbors=[_check_exam_flow.spec.js] | lang=en
+- "tests_conftest_app": "app()" | kind=code-symbol | source=tests/conftest.py:L7 | neighbors=[conftest.py] | lang=en
+- "tests_conftest_client": "client()" | kind=code-symbol | source=tests/conftest.py:L19 | neighbors=[conftest.py] | lang=en
+- "tests_conftest_runner": "runner()" | kind=code-symbol | source=tests/conftest.py:L32 | neighbors=[conftest.py] | lang=en
+- "tests_offline_spec_exam_content_assets": "EXAM_CONTENT_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L31 | neighbors=[offline.spec.js] | lang=en
+- "tests_offline_spec_key_pages": "KEY_PAGES" | kind=code-symbol | source=tests/offline.spec.js:L11 | neighbors=[offline.spec.js] | lang=en
+- "tests_offline_spec_vendored_assets": "VENDORED_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L19 | neighbors=[offline.spec.js] | lang=en
+- "tests_pals_reviewer_spec": "pals-reviewer.spec.js" | kind=code-symbol | source=tests/pals-reviewer.spec.js:L1 | neighbors=[2e859ad Adding PALS Course] | lang=en
+- "tests_prometric_spec_navigatewizard": "navigateWizard()" | kind=code-symbol | source=tests/prometric.spec.js:L54 | neighbors=[prometric.spec.js] | lang=en
+- "tests_test_api_fakeresp_init": ".__init__()" | kind=code-symbol | source=tests/test_api.py:L16 | neighbors=[_FakeResp] | lang=en
+- "tests_test_api_fakeresp_json": ".json()" | kind=code-symbol | source=tests/test_api.py:L20 | neighbors=[_FakeResp] | lang=en
+- "tests_test_api_fakeresp_raise_for_status": ".raise_for_status()" | kind=code-symbol | source=tests/test_api.py:L23 | neighbors=[_FakeResp] | lang=en
+- "tests_test_api_rationale_1": "Smoke tests for the SmartCare Flask API." | kind=entity | source=tests/test_api.py:L1 | neighbors=[test_api.py] | lang=en
+- "tests_test_api_rationale_102": "A completely ordinary (non-admin) signed-in user can delete themself." | kind=entity | source=tests/test_api.py:L102 | neighbors=[.test_self_delete_works_no_admin_requir…] | lang=pt
+- "tests_test_api_rationale_107": "Both bad-user and bad-password return the same message (anti-enumeration)." | kind=entity | source=tests/test_api.py:L107 | neighbors=[.test_login_generic_error_message()] | lang=en
+- "tests_test_api_rationale_112": "There is no id parameter on this route — it can only ever delete\r         the ac" | kind=entity | source=tests/test_api.py:L112 | neighbors=[.test_only_deletes_the_caller_own_accou…] | lang=en
+- "tests_test_api_rationale_136": "Anonymous access to the admin API must be denied (no PII leak)." | kind=entity | source=tests/test_api.py:L136 | neighbors=[.test_admin_users_requires_auth()] | lang=en
+- "tests_test_api_rationale_141": "A signed-in non-admin must be forbidden (broken-access-control fix)." | kind=entity | source=tests/test_api.py:L141 | neighbors=[.test_admin_users_forbidden_for_regular…] | lang=pt
+- "tests_test_api_rationale_147": "An authenticated admin (role == 'Admin') can list users." | kind=entity | source=tests/test_api.py:L147 | neighbors=[.test_admin_can_list_users()] | lang=en
+- "tests_test_api_rationale_178": "A plain-form request to an /api/ endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L178 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
+- "tests_test_api_rationale_188": "A request missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L188 | neighbors=[.test_delete_without_xrw_header_rejecte…] | lang=pt
+- "tests_test_api_rationale_196": "A well-formed request with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L196 | neighbors=[.test_valid_delete_request_allowed()] | lang=en
+- "tests_test_api_rationale_205": "GET requests are never subject to the CSRF guard (only auth applies)." | kind=entity | source=tests/test_api.py:L205 | neighbors=[.test_get_requests_not_blocked()] | lang=en
+- "tests_test_api_rationale_250": "A plain-form POST to an API endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L250 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
+- "tests_test_api_rationale_260": "A POST missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L260 | neighbors=[.test_post_without_xrw_header_rejected()] | lang=pt
+- "tests_test_api_rationale_269": "A well-formed JSON POST with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L269 | neighbors=[.test_valid_json_post_allowed()] | lang=en
+- "tests_test_api_rationale_279": "GET requests are never subject to the CSRF guard." | kind=entity | source=tests/test_api.py:L279 | neighbors=[.test_get_requests_not_blocked()] | lang=en
 
 ## Instructions
 
