@@ -90,5 +90,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "AHA 2025 PALS Drug Reference Card",
     "AHA 2025 Guidelines for Vascular Access in Pediatric Resuscitation"
+  ],
+  "graphics": [
+    {
+      "id": "c09_g01",
+      "section": "summary",
+      "sectionIndex": 6,
+      "url": "../../images/courses/pals/c09_g01.jpg",
+      "alt": "Intraosseous (IO) Insertion Site in Children",
+      "caption": "Anatomical diagram of a child's knee showing the correct tibial insertion site for intraosseous access."
+    }
   ]
 }

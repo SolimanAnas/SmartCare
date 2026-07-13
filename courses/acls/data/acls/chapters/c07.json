@@ -74,5 +74,15 @@
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support (Asystole/PEA management)",
     "AHA 2025 Guidelines for CPR and ECC — Epinephrine timing in nonshockable rhythms"
+  ],
+  "graphics": [
+    {
+      "id": "c07_g01",
+      "section": "summary",
+      "sectionIndex": 1,
+      "url": "../../images/courses/acls/c07_g01.jpg",
+      "alt": "Asystole / PEA Resuscitation Flowchart",
+      "caption": "Resuscitation flowchart showing CPR, immediate Epinephrine, and search for H's and T's."
+    }
   ]
 }

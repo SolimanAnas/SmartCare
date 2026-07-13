@@ -17,6 +17,8 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "tests_test_api_testcsrfguard": "TestCsrfGuard" | kind=code-symbol | source=tests/test_api.py:L176 | neighbors=[test_api.py, .test_delete_without_xrw_header_rejecte…, .test_get_requests_not_blocked(), .test_post_without_json_content_type_re…, .test_valid_delete_request_allowed(), .test_post_without_xrw_header_rejected()]
+- "vendor_chart_4_5_1_umd_min_bo_buildticks": ".buildTicks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo, .getTickLimit(), H(), j(), s(), ._maxDigits()]
 - "vendor_chart_4_5_1_umd_min_ca": "ca" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .constructor(), .interpolate(), .pathSegment(), .apply(), n()]
 - "vendor_chart_4_5_1_umd_min_en": "en" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .constructor(), .get(), .isForType(), .register(), .unregister()]
 - "vendor_chart_4_5_1_umd_min_f": "f()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, Fi(), .update(), ._handleEvent(), .setActiveElements(), .handleEvent()]
@@ -55,8 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_onconnclose": "onConnClose()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, clearHeartbeats(), hasLogger(), log(), scheduleTimeout(), triggerChanError()]
 - "vendor_supabase_js_2_110_0_onvisibilitychanged": "_onVisibilityChanged()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _handleVisibilityChange(), _acquireLock(), _debug(), _recoverAndRefresh(), _startAutoRefresh()]
 - "vendor_supabase_js_2_110_0_removesession": "_removeSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _callRefreshToken(), getUser(), __loadSession(), _recoverAndRefresh(), _debug()]
-- "vendor_supabase_js_2_110_0_sendheartbeat": "sendHeartbeat()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, heartbeatCallback(), heartbeatTimeout(), isConnected(), log(), makeRef()]
-- "vendor_supabase_js_2_110_0_signout": "signOut()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, _handleTokenChanged(), _acquireLock(), join(), m(), _useSession()]
 
 ## Instructions
 

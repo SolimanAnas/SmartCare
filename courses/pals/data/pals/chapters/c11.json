@@ -78,5 +78,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "AHA 2025 Pediatric Tachycardia With a Pulse Algorithm",
     "AHA 2025 Guidelines: Adenosine dosing and cardioversion recommendations"
+  ],
+  "graphics": [
+    {
+      "id": "c11_g01",
+      "section": "summary",
+      "sectionIndex": 4,
+      "url": "../../images/courses/pals/c11_g01.jpg",
+      "alt": "Pediatric Tachycardia with Pulse Algorithm Flowchart",
+      "caption": "Flowchart showing evaluation of stable vs unstable pediatric tachycardia, narrow-QRS (SVT vs Sinus Tachycardia) and wide-QRS (VT) pathways."
+    }
   ]
 }

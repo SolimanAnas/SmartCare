@@ -89,5 +89,15 @@
     "TTM2 Trial — Targeted Hypothermia vs Normothermia After Cardiac Arrest (NEJM 2021)",
     "ECPR Consensus on Patient Selection and Techniques (ILCOR 2023)",
     "AHA/ILCOR Advisory — Extracorporeal CPR for Cardiac Arrest (2025)"
+  ],
+  "graphics": [
+    {
+      "id": "c14_g01",
+      "section": "summary",
+      "sectionIndex": 4,
+      "url": "../../images/courses/acls/c14_g01.jpg",
+      "alt": "Veno-Arterial ECMO (VA-ECMO) for ECPR",
+      "caption": "Diagram of a patient receiving veno-arterial ECMO during ECPR, showing femoral venous drainage, pump, oxygenator, and femoral arterial return."
+    }
   ]
 }

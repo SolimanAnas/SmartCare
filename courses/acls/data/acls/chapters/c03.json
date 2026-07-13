@@ -81,5 +81,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support",
     "AHA 2025 Guidelines for CPR and ECC — Part 5: Adult BLS and CPR Quality",
     "AHA 2025 Guidelines for CPR and ECC — Executive Summary: Airway Management and Ventilation"
+  ],
+  "graphics": [
+    {
+      "id": "c03_g01",
+      "section": "summary",
+      "sectionIndex": 3,
+      "url": "../../images/courses/acls/c03_g01.jpg",
+      "alt": "Waveform Capnography Patterns",
+      "caption": "Schematic diagram of five capnography waveforms: Normal, Hyperventilation, Hypoventilation, Esophageal Intubation (flat line), and ROSC (sudden spike)."
+    }
   ]
 }

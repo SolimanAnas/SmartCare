@@ -85,5 +85,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support (Refractory VF/pVT, Reversible Causes)",
     "AHA 2025 Guidelines for CPR and ECC — Executive Summary (DSED, vector-change defibrillation)",
     "AHA 2025 Focused Update on DSED and Antiarrhythmic Therapy for Refractory VF/pVT"
+  ],
+  "graphics": [
+    {
+      "id": "c09_g01",
+      "section": "summary",
+      "sectionIndex": 0,
+      "url": "../../images/courses/acls/c09_g01.jpg",
+      "alt": "Reversible Causes: The H's & T's",
+      "caption": "Infographic displaying the 5 H's (Hypovolemia, Hypoxia, Hydrogen ion, Hypo-/Hyperkalemia, Hypothermia) and 5 T's (Tension pneumothorax, Tamponade, Toxins, Thrombosis pulmonary, Thrombosis coronary)."
+    }
   ]
 }

@@ -68,5 +68,23 @@
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Adult and Pediatric Choking (FBAO)",
     "AHA 2025 Guidelines for CPR and ECC — First Aid for Airway Obstruction"
+  ],
+  "graphics": [
+    {
+      "id": "c10_g01",
+      "section": "summary",
+      "sectionIndex": 1,
+      "url": "../../images/courses/bls/c10_g01.jpg",
+      "alt": "Choking Relief Sequence (Adult & Child)",
+      "caption": "Step-by-step panel sequence showing 5 back blows followed by 5 abdominal thrusts for responsive adults and children."
+    },
+    {
+      "id": "c10_g02",
+      "section": "summary",
+      "sectionIndex": 3,
+      "url": "../../images/courses/bls/c10_g02.jpg",
+      "alt": "Infant Choking Relief Sequence",
+      "caption": "Dual-panel illustration demonstrating face-down back blows and face-up chest thrusts on an infant."
+    }
   ]
 }

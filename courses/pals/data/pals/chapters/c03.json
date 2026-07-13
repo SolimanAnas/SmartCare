@@ -94,5 +94,23 @@
     "AHA/AAP 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "AHA 2025 Guidelines — Cuffed Endotracheal Tubes in Pediatric Patients",
     "AHA 2025 Guidelines — Capnography During Cardiac Arrest"
+  ],
+  "graphics": [
+    {
+      "id": "c03_g01",
+      "section": "summary",
+      "sectionIndex": 2,
+      "url": "../../images/courses/pals/c03_g01.jpg",
+      "alt": "Pediatric Airway Sizing: Cuffed vs. Uncuffed Tubes",
+      "caption": "Comparison of cuffed and uncuffed endotracheal tubes showing placement inside a child's trachea and sizing formula notes."
+    },
+    {
+      "id": "c03_g02",
+      "section": "summary",
+      "sectionIndex": 8,
+      "url": "../../images/courses/pals/c03_g02.jpg",
+      "alt": "Airway Troubleshooting: The DOPE Mnemonic",
+      "caption": "Infographic outlining the DOPE mnemonic: Displacement, Obstruction, Pneumothorax, and Equipment failure."
+    }
   ]
 }

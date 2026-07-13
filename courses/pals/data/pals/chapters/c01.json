@@ -94,5 +94,15 @@
   "references": [
     "AHA/AAP 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "AHA Pediatric Assessment Triangle and Systematic Approach — Educational Materials 2025"
+  ],
+  "graphics": [
+    {
+      "id": "c01_g01",
+      "section": "summary",
+      "sectionIndex": 1,
+      "url": "../../images/courses/pals/c01_g01.jpg",
+      "alt": "Pediatric Assessment Triangle (PAT)",
+      "caption": "Diagram of the Pediatric Assessment Triangle showing its three arms: Appearance, Work of Breathing, and Circulation to Skin."
+    }
   ]
 }

@@ -84,5 +84,15 @@
     "AHA/AAP 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "Pediatric Emergency Medicine, 5th Edition — Shock and Resuscitation",
     "Nelson Textbook of Pediatrics, 22nd Edition — Cardiovascular Disorders"
+  ],
+  "graphics": [
+    {
+      "id": "c05_g01",
+      "section": "summary",
+      "sectionIndex": 3,
+      "url": "../../images/courses/pals/c05_g01.jpg",
+      "alt": "Shock Recognition: Compensated vs. Hypotensive",
+      "caption": "Comparison infographic showing clinical features of compensated shock vs hypotensive shock in a child."
+    }
   ]
 }

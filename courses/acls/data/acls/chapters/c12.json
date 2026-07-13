@@ -80,5 +80,15 @@
     "2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients With Acute Coronary Syndromes",
     "DETO2X-AMI Trial — Routine Oxygen in Suspected Myocardial Infarction (NEJM 2017)",
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support"
+  ],
+  "graphics": [
+    {
+      "id": "c12_g01",
+      "section": "summary",
+      "sectionIndex": 0,
+      "url": "../../images/courses/acls/c12_g01.jpg",
+      "alt": "Acute Coronary Syndrome: Coronary Angioplasty (PCI)",
+      "caption": "Cross-section of a coronary artery showing catheter balloon inflation and stent placement."
+    }
   ]
 }

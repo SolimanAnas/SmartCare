@@ -83,5 +83,15 @@
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support (Pharmacology)",
     "AHA 2025 Drug Dosing Reference for ACLS"
+  ],
+  "graphics": [
+    {
+      "id": "c08_g01",
+      "section": "summary",
+      "sectionIndex": 7,
+      "url": "../../images/courses/acls/c08_g01.jpg",
+      "alt": "Intraosseous (IO) Access Sites",
+      "caption": "Anatomical diagram showing the primary insertion sites for adult IO access: proximal humerus and proximal tibia."
+    }
   ]
 }

@@ -79,5 +79,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "AHA 2025 Pediatric Cardiac Arrest Algorithm — Shockable Rhythms",
     "AHA 2025 Guideline Highlights — Pediatric Defibrillation and Antiarrhythmics"
+  ],
+  "graphics": [
+    {
+      "id": "c07_g01",
+      "section": "summary",
+      "sectionIndex": 2,
+      "url": "../../images/courses/pals/c07_g01.jpg",
+      "alt": "Pediatric Pulseless VF / VT Resuscitation Flowchart",
+      "caption": "Pediatric VF/pVT algorithm showing 2 J/kg, 4 J/kg, and escalated shocks, along with CPR cycles, Epinephrine, and Amiodarone."
+    }
   ]
 }

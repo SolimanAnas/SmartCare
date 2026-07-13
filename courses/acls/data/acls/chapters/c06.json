@@ -68,5 +68,15 @@
   ],
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support (VF/pVT management)"
+  ],
+  "graphics": [
+    {
+      "id": "c06_g01",
+      "section": "summary",
+      "sectionIndex": 1,
+      "url": "../../images/courses/acls/c06_g01.jpg",
+      "alt": "VF / Pulseless VT Resuscitation Flowchart",
+      "caption": "Resuscitation flowchart showing CPR, Shock, Epinephrine administration, and Antiarrhythmic administration (Amiodarone/Lidocaine) sequence."
+    }
   ]
 }

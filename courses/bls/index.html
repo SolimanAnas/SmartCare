@@ -208,6 +208,11 @@
   pre.tree { white-space: pre-wrap; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 13px;
     color: var(--text-dim); background: var(--bg-2); border:1px solid var(--border); border-radius: 10px; padding: 14px; }
 
+  /* Graphic Card & Illustrations */
+  .graphic-card { padding: 14px; display: flex; flex-direction: column; align-items: center; background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; box-shadow: var(--shadow); }
+  .graphic-img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .graphic-caption { font-size: 12.5px; color: var(--text-dim); margin-top: 10px; text-align: center; font-style: italic; font-weight: 500; }
+
   /* Algorithms & Tables */
   .alg-card { background: var(--panel); border:1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
   .alg-card h3 { font-size: 16px; margin-bottom: 6px; }
@@ -469,19 +474,49 @@ function renderSummary() {
   const ch = DATA.chapters[curChap];
   if (!ch) return `<div class="empty">Chapter content coming soon.</div>`;
   let html = "";
-  if (ch.learningObjectives?.length)
+
+  const getGraphicHtml = (section, idx) => {
+    if (!ch.graphics) return "";
+    const g = ch.graphics.find(x => x.section === section && x.sectionIndex === idx);
+    if (!g) return "";
+    return `
+      <div class="graphic-card">
+        <img src="${g.url}" alt="${esc(g.alt)}" class="graphic-img" id="${g.id}">
+        ${g.caption ? `<div class="graphic-caption">${esc(g.caption)}</div>` : ""}
+      </div>
+    `;
+  };
+
+  if (ch.learningObjectives?.length) {
     html += `<div class="card"><h3><span class="pill obj">Learning Objectives</span></h3><ol class="num-list">${ch.learningObjectives.map(o=>`<li>${esc(o)}</li>`).join("")}</ol></div>`;
-  if (ch.summary?.length) {
-    html += ch.summary.map(s =>
-      `<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.content)}</p></div>`).join("");
+    html += getGraphicHtml("learningObjectives", 0);
   }
-  html += block("Clinical Pearls", "pearl", ch.clinicalPearls, "pearl");
-  html += block("Red Flags", "flag", ch.redFlags, "flag");
-  html += block("Common Mistakes", "mistake", ch.commonMistakes, "mistake");
-  html += block("Memory Aids", "aid", ch.memoryAids, "aid");
+  if (ch.summary?.length) {
+    html += ch.summary.map((s, idx) => {
+      let card = `<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.content)}</p></div>`;
+      card += getGraphicHtml("summary", idx);
+      return card;
+    }).join("");
+  }
+  
+  let pearls = block("Clinical Pearls", "pearl", ch.clinicalPearls, "pearl");
+  if (pearls) html += pearls + getGraphicHtml("clinicalPearls", 0);
+  
+  let flags = block("Red Flags", "flag", ch.redFlags, "flag");
+  if (flags) html += flags + getGraphicHtml("redFlags", 0);
+  
+  let mistakes = block("Common Mistakes", "mistake", ch.commonMistakes, "mistake");
+  if (mistakes) html += mistakes + getGraphicHtml("commonMistakes", 0);
+  
+  let aids = block("Memory Aids", "aid", ch.memoryAids, "aid");
+  if (aids) html += aids + getGraphicHtml("memoryAids", 0);
+
   if (ch.decisionTrees?.length) {
-    html += ch.decisionTrees.map(d =>
-      `<div class="card"><h3>${esc(d.title)}</h3><pre class="tree">${esc(d.content)}</pre></div>`).join("");
+    html += ch.decisionTrees.map((d, idx) => {
+      let card = `<div class="card"><h3>${esc(d.title)}</h3><pre class="tree">${esc(d.content)}</pre></div>`;
+      card += getGraphicHtml("decisionTrees", idx);
+      return card;
+    }).join("");
   }
   if (ch.references?.length) {
     html += `<div class="card"><h3 style="color:var(--text-faint)">References</h3><ul class="clean" style="font-size:12px">${ch.references.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;

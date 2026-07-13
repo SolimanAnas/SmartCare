@@ -68,5 +68,15 @@
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Adult Basic Life Support (Ventilation)",
     "AHA 2025 Guidelines for CPR and ECC — Airway Management and Ventilation"
+  ],
+  "graphics": [
+    {
+      "id": "c06_g01",
+      "section": "summary",
+      "sectionIndex": 2,
+      "url": "../../images/courses/bls/c06_g01.jpg",
+      "alt": "Bag-Mask Ventilation",
+      "caption": "Close-up of a rescuer's hand performing the E-C clamp technique to seal a BVM mask on a patient's face."
+    }
   ]
 }

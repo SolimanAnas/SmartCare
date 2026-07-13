@@ -79,5 +79,15 @@
     "AHA/AAP 2025 Guidelines for CPR and ECC — Part 8: Pediatric Advanced Life Support",
     "Pediatric Emergency Medicine, 5th Edition — Respiratory Disorders in Children",
     "Nelson Textbook of Pediatrics, 22nd Edition — Respiratory Tract Diseases"
+  ],
+  "graphics": [
+    {
+      "id": "c04_g01",
+      "section": "summary",
+      "sectionIndex": 0,
+      "url": "../../images/courses/pals/c04_g01.jpg",
+      "alt": "Respiratory Distress: The Four Categories",
+      "caption": "Grid illustrating the anatomical sites of the four respiratory problem categories: Upper Airway, Lower Airway, Lung Tissue Disease, and Disordered Control of Breathing."
+    }
   ]
 }

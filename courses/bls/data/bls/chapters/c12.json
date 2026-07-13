@@ -69,5 +69,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Adult and Pediatric Special Circumstances of Resuscitation",
     "AHA 2024/2025 Focused Guidance — Drowning Resuscitation",
     "AHA 2025 Guidelines for CPR and ECC — Post-Cardiac Arrest Care and Recovery"
+  ],
+  "graphics": [
+    {
+      "id": "c12_g01",
+      "section": "summary",
+      "sectionIndex": 1,
+      "url": "../../images/courses/bls/c12_g01.jpg",
+      "alt": "Maternal Cardiac Arrest: Left Uterine Displacement",
+      "caption": "Schematic showing a rescuer applying left uterine displacement (LUD) to a pregnant patient during CPR to relieve aortocaval compression."
+    }
   ]
 }

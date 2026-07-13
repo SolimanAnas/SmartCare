@@ -82,5 +82,15 @@
     "AHA 2025 Guidelines for CPR and ECC — Part 9: Adult Advanced Life Support",
     "AHA 2025 Guidelines for CPR and ECC — Part 5: Adult BLS and CPR Quality",
     "AHA 2025 Guidelines for CPR and ECC — Executive Summary: Tachycardia and Bradycardia Algorithms"
+  ],
+  "graphics": [
+    {
+      "id": "c04_g01",
+      "section": "summary",
+      "sectionIndex": 0,
+      "url": "../../images/courses/acls/c04_g01.jpg",
+      "alt": "Core ACLS ECG Rhythms",
+      "caption": "Panel of ECG strips showing VF, pulseless VT, Mobitz Type II AV Block, Complete Heart Block, SVT, and Torsades de Pointes."
+    }
   ]
 }

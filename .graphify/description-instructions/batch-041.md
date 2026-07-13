@@ -26,6 +26,8 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "app_refreshstatsbadge": "refreshStatsBadge()" | kind=code-symbol | source=app.js:L1434 | neighbors=[app.js] | lang=en
+- "app_registerserviceworker": "registerServiceWorker()" | kind=code-symbol | source=app.js:L68 | neighbors=[app.js] | lang=en
 - "app_renderbottomnav": "renderBottomNav()" | kind=code-symbol | source=app.js:L300 | neighbors=[app.js] | lang=en
 - "app_rendersectionnavigation": "renderSectionNavigation()" | kind=code-symbol | source=app.js:L319 | neighbors=[app.js] | lang=en
 - "app_rendersectiontabs": "renderSectionTabs()" | kind=code-symbol | source=app.js:L285 | neighbors=[app.js] | lang=en
@@ -51,7 +53,7 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_gen_rationale_33": "Replaces placeholders in the template with course-specific data." | kind=entity | source=scripts/gen.py:L33 | neighbors=[generate_course_page()] | lang=en
 - "scripts_generate_all_itls_data_main": "main()" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L975 | neighbors=[generate_all_itls_data.py] | lang=en
 - "scripts_generate_maskable_icons_main": "main()" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L29 | neighbors=[generate_maskable_icons.py] | lang=en
-- "scripts_generate_sitemap_main": "main()" | kind=code-symbol | source=scripts/generate_sitemap.py:L28 | neighbors=[generate_sitemap.py] | lang=en
+- "scripts_generate_sitemap_main": "main()" | kind=code-symbol | source=scripts/generate_sitemap.py:L32 | neighbors=[generate_sitemap.py] | lang=en
 - "scripts_split_content_chapter_ids": "CHAPTER_IDS" | kind=code-symbol | source=scripts/split_content.js:L22 | neighbors=[split_content.js] | lang=en
 - "scripts_split_content_content_dir": "CONTENT_DIR" | kind=code-symbol | source=scripts/split_content.js:L17 | neighbors=[split_content.js] | lang=en
 - "scripts_split_content_fs": "fs" | kind=code-symbol | source=scripts/split_content.js:L12 | neighbors=[split_content.js] | lang=en
@@ -64,8 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "server_rationale_121": "Abort with 503/401 unless the caller has a valid Supabase session.\r     Returns" | kind=entity | source=server.py:L121 | neighbors=[_require_supabase_user()] | lang=en
 - "server_rationale_151": "Allow-list of admin emails sourced from the environment (no hard-coding)." | kind=entity | source=server.py:L151 | neighbors=[_admin_emails()] | lang=en
 - "server_rationale_157": "A user is an admin if their role is 'Admin' or they are allow-listed." | kind=entity | source=server.py:L157 | neighbors=[_is_admin()] | lang=en
-- "server_rationale_21": "Write a structured audit record for auth and admin events." | kind=entity | source=server.py:L21 | neighbors=[_audit()] | lang=en
-- "server_rationale_35": "Write a structured audit record for auth and admin events." | kind=entity | source=server.py:L35 | neighbors=[_audit()] | lang=en
 
 ## Instructions
 

@@ -17,6 +17,8 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_purgecache": "purgeCache()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_qn": "qn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, toString()]
 - "vendor_supabase_js_2_110_0_qr": "Qr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, Q()]
 - "vendor_supabase_js_2_110_0_removeallchannels": "removeAllChannels()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, disconnect()]
 - "vendor_supabase_js_2_110_0_removeemptyfolders": "_removeEmptyFolders()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, uploadToSignedUrl()]
@@ -55,8 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "app_createripple": "createRipple()" | kind=code-symbol | source=app.js:L1218 | neighbors=[app.js]
 - "app_initindexsearch": "initIndexSearch()" | kind=code-symbol | source=app.js:L1013 | neighbors=[app.js]
 - "app_initswupdatetoast": "initSWUpdateToast()" | kind=code-symbol | source=app.js:L85 | neighbors=[app.js]
-- "app_refreshstatsbadge": "refreshStatsBadge()" | kind=code-symbol | source=app.js:L1434 | neighbors=[app.js]
-- "app_registerserviceworker": "registerServiceWorker()" | kind=code-symbol | source=app.js:L68 | neighbors=[app.js]
 
 ## Instructions
 

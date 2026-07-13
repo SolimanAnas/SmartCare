@@ -63,9 +63,9 @@ one-sentence description — no prose, no markdown fences.
 - "commit:repo:github.com/SolimanAnas/SmartCare@4fb7ba040a790e01ce1b9ce07446c7ffd4603b53": "4fb7ba0 Fix formatting in README for Live Demo link" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, a9eb59e Update README.md, f3d2625 Update README.md] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@503d0e1699bdadb4f7175ecb92717550c1770eb6": "503d0e1 Fix 36 single-option questions across BLS, PEPP, and prometric banks" | kind=Commit | source=git | neighbors=[main, 3c15b4d V2 ⭐ : Question Review, All Que…, precache-manifest.js, ef31570 Fix offline precache gap, add c…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@508e08701627fbfd39a37fe6c0f5ff394ac4e414": "508e087 Update index.html" | kind=Commit | source=git | neighbors=[0801c55 Update styles.css, feat/lucide-svg-migration, fix/lucide-quote-consistency, 8deb40e Completed the content] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@521060d9852ec14d305937c0cc2041c59ef27d50": "521060d BLS , ACLS, PALS added ✅" | kind=Commit | source=git | neighbors=[main, d9844d1 Fix CI: break long line in gene…, bundle.js, bd7b1a9 Completing ACLS Course Reviewer] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@5d23c19f55908df5132630da585963ba2940e065": "5d23c19 fix: improve heading and index-count visibility in dark/amoled themes" | kind=Commit | source=git | neighbors=[main, 65ac830 feat: restructure Chapter 1 — m…, c-index.js, 5dddc2f feat: update ECG-study.html foo…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@680d70693d693c7dbadddb4ecbac5fbc6e194561": "680d706 Browslow tape" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 730ad49 BLS, 69889e8 Delete chapters/c3.html] | lang=en
-- "commit:repo:github.com/SolimanAnas/SmartCare@69889e8c8c739569db5fa221249f0c802ce0d30c": "69889e8 Delete chapters/c3.html" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 680d706 Browslow tape, edb1e1d Version 4.0.1] | lang=en
 
 ## Instructions
 

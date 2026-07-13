@@ -68,5 +68,15 @@
   "references": [
     "AHA 2025 Guidelines for CPR and ECC — Adult Basic Life Support (Defibrillation)",
     "AHA 2025 Guidelines for CPR and ECC — Pediatric Basic Life Support (AED Use)"
+  ],
+  "graphics": [
+    {
+      "id": "c05_g01",
+      "section": "summary",
+      "sectionIndex": 2,
+      "url": "../../images/courses/bls/c05_g01.jpg",
+      "alt": "AED Pad Placement",
+      "caption": "Schematic diagram of an adult chest showing anterolateral and anteroposterior AED pad placement."
+    }
   ]
 }
