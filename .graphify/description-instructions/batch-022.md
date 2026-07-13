@@ -26,6 +26,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_trigger": "trigger()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, leave(), joinRef(), onMessage()] | lang=en
 - "vendor_supabase_js_2_110_0_triggerchanerror": "triggerChanError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, heartbeatTimeout(), onConnClose(), onConnError()] | lang=en
 - "vendor_supabase_js_2_110_0_u": "U()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, gt(), ts(), zn()] | lang=en
 - "vendor_supabase_js_2_110_0_unenroll": "_unenroll()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _returnResult(), _useSession(), y()] | lang=en
@@ -61,11 +62,10 @@ one-sentence description — no prose, no markdown fences.
 - "commit:repo:github.com/SolimanAnas/SmartCare@5b988aa93af5c5e028873d87c0cbd12b0379784f": "5b988aa Create .nojekyll" | kind=Commit | source=git | neighbors=[40d423a Remove unused admin/login/signu…, main, 1a56d75 feat: graphify rebuild with des…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@5dddc2fc156b7d7c32e9a543f909731384dafe25": "5dddc2f feat: update ECG-study.html footer to match index.html branding" | kind=Commit | source=git | neighbors=[main, 5d23c19 fix: improve heading and index-…, bae7406 chore: graphify auto-update, EC…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@60c17820d11ca70af36e0dffe44414c34a7b9672": "60c1782 chore: stop tracking TOC/ directory (now gitignored)" | kind=Commit | source=git | neighbors=[main, de0dcb2 feat: Add Open Graph metadata, …, 9b0bbbb content: deploy chapters 6-10 w…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@6477974342f4903a0866c4e1eb4d05e398d97732": "6477974 BLS illustrations ✅" | kind=Commit | source=git | neighbors=[main, bundle.js, d9844d1 Fix CI: break long line in gene…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@67cd1ebdd38c3b3a718d12f11d183faaa761dfd6": "67cd1eb fix: update contact email and all URLs in privacy policy" | kind=Commit | source=git | neighbors=[main, 18fb7dc Added ├── .well-known/, d5777e9 feat: comprehensive privacy pol…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@6c55b58a08f87310c2157a2ecec18a123b5f5594": "6c55b58 fix: sync section-header & continue-label colors with index.html sectio…" | kind=Commit | source=git | neighbors=[main, 0245fab update: refresh PWA icons and f…, ff409d5 fix: match section-header style…] | lang=en
 - "commit:repo:github.com/SolimanAnas/SmartCare@7c988c004c1065d2ba9e8065b9e0cdd475988565": "7c988c0 chore: commit graphify auto-updates, 404.html /SmartCare/ paths, supaba…" | kind=Commit | source=git | neighbors=[24d0345 fix: correct SUPABASE_URL typo …, main, 0465774 feat: Google Identity Services …] | lang=en
-- "commit:repo:github.com/SolimanAnas/SmartCare@8541abefec7ae7fa9d781e820ae6356b7c77b72b": "8541abe chore: Change index page title from landing page to clinical learning p…" | kind=Commit | source=git | neighbors=[main, d00c567 feat: Remove Scope of Practice …, 92652ca feat: Update search placeholder…] | lang=en
-- "commit:repo:github.com/SolimanAnas/SmartCare@90c10bb9124d5ae485f96aeae6b5c0b137683cdd": "90c10bb Make hero greeting on index.html sign-in aware" | kind=Commit | source=git | neighbors=[8a6ee0b Fix invisible table borders and…, main, 4389d53 Improve drawer toggle panel ide…] | lang=en
 
 ## Instructions
 

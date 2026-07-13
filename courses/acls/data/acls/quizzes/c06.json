@@ -69,10 +69,10 @@
     },
     {
       "id": "c06_q08",
-      "question": "What is the first dose of lidocaine as an alternative antiarrhythmic for refractory VF/pVT?",
-      "options": ["A. 0.5–0.75 mg/kg IV/IO", "B. 1–1.5 mg/kg IV/IO", "C. 2–3 mg/kg IV/IO", "D. 50 mg flat dose IV/IO"],
+      "question": "A patient remains in VF after the third shock and amiodarone is unavailable. Which antiarrhythmic should be given instead, and at what dose?",
+      "options": ["A. Lidocaine 0.5–0.75 mg/kg IV/IO", "B. Lidocaine 1–1.5 mg/kg IV/IO", "C. Lidocaine 2–3 mg/kg IV/IO", "D. Lidocaine 50 mg flat dose IV/IO"],
       "correct": 1,
-      "rationale": "Lidocaine first dose is 1–1.5 mg/kg IV/IO, with subsequent doses of 0.5–0.75 mg/kg. It is used as an alternative to amiodarone.",
+      "rationale": "When amiodarone is unavailable, lidocaine is an acceptable alternative antiarrhythmic for refractory VF/pVT, dosed at 1–1.5 mg/kg IV/IO for the first dose.",
       "difficulty": "Medium"
     },
     {

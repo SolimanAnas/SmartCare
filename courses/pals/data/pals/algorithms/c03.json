@@ -5,6 +5,7 @@
       "id": "c03_alg01",
       "title": "Airway Management During Pediatric Resuscitation",
       "description": "A structured approach to pediatric airway management, from initial bag-mask ventilation through advanced airway placement and confirmation during CPR.",
+      "image": "../../images/courses/pals/c03_g01.webp",
       "steps": [
         "Step 1 — Position the child: place a shoulder roll or folded towel under the occiput to neutralize the head position (infants have a proportionally large occiput that causes flexion when supine).",
         "Step 2 — Open the airway: head-tilt/chin-lift (jaw-thrust if trauma is suspected). Suction secretions if present.",
@@ -22,6 +23,7 @@
       "id": "c03_alg02",
       "title": "DOPE: Troubleshooting Acute Deterioration with an Advanced Airway",
       "description": "A systematic approach to evaluating sudden clinical deterioration (desaturation, loss of ETCO₂, absent chest rise) in a child with an ET tube or SGA in place.",
+      "image": "../../images/courses/pals/c03_g02.webp",
       "steps": [
         "Step 1 — D (Displacement): Has the tube moved? Check depth marking at the lip, auscultate breath sounds bilaterally, and assess ETCO₂ waveform. If tube is out or in the right mainstem → reposition or re-intubate.",
         "Step 2 — O (Obstruction): Is the tube blocked? Suction through the tube, check for kinking, and assess for biting. If mucus plug → inline suction. If kinked → reposition tube or circuit.",

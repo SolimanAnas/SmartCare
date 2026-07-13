@@ -5,6 +5,7 @@
       "id": "c11_alg01",
       "title": "Pediatric Tachycardia With a Pulse — Decision Algorithm",
       "description": "Stepwise approach to evaluating and managing a pediatric patient with a heart rate above the normal range for age, based on the 2025 AHA PALS tachycardia algorithm.",
+      "image": "../../images/courses/pals/c11_g01.webp",
       "steps": [
         "Step 1 — Confirm tachycardia: heart rate above the upper limit of normal for the patient's age.",
         "Step 2 — Assess perfusion and hemodynamic stability: check mental status, skin color and temperature, pulse quality, capillary refill, and blood pressure.",

@@ -14,7 +14,7 @@
         "D. There is no difference between the two concentrations"
       ],
       "correct": 1,
-      "rationale": "1:1,000 epinephrine contains 1 mg/mL versus 0.1 mg/mL for 1:1,000. Drawing 1 mL from the wrong vial delivers 10 mg instead of 1 mg — a 10-fold overdose that can cause severe hypertension, increased myocardial oxygen demand, and potentially worsen outcomes. This is why concentration verification is a critical safety step in every code.",
+      "explanation": "1:1,000 epinephrine contains 1 mg/mL versus 0.1 mg/mL for 1:10,000. Drawing 1 mL from the wrong vial delivers 10 mg instead of 1 mg — a 10-fold overdose that can cause severe hypertension, increased myocardial oxygen demand, and potentially worsen outcomes. This is why concentration verification is a critical safety step in every code.",
       "clinicalPearl": "Always verify epinephrine concentration: cardiac arrest uses 1:10,000 (0.1 mg/mL). The 1:1,000 concentration is for anaphylaxis and other indications — never for cardiac arrest."
     },
     {

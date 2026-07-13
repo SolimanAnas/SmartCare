@@ -126,7 +126,7 @@
         "D. Wait for cardiology consultation"
       ],
       "correct": 1,
-      "explanation": "An unstable patient with tachycardia requires immediate synchronized cardioversion — do not delay for drug therapy.",
+      "rationale": "An unstable patient with tachycardia requires immediate synchronized cardioversion — do not delay for drug therapy.",
       "difficulty": "Medium"
     },
     {

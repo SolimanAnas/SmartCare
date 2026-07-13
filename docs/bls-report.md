@@ -149,3 +149,20 @@ The dynamic renderer in [index.html](file:///D:/Apps/SmartCare/courses/bls/index
 *   **Aspect Ratio & Dimensions:** 4:3 | 800 x 600 px
 *   **Alt Text:** Schematic showing a rescuer applying left uterine displacement (LUD) to a pregnant patient during CPR to relieve aortocaval compression.
 *   **AI Image Prompt:** `A clinical schematic diagram illustrating Left Uterine Displacement (LUD) during resuscitation of a pregnant patient. The patient is lying supine. A rescuer's hand is shown pushing the uterus to the patient's left side (indicated by a clear arrow) to relieve pressure on the inferior vena cava and aorta. Superimposed anatomical outlines show the heart, aorta, and inferior vena cava. Clear contrast, high didactic value, flat vector illustration.`
+
+## 6. Mapped Algorithm Images (Completed)
+
+To ensure that clinical illustrations are prominently displayed during algorithm steps, we have mapped the summary illustration WebP assets directly into the `algorithms/*.json` data structures. This displays the corresponding diagrams inside the **Algorithms** tab of the reviewer UI:
+
+*   **Chapter 1 (Universal Chain of Survival):** `Universal Chain of Survival (2025) — BLS Provider View` is now linked to [c01_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c01_g01.webp).
+*   **Chapter 5 (AED Pad Placement):** `AED Operation Sequence` is now linked to [c05_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c05_g01.webp).
+*   **Chapter 6 (Bag-Mask Technique):** `Bag-Mask Ventilation Technique` is now linked to [c06_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c06_g01.webp).
+*   **Chapter 9 (Infant CPR):** `Infant BLS Algorithm (<1 year)` is now linked to [c09_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c09_g01.webp).
+*   **Chapter 10 (Choking Relief):** `Choking Victim Who Becomes Unresponsive` is now linked to [c10_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c10_g01.webp).
+*   **Chapter 12 (Maternal CPR):** `CPR in Late Pregnancy` is now linked to [c12_g01.webp](file:///D:/Apps/SmartCare/images/courses/bls/c12_g01.webp).
+
+### Next Steps for ACLS & PALS Algorithm Mapping:
+To maintain consistency across all courses, we recommend mapping the corresponding illustration assets to their algorithm arrays in ACLS and PALS:
+1.  **ACLS:** Link `c03_g01.webp` (Waveform Capnography), `c04_g01.webp` (Defibrillator Pad Placement), `c05_g01.webp` (Transcutaneous Pacing), `c05_g02.webp` (Post-ROSC PCI), `c08_g01.webp` (IO Access), `c09_g01.webp` (H's & T's), `c12_g01.webp` (Maternal CPR LUD), and `c14_g01.webp` (TTM) to their respective algorithms in `courses/acls/data/acls/algorithms/`.
+2.  **PALS:** Link `c01_g01.webp` (PAT), `c03_g01.webp` (Airway Sizing), `c03_g02.webp` (DOPE), `c04_g01.webp` (Upper Airway/Croup), `c05_g01.webp` (Shock Severity), and `c09_g01.webp` (IO Access) to their respective algorithms in `courses/pals/data/pals/algorithms/`.
+

@@ -17,6 +17,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_tn_aspectratio": ".aspectRatio()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, s()]
 - "vendor_chart_4_5_1_umd_min_tn_beforeupdate": ".beforeUpdate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, d()]
 - "vendor_chart_4_5_1_umd_min_tn_calculatepadding": "._calculatePadding()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .fit()]
 - "vendor_chart_4_5_1_umd_min_tn_computelabelarea": "._computeLabelArea()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .drawLabels()]
@@ -56,7 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_yn_countvisibleelements": ".countVisibleElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), .updateElements()]
 - "vendor_chart_4_5_1_umd_min_yn_getlabelandvalue": ".getLabelAndValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), ne()]
 - "vendor_chart_4_5_1_umd_min_yn_update": ".update()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), ._updateRadius()]
-- "vendor_supabase_js_2_110_0_bs": "bs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, x()]
 
 ## Instructions
 

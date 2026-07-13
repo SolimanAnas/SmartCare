@@ -22,6 +22,7 @@
       "id": "c03_alg02",
       "title": "ETCO2-Guided CPR Quality Monitoring",
       "description": "Using continuous waveform capnography to assess and improve CPR quality during cardiac arrest.",
+      "image": "../../images/courses/acls/c03_g01.webp",
       "steps": [
         "Advanced airway placed and confirmed — continuous waveform capnography active on monitor.",
         "Measure ETCO2 after each cycle of compressions.",

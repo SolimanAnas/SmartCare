@@ -17,6 +17,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_js_getotherscale": "._getOtherScale()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .getMinMax()]
 - "vendor_chart_4_5_1_umd_min_js_getscaleforid": ".getScaleForId()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .linkScales()]
 - "vendor_chart_4_5_1_umd_min_js_initialize": ".initialize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .isPluginEnabled()]
 - "vendor_chart_4_5_1_umd_min_js_ondatapop": "._onDataPop()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._sync()]
@@ -56,7 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_oo_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo, no()]
 - "vendor_chart_4_5_1_umd_min_oo_pathsegment": ".pathSegment()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo, io()]
 - "vendor_chart_4_5_1_umd_min_oo_segments": ".segments()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[oo, zi()]
-- "vendor_chart_4_5_1_umd_min_parseobjectdata": "parseObjectData()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, l()]
 
 ## Instructions
 

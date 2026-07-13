@@ -5,6 +5,7 @@
       "id": "c08_alg01",
       "title": "Child BLS Algorithm (1 year to puberty)",
       "description": "The sequence for a child in cardiac arrest, including single- and multi-rescuer ratios.",
+      "image": "../../algorithms/Pediatric-BLS-Single-Rescuer.webp",
       "steps": [
         "Verify scene safety and check responsiveness; shout for help.",
         "Assess breathing and pulse simultaneously (carotid or femoral) for no more than 10 seconds.",

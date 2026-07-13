@@ -5,6 +5,7 @@
       "id": "c06_alg01",
       "title": "VF/pVT Cardiac Arrest Algorithm",
       "description": "Step-by-step management of ventricular fibrillation and pulseless ventricular tachycardia, from initial rhythm identification through defibrillation, epinephrine, antiarrhythmics, and refractory-arrest considerations.",
+      "image": "../../algorithms/ACLS-CA.webp",
       "steps": [
         "Confirm VF or pulseless VT on the cardiac monitor.",
         "Deliver one shock immediately — biphasic 120–200 J (manufacturer-specific or escalating); monophasic 360 J.",

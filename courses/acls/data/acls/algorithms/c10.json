@@ -5,6 +5,7 @@
       "id": "c10_alg01",
       "title": "ACLS Bradycardia With a Pulse Algorithm",
       "description": "Stepwise assessment and management of bradycardia in the adult patient, aligned with the 2025 AHA guidelines.",
+      "image": "../../algorithms/ACLS-Bradycardia.webp",
       "steps": [
         "Bradycardia identified on monitor (rate typically <50/min).",
         "Assess for signs of instability: hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, acute heart failure.",

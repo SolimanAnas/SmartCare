@@ -5,7 +5,7 @@
     { "id": "bls", "shortTitle": "BLS", "title": "Basic Life Support", "link": "bls.html", "available": true, "icon": "🫀", "count": 284 },
     { "id": "bls-reviewer", "shortTitle": "BLS Reviewer", "title": "Basic Life Support — Course Reviewer", "link": "../courses/bls/index.html", "available": true, "icon": "🫀", "count": 220 },
     { "id": "acls", "shortTitle": "ACLS", "title": "Advanced Cardiovascular Life Support", "link": "acls.html", "available": true, "icon": "❤️", "count": 33 },
-    { "id": "acls-reviewer", "shortTitle": "ACLS Reviewer", "title": "Advanced Cardiovascular Life Support — Course Reviewer", "link": "../courses/acls/index.html", "available": true, "icon": "❤️", "count": 230 },
+    { "id": "acls-reviewer", "shortTitle": "ACLS Reviewer", "title": "Advanced Cardiovascular Life Support — Course Reviewer", "link": "../courses/acls/index.html", "available": true, "icon": "❤️", "count": 241 },
     { "id": "bdls", "shortTitle": "BDLS", "title": "Basic Disaster Life Support", "link": "bdls.html", "available": true, "icon": "🌪️", "count": 40 },
     { "id": "pepp", "shortTitle": "PEPP", "title": "Pediatric Education for Prehospital Professionals", "link": "pepp.html", "available": true, "icon": "🧸", "count": 200 },
     { "id": "ppet", "shortTitle": "PPET", "title": "Prehospital Pediatric Emergency Transport", "link": "ppet.html", "available": true, "icon": "🚁", "count": 57 },

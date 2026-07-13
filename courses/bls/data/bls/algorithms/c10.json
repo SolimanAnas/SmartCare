@@ -5,6 +5,7 @@
       "id": "c10_alg01",
       "title": "Choking (FBAO) — Responsive Victim (2025)",
       "description": "Management of a responsive victim with a foreign-body airway obstruction, by age and body type.",
+      "image": "../../algorithms/BLS-Adult-FBAO.webp",
       "steps": [
         "Assess severity: if the victim can cough forcefully, speak, or breathe (mild), encourage coughing and do not interfere.",
         "If severe (cannot speak, cough effectively, or breathe) and responsive, act immediately.",
@@ -18,6 +19,7 @@
       "id": "c10_alg02",
       "title": "Choking Victim Who Becomes Unresponsive",
       "description": "Transition from choking relief to CPR when the victim loses responsiveness.",
+      "image": "../../images/courses/bls/c10_g01.webp",
       "steps": [
         "Carefully lower the victim to the ground.",
         "Activate the emergency response system (or ensure it has been activated).",

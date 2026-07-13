@@ -5,6 +5,7 @@
       "id": "c14_alg01",
       "title": "Post-ROSC Management Bundle",
       "description": "Comprehensive post-ROSC management pathway from ROSC through neuroprognostication and recovery.",
+      "image": "../../algorithms/PCAC-Algorithm-ACLS-PCAC.webp",
       "steps": [
         "ROSC achieved → confirm with waveform capnography (sudden rise in ETCO₂) and pulse check.",
         "Airway management: confirm and secure advanced airway; target ETCO₂ 35–45 mmHg (avoid hypo/hyperventilation).",
@@ -32,6 +33,7 @@
       "id": "c14_alg02",
       "title": "ECPR Patient Selection and Initiation",
       "description": "Decision pathway for extracorporeal CPR candidacy in refractory cardiac arrest.",
+      "image": "../../images/courses/acls/c14_g01.webp",
       "steps": [
         "Refractory cardiac arrest: persistent VF/pVT despite standard ACLS (high-quality CPR, ≥3 shocks, epinephrine, amiodarone/lidocaine).",
         "Identify potentially reversible cause: acute MI, PE, myocarditis, drug toxicity, hypothermia, tension pneumothorax.",

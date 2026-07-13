@@ -17,6 +17,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_tn_binduserevents": ".bindUserEvents()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .bindEvents(), u()]
 - "vendor_chart_4_5_1_umd_min_tn_buildorupdatescales": ".buildOrUpdateScales()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, u(), ._updateScales()]
 - "vendor_chart_4_5_1_umd_min_tn_clear": ".clear()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.clearCache(), tn, .draw()]
 - "vendor_chart_4_5_1_umd_min_tn_drawgrid": ".drawGrid()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, a(), ._computeGridLineItems()]
@@ -56,7 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_ya_getlegenditemat": "._getLegendItemAt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, tt(), .handleEvent()]
 - "vendor_chart_4_5_1_umd_min_ya_handleevent": ".handleEvent()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, d(), ._getLegendItemAt()]
 - "vendor_chart_4_5_1_umd_min_ye": "Ye()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e(), .resolveNamedOptions()]
-- "vendor_chart_4_5_1_umd_min_yn_computeangle": "._computeAngle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), .getDataVisibility(), .updateElements()]
 
 ## Instructions
 

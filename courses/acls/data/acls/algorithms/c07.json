@@ -5,6 +5,7 @@
       "id": "c07_alg01",
       "title": "Asystole / PEA Cardiac Arrest Algorithm",
       "description": "Step-by-step management of asystole and pulseless electrical activity (PEA), emphasizing nonshockable rhythm management, early epinephrine, and systematic identification and treatment of reversible causes (H's & T's).",
+      "image": "../../algorithms/ACLS-CA.webp",
       "steps": [
         "Identify asystole or PEA on the cardiac monitor — confirm on at least two ECG leads.",
         "Immediately begin high-quality CPR: compressions at 100–120/min, depth 2–2.4 in, allow full recoil, with ventilations (bag-valve mask or advanced airway).",

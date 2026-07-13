@@ -5,6 +5,7 @@
       "id": "c09_alg01",
       "title": "Infant BLS Algorithm (<1 year)",
       "description": "The sequence for an infant in cardiac arrest, reflecting the 2025 preferred two-thumb technique.",
+      "image": "../../images/courses/bls/c09_g01.webp",
       "steps": [
         "Verify scene safety; check responsiveness by tapping the sole of the foot; shout for help.",
         "Assess breathing and the brachial pulse simultaneously for no more than 10 seconds.",

@@ -26,6 +26,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "app_initswupdatetoast": "initSWUpdateToast()" | kind=code-symbol | source=app.js:L85 | neighbors=[app.js] | lang=en
 - "app_refreshstatsbadge": "refreshStatsBadge()" | kind=code-symbol | source=app.js:L1434 | neighbors=[app.js] | lang=en
 - "app_registerserviceworker": "registerServiceWorker()" | kind=code-symbol | source=app.js:L68 | neighbors=[app.js] | lang=en
 - "app_renderbottomnav": "renderBottomNav()" | kind=code-symbol | source=app.js:L300 | neighbors=[app.js] | lang=en
@@ -65,7 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "server_load_user": "load_user()" | kind=code-symbol | source=server.py:L146 | neighbors=[server.py] | lang=en
 - "server_rationale_121": "Abort with 503/401 unless the caller has a valid Supabase session.\r     Returns" | kind=entity | source=server.py:L121 | neighbors=[_require_supabase_user()] | lang=en
 - "server_rationale_151": "Allow-list of admin emails sourced from the environment (no hard-coding)." | kind=entity | source=server.py:L151 | neighbors=[_admin_emails()] | lang=en
-- "server_rationale_157": "A user is an admin if their role is 'Admin' or they are allow-listed." | kind=entity | source=server.py:L157 | neighbors=[_is_admin()] | lang=en
 
 ## Instructions
 

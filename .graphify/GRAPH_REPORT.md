@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-07-13)
 
 ## Corpus Check
-- Large corpus: 94 files · ~614,926 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 94 files · ~615,106 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1943 nodes · 5995 edges · 84 communities detected
+- 1944 nodes · 5998 edges · 84 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: calls: 1977 · ON_BRANCH: 1698 · contains: 920 · method: 550 · MODIFIES: 413 · PARENT_OF: 382 · rationale_for: 34 · imports: 12 · imports_from: 4 · references: 2 · inherits: 1 · reads_from: 1 · triggers: 1
+- Edge kinds: calls: 1977 · ON_BRANCH: 1699 · contains: 920 · method: 550 · MODIFIES: 414 · PARENT_OF: 383 · rationale_for: 34 · imports: 12 · imports_from: 4 · references: 2 · inherits: 1 · reads_from: 1 · triggers: 1
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 94 · Candidates: 1056
-- Excluded: 32 untracked · 14597 ignored · 0 sensitive · 0 missing committed
+- Included files: 94 · Candidates: 1079
+- Excluded: 43 untracked · 14597 ignored · 0 sensitive · 19 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `d9844d1`
+- Built from Git commit: `6477974`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `tn` - 124 edges
@@ -66,9 +66,9 @@ Nodes (13): 4663aec fix: Resolve unused variable and import lint errors in scrip
 Cohesion: 0.31
 Nodes (6): 1543337 Fix raw markup in Last Visited, extend homepage search to sub-chapters, harden sw.js, 301bb11 Fix NaN days ago — index.html reads h.timestamp (stored as 'timestamp' by app.js, not 'ts'), 817a4bf Merge pull request #23 Fixed: reflected XSS, 81d920a Fix reflected XSS in med-index.html, add Google Play production audit, 8c61be7 Merge pull request #22 raw markup code, SW, Extended search✅, f3382e1 Add agentic implementation plan for BLS course reviewer (docs/BLS.md)
 
-### Community 39 - "Community 39"
+### Community 37 - "Community 37"
 Cohesion: 0.18
-Nodes (12): load(), main(), load(), main(), 33c9dd7 Author BLS chapters c04-c06 (2-rescuer/teams, AED, ventilation), 521060d BLS , ACLS, PALS added ✅, 7c0b047 Author BLS chapters c02-c03 (assessment, adult 1-rescuer CPR), a75c415 Scaffold BLS reviewer (courses/bls) with c01 content (+4 more)
+Nodes (13): load(), main(), load(), main(), 33c9dd7 Author BLS chapters c04-c06 (2-rescuer/teams, AED, ventilation), 521060d BLS , ACLS, PALS added ✅, 6477974 BLS illustrations ✅, 7c0b047 Author BLS chapters c02-c03 (assessment, adult 1-rescuer CPR) (+5 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.17
@@ -226,7 +226,7 @@ Nodes (15): mt(), _t(), vt(), wt(), kt(), It(), zt(), Ft() (+7 more)
 Cohesion: 0.25
 Nodes (1): xt
 
-### Community 38 - "Community 38"
+### Community 39 - "Community 39"
 Cohesion: 0.18
 Nodes (1): ke()
 
@@ -242,7 +242,7 @@ Nodes (4): he(), ce(), de, ca
 Cohesion: 0.50
 Nodes (3): fe(), ps(), dn()
 
-### Community 37 - "Community 37"
+### Community 38 - "Community 38"
 Cohesion: 0.13
 Nodes (10): ge(), pe(), xe(), we(), es(), is(), ss(), ns() (+2 more)
 
@@ -395,7 +395,7 @@ Nodes (7): 0465774 feat: Google Identity Services popup sign-in (shows SmartCare
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 56`** (1 nodes): `xt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (1 nodes): `ke()`
+- **Thin community `Community 39`** (1 nodes): `ke()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 60`** (1 nodes): `hs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -411,7 +411,7 @@ Nodes (7): 0465774 feat: Google Identity Services popup sign-in (shows SmartCare
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `tn` connect `Community 6` to `Community 13`, `Community 29`, `Community 18`, `Community 61`, `Community 31`, `Community 38`, `Community 9`, `Community 55`, `Community 12`, `Community 4`, `Community 7`, `Community 5`, `Community 8`, `Community 37`, `Community 11`, `Community 57`?**
+- **Why does `tn` connect `Community 6` to `Community 13`, `Community 29`, `Community 18`, `Community 61`, `Community 31`, `Community 39`, `Community 9`, `Community 55`, `Community 12`, `Community 4`, `Community 7`, `Community 5`, `Community 8`, `Community 38`, `Community 11`, `Community 57`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `ExamEngine` connect `Community 3` to `Community 0`?**
   _High betweenness centrality (0.062) - this node is a cross-community bridge._

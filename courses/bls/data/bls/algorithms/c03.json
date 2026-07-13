@@ -5,6 +5,7 @@
       "id": "c03_alg01",
       "title": "Adult 1-Rescuer BLS (CPR) Algorithm",
       "description": "The single-rescuer sequence for an adult in cardiac arrest, following the C-A-B approach.",
+      "image": "../../algorithms/BLS-Adult-Healthcare.webp",
       "steps": [
         "Verify scene safety and confirm cardiac arrest (unresponsive, no normal breathing, no pulse in ≤10 s).",
         "Activate the emergency response system and get an AED (use a phone on speaker if alone).",

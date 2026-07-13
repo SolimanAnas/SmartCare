@@ -178,3 +178,15 @@ ACLS is a highly visual course relying heavily on ECG strips, pad placement diag
 *   **Aspect Ratio & Dimensions:** 4:3 | 800 x 600 px
 *   **Alt Text:** Diagram of a patient receiving veno-arterial ECMO during ECPR, showing femoral venous drainage, pump, oxygenator, and femoral arterial return.
 *   **AI Image Prompt:** `A clinical medical illustration showing a patient receiving Veno-Arterial Extracorporeal Membrane Oxygenation (VA-ECMO) during ECPR. Visualizes cannulas inserted in the femoral vein (blue drainage line) and femoral artery (red return line), connected to an external centrifugal pump and membrane oxygenator machine. Blood flow direction indicated by arrows. Professional textbook layout, clean anatomy outlines, neutral patient silhouette.`
+
+## 6. Mapped Algorithm Images (Completed)
+
+To ensure that clinical illustrations are prominently displayed during algorithm steps, we have mapped the summary illustration WebP assets directly into the `algorithms/*.json` data structures. This displays the corresponding diagrams inside the **Algorithms** tab of the reviewer UI:
+
+*   **Chapter 3 (Waveform Capnography):** `ETCO2-Guided CPR Quality Monitoring` is now linked to [c03_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c03_g01.webp).
+*   **Chapter 4 (Defibrillation):** `ACLS Cardiac Arrest Rhythm Identification and Treatment Pathway` is now linked to [c04_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c04_g01.webp).
+*   **Chapter 5 (Pacing/PCI):** `Transcutaneous Pacing (TCP) Protocol` is now linked to [c05_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c05_g01.webp).
+*   **Chapter 8 (IO Access):** `Cardiac Arrest Drug Administration Algorithm` is now linked to [c08_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c08_g01.webp).
+*   **Chapter 9 (Reversible Causes):** `H's & T's Systematic Arrest Workup` is now linked to [c09_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c09_g01.webp).
+*   **Chapter 12 (Acute Coronary Syndromes):** `STEMI Reperfusion Decision Pathway` is now linked to [c12_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c12_g01.webp).
+*   **Chapter 14 (Post-ROSC Care / ECPR):** `ECPR Patient Selection and Initiation` is now linked to [c14_g01.webp](file:///D:/Apps/SmartCare/images/courses/acls/c14_g01.webp).

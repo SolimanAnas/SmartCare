@@ -20,6 +20,7 @@
       "id": "c09_alg02",
       "title": "IV-IO Access Decision Tree for Pediatric Emergencies",
       "description": "Decision tree for selecting and establishing vascular access in pediatric emergencies, including cardiac arrest, shock, and stable patients.",
+      "image": "../../images/courses/pals/c09_g01.webp",
       "steps": [
         "Step 1 — Assess the clinical urgency: is the patient in cardiac arrest, in shock, or stable?",
         "Step 2 — If in cardiac arrest or peri-arrest with no existing access: proceed directly to IO if peripheral IV cannot be established within 1–2 attempts (target: access within 2 minutes of first attempt).",

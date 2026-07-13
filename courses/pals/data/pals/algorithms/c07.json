@@ -5,6 +5,7 @@
       "id": "c07_alg01",
       "title": "Pediatric VF / Pulseless VT Cardiac Arrest Algorithm",
       "description": "Structured steps for managing pediatric cardiac arrest with shockable rhythms (VF or pVT), based on the 2025 AHA Pediatric Cardiac Arrest Algorithm for shockable rhythms.",
+      "image": "../../images/courses/pals/c07_g01.webp",
       "steps": [
         "Step 1 — Recognize cardiac arrest: confirm unresponsiveness, absence of normal breathing, and no palpable pulse within 10 seconds.",
         "Step 2 — Activate emergency response and begin high-quality CPR: 30:2 compression-to-ventilation ratio (single rescuer) or 15:2 (two rescuers); push hard and fast at ≥200 compressions/min for infants/children; allow full chest recoil; minimize interruptions.",

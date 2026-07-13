@@ -16,8 +16,7 @@
         "A. Removed the defibrillation link",
         "B. Consolidated the separate chains into one universal chain and added a distinct newborn chain",
         "C. Reduced the number of links to four",
-        "D. Eliminated the recovery link",
-        "E. Made bystander CPR optional"
+        "D. Eliminated the recovery link"
       ],
       "correct": 1,
       "rationale": "The 2025 update merged the previously separate adult, pediatric, in-hospital, and out-of-hospital chains into a single universal Chain of Survival, and introduced a separate Neonatal Chain of Care for newborns.",

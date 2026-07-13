@@ -5,6 +5,7 @@
       "id": "c08_alg01",
       "title": "Cardiac Arrest Drug Administration Algorithm",
       "description": "Decision framework for selecting and administering the correct drugs based on the cardiac arrest rhythm, including dose, timing, route, and flush protocol.",
+      "image": "../../images/courses/acls/c08_g01.webp",
       "steps": [
         "Cardiac arrest confirmed → begin CPR and establish IV/IO access.",
         "Determine rhythm category: Shockable (VF/pVT) or Nonshockable (Asystole/PEA).",

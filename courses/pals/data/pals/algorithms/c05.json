@@ -5,6 +5,7 @@
       "id": "c05_alg01",
       "title": "Pediatric Shock Recognition and Classification",
       "description": "A systematic approach to identifying, staging, and classifying shock in pediatric patients, from initial assessment through type determination and immediate intervention.",
+      "image": "../../images/courses/pals/c05_g01.webp",
       "steps": [
         "Perform rapid assessment using the Pediatric Assessment Triangle: evaluate appearance, work of breathing, and circulation to skin. Pallor, mottling, or cyanosis in circulation to skin suggests shock.",
         "Assess perfusion: check capillary refill time (sternum or fingertip), pulse quality (strong vs weak/thready), skin temperature and color, mental status, and urine output.",

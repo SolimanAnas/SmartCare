@@ -17,6 +17,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "prometric_exam_examengine_gotostep": ".goToStep()" | kind=code-symbol | source=src/prometric/exam.js:L114 | neighbors=[ExamEngine, .newExam()]
 - "prometric_exam_examengine_handletouchend": ".handleTouchEnd()" | kind=code-symbol | source=src/prometric/exam.js:L225 | neighbors=[ExamEngine, .navigate()]
 - "prometric_exam_examengine_initwizard": ".initWizard()" | kind=code-symbol | source=src/prometric/exam.js:L82 | neighbors=[ExamEngine, .init()]
 - "prometric_exam_examengine_loadchartjs": ".loadChartJS()" | kind=code-symbol | source=src/prometric/exam.js:L51 | neighbors=[ExamEngine, .init()]
@@ -56,7 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "server_register_csrf_guard": "_register_csrf_guard()" | kind=code-symbol | source=server.py:L217 | neighbors=[server.py, create_app()]
 - "server_register_routes": "_register_routes()" | kind=code-symbol | source=server.py:L136 | neighbors=[server.py, create_app()]
 - "server_register_security_headers": "_register_security_headers()" | kind=code-symbol | source=server.py:L239 | neighbors=[server.py, create_app()]
-- "server_user": "User" | kind=code-symbol | source=server.py:L136 | neighbors=[server.py, UserMixin]
 
 ## Instructions
 

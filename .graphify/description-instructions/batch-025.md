@@ -17,6 +17,7 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_et": "et()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, s(), wo()]
 - "vendor_chart_4_5_1_umd_min_fe": "fe()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dn(), ps()]
 - "vendor_chart_4_5_1_umd_min_fs": "Fs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getMatchingVisibleMetas(), vs()]
 - "vendor_chart_4_5_1_umd_min_getaxiscount": "_getAxisCount()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getAxis()]
@@ -56,7 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_n_getcircumference": "._getCircumference()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._circumference(), ._getRotationExtents()]
 - "vendor_chart_4_5_1_umd_min_n_getrotation": "._getRotation()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._getRotationExtents(), .updateElements()]
 - "vendor_chart_4_5_1_umd_min_n_getvisibledatasetweighttotal": "._getVisibleDatasetWeightTotal()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._getRingWeightOffset(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_pluginscopekeys": ".pluginScopeKeys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), xn(), rn()]
 
 ## Instructions
 

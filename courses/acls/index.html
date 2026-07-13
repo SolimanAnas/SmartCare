@@ -334,7 +334,7 @@
   </main>
 </div>
 
-<script src="data/bundle.js" onerror="window.__noBundle=true"></script>
+<script src="data/bundle.js?v=20260713" onerror="window.__noBundle=true"></script>
 <script src="../../src/theme.js"></script>
 <script>
 (function() {
@@ -479,9 +479,10 @@ function renderSummary() {
     if (!ch.graphics) return "";
     const g = ch.graphics.find(x => x.section === section && x.sectionIndex === idx);
     if (!g) return "";
+    const imgUrl = g.url.replace(/\.(jpg|png)$/i, ".webp");
     return `
       <div class="graphic-card">
-        <img src="${g.url}" alt="${esc(g.alt)}" class="graphic-img" id="${g.id}">
+        <img src="${imgUrl}" alt="${esc(g.alt)}" class="graphic-img" id="${g.id}">
         ${g.caption ? `<div class="graphic-caption">${esc(g.caption)}</div>` : ""}
       </div>
     `;
@@ -636,6 +637,11 @@ function renderAlgorithms() {
     return `<div class="alg-card">
       <h3>${esc(a.title)}</h3>
       ${a.description?`<div class="desc">${esc(a.description)}</div>`:""}
+      ${a.image?`
+        <div class="graphic-card" style="margin: 14px 0; padding: 6px;">
+          <img src="${a.image}" alt="${esc(a.title)}" class="graphic-img" style="max-height: 500px; object-fit: contain;">
+        </div>
+      `:""}
       <ol class="num-list">${steps}</ol>
     </div>`;
   }).join("");

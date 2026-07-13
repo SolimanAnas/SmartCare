@@ -5,6 +5,7 @@
       "id": "c11_alg01",
       "title": "ACLS Tachycardia With a Pulse Algorithm",
       "description": "Complete decision pathway for adult tachycardia with a pulse, from initial assessment through rhythm-specific treatment.",
+      "image": "../../algorithms/ACLS-Tachycardia.webp",
       "steps": [
         "Tachycardia identified (heart rate >100/min with a pulse) on the monitor.",
         "Assess for hemodynamic instability: hypotension (SBP <90), acutely altered mental status, chest pain, acute heart failure, signs of shock.",
@@ -37,6 +38,7 @@
       "id": "c11_alg02",
       "title": "Synchronized Cardioversion Quick-Reference",
       "description": "Energy selection and preparation checklist for synchronized cardioversion.",
+      "image": "../../algorithms/ACLS-Electrical-Cardioversion.webp",
       "steps": [
         "Confirm tachycardia is UNSTABLE (hypotension, altered mentation, chest pain, heart failure, shock).",
         "Identify the rhythm: narrow vs wide, regular vs irregular.",

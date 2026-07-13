@@ -24,14 +24,12 @@ acls/
 
 ## Content totals
 
-_Updated at the end of authoring — see the coverage table printed by `build.py`._
-
 - 14 chapters
-- 200+ flashcards (target)
-- 230+ quiz questions (target, with rationales and difficulty)
-- 42 clinical scenarios (target, with vitals, correct answer, explanation, clinical pearl)
-- 12+ structured clinical algorithms (target)
-- 10+ structured comparison/drug/energy tables (target)
+- 228 flashcards
+- 241 quiz questions (with rationales and difficulty)
+- 42 clinical scenarios (with vitals, correct answer, explanation, clinical pearl)
+- 25 structured clinical algorithms
+- 39 structured comparison/drug/energy tables
 
 The chapters cover the ACLS Provider curriculum: systems of care and the Chain of Survival,
 high-quality BLS inside ACLS and team dynamics, airway management and waveform capnography,

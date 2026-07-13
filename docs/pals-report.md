@@ -162,3 +162,13 @@ PALS uses several visual algorithms and diagnostic matrices. Extending the JSON 
 *   **Aspect Ratio & Dimensions:** 9:16 | 600 x 1060 px
 *   **Alt Text:** Flowchart showing evaluation of stable vs unstable pediatric tachycardia, narrow-QRS (SVT vs Sinus Tachycardia) and wide-QRS (VT) pathways.
 *   **AI Image Prompt:** `A vertical clinical flowchart for pediatric tachycardia with a pulse. Main branches: "Stable vs Unstable". Unstable branch -> "Immediate Synchronized Cardioversion (0.5-1 J/kg)". Stable branch -> "Evaluate QRS duration". Narrow QRS branch -> "Sinus Tachycardia (search cause)" vs "SVT (vagal maneuvers, Adenosine 0.1 mg/kg)". Wide QRS branch -> "VT (Amiodarone 5 mg/kg infusion)". Professional medical colors, flat vector layout.`
+
+## 6. Mapped Algorithm Images (Completed)
+
+To ensure that clinical illustrations are prominently displayed during algorithm steps, we have mapped the summary illustration WebP assets directly into the `algorithms/*.json` data structures. This displays the corresponding diagrams inside the **Algorithms** tab of the reviewer UI:
+
+*   **Chapter 1 (Initial Survey):** `Pediatric Assessment Triangle and ABCDE Algorithm` is now linked to [c01_g01.webp](file:///D:/Apps/SmartCare/images/courses/pals/c01_g01.webp).
+*   **Chapter 3 (Airway Sizing & DOPE):** `Airway Management During Pediatric Resuscitation` is now linked to [c03_g01.webp](file:///D:/Apps/SmartCare/images/courses/pals/c03_g01.webp) and `DOPE: Troubleshooting Acute Deterioration with an Advanced Airway` is now linked to [c03_g02.webp](file:///D:/Apps/SmartCare/images/courses/pals/c03_g02.webp).
+*   **Chapter 4 (Respiratory Distress):** `Categorizing Pediatric Respiratory Distress and Failure` is now linked to [c04_g01.webp](file:///D:/Apps/SmartCare/images/courses/pals/c04_g01.webp).
+*   **Chapter 5 (Shock Recognition):** `Pediatric Shock Recognition and Classification` is now linked to [c05_g01.webp](file:///D:/Apps/SmartCare/images/courses/pals/c05_g01.webp).
+*   **Chapter 9 (Vascular Access):** `IV-IO Access Decision Tree for Pediatric Emergencies` is now linked to [c09_g01.webp](file:///D:/Apps/SmartCare/images/courses/pals/c09_g01.webp).

@@ -5,6 +5,7 @@
       "id": "c10_alg01",
       "title": "Pediatric Bradycardia With a Pulse — Management Algorithm",
       "description": "Stepwise approach to evaluating and managing a pediatric patient with a heart rate below 60 bpm and a palpable pulse, based on the 2025 AHA PALS bradycardia algorithm.",
+      "image": "../../images/courses/pals/c10_g01.webp",
       "steps": [
         "Step 1 — Assess the patient: confirm heart rate < 60 bpm and evaluate perfusion (pulse quality, capillary refill, skin color, mental status, blood pressure if measurable).",
         "Step 2 — If perfusion is adequate: monitor the patient closely, investigate the underlying cause, and treat accordingly. No emergent intervention is required.",

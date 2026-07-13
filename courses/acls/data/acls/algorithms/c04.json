@@ -5,6 +5,7 @@
       "id": "c04_alg01",
       "title": "ACLS Cardiac Arrest Rhythm Identification and Treatment Pathway",
       "description": "Systematic approach to identifying and treating the four cardiac arrest rhythms during ACLS resuscitation.",
+      "image": "../../images/courses/acls/c04_g01.webp",
       "steps": [
         "Cardiac arrest recognized — begin high-quality CPR and apply defibrillator pads.",
         "At the first opportunity, analyze the cardiac rhythm on the monitor.",

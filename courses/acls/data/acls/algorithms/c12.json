@@ -5,6 +5,7 @@
       "id": "c12_alg01",
       "title": "STEMI Reperfusion Decision Pathway",
       "description": "Decision pathway from STEMI identification to reperfusion, including primary PCI and fibrinolysis pathways.",
+      "image": "../../images/courses/acls/c12_g01.webp",
       "steps": [
         "Obtain and interpret 12-lead ECG within 10 minutes of first medical contact.",
         "ST elevation or new LBBB consistent with STEMI identified.",
