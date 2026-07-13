@@ -118,8 +118,9 @@ Scenario vitals should look like ACLS cases: include rhythm descriptions ("monit
 ## 5. App shell, build script, README
 
 1. Copy `courses/bls/index.html` → `courses/acls/index.html`. Rename: `BLS_DATA` → `ACLS_DATA`, `data/bls/` → `data/acls/`, localStorage keys `bls_*` → `acls_*`, title/brand "ACLS Reviewer — Advanced Cardiovascular Life Support", icon `../../icons/courses/thumb/acls.png`, `<meta>` description. Keep all six tabs and every feature; add nothing in v1.
-2. Copy `courses/bls/build.py` → `courses/acls/build.py`; change `DATA` to `data/acls`, output global to `window.ACLS_DATA`, header comment. Must end `Validation OK.`
-3. Write `courses/acls/README.md` mirroring the BLS one: layout, totals, run instructions, schema reference, **guideline provenance**, disclaimer ("not a substitute for an official AHA ACLS course, certification card, or local protocols").
+2. **Mobile-friendliness is a hard requirement.** The BLS shell is already phone-safe — `minmax(0, 1fr)` grid tracks (both desktop and the ≤820px media query), `min-width: 0` on the sidebar, tables inside `.table-wrap { overflow-x: auto }`, and mobile size overrides in the media query. Preserve all of these when copying; never reintroduce a bare `1fr` track (nowrap sidebar titles propagate intrinsic width and force horizontal scroll on phones — this was a real bug, fixed). ACLS drug/energy tables are wide: they must scroll inside `.table-wrap`, never the page body.
+3. Copy `courses/bls/build.py` → `courses/acls/build.py`; change `DATA` to `data/acls`, output global to `window.ACLS_DATA`, header comment. Must end `Validation OK.`
+4. Write `courses/acls/README.md` mirroring the BLS one: layout, totals, run instructions, schema reference, **guideline provenance**, disclaimer ("not a substitute for an official AHA ACLS course, certification card, or local protocols").
 
 ## 6. Platform integration
 
@@ -135,7 +136,7 @@ Scenario vitals should look like ACLS cases: include rhythm descriptions ("monit
 **Phase 1 — Scaffold.** Tree + manifest + adapted build.py/index.html/README + full c01 content. *Gate: `python courses/acls/build.py` → `Validation OK.`*
 **Phase 2 — Author, 3–4 chapters per batch** (c01–c04, c05–c08, c09–c11, c12–c14), running build.py per batch. *Gate per batch: validation OK, targets met, spot-check 3 quiz answers per chapter against verified facts — every drug dose and energy value double-checked.*
 **Phase 3 — Integration (§6).** *Gate: reviewer reachable from courses page; precache + sitemap regenerated; click through 3 chapters × all tabs served over HTTP with no console errors.*
-**Phase 4 — QA.** Clean build; programmatic answer-integrity sweep (correct-index bounds, required fields — see the python snippet pattern used for BLS); clinical-number consistency grep (doses, energies, ratios); clone `tests/bls-reviewer.spec.js` → `tests/acls-reviewer.spec.js` and run it; record final counts in README + `data/courses.json`; `graphify update .` if available.
+**Phase 4 — QA.** Clean build; programmatic answer-integrity sweep (correct-index bounds, required fields — see the python snippet pattern used for BLS); clinical-number consistency grep (doses, energies, ratios); clone `tests/bls-reviewer.spec.js` → `tests/acls-reviewer.spec.js` and run it — **including its mobile no-horizontal-overflow tests (360px and 320px viewports, all six tabs, on a table-heavy chapter)**, which are a hard gate; record final counts in README + `data/courses.json`; `graphify update .` if available.
 **Phase 5 — Ship.** Final commit, push. No PR unless asked.
 
 ## 8. Guardrails

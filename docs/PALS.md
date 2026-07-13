@@ -115,8 +115,9 @@ Scenario vitals must be **age-appropriate** (a normal HR for a 6-month-old is ta
 ## 5. App shell, build script, README
 
 1. Copy `courses/bls/index.html` → `courses/pals/index.html`. Rename: `BLS_DATA` → `PALS_DATA`, `data/bls/` → `data/pals/`, localStorage `bls_*` → `pals_*`, title/brand "PALS Reviewer — Pediatric Advanced Life Support", icon `../../icons/courses/thumb/pals.png`, `<meta>` description. Keep all six tabs; add nothing in v1.
-2. Copy `courses/bls/build.py` → `courses/pals/build.py`; `DATA` → `data/pals`, global → `window.PALS_DATA`. Must end `Validation OK.`
-3. `courses/pals/README.md` mirroring BLS: layout, totals, run instructions, schema reference, **guideline provenance** (note the joint AHA/AAP authorship), disclaimer.
+2. **Mobile-friendliness is a hard requirement.** The BLS shell is already phone-safe — `minmax(0, 1fr)` grid tracks (desktop and the ≤820px media query), `min-width: 0` on the sidebar, tables inside `.table-wrap { overflow-x: auto }`, and mobile size overrides in the media query. Preserve all of these when copying; never reintroduce a bare `1fr` track (nowrap sidebar titles propagate intrinsic width and force horizontal scroll on phones — this was a real bug, fixed). The weight-based dosing and vitals tables are wide: they must scroll inside `.table-wrap`, never the page body.
+3. Copy `courses/bls/build.py` → `courses/pals/build.py`; `DATA` → `data/pals`, global → `window.PALS_DATA`. Must end `Validation OK.`
+4. `courses/pals/README.md` mirroring BLS: layout, totals, run instructions, schema reference, **guideline provenance** (note the joint AHA/AAP authorship), disclaimer.
 
 ## 6. Platform integration
 
@@ -132,7 +133,7 @@ Scenario vitals must be **age-appropriate** (a normal HR for a 6-month-old is ta
 **Phase 1 — Scaffold.** Tree + manifest + adapted build.py/index.html/README + full c01 content. *Gate: `python courses/pals/build.py` → `Validation OK.`*
 **Phase 2 — Author, 3–4 chapters per batch** (c01–c03, c04–c06, c07–c09, c10–c13). *Gate per batch: validation OK, targets met, every weight-based dose and energy value double-checked against the verified table; consistency check against `courses/bls` pediatric chapters.*
 **Phase 3 — Integration (§6).** *Gate: reviewer reachable from courses page; precache + sitemap regenerated; 3 chapters × all tabs clicked through over HTTP, no console errors.*
-**Phase 4 — QA.** Clean build; programmatic answer-integrity sweep; clinical-number grep (all mg/kg doses, J/kg energies, rates, ratios); clone the BLS Playwright spec → `tests/pals-reviewer.spec.js` and run; final counts into README + `data/courses.json`; `graphify update .` if available.
+**Phase 4 — QA.** Clean build; programmatic answer-integrity sweep; clinical-number grep (all mg/kg doses, J/kg energies, rates, ratios); clone the BLS Playwright spec → `tests/pals-reviewer.spec.js` and run — **including its mobile no-horizontal-overflow tests (360px and 320px viewports, all six tabs, on a table-heavy chapter)**, which are a hard gate; final counts into README + `data/courses.json`; `graphify update .` if available.
 **Phase 5 — Ship.** Final commit, push. No PR unless asked.
 
 ## 8. Guardrails
