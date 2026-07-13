@@ -49,3 +49,26 @@ test('BLS reviewer switches chapters via the sidebar', async ({ page }) => {
   await page.locator('#chapters .chap', { hasText: 'Automated External Defibrillation' }).click();
   await expect(page.locator('#ctitle')).toContainText('Automated External Defibrillation');
 });
+
+// Regression test for a real bug: the reviewer's `1fr` grid track could not
+// shrink below the sidebar's min-content width — the nowrap chapter titles
+// propagated ~440px of intrinsic width up through the nested flex layout,
+// forcing ~170-210px of horizontal scroll on phones. Fixed with
+// `minmax(0, 1fr)` grid tracks and `min-width: 0` on the sidebar. This test
+// walks every tab (including the table-heavy c03) at phone widths and fails
+// on any page-level horizontal overflow.
+for (const vp of [{ w: 360, h: 740 }, { w: 320, h: 568 }]) {
+  test(`BLS reviewer has no horizontal overflow at ${vp.w}px`, async ({ page }) => {
+    await page.setViewportSize({ width: vp.w, height: vp.h });
+    await page.goto('courses/bls/index.html', { waitUntil: 'networkidle' });
+    await page.locator('#chapters .chap', { hasText: 'High-Quality CPR' }).first().click();
+    for (const tab of ['Summary', 'Flashcards', 'Quiz', 'Scenarios', 'Algorithms', 'Tables']) {
+      await page.locator('#tabs .tab', { hasText: tab }).click();
+      const overflow = await page.evaluate(() => {
+        const d = document.scrollingElement;
+        return d.scrollWidth - d.clientWidth;
+      });
+      expect(overflow, `${tab} tab overflows by ${overflow}px at ${vp.w}px`).toBeLessThanOrEqual(1);
+    }
+  });
+}
