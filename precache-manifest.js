@@ -16,6 +16,8 @@ self.__PRECACHE = [
   "courses/bls/data/bundle.js",
   "courses/bdls/index.html",
   "courses/bdls/data/bundle.js",
+  "courses/empact/index.html",
+  "courses/empact/data/bundle.js",
   "chapters/c-index.html",
   "chapters/c0.html",
   "chapters/c1.html",
@@ -135,4 +137,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "4dfdb05067";
+self.__PRECACHE_VERSION = "3c85d23a49";

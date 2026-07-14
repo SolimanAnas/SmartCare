@@ -41,6 +41,8 @@ CORE_FILES = [
     "courses/bls/data/bundle.js",
     "courses/bdls/index.html",
     "courses/bdls/data/bundle.js",
+    "courses/empact/index.html",
+    "courses/empact/data/bundle.js",
 ]
 
 GLOB_DIRS = [
