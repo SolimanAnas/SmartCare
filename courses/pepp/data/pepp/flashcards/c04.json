@@ -14,6 +14,7 @@
     { "id": "c04_fc11", "question": "What is the focused exam used for?", "answer": "A targeted exam for stable/low-priority patients, directed at the chief complaint.", "category": "Secondary Assessment" },
     { "id": "c04_fc12", "question": "What is the rapid exam used for?", "answer": "A more limited exam for high-priority patients, often performed en route to the hospital.", "category": "Secondary Assessment" },
     { "id": "c04_fc13", "question": "What four steps make up PEPP's complete assessment sequence?", "answer": "PAT, primary assessment, history, secondary assessment.", "category": "Assessment" },
-    { "id": "c04_fc14", "question": "Why is adapting communication considered a clinical skill rather than a courtesy?", "answer": "It materially affects the quality of the history and exam obtained, directly impacting patient care.", "category": "Communication" }
+    { "id": "c04_fc14", "question": "Why is adapting communication considered a clinical skill rather than a courtesy?", "answer": "It materially affects the quality of the history and exam obtained, directly impacting patient care.", "category": "Communication" },
+    { "id": "c04_fc15", "question": "Why is growth/weight trend information relevant to a pediatric SAMPLE history?", "answer": "It informs weight-based medication dosing considerations that may apply during subsequent care.", "category": "History" }
   ]
 }

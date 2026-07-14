@@ -12,6 +12,8 @@
     { "id": "c11_fc09", "question": "What is the single most important intervention in newborn resuscitation?", "answer": "Positive-pressure ventilation.", "category": "Neonatal" },
     { "id": "c11_fc10", "question": "When are chest compressions added during newborn resuscitation?", "answer": "Only if the heart rate remains below 60 bpm despite 30 seconds of effective PPV.", "category": "Neonatal" },
     { "id": "c11_fc11", "question": "How does the newborn resuscitation sequence differ from adult/older-child arrest sequences?", "answer": "Ventilation comes first and is prioritized; compressions are added only if ventilation alone fails to raise the heart rate above 60 bpm, reflecting that most newborn compromise is a ventilation problem.", "category": "Neonatal" },
-    { "id": "c11_fc12", "question": "Where should providers look for detailed neonatal resuscitation algorithms, medication dosing, and advanced airway specifics?", "answer": "Their local neonatal resuscitation protocol / the Neonatal Resuscitation Program (NRP), the authoritative source for this skill set.", "category": "Field Management" }
+    { "id": "c11_fc12", "question": "Where should providers look for detailed neonatal resuscitation algorithms, medication dosing, and advanced airway specifics?", "answer": "Their local neonatal resuscitation protocol / the Neonatal Resuscitation Program (NRP), the authoritative source for this skill set.", "category": "Field Management" },
+    { "id": "c11_fc13", "question": "What does 'vigorous' typically describe about a newborn who does not need the initial stabilization steps?", "answer": "Strong cry, good tone, and pink/appropriate color within the first minute after birth.", "category": "Neonatal" },
+    { "id": "c11_fc14", "question": "Roughly how long do the initial steps of newborn stabilization take before reassessment?", "answer": "About 30 seconds.", "category": "Neonatal" }
   ]
 }

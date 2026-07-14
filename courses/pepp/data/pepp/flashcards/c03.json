@@ -13,6 +13,8 @@
     { "id": "c03_fc10", "question": "What are components of the 'Breathing' step in ABCDE?", "answer": "Rate, effort, breath sounds, and oxygen saturation.", "category": "Primary Assessment" },
     { "id": "c03_fc11", "question": "Where should a provider look for depth on cardiac-arrest-specific ABCDE content?", "answer": "The PALS reviewer — PEPP's ABCDE is a field assessment/transport-decision tool, not a resuscitation-team algorithm.", "category": "Cross-Reference" },
     { "id": "c03_fc12", "question": "Why should priority be reassessed throughout the encounter?", "answer": "New findings can emerge as the exam and treatment proceed, changing the acuity picture.", "category": "Assessment" },
-    { "id": "c03_fc13", "question": "Why involve a calm caregiver early in the scene, when safe?", "answer": "It often improves both scene safety and the child's cooperation during assessment.", "category": "Scene Size-Up" }
+    { "id": "c03_fc13", "question": "Why involve a calm caregiver early in the scene, when safe?", "answer": "It often improves both scene safety and the child's cooperation during assessment.", "category": "Scene Size-Up" },
+    { "id": "c03_fc14", "question": "What is assessed under 'Airway' in pediatric ABCDE?", "answer": "Patency — whether the airway is open, maintainable, or requires positioning/intervention.", "category": "Primary Assessment" },
+    { "id": "c03_fc15", "question": "What pediatric-specific consideration applies during the scene size-up for a suspected multi-victim event?", "answer": "Actively count and account for all children present, since multi-victim pediatric events (e.g., daycare, school, family incidents) are common and easy to under-triage.", "category": "Scene Size-Up" }
   ]
 }
