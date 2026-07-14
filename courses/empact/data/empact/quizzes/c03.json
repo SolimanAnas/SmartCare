@@ -147,6 +147,22 @@
       "correct": 1,
       "rationale": "Progressively quieter wheeze in a tiring, anxious asthma patient suggests worsening obstruction toward a silent chest — treatment should escalate, not stop.",
       "difficulty": "Hard"
+    },
+    {
+      "id": "c03_q15",
+      "question": "What is the standard supportive measure across nearly every respiratory emergency in this chapter?",
+      "options": ["A. Withholding oxygen until diagnosis is certain", "B. Supplemental oxygen with pulse oximetry monitoring", "C. Immediate intubation of every patient", "D. No monitoring is required"],
+      "correct": 1,
+      "rationale": "Because hypoxia is a common thread across these conditions, supplemental oxygen and SpO2 monitoring are broadly applied supportive measures.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q16",
+      "question": "A patient with a history of COPD reports acute dyspnea after a coughing fit, with no chest trauma. What should be high on the differential?",
+      "options": ["A. Pulmonary embolism only", "B. Spontaneous pneumothorax", "C. Meningitis", "D. Appendicitis"],
+      "correct": 1,
+      "rationale": "Spontaneous pneumothorax is common in COPD patients due to rupture of weakened lung tissue, and can be triggered by exertion such as a coughing fit, without any external trauma.",
+      "difficulty": "Medium"
     }
   ]
 }

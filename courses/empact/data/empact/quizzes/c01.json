@@ -198,6 +198,32 @@
       "correct": 1,
       "rationale": "Scene size-up happens before hands-on patient care and focuses on safety, precautions, and situational clues — protecting the responder and informing the coming assessment.",
       "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q17",
+      "question": "What best describes the relationship between the four assessment stages?",
+      "options": [
+        "A. They are independent and can be performed in any order",
+        "B. Each stage builds on the information and actions of the one before it",
+        "C. Only the primary assessment matters; the rest are optional",
+        "D. Reassessment replaces the need for a primary assessment"
+      ],
+      "correct": 1,
+      "rationale": "Scene size-up informs safe approach, the primary assessment sets priority and treats life threats, the secondary assessment builds the differential, and reassessment tracks the response — each stage depends on the ones before it.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c01_q18",
+      "question": "A patient's chief complaint doesn't match your physical findings. What should guide your next action?",
+      "options": [
+        "A. Always defer entirely to the stated chief complaint",
+        "B. Trust your own exam findings and investigate the discrepancy further",
+        "C. Ignore your findings since the patient knows their body best",
+        "D. Document the mismatch and take no further action"
+      ],
+      "correct": 1,
+      "rationale": "Trusting your own primary assessment and findings — while still listening actively — is a core principle when the story and the exam don't align.",
+      "difficulty": "Medium"
     }
   ]
 }

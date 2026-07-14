@@ -157,6 +157,19 @@
       "correct": 1,
       "rationale": "The proximal location of the obstruction causing stridor means airway compromise can worsen quickly, demanding urgent recognition and action.",
       "difficulty": "Medium"
+    },
+    {
+      "id": "c02_q15",
+      "question": "A patient is breathing 22 times per minute with good tidal volume and no distress. Is BVM ventilation indicated?",
+      "options": [
+        "A. Yes, all patients need BVM support",
+        "B. No — adequate rate, volume, and effort without distress do not meet BVM indications",
+        "C. Yes, because the rate is above 20",
+        "D. Only if the patient requests it"
+      ],
+      "correct": 1,
+      "rationale": "BVM ventilation is reserved for apnea, bradypnea, inadequate tidal volume, cyanosis, or altered mental status with poor effort — not simply an elevated but adequate respiratory rate.",
+      "difficulty": "Medium"
     }
   ]
 }

@@ -159,6 +159,14 @@
       "correct": 0,
       "rationale": "Indwelling urinary catheters are a recognized common source of sepsis in patients with fever and altered mental status, particularly in elderly populations.",
       "difficulty": "Medium"
+    },
+    {
+      "id": "c09_q14",
+      "question": "Which route is used for the first-line epinephrine dose in anaphylaxis?",
+      "options": ["A. Oral", "B. Intramuscular (IM)", "C. Topical", "D. Subcutaneous only, never IM"],
+      "correct": 1,
+      "rationale": "IM epinephrine is the first-line route for anaphylaxis treatment, providing rapid absorption to reverse hypotension and airway compromise.",
+      "difficulty": "Easy"
     }
   ]
 }

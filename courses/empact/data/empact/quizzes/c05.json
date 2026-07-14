@@ -162,6 +162,14 @@
       "correct": 1,
       "rationale": "Heart failure history with hypotension and pulmonary crackles suggests cardiogenic shock (pump failure), where inotropic/vasopressor support is favored over aggressive fluid boluses, which risk worsening pulmonary edema.",
       "difficulty": "Hard"
+    },
+    {
+      "id": "c05_q15",
+      "question": "Which of the following is an example of distributive shock?",
+      "options": ["A. Bleeding from a laceration", "B. Anaphylaxis causing widespread vasodilation", "C. Myocardial infarction with pump failure", "D. Tension pneumothorax"],
+      "correct": 1,
+      "rationale": "Anaphylaxis causes distributive shock through pathologic vasodilation, distinct from hypovolemic (bleeding), cardiogenic (MI), or obstructive (tension pneumothorax) shock.",
+      "difficulty": "Medium"
     }
   ]
 }

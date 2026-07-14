@@ -139,6 +139,19 @@
       "correct": 1,
       "rationale": "A systematic assessment — not anchoring on 'GI' — catches referred/mimicking causes like inferior MI, DKA, or pneumonia presenting as abdominal pain.",
       "difficulty": "Hard"
+    },
+    {
+      "id": "c08_q14",
+      "question": "A patient presents with vomiting for two days, dry mucous membranes, and tenting skin. What is the best interpretation?",
+      "options": [
+        "A. No clinical significance",
+        "B. Signs consistent with dehydration",
+        "C. Signs consistent with anaphylaxis",
+        "D. Signs consistent with hyperkalemia specifically"
+      ],
+      "correct": 1,
+      "rationale": "Dry mucous membranes and skin tenting are classic bedside indicators of dehydration from ongoing fluid losses.",
+      "difficulty": "Easy"
     }
   ]
 }

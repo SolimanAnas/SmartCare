@@ -167,6 +167,14 @@
       "correct": 1,
       "rationale": "Both hypoglycemia and hyperglycemia can present with stroke-like symptoms (weakness, slurred speech, altered mentation), so glucose must always be checked in a suspected stroke.",
       "difficulty": "Medium"
+    },
+    {
+      "id": "c06_q15",
+      "question": "Which finding is NOT part of Cushing's Triad?",
+      "options": ["A. Hypertension", "B. Bradycardia", "C. Tachypnea with regular pattern", "D. Altered respiratory pattern"],
+      "correct": 2,
+      "rationale": "Cushing's Triad consists of hypertension, bradycardia, and an ALTERED (irregular) respiratory pattern — not a regular tachypnea.",
+      "difficulty": "Medium"
     }
   ]
 }

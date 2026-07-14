@@ -14,6 +14,7 @@
     { "id": "c02_fc11", "question": "What causes can produce stridor?", "answer": "Anaphylaxis-related angioedema, epiglottitis, foreign body, or airway burns, among others.", "category": "Respiratory" },
     { "id": "c02_fc12", "question": "Why should positioning come before waiting to set up suction equipment?", "answer": "Positioning (turning the patient) is the fastest first response to drain fluid and should not be delayed while suction is prepared.", "category": "Airway" },
     { "id": "c02_fc13", "question": "Why is airway risk from altered LOC a 'common thread' across different diagnoses?", "answer": "Overdose, stroke, post-ictal state, metabolic derangement, and sepsis can all cause altered LOC — the airway management priority is the same regardless of the underlying cause.", "category": "Assessment" },
-    { "id": "c02_fc14", "question": "What is a modified logroll used for in airway management?", "answer": "Turning a patient with vomit/blood in the airway onto their side to drain fluid while maintaining spinal precautions if trauma is suspected.", "category": "Airway" }
+    { "id": "c02_fc14", "question": "What is a modified logroll used for in airway management?", "answer": "Turning a patient with vomit/blood in the airway onto their side to drain fluid while maintaining spinal precautions if trauma is suspected.", "category": "Airway" },
+    { "id": "c02_fc15", "question": "Is a mildly elevated respiratory rate alone enough to justify BVM ventilation?", "answer": "No — adequacy depends on rate, depth, effort, and color together, not rate alone.", "category": "Respiratory" }
   ]
 }

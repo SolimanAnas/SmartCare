@@ -14,6 +14,7 @@
     { "id": "c05_fc11", "question": "What is the primary management focus for hypovolemic shock?", "answer": "Fluid resuscitation to restore circulating volume.", "category": "Shock" },
     { "id": "c05_fc12", "question": "What is the primary management focus for obstructive shock (e.g., tamponade, tension pneumothorax)?", "answer": "Mechanical correction of the obstruction (e.g., decompression, pericardiocentesis) rather than fluids or vasopressors alone.", "category": "Shock" },
     { "id": "c05_fc13", "question": "Why does recognizing the shock category matter for treatment?", "answer": "Because fluids, vasopressors, epinephrine, and mechanical correction are not interchangeable — the wrong intervention for the category can worsen outcomes.", "category": "Shock" },
-    { "id": "c05_fc14", "question": "Is a normal blood pressure enough to rule out significant shock?", "answer": "No — compensated shock can have a normal blood pressure while perfusion is already inadequate.", "category": "Shock" }
+    { "id": "c05_fc14", "question": "Is a normal blood pressure enough to rule out significant shock?", "answer": "No — compensated shock can have a normal blood pressure while perfusion is already inadequate.", "category": "Shock" },
+    { "id": "c05_fc15", "question": "What causes distributive shock in anaphylaxis?", "answer": "Pathologic, widespread vasodilation from the allergic reaction, dropping systemic vascular resistance and blood pressure.", "category": "Shock" }
   ]
 }

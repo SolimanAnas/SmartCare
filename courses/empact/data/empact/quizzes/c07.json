@@ -144,6 +144,32 @@
       "correct": 1,
       "rationale": "All three diabetic emergencies are time-sensitive and can closely mimic primary neurological events, so they warrant urgent, systematic evaluation rather than assumption of a benign cause.",
       "difficulty": "Hard"
+    },
+    {
+      "id": "c07_q14",
+      "question": "A patient with known Type 1 diabetes has a glucose of 45 mg/dL and mild confusion, with no abnormal breathing pattern. What is the correct immediate treatment?",
+      "options": [
+        "A. IV insulin",
+        "B. Glucose administration",
+        "C. IV fluids alone with no glucose",
+        "D. Withhold treatment until hospital arrival"
+      ],
+      "correct": 1,
+      "rationale": "Confirmed hypoglycemia with altered mental status requires immediate glucose administration — insulin would worsen the problem, and delaying treatment risks further neurological compromise.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q15",
+      "question": "Which onset pattern and finding combination best distinguishes DKA from HHNS in the field?",
+      "options": [
+        "A. Both present identically in onset and breathing pattern",
+        "B. DKA: hours-to-days onset with Kussmaul respirations; HHNS: days-long onset without Kussmaul respirations",
+        "C. DKA: days-long onset; HHNS: minutes-long onset",
+        "D. Only urine ketone testing can distinguish them in the field"
+      ],
+      "correct": 1,
+      "rationale": "The combination of onset speed and respiratory pattern — DKA's faster onset with Kussmaul breathing versus HHNS's slower onset without it — allows field differentiation without lab testing.",
+      "difficulty": "Medium"
     }
   ]
 }
