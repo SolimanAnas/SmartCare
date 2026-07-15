@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/SolimanAnas/SmartCare/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SolimanAnas/SmartCare?color=blue" alt="License" /></a>
+  <a href="https://github.com/SolimanAnas/SmartCare/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-All%20Rights%20Reserved-red" alt="License" /></a>
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Flask-3.x-000000.svg?logo=flask&logoColor=white" alt="Flask" />
   <img src="https://img.shields.io/badge/Frontend-Vanilla_JS-F7DF1E.svg?logo=javascript&logoColor=black" alt="JavaScript" />
@@ -194,6 +194,7 @@ To report a vulnerability, see [SECURITY.md](SECURITY.md).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+All rights reserved. This software and its course content are proprietary.
+See [LICENSE](LICENSE) for details.
 
 Copyright (c) 2025 Soliman Anas
