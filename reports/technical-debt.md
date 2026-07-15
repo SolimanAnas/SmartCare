@@ -1,7 +1,7 @@
 # Technical Debt Register
 
 **Date:** June 9, 2026  
-**Project:** Smart CPG (DCAS CPG 2025)  
+**Project:** Smart CPG (SmartCare)  
 **Total Items:** 25  
 **Total Effort:** 45-60 days
 

@@ -1,8 +1,8 @@
-# 📋 Requirements Specification — DCAS CPG 2025
+# 📋 Requirements Specification — SmartCare
 
-**Project:** DCAS CPG 2025 — Clinical Review Platform
+**Project:** SmartCare — Clinical Review Platform
 **Document type:** Software / Security Requirements Specification (SRS)
-**Derived from:** *DCAS Software Development Life Cycle Policy and Procedure* (Secure SDLC), Version 1.1 (07-02-2025), Classification **Shared – Confidential**
+**Derived from:** *Secure Development Lifecycle Policy and Procedure* (Secure SDLC), Version 1.1 (07-02-2025), Classification **Shared – Confidential**
 **Prepared:** 2026-06-08 · **Status:** Draft for review/approval
 **Classification:** Shared – Confidential
 
@@ -14,7 +14,7 @@
 
 | Item | Detail |
 |------|--------|
-| Document Title | Requirements Specification — DCAS CPG 2025 |
+| Document Title | Requirements Specification — SmartCare |
 | Document Reference | CPG2025-SRS-001 |
 | Classification | Shared – Confidential |
 | Version | 0.1 (Draft) |
@@ -31,14 +31,14 @@
 | Solution / Security Architect | Author SAD Security View | ☐ |
 | Information Security Section | Ensure security requirements per IT Security, Security Monitoring, Password, Application & Database Security standards | ☐ |
 
-> Per policy §6 (SRS/SAD): "The Information Security Section should ensure that security requirements are identified … in accordance with the IT Security Policy, Security Monitoring Policy, Password Security Policy, Application Security Standard, Database Security Standard." These referenced DCAS standards are **dependencies** of this document (see §7).
+> Per policy §6 (SRS/SAD): "The Information Security Section should ensure that security requirements are identified … in accordance with the IT Security Policy, Security Monitoring Policy, Password Security Policy, Application Security Standard, Database Security Standard." These referenced security standards are **dependencies** of this document (see §7).
 
 ---
 
 ## 1. Business Requirement Specification (BRS) — *policy §6.1*
 
 ### 1.1 Description of business processes to be automated
-Provide DCAS EMS personnel (Physicians, Paramedics, EMTs) with a digitised, interactive, **offline-capable** study aid and rapid reference tool for the 2025 Clinical Practice Guidelines, including chapter content, flashcards, quizzes, drug calculator, ECG tools and certification exam practice.
+Provide healthcare professionals (Physicians, Paramedics, EMTs) with a digitised, interactive, **offline-capable** study aid and rapid reference tool for the 2025 Clinical Practice Guidelines, including chapter content, flashcards, quizzes, drug calculator, ECG tools and certification exam practice.
 
 ### 1.2 Added features expected after automation
 - Instant offline access to protocols in the field (unreliable cellular coverage).
@@ -62,7 +62,7 @@ Provide DCAS EMS personnel (Physicians, Paramedics, EMTs) with a digitised, inte
 - Clinical PII (name, email, professional level) must be protected at all times.
 
 ### 1.6 Business Volumes & Performance Measures
-- Target user base: DCAS EMS staff. Content must render instantly from local cache; auth round-trip < 2 s on a normal connection.
+- Target user base: healthcare staff. Content must render instantly from local cache; auth round-trip < 2 s on a normal connection.
 
 ---
 
@@ -70,7 +70,7 @@ Provide DCAS EMS personnel (Physicians, Paramedics, EMTs) with a digitised, inte
 
 | QoS attribute (policy §6.2.2) | Requirement for CPG-2025 |
 |-------------------------------|---------------------------|
-| **Scalability** | Support the full DCAS clinical workforce concurrently at peak (shift changes). |
+| **Scalability** | Support the full clinical workforce concurrently at peak (shift changes). |
 | **Availability** | Core guideline content 100% available offline via Service Worker cache; backend auth target ≥ 99.5% uptime. |
 | **Performance** | First contentful paint from cache < 1 s; API responses < 500 ms p95. |
 | **Manageability** | Admin console for user/role management; observable logs for auth & admin actions. |
@@ -90,7 +90,7 @@ A PWA front-end (Vanilla JS/HTML/CSS + Service Worker) served by a Flask backend
 ### 3.2 Assumptions & Dependencies
 - TLS/HTTPS terminated at the hosting platform (Render).
 - Google OAuth client credentials provisioned and held as environment secrets.
-- DCAS reference security standards (IT Security, Password, Application & Database Security, Encryption & Key Management, Security Monitoring) are available and binding — see §7.
+- reference security standards (IT Security, Password, Application & Database Security, Encryption & Key Management, Security Monitoring) are available and binding — see §7.
 
 ### 3.3 Functional requirements (summary)
 | ID | Requirement |
@@ -120,7 +120,7 @@ Each Security Requirement (§4) is traceable to a Policy clause and to an ISR/IS
 |----|-------------|----------------------|
 | SR-AUTH-1 | All authentication decisions are made **server-side**; no credential check or auth state in client code. | No secret/hash in front-end; `localStorage` cannot grant access. |
 | SR-AUTH-2 | Passwords stored only as salted one-way hashes (Werkzeug PBKDF2/scrypt). | DB never stores plaintext; hash verified server-side. |
-| SR-AUTH-3 | Enforce a **password policy** (min length, complexity, common-password block) per DCAS Password Security Policy. | Weak passwords rejected at `register`. |
+| SR-AUTH-3 | Enforce a **password policy** (min length, complexity, common-password block) per Password Security Policy. | Weak passwords rejected at `register`. |
 | SR-AUTH-4 | Google OAuth tokens verified server-side against the configured client ID. | Forged/expired tokens rejected (401). |
 | SR-AUTH-5 | Rate limiting + lockout on auth endpoints; generic failure messages (no user enumeration). | Brute-force throttled; identical error for bad user vs bad password. |
 
@@ -154,7 +154,7 @@ Each Security Requirement (§4) is traceable to a Policy clause and to an ISR/IS
 | ID | Requirement | Acceptance criterion |
 |----|-------------|----------------------|
 | SR-LOG-1 | Log auth events (success/failure) and all admin actions (role change, delete) with timestamp + actor. | Audit trail queryable; shipped to monitored sink. |
-| SR-LOG-2 | Security monitoring requirements identified per DCAS Security Monitoring Policy. | Monitoring coverage documented. |
+| SR-LOG-2 | Security monitoring requirements identified per Security Monitoring Policy. | Monitoring coverage documented. |
 
 ### 4.7 Secure Configuration & Transport *(SAD: Network positioning, Hardening · §4.3(c), §4.6(a))*
 | ID | Requirement | Acceptance criterion |
@@ -162,14 +162,14 @@ Each Security Requirement (§4) is traceable to a Policy clause and to an ISR/IS
 | SR-CFG-1 | All secrets (`SECRET_KEY`, OAuth client/secret, DB URL) injected via environment; app fails fast if unset; **no hard-coded fallbacks**. | No secrets in source or history. |
 | SR-CFG-2 | Security headers enforced: CSP, HSTS, X-Content-Type-Options, frame-ancestors, Referrer-Policy. | Headers present on all responses. |
 | SR-CFG-3 | Secure session cookies (`Secure`, `HttpOnly`, `SameSite`). | Verified in responses. |
-| SR-CFG-4 | OS / web server / DB hardened per the DCAS Secure Baseline Document. | Hardening checklist signed off. |
+| SR-CFG-4 | OS / web server / DB hardened per the Secure Baseline Document. | Hardening checklist signed off. |
 | SR-CFG-5 | Network positioning of components per IT Security Policy; environments separated (dev/SIT vs UAT/prod). | Deployment topology documented in SAD. |
 
 ### 4.8 Patch & Database Security *(SAD: Patch Management, Database Security · §4.7(a))*
 | ID | Requirement | Acceptance criterion |
 |----|-------------|----------------------|
 | SR-PATCH-1 | Process to manage security updates/patches; automated dependency scanning (`pip-audit`, Dependabot). | CI fails on High/Critical vulns. |
-| SR-DB-1 | Database security per the DCAS Database Security Standard (access control, least privilege, encryption). | DB access restricted & audited. |
+| SR-DB-1 | Database security per the Database Security Standard (access control, least privilege, encryption). | DB access restricted & audited. |
 
 ---
 
@@ -202,9 +202,9 @@ The policy mandates the Software Architecture Document Security View cover the f
 
 ---
 
-## 7. Referenced DCAS Standards (Dependencies)
+## 7. Referenced SmartCare Standards (Dependencies)
 
-Per policy §6, the security requirements above are governed by, and must be reconciled with, the following DCAS documents (obtain current versions from the Information Security Section):
+Per policy §6, the security requirements above are governed by, and must be reconciled with, the following security documents (obtain current versions from the Information Security Section):
 
 - IT Security Policy
 - Password Security Policy
@@ -234,4 +234,4 @@ Per policy §6, the security requirements above are governed by, and must be rec
 
 ---
 
-*This requirements specification is the §6 mandated artefact set (BRS + SBS + SRS + SAD Security View) for DCAS CPG 2025. It must be reviewed and approved by the Project Owner and the Information Security Section (per §6) before the design and coding phases begin, and traced to delivery via `docs/security/COMPLIANCE_TRACEABILITY.md`.*
+*This requirements specification is the §6 mandated artefact set (BRS + SBS + SRS + SAD Security View) for SmartCare. It must be reviewed and approved by the Project Owner and the Information Security Section (per §6) before the design and coding phases begin, and traced to delivery via `docs/security/COMPLIANCE_TRACEABILITY.md`.*

@@ -1,4 +1,4 @@
-# Release & Change Management — DCAS CPG 2025
+# Release & Change Management — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §5 (Change Management) · §4.6 · §4.7 · ISR 8.1.2 · ISR 8.2.1
 **Document ref:** CPG2025-RCM-001 · Version 1.0 · 2026-06-09
@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-This document defines how code changes, dependency updates, and configuration changes to the DCAS CPG 2025 platform are reviewed, approved, and released — ensuring that no untested or unauthorised change reaches production.
+This document defines how code changes, dependency updates, and configuration changes to the SmartCare CPG 2025 platform are reviewed, approved, and released — ensuring that no untested or unauthorised change reaches production.
 
 ---
 

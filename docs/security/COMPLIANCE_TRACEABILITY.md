@@ -1,6 +1,6 @@
-# Compliance Traceability Matrix — DCAS CPG 2025
+# Compliance Traceability Matrix — SmartCare CPG 2025
 
-**Policy ref:** DCAS Secure SDLC Policy and Procedure v1.1 (07-02-2025) — all sections
+**Policy ref:** SmartCare Secure SDLC Policy and Procedure v1.1 (07-02-2025) — all sections
 **Document ref:** CPG2025-CTM-001 · Version 1.0 · 2026-06-09
 **Classification:** Shared – Confidential
 

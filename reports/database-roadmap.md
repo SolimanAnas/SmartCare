@@ -1,7 +1,7 @@
 # Database Architecture Roadmap
 
 **Date:** June 9, 2026  
-**Project:** Smart CPG (DCAS CPG 2025)  
+**Project:** Smart CPG (SmartCare)  
 **Current State:** SQLite (Development)  
 **Target State:** Production-ready database
 

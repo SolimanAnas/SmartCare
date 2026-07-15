@@ -1,6 +1,6 @@
 # SmartCare Project Reboot — Plan & Progress
 
-This document tracks the reboot of the **DCAS CPG 2025** review application into **SmartCare – Clinical Learning Platform**, a generic, content-agnostic educational platform for emergency nurses, EMTs, paramedics, ER physicians, and nursing students.
+This document tracks the evolution of SmartCare into a generic, content-agnostic educational platform for emergency nurses, EMTs, paramedics, ER physicians, and nursing students.
 
 ---
 
@@ -20,8 +20,8 @@ SmartCare is designed as a reusable clinical education platform where content mo
 
 ## 2. Intellectual Property Safeguards
 
-To ensure Dubai Corporation for Ambulance Services (DCAS) copyrighted guideline content is completely removed from the live application while preserving data structure templates locally:
-1. Renamed `/chapters` to `/chapters_dcas_archive` and `/content` to `/content_dcas_archive`.
+To ensure copyrighted guideline content is completely removed from the live application while preserving data structure templates locally:
+1. Renamed `/chapters` to `/chapters_dcas_archive` and `/content` to `/content_dcas_archive` (legacy archive).
 2. Appended both archive folders to `.gitignore` to prevent any remote repository exposure.
 3. Created new, empty `/chapters` and `/content` folders for generic curriculum files.
 

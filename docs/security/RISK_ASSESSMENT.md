@@ -1,4 +1,4 @@
-# Risk Assessment — DCAS CPG 2025
+# Risk Assessment — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §4.1 (Planning Phase) · §3.1 (Policy Statement 1)
 **Document ref:** CPG2025-RA-001 · Version 1.0 · 2026-06-09
@@ -9,7 +9,7 @@
 
 ## 1. Scope
 
-This risk assessment covers the DCAS CPG 2025 Clinical Review Platform:
+This risk assessment covers the SmartCare CPG 2025 Clinical Review Platform:
 
 | Component | Description |
 |-----------|-------------|
@@ -20,7 +20,7 @@ This risk assessment covers the DCAS CPG 2025 Clinical Review Platform:
 | GitHub repository | Source code, CI/CD pipeline |
 | Render cloud hosting | Production runtime, HTTPS termination |
 
-**Out of scope:** DCAS network infrastructure, Google OAuth platform internals, end-user devices.
+**Out of scope:** SmartCare network infrastructure, Google OAuth platform internals, end-user devices.
 
 ---
 

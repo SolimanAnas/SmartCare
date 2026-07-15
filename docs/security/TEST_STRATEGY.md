@@ -1,4 +1,4 @@
-# Test Strategy — DCAS CPG 2025
+# Test Strategy — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §7 (Unit Testing · SIT · Software Security Testing · UAT) · §4.5
 **Document ref:** CPG2025-TST-001 · Version 1.0 · 2026-06-09

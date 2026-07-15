@@ -1,4 +1,4 @@
-# High-Level & Low-Level Design — DCAS CPG 2025
+# High-Level & Low-Level Design — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §4.2 (Design Phase) · §3.7 · §3.9 · ISR 8.2.1
 **Document ref:** CPG2025-HLD-001 · Version 1.0 · 2026-06-09
@@ -257,7 +257,7 @@ Before any coding sprint begins, the Security Architect verifies:
 
 | ID | Item | Owner | Target |
 |----|------|-------|--------|
-| P2-6 | Replace SQLite with encrypted managed DB; update `DATABASE_URL` and document key management per DCAS Encryption & Key Management Policy | IT Admin | Sprint 2 end |
+| P2-6 | Replace SQLite with encrypted managed DB; update `DATABASE_URL` and document key management per SmartCare Encryption & Key Management Policy | IT Admin | Sprint 2 end |
 | P3-5a | HLD/LLD review and approval by Security Architect (sign-off below) | Security Architect | Before next coding sprint |
 
 ---

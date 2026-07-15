@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SolimanAnas/CPG-2025.git"
+    "url": "git+https://github.com/SolimanAnas/SmartCare.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/SolimanAnas/CPG-2025/issues"
+    "url": "https://github.com/SolimanAnas/SmartCare/issues"
   },
-  "homepage": "https://github.com/SolimanAnas/CPG-2025#readme",
+  "homepage": "https://github.com/SolimanAnas/SmartCare#readme",
   "dependencies": {
     "@playwright/test": "^1.61.0"
   },

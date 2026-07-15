@@ -181,7 +181,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for full configuration details.
 
 ## Security
 
-SmartCare follows the **DCAS Secure Software Development Lifecycle Policy** (v1.1). Security controls include:
+SmartCare follows secure development best practices. Security controls include:
 
 - **CI/CD pipeline** — Ruff, Bandit (SAST), pip-audit (dependency scanning), ESLint, and access-control regression tests run on every push.
 - **Secrets management** — all credentials injected via environment variables; `.env` is gitignored.

@@ -1,4 +1,4 @@
-# Maintenance & Patch Management Plan — DCAS CPG 2025
+# Maintenance & Patch Management Plan — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §4.7 (Maintenance Phase) · §4.7(a) Patch Management · ISR 8.2.2 · ISR 8.2.3
 **Document ref:** CPG2025-MPP-001 · Version 1.0 · 2026-06-09
@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-This document defines the ongoing patch management and maintenance process for the DCAS CPG 2025 platform, covering Python dependencies, OS/runtime, and application-level security fixes. It satisfies the policy requirement that "systems are kept up-to-date and that known vulnerabilities are patched within a reasonable timeframe."
+This document defines the ongoing patch management and maintenance process for the SmartCare CPG 2025 platform, covering Python dependencies, OS/runtime, and application-level security fixes. It satisfies the policy requirement that "systems are kept up-to-date and that known vulnerabilities are patched within a reasonable timeframe."
 
 ---
 
@@ -146,7 +146,7 @@ SLA clock starts when the CVE appears in `pip-audit` output or is reported via `
 
 ## 8. Maintenance Windows
 
-- **Scheduled maintenance:** Announced to DCAS IT Admin at least 48 hours in advance via email.
+- **Scheduled maintenance:** Announced to SmartCare IT Admin at least 48 hours in advance via email.
 - **Emergency patches:** Deployed with minimum possible notice; IT Admin notified as soon as possible.
 - **Service downtime:** Render zero-downtime deploys are used where available. If a migration requires downtime, it is scheduled for off-peak hours.
 

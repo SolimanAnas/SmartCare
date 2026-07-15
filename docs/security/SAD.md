@@ -1,4 +1,4 @@
-# Software Architecture Document (SAD) — DCAS CPG 2025
+# Software Architecture Document (SAD) — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §6 (Engineering Principles and SAD) · §3.7 · §3.9
 **Document ref:** CPG2025-SAD-001 · Version 1.0 · 2026-06-09
@@ -34,7 +34,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                   DCAS EMS Staff                     │
+│                   SmartCare EMS Staff                     │
 │   (Physician / Paramedic / EMT)                      │
 └──────────────────┬───────────────────────────────────┘
                    │ HTTPS (Render TLS)
@@ -108,11 +108,11 @@
 
 | Mechanism | Implementation | Standard |
 |-----------|---------------|----------|
-| Email/password | Werkzeug PBKDF2-SHA256 hashing; server-side only | DCAS Password Security Policy |
+| Email/password | Werkzeug PBKDF2-SHA256 hashing; server-side only | SmartCare Password Security Policy |
 | Google OAuth 2.0 | `google-auth` `id_token.verify_oauth2_token`; GOOGLE_CLIENT_ID from env | OAuth 2.0 RFC 6749 |
-| Session management | Flask-Login + server-side sessions; HttpOnly, Secure, SameSite=Lax cookies | DCAS IT Security Policy |
+| Session management | Flask-Login + server-side sessions; HttpOnly, Secure, SameSite=Lax cookies | SmartCare IT Security Policy |
 | Rate limiting | Flask-Limiter: 10/min on login; 5/min on register | ISR 5.2.1.5 |
-| Password policy | Min 10 chars, upper+lower+digit, common-password block | DCAS Password Security Policy |
+| Password policy | Min 10 chars, upper+lower+digit, common-password block | SmartCare Password Security Policy |
 
 ### 5.3 Authorisation
 
@@ -134,7 +134,7 @@
 
 ### 5.5 Security Monitoring
 
-Per DCAS Security Monitoring Policy:
+Per SmartCare Security Monitoring Policy:
 
 - `dcas.audit` logger emits one JSON line per security event: `ts`, `event`, `outcome`, `actor`, `ip`, `detail`.
 - Covered events: `register`, `login`, `google_login`, `logout`, `admin_list_users`, `admin_update_role`, `admin_delete_user`, `rate_limit`, `csrf_guard`.
@@ -142,7 +142,7 @@ Per DCAS Security Monitoring Policy:
 
 ### 5.6 Network Positioning
 
-Per DCAS IT Security Policy (environment-separation requirements):
+Per SmartCare IT Security Policy (environment-separation requirements):
 
 | Environment | Location | Notes |
 |-------------|----------|-------|
@@ -154,7 +154,7 @@ Full network-zone separation (dev/SIT/UAT/prod VLANs) is documented in `ENVIRONM
 
 ### 5.7 Hardening
 
-Per DCAS Secure Baseline Document:
+Per SmartCare Secure Baseline Document:
 
 - Flask `debug=False` in production (driven by `FLASK_DEBUG` env var).
 - Gunicorn (not the Flask dev server) serves production.
@@ -163,7 +163,7 @@ Per DCAS Secure Baseline Document:
 
 ### 5.8 Patch Management
 
-Per §4.7(a) and DCAS Patch Management process:
+Per §4.7(a) and SmartCare Patch Management process:
 
 - `pip-audit` runs on every CI push — blocks merge on High/Critical CVE.
 - Dependabot configured for automated dependency PRs.
@@ -171,7 +171,7 @@ Per §4.7(a) and DCAS Patch Management process:
 
 ### 5.9 Database Security
 
-Per DCAS Database Security Standard:
+Per SmartCare Database Security Standard:
 
 - ORM (SQLAlchemy) for all DB access — no raw SQL, parameterised queries only.
 - DB connection string from `DATABASE_URL` env var.

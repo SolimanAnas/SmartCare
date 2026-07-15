@@ -1,23 +1,16 @@
 # Security Policy
 
-DCAS CPG 2025 is developed under the **DCAS Secure Software Development Life
-Cycle Policy and Procedure** (v1.1). Security is treated as a requirement at
-every phase of the lifecycle.
+SmartCare is developed following secure software development best practices.
 
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability, **do not open a public issue**.
-Instead, report it privately to the DCAS Information Security Section so it can
-be triaged and remediated before disclosure.
+Instead, report it privately so it can be triaged and remediated before disclosure.
 
-- Email the project maintainer / DCAS Information Security Section.
+- Email the project maintainer.
 - Include: a description, steps to reproduce, affected component/endpoint, and
   impact assessment.
 - You will receive an acknowledgement and a remediation timeline.
-
-Per the Secure SDLC Policy (§11), all confirmed violations and material
-vulnerabilities are reported to the DCAS Information Security Steering
-Committee (DCASISSC).
 
 ## Supported Surface
 
@@ -32,8 +25,8 @@ Committee (DCASISSC).
 Every push and pull request runs:
 - **Ruff** — Python static linting.
 - **pytest** — includes access-control regression tests.
-- **Bandit** — Python SAST (Static Source Code Scanning, §5/§7).
-- **pip-audit** — dependency vulnerability scanning (§4.7 patch management).
+- **Bandit** — Python SAST (Static Source Code Scanning).
+- **pip-audit** — dependency vulnerability scanning.
 - **ESLint** — JavaScript static analysis.
 
 ## Handling of Secrets

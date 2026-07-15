@@ -1,4 +1,4 @@
-# Environment Separation — DCAS CPG 2025
+# Environment Separation — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §6 (SAD §5.6 "Network Positioning") · §3.9 · ISR 8.1.1.4
 **Document ref:** CPG2025-ENV-001 · Version 1.0 · 2026-06-09
@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-This document defines the separation of environments used throughout the DCAS CPG 2025 SDLC, ensuring that production data is never accessible from development or test environments and that each environment has controls appropriate to its exposure level.
+This document defines the separation of environments used throughout the SmartCare CPG 2025 SDLC, ensuring that production data is never accessible from development or test environments and that each environment has controls appropriate to its exposure level.
 
 ---
 
@@ -20,7 +20,7 @@ This document defines the separation of environments used throughout the DCAS CP
 | **CI (Continuous Integration)** | Automated build, lint, test, SAST, dependency scan | GitHub Actions ephemeral runners | GitHub Actions — isolated per run |
 | **SIT (System Integration Test)** | End-to-end integration testing against dummy data | Local / ephemeral Docker | Developer + Test Lead |
 | **UAT (User Acceptance Test)** | Business / clinical acceptance testing | Render preview environment or separate Render service | Project Owner, BAs, End Users — no production data |
-| **Production (PROD)** | Live service for DCAS clinical staff | Render cloud (HTTPS, public) | Authorised DCAS clinical staff |
+| **Production (PROD)** | Live service for SmartCare clinical staff | Render cloud (HTTPS, public) | Authorised SmartCare clinical staff |
 
 ---
 
@@ -130,7 +130,7 @@ Prod and UAT OAuth clients are **separate Google Cloud credentials** so that a U
 | UAT Render service | HTTPS (restricted) | Render TLS; optional IP allowlist or basic auth |
 | PROD Render service | HTTPS (public) | Render TLS + DDoS protection; rate limiting in app |
 
-Full VLAN / network-zone separation (dev/SIT/UAT/prod VLANs at the DCAS perimeter level) is a DCAS IT infrastructure control documented separately by the Network Security team.
+Full VLAN / network-zone separation (dev/SIT/UAT/prod VLANs at the SmartCare perimeter level) is a SmartCare IT infrastructure control documented separately by the Network Security team.
 
 ---
 

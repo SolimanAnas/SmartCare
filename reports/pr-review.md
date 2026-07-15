@@ -1,7 +1,7 @@
 # Pull Request Review Template
 
 **Date:** June 9, 2026  
-**Project:** Smart CPG (DCAS CPG 2025)  
+**Project:** Smart CPG (SmartCare)  
 **Purpose:** Standardized PR review process
 
 ---

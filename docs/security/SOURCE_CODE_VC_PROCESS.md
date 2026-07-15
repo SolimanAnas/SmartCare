@@ -1,4 +1,4 @@
-# Source Code Version Control Process — DCAS CPG 2025
+# Source Code Version Control Process — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §3.7 (Version Control) · §3.8 (CODEOWNERS) · §4.3 · ISR 8.1.1.3
 **Document ref:** CPG2025-VCP-001 · Version 1.0 · 2026-06-09
@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-This document defines the source code version control process for the DCAS CPG 2025 platform, including branch strategy, commit standards, CODEOWNERS configuration, and history hygiene requirements. It ensures traceability between code changes and their justifications and prevents unauthorised modifications to security-sensitive files.
+This document defines the source code version control process for the SmartCare CPG 2025 platform, including branch strategy, commit standards, CODEOWNERS configuration, and history hygiene requirements. It ensures traceability between code changes and their justifications and prevents unauthorised modifications to security-sensitive files.
 
 ---
 

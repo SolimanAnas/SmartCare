@@ -1,7 +1,7 @@
 # Repository Health Report
 
 **Date:** June 9, 2026  
-**Project:** Smart CPG (DCAS CPG 2025)  
+**Project:** Smart CPG (SmartCare)  
 **Status:** ✅ PASSING
 
 ---

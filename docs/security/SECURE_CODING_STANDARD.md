@@ -1,4 +1,4 @@
-# Secure Coding Standard — DCAS CPG 2025
+# Secure Coding Standard — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §7 "Secure Coding Standards" · §3.8 · ISR 8.2.3
 **Document ref:** CPG2025-SCS-001 · Version 1.0 · 2026-06-09
