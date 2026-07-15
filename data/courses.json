@@ -10,10 +10,12 @@
     { "id": "bdls", "shortTitle": "BDLS", "title": "Basic Disaster Life Support", "link": "bdls.html", "available": true, "icon": "🌪️", "count": 40 },
     { "id": "bdls-reviewer", "shortTitle": "BDLS Reviewer", "title": "Basic Disaster Life Support — Course Reviewer", "link": "../courses/bdls/index.html", "available": true, "icon": "🌪️", "count": 161 },
     { "id": "pepp", "shortTitle": "PEPP", "title": "Pediatric Education for Prehospital Professionals", "link": "pepp.html", "available": true, "icon": "🧸", "count": 200 },
+    { "id": "pepp-reviewer", "shortTitle": "PEPP Reviewer", "title": "Pediatric Education for Prehospital Professionals — Course Reviewer", "link": "../courses/pepp/index.html", "available": true, "icon": "🧸", "count": 200 },
     { "id": "ppet", "shortTitle": "PPET", "title": "Prehospital Pediatric Emergency Transport", "link": "ppet.html", "available": true, "icon": "🚁", "count": 57 },
     { "id": "pals", "shortTitle": "PALS", "title": "Pediatric Advanced Life Support", "link": "pals.html", "available": true, "icon": "👶", "count": 57 },
     { "id": "pals-reviewer", "shortTitle": "PALS Reviewer", "title": "Pediatric Advanced Life Support — Course Reviewer", "link": "../courses/pals/index.html", "available": true, "icon": "👶", "count": 215 },
     { "id": "medical", "shortTitle": "Medical", "title": "Medical Emergencies Review", "link": "medical.html", "available": true, "icon": "💊", "count": 45 },
+    { "id": "medical-reviewer", "shortTitle": "Medical Reviewer", "title": "Medical Emergencies Review — Course Reviewer", "link": "../courses/medical/index.html", "available": true, "icon": "💊", "count": 180 },
     { "id": "ecg-study", "shortTitle": "ECG Course", "title": "The Ultimate ECG Course", "link": "ECG-study.html", "available": true, "icon": "🫀" },
     { "id": "ecg", "shortTitle": "ECG Sim", "title": "ECG Rhythm Simulator", "link": "ecg.html", "available": true, "icon": "📉" },
     { "id": "ecg-test", "shortTitle": "ECG Test", "title": "ECG Test", "link": "ecg-test.html", "available": true, "icon": "📈" }
