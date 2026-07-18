@@ -1148,6 +1148,37 @@
         { id:"formulary",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope", chapterFile:"formulary" }
     ];
 
+    // Individual training courses — rendered as their own search-only cards
+    // (hidden until the user searches) so "PALS" or "BDLS" surfaces the
+    // actual course instead of only matching if the word happened to be
+    // hand-typed into the single "Courses Preparation" umbrella card.
+    const COURSES_INDEX = [
+        { id:"itls",    shortTitle:"ITLS",    title:"International Trauma Life Support",                     icon:"bandage",       link:"courses/itls/index.html" },
+        { id:"empact",  shortTitle:"EMPACT",  title:"Emergency Medical Patients: Assessment, Care & Transport", icon:"stethoscope", link:"courses/empact/index.html" },
+        { id:"bls",     shortTitle:"BLS",     title:"Basic Life Support",                                     icon:"heart-pulse",   link:"courses/bls/index.html" },
+        { id:"acls",    shortTitle:"ACLS",    title:"Advanced Cardiovascular Life Support",                   icon:"heart",         link:"courses/acls/index.html" },
+        { id:"bdls",    shortTitle:"BDLS",    title:"Basic Disaster Life Support",                            icon:"tornado",       link:"courses/bdls/index.html" },
+        { id:"pepp",    shortTitle:"PEPP",    title:"Pediatric Education for Prehospital Professionals",      icon:"smile-plus",    link:"courses/pepp/index.html" },
+        { id:"pals",    shortTitle:"PALS",    title:"Pediatric Advanced Life Support",                        icon:"hand-heart",    link:"courses/pals/index.html" },
+        { id:"medical-course", shortTitle:"Medical", title:"Medical Emergencies Review",                       icon:"pill",          link:"courses/medical/index.html" }
+    ];
+
+    // Individual EMS calculators/tools — same reasoning as COURSES_INDEX:
+    // each one needs to be found by its own name ("GCS", "APGAR"...), not
+    // just via the generic "EMS Essentials" bundle card.
+    const TOOLS_INDEX = [
+        { id:"medical-asm", shortTitle:"Medical Assessment", title:"Primary & secondary survey",       icon:"stethoscope", link:"pages/medical-asm.html" },
+        { id:"trauma-asm",  shortTitle:"Trauma Assessment",  title:"Rapid trauma survey checklist",     icon:"droplet",      link:"pages/trauma.html" },
+        { id:"gcs",         shortTitle:"GCS Score",          title:"Glasgow Coma Scale assessment",     icon:"brain",        link:"pages/GCS.html" },
+        { id:"apgar",       shortTitle:"APGAR Score",        title:"Neonatal assessment at 1 & 5 min",  icon:"baby",         link:"pages/ems-tools.html" },
+        { id:"burns",       shortTitle:"Burn Surface Area",  title:"Rule of Nines + Parkland formula",  icon:"triangle-alert", link:"pages/ems-tools.html" },
+        { id:"rts",         shortTitle:"Revised Trauma Score", title:"GCS + SBP + RR triage calculator", icon:"chart-no-axes-column", link:"pages/ems-tools.html" },
+        { id:"start",       shortTitle:"START Triage",       title:"MCI step-by-step triage flow",      icon:"siren",        link:"pages/ems-tools.html" },
+        { id:"o2-calc",     shortTitle:"O2 Calculator",      title:"Cylinder duration & planning",      icon:"wind",         link:"pages/Carevent.html" },
+        { id:"aha",         shortTitle:"AHA Algorithms",     title:"American Heart Association algorithms", icon:"heart-pulse", link:"pages/aha.html" },
+        { id:"ecg-sim",     shortTitle:"ECG Simulator",      title:"12-lead ECG rhythm simulator",      icon:"activity",     link:"pages/ecg.html" }
+    ];
+
     // ══════════════════════════════════════════════════════════
     //  STORAGE
     // ══════════════════════════════════════════════════════════
@@ -1278,10 +1309,10 @@
         const searchHtml = `
             <div class="search-container">
                 <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg></span>
-                <input type="text" id="searchInput" placeholder="Search all clinical chapters &amp; guidelines…" value="${filterText.replace(/"/g,'&quot;')}">
+                <input type="text" id="searchInput" placeholder="Search chapters, medications, courses, tools…" value="${filterText.replace(/"/g,'&quot;')}">
                 <button id="searchClearBtn" ${filterText ? '' : 'style="display:none;"'} aria-label="Clear search"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#x"/></svg></button>
             </div>
-            <div class="cpg-search-hint" id="cpgSearchHint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg> Searching across all ${CHAPTERS.filter(c=>!c.isSpecial).length} clinical chapters &amp; guidelines</div>`;
+            <div class="cpg-search-hint" id="cpgSearchHint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#search"/></svg> Searching across all ${CHAPTERS.filter(c=>!c.isSpecial).length} chapters, ${COURSES_INDEX.length} courses, and every medication &amp; tool</div>`;
 
         // ━━ Quick Access (1-col) ━━
         const quickHtml = `
@@ -1337,6 +1368,36 @@
                         <a href="pages/ecg.html"             class="ems-btn ems-btn-ecg">ECG Simulator</a>
                         <a href="pages/ems-tools.html"       class="ems-btn ems-btn-more">More Tools</a>
                     </div>
+                </div>
+            </div>`;
+
+        // ━━ Individual courses & tools — hidden until the user searches; ━━
+        // ━━ see filterCards() for the reveal logic.                     ━━
+        const coursesSearchHtml = `
+            <div id="coursesSearchContainer" class="cpg-section-hidden">
+                <div class="menu-grid" data-section="courses-individual">
+                    ${COURSES_INDEX.map(c => `
+                        <a href="${c.link}" class="menu-card special-card"
+                           data-chapter="${c.id}" data-search="${c.shortTitle} ${c.title} course review">
+                            <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#${c.icon}"/></svg></span>
+                            <h2>${c.shortTitle}</h2>
+                            <p>${c.title}</p>
+                            <span class="sc-arrow">›</span>
+                        </a>`).join('')}
+                </div>
+            </div>`;
+
+        const toolsSearchHtml = `
+            <div id="toolsSearchContainer" class="cpg-section-hidden">
+                <div class="menu-grid" data-section="tools-individual">
+                    ${TOOLS_INDEX.map(t => `
+                        <a href="${t.link}" class="menu-card special-card"
+                           data-chapter="${t.id}" data-search="${t.shortTitle} ${t.title} tool calculator">
+                            <span class="sc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#${t.icon}"/></svg></span>
+                            <h2>${t.shortTitle}</h2>
+                            <p>${t.title}</p>
+                            <span class="sc-arrow">›</span>
+                        </a>`).join('')}
                 </div>
             </div>`;
 
@@ -1454,7 +1515,7 @@
             </div>`;
 
         document.getElementById('mainContent').innerHTML =
-            heroHtml + searchHtml + quickHtml + coursesExamsHtml + emsHtml +
+            heroHtml + searchHtml + quickHtml + coursesExamsHtml + coursesSearchHtml + emsHtml + toolsSearchHtml +
             cpgRefHtml + chaptersHtml + downloadHtml + emptyHtml;
 
         updateAllProgress();
@@ -1474,6 +1535,15 @@
                 searchInput.value = ''; clearBtn.style.display = 'none'; filterCards('');
             });
         }
+        // "/" focuses search from anywhere on the page (skip when already
+        // typing in a field, so it doesn't hijack normal text entry).
+        document.addEventListener('keydown', function(e) {
+            if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+            const tag = (e.target && e.target.tagName) || '';
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+            e.preventDefault();
+            if (searchInput) searchInput.focus();
+        });
 
         // Offline download
         const downloadBtn = document.getElementById('downloadOfflineBtn');
@@ -1752,20 +1822,42 @@
         }
     }
 
+    // Tokenized AND matching: every word in the query must appear somewhere
+    // in the card's search string, in any order. Plain substring matching
+    // (the old behavior) missed queries like "GCS Score" against a search
+    // string of "...ECG GCS AHA Algorithms Tools" — the words are both
+    // there, just not contiguous — so token-AND is strictly more permissive
+    // while still requiring every word to actually be present (unlike a
+    // naive OR match, which would surface a card for matching just one of
+    // several words in a multi-word query).
+    function searchTokens(text) {
+        return text.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    }
+    function matchesTokens(haystack, tokens) {
+        if (!tokens.length) return true;
+        const h = (haystack || '').toLowerCase();
+        return tokens.every(t => h.includes(t));
+    }
+
     function filterCards(text) {
         const lower = text.toLowerCase().trim();
-        const isSearching = lower.length > 0;
+        const tokens = searchTokens(text);
+        const isSearching = tokens.length > 0;
         let anyVisible = false;
 
-        // Global search: reveal all chapters when searching, collapse when done
-        const cpgContainer = document.getElementById('cpgChaptersContainer');
-        if (cpgContainer) {
-            if (isSearching) {
-                cpgContainer.classList.remove('cpg-section-hidden');
-            } else if (!showCpgChapters) {
-                cpgContainer.classList.add('cpg-section-hidden');
-            }
-        }
+        // Global search: reveal all chapters/courses/tools when searching,
+        // collapse back down when the query is cleared.
+        const revealContainers = [
+            { el: document.getElementById('cpgChaptersContainer'), collapseGuard: () => showCpgChapters },
+            { el: document.getElementById('coursesSearchContainer'), collapseGuard: () => false },
+            { el: document.getElementById('toolsSearchContainer'), collapseGuard: () => false }
+        ];
+        revealContainers.forEach(({ el, collapseGuard }) => {
+            if (!el) return;
+            if (isSearching) el.classList.remove('cpg-section-hidden');
+            else if (!collapseGuard()) el.classList.add('cpg-section-hidden');
+        });
+
         // Show global-search hint
         const srchHint = document.getElementById('cpgSearchHint');
         if (srchHint) srchHint.classList.toggle('visible', isSearching && !showCpgChapters);
@@ -1775,21 +1867,21 @@
             const cards = section.querySelectorAll('.menu-card, .chapter-card');
             let sectionVisible = false;
             cards.forEach(card => {
-                const match = !lower || (card.dataset.search || '').toLowerCase().includes(lower);
+                const match = !isSearching || matchesTokens(card.dataset.search, tokens);
                 card.classList.toggle('filtered-out', !match);
                 if (match) { sectionVisible = true; anyVisible = true; }
             });
             // Hide the section label above this grid when all cards are hidden
             const label = section.previousElementSibling;
             if (label && label.classList.contains('section-label')) {
-                label.style.display = (lower && !sectionVisible) ? 'none' : '';
+                label.style.display = (isSearching && !sectionVisible) ? 'none' : '';
             }
-            section.style.display = (lower && !sectionVisible) ? 'none' : '';
+            section.style.display = (isSearching && !sectionVisible) ? 'none' : '';
         });
 
         // Also handle the quick-grid which uses .menu-card directly
         document.querySelectorAll('.quick-grid .menu-card').forEach(card => {
-            const match = !lower || (card.dataset.search || '').toLowerCase().includes(lower);
+            const match = !isSearching || matchesTokens(card.dataset.search, tokens);
             card.classList.toggle('filtered-out', !match);
             if (match) anyVisible = true;
         });
@@ -1800,7 +1892,7 @@
 
         // Empty state
         const empty = document.getElementById('searchEmpty');
-        if (empty) empty.style.display = (lower && !anyVisible) ? 'block' : 'none';
+        if (empty) empty.style.display = (isSearching && !anyVisible) ? 'block' : 'none';
     }
 
     // Header buttons

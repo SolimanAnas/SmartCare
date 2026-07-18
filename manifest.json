@@ -1,9 +1,11 @@
 {
   "name": "SmartCare – Study Aid",
   "short_name": "SmartCare",
-  "description": "Generic clinical learning platform for healthcare professionals.",
+  "description": "Offline-first EMS study platform — clinical chapters, a 48-drug medication formulary with dose calculator, NREMT-style practice exams, and course reviews for ITLS, ACLS, PALS, BLS, and more.",
   "categories": [
-    "education"
+    "education",
+    "medical",
+    "reference"
   ],
   "lang": "en",
   "dir": "ltr",
@@ -144,6 +146,19 @@
       "short_name": "Drug Calc",
       "description": "Calculate medication doses, drip rates, and infusions",
       "url": "pages/drug-calculator.html",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Drug Formulary",
+      "short_name": "Formulary",
+      "description": "Browse all 48 medications by clinical category",
+      "url": "pages/drug-index.html",
       "icons": [
         {
           "src": "icons/icon-96x96.png",

@@ -12,7 +12,7 @@ window.CPG_DATA = {
                     <div style="font-size:2.8rem;margin-bottom:12px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <h3 style="color:var(--primary-accent);font-size:1.2rem;margin-bottom:8px;">SmartCare Medication Formulary</h3>
                     <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;margin-bottom:20px;">
-                        Browse the complete 48-drug formulary by clinical category, or jump straight to a weight-based dose calculator for the 31 medications with pediatric dosing tables. Every drug also has its own full monograph — classification, mechanism, contraindications, scope of practice — in the Drug 1–48 tabs above.
+                        Browse the complete 48-drug formulary by clinical category, or jump straight to a weight-based dose calculator for the 31 medications with pediatric dosing tables. Every drug also has its own full monograph — classification, mechanism, indications, contraindications, dosing — in the Drug 1–48 tabs above.
                     </p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
                         <a href="../pages/drug-index.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--primary-accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 4px 16px rgba(0,86,179,.35);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
@@ -340,10 +340,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 1 &middot; Other Medications</div>
                         <h3 class="rx-name">ActiMaris (Wound Irrigation Solution)</h3>
                     </div>
-                    <div class="rx-scope" title="All clinical levels (EMR, EMT, EMT‑A, P, AP, EP) – independent practice.">
-                        <span class="rx-scope-badge">All Levels</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -404,10 +400,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 2 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Adenosine</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
                     </div>
                 </div>
 
@@ -470,10 +462,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 3 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Amiodarone</h3>
                     </div>
-                    <div class="rx-scope" title="EMT (for cardiac arrest) and above; Advanced Paramedic (AP) and above for infusion.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -534,10 +522,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 4 &middot; Other Medications</div>
                         <h3 class="rx-name">Aspirin</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
                     </div>
                 </div>
 
@@ -600,10 +584,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 5 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Atropine</h3>
                     </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">—+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -664,10 +644,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 6 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Combivent</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -730,10 +706,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 7 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Dextrose 5% Water (D5W)</h3>
                     </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -794,10 +766,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 8 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Dextrose 10%</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -860,10 +828,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 9 &middot; Neuro / Sedation</div>
                         <h3 class="rx-name">Diazepam</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -924,10 +888,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 10 &middot; Pain</div>
                         <h3 class="rx-name">Diclofenac (Voltaren)</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">—+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
                     </div>
                 </div>
 
@@ -990,10 +950,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 11 &middot; Other Medications</div>
                         <h3 class="rx-name">Diphenhydramine</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1054,10 +1010,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 12 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Dopamine</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
                     </div>
                 </div>
 
@@ -1122,10 +1074,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 13 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Epinephrine (Adrenaline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above for IM/IV/IO (as per specific indication). Advanced Paramedic (AP) for infusions.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -1196,10 +1144,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 14 &middot; Other Medications</div>
                         <h3 class="rx-name">Ethyl Chloride (Chloroethane)</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1261,10 +1205,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 15 &middot; Other Medications</div>
                         <h3 class="rx-name">Furosemide</h3>
                     </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1325,10 +1265,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 16 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Glucagon</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -1393,10 +1329,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 17 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Glucose 40% Oral Paste</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1457,10 +1389,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 18 &middot; Pain</div>
                         <h3 class="rx-name">Glyceryl Trinitrate (GTN)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -1523,10 +1451,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 19 &middot; Neuro / Sedation</div>
                         <h3 class="rx-name">Haloperidol</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1587,10 +1511,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 20 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Hydrocortisone</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) for IM; Emergency Medical Technician (EMT) for IV – independent practice.">
-                        <span class="rx-scope-badge">EMT</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -1656,10 +1576,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 21 &middot; Other Medications</div>
                         <h3 class="rx-name">Hyoscine Butyl bromide</h3>
                     </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1720,10 +1636,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 22 &middot; Neuro / Sedation</div>
                         <h3 class="rx-name">Ketamine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
                     </div>
                 </div>
 
@@ -1788,10 +1700,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 23 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Labetalol</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1853,10 +1761,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 24 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Magnesium Sulphate</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
                     </div>
                 </div>
 
@@ -1922,10 +1826,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 25 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Methoxyflurane (Penthrox)</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -1987,10 +1887,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 26 &middot; Other Medications</div>
                         <h3 class="rx-name">Metoclopramide</h3>
                     </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2051,10 +1947,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 27 &middot; Neuro / Sedation</div>
                         <h3 class="rx-name">Midazolam</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
                     </div>
                 </div>
 
@@ -2120,10 +2012,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 28 &middot; Pain</div>
                         <h3 class="rx-name">Morphine</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2186,10 +2074,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 29 &middot; Other Medications</div>
                         <h3 class="rx-name">Naloxone</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2250,10 +2134,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 30 &middot; Pain</div>
                         <h3 class="rx-name">Nefopam</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -2316,10 +2196,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 31 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Oxygen</h3>
                     </div>
-                    <div class="rx-scope" title="All clinical levels – independent practice.">
-                        <span class="rx-scope-badge">All Levels</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2381,10 +2257,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 32 &middot; Pain</div>
                         <h3 class="rx-name">Paracetamol (Acetaminophen)</h3>
                     </div>
-                    <div class="rx-scope" title="EMR for PO; EMT for IV/PR – independent practice.">
-                        <span class="rx-scope-badge">—</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2445,10 +2317,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 33 &middot; Pain</div>
                         <h3 class="rx-name">Pethidine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
                     </div>
                 </div>
 
@@ -2512,10 +2380,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 34 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Racemic Epinephrine (Adrenaline)</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2576,10 +2440,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 35 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Ringers Lactate</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -2642,10 +2502,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 36 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Salbutamol</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2706,10 +2562,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 37 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Sodium Chloride 0.9% (Normal Saline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -2772,10 +2624,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 38 &middot; Other Medications</div>
                         <h3 class="rx-name">Tranexamic Acid</h3>
                     </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2836,10 +2684,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 39 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Calcium Chloride</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
                     </div>
                 </div>
 
@@ -2902,10 +2746,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 40 &middot; Airway / Respiratory</div>
                         <h3 class="rx-name">Dexamethasone</h3>
                     </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -2966,10 +2806,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 41 &middot; Neuro / Sedation</div>
                         <h3 class="rx-name">Etomidate</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
-                        <span class="rx-scope-badge">EP / AP · RSI</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
                     </div>
                 </div>
 
@@ -3032,10 +2868,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 42 &middot; Pain</div>
                         <h3 class="rx-name">Fentanyl</h3>
                     </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -3096,10 +2928,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 43 &middot; Pain</div>
                         <h3 class="rx-name">Ketorolac</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT-Advanced (EMT-A) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT-A+</span>
-                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
                     </div>
                 </div>
 
@@ -3162,10 +2990,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 44 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Lidocaine</h3>
                     </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -3226,10 +3050,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 45 &middot; Other Medications</div>
                         <h3 class="rx-name">Ondansetron</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
@@ -3292,10 +3112,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 46 &middot; Other Medications</div>
                         <h3 class="rx-name">Promethazine</h3>
                     </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -3357,10 +3173,6 @@ window.CPG_DATA = {
                         <div class="rx-eyebrow">Drug 47 &middot; Metabolic / Fluids</div>
                         <h3 class="rx-name">Sodium Bicarbonate</h3>
                     </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
                 </div>
 
                 <div class="rx-quickfacts">
@@ -3421,10 +3233,6 @@ window.CPG_DATA = {
                     <div class="rx-head-text">
                         <div class="rx-eyebrow">Drug 48 &middot; Cardiac / Resus</div>
                         <h3 class="rx-name">Vasopressin</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice, cardiac arrest only.">
-                        <span class="rx-scope-badge">AP+ · Arrest</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
                     </div>
                 </div>
 
