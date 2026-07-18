@@ -199,12 +199,13 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .drug-card:hover{background:var(--card-hover)}
 .drug-card:hover::before{opacity:1}
 .drug-card:active{transform:scale(.99)}
+.drug-card:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .drug-card::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,var(--dc-glow,rgba(59,130,246,.06)),transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
 .drug-card:hover::after{opacity:1}
 .dc-inner{padding:14px 16px;display:flex;align-items:flex-start;gap:12px;flex:1}
 .dc-icon-wrap{width:38px;height:38px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.05rem;border:1px solid;transition:transform .18s}
 .drug-card:hover .dc-icon-wrap{transform:scale(1.08) rotate(-4deg)}
-.dc-content{flex:1;min-width:0}
+.dc-content{flex:1;min-width:0;padding-right:36px}
 .dc-name{font-size:.88rem;font-weight:800;letter-spacing:-.25px;line-height:1.3;word-break:break-word;margin-bottom:3px}
 .dc-cat-tag{display:inline-block;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:20px;border:1px solid;margin-bottom:8px;opacity:.85}
 .dc-inds{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
@@ -215,9 +216,9 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .drug-card:hover .dc-dose-box{border-color:var(--br2)}
 .dc-dose-lbl{font-size:.58rem;text-transform:uppercase;letter-spacing:.6px;font-weight:800;color:var(--text2);margin-bottom:3px}
 .dc-dose-val{font-size:.7rem;font-family:var(--mono);color:var(--text);line-height:1.5;word-break:break-word}
-.dc-actions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}
-.dc-action{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;padding:6px 11px;border-radius:9px;text-decoration:none;color:var(--dca,var(--accent));background:color-mix(in srgb,var(--dca,var(--accent)) 12%,transparent);border:1px solid color-mix(in srgb,var(--dca,var(--accent)) 30%,transparent);transition:background .15s}
-.dc-action:hover{background:color-mix(in srgb,var(--dca,var(--accent)) 22%,transparent)}
+.dc-calc-btn{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--dc,var(--accent));background:color-mix(in srgb,var(--dc,var(--accent)) 14%,transparent);border:1px solid color-mix(in srgb,var(--dc,var(--accent)) 32%,transparent);transition:background .15s,transform .15s;z-index:2}
+.dc-calc-btn:hover{background:color-mix(in srgb,var(--dc,var(--accent)) 26%,transparent);transform:scale(1.08)}
+.dc-calc-btn:active{transform:scale(.94)}
 
 /* ANCHOR */
 .az-anchor{display:block;height:0;visibility:hidden;position:relative;top:-80px}
@@ -287,7 +288,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
   <div>
     <div class="hero-eyebrow">SmartCare · Formulary</div>
     <div class="hero-heading">EMS <span class="hl">Drug Reference</span></div>
-    <div class="hero-desc">Open the weight-based dose calculator, or read the full clinical monograph in Chapter 11</div>
+    <div class="hero-desc">Tap a medication for its full monograph &middot; tap <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> for the dose calculator</div>
   </div>
   <div class="hero-stats">
     <div class="h-stat"><div class="hs-num" id="hsTotalDrugs">—</div><div class="hs-lbl">Medications</div></div>
@@ -505,24 +506,28 @@ function buildCard(name,drug,cat){
   const cc=cat.color.startsWith('var')?'#3b82f6':cat.color;
   const card=document.createElement('div');
   card.className='drug-card';
+  card.setAttribute('role','link');
+  card.setAttribute('tabindex','0');
   card.style.setProperty('--dc',cc);
   card.style.setProperty('--dc-glow',cc+'10');
   const allInds=(drug.indications||[]).map(i=>i.name);
   const primaryDose=drug.indications&&drug.indications[0]?drug.indications[0].dose_formula:'';
   const formularySection=FORMULARY_MAP[name];
-  card.innerHTML='<div class="dc-inner">'
+  const monographUrl=formularySection?('../chapters/formulary.html?view=summary&section='+formularySection):('drug-calculator.html?drug='+encodeURIComponent(name));
+  const calcUrl='drug-calculator.html?drug='+encodeURIComponent(name);
+  card.dataset.href=monographUrl;
+  card.innerHTML='<a class="dc-calc-btn" href="'+calcUrl+'" title="Dose calculator" aria-label="Open dose calculator for '+name.replace(/"/g,'&quot;')+'" onclick="event.stopPropagation()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg></a>'
+    +'<div class="dc-inner">'
     +'<div class="dc-icon-wrap" style="background:'+cc+'15;border-color:'+cc+'30;color:'+cc+'">'+cat.icon+'</div>'
     +'<div class="dc-content">'
     +'<div class="dc-name">'+hl(name)+'</div>'
     +'<span class="dc-cat-tag" style="color:'+cc+';border-color:'+cc+'35;background:'+cc+'10">'+cat.name+'</span>'
     +'<div class="dc-inds">'+allInds.map(i=>'<div class="dc-ind"><div class="dc-ind-dot" style="background:'+cc+'"></div><div class="dc-ind-text">'+hl(i)+'</div></div>').join('')+'</div>'
     +(primaryDose?'<div class="dc-dose-box"><div class="dc-dose-lbl">Primary Dose</div><div class="dc-dose-val">'+hl(primaryDose)+'</div></div>':'')
-    +'<div class="dc-actions">'
-    +'<a class="dc-action" href="drug-calculator.html?drug='+encodeURIComponent(name)+'" style="--dca:'+cc+'"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Calculator</a>'
-    +(formularySection?'<a class="dc-action" href="../chapters/formulary.html?view=summary&section='+formularySection+'" style="--dca:'+cc+'"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Full Monograph</a>':'')
-    +'</div>'
     +'</div>'
     +'</div>';
+  card.addEventListener('click',()=>{ window.location.href = monographUrl; });
+  card.addEventListener('keydown',e=>{ if(e.key==='Enter'){ window.location.href = monographUrl; } });
   return card;
 }
 
