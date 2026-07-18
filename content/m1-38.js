@@ -1,18 +1,18 @@
-/* ========== M1-38 – Medication Formulary (SmartCare) ========== */
+/* ========== Medication Formulary (SmartCare) ========== */
 window.CPG_DATA = {
     id: "m1-38",
     title: "Medication Formulary",
-    shortTitle: "M1–38 Formulary",
+    shortTitle: "Drug Formulary",
     sections: [
         {
             id: "m1-38s1",
-            shortTitle: "M1–38 Drug Formulary",
+            shortTitle: "Full Drug Formulary",
             summary: `
                 <div class="sum-card" style="text-align:center;padding:28px 20px;">
                     <div style="font-size:2.8rem;margin-bottom:12px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <h3 style="color:var(--primary-accent);font-size:1.2rem;margin-bottom:8px;">SmartCare Medication Formulary</h3>
                     <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;margin-bottom:20px;">
-                        The full interactive drug reference — all 31 medications across 6 clinical categories with indications, dosing tables, and pediatric weight-based doses — is available in the Medication Index. For the complete M1–38 monograph on every individual drug (classification, mechanism, contraindications, scope of practice), use the M1–M38 tabs above.
+                        The full interactive drug reference — 31 medications across 6 clinical categories with indications, dosing tables, and pediatric weight-based doses — is available in the Medication Index. For the complete monograph on every individual drug (classification, mechanism, contraindications, scope of practice) across all 48 medications in the formulary, use the Drug 1–48 tabs above.
                     </p>
                     <a href="../pages/med-index.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--primary-accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 4px 16px rgba(0,86,179,.35);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
                         <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Open Medication Index <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>
@@ -325,7 +325,7 @@ window.CPG_DATA = {
         },
             {
                 id: "m1-38s2",
-                shortTitle: "M1 ActiMaris",
+                shortTitle: "Drug 1 ActiMaris",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#test-tube"/></svg> ActiMaris (Wound Irrigation Solution)</h3>
@@ -361,7 +361,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s3",
-                shortTitle: "M2 Adenosine",
+                shortTitle: "Drug 2 Adenosine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Adenosine</h3>
@@ -397,7 +397,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s4",
-                shortTitle: "M3 Amiodarone",
+                shortTitle: "Drug 3 Amiodarone",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Amiodarone</h3>
@@ -433,7 +433,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s5",
-                shortTitle: "M4 Aspirin",
+                shortTitle: "Drug 4 Aspirin",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Aspirin</h3>
@@ -469,7 +469,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s6",
-                shortTitle: "M5 Atropine",
+                shortTitle: "Drug 5 Atropine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Atropine</h3>
@@ -505,7 +505,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s7",
-                shortTitle: "M6 Combivent",
+                shortTitle: "Drug 6 Combivent",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Combivent</h3>
@@ -541,7 +541,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s8",
-                shortTitle: "M7 D5W",
+                shortTitle: "Drug 7 D5W",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Dextrose 5% Water (D5W)</h3>
@@ -577,7 +577,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s9",
-                shortTitle: "M8 Dextrose 10%",
+                shortTitle: "Drug 8 Dextrose 10%",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Dextrose 10%</h3>
@@ -613,7 +613,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s10",
-                shortTitle: "M9 Diazepam",
+                shortTitle: "Drug 9 Diazepam",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Diazepam</h3>
@@ -649,7 +649,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s11",
-                shortTitle: "M10 Diclofenac",
+                shortTitle: "Drug 10 Diclofenac",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Diclofenac (Voltaren)</h3>
@@ -685,7 +685,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s12",
-                shortTitle: "M11 Diphenhydramine",
+                shortTitle: "Drug 11 Diphenhydramine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Diphenhydramine</h3>
@@ -721,7 +721,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s13",
-                shortTitle: "M12 Dopamine",
+                shortTitle: "Drug 12 Dopamine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Dopamine</h3>
@@ -760,7 +760,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s14",
-                shortTitle: "M13 Epinephrine",
+                shortTitle: "Drug 13 Epinephrine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Epinephrine (Adrenaline)</h3>
@@ -804,7 +804,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s15",
-                shortTitle: "M14 Ethyl Chloride",
+                shortTitle: "Drug 14 Ethyl Chloride",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#snowflake"/></svg> Ethyl Chloride (Chloroethane)</h3>
@@ -840,7 +840,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s16",
-                shortTitle: "M15 Furosemide",
+                shortTitle: "Drug 15 Furosemide",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Furosemide</h3>
@@ -876,7 +876,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s17",
-                shortTitle: "M16 Glucagon",
+                shortTitle: "Drug 16 Glucagon",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Glucagon</h3>
@@ -914,7 +914,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s18",
-                shortTitle: "M17 Glucose Paste",
+                shortTitle: "Drug 17 Glucose Paste",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#candy"/></svg> Glucose 40% Oral Paste</h3>
@@ -950,7 +950,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s19",
-                shortTitle: "M18 GTN",
+                shortTitle: "Drug 18 GTN",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Glyceryl Trinitrate (GTN)</h3>
@@ -986,7 +986,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s20",
-                shortTitle: "M19 Haloperidol",
+                shortTitle: "Drug 19 Haloperidol",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Haloperidol</h3>
@@ -1022,7 +1022,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s21",
-                shortTitle: "M20 Hydrocortisone",
+                shortTitle: "Drug 20 Hydrocortisone",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Hydrocortisone</h3>
@@ -1061,7 +1061,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s22",
-                shortTitle: "M21 Hyoscine",
+                shortTitle: "Drug 21 Hyoscine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Hyoscine Butyl bromide</h3>
@@ -1097,7 +1097,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s23",
-                shortTitle: "M22 Ketamine",
+                shortTitle: "Drug 22 Ketamine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Ketamine</h3>
@@ -1135,7 +1135,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s24",
-                shortTitle: "M23 Labetalol",
+                shortTitle: "Drug 23 Labetalol",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Labetalol</h3>
@@ -1172,7 +1172,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s25",
-                shortTitle: "M24 Magnesium Sulphate",
+                shortTitle: "Drug 24 Magnesium Sulphate",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Magnesium Sulphate</h3>
@@ -1211,7 +1211,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s26",
-                shortTitle: "M25 Penthrox",
+                shortTitle: "Drug 25 Penthrox",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Methoxyflurane (Penthrox)</h3>
@@ -1247,7 +1247,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s27",
-                shortTitle: "M26 Metoclopramide",
+                shortTitle: "Drug 26 Metoclopramide",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Metoclopramide</h3>
@@ -1283,7 +1283,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s28",
-                shortTitle: "M27 Midazolam",
+                shortTitle: "Drug 27 Midazolam",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Midazolam</h3>
@@ -1322,7 +1322,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s29",
-                shortTitle: "M28 Morphine",
+                shortTitle: "Drug 28 Morphine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Morphine</h3>
@@ -1359,7 +1359,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s30",
-                shortTitle: "M29 Naloxone",
+                shortTitle: "Drug 29 Naloxone",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Naloxone</h3>
@@ -1395,7 +1395,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s31",
-                shortTitle: "M30 Nefopam",
+                shortTitle: "Drug 30 Nefopam",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Nefopam</h3>
@@ -1431,7 +1431,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s32",
-                shortTitle: "M31 Oxygen",
+                shortTitle: "Drug 31 Oxygen",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg> Oxygen</h3>
@@ -1467,7 +1467,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s33",
-                shortTitle: "M32 Paracetamol",
+                shortTitle: "Drug 32 Paracetamol",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Paracetamol (Acetaminophen)</h3>
@@ -1503,7 +1503,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s34",
-                shortTitle: "M33 Pethidine",
+                shortTitle: "Drug 33 Pethidine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Pethidine</h3>
@@ -1540,7 +1540,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s35",
-                shortTitle: "M34 Racemic Epinephrine",
+                shortTitle: "Drug 34 Racemic Epinephrine",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Racemic Epinephrine (Adrenaline)</h3>
@@ -1576,7 +1576,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s36",
-                shortTitle: "M35 Ringers Lactate",
+                shortTitle: "Drug 35 Ringers Lactate",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg> Ringers Lactate</h3>
@@ -1612,7 +1612,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s37",
-                shortTitle: "M36 Salbutamol",
+                shortTitle: "Drug 36 Salbutamol",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Salbutamol</h3>
@@ -1648,7 +1648,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s38",
-                shortTitle: "M37 Normal Saline",
+                shortTitle: "Drug 37 Normal Saline",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg> Sodium Chloride 0.9% (Normal Saline)</h3>
@@ -1684,7 +1684,7 @@ window.CPG_DATA = {
             },
             {
                 id: "m1-38s39",
-                shortTitle: "M38 Tranexamic Acid",
+                shortTitle: "Drug 38 Tranexamic Acid",
                 summary: `
             <div class="sum-card">
                 <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Tranexamic Acid</h3>
@@ -1712,6 +1712,366 @@ window.CPG_DATA = {
                 <p>Nil.</p>
                 <h4>Scope of Practice</h4>
                 <p>Paramedic (P) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s40",
+                shortTitle: "Drug 39 Calcium Chloride",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Calcium Chloride</h3>
+                <h4>Classification</h4>
+                <p>Electrolyte</p>
+                <h4>Presentation</h4>
+                <p>1 g/10 mL (10%) prefilled syringe or ampule.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Increases serum ionized calcium, directly stabilizing the cardiac cell membrane and improving myocardial contractility. Antagonizes the cardiotoxic effects of hyperkalemia and calcium channel blocker overdose at the membrane level.</p>
+                <h4>Indications</h4>
+                <p>Hyperkalemia with ECG changes; calcium channel blocker or magnesium overdose; hypocalcemia; adjunct in cardiac arrest with suspected hyperkalemia.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; digoxin toxicity (may precipitate fatal arrhythmia); concurrent sodium bicarbonate in the same line (precipitates).</p>
+                <h4>Precautions</h4>
+                <p>Ensure IV is patent — extravasation causes severe tissue necrosis. Administer slowly through a large vein.</p>
+                <h4>Side Effects</h4>
+                <p>Bradycardia; hypotension if given rapidly; local tissue injury on extravasation; metallic taste.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>1 g (10 mL of 10%) IV/IO slow push over 5 minutes. May repeat once for refractory hyperkalemia or CCB overdose.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>20 mg/kg (0.2 mL/kg of 10%) IV/IO slow push over 5 minutes (maximum 1 g).</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p>
+                <h4>Additional Information</h4>
+                <p>Flush the line with Normal Saline before and after administration. Never administer through the same line as sodium bicarbonate — the two will precipitate and occlude the line.</p>
+                <h4>Scope of Practice</h4>
+                <p>Advanced Paramedic (AP) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s41",
+                shortTitle: "Drug 40 Dexamethasone",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Dexamethasone</h3>
+                <h4>Classification</h4>
+                <p>Corticosteroid</p>
+                <h4>Presentation</h4>
+                <p>4 mg/mL vial, typically supplied as a 2 mL (8 mg) or 5 mL (20 mg) vial.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Long-acting glucocorticoid that suppresses inflammatory mediator release and reduces airway edema. Onset is delayed (1–2 hours) relative to hydrocortisone but has a longer duration of action.</p>
+                <h4>Indications</h4>
+                <p>Moderate–severe croup; asthma/COPD exacerbation as an adjunct to bronchodilators; anaphylaxis as an adjunct after epinephrine.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy.</p>
+                <h4>Precautions</h4>
+                <p>Not a substitute for epinephrine in anaphylaxis — give after, not instead of, epinephrine. Use caution in known active infection.</p>
+                <h4>Side Effects</h4>
+                <p>Rare with single prehospital dose; hyperglycemia; mild agitation.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>10 mg IV/IM/PO single dose.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>0.6 mg/kg PO/IV/IM (maximum 10 mg) single dose — most commonly used for croup.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated.<br>Lactation: considered compatible with breastfeeding at standard single doses.</p>
+                <h4>Additional Information</h4>
+                <p>Oral and IV routes are considered equally effective for croup — oral is preferred in a cooperative patient to avoid the distress of an injection.</p>
+                <h4>Scope of Practice</h4>
+                <p>Emergency Medical Technician (EMT) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s42",
+                shortTitle: "Drug 41 Etomidate",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Etomidate</h3>
+                <h4>Classification</h4>
+                <p>Sedative-Hypnotic (Induction Agent)</p>
+                <h4>Presentation</h4>
+                <p>2 mg/mL, 10 mL vial (20 mg/10 mL).</p>
+                <h4>Mechanism of Action</h4>
+                <p>Enhances GABA-mediated inhibition in the CNS, producing rapid sedation and unconsciousness with relative hemodynamic stability compared to other induction agents.</p>
+                <h4>Indications</h4>
+                <p>Induction agent for Rapid Sequence Intubation (RSI); procedural sedation for cardioversion or reduction where hemodynamic stability is a priority.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy.</p>
+                <h4>Precautions</h4>
+                <p>Adrenal suppression with repeated or prolonged dosing — use single-dose only in the prehospital setting. Does not provide analgesia — pair with an opioid for painful procedures.</p>
+                <h4>Side Effects</h4>
+                <p>Myoclonus (transient involuntary muscle movement); injection site pain; nausea/vomiting on emergence; adrenal suppression.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>0.3 mg/kg IV push over 30–60 seconds for RSI induction.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>0.2–0.3 mg/kg IV push. Use with caution — limited pediatric prehospital evidence; local RSI protocol and physician order required.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: safety not established; use only if clinically indicated (e.g., maternal RSI).<br>Lactation: safety not established.</p>
+                <h4>Additional Information</h4>
+                <p>Etomidate has minimal effect on blood pressure and heart rate, making it a preferred induction agent in hemodynamically unstable patients. Always have a paralytic and airway equipment ready before administration.</p>
+                <h4>Scope of Practice</h4>
+                <p>Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s43",
+                shortTitle: "Drug 42 Fentanyl",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Fentanyl</h3>
+                <h4>Classification</h4>
+                <p>Opioid Analgesic</p>
+                <h4>Presentation</h4>
+                <p>100 mcg/2 mL ampule.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Synthetic opioid agonist that binds mu-opioid receptors in the CNS, producing potent analgesia with rapid onset (1–2 minutes IV) and short duration (30–60 minutes).</p>
+                <h4>Indications</h4>
+                <p>Moderate–severe pain, including traumatic and cardiac chest pain; analgesia prior to painful procedures (e.g., fracture reduction, cardioversion).</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; respiratory depression without ventilatory support available.</p>
+                <h4>Precautions</h4>
+                <p>Hypotension; head injury with altered mental status (may confound neurological exam); renal/hepatic impairment.</p>
+                <h4>Side Effects</h4>
+                <p>Respiratory depression; hypotension; nausea/vomiting; sedation; chest wall rigidity with rapid high-dose administration.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>25–50 mcg IV slow push every 5 minutes, titrated to pain (maximum 200 mcg); 1–2 mcg/kg IN/IM if no IV access.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>1 mcg/kg IV slow push every 5 minutes (maximum single dose 50 mcg); 1.5 mcg/kg IN if no IV access.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated for maternal pain control.<br>Lactation: infant sedation possible; monitor if breastfeeding shortly after administration.</p>
+                <h4>Additional Information</h4>
+                <p>Faster onset and shorter duration than Morphine, making it preferred for procedural analgesia. Have Naloxone and airway equipment immediately available.</p>
+                <h4>Scope of Practice</h4>
+                <p>Advanced Paramedic (AP) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s44",
+                shortTitle: "Drug 43 Ketorolac",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Ketorolac</h3>
+                <h4>Classification</h4>
+                <p>Non-Steroidal Anti-inflammatory (NSAID)</p>
+                <h4>Presentation</h4>
+                <p>30 mg/1 mL vial.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Inhibits cyclooxygenase (COX-1 and COX-2), reducing prostaglandin synthesis and producing analgesic and anti-inflammatory effects without respiratory depression or sedation.</p>
+                <h4>Indications</h4>
+                <p>Moderate pain, particularly musculoskeletal, renal colic, and migraine.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; previous reaction to NSAIDs; active GI bleeding or peptic ulcer disease; renal insufficiency; pregnancy (third trimester); age under 17.</p>
+                <h4>Precautions</h4>
+                <p>Asthma/COPD with history of NSAID-induced bronchospasm; concurrent anticoagulant use; dehydration.</p>
+                <h4>Side Effects</h4>
+                <p>GI upset; injection site discomfort; increased bleeding risk.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>15–30 mg IV over 15 seconds or 30–60 mg IM. Single prehospital dose.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>Not recommended for pediatric prehospital use.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: contraindicated, particularly in the third trimester (risk of premature ductus arteriosus closure).<br>Lactation: generally considered compatible in short courses; consult local guidance.</p>
+                <h4>Additional Information</h4>
+                <p>Does not cause sedation or respiratory depression, making it a useful non-opioid option, but onset is slower (30–60 min for full effect) than opioids.</p>
+                <h4>Scope of Practice</h4>
+                <p>EMT-Advanced (EMT-A) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s45",
+                shortTitle: "Drug 44 Lidocaine",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Lidocaine</h3>
+                <h4>Classification</h4>
+                <p>Antiarrhythmic / Local Anesthetic</p>
+                <h4>Presentation</h4>
+                <p>100 mg/5 mL (2%) prefilled syringe.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Class Ib antiarrhythmic that blocks fast sodium channels, decreasing automaticity and suppressing ventricular ectopy. As a local anesthetic, it blocks sodium channels in peripheral nerve fibers.</p>
+                <h4>Indications</h4>
+                <p>Alternative antiarrhythmic for refractory VF/pulseless VT when Amiodarone is unavailable or contraindicated; local anesthesia prior to IO insertion in a conscious patient.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy to amide local anesthetics; second- or third-degree heart block without a pacemaker; Wolff-Parkinson-White syndrome.</p>
+                <h4>Precautions</h4>
+                <p>Reduce dose in hepatic impairment and heart failure — reduced clearance increases toxicity risk. Avoid in wide-complex tachycardia of unclear origin without expert guidance.</p>
+                <h4>Side Effects</h4>
+                <p>CNS toxicity at high doses (tinnitus, perioral numbness, seizures); bradycardia; hypotension.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>Cardiac Arrest: 1–1.5 mg/kg IV/IO push, may repeat 0.5–0.75 mg/kg once (maximum total 3 mg/kg). IO local anesthesia: 20–40 mg (1–2 mL of 2%) slow push into the IO space prior to infusion in a conscious patient.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>Cardiac Arrest: 1 mg/kg IV/IO push. IO local anesthesia: 0.5 mg/kg (maximum 20 mg) slow push into the IO space.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p>
+                <h4>Additional Information</h4>
+                <p>Lidocaine is a second-line alternative to Amiodarone for refractory VF/VT in current resuscitation guidelines — do not administer both agents in the same arrest without medical direction.</p>
+                <h4>Scope of Practice</h4>
+                <p>Paramedic (P) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s46",
+                shortTitle: "Drug 45 Ondansetron",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Ondansetron</h3>
+                <h4>Classification</h4>
+                <p>Antiemetic (5-HT3 Receptor Antagonist)</p>
+                <h4>Presentation</h4>
+                <p>4 mg/2 mL vial or 4 mg orally disintegrating tablet (ODT).</p>
+                <h4>Mechanism of Action</h4>
+                <p>Selectively blocks serotonin (5-HT3) receptors in the chemoreceptor trigger zone and vagal afferents in the gut, reducing nausea and vomiting.</p>
+                <h4>Indications</h4>
+                <p>Nausea and vomiting of any prehospital etiology.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; congenital long QT syndrome.</p>
+                <h4>Precautions</h4>
+                <p>QT prolongation — use caution with other QT-prolonging drugs or known electrolyte abnormalities (hypokalemia, hypomagnesemia).</p>
+                <h4>Side Effects</h4>
+                <p>Headache; constipation; transient QT prolongation; dizziness.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>4 mg IV slow push over 2–5 minutes or 4 mg ODT sublingual. May repeat once (maximum 8 mg total).</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>0.1 mg/kg IV (maximum 4 mg) or ODT: 8–15 kg 2 mg, 15–30 kg 4 mg, >30 kg 4–8 mg.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: conflicting data on minor fetal risk with first-trimester use; administer if clinically indicated for severe nausea/vomiting.<br>Lactation: considered compatible; administer if clinically indicated.</p>
+                <h4>Additional Information</h4>
+                <p>The ODT formulation is useful when IV access is not available or not clinically necessary. Does not cause sedation, unlike Metoclopramide.</p>
+                <h4>Scope of Practice</h4>
+                <p>Emergency Medical Technician (EMT) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s47",
+                shortTitle: "Drug 46 Promethazine",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Promethazine</h3>
+                <h4>Classification</h4>
+                <p>Antihistamine / Antiemetic</p>
+                <h4>Presentation</h4>
+                <p>25 mg/mL, 1 mL ampule.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Blocks H1 histamine receptors and has central antidopaminergic and anticholinergic activity, producing antiemetic and sedative effects.</p>
+                <h4>Indications</h4>
+                <p>Nausea and vomiting refractory to other antiemetics; allergic reaction as an adjunct to Diphenhydramine.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; age under 2 years (risk of fatal respiratory depression); severe CNS depression.</p>
+                <h4>Precautions</h4>
+                <p>Significant sedation — use caution in patients requiring ongoing neurological assessment. Severe tissue injury with IV extravasation or intra-arterial injection — IM route preferred prehospital.</p>
+                <h4>Side Effects</h4>
+                <p>Sedation; hypotension; extrapyramidal symptoms; respiratory depression in young children.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>12.5–25 mg IM (preferred) or slow IV push diluted, deep into a large muscle or well-running large-bore IV.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>Not recommended under 2 years. Age 2 and above: 0.25–0.5 mg/kg IM (maximum 25 mg) — use with caution and only per local protocol.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: has been used for hyperemesis; administer if clinically indicated.<br>Lactation: may cause infant sedation; use lowest effective dose.</p>
+                <h4>Additional Information</h4>
+                <p>IM administration is strongly preferred over IV in the prehospital setting due to the risk of severe tissue necrosis with extravasation or inadvertent intra-arterial injection.</p>
+                <h4>Scope of Practice</h4>
+                <p>Advanced Paramedic (AP) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s48",
+                shortTitle: "Drug 47 Sodium Bicarbonate",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Sodium Bicarbonate</h3>
+                <h4>Classification</h4>
+                <p>Alkalinizing Agent</p>
+                <h4>Presentation</h4>
+                <p>8.4% solution, 50 mEq/50 mL prefilled syringe.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Buffers hydrogen ions, raising blood and urine pH. In hyperkalemia, alkalinization drives potassium intracellularly. In sodium channel blocker (e.g., tricyclic antidepressant) overdose, the added sodium load and alkalinization narrow the QRS complex.</p>
+                <h4>Indications</h4>
+                <p>Severe hyperkalemia with ECG changes; tricyclic antidepressant overdose with wide QRS or arrhythmia; prolonged cardiac arrest with suspected hyperkalemia or known pre-arrest acidosis; crush syndrome.</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy; hypokalemia; metabolic or respiratory alkalosis.</p>
+                <h4>Precautions</h4>
+                <p>Do not mix or co-administer through the same line as Calcium Chloride or catecholamines (epinephrine/dopamine) — will precipitate or inactivate. Flush the line thoroughly before and after.</p>
+                <h4>Side Effects</h4>
+                <p>Metabolic alkalosis; hypokalemia; hypernatremia; tissue necrosis on extravasation.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>1 mEq/kg IV/IO slow push. In TCA overdose, repeat to maintain arterial pH 7.45–7.55 per medical direction.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>1 mEq/kg IV/IO slow push (dilute 1:1 with sterile water in neonates and infants to reduce osmolar load).</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p>
+                <h4>Additional Information</h4>
+                <p>Ensure adequate ventilation before administration — bicarbonate generates CO2, which requires effective ventilation to be cleared, or paradoxical intracellular acidosis can result.</p>
+                <h4>Scope of Practice</h4>
+                <p>Advanced Paramedic (AP) and above – independent practice.</p>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "m1-38s49",
+                shortTitle: "Drug 48 Vasopressin",
+                summary: `
+            <div class="sum-card">
+                <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Vasopressin</h3>
+                <h4>Classification</h4>
+                <p>Vasopressor (Antidiuretic Hormone Analog)</p>
+                <h4>Presentation</h4>
+                <p>20 units/mL, 1 mL ampule.</p>
+                <h4>Mechanism of Action</h4>
+                <p>Direct V1-receptor agonist causing peripheral vasoconstriction independent of adrenergic receptors, increasing coronary and cerebral perfusion pressure during cardiac arrest and in catecholamine-refractory shock.</p>
+                <h4>Indications</h4>
+                <p>Cardiac arrest as an alternative or adjunct to Epinephrine per local protocol; catecholamine-refractory septic shock (physician-directed, critical care transport).</p>
+                <h4>Contraindications</h4>
+                <p>Known allergy.</p>
+                <h4>Precautions</h4>
+                <p>Not a substitute for high-quality CPR and defibrillation. Extravasation can cause severe local ischemia.</p>
+                <h4>Side Effects</h4>
+                <p>Peripheral and mesenteric ischemia; hyponatremia with prolonged use; arrhythmia.</p>
+                <h4>Adult Dose & Administration</h4>
+                <p>40 units IV/IO push, single dose, may be substituted for either the first or second dose of Epinephrine in cardiac arrest per local protocol.</p>
+                <h4>Pediatric Dose & Administration</h4>
+                <p>Not established for pediatric cardiac arrest — Epinephrine remains first-line.</p>
+                <h4>Use in Pregnancy and Lactation</h4>
+                <p>Pregnancy: use only in cardiac arrest where maternal survival is the priority.<br>Lactation: not applicable in the arrest setting.</p>
+                <h4>Additional Information</h4>
+                <p>Current resuscitation guidelines regard Vasopressin as having no significant advantage over Epinephrine alone in cardiac arrest; use per local medical direction only.</p>
+                <h4>Scope of Practice</h4>
+                <p>Advanced Paramedic (AP) and above – independent practice, cardiac arrest only.</p>
             </div>
         `,
                 flashcards: [],
