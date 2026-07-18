@@ -215,8 +215,9 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .drug-card:hover .dc-dose-box{border-color:var(--br2)}
 .dc-dose-lbl{font-size:.58rem;text-transform:uppercase;letter-spacing:.6px;font-weight:800;color:var(--text2);margin-bottom:3px}
 .dc-dose-val{font-size:.7rem;font-family:var(--mono);color:var(--text);line-height:1.5;word-break:break-word}
-.dc-arrow{width:28px;height:28px;border-radius:8px;flex-shrink:0;margin-top:2px;background:var(--sf2);border:1px solid var(--br);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--text2);transition:all .18s}
-.drug-card:hover .dc-arrow{background:var(--accent-d);border-color:var(--accent);color:var(--accent)}
+.dc-actions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}
+.dc-action{display:inline-flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;padding:6px 11px;border-radius:9px;text-decoration:none;color:var(--dca,var(--accent));background:color-mix(in srgb,var(--dca,var(--accent)) 12%,transparent);border:1px solid color-mix(in srgb,var(--dca,var(--accent)) 30%,transparent);transition:background .15s}
+.dc-action:hover{background:color-mix(in srgb,var(--dca,var(--accent)) 22%,transparent)}
 
 /* ANCHOR */
 .az-anchor{display:block;height:0;visibility:hidden;position:relative;top:-80px}
@@ -249,7 +250,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
     <div class="hdr-sub" id="hdrSub">Loading…</div>
   </div>
   <div class="hdr-actions">
-    <a href="drug-calculator.html" class="hdr-pill"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg>️ Calculator</a>
+    <a href="../chapters/formulary.html" class="hdr-pill"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Full Formulary</a>
     <button class="theme-btn" id="themeBtn" onclick="toggleThemePanel()" title="Change theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
   </div>
 </div>
@@ -286,7 +287,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
   <div>
     <div class="hero-eyebrow">SmartCare · Formulary</div>
     <div class="hero-heading">EMS <span class="hl">Drug Reference</span></div>
-    <div class="hero-desc">Tap any medication to open full dosing in the calculator</div>
+    <div class="hero-desc">Open the weight-based dose calculator, or read the full clinical monograph in Chapter 11</div>
   </div>
   <div class="hero-stats">
     <div class="h-stat"><div class="hs-num" id="hsTotalDrugs">—</div><div class="hs-lbl">Medications</div></div>
@@ -333,6 +334,39 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-up"/></svg></button>
 
 <script>
+const FORMULARY_MAP = {
+  "Adenosine": "formulary-2",
+  "Amiodarone": "formulary-3",
+  "Atropine": "formulary-5",
+  "Epinephrine (Adrenaline)": "formulary-13",
+  "Labetalol": "formulary-23",
+  "Combivent": "formulary-6",
+  "Salbutamol": "formulary-36",
+  "Racemic Epinephrine (Adrenaline)": "formulary-34",
+  "Methoxyflurane (Penthrox)": "formulary-25",
+  "Hydrocortisone": "formulary-20",
+  "Magnesium Sulphate": "formulary-24",
+  "Diazepam": "formulary-9",
+  "Haloperidol": "formulary-19",
+  "Morphine": "formulary-28",
+  "Diclofenac": "formulary-10",
+  "Nefopam": "formulary-30",
+  "Paracetamol": "formulary-32",
+  "Glyceryl Trinitrate": "formulary-18",
+  "Dextrose 5% Water": "formulary-7",
+  "Dextrose 10%": "formulary-8",
+  "Glucose 40% Oral Paste": "formulary-17",
+  "Glucagon": "formulary-16",
+  "Normal Saline": "formulary-37",
+  "Lactated Ringers": "formulary-35",
+  "Aspirin": "formulary-4",
+  "Diphenhydramine": "formulary-11",
+  "Furosemide": "formulary-15",
+  "Hyoscine Butyl bromide": "formulary-21",
+  "Metoclopramide": "formulary-26",
+  "Naloxone": "formulary-29",
+  "Tranexamic Acid": "formulary-38"
+};
 let DRUGS={},CATS=[],activeCat='ALL',query='',sortAZ=false,azOpen=false;
 
 // The `?drug=` deep-link param and any fetch error message get interpolated
@@ -372,7 +406,7 @@ async function init(){
     document.getElementById('hsTotalDrugs').textContent=Object.keys(DRUGS).length;
     document.getElementById('hsTotalCats').textContent=CATS.length;
     document.getElementById('hsTotalInds').textContent=totalInds;
-    document.getElementById('hdrSub').textContent=Object.keys(DRUGS).length+' medications · SmartCare';
+    document.getElementById('hdrSub').textContent=Object.keys(DRUGS).length+' with dose calculator · 48 in full formulary';
     buildPills(); buildAZ(); render();
     // deep-link
     const d=new URLSearchParams(location.search).get('drug');
@@ -469,13 +503,13 @@ function buildSection(cat,entries,showAlpha){
 
 function buildCard(name,drug,cat){
   const cc=cat.color.startsWith('var')?'#3b82f6':cat.color;
-  const card=document.createElement('a');
+  const card=document.createElement('div');
   card.className='drug-card';
-  card.href='drug-calculator.html?drug='+encodeURIComponent(name);
   card.style.setProperty('--dc',cc);
   card.style.setProperty('--dc-glow',cc+'10');
   const allInds=(drug.indications||[]).map(i=>i.name);
   const primaryDose=drug.indications&&drug.indications[0]?drug.indications[0].dose_formula:'';
+  const formularySection=FORMULARY_MAP[name];
   card.innerHTML='<div class="dc-inner">'
     +'<div class="dc-icon-wrap" style="background:'+cc+'15;border-color:'+cc+'30;color:'+cc+'">'+cat.icon+'</div>'
     +'<div class="dc-content">'
@@ -483,8 +517,11 @@ function buildCard(name,drug,cat){
     +'<span class="dc-cat-tag" style="color:'+cc+';border-color:'+cc+'35;background:'+cc+'10">'+cat.name+'</span>'
     +'<div class="dc-inds">'+allInds.map(i=>'<div class="dc-ind"><div class="dc-ind-dot" style="background:'+cc+'"></div><div class="dc-ind-text">'+hl(i)+'</div></div>').join('')+'</div>'
     +(primaryDose?'<div class="dc-dose-box"><div class="dc-dose-lbl">Primary Dose</div><div class="dc-dose-val">'+hl(primaryDose)+'</div></div>':'')
+    +'<div class="dc-actions">'
+    +'<a class="dc-action" href="drug-calculator.html?drug='+encodeURIComponent(name)+'" style="--dca:'+cc+'"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Calculator</a>'
+    +(formularySection?'<a class="dc-action" href="../chapters/formulary.html?view=summary&section='+formularySection+'" style="--dca:'+cc+'"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Full Monograph</a>':'')
     +'</div>'
-    +'<div class="dc-arrow"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></div>'
+    +'</div>'
     +'</div>';
   return card;
 }

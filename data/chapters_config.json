@@ -672,13 +672,13 @@
         "sectionParam": null
     },
     {
-        "id": "m1-38",
-        "shortTitle": "M1–38 Formulary",
-        "title": "Medication Formulary (38 drugs)",
+        "id": "formulary",
+        "shortTitle": "Drug Formulary",
+        "title": "Medication Formulary (48 drugs)",
         "hasCritical": false,
         "chapterGroup": "scope",
         "isSpecial": false,
-        "chapterFile": "m1-38",
+        "chapterFile": "formulary",
         "sectionParam": null
     }
 ]

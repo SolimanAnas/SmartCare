@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
+         its own header, but Pages can't send headers, so it lives here. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'">
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="EMS medication formulary — complete drug reference for paramedics including dosages, indications, and administration routes.">
+    <meta name="keywords" content="SmartCare, chapters, formulary, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/chapters/formulary">
+    <meta property="og:title" content="SmartCare · Medication Formulary">
+    <meta property="og:description" content="EMS medication formulary — complete drug reference for paramedics including dosages, indications, and administration routes.">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/chapters/formulary">
+    <meta name="twitter:title" content="SmartCare · Medication Formulary">
+    <meta name="twitter:description" content="EMS medication formulary — complete drug reference for paramedics including dosages, indications, and administration routes.">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/chapters/formulary">
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SmartCare · Medication Formulary",
+  "url": "https://solimananas.github.io/SmartCare/chapters/formulary",
+  "description": "EMS medication formulary — complete drug reference for paramedics including dosages, indications, and administration routes.",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Soliman Anas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://solimananas.github.io/SmartCare/icons/icon.png"
+    }
+  },
+  "inLanguage": "en-US"
+}
+    </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>SmartCare · Medication Formulary</title>
+    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Drug monograph card system — scoped to this chapter only.
+         Colors mirror the category palette already used in the Medication
+         Index/Calculator (pages/drug-data.json) so a drug reads the same
+         color everywhere in the app. Contraindication/Precaution/Indication
+         boxes use fixed red/amber/green across all themes on purpose: they
+         encode clinical severity, not a decorative accent, and that meaning
+         shouldn't shift when someone switches to light or sepia mode. -->
+    <style>
+        :root{
+            --rx-stop: #ef4444;
+            --rx-stop-bg: rgba(239,68,68,.08);
+            --rx-caution: #f59e0b;
+            --rx-caution-bg: rgba(245,158,11,.08);
+            --rx-go: #22c55e;
+            --rx-go-bg: rgba(34,197,94,.08);
+            --rx-info: #38bdf8;
+            --rx-info-bg: rgba(56,189,248,.08);
+        }
+        .rx-card{
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 24px 22px 22px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            animation: fadeInUp .5s ease both;
+        }
+        .rx-topbar{
+            position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: var(--rx-cat);
+        }
+        .rx-head{ display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .rx-head-icon{
+            width: 44px; height: 44px; flex-shrink: 0; border-radius: 13px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; color: var(--rx-cat);
+            background: color-mix(in srgb, var(--rx-cat) 15%, transparent);
+            border: 1px solid color-mix(in srgb, var(--rx-cat) 35%, transparent);
+        }
+        .rx-head-text{ flex: 1; min-width: 0; }
+        .rx-eyebrow{
+            font-size: .68rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: .8px; color: var(--rx-cat); margin-bottom: 4px;
+        }
+        .rx-name{ font-size: 1.35rem; font-weight: 800; color: var(--text-primary); line-height: 1.25; }
+        .rx-scope{ flex-shrink: 0; text-align: right; width: 92px; cursor: help; }
+        .rx-scope-badge{
+            display: inline-block; font-size: .66rem; font-weight: 800;
+            color: var(--text-primary); white-space: nowrap;
+        }
+        .rx-scope-bar{
+            margin-top: 5px; height: 4px; border-radius: 4px;
+            background: color-mix(in srgb, var(--text-secondary) 20%, transparent);
+            overflow: hidden;
+        }
+        .rx-scope-bar span{
+            display: block; height: 100%; min-width: 4px;
+            background: var(--rx-cat); border-radius: 4px;
+        }
+        .rx-quickfacts{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            margin-bottom: 16px;
+        }
+        .rx-fact{
+            background: color-mix(in srgb, var(--text-primary) 4%, transparent);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px; padding: 9px 12px;
+        }
+        .rx-fact-lbl{
+            display: block; font-size: .6rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: .5px; color: var(--text-secondary); margin-bottom: 3px;
+        }
+        .rx-fact-val{ display: block; font-size: .82rem; color: var(--text-primary); line-height: 1.4; }
+        .rx-moa{
+            font-size: .87rem; line-height: 1.6; color: var(--text-secondary);
+            font-style: italic; margin-bottom: 18px; padding-left: 12px;
+            border-left: 2px solid var(--glass-border);
+        }
+        .rx-box{
+            border-radius: 12px; padding: 13px 16px; margin-bottom: 12px;
+            border: 1px solid; border-left-width: 4px;
+        }
+        .rx-box h4{
+            display: flex; align-items: center; gap: 6px;
+            font-size: .72rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: .5px; margin-bottom: 6px;
+        }
+        .rx-box p{ font-size: .85rem; line-height: 1.55; color: var(--text-primary); margin: 0; }
+        .rx-box-go{ background: var(--rx-go-bg); border-color: color-mix(in srgb, var(--rx-go) 35%, transparent); border-left-color: var(--rx-go); }
+        .rx-box-go h4{ color: var(--rx-go); }
+        .rx-box-stop{ background: var(--rx-stop-bg); border-color: color-mix(in srgb, var(--rx-stop) 35%, transparent); border-left-color: var(--rx-stop); }
+        .rx-box-stop h4{ color: var(--rx-stop); }
+        .rx-box-caution{ background: var(--rx-caution-bg); border-color: color-mix(in srgb, var(--rx-caution) 35%, transparent); border-left-color: var(--rx-caution); }
+        .rx-box-caution h4{ color: var(--rx-caution); }
+        .rx-box-info{ background: var(--rx-info-bg); border-color: color-mix(in srgb, var(--rx-info) 35%, transparent); border-left-color: var(--rx-info); }
+        .rx-box-info h4{ color: var(--rx-info); }
+        .rx-dose-grid{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            margin-bottom: 12px;
+        }
+        .rx-dose-card{
+            background: color-mix(in srgb, var(--primary-accent) 8%, transparent);
+            border: 1px solid color-mix(in srgb, var(--primary-accent) 30%, transparent);
+            border-radius: 12px; padding: 13px 14px;
+        }
+        .rx-dose-card h4{
+            display: flex; align-items: center; gap: 6px;
+            font-size: .68rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: .5px; color: var(--primary-accent); margin-bottom: 6px;
+        }
+        .rx-dose-card p{ font-size: .84rem; line-height: 1.55; color: var(--text-primary); margin: 0; }
+        .rx-two-col{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            margin-bottom: 12px;
+        }
+        .rx-mini{
+            background: color-mix(in srgb, var(--text-primary) 4%, transparent);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px; padding: 12px 14px;
+        }
+        .rx-mini h4{
+            font-size: .66rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: .5px; color: var(--text-secondary); margin-bottom: 5px;
+        }
+        .rx-mini p{ font-size: .78rem; line-height: 1.5; color: var(--text-primary); margin: 0; }
+        @media (max-width: 560px){
+            .rx-quickfacts, .rx-dose-grid, .rx-two-col{ grid-template-columns: 1fr; }
+            .rx-name{ font-size: 1.15rem; }
+        }
+        @media (prefers-reduced-motion: reduce){
+            .rx-card{ animation: none; }
+        }
+    </style>
+
+    <!-- PWA Manifest and icons -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#0056b3">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <button class="icon-btn" id="homeBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="header-text">
+            <h1 id="pageTitle">Drug Formulary</h1>
+            <p id="pageSubtitle">SmartCare</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="icon-btn" id="themeToggle" title="Switch Theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
+        <div class="stats-badge" id="liveStatsBadge">
+            <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg> <span id="statsAttempts">0</span></span>
+            <div class="stats-divider"></div>
+            <span><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#target"/></svg> <span id="statsCritical">0%</span></span>
+        </div>
+        <a href="c-index.html?view=summary" class="icon-btn" id="headerIndexBtn" title="Index"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></a>
+        <a href="../pages/about.html" class="icon-btn" id="headerAboutBtn" title="About"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg></a>
+    </div>
+</header>
+
+
+<main id="mainContent"></main>
+
+<footer>
+    <div>Created & Maintained by Soliman Anas · for study aid only</div>
+    <div><a href="../pages/about.html">About & Disclaimer</a> · <a href="../pages/privacy.html">Privacy</a> · <a href="../pages/terms.html">Terms</a> · Intended for educational and clinical revision purposes.</div>
+</footer>
+
+<script src="../content/formulary.js"></script>
+<script src="../src/theme.js"></script>
+<script src="../src/render-state.js"></script>
+<script src="../app.js"></script>
+<script>
+    (function() {
+
+        document.getElementById('homeBtn').addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+
+        function loadStats() {
+            try {
+                const data = localStorage.getItem('smartcare_cpg_stats');
+                const stats = data ? JSON.parse(data) : { totalAttempts: 0, critical: { total: 0, correct: 0 } };
+                const critAcc = stats.critical.total ? Math.round((stats.critical.correct / stats.critical.total) * 100) : 0;
+                document.getElementById('statsAttempts').innerText = stats.totalAttempts || 0;
+                document.getElementById('statsCritical').innerText = `${critAcc}%`;
+            } catch(e) {}
+        }
+        loadStats();
+    })();
+</script>
+
+</body>
+</html>
