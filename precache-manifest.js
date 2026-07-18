@@ -38,7 +38,7 @@ self.__PRECACHE = [
   "chapters/c7.html",
   "chapters/c8.html",
   "chapters/c9.html",
-  "chapters/m1-38.html",
+  "chapters/formulary.html",
   "pages/Carevent.html",
   "pages/ECG-study.html",
   "pages/GCS.html",
@@ -133,7 +133,7 @@ self.__PRECACHE = [
   "content/c8.meta.js",
   "content/c9.meta.js",
   "content/curriculum-index.js",
-  "content/m1-38.js",
+  "content/formulary.js",
   "content/c1/c1s1.json",
   "content/c10/c10s1.json",
   "content/c2/c2s1.json",
@@ -145,4 +145,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "24a10f51ba";
+self.__PRECACHE_VERSION = "addd224c0f";

@@ -1145,7 +1145,7 @@
         { id:"c8",     shortTitle:"8. Environmental",     title:"Environmental & Disaster Medicine",            hasCritical:true,  chapterFile:"c8",  isFirstInChapter:true,  chapterGroup:"environmental" },
         { id:"c9",     shortTitle:"9. Pharmacology",      title:"Emergency Pharmacology",                       hasCritical:true,  chapterFile:"c9",  isFirstInChapter:true,  chapterGroup:"pharmacology" },
         { id:"c10",    shortTitle:"10. Procedures",       title:"Clinical Procedures & Skills",                 hasCritical:true,  chapterFile:"c10", isFirstInChapter:true,  chapterGroup:"procedures" },
-        { id:"m1-38",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope", chapterFile:"m1-38" }
+        { id:"formulary",  shortTitle:"Medication Formulary", title:"Emergency Drug Reference",                    hasCritical:false, isFirstInChapter:true,  chapterGroup:"scope", chapterFile:"formulary" }
     ];
 
     // ══════════════════════════════════════════════════════════
@@ -1427,7 +1427,7 @@
                             <h2>${ch.shortTitle}</h2>
                             <p>${ch.title}${s.attempts ? ` · ${s.attempts} attempts · Avg ${avg}%` : ''}</p>
                             <div class="menu-sub-options">
-<a href="${ch.id === 'm1-38' ? 'pages/med-index.html' : `chapters/${baseFile}.html?view=summary${sec}`}" class="btn-action btn-summary"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg> Summary</a>                                <a href="chapters/${baseFile}.html?view=flashcards${sec}" class="btn-action btn-flash"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg> Flashcards</a>
+<a href="${ch.id === 'formulary' ? 'pages/med-index.html' : `chapters/${baseFile}.html?view=summary${sec}`}" class="btn-action btn-summary"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#book"/></svg> Summary</a>                                <a href="chapters/${baseFile}.html?view=flashcards${sec}" class="btn-action btn-flash"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg> Flashcards</a>
                                 <a href="chapters/${baseFile}.html?view=quiz${sec}"       class="btn-action btn-quiz"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Quiz</a>
                                 <a href="chapters/${baseFile}.html?view=critical${sec}"   class="btn-action btn-scenario"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#ambulance"/></svg> Scenario</a>
                             </div>
