@@ -113,6 +113,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 .tag-calc{color:#6ee7b7;border-color:rgba(110,231,183,.3);background:rgba(110,231,183,.1)}
 .tag-cardio{color:#f43f5e;border-color:rgba(244,63,94,.3);background:rgba(244,63,94,.1)}
 .tag-neuro{color:#c084fc;border-color:rgba(192,132,252,.3);background:rgba(192,132,252,.1)}
+.tag-resp{color:#67e8f9;border-color:rgba(103,232,249,.3);background:rgba(103,232,249,.1)}
 
 /* ──── BOTTOM SHEET (shared overlay) ────────────────── */
 .bs-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:200;display:none;flex-direction:column;justify-content:flex-end}
@@ -333,6 +334,20 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
       <div class="tc-title">O₂ Calculator</div>
       <div class="tc-desc">Cylinder duration &amp; planning</div>
       <span class="tc-tag tag-calc">Airway</span>
+    </div>
+
+    <div class="tool-card" role="button" tabindex="0" onclick="window.location.href='respiratory-patterns.html'">
+      <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg></div>
+      <div class="tc-title">Respiratory Patterns</div>
+      <div class="tc-desc">Animated waveform &amp; pattern recognition</div>
+      <span class="tc-tag tag-resp">Airway</span>
+    </div>
+
+    <div class="tool-card" role="button" tabindex="0" onclick="window.location.href='ecg.html'">
+      <div class="tc-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg></div>
+      <div class="tc-title">ECG Simulator</div>
+      <div class="tc-desc">Live rhythm trainer &amp; interpreter</div>
+      <span class="tc-tag tag-cardio">Cardiac</span>
     </div>
 
 	

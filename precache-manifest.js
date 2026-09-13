@@ -73,6 +73,8 @@ self.__PRECACHE = [
   "pages/ppet.html",
   "pages/privacy.html",
   "pages/prometric-planner.html",
+  "pages/respiratory-engine.js",
+  "pages/respiratory-patterns.html",
   "pages/signup.html",
   "pages/supabase-client.js",
   "pages/supabase-config.js",
@@ -145,4 +147,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "addd224c0f";
+self.__PRECACHE_VERSION = "3b4f072f7f";

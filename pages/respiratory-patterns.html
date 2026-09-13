@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="Interactive respiratory pattern engine — animated waveforms for eupnea, Cheyne–Stokes, Kussmaul, Biot's, apneustic and agonal breathing with clinical notes for EMS and nursing students.">
+    <meta name="keywords" content="SmartCare, respiratory patterns, Cheyne-Stokes, Kussmaul, Biot, agonal breathing, apneustic, respiratory waveform, EMS, NREMT, paramedic study, EMT exam, healthcare education">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/pages/respiratory-patterns">
+    <meta property="og:title" content="SmartCare · Respiratory Patterns">
+    <meta property="og:description" content="Interactive respiratory pattern engine — animated waveforms with clinical notes for EMS and nursing pattern recognition.">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/pages/respiratory-patterns">
+    <meta name="twitter:title" content="SmartCare · Respiratory Patterns">
+    <meta name="twitter:description" content="Interactive respiratory pattern engine — animated waveforms with clinical notes for EMS and nursing pattern recognition.">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/pages/respiratory-patterns">
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SmartCare · Respiratory Patterns",
+  "url": "https://solimananas.github.io/SmartCare/pages/respiratory-patterns",
+  "description": "Interactive respiratory pattern engine — animated waveforms with clinical notes for EMS and nursing pattern recognition.",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Soliman Anas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://solimananas.github.io/SmartCare/icons/icon.png"
+    }
+  },
+  "inLanguage": "en-US"
+}
+    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SmartCare · Respiratory Patterns</title>
+<script src="respiratory-engine.js"></script>
+<script>(function(){var t=localStorage.getItem('resp-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* ══════════════════════ THEME TOKENS ══════════════════════ */
+:root,[data-theme="dark"]{
+  --bg:#07111f;--panel:#0c1629;--card:#111d30;--sf:rgba(255,255,255,.055);--sf2:rgba(255,255,255,.09);
+  --br:rgba(255,255,255,.10);--br2:rgba(255,255,255,.18);
+  --tx:#dde6f0;--mu:#5a7080;--dm:#8a9bb0;
+  --green:#22c55e;--yellow:#eab308;--red:#ef4444;
+  --blue:#3b82f6;--cyan:#06b6d4;--orange:#f97316;--purple:#8b5cf6;
+  --mono:'DM Mono',monospace;--hdr:60px;--r:18px;
+  --mon-bg:#04121a;--mon-grid:rgba(34,211,238,.13);--mon-grid2:rgba(34,211,238,.24);
+  --trace:#22d3ee;--trace-glow:rgba(34,211,238,.45);
+  --trace-warn:#fb923c;--trace-warn-glow:rgba(251,146,60,.45);
+  --trace-crit:#f87171;--trace-crit-glow:rgba(248,113,113,.45);
+  --abd:#fbbf24;--abd-glow:rgba(251,191,36,.4);
+  /* Motion — same curves/durations as the repo motion system in styles.css */
+  --ease-out:cubic-bezier(.23,1,.32,1);--dur-press:140ms;--dur-enter:240ms;--dur-exit:150ms;
+}
+[data-theme="light"]{
+  --bg:#f0f4f8;--panel:#fff;--card:#fff;--sf:rgba(10,25,45,.04);--sf2:rgba(10,25,45,.07);
+  --br:rgba(0,0,0,.10);--br2:rgba(0,0,0,.18);
+  --tx:#1a2637;--mu:#687888;--dm:#45566a;
+  --green:#16a34a;--yellow:#ca8a04;--red:#dc2626;
+  --blue:#2563eb;--cyan:#0891b2;--orange:#ea580c;--purple:#7c3aed;
+  --mon-bg:#08202b;--mon-grid:rgba(34,211,238,.15);--mon-grid2:rgba(34,211,238,.28);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+[hidden]{display:none!important}
+html{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100%;
+     display:flex;flex-direction:column;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:radial-gradient(ellipse 90% 50% at 15% 0%,rgba(8,45,60,.75),transparent),
+                   radial-gradient(ellipse 60% 50% at 85% 100%,rgba(20,40,70,.5),transparent)}
+[data-theme="light"] body::before{background-image:radial-gradient(ellipse 90% 50% at 15% 0%,rgba(6,182,212,.10),transparent),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(59,130,246,.08),transparent)}
+
+/* ──── HEADER ──── */
+.app-header{height:var(--hdr);background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--br);display:flex;align-items:center;
+  padding:0 14px;gap:10px;position:sticky;top:0;z-index:60;flex-shrink:0}
+.hdr-back{width:36px;height:36px;border-radius:11px;background:var(--sf2);border:1px solid var(--br);color:var(--tx);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;flex-shrink:0}
+.hdr-badge{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#0e7490,#06b6d4);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  box-shadow:0 4px 12px rgba(6,182,212,.38)}
+.hdr-info{flex:1;min-width:0}
+.hdr-title{font-size:.93rem;font-weight:800;letter-spacing:-.3px}
+.hdr-sub{font-size:.62rem;color:var(--mu)}
+.icon-btn{width:34px;height:34px;border-radius:10px;background:var(--sf2);border:1px solid var(--br);color:var(--dm);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+@media(hover:hover) and (pointer:fine){.icon-btn:hover{border-color:var(--br2);color:var(--tx)}}
+
+/* ──── LAYOUT ──── */
+.page-body{flex:1;padding:14px 14px 44px;max-width:860px;width:100%;margin:0 auto}
+.sec-hdr{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--mu);
+  margin:22px 0 9px 2px;display:flex;align-items:center;gap:7px}
+.lucide{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+
+/* ──── MONITOR ──── */
+.monitor{background:var(--mon-bg);border:1px solid var(--br);border-radius:var(--r);overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.mon-top{display:flex;align-items:center;gap:9px;padding:11px 13px 9px;flex-wrap:wrap}
+.mon-name{font-size:.95rem;font-weight:800;letter-spacing:-.2px;color:#e9f6fb}
+.mon-aka{font-size:.64rem;color:#7f9aa8;flex:1;min-width:90px}
+.pill{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px;padding:3px 9px;
+  border-radius:20px;border:1px solid;white-space:nowrap}
+.pill-normal{color:#6ee7b7;border-color:rgba(110,231,183,.35);background:rgba(110,231,183,.12)}
+.pill-caution{color:#fbbf24;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.12)}
+.pill-critical{color:#f87171;border-color:rgba(248,113,113,.38);background:rgba(248,113,113,.14)}
+.live{display:flex;align-items:center;gap:5px;font-size:.58rem;font-weight:700;letter-spacing:.8px;color:#7f9aa8}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--trace);box-shadow:0 0 8px var(--trace-glow);
+  animation:blip 2.6s ease-in-out infinite}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.35}}
+.monitor.paused .live-dot{animation:none;opacity:.25}
+.canvas-wrap{position:relative;height:230px;margin:0 2px}
+@media(max-width:560px){.canvas-wrap{height:190px}}
+canvas{display:block;width:100%;height:100%;cursor:pointer}
+.mon-legend{display:flex;gap:14px;padding:0 13px 8px;font-size:.62rem;color:#7f9aa8;flex-wrap:wrap}
+.lg{display:flex;align-items:center;gap:6px}
+.lg i{width:14px;height:3px;border-radius:2px;display:inline-block}
+.readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--br);border-top:1px solid var(--br)}
+@media(max-width:480px){.readouts{grid-template-columns:repeat(2,1fr)}}
+.ro{background:var(--mon-bg);padding:8px 10px;text-align:center}
+.ro-v{font-family:var(--mono);font-size:1rem;font-weight:700;color:#d4f0f8;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.ro-l{font-size:.55rem;text-transform:uppercase;letter-spacing:.9px;color:#6d8794;margin-top:2px}
+
+/* ──── TRANSPORT ──── */
+.transport{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.btn{background:var(--sf);border:1px solid var(--br);color:var(--tx);border-radius:12px;padding:9px 14px;
+  font-family:inherit;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;
+  gap:7px;transition:transform var(--dur-press) var(--ease-out),border-color var(--dur-enter) var(--ease-out)}
+.btn:active{transform:scale(.96)}
+@media(hover:hover) and (pointer:fine){.btn:hover{border-color:var(--br2)}}
+.btn-primary{background:linear-gradient(135deg,rgba(6,182,212,.22),rgba(59,130,246,.18));border-color:rgba(34,211,238,.4);color:#a5f3fc}
+[data-theme="light"] .btn-primary{color:#0e7490}
+.btn.on{background:rgba(34,211,238,.16);border-color:rgba(34,211,238,.45)}
+.spacer{flex:1}
+
+/* ──── PARAMETER SLIDERS ──── */
+.params{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:560px){.params{grid-template-columns:1fr}}
+.pm{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:10px 13px 12px}
+.pm-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:7px}
+.pm-lb{font-size:.71rem;font-weight:700;color:var(--dm)}
+.pm-val{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--cyan)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:20px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:var(--sf2);border:1px solid var(--br)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;
+  background:var(--cyan);border:2px solid var(--bg);margin-top:-7px;box-shadow:0 0 0 1px var(--br2)}
+input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:var(--sf2);border:1px solid var(--br)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--cyan);border:2px solid var(--bg)}
+
+/* ──── PRESETS + CHIPS ──── */
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{background:var(--sf);border:1px solid var(--br);color:var(--dm);border-radius:20px;padding:6px 12px;
+  font-family:inherit;font-size:.7rem;font-weight:700;cursor:pointer;
+  transition:transform var(--dur-press) var(--ease-out),border-color var(--dur-enter) var(--ease-out)}
+.chip:active{transform:scale(.95)}
+.chip[aria-pressed="true"]{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.45);color:var(--cyan)}
+[data-theme="light"] .chip[aria-pressed="true"]{color:#0e7490}
+
+/* ──── SEARCH ──── */
+.search-wrap{position:relative;margin-bottom:10px}
+.search-wrap .lucide{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--mu);font-size:.9rem}
+#patternSearch{width:100%;background:var(--sf);border:1px solid var(--br);border-radius:13px;color:var(--tx);
+  font-family:inherit;font-size:.8rem;padding:10px 12px 10px 34px}
+#patternSearch::placeholder{color:var(--mu)}
+
+/* ──── PATTERN CARDS ──── */
+.pat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:9px}
+.pat{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:10px 11px;text-align:left;
+  cursor:pointer;font-family:inherit;color:var(--tx);display:flex;flex-direction:column;gap:3px;
+  transition:transform var(--dur-press) var(--ease-out),border-color var(--dur-enter) var(--ease-out)}
+.pat:active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){.pat:hover{border-color:var(--br2)}}
+.pat[aria-pressed="true"]{background:rgba(34,211,238,.13);border-color:rgba(34,211,238,.5);
+  box-shadow:0 0 0 1px rgba(34,211,238,.18)}
+.pat-n{font-size:.78rem;font-weight:800;line-height:1.2;display:flex;align-items:center;gap:5px}
+.pat-c{font-size:.62rem;color:var(--mu);line-height:1.35}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dot-normal{background:var(--green)}.dot-caution{background:var(--yellow)}.dot-critical{background:var(--red)}
+.empty{grid-column:1/-1;padding:18px;text-align:center;color:var(--mu);font-size:.75rem}
+
+/* ──── MECHANICS PANEL ──── */
+.mech{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);padding:14px;
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.mech-fig{width:112px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;align-items:center}
+.mech-seg{width:78px;border-radius:16px;border:1.5px solid;display:flex;align-items:center;justify-content:center;
+  font-size:.56rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;transition:none;will-change:transform}
+.mech-seg.chest{height:52px;border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.13);color:#67e8f9}
+.mech-seg.abd{height:40px;border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.13);color:#fcd34d}
+[data-theme="light"] .mech-seg.chest{color:#0e7490}
+[data-theme="light"] .mech-seg.abd{color:#a16207}
+.mech-txt{flex:1;min-width:180px}
+.mech-h{font-size:.78rem;font-weight:800;margin-bottom:4px}
+.mech-d{font-size:.72rem;color:var(--dm);line-height:1.55}
+.mech-state{font-family:var(--mono);font-size:.68rem;color:var(--mu);margin-top:7px}
+.mech.opposed .mech-h{color:var(--orange)}
+
+/* ──── COMPARE ──── */
+.cmp-picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:10px}
+.cmp-pick label{display:block;font-size:.58rem;text-transform:uppercase;letter-spacing:.9px;color:var(--mu);margin-bottom:4px}
+select{width:100%;background:var(--sf);border:1px solid var(--br);border-radius:11px;color:var(--tx);
+  font-family:inherit;font-size:.74rem;font-weight:600;padding:8px 9px;cursor:pointer}
+#compareWrap{height:340px;margin:0 2px}
+@media(max-width:560px){#compareWrap{height:400px}}
+
+/* ──── CLINICAL INFO ──── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.info-grid{grid-template-columns:1fr}}
+.ic{background:var(--sf);border:1px solid var(--br);border-radius:var(--r);padding:13px 15px}
+.ic-h{font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:1.1px;color:var(--cyan);
+  margin-bottom:8px;display:flex;align-items:center;gap:6px}
+[data-theme="light"] .ic-h{color:#0e7490}
+.ic-b{font-size:.79rem;line-height:1.65;color:var(--tx)}
+.ic-b p+p{margin-top:9px}
+.ic ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.ic li{font-size:.77rem;line-height:1.55;color:var(--dm);padding-left:15px;position:relative}
+.ic li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.6}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:7px 12px;font-size:.75rem}
+.facts dt{font-weight:700;color:var(--mu);white-space:nowrap}
+.facts dd{color:var(--tx);line-height:1.5}
+.note{border-radius:14px;padding:12px 14px;border:1px solid;font-size:.78rem;line-height:1.6}
+.note-h{font-size:.61rem;font-weight:800;text-transform:uppercase;letter-spacing:1.1px;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px}
+.note-ems{background:rgba(248,113,113,.09);border-color:rgba(248,113,113,.3);color:var(--tx)}
+.note-ems .note-h{color:var(--red)}
+.note-key{background:rgba(139,92,246,.09);border-color:rgba(139,92,246,.28);color:var(--tx);margin-top:12px}
+.note-key .note-h{color:var(--purple)}
+.disclaimer{margin-top:26px;font-size:.66rem;line-height:1.65;color:var(--mu);border-top:1px solid var(--br);
+  padding-top:14px}
+.refs{margin-top:10px;font-size:.66rem;line-height:1.7;color:var(--mu)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ──── REDUCED MOTION ──── */
+/* The waveform itself is the content, so it is not suppressed — instead the
+   page opens paused on a full static cycle and the user presses Play. Decorative
+   motion is removed. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+  .live-dot{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <a class="hdr-back" href="ems-tools.html" aria-label="Back to EMS Tools">&#8592;</a>
+  <div class="hdr-badge" aria-hidden="true">&#x1FAC1;</div>
+  <div class="hdr-info">
+    <div class="hdr-title">Respiratory Patterns</div>
+    <div class="hdr-sub">Interactive pattern-recognition engine</div>
+  </div>
+  <button type="button" class="icon-btn" id="themeBtn" aria-label="Toggle light or dark theme">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#moon"/></svg>
+  </button>
+</header>
+
+<main class="page-body">
+
+  <!-- ════════ MONITOR ════════ -->
+  <section class="monitor" id="monitor" aria-labelledby="monName">
+    <div class="mon-top">
+      <span class="mon-name" id="monName">Eupnea</span>
+      <span class="pill pill-normal" id="monSeverity">Normal</span>
+      <span class="mon-aka" id="monAka">Normal respiration</span>
+      <span class="live"><span class="live-dot"></span><span id="liveLabel">LIVE</span></span>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="respCanvas" role="img" aria-label="Respiratory waveform"
+              title="Tap the trace to pause or resume"></canvas>
+    </div>
+    <div class="mon-legend" id="monLegend" hidden>
+      <span class="lg"><i style="background:#22d3ee"></i>Chest excursion</span>
+      <span class="lg"><i style="background:#fbbf24"></i>Abdominal excursion</span>
+    </div>
+    <div class="readouts">
+      <div class="ro"><div class="ro-v" id="roRate">—</div><div class="ro-l">Breaths / min</div></div>
+      <div class="ro"><div class="ro-v" id="roDepth">—</div><div class="ro-l">Peak excursion</div></div>
+      <div class="ro"><div class="ro-v" id="roPause">—</div><div class="ro-l">Longest pause</div></div>
+      <div class="ro"><div class="ro-v" id="roVent">—</div><div class="ro-l">Vent. index</div></div>
+    </div>
+  </section>
+  <p class="sr-only" role="status" aria-live="polite" id="announcer"></p>
+
+  <!-- ════════ TRANSPORT ════════ -->
+  <div class="transport">
+    <button type="button" class="btn btn-primary" id="playBtn" aria-pressed="true">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pause"/></svg>
+      <span id="playLabel">Pause</span>
+    </button>
+    <button type="button" class="btn" id="restartBtn">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#refresh-ccw"/></svg>
+      Restart
+    </button>
+    <button type="button" class="btn" id="resetBtn">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#rotate-ccw"/></svg>
+      Reset defaults
+    </button>
+    <span class="spacer"></span>
+    <button type="button" class="btn" id="compareBtn" aria-pressed="false" aria-controls="compareSection">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg>
+      Compare
+    </button>
+  </div>
+
+  <!-- ════════ PARAMETERS ════════ -->
+  <p class="sec-hdr">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#settings-2"/></svg>
+    Parameters
+  </p>
+  <div class="params" id="paramBox"></div>
+  <div class="params" style="grid-template-columns:1fr;margin-top:0">
+    <div class="pm">
+      <div class="pm-top">
+        <label class="pm-lb" for="speedInput">Sweep speed</label>
+        <span class="pm-val" id="speedVal">25 px/s</span>
+      </div>
+      <input type="range" id="speedInput" min="6" max="60" step="1" value="25"
+             aria-describedby="speedHint">
+      <p class="sr-only" id="speedHint">Controls how much time the trace shows. Set automatically when you change pattern so a whole cycle fits.</p>
+    </div>
+  </div>
+
+  <!-- ════════ PATTERN PICKER ════════ -->
+  <p class="sec-hdr">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg>
+    Pattern library
+  </p>
+  <div class="search-wrap">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg>
+    <input type="search" id="patternSearch" placeholder="Search respiratory patterns…"
+           aria-label="Search respiratory patterns" autocomplete="off">
+  </div>
+  <div class="chips" id="catChips" role="group" aria-label="Filter by category" style="margin-bottom:11px"></div>
+  <div class="pat-grid" id="patGrid"></div>
+
+  <!-- ════════ CHEST WALL MECHANICS ════════ -->
+  <p class="sec-hdr">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#move-vertical"/></svg>
+    Chest wall mechanics
+  </p>
+  <div class="mech" id="mechPanel">
+    <div class="mech-fig" aria-hidden="true">
+      <div class="mech-seg chest" id="mechChest">Chest</div>
+      <div class="mech-seg abd" id="mechAbd">Abdomen</div>
+    </div>
+    <div class="mech-txt">
+      <div class="mech-h" id="mechH">Chest and abdomen move together</div>
+      <p class="mech-d" id="mechD">In normal breathing both compartments expand outward during inspiration and relax inward during expiration.</p>
+      <div class="mech-state" id="mechState">—</div>
+    </div>
+  </div>
+
+  <!-- ════════ COMPARE ════════ -->
+  <section id="compareSection" hidden>
+    <p class="sec-hdr">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg>
+      Side-by-side comparison
+    </p>
+    <div class="cmp-picks" id="cmpPicks"></div>
+    <div class="monitor">
+      <div id="compareWrap">
+        <canvas id="compareCanvas" role="img" aria-label="Comparison of respiratory patterns"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ CLINICAL INFO ════════ -->
+  <p class="sec-hdr">
+    <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#stethoscope"/></svg>
+    Clinical reference
+  </p>
+  <div class="info-grid">
+    <div class="ic">
+      <div class="ic-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg>Definition</div>
+      <div class="ic-b" id="infoDef"></div>
+    </div>
+    <div class="ic">
+      <div class="ic-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg>Waveform characteristics</div>
+      <div class="ic-b" id="infoWave"></div>
+    </div>
+    <div class="ic">
+      <div class="ic-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scan"/></svg>At a glance</div>
+      <dl class="facts" id="infoFacts"></dl>
+    </div>
+    <div class="ic">
+      <div class="ic-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg>Common associations</div>
+      <ul id="infoCauses"></ul>
+    </div>
+  </div>
+  <div class="ic" style="margin-top:12px">
+    <div class="ic-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg>Clinical significance</div>
+    <div class="ic-b" id="infoSig"></div>
+  </div>
+  <div id="infoEmsWrap" style="margin-top:12px"></div>
+  <div class="note note-key">
+    <div class="note-h"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#target"/></svg>Key distinction</div>
+    <span id="infoKey"></span>
+  </div>
+
+  <p class="disclaimer">
+    <strong>Educational visualisation only.</strong> These respiratory waveforms are conceptual
+    representations generated for learning and pattern recognition. They are not monitor traces,
+    not physiological simulations, and not a substitute for patient assessment, monitoring,
+    clinical judgement or local protocols. Amplitude is a dimensionless chest excursion, not a
+    measured volume or pressure.
+  </p>
+  <p class="refs">
+    Further reading on respiratory patterns is available from established clinical education
+    sources including the American Heart Association, the Merck Manual, StatPearls / NCBI
+    Bookshelf, and standard EMS and nursing assessment textbooks. Always follow your own
+    service's clinical guidelines and local protocols for patient care.
+  </p>
+
+</main>
+
+<script>
+"use strict";
+/* ══════════════════════════════════════════════════════════════
+   SmartCare Respiratory Patterns — page controller
+   The maths lives in respiratory-engine.js. This file owns the canvas
+   renderer, the UI and the single animation loop.
+
+   ONE requestAnimationFrame loop drives everything on this page — the main
+   trace, the abdominal trace, the comparison lanes and the mechanics figure.
+   That is deliberate: several independent loops is the usual source of
+   duplicate-animation and CPU problems.
+══════════════════════════════════════════════════════════════ */
+
+const E = RespEngine;
+const SAMPLE_RATE = 60;                 // Hz — respiration is slow; 60 is ample
+const FLAT_EPS    = 0.006;              // |amplitude| below this counts as baseline
+const MIN_PAUSE_S = 2.0;                // shortest gap reported as a pause
+const REF_MEAN    = 0.246;              // mean |excursion| of default eupnea; the
+                                        // ventilation index is expressed against it
+const Y_FIXED     = 2.2;                // shared scale used by comparison lanes
+const Y_MIN       = 1.15;               // never zoom in past this excursion
+let   viewScale   = Y_FIXED;            // smoothed adaptive scale, main monitor only
+
+/* ── APPLICATION STATE ─────────────────────────────────────── */
+const S = {
+  key: 'eupnea',
+  params: Object.assign({}, E.PATTERNS.eupnea.defaults),
+  playing: true,
+  speed: 25,                            // px per second
+  compare: false,
+  compareKeys: ['eupnea', 'cheyneStokes', 'kussmaul', 'biot'],
+  cmpSpeed: 12,
+  category: 'all',
+  query: ''
+};
+
+/* ── LANES (ring buffers) ──────────────────────────────────── */
+// A lane is a ring buffer holding exactly one screen-width of samples.
+function makeLane() { return { buf: new Float32Array(1), head: 0, size: 1 }; }
+
+function sizeLane(lane, widthPx, speed) {
+  lane.size = Math.max(64, Math.ceil(widthPx * SAMPLE_RATE / (speed || S.speed)));
+  lane.buf  = new Float32Array(lane.size);
+  lane.head = 0;
+}
+function push(lane, v) {
+  lane.buf[lane.head] = v;
+  lane.head = (lane.head + 1) % lane.size;
+}
+function readAt(lane, i) { return lane.buf[(lane.head + i) % lane.size]; }
+
+const chestLane = makeLane();
+const abdLane   = makeLane();
+const cmpLanes  = [makeLane(), makeLane(), makeLane(), makeLane()];
+let   cmpStates = cmpLanes.map(() => E.createState());
+
+let engState = E.createState();
+let tNow = 0, lastTs = null, raf = null, frame = 0;
+
+/* ── CANVASES ──────────────────────────────────────────────── */
+let mainCv, mainCtx, cmpCv, cmpCtx, dpr = 1;
+
+function setupCanvas(cv) {
+  const rect = cv.parentElement.getBoundingClientRect();
+  dpr = window.devicePixelRatio || 1;
+  cv.width  = Math.max(1, Math.round(rect.width  * dpr));
+  cv.height = Math.max(1, Math.round(rect.height * dpr));
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return { ctx: ctx, w: rect.width, h: rect.height };
+}
+
+let mainW = 0, mainH = 0, cmpW = 0, cmpH = 0;
+
+function measureMain() {
+  const a = setupCanvas(mainCv);
+  mainCtx = a.ctx; mainW = a.w; mainH = a.h;
+}
+
+function resizeAll() {
+  measureMain();
+  sizeLane(chestLane, mainW);
+  sizeLane(abdLane,   mainW);
+  if (!cmpCv.parentElement.closest('[hidden]')) {
+    const b = setupCanvas(cmpCv);
+    cmpCtx = b.ctx; cmpW = b.w; cmpH = b.h;
+    computeCmpSpeed();
+    cmpLanes.forEach(l => sizeLane(l, cmpW, S.cmpSpeed));
+  }
+  prefill();
+}
+
+/* ── PREFILL ───────────────────────────────────────────────────
+   Fill the whole visible window before the first frame. Without this a
+   44-second Cheyne–Stokes cycle would take most of a minute to appear. */
+function prefill() {
+  engState = E.createState();
+  tNow = 0;
+  for (let i = 0; i < chestLane.size; i++) {
+    tNow += 1 / SAMPLE_RATE;
+    chestLane.buf[i] = E.generateSample(tNow, S.key, engState, S.params);
+    abdLane.buf[i]   = E.generateAbdomenSample(tNow, S.key, engState, S.params);
+  }
+  chestLane.head = 0; abdLane.head = 0;
+  prefillCompare();
+}
+
+function prefillCompare() {
+  if (!S.compare) return;
+  cmpStates = cmpLanes.map(() => E.createState());
+  for (let L = 0; L < cmpLanes.length; L++) {
+    const lane = cmpLanes[L], key = S.compareKeys[L];
+    if (!key) continue;
+    const p = E.PATTERNS[key].defaults;
+    let t = 0;
+    for (let i = 0; i < lane.size; i++) {
+      t += 1 / SAMPLE_RATE;
+      lane.buf[i] = E.generateSample(t, key, cmpStates[L], p);
+    }
+    lane.head = 0;
+  }
+}
+
+/* ── SWEEP SPEED THAT FITS THE PATTERN ─────────────────────────
+   Periodic patterns are only recognisable if at least one whole cycle is on
+   screen, so the sweep speed is derived from the pattern's own period. */
+function secondsNeeded(key, p) {
+  switch (key) {
+    case 'cheyneStokes': return (p.cycle + p.apnea) * 1.4;
+    case 'periodic':     return p.cycle * 1.8;
+    case 'apnea':        return (p.cluster * 60 / p.rate + p.apnea) * 1.6;
+    case 'biot':         return (p.cluster * 60 / p.rate + p.apnea) * 2.6;
+    case 'agonal':       return 60 / Math.max(2, p.rate) * 5;
+    case 'ataxic':       return 40;
+    case 'sighing':      return p.cluster * 60 / p.rate * 1.5;
+    case 'bradypnea':    return 34;
+    default:             return 22;
+  }
+}
+function computeCmpSpeed() {
+  let want = 12;
+  S.compareKeys.forEach(k => {
+    if (!k) return;
+    const n = secondsNeeded(k, E.PATTERNS[k].defaults);
+    if (n > want) want = n;
+  });
+  S.cmpSpeed = Math.round(Math.min(60, Math.max(4, cmpW / want)));
+}
+
+function autoSpeed() {
+  const want = secondsNeeded(S.key, S.params);
+  const px = mainW / Math.max(6, want);
+  S.speed = Math.round(Math.min(60, Math.max(6, px)));
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RENDERING
+══════════════════════════════════════════════════════════════ */
+
+function traceColors(key) {
+  const sev = E.PATTERNS[key].severity;
+  if (key === 'agonal') return ['#f87171', 'rgba(248,113,113,.5)'];
+  if (sev === 'critical') return ['#fb923c', 'rgba(251,146,60,.45)'];
+  return ['#22d3ee', 'rgba(34,211,238,.45)'];
+}
+
+/* Grid: 1-second minor lines, 5-second major lines with time labels, plus a
+   baseline. The labels are what let a learner read a cycle length off the
+   screen, so they matter more here than a decorative graticule. */
+function drawGrid(ctx, w, h, y0, laneH, showLabels, baseFrac, speed) {
+  const secPx = speed || S.speed;
+  ctx.save();
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(34,211,238,.085)';
+  ctx.beginPath();
+  for (let s = 0; s * secPx <= w; s++) {
+    const x = Math.round(w - s * secPx) + 0.5;
+    if (s % 5 === 0) continue;
+    ctx.moveTo(x, y0); ctx.lineTo(x, y0 + laneH);
+  }
+  ctx.stroke();
+
+  ctx.strokeStyle = 'rgba(34,211,238,.2)';
+  ctx.beginPath();
+  for (let s = 0; s * secPx <= w; s += 5) {
+    const x = Math.round(w - s * secPx) + 0.5;
+    ctx.moveTo(x, y0); ctx.lineTo(x, y0 + laneH);
+  }
+  ctx.stroke();
+
+  // Baseline (end-expiration)
+  const base = y0 + laneH * (baseFrac || 0.84);
+  ctx.strokeStyle = 'rgba(34,211,238,.28)';
+  ctx.setLineDash([3, 4]);
+  ctx.beginPath();
+  ctx.moveTo(0, Math.round(base) + 0.5); ctx.lineTo(w, Math.round(base) + 0.5);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  if (showLabels) {
+    ctx.fillStyle = 'rgba(125,160,175,.75)';
+    ctx.font = '9px ' + (getComputedStyle(document.body).getPropertyValue('--mono') || 'monospace');
+    ctx.textAlign = 'center';
+    // Label interval grows with the zoom level so the axis never crowds.
+    let stepS = 5;
+    while (stepS * secPx < 46) stepS += 5;
+    for (let sec = stepS; sec * secPx <= w - 14; sec += stepS) {
+      ctx.fillText('-' + sec + 's', w - sec * secPx, y0 + laneH - 3);
+    }
+  }
+  ctx.restore();
+}
+
+/* One lane of trace. y0/laneH let the same routine draw the main monitor, the
+   inverted abdominal channel and every comparison row. */
+function drawLane(ctx, lane, w, y0, laneH, color, glow, lineW, headroom, baseFrac) {
+  const base  = y0 + laneH * (baseFrac || 0.84);
+  const scale = (laneH * 0.78) / (headroom || Y_FIXED);
+  const step  = Math.max(1, Math.floor(lane.size / Math.max(1, Math.round(w * dpr))));
+  ctx.save();
+  ctx.beginPath(); ctx.rect(0, y0, w, laneH); ctx.clip();
+  ctx.lineWidth = lineW;
+  ctx.strokeStyle = color;
+  ctx.shadowColor = glow;
+  ctx.shadowBlur = 7;
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  for (let i = 0; i < lane.size; i += step) {
+    const x = (i / (lane.size - 1)) * w;
+    const y = base - readAt(lane, i) * scale;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+  ctx.restore();
+}
+
+/* Flat-interval finder — shared by the APNEA overlay and the "longest pause"
+   readout, so the label and the number can never disagree. */
+function findFlats(lane, minSec) {
+  const out = [];
+  let run = -1;
+  for (let i = 0; i < lane.size; i++) {
+    if (Math.abs(readAt(lane, i)) < FLAT_EPS) {
+      if (run < 0) run = i;
+    } else {
+      if (run >= 0 && (i - run) / SAMPLE_RATE >= minSec) out.push([run, i]);
+      run = -1;
+    }
+  }
+  if (run >= 0 && (lane.size - run) / SAMPLE_RATE >= minSec) out.push([run, lane.size]);
+  return out;
+}
+
+function apneaThreshold(p) {
+  return Math.max(2.5, 1.5 * (60 / Math.max(4, p.rate)));
+}
+
+function drawApneaMarks(ctx, lane, w, y0, laneH, params) {
+  const flats = findFlats(lane, apneaThreshold(params || S.params));
+  if (!flats.length) return;
+  const base = y0 + laneH * 0.84;
+  ctx.save();
+  ctx.beginPath(); ctx.rect(0, y0, w, laneH); ctx.clip();
+  ctx.font = '700 9px ' + (getComputedStyle(document.body).getPropertyValue('--mono') || 'monospace');
+  ctx.textAlign = 'center';
+  for (let f = 0; f < flats.length; f++) {
+    const x0 = (flats[f][0] / (lane.size - 1)) * w;
+    const x1 = (flats[f][1] / (lane.size - 1)) * w;
+    if (x1 - x0 < 46) continue;
+    const secs = (flats[f][1] - flats[f][0]) / SAMPLE_RATE;
+    ctx.strokeStyle = 'rgba(248,113,113,.55)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x0 + 2, base - 9); ctx.lineTo(x1 - 2, base - 9);
+    ctx.moveTo(x0 + 2, base - 5); ctx.lineTo(x0 + 2, base - 13);
+    ctx.moveTo(x1 - 2, base - 5); ctx.lineTo(x1 - 2, base - 13);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(248,113,113,.9)';
+    ctx.fillText('APNEA ' + secs.toFixed(1) + 's', (x0 + x1) / 2, base - 17);
+  }
+  ctx.restore();
+}
+
+// The main monitor eases its vertical scale towards the peak actually on
+// screen, bounded so it never zooms past Y_MIN or beyond Y_FIXED. Comparison
+// lanes deliberately keep the FIXED scale instead — a shared scale is the whole
+// point of comparing, and the numeric peak readout keeps the main view honest.
+function updateViewScale() {
+  let max = 0;
+  for (let i = 0; i < chestLane.size; i += 3) {
+    const v = Math.abs(readAt(chestLane, i));
+    if (v > max) max = v;
+  }
+  if (S.key === 'paradoxical') {
+    for (let i = 0; i < abdLane.size; i += 3) {
+      const v = Math.abs(readAt(abdLane, i));
+      if (v > max) max = v;
+    }
+  }
+  const target = Math.min(Y_FIXED, Math.max(Y_MIN, max * 1.15));
+  viewScale += (target - viewScale) * 0.08;        // ease, so it never jitters
+}
+
+function drawMain() {
+  if (!mainCtx) return;
+  updateViewScale();
+  const c = traceColors(S.key);
+  mainCtx.clearRect(0, 0, mainW, mainH);
+  mainCtx.fillStyle = getComputedStyle(document.body).getPropertyValue('--mon-bg').trim() || '#04121a';
+  mainCtx.fillRect(0, 0, mainW, mainH);
+
+  if (S.key === 'paradoxical') {
+    // Two half-height lanes so the opposing movement is unmissable.
+    const half = mainH / 2;
+    drawGrid(mainCtx, mainW, mainH, 0, half, false, 0.84);
+    drawGrid(mainCtx, mainW, mainH, half, half, true, 0.30);
+    drawLane(mainCtx, chestLane, mainW, 0,    half, '#22d3ee', 'rgba(34,211,238,.45)', 2, viewScale, 0.84);
+    drawLane(mainCtx, abdLane,   mainW, half, half, '#fbbf24', 'rgba(251,191,36,.4)',  2, viewScale, 0.30);
+    mainCtx.save();
+    mainCtx.font = '700 9px ' + (getComputedStyle(document.body).getPropertyValue('--mono') || 'monospace');
+    mainCtx.fillStyle = 'rgba(34,211,238,.8)';  mainCtx.fillText('CHEST',   8, 13);
+    mainCtx.fillStyle = 'rgba(251,191,36,.85)'; mainCtx.fillText('ABDOMEN', 8, half + 13);
+    mainCtx.restore();
+  } else {
+    drawGrid(mainCtx, mainW, mainH, 0, mainH, true);
+    drawLane(mainCtx, chestLane, mainW, 0, mainH, c[0], c[1], 2.1, viewScale);
+    drawApneaMarks(mainCtx, chestLane, mainW, 0, mainH);
+  }
+}
+
+function drawCompare() {
+  if (!cmpCtx || !S.compare) return;
+  const keys = S.compareKeys.filter(Boolean);
+  cmpCtx.clearRect(0, 0, cmpW, cmpH);
+  cmpCtx.fillStyle = getComputedStyle(document.body).getPropertyValue('--mon-bg').trim() || '#04121a';
+  cmpCtx.fillRect(0, 0, cmpW, cmpH);
+  const laneH = cmpH / Math.max(1, keys.length);
+  const mono = getComputedStyle(document.body).getPropertyValue('--mono') || 'monospace';
+
+  for (let L = 0; L < keys.length; L++) {
+    const key = keys[L], y0 = L * laneH;
+    const c = traceColors(key);
+    drawGrid(cmpCtx, cmpW, cmpH, y0, laneH, L === keys.length - 1, 0.84, S.cmpSpeed);
+    drawLane(cmpCtx, cmpLanes[L], cmpW, y0, laneH, c[0], c[1], 1.8, Y_FIXED);
+    drawApneaMarks(cmpCtx, cmpLanes[L], cmpW, y0, laneH, E.PATTERNS[key].defaults);
+    if (L > 0) {
+      cmpCtx.save();
+      cmpCtx.strokeStyle = 'rgba(255,255,255,.09)';
+      cmpCtx.beginPath(); cmpCtx.moveTo(0, y0 + 0.5); cmpCtx.lineTo(cmpW, y0 + 0.5);
+      cmpCtx.stroke(); cmpCtx.restore();
+    }
+    cmpCtx.save();
+    cmpCtx.font = '800 10px ' + mono;
+    cmpCtx.fillStyle = c[0];
+    cmpCtx.fillText(E.PATTERNS[key].name.toUpperCase(), 8, y0 + 14);
+    cmpCtx.restore();
+  }
+}
+
+/* Mechanics figure — driven from the same sample stream as the trace. */
+const mechChest = () => document.getElementById('mechChest');
+const mechAbd   = () => document.getElementById('mechAbd');
+
+function drawMech() {
+  const ch = readAt(chestLane, chestLane.size - 1);
+  const ab = readAt(abdLane,   abdLane.size - 1);
+  const cEl = mechChest(), aEl = mechAbd();
+  if (!cEl) return;
+  cEl.style.transform = 'scale(' + (1 + 0.16 * ch) + ',' + (1 + 0.11 * ch) + ')';
+  aEl.style.transform = 'scale(' + (1 + 0.16 * ab) + ',' + (1 + 0.11 * ab) + ')';
+  if (frame % 8 === 0) {
+    const dir = v => (v > 0.05 ? 'out ▲' : v < -0.05 ? 'in ▼' : 'neutral ·');
+    document.getElementById('mechState').textContent =
+      'chest ' + dir(ch) + '   abdomen ' + dir(ab);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   READOUTS — derived from what is actually on screen, never asserted
+══════════════════════════════════════════════════════════════ */
+function updateReadouts() {
+  const n = chestLane.size, win = n / SAMPLE_RATE;
+  let max = 0, sum = 0;
+  for (let i = 0; i < n; i++) {
+    const v = Math.abs(readAt(chestLane, i));
+    if (v > max) max = v;
+    sum += v;
+  }
+  // Count breaths as upward crossings of 25 % of the window's own peak, so the
+  // count works for shallow patterns as well as deep ones.
+  const thr = Math.max(0.05, max * 0.25);
+  let breaths = 0, prev = 0;
+  for (let i = 0; i < n; i++) {
+    const v = readAt(chestLane, i);
+    if (prev <= thr && v > thr) breaths++;
+    prev = v;
+  }
+  const flats = findFlats(chestLane, MIN_PAUSE_S);
+  let longest = 0;
+  for (let f = 0; f < flats.length; f++) {
+    const d = (flats[f][1] - flats[f][0]) / SAMPLE_RATE;
+    if (d > longest) longest = d;
+  }
+  const set = (id, v) => { document.getElementById(id).textContent = v; };
+  set('roRate',  breaths ? Math.round(breaths / win * 60) : '0');
+  set('roDepth', Math.round(max * 100) + '%');
+  set('roPause', longest >= MIN_PAUSE_S ? longest.toFixed(1) + 's' : '—');
+  set('roVent',  '×' + ((sum / n) / REF_MEAN).toFixed(2));
+}
+
+/* ══════════════════════════════════════════════════════════════
+   THE SINGLE ANIMATION LOOP
+══════════════════════════════════════════════════════════════ */
+function loop(ts) {
+  raf = requestAnimationFrame(loop);
+  if (lastTs === null) lastTs = ts;
+  const dt = S.playing ? Math.min((ts - lastTs) / 1000, 0.1) : 0;   // cap at 100 ms
+  lastTs = ts;
+
+  if (dt > 0) {
+    const count = Math.round(dt * SAMPLE_RATE);
+    for (let i = 0; i < count; i++) {
+      tNow += 1 / SAMPLE_RATE;
+      push(chestLane, E.generateSample(tNow, S.key, engState, S.params));
+      push(abdLane,   E.generateAbdomenSample(tNow, S.key, engState, S.params));
+      if (S.compare) {
+        for (let L = 0; L < cmpLanes.length; L++) {
+          const key = S.compareKeys[L];
+          if (!key) continue;
+          push(cmpLanes[L], E.generateSample(tNow, key, cmpStates[L], E.PATTERNS[key].defaults));
+        }
+      }
+    }
+  }
+
+  drawMain();
+  if (S.compare) drawCompare();
+  drawMech();
+  frame++;
+  if (frame % 10 === 0) updateReadouts();
+}
+
+function startLoop() { if (raf === null) { lastTs = null; raf = requestAnimationFrame(loop); } }
+function stopLoop()  { if (raf !== null) { cancelAnimationFrame(raf); raf = null; } }
+
+// Never run the loop against a hidden tab — that is where the CPU goes.
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopLoop(); else startLoop();
+});
+window.addEventListener('pagehide', stopLoop);
+
+/* ══════════════════════════════════════════════════════════════
+   UI — PARAMETERS
+══════════════════════════════════════════════════════════════ */
+function labelFor(key, ctrlId) {
+  const over = E.CONTROL_LABELS[key];
+  if (over && over[ctrlId]) return over[ctrlId];
+  return E.CONTROLS[ctrlId].label;
+}
+
+function buildParams() {
+  const box = document.getElementById('paramBox');
+  const pat = E.PATTERNS[S.key];
+  box.textContent = '';
+  pat.controls.forEach(id => {
+    const cf = E.CONTROLS[id];
+    const wrap = document.createElement('div');
+    wrap.className = 'pm';
+    const top = document.createElement('div');
+    top.className = 'pm-top';
+    const lb = document.createElement('label');
+    lb.className = 'pm-lb';
+    lb.htmlFor = 'pm-' + id;
+    lb.textContent = labelFor(S.key, id);
+    const val = document.createElement('span');
+    val.className = 'pm-val';
+    val.id = 'pmv-' + id;
+    val.textContent = cf.fmt(S.params[id]);
+    top.appendChild(lb); top.appendChild(val);
+    const inp = document.createElement('input');
+    inp.type = 'range'; inp.id = 'pm-' + id;
+    inp.min = cf.min; inp.max = cf.max; inp.step = cf.step;
+    inp.value = S.params[id];
+    inp.setAttribute('aria-valuetext', cf.fmt(S.params[id]));
+    inp.addEventListener('input', () => {
+      S.params[id] = parseFloat(inp.value);
+      val.textContent = cf.fmt(S.params[id]);
+      inp.setAttribute('aria-valuetext', cf.fmt(S.params[id]));
+      // Changing a parameter re-derives the window so periodic patterns keep
+      // showing a whole cycle, then refills — no duplicate loop, no stale trace.
+      measureMain(); autoSpeed(); syncSpeed(); resizeAll();
+    });
+    wrap.appendChild(top); wrap.appendChild(inp);
+    box.appendChild(wrap);
+  });
+}
+
+function syncSpeed() {
+  const el = document.getElementById('speedInput');
+  el.value = S.speed;
+  document.getElementById('speedVal').textContent =
+    S.speed + ' px/s · ' + (mainW / S.speed).toFixed(0) + 's window';
+}
+
+/* ══════════════════════════════════════════════════════════════
+   UI — PATTERN LIBRARY
+══════════════════════════════════════════════════════════════ */
+function buildChips() {
+  const box = document.getElementById('catChips');
+  box.textContent = '';
+  const cats = [{ id: 'all', label: 'All' }].concat(E.CATEGORIES);
+  cats.forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip';
+    b.textContent = c.label;
+    b.setAttribute('aria-pressed', String(S.category === c.id));
+    b.addEventListener('click', () => {
+      S.category = c.id;
+      box.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', 'false'));
+      b.setAttribute('aria-pressed', 'true');
+      buildGrid();
+    });
+    box.appendChild(b);
+  });
+}
+
+function buildGrid() {
+  const grid = document.getElementById('patGrid');
+  const q = S.query.trim().toLowerCase();
+  grid.textContent = '';
+  let shown = 0;
+
+  E.PATTERN_KEYS.forEach(key => {
+    const p = E.PATTERNS[key];
+    if (S.category !== 'all' && p.category !== S.category) return;
+    if (q) {
+      const hay = (p.name + ' ' + (p.alsoKnownAs || '') + ' ' + p.summary + ' ' +
+                   p.causes.join(' ')).toLowerCase();
+      if (hay.indexOf(q) === -1) return;
+    }
+    shown++;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'pat';
+    b.setAttribute('aria-pressed', String(key === S.key));
+    b.dataset.key = key;
+
+    const n = document.createElement('span');
+    n.className = 'pat-n';
+    const d = document.createElement('span');
+    d.className = 'dot dot-' + p.severity;
+    n.appendChild(d);
+    n.appendChild(document.createTextNode(p.name));
+
+    const c = document.createElement('span');
+    c.className = 'pat-c';
+    c.textContent = p.summary.replace(/^[^:]+:\s*/, '');
+
+    b.appendChild(n); b.appendChild(c);
+    b.addEventListener('click', () => selectPattern(key));
+    grid.appendChild(b);
+  });
+
+  if (!shown) {
+    const e = document.createElement('div');
+    e.className = 'empty';
+    e.textContent = 'No patterns match that search.';
+    grid.appendChild(e);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   UI — CLINICAL PANELS
+══════════════════════════════════════════════════════════════ */
+function renderInfo() {
+  const p = E.PATTERNS[S.key];
+
+  document.getElementById('monName').textContent = p.name;
+  document.getElementById('monAka').textContent = p.alsoKnownAs || '';
+  const sev = document.getElementById('monSeverity');
+  sev.textContent = p.severity === 'normal' ? 'Normal'
+                  : p.severity === 'caution' ? 'Assess' : 'High acuity';
+  sev.className = 'pill pill-' + p.severity;
+
+  document.getElementById('respCanvas')
+    .setAttribute('aria-label', 'Respiratory waveform. ' + p.summary + ' ' + p.waveform);
+  document.getElementById('announcer').textContent = p.summary;
+
+  document.getElementById('infoDef').textContent  = p.definition;
+  document.getElementById('infoWave').textContent = p.waveform;
+  document.getElementById('infoSig').textContent  = p.significance;
+  document.getElementById('infoKey').textContent  = p.keyDistinction;
+
+  const facts = [['Rate', p.rate], ['Depth', p.depth], ['Rhythm', p.rhythm],
+                 ['Insp / exp', p.ieNote], ['Category',
+                  (E.CATEGORIES.filter(c => c.id === p.category)[0] || {}).label || p.category]];
+  const dl = document.getElementById('infoFacts');
+  dl.textContent = '';
+  facts.forEach(f => {
+    const dt = document.createElement('dt'); dt.textContent = f[0];
+    const dd = document.createElement('dd'); dd.textContent = f[1];
+    dl.appendChild(dt); dl.appendChild(dd);
+  });
+
+  const ul = document.getElementById('infoCauses');
+  ul.textContent = '';
+  p.causes.forEach(c => {
+    const li = document.createElement('li'); li.textContent = c; ul.appendChild(li);
+  });
+
+  const ems = document.getElementById('infoEmsWrap');
+  ems.textContent = '';
+  if (p.emsNote) {
+    const d = document.createElement('div');
+    d.className = 'note note-ems';
+    const h = document.createElement('div');
+    h.className = 'note-h';
+    h.innerHTML = '<svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>EMS / clinical note';
+    const s = document.createElement('span');
+    s.textContent = p.emsNote;
+    d.appendChild(h); d.appendChild(s);
+    ems.appendChild(d);
+  }
+
+  // Mechanics panel copy
+  const panel = document.getElementById('mechPanel');
+  const opposed = S.key === 'paradoxical';
+  panel.classList.toggle('opposed', opposed);
+  document.getElementById('mechH').textContent = opposed
+    ? 'Chest and abdomen oppose each other'
+    : 'Chest and abdomen move together';
+  document.getElementById('mechD').textContent = opposed
+    ? 'One compartment draws inward while the other moves outward — the see-saw movement of paradoxical breathing. Effective tidal volume falls even though effort is visible.'
+    : 'Both compartments expand outward during inspiration and relax inward during expiration. The figure is driven by the same samples as the trace above.';
+
+  document.getElementById('monLegend').hidden = !opposed;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PATTERN SELECTION
+══════════════════════════════════════════════════════════════ */
+function selectPattern(key, keepParams) {
+  if (!E.PATTERNS[key]) return;
+  S.key = key;
+  if (!keepParams) S.params = Object.assign({}, E.PATTERNS[key].defaults);
+  document.querySelectorAll('.pat').forEach(b =>
+    b.setAttribute('aria-pressed', String(b.dataset.key === key)));
+  viewScale = Y_FIXED;
+  buildParams();
+  renderInfo();
+  measureMain();          // mainW must be known before the speed is derived
+  autoSpeed();
+  syncSpeed();
+  resizeAll();
+  try {
+    history.replaceState(null, '', location.pathname + '?p=' + key);
+    sessionStorage.setItem('resp-pattern', key);
+  } catch (e) { /* private mode / file:// — deep links simply stop persisting */ }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TRANSPORT + TOGGLES
+══════════════════════════════════════════════════════════════ */
+function setPlaying(on) {
+  S.playing = on;
+  lastTs = null;                                   // avoids a jump on resume
+  const btn = document.getElementById('playBtn');
+  btn.setAttribute('aria-pressed', String(on));
+  btn.querySelector('use').setAttribute('href',
+    '../icons/sprite.svg#' + (on ? 'pause' : 'play'));
+  document.getElementById('playLabel').textContent = on ? 'Pause' : 'Play';
+  document.getElementById('monitor').classList.toggle('paused', !on);
+  document.getElementById('liveLabel').textContent = on ? 'LIVE' : 'PAUSED';
+}
+
+function buildComparePicks() {
+  const box = document.getElementById('cmpPicks');
+  box.textContent = '';
+  for (let L = 0; L < 4; L++) {
+    const wrap = document.createElement('div');
+    wrap.className = 'cmp-pick';
+    const lb = document.createElement('label');
+    lb.htmlFor = 'cmp-' + L;
+    lb.textContent = 'Lane ' + (L + 1);
+    const sel = document.createElement('select');
+    sel.id = 'cmp-' + L;
+    const none = document.createElement('option');
+    none.value = ''; none.textContent = '— none —';
+    sel.appendChild(none);
+    E.PATTERN_KEYS.forEach(k => {
+      const o = document.createElement('option');
+      o.value = k; o.textContent = E.PATTERNS[k].name;
+      sel.appendChild(o);
+    });
+    sel.value = S.compareKeys[L] || '';
+    sel.addEventListener('change', () => {
+      S.compareKeys[L] = sel.value;
+      computeCmpSpeed();
+      cmpLanes.forEach(l => sizeLane(l, cmpW, S.cmpSpeed));
+      prefillCompare();
+      drawCompare();
+    });
+    wrap.appendChild(lb); wrap.appendChild(sel);
+    box.appendChild(wrap);
+  }
+}
+
+function setCompare(on) {
+  S.compare = on;
+  document.getElementById('compareSection').hidden = !on;
+  document.getElementById('compareBtn').setAttribute('aria-pressed', String(on));
+  document.getElementById('compareBtn').classList.toggle('on', on);
+  if (on) {
+    const b = setupCanvas(cmpCv);
+    cmpCtx = b.ctx; cmpW = b.w; cmpH = b.h;
+    computeCmpSpeed();
+    cmpLanes.forEach(l => sizeLane(l, cmpW, S.cmpSpeed));
+    prefillCompare();
+    drawCompare();
+    document.getElementById('compareSection').scrollIntoView({ block: 'nearest' });
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════════════ */
+function init() {
+  mainCv = document.getElementById('respCanvas');
+  cmpCv  = document.getElementById('compareCanvas');
+
+  buildChips();
+  buildGrid();
+  buildComparePicks();
+
+  // Deep link (?p=key) wins, then the session's last pattern.
+  let start = 'eupnea';
+  try {
+    const q = new URLSearchParams(location.search).get('p');
+    const s = sessionStorage.getItem('resp-pattern');
+    if (q && E.PATTERNS[q]) start = q;
+    else if (s && E.PATTERNS[s]) start = s;
+  } catch (e) { /* ignore */ }
+
+  selectPattern(start);
+  updateReadouts();
+
+  // Transport
+  document.getElementById('playBtn').addEventListener('click', () => setPlaying(!S.playing));
+  mainCv.addEventListener('click', () => setPlaying(!S.playing));
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    prefill(); updateReadouts(); drawMain();
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    // Reset restores THIS pattern's defaults; it does not change the selection.
+    S.params = Object.assign({}, E.PATTERNS[S.key].defaults);
+    buildParams(); measureMain(); autoSpeed(); syncSpeed(); resizeAll();
+    document.getElementById('announcer').textContent =
+      E.PATTERNS[S.key].name + ' parameters reset to defaults.';
+  });
+  document.getElementById('compareBtn').addEventListener('click', () => setCompare(!S.compare));
+
+  // Sweep speed
+  document.getElementById('speedInput').addEventListener('input', e => {
+    S.speed = parseInt(e.target.value, 10);
+    syncSpeed(); resizeAll();
+  });
+
+  // Search
+  document.getElementById('patternSearch').addEventListener('input', e => {
+    S.query = e.target.value; buildGrid();
+  });
+
+  // Theme
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('resp-theme', next); } catch (e) { /* ignore */ }
+    document.querySelector('#themeBtn use')
+      .setAttribute('href', '../icons/sprite.svg#' + (next === 'dark' ? 'moon' : 'sun'));
+    drawMain(); if (S.compare) drawCompare();
+  });
+  document.querySelector('#themeBtn use').setAttribute('href', '../icons/sprite.svg#' +
+    (document.documentElement.getAttribute('data-theme') === 'dark' ? 'moon' : 'sun'));
+
+  // Keyboard shortcuts (ignored while typing in the search field)
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    if (e.key === ' ') { e.preventDefault(); setPlaying(!S.playing); }
+    else if (e.key === 'r' || e.key === 'R') { prefill(); drawMain(); }
+  });
+
+  // Debounced resize — canvases and ring buffers must be rebuilt together.
+  let rzT = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(rzT);
+    rzT = setTimeout(() => { measureMain(); autoSpeed(); syncSpeed(); resizeAll(); }, 140);
+  });
+
+  // Honour a reduced-motion preference: open paused on a full static cycle.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setPlaying(false);
+  } else {
+    setPlaying(true);
+  }
+  startLoop();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+</body>
+</html>
