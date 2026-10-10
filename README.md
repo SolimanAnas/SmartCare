@@ -45,7 +45,7 @@
 | 👶 **PALS** | Pediatric Advanced Life Support | 57 |
 | 🚑 **ITLS** | International Trauma Life Support | 455 |
 | 🌪️ **BDLS** | Basic Disaster Life Support | 40 |
-| 🚨 **MCI** | Mass Casualty Incident Management (with timed triage drills) | 137 |
+| 🚨 **MCI** | Mass Casualty Incident Management (with timed triage drills) | 66 |
 | 🧸 **PEPP** | Pediatric Education for Prehospital Professionals | 200 |
 | ⚕️ **EMPACT** | Emergency Medical Patients: Assessment, Care & Transport | 50 |
 | 💊 **Medical** | Medical Emergencies Review | 45 |

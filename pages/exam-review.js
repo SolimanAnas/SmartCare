@@ -1,7 +1,7 @@
 'use strict';
 
 /* SmartCare Exam Review — shared quiz engine.
- * Used by acls/bdls/bls/itls/medical/pals/pepp/ppet.html. Each page defines
+ * Used by acls/bdls/bls/itls/mci/medical/pals/pepp/ppet.html. Each page defines
  * `window.EXAM_CONFIG = { id, qCountFallback }` in an inline <script> before
  * loading this file — `id` namespaces this page's localStorage keys
  * (progress/theme/mode) so pages don't collide with each other.

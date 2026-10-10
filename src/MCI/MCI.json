@@ -1,0 +1,996 @@
+{
+  "title": "MCI — Mass Casualty Incident Management Final Exam",
+  "description": "Integrated scenario-style exam spanning all 14 MCI chapters: disaster types, METHANE, ICS and officer roles, scene layout, START/JumpSTART/SALT triage, treatment and transport, CBRNE, blast/hostile events, special MCIs, and recovery.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which factor DEFINES whether an incident is an MCI?",
+      "options": [
+        "Casualties exceed the resources immediately available",
+        "More than 10 patients",
+        "Any incident with a fatality",
+        "Any incident involving hazardous materials"
+      ],
+      "correct_answer": "A",
+      "explanation": "An MCI is defined by the resource gap, not a fixed number. Local plans may use counts only as activation tiers.",
+      "hint": "Think capacity, not counts.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 2,
+      "text": "A hurricane floods the county's only hospital and knocks out cell towers; victims are still being found days later. This is BEST classified as:",
+      "options": [
+        "Open, simple, compensated",
+        "Closed, simple, compensated",
+        "Closed, compound, compensated",
+        "Open, compound, uncompensated"
+      ],
+      "correct_answer": "D",
+      "explanation": "Victims still appearing = open; damaged infrastructure = compound; the community needs outside help = uncompensated (a disaster).",
+      "hint": "Ask three questions: victims finite? infrastructure intact? can the system absorb it?",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 3,
+      "text": "Which injury pattern should you anticipate FIRST after a major earthquake in a dense city?",
+      "options": [
+        "Primary blast lung",
+        "Entrapment with crush injury and crush syndrome",
+        "Compressive asphyxia from crowd surges",
+        "Drowning and hypothermia"
+      ],
+      "correct_answer": "B",
+      "explanation": "Collapsed structures trap people; prolonged compression causes crush syndrome at release.",
+      "hint": "What does a collapsed building do to the people inside?",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 4,
+      "text": "Two days after an ice storm, several members of one family present with headache, nausea, and confusion. The MOST likely cause is:",
+      "options": [
+        "Viral gastroenteritis",
+        "Food poisoning",
+        "Hypothermia",
+        "Carbon monoxide from a generator or heater used indoors"
+      ],
+      "correct_answer": "D",
+      "explanation": "Post-storm CO poisoning from generators/heaters is a predictable 'second wave' killer. Remove everyone and give high-flow O2.",
+      "hint": "What do people use when the power is out?",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 5,
+      "text": "You are first on scene at a coach rollover with ~35 casualties. Your partner should:",
+      "options": [
+        "Perform a rapid recon and global sort while you establish command and send METHANE",
+        "Splint the nearest open fracture",
+        "Start loading green patients into your ambulance",
+        "Begin CPR on the first pulseless patient"
+      ],
+      "correct_answer": "A",
+      "explanation": "First crew: one takes command/comms, the other recons and sorts. Nobody gets 'sucked in' to single-patient care.",
+      "hint": "First-in doesn't get sucked in.",
+      "difficulty": "easy",
+      "topic": "First-Due & METHANE"
+    },
+    {
+      "id": 6,
+      "text": "In a METHANE report, 'A' tells incoming units:",
+      "options": [
+        "Access and egress routes and the rendezvous/staging point",
+        "Agency in charge",
+        "The number of ambulances required",
+        "Airway status of casualties"
+      ],
+      "correct_answer": "A",
+      "explanation": "M-E-T-H-A-N-E: Major incident, Exact location, Type, Hazards, Access, Number of casualties, Emergency services.",
+      "hint": "How do incoming units get in safely?",
+      "difficulty": "easy",
+      "topic": "First-Due & METHANE"
+    },
+    {
+      "id": 7,
+      "text": "Which METHANE 'N' line is BEST?",
+      "options": [
+        "'Unknown until all are triaged.'",
+        "'Lots of casualties, will update.'",
+        "'Approximately 40: 6 red, 12 yellow, 22 green; at least 4 children.'",
+        "'40 patients.'"
+      ],
+      "correct_answer": "C",
+      "explanation": "Estimates with a severity split and special groups let resources and hospitals move now.",
+      "hint": "Numbers + severity + special groups.",
+      "difficulty": "medium",
+      "topic": "First-Due & METHANE"
+    },
+    {
+      "id": 8,
+      "text": "Arriving at a warehouse, you see 4 workers collapsed near a loading bay with no visible trauma and a faint acrid smell. Per Step 1-2-3 Plus you should:",
+      "options": [
+        "Not approach; withdraw upwind, isolate, report (METHANE) and request HazMat",
+        "Enter with a BVM and oxygen",
+        "Wait for the workers to recover",
+        "Approach with caution and assess the nearest worker"
+      ],
+      "correct_answer": "A",
+      "explanation": "Three or more unexplained casualties = Step 3: do not approach. Plus: instruct people to get out, disrobe, and decontaminate.",
+      "hint": "How many are down, and is there an obvious cause?",
+      "difficulty": "medium",
+      "topic": "First-Due & METHANE"
+    },
+    {
+      "id": 9,
+      "text": "The correct order of CSCATTT priorities begins with:",
+      "options": [
+        "Triage, Treatment, Transport, then Command",
+        "Safety, Triage, Treatment, Transport",
+        "Command & control, Safety, Communication, Assessment",
+        "Assessment, Command, Safety, Triage"
+      ],
+      "correct_answer": "C",
+      "explanation": "CSCA (management) must be in place before TTT (medical support) can work well.",
+      "hint": "Management before medicine.",
+      "difficulty": "easy",
+      "topic": "First-Due & METHANE"
+    },
+    {
+      "id": 10,
+      "text": "A person leading an ICS Branch is titled:",
+      "options": [
+        "Supervisor",
+        "Chief",
+        "Leader",
+        "Director"
+      ],
+      "correct_answer": "D",
+      "explanation": "Section = Chief, Branch = Director, Division/Group = Supervisor, Unit = Leader, Staging = Manager.",
+      "hint": "Chief → ? → Supervisor → Leader.",
+      "difficulty": "easy",
+      "topic": "ICS"
+    },
+    {
+      "id": 11,
+      "text": "Fire, police, and EMS all have jurisdiction at a stadium collapse. The ICS model that gives them ONE set of objectives while each keeps authority over its own resources is:",
+      "options": [
+        "Unified Command",
+        "Single Command by the highest rank",
+        "Mutual aid",
+        "Area Command"
+      ],
+      "correct_answer": "A",
+      "explanation": "Unified Command co-locates agency commanders at one command post with one Incident Action Plan.",
+      "hint": "One incident, one plan, several agencies.",
+      "difficulty": "medium",
+      "topic": "ICS"
+    },
+    {
+      "id": 12,
+      "text": "The Medical Group Supervisor is directly managing 10 ambulance crews and 3 rescue teams. The correct ICS response is to:",
+      "options": [
+        "Accept it — span of control doesn't apply in emergencies",
+        "Request a second Incident Commander",
+        "Appoint unit leaders (triage, treatment, transport) and a staging manager to restore span of control",
+        "Send crews back to quarters"
+      ],
+      "correct_answer": "C",
+      "explanation": "Span of control is ~3–7 (≈5 optimal). Expand the organization when it's exceeded.",
+      "hint": "How many people can one supervisor manage well?",
+      "difficulty": "medium",
+      "topic": "ICS"
+    },
+    {
+      "id": 13,
+      "text": "Which is a General Staff (Section Chief) position?",
+      "options": [
+        "Liaison Officer",
+        "Safety Officer",
+        "Logistics",
+        "Public Information Officer"
+      ],
+      "correct_answer": "C",
+      "explanation": "General Staff = Operations, Planning, Logistics, Finance/Admin. Safety, Liaison, and PIO are Command Staff.",
+      "hint": "Chiefs vs Officers.",
+      "difficulty": "easy",
+      "topic": "ICS"
+    },
+    {
+      "id": 14,
+      "text": "A senior EMS chief arrives at your incident. Command transfers when:",
+      "options": [
+        "After a face-to-face briefing, the chief accepts, and the transfer is announced to all units",
+        "The chief begins giving orders",
+        "The chief arrives on scene",
+        "Dispatch notes the chief's arrival"
+      ],
+      "correct_answer": "A",
+      "explanation": "Formal transfer of command: brief, accept, announce. Arrival or rank alone does not transfer command.",
+      "hint": "Brief — Accept — ?",
+      "difficulty": "medium",
+      "topic": "ICS"
+    },
+    {
+      "id": 15,
+      "text": "Who assigns destination hospitals and keeps the patient log at an MCI?",
+      "options": [
+        "Triage Officer",
+        "Transport Officer",
+        "Staging Officer",
+        "Treatment Officer"
+      ],
+      "correct_answer": "B",
+      "explanation": "Transport matches patients to hospitals by capability/capacity and logs tag #, unit, destination, time.",
+      "hint": "Who 'moves and tracks'?",
+      "difficulty": "easy",
+      "topic": "Officer Roles"
+    },
+    {
+      "id": 16,
+      "text": "Fifteen minutes into an MCI, no updated casualty count has reached command. The triage officer is found performing an IO on a child. The BEST correction is:",
+      "options": [
+        "Let the triage officer finish; children take priority",
+        "Stop all triage until the IO is placed",
+        "Reassign the triage officer to transport",
+        "Hand the child to the treatment team and return the triage officer to sorting and reporting counts"
+      ],
+      "correct_answer": "D",
+      "explanation": "Triage interventions are seconds-long only. When triage stops, untagged reds go unfound.",
+      "hint": "What is the triage officer's ONE job?",
+      "difficulty": "medium",
+      "topic": "Officer Roles"
+    },
+    {
+      "id": 17,
+      "text": "Mutual-aid ambulances arriving at an MCI should:",
+      "options": [
+        "Self-select patients and hospitals",
+        "Drive to the treatment area and load the nearest patient",
+        "Go to the command post",
+        "Check in at staging and wait with their vehicle until called to the loading zone"
+      ],
+      "correct_answer": "D",
+      "explanation": "Staging keeps vehicles organized; Transport calls them forward. Self-dispatch breaks flow and tracking.",
+      "hint": "Check in, keys in, crews in.",
+      "difficulty": "easy",
+      "topic": "Officer Roles"
+    },
+    {
+      "id": 18,
+      "text": "Dead victims at an MCI should generally be:",
+      "options": [
+        "Placed in ambulances to protect them from weather",
+        "Transported first to clear the scene",
+        "Moved to the treatment area for documentation",
+        "Left in place unless they block access to the living; secured and screened from view"
+      ],
+      "correct_answer": "D",
+      "explanation": "Leave in place: saves resources and preserves evidence and identification. The morgue manager coordinates with police/ME.",
+      "hint": "Who needs the stretchers more?",
+      "difficulty": "medium",
+      "topic": "Officer Roles"
+    },
+    {
+      "id": 19,
+      "text": "The treatment area is full, ambulances are idle at the loading zone, and nothing is leaving. The MOST likely failure point is:",
+      "options": [
+        "Global triage",
+        "The Liaison Officer",
+        "The PIO",
+        "The handoff between treatment and transport (prioritization/loading)"
+      ],
+      "correct_answer": "D",
+      "explanation": "Idle ambulances + full treatment area = treatment isn't releasing patients or transport isn't loading them.",
+      "hint": "Patients in, nobody out — where's the bottleneck?",
+      "difficulty": "hard",
+      "topic": "Officer Roles"
+    },
+    {
+      "id": 20,
+      "text": "The decontamination corridor belongs in the:",
+      "options": [
+        "Cold zone",
+        "Staging area",
+        "Warm zone",
+        "Hot zone"
+      ],
+      "correct_answer": "C",
+      "explanation": "Warm = contamination reduction zone.",
+      "hint": "Between the hazard and the support area.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 21,
+      "text": "Which treatment-area design is BEST?",
+      "options": [
+        "Next to the helicopter landing zone",
+        "Upwind in the cold zone, red section nearest the loading zone exit, one-way flow",
+        "Downwind for ventilation with red in the center",
+        "Inside the warm zone for speed"
+      ],
+      "correct_answer": "B",
+      "explanation": "Safety plus flow: upwind, cold zone, reds exit first, one direction.",
+      "hint": "Who leaves first, and which way is the wind blowing?",
+      "difficulty": "medium",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 22,
+      "text": "An unattended backpack is found 20 m from your casualty collection point after a bombing. You should:",
+      "options": [
+        "Continue working — it's probably lost property",
+        "Open it to check contents",
+        "Carry the backpack away from patients",
+        "Move patients and staff out of line of sight beyond the stand-off distance and notify police"
+      ],
+      "correct_answer": "D",
+      "explanation": "Assume a secondary device. Pipe-bomb mandatory evacuation is ~70 ft (preferred outdoor ~1,200 ft).",
+      "hint": "Who is the second bomb for?",
+      "difficulty": "medium",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 23,
+      "text": "Staging for ambulances should be:",
+      "options": [
+        "Out of sight of the hazard, on the approach route, with one-way access to the loading zone",
+        "Wherever crews find space",
+        "Directly beside the treatment area",
+        "In the warm zone"
+      ],
+      "correct_answer": "A",
+      "explanation": "Staging is remote, safe, organized, and released by Transport.",
+      "hint": "Safe, organized, and not in the way.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 24,
+      "text": "START: a non-ambulatory adult has RR 34, radial pulse present, and follows commands. Category:",
+      "options": [
+        "Minor (green)",
+        "Deceased (black)",
+        "Immediate (red)",
+        "Delayed (yellow)"
+      ],
+      "correct_answer": "C",
+      "explanation": "RR > 30 = Immediate.",
+      "hint": "RPM: 30-2-Can do.",
+      "difficulty": "easy",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 25,
+      "text": "START: RR 24, radial pulse present but capillary refill 4 seconds (warm day), follows commands. Category:",
+      "options": [
+        "Minor (green)",
+        "Delayed (yellow)",
+        "Immediate (red)",
+        "Expectant"
+      ],
+      "correct_answer": "C",
+      "explanation": "CRT > 2 s = perfusion failure = Immediate.",
+      "hint": "Check the 'P' in RPM.",
+      "difficulty": "medium",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 26,
+      "text": "START: RR 30, radial present, CRT 1 s, follows commands, can't walk. Category:",
+      "options": [
+        "Immediate (red)",
+        "Deceased (black)",
+        "Delayed (yellow)",
+        "Minor (green)"
+      ],
+      "correct_answer": "C",
+      "explanation": "The cut-off is RR MORE than 30. All other checks pass → Delayed.",
+      "hint": "Is 30 more than 30?",
+      "difficulty": "medium",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 27,
+      "text": "JumpSTART: a 4-year-old is apneic after airway positioning but has a palpable pulse. You give 5 rescue breaths and she begins breathing. Category:",
+      "options": [
+        "Minor (green)",
+        "Delayed (yellow)",
+        "Immediate (red)",
+        "Deceased (black)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Breathing after rescue breaths = Immediate. If still apneic after 5 breaths = Deceased.",
+      "hint": "What does breathing only after help mean?",
+      "difficulty": "medium",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 28,
+      "text": "JumpSTART: a 6-year-old has RR 38, palpable peripheral pulse, is alert, and has a deformed femur. Category:",
+      "options": [
+        "Delayed (yellow)",
+        "Immediate (red)",
+        "Deceased (black)",
+        "Minor (green)"
+      ],
+      "correct_answer": "A",
+      "explanation": "JumpSTART's normal range is 15–45; pulse present and Alert → Delayed. (RR 38 would be red in adult START.)",
+      "hint": "Kids breathe faster — what's the JumpSTART range?",
+      "difficulty": "medium",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 29,
+      "text": "JumpSTART: a 3-year-old has RR 26, palpable pulse, and responds to a painful stimulus only with rigid arm extension. Category:",
+      "options": [
+        "Immediate (red)",
+        "Deceased (black)",
+        "Delayed (yellow)",
+        "Minor (green)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Inappropriate response to pain (posturing) or Unresponsive = Immediate.",
+      "hint": "Is that an 'appropriate P'?",
+      "difficulty": "hard",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 30,
+      "text": "During a cold night-time MCI, the most reliable START perfusion check is:",
+      "options": [
+        "Skin color",
+        "Capillary refill",
+        "Blood pressure by palpation",
+        "Radial pulse"
+      ],
+      "correct_answer": "D",
+      "explanation": "Cold and darkness make capillary refill unreliable.",
+      "hint": "Which sign does the cold distort?",
+      "difficulty": "medium",
+      "topic": "START & JumpSTART"
+    },
+    {
+      "id": 31,
+      "text": "In SALT global sorting, which casualties are assessed FIRST?",
+      "options": [
+        "Those who are still or have obvious life threats",
+        "Those who walk to the designated area",
+        "Children",
+        "Those who wave"
+      ],
+      "correct_answer": "A",
+      "explanation": "Walk → last, Wave → second, Still/obvious life threat → first.",
+      "hint": "Who is most likely to need a lifesaving intervention?",
+      "difficulty": "easy",
+      "topic": "SALT & Re-Triage"
+    },
+    {
+      "id": 32,
+      "text": "SALT: after a tourniquet stops arterial thigh bleeding, the patient obeys commands, has a peripheral pulse, and no respiratory distress. Category:",
+      "options": [
+        "Delayed",
+        "Immediate",
+        "Minimal",
+        "Expectant"
+      ],
+      "correct_answer": "A",
+      "explanation": "After the LSI all four questions are YES; the injury is significant (not minor) → Delayed. Write TQ + time on the tag.",
+      "hint": "Re-ask the four questions AFTER the intervention.",
+      "difficulty": "medium",
+      "topic": "SALT & Re-Triage"
+    },
+    {
+      "id": 33,
+      "text": "SALT, 70 casualties, 3 ambulances: a man with ~90% full-thickness burns is breathing shallowly and unresponsive. Category NOW:",
+      "options": [
+        "Expectant — comfort care and re-triage when resources improve",
+        "Immediate — he is the sickest",
+        "Dead",
+        "Delayed"
+      ],
+      "correct_answer": "A",
+      "explanation": "Expectant = alive but unlikely to survive given CURRENT resources. Re-triage as resources arrive.",
+      "hint": "Survival given what you have right now?",
+      "difficulty": "hard",
+      "topic": "SALT & Re-Triage"
+    },
+    {
+      "id": 34,
+      "text": "A trauma system's over-triage rate rises sharply during an MCI. The expected effect is:",
+      "options": [
+        "Lower overall mortality",
+        "Faster transport of critical patients",
+        "Higher mortality among the truly critical",
+        "No effect on outcomes"
+      ],
+      "correct_answer": "C",
+      "explanation": "Over-triage floods red areas and transport, burying true reds (Frykberg).",
+      "hint": "What happens to the real reds?",
+      "difficulty": "medium",
+      "topic": "SALT & Re-Triage"
+    },
+    {
+      "id": 35,
+      "text": "A triage tag should be attached to:",
+      "options": [
+        "The stretcher only",
+        "A limb or the neck",
+        "The jacket zipper",
+        "The patient's shoe"
+      ],
+      "correct_answer": "B",
+      "explanation": "Clothing gets cut off in treatment; tags on clothing get lost.",
+      "hint": "What gets removed in the treatment area?",
+      "difficulty": "easy",
+      "topic": "SALT & Re-Triage"
+    },
+    {
+      "id": 36,
+      "text": "Which intervention BEST fits the MCI treatment area?",
+      "options": [
+        "Second IV lines on stable greens",
+        "Wound packing and tourniquet reassessment",
+        "Routine spinal packaging for all",
+        "Full secondary survey on every yellow"
+      ],
+      "correct_answer": "B",
+      "explanation": "Do what changes near-term survival (MARCH); defer what slows flow.",
+      "hint": "MARCH starts with M.",
+      "difficulty": "medium",
+      "topic": "Treatment & Transport"
+    },
+    {
+      "id": 37,
+      "text": "The nearest hospital to a bombing is usually overwhelmed early because:",
+      "options": [
+        "It is always the trauma center",
+        "Less-injured victims self-present there before EMS patients arrive",
+        "EMS sends all reds there",
+        "Families gather there"
+      ],
+      "correct_answer": "B",
+      "explanation": "'Upside-down triage': the walking wounded reach the closest ED first.",
+      "hint": "Who gets there first, and how?",
+      "difficulty": "medium",
+      "topic": "Treatment & Transport"
+    },
+    {
+      "id": 38,
+      "text": "A hospital receives 25 casualties in the first hour after an explosion. Its approximate total expected is:",
+      "options": [
+        "250",
+        "50",
+        "25",
+        "100"
+      ],
+      "correct_answer": "B",
+      "explanation": "CDC rule of thumb: roughly double the first-hour arrivals.",
+      "hint": "Rule of thumb: multiply by…",
+      "difficulty": "medium",
+      "topic": "Treatment & Transport"
+    },
+    {
+      "id": 39,
+      "text": "Which loading plan is MOST efficient?",
+      "options": [
+        "All reds in one ambulance",
+        "One green per ambulance",
+        "One red plus one or two greens per ambulance; greens in bulk by bus with a medic",
+        "Wait until all patients are treated"
+      ],
+      "correct_answer": "C",
+      "explanation": "Use every seat sensibly; move greens in bulk.",
+      "hint": "Fill the seats wisely.",
+      "difficulty": "easy",
+      "topic": "Treatment & Transport"
+    },
+    {
+      "id": 40,
+      "text": "Hospital capacity during an MCI should be obtained through:",
+      "options": [
+        "Social media updates",
+        "A single Medical Communications Coordinator / hospital coordination center",
+        "The PIO",
+        "Each crew calling its destination"
+      ],
+      "correct_answer": "B",
+      "explanation": "One voice to hospitals prevents duplicate calls and skewed distribution.",
+      "hint": "How many voices should hospitals hear?",
+      "difficulty": "medium",
+      "topic": "Treatment & Transport"
+    },
+    {
+      "id": 41,
+      "text": "In the ERG, which pages give initial isolation and protective action distances?",
+      "options": [
+        "Orange",
+        "Yellow",
+        "Blue",
+        "Green"
+      ],
+      "correct_answer": "D",
+      "explanation": "Yellow = by ID number, Blue = by name, Orange = guides, Green = distances.",
+      "hint": "Gap = Green.",
+      "difficulty": "easy",
+      "topic": "HazMat & Decon"
+    },
+    {
+      "id": 42,
+      "text": "NFPA 704: the RED quadrant represents:",
+      "options": [
+        "Flammability",
+        "Health",
+        "Special hazards",
+        "Instability"
+      ],
+      "correct_answer": "A",
+      "explanation": "Blue health, red flammability, yellow instability, white special.",
+      "hint": "Red = fire.",
+      "difficulty": "easy",
+      "topic": "HazMat & Decon"
+    },
+    {
+      "id": 43,
+      "text": "Which PPE level uses an air-purifying respirator and requires a known agent with adequate oxygen?",
+      "options": [
+        "Level A",
+        "Level B",
+        "Level C",
+        "Level D"
+      ],
+      "correct_answer": "C",
+      "explanation": "Level C = APR/PAPR + splash suit; it filters ambient air but supplies no oxygen.",
+      "hint": "Filter vs supplied air.",
+      "difficulty": "medium",
+      "topic": "HazMat & Decon"
+    },
+    {
+      "id": 44,
+      "text": "The single most effective first decontamination step is:",
+      "options": [
+        "Scrubbing skin with dilute bleach",
+        "Wrapping in a blanket",
+        "Removing clothing",
+        "Applying antibiotic ointment"
+      ],
+      "correct_answer": "C",
+      "explanation": "Disrobing removes most external contamination (often quoted ~80–90%).",
+      "hint": "What is touching the skin most?",
+      "difficulty": "easy",
+      "topic": "HazMat & Decon"
+    },
+    {
+      "id": 45,
+      "text": "A critically injured, contaminated patient with arterial bleeding reaches the decon line. Best action:",
+      "options": [
+        "Tourniquet by protected staff during rapid gross decon, then transport",
+        "Wait at the end of the decon queue",
+        "Tag expectant",
+        "Transport immediately without decon"
+      ],
+      "correct_answer": "A",
+      "explanation": "Combine LSIs with rapid decon. A contaminated ambulance and crew become casualties.",
+      "hint": "Never skip decon — but don't let them bleed out either.",
+      "difficulty": "medium",
+      "topic": "HazMat & Decon"
+    },
+    {
+      "id": 46,
+      "text": "Subway riders have pinpoint pupils, copious secretions, wheezing, vomiting, and fasciculations. The antidote combination is:",
+      "options": [
+        "Naloxone",
+        "Atropine plus pralidoxime (with a benzodiazepine for seizures)",
+        "Hydroxocobalamin",
+        "Dimercaprol (BAL)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Cholinergic crisis = nerve agent → atropine + 2-PAM; benzo for seizures.",
+      "hint": "Wet + pinpoint + twitching.",
+      "difficulty": "medium",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 47,
+      "text": "Atropine for nerve-agent poisoning is titrated to:",
+      "options": [
+        "Heart rate above 100",
+        "Normal blood pressure",
+        "Dry bronchial secretions and easy breathing",
+        "Pupil dilation"
+      ],
+      "correct_answer": "C",
+      "explanation": "Tachycardia and persistent miosis are not reasons to stop or keep giving atropine.",
+      "hint": "What kills these patients?",
+      "difficulty": "medium",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 48,
+      "text": "A nerve-agent casualty is seizing and apneic after decon. Using DuoDote/ATNAA kits, the correct dosing is:",
+      "options": [
+        "2 kits only",
+        "No kits; ventilate only",
+        "3 kits rapidly plus a benzodiazepine, with ventilatory support",
+        "1 kit and reassess in 15 minutes"
+      ],
+      "correct_answer": "C",
+      "explanation": "Severe = 3 kits + benzo. Repeat atropine until secretions dry.",
+      "hint": "Mild 1, severe…",
+      "difficulty": "hard",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 49,
+      "text": "A house-fire victim is unresponsive with BP 70/40 and SpO2 reading 99%. Which antidote is most appropriate?",
+      "options": [
+        "Naloxone",
+        "Hydroxocobalamin",
+        "Atropine",
+        "Sodium nitrite"
+      ],
+      "correct_answer": "B",
+      "explanation": "Smoke + shock → cyanide (and CO). Hydroxocobalamin is safe with CO; nitrites worsen oxygen delivery.",
+      "hint": "What else is in smoke besides CO?",
+      "difficulty": "medium",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 50,
+      "text": "Workers exposed to a gas smelling of 'freshly cut hay' feel fine 30 minutes later. Best disposition:",
+      "options": [
+        "Give hydroxocobalamin",
+        "Rest and observe ~24 h for delayed pulmonary edema",
+        "Give atropine",
+        "Release with advice"
+      ],
+      "correct_answer": "B",
+      "explanation": "Phosgene's latent period: pulmonary edema 2–24 h; exertion worsens it.",
+      "hint": "Some agents bite later.",
+      "difficulty": "medium",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 51,
+      "text": "A theater audience collapses with pinpoint pupils, slow shallow respirations, dry skin, and no fasciculations. Treatment:",
+      "options": [
+        "Ventilation and naloxone",
+        "Hydroxocobalamin",
+        "Decon only",
+        "Atropine and pralidoxime"
+      ],
+      "correct_answer": "A",
+      "explanation": "Dry miosis + respiratory depression = opioid agent, not a nerve agent.",
+      "hint": "Wet or dry?",
+      "difficulty": "medium",
+      "topic": "Chemical Agents"
+    },
+    {
+      "id": 52,
+      "text": "Which Category A agent requires airborne PLUS contact precautions?",
+      "options": [
+        "Inhalational anthrax",
+        "Smallpox",
+        "Botulism",
+        "Tularemia"
+      ],
+      "correct_answer": "B",
+      "explanation": "Smallpox spreads by respiratory and contact routes; anthrax, botulism, and tularemia don't spread person-to-person.",
+      "hint": "Which one spreads between people through the air?",
+      "difficulty": "medium",
+      "topic": "Bio & Rad/Nuc"
+    },
+    {
+      "id": 53,
+      "text": "An alert, afebrile adult has ptosis, double vision, slurred speech, and difficulty swallowing that is progressing downward. Suspect:",
+      "options": [
+        "Stroke",
+        "Smallpox",
+        "Nerve agent",
+        "Botulism"
+      ],
+      "correct_answer": "D",
+      "explanation": "Descending symmetric flaccid paralysis with a clear mind = botulism; prepare for respiratory failure.",
+      "hint": "Which way is the weakness travelling?",
+      "difficulty": "medium",
+      "topic": "Bio & Rad/Nuc"
+    },
+    {
+      "id": 54,
+      "text": "A patient was irradiated by a hidden source but is not contaminated. The risk to EMS providers is:",
+      "options": [
+        "High — avoid touching",
+        "None — the patient is not radioactive",
+        "Only if the patient vomits",
+        "Moderate — use a lead apron"
+      ],
+      "correct_answer": "B",
+      "explanation": "Exposure doesn't make a person radioactive; contamination is the transferable risk.",
+      "hint": "X-ray or mud?",
+      "difficulty": "easy",
+      "topic": "Bio & Rad/Nuc"
+    },
+    {
+      "id": 55,
+      "text": "A dirty-bomb victim has a traumatic amputation with arterial bleeding and a radiation detector is alarming. Priority:",
+      "options": [
+        "Tourniquet and trauma care now in standard PPE, then decon",
+        "Wait for a radiation survey",
+        "Give potassium iodide first",
+        "Decontaminate before touching"
+      ],
+      "correct_answer": "A",
+      "explanation": "RDDs injure by blast; radiation contamination is rarely immediately life-threatening. Life threats first.",
+      "hint": "Bomb first, dirt second.",
+      "difficulty": "medium",
+      "topic": "Bio & Rad/Nuc"
+    },
+    {
+      "id": 56,
+      "text": "Moving from 2 m to 4 m away from a radiation point source changes your dose rate to:",
+      "options": [
+        "One eighth",
+        "No change",
+        "One half",
+        "One quarter"
+      ],
+      "correct_answer": "D",
+      "explanation": "Inverse-square law: double the distance → ¼ the dose rate.",
+      "hint": "Distance squared.",
+      "difficulty": "medium",
+      "topic": "Bio & Rad/Nuc"
+    },
+    {
+      "id": 57,
+      "text": "The most common mechanism of injury in explosions is:",
+      "options": [
+        "Primary — overpressure",
+        "Tertiary — body displacement",
+        "Secondary — fragments and debris",
+        "Quinary — additives"
+      ],
+      "correct_answer": "C",
+      "explanation": "Fragments injure the most people; primary blast is worse in enclosed spaces.",
+      "hint": "What flies through the air?",
+      "difficulty": "easy",
+      "topic": "Blast & Hostile"
+    },
+    {
+      "id": 58,
+      "text": "A survivor of a bus bombing walked away with ruptured eardrums and mild dyspnea; SpO2 now 93%. Best action:",
+      "options": [
+        "Needle decompression for all blast victims",
+        "Treat as possible blast lung: O2, monitor, transport for observation",
+        "Aggressive IV fluids",
+        "Tag green and release"
+      ],
+      "correct_answer": "B",
+      "explanation": "Enclosed blast + TM rupture + hypoxia = evolving blast lung risk; caution with fluids and positive pressure.",
+      "hint": "Enclosed space + ears + breathing.",
+      "difficulty": "medium",
+      "topic": "Blast & Hostile"
+    },
+    {
+      "id": 59,
+      "text": "In TECC direct threat (hot zone), the recommended medical intervention is:",
+      "options": [
+        "Endotracheal intubation",
+        "Spinal immobilization",
+        "Tourniquet for life-threatening extremity hemorrhage and movement to cover",
+        "IV access"
+      ],
+      "correct_answer": "C",
+      "explanation": "Direct threat = cover + tourniquet only. Airway and other care wait for indirect threat.",
+      "hint": "Under fire, what's the one fix?",
+      "difficulty": "easy",
+      "topic": "Blast & Hostile"
+    },
+    {
+      "id": 60,
+      "text": "A Rescue Task Force typically:",
+      "options": [
+        "Hunts the shooter",
+        "Enters cleared warm-zone areas with law-enforcement escort to stop bleeding and extract casualties",
+        "Works only in the cold zone",
+        "Enters the hot zone alone"
+      ],
+      "correct_answer": "B",
+      "explanation": "RTF = EMS/fire in ballistic PPE + police escort in the warm zone → CCP.",
+      "hint": "Escorted, warm, fast.",
+      "difficulty": "medium",
+      "topic": "Blast & Hostile"
+    },
+    {
+      "id": 61,
+      "text": "Hartford Consensus THREAT stands for:",
+      "options": [
+        "Threat, Hazards, Rescue, Exposure, Access, Transport",
+        "Threat suppression, Hemorrhage control, Rapid Extrication, Assessment, Transport",
+        "Triage, Hospital, Radio, Evacuation, Airway, Treatment",
+        "Tourniquet, Hemostatics, Recovery, Extraction, Analgesia, Transfer"
+      ],
+      "correct_answer": "B",
+      "explanation": "THREAT puts hemorrhage control right after stopping the threat.",
+      "hint": "Stop the killing, stop the dying.",
+      "difficulty": "medium",
+      "topic": "Blast & Hostile"
+    },
+    {
+      "id": 62,
+      "text": "A worker pinned under a slab for 5 hours is about to be freed. The MOST important preparation is:",
+      "options": [
+        "Ice packs to the limb",
+        "Rapid lift then lactated Ringer's",
+        "Release immediately — he is talking",
+        "IV normal saline before release with cardiac monitoring and hyperkalemia drugs ready"
+      ],
+      "correct_answer": "D",
+      "explanation": "Fluids before freedom; release can trigger fatal hyperkalemia. Avoid potassium-containing fluids.",
+      "hint": "What floods the circulation at release?",
+      "difficulty": "medium",
+      "topic": "Special MCIs"
+    },
+    {
+      "id": 63,
+      "text": "Crowd-crush victims die mainly from:",
+      "options": [
+        "Heat stroke",
+        "Head injuries from trampling",
+        "Hemorrhage",
+        "Compressive (traumatic) asphyxia"
+      ],
+      "correct_answer": "D",
+      "explanation": "They cannot expand their chests. Relieve pressure, then ventilate.",
+      "hint": "What can't they do while squeezed?",
+      "difficulty": "easy",
+      "topic": "Special MCIs"
+    },
+    {
+      "id": 64,
+      "text": "The first hazard control at a commuter-rail derailment is:",
+      "options": [
+        "Extricating the driver",
+        "Calling the media",
+        "Starting triage inside the cars",
+        "Confirming electrical power is isolated"
+      ],
+      "correct_answer": "D",
+      "explanation": "Overhead lines and third rails kill rescuers.",
+      "hint": "What powers the train?",
+      "difficulty": "easy",
+      "topic": "Special MCIs"
+    },
+    {
+      "id": 65,
+      "text": "Before terminating command, the MOST important check is:",
+      "options": [
+        "Patient counts reconcile across tags, transport log, and hospital arrivals",
+        "Overtime is approved",
+        "The media have left",
+        "All units have returned to quarters"
+      ],
+      "correct_answer": "A",
+      "explanation": "Tags = transport log = hospitals (+ dead + released). A mismatch means someone is missing.",
+      "hint": "Do the numbers add up?",
+      "difficulty": "easy",
+      "topic": "Recovery"
+    },
+    {
+      "id": 66,
+      "text": "Which approach to responder mental health after an MCI is recommended?",
+      "options": [
+        "Immediate sedative medication",
+        "Ignoring reactions unless reported",
+        "Psychological First Aid with voluntary peer support and follow-up",
+        "Mandatory single-session group debriefing for all"
+      ],
+      "correct_answer": "C",
+      "explanation": "PFA (Look, Listen, Link) is recommended; forced single-session debriefing may harm.",
+      "hint": "Offer, don't force.",
+      "difficulty": "medium",
+      "topic": "Recovery"
+    }
+  ]
+}

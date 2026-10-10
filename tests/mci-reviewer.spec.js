@@ -70,3 +70,37 @@ for (const vp of [{ w: 360, h: 740 }, { w: 320, h: 568 }]) {
     }
   });
 }
+
+// Exam page (pages/mci.html) on the shared exam-review engine: both banks
+// load, the question-count selector slices the set, and an exam can be
+// answered and submitted through to the results screen.
+test('MCI exam page lists both banks and runs a 20-question exam to results', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('.exam-card')).toHaveCount(2);
+
+  await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
+  await page.selectOption('#qCount', '20');
+  await page.locator('.exam-card', { hasText: 'MCI Final Exam' }).click();
+  await expect(page.locator('#examScreen')).toBeVisible();
+  await expect(page.locator('#qBadge')).toHaveText('Question 1 of 20');
+
+  for (let i = 0; i < 20; i++) {
+    await page.locator('#optsList .opt-wrap').first().click();
+    if (i < 19) await page.locator('#nextBtn').click();
+  }
+  await page.locator('#endBtn').click();
+  await page.locator('#endModal .mbtn-submit').click();
+  await expect(page.locator('#resultsScreen')).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('MCI practice bank loads all generated reviewer questions', async ({ page }) => {
+  await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
+  await page.selectOption('#qCount', '9999');
+  await page.locator('.exam-card', { hasText: 'Practice Bank' }).click();
+  await expect(page.locator('#examScreen')).toBeVisible();
+  const total = await page.evaluate(async () => (await (await fetch('../src/MCI/MCI-practice.json')).json()).questions.length);
+  await expect(page.locator('#qBadge')).toHaveText(`Question 1 of ${total}`);
+});
