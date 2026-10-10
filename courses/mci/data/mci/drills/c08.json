@@ -1,0 +1,134 @@
+{
+  "chapter": "c08",
+  "drills": [
+    {
+      "title": "Where Does This One Go?",
+      "icon": "🚑",
+      "targetSeconds": 12,
+      "description": "You're Transport Officer. Central (Level I trauma, near, flooded with walk-ins), East (community, spare beds), Children's (pediatric, farther), Burn Center (40 min). Pick the best move.",
+      "items": [
+        {
+          "id": "c08_dr01_01",
+          "prompt": "Adult red, gunshot to the abdomen, weak radial pulse.",
+          "options": [
+            "Central (trauma center)",
+            "East community hospital",
+            "Bus with greens",
+            "Hold on scene for IV fluids"
+          ],
+          "answer": 0,
+          "why": "Non-compressible torso hemorrhage needs a trauma surgeon."
+        },
+        {
+          "id": "c08_dr01_02",
+          "prompt": "20 greens with bruises and small cuts.",
+          "options": [
+            "One per ambulance to Central",
+            "Bus with a medic to East (spare capacity)",
+            "Send them home",
+            "Hold until all reds are gone"
+          ],
+          "answer": 1,
+          "why": "Move greens in bulk, away from the flooded trauma center."
+        },
+        {
+          "id": "c08_dr01_03",
+          "prompt": "Yellow adult, closed tib fracture, stable.",
+          "options": [
+            "Central",
+            "East",
+            "Burn Center",
+            "Air medical"
+          ],
+          "answer": 1,
+          "why": "Protect the trauma center's capacity for reds; East has beds."
+        },
+        {
+          "id": "c08_dr01_04",
+          "prompt": "Red 6-year-old, stable airway, splenic injury suspected, 15 min to Children's.",
+          "options": [
+            "Children's (pediatric center)",
+            "East community hospital",
+            "Bus",
+            "Hold on scene"
+          ],
+          "answer": 0,
+          "why": "Pediatric-capable center when the time cost is acceptable."
+        },
+        {
+          "id": "c08_dr01_05",
+          "prompt": "Adult red with 40% burns and singed nasal hair, voice getting hoarse.",
+          "options": [
+            "Burn Center by ground (40 min)",
+            "Central — closest capable airway/trauma care now",
+            "East by bus",
+            "Mark expectant"
+          ],
+          "answer": 1,
+          "why": "Threatened airway can't wait 40 min. Stabilize at the nearest capable center, transfer to burns later."
+        },
+        {
+          "id": "c08_dr01_06",
+          "prompt": "Red patient + space for passengers in the same ambulance.",
+          "options": [
+            "Leave seats empty",
+            "Add 1–2 greens going to the same hospital",
+            "Add another red",
+            "Add the expectant patient"
+          ],
+          "answer": 1,
+          "why": "Fill seats sensibly: 1 red + 1–2 greens (per policy)."
+        },
+        {
+          "id": "c08_dr01_07",
+          "prompt": "Patient contaminated with an unknown liquid chemical.",
+          "options": [
+            "Load immediately",
+            "Decon first, then transport and notify hospital",
+            "Send by private car",
+            "Wrap in a blanket and load"
+          ],
+          "answer": 1,
+          "why": "Decon before transport — a contaminated ambulance is out of service and its crew become patients."
+        },
+        {
+          "id": "c08_dr01_08",
+          "prompt": "An ambulance crew wants to take 'their' patient to their usual hospital.",
+          "options": [
+            "Allow it",
+            "Transport Officer assigns destination per the plan",
+            "Let the patient decide",
+            "Let dispatch decide later"
+          ],
+          "answer": 1,
+          "why": "Destination is assigned centrally to balance load and capability."
+        },
+        {
+          "id": "c08_dr01_09",
+          "prompt": "Scene is 90 min by road from the only trauma center; red patient.",
+          "options": [
+            "Ground to trauma center",
+            "Air medical if available, LZ away from treatment area",
+            "Hold on scene",
+            "Bus"
+          ],
+          "answer": 1,
+          "why": "Long distance + critical = air medical is worth the LZ cost."
+        },
+        {
+          "id": "c08_dr01_10",
+          "prompt": "You don't know how many beds East has.",
+          "options": [
+            "Guess",
+            "Ask Med Comms/hospital coordination for capacity by color",
+            "Have each crew call East",
+            "Send everyone to Central"
+          ],
+          "answer": 1,
+          "why": "One channel for hospital capacity."
+        }
+      ],
+      "id": "c08_dr01"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "chapter": "c06",
+  "cards": [
+    {
+      "id": "c06_fc01",
+      "question": "What does START stand for?",
+      "answer": "Simple Triage And Rapid Treatment.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc02",
+      "question": "START mnemonic for the 3 checks?",
+      "answer": "RPM 30-2-Can do: Respirations > 30, Perfusion (CRT > 2 s / no radial), Mental status (can't follow commands).",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc03",
+      "question": "START: an adult who can walk is tagged…",
+      "answer": "MINOR (green) — assessed later and re-triaged.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc04",
+      "question": "START: apneic adult after airway positioning?",
+      "answer": "DECEASED (black). If breathing starts after positioning → IMMEDIATE.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc05",
+      "question": "START: RR 34, radial present, follows commands?",
+      "answer": "IMMEDIATE — RR > 30.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc06",
+      "question": "START: RR 20, radial absent?",
+      "answer": "IMMEDIATE — perfusion criterion.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc07",
+      "question": "START: RR 22, radial present, CRT < 2 s, follows commands, can't walk?",
+      "answer": "DELAYED (yellow).",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc08",
+      "question": "Which two interventions are allowed during START?",
+      "answer": "Open/position the airway and control major bleeding.",
+      "category": "START"
+    },
+    {
+      "id": "c06_fc09",
+      "question": "Age range for JumpSTART?",
+      "answer": "Roughly 1–8 years: use JumpSTART if the patient looks like a child, START if they look like a young adult.",
+      "category": "JumpSTART"
+    },
+    {
+      "id": "c06_fc10",
+      "question": "JumpSTART: apneic child after positioning, with a pulse — next step?",
+      "answer": "Give 5 rescue breaths (~15 s). Breathing → IMMEDIATE; still apneic → DECEASED.",
+      "category": "JumpSTART"
+    },
+    {
+      "id": "c06_fc11",
+      "question": "JumpSTART respiratory cut-offs?",
+      "answer": "RR < 15 or > 45 → IMMEDIATE.",
+      "category": "JumpSTART"
+    },
+    {
+      "id": "c06_fc12",
+      "question": "JumpSTART mental status tool?",
+      "answer": "AVPU: U or inappropriate P (non-localizing/posturing) → IMMEDIATE; A, V, or appropriate P → DELAYED.",
+      "category": "JumpSTART"
+    },
+    {
+      "id": "c06_fc13",
+      "question": "Why use radial pulse over capillary refill in some scenes?",
+      "answer": "CRT is unreliable in cold and in poor lighting.",
+      "category": "Pitfalls"
+    },
+    {
+      "id": "c06_fc14",
+      "question": "Target time per patient in START?",
+      "answer": "~30 seconds; no more than 60.",
+      "category": "START"
+    }
+  ]
+}

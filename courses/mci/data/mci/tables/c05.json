@@ -1,0 +1,122 @@
+{
+  "chapter": "c05",
+  "tables": [
+    {
+      "id": "c05_t01",
+      "title": "Zone Functions",
+      "headers": [
+        "Zone",
+        "Also called",
+        "What happens",
+        "Who enters"
+      ],
+      "rows": [
+        [
+          "Hot",
+          "Exclusion / direct threat",
+          "Hazard source, rescue, threat neutralization",
+          "Specialist teams in proper PPE; police"
+        ],
+        [
+          "Warm",
+          "Contamination reduction / indirect threat",
+          "Decon, CCP, rapid LSIs (TECC)",
+          "Decon teams; Rescue Task Forces with escort"
+        ],
+        [
+          "Cold",
+          "Support",
+          "Command, treatment, transport, staging, rehab, morgue, media",
+          "All responders"
+        ]
+      ]
+    },
+    {
+      "id": "c05_t02",
+      "title": "Bomb Threat Stand-Off (Approximate, DHS/NCTC)",
+      "headers": [
+        "Threat",
+        "Mandatory evacuation",
+        "Preferred outdoor evacuation"
+      ],
+      "rows": [
+        [
+          "Pipe bomb",
+          "≈70 ft (21 m)",
+          "≈1,200 ft (366 m)"
+        ],
+        [
+          "Suicide vest",
+          "≈110 ft (34 m)",
+          "≈1,700 ft (518 m)"
+        ],
+        [
+          "Briefcase / suitcase",
+          "≈150 ft (46 m)",
+          "≈1,850 ft (564 m)"
+        ],
+        [
+          "Car",
+          "≈320 ft (98 m)",
+          "≈1,500 ft (457 m)"
+        ],
+        [
+          "Semi-trailer",
+          "≈1,570 ft (479 m)",
+          "≈9,300 ft (2,835 m)"
+        ]
+      ]
+    },
+    {
+      "id": "c05_t03",
+      "title": "Facility Placement Checklist",
+      "headers": [
+        "Facility",
+        "Zone",
+        "Key rule"
+      ],
+      "rows": [
+        [
+          "Command post",
+          "Cold",
+          "Visible, fixed, view of the scene"
+        ],
+        [
+          "Casualty collection point",
+          "Warm (hostile/CBRNE) or edge of cold",
+          "Gather → rapid triage → move on"
+        ],
+        [
+          "Treatment area",
+          "Cold",
+          "Upwind, expandable, next to loading zone"
+        ],
+        [
+          "Loading zone",
+          "Cold",
+          "At treatment exit, one-way loop"
+        ],
+        [
+          "Staging",
+          "Cold (remote)",
+          "Out of sight, on the approach, check-in"
+        ],
+        [
+          "Green collection point",
+          "Cold",
+          "Supervised, sheltered"
+        ],
+        [
+          "Morgue",
+          "Cold",
+          "Secure, screened from view"
+        ],
+        [
+          "Helicopter LZ",
+          "Cold",
+          "Away from treatment; clear of wires/debris"
+        ]
+      ]
+    }
+  ]
+}

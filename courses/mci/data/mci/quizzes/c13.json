@@ -1,0 +1,122 @@
+{
+  "chapter": "c13",
+  "questions": [
+    {
+      "id": "c13_q01",
+      "question": "A worker trapped under a beam for 5 hours is about to be released. Which is MOST important first?",
+      "options": [
+        "A. IV normal saline before release with cardiac monitoring",
+        "B. Lactated Ringer's after release",
+        "C. Apply ice",
+        "D. Release quickly"
+      ],
+      "correct": 0,
+      "rationale": "Fluids before freedom; monitor for hyperkalemia.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c13_q02",
+      "question": "Why is lactated Ringer's avoided pre-release in crush injury?",
+      "options": [
+        "A. It causes hypoglycemia",
+        "B. It contains potassium",
+        "C. It's hypertonic",
+        "D. Too expensive"
+      ],
+      "correct": 1,
+      "rationale": "Hyperkalemia is the main threat at release.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c13_q03",
+      "question": "After extrication, a crush victim's ECG shows peaked T waves and widening QRS. Give:",
+      "options": [
+        "A. Atropine",
+        "B. Calcium",
+        "C. Amiodarone",
+        "D. Adenosine"
+      ],
+      "correct": 1,
+      "rationale": "Calcium stabilizes the myocardium in hyperkalemia.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c13_q04",
+      "question": "Crowd crush victims mostly die from:",
+      "options": [
+        "A. Heat stroke",
+        "B. Trampling head injuries",
+        "C. Compressive asphyxia",
+        "D. Cardiac contusion"
+      ],
+      "correct": 2,
+      "rationale": "They cannot expand their chests.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c13_q05",
+      "question": "The FIRST hazard control at a rail derailment is:",
+      "options": [
+        "A. Calling the media",
+        "B. Extrication",
+        "C. Triage",
+        "D. Isolating electrical power"
+      ],
+      "correct": 3,
+      "rationale": "Overhead lines and third rails kill rescuers.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c13_q06",
+      "question": "Floodwater depth that can knock an adult off their feet if moving:",
+      "options": [
+        "A. ~6 inches",
+        "B. ~3 feet",
+        "C. Only above waist",
+        "D. ~5 feet"
+      ],
+      "correct": 0,
+      "rationale": "About 6 inches of moving water can knock a person down.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c13_q07",
+      "question": "A marathon runner collapses, confused, temp 41.5 °C. Best initial action:",
+      "options": [
+        "A. Cold-water immersion on scene",
+        "B. Antipyretics",
+        "C. Transport immediately",
+        "D. Oral fluids only"
+      ],
+      "correct": 0,
+      "rationale": "Cool first, transport second for exertional heat stroke.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c13_q08",
+      "question": "An unaccompanied 6-year-old at an MCI should be:",
+      "options": [
+        "A. Identified, photographed, tagged, and kept supervised until a verified guardian is found",
+        "B. Sent home by taxi",
+        "C. Left with green patients",
+        "D. Released to any adult who claims them"
+      ],
+      "correct": 0,
+      "rationale": "Reunification is a safety process.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c13_q09",
+      "question": "During a prolonged power outage, which patients are highest priority for proactive outreach?",
+      "options": [
+        "A. Mild colds",
+        "B. Healthy adults",
+        "C. Ankle sprains",
+        "D. Ventilator and home O2-dependent patients"
+      ],
+      "correct": 3,
+      "rationale": "Technology-dependent patients deteriorate quickly without power.",
+      "difficulty": "Easy"
+    }
+  ]
+}

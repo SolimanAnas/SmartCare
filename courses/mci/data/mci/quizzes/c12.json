@@ -1,0 +1,135 @@
+{
+  "chapter": "c12",
+  "questions": [
+    {
+      "id": "c12_q01",
+      "question": "The most common mechanism of injury in explosions is:",
+      "options": [
+        "A. Secondary",
+        "B. Tertiary",
+        "C. Quinary",
+        "D. Primary"
+      ],
+      "correct": 0,
+      "rationale": "Fragments and debris injure the most people.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q02",
+      "question": "Which organ is MOST susceptible to primary blast injury?",
+      "options": [
+        "A. Liver",
+        "B. Lungs",
+        "C. Spleen",
+        "D. Femur"
+      ],
+      "correct": 1,
+      "rationale": "Air-filled organs: lungs, TMs, bowel.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q03",
+      "question": "A bus-bombing survivor with intact eardrums becomes hypoxic 6 hours later. This:",
+      "options": [
+        "A. Is CO only",
+        "B. Excludes blast lung",
+        "C. Is consistent with delayed blast lung",
+        "D. Is anxiety"
+      ],
+      "correct": 2,
+      "rationale": "Blast lung can be delayed; intact TMs don't exclude it.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c12_q04",
+      "question": "In TECC Direct Threat (hot zone), the recommended medical intervention is:",
+      "options": [
+        "A. IV access",
+        "B. Intubation",
+        "C. Tourniquet for life-threatening extremity hemorrhage",
+        "D. Spinal immobilization"
+      ],
+      "correct": 2,
+      "rationale": "Only TQ (and moving to cover) under direct threat.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q05",
+      "question": "THREAT's 'H' stands for:",
+      "options": [
+        "A. Hospital",
+        "B. Hazards",
+        "C. Hot zone",
+        "D. Hemorrhage control"
+      ],
+      "correct": 3,
+      "rationale": "Threat suppression, Hemorrhage control, Rapid Extrication, Assessment, Transport.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q06",
+      "question": "A Rescue Task Force typically operates in the:",
+      "options": [
+        "A. Hospital",
+        "B. Hot zone without escort",
+        "C. Cold zone only",
+        "D. Warm zone with law-enforcement escort"
+      ],
+      "correct": 3,
+      "rationale": "RTFs enter cleared-but-not-secure warm zones with police protection.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q07",
+      "question": "Which management is appropriate for suspected blast lung?",
+      "options": [
+        "A. O2 and cautious fluids; caution with positive-pressure ventilation",
+        "B. Ignore until symptoms worsen",
+        "C. Immediate high-pressure ventilation",
+        "D. Large-volume fluids"
+      ],
+      "correct": 0,
+      "rationale": "Avoid fluid overload and barotrauma/air embolism.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c12_q08",
+      "question": "Why should EMS staging be out of sight in a bombing?",
+      "options": [
+        "A. Radio interference",
+        "B. Traffic",
+        "C. Secondary devices may target responders",
+        "D. Media"
+      ],
+      "correct": 2,
+      "rationale": "Responders and CCPs are predictable targets.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q09",
+      "question": "Indirect Threat care includes:",
+      "options": [
+        "A. Only transport",
+        "B. Return fire",
+        "C. Only tourniquets",
+        "D. Wound packing, chest seals, needle decompression, hypothermia prevention"
+      ],
+      "correct": 3,
+      "rationale": "MARCH-based care when the immediate threat is suppressed.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c12_q10",
+      "question": "Hospitals near a bombing often receive which patients first?",
+      "options": [
+        "A. Only children",
+        "B. The less injured self-presenters",
+        "C. Only EMS transports",
+        "D. The most critical"
+      ],
+      "correct": 1,
+      "rationale": "Upside-down triage.",
+      "difficulty": "Medium"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "c04",
+  "title": "MCI Officer Roles & Action Cards",
+  "shortTitle": "Officer Roles",
+  "estimatedStudyTime": 40,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "State the mission, first actions, and 'never do' for each MCI officer role.",
+    "Describe how Triage → Treatment → Transport → Staging hand patients and vehicles to each other.",
+    "Run a transport log and distribute patients across hospitals.",
+    "Use vests and action cards to make roles visible and repeatable."
+  ],
+  "summary": [
+    {
+      "title": "Roles Beat Heroics",
+      "content": "In an MCI nobody is 'just a medic'. Each officer has a narrow mission and hands off the rest. Wear the vest (it's your ID), take the action card (it's your checklist), and report only to your supervisor. Typical ICS titles: Medical Group Supervisor (often 'EMS Command/IC' in small incidents), Triage Unit Leader, Treatment Unit Leader, Patient Transportation Unit Leader, Staging Area Manager — usually called Triage/Treatment/Transport/Staging Officer on scene."
+    },
+    {
+      "title": "Incident Commander (EMS Command)",
+      "content": "Mission: own the whole incident. First actions: establish and name command at a fixed, visible command post; declare MCI; METHANE; set objectives (life safety, triage, treat, transport, hazard control); assign Triage, Transport, Treatment, Staging; coordinate with fire/police (unified command); request resources early; manage span of control. Never: get hands-on with a patient, leave the command post without handover."
+    },
+    {
+      "title": "Triage Officer",
+      "content": "Mission: find and sort every casualty, fast. First actions: global sort (walk/wave), direct triage teams in pairs, ensure every patient is tagged with a category, perform only seconds-long lifesaving interventions (tourniquet, open airway, position), report counts by color to the IC, direct litter teams to move reds first to the treatment area, re-triage. Coordinates with morgue manager for the dead (leave in place unless obstructing access). Never: stop to treat or transport."
+    },
+    {
+      "title": "Treatment Officer",
+      "content": "Mission: keep patients alive until transport. First actions: set up the treatment area (red/yellow/green/black zones) near the loading zone and away from hazards; assign Red/Yellow/Green treatment managers; do secondary triage on arrival; provide focused interventions (airway, O2, bleeding control, splinting, IV only when it doesn't slow flow); prioritize and hand patients to the Transport Officer; request supplies through logistics. Never: let the treatment area become a holding hospital — flow out is the goal."
+    },
+    {
+      "title": "Transport Officer",
+      "content": "Mission: right patient, right hospital, right vehicle, tracked. First actions: set up the ambulance loading zone; get hospital capacity via the Medical Communications Coordinator/hospital coordination center; call units forward from staging; assign destination per patient category and hospital capability; keep a transport log (tag #, category, unit, destination, time out); spread patients across hospitals — don't dump everyone at the closest; use buses for greens with a medic aboard. Never: let crews choose their own hospital or self-dispatch."
+    },
+    {
+      "title": "Staging Officer & Support Roles",
+      "content": "STAGING: set staging at a safe distance with easy one-way access; check in every unit (unit ID, level, crew); crews stay with vehicles, keys in; release units only on request from Transport; tell IC when available units drop to a set level. SAFETY OFFICER: scans hazards, enforces PPE, can stop unsafe acts. MEDICAL COMMUNICATIONS: single voice to hospitals (capacity, notifications). MORGUE MANAGER: dead stay in place where possible; secure, out of view; coordinate with law enforcement/ME. LOGISTICS/SUPPLY: MCI caches, O2, litters. REHAB: monitor responders."
+    }
+  ],
+  "clinicalPearls": [
+    "Your vest is your badge in chaos. No vest = nobody knows to bring you the problem.",
+    "Assign Transport EARLY. The bottleneck in most MCIs is getting patients off scene, not triaging them.",
+    "Triage officer's hands touch patients for seconds; treatment officer's for minutes; transport officer's not at all — they touch paper and radios.",
+    "The dead are not moved unless they block access to the living — it's also a crime/identification scene.",
+    "A transport log entry per patient (tag # → unit → hospital → time) is how families and hospitals find people later."
+  ],
+  "redFlags": [
+    "Ambulances driving into the scene, loading whoever is nearest, and choosing their own hospital.",
+    "The closest hospital receiving every patient while others sit empty.",
+    "The IC kneeling beside a patient.",
+    "Treatment area filling up with nobody leaving (transport bottleneck)."
+  ],
+  "commonMistakes": [
+    "Triage officer stopping to start IVs.",
+    "No staging — units block the access road.",
+    "No transport log — patients 'disappear' into the system.",
+    "Running out of litter-bearers — use green patients and non-medical responders to carry."
+  ],
+  "memoryAids": [
+    "Triage FINDS, Treatment KEEPS, Transport MOVES, Staging HOLDS, Command THINKS.",
+    "Transport log = 'Tag–Truck–Target–Time'.",
+    "Staging rules: 'Check in, keys in, crews in.'"
+  ],
+  "decisionTrees": [
+    {
+      "title": "Patient & Vehicle Flow Between Officers",
+      "content": "Casualty location\n  → TRIAGE OFFICER: sort, tag, LSI, count → litter teams carry reds first\n     → TREATMENT AREA (Treatment Officer): secondary triage, stabilize, prioritize\n        → TRANSPORT OFFICER: request unit from STAGING, assign hospital, log\n           → LOADING ZONE → ambulance → hospital\nSTAGING OFFICER: holds vehicles, sends them only when Transport calls\nCOMMAND (IC): coordinates all of the above; resources, safety, hospitals via Med Comms"
+    }
+  ],
+  "references": [
+    "FIRESCOPE Multi-Casualty Incident (MCI) position checklists",
+    "FEMA ICS / NIMS — position titles and responsibilities"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "chapter": "c02",
+  "questions": [
+    {
+      "id": "c02_q01",
+      "question": "You are first on scene at a multi-vehicle pile-up with ~20 patients. Your FIRST action is to:",
+      "options": [
+        "A. Begin extrication",
+        "B. Establish command and send a METHANE report",
+        "C. Treat the most critical patient",
+        "D. Start transporting the walking wounded"
+      ],
+      "correct": 1,
+      "rationale": "Command and communication come before treatment. The first crew sets up the incident.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q02",
+      "question": "In METHANE, 'E' (the first one) stands for:",
+      "options": [
+        "A. Emergency services",
+        "B. Estimated casualties",
+        "C. Evacuation",
+        "D. Exact location"
+      ],
+      "correct": 3,
+      "rationale": "M-E-T-H-A-N-E: the first E is Exact location; the last E is Emergency services present/required.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q03",
+      "question": "Which element of METHANE tells incoming units the safest approach route and rendezvous point?",
+      "options": [
+        "A. T",
+        "B. H",
+        "C. A",
+        "D. N"
+      ],
+      "correct": 2,
+      "rationale": "A = Access and egress.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q04",
+      "question": "CSCATTT places TRIAGE after:",
+      "options": [
+        "A. Nothing — it's first",
+        "B. Assessment",
+        "C. Transport",
+        "D. Treatment"
+      ],
+      "correct": 1,
+      "rationale": "Command, Safety, Communication, Assessment, then Triage, Treatment, Transport.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q05",
+      "question": "The best way to report casualty numbers early in an incident is:",
+      "options": [
+        "A. Wait until all are counted",
+        "B. Report only the dead",
+        "C. Leave it to the hospital",
+        "D. Give an estimate with severity breakdown"
+      ],
+      "correct": 3,
+      "rationale": "Early estimates let resources move. Refine numbers in later updates.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q06",
+      "question": "You arrive and see 6 office workers collapsed in a lobby, no trauma, two seizing. You should:",
+      "options": [
+        "A. Start triage at the door",
+        "B. Withdraw, isolate upwind, report a suspected chemical incident and request HazMat",
+        "C. Run in and open airways",
+        "D. Ventilate with BVM"
+      ],
+      "correct": 1,
+      "rationale": "Multiple collapsed people without trauma = chemical until proven otherwise. Entering makes you casualty #7.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c02_q07",
+      "question": "Why are 10-codes discouraged in MCI radio traffic?",
+      "options": [
+        "A. Hospitals cannot hear them",
+        "B. They are too slow",
+        "C. They are illegal",
+        "D. They differ between agencies and cause confusion"
+      ],
+      "correct": 3,
+      "rationale": "NIMS requires plain language to ensure interoperability across agencies.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c02_q08",
+      "question": "In the first-due crew, the member NOT in command should:",
+      "options": [
+        "A. Perform a rapid recon and global sort, feeding numbers to command",
+        "B. Start IVs on red patients",
+        "C. Stay in the cab",
+        "D. Drive to the hospital"
+      ],
+      "correct": 0,
+      "rationale": "Recon and global triage give command the 'N' for METHANE.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c02_q09",
+      "question": "Which METHANE element is MOST often forgotten and endangers incoming crews?",
+      "options": [
+        "A. Hazards",
+        "B. Exact location",
+        "C. Type",
+        "D. Number"
+      ],
+      "correct": 0,
+      "rationale": "Omitting hazards sends crews into fire, chemicals, traffic, or violence.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c02_q10",
+      "question": "A good follow-up update structure after METHANE is:",
+      "options": [
+        "A. SAMPLE",
+        "B. OPQRST",
+        "C. CAN — Conditions, Actions, Needs",
+        "D. SOAP"
+      ],
+      "correct": 2,
+      "rationale": "CAN updates keep command and dispatch synchronized.",
+      "difficulty": "Easy"
+    }
+  ]
+}

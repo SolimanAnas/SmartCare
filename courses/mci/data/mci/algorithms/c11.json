@@ -1,0 +1,31 @@
+{
+  "chapter": "c11",
+  "algorithms": [
+    {
+      "id": "c11_alg01",
+      "title": "Suspected Biological Event (EMS)",
+      "description": "Protect, contain, notify.",
+      "steps": [
+        "PPE by syndrome: respiratory + rash/bleeding → airborne + contact (N95/PAPR, gown, gloves, eye protection).",
+        "Source control: surgical mask on the patient.",
+        "Limit crew contact; avoid aerosol-generating procedures unless necessary.",
+        "Notify medical control and public health; pre-alert the hospital.",
+        "Document contacts (crew, bystanders) for prophylaxis/vaccination.",
+        "Decontaminate the ambulance per agent guidance; doff PPE with a spotter."
+      ]
+    },
+    {
+      "id": "c11_alg02",
+      "title": "Radiological Incident (EMS)",
+      "description": "Trauma first, then radiation.",
+      "steps": [
+        "Approach upwind; use dosimeters; minimize time, maximize distance, use shielding.",
+        "Triage and treat life threats in standard PPE (gloves, gown, N95/mask, eye protection).",
+        "Remove patient clothing (bag/label); gently wash skin and wounds; cover wounds.",
+        "Note time of vomiting (dose estimate); avoid eating/drinking/smoking in the area.",
+        "Notify hospital: contaminated vs exposed; numbers.",
+        "Survey responders and equipment before leaving; follow turn-back values."
+      ]
+    }
+  ]
+}

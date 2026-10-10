@@ -1,0 +1,44 @@
+{
+  "chapter": "c08",
+  "cases": [
+    {
+      "id": "c08_s01",
+      "title": "The Field Hospital Trap",
+      "presentation": "Your treatment area has 8 reds. Two paramedics are attempting RSI on one red, another is placing a second IV on a stable yellow. Four ambulances wait empty at the loading zone.",
+      "vitals": {
+        "reds waiting": "8",
+        "ambulances idle": "4"
+      },
+      "question": "Best correction?",
+      "options": [
+        "A: Transport yellows first since they're ready.",
+        "B: Send ambulances back to staging.",
+        "C: Load reds now with essential interventions only (airway positioning/adjuncts, bleeding control, decompression); do advanced procedures en route or at hospital.",
+        "D: Finish the procedures first."
+      ],
+      "correct": 2,
+      "explanation": "Idle ambulances + waiting reds = flow failure. Treat to the minimum that's safe for transport and move.",
+      "clinicalPearl": "Empty ambulances are a red flag in the treatment area."
+    },
+    {
+      "id": "c08_s02",
+      "title": "Three Hospitals, One Plan",
+      "presentation": "Subway derailment: 6 red, 10 yellow, 25 green. Hospitals: Central (Level I, 6 min — already receiving 15 walk-ins), East (community, 12 min, 10 free ED beds), Children's (15 min). 2 reds are children.",
+      "vitals": {
+        "red": "6 (2 peds)",
+        "yellow": "10",
+        "green": "25"
+      },
+      "question": "Best distribution?",
+      "options": [
+        "A: Greens first to clear the scene.",
+        "B: Everyone to Central.",
+        "C: Hold all patients until hospitals call back.",
+        "D: Adult reds split between Central and the next trauma-capable hospital, pediatric reds toward Children's if stable enough for 15 min, yellows to East, greens by bus to the least-loaded facility — all via Med Comms and logged."
+      ],
+      "correct": 3,
+      "explanation": "Match capability, respect capacity, and protect the trauma center for those who need it. Central is already flooded by self-presenters.",
+      "clinicalPearl": "Ask hospitals for capacity by color: 'How many red, yellow, green can you take?'"
+    }
+  ]
+}

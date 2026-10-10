@@ -1,0 +1,33 @@
+{
+  "id": "mci",
+  "title": "MCI — Mass Casualty Incident Management",
+  "subtitle": "Tactical MCI Ops for EMS",
+  "version": "1.0.0",
+  "edition": "Aligned to NIMS/ICS, JESIP METHANE, START/JumpSTART, CDC SALT, TECC and DOT ERG field practice",
+  "description": "A tactical, high-yield MCI course for EMS built as an incident timeline: understand the event, own the first ten minutes, command it, triage it, treat and move patients, survive CBRNE and hostile threats, then demobilize and recover. Each chapter has a tight summary, field pearls, red flags, memory aids, flashcards, course-style quizzes, scenarios, algorithms, tables — and timed game-style drills for triage, METHANE radio reports, and officer roles.",
+  "icon": "siren",
+  "color": "#c8102e",
+  "accentColor": "#1f6feb",
+  "estimatedHours": 9,
+  "difficulty": "Beginner to Advanced",
+  "certification": "Educational reviewer (no certifying body)",
+  "audience": ["EMR", "EMT", "AEMT", "Paramedic", "EMS Supervisor", "Flight / Critical Care", "ED Nurse & Physician"],
+  "prerequisites": ["BLS-level patient assessment", "Basic familiarity with local EMS protocols"],
+  "contentTypes": ["summary", "flashcards", "quizzes", "scenarios", "algorithms", "tables", "drills"],
+  "chapters": [
+    { "id": "c01", "number": 1, "title": "MCI Fundamentals & Types of Disasters", "section": "① Mission Briefing", "difficulty": "Beginner" },
+    { "id": "c02", "number": 2, "title": "First-Due: Size-Up, CSCATTT & METHANE", "section": "② The First 10 Minutes", "difficulty": "Beginner" },
+    { "id": "c03", "number": 3, "title": "ICS for EMS: Command Structure", "section": "② The First 10 Minutes", "difficulty": "Intermediate" },
+    { "id": "c04", "number": 4, "title": "MCI Officer Roles & Action Cards", "section": "② The First 10 Minutes", "difficulty": "Intermediate" },
+    { "id": "c05", "number": 5, "title": "Scene Layout: Zones, Staging & Patient Flow", "section": "② The First 10 Minutes", "difficulty": "Intermediate" },
+    { "id": "c06", "number": 6, "title": "Triage I: START & JumpSTART", "section": "③ Triage", "difficulty": "Beginner" },
+    { "id": "c07", "number": 7, "title": "Triage II: SALT, Tags & Re-Triage", "section": "③ Triage", "difficulty": "Intermediate" },
+    { "id": "c08", "number": 8, "title": "Treatment Area, Transport & Hospital Distribution", "section": "④ Treat & Move", "difficulty": "Intermediate" },
+    { "id": "c09", "number": 9, "title": "CBRNE I: HazMat Recognition, PPE & Decon", "section": "⑤ CBRNE", "difficulty": "Intermediate" },
+    { "id": "c10", "number": 10, "title": "CBRNE II: Chemical Agents & Antidotes", "section": "⑤ CBRNE", "difficulty": "Advanced" },
+    { "id": "c11", "number": 11, "title": "CBRNE III: Biological & Radiological/Nuclear", "section": "⑤ CBRNE", "difficulty": "Advanced" },
+    { "id": "c12", "number": 12, "title": "Explosive & Hostile Events: Blast, Active Shooter, TECC", "section": "⑤ CBRNE", "difficulty": "Advanced" },
+    { "id": "c13", "number": 13, "title": "Special MCIs: Collapse, Crush, Crowds & Natural Disasters", "section": "⑥ Special Ops & Recovery", "difficulty": "Advanced" },
+    { "id": "c14", "number": 14, "title": "Demobilization, Recovery & Responder Resilience", "section": "⑥ Special Ops & Recovery", "difficulty": "Beginner" }
+  ]
+}

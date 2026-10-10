@@ -1,0 +1,135 @@
+{
+  "chapter": "c01",
+  "questions": [
+    {
+      "id": "c01_q01",
+      "question": "An MCI is BEST defined as:",
+      "options": [
+        "A. Any incident where casualties exceed immediately available resources",
+        "B. Any incident requiring a helicopter",
+        "C. Any incident with 10 or more patients",
+        "D. Any incident declared by a hospital"
+      ],
+      "correct": 0,
+      "rationale": "The resource gap defines an MCI. A fixed number is only a local activation tier.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q02",
+      "question": "A tour bus rolls over with 32 passengers aboard. All are accounted for. This is a(n):",
+      "options": [
+        "A. Compound incident",
+        "B. Open incident",
+        "C. Closed incident",
+        "D. Uncompensated incident"
+      ],
+      "correct": 2,
+      "rationale": "The number of victims is finite and known — a closed (contained) incident.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q03",
+      "question": "An earthquake damages the regional hospital and cuts the main highway. This is BEST described as:",
+      "options": [
+        "A. Simple, closed",
+        "B. Simple, open",
+        "C. Compound, open",
+        "D. Compound, closed"
+      ],
+      "correct": 2,
+      "rationale": "Infrastructure damage = compound; unknown, growing victim numbers in an earthquake = open.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c01_q04",
+      "question": "Which pairing of disaster type and dominant injury is CORRECT?",
+      "options": [
+        "A. Earthquake — crush injury",
+        "B. Flood — blast lung",
+        "C. Tornado — drowning",
+        "D. Heat wave — penetrating trauma"
+      ],
+      "correct": 0,
+      "rationale": "Earthquakes cause entrapment and crush; tornadoes cause penetrating debris and blunt trauma.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q05",
+      "question": "Three days after a hurricane, several family members are found confused with headache in a closed house running a generator. Most likely cause:",
+      "options": [
+        "A. Carbon monoxide poisoning",
+        "B. Heat stroke",
+        "C. Dehydration",
+        "D. Food poisoning"
+      ],
+      "correct": 0,
+      "rationale": "Generator use indoors after storms is a classic delayed killer — CO poisoning. Get everyone out and give high-flow O2.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q06",
+      "question": "Pandemics are classified as which type of natural disaster?",
+      "options": [
+        "A. Biological",
+        "B. Geophysical",
+        "C. Hydrological",
+        "D. Climatological"
+      ],
+      "correct": 0,
+      "rationale": "Epidemics/pandemics fall under the biological natural-hazard group.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q07",
+      "question": "The MCI mindset shift is from:",
+      "options": [
+        "A. Maximum care for each patient to the most good for the most patients",
+        "B. Speed to accuracy",
+        "C. BLS to ALS",
+        "D. Transport to treatment"
+      ],
+      "correct": 0,
+      "rationale": "MCI care rations resources to maximize survivors overall.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q08",
+      "question": "Which phase of the disaster cycle includes MCI drills and stocking triage tags?",
+      "options": [
+        "A. Recovery",
+        "B. Preparedness",
+        "C. Mitigation",
+        "D. Response"
+      ],
+      "correct": 1,
+      "rationale": "Planning, training, exercises, and equipment caches are preparedness.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c01_q09",
+      "question": "The primary mechanism of death in a crowd crush is:",
+      "options": [
+        "A. Hypothermia",
+        "B. Head injury from falls",
+        "C. Penetrating trauma",
+        "D. Compressive asphyxia"
+      ],
+      "correct": 3,
+      "rationale": "Sustained chest compression prevents ventilation — traumatic/compressive asphyxia.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c01_q10",
+      "question": "A second explosion occurs 20 minutes after the first at the same scene. Your FIRST consideration is:",
+      "options": [
+        "A. Gas leak only",
+        "B. Industrial accident",
+        "C. Intentional event with secondary devices targeting responders",
+        "D. Hoax"
+      ],
+      "correct": 2,
+      "rationale": "Repeat events suggest an intentional attack; withdraw, stage away, and coordinate with law enforcement.",
+      "difficulty": "Medium"
+    }
+  ]
+}

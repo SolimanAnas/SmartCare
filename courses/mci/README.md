@@ -1,0 +1,90 @@
+# MCI Course Reviewer
+
+A tactical, high-yield **Mass Casualty Incident (MCI)** course for EMS, built on the
+SmartCare reviewer architecture (same shell as BLS/BDLS/Medical): pure JSON data + a
+standalone HTML reviewer. Content is deliberately short on theory and long on what you
+*do* on scene.
+
+## Course structure (an incident timeline)
+
+| # | Chapter | Section | Drill |
+|---|---------|---------|-------|
+| 1 | MCI Fundamentals & Types of Disasters | ① Mission Briefing | Disaster → injury pattern |
+| 2 | First-Due: Size-Up, CSCATTT & METHANE | ② The First 10 Minutes | METHANE radio drill |
+| 3 | ICS for EMS: Command Structure | ② The First 10 Minutes | ICS title match |
+| 4 | MCI Officer Roles & Action Cards (IC, Triage, Treatment, Transport, Staging, Safety…) | ② The First 10 Minutes | Whose job is it? |
+| 5 | Scene Layout: Zones, Staging & Patient Flow | ② The First 10 Minutes | Zone it! |
+| 6 | Triage I: START & JumpSTART | ③ Triage | 60-second tagger (26 patients) |
+| 7 | Triage II: SALT, Tags & Re-Triage | ③ Triage | SALT tagger (with Expectant) |
+| 8 | Treatment Area, Transport & Hospital Distribution | ④ Treat & Move | Where does this one go? |
+| 9 | CBRNE I: HazMat Recognition, PPE & Decon | ⑤ CBRNE | Read the hazard |
+| 10 | CBRNE II: Chemical Agents & Antidotes | ⑤ CBRNE | Name that toxidrome |
+| 11 | CBRNE III: Biological & Radiological/Nuclear | ⑤ CBRNE | Contain it |
+| 12 | Explosive & Hostile Events: Blast, Active Shooter, TECC | ⑤ CBRNE | Which TECC phase? |
+| 13 | Special MCIs: Collapse, Crush, Crowds & Natural Disasters | ⑥ Special Ops & Recovery | Special ops quick calls |
+| 14 | Demobilization, Recovery & Responder Resilience | ⑥ Special Ops & Recovery | Close it out right |
+
+Totals (see `python build.py`): 14 chapters · 175 flashcards · 137 quiz questions ·
+40 scenarios · 27 algorithms · 31 tables · 14 drills (172 drill rounds).
+
+## What's inside
+
+```
+mci/
+├── index.html            ← the reviewer app (open in a browser)
+├── build.py              ← regenerates data/bundle.js from the JSON + validates
+├── data/
+│   ├── bundle.js         ← all data bundled as window.MCI_DATA (offline-capable)
+│   └── mci/
+│       ├── manifest.json            ← course + chapter index
+│       ├── chapters/c01..c14.json   ← summary, objectives, pearls, red flags, mistakes, memory aids, decision trees
+│       ├── flashcards/c01..c14.json ← Q/A cards
+│       ├── quizzes/c01..c14.json    ← MCQs with rationale
+│       ├── scenarios/c01..c14.json  ← scene scenarios with explanations
+│       ├── algorithms/c01..c14.json ← action cards / step algorithms
+│       ├── tables/c01..c14.json     ← comparison tables
+│       └── drills/c01..c14.json     ← timed game-style drills (MCI-only)
+```
+
+## Drills (the 🎮 tab)
+
+Each chapter has a timed rapid-fire drill: shuffled rounds, a per-round timer against a
+target, speed bonus, streak bonus, a final rank ("Probie" → "Incident Commander"), and a
+personal best saved in `localStorage` (`mci_drill_best`). The tab only appears when a
+chapter has drills.
+
+Drill schema:
+
+```json
+{ "chapter": "c06", "drills": [ {
+  "id": "c06_dr01", "title": "…", "icon": "🏷️", "description": "…", "targetSeconds": 30,
+  "options": [ { "key": "red", "label": "IMMEDIATE (Red)", "color": "#c8102e" } ],
+  "items": [ { "id": "c06_dr01_01", "prompt": "…", "details": { "resp": "36/min" },
+               "answer": "red", "why": "…" } ]
+} ] }
+```
+
+Either use a drill-level `options` set with `item.answer` as a **key**, or give each item
+its own `options` (strings) with `item.answer` as an **index** (options are shuffled at
+render time).
+
+## Running
+
+Open `index.html` directly (uses `data/bundle.js`) or serve over HTTP (falls back to the
+per-chapter JSON). After editing any JSON run `python build.py` — it rebuilds the bundle
+and validates JSON parse, globally unique IDs, quiz/scenario answer indices, drill
+answers, and chapter cross-references. Progress keys: `mci_progress`, `mci_quiz`,
+`mci_drill_best`.
+
+## Content provenance
+
+Original summary content drawn from public doctrine: FEMA NIMS/ICS, FIRESCOPE MCI
+position checklists, JESIP M/ETHANE and MIMMS CSCATTT, START (Newport Beach) and
+JumpSTART (Romig), CDC-sponsored SALT / MUCC, NARU Triage Sieve, DOT ERG, NFPA 704,
+HHS CHEMM/REMM, CDC Category A agents, EPA PAG emergency-worker dose guidance, C-TECC and
+the Hartford Consensus (THREAT), CDC blast-injury guidance, WHO Psychological First Aid,
+FEMA HSEEP. Drug doses (nerve-agent kits, hydroxocobalamin, crush fluids) reflect common
+label/consensus values — **always follow local protocols and medical direction.**
+
+> Educational reviewer content. Not a certification course and not a substitute for your
+> agency's MCI plan, protocols, or HazMat/TECC training.

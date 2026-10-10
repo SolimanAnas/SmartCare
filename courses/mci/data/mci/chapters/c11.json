@@ -1,0 +1,72 @@
+{
+  "id": "c11",
+  "title": "CBRNE III: Biological & Radiological/Nuclear",
+  "shortTitle": "Bio & Rad/Nuc",
+  "estimatedStudyTime": 40,
+  "difficulty": "Advanced",
+  "learningObjectives": [
+    "Recognize bioterrorism clues and match Category A agents to transmission and PPE.",
+    "Separate radiation EXPOSURE from CONTAMINATION and act accordingly.",
+    "Apply time–distance–shielding and emergency-worker dose guidance.",
+    "Manage dirty-bomb casualties without delaying trauma care."
+  ],
+  "summary": [
+    {
+      "title": "Biological Events Arrive Quietly",
+      "content": "There's usually no scene — just a surge of sick people at EDs and clinics days later. Clues: clusters of the same severe illness, illness in an unusual place/season/age group, many cases from one event or location, sick or dead animals, a single case of a vanished disease (smallpox = public-health emergency). Overt events (threat letters, sprayers) are the exception. EMS role: protect yourself (PPE), mask the patient (source control), limit crew exposure, notify public health/medical control, clean the vehicle, follow prophylaxis guidance."
+    },
+    {
+      "title": "CDC Category A Agents — EMS Essentials",
+      "content": "ANTHRAX (inhalational): flu-like → severe respiratory distress, shock, widened mediastinum; NOT person-to-person → standard precautions. PLAGUE (pneumonic): fulminant pneumonia ± hemoptysis; person-to-person by DROPLETS → mask the patient, droplet precautions (many systems use N95). SMALLPOX: high fever then synchronous pustules, densest on face/extremities incl. palms/soles; AIRBORNE + CONTACT → N95/PAPR, gown, gloves, eye protection; vaccinate contacts early. BOTULISM: alert patient with descending symmetric flaccid paralysis (diplopia, dysarthria, dysphagia → respiratory failure), no fever; not person-to-person; support ventilation, antitoxin. TULAREMIA: pneumonia/ulceroglandular, not person-to-person. VIRAL HEMORRHAGIC FEVERS (e.g., Ebola): fever, bleeding, shock; CONTACT/droplet with body fluids → full PPE with trained donning/doffing and a spotter."
+    },
+    {
+      "title": "Radiation: Exposure vs Contamination",
+      "content": "EXPOSED (irradiated): energy passed through the body — like an X-ray. The patient is NOT radioactive and poses NO risk to you. CONTAMINATED: radioactive material is ON (external) or IN (internal: inhaled, ingested, wounds) the body — risk is mainly from spreading particles. Standard PPE (gloves, gown, N95/surgical mask, eye protection) + removing the patient's clothing (removes the large majority of external contamination) + gentle washing handles most of it. Radiation contamination is almost never an immediate threat to the patient's life or yours — treat life threats FIRST."
+    },
+    {
+      "title": "Time, Distance, Shielding",
+      "content": "Minimize TIME near a source; maximize DISTANCE (inverse-square law: double the distance → ¼ the dose); use SHIELDING (concrete, earth, vehicles, buildings). Wear personal dosimeters and know turn-back values. US EPA emergency-worker guidance: ~5 rem (50 mSv) for general emergency actions, ~10 rem (100 mSv) to protect valuable property, ~25 rem (250 mSv) for lifesaving/protecting large populations — higher only by fully informed volunteers. ALARA: As Low As Reasonably Achievable."
+    },
+    {
+      "title": "Device Types & Field Medicine",
+      "content": "RDD ('dirty bomb'): conventional explosive + radioactive material — the blast injures; radiation doses are usually low; triage and treat trauma normally, then decon. RED (radiological exposure device): hidden source irradiating passers-by — exposures without contamination, often discovered by clusters of skin burns/ARS. IND (nuclear detonation): blast, thermal, prompt radiation, then fallout — public messaging is 'Get inside, stay inside, stay tuned' (shelter in the center of a sturdy building/basement until advised). Acute radiation syndrome: earlier vomiting = higher dose (roughly: < 1 h → severe dose, > 4 h → likely survivable). Potassium iodide (KI) protects ONLY the thyroid and ONLY against radioactive iodine — not a general 'radiation pill'."
+    }
+  ],
+  "clinicalPearls": [
+    "An irradiated patient is not radioactive. A contaminated patient is — but clothing off + wash fixes most of it.",
+    "Never delay lifesaving trauma care for radiological decontamination.",
+    "Mask the coughing patient first — source control beats PPE.",
+    "Smallpox, Ebola, and pneumonic plague are the Category A agents that spread person-to-person; anthrax, botulism, tularemia do not.",
+    "White-powder letters are usually hoaxes: don't shake/sniff, isolate the area, wash hands with soap and water, call law enforcement/HazMat."
+  ],
+  "redFlags": [
+    "Multiple previously healthy adults with severe pneumonia and shock from the same building.",
+    "Fever + synchronous pustules on face and palms → smallpox until proven otherwise.",
+    "Alert patient with descending paralysis and difficulty swallowing → botulism; prepare for respiratory failure.",
+    "Unexplained radiation-like skin burns in several people → hidden source (RED)."
+  ],
+  "commonMistakes": [
+    "Refusing to touch an irradiated (exposed-only) patient.",
+    "Giving KI after a dirty bomb without radioiodine involvement.",
+    "Using only standard precautions for smallpox or VHF.",
+    "Over-decontaminating stable patients while critical trauma waits."
+  ],
+  "memoryAids": [
+    "Category A: 'A-B-P-S-T-V' — Anthrax, Botulism, Plague, Smallpox, Tularemia, VHF.",
+    "Person-to-person: 'SPV' — Smallpox, Plague (pneumonic), VHF.",
+    "Radiation protection: Time–Distance–Shielding (ALARA).",
+    "Exposed = X-ray (safe). Contaminated = mud (wash it off)."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Radiological Casualty",
+      "content": "Radiological incident suspected\n  → Life threats? YES → treat now (standard PPE), decon after/with care\n  → Contaminated?\n       Unknown/likely → survey if meter available; remove clothing; gentle wash; cover wounds\n       Exposed only → no decon needed; patient is NOT radioactive\n  → Early vomiting? (< ~1 h) → high dose → priority for hospital ARS care\n  → Track your dose: time, distance, shielding; dosimeter turn-back values"
+    }
+  ],
+  "references": [
+    "CDC Bioterrorism Agents/Diseases (Category A)",
+    "HHS REMM — Radiation Emergency Medical Management",
+    "US EPA Protective Action Guides (PAG) Manual — emergency worker dose guidelines",
+    "FEMA/Ready.gov — Nuclear explosion: Get Inside, Stay Inside, Stay Tuned"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "chapter": "c10",
+  "drills": [
+    {
+      "title": "Name That Toxidrome",
+      "icon": "🧪",
+      "targetSeconds": 12,
+      "description": "Fast pattern recognition. Read the signs, pick the agent or the antidote. Wrong answer = wrong drug.",
+      "items": [
+        {
+          "id": "c10_dr01_01",
+          "prompt": "Pinpoint pupils, drooling, wheezing, twitching, vomiting.",
+          "options": [
+            "Nerve agent",
+            "Opioid",
+            "Cyanide",
+            "Chlorine"
+          ],
+          "answer": 0,
+          "why": "Wet miosis + fasciculations = cholinergic crisis."
+        },
+        {
+          "id": "c10_dr01_02",
+          "prompt": "Pinpoint pupils, RR 4, dry skin, no twitching, crowd in a theater.",
+          "options": [
+            "Nerve agent",
+            "Incapacitating opioid",
+            "Mustard",
+            "Riot agent"
+          ],
+          "answer": 1,
+          "why": "Dry miosis + respiratory depression = opioid → naloxone."
+        },
+        {
+          "id": "c10_dr01_03",
+          "prompt": "Fire victim, unresponsive, BP 70/40, SpO2 reads 99%.",
+          "options": [
+            "Hydroxocobalamin",
+            "Atropine",
+            "Pralidoxime",
+            "Naloxone"
+          ],
+          "answer": 0,
+          "why": "Smoke + shock → cyanide (and CO). Hydroxocobalamin is the antidote."
+        },
+        {
+          "id": "c10_dr01_04",
+          "prompt": "Yellow-green cloud, bleach smell, immediate burning eyes and stridor.",
+          "options": [
+            "Chlorine",
+            "Phosgene",
+            "Mustard",
+            "Sarin"
+          ],
+          "answer": 0,
+          "why": "Highly water-soluble → immediate upper-airway irritation."
+        },
+        {
+          "id": "c10_dr01_05",
+          "prompt": "'Smelled like cut hay', mild cough now; feels fine.",
+          "options": [
+            "Phosgene — observe 24 h",
+            "Riot agent — release",
+            "Cyanide — antidote now",
+            "Nerve agent — 3 kits"
+          ],
+          "answer": 0,
+          "why": "Phosgene: delayed pulmonary edema 2–24 h. Rest and observe."
+        },
+        {
+          "id": "c10_dr01_06",
+          "prompt": "Painless garlic-smelling oily liquid; red blistering skin appears 6 h later.",
+          "options": [
+            "Sulfur mustard",
+            "Lewisite",
+            "CS gas",
+            "Ammonia"
+          ],
+          "answer": 0,
+          "why": "Mustard: painless exposure, delayed blisters. Decon immediately — no antidote."
+        },
+        {
+          "id": "c10_dr01_07",
+          "prompt": "Immediate severe skin pain, geranium odor, blistering.",
+          "options": [
+            "Lewisite — BAL antidote",
+            "Mustard — no antidote",
+            "Phosgene",
+            "VX"
+          ],
+          "answer": 0,
+          "why": "Lewisite hurts immediately; antidote is BAL (dimercaprol)."
+        },
+        {
+          "id": "c10_dr01_08",
+          "prompt": "Protesters: tearing, burning skin, coughing; improving after 20 min in fresh air.",
+          "options": [
+            "Riot-control agent",
+            "Nerve agent",
+            "Cyanide",
+            "Phosgene"
+          ],
+          "answer": 0,
+          "why": "CS/OC effects are immediate and self-limited after removal."
+        },
+        {
+          "id": "c10_dr01_09",
+          "prompt": "Severe nerve-agent casualty, seizing. Kits?",
+          "options": [
+            "1",
+            "2",
+            "3 + benzodiazepine",
+            "0"
+          ],
+          "answer": 2,
+          "why": "Severe = 3 kits rapidly + benzo + ventilatory support."
+        },
+        {
+          "id": "c10_dr01_10",
+          "prompt": "Atropine has been given. Pulse 128, pupils still tiny, chest now clear and breathing easy. Next?",
+          "options": [
+            "More atropine until pupils dilate",
+            "Stop — endpoint reached (dry secretions, easy breathing)",
+            "More atropine until HR < 100",
+            "Give naloxone"
+          ],
+          "answer": 1,
+          "why": "Titrate to secretions/breathing — tachycardia and miosis aren't the endpoint."
+        },
+        {
+          "id": "c10_dr01_11",
+          "prompt": "Basement, rotten-egg smell that 'disappeared', 3 workers collapsed.",
+          "options": [
+            "Hydrogen sulfide — do not enter; SCBA only",
+            "Chlorine — enter with a mask",
+            "Phosgene — observe",
+            "Riot agent — fresh air"
+          ],
+          "answer": 0,
+          "why": "H2S paralyzes smell at high concentration — a classic multiple-rescuer death scenario."
+        },
+        {
+          "id": "c10_dr01_12",
+          "prompt": "Farmer after spraying crops: sweating, diarrhea, miosis, bradycardia.",
+          "options": [
+            "Organophosphate — atropine + pralidoxime",
+            "Cyanide — hydroxocobalamin",
+            "Opioid — naloxone",
+            "Heat stroke — cooling"
+          ],
+          "answer": 0,
+          "why": "Organophosphate pesticides = same mechanism as nerve agents."
+        }
+      ],
+      "id": "c10_dr01"
+    }
+  ]
+}

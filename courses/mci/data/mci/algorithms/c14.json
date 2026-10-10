@@ -1,0 +1,20 @@
+{
+  "chapter": "c14",
+  "algorithms": [
+    {
+      "id": "c14_alg01",
+      "title": "Incident Close-Out",
+      "description": "Do it in this order.",
+      "steps": [
+        "Confirm no patients remain (re-sweep scene, check green area, search for self-evacuees).",
+        "Reconcile counts: tags = transport log = hospital arrivals + dead + released on scene.",
+        "Phased demobilization: rehab/medical check → decon → restock → return to service; log each release.",
+        "Terminate command and announce.",
+        "Hot wash before crews disperse.",
+        "Complete documentation (ePCRs, exposure logs).",
+        "AAR/Improvement Plan within weeks; update plans, train, and drill.",
+        "PFA and peer follow-up at ~1 day, 1 week, 1 month."
+      ]
+    }
+  ]
+}

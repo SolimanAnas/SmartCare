@@ -1,0 +1,374 @@
+{
+  "chapter": "c06",
+  "drills": [
+    {
+      "title": "60-Second Tagger: START & JumpSTART",
+      "icon": "🏷️",
+      "targetSeconds": 30,
+      "options": [
+        {
+          "key": "green",
+          "label": "MINOR (Green)",
+          "color": "#2ea043"
+        },
+        {
+          "key": "yellow",
+          "label": "DELAYED (Yellow)",
+          "color": "#d29922"
+        },
+        {
+          "key": "red",
+          "label": "IMMEDIATE (Red)",
+          "color": "#c8102e"
+        },
+        {
+          "key": "black",
+          "label": "DECEASED (Black)",
+          "color": "#111111"
+        }
+      ],
+      "description": "Twenty-six patients. One tag each. Target ≤ 30 s per patient. Read the protocol line — adults get START, kids get JumpSTART.",
+      "items": [
+        {
+          "id": "c06_dr01_01",
+          "prompt": "Man walks to the green tarp holding a bloody forearm (oozing).",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "Yes",
+            "resp": "—",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "green",
+          "why": "Ambulatory = MINOR. Re-triage later; have him hold pressure."
+        },
+        {
+          "id": "c06_dr01_02",
+          "prompt": "Woman lying under a seat, not breathing. You tilt her head — she gasps and starts breathing.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "Apneic → breathes after positioning",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "red",
+          "why": "Breathing only after airway positioning = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_03",
+          "prompt": "Man face-down, not breathing. Airway repositioned — still no breathing.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "Apneic after positioning",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "black",
+          "why": "Adult apneic after positioning = DECEASED. No CPR in START."
+        },
+        {
+          "id": "c06_dr01_04",
+          "prompt": "Teen-looking adult, pelvis pain, can't stand.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "36/min",
+            "perfusion": "Radial present",
+            "mental": "Follows commands"
+          },
+          "answer": "red",
+          "why": "RR > 30 = IMMEDIATE — stop at the first red criterion."
+        },
+        {
+          "id": "c06_dr01_05",
+          "prompt": "Driver trapped, pale.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "22/min",
+            "perfusion": "Radial ABSENT",
+            "mental": "Follows commands"
+          },
+          "answer": "red",
+          "why": "No radial pulse = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_06",
+          "prompt": "Older woman, wrist and hip deformity.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "24/min",
+            "perfusion": "Radial present, CRT 4 s (warm day)",
+            "mental": "Follows commands"
+          },
+          "answer": "red",
+          "why": "CRT > 2 s = IMMEDIATE (perfusion)."
+        },
+        {
+          "id": "c06_dr01_07",
+          "prompt": "Construction worker, open tib-fib fracture, screaming.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "26/min",
+            "perfusion": "Radial strong, CRT < 2 s",
+            "mental": "Follows commands"
+          },
+          "answer": "yellow",
+          "why": "Passes RPM = DELAYED. Loud ≠ red."
+        },
+        {
+          "id": "c06_dr01_08",
+          "prompt": "Man with a head wound, eyes open, mumbling, can't squeeze your hand on request.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "18/min",
+            "perfusion": "Radial present",
+            "mental": "Does NOT follow commands"
+          },
+          "answer": "red",
+          "why": "Can't follow simple commands = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_09",
+          "prompt": "Woman with a femur deformity, calm.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "30/min",
+            "perfusion": "Radial present, CRT 1 s",
+            "mental": "Follows commands"
+          },
+          "answer": "yellow",
+          "why": "RR exactly 30 is NOT > 30 → DELAYED."
+        },
+        {
+          "id": "c06_dr01_10",
+          "prompt": "Unconscious man, snoring respirations.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "10/min",
+            "perfusion": "Radial present",
+            "mental": "Unresponsive"
+          },
+          "answer": "red",
+          "why": "RR ≤ 30 and pulse OK, but can't follow commands = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_11",
+          "prompt": "Woman sitting, says her back hurts too much to walk.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "20/min",
+            "perfusion": "Radial present, CRT < 2 s",
+            "mental": "Follows commands"
+          },
+          "answer": "yellow",
+          "why": "Non-ambulatory with normal RPM = DELAYED."
+        },
+        {
+          "id": "c06_dr01_12",
+          "prompt": "Man with burns to both arms, walking around asking for water.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "Yes",
+            "resp": "—",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "green",
+          "why": "Ambulatory = MINOR for now — burns patients need re-triage (airway, % TBSA)."
+        },
+        {
+          "id": "c06_dr01_13",
+          "prompt": "Woman in the cold night air, fingers icy.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "24/min",
+            "perfusion": "Radial present (CRT unreadable in cold)",
+            "mental": "Follows commands"
+          },
+          "answer": "yellow",
+          "why": "Use radial pulse when CRT is unreliable. Radial present + RPM OK = DELAYED."
+        },
+        {
+          "id": "c06_dr01_14",
+          "prompt": "Man with arterial spurting from the thigh — you place a tourniquet.",
+          "details": {
+            "protocol": "START (adult)",
+            "walks": "No",
+            "resp": "28/min",
+            "perfusion": "Radial weak but present after TQ, CRT 3 s",
+            "mental": "Follows commands"
+          },
+          "answer": "red",
+          "why": "CRT > 2 s = IMMEDIATE. The tourniquet was the right seconds-long LSI."
+        },
+        {
+          "id": "c06_dr01_15",
+          "prompt": "6-year-old walks to her mother at the green area.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "Yes",
+            "resp": "—",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "green",
+          "why": "Ambulatory child = MINOR. Re-triage later."
+        },
+        {
+          "id": "c06_dr01_16",
+          "prompt": "4-year-old not breathing. Positioned — still apneic. Pulse present. You give 5 breaths — he starts breathing.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "Breathes after 5 rescue breaths",
+            "perfusion": "Pulse present",
+            "mental": "—"
+          },
+          "answer": "red",
+          "why": "Breathing after rescue breaths = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_17",
+          "prompt": "7-year-old not breathing after positioning. No palpable pulse.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "Apneic",
+            "perfusion": "No pulse",
+            "mental": "—"
+          },
+          "answer": "black",
+          "why": "Apneic + pulseless child = DECEASED (no rescue breaths)."
+        },
+        {
+          "id": "c06_dr01_18",
+          "prompt": "3-year-old apneic after positioning, pulse present, still apneic after 5 rescue breaths.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "Apneic after 5 breaths",
+            "perfusion": "Pulse present",
+            "mental": "—"
+          },
+          "answer": "black",
+          "why": "Apnea persists after 5 breaths = DECEASED."
+        },
+        {
+          "id": "c06_dr01_19",
+          "prompt": "5-year-old with chest bruising, grunting.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "52/min",
+            "perfusion": "Pulse present",
+            "mental": "Alert"
+          },
+          "answer": "red",
+          "why": "RR > 45 = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_20",
+          "prompt": "2-year-old, drowsy, slow breathing.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "12/min",
+            "perfusion": "Pulse present",
+            "mental": "Responds to voice"
+          },
+          "answer": "red",
+          "why": "RR < 15 = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_21",
+          "prompt": "6-year-old, deformed thigh, crying for mom.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "34/min",
+            "perfusion": "Peripheral pulse present",
+            "mental": "Alert"
+          },
+          "answer": "yellow",
+          "why": "RR 15–45, pulse present, Alert = DELAYED. (34 would be red in START — not in JumpSTART.)"
+        },
+        {
+          "id": "c06_dr01_22",
+          "prompt": "4-year-old, pale, abdominal bruising.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "28/min",
+            "perfusion": "NO palpable peripheral pulse",
+            "mental": "Responds to voice"
+          },
+          "answer": "red",
+          "why": "No palpable peripheral pulse = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_23",
+          "prompt": "5-year-old with a scalp wound, eyes closed, pushes your hand away when pinched.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "24/min",
+            "perfusion": "Pulse present",
+            "mental": "P — localizes (appropriate)"
+          },
+          "answer": "yellow",
+          "why": "Appropriate P (localizes/withdraws) = DELAYED."
+        },
+        {
+          "id": "c06_dr01_24",
+          "prompt": "3-year-old, extends arms rigidly when pinched.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "26/min",
+            "perfusion": "Pulse present",
+            "mental": "P — posturing (inappropriate)"
+          },
+          "answer": "red",
+          "why": "Inappropriate P (posturing) = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_25",
+          "prompt": "8-year-old, no response to voice or pain.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "20/min",
+            "perfusion": "Pulse present",
+            "mental": "U — unresponsive"
+          },
+          "answer": "red",
+          "why": "U on AVPU = IMMEDIATE."
+        },
+        {
+          "id": "c06_dr01_26",
+          "prompt": "6-year-old not breathing; you position the airway and she starts breathing.",
+          "details": {
+            "protocol": "JumpSTART (child)",
+            "walks": "No",
+            "resp": "Breathes after positioning",
+            "perfusion": "—",
+            "mental": "—"
+          },
+          "answer": "red",
+          "why": "Breathing after positioning = IMMEDIATE (same as START)."
+        }
+      ],
+      "id": "c06_dr01"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "chapter": "c04",
+  "tables": [
+    {
+      "id": "c04_t01",
+      "title": "MCI Officer Roles — One-Glance Card",
+      "headers": [
+        "Role",
+        "Mission",
+        "First actions",
+        "Never"
+      ],
+      "rows": [
+        [
+          "Incident Commander",
+          "Run the incident",
+          "Command post, METHANE, assign officers, request resources",
+          "Hands-on patient care"
+        ],
+        [
+          "Triage Officer",
+          "Find & sort everyone",
+          "Global sort, tag, LSIs, count, re-triage",
+          "Stop to treat/transport"
+        ],
+        [
+          "Treatment Officer",
+          "Keep patients alive",
+          "Zones, managers, secondary triage, prioritize",
+          "Let the area become a hospital"
+        ],
+        [
+          "Transport Officer",
+          "Move & track patients",
+          "Loading zone, hospital capacity, assign, log",
+          "Let crews self-select hospitals"
+        ],
+        [
+          "Staging Officer",
+          "Hold & release vehicles",
+          "Location, check-in, release on request",
+          "Let units self-dispatch"
+        ],
+        [
+          "Safety Officer",
+          "Protect responders",
+          "Hazard scan, PPE, zones",
+          "Ignore an unsafe act"
+        ],
+        [
+          "Med Comms Coordinator",
+          "Single voice to hospitals",
+          "Capacity, notifications",
+          "Let crews call independently"
+        ],
+        [
+          "Morgue Manager",
+          "Manage the dead",
+          "Secure, out of view, liaise with police/ME",
+          "Move bodies unnecessarily"
+        ]
+      ]
+    },
+    {
+      "id": "c04_t02",
+      "title": "Transport Log Template",
+      "headers": [
+        "Tag #",
+        "Category",
+        "Age/Sex",
+        "Unit",
+        "Destination",
+        "Time out"
+      ],
+      "rows": [
+        [
+          "A-00231",
+          "Red",
+          "~40 M",
+          "Medic 12",
+          "General (Trauma I)",
+          "14:22"
+        ],
+        [
+          "A-00244",
+          "Yellow",
+          "~25 F",
+          "Medic 7",
+          "St. Mary's",
+          "14:26"
+        ],
+        [
+          "A-00250 to 00262",
+          "Green ×12",
+          "mixed",
+          "Bus 3 + medic",
+          "West Hospital",
+          "14:31"
+        ]
+      ]
+    }
+  ]
+}

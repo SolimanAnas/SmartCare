@@ -1,0 +1,77 @@
+{
+  "chapter": "c05",
+  "cards": [
+    {
+      "id": "c05_fc01",
+      "question": "Define the hot zone.",
+      "answer": "Area of immediate danger (contamination, fire, collapse, active violence) — entry only by properly protected specialist teams.",
+      "category": "Zones"
+    },
+    {
+      "id": "c05_fc02",
+      "question": "What happens in the warm zone?",
+      "answer": "Decontamination corridor, casualty collection points, rapid lifesaving care under protection/escort.",
+      "category": "Zones"
+    },
+    {
+      "id": "c05_fc03",
+      "question": "What belongs in the cold zone?",
+      "answer": "Command post, treatment area, loading zone, staging, rehab, media area, morgue (out of view).",
+      "category": "Zones"
+    },
+    {
+      "id": "c05_fc04",
+      "question": "Ideal treatment area location?",
+      "answer": "Cold zone, upwind/uphill, flat, lit, sheltered, room to expand, next to the loading zone, one way in/one way out.",
+      "category": "Layout"
+    },
+    {
+      "id": "c05_fc05",
+      "question": "Which treatment section sits nearest the loading zone exit?",
+      "answer": "Red (Immediate) — they leave first.",
+      "category": "Layout"
+    },
+    {
+      "id": "c05_fc06",
+      "question": "Ideal staging area?",
+      "answer": "On the approach route, out of sight of the hazard, safe, with room to park in rows and a one-way path to the loading zone.",
+      "category": "Layout"
+    },
+    {
+      "id": "c05_fc07",
+      "question": "Where should the helicopter LZ be?",
+      "answer": "Cold zone, clear of wires/obstacles/debris, away from the treatment area because of rotor wash; typically ~100 × 100 ft (≈30 × 30 m) — follow your air provider.",
+      "category": "Layout"
+    },
+    {
+      "id": "c05_fc08",
+      "question": "Where is the morgue placed?",
+      "answer": "Cold zone, secure, out of public and patient view.",
+      "category": "Layout"
+    },
+    {
+      "id": "c05_fc09",
+      "question": "Rule for positioning near HazMat?",
+      "answer": "Upwind, uphill, upstream; use the ERG for isolation and protective action distances.",
+      "category": "Stand-off"
+    },
+    {
+      "id": "c05_fc10",
+      "question": "Approximate stand-off for a pipe bomb?",
+      "answer": "≈70 ft mandatory evacuation; ≈1,200 ft outdoor preferred evacuation (DHS/NCTC chart).",
+      "category": "Stand-off"
+    },
+    {
+      "id": "c05_fc11",
+      "question": "What is a Casualty Collection Point (CCP)?",
+      "answer": "A point (often in the warm zone) where casualties are gathered for triage and rapid care before movement to the treatment area.",
+      "category": "Flow"
+    },
+    {
+      "id": "c05_fc12",
+      "question": "Why one-way patient and vehicle flow?",
+      "answer": "Prevents congestion, collisions, and lost patients; ambulances never back through the scene.",
+      "category": "Flow"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "chapter": "c09",
+  "algorithms": [
+    {
+      "id": "c09_alg01",
+      "title": "HazMat Approach (EMS Awareness/Operations)",
+      "description": "Survive first, then help.",
+      "steps": [
+        "Recognize: clues, placards, Step 1-2-3.",
+        "Stop upwind, uphill, upstream; use binoculars.",
+        "Identify: placard class + UN number → ERG (yellow/blue → orange guide → green distances).",
+        "Isolate & deny entry; set hot/warm/cold zones.",
+        "Notify: METHANE + HazMat team + hospitals (contaminated patients may self-present).",
+        "Instruct exposed ambulatory people by PA: move upwind, remove outer clothing.",
+        "Receive patients in the cold zone after decon; treat per toxidrome (Chapter 10)."
+      ]
+    },
+    {
+      "id": "c09_alg02",
+      "title": "Mass Decontamination",
+      "description": "High volume, fast, humane.",
+      "steps": [
+        "Disrobe (outer clothing at least) — bag, tag, keep valuables with the person.",
+        "Triage for decon priority: symptomatic, visible liquid, non-ambulatory first.",
+        "Dry decon (blot/wipe exposed skin) for most; wet decon for caustics, visible liquid, symptoms.",
+        "Wet decon: high-volume, low-pressure lukewarm water, ~30–60 s+ per person, head to toe; no scrubbing.",
+        "Non-ambulatory lane: decon teams roll/wash on backboards/litters.",
+        "Re-dress (gowns/blankets), keep warm, triage in the cold zone, document decon on the tag."
+      ]
+    }
+  ]
+}

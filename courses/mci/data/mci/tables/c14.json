@@ -1,0 +1,62 @@
+{
+  "chapter": "c14",
+  "tables": [
+    {
+      "id": "c14_t01",
+      "title": "Stress Reactions: Normal vs Refer",
+      "headers": [
+        "Usually normal (days–weeks)",
+        "Refer / act"
+      ],
+      "rows": [
+        [
+          "Trouble sleeping, vivid dreams",
+          "Symptoms > ~1 month or worsening"
+        ],
+        [
+          "Irritability, sadness, numbness",
+          "Unable to work or function at home"
+        ],
+        [
+          "Replaying images of the event",
+          "Increasing alcohol/drug use"
+        ],
+        [
+          "Wanting to talk — or not",
+          "Any thoughts of self-harm (act today)"
+        ]
+      ]
+    },
+    {
+      "id": "c14_t02",
+      "title": "Hot Wash vs AAR",
+      "headers": [
+        "",
+        "Hot wash",
+        "After-Action Review/Report"
+      ],
+      "rows": [
+        [
+          "When",
+          "Immediately (minutes–hours)",
+          "Days–weeks later"
+        ],
+        [
+          "Format",
+          "Informal, verbal, short",
+          "Structured, written, with Improvement Plan"
+        ],
+        [
+          "Who",
+          "Everyone on scene",
+          "Leads from all agencies + planners"
+        ],
+        [
+          "Output",
+          "Immediate safety fixes, quick lessons",
+          "Sustain/improve actions with owners & deadlines"
+        ]
+      ]
+    }
+  ]
+}

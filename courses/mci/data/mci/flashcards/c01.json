@@ -1,0 +1,77 @@
+{
+  "chapter": "c01",
+  "cards": [
+    {
+      "id": "c01_fc01",
+      "question": "Define a mass casualty incident (MCI).",
+      "answer": "Any incident where the number and/or severity of casualties exceeds the resources immediately available — defined by the resource gap, not a fixed number.",
+      "category": "Definitions"
+    },
+    {
+      "id": "c01_fc02",
+      "question": "MCI vs disaster?",
+      "answer": "An MCI overwhelms immediately available resources; a disaster overwhelms the community's overall response capacity and requires outside (regional/national) assistance.",
+      "category": "Definitions"
+    },
+    {
+      "id": "c01_fc03",
+      "question": "Open vs closed incident?",
+      "answer": "Closed: finite, known number of victims (bus crash). Open: victims keep appearing or number unknown (earthquake, active shooter, plume).",
+      "category": "Classification"
+    },
+    {
+      "id": "c01_fc04",
+      "question": "Simple vs compound incident?",
+      "answer": "Simple: infrastructure intact. Compound: infrastructure (roads, hospitals, comms, utilities) is itself damaged.",
+      "category": "Classification"
+    },
+    {
+      "id": "c01_fc05",
+      "question": "Compensated vs uncompensated incident?",
+      "answer": "Compensated: the system can absorb it with additional resources. Uncompensated: cannot, even with mutual aid — a disaster.",
+      "category": "Classification"
+    },
+    {
+      "id": "c01_fc06",
+      "question": "Name the 5 natural disaster groups.",
+      "answer": "Geophysical, hydrological, meteorological, climatological, biological.",
+      "category": "Disaster Types"
+    },
+    {
+      "id": "c01_fc07",
+      "question": "Name 4 categories of human-made disasters.",
+      "answer": "Technological/industrial, transportation, intentional (terrorism/CBRNE/violence), mass-gathering/crowd events.",
+      "category": "Disaster Types"
+    },
+    {
+      "id": "c01_fc08",
+      "question": "Dominant injury pattern in an earthquake?",
+      "answer": "Crush injuries and crush syndrome, fractures, head injuries, entrapment — plus later wound infections.",
+      "category": "Injury Patterns"
+    },
+    {
+      "id": "c01_fc09",
+      "question": "Dominant threats in a flood?",
+      "answer": "Drowning, hypothermia, debris trauma, electrocution, contaminated water — and swift-water rescuer deaths.",
+      "category": "Injury Patterns"
+    },
+    {
+      "id": "c01_fc10",
+      "question": "Key post-hurricane killer often missed?",
+      "answer": "Carbon monoxide poisoning from generators used indoors; also cleanup injuries and loss of dialysis/oxygen.",
+      "category": "Injury Patterns"
+    },
+    {
+      "id": "c01_fc11",
+      "question": "Mechanism of death in crowd crush?",
+      "answer": "Compressive (traumatic) asphyxia — the chest can't expand; not trampling alone.",
+      "category": "Injury Patterns"
+    },
+    {
+      "id": "c01_fc12",
+      "question": "Phases of the disaster cycle?",
+      "answer": "Mitigation → Preparedness → Response → Recovery (→ back to mitigation).",
+      "category": "Disaster Cycle"
+    }
+  ]
+}

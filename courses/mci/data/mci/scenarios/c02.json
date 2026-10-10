@@ -1,0 +1,65 @@
+{
+  "chapter": "c02",
+  "cases": [
+    {
+      "id": "c02_s01",
+      "title": "The Pull of the First Patient",
+      "presentation": "You arrive first at a bus vs. truck collision. A screaming woman with an open femur fracture is right by your door. Through the windshield you see at least 20 more people, some not moving.",
+      "vitals": {
+        "your unit": "first & only",
+        "patients": "20+",
+        "ETA next": "6 min"
+      },
+      "question": "What do you do?",
+      "options": [
+        "A: Splint the femur — she's right here.",
+        "B: Wait for a supervisor.",
+        "C: Partner does a quick recon/global sort while you declare MCI, name command, and send METHANE.",
+        "D: Load her and transport to clear the scene."
+      ],
+      "correct": 2,
+      "explanation": "First-in doesn't get sucked in. The open femur can wait seconds; the scene can't run without command. Declare, report, request, then assign triage.",
+      "clinicalPearl": "Your first radio transmission is the most valuable intervention you'll do all day."
+    },
+    {
+      "id": "c02_s02",
+      "title": "Build the METHANE",
+      "presentation": "Gas explosion in a 3-story restaurant at 42 Harbor Rd, rear wall collapsed, smell of gas still present. Approx 15 casualties: 3 critical, 5 serious, 7 walking. Harbor Rd blocked by debris; access via Mill Lane. Your unit and one engine on scene.",
+      "vitals": {
+        "location": "42 Harbor Rd",
+        "casualties": "~15",
+        "access": "Mill Lane"
+      },
+      "question": "Which report is BEST?",
+      "options": [
+        "A: '15 patients, need ambulances.'",
+        "B: 'Explosion at Harbor Rd, lots hurt, will update.'",
+        "C: 'Send everyone to the explosion.'",
+        "D: 'Major incident declared. 42 Harbor Rd, rear of restaurant. Gas explosion with partial collapse. Hazards: ongoing gas leak, unstable structure. Access via Mill Lane — Harbor Rd blocked. Approx 15: 3 red, 5 yellow, 7 green. On scene: 1 ambulance, 1 engine; request 6 ambulances, USAR, gas utility, police.'"
+      ],
+      "correct": 3,
+      "explanation": "This hits every METHANE element in one concise transmission, including the critical hazard (gas) and the access change (Mill Lane).",
+      "clinicalPearl": "If you can't remember METHANE, read it off the action card on your visor."
+    },
+    {
+      "id": "c02_s03",
+      "title": "Quiet Lobby",
+      "presentation": "Dispatch: 'multiple people fainted in a subway station.' On arrival you see commuters coughing as they exit, several collapsed on the platform stairs, and pigeons dead near a vent.",
+      "vitals": {
+        "down": "≥6, no trauma",
+        "odor": "faint",
+        "animals": "dead birds"
+      },
+      "question": "Best action?",
+      "options": [
+        "A: Bring the patients to your ambulance immediately.",
+        "B: Stop, withdraw upwind, keep ambulatory exiting patients in one area, report suspected chemical MCI (METHANE) and request HazMat/decon.",
+        "C: Enter with a BVM and start triage.",
+        "D: Assume heat exhaustion."
+      ],
+      "correct": 1,
+      "explanation": "Multiple collapsed casualties without trauma + dead animals = chemical clues. Don't approach (Step 1-2-3), control the exiting crowd for decon, and report.",
+      "clinicalPearl": "Dead birds and fallen people — don't be the next one down."
+    }
+  ]
+}

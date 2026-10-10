@@ -1,0 +1,87 @@
+{
+  "chapter": "c03",
+  "tables": [
+    {
+      "id": "c03_t01",
+      "title": "ICS Levels & Titles",
+      "headers": [
+        "Organizational level",
+        "Title",
+        "EMS example"
+      ],
+      "rows": [
+        [
+          "Incident Command",
+          "Incident Commander",
+          "First-due EMS officer → later chief"
+        ],
+        [
+          "Command Staff",
+          "Officer",
+          "Safety, PIO, Liaison"
+        ],
+        [
+          "Section",
+          "Chief",
+          "Operations Section Chief"
+        ],
+        [
+          "Branch",
+          "Director",
+          "Medical Branch Director"
+        ],
+        [
+          "Division (geographic) / Group (functional)",
+          "Supervisor",
+          "Medical Group Supervisor"
+        ],
+        [
+          "Unit",
+          "Leader",
+          "Triage / Treatment / Transport Unit Leader"
+        ],
+        [
+          "Strike Team / Task Force",
+          "Leader",
+          "Ambulance Strike Team Leader (5 ambulances + leader)"
+        ],
+        [
+          "Staging Area",
+          "Manager",
+          "Staging Area Manager"
+        ]
+      ]
+    },
+    {
+      "id": "c03_t02",
+      "title": "General Staff — Who Does What",
+      "headers": [
+        "Section",
+        "Core job",
+        "MCI example"
+      ],
+      "rows": [
+        [
+          "Operations",
+          "Does the tactical work",
+          "Triage, treatment, transport, rescue"
+        ],
+        [
+          "Planning",
+          "Situation & resource status, IAP, documentation",
+          "Patient-count tracking, next operational period"
+        ],
+        [
+          "Logistics",
+          "Supplies, facilities, comms, food, responder medical",
+          "MCI trailer, O2 cylinders, generators, rehab"
+        ],
+        [
+          "Finance/Admin",
+          "Costs, time records, claims, procurement",
+          "Mutual-aid reimbursement, injury claims"
+        ]
+      ]
+    }
+  ]
+}

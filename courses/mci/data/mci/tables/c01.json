@@ -1,0 +1,97 @@
+{
+  "chapter": "c01",
+  "tables": [
+    {
+      "id": "c01_t01",
+      "title": "Disaster Type → Injury Pattern → EMS Tactical Priority",
+      "headers": [
+        "Disaster",
+        "Dominant injuries/threats",
+        "EMS tactical priority"
+      ],
+      "rows": [
+        [
+          "Earthquake / structural collapse",
+          "Crush, crush syndrome, fractures, head injury",
+          "USAR coordination; pre-release fluids for crush; aftershock safety"
+        ],
+        [
+          "Flood / tsunami",
+          "Drowning, hypothermia, debris trauma, electrocution",
+          "Don't enter moving water; swift-water teams; warm the patients"
+        ],
+        [
+          "Tornado",
+          "Penetrating debris, blunt trauma, fractures",
+          "Search debris fields; tetanus/wound care; gas leaks/downed lines"
+        ],
+        [
+          "Hurricane (and aftermath)",
+          "Trauma, drowning; later CO poisoning, chronic disease decompensation",
+          "Pre-storm evacuation of dependent patients; CO screening after"
+        ],
+        [
+          "Heat wave",
+          "Heat stroke, dehydration, elderly/isolated deaths",
+          "Rapid cooling on scene; welfare checks"
+        ],
+        [
+          "Wildfire",
+          "Burns, smoke inhalation, CO/cyanide",
+          "Evacuation corridors; airway burns; don't get trapped"
+        ],
+        [
+          "Industrial / HazMat",
+          "Toxic exposure, burns, blast",
+          "Upwind/uphill; isolate; decon before treatment"
+        ],
+        [
+          "Transportation (bus, rail, air)",
+          "Blunt multi-system trauma, entrapment, fire",
+          "Extrication; closed incident — account for the manifest"
+        ],
+        [
+          "Explosion / terrorism",
+          "Blast lung, fragments, amputations, burns",
+          "Secondary device awareness; tourniquets; rapid evacuation"
+        ],
+        [
+          "Crowd crush / mass gathering",
+          "Compressive asphyxia, trampling",
+          "Relieve compression; open airway; access/egress control"
+        ],
+        [
+          "Pandemic / bioterror",
+          "Respiratory failure, sepsis, surge over weeks",
+          "PPE first; protect the workforce; altered standards of care"
+        ]
+      ]
+    },
+    {
+      "id": "c01_t02",
+      "title": "Incident Classification Cheat Sheet",
+      "headers": [
+        "Axis",
+        "Option A",
+        "Option B"
+      ],
+      "rows": [
+        [
+          "Victim number",
+          "CLOSED — finite, known",
+          "OPEN — ongoing / unknown"
+        ],
+        [
+          "Infrastructure",
+          "SIMPLE — intact",
+          "COMPOUND — damaged"
+        ],
+        [
+          "System capacity",
+          "COMPENSATED — absorbable",
+          "UNCOMPENSATED — needs outside help (disaster)"
+        ]
+      ]
+    }
+  ]
+}

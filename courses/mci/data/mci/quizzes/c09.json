@@ -1,0 +1,135 @@
+{
+  "chapter": "c09",
+  "questions": [
+    {
+      "id": "c09_q01",
+      "question": "You arrive to find 4 workers collapsed near a loading dock, no trauma. Per Step 1-2-3:",
+      "options": [
+        "A. Start CPR",
+        "B. Approach with caution",
+        "C. Approach normally",
+        "D. Do not approach; withdraw, report, isolate"
+      ],
+      "correct": 3,
+      "rationale": "Three or more casualties without explanation = do not approach.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q02",
+      "question": "ERG pages listing materials by 4-digit ID number are:",
+      "options": [
+        "A. Blue",
+        "B. Yellow",
+        "C. Orange",
+        "D. Green"
+      ],
+      "correct": 1,
+      "rationale": "Yellow = ID number; Blue = name; Orange = guide; Green = distances.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q03",
+      "question": "In the NFPA 704 diamond, the blue section indicates:",
+      "options": [
+        "A. Special hazard",
+        "B. Flammability",
+        "C. Health hazard",
+        "D. Instability"
+      ],
+      "correct": 2,
+      "rationale": "Blue = health.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q04",
+      "question": "A placard with hazard class 8 indicates:",
+      "options": [
+        "A. Corrosives",
+        "B. Radioactive material",
+        "C. Flammable gas",
+        "D. Explosives"
+      ],
+      "correct": 0,
+      "rationale": "Class 8 = corrosives.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q05",
+      "question": "Which PPE level uses an air-purifying respirator?",
+      "options": [
+        "A. A",
+        "B. B",
+        "C. C",
+        "D. D"
+      ],
+      "correct": 2,
+      "rationale": "Level C uses APR/PAPR — requires a known agent and adequate oxygen.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q06",
+      "question": "The most effective initial decon step is:",
+      "options": [
+        "A. Scrubbing with bleach",
+        "B. Removing clothing",
+        "C. Wrapping in blankets",
+        "D. Antibiotic ointment"
+      ],
+      "correct": 1,
+      "rationale": "Disrobing removes most contamination fast.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c09_q07",
+      "question": "Wet decon is especially indicated for:",
+      "options": [
+        "A. Radiological exposure without contamination",
+        "B. Vapor-only exposure with no symptoms",
+        "C. All patients regardless of exposure",
+        "D. Caustic exposures or visible liquid contamination"
+      ],
+      "correct": 3,
+      "rationale": "Dry decon suffices for most; go wet for caustics/liquids/symptoms.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c09_q08",
+      "question": "A critical contaminated patient with arterial bleeding in the decon line should:",
+      "options": [
+        "A. Be tagged expectant",
+        "B. Receive LSIs (tourniquet) from protected staff during rapid gross decon",
+        "C. Wait at the end of the line",
+        "D. Skip decon and be transported"
+      ],
+      "correct": 1,
+      "rationale": "Combine LSIs with rapid decon — never transport contaminated.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c09_q09",
+      "question": "Which statement about Level C PPE is TRUE?",
+      "options": [
+        "A. Includes SCBA",
+        "B. Safe in oxygen-deficient atmospheres",
+        "C. Safe in unknown atmospheres",
+        "D. Requires a known agent and adequate oxygen"
+      ],
+      "correct": 3,
+      "rationale": "APRs filter ambient air; they don't supply oxygen.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c09_q10",
+      "question": "ERG green pages tell you:",
+      "options": [
+        "A. Fire-fighting tactics",
+        "B. Material names",
+        "C. Initial isolation and protective action distances for toxic-inhalation hazards",
+        "D. Hospital locations"
+      ],
+      "correct": 2,
+      "rationale": "Green = distances for TIH materials.",
+      "difficulty": "Easy"
+    }
+  ]
+}

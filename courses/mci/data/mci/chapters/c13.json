@@ -1,0 +1,72 @@
+{
+  "id": "c13",
+  "title": "Special MCIs: Collapse, Crush, Crowds & Natural Disasters",
+  "shortTitle": "Special MCIs",
+  "estimatedStudyTime": 40,
+  "difficulty": "Advanced",
+  "learningObjectives": [
+    "Manage entrapment and prevent death at release in crush syndrome.",
+    "Recognize and respond to crowd crush and mass-gathering hazards.",
+    "Apply hazard-specific tactics for transport crashes and natural disasters.",
+    "Protect vulnerable populations: children, elderly, technology-dependent patients."
+  ],
+  "summary": [
+    {
+      "title": "Structural Collapse & Crush Syndrome",
+      "content": "Don't enter unstable structures — USAR teams shore, breach, and perform confined-space rescue; EMS supports them and may treat in voids only when it's declared safe. Crush syndrome follows prolonged compression of large muscle masses (classically hours, but sooner with heavy loads): at RELEASE, potassium, acid, and myoglobin flood the circulation → arrhythmia/cardiac arrest ('smiling death') and later kidney failure. Before release: IV/IO normal saline (~1–1.5 L/h adult; avoid potassium-containing fluids), cardiac monitor, prepare for hyperkalemia (calcium, sodium bicarbonate, nebulized albuterol per protocol). If no access and release can't wait, some protocols allow a tourniquet on the limb before release as a last resort."
+    },
+    {
+      "title": "Crowd Crush & Mass Gatherings",
+      "content": "Danger starts when crowd density exceeds ~4–5 people per m² and people can no longer move independently; crowd 'waves' and surges precede collapse. Victims die standing — compressive (traumatic) asphyxia — not mainly from trampling. Signs: facial/neck plethora and petechiae, subconjunctival hemorrhage, hypoxia. Actions: alert event control to stop inflow and open exits, extract from the edges, open airway, O2, ventilate, triage normally. Pre-plan mass gatherings: medical posts, access/egress lanes, heat/cold plans, intoxication, communications with event security."
+    },
+    {
+      "title": "Transportation Incidents",
+      "content": "Closed incidents with a manifest — get the passenger count early and account for everyone (including those ejected or wandered off). BUS/COACH: rollover = multi-system blunt trauma, entrapment, fuel. RAIL: isolate power (overhead lines, third rail) before entry; long extrication; hazmat cargo. AIRCRAFT: approach upwind, fuel fires, composite fiber hazards (respiratory protection), wide debris field; airport emergency plans. MARITIME: drowning, hypothermia, staged shore triage."
+    },
+    {
+      "title": "Natural Disaster Tactics",
+      "content": "EARTHQUAKE: aftershocks — stay out of damaged buildings; crush and fractures; compound incident (hospitals damaged). FLOOD: never enter moving water — ~6 inches (15 cm) can knock you down and ~1 foot (30 cm) can float most cars; electrocution, contaminated water, hypothermia; swift-water teams only. HEAT WAVE: exertional or classic heat stroke = cool FIRST (cold-water immersion is best), transport second. WINTER STORM: hypothermia, CO from heaters/generators, falls. HURRICANE: pre-landfall evacuation of dependent patients; post-storm CO, chainsaw injuries, missed dialysis. WILDFIRE: protect your exit route; burns, smoke, CO/cyanide."
+    },
+    {
+      "title": "Vulnerable Populations",
+      "content": "CHILDREN: JumpSTART triage; keep with caregivers where possible; document and protect UNACCOMPANIED MINORS (photo, tag, safe supervised area) — never release to unverified adults; smaller airways and higher surface area → faster hypothermia and toxin absorption. ELDERLY: atypical presentations, falls, medication dependence, heat vulnerability. TECHNOLOGY-DEPENDENT: home ventilators, O2 concentrators, dialysis, insulin — power outages create patients. DISABILITIES: service animals stay with owners; communication aids; evacuation chairs. PREGNANCY: left lateral tilt; fetal well-being depends on maternal oxygenation and perfusion."
+    }
+  ],
+  "clinicalPearls": [
+    "Fluids before freedom: start IV saline before releasing a crush victim.",
+    "Peaked T waves after extrication = hyperkalemia → calcium now.",
+    "Crowd crush kills by asphyxia — the fix is releasing the chest and ventilating.",
+    "Turn around, don't drown: no rescuer enters moving water without swift-water training and gear.",
+    "Unaccompanied children get a name, a photo, a tag, and a guardian-in-charge — reunification is a safety process."
+  ],
+  "redFlags": [
+    "Releasing a long-entrapped limb without fluids or a monitor.",
+    "Crowd surges, people unable to raise their arms, screams from one area of a crowd.",
+    "Rescuers entering unshored collapse voids.",
+    "Power outage calls for ventilator/O2-dependent patients — rising heat or cold."
+  ],
+  "commonMistakes": [
+    "Using lactated Ringer's (contains potassium) for crush pre-release fluids.",
+    "Releasing unaccompanied children to any adult who claims them.",
+    "Treating heat stroke without aggressive cooling on scene.",
+    "Forgetting to request the passenger manifest in transport incidents."
+  ],
+  "memoryAids": [
+    "Crush: 'Fluids before freedom; calcium for the K.'",
+    "Flood: '6 inches knocks you down, 1 foot floats your car.'",
+    "Heat stroke: 'Cool first, transport second.'",
+    "Unaccompanied minors: 'Name, Photo, Tag, Guardian.'"
+  ],
+  "decisionTrees": [
+    {
+      "title": "Crush Victim Release",
+      "content": "Entrapped > ~1 h (large muscle mass) or heavy compression?\n  → YES: crush syndrome risk\n     → IV/IO access → NS 1–1.5 L/h BEFORE release (no K+ fluids)\n     → Cardiac monitor; prepare calcium, bicarbonate, albuterol per protocol\n     → No IV & release can't wait → consider TQ before release (protocol/last resort)\n     → Release → watch for hyperkalemia (peaked T, wide QRS, arrhythmia)\n  → NO: standard trauma care"
+    }
+  ],
+  "references": [
+    "INSARAG / FEMA USAR medical guidance",
+    "International Society of Nephrology / Renal Disaster Relief Task Force crush syndrome recommendations",
+    "US National Weather Service 'Turn Around Don't Drown'",
+    "AAP / ASPR pediatric disaster and family reunification guidance"
+  ]
+}

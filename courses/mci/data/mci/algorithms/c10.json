@@ -1,0 +1,32 @@
+{
+  "chapter": "c10",
+  "algorithms": [
+    {
+      "id": "c10_alg01",
+      "title": "Nerve Agent Casualty",
+      "description": "Decon + Drugs + Airway.",
+      "steps": [
+        "PPE; remove from source; disrobe/decon (vapor: clothing removal; liquid: wet decon).",
+        "Assess severity: mild (miosis, rhinorrhea), moderate (secretions, wheeze, vomiting, fasciculations), severe (resp. distress, seizures, unconscious, apnea).",
+        "Mild: observe; 1 kit if symptoms progress. Moderate: 1 kit (atropine 2.1 mg + pralidoxime 600 mg IM).",
+        "Severe: 3 kits rapidly + benzodiazepine (midazolam 10 mg IM or diazepam 10 mg) for seizures.",
+        "Support ventilation; suction secretions (atropine first makes BVM ventilation possible).",
+        "Repeat atropine 2 mg every 5–10 min until secretions dry and breathing is easy.",
+        "Children: weight-based atropine/pediatric auto-injectors per protocol."
+      ]
+    },
+    {
+      "id": "c10_alg02",
+      "title": "Cyanide (incl. Smoke Inhalation)",
+      "description": "Fast recognition, fast antidote.",
+      "steps": [
+        "Remove from source; decon if liquid exposure.",
+        "100% O2 / ventilate; treat seizures.",
+        "Suspect if: enclosed-space fire + AMS, hypotension, seizures, or arrest; sudden collapse near HCN source.",
+        "Hydroxocobalamin 5 g IV/IO over ~15 min (child 70 mg/kg); repeat once if needed.",
+        "Expect red skin/urine; SpO2 and some labs may read falsely.",
+        "Avoid nitrites if CO poisoning is possible."
+      ]
+    }
+  ]
+}

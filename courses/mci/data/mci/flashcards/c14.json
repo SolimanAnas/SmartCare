@@ -1,0 +1,71 @@
+{
+  "chapter": "c14",
+  "cards": [
+    {
+      "id": "c14_fc01",
+      "question": "What must reconcile before closing an MCI?",
+      "answer": "Patient counts: triage tags = transport log = hospital arrivals (+ dead and released on scene).",
+      "category": "Demob"
+    },
+    {
+      "id": "c14_fc02",
+      "question": "Why demobilize in phases?",
+      "answer": "Late-found patients, re-triage needs, rehab, and possible re-escalation.",
+      "category": "Demob"
+    },
+    {
+      "id": "c14_fc03",
+      "question": "Demobilization checklist per unit?",
+      "answer": "Crew accounted for and checked, equipment decontaminated, restocked, returned to service, release logged.",
+      "category": "Demob"
+    },
+    {
+      "id": "c14_fc04",
+      "question": "What is a hot wash?",
+      "answer": "Short, informal debrief immediately after the incident: what worked, what didn't, immediate safety issues.",
+      "category": "Review"
+    },
+    {
+      "id": "c14_fc05",
+      "question": "Four AAR questions?",
+      "answer": "What was supposed to happen? What happened? Why the difference? What to sustain/improve?",
+      "category": "Review"
+    },
+    {
+      "id": "c14_fc06",
+      "question": "Exercise types to test MCI plans?",
+      "answer": "Tabletop, functional, full-scale exercises (HSEEP).",
+      "category": "Review"
+    },
+    {
+      "id": "c14_fc07",
+      "question": "Rehab trigger example (NFPA 1584)?",
+      "answer": "After two 30-minute SCBA cylinders or ~40 minutes of intense work.",
+      "category": "Rehab"
+    },
+    {
+      "id": "c14_fc08",
+      "question": "What is Psychological First Aid?",
+      "answer": "Evidence-informed support: ensure safety/needs, listen without forcing details, link to support — 'Look, Listen, Link'.",
+      "category": "Resilience"
+    },
+    {
+      "id": "c14_fc09",
+      "question": "Is mandatory single-session debriefing recommended?",
+      "answer": "No — it doesn't prevent PTSD and may cause harm; use PFA and voluntary peer support.",
+      "category": "Resilience"
+    },
+    {
+      "id": "c14_fc10",
+      "question": "When to refer a responder for mental-health care?",
+      "answer": "Symptoms persisting beyond ~1 month, worsening function, substance misuse, or any suicidal thoughts (immediately).",
+      "category": "Resilience"
+    },
+    {
+      "id": "c14_fc11",
+      "question": "Key MCI documents?",
+      "answer": "Triage tags, transport log, unit assignments/times, TQ times, antidotes/decon, exposure logs, ePCRs.",
+      "category": "Documentation"
+    }
+  ]
+}

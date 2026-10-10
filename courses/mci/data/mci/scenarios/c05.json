@@ -1,0 +1,64 @@
+{
+  "chapter": "c05",
+  "cases": [
+    {
+      "id": "c05_s01",
+      "title": "The Wind Changed",
+      "presentation": "Industrial fire with 18 casualties. Your treatment area is set up 150 m east of the plant. Twenty minutes in, a light breeze shifts and smoke begins drifting toward the treatment area. Two treatment staff start coughing.",
+      "vitals": {
+        "patients in TA": "12",
+        "wind": "now toward TA",
+        "smoke": "drifting"
+      },
+      "question": "What now?",
+      "options": [
+        "A: Hand out surgical masks and continue.",
+        "B: Relocate the treatment area upwind immediately, re-mark zones, and inform IC/Safety and Transport of the new loading point.",
+        "C: Close the windows of the ambulances.",
+        "D: Transport everyone at once to the nearest hospital."
+      ],
+      "correct": 1,
+      "explanation": "Zones move with the hazard. A treatment area in smoke creates new casualties among patients and staff. Relocate and re-communicate flow.",
+      "clinicalPearl": "Check the wind every 15 minutes — tie a strip of tape to an antenna."
+    },
+    {
+      "id": "c05_s02",
+      "title": "Gridlock",
+      "presentation": "At a stadium MCI, ambulances are driving in from three directions, parking wherever they can, and backing out past the green collection point. Two crews almost hit walking wounded.",
+      "vitals": {
+        "ambulances": "14",
+        "entry points": "3",
+        "loading zone": "undefined"
+      },
+      "question": "Best fix?",
+      "options": [
+        "A: Ask crews to drive carefully.",
+        "B: Move the greens into ambulances.",
+        "C: Establish one staging area on a single approach, a defined loading zone at the treatment exit, and a one-way exit route — communicate it to all units.",
+        "D: Stop transporting until clear."
+      ],
+      "correct": 2,
+      "explanation": "Flow design solves congestion: one way in from staging, load, one way out.",
+      "clinicalPearl": "Draw the flow on the hood of your rig, then put it on the radio."
+    },
+    {
+      "id": "c05_s03",
+      "title": "Second Bag",
+      "presentation": "Fifteen minutes after an explosion at a bus terminal, a police officer reports an unattended backpack 20 m from your casualty collection point.",
+      "vitals": {
+        "distance": "~20 m",
+        "CCP patients": "9"
+      },
+      "question": "Your action?",
+      "options": [
+        "A: Evacuate the CCP and staff beyond the stand-off distance using cover, avoid radio use near the device, notify IC/police — continue care at the new location.",
+        "B: Open the bag to check.",
+        "C: Ignore it — police will handle it.",
+        "D: Move the backpack away yourself."
+      ],
+      "correct": 0,
+      "explanation": "Assume a secondary device. Move people out of line-of-sight beyond the stand-off distance; let bomb technicians manage it.",
+      "clinicalPearl": "Time, distance, cover — for bombs as for radiation."
+    }
+  ]
+}

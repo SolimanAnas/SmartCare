@@ -1,0 +1,72 @@
+{
+  "id": "c07",
+  "title": "Triage II: SALT, Tags & Re-Triage",
+  "shortTitle": "SALT & Re-Triage",
+  "estimatedStudyTime": 40,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Run SALT: global sort, lifesaving interventions, five categories including Expectant.",
+    "Compare START, SALT and Triage Sieve and know when each is used.",
+    "Tag correctly and re-triage at every hand-off point.",
+    "Explain over-triage vs under-triage and why both kill."
+  ],
+  "summary": [
+    {
+      "title": "SALT in 4 Moves",
+      "content": "SORT globally: 'Walk to me' (assess LAST), 'Wave/move' (assess SECOND), still or obvious life threat (assess FIRST). ASSESS individually and do LIFESAVING INTERVENTIONS (seconds only): control major hemorrhage, open airway (child: consider 2 rescue breaths), chest decompression (if trained), antidote auto-injector. Then: not breathing → DEAD. Breathing → ask 4 questions: obeys commands/purposeful movement? peripheral pulse? not in respiratory distress? major hemorrhage controlled? ALL yes → MINIMAL (minor injuries only) or DELAYED. ANY no → IMMEDIATE if likely to survive with current resources, otherwise EXPECTANT. TREATMENT/TRANSPORT by priority."
+    },
+    {
+      "title": "Expectant (Gray) Is a Resource Decision",
+      "content": "Expectant = alive, but unlikely to survive given CURRENT resources (e.g., massive burns, devastating head injury with agonal breathing in a scene with 3 ambulances for 60 patients). They get comfort care and pain relief and are re-triaged as soon as resources allow — the same patient may become IMMEDIATE when the scene stabilizes. Expectant is not abandonment and not 'black'. START has no expectant step; SALT and many systems do."
+    },
+    {
+      "title": "Which System?",
+      "content": "START/JumpSTART: simplest, widely taught in North America. SALT: CDC-sponsored national all-hazards guideline (adults and kids in one algorithm, includes LSIs and Expectant) — the basis of the Model Uniform Core Criteria. Triage Sieve (UK/NARU): primary triage by walking, catastrophic hemorrhage, airway, breathing rate, and pulse/CRT, ranking P1–P3. Secondary triage tools (e.g., Triage Sort using the Revised Trauma Score) are used at the treatment area. Use what your system trains — consistency beats elegance."
+    },
+    {
+      "title": "Tags: Your Silent Radio",
+      "content": "Tags or ribbons tell everyone the category without a word. Minimum on a tag: unique number, category, time, and critical interventions (TOURNIQUET + TIME, antidotes given, decontaminated Y/N). Attach to a limb or neck — not clothing that will be cut off. Category changes: tear/fold the tag to the new color and note the time; never leave two contradictory colors. Use the tear-off stub for the transport log."
+    },
+    {
+      "title": "Re-Triage and the Two Errors",
+      "content": "Triage is a snapshot. Re-triage at: primary (scene) → secondary (treatment area entry) → before transport → hospital arrival — and whenever condition or resources change. UNDER-triage (critical patient tagged low) causes preventable deaths. OVER-triage (non-critical tagged red) floods the red area and transport — critical mortality rises as over-triage rises (Frykberg). Trauma-system benchmarks: under-triage < 5%, over-triage ~25–35%. In MCIs, accuracy saves the reds."
+    }
+  ],
+  "clinicalPearls": [
+    "SALT LSIs = 'Bleed, Breathe (airway ± 2 breaths for kids), Decompress, Dose (auto-injector)'.",
+    "SALT asks four YES questions: Obeys? Pulse? No distress? Bleeding controlled? Any 'no' → red or gray.",
+    "Write TQ + time on the tag (and on the patient's forehead if tags are short).",
+    "Same patient, different tag over time is normal — re-triage is the system working.",
+    "Over-triage feels safe but kills: it buries the true reds."
+  ],
+  "redFlags": [
+    "Tags attached to jackets that get cut off in treatment.",
+    "Two colors on one patient with no time noted.",
+    "Expectant patients left alone without comfort care or re-triage.",
+    "No one assigned to re-triage the green area."
+  ],
+  "commonMistakes": [
+    "Confusing EXPECTANT (alive, gray) with DEAD (black).",
+    "Forgetting that walkers are assessed LAST, not skipped.",
+    "Tagging everyone red 'to be safe'.",
+    "Forgetting the 2 rescue breaths for apneic children in SALT."
+  ],
+  "memoryAids": [
+    "SALT = Sort, Assess, Lifesaving interventions, Treatment/Transport.",
+    "Sort: Walk → last, Wave → second, Still → first.",
+    "Colors: Green walks, Yellow waits, Red runs (first), Gray gets comfort, Black is gone.",
+    "Tag must-haves: #, Color, Time, TQ/Antidote, Decon."
+  ],
+  "decisionTrees": [
+    {
+      "title": "SALT Individual Assessment",
+      "content": "LSIs as needed: hemorrhage control | open airway (child: consider 2 breaths) | chest decompression | auto-injector\nBreathing?\n  → NO: DEAD\n  → YES ↓\nObeys commands/purposeful movement? Peripheral pulse? Not in respiratory distress? Major hemorrhage controlled?\n  → ALL YES: minor injuries only? YES → MINIMAL | NO → DELAYED\n  → ANY NO: likely to survive with current resources?\n        YES → IMMEDIATE | NO → EXPECTANT\nRe-triage at every stage"
+    }
+  ],
+  "references": [
+    "SALT Mass Casualty Triage — CDC-sponsored workgroup (Lerner et al.)",
+    "Model Uniform Core Criteria (MUCC) for Mass Casualty Triage",
+    "NARU / UK Ambulance Service Triage Sieve",
+    "Frykberg ER. Medical management of disasters and mass casualties (over-triage and critical mortality)"
+  ]
+}

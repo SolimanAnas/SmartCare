@@ -1,0 +1,89 @@
+{
+  "chapter": "c11",
+  "cards": [
+    {
+      "id": "c11_fc01",
+      "question": "Name the CDC Category A bioterrorism agents.",
+      "answer": "Anthrax, botulism, plague, smallpox, tularemia, viral hemorrhagic fevers.",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc02",
+      "question": "Which Category A agents spread person-to-person?",
+      "answer": "Smallpox (airborne/contact), pneumonic plague (droplet), VHF (contact with body fluids).",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc03",
+      "question": "PPE for suspected smallpox?",
+      "answer": "Airborne + contact: fit-tested N95/PAPR, gown, gloves, eye protection; mask the patient.",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc04",
+      "question": "Inhalational anthrax key features?",
+      "answer": "Flu-like prodrome → severe dyspnea, shock; widened mediastinum; not contagious person-to-person.",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc05",
+      "question": "Botulism presentation?",
+      "answer": "Alert, afebrile patient with descending symmetric flaccid paralysis: diplopia, ptosis, dysarthria, dysphagia → respiratory failure.",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc06",
+      "question": "Smallpox vs chickenpox rash?",
+      "answer": "Smallpox: synchronous lesions, centrifugal (face/extremities, palms/soles). Chickenpox: asynchronous crops, centripetal (trunk).",
+      "category": "Bio"
+    },
+    {
+      "id": "c11_fc07",
+      "question": "Exposure vs contamination?",
+      "answer": "Exposure: radiation passed through — patient not radioactive. Contamination: radioactive material on/in the body — remove clothing, wash.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc08",
+      "question": "Three principles of radiation protection?",
+      "answer": "Time, distance, shielding (ALARA).",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc09",
+      "question": "Inverse-square law?",
+      "answer": "Doubling the distance from a point source reduces the dose rate to one quarter.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc10",
+      "question": "EPA emergency-worker dose guidelines?",
+      "answer": "~5 rem general; ~10 rem protecting valuable property; ~25 rem lifesaving/protecting large populations; higher only for informed volunteers.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc11",
+      "question": "What is an RDD?",
+      "answer": "Radiological dispersal device ('dirty bomb'): conventional explosive spreading radioactive material — blast causes most injuries.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc12",
+      "question": "What does potassium iodide protect against?",
+      "answer": "Only thyroid uptake of radioactive iodine.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc13",
+      "question": "Public message after a nuclear detonation?",
+      "answer": "Get inside, stay inside, stay tuned — shelter deep inside a sturdy building until advised.",
+      "category": "Rad"
+    },
+    {
+      "id": "c11_fc14",
+      "question": "Time to vomiting in ARS — significance?",
+      "answer": "Earlier vomiting = higher dose; vomiting within ~1 h suggests a severe dose.",
+      "category": "Rad"
+    }
+  ]
+}

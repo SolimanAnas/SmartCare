@@ -1,0 +1,136 @@
+{
+  "chapter": "c04",
+  "drills": [
+    {
+      "title": "Whose Job Is It?",
+      "icon": "🦺",
+      "targetSeconds": 8,
+      "options": [
+        {
+          "key": "ic",
+          "label": "Incident Commander",
+          "color": "#f0f6fc"
+        },
+        {
+          "key": "triage",
+          "label": "Triage Officer",
+          "color": "#c8102e"
+        },
+        {
+          "key": "treat",
+          "label": "Treatment Officer",
+          "color": "#d29922"
+        },
+        {
+          "key": "transport",
+          "label": "Transport Officer",
+          "color": "#2ea043"
+        },
+        {
+          "key": "staging",
+          "label": "Staging Officer",
+          "color": "#1f6feb"
+        },
+        {
+          "key": "safety",
+          "label": "Safety Officer",
+          "color": "#ff9f43"
+        }
+      ],
+      "description": "A task lands on the scene. Toss it to the right vest — fast. Wrong vest = lost minutes.",
+      "items": [
+        {
+          "id": "c04_dr01_01",
+          "prompt": "Sending the METHANE report and naming the incident.",
+          "answer": "ic",
+          "why": "Command owns the first report and naming the incident."
+        },
+        {
+          "id": "c04_dr01_02",
+          "prompt": "Shouting 'If you can walk, come to the blue tent!'",
+          "answer": "triage",
+          "why": "Global sort is the triage officer's opening move."
+        },
+        {
+          "id": "c04_dr01_03",
+          "prompt": "Choosing which hospital gets the next red patient.",
+          "answer": "transport",
+          "why": "Transport matches patients to hospital capability and capacity."
+        },
+        {
+          "id": "c04_dr01_04",
+          "prompt": "Laying out red, yellow, and green tarps.",
+          "answer": "treat",
+          "why": "Treatment Officer sets up the treatment area."
+        },
+        {
+          "id": "c04_dr01_05",
+          "prompt": "Making mutual-aid ambulances check in, keys left in the ignition.",
+          "answer": "staging",
+          "why": "Staging tracks and holds available vehicles."
+        },
+        {
+          "id": "c04_dr01_06",
+          "prompt": "Stopping a crew from walking under a sagging roof.",
+          "answer": "safety",
+          "why": "Safety Officer can stop unsafe acts immediately."
+        },
+        {
+          "id": "c04_dr01_07",
+          "prompt": "Applying a tourniquet in 10 seconds then moving on.",
+          "answer": "triage",
+          "why": "Seconds-long LSIs are allowed during triage."
+        },
+        {
+          "id": "c04_dr01_08",
+          "prompt": "Writing 'A-00231 · Red · Medic 12 · General · 14:22'.",
+          "answer": "transport",
+          "why": "The transport log is the Transport Officer's record."
+        },
+        {
+          "id": "c04_dr01_09",
+          "prompt": "Requesting 6 more ambulances and a bus from dispatch.",
+          "answer": "ic",
+          "why": "Resource requests flow through command."
+        },
+        {
+          "id": "c04_dr01_10",
+          "prompt": "Secondary triage of patients arriving at the treatment area.",
+          "answer": "treat",
+          "why": "Treatment re-triages on entry to the treatment area."
+        },
+        {
+          "id": "c04_dr01_11",
+          "prompt": "Telling the IC 'only 2 ambulances left available'.",
+          "answer": "staging",
+          "why": "Staging reports when available resources drop to the trigger level."
+        },
+        {
+          "id": "c04_dr01_12",
+          "prompt": "Reporting '5 red, 9 yellow, 21 green, 2 black' to command.",
+          "answer": "triage",
+          "why": "Triage owns the casualty count by category."
+        },
+        {
+          "id": "c04_dr01_13",
+          "prompt": "Coordinating with police and fire chiefs at one command post.",
+          "answer": "ic",
+          "why": "Unified command coordination is a command function."
+        },
+        {
+          "id": "c04_dr01_14",
+          "prompt": "Calling the next ambulance up from staging to the loading zone.",
+          "answer": "transport",
+          "why": "Transport requests units from staging as patients are ready."
+        },
+        {
+          "id": "c04_dr01_15",
+          "prompt": "Enforcing respiratory protection near a smoldering chemical drum.",
+          "answer": "safety",
+          "why": "PPE and hazard enforcement are safety functions."
+        }
+      ],
+      "id": "c04_dr01"
+    }
+  ]
+}

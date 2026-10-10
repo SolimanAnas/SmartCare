@@ -1,0 +1,97 @@
+{
+  "chapter": "c12",
+  "drills": [
+    {
+      "title": "Which TECC Phase?",
+      "icon": "🎯",
+      "targetSeconds": 8,
+      "options": [
+        {
+          "key": "direct",
+          "label": "Direct Threat (HOT)",
+          "color": "#c8102e"
+        },
+        {
+          "key": "indirect",
+          "label": "Indirect Threat (WARM)",
+          "color": "#d29922"
+        },
+        {
+          "key": "evac",
+          "label": "Evacuation (COLD)",
+          "color": "#2ea043"
+        }
+      ],
+      "description": "Each action belongs to a phase. Do the right thing in the wrong zone and you become a casualty.",
+      "items": [
+        {
+          "id": "c12_dr01_01",
+          "prompt": "Applying a tourniquet 'high and tight' while rounds are still being fired.",
+          "answer": "direct",
+          "why": "Tourniquet is the only medical intervention in direct threat."
+        },
+        {
+          "id": "c12_dr01_02",
+          "prompt": "Packing a groin (junctional) wound with hemostatic gauze in a cleared hallway.",
+          "answer": "indirect",
+          "why": "Junctional packing is warm-zone (indirect threat) care."
+        },
+        {
+          "id": "c12_dr01_03",
+          "prompt": "Placing a vented chest seal under police escort.",
+          "answer": "indirect",
+          "why": "Respiration step of MARCH — indirect threat."
+        },
+        {
+          "id": "c12_dr01_04",
+          "prompt": "Dragging a casualty behind a concrete pillar.",
+          "answer": "direct",
+          "why": "Moving to cover is direct-threat care."
+        },
+        {
+          "id": "c12_dr01_05",
+          "prompt": "Reassessing tourniquet effectiveness and documenting time in the ambulance.",
+          "answer": "evac",
+          "why": "Reassessment and documentation continue during evacuation care."
+        },
+        {
+          "id": "c12_dr01_06",
+          "prompt": "Needle decompression for suspected tension pneumothorax at the CCP.",
+          "answer": "indirect",
+          "why": "Decompression is indirect-threat (warm) care."
+        },
+        {
+          "id": "c12_dr01_07",
+          "prompt": "Telling a wounded officer to apply his own tourniquet while staying in the fight.",
+          "answer": "direct",
+          "why": "Self-aid is emphasized under direct threat."
+        },
+        {
+          "id": "c12_dr01_08",
+          "prompt": "Wrapping a casualty in a hypothermia blanket before moving to the CCP.",
+          "answer": "indirect",
+          "why": "Hypothermia prevention starts in indirect threat."
+        },
+        {
+          "id": "c12_dr01_09",
+          "prompt": "Starting a second IV and advanced monitoring en route to the trauma center.",
+          "answer": "evac",
+          "why": "Advanced care belongs in evacuation."
+        },
+        {
+          "id": "c12_dr01_10",
+          "prompt": "Placing an NPA and recovery position in an unconscious casualty in a cleared room.",
+          "answer": "indirect",
+          "why": "Airway management is deferred until indirect threat."
+        },
+        {
+          "id": "c12_dr01_11",
+          "prompt": "Converting a hasty tourniquet to a pressure dressing when safe and time allows.",
+          "answer": "indirect",
+          "why": "TQ reassessment/conversion happens in indirect threat or later."
+        }
+      ],
+      "id": "c12_dr01"
+    }
+  ]
+}

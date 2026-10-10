@@ -1,0 +1,34 @@
+{
+  "chapter": "c02",
+  "algorithms": [
+    {
+      "id": "c02_alg01",
+      "title": "METHANE Radio Template",
+      "description": "Read it straight off the card. Target: under 60 seconds.",
+      "steps": [
+        "'[Dispatch], this is [unit], establishing [Name] Command.'",
+        "M — 'MAJOR INCIDENT DECLARED' (or 'major incident standby').",
+        "E — Exact location: address/grid, side of building, landmarks.",
+        "T — Type: what happened (RTC, explosion, collapse, chemical, shooting).",
+        "H — Hazards: present and potential (fire, fuel, gas, chemicals, structure, violence, traffic, weather).",
+        "A — Access/egress: best route in, routes to avoid, staging/RV location.",
+        "N — Number: estimated total + red/yellow/green split + special groups (children, burns, contaminated).",
+        "E — Emergency services: who is on scene, what you request (ambulances, buses, HazMat, USAR, police, air).",
+        "Follow with CAN updates (Conditions, Actions, Needs) every 10–15 min or on major change."
+      ]
+    },
+    {
+      "id": "c02_alg02",
+      "title": "First-Due Crew Actions",
+      "description": "Two-person crew, first unit at an MCI.",
+      "steps": [
+        "Approach with caution; stop short; position upwind/uphill/upstream and out of traffic.",
+        "Scan for hazards and CBRNE/hostile clues; if present — withdraw and report.",
+        "Crew 1: assume command, name the incident, declare MCI, send METHANE.",
+        "Crew 2: 360° recon + global sort (walkers to a collection point, wavers noted).",
+        "Request resources early and name the staging area.",
+        "As units arrive: assign Triage, Treatment, Transport, Staging; hand command up when a senior officer arrives (formal transfer)."
+      ]
+    }
+  ]
+}

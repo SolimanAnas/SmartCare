@@ -1,0 +1,110 @@
+{
+  "chapter": "c14",
+  "drills": [
+    {
+      "title": "Close It Out Right",
+      "icon": "🏁",
+      "targetSeconds": 10,
+      "description": "The last ambulance is gone. Is the incident really over? Make the right call.",
+      "items": [
+        {
+          "id": "c14_dr01_01",
+          "prompt": "Tags 50, transported 45, dead 2, released 1. Close?",
+          "options": [
+            "Yes",
+            "No — 2 unaccounted; re-sweep and search",
+            "Yes, if the IC agrees",
+            "Ask the media"
+          ],
+          "answer": 1,
+          "why": "50 − 48 = 2 missing. Reconcile before terminating."
+        },
+        {
+          "id": "c14_dr01_02",
+          "prompt": "Last red patient just left. Release all 20 units?",
+          "options": [
+            "Yes, all at once",
+            "Release in phases; keep some for late finds/rehab",
+            "Keep all units overnight",
+            "Let crews decide"
+          ],
+          "answer": 1,
+          "why": "Phased demobilization keeps capacity."
+        },
+        {
+          "id": "c14_dr01_03",
+          "prompt": "Best timing for a hot wash?",
+          "options": [
+            "Before crews disperse, same day",
+            "Next month",
+            "Never",
+            "Only if things went badly"
+          ],
+          "answer": 0,
+          "why": "Immediate, short, everyone present."
+        },
+        {
+          "id": "c14_dr01_04",
+          "prompt": "Ambulance used for decon-zone patients at a chemical incident.",
+          "options": [
+            "Back in service now",
+            "Decontaminate before returning to service",
+            "Burn it",
+            "Air it out for 5 min"
+          ],
+          "answer": 1,
+          "why": "Contaminated equipment endangers the next crew and patient."
+        },
+        {
+          "id": "c14_dr01_05",
+          "prompt": "Crew member is quiet but says 'I'm fine'. You…",
+          "options": [
+            "Force them to describe it in detail",
+            "Check in (PFA), offer support, follow up later",
+            "Report them",
+            "Ignore"
+          ],
+          "answer": 1,
+          "why": "Look, Listen, Link — offer, don't force."
+        },
+        {
+          "id": "c14_dr01_06",
+          "prompt": "AAR finding: 'Staging was chaotic.' What makes it useful?",
+          "options": [
+            "Name someone to blame",
+            "Add a specific fix, an owner, and a deadline",
+            "Leave as is",
+            "Delete it"
+          ],
+          "answer": 1,
+          "why": "Improvement plans need actions, owners, and dates."
+        },
+        {
+          "id": "c14_dr01_07",
+          "prompt": "Firefighter changed 2 SCBA cylinders in heavy work.",
+          "options": [
+            "Keep going",
+            "Send to rehab (rest, fluids, vitals)",
+            "Go home",
+            "Third cylinder now"
+          ],
+          "answer": 1,
+          "why": "Rehab trigger per NFPA 1584 guidance."
+        },
+        {
+          "id": "c14_dr01_08",
+          "prompt": "Six weeks later, a medic has nightmares and is drinking heavily.",
+          "options": [
+            "It's normal, wait",
+            "Refer to professional and peer support",
+            "Discipline",
+            "Change shifts"
+          ],
+          "answer": 1,
+          "why": "Persistent symptoms with functional impact need referral."
+        }
+      ],
+      "id": "c14_dr01"
+    }
+  ]
+}

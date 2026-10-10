@@ -1,0 +1,87 @@
+{
+  "chapter": "c06",
+  "tables": [
+    {
+      "id": "c06_t01",
+      "title": "START vs JumpSTART",
+      "headers": [
+        "Step",
+        "START (adult)",
+        "JumpSTART (child)"
+      ],
+      "rows": [
+        [
+          "Walking",
+          "MINOR",
+          "MINOR"
+        ],
+        [
+          "Apneic after positioning",
+          "DECEASED",
+          "Pulse? None → DECEASED; pulse → 5 breaths"
+        ],
+        [
+          "After rescue breaths",
+          "N/A",
+          "Breathes → IMMEDIATE; apneic → DECEASED"
+        ],
+        [
+          "Respiratory rate red flag",
+          "> 30",
+          "< 15 or > 45"
+        ],
+        [
+          "Perfusion red flag",
+          "No radial pulse or CRT > 2 s",
+          "No palpable peripheral pulse"
+        ],
+        [
+          "Mental status red flag",
+          "Can't follow simple commands",
+          "U, or P with inappropriate response"
+        ],
+        [
+          "Otherwise",
+          "DELAYED",
+          "DELAYED"
+        ]
+      ]
+    },
+    {
+      "id": "c06_t02",
+      "title": "Triage Categories & Colors (START family)",
+      "headers": [
+        "Color",
+        "Category",
+        "Priority",
+        "Typical examples"
+      ],
+      "rows": [
+        [
+          "Red",
+          "Immediate",
+          "1st",
+          "Airway compromise, shock, altered mental status, RR > 30"
+        ],
+        [
+          "Yellow",
+          "Delayed",
+          "2nd",
+          "Stable fractures, burns without airway issues, stable abdominal injury"
+        ],
+        [
+          "Green",
+          "Minor",
+          "3rd",
+          "Walking wounded: abrasions, sprains, small lacerations"
+        ],
+        [
+          "Black",
+          "Deceased",
+          "—",
+          "Apneic after airway positioning (child: after pulse check/5 breaths)"
+        ]
+      ]
+    }
+  ]
+}

@@ -26,6 +26,8 @@ self.__PRECACHE = [
   "courses/pepp/data/bundle.js",
   "courses/medical/index.html",
   "courses/medical/data/bundle.js",
+  "courses/mci/index.html",
+  "courses/mci/data/bundle.js",
   "chapters/c-index.html",
   "chapters/c0.html",
   "chapters/c1.html",
@@ -147,4 +149,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "acb2598852";
+self.__PRECACHE_VERSION = "37b54fac1f";

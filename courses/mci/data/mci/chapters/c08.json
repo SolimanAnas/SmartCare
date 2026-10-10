@@ -1,0 +1,71 @@
+{
+  "id": "c08",
+  "title": "Treatment Area, Transport & Hospital Distribution",
+  "shortTitle": "Treat & Transport",
+  "estimatedStudyTime": 35,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Deliver focused, flow-friendly care in the treatment area (MARCH priorities).",
+    "Set transport priorities and load vehicles efficiently.",
+    "Distribute patients across hospitals by capability and capacity.",
+    "Track every patient from tag to hospital bed."
+  ],
+  "summary": [
+    {
+      "title": "Treatment Area Care: Do What Changes Outcome",
+      "content": "MARCH: Massive hemorrhage (tourniquets, packing), Airway (position, adjuncts; advanced airways only if they don't stall flow), Respiration (seal open chest wounds, decompress tension pneumothorax, O2 to those who need it most), Circulation (bleeding control first; IV/IO and fluids selectively — permissive hypotension in penetrating trauma), Hypothermia/Head (keep everyone warm — blankets, ground insulation; protect the head-injured airway). Skip what doesn't change survival in the next hour: detailed secondary surveys, full spinal packaging of every patient, non-critical IVs. One provider can watch several yellows; reds need hands."
+    },
+    {
+      "title": "Transport Priorities",
+      "content": "Reds first — especially those who need a surgeon now: non-compressible torso hemorrhage, airway that won't stay open, tension physiology not relieved, severe burns with airway involvement. Then yellows, then greens. Fill vehicles smartly: 1 red + 1–2 greens, or 2 yellows, per ambulance (per local policy and crew capacity). Move greens in bulk — buses or vans with a medic and a radio. Use air medical for long distances or specialty centers, but an LZ costs time — don't fly a patient a ground unit could have delivered sooner."
+    },
+    {
+      "title": "Hospital Distribution: Distribute, Don't Dump",
+      "content": "The closest hospital gets hit first and hardest — often by walking wounded who self-present before EMS patients arrive ('upside-down triage': the first arrivals at hospital are the least injured). Send reds to the trauma center, burns to burn-capable centers, children to pediatric-capable hospitals when the time cost is acceptable, and spread yellows/greens to hospitals further out. Get capacity through one channel: the Medical Communications Coordinator / regional hospital coordination center (e.g., 'General can take 4 red, 8 yellow')."
+    },
+    {
+      "title": "Tracking: Every Patient Has a Trail",
+      "content": "Tag number → transport log → hospital. Without tracking, families can't find loved ones, hospitals can't anticipate, and patients 'disappear'. Log at the loading point (tag #, category, unit, destination, time). Hand the tear-off stub to the transport officer. Many systems use electronic patient tracking — scan the barcode on the tag. Family reunification centers depend on this data."
+    },
+    {
+      "title": "Hospital Side (What EMS Should Know)",
+      "content": "Hospitals activate their own command system (e.g., HICS), clear ED beds, cancel elective surgery, and open surge areas. A classic CDC rule of thumb: roughly double the number of casualties arriving in the first hour to estimate the hospital's total. Expect decontamination at the hospital door for chemical incidents — many contaminated patients self-present. Give hospitals early, honest numbers so they can surge."
+    }
+  ],
+  "clinicalPearls": [
+    "The fastest treatment in an MCI is often the ambulance door closing on a red patient headed to a surgeon.",
+    "Hypothermia is the silent MCI killer — insulate from the ground, not just on top.",
+    "Load reds with a green 'buddy' who can call for help if the red deteriorates — and fill empty seats.",
+    "First-hour hospital arrivals × 2 ≈ total expected at that hospital (rule of thumb).",
+    "If you can't remember where a patient went, nobody can. Log it."
+  ],
+  "redFlags": [
+    "Treatment area turning into a field hospital with long procedures and no outflow.",
+    "All ambulances going to the closest hospital.",
+    "Patients leaving the scene without a log entry.",
+    "Greens self-evacuating in private cars untracked (they'll show up at the nearest ED)."
+  ],
+  "commonMistakes": [
+    "Intubating or starting multiple IVs on scene while transport units wait.",
+    "Sending one green per ambulance.",
+    "Not telling hospitals the real numbers early.",
+    "Forgetting pediatric/burn/trauma capability when assigning destinations."
+  ],
+  "memoryAids": [
+    "MARCH: Massive bleeding, Airway, Respiration, Circulation, Hypothermia/Head.",
+    "Distribute, don't dump.",
+    "Vehicle math: 1 red + greens, 2 yellows, a busload of greens with a medic.",
+    "Log = Tag · Truck · Target · Time."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Destination Decision",
+      "content": "Patient ready for transport\n  → RED?\n     → Needs surgery/trauma team → TRAUMA CENTER (spread reds across trauma-capable hospitals)\n     → Major burns → burn-capable center (if time allows; else stabilize at nearest)\n     → Child → pediatric-capable hospital if time cost acceptable\n  → YELLOW → hospitals with capacity, often further from scene\n  → GREEN → bus/van with medic to hospital/clinic with spare capacity (NOT the closest)\n  → Always: check capacity via Med Comms, log it"
+    }
+  ],
+  "references": [
+    "TCCC/TECC MARCH algorithm (CoTCCC / C-TECC)",
+    "CDC 'In a Moment's Notice: Surge Capacity for Terrorist Bombings' (first-hour rule of thumb)",
+    "Hospital Incident Command System (HICS)"
+  ]
+}

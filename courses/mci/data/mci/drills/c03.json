@@ -1,0 +1,158 @@
+{
+  "chapter": "c03",
+  "drills": [
+    {
+      "title": "ICS Title Match",
+      "icon": "🪖",
+      "targetSeconds": 8,
+      "description": "Rapid-fire ICS terminology. Get the title and the box right — it's how strangers work together.",
+      "items": [
+        {
+          "id": "c03_dr01_01",
+          "prompt": "Head of the Operations Section is the…",
+          "options": [
+            "Operations Section Chief",
+            "Operations Director",
+            "Operations Supervisor",
+            "Operations Officer"
+          ],
+          "answer": 0,
+          "why": "Sections are led by Chiefs."
+        },
+        {
+          "id": "c03_dr01_02",
+          "prompt": "Head of the Medical Branch is the…",
+          "options": [
+            "Medical Branch Chief",
+            "Medical Branch Director",
+            "Medical Branch Leader",
+            "Medical Branch Officer"
+          ],
+          "answer": 1,
+          "why": "Branches are led by Directors."
+        },
+        {
+          "id": "c03_dr01_03",
+          "prompt": "Head of the Medical Group is the…",
+          "options": [
+            "Medical Group Leader",
+            "Medical Group Director",
+            "Medical Group Supervisor",
+            "Medical Group Manager"
+          ],
+          "answer": 2,
+          "why": "Divisions and Groups are led by Supervisors."
+        },
+        {
+          "id": "c03_dr01_04",
+          "prompt": "Head of the Triage Unit is the…",
+          "options": [
+            "Triage Unit Leader",
+            "Triage Unit Supervisor",
+            "Triage Unit Chief",
+            "Triage Officer (Command Staff)"
+          ],
+          "answer": 0,
+          "why": "Units are led by Leaders (often called 'Triage Officer' informally)."
+        },
+        {
+          "id": "c03_dr01_05",
+          "prompt": "The Public Information Officer belongs to…",
+          "options": [
+            "General Staff",
+            "Command Staff",
+            "Planning Section",
+            "Operations Section"
+          ],
+          "answer": 1,
+          "why": "Command Staff = Safety, PIO, Liaison."
+        },
+        {
+          "id": "c03_dr01_06",
+          "prompt": "Logistics is part of…",
+          "options": [
+            "Command Staff",
+            "General Staff",
+            "Medical Group",
+            "Staging"
+          ],
+          "answer": 1,
+          "why": "General Staff = Operations, Planning, Logistics, Finance/Admin."
+        },
+        {
+          "id": "c03_dr01_07",
+          "prompt": "'Division B' most likely refers to…",
+          "options": [
+            "A function",
+            "A geographic area",
+            "An agency",
+            "A shift"
+          ],
+          "answer": 1,
+          "why": "Divisions are geographic; Groups are functional."
+        },
+        {
+          "id": "c03_dr01_08",
+          "prompt": "Who coordinates with other agencies' representatives?",
+          "options": [
+            "Liaison Officer",
+            "PIO",
+            "Logistics Chief",
+            "Treatment Unit Leader"
+          ],
+          "answer": 0,
+          "why": "Liaison Officer is the point of contact for assisting/cooperating agencies."
+        },
+        {
+          "id": "c03_dr01_09",
+          "prompt": "Who runs the area where uncommitted ambulances wait?",
+          "options": [
+            "Transport Unit Leader",
+            "Staging Area Manager",
+            "Safety Officer",
+            "Treatment Unit Leader"
+          ],
+          "answer": 1,
+          "why": "Staging Areas are run by Managers."
+        },
+        {
+          "id": "c03_dr01_10",
+          "prompt": "A supervisor has 9 direct reports. ICS says…",
+          "options": [
+            "Fine in an emergency",
+            "Add a supervisory layer",
+            "Send 4 home",
+            "Report to two supervisors"
+          ],
+          "answer": 1,
+          "why": "Span of control ~3–7 (5 optimal) — expand the organization."
+        },
+        {
+          "id": "c03_dr01_11",
+          "prompt": "Who documents the situation and writes the IAP?",
+          "options": [
+            "Operations",
+            "Planning",
+            "Finance/Admin",
+            "Liaison"
+          ],
+          "answer": 1,
+          "why": "Planning tracks situation/resources and produces the IAP."
+        },
+        {
+          "id": "c03_dr01_12",
+          "prompt": "Who can halt an unsafe operation immediately?",
+          "options": [
+            "Any crew member",
+            "Safety Officer",
+            "PIO",
+            "Finance Chief"
+          ],
+          "answer": 1,
+          "why": "Safety Officer has stop-work authority (everyone should still call out hazards)."
+        }
+      ],
+      "id": "c03_dr01"
+    }
+  ]
+}

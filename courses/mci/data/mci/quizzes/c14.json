@@ -1,0 +1,109 @@
+{
+  "chapter": "c14",
+  "questions": [
+    {
+      "id": "c14_q01",
+      "question": "Before terminating command, the MOST important check is:",
+      "options": [
+        "A. Media have left",
+        "B. Overtime is approved",
+        "C. Patient counts reconcile across tags, transport log, and hospitals",
+        "D. All units are home"
+      ],
+      "correct": 2,
+      "rationale": "A mismatch means a patient may be missing.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q02",
+      "question": "A hot wash is best described as:",
+      "options": [
+        "A. A media briefing",
+        "B. Decontamination of equipment",
+        "C. A brief informal debrief right after the incident",
+        "D. A formal written report weeks later"
+      ],
+      "correct": 2,
+      "rationale": "Immediate, short, focused on facts and safety.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q03",
+      "question": "Which approach to responder mental health is recommended?",
+      "options": [
+        "A. Ignore reactions",
+        "B. Psychological First Aid with voluntary peer support and follow-up",
+        "C. Immediate medication",
+        "D. Mandatory group debriefing for everyone"
+      ],
+      "correct": 1,
+      "rationale": "PFA is recommended; forced single-session debriefing is not.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q04",
+      "question": "An AAR should be:",
+      "options": [
+        "A. Written only by the IC",
+        "B. Systems-focused with sustain/improve items, owners, and deadlines",
+        "C. Focused on blame",
+        "D. Optional"
+      ],
+      "correct": 1,
+      "rationale": "Blame-free, actionable improvement plans drive change.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q05",
+      "question": "Resources should be released:",
+      "options": [
+        "A. All at once when the last red leaves",
+        "B. Only after media leave",
+        "C. In phases as they're no longer needed",
+        "D. Never until the next day"
+      ],
+      "correct": 2,
+      "rationale": "Phased demob keeps capacity for late finds and rehab.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q06",
+      "question": "A paramedic reports nightmares and avoidance six weeks after an MCI and is drinking more. Best action:",
+      "options": [
+        "A. Tell them it's normal and will pass",
+        "B. Refer to professional mental-health support and peer support",
+        "C. Wait another 6 months",
+        "D. Discipline"
+      ],
+      "correct": 1,
+      "rationale": "Persistent symptoms beyond ~1 month with functional impact warrant referral.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c14_q07",
+      "question": "Equipment used at a chemical MCI must be:",
+      "options": [
+        "A. Returned to service immediately",
+        "B. Decontaminated before returning to service",
+        "C. Left on scene",
+        "D. Discarded always"
+      ],
+      "correct": 1,
+      "rationale": "Contaminated equipment injures the next crew and patient.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c14_q08",
+      "question": "The three PFA actions are:",
+      "options": [
+        "A. Sort, Assess, Treat",
+        "B. Stop, Drop, Roll",
+        "C. Look, Listen, Link",
+        "D. Assess, Treat, Transport"
+      ],
+      "correct": 2,
+      "rationale": "WHO PFA: Look, Listen, Link.",
+      "difficulty": "Easy"
+    }
+  ]
+}

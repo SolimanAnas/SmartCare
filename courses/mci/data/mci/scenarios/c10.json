@@ -1,0 +1,65 @@
+{
+  "chapter": "c10",
+  "cases": [
+    {
+      "id": "c10_s01",
+      "title": "Morning Rush, Line 3",
+      "presentation": "A commuter train car fills with a faint vapor. On the platform: a woman with pinpoint pupils and runny nose only; a man drooling, wheezing, vomiting; and a teen seizing and cyanotic. All have been disrobed and decontaminated.",
+      "vitals": {
+        "woman": "miosis + rhinorrhea",
+        "man": "secretions, wheeze, vomiting",
+        "teen": "seizing, apneic"
+      },
+      "question": "Best antidote plan?",
+      "options": [
+        "A: Atropine only for the teen.",
+        "B: 1 kit for each.",
+        "C: 3 kits for everyone.",
+        "D: Woman: observe (± 1 kit if symptoms progress); man: 1 kit, repeat atropine to dry secretions; teen: 3 kits + benzodiazepine + ventilation."
+      ],
+      "correct": 3,
+      "explanation": "Dose by severity. Vapor-only mild miosis/rhinorrhea may need no injector; moderate → 1 kit; severe → 3 kits + benzo and airway support. Titrate repeat atropine to secretions.",
+      "clinicalPearl": "Mild 1, Severe 3 + Benzo."
+    },
+    {
+      "id": "c10_s02",
+      "title": "Pulled From the Apartment",
+      "presentation": "Firefighters carry a 40-year-old man out of a smoky apartment fire (burning furniture/foam). He is unresponsive, BP 78/40, RR 6, SpO2 98% on the monitor.",
+      "vitals": {
+        "BP": "78/40",
+        "RR": "6",
+        "SpO2": "98% (?)"
+      },
+      "question": "What's going on and what do you give?",
+      "options": [
+        "A: Anaphylaxis — epinephrine.",
+        "B: Opioid overdose — naloxone.",
+        "C: Nerve agent — atropine.",
+        "D: Combined CO and cyanide toxicity — 100% O2/ventilation and hydroxocobalamin 5 g IV."
+      ],
+      "correct": 3,
+      "explanation": "Pulse oximetry can be falsely reassuring with CO. Shock and coma in a smoke victim = cyanide until proven otherwise. Hydroxocobalamin doesn't cause methemoglobinemia — safe with CO.",
+      "clinicalPearl": "Smoke + shock = think cyanide."
+    },
+    {
+      "id": "c10_s03",
+      "title": "The Hay Smell",
+      "presentation": "After a chemical plant leak, 12 workers mildly cough and say they smelled 'freshly mown hay'. All have normal vitals and want to go home.",
+      "vitals": {
+        "exposed": "12",
+        "vitals": "normal",
+        "odor": "hay"
+      },
+      "question": "Disposition?",
+      "options": [
+        "A: Treat as phosgene exposure: rest, O2 as needed, transport/observe ~24 h for delayed pulmonary edema.",
+        "B: Release with advice.",
+        "C: Atropine for all.",
+        "D: Hydroxocobalamin for all."
+      ],
+      "correct": 0,
+      "explanation": "Phosgene's latent period fools everyone. Exertion accelerates the pulmonary edema — they should not walk out, drive home, or exercise.",
+      "clinicalPearl": "Hay smell today = wet lungs tonight."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "chapter": "c05",
+  "algorithms": [
+    {
+      "id": "c05_alg01",
+      "title": "Build the Scene Layout in 10 Minutes",
+      "description": "Do it on paper/whiteboard and on the radio.",
+      "steps": [
+        "Identify the hazard and wind; set hot/warm/cold boundaries and mark them (tape, cones, flags).",
+        "Fix the command post in the cold zone with a clear view.",
+        "Choose the treatment area: upwind, flat, lit, sheltered, expandable, near a road.",
+        "Define the loading zone at the treatment exit; set a one-way vehicle loop.",
+        "Set staging on the approach route, out of sight; announce it.",
+        "Set a supervised green collection point and a screened morgue area.",
+        "Pick a helicopter LZ away from treatment if air resources are coming.",
+        "Broadcast the layout to all units; re-evaluate when wind/threat changes."
+      ]
+    }
+  ]
+}

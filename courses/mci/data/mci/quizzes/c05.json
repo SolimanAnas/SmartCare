@@ -1,0 +1,109 @@
+{
+  "chapter": "c05",
+  "questions": [
+    {
+      "id": "c05_q01",
+      "question": "The decontamination corridor is located in the:",
+      "options": [
+        "A. Hot zone",
+        "B. Cold zone",
+        "C. Staging area",
+        "D. Warm zone"
+      ],
+      "correct": 3,
+      "rationale": "Decon happens in the warm (contamination reduction) zone.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c05_q02",
+      "question": "The treatment area should be:",
+      "options": [
+        "A. At the hospital",
+        "B. Inside the hot zone for speed",
+        "C. Downwind for ventilation",
+        "D. In the cold zone, upwind, next to the loading zone"
+      ],
+      "correct": 3,
+      "rationale": "Safety plus flow: cold zone, upwind, adjacent to the loading zone.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c05_q03",
+      "question": "Which part of the treatment area should be closest to the ambulance loading exit?",
+      "options": [
+        "A. Green",
+        "B. Yellow",
+        "C. Red",
+        "D. Black"
+      ],
+      "correct": 2,
+      "rationale": "Reds are transported first.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c05_q04",
+      "question": "Ambulances should move through the scene:",
+      "options": [
+        "A. In any direction",
+        "B. On a one-way loop: staging → loading zone → hospital",
+        "C. By reversing into the treatment area",
+        "D. Only after all patients are treated"
+      ],
+      "correct": 1,
+      "rationale": "One-way vehicle flow keeps the scene moving and safe.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c05_q05",
+      "question": "A suspected pipe bomb is found near the treatment area. The minimum mandatory evacuation distance is approximately:",
+      "options": [
+        "A. 10 ft",
+        "B. 70 ft",
+        "C. 500 ft",
+        "D. 1 mile"
+      ],
+      "correct": 1,
+      "rationale": "≈70 ft mandatory; ≈1,200 ft preferred outdoor evacuation per stand-off charts — move the treatment area.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c05_q06",
+      "question": "The helicopter landing zone should be placed:",
+      "options": [
+        "A. In the warm zone",
+        "B. In the cold zone away from the treatment area",
+        "C. On the access road used by ambulances",
+        "D. Next to the red treatment area"
+      ],
+      "correct": 1,
+      "rationale": "Rotor wash throws debris; the LZ also shouldn't block ground flow.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c05_q07",
+      "question": "Which statement about zones is TRUE?",
+      "options": [
+        "A. Zones can move as wind, threat, or structure changes",
+        "B. The cold zone has no hazards ever",
+        "C. Only police mark zones",
+        "D. Zones are fixed once set"
+      ],
+      "correct": 0,
+      "rationale": "Re-evaluate zones continuously, especially wind in chemical incidents.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c05_q08",
+      "question": "Staging during a suspected terrorist bombing should be:",
+      "options": [
+        "A. At the hospital entrance",
+        "B. Next to the blast site",
+        "C. At the most obvious nearby parking lot",
+        "D. Out of sight, in a location checked for secondary devices"
+      ],
+      "correct": 3,
+      "rationale": "Secondary devices may target predictable responder gathering points.",
+      "difficulty": "Medium"
+    }
+  ]
+}

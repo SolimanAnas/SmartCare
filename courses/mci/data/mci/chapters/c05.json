@@ -1,0 +1,66 @@
+{
+  "id": "c05",
+  "title": "Scene Layout: Zones, Staging & Patient Flow",
+  "shortTitle": "Scene Layout",
+  "estimatedStudyTime": 30,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Define hot, warm, and cold zones and what happens in each.",
+    "Place the command post, treatment area, loading zone, staging, morgue, and helicopter LZ correctly.",
+    "Design a one-way patient and vehicle flow.",
+    "Apply basic stand-off distances for hazardous and explosive threats."
+  ],
+  "summary": [
+    {
+      "title": "Three Zones",
+      "content": "HOT (exclusion/direct threat): immediate danger — fire, collapse, contamination, active violence. Only properly protected specialist teams (e.g., HazMat, USAR, law enforcement/Rescue Task Force under escort). WARM (contamination reduction/indirect threat): decon corridor, casualty collection points, rapid lifesaving care under protection. COLD (support): command post, treatment area, transport loading, staging, rehab, media. Zones are set by the hazard, marked visibly, and can move — the wind shifts, the shooter moves, the building settles."
+    },
+    {
+      "title": "Where Everything Goes",
+      "content": "Command post: cold zone, visible, close enough to see the scene. Treatment area: cold zone, upwind/uphill, flat, lit, sheltered, with room to grow, one way in/one way out, next to the loading zone. Ambulance loading zone: at the treatment area exit, on a one-way vehicle loop — no backing up. Staging: further out, on the approach route, out of sight of the hazard, with space to park in rows. Green (walking wounded) collection point: separate, supervised. Morgue: cold zone, out of public view, secure. Helicopter LZ: cold zone, away from the treatment area (rotor wash), clear of wires/debris."
+    },
+    {
+      "title": "One-Way Flow",
+      "content": "Patients flow one direction: Hot → (CCP) → Warm (decon if needed) → Treatment (Red/Yellow/Green) → Loading Zone → Hospital. Vehicles flow one direction: Staging → Loading Zone → Hospital, never back through the scene. Crossing flows (ambulances reversing into crowds, litters weaving through traffic) cause delays and injuries. Draw it on the hood of your rig in the first 10 minutes."
+    },
+    {
+      "title": "Stand-Off Distances (Quick Reference)",
+      "content": "HazMat: use the DOT Emergency Response Guidebook (ERG) initial isolation and protective action distances; approach upwind, uphill, upstream. Suspected explosive: stay out of line-of-sight, use cover, don't use radios/cell phones next to a suspected device, and use the bomb-threat stand-off chart (e.g., pipe bomb ≈ 70 ft mandatory evacuation / ≈ 1,200 ft shelter-or-evacuate outdoors; car bomb ≈ 320 ft / ≈ 1,500 ft). Always ask: is the staging area itself a target (secondary device)?"
+    }
+  ],
+  "clinicalPearls": [
+    "Treatment area next to the loading zone, red section closest to the exit — reds leave first.",
+    "Staging should be invisible from the hazard and reachable without driving through the scene.",
+    "Greens wander. Give them a place, a person in charge, and a reason to stay (water, shelter, phone charging).",
+    "Rotor wash throws debris and tarps — keep the LZ well away from the treatment area.",
+    "Re-check the wind every 15 minutes in any chemical or fire incident — zones move."
+  ],
+  "redFlags": [
+    "Treatment area downwind of smoke or a chemical release.",
+    "Ambulances reversing through pedestrian areas.",
+    "Staging in an obvious, crowded spot in a terrorist incident — potential secondary-device target.",
+    "Unprotected responders entering the hot zone to 'just grab one'."
+  ],
+  "commonMistakes": [
+    "Placing the treatment area so close it must be moved when the hazard grows.",
+    "Forgetting space to expand the treatment area as patient numbers rise.",
+    "Morgue in public view.",
+    "No physical markings — tape, cones, flags — so zones exist only in the IC's head."
+  ],
+  "memoryAids": [
+    "Hot = Hazard, Warm = Wash (decon) & Work fast, Cold = Command & Care.",
+    "Upwind, Uphill, Upstream.",
+    "Flow is a river — it never runs backward."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Scene Layout Sketch (Typical)",
+      "content": "      WIND →\n[ HOT ZONE: incident ]\n        ↓ litters / CCP\n[ WARM: decon corridor ]\n        ↓\n[ COLD: TREATMENT AREA ]  RED | YELLOW | GREEN    (BLACK separate, screened)\n        ↓ exit\n[ LOADING ZONE ] ←— one-way loop —— [ STAGING (out of sight) ]\n        ↓\n    Hospitals\nCommand post: cold, visible | LZ: cold, away from treatment"
+    }
+  ],
+  "references": [
+    "DOT/PHMSA Emergency Response Guidebook (ERG, current edition)",
+    "DHS/NCTC Bomb Threat Stand-Off Distances card",
+    "FEMA ICS facilities (ICP, staging, base, helibase/helispot)"
+  ]
+}

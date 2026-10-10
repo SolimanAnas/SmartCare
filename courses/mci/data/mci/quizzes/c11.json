@@ -1,0 +1,148 @@
+{
+  "chapter": "c11",
+  "questions": [
+    {
+      "id": "c11_q01",
+      "question": "Which bioterrorism agent requires airborne + contact precautions?",
+      "options": [
+        "A. Tularemia",
+        "B. Anthrax",
+        "C. Smallpox",
+        "D. Botulism"
+      ],
+      "correct": 2,
+      "rationale": "Smallpox spreads by respiratory and contact routes.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c11_q02",
+      "question": "A cluster of previously healthy postal workers presents with severe pneumonia, shock, and widened mediastinum. Most likely:",
+      "options": [
+        "A. Inhalational anthrax",
+        "B. Botulism",
+        "C. Influenza",
+        "D. Smallpox"
+      ],
+      "correct": 0,
+      "rationale": "Classic inhalational anthrax; not person-to-person.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c11_q03",
+      "question": "An alert, afebrile patient has double vision, slurred speech, and difficulty swallowing that is progressing downward. Suspect:",
+      "options": [
+        "A. Botulism",
+        "B. Guillain–Barré",
+        "C. Nerve agent",
+        "D. Stroke"
+      ],
+      "correct": 0,
+      "rationale": "Descending symmetric flaccid paralysis with clear sensorium = botulism.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c11_q04",
+      "question": "A patient exposed to radiation from a hidden source (no contamination) is:",
+      "options": [
+        "A. Requires Level A PPE",
+        "B. Not radioactive — no risk to responders",
+        "C. Contagious",
+        "D. Radioactive and dangerous"
+      ],
+      "correct": 1,
+      "rationale": "Exposure does not make a person radioactive.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c11_q05",
+      "question": "The most effective first step in external radiological decon is:",
+      "options": [
+        "A. Waiting for a survey meter",
+        "B. Removing clothing",
+        "C. Scrubbing with bleach",
+        "D. KI tablets"
+      ],
+      "correct": 1,
+      "rationale": "Clothing removal removes most external contamination.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c11_q06",
+      "question": "A dirty-bomb victim has an amputated leg with arterial bleeding and is contaminated. Priority:",
+      "options": [
+        "A. Wait for radiation team",
+        "B. Decon first",
+        "C. Tourniquet and trauma care now, decon as part of care",
+        "D. KI tablet"
+      ],
+      "correct": 2,
+      "rationale": "Life threats first; radiation contamination is rarely immediately dangerous.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c11_q07",
+      "question": "Doubling your distance from a radiation source reduces your dose rate to:",
+      "options": [
+        "A. 1/4",
+        "B. No change",
+        "C. 1/8",
+        "D. 1/2"
+      ],
+      "correct": 0,
+      "rationale": "Inverse-square law.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c11_q08",
+      "question": "Potassium iodide is indicated when:",
+      "options": [
+        "A. Treating ARS",
+        "B. Any radiation event occurs",
+        "C. Radioactive iodine release threatens thyroid uptake",
+        "D. For dirty bombs with cesium"
+      ],
+      "correct": 2,
+      "rationale": "KI blocks thyroid uptake of radioiodine only.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c11_q09",
+      "question": "Under EPA guidance, the dose guideline for lifesaving actions by emergency workers is about:",
+      "options": [
+        "A. 500 rem",
+        "B. 25 rem",
+        "C. 0.5 rem",
+        "D. 5 rem"
+      ],
+      "correct": 1,
+      "rationale": "~25 rem for lifesaving/protecting large populations; higher only for informed volunteers.",
+      "difficulty": "Advanced"
+    },
+    {
+      "id": "c11_q10",
+      "question": "A patient vomited 30 minutes after a radiation exposure. This suggests:",
+      "options": [
+        "A. A trivial dose",
+        "B. Anxiety only",
+        "C. Contamination only",
+        "D. A high, potentially severe dose"
+      ],
+      "correct": 3,
+      "rationale": "Early onset of vomiting correlates with higher dose.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c11_q11",
+      "question": "You receive a call about a white powder in an opened envelope at an office. Best initial action:",
+      "options": [
+        "A. Vacuum the powder",
+        "B. Shake the envelope to see contents",
+        "C. Isolate the area, keep the envelope still, wash hands with soap and water, notify law enforcement/HazMat",
+        "D. Give everyone antibiotics"
+      ],
+      "correct": 2,
+      "rationale": "Contain, wash, notify; prophylaxis only if testing confirms a threat.",
+      "difficulty": "Easy"
+    }
+  ]
+}

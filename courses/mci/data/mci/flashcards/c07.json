@@ -1,0 +1,77 @@
+{
+  "chapter": "c07",
+  "cards": [
+    {
+      "id": "c07_fc01",
+      "question": "SALT global sort — who is assessed first, second, last?",
+      "answer": "First: still/obvious life threat. Second: those who wave/move purposefully. Last: those who walk.",
+      "category": "SALT Sort"
+    },
+    {
+      "id": "c07_fc02",
+      "question": "SALT lifesaving interventions?",
+      "answer": "Control major hemorrhage, open airway (child: consider 2 rescue breaths), chest decompression, antidote auto-injector — seconds only.",
+      "category": "SALT LSIs"
+    },
+    {
+      "id": "c07_fc03",
+      "question": "SALT's four assessment questions?",
+      "answer": "Obeys commands/purposeful movement? Peripheral pulse? Not in respiratory distress? Major hemorrhage controlled?",
+      "category": "SALT Assess"
+    },
+    {
+      "id": "c07_fc04",
+      "question": "SALT: all four YES with only minor injuries?",
+      "answer": "MINIMAL (green).",
+      "category": "SALT Categories"
+    },
+    {
+      "id": "c07_fc05",
+      "question": "SALT: all four YES with significant injuries?",
+      "answer": "DELAYED (yellow).",
+      "category": "SALT Categories"
+    },
+    {
+      "id": "c07_fc06",
+      "question": "SALT: any NO, likely to survive with current resources?",
+      "answer": "IMMEDIATE (red).",
+      "category": "SALT Categories"
+    },
+    {
+      "id": "c07_fc07",
+      "question": "Define EXPECTANT.",
+      "answer": "Alive but unlikely to survive given current resources — comfort care, re-triage when resources improve (gray).",
+      "category": "SALT Categories"
+    },
+    {
+      "id": "c07_fc08",
+      "question": "Minimum information on a triage tag?",
+      "answer": "Unique number, category, time, critical interventions (TQ + time, antidotes), decon status.",
+      "category": "Tags"
+    },
+    {
+      "id": "c07_fc09",
+      "question": "When should patients be re-triaged?",
+      "answer": "At the scene, on entry to treatment, before transport, at hospital arrival, and whenever condition or resources change.",
+      "category": "Re-Triage"
+    },
+    {
+      "id": "c07_fc10",
+      "question": "Under-triage vs over-triage?",
+      "answer": "Under: critical patient tagged too low (preventable death). Over: non-critical tagged too high (resources diverted; critical mortality rises).",
+      "category": "Accuracy"
+    },
+    {
+      "id": "c07_fc11",
+      "question": "Accepted trauma-system targets for triage error?",
+      "answer": "Under-triage < 5%; over-triage ~25–35%.",
+      "category": "Accuracy"
+    },
+    {
+      "id": "c07_fc12",
+      "question": "What is the UK primary triage tool?",
+      "answer": "Triage Sieve (P1–P3 priorities), followed by Triage Sort at the casualty clearing station.",
+      "category": "Systems"
+    }
+  ]
+}

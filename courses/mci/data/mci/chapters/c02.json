@@ -1,0 +1,71 @@
+{
+  "id": "c02",
+  "title": "First-Due: Size-Up, CSCATTT & the METHANE Report",
+  "shortTitle": "First-Due & METHANE",
+  "estimatedStudyTime": 35,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Perform the first-arriving crew's actions without getting pulled into patient care.",
+    "Apply CSCATTT as the order of MCI priorities.",
+    "Deliver a complete METHANE report in under 60 seconds.",
+    "Use plain-language radio and structured follow-up updates (CAN)."
+  ],
+  "summary": [
+    {
+      "title": "The First Crew's Job Is Not Treatment",
+      "content": "The first ambulance sets the tone for the entire incident. The most common failure is the first crew treating the first patient they reach — the scene then runs without command for 20 minutes. First-due rule: one crew member takes COMMAND and the radio; the other does a rapid RECON/global triage. You stay visible, stay with the vehicle/command point, and you do not disappear into a patient."
+    },
+    {
+      "title": "Safety 1-2-3: Self → Scene → Survivors",
+      "content": "Stop short. Park upwind, uphill, upstream, out of the traffic lane and away from obvious hazards (fuel, wires, smoke, crowds, unstable structure). Look for clues of CBRNE or violence: multiple people down without trauma, odd odors or clouds, dead animals, repeated blasts, gunfire. If it smells, looks, or feels wrong — withdraw and report. A dead or injured rescuer converts a resource into a patient."
+    },
+    {
+      "title": "CSCATTT — The Order of Business",
+      "content": "Command & Control → Safety → Communication → Assessment → Triage → Treatment → Transport. The first four (CSCA) are MANAGEMENT; the last three (TTT) are MEDICAL SUPPORT. You cannot do TTT well until CSCA is in place. It's a priority list, not a pause — in reality you do several at once, but if something must slip, it's treatment, never command or safety."
+    },
+    {
+      "title": "METHANE: The Universal First Report",
+      "content": "M — Major incident DECLARED (or 'standby'). E — EXACT location (grid/address, landmarks, which side). T — TYPE of incident (what happened: RTC, explosion, collapse, chemical). H — HAZARDS present and potential (fire, fuel, chemical, structural, violence, weather). A — ACCESS and egress routes (best approach, RV point, staging). N — NUMBER, severity and type of casualties (estimate: 'approx 25: 5 red, 8 yellow, 12 green'). E — EMERGENCY services present and REQUIRED (who's on scene, what you need). Short, factual, estimates are fine — a fast 80%-right report beats a slow perfect one."
+    },
+    {
+      "title": "Radio Discipline",
+      "content": "Plain language, no 10-codes (NIMS standard — mutual-aid units won't share your codes). Name the incident ('Riverside Bus Command') so every unit knows who to call. Think before you key; one message, one purpose; repeat back critical orders. After METHANE, send structured updates (e.g., CAN: Conditions, Actions, Needs) every 10–15 minutes or when anything big changes."
+    }
+  ],
+  "clinicalPearls": [
+    "First-in doesn't get sucked in: command, recon, report — patients come next.",
+    "Say the words 'MASS CASUALTY INCIDENT' / 'MAJOR INCIDENT DECLARED' on the radio. Ambiguity delays the cavalry.",
+    "Give casualty numbers as estimates with severity split — 'approximately' is a perfectly good word.",
+    "Your ambulance is a landmark: park it where it can serve as a visible command point without blocking the ambulance loop.",
+    "Name the staging/rendezvous point in your first report so incoming units don't self-dispatch into the scene."
+  ],
+  "redFlags": [
+    "Multiple casualties down with no obvious trauma → think chemical; stop, withdraw upwind, report (Step 1-2-3).",
+    "A second explosion, gunfire, or suspicious packages → secondary-device/hostile threat; stage away.",
+    "No one has said 'I am command' within the first minutes.",
+    "Radio traffic chaos: every unit talking, no named incident, codes being used."
+  ],
+  "commonMistakes": [
+    "First crew starting CPR or packaging the first patient.",
+    "Waiting for exact numbers before sending METHANE.",
+    "Forgetting the 'H' (hazards) and 'A' (access) — incoming units drive into danger or gridlock.",
+    "Parking in the hazard zone or blocking the only access road."
+  ],
+  "memoryAids": [
+    "Safety 1-2-3: Self, Scene, Survivors.",
+    "CSCATTT: 'Can Some Cops And Teachers Train Together?' — CSCA = manage, TTT = medical.",
+    "METHANE: Major — Exact location — Type — Hazards — Access — Number — Emergency services.",
+    "Updates = CAN: Conditions, Actions, Needs."
+  ],
+  "decisionTrees": [
+    {
+      "title": "First-Due Crew: First 3 Minutes",
+      "content": "Approach\n  → Stop short, upwind/uphill, out of traffic; look for CBRNE/violence clues\n     → Clues present: withdraw, report, wait for specialist teams\n     → Scene appears safe:\n        Crew member 1 (COMMAND): announce arrival + 'MCI declared' + name incident\n           → METHANE report → request resources → name staging\n        Crew member 2 (RECON/TRIAGE): 360° look + global sort (walk/wave)\n           → feed numbers back to command\n  → Hand over roles (triage/treatment/transport) as units arrive"
+    }
+  ],
+  "references": [
+    "JESIP Joint Doctrine — M/ETHANE model",
+    "MIMMS (Major Incident Medical Management and Support) — CSCATTT",
+    "NIMS — plain-language communications"
+  ]
+}

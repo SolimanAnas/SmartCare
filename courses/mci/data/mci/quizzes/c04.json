@@ -1,0 +1,135 @@
+{
+  "chapter": "c04",
+  "questions": [
+    {
+      "id": "c04_q01",
+      "question": "Which task belongs to the Transport Officer?",
+      "options": [
+        "A. Applying tourniquets",
+        "B. Global sort of casualties",
+        "C. Assigning destination hospitals and logging each departure",
+        "D. Setting up red/yellow/green treatment zones"
+      ],
+      "correct": 2,
+      "rationale": "Transport matches patients to vehicles and hospitals and tracks them.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q02",
+      "question": "The Triage Officer encounters a patient with arterial bleeding from the thigh. They should:",
+      "options": [
+        "A. Start two large-bore IVs",
+        "B. Apply a tourniquet, tag, and move on",
+        "C. Package and transport",
+        "D. Ignore — triage only"
+      ],
+      "correct": 1,
+      "rationale": "Hemorrhage control is a seconds-long LSI permitted during triage.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q03",
+      "question": "Where should ambulances wait until called?",
+      "options": [
+        "A. At the treatment area",
+        "B. At the hospital",
+        "C. In the staging area",
+        "D. At the command post"
+      ],
+      "correct": 2,
+      "rationale": "Staging keeps uncommitted units organized and out of the scene until the Transport Officer requests them.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q04",
+      "question": "Who sets up the red/yellow/green zones of the treatment area?",
+      "options": [
+        "A. Staging Officer",
+        "B. Treatment Officer",
+        "C. Triage Officer",
+        "D. PIO"
+      ],
+      "correct": 1,
+      "rationale": "The Treatment Officer establishes and runs the treatment area.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q05",
+      "question": "The best way for hospitals to receive MCI information is:",
+      "options": [
+        "A. Each ambulance calls its own destination",
+        "B. A single Medical Communications Coordinator / hospital coordination point",
+        "C. Patients phone ahead",
+        "D. Media reports"
+      ],
+      "correct": 1,
+      "rationale": "One voice prevents duplicate calls and gives an accurate picture of distribution.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c04_q06",
+      "question": "A crew arrives and asks staging 'Can we just go grab a patient?' The correct reply is:",
+      "options": [
+        "A. Self-select the sickest",
+        "B. No — wait with the vehicle until the Transport Officer calls you to the loading zone",
+        "C. Yes, the closest one",
+        "D. Go to the command post"
+      ],
+      "correct": 1,
+      "rationale": "Self-dispatch breaks tracking and distribution.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q07",
+      "question": "Dead victims at an MCI should generally be:",
+      "options": [
+        "A. Left in place unless blocking access to the living",
+        "B. Moved immediately to the treatment area",
+        "C. Transported first",
+        "D. Covered and put in an ambulance"
+      ],
+      "correct": 0,
+      "rationale": "Leave in place: preserves resources, the scene, and identification.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q08",
+      "question": "Which is NOT a role of the EMS Incident Commander?",
+      "options": [
+        "A. Assigning triage and transport officers",
+        "B. Coordinating with police and fire",
+        "C. Requesting resources",
+        "D. Inserting an advanced airway on a red patient"
+      ],
+      "correct": 3,
+      "rationale": "The IC does not provide hands-on care.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c04_q09",
+      "question": "The treatment area is full and nothing is leaving. The MOST likely failure is in:",
+      "options": [
+        "A. Triage",
+        "B. PIO",
+        "C. Transport/staging flow",
+        "D. Finance"
+      ],
+      "correct": 2,
+      "rationale": "Treatment areas back up when transport and staging aren't moving vehicles efficiently.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c04_q10",
+      "question": "A transport log primarily ensures:",
+      "options": [
+        "A. Every patient can be located — which unit took them and to which hospital",
+        "B. Media can be briefed",
+        "C. Crew overtime is recorded",
+        "D. Billing accuracy"
+      ],
+      "correct": 0,
+      "rationale": "Tracking reunites families, informs hospitals, and supports re-triage and accountability.",
+      "difficulty": "Easy"
+    }
+  ]
+}
