@@ -1,0 +1,30 @@
+{
+  "chapter": "c03",
+  "algorithms": [
+    {
+      "id": "c03_alg01",
+      "title": "Transfer of Command",
+      "description": "Use every time command changes hands.",
+      "steps": [
+        "Incoming officer reports to the command post (face-to-face preferred).",
+        "Outgoing IC briefs: situation/size, hazards & safety, objectives & progress, resources assigned/requested, current org chart.",
+        "Incoming officer formally accepts command.",
+        "New IC announces the change on the radio to all units and dispatch.",
+        "Outgoing IC is reassigned (often to Medical Group or a unit leader role) — never just leaves."
+      ]
+    },
+    {
+      "id": "c03_alg02",
+      "title": "Building the EMS Org Chart",
+      "description": "Grow only what you need.",
+      "steps": [
+        "First EMS unit: IC + global triage.",
+        "Add Triage Unit Leader when 2nd unit arrives.",
+        "Add Transport Unit Leader early — transport bottlenecks kill MCIs.",
+        "Add Treatment Unit Leader once a treatment area is needed.",
+        "Add Staging Area Manager once more than a few units are inbound.",
+        "When the IC is overloaded or other agencies have big roles: Medical Group Supervisor under Operations; consider Unified Command and Command Staff."
+      ]
+    }
+  ]
+}

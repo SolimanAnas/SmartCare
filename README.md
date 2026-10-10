@@ -28,7 +28,7 @@
 
 | | |
 |---|---|
-| **21 Study Modules** | BLS, ACLS, PALS, ITLS, BDLS, PEPP, EMPACT, Medical Emergencies, Prometric Exam, ECG Course & Simulator, Drug Calculator — and dedicated course reviewers for each. |
+| **22 Study Modules** | BLS, ACLS, PALS, ITLS, BDLS, MCI, PEPP, EMPACT, Medical Emergencies, Prometric Exam, ECG Course & Simulator, Drug Calculator — and dedicated course reviewers for each. |
 | **100% Offline** | Service Workers cache all content. Study in elevators, ambulances, or rural clinics with zero connectivity. |
 | **Zero Framework Bloat** | Vanilla JS + raw CSS. No React, no build pipeline — instant render on any device. |
 | **Dark-Mode Native** | 5 themes including a true AMOLED Black for battery conservation on OLED screens. |
@@ -45,6 +45,7 @@
 | 👶 **PALS** | Pediatric Advanced Life Support | 57 |
 | 🚑 **ITLS** | International Trauma Life Support | 455 |
 | 🌪️ **BDLS** | Basic Disaster Life Support | 40 |
+| 🚨 **MCI** | Mass Casualty Incident Management (with timed triage drills) | 66 |
 | 🧸 **PEPP** | Pediatric Education for Prehospital Professionals | 200 |
 | ⚕️ **EMPACT** | Emergency Medical Patients: Assessment, Care & Transport | 50 |
 | 💊 **Medical** | Medical Emergencies Review | 45 |
@@ -53,7 +54,7 @@
 | 📉 **ECG Sim** | ECG Rhythm Simulator | — |
 | 📈 **ECG Test** | ECG Rhythm Test | — |
 
-Each course includes **chapters**, **flashcards**, **quizzes**, **clinical scenarios**, **algorithms**, and **reference tables**. Dedicated reviewer modules are available for BLS, ACLS, PALS, BDLS, PEPP, EMPACT, and Medical.
+Each course includes **chapters**, **flashcards**, **quizzes**, **clinical scenarios**, **algorithms**, and **reference tables**. Dedicated reviewer modules are available for BLS, ACLS, PALS, BDLS, MCI, PEPP, EMPACT, and Medical. The MCI reviewer adds a seventh tab — timed, game-style **drills** (triage tagging, METHANE radio reports, officer roles, toxidromes).
 
 ---
 

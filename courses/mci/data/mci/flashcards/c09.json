@@ -1,0 +1,77 @@
+{
+  "chapter": "c09",
+  "cards": [
+    {
+      "id": "c09_fc01",
+      "question": "Step 1-2-3 Plus?",
+      "answer": "1 casualty: approach normally. 2: approach with caution. 3+: do not approach — withdraw, report, isolate. Plus: get people out, disrobe, decontaminate.",
+      "category": "Recognition"
+    },
+    {
+      "id": "c09_fc02",
+      "question": "Classic clues of a chemical incident?",
+      "answer": "Multiple casualties, similar symptoms, no trauma; odors/mists/liquids; dead animals/vegetation; people fleeing from one point.",
+      "category": "Recognition"
+    },
+    {
+      "id": "c09_fc03",
+      "question": "DOT hazard classes 1–9?",
+      "answer": "1 Explosives, 2 Gases, 3 Flammable liquids, 4 Flammable solids, 5 Oxidizers, 6 Toxic/infectious, 7 Radioactive, 8 Corrosives, 9 Miscellaneous.",
+      "category": "Placards"
+    },
+    {
+      "id": "c09_fc04",
+      "question": "ERG page colors?",
+      "answer": "Yellow: by ID number. Blue: by name. Orange: guides. Green: isolation & protective action distances (TIH).",
+      "category": "ERG"
+    },
+    {
+      "id": "c09_fc05",
+      "question": "NFPA 704 colors?",
+      "answer": "Blue health, Red flammability, Yellow instability, White special hazards; 0–4 severity.",
+      "category": "NFPA"
+    },
+    {
+      "id": "c09_fc06",
+      "question": "PPE Level A?",
+      "answer": "SCBA + fully encapsulating vapor-tight suit.",
+      "category": "PPE"
+    },
+    {
+      "id": "c09_fc07",
+      "question": "PPE Level B?",
+      "answer": "SCBA + splash-protective (non-encapsulating) suit.",
+      "category": "PPE"
+    },
+    {
+      "id": "c09_fc08",
+      "question": "PPE Level C?",
+      "answer": "Air-purifying respirator + splash suit — known agent, adequate O2.",
+      "category": "PPE"
+    },
+    {
+      "id": "c09_fc09",
+      "question": "Single most effective decon step?",
+      "answer": "Removing clothing — removes most external contamination (~80–90% often quoted).",
+      "category": "Decon"
+    },
+    {
+      "id": "c09_fc10",
+      "question": "Dry vs wet decon?",
+      "answer": "Dry (blot/wipe) is default for most exposures; wet (high-volume, low-pressure water) for caustics, visible liquid contamination, or symptomatic patients.",
+      "category": "Decon"
+    },
+    {
+      "id": "c09_fc11",
+      "question": "Types of decon?",
+      "answer": "Gross/emergency, mass, and technical decontamination.",
+      "category": "Decon"
+    },
+    {
+      "id": "c09_fc12",
+      "question": "Where does EMS without HazMat training work?",
+      "answer": "Cold zone — receive patients after decon.",
+      "category": "PPE"
+    }
+  ]
+}

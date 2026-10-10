@@ -1,0 +1,65 @@
+{
+  "chapter": "c01",
+  "cases": [
+    {
+      "id": "c01_s01",
+      "title": "Three Patients, One Ambulance",
+      "presentation": "Night call to a rural two-car head-on collision 40 minutes from the nearest hospital. You are the only unit; the next is 30 minutes away. You find three critically injured patients.",
+      "vitals": {
+        "patients": "3 critical",
+        "units": "1 (yours)",
+        "next unit": "30 min"
+      },
+      "question": "Is this an MCI?",
+      "options": [
+        "A: No — MCIs need at least 10 patients.",
+        "B: Only if a hospital declares it.",
+        "C: Yes — casualties exceed immediately available resources; declare and request resources.",
+        "D: Only if one patient dies."
+      ],
+      "correct": 2,
+      "explanation": "MCI = patients > resources. Three critical patients for one crew in a remote area is an MCI. Declare early so help starts moving.",
+      "clinicalPearl": "Small numbers + few resources = MCI. Declare early, downgrade later."
+    },
+    {
+      "id": "c01_s02",
+      "title": "The River Is Still Rising",
+      "presentation": "Flash flooding in a low-lying district. Dispatch reports 'about 12 people' stranded. As you arrive, more calls are coming in from adjacent streets; the bridge to the main hospital is closed.",
+      "vitals": {
+        "reported": "~12",
+        "calls": "increasing",
+        "hospital route": "bridge closed"
+      },
+      "question": "How do you classify this incident?",
+      "options": [
+        "A: Open, simple",
+        "B: Closed, compound",
+        "C: Open, compound — expect more victims and degraded infrastructure",
+        "D: Closed, simple"
+      ],
+      "correct": 2,
+      "explanation": "Victims are still appearing (open) and infrastructure is damaged (compound). Expect longer scene times, alternate destinations, and request swift-water rescue rather than entering water yourself.",
+      "clinicalPearl": "Open + compound = plan for self-sufficiency and longer holds."
+    },
+    {
+      "id": "c01_s03",
+      "title": "Week After the Storm",
+      "presentation": "Five days after a hurricane, your service is busier than during the storm: a chainsaw laceration, a dialysis patient with weakness and peaked T waves, an elderly woman whose home oxygen ran out, and a family with headaches.",
+      "vitals": {
+        "power": "out",
+        "pharmacies": "closed",
+        "calls": "↑ 40%"
+      },
+      "question": "What is the KEY lesson?",
+      "options": [
+        "A: These calls are unrelated to the disaster.",
+        "B: Disasters cause a delayed wave: CO poisoning, cleanup trauma, and decompensated chronic disease.",
+        "C: Only trauma matters after hurricanes.",
+        "D: Storm injuries are over once the wind stops."
+      ],
+      "correct": 1,
+      "explanation": "Post-disaster mortality is driven by CO from generators, cleanup injuries, and loss of dialysis, oxygen, and medications. The family with headaches needs CO screening and removal from the home.",
+      "clinicalPearl": "Ask every post-storm household: 'Is a generator running inside or near the house?'"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "chapter": "c01",
+  "algorithms": [
+    {
+      "id": "c01_alg01",
+      "title": "60-Second Incident Classification",
+      "description": "Run this in your head while you're still in the cab.",
+      "steps": [
+        "Count & severity: do casualties exceed what is immediately available? → If yes, DECLARE MCI.",
+        "Open or closed? Are victims finite/known, or still appearing/unknown?",
+        "Simple or compound? Are roads, hospitals, comms, utilities intact?",
+        "Hazard type: natural vs human-made; CBRNE? structural? violence/secondary device?",
+        "Predict the injury pattern from the disaster type (crush, burns, drowning, blast, asphyxia).",
+        "Translate into resource requests in your METHANE report (Chapter 2)."
+      ]
+    }
+  ]
+}

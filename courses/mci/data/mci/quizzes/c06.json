@@ -1,0 +1,161 @@
+{
+  "chapter": "c06",
+  "questions": [
+    {
+      "id": "c06_q01",
+      "question": "Under START, a patient who walks to the designated area is tagged:",
+      "options": [
+        "A. Deceased",
+        "B. Immediate",
+        "C. Delayed",
+        "D. Minor"
+      ],
+      "correct": 3,
+      "rationale": "Ambulatory patients are tagged Minor (green) and re-triaged later.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q02",
+      "question": "A non-ambulatory adult has RR 32, radial pulse present, follows commands. START category:",
+      "options": [
+        "A. Minor",
+        "B. Delayed",
+        "C. Deceased",
+        "D. Immediate"
+      ],
+      "correct": 3,
+      "rationale": "RR > 30 → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q03",
+      "question": "A non-ambulatory adult has RR 30, radial pulse present, CRT 1 s, follows commands. START category:",
+      "options": [
+        "A. Deceased",
+        "B. Immediate",
+        "C. Delayed",
+        "D. Minor"
+      ],
+      "correct": 2,
+      "rationale": "The criterion is MORE than 30; 30 passes. Perfusion and mental status are normal → Delayed.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c06_q04",
+      "question": "An adult is apneic. After you reposition the airway, he begins breathing. Tag:",
+      "options": [
+        "A. Immediate",
+        "B. Minor",
+        "C. Delayed",
+        "D. Deceased"
+      ],
+      "correct": 0,
+      "rationale": "Breathing only after airway positioning → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q05",
+      "question": "An adult has RR 18, absent radial pulse. Tag:",
+      "options": [
+        "A. Deceased",
+        "B. Delayed",
+        "C. Minor",
+        "D. Immediate"
+      ],
+      "correct": 3,
+      "rationale": "Perfusion failure → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q06",
+      "question": "An adult has RR 16, strong radial pulse, but cannot follow simple commands. Tag:",
+      "options": [
+        "A. Expectant",
+        "B. Delayed",
+        "C. Immediate",
+        "D. Minor"
+      ],
+      "correct": 2,
+      "rationale": "Altered mental status (can't follow commands) → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q07",
+      "question": "JumpSTART: a 4-year-old is apneic after airway positioning but has a palpable pulse. Next step:",
+      "options": [
+        "A. Give 5 rescue breaths and reassess",
+        "B. Tag deceased",
+        "C. Tag immediate without breaths",
+        "D. Start CPR"
+      ],
+      "correct": 0,
+      "rationale": "5 rescue breaths; if breathing resumes → Immediate; if not → Deceased.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c06_q08",
+      "question": "JumpSTART: a 3-year-old has RR 12. Tag:",
+      "options": [
+        "A. Delayed",
+        "B. Minor",
+        "C. Immediate",
+        "D. Deceased"
+      ],
+      "correct": 2,
+      "rationale": "RR < 15 → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q09",
+      "question": "JumpSTART: a 6-year-old has RR 30, palpable peripheral pulse, alert, deformed femur, can't walk. Tag:",
+      "options": [
+        "A. Deceased",
+        "B. Minor",
+        "C. Immediate",
+        "D. Delayed"
+      ],
+      "correct": 3,
+      "rationale": "RR 15–45, pulse present, Alert → Delayed.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c06_q10",
+      "question": "JumpSTART: a 5-year-old responds to pain only with abnormal flexion (posturing). Tag:",
+      "options": [
+        "A. Minor",
+        "B. Immediate",
+        "C. Delayed",
+        "D. Deceased"
+      ],
+      "correct": 1,
+      "rationale": "Inappropriate P (posturing) → Immediate.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c06_q11",
+      "question": "Which is NOT performed during START primary triage?",
+      "options": [
+        "A. CPR",
+        "B. Tourniquet for arterial bleeding",
+        "C. Positioning the airway",
+        "D. Asking the patient to follow a command"
+      ],
+      "correct": 0,
+      "rationale": "CPR is not performed during mass-casualty triage.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c06_q12",
+      "question": "A night-time winter MCI. The best START perfusion check is:",
+      "options": [
+        "A. Capillary refill",
+        "B. Radial pulse",
+        "C. Blood pressure",
+        "D. Skin color"
+      ],
+      "correct": 1,
+      "rationale": "Cold and darkness make CRT unreliable — use the radial pulse.",
+      "difficulty": "Medium"
+    }
+  ]
+}

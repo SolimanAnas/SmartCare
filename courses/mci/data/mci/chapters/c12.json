@@ -1,0 +1,72 @@
+{
+  "id": "c12",
+  "title": "Explosive & Hostile Events: Blast, Active Shooter, TECC",
+  "shortTitle": "Blast & Hostile MCI",
+  "estimatedStudyTime": 45,
+  "difficulty": "Advanced",
+  "learningObjectives": [
+    "Classify blast injuries (primary to quinary) and recognize blast lung.",
+    "Apply TECC phases of care and the THREAT sequence.",
+    "Explain the Rescue Task Force model and casualty collection points.",
+    "Anticipate secondary devices, upside-down triage, and responder targeting."
+  ],
+  "summary": [
+    {
+      "title": "Blast Injury Classes",
+      "content": "PRIMARY: the pressure wave hits air-filled organs — tympanic membranes, lungs (blast lung), bowel; worse in ENCLOSED spaces and near the device. SECONDARY: fragments/shrapnel/debris — the most common cause of blast injuries (penetrating wounds anywhere, eyes). TERTIARY: the body thrown, or structure collapsing on it — blunt trauma, traumatic amputation, crush. QUATERNARY: everything else — burns, toxic inhalation, CO, exacerbation of chronic illness. QUINARY: hyperinflammatory state from additives (bacteria, chemicals, radiation)."
+    },
+    {
+      "title": "Blast Lung & Blast Pearls",
+      "content": "Blast lung: dyspnea, hypoxia, cough, hemoptysis, chest pain — can appear up to 24–48 h later. Give O2, avoid aggressive fluids, be careful with positive-pressure ventilation (pneumothorax and arterial air embolism risk), watch for tension pneumothorax. A ruptured eardrum signals significant pressure exposure but is NOT a reliable marker of blast lung — and an intact eardrum doesn't rule it out. Victims may be deafened: communicate with gestures and written cues. Traumatic amputation = high energy; look for hidden torso injury."
+    },
+    {
+      "title": "Hostile MCI: The Threat Changes Everything",
+      "content": "Active shooters, bombings, vehicle rammings, and complex coordinated attacks may target responders. Expect secondary devices near CCPs and staging, shooters moving between locations, and fake 'victims'. Staging out of sight; vary your positions; no gathering in obvious open spaces; police cordons decide where you can go. 'Upside-down triage': the least injured flee and self-present to nearby hospitals first; the critically injured arrive later via EMS."
+    },
+    {
+      "title": "TECC — Three Phases of Care",
+      "content": "DIRECT THREAT (hot): win the fight / get out of the line of fire; casualty self-aid if possible; ONLY tourniquet for life-threatening extremity bleeding ('high and tight') and move to cover — no airway management, no spinal immobilization. INDIRECT THREAT (warm): structured MARCH care — reassess/convert tourniquets, pack junctional wounds, recovery position/NPA, chest seal and needle decompression, prevent hypothermia, consider TXA per protocol, prepare for movement. EVACUATION (cold): reassess and continue care during transport; more advanced interventions as resources allow."
+    },
+    {
+      "title": "THREAT & the Rescue Task Force",
+      "content": "Hartford Consensus THREAT: Threat suppression, Hemorrhage control, Rapid Extrication to safety, Assessment by medical providers, Transport to definitive care. Rescue Task Force (RTF): small teams of EMS/fire in ballistic protection, escorted by law enforcement, entering CLEARED warm-zone areas to stop bleeding and move casualties to a casualty collection point (CCP) — while other officers keep hunting the threat. Goal: 'Stop the killing, then stop the dying.' Bystanders with Stop the Bleed training save lives before you arrive."
+    }
+  ],
+  "clinicalPearls": [
+    "Hemorrhage is the leading preventable cause of death in hostile events — tourniquets early, high and tight in the hot zone.",
+    "In direct threat, the best medicine is fire superiority and cover — not airway management.",
+    "Enclosed-space blasts (bus, train, room) produce far more primary blast injury than open-air blasts.",
+    "Every ruptured eardrum is a reason to look harder at the lungs — but a normal eardrum doesn't clear them.",
+    "CCPs and staging are predictable targets — ask police to clear them for secondary devices."
+  ],
+  "redFlags": [
+    "Unattended bags, vehicles parked oddly near the scene, or a second explosion.",
+    "Responders bunching at one obvious spot (perfect secondary target).",
+    "Delayed dyspnea or hypoxia in a blast survivor who looked fine (blast lung).",
+    "Aggressive fluids or high-pressure ventilation in blast lung."
+  ],
+  "commonMistakes": [
+    "Entering a hot zone without law enforcement — or not entering cleared warm zones when RTF is the plan.",
+    "Using a tourniquet too low or too loose in the hot zone ('high and tight' then reassess in warm).",
+    "Assuming an intact eardrum rules out primary blast injury.",
+    "Forgetting the tourniquet time on the tag."
+  ],
+  "memoryAids": [
+    "Blast classes: 1 Pressure, 2 Projectiles, 3 Pushed/Pinned, 4 Plus everything else (burns, toxins), 5 Pro-inflammatory.",
+    "THREAT: Threat suppression, Hemorrhage control, Rapid Extrication, Assessment, Transport.",
+    "TECC: Hot = Tourniquet & Cover; Warm = MARCH; Cold = Reassess & Ride.",
+    "'Stop the killing, stop the dying.'"
+  ],
+  "decisionTrees": [
+    {
+      "title": "Hostile Event — EMS Flow",
+      "content": "Report of shooting/explosion\n  → Stage out of sight; police establish cordons\n  → Threat ongoing? Direct threat = HOT → police only (self-aid/TQ by those already inside)\n  → Areas cleared but not secure = WARM → Rescue Task Forces with police escort:\n       TQs, packing, airway positioning, chest seals → move to CCP\n  → CCP → triage (SALT/START) → COLD treatment & transport\n  → Watch for secondary devices; re-check staging/CCP safety"
+    }
+  ],
+  "references": [
+    "C-TECC Tactical Emergency Casualty Care guidelines",
+    "Hartford Consensus (ACS) — THREAT",
+    "CDC Explosions and Blast Injuries: A Primer for Clinicians",
+    "FEMA/USFA Fire/EMS Departments Operational Considerations for Active Shooter and Mass Casualty Incidents"
+  ]
+}

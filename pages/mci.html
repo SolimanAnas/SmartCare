@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- General SEO Meta Tags -->
+    <meta name="description" content="MCI exam review — mass casualty incident management for EMS: METHANE, ICS and officer roles, START/JumpSTART/SALT triage, CBRNE, blast and hostile events.">
+    <meta name="keywords" content="SmartCare, pages, mci, mass casualty incident, triage, START, SALT, METHANE, CBRNE, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
+    <meta name="author" content="Soliman Anas">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solimananas.github.io/SmartCare/pages/mci">
+    <meta property="og:title" content="MCI Exam Review">
+    <meta property="og:description" content="MCI exam review — mass casualty incident management for EMS: METHANE, ICS and officer roles, START/JumpSTART/SALT triage, CBRNE, blast and hostile events.">
+    <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="1022">
+    <meta property="og:image:alt" content="SmartCare · Clinical Learning Platform">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="SmartCare">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/pages/mci">
+    <meta name="twitter:title" content="MCI Exam Review">
+    <meta name="twitter:description" content="MCI exam review — mass casualty incident management for EMS: METHANE, ICS and officer roles, START/JumpSTART/SALT triage, CBRNE, blast and hostile events.">
+    <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+    <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://solimananas.github.io/SmartCare/pages/mci">
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../icons/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="../icons/icon.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "MCI Exam Review",
+  "url": "https://solimananas.github.io/SmartCare/pages/mci",
+  "description": "MCI exam review — mass casualty incident management for EMS: METHANE, ICS and officer roles, START/JumpSTART/SALT triage, CBRNE, blast and hostile events.",
+  "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Soliman Anas"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SmartCare",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://solimananas.github.io/SmartCare/icons/icon.png"
+    }
+  },
+  "inLanguage": "en-US"
+}
+    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MCI Exam Review</title>
+    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+<link rel="stylesheet" href="exam-review.css">
+</head>
+<body>
+
+<!-- Skip link for accessibility -->
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
+<!-- Toast container -->
+<div id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Selector -->
+<div id="selectorScreen">
+  <!-- Theme toggle upper left -->
+  <div class="theme-top">
+    <div class="sel-theme-row" role="group" aria-label="Theme selection">
+      <span class="sel-theme-lbl">Theme</span>
+      <button class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme" aria-pressed="false"></button>
+      <button class="tp tp-light" id="s-tp-light" onclick="setTheme('light')" aria-label="Light theme" aria-pressed="false"></button>
+      <button class="tp tp-sepia" id="s-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme" aria-pressed="false"></button>
+      <button class="tp tp-green" id="s-tp-green" onclick="setTheme('green')" aria-label="Green theme" aria-pressed="false"></button>
+    </div>
+  </div>
+
+  <div class="sel-logo"><span class="brand-name">MCI</span> Review</div>
+  <div class="sel-sub">Mass Casualty Incident Management</div>
+  
+  <!-- Mode row - identical size -->
+  <div class="mode-row" role="group" aria-label="Study mode selection">
+    <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">
+      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study Mode
+      <span class="mode-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Hints & Review answers</span>
+    </button>
+    <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">
+      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam Mode
+      <span class="mode-hint">No hints • Timed • Submit to score</span>
+    </button>
+  </div>
+
+  <div class="exam-q-selector">
+    <label for="qCount">Number of Questions:</label>
+    <select id="qCount" class="q-select">
+        <option value="20">20 Questions</option>
+        <option value="40" selected>40 Questions</option>
+        <option value="9999">All Questions</option>
+    </select>
+  </div>
+
+  <div class="exam-cards" role="list">
+    <div class="exam-card" onclick="startExam('../src/MCI/MCI.json', 'MCI Final Exam')" role="listitem" tabindex="0" aria-label="Start MCI Final Exam">
+      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg></div>
+      <div class="ec-title">MCI Final Exam</div>
+      <div class="ec-meta">66 integrated scenario questions · Exam & Study modes</div>
+      <span class="ec-tag tag-exam">Final Exam</span>
+    </div>
+    <div class="exam-card" onclick="startExam('../src/MCI/MCI-practice.json', 'MCI Practice Bank')" role="listitem" tabindex="0" aria-label="Start MCI Practice Bank">
+      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></div>
+      <div class="ec-title">MCI Practice Bank</div>
+      <div class="ec-meta">177 chapter questions & scenarios · Exam & Study modes</div>
+      <span class="ec-tag tag-exam">Practice</span>
+    </div>
+  </div>
+  <a href="../courses/mci/index.html" class="back-link"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Open MCI Reviewer</a>
+  <a href="courses.html" class="back-link"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back to Courses</a>
+</div>
+
+<!-- Exam screen -->
+<div id="examScreen" role="main" aria-label="Exam interface">
+  <header class="exam-header">
+    <div class="eh-left">
+      <button class="sb-toggle" onclick="toggleSidebar()" aria-label="Toggle question navigator" aria-expanded="false"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#menu"/></svg></button>
+      <span class="hdr-brand">MCI</span>
+      <span class="hdr-exam" id="examName" aria-live="polite">—</span>
+      <span class="hdr-mode m-exam" id="modeBadge" aria-live="polite">Exam</span>
+    </div>
+    <div class="eh-center">
+      <div class="hdr-timer" id="timerDisplay" role="timer" aria-live="polite">00:00</div>
+    </div>
+    <div class="eh-right">
+      <div class="hdr-themes" role="group" aria-label="Quick theme switch">
+        <button class="tp tp-dark" id="h-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme"></button>
+        <button class="tp tp-light" id="h-tp-light" onclick="setTheme('light')" aria-label="Light theme"></button>
+        <button class="tp tp-sepia" id="h-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme"></button>
+        <button class="tp tp-green" id="h-tp-green" onclick="setTheme('green')" aria-label="Green theme"></button>
+      </div>
+      <button class="hbtn hbtn-flag" id="markBtn" onclick="toggleMark()" aria-pressed="false">
+        <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg> <span class="btn-txt">Flag</span>
+      </button>
+      <!-- Back button for study mode -->
+      <button class="hbtn hbtn-back" id="backBtn" onclick="confirmExit()" style="display:none"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back</button>
+      <button class="hbtn hbtn-end" id="endBtn" onclick="openEndModal()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg> <span class="btn-txt">End</span></button>
+    </div>
+  </header>
+  
+  <div class="exam-body">
+    <aside class="sidebar" id="sidebar" aria-label="Question navigator">
+      <div class="sb-hdr">
+        <div class="sb-ttl">
+          <span>Navigator</span>
+          <button class="sb-filter-btn active" data-filter="all" onclick="filterGrid('all')" aria-pressed="true">All</button>
+        </div>
+        <div class="sb-filters">
+          <button class="sb-filter-btn" data-filter="unanswered" onclick="filterGrid('unanswered')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-dot"/></svg></button>
+          <button class="sb-filter-btn" data-filter="flagged" onclick="filterGrid('flagged')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg></button>
+        </div>
+        <div class="sb-legend" aria-label="Question status legend">
+          <div class="sb-leg"><div class="leg-dot ld-unseen" aria-hidden="true"></div>Unanswered</div>
+          <div class="sb-leg"><div class="leg-dot ld-current" aria-hidden="true"></div>Current</div>
+          <div class="sb-leg"><div class="leg-dot ld-done" aria-hidden="true"></div>Answered</div>
+          <div class="sb-leg"><div class="leg-dot ld-flag" aria-hidden="true"></div>Flagged</div>
+        </div>
+      </div>
+      <div class="sb-scroll"><div class="q-grid" id="qGrid" role="listbox" aria-label="Questions"></div></div>
+      <div class="sb-stats" aria-live="polite">
+        <div class="sb-stat"><span class="ss-lbl">Answered</span><span class="ss-val" id="stAns">0</span></div>
+        <div class="sb-stat"><span class="ss-lbl">Unanswered</span><span class="ss-val" id="stUns">0</span></div>
+        <div class="sb-stat"><span class="ss-lbl">Flagged</span><span class="ss-val" id="stFlg">0</span></div>
+      </div>
+    </aside>
+    
+    <main class="q-main" id="mainContent">
+      <div class="q-scroll" id="qScroll">
+        <div class="q-hdr">
+          <span class="q-badge" id="qBadge" aria-live="polite">Question 1 of 50</span>
+          <div class="q-pbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progress">
+            <div class="q-pfill" id="qPfill"></div>
+          </div>
+        </div>
+        
+        <!-- Loading skeleton -->
+        <div id="qLoading" style="display:none">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text" style="width:80%"></div>
+          <div style="margin-top:18px"></div>
+          <div class="skeleton skeleton-opt"></div>
+          <div class="skeleton skeleton-opt"></div>
+          <div class="skeleton skeleton-opt"></div>
+          <div class="skeleton skeleton-opt"></div>
+        </div>
+        
+        <div class="q-box" id="qBox">
+		<span id="qText" aria-live="polite">Loading…</span>
+		</div>
+        
+        <!-- Study mode actions -->
+        <div id="studyActions" class="study-actions" style="display:none">
+          <button class="study-btn" id="hintBtn" onclick="showHint()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Show Hint</button>
+          <button class="study-btn primary" id="answerBtn" onclick="revealAnswer()" disabled><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Reveal Answer</button>
+        </div>
+        
+        <div class="opts" id="optsList" role="radiogroup" aria-label="Answer choices"></div>
+        
+        <!-- Confidence rating for study mode -->
+        <div id="confidenceRow" class="confidence-row" style="display:none" aria-label="How confident were you?">
+          <button class="confidence-btn" data-level="high" onclick="setConfidence('high')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg> Sure</button>
+          <button class="confidence-btn" data-level="medium" onclick="setConfidence('medium')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#message-circle-question"/></svg> Maybe</button>
+          <button class="confidence-btn" data-level="low" onclick="setConfidence('low')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#frown"/></svg> Guessed</button>
+        </div>
+        
+        <div id="expArea" aria-live="polite"></div>
+      </div>
+      
+      <div class="q-nav">
+        <button class="nav-btn nav-prev" id="prevBtn" onclick="nav(-1)" disabled aria-label="Previous question"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Prev</button>
+        <span class="nav-ctr" id="navCtr" aria-live="polite">1 / 50</span>
+        <button class="nav-btn nav-next" id="nextBtn" onclick="nav(1)" aria-label="Next question">Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg></button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Results screen -->
+<div id="resultsScreen">
+  <div class="res-hdr">
+    <span class="res-ttl"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg> Exam Results</span>
+    <span id="resExamName" aria-live="polite"></span>
+    <button class="res-back" onclick="goSelector()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> New Exam</button>
+  </div>
+  <div class="res-scroll">
+    <div id="resContent">
+      <!-- Results will be injected here -->
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal-bg" id="endModal" onclick="if(event.target===this)closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg></div>
+    <div class="modal-ttl" id="modalTitle">Submit Exam Block?</div>
+    <div class="modal-sub">You are about to submit your answers. This action cannot be undone.</div>
+    <div class="modal-stats" aria-live="polite">
+      <div class="ms-box"><div class="ms-num" id="mAns">0</div><div class="ms-lbl">Answered</div></div>
+      <div class="ms-box"><div class="ms-num" id="mUns">0</div><div class="ms-lbl">Unanswered</div></div>
+      <div class="ms-box"><div class="ms-num" id="mFlg">0</div><div class="ms-lbl">Flagged</div></div>
+    </div>
+    <div class="modal-btns">
+      <button class="mbtn mbtn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="mbtn mbtn-submit" onclick="submitExam()">Submit Answers</button>
+    </div>
+  </div>
+</div>
+
+<!-- Exit Confirmation Modal -->
+<div class="modal-bg" id="exitModal" onclick="if(event.target===this)closeExitModal()" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle">
+  <div class="modal">
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg></div>
+    <div class="modal-ttl" id="exitModalTitle">Leave Exam?</div>
+    <div class="modal-sub" id="exitModalSub">Your progress will be saved. You can resume later.</div>
+    <div class="modal-btns">
+      <button class="mbtn mbtn-cancel" onclick="closeExitModal()">Stay</button>
+      <button class="mbtn mbtn-submit" onclick="confirmExitNow()">Leave</button>
+    </div>
+  </div>
+</div>
+
+
+<script>window.EXAM_CONFIG = { id: 'mci', qCountFallback: '40' };</script>
+<script src="exam-review.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+{
+  "chapter": "c11",
+  "tables": [
+    {
+      "id": "c11_t01",
+      "title": "Category A Agents — Transmission & PPE",
+      "headers": [
+        "Agent",
+        "Key presentation",
+        "Person-to-person?",
+        "EMS precautions"
+      ],
+      "rows": [
+        [
+          "Anthrax (inhalational)",
+          "Flu-like → shock, widened mediastinum",
+          "No",
+          "Standard"
+        ],
+        [
+          "Botulism",
+          "Descending flaccid paralysis, alert, afebrile",
+          "No",
+          "Standard; prepare to ventilate"
+        ],
+        [
+          "Plague (pneumonic)",
+          "Fulminant pneumonia, hemoptysis",
+          "Yes — droplet",
+          "Droplet (mask patient; N95 commonly used)"
+        ],
+        [
+          "Smallpox",
+          "Fever → synchronous centrifugal pustules",
+          "Yes — airborne/contact",
+          "Airborne + contact + eye"
+        ],
+        [
+          "Tularemia",
+          "Pneumonia, ulceroglandular lesions",
+          "No",
+          "Standard"
+        ],
+        [
+          "Viral hemorrhagic fever",
+          "Fever, bleeding, shock",
+          "Yes — body fluids",
+          "Full contact/droplet PPE, trained doffing"
+        ]
+      ]
+    },
+    {
+      "id": "c11_t02",
+      "title": "Radiological/Nuclear Devices",
+      "headers": [
+        "Device",
+        "What it is",
+        "Main injuries",
+        "Key action"
+      ],
+      "rows": [
+        [
+          "RDD (dirty bomb)",
+          "Explosive + radioactive material",
+          "Blast trauma; low radiation doses",
+          "Treat trauma first; disrobe/decon"
+        ],
+        [
+          "RED (exposure device)",
+          "Hidden source",
+          "Local burns, ARS; no contamination",
+          "Find cluster; isolate source"
+        ],
+        [
+          "IND / nuclear detonation",
+          "Nuclear yield",
+          "Blast, burns, radiation, fallout",
+          "Get inside, stay inside, stay tuned"
+        ]
+      ]
+    },
+    {
+      "id": "c11_t03",
+      "title": "Time to Vomiting → Approximate Dose (ARS)",
+      "headers": [
+        "Vomiting onset",
+        "Approximate dose",
+        "Implication"
+      ],
+      "rows": [
+        [
+          "< 10 min",
+          "Very high (> ~8 Gy)",
+          "Likely lethal; comfort care in mass events"
+        ],
+        [
+          "< 1 h",
+          "High (≈ 4–8 Gy)",
+          "Severe ARS — priority for hospital care"
+        ],
+        [
+          "1–2 h",
+          "Moderate (≈ 2–4 Gy)",
+          "Hospital care likely needed"
+        ],
+        [
+          "> 2–4 h / none",
+          "Low (< ~2 Gy)",
+          "Likely survivable; outpatient follow-up"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "chapter": "c10",
+  "tables": [
+    {
+      "id": "c10_t01",
+      "title": "Chemical Toxidrome Cheat Sheet",
+      "headers": [
+        "Agent class",
+        "Examples",
+        "Onset",
+        "Key signs",
+        "Field treatment"
+      ],
+      "rows": [
+        [
+          "Nerve",
+          "Sarin, soman, VX, organophosphates",
+          "Vapor: sec–min; liquid: up to 18 h",
+          "Miosis, secretions, bronchospasm, fasciculations, seizures",
+          "Decon, atropine + pralidoxime, benzo"
+        ],
+        [
+          "Cyanide (blood)",
+          "HCN, cyanogen chloride, smoke",
+          "Seconds–minutes",
+          "Sudden collapse, seizures, apnea, shock",
+          "O2, hydroxocobalamin"
+        ],
+        [
+          "Choking (pulmonary)",
+          "Chlorine, ammonia, phosgene",
+          "Chlorine immediate; phosgene 2–24 h",
+          "Cough, stridor, wheeze; delayed pulmonary edema",
+          "Remove, O2, rest, bronchodilators, observe"
+        ],
+        [
+          "Vesicant (blister)",
+          "Sulfur mustard, lewisite",
+          "Mustard 2–24 h; lewisite immediate",
+          "Erythema, blisters, eye injury, airway injury",
+          "Immediate decon; BAL for lewisite"
+        ],
+        [
+          "Riot control",
+          "CS, CN, OC",
+          "Immediate",
+          "Tearing, burning, cough",
+          "Fresh air, eye irrigation; self-limited"
+        ],
+        [
+          "Incapacitating opioid",
+          "Carfentanil aerosol",
+          "Minutes",
+          "Miosis, coma, apnea, DRY",
+          "Ventilate, naloxone"
+        ]
+      ]
+    },
+    {
+      "id": "c10_t02",
+      "title": "Nerve Agent Kit Dosing by Severity",
+      "headers": [
+        "Severity",
+        "Signs",
+        "Kits (atropine 2.1 mg + 2-PAM 600 mg)",
+        "Add"
+      ],
+      "rows": [
+        [
+          "Mild (vapor)",
+          "Miosis, rhinorrhea only",
+          "0 — observe (1 if progressing)",
+          "—"
+        ],
+        [
+          "Moderate",
+          "Secretions, wheeze, vomiting, fasciculations",
+          "1",
+          "Repeat atropine to dry secretions"
+        ],
+        [
+          "Severe",
+          "Resp. distress, seizures, unconscious, apnea",
+          "3 rapidly",
+          "Benzodiazepine + ventilation"
+        ]
+      ]
+    }
+  ]
+}

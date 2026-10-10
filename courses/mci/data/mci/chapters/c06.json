@@ -1,0 +1,74 @@
+{
+  "id": "c06",
+  "title": "Triage I: START & JumpSTART",
+  "shortTitle": "START & JumpSTART",
+  "estimatedStudyTime": 45,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Triage an adult with START in under 60 seconds (goal ~30 s).",
+    "Triage a child with JumpSTART, including the 5-rescue-breath rule.",
+    "Use only the lifesaving interventions START allows during triage.",
+    "Recognize when START criteria mislead (cold, dark, walkers who are sick)."
+  ],
+  "summary": [
+    {
+      "title": "START in One Breath",
+      "content": "Simple Triage And Rapid Treatment uses three physiological checks — RPM: Respirations, Perfusion, Mental status. Step 0: everyone who can WALK → MINOR (green). Then for each non-walker: Breathing? If no → open/position airway → starts breathing = IMMEDIATE (red); still apneic = DECEASED (black). Breathing > 30/min = IMMEDIATE. Perfusion: radial pulse absent OR capillary refill > 2 s = IMMEDIATE (control bleeding). Mental status: can't follow simple commands = IMMEDIATE. Passed everything = DELAYED (yellow)."
+    },
+    {
+      "title": "What You May Do During START",
+      "content": "Only two things, both seconds long: open the airway (position it; insert an airway adjunct if instantly available per protocol) and control major bleeding (direct pressure/tourniquet — or have a green patient hold pressure). Then tag and move. No CPR, no splinting, no oxygen, no IVs during primary triage. Target: ~30 seconds per patient, never more than 60."
+    },
+    {
+      "title": "JumpSTART for Kids (≈1–8 years)",
+      "content": "Children arrest from hypoxia, and normal pediatric vitals differ — so JumpSTART adapts START. Walk → MINOR. Not breathing → position airway → breathing = IMMEDIATE; still apneic → check PERIPHERAL PULSE: none = DECEASED; pulse present → give 5 RESCUE BREATHS (~15 s) → breathing = IMMEDIATE, still apneic = DECEASED. Breathing: RR < 15 or > 45 = IMMEDIATE. Perfusion: no palpable peripheral pulse = IMMEDIATE. Mental status (AVPU): 'P' with inappropriate response (non-localizing, posturing) or 'U' = IMMEDIATE; A, V, or appropriate P = DELAYED. If the patient looks like a child → JumpSTART; looks like a young adult → START."
+    },
+    {
+      "title": "Babies and Kids Who Can't Walk Yet",
+      "content": "Infants and toddlers who are not developmentally able to walk go straight through the JumpSTART algorithm (they can't 'pass' the walk test). Per JumpSTART guidance, a well-appearing non-walker with normal JumpSTART findings and no significant external injury may be tagged MINOR; otherwise DELAYED or IMMEDIATE by the criteria. A child carried out by a parent is triaged as an individual — not automatically green."
+    },
+    {
+      "title": "Where START Fools You",
+      "content": "Capillary refill is unreliable in the cold and dark → use the radial pulse. Walkers can be sick (internal bleeding, chest pain, pregnancy, blast lung, toxic exposures with delayed onset) — they're green for sorting, not for life: re-triage them. START is a snapshot: a yellow with a pelvic fracture can be red in 20 minutes. Over-triaging everyone to red feels safe but buries the true reds and raises their mortality."
+    }
+  ],
+  "clinicalPearls": [
+    "RPM = 30-2-Can do: RR > 30 → red; CRT > 2 s (or no radial) → red; can't follow commands → red.",
+    "In START an RR of exactly 30 does NOT trigger red — the cutoff is MORE than 30.",
+    "JumpSTART numbers: 15–45 is 'OK'; outside that range is red.",
+    "Kids get a pulse check and 5 rescue breaths before being tagged deceased — the only 'resuscitation' in mass triage.",
+    "Use green patients as helpers: 'Hold pressure here, don't let go until someone relieves you.'"
+  ],
+  "redFlags": [
+    "Spending > 60 seconds per patient — the triage line stops.",
+    "Starting CPR on an apneic adult during START.",
+    "Tagging a child deceased without the pulse check / 5 breaths step.",
+    "Relying on capillary refill in a cold night-time scene."
+  ],
+  "commonMistakes": [
+    "Tagging RR 30 as red (rule is > 30).",
+    "Using adult START cut-offs on a toddler (RR 40 is normal for a 2-year-old).",
+    "Treating 'walking' as 'uninjured' — greens still need assessment and re-triage.",
+    "Forgetting to open the airway before tagging an apneic adult deceased."
+  ],
+  "memoryAids": [
+    "START = RPM 30-2-Can do.",
+    "JumpSTART = 'Pulse? → 5 breaths', then 15–45, Pulse, AVPU.",
+    "Black needs TWO things in a child: no breathing after positioning AND (no pulse OR no breathing after 5 breaths)."
+  ],
+  "decisionTrees": [
+    {
+      "title": "START (Adult)",
+      "content": "Can walk? → YES: MINOR (green)\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR > 30? → YES: IMMEDIATE\n  NO ↓\nRadial pulse absent OR CRT > 2 s? → YES: IMMEDIATE (control bleeding)\n  NO ↓\nFollows simple commands? → NO: IMMEDIATE | YES: DELAYED"
+    },
+    {
+      "title": "JumpSTART (Child ~1–8 y)",
+      "content": "Can walk? → YES: MINOR\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE\n        NO → palpable peripheral pulse? NO: DECEASED\n                YES → 5 rescue breaths → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR < 15 or > 45? → YES: IMMEDIATE\n  NO ↓\nPalpable peripheral pulse? → NO: IMMEDIATE\n  YES ↓\nAVPU: U or inappropriate P → IMMEDIATE | A, V, appropriate P → DELAYED"
+    }
+  ],
+  "references": [
+    "START — Newport Beach Fire Dept / Hoag Hospital (1983, revised)",
+    "JumpSTART Pediatric MCI Triage — L. Romig, MD",
+    "CHEMM / REMM triage resources (HHS)"
+  ]
+}

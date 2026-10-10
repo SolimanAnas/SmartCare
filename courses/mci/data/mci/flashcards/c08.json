@@ -1,0 +1,71 @@
+{
+  "chapter": "c08",
+  "cards": [
+    {
+      "id": "c08_fc01",
+      "question": "Expand MARCH.",
+      "answer": "Massive hemorrhage, Airway, Respiration, Circulation, Hypothermia/Head injury.",
+      "category": "Treatment"
+    },
+    {
+      "id": "c08_fc02",
+      "question": "What care is skipped in the MCI treatment area?",
+      "answer": "Time-consuming care that doesn't change near-term survival: detailed secondary surveys, routine full spinal packaging, non-critical IVs, prolonged procedures.",
+      "category": "Treatment"
+    },
+    {
+      "id": "c08_fc03",
+      "question": "Why is hypothermia a major concern in MCIs?",
+      "answer": "Prolonged waits on the ground worsen coagulopathy and outcomes — insulate from the ground and cover.",
+      "category": "Treatment"
+    },
+    {
+      "id": "c08_fc04",
+      "question": "Transport priority order?",
+      "answer": "Immediate (red) → Delayed (yellow) → Minor (green); Expectant when resources allow.",
+      "category": "Transport"
+    },
+    {
+      "id": "c08_fc05",
+      "question": "Efficient ambulance loading examples?",
+      "answer": "1 red + 1–2 greens, or 2 yellows (per policy); greens in bulk by bus with a medic.",
+      "category": "Transport"
+    },
+    {
+      "id": "c08_fc06",
+      "question": "What is 'upside-down triage' at hospitals?",
+      "answer": "Less-injured patients self-present first to the nearest hospital, filling it before critical EMS patients arrive.",
+      "category": "Hospitals"
+    },
+    {
+      "id": "c08_fc07",
+      "question": "Why spread patients across hospitals?",
+      "answer": "Prevents overwhelming the nearest facility (which also gets most self-presenters) while others sit underused.",
+      "category": "Hospitals"
+    },
+    {
+      "id": "c08_fc08",
+      "question": "CDC first-hour rule of thumb?",
+      "answer": "Roughly double the number of casualties arriving at a hospital in the first hour to estimate its total casualties.",
+      "category": "Hospitals"
+    },
+    {
+      "id": "c08_fc09",
+      "question": "Who should talk to hospitals during an MCI?",
+      "answer": "One Medical Communications Coordinator / regional hospital coordination center.",
+      "category": "Hospitals"
+    },
+    {
+      "id": "c08_fc10",
+      "question": "Why is patient tracking vital?",
+      "answer": "Locates every patient for families, hospitals, re-triage, and accountability; supports reunification.",
+      "category": "Tracking"
+    },
+    {
+      "id": "c08_fc11",
+      "question": "When should air medical be used in an MCI?",
+      "answer": "Long distances or specialty center needs where it's faster than ground — LZs cost time and resources.",
+      "category": "Transport"
+    }
+  ]
+}

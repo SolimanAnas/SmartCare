@@ -1,0 +1,77 @@
+{
+  "chapter": "c13",
+  "cards": [
+    {
+      "id": "c13_fc01",
+      "question": "What causes death at release in crush syndrome?",
+      "answer": "Sudden release of potassium, acid, and myoglobin → hyperkalemic arrhythmia/cardiac arrest.",
+      "category": "Crush"
+    },
+    {
+      "id": "c13_fc02",
+      "question": "Pre-release fluid for crush syndrome?",
+      "answer": "Normal saline ~1–1.5 L/h (adult) before extrication; avoid potassium-containing fluids.",
+      "category": "Crush"
+    },
+    {
+      "id": "c13_fc03",
+      "question": "Drugs to prepare for crush hyperkalemia?",
+      "answer": "Calcium (chloride/gluconate), sodium bicarbonate, nebulized albuterol — per protocol.",
+      "category": "Crush"
+    },
+    {
+      "id": "c13_fc04",
+      "question": "Mechanism of death in crowd crush?",
+      "answer": "Compressive (traumatic) asphyxia.",
+      "category": "Crowds"
+    },
+    {
+      "id": "c13_fc05",
+      "question": "Signs of traumatic asphyxia?",
+      "answer": "Facial/neck plethora, petechiae, subconjunctival hemorrhage, hypoxia.",
+      "category": "Crowds"
+    },
+    {
+      "id": "c13_fc06",
+      "question": "Crowd density danger threshold?",
+      "answer": "About 4–5 people per m² and rising, when individuals can't move independently.",
+      "category": "Crowds"
+    },
+    {
+      "id": "c13_fc07",
+      "question": "First hazard step at a rail incident?",
+      "answer": "Isolate power (overhead lines/third rail) before approaching.",
+      "category": "Transport"
+    },
+    {
+      "id": "c13_fc08",
+      "question": "Why get the passenger manifest?",
+      "answer": "Transport incidents are closed — the manifest lets you account for every occupant.",
+      "category": "Transport"
+    },
+    {
+      "id": "c13_fc09",
+      "question": "Floodwater danger depths?",
+      "answer": "~6 inches (15 cm) of moving water can knock a person down; ~1 foot (30 cm) can float most cars.",
+      "category": "Natural"
+    },
+    {
+      "id": "c13_fc10",
+      "question": "Priority in heat stroke?",
+      "answer": "Rapid cooling on scene (cold-water immersion best) before transport.",
+      "category": "Natural"
+    },
+    {
+      "id": "c13_fc11",
+      "question": "Key protective steps for unaccompanied minors?",
+      "answer": "Identify, photograph, tag, keep in a supervised safe area, release only to verified guardians.",
+      "category": "Vulnerable"
+    },
+    {
+      "id": "c13_fc12",
+      "question": "Technology-dependent patients in disasters?",
+      "answer": "Home ventilators, O2 concentrators, dialysis, insulin — power/supply loss creates emergencies; plan early evacuation/power.",
+      "category": "Vulnerable"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "chapter": "c07",
+  "algorithms": [
+    {
+      "id": "c07_alg01",
+      "title": "SALT Mass Casualty Triage",
+      "description": "CDC-sponsored all-hazards standard (adults & children).",
+      "steps": [
+        "SORT: 'Walk to [area]' → assess last. 'Wave/move' → assess second. Still/obvious life threat → assess first.",
+        "ASSESS each casualty; perform LSIs (seconds): hemorrhage control, open airway (child: consider 2 rescue breaths), chest decompression, auto-injector.",
+        "Not breathing → DEAD.",
+        "Breathing → Obeys commands/purposeful movement? Peripheral pulse? Not in respiratory distress? Major hemorrhage controlled?",
+        "ALL YES → minor injuries only? → MINIMAL; otherwise → DELAYED.",
+        "ANY NO → likely to survive with current resources? → IMMEDIATE; otherwise → EXPECTANT (comfort care).",
+        "TREATMENT/TRANSPORT in priority order: Immediate → Delayed → Minimal (Expectant when resources allow).",
+        "Re-triage at every stage."
+      ]
+    },
+    {
+      "id": "c07_alg02",
+      "title": "Re-Triage Loop",
+      "description": "Run it at every hand-off.",
+      "steps": [
+        "Primary triage at scene (START/SALT).",
+        "Secondary triage at treatment area entry (more detailed physiology, injury, age).",
+        "Re-check while waiting (assign a medic per area, every ~15 min or per protocol).",
+        "Pre-transport triage to set loading order and destination.",
+        "Hospital triage on arrival.",
+        "Any change: re-tag, note time, tell the Treatment and Transport Officers."
+      ]
+    }
+  ]
+}

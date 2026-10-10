@@ -1,6 +1,6 @@
 /* ================================================================
    SmartCare Exam Review — shared engine styles
-   Used by acls/bdls/bls/itls/medical/pals/pepp/ppet.html
+   Used by acls/bdls/bls/itls/mci/medical/pals/pepp/ppet.html
  ================================================================ */
 :root,[data-theme="dark"]{
   --bg:#070f1d;--panel:#0c1628;--card:#111d30;--card2:#162035;

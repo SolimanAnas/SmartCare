@@ -1,0 +1,71 @@
+{
+  "chapter": "c12",
+  "tables": [
+    {
+      "id": "c12_t01",
+      "title": "Blast Injury Classification",
+      "headers": [
+        "Class",
+        "Mechanism",
+        "Typical injuries"
+      ],
+      "rows": [
+        [
+          "Primary",
+          "Overpressure wave",
+          "TM rupture, blast lung, bowel perforation, eye globe rupture"
+        ],
+        [
+          "Secondary",
+          "Fragments/debris",
+          "Penetrating wounds, eye injuries"
+        ],
+        [
+          "Tertiary",
+          "Body displacement / collapse",
+          "Blunt trauma, amputations, crush, fractures"
+        ],
+        [
+          "Quaternary",
+          "Other explosion effects",
+          "Burns, inhalation (CO, cyanide), asthma/COPD/angina"
+        ],
+        [
+          "Quinary",
+          "Additives",
+          "Hyperinflammatory state; bacteria/chemicals/radiation"
+        ]
+      ]
+    },
+    {
+      "id": "c12_t02",
+      "title": "TECC Phases vs ICS Zones",
+      "headers": [
+        "TECC phase",
+        "Zone",
+        "What you do",
+        "What you don't"
+      ],
+      "rows": [
+        [
+          "Direct threat",
+          "Hot",
+          "Cover, self-aid, tourniquet",
+          "Airway, C-spine, IVs"
+        ],
+        [
+          "Indirect threat",
+          "Warm",
+          "MARCH, CCP, prepare to move",
+          "Prolonged procedures"
+        ],
+        [
+          "Evacuation",
+          "Cold",
+          "Reassess, advanced care en route",
+          "Delay transport"
+        ]
+      ]
+    }
+  ]
+}

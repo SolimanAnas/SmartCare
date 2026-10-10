@@ -1,0 +1,158 @@
+{
+  "chapter": "c09",
+  "drills": [
+    {
+      "title": "Read the Hazard",
+      "icon": "☢️",
+      "targetSeconds": 10,
+      "description": "Placards, diamonds, the ERG, and PPE. Ten seconds each — you're reading through binoculars.",
+      "items": [
+        {
+          "id": "c09_dr01_01",
+          "prompt": "A placard shows hazard class 3.",
+          "options": [
+            "Flammable liquid",
+            "Corrosive",
+            "Radioactive",
+            "Explosive"
+          ],
+          "answer": 0,
+          "why": "Class 3 = flammable liquids (e.g., gasoline)."
+        },
+        {
+          "id": "c09_dr01_02",
+          "prompt": "A placard shows hazard class 7.",
+          "options": [
+            "Toxic",
+            "Radioactive",
+            "Oxidizer",
+            "Gas"
+          ],
+          "answer": 1,
+          "why": "Class 7 = radioactive."
+        },
+        {
+          "id": "c09_dr01_03",
+          "prompt": "A placard shows hazard class 8.",
+          "options": [
+            "Explosive",
+            "Corrosive",
+            "Flammable solid",
+            "Miscellaneous"
+          ],
+          "answer": 1,
+          "why": "Class 8 = corrosives."
+        },
+        {
+          "id": "c09_dr01_04",
+          "prompt": "You know the 4-digit UN number. Which ERG pages?",
+          "options": [
+            "Yellow",
+            "Blue",
+            "Green",
+            "White"
+          ],
+          "answer": 0,
+          "why": "Yellow pages are sorted by ID number."
+        },
+        {
+          "id": "c09_dr01_05",
+          "prompt": "You need the initial isolation distance for a toxic gas.",
+          "options": [
+            "Orange",
+            "Green",
+            "Blue",
+            "Yellow"
+          ],
+          "answer": 1,
+          "why": "Green pages = isolation and protective action distances."
+        },
+        {
+          "id": "c09_dr01_06",
+          "prompt": "NFPA diamond: the BLUE quadrant shows 4.",
+          "options": [
+            "Extremely flammable",
+            "Lethal health hazard",
+            "May detonate",
+            "Water-reactive"
+          ],
+          "answer": 1,
+          "why": "Blue = health; 4 = can be lethal with short exposure."
+        },
+        {
+          "id": "c09_dr01_07",
+          "prompt": "NFPA white quadrant shows 'W' with a line through it.",
+          "options": [
+            "Use water",
+            "Water-reactive — avoid water",
+            "Wear Level A",
+            "Waste material"
+          ],
+          "answer": 1,
+          "why": "W̶ = reacts with water."
+        },
+        {
+          "id": "c09_dr01_08",
+          "prompt": "Unknown vapor, entry team going into the hot zone.",
+          "options": [
+            "Level A",
+            "Level C",
+            "Level D",
+            "Surgical mask + gown"
+          ],
+          "answer": 0,
+          "why": "Unknown vapor hazards require maximum skin + respiratory protection."
+        },
+        {
+          "id": "c09_dr01_09",
+          "prompt": "Hospital decon team, agent known, oxygen normal.",
+          "options": [
+            "Level A",
+            "Level B",
+            "Level C",
+            "Level D"
+          ],
+          "answer": 2,
+          "why": "Level C (APR/PAPR + splash suit) is typical for hospital/decon teams with known agents."
+        },
+        {
+          "id": "c09_dr01_10",
+          "prompt": "Five people collapsed in a basement, no trauma, rotten-egg smell.",
+          "options": [
+            "Go in with a BVM",
+            "Do not approach — withdraw, report, request HazMat (Step 3)",
+            "Approach with caution (Step 2)",
+            "Ventilate the basement yourself"
+          ],
+          "answer": 1,
+          "why": "3+ casualties unexplained = Step 3. Rotten egg suggests hydrogen sulfide — smell fades as it paralyzes olfaction."
+        },
+        {
+          "id": "c09_dr01_11",
+          "prompt": "First and best decon step for 100 exposed people?",
+          "options": [
+            "Remove outer clothing",
+            "Bleach shower",
+            "Antibiotics",
+            "Wait for the HazMat team"
+          ],
+          "answer": 0,
+          "why": "Disrobing removes most external contamination immediately."
+        },
+        {
+          "id": "c09_dr01_12",
+          "prompt": "Exposure to a vapor only, patients asymptomatic, no visible liquid.",
+          "options": [
+            "Wet decon with scrubbing",
+            "Disrobe + dry decon",
+            "No action",
+            "Level A for patients"
+          ],
+          "answer": 1,
+          "why": "Dry decon is the default for most exposures; wet for caustics/liquid/symptoms."
+        }
+      ],
+      "id": "c09_dr01"
+    }
+  ]
+}

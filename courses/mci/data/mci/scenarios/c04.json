@@ -1,0 +1,65 @@
+{
+  "chapter": "c04",
+  "cases": [
+    {
+      "id": "c04_s01",
+      "title": "You're Wearing the Orange Vest",
+      "presentation": "The IC hands you the TRANSPORT vest at a 26-patient bus crash. Three hospitals: General (Level I trauma, 8 min), St. Mary's (community, 5 min), Children's (12 min). 4 red, 8 yellow, 14 green — including 3 injured children.",
+      "vitals": {
+        "red": "4",
+        "yellow": "8",
+        "green": "14 (3 peds)",
+        "hospitals": "3"
+      },
+      "question": "Best distribution strategy?",
+      "options": [
+        "A: Let each ambulance crew decide.",
+        "B: Reds to General (trauma center) a few at a time, yellows split between General and St. Mary's, injured children toward Children's per capability, greens by bus with a medic to a less-busy hospital — all logged.",
+        "C: Hold everyone until you hear from all hospitals.",
+        "D: Everyone to St. Mary's — it's closest."
+      ],
+      "correct": 1,
+      "explanation": "Match severity to capability and spread the load. Nearby hospitals already get flooded by self-presenters. Log every departure.",
+      "clinicalPearl": "Distribute, don't dump."
+    },
+    {
+      "id": "c04_s02",
+      "title": "The Triage Officer Who Stayed",
+      "presentation": "Fifteen minutes into an apartment-fire MCI, the triage count hasn't been updated since the first report. The triage officer is found inserting an IO in a burned toddler.",
+      "vitals": {
+        "time": "15 min",
+        "count updates": "0",
+        "untagged": "unknown"
+      },
+      "question": "What's the problem and fix?",
+      "options": [
+        "A: Pause the incident.",
+        "B: Nothing — the toddler is critical.",
+        "C: Triage has stopped: hand the toddler to the treatment area team, return the triage officer to sorting and reporting counts.",
+        "D: Make the triage officer the transport officer."
+      ],
+      "correct": 2,
+      "explanation": "When the triage officer treats, triage halts and untagged reds go unfound. Lifesaving interventions in triage are seconds-long only.",
+      "clinicalPearl": "Triage touches for seconds, then moves."
+    },
+    {
+      "id": "c04_s03",
+      "title": "Staging Chaos",
+      "presentation": "Mutual-aid ambulances keep driving straight to the scene, blocking the fire apparatus and the loading zone. Two crews have loaded green patients on their own and left.",
+      "vitals": {
+        "inbound units": "9",
+        "staging": "not established"
+      },
+      "question": "Best fix?",
+      "options": [
+        "A: Close the road to all ambulances.",
+        "B: Let them continue — more transports is good.",
+        "C: Ask dispatch to cancel mutual aid.",
+        "D: Appoint a Staging Officer, set a staging location in the METHANE update, require check-in, and release units only on Transport Officer request."
+      ],
+      "correct": 3,
+      "explanation": "Staging restores flow and accountability. Self-dispatching units clog access and lose patient tracking.",
+      "clinicalPearl": "Check in, keys in, crews in."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "chapter": "c06",
+  "algorithms": [
+    {
+      "id": "c06_alg01",
+      "title": "START Adult Triage",
+      "description": "Target: ~30 seconds per patient.",
+      "steps": [
+        "Global: 'If you can walk, go to [green point].' → walkers = MINOR (green).",
+        "Non-walkers, one by one: Breathing? If NO → open/position airway.",
+        "Breathes after positioning → IMMEDIATE. Still apneic → DECEASED.",
+        "Breathing: RR > 30 → IMMEDIATE.",
+        "RR ≤ 30: check perfusion — radial pulse absent or CRT > 2 s → IMMEDIATE (control bleeding).",
+        "Perfusion OK: can follow simple commands? NO → IMMEDIATE. YES → DELAYED.",
+        "Tag, mark, move. Re-triage later."
+      ]
+    },
+    {
+      "id": "c06_alg02",
+      "title": "JumpSTART Pediatric Triage",
+      "description": "For children ~1–8 years (or anyone who looks like a child).",
+      "steps": [
+        "Walking → MINOR (non-walkers by development: run the algorithm; well-appearing with no significant injury may be MINOR).",
+        "Not breathing → position airway → breathes → IMMEDIATE.",
+        "Still apneic → palpable peripheral pulse? NO → DECEASED.",
+        "Pulse present → 5 rescue breaths (~15 s) → breathes → IMMEDIATE; still apneic → DECEASED.",
+        "Breathing: RR < 15 or > 45 → IMMEDIATE.",
+        "RR 15–45: palpable peripheral pulse? NO → IMMEDIATE.",
+        "Pulse present: AVPU — U or inappropriate P → IMMEDIATE; A, V, or appropriate P → DELAYED."
+      ]
+    }
+  ]
+}

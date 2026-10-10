@@ -1,0 +1,29 @@
+{
+  "chapter": "c12",
+  "algorithms": [
+    {
+      "id": "c12_alg01",
+      "title": "TECC by Phase",
+      "description": "Care matches the threat level.",
+      "steps": [
+        "DIRECT THREAT (hot): suppress threat / move to cover; direct self-aid; tourniquet 'high and tight' for life-threatening extremity bleeding; drag casualty to cover. No airway or spinal care.",
+        "INDIRECT THREAT (warm): M — reassess/convert TQs, pack junctional wounds, pressure dressings; A — recovery position, NPA, (surgical airway if trained); R — chest seal, needle decompression; C — IV/IO and TXA per protocol; H — hypothermia prevention, head injury care.",
+        "Move casualties to the CCP; triage there.",
+        "EVACUATION (cold): reassess everything, continue MARCH, add advanced care en route; document TQ times."
+      ]
+    },
+    {
+      "id": "c12_alg02",
+      "title": "Blast Casualty Rapid Check",
+      "description": "Think in classes.",
+      "steps": [
+        "Scene: secondary device? structural collapse? fire/toxins? radiation detector alarm?",
+        "Primary: ears, breathing (blast lung), abdominal pain (bowel).",
+        "Secondary: fragment wounds — look everywhere, eyes too.",
+        "Tertiary: blunt trauma, amputations, crush.",
+        "Quaternary: burns, smoke/CO/cyanide, exacerbated illness.",
+        "Manage: hemorrhage first, O2, cautious fluids, careful ventilation, re-triage walking patients from enclosed blasts."
+      ]
+    }
+  ]
+}

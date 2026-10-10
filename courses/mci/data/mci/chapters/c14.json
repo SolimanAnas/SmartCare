@@ -1,0 +1,72 @@
+{
+  "id": "c14",
+  "title": "Demobilization, Recovery & Responder Resilience",
+  "shortTitle": "Demob & Resilience",
+  "estimatedStudyTime": 25,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Demobilize resources safely and reconcile every patient.",
+    "Run a hot wash and contribute to an after-action review.",
+    "Apply responder rehab and Psychological First Aid.",
+    "Recognize stress reactions that need referral."
+  ],
+  "summary": [
+    {
+      "title": "Demobilization Is an Operation",
+      "content": "Release resources as they're no longer needed, not all at once — keep enough for re-triage, late-found patients, and responder rehab. Each unit is checked out: crew accounted for, rehab/medical check, equipment decontaminated (CBRNE), restocked, returned to service. Command is formally terminated and announced. Before closing: reconcile the patient count — scene tags = transport log = hospital arrivals (+ dead + released on scene). A mismatch means someone is missing."
+    },
+    {
+      "title": "Documentation That Matters",
+      "content": "MCI paperwork is short but non-negotiable: triage tags (they ARE records), the transport log, unit assignments, times, tourniquet times, antidotes and decon given, and exposure logs for responders (chemical/radiological/biological). Complete abbreviated or full ePCRs per local policy after the incident. Records drive reunification, legal review, reimbursement, and the after-action report."
+    },
+    {
+      "title": "Hot Wash & After-Action Review",
+      "content": "HOT WASH: within minutes–hours, short, informal, everyone present: what went well, what didn't, any immediate safety issues. AFTER-ACTION REVIEW/REPORT (AAR) with an Improvement Plan: What was supposed to happen? What actually happened? Why was there a difference? What do we sustain, what do we improve — with owners and deadlines. Blame-free and systems-focused. Feed lessons into plans, training, and drills (tabletop → functional → full-scale exercises)."
+    },
+    {
+      "title": "Responder Rehab",
+      "content": "Rehab starts during the incident, not after: shade/shelter, hydration, food, rest, medical monitoring (vitals, symptoms, CO if smoke exposure). Rotate crews before exhaustion — e.g., NFPA 1584 guidance: rehab after two 30-minute SCBA cylinders or ~40 minutes of intense work. Watch for heat illness, rhabdomyolysis, chest pain, and dehydration in your own people."
+    },
+    {
+      "title": "Psychological First Aid, Not Forced Debriefing",
+      "content": "Stress reactions (poor sleep, intrusive images, irritability, numbness) are common and usually fade in days to weeks. Psychological First Aid (PFA) — 'Look, Listen, Link': ensure safety and basic needs, listen without pushing for details, connect to social support and services. Mandatory single-session psychological debriefing (forcing everyone to relive the event) is NOT recommended — it doesn't prevent PTSD and may harm. Use peer support, buddy checks, and follow-up; refer when symptoms persist beyond ~a month, worsen, or include suicidal thoughts or substance misuse."
+    }
+  ],
+  "clinicalPearls": [
+    "Tags + transport log + hospital list must add up. If they don't, keep looking.",
+    "Release units in phases — the last patients are often found after the scene 'feels' over.",
+    "The hot wash is for facts and safety, not therapy — keep it short.",
+    "Look, Listen, Link: PFA works for colleagues as well as patients.",
+    "Normal people have strong reactions to abnormal events — say it out loud to your crew."
+  ],
+  "redFlags": [
+    "A colleague who can't sleep, drinks more, or withdraws weeks after the incident.",
+    "Any responder talking about hopelessness or self-harm — act today.",
+    "Patient numbers that don't reconcile with hospitals.",
+    "Contaminated equipment returned to service without decon."
+  ],
+  "commonMistakes": [
+    "Releasing all resources the moment the last red is transported.",
+    "Skipping the hot wash because 'everyone is tired'.",
+    "Forcing all staff into a single group debrief to 'process' the event.",
+    "Writing AAR findings without owners or deadlines — nothing changes."
+  ],
+  "memoryAids": [
+    "Demob: Check out, Clean, Restock, Return.",
+    "AAR 4 questions: Supposed to? Actually? Why different? Sustain/Improve?",
+    "PFA: Look, Listen, Link.",
+    "Reconcile: Tags = Log = Hospitals (+ dead + released)."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Closing the Incident",
+      "content": "All patients transported/released?\n  → Reconcile counts: tags = transport log = hospital arrivals (+ dead/released)\n     → Mismatch: search, re-check hospitals, re-sweep scene\n  → Phased demob: rehab check → decon → restock → return to service\n  → Terminate command (announce)\n  → Hot wash today → AAR/Improvement Plan → update plans & training\n  → PFA + peer follow-up for responders; refer persistent symptoms"
+    }
+  ],
+  "references": [
+    "FEMA HSEEP — After-Action Report / Improvement Plan",
+    "WHO Psychological First Aid: Guide for Field Workers (Look, Listen, Link)",
+    "NFPA 1584 — Rehabilitation Process for Members During Emergency Operations",
+    "Cochrane/WHO guidance on single-session psychological debriefing"
+  ]
+}

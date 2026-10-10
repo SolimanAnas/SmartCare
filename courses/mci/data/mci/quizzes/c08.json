@@ -1,0 +1,109 @@
+{
+  "chapter": "c08",
+  "questions": [
+    {
+      "id": "c08_q01",
+      "question": "Which is the MOST appropriate intervention in the MCI treatment area?",
+      "options": [
+        "A. Two large-bore IVs for every yellow",
+        "B. Routine spinal immobilization of all patients",
+        "C. Full secondary survey on every patient",
+        "D. Tourniquet and wound packing for hemorrhage"
+      ],
+      "correct": 3,
+      "rationale": "Hemorrhage control changes survival; the others slow flow without proportional benefit.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c08_q02",
+      "question": "The nearest hospital is usually overwhelmed early because:",
+      "options": [
+        "A. Self-presenting walking wounded arrive first",
+        "B. It has no ED",
+        "C. It's the trauma center",
+        "D. EMS sends no one there"
+      ],
+      "correct": 0,
+      "rationale": "Upside-down triage: the least injured self-present to the closest hospital.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c08_q03",
+      "question": "Which loading plan is MOST efficient?",
+      "options": [
+        "A. Wait until all patients are treated",
+        "B. All reds in one ambulance",
+        "C. One green per ambulance",
+        "D. One red + one or two greens per ambulance; greens in bulk by bus with a medic"
+      ],
+      "correct": 3,
+      "rationale": "Fill seats sensibly and move greens in bulk.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c08_q04",
+      "question": "A hospital receives 30 casualties in the first hour. Its likely total is about:",
+      "options": [
+        "A. 30",
+        "B. 45",
+        "C. 60",
+        "D. 300"
+      ],
+      "correct": 2,
+      "rationale": "CDC rule of thumb: roughly double the first-hour count.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c08_q05",
+      "question": "Which patient should be transported FIRST?",
+      "options": [
+        "A. Stable ankle fracture",
+        "B. Penetrating torso wound with signs of shock",
+        "C. Minor burns to the hand",
+        "D. Anxious walking patient"
+      ],
+      "correct": 1,
+      "rationale": "Non-compressible torso hemorrhage needs a surgeon now.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c08_q06",
+      "question": "The main reason to log every transport is to:",
+      "options": [
+        "A. Measure crew speed",
+        "B. Track each patient's location for families, hospitals, and accountability",
+        "C. Bill correctly",
+        "D. Satisfy media"
+      ],
+      "correct": 1,
+      "rationale": "Tracking keeps patients from 'disappearing'.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c08_q07",
+      "question": "Which statement about hypothermia in MCIs is TRUE?",
+      "options": [
+        "A. Insulating from the ground is as important as covering",
+        "B. Only a winter issue",
+        "C. Warm patients do worse",
+        "D. Irrelevant for trauma"
+      ],
+      "correct": 0,
+      "rationale": "Ground contact steals heat fast; hypothermia worsens trauma coagulopathy.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c08_q08",
+      "question": "Hospital capacity during an MCI should be obtained:",
+      "options": [
+        "A. After arrival",
+        "B. From social media",
+        "C. By each crew calling ahead",
+        "D. Through the Medical Communications Coordinator / hospital coordination center"
+      ],
+      "correct": 3,
+      "rationale": "A single channel prevents duplicate calls and gives accurate distribution.",
+      "difficulty": "Easy"
+    }
+  ]
+}

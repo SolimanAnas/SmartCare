@@ -51,6 +51,8 @@ CORE_FILES = [
     "courses/pepp/data/bundle.js",
     "courses/medical/index.html",
     "courses/medical/data/bundle.js",
+    "courses/mci/index.html",
+    "courses/mci/data/bundle.js",
 ]
 
 GLOB_DIRS = [

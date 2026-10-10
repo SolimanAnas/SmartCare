@@ -1,0 +1,134 @@
+{
+  "chapter": "c02",
+  "drills": [
+    {
+      "title": "METHANE Radio Drill",
+      "icon": "📻",
+      "targetSeconds": 12,
+      "description": "You're on the radio. Pick the line that correctly belongs in each METHANE slot. Speed matters — dispatch is waiting.",
+      "items": [
+        {
+          "id": "c02_dr01_01",
+          "prompt": "Which line belongs in 'M'?",
+          "options": [
+            "Major incident declared.",
+            "Multiple patients, will advise.",
+            "Medic 4 on scene.",
+            "Mild injuries mostly."
+          ],
+          "answer": 0,
+          "why": "M = the declaration (or 'standby'). Say the words."
+        },
+        {
+          "id": "c02_dr01_02",
+          "prompt": "Which line belongs in the FIRST 'E'?",
+          "options": [
+            "Request 6 ambulances.",
+            "Exit 14, northbound, under the rail bridge.",
+            "Evacuating now.",
+            "Engine 2 on scene."
+          ],
+          "answer": 1,
+          "why": "First E = Exact location. The last E = Emergency services."
+        },
+        {
+          "id": "c02_dr01_03",
+          "prompt": "Which line belongs in 'T'?",
+          "options": [
+            "Approx 20 casualties.",
+            "Coach overturned into ditch after striking a lorry.",
+            "Fuel leaking.",
+            "Access from the south."
+          ],
+          "answer": 1,
+          "why": "T = Type of incident — what happened."
+        },
+        {
+          "id": "c02_dr01_04",
+          "prompt": "Which line belongs in 'H'?",
+          "options": [
+            "Fuel leaking, live traffic in southbound lanes, powerlines down.",
+            "Stage at the truck stop.",
+            "Two engines on scene.",
+            "Hospital notified."
+          ],
+          "answer": 0,
+          "why": "H = hazards present AND potential."
+        },
+        {
+          "id": "c02_dr01_05",
+          "prompt": "Which line belongs in 'A'?",
+          "options": [
+            "All patients triaged.",
+            "Approach from the north only; RV point at the truck stop, junction 13.",
+            "Approx 30 casualties.",
+            "Ambulance 7 en route."
+          ],
+          "answer": 1,
+          "why": "A = Access/egress + rendezvous/staging."
+        },
+        {
+          "id": "c02_dr01_06",
+          "prompt": "Which line belongs in 'N'?",
+          "options": [
+            "Need more units.",
+            "Approx 30 casualties: 5 red, 10 yellow, 15 green, 3 are children.",
+            "Number of the incident is 4471.",
+            "No hazards."
+          ],
+          "answer": 1,
+          "why": "N = number, severity, and type of casualties — estimates are fine."
+        },
+        {
+          "id": "c02_dr01_07",
+          "prompt": "Which line belongs in the LAST 'E'?",
+          "options": [
+            "Exact address is 9 Main St.",
+            "On scene: 2 ALS, 1 engine, police. Request: 8 ambulances, 1 bus for greens, heavy rescue.",
+            "Estimated time 10 minutes.",
+            "Everyone is stable."
+          ],
+          "answer": 1,
+          "why": "Last E = Emergency services present and required."
+        },
+        {
+          "id": "c02_dr01_08",
+          "prompt": "A dispatcher asks 'Confirm, is this a major incident?' The incident clearly exceeds your resources. You say:",
+          "options": [
+            "'Standby, still assessing.'",
+            "'Affirmative — MAJOR INCIDENT DECLARED.'",
+            "'Possibly, send what you can.'",
+            "'Code 3, 10-50 major.'"
+          ],
+          "answer": 1,
+          "why": "Unambiguous plain language. Hedging delays resources; codes confuse mutual aid."
+        },
+        {
+          "id": "c02_dr01_09",
+          "prompt": "You don't yet know the exact casualty count. Best 'N' line?",
+          "options": [
+            "'Unknown, will count.'",
+            "'Approximately 40, majority walking, at least 6 appear critical.'",
+            "Skip N until later.",
+            "'Lots.'"
+          ],
+          "answer": 1,
+          "why": "An estimate with a severity split moves resources now. Refine later."
+        },
+        {
+          "id": "c02_dr01_10",
+          "prompt": "Which order is correct?",
+          "options": [
+            "M-E-T-H-A-N-E: Major, Exact location, Type, Hazards, Access, Number, Emergency services",
+            "M-E-T-H-A-N-E: Medical, Evacuation, Triage, Hospital, Ambulance, Number, Exit",
+            "M-E-T-H-A-N-E: Major, Emergency services, Type, Hospital, Access, Number, Exact location",
+            "M-E-T-H-A-N-E: Mechanism, Exposure, Time, Hazards, Age, Name, ETA"
+          ],
+          "answer": 0,
+          "why": "Major – Exact location – Type – Hazards – Access – Number – Emergency services."
+        }
+      ],
+      "id": "c02_dr01"
+    }
+  ]
+}

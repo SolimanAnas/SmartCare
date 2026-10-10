@@ -1,0 +1,97 @@
+{
+  "chapter": "c02",
+  "tables": [
+    {
+      "id": "c02_t01",
+      "title": "CSCATTT at a Glance",
+      "headers": [
+        "Letter",
+        "Priority",
+        "What it looks like on scene"
+      ],
+      "rows": [
+        [
+          "C",
+          "Command & control",
+          "Someone says 'I am command'; vests on; command post fixed"
+        ],
+        [
+          "S",
+          "Safety",
+          "Self–Scene–Survivors; PPE; hazard zones marked"
+        ],
+        [
+          "C",
+          "Communication",
+          "METHANE sent; named incident; plain language"
+        ],
+        [
+          "A",
+          "Assessment",
+          "Recon, scale, hazards, resources needed"
+        ],
+        [
+          "T",
+          "Triage",
+          "Global sort → primary triage → re-triage"
+        ],
+        [
+          "T",
+          "Treatment",
+          "Lifesaving interventions; treatment area by priority"
+        ],
+        [
+          "T",
+          "Transport",
+          "Right patient, right hospital, right time; tracking"
+        ]
+      ]
+    },
+    {
+      "id": "c02_t02",
+      "title": "METHANE — Good vs Weak",
+      "headers": [
+        "Element",
+        "Weak",
+        "Strong"
+      ],
+      "rows": [
+        [
+          "M",
+          "'Looks bad'",
+          "'Major incident declared'"
+        ],
+        [
+          "E",
+          "'On the highway'",
+          "'Hwy 9 northbound, km 42, past the Shell station'"
+        ],
+        [
+          "T",
+          "'Accident'",
+          "'Bus vs truck rollover'"
+        ],
+        [
+          "H",
+          "(omitted)",
+          "'Diesel spill, fire risk, traffic still moving southbound'"
+        ],
+        [
+          "A",
+          "(omitted)",
+          "'Approach from north only; staging at the rest area, km 40'"
+        ],
+        [
+          "N",
+          "'Lots of patients'",
+          "'Approx 30: 5 red, 9 yellow, 16 green, 2 children'"
+        ],
+        [
+          "E",
+          "'Send help'",
+          "'2 ALS + police on scene; request 8 ambulances, 1 bus, fire rescue'"
+        ]
+      ]
+    }
+  ]
+}

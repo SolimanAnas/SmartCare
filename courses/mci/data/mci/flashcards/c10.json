@@ -1,0 +1,89 @@
+{
+  "chapter": "c10",
+  "cards": [
+    {
+      "id": "c10_fc01",
+      "question": "Mechanism of nerve agents?",
+      "answer": "Inhibit acetylcholinesterase → excess acetylcholine at muscarinic, nicotinic, and CNS receptors.",
+      "category": "Nerve Agents"
+    },
+    {
+      "id": "c10_fc02",
+      "question": "Nerve agent 'killer B's'?",
+      "answer": "Bronchorrhea, Bronchospasm, Bradycardia.",
+      "category": "Nerve Agents"
+    },
+    {
+      "id": "c10_fc03",
+      "question": "Atropine endpoint in nerve-agent poisoning?",
+      "answer": "Drying of bronchial secretions and easy breathing — not heart rate or pupil size.",
+      "category": "Nerve Agents"
+    },
+    {
+      "id": "c10_fc04",
+      "question": "DuoDote/ATNAA contents?",
+      "answer": "Atropine 2.1 mg + pralidoxime 600 mg, IM auto-injector.",
+      "category": "Antidotes"
+    },
+    {
+      "id": "c10_fc05",
+      "question": "Kit dosing for severe nerve-agent poisoning?",
+      "answer": "3 kits in rapid succession + benzodiazepine (e.g., midazolam 10 mg IM) for seizures; repeat atropine as needed.",
+      "category": "Antidotes"
+    },
+    {
+      "id": "c10_fc06",
+      "question": "Why give pralidoxime early?",
+      "answer": "It must reactivate acetylcholinesterase before the agent–enzyme bond 'ages' (soman: minutes).",
+      "category": "Antidotes"
+    },
+    {
+      "id": "c10_fc07",
+      "question": "Cyanide antidote and adult dose?",
+      "answer": "Hydroxocobalamin 5 g IV over ~15 min (child 70 mg/kg); may repeat.",
+      "category": "Cyanide"
+    },
+    {
+      "id": "c10_fc08",
+      "question": "When should you suspect cyanide?",
+      "answer": "Enclosed-space fire victims with altered mental status, hypotension, seizures, or arrest; sudden collapse near an industrial/terror source.",
+      "category": "Cyanide"
+    },
+    {
+      "id": "c10_fc09",
+      "question": "Chlorine vs phosgene presentation?",
+      "answer": "Chlorine: immediate upper-airway/eye irritation (water-soluble). Phosgene: mild early, delayed pulmonary edema 2–24 h (poorly soluble).",
+      "category": "Choking Agents"
+    },
+    {
+      "id": "c10_fc10",
+      "question": "Key management for phosgene exposure?",
+      "answer": "Remove, O2, enforced rest, observe ~24 h — no antidote.",
+      "category": "Choking Agents"
+    },
+    {
+      "id": "c10_fc11",
+      "question": "Sulfur mustard features?",
+      "answer": "Garlic odor, painless exposure, delayed erythema/blisters 2–24 h; decon immediately; no antidote.",
+      "category": "Vesicants"
+    },
+    {
+      "id": "c10_fc12",
+      "question": "Lewisite antidote?",
+      "answer": "BAL (dimercaprol).",
+      "category": "Vesicants"
+    },
+    {
+      "id": "c10_fc13",
+      "question": "Riot-control agent management?",
+      "answer": "Remove to fresh air, irrigate eyes, remove contaminated clothing; usually resolves in 15–30 min; watch asthmatics.",
+      "category": "Riot Agents"
+    },
+    {
+      "id": "c10_fc14",
+      "question": "How to distinguish opioid agent vs nerve agent?",
+      "answer": "Both miosis; opioids are DRY with no fasciculations; nerve agents are WET with fasciculations ± seizures.",
+      "category": "Opioid Agents"
+    }
+  ]
+}

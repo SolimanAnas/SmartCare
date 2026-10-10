@@ -1,0 +1,77 @@
+{
+  "chapter": "c07",
+  "tables": [
+    {
+      "id": "c07_t01",
+      "title": "Triage Systems Compared",
+      "headers": [
+        "Feature",
+        "START / JumpSTART",
+        "SALT",
+        "Triage Sieve (UK)"
+      ],
+      "rows": [
+        [
+          "Origin",
+          "US (1983 / Romig peds)",
+          "CDC-sponsored national guideline",
+          "UK major-incident doctrine"
+        ],
+        [
+          "Global sort",
+          "Walkers only",
+          "Walk / Wave / Still",
+          "Walkers"
+        ],
+        [
+          "LSIs built in",
+          "Airway + bleeding",
+          "Bleeding, airway ± 2 breaths, decompression, auto-injector",
+          "Catastrophic hemorrhage, airway"
+        ],
+        [
+          "Pediatrics",
+          "Separate (JumpSTART)",
+          "Same algorithm (+2 breaths)",
+          "Paediatric tape/adjusted values"
+        ],
+        [
+          "Expectant",
+          "No",
+          "Yes (gray)",
+          "Optional (expectant category in mass events)"
+        ],
+        [
+          "Categories",
+          "Green / Yellow / Red / Black",
+          "Minimal / Delayed / Immediate / Expectant / Dead",
+          "P3 / P2 / P1 / Dead"
+        ]
+      ]
+    },
+    {
+      "id": "c07_t02",
+      "title": "Under- vs Over-Triage",
+      "headers": [
+        "Error",
+        "Definition",
+        "Consequence",
+        "Fix"
+      ],
+      "rows": [
+        [
+          "Under-triage",
+          "Critical patient tagged too low",
+          "Preventable death/disability",
+          "Re-triage greens/yellows; clear criteria"
+        ],
+        [
+          "Over-triage",
+          "Non-critical patient tagged too high",
+          "Red area & transport flooded; ↑ critical mortality",
+          "Strict physiological criteria; re-triage down"
+        ]
+      ]
+    }
+  ]
+}

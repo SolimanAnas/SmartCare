@@ -1,0 +1,103 @@
+{
+  "chapter": "c05",
+  "drills": [
+    {
+      "title": "Zone It!",
+      "icon": "🗺️",
+      "targetSeconds": 6,
+      "options": [
+        {
+          "key": "hot",
+          "label": "HOT zone",
+          "color": "#c8102e"
+        },
+        {
+          "key": "warm",
+          "label": "WARM zone",
+          "color": "#d29922"
+        },
+        {
+          "key": "cold",
+          "label": "COLD zone",
+          "color": "#2ea043"
+        }
+      ],
+      "description": "Drop each item into the right zone. Speed counts — the scene is building itself around you.",
+      "items": [
+        {
+          "id": "c05_dr01_01",
+          "prompt": "Incident command post",
+          "answer": "cold",
+          "why": "Command lives in the cold zone, visible and safe."
+        },
+        {
+          "id": "c05_dr01_02",
+          "prompt": "Decontamination corridor",
+          "answer": "warm",
+          "why": "Decon = contamination reduction = warm zone."
+        },
+        {
+          "id": "c05_dr01_03",
+          "prompt": "Leaking chlorine cylinder",
+          "answer": "hot",
+          "why": "The hazard source defines the hot zone."
+        },
+        {
+          "id": "c05_dr01_04",
+          "prompt": "Red/yellow/green treatment area",
+          "answer": "cold",
+          "why": "Definitive field treatment happens in the cold zone."
+        },
+        {
+          "id": "c05_dr01_05",
+          "prompt": "Casualty collection point during an active-shooter response",
+          "answer": "warm",
+          "why": "CCPs sit in the warm (indirect threat) zone, staffed by Rescue Task Forces with security."
+        },
+        {
+          "id": "c05_dr01_06",
+          "prompt": "Ambulance staging area",
+          "answer": "cold",
+          "why": "Staging is cold, remote, and out of sight of the hazard."
+        },
+        {
+          "id": "c05_dr01_07",
+          "prompt": "Direct-threat area where the shooter is still active",
+          "answer": "hot",
+          "why": "Direct threat = hot zone; law enforcement neutralizes the threat."
+        },
+        {
+          "id": "c05_dr01_08",
+          "prompt": "Applying a tourniquet under police escort in a cleared hallway",
+          "answer": "warm",
+          "why": "Indirect-threat care (TECC) happens in the warm zone."
+        },
+        {
+          "id": "c05_dr01_09",
+          "prompt": "Media briefing area",
+          "answer": "cold",
+          "why": "Media are kept in the cold zone, away from patients."
+        },
+        {
+          "id": "c05_dr01_10",
+          "prompt": "Helicopter landing zone",
+          "answer": "cold",
+          "why": "LZ is cold and away from treatment because of rotor wash."
+        },
+        {
+          "id": "c05_dr01_11",
+          "prompt": "Collapsed floor slabs with trapped victims and ongoing aftershocks",
+          "answer": "hot",
+          "why": "Unstable structure = hot zone; USAR teams only."
+        },
+        {
+          "id": "c05_dr01_12",
+          "prompt": "Responder rehab station",
+          "answer": "cold",
+          "why": "Rehab supports responders in the cold zone."
+        }
+      ],
+      "id": "c05_dr01"
+    }
+  ]
+}

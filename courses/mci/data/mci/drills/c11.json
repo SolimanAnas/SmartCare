@@ -1,0 +1,158 @@
+{
+  "chapter": "c11",
+  "drills": [
+    {
+      "title": "Contain It: Bio & Rad Decisions",
+      "icon": "🧬",
+      "targetSeconds": 12,
+      "description": "PPE, risk, and the right move for invisible threats. Wrong call = exposed crew or delayed care.",
+      "items": [
+        {
+          "id": "c11_dr01_01",
+          "prompt": "Suspected smallpox patient. Your respiratory protection?",
+          "options": [
+            "Surgical mask",
+            "Fit-tested N95 or PAPR",
+            "None",
+            "Level A"
+          ],
+          "answer": 1,
+          "why": "Airborne + contact precautions."
+        },
+        {
+          "id": "c11_dr01_02",
+          "prompt": "Inhalational anthrax patient. Precautions?",
+          "options": [
+            "Standard precautions",
+            "Airborne isolation",
+            "Level A suit",
+            "Quarantine the crew"
+          ],
+          "answer": 0,
+          "why": "Anthrax is not transmitted person-to-person."
+        },
+        {
+          "id": "c11_dr01_03",
+          "prompt": "Pneumonic plague, coughing blood.",
+          "options": [
+            "Standard only",
+            "Droplet precautions + mask the patient",
+            "No PPE needed",
+            "Level A"
+          ],
+          "answer": 1,
+          "why": "Pneumonic plague spreads by respiratory droplets."
+        },
+        {
+          "id": "c11_dr01_04",
+          "prompt": "Patient exposed to a hidden radiation source, no contamination. Risk to you?",
+          "options": [
+            "High — avoid touching",
+            "None — he is not radioactive",
+            "Moderate — use lead apron",
+            "Need KI first"
+          ],
+          "answer": 1,
+          "why": "Exposure doesn't make a person radioactive."
+        },
+        {
+          "id": "c11_dr01_05",
+          "prompt": "Contaminated dirty-bomb victim with arterial bleeding.",
+          "options": [
+            "Decon first",
+            "Tourniquet now, decon with care",
+            "Wait for survey",
+            "KI tablet"
+          ],
+          "answer": 1,
+          "why": "Life threats first. Radiological contamination is rarely immediately dangerous."
+        },
+        {
+          "id": "c11_dr01_06",
+          "prompt": "Best first decon step for radiological contamination?",
+          "options": [
+            "Remove clothing",
+            "Bleach scrub",
+            "Hair shaving",
+            "KI"
+          ],
+          "answer": 0,
+          "why": "Disrobing removes most external contamination."
+        },
+        {
+          "id": "c11_dr01_07",
+          "prompt": "You move from 1 m to 2 m from a source. Your dose rate becomes…",
+          "options": [
+            "½",
+            "¼",
+            "Same",
+            "Double"
+          ],
+          "answer": 1,
+          "why": "Inverse-square law."
+        },
+        {
+          "id": "c11_dr01_08",
+          "prompt": "Nuclear detonation nearby; public guidance?",
+          "options": [
+            "Drive away immediately",
+            "Get inside, stay inside, stay tuned",
+            "Go outside to look",
+            "Shelter in a car"
+          ],
+          "answer": 1,
+          "why": "Shelter in the middle of a sturdy building/basement to avoid fallout."
+        },
+        {
+          "id": "c11_dr01_09",
+          "prompt": "KI after a cesium dirty bomb?",
+          "options": [
+            "Yes, everyone",
+            "No — KI only protects against radioactive iodine",
+            "Only children",
+            "Only responders"
+          ],
+          "answer": 1,
+          "why": "KI does nothing against cesium; it only blocks thyroid radioiodine uptake."
+        },
+        {
+          "id": "c11_dr01_10",
+          "prompt": "Alert, afebrile adult: ptosis, double vision, can't swallow, weakness spreading down.",
+          "options": [
+            "Botulism",
+            "Smallpox",
+            "Anthrax",
+            "Plague"
+          ],
+          "answer": 0,
+          "why": "Descending symmetric flaccid paralysis with a clear mind = botulism."
+        },
+        {
+          "id": "c11_dr01_11",
+          "prompt": "White powder spilled from a letter onto a clerk's hands.",
+          "options": [
+            "Shake it off and sniff",
+            "Keep still, isolate area, wash hands with soap & water, call law enforcement/HazMat",
+            "Bleach the skin",
+            "Start antibiotics for all"
+          ],
+          "answer": 1,
+          "why": "Contain, wash, notify. Prophylaxis only if testing indicates a threat."
+        },
+        {
+          "id": "c11_dr01_12",
+          "prompt": "Vomiting began 20 minutes after radiation exposure.",
+          "options": [
+            "Low dose",
+            "High dose — priority ARS care",
+            "Contamination only",
+            "Not radiation related"
+          ],
+          "answer": 1,
+          "why": "Early vomiting = high dose."
+        }
+      ],
+      "id": "c11_dr01"
+    }
+  ]
+}

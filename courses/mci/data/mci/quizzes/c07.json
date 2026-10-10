@@ -1,0 +1,135 @@
+{
+  "chapter": "c07",
+  "questions": [
+    {
+      "id": "c07_q01",
+      "question": "In SALT, which group is assessed FIRST after global sorting?",
+      "options": [
+        "A. Wavers",
+        "B. Walkers",
+        "C. Still casualties / obvious life threats",
+        "D. Children"
+      ],
+      "correct": 2,
+      "rationale": "Still casualties and obvious life threats are most likely to need LSIs.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q02",
+      "question": "Which is a SALT lifesaving intervention?",
+      "options": [
+        "A. Chest decompression",
+        "B. Spinal immobilization",
+        "C. IV fluids",
+        "D. Splinting"
+      ],
+      "correct": 0,
+      "rationale": "LSIs: hemorrhage control, airway (± 2 breaths for kids), chest decompression, auto-injector.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q03",
+      "question": "A breathing patient obeys commands, has a peripheral pulse, no respiratory distress, hemorrhage controlled, and an open femur fracture. SALT category:",
+      "options": [
+        "A. Expectant",
+        "B. Minimal",
+        "C. Immediate",
+        "D. Delayed"
+      ],
+      "correct": 3,
+      "rationale": "All four YES but injuries aren't minor → Delayed.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c07_q04",
+      "question": "A breathing patient has no peripheral pulse but is likely to survive with care available. SALT category:",
+      "options": [
+        "A. Delayed",
+        "B. Minimal",
+        "C. Immediate",
+        "D. Expectant"
+      ],
+      "correct": 2,
+      "rationale": "Any NO + likely survivable → Immediate.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q05",
+      "question": "Expectant patients should receive:",
+      "options": [
+        "A. Comfort care and re-triage when resources allow",
+        "B. CPR",
+        "C. Immediate transport",
+        "D. Nothing"
+      ],
+      "correct": 0,
+      "rationale": "Expectant is a resource-based decision; comfort care and re-triage are required.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q06",
+      "question": "In SALT, an apneic child after airway opening should:",
+      "options": [
+        "A. Receive CPR",
+        "B. Be tagged dead immediately",
+        "C. Receive consideration of 2 rescue breaths",
+        "D. Be tagged expectant"
+      ],
+      "correct": 2,
+      "rationale": "Children: consider 2 rescue breaths before tagging dead.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c07_q07",
+      "question": "Which is the BEST place to attach a triage tag?",
+      "options": [
+        "A. Shoe",
+        "B. Jacket zipper",
+        "C. Stretcher only",
+        "D. Limb or neck"
+      ],
+      "correct": 3,
+      "rationale": "Clothing is cut off in treatment; tags on clothing get lost.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q08",
+      "question": "High over-triage rates in an MCI are associated with:",
+      "options": [
+        "A. Higher critical mortality",
+        "B. Lower critical mortality",
+        "C. No effect",
+        "D. Faster transport"
+      ],
+      "correct": 0,
+      "rationale": "Over-triage diverts resources from the truly critical (Frykberg).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c07_q09",
+      "question": "A patient tagged yellow deteriorates in the treatment area. The correct action:",
+      "options": [
+        "A. Leave the yellow tag",
+        "B. Add a second tag",
+        "C. Move to green",
+        "D. Re-triage to red, note the time, and inform the treatment/transport officers"
+      ],
+      "correct": 3,
+      "rationale": "Update the category and time; communicate the change.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c07_q10",
+      "question": "Which statement about triage systems is TRUE?",
+      "options": [
+        "A. SALT is only for chemical events",
+        "B. START includes an Expectant step",
+        "C. SALT includes LSIs and an Expectant category",
+        "D. Triage Sieve is only for children"
+      ],
+      "correct": 2,
+      "rationale": "SALT integrates LSIs and Expectant; START has no Expectant step.",
+      "difficulty": "Medium"
+    }
+  ]
+}

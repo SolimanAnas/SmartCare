@@ -1,0 +1,63 @@
+{
+  "chapter": "c13",
+  "cases": [
+    {
+      "id": "c13_s01",
+      "title": "Under the Slab",
+      "presentation": "Earthquake. USAR has reached a 35-year-old man pinned at both thighs under a slab for ~6 hours. He's talking, HR 110, BP 110/70. They're ready to lift in 10 minutes.",
+      "vitals": {
+        "entrapment": "~6 h",
+        "HR": "110",
+        "BP": "110/70"
+      },
+      "question": "Best plan?",
+      "options": [
+        "A: LR bolus after release only.",
+        "B: Lift now, then start fluids.",
+        "C: IV/IO access, NS 1–1.5 L/h before release, cardiac monitor, have calcium/bicarbonate/albuterol ready; coordinate the lift with USAR; watch for arrhythmia at release.",
+        "D: Leave him until the hospital is ready."
+      ],
+      "correct": 2,
+      "explanation": "Prolonged compression of large muscle mass = crush syndrome risk. Pre-release saline and hyperkalemia readiness prevent the 'smiling death'.",
+      "clinicalPearl": "Fluids before freedom."
+    },
+    {
+      "id": "c13_s02",
+      "title": "Gate 4",
+      "presentation": "At a concert, the crowd surges at a narrow exit. Security radios that people are 'stuck standing'. You see faces deeply purple above the barrier.",
+      "vitals": {
+        "density": "packed, no movement",
+        "victims": "cyanotic, plethoric"
+      },
+      "question": "First priorities?",
+      "options": [
+        "A: Wait until the crowd disperses.",
+        "B: Get event control to stop inflow and open alternate exits, relieve pressure from the edges/barriers, extract victims, open airways and ventilate, then triage.",
+        "C: Announce over the PA for everyone to stay still and wait.",
+        "D: Push into the center of the crowd to reach victims."
+      ],
+      "correct": 1,
+      "explanation": "Crowd crush is a pressure problem. Stop inflow, open egress, decompress from the edges, and ventilate the asphyxiated.",
+      "clinicalPearl": "Fix the pressure, then fix the patients."
+    },
+    {
+      "id": "c13_s03",
+      "title": "The Silent Ventilator",
+      "presentation": "Day 2 of a regional blackout during a heat wave. Calls are rising: a home-ventilator patient whose battery is at 10%, an elderly couple in a hot flat, and a dialysis patient whose center is closed.",
+      "vitals": {
+        "power": "out 36 h",
+        "temperature": "38 °C"
+      },
+      "question": "Key lesson?",
+      "options": [
+        "A: Disasters create medical emergencies through infrastructure loss — prioritize technology-dependent and heat-vulnerable patients, coordinate shelters with power and dialysis diversion.",
+        "B: These are routine calls.",
+        "C: Tell them to wait for power.",
+        "D: Only transport the ventilator patient."
+      ],
+      "correct": 0,
+      "explanation": "Compound incidents turn chronic conditions into emergencies. Registries, early outreach, and power-equipped shelters save lives.",
+      "clinicalPearl": "No power = new patients."
+    }
+  ]
+}

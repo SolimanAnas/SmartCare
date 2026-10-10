@@ -26,6 +26,8 @@ self.__PRECACHE = [
   "courses/pepp/data/bundle.js",
   "courses/medical/index.html",
   "courses/medical/data/bundle.js",
+  "courses/mci/index.html",
+  "courses/mci/data/bundle.js",
   "chapters/c-index.html",
   "chapters/c0.html",
   "chapters/c1.html",
@@ -65,6 +67,7 @@ self.__PRECACHE = [
   "pages/itls-chapter.html",
   "pages/itls.html",
   "pages/login.html",
+  "pages/mci.html",
   "pages/med-index.html",
   "pages/medical-asm.html",
   "pages/medical.html",
@@ -109,6 +112,8 @@ self.__PRECACHE = [
   "src/ITLS/itls-pre-9th.json",
   "src/ITLS/itls-pre.json",
   "src/ITLS/pearls.json",
+  "src/MCI/MCI-practice.json",
+  "src/MCI/MCI.json",
   "src/Medical/medical.json",
   "src/PALS/pals.json",
   "src/PEPP/exam_a.json",
@@ -147,4 +152,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "acb2598852";
+self.__PRECACHE_VERSION = "6d2d149ad7";

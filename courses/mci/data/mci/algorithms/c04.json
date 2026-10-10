@@ -1,0 +1,47 @@
+{
+  "chapter": "c04",
+  "algorithms": [
+    {
+      "id": "c04_alg01",
+      "title": "Triage Officer Action Card",
+      "description": "Put on the vest. Grab tags. Go.",
+      "steps": [
+        "Report to IC; get the area to triage and your team (pairs).",
+        "Global sort: 'If you can walk, go to [point]' → 'Wave if you need help'.",
+        "Systematic sweep (e.g., clockwise / row by row); START/JumpSTART or SALT per local protocol.",
+        "Seconds-long LSIs only: tourniquet/pressure, open airway/position, (child) breaths per protocol, auto-injector.",
+        "Tag every patient; mark searched areas.",
+        "Report counts by category to IC (red/yellow/green/black) and update as they change.",
+        "Direct litter teams: reds to treatment area first.",
+        "Re-triage; hand the dead to the morgue manager."
+      ]
+    },
+    {
+      "id": "c04_alg02",
+      "title": "Transport Officer Action Card",
+      "description": "You move patients and paperwork, not stretchers.",
+      "steps": [
+        "Set up the ambulance loading zone (one-way flow, close to treatment area exit).",
+        "Get hospital capacity/capability through Med Comms or the hospital coordination center.",
+        "Request units from Staging as patients are ready.",
+        "Assign destination by category + hospital capability (trauma, burns, peds) — spread the load.",
+        "Load reds first; use buses (with medic) for greens; avoid 'one patient per ambulance' if yellows/greens can share.",
+        "Log: tag # · category · unit · destination · time.",
+        "Update IC with patients transported/remaining."
+      ]
+    },
+    {
+      "id": "c04_alg03",
+      "title": "Treatment Officer Action Card",
+      "description": "Keep them alive and keep them moving.",
+      "steps": [
+        "Choose the treatment area: safe, upwind, near the loading zone, room to expand, one entrance/one exit.",
+        "Lay out red / yellow / green zones (tarps/flags) with a separate, out-of-view black area.",
+        "Assign Red, Yellow, Green treatment managers.",
+        "Secondary triage at the entrance; re-triage regularly.",
+        "Focused care: airway, O2, bleeding, splinting, warmth; minimal procedures that don't slow flow.",
+        "Prioritize patients for the Transport Officer; request supplies via Logistics."
+      ]
+    }
+  ]
+}

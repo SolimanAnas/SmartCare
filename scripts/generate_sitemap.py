@@ -17,7 +17,7 @@ OUT = os.path.join(ROOT, "sitemap.xml")
 SCAN_DIRS = [
     "", "pages", "chapters",
     "courses/itls", "courses/bls", "courses/acls", "courses/pals",
-    "courses/bdls", "courses/empact", "courses/pepp", "courses/medical",
+    "courses/bdls", "courses/empact", "courses/pepp", "courses/medical", "courses/mci",
     "src/prometric",
 ]
 EXCLUDE = {

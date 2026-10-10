@@ -1,0 +1,77 @@
+{
+  "chapter": "c02",
+  "cards": [
+    {
+      "id": "c02_fc01",
+      "question": "What are the first-arriving EMS crew's two jobs?",
+      "answer": "Command (declare MCI, METHANE, request resources) and recon/global triage — NOT treating the first patient.",
+      "category": "First-Due"
+    },
+    {
+      "id": "c02_fc02",
+      "question": "Safety 1-2-3?",
+      "answer": "Self, Scene, Survivors — in that order.",
+      "category": "Safety"
+    },
+    {
+      "id": "c02_fc03",
+      "question": "Expand CSCATTT.",
+      "answer": "Command & control, Safety, Communication, Assessment, Triage, Treatment, Transport.",
+      "category": "CSCATTT"
+    },
+    {
+      "id": "c02_fc04",
+      "question": "Which parts of CSCATTT are management vs medical?",
+      "answer": "CSCA = management; TTT (Triage, Treatment, Transport) = medical support.",
+      "category": "CSCATTT"
+    },
+    {
+      "id": "c02_fc05",
+      "question": "Expand METHANE.",
+      "answer": "Major incident declared/standby, Exact location, Type of incident, Hazards, Access/egress, Number & severity of casualties, Emergency services present & required.",
+      "category": "METHANE"
+    },
+    {
+      "id": "c02_fc06",
+      "question": "What goes in the 'H' of METHANE?",
+      "answer": "Hazards present AND potential: fire, fuel, chemicals, structural instability, violence/secondary device, weather, traffic.",
+      "category": "METHANE"
+    },
+    {
+      "id": "c02_fc07",
+      "question": "What goes in the 'A' of METHANE?",
+      "answer": "Access and egress routes: safest approach, rendezvous/staging point, roads to avoid, one-way flow.",
+      "category": "METHANE"
+    },
+    {
+      "id": "c02_fc08",
+      "question": "How should casualty numbers be given in METHANE?",
+      "answer": "Estimated total with severity split, e.g., 'approximately 30: 6 red, 10 yellow, 14 green'. Estimates are acceptable.",
+      "category": "METHANE"
+    },
+    {
+      "id": "c02_fc09",
+      "question": "Why plain language instead of 10-codes?",
+      "answer": "NIMS standard — mutual-aid agencies use different codes; plain language prevents misunderstanding.",
+      "category": "Comms"
+    },
+    {
+      "id": "c02_fc10",
+      "question": "What is a CAN report?",
+      "answer": "Structured update: Conditions, Actions, Needs.",
+      "category": "Comms"
+    },
+    {
+      "id": "c02_fc11",
+      "question": "Where should the first ambulance park?",
+      "answer": "Upwind, uphill, upstream, outside the hazard, out of traffic, not blocking access — visible as a command point.",
+      "category": "First-Due"
+    },
+    {
+      "id": "c02_fc12",
+      "question": "Clue that an MCI is chemical rather than traumatic?",
+      "answer": "Multiple casualties collapsed without obvious trauma, odors/clouds, dead animals, similar symptoms in many people.",
+      "category": "Safety"
+    }
+  ]
+}

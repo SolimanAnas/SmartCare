@@ -1,0 +1,63 @@
+{
+  "chapter": "c03",
+  "cases": [
+    {
+      "id": "c03_s01",
+      "title": "Who's in Charge Here?",
+      "presentation": "At a warehouse fire with 14 burned workers, a fire captain and an EMS supervisor both arrive and each starts giving orders to the same ambulance crews. Police set up their own post across the street.",
+      "vitals": {
+        "patients": "14 burns",
+        "agencies": "Fire, EMS, Police",
+        "command posts": "2"
+      },
+      "question": "What fixes this?",
+      "options": [
+        "A: The highest rank wins.",
+        "B: Let dispatch coordinate.",
+        "C: Unified Command: co-locate fire, EMS, and police commanders at one command post with one set of objectives; EMS crews report only through the Medical Group.",
+        "D: Each agency keeps its own command post."
+      ],
+      "correct": 2,
+      "explanation": "Multi-jurisdiction incidents use Unified Command. Unity of command for crews is restored by clear EMS supervision within the shared structure.",
+      "clinicalPearl": "One incident, one command post, one plan."
+    },
+    {
+      "id": "c03_s02",
+      "title": "Too Many Radios",
+      "presentation": "You're Medical Group Supervisor at a train derailment. 12 ambulances, 2 rescue teams, and a bus are all calling you directly.",
+      "vitals": {
+        "units reporting": "15",
+        "you": "Medical Group Supervisor"
+      },
+      "question": "Best ICS move?",
+      "options": [
+        "A: Send half the ambulances away.",
+        "B: Request a second Incident Commander.",
+        "C: Turn your radio down.",
+        "D: Appoint Triage, Treatment, and Transport Unit Leaders and a Staging Manager; units report to them."
+      ],
+      "correct": 3,
+      "explanation": "Span of control exceeded → delegate. Unit leaders each supervise a manageable number; you supervise ~4–5 leaders.",
+      "clinicalPearl": "When the radio never stops, your org chart is too flat."
+    },
+    {
+      "id": "c03_s03",
+      "title": "The Handover",
+      "presentation": "You've been IC at a 9-patient bus crash for 15 minutes. The EMS duty chief arrives and says 'I've got it.'",
+      "vitals": {
+        "time": "15 min",
+        "patients": "9"
+      },
+      "question": "What must happen?",
+      "options": [
+        "A: Face-to-face briefing: situation, hazards, objectives, resources, org chart; chief accepts; transfer announced to all units; you take a new assignment.",
+        "B: Hand over your radio and leave.",
+        "C: Nothing — rank transfers command automatically.",
+        "D: Ask dispatch to decide."
+      ],
+      "correct": 0,
+      "explanation": "A formal transfer of command keeps continuity and tells everyone who's in charge. The outgoing IC usually stays in the structure (e.g., as Medical Group Supervisor).",
+      "clinicalPearl": "Brief — Accept — Announce."
+    }
+  ]
+}

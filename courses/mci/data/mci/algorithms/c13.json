@@ -1,0 +1,30 @@
+{
+  "chapter": "c13",
+  "algorithms": [
+    {
+      "id": "c13_alg01",
+      "title": "Crush Syndrome Field Protocol",
+      "description": "Prevent death at release.",
+      "steps": [
+        "Scene safety with USAR; do not enter unshored voids.",
+        "Establish IV/IO; normal saline ~1–1.5 L/h adult (pediatric weight-based) BEFORE release.",
+        "Cardiac monitor; check for peaked T waves/QRS widening.",
+        "Prepare calcium, sodium bicarbonate, nebulized albuterol per protocol.",
+        "If no access and release can't wait: consider proximal tourniquet before release per protocol.",
+        "Release; watch for arrhythmia/hypotension; treat hyperkalemia; continue fluids; transport to a center with dialysis capability."
+      ]
+    },
+    {
+      "id": "c13_alg02",
+      "title": "Crowd Crush Response",
+      "description": "Pressure first, patients second.",
+      "steps": [
+        "Alert event control/security: stop inflow, open exits, stop the show/music if needed.",
+        "Approach from the edges; remove barriers if they trap people.",
+        "Extract victims; open airway, high-flow O2, ventilate apneic patients if resources allow.",
+        "Triage (START/SALT); treat traumatic asphyxia and fractures.",
+        "Re-triage; watch for delayed hypoxia; track patients for reunification."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "chapter": "c14",
+  "cases": [
+    {
+      "id": "c14_s01",
+      "title": "The Missing Three",
+      "presentation": "End of a 38-patient bus crash. Tags issued: 38. Transport log: 33 transported. Released on scene: 1. Dead: 1. Hospitals report receiving 31.",
+      "vitals": {
+        "tags": "38",
+        "logged out": "33 + 1 released + 1 dead",
+        "hospitals": "31"
+      },
+      "question": "What now?",
+      "options": [
+        "A: Do not terminate: 3 tagged patients unaccounted on scene and 2 transported patients not found at hospitals — re-sweep the scene, check the transport log against hospitals, search for self-evacuees.",
+        "B: Ask the media.",
+        "C: Close the incident — close enough.",
+        "D: Assume they went home."
+      ],
+      "correct": 0,
+      "explanation": "38 − (33 + 1 + 1) = 3 missing on scene, and 33 − 31 = 2 missing in the hospital system. Reconciliation finds them.",
+      "clinicalPearl": "Math is a patient-safety tool."
+    },
+    {
+      "id": "c14_s02",
+      "title": "After the Night",
+      "presentation": "Two days after a nightclub fire with multiple deaths, your manager proposes a mandatory 3-hour session where every crew member must describe their worst moments in detail.",
+      "vitals": {
+        "crews": "14",
+        "deaths": "multiple"
+      },
+      "question": "Best recommendation?",
+      "options": [
+        "A: Replace it with Psychological First Aid, voluntary peer support, practical help, and follow-up checks; refer anyone with persistent or severe symptoms.",
+        "B: Support it — talking always helps.",
+        "C: Give everyone a week off and no contact.",
+        "D: Do nothing."
+      ],
+      "correct": 0,
+      "explanation": "Mandatory single-session debriefing is not recommended. PFA principles and voluntary, ongoing support are evidence-informed.",
+      "clinicalPearl": "Offer support; don't force reliving."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "chapter": "c12",
+  "cases": [
+    {
+      "id": "c12_s01",
+      "title": "Mall Shooting — Minute 12",
+      "presentation": "Police report the shooter is pinned down in the east wing. The food court (west) has been cleared but not secured. 15 casualties are there. You are assigned to a Rescue Task Force with 4 officers.",
+      "vitals": {
+        "threat": "contained east",
+        "food court": "cleared, not secure",
+        "casualties": "~15"
+      },
+      "question": "Your RTF priorities?",
+      "options": [
+        "A: Search for the shooter.",
+        "B: Wait in the cold zone until the building is fully secure.",
+        "C: Intubate the first unresponsive patient.",
+        "D: Enter the food court with escort: rapid hemorrhage control (TQs, packing), airway positioning, chest seals; move casualties to the CCP; minimal time on each."
+      ],
+      "correct": 3,
+      "explanation": "RTF's job is warm-zone TECC and rapid extraction. Prolonged procedures expose the team; police manage the threat.",
+      "clinicalPearl": "Stop the bleeding, get them out, keep moving."
+    },
+    {
+      "id": "c12_s02",
+      "title": "The Train Carriage",
+      "presentation": "An explosive device detonates inside a crowded rail carriage. A 30-year-old is walking, deafened, mildly short of breath, with a ruptured right eardrum. SpO2 94%.",
+      "vitals": {
+        "setting": "enclosed",
+        "SpO2": "94%",
+        "TM": "ruptured"
+      },
+      "question": "Best management?",
+      "options": [
+        "A: Needle decompression for all blast victims.",
+        "B: Tag green and release.",
+        "C: Treat as at risk for blast lung: re-triage, O2, monitor SpO2/work of breathing, transport for observation — communicate in writing.",
+        "D: Large-volume IV fluids."
+      ],
+      "correct": 2,
+      "explanation": "Enclosed-space blast + TM rupture + mild hypoxia = high risk of evolving blast lung. Keep him under observation; he may deteriorate hours later.",
+      "clinicalPearl": "Enclosed blast, walking patient — still watch the lungs."
+    },
+    {
+      "id": "c12_s03",
+      "title": "Second Device",
+      "presentation": "Twenty minutes after a car bomb, EMS and fire have clustered at a single CCP in a plaza next to a parked van with blacked-out windows.",
+      "vitals": {
+        "time": "20 min",
+        "CCP": "plaza next to van"
+      },
+      "question": "What should command do?",
+      "options": [
+        "A: Relocate the CCP and staging away and out of line of sight; request police clearance of the van and the new site; disperse vehicles.",
+        "B: Search the van yourself.",
+        "C: Nothing — keep treating.",
+        "D: Move all patients into the van for shelter."
+      ],
+      "correct": 0,
+      "explanation": "Secondary devices are designed to kill responders at predictable gathering points. Relocate, disperse, and get bomb-squad clearance.",
+      "clinicalPearl": "The second bomb is for you."
+    }
+  ]
+}

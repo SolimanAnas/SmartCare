@@ -1,0 +1,135 @@
+{
+  "chapter": "c03",
+  "questions": [
+    {
+      "id": "c03_q01",
+      "question": "Which is a Command Staff position?",
+      "options": [
+        "A. Operations Section Chief",
+        "B. Logistics Section Chief",
+        "C. Triage Unit Leader",
+        "D. Safety Officer"
+      ],
+      "correct": 3,
+      "rationale": "Command Staff = Safety, PIO, Liaison. They report directly to the IC.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q02",
+      "question": "The optimal span of control in ICS is approximately:",
+      "options": [
+        "A. 1:2",
+        "B. 1:5",
+        "C. 1:12",
+        "D. 1:20"
+      ],
+      "correct": 1,
+      "rationale": "3–7 subordinates, with 5 considered optimal.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q03",
+      "question": "A 'Medical Group' is named so because it is defined by:",
+      "options": [
+        "A. Geography",
+        "B. Shift",
+        "C. Function",
+        "D. Agency"
+      ],
+      "correct": 2,
+      "rationale": "Groups are functional; Divisions are geographic.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c03_q04",
+      "question": "The person in charge of an ICS Branch is titled:",
+      "options": [
+        "A. Director",
+        "B. Leader",
+        "C. Chief",
+        "D. Supervisor"
+      ],
+      "correct": 0,
+      "rationale": "Section–Chief, Branch–Director, Division/Group–Supervisor, Unit–Leader.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c03_q05",
+      "question": "A battalion chief arrives on scene. Command is transferred when:",
+      "options": [
+        "A. The chief arrives",
+        "B. Dispatch decides",
+        "C. The chief's rank is higher",
+        "D. A face-to-face briefing occurs and the transfer is announced"
+      ],
+      "correct": 3,
+      "rationale": "Arrival alone does not transfer command. Brief, accept, announce.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c03_q06",
+      "question": "Unified Command is used when:",
+      "options": [
+        "A. Multiple agencies share jurisdiction over an incident",
+        "B. The incident is over",
+        "C. The IC is injured",
+        "D. Only one agency responds"
+      ],
+      "correct": 0,
+      "rationale": "UC lets fire, police, EMS, and others share one set of objectives without surrendering authority.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q07",
+      "question": "Which section would source extra oxygen cylinders and backboards for a prolonged incident?",
+      "options": [
+        "A. Planning",
+        "B. Operations",
+        "C. Finance",
+        "D. Logistics"
+      ],
+      "correct": 3,
+      "rationale": "Logistics supports the incident with supplies, facilities, and equipment.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q08",
+      "question": "An MCI supervisor is directly managing 11 ambulance crews. The ICS fix is to:",
+      "options": [
+        "A. Work faster",
+        "B. Ignore span of control in emergencies",
+        "C. Add a supervisory layer (e.g., group/division or unit leaders)",
+        "D. Send some crews home"
+      ],
+      "correct": 2,
+      "rationale": "When span is exceeded, expand the organization — modularity is the point of ICS.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c03_q09",
+      "question": "Who may immediately stop an unsafe act on scene without waiting for the IC?",
+      "options": [
+        "A. PIO",
+        "B. Finance Chief",
+        "C. Safety Officer",
+        "D. Liaison Officer"
+      ],
+      "correct": 2,
+      "rationale": "The Safety Officer has authority to halt unsafe acts immediately.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c03_q10",
+      "question": "An off-duty EMT drives to the scene and starts treating patients without checking in. This is:",
+      "options": [
+        "A. Freelancing — an accountability and safety problem",
+        "B. Mutual aid",
+        "C. Encouraged in MCIs",
+        "D. Unified command"
+      ],
+      "correct": 0,
+      "rationale": "Everyone checks in and receives an assignment. Freelancers can't be tracked or protected.",
+      "difficulty": "Easy"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "chapter": "c07",
+  "cases": [
+    {
+      "id": "c07_s01",
+      "title": "Gray or Red?",
+      "presentation": "Tanker explosion. 40+ casualties, 4 ambulances on scene, 15 min to the next wave. A man with ~90% full-thickness burns is breathing shallowly, unresponsive, weak pulse.",
+      "vitals": {
+        "casualties": "40+",
+        "ambulances": "4",
+        "burns": "~90% FT"
+      },
+      "question": "SALT category now?",
+      "options": [
+        "A: DEAD",
+        "B: DELAYED",
+        "C: IMMEDIATE — he's the sickest.",
+        "D: EXPECTANT — survival unlikely with current resources; comfort care and re-triage when resources improve."
+      ],
+      "correct": 3,
+      "explanation": "SALT's Expectant category exists for this scenario. Resources spent on him now cost several salvageable lives. Provide analgesia/comfort and re-triage as resources arrive.",
+      "clinicalPearl": "Gray is 'not now', not 'never' — re-triage when the scene changes."
+    },
+    {
+      "id": "c07_s02",
+      "title": "The Lost Tourniquet Time",
+      "presentation": "At the hospital, a red patient arrives with a tourniquet on his thigh. No tag notes, no time. Nobody on scene remembers when it went on.",
+      "vitals": {
+        "TQ": "thigh",
+        "time": "unknown"
+      },
+      "question": "What scene practice would have prevented this?",
+      "options": [
+        "A: Removing tourniquets before transport.",
+        "B: Writing 'TQ + time' on the tag (and/or forehead) at application.",
+        "C: Telling the patient to remember.",
+        "D: Not applying tourniquets in MCIs."
+      ],
+      "correct": 1,
+      "explanation": "Tourniquet time drives surgical decision-making. The tag is the record that travels with the patient.",
+      "clinicalPearl": "TQ without a time is half a treatment."
+    },
+    {
+      "id": "c07_s03",
+      "title": "Red Area Overflowing",
+      "presentation": "Your treatment area has 22 'red' patients and 3 yellows from a nightclub stampede. Transport is stalled. On re-triage, 12 of the reds are alert, have good pulses, no respiratory distress, and minor injuries.",
+      "vitals": {
+        "red": "22",
+        "true reds on re-triage": "~10"
+      },
+      "question": "What happened and what now?",
+      "options": [
+        "A: Transport in order of arrival.",
+        "B: Nothing — better safe than sorry.",
+        "C: Over-triage is clogging the red area and transport; re-triage and re-tag downward so true reds move first.",
+        "D: Request 22 more ambulances and keep tags."
+      ],
+      "correct": 2,
+      "explanation": "Over-triage buries true reds and wastes transport. Re-triage corrects it — that's the system working.",
+      "clinicalPearl": "Accuracy is a life-saving intervention."
+    }
+  ]
+}

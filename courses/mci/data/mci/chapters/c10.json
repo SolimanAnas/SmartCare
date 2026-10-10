@@ -1,0 +1,72 @@
+{
+  "id": "c10",
+  "title": "CBRNE II: Chemical Agents & Antidotes",
+  "shortTitle": "Chemical Agents",
+  "estimatedStudyTime": 45,
+  "difficulty": "Advanced",
+  "learningObjectives": [
+    "Recognize the six chemical toxidromes EMS will see: nerve, cyanide, choking, vesicant, riot-control, opioid.",
+    "Dose the nerve-agent antidote kit by severity and titrate atropine correctly.",
+    "Give hydroxocobalamin for cyanide and know when to suspect it.",
+    "Separate delayed-onset agents (phosgene, mustard) that look 'fine' on scene."
+  ],
+  "summary": [
+    {
+      "title": "Nerve Agents & Organophosphates",
+      "content": "Sarin (GB), soman (GD), tabun (GA), VX — and organophosphate pesticides — block acetylcholinesterase → acetylcholine flood. Muscarinic: SLUDGEM/DUMBELS (salivation, lacrimation, urination, defecation, GI upset, emesis, MIOSIS) and the 'killer B's' — Bronchorrhea, Bronchospasm, Bradycardia. Nicotinic: fasciculations, weakness → paralysis (tachycardia possible). CNS: seizures, coma, apnea. Vapor acts in seconds–minutes; liquid on skin can be delayed up to ~18 h. Death = respiratory failure (secretions + bronchospasm + paralysis + central apnea)."
+    },
+    {
+      "title": "Nerve Agent Treatment",
+      "content": "Decon (remove clothing) + ABCs + antidotes. ATROPINE dries secretions and opens airways — titrate (adult typically 2 mg IM/IV, repeat every 5–10 min) to DRY bronchial secretions and EASY breathing, NOT to heart rate or pupil size; huge cumulative doses may be needed. PRALIDOXIME (2-PAM) reactivates the enzyme — give early before 'aging' (soman ages in minutes). Auto-injector kit (DuoDote/ATNAA: atropine 2.1 mg + pralidoxime 600 mg IM): MILD/moderate symptoms → 1 kit; SEVERE (resp. distress, seizures, unconscious) → 3 kits rapidly + benzodiazepine (midazolam 10 mg IM or diazepam 10 mg) for seizures. Isolated miosis/rhinorrhea from vapor may need no injector — observe. Children: weight-based atropine / pediatric auto-injectors per protocol."
+    },
+    {
+      "title": "Cyanide",
+      "content": "Hydrogen cyanide/cyanogen chloride (and most commonly SMOKE from house fires — burning plastics, foam). Blocks cellular oxygen use: sudden collapse, gasping then apnea, seizures, hypotension → cardiac arrest within minutes at high doses; pink skin and 'bitter almonds' are unreliable; SpO2 may look normal. Suspect in enclosed-space fire victims with altered mental status, hypotension, or arrest. Treat: remove from source, 100% O2, HYDROXOCOBALAMIN (Cyanokit) 5 g IV over ~15 min (child 70 mg/kg), may repeat; turns skin and urine red and interferes with some lab tests/pulse oximetry. Nitrites cause methemoglobinemia — avoid in smoke victims who may have CO poisoning."
+    },
+    {
+      "title": "Choking (Pulmonary) Agents",
+      "content": "CHLORINE (bleach odor, yellow-green gas) and AMMONIA are water-soluble → immediate eye, nose, throat burning, cough, stridor; heavy exposure → lower airway injury. PHOSGENE ('freshly mown hay') is poorly soluble → mild early symptoms then delayed non-cardiogenic pulmonary edema at 2–24 h. Treat: remove from source, O2, bronchodilators for bronchospasm, enforced REST (exertion worsens phosgene edema), observe phosgene exposures ~24 h even if they look well. No antidote."
+    },
+    {
+      "title": "Vesicants, Riot Agents & Opioid Agents",
+      "content": "SULFUR MUSTARD (garlic/horseradish): no pain at exposure; erythema and blisters 2–24 h later; eyes and airways too. Cellular damage starts within minutes — decon immediately even without symptoms; no antidote. LEWISITE (geranium): immediate pain; antidote BAL (dimercaprol). RIOT-CONTROL agents (CS, CN, OC/pepper): immediate tearing, burning, cough; self-limited ~15–30 min after leaving the area — fresh air, irrigate eyes, watch asthmatics and confined-space exposures. Incapacitating OPIOIDS (fentanyl analogs, e.g., aerosolized carfentanil): miosis + coma + apnea WITHOUT secretions or fasciculations → ventilate and give naloxone (large/repeated doses)."
+    }
+  ],
+  "clinicalPearls": [
+    "Wet + pinpoint + twitching = nerve agent. Dry + pinpoint + not breathing = opioid.",
+    "Atropine endpoint = DRY LUNGS and easy breathing. Not the pulse, not the pupils.",
+    "3 kits + a benzo for severe nerve-agent poisoning — don't under-dose.",
+    "House-fire victim in arrest or shock → think cyanide + CO → hydroxocobalamin.",
+    "The patient who 'feels fine' after phosgene or mustard may be sick tomorrow — document, observe, don't discharge on scene."
+  ],
+  "redFlags": [
+    "Rescuers with miosis, runny nose, or chest tightness — you're exposed; withdraw.",
+    "Titrating atropine to heart rate in a bronchorrheic patient.",
+    "Using nitrites in smoke inhalation victims with possible CO poisoning.",
+    "Releasing phosgene-exposed patients from the scene without observation."
+  ],
+  "commonMistakes": [
+    "Waiting for symptoms before decontaminating mustard exposures.",
+    "Mixing up nerve-agent and opioid toxidromes (both have small pupils).",
+    "Giving one kit to a seizing, apneic nerve-agent patient.",
+    "Over-treating riot-control agent exposures — most resolve with fresh air."
+  ],
+  "memoryAids": [
+    "DUMBELS: Diarrhea, Urination, Miosis, Bronchorrhea / Bronchospasm / Bradycardia, Emesis, Lacrimation, Salivation.",
+    "Nerve agent kit dosing: 'Mild 1, Severe 3 + Benzo'.",
+    "Cyanide antidote = 'Cyanokit is RED': hydroxocobalamin turns skin/urine red.",
+    "Smell clues (never rely on them): Phosgene = hay, Mustard = garlic, Lewisite = geranium, Chlorine = bleach, H2S = rotten eggs."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Small Pupils — Which Toxidrome?",
+      "content": "Pinpoint pupils + decreased consciousness\n  → Wet (secretions, sweating, bronchorrhea), fasciculations, ± seizures?\n       → NERVE AGENT / organophosphate → decon + atropine + pralidoxime (+ benzo)\n  → Dry, no fasciculations, apnea/hypoventilation?\n       → OPIOID agent → ventilate + naloxone\n  Sudden collapse, normal-ish pupils, enclosed fire/HCN source?\n       → CYANIDE → O2 + hydroxocobalamin"
+    }
+  ],
+  "references": [
+    "HHS CHEMM (Chemical Hazards Emergency Medical Management)",
+    "DuoDote / ATNAA prescribing information (atropine 2.1 mg + pralidoxime 600 mg)",
+    "Cyanokit (hydroxocobalamin) prescribing information",
+    "US Army MRICD — Medical Management of Chemical Casualties Handbook"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "chapter": "c13",
+  "tables": [
+    {
+      "id": "c13_t01",
+      "title": "Special MCI Quick Tactics",
+      "headers": [
+        "Incident",
+        "Hazard to you",
+        "Medical focus",
+        "Key action"
+      ],
+      "rows": [
+        [
+          "Structural collapse",
+          "Secondary collapse, dust",
+          "Crush, fractures, dust inhalation",
+          "USAR coordination; fluids before release"
+        ],
+        [
+          "Crowd crush",
+          "Being swept in",
+          "Compressive asphyxia",
+          "Stop inflow, open exits, ventilate"
+        ],
+        [
+          "Bus/coach crash",
+          "Traffic, fuel",
+          "Blunt multi-system trauma",
+          "Manifest; extrication"
+        ],
+        [
+          "Rail crash",
+          "Electrical power, hazmat cargo",
+          "Blunt trauma, entrapment",
+          "Isolate power first"
+        ],
+        [
+          "Aircraft crash",
+          "Fuel fire, composites",
+          "Burns, blunt trauma",
+          "Upwind approach; respiratory PPE"
+        ],
+        [
+          "Flood",
+          "Moving water, electrocution",
+          "Drowning, hypothermia",
+          "Swift-water teams only"
+        ],
+        [
+          "Heat wave",
+          "Your own heat illness",
+          "Heat stroke",
+          "Cool first, transport second"
+        ],
+        [
+          "Winter storm/outage",
+          "Roads, CO",
+          "Hypothermia, CO, tech-dependent pts",
+          "CO screening, shelters with power"
+        ]
+      ]
+    },
+    {
+      "id": "c13_t02",
+      "title": "Vulnerable Populations Checklist",
+      "headers": [
+        "Group",
+        "Risk",
+        "MCI action"
+      ],
+      "rows": [
+        [
+          "Children",
+          "Hypoxia, hypothermia, separation",
+          "JumpSTART; keep with caregivers; unaccompanied-minor protocol"
+        ],
+        [
+          "Elderly",
+          "Atypical signs, falls, heat",
+          "Lower threshold to re-triage; medication lists"
+        ],
+        [
+          "Technology-dependent",
+          "Power/supply loss",
+          "Early evacuation, battery/O2 resupply, dialysis plans"
+        ],
+        [
+          "Disabilities",
+          "Mobility, communication",
+          "Evacuation aids; keep service animals and devices"
+        ],
+        [
+          "Pregnancy",
+          "Aortocaval compression; fetal hypoxia",
+          "Left lateral tilt; maternal oxygenation"
+        ]
+      ]
+    }
+  ]
+}

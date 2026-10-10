@@ -1,0 +1,212 @@
+{
+  "chapter": "c07",
+  "drills": [
+    {
+      "title": "SALT Tagger (with Expectant)",
+      "icon": "⚖️",
+      "targetSeconds": 25,
+      "options": [
+        {
+          "key": "green",
+          "label": "MINIMAL (Green)",
+          "color": "#2ea043"
+        },
+        {
+          "key": "yellow",
+          "label": "DELAYED (Yellow)",
+          "color": "#d29922"
+        },
+        {
+          "key": "red",
+          "label": "IMMEDIATE (Red)",
+          "color": "#c8102e"
+        },
+        {
+          "key": "gray",
+          "label": "EXPECTANT (Gray)",
+          "color": "#8b949e"
+        },
+        {
+          "key": "black",
+          "label": "DEAD (Black)",
+          "color": "#111111"
+        }
+      ],
+      "description": "SALT adds the hardest call in EMS: EXPECTANT. Read resources carefully — the same injury can be red or gray depending on what's available.",
+      "items": [
+        {
+          "id": "c07_dr01_01",
+          "prompt": "Walked to you; abrasions and a sprained wrist.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "No",
+            "bleeding": "None"
+          },
+          "answer": "green",
+          "why": "All YES with minor injuries = MINIMAL."
+        },
+        {
+          "id": "c07_dr01_02",
+          "prompt": "Adult, still, apneic after airway opened.",
+          "details": {
+            "breathing": "No (after airway)",
+            "age": "Adult"
+          },
+          "answer": "black",
+          "why": "Not breathing after airway opening = DEAD."
+        },
+        {
+          "id": "c07_dr01_03",
+          "prompt": "Child, apneic → airway opened → 2 rescue breaths → now breathing, unresponsive, pulse present.",
+          "details": {
+            "breathing": "Yes (after 2 breaths)",
+            "obeys": "No",
+            "pulse": "Yes",
+            "resources": "Adequate"
+          },
+          "answer": "red",
+          "why": "Any NO + likely survivable = IMMEDIATE."
+        },
+        {
+          "id": "c07_dr01_04",
+          "prompt": "Open femur fracture, talking, bleeding controlled with pressure dressing.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "No",
+            "bleeding": "Controlled"
+          },
+          "answer": "yellow",
+          "why": "All YES, injury not minor = DELAYED."
+        },
+        {
+          "id": "c07_dr01_05",
+          "prompt": "Arterial thigh bleed — you apply a tourniquet; bleeding stops. Alert, radial present, breathing easily.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "No",
+            "bleeding": "Controlled (TQ)"
+          },
+          "answer": "yellow",
+          "why": "After the LSI, all four are YES and injury is significant = DELAYED. Note TQ + time."
+        },
+        {
+          "id": "c07_dr01_06",
+          "prompt": "Blast victim, severe respiratory distress, alert.",
+          "details": {
+            "breathing": "Yes, labored",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "YES",
+            "resources": "Adequate"
+          },
+          "answer": "red",
+          "why": "Respiratory distress = a NO → IMMEDIATE if survivable."
+        },
+        {
+          "id": "c07_dr01_07",
+          "prompt": "~90% full-thickness burns, unresponsive, weak pulse. 50 casualties, 3 ambulances.",
+          "details": {
+            "breathing": "Shallow",
+            "obeys": "No",
+            "pulse": "Weak",
+            "resources": "Overwhelmed"
+          },
+          "answer": "gray",
+          "why": "Any NO + survival unlikely with CURRENT resources = EXPECTANT. Comfort care; re-triage later."
+        },
+        {
+          "id": "c07_dr01_08",
+          "prompt": "Open skull fracture with exposed brain, agonal breathing. Mass-casualty, scarce resources.",
+          "details": {
+            "breathing": "Agonal",
+            "obeys": "No",
+            "pulse": "Present",
+            "resources": "Scarce"
+          },
+          "answer": "gray",
+          "why": "Unsurvivable with current resources = EXPECTANT."
+        },
+        {
+          "id": "c07_dr01_09",
+          "prompt": "Abdominal stab wound, alert, no radial pulse, breathing OK. Resources adequate.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "NO",
+            "distress": "No"
+          },
+          "answer": "red",
+          "why": "Absent peripheral pulse = NO → IMMEDIATE."
+        },
+        {
+          "id": "c07_dr01_10",
+          "prompt": "Child, apneic after airway opening and 2 rescue breaths.",
+          "details": {
+            "breathing": "No (after 2 breaths)",
+            "age": "Child"
+          },
+          "answer": "black",
+          "why": "Still apneic after 2 breaths = DEAD."
+        },
+        {
+          "id": "c07_dr01_11",
+          "prompt": "Small lacerations; waved when asked; sitting because she's shaken.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "No",
+            "bleeding": "Minor"
+          },
+          "answer": "green",
+          "why": "All YES with minor injuries = MINIMAL (re-triage later)."
+        },
+        {
+          "id": "c07_dr01_12",
+          "prompt": "Confused elderly man after the crash, won't follow commands, pulse present, no distress.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "NO",
+            "pulse": "Yes",
+            "distress": "No",
+            "resources": "Adequate"
+          },
+          "answer": "red",
+          "why": "Doesn't obey commands = NO → IMMEDIATE."
+        },
+        {
+          "id": "c07_dr01_13",
+          "prompt": "Same 90% burns patient as before — 2 hours later, 20 ambulances and burn center beds are available.",
+          "details": {
+            "breathing": "Shallow",
+            "obeys": "No",
+            "pulse": "Weak",
+            "resources": "Now adequate"
+          },
+          "answer": "red",
+          "why": "Re-triage when resources change: Expectant can become IMMEDIATE."
+        },
+        {
+          "id": "c07_dr01_14",
+          "prompt": "Nerve-agent exposure: pinpoint pupils, drooling, wheezing. You give an auto-injector; now breathing easier, obeys, pulse present, no distress.",
+          "details": {
+            "breathing": "Yes",
+            "obeys": "Yes",
+            "pulse": "Yes",
+            "distress": "No (after antidote)",
+            "injuries": "Significant exposure"
+          },
+          "answer": "yellow",
+          "why": "After the LSI (auto-injector) all four YES; significant exposure, not minor → DELAYED. Re-triage often."
+        }
+      ],
+      "id": "c07_dr01"
+    }
+  ]
+}

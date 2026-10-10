@@ -1,0 +1,83 @@
+{
+  "chapter": "c03",
+  "cards": [
+    {
+      "id": "c03_fc01",
+      "question": "What is unity of command?",
+      "answer": "Each responder reports to one, and only one, designated supervisor.",
+      "category": "Principles"
+    },
+    {
+      "id": "c03_fc02",
+      "question": "Recommended span of control in ICS?",
+      "answer": "About 3–7 subordinates per supervisor; ~5 is optimal.",
+      "category": "Principles"
+    },
+    {
+      "id": "c03_fc03",
+      "question": "Name the three Command Staff positions.",
+      "answer": "Safety Officer, Public Information Officer, Liaison Officer.",
+      "category": "Command Staff"
+    },
+    {
+      "id": "c03_fc04",
+      "question": "Name the four General Staff sections.",
+      "answer": "Operations, Planning, Logistics, Finance/Administration.",
+      "category": "General Staff"
+    },
+    {
+      "id": "c03_fc05",
+      "question": "Which ICS section does EMS work in?",
+      "answer": "Operations Section (Medical Branch/Group).",
+      "category": "EMS in ICS"
+    },
+    {
+      "id": "c03_fc06",
+      "question": "Title for the head of a Section? Branch? Division/Group? Unit?",
+      "answer": "Section Chief; Branch Director; Division/Group Supervisor; Unit Leader.",
+      "category": "Titles"
+    },
+    {
+      "id": "c03_fc07",
+      "question": "Division vs Group?",
+      "answer": "Division = geographic area (where); Group = functional assignment (what).",
+      "category": "Titles"
+    },
+    {
+      "id": "c03_fc08",
+      "question": "What is an Incident Action Plan (IAP)?",
+      "answer": "The incident's objectives, strategies, and assignments for an operational period — verbal for small incidents, written for large.",
+      "category": "Principles"
+    },
+    {
+      "id": "c03_fc09",
+      "question": "Who owns an ICS position that hasn't been filled?",
+      "answer": "The supervisor above it — ultimately the Incident Commander.",
+      "category": "Principles"
+    },
+    {
+      "id": "c03_fc10",
+      "question": "Proper transfer of command?",
+      "answer": "Face-to-face briefing (situation, objectives, hazards, resources, org), then announce the change to all units.",
+      "category": "Command"
+    },
+    {
+      "id": "c03_fc11",
+      "question": "What is unified command?",
+      "answer": "Multiple agencies with jurisdiction co-manage the incident with one command post and one set of objectives, each keeping authority over its own resources.",
+      "category": "Command"
+    },
+    {
+      "id": "c03_fc12",
+      "question": "Which section handles supplies, facilities, comms equipment, and food?",
+      "answer": "Logistics.",
+      "category": "General Staff"
+    },
+    {
+      "id": "c03_fc13",
+      "question": "Which section tracks resources, situation status, and writes the IAP?",
+      "answer": "Planning.",
+      "category": "General Staff"
+    }
+  ]
+}

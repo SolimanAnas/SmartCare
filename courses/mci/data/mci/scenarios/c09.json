@@ -1,0 +1,44 @@
+{
+  "chapter": "c09",
+  "cases": [
+    {
+      "id": "c09_s01",
+      "title": "Placard 1005",
+      "presentation": "A tanker on its side on the highway displays a placard: class 2, ID 1005. A faint pungent smell; a motorist downwind is coughing.",
+      "vitals": {
+        "placard": "Class 2 · UN1005",
+        "wind": "toward traffic"
+      },
+      "question": "Best first steps?",
+      "options": [
+        "A: Open the valve to vent pressure.",
+        "B: Ask the coughing motorist to come to your ambulance.",
+        "C: Approach to read the bill of lading.",
+        "D: Stop upwind/uphill at distance, look up 1005 in the ERG yellow pages → guide (orange) → isolation/protective distances (green), isolate and deny entry, METHANE with HazMat request."
+      ],
+      "correct": 3,
+      "explanation": "UN1005 is anhydrous ammonia (a toxic-inhalation gas). The ERG workflow — yellow/blue → orange → green — gives the PPE and distances. Ambulatory exposed people should move upwind and disrobe/decon before coming near you.",
+      "clinicalPearl": "ERG: find the number, read the guide, check the green distances."
+    },
+    {
+      "id": "c09_s02",
+      "title": "200 Wet Commuters",
+      "presentation": "A sprayer releases an oily liquid in a train station. 200 people exit, many with burning eyes, some vomiting. Fire is setting up a ladder-pipe decon corridor.",
+      "vitals": {
+        "exposed": "~200",
+        "symptoms": "eyes, nausea",
+        "liquid": "visible on clothes"
+      },
+      "question": "Your mass-decon priorities?",
+      "options": [
+        "A: Decon in order of arrival only.",
+        "B: Wait for Level A suits for everyone.",
+        "C: Tell everyone to remove outer clothing immediately; prioritize symptomatic and visibly contaminated for wet decon; separate ambulatory and non-ambulatory lanes; privacy, warmth, keep families together; triage after decon.",
+        "D: Send people home to shower."
+      ],
+      "correct": 2,
+      "explanation": "Disrobing is decon step one. Visible liquid + symptoms → wet decon. Good crowd management (modesty, warmth, families) keeps people from self-evacuating contaminated.",
+      "clinicalPearl": "If decon feels humiliating or freezing, people will skip it — design for dignity."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "chapter": "c08",
+  "algorithms": [
+    {
+      "id": "c08_alg01",
+      "title": "Treatment Area — MARCH Rapid Pass",
+      "description": "Per patient, then move to the next.",
+      "steps": [
+        "M — Massive hemorrhage: tourniquet, packing, pressure dressing (note TQ time).",
+        "A — Airway: position, suction, NPA/OPA; recovery position for unconscious breathing patients.",
+        "R — Respiration: seal open chest wounds; decompress tension pneumothorax per protocol; O2 to the hypoxic.",
+        "C — Circulation: bleeding control first; IV/IO and fluids only when indicated; permissive hypotension in penetrating trauma per protocol.",
+        "H — Hypothermia/Head: insulate from ground, cover; protect airway in head injury.",
+        "Re-triage and hand to Transport when ready."
+      ]
+    },
+    {
+      "id": "c08_alg02",
+      "title": "Transport Officer — Loading Cycle",
+      "description": "Repeat until the scene is clear.",
+      "steps": [
+        "Ask Treatment: who is next (priority order)?",
+        "Ask Med Comms: who can take what (red/yellow/green capacity)?",
+        "Call the next unit from staging to the loading zone.",
+        "Assign patient(s) + destination; brief the crew in one line.",
+        "Log tag # · category · unit · destination · time.",
+        "Notify hospital via Med Comms; update IC counts."
+      ]
+    }
+  ]
+}

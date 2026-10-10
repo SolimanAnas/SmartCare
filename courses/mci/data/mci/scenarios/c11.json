@@ -1,0 +1,64 @@
+{
+  "chapter": "c11",
+  "cases": [
+    {
+      "id": "c11_s01",
+      "title": "The Bus Stop Blast",
+      "presentation": "A small explosion at a bus stop. A police officer's radiation pager is alarming. 7 casualties: one with a partial leg amputation and arterial bleeding, others with fragment wounds.",
+      "vitals": {
+        "casualties": "7",
+        "radiation": "detector alarming",
+        "worst": "arterial bleed"
+      },
+      "question": "Best approach?",
+      "options": [
+        "A: Standard PPE; tourniquet and triage now; remove patients' clothing; limit time near the seat of the blast; notify hospitals of contamination; decon as part of care.",
+        "B: Withdraw everyone until radiation is mapped.",
+        "C: Give KI to all.",
+        "D: Wait for Level A suits."
+      ],
+      "correct": 0,
+      "explanation": "RDDs injure mainly by blast. Radiation risk to patients and responders is usually low; treat life threats immediately, minimize time near the source, and decon by disrobing.",
+      "clinicalPearl": "Dirty bomb = bomb first, dirt second."
+    },
+    {
+      "id": "c11_s02",
+      "title": "Fever and Pustules",
+      "presentation": "A 30-year-old with 3 days of high fever and back pain now has firm pustules on the face, forearms, palms, and soles — all at the same stage.",
+      "vitals": {
+        "temp": "39.8 °C",
+        "rash": "synchronous, centrifugal"
+      },
+      "question": "Your actions?",
+      "options": [
+        "A: Transport by bus with others.",
+        "B: Ignore the rash — treat the fever.",
+        "C: Standard precautions — it's chickenpox.",
+        "D: Treat as possible smallpox: mask the patient, N95/PAPR + gown + gloves + eye protection, limit crew, notify medical control/public health, decon the vehicle."
+      ],
+      "correct": 3,
+      "explanation": "Synchronous centrifugal pustules including palms/soles = smallpox pattern. A single case is a public-health emergency.",
+      "clinicalPearl": "Same-stage pustules on palms and soles → think smallpox."
+    },
+    {
+      "id": "c11_s03",
+      "title": "Seven Burned Hands",
+      "presentation": "Over a week, a clinic sees seven scrap-metal workers with painful red skin lesions on their hands and nausea. No chemical history.",
+      "vitals": {
+        "cluster": "7 workers",
+        "lesions": "hands",
+        "symptoms": "nausea, fatigue"
+      },
+      "question": "Most likely explanation?",
+      "options": [
+        "A: Smallpox",
+        "B: Mustard exposure",
+        "C: A lost radioactive source causing local radiation injury/ARS (exposure)",
+        "D: Contact dermatitis"
+      ],
+      "correct": 2,
+      "explanation": "Clusters of unexplained 'burns' + GI symptoms in people handling scrap suggest an orphan radioactive source (e.g., a medical teletherapy head). These patients are exposed, not necessarily contaminated.",
+      "clinicalPearl": "Unexplained burns in a cluster = think radiation."
+    }
+  ]
+}

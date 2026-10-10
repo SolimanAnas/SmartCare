@@ -1,0 +1,72 @@
+{
+  "id": "c09",
+  "title": "CBRNE I: HazMat Recognition, PPE & Decon",
+  "shortTitle": "HazMat, PPE & Decon",
+  "estimatedStudyTime": 40,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Recognize CBRNE/HazMat clues and apply Step 1-2-3 Plus.",
+    "Read DOT placards, NFPA 704 diamonds, and the ERG color pages.",
+    "Match PPE levels A–D to tasks.",
+    "Run gross, mass, and technical decontamination — and know when dry beats wet."
+  ],
+  "summary": [
+    {
+      "title": "CBRNE: Know Which Letter",
+      "content": "Chemical, Biological, Radiological, Nuclear, Explosive. Explosives are by far the most common terrorist weapon; chemicals the most common HazMat call; biological events start silently (at clinics, days later); radiological events are mostly a fear-and-decon problem unless doses are huge. Your scene questions: Is it still releasing? Is it on people (contamination)? Can it spread person-to-person? What PPE do I need?"
+    },
+    {
+      "title": "Recognition & Step 1-2-3 Plus",
+      "content": "Clues: multiple casualties with similar symptoms and no trauma, unexplained odors/mists/clouds/oily liquids, dead animals or wilted vegetation, explosions with unusual smoke or little damage, placards/labels/containers, people fleeing from one point. STEP 1: one casualty, no obvious cause → approach with normal caution. STEP 2: two casualties → approach with caution, report, consider options. STEP 3: three or more → DO NOT APPROACH; withdraw, contain, report (METHANE), isolate. PLUS: tell exposed people to get out of the area, remove outer clothing, and decontaminate ('Remove, Remove, Remove')."
+    },
+    {
+      "title": "Reading the Labels",
+      "content": "DOT PLACARDS show hazard class 1–9 (1 explosives, 2 gases, 3 flammable liquids, 4 flammable solids, 5 oxidizers, 6 toxic/infectious, 7 radioactive, 8 corrosives, 9 miscellaneous) and a 4-digit UN/NA ID. The ERG: YELLOW pages = look up by ID number; BLUE = by material name; ORANGE = guide pages (hazards, PPE, first aid, evacuation); GREEN = initial isolation & protective action distances for toxic-inhalation hazards. NFPA 704 diamond (fixed facilities): BLUE = health, RED = flammability, YELLOW = instability/reactivity, WHITE = special (W = water-reactive, OX = oxidizer); 0 = minimal → 4 = severe."
+    },
+    {
+      "title": "PPE Levels",
+      "content": "LEVEL A: SCBA + fully encapsulating vapor-tight suit — highest skin and respiratory protection, unknown/vapor hazards (HazMat entry teams). LEVEL B: SCBA + splash-protective suit — highest respiratory, less skin protection. LEVEL C: air-purifying respirator (APR/PAPR) + splash suit — known agent and concentration, enough oxygen; typical for decon teams and hospital decon. LEVEL D: work uniform, no respiratory protection — never in a contaminated area. EMS without HazMat training works in the COLD zone and receives patients AFTER decon."
+    },
+    {
+      "title": "Decontamination",
+      "content": "The single most effective step: REMOVE CLOTHING — removes the large majority (often quoted ~80–90%) of external contamination. GROSS/emergency decon: immediate disrobe + flush for life-threatening exposure. MASS decon: disrobe → dry decon (blot/wipe exposed skin) for most exposures → wet decon (high-volume, low-pressure water, e.g., ladder-pipe/fire-engine corridor) for caustics, visible liquid contamination, or symptoms → re-dress/cover. TECHNICAL decon: thorough decon of responders/equipment. Ambulatory and non-ambulatory lanes; keep families together; give privacy and warmth; bag and tag belongings. Decon before transport — always. Life threats (airway, bleeding, antidotes) are managed in the warm zone by protected, trained providers during decon."
+    }
+  ],
+  "clinicalPearls": [
+    "Three down, stay out: Step 1-2-3 is the rescuer's survival rule.",
+    "Clothing off is decon step one — and it's free, fast, and can be done by the patient.",
+    "Dry decon first for most exposures; go wet for caustics, visible liquid, or symptoms.",
+    "A contaminated patient in your ambulance takes the ambulance and crew out of service.",
+    "Expect many contaminated patients to self-present to hospitals — warn them early."
+  ],
+  "redFlags": [
+    "Rescuers developing symptoms (eye irritation, cough, miosis) — withdraw and decon everyone.",
+    "Responders entering the hot zone in Level D.",
+    "Skipping decon because the patient is critical — do rapid gross decon with LSIs instead.",
+    "Treatment area downwind of the release."
+  ],
+  "commonMistakes": [
+    "Confusing ERG yellow (ID number) and blue (name) pages.",
+    "Thinking Level C protects in oxygen-deficient or unknown atmospheres (it doesn't — it filters air).",
+    "Using high-pressure water or scrubbing that abrades skin.",
+    "Forgetting modesty, warmth, and family grouping in mass decon — people avoid decon and self-evacuate."
+  ],
+  "memoryAids": [
+    "Step 1-2-3 Plus: 1 = approach, 2 = caution, 3 = don't approach + 'Remove, Remove, Remove'.",
+    "ERG colors: Yellow = Your number, Blue = By name, Orange = Orders (guide), Green = Gap (distances).",
+    "NFPA: Blue = Body (health), Red = Fire, Yellow = Yikes (unstable), White = Weird (special).",
+    "PPE: A = Airtight, B = Breathing (SCBA) but splash, C = Canister (filter), D = Daily uniform."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Contaminated Casualty Flow",
+      "content": "Suspected HazMat/chemical\n  → Isolate, deny entry, upwind/uphill; ERG distances\n  → Casualties: get ambulatory out of hot zone → instruct 'remove outer clothing'\n  → Warm zone decon corridor (Level B/C teams):\n       LSIs (airway, bleeding, antidote) by trained protected staff\n       → Dry decon (default) | Wet decon (caustic, visible liquid, symptomatic)\n  → Cold zone: triage/treat (EMS) → transport → notify hospital"
+    }
+  ],
+  "references": [
+    "DOT/PHMSA Emergency Response Guidebook (ERG 2024)",
+    "NFPA 704 Standard System for the Identification of the Hazards of Materials",
+    "US HHS/BARDA PRISM — Primary Response Incident Scene Management guidance (mass decon)",
+    "UK Step 1-2-3 Plus (JESIP / NARU)"
+  ]
+}

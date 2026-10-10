@@ -1,0 +1,134 @@
+{
+  "chapter": "c01",
+  "drills": [
+    {
+      "title": "Disaster → What Will Hurt People?",
+      "icon": "🌪️",
+      "targetSeconds": 10,
+      "description": "Match each disaster to the injury pattern you should expect on arrival. Fast pattern recognition = right resource request.",
+      "items": [
+        {
+          "id": "c01_dr01_01",
+          "prompt": "Magnitude 7.1 earthquake, apartment blocks down.",
+          "options": [
+            "Crush injuries & entrapment",
+            "Drowning",
+            "Heat stroke",
+            "Compressive asphyxia"
+          ],
+          "answer": 0,
+          "why": "Collapsed structures → entrapment, crush, and crush syndrome after release."
+        },
+        {
+          "id": "c01_dr01_02",
+          "prompt": "Flash flood sweeps through a campground.",
+          "options": [
+            "Blast lung",
+            "Drowning, hypothermia & debris trauma",
+            "Cyanide toxicity",
+            "Penetrating fragments"
+          ],
+          "answer": 1,
+          "why": "Floods drown, chill, and batter with debris. Never self-deploy into moving water."
+        },
+        {
+          "id": "c01_dr01_03",
+          "prompt": "EF-4 tornado through a mobile-home park.",
+          "options": [
+            "Penetrating debris & blunt trauma",
+            "Radiation burns",
+            "Pulmonary edema from phosgene",
+            "Crowd crush"
+          ],
+          "answer": 0,
+          "why": "Wind-borne debris impales and batters; also check for gas leaks and downed power lines."
+        },
+        {
+          "id": "c01_dr01_04",
+          "prompt": "Packed stadium exit gate jammed during a stampede.",
+          "options": [
+            "Drowning",
+            "Burns",
+            "Compressive (traumatic) asphyxia",
+            "Crush syndrome from 6-h entrapment"
+          ],
+          "answer": 2,
+          "why": "People die standing up — chest compression prevents breathing."
+        },
+        {
+          "id": "c01_dr01_05",
+          "prompt": "Day 4 after a hurricane; family indoors with a generator.",
+          "options": [
+            "Carbon monoxide poisoning",
+            "Hypothermia",
+            "Blast injury",
+            "Anaphylaxis"
+          ],
+          "answer": 0,
+          "why": "Generators indoors or near windows are a predictable post-storm killer."
+        },
+        {
+          "id": "c01_dr01_06",
+          "prompt": "Week-long heat wave; elderly living alone.",
+          "options": [
+            "Heat stroke & dehydration",
+            "Frostbite",
+            "Crush injury",
+            "Smoke inhalation"
+          ],
+          "answer": 0,
+          "why": "Elderly, isolated, and on diuretics/psych meds are highest risk — cool aggressively."
+        },
+        {
+          "id": "c01_dr01_07",
+          "prompt": "Chlorine tanker ruptures near a school.",
+          "options": [
+            "Toxic inhalation (airway/lung irritation)",
+            "Crush injury",
+            "Drowning",
+            "Heat stroke"
+          ],
+          "answer": 0,
+          "why": "Chemical release = respiratory toxicity. Approach upwind/uphill; decon before treatment."
+        },
+        {
+          "id": "c01_dr01_08",
+          "prompt": "Train derailment, two cars on their sides.",
+          "options": [
+            "Blunt multi-system trauma & entrapment",
+            "Radiation sickness",
+            "Compressive asphyxia only",
+            "Pandemic respiratory illness"
+          ],
+          "answer": 0,
+          "why": "High-energy blunt trauma with extrication needs. Get the passenger manifest — it's closed."
+        },
+        {
+          "id": "c01_dr01_09",
+          "prompt": "Wildfire overruns a hillside neighborhood.",
+          "options": [
+            "Burns & smoke inhalation (CO/cyanide)",
+            "Drowning",
+            "Crush syndrome",
+            "Blast lung"
+          ],
+          "answer": 0,
+          "why": "Thermal burns, airway burns, and smoke toxins. Protect your evacuation route."
+        },
+        {
+          "id": "c01_dr01_10",
+          "prompt": "Novel respiratory virus overwhelming ICUs.",
+          "options": [
+            "Biological disaster — slow surge over weeks",
+            "Closed incident",
+            "Simple, compensated event",
+            "Blast injury pattern"
+          ],
+          "answer": 0,
+          "why": "Biological disasters are 'slow MCIs': staff protection, PPE, and crisis standards of care matter most."
+        }
+      ],
+      "id": "c01_dr01"
+    }
+  ]
+}

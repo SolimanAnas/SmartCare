@@ -1,0 +1,77 @@
+{
+  "chapter": "c04",
+  "cards": [
+    {
+      "id": "c04_fc01",
+      "question": "Core mission of the EMS Incident Commander?",
+      "answer": "Own the incident: command post, METHANE, objectives, assign officers, request resources, coordinate agencies — never hands-on patient care.",
+      "category": "IC"
+    },
+    {
+      "id": "c04_fc02",
+      "question": "Core mission of the Triage Officer?",
+      "answer": "Find and sort all casualties fast: global sort, tag, seconds-long LSIs, report counts to IC, direct reds to treatment, re-triage.",
+      "category": "Triage"
+    },
+    {
+      "id": "c04_fc03",
+      "question": "What may the Triage Officer do to a patient?",
+      "answer": "Only seconds-long lifesaving interventions: control massive bleeding, open/position the airway, (child) rescue breaths per protocol, auto-injector, decompression if trained and protocol allows.",
+      "category": "Triage"
+    },
+    {
+      "id": "c04_fc04",
+      "question": "Core mission of the Treatment Officer?",
+      "answer": "Set up and run the treatment area by category, perform secondary triage and stabilizing care, and prioritize patients for transport.",
+      "category": "Treatment"
+    },
+    {
+      "id": "c04_fc05",
+      "question": "Core mission of the Transport Officer?",
+      "answer": "Coordinate loading zone, call units from staging, assign destination hospitals by capacity/capability, and keep the transport log.",
+      "category": "Transport"
+    },
+    {
+      "id": "c04_fc06",
+      "question": "Minimum fields in a transport log?",
+      "answer": "Triage tag number, category, transporting unit, destination hospital, departure time (plus basic injuries/age/sex if possible).",
+      "category": "Transport"
+    },
+    {
+      "id": "c04_fc07",
+      "question": "Why not send every patient to the closest hospital?",
+      "answer": "It overwhelms that hospital (which also receives most self-presenters) while others sit underused — distribute by capacity and capability.",
+      "category": "Transport"
+    },
+    {
+      "id": "c04_fc08",
+      "question": "Staging Officer's key rules?",
+      "answer": "Safe location with one-way access; check in every unit; crews stay with vehicles, keys in; release only on Transport's request; report available numbers to IC.",
+      "category": "Staging"
+    },
+    {
+      "id": "c04_fc09",
+      "question": "Who speaks to hospitals during an MCI?",
+      "answer": "The Medical Communications Coordinator (under Transport) — one voice to hospitals/hospital coordination center.",
+      "category": "Support Roles"
+    },
+    {
+      "id": "c04_fc10",
+      "question": "What happens to the dead at an MCI?",
+      "answer": "Left in place unless blocking access to the living; tagged, secured, out of public view; morgue manager coordinates with law enforcement/medical examiner.",
+      "category": "Support Roles"
+    },
+    {
+      "id": "c04_fc11",
+      "question": "Why wear role vests?",
+      "answer": "Instant visual identification of who holds which role — the scene can find its officers.",
+      "category": "General"
+    },
+    {
+      "id": "c04_fc12",
+      "question": "How can green patients help?",
+      "answer": "Under direction they can apply pressure, assist other greens, or help carry litters — and they must still be assessed and re-triaged.",
+      "category": "Triage"
+    }
+  ]
+}

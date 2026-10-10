@@ -1,0 +1,76 @@
+{
+  "chapter": "c08",
+  "tables": [
+    {
+      "id": "c08_t01",
+      "title": "Destination Matching",
+      "headers": [
+        "Patient type",
+        "Preferred destination",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Red — torso/major trauma",
+          "Trauma center (spread across centers)",
+          "Surgeon availability matters most"
+        ],
+        [
+          "Red — major burns",
+          "Burn center if reachable",
+          "Otherwise stabilize at nearest, transfer later"
+        ],
+        [
+          "Red — child",
+          "Pediatric-capable center",
+          "If time cost acceptable; else nearest appropriate"
+        ],
+        [
+          "Yellow",
+          "Hospitals with capacity, often further out",
+          "Protect trauma center for reds"
+        ],
+        [
+          "Green",
+          "Bus/van to low-load hospital or clinic",
+          "Medic + radio aboard; not the closest hospital"
+        ],
+        [
+          "Contaminated",
+          "Decon BEFORE transport",
+          "Notify receiving hospital"
+        ]
+      ]
+    },
+    {
+      "id": "c08_t02",
+      "title": "Field Care: Do / Defer",
+      "headers": [
+        "Do now",
+        "Defer (unless it's quick & lifesaving)"
+      ],
+      "rows": [
+        [
+          "Tourniquets, packing, pressure dressings",
+          "Detailed secondary survey"
+        ],
+        [
+          "Airway positioning, adjuncts",
+          "Routine full spinal packaging"
+        ],
+        [
+          "Chest seal / decompression",
+          "Non-critical IV lines"
+        ],
+        [
+          "Warmth and ground insulation",
+          "Splinting minor injuries (greens can self-splint)"
+        ],
+        [
+          "Antidotes (chemical)",
+          "Prolonged procedures delaying loading"
+        ]
+      ]
+    }
+  ]
+}

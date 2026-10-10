@@ -1,0 +1,128 @@
+{
+  "chapter": "c09",
+  "tables": [
+    {
+      "id": "c09_t01",
+      "title": "PPE Levels A–D",
+      "headers": [
+        "Level",
+        "Respiratory",
+        "Skin",
+        "Typical use"
+      ],
+      "rows": [
+        [
+          "A",
+          "SCBA",
+          "Fully encapsulating, vapor-tight",
+          "Unknown/high vapor hazard entry (HazMat team)"
+        ],
+        [
+          "B",
+          "SCBA",
+          "Splash-protective, non-encapsulating",
+          "Highest respiratory need, lower skin threat"
+        ],
+        [
+          "C",
+          "APR / PAPR",
+          "Splash-protective",
+          "Known agent & concentration, O2 adequate; decon teams, hospital decon"
+        ],
+        [
+          "D",
+          "None",
+          "Work uniform",
+          "No contamination present"
+        ]
+      ]
+    },
+    {
+      "id": "c09_t02",
+      "title": "DOT Hazard Classes",
+      "headers": [
+        "Class",
+        "Hazard",
+        "Example"
+      ],
+      "rows": [
+        [
+          "1",
+          "Explosives",
+          "Fireworks, blasting agents"
+        ],
+        [
+          "2",
+          "Gases",
+          "Propane, chlorine, ammonia"
+        ],
+        [
+          "3",
+          "Flammable liquids",
+          "Gasoline, ethanol"
+        ],
+        [
+          "4",
+          "Flammable solids",
+          "Magnesium, matches"
+        ],
+        [
+          "5",
+          "Oxidizers / organic peroxides",
+          "Ammonium nitrate, hydrogen peroxide"
+        ],
+        [
+          "6",
+          "Toxic / infectious",
+          "Pesticides, medical waste"
+        ],
+        [
+          "7",
+          "Radioactive",
+          "Medical isotopes, industrial sources"
+        ],
+        [
+          "8",
+          "Corrosives",
+          "Sulfuric acid, sodium hydroxide"
+        ],
+        [
+          "9",
+          "Miscellaneous",
+          "Lithium batteries, dry ice"
+        ]
+      ]
+    },
+    {
+      "id": "c09_t03",
+      "title": "NFPA 704 Quick Read",
+      "headers": [
+        "Quadrant",
+        "Meaning",
+        "4 means…"
+      ],
+      "rows": [
+        [
+          "Blue (left)",
+          "Health",
+          "Can be lethal with brief exposure"
+        ],
+        [
+          "Red (top)",
+          "Flammability",
+          "Extremely flammable / vaporizes readily"
+        ],
+        [
+          "Yellow (right)",
+          "Instability / reactivity",
+          "May detonate at normal conditions"
+        ],
+        [
+          "White (bottom)",
+          "Special hazards",
+          "W̶ = water-reactive, OX = oxidizer, SA = simple asphyxiant"
+        ]
+      ]
+    }
+  ]
+}

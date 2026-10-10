@@ -1,0 +1,134 @@
+{
+  "chapter": "c13",
+  "drills": [
+    {
+      "title": "Special Ops Quick Calls",
+      "icon": "🏗️",
+      "targetSeconds": 12,
+      "description": "Collapse, crowds, crashes, and weather. Make the call that keeps your crew alive and your patient breathing.",
+      "items": [
+        {
+          "id": "c13_dr01_01",
+          "prompt": "Arm trapped for 4 hours under rubble; USAR ready to lift.",
+          "options": [
+            "Lift now",
+            "IV saline + monitor before release",
+            "LR after release",
+            "Ice the arm"
+          ],
+          "answer": 1,
+          "why": "Fluids before freedom; prepare for hyperkalemia."
+        },
+        {
+          "id": "c13_dr01_02",
+          "prompt": "Post-release ECG: peaked T waves, QRS widening.",
+          "options": [
+            "Calcium",
+            "Amiodarone",
+            "Adenosine",
+            "More lifting"
+          ],
+          "answer": 0,
+          "why": "Calcium stabilizes the cardiac membrane in hyperkalemia."
+        },
+        {
+          "id": "c13_dr01_03",
+          "prompt": "Crowd surge at a gate; people can't raise their arms.",
+          "options": [
+            "Push into the crowd",
+            "Stop inflow, open exits, extract from edges",
+            "Wait it out",
+            "Use a PA to tell people to push"
+          ],
+          "answer": 1,
+          "why": "Relieve pressure first — compressive asphyxia kills fast."
+        },
+        {
+          "id": "c13_dr01_04",
+          "prompt": "Train derailed under overhead catenary lines.",
+          "options": [
+            "Begin triage inside",
+            "Confirm power isolated before entering",
+            "Use ladders on the wires",
+            "Ignore — trains are diesel"
+          ],
+          "answer": 1,
+          "why": "Isolate electrical power first."
+        },
+        {
+          "id": "c13_dr01_05",
+          "prompt": "Water flowing across the road, ~30 cm deep, patient on the other side.",
+          "options": [
+            "Drive through",
+            "Wade across",
+            "Stop — request swift-water rescue / find another route",
+            "Rope yourself and swim"
+          ],
+          "answer": 2,
+          "why": "~1 ft of moving water floats most cars. Turn around, don't drown."
+        },
+        {
+          "id": "c13_dr01_06",
+          "prompt": "Collapsed marathon runner, temp 42 °C, confused.",
+          "options": [
+            "Transport now",
+            "Cold-water immersion on scene",
+            "Oral fluids",
+            "Paracetamol"
+          ],
+          "answer": 1,
+          "why": "Cool first, transport second."
+        },
+        {
+          "id": "c13_dr01_07",
+          "prompt": "Small aircraft crash with burning wreckage.",
+          "options": [
+            "Approach downwind",
+            "Approach upwind with respiratory protection",
+            "Walk through the debris field",
+            "Wait for media"
+          ],
+          "answer": 1,
+          "why": "Upwind; burning composites release toxic fibers/gases."
+        },
+        {
+          "id": "c13_dr01_08",
+          "prompt": "Lone 5-year-old at the green area; an adult says 'that's my nephew'.",
+          "options": [
+            "Hand him over",
+            "Verify identity per reunification protocol before release",
+            "Send the child home",
+            "Ignore"
+          ],
+          "answer": 1,
+          "why": "Unaccompanied minors are released only to verified guardians."
+        },
+        {
+          "id": "c13_dr01_09",
+          "prompt": "Coach crash: you've found 41 people; manifest says 44.",
+          "options": [
+            "Close the scene",
+            "Search for 3 missing (ejected, wandered, trapped)",
+            "Assume no-shows",
+            "Ask the media"
+          ],
+          "answer": 1,
+          "why": "Closed incident — account for everyone on the manifest."
+        },
+        {
+          "id": "c13_dr01_10",
+          "prompt": "Blackout day 2; home-ventilator battery at 10%.",
+          "options": [
+            "Advise waiting",
+            "Priority transport/power source now",
+            "Call tomorrow",
+            "Switch off alarms"
+          ],
+          "answer": 1,
+          "why": "Technology-dependent patients become critical when power fails."
+        }
+      ],
+      "id": "c13_dr01"
+    }
+  ]
+}

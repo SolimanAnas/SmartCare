@@ -1,0 +1,148 @@
+{
+  "chapter": "c10",
+  "questions": [
+    {
+      "id": "c10_q01",
+      "question": "A subway passenger has pinpoint pupils, copious secretions, wheezing, and muscle twitching. Most likely agent:",
+      "options": [
+        "A. Nerve agent",
+        "B. Cyanide",
+        "C. Mustard",
+        "D. Chlorine"
+      ],
+      "correct": 0,
+      "rationale": "Muscarinic + nicotinic signs with miosis = nerve agent.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c10_q02",
+      "question": "Atropine in nerve-agent poisoning is titrated to:",
+      "options": [
+        "A. Normal blood pressure",
+        "B. Heart rate > 100",
+        "C. Dry bronchial secretions and easy breathing",
+        "D. Pupil dilation"
+      ],
+      "correct": 2,
+      "rationale": "Secretions and work of breathing are the endpoints.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q03",
+      "question": "A nerve-agent casualty is seizing and apneic. Antidote kit dosing:",
+      "options": [
+        "A. No kit; ventilate only",
+        "B. 1 kit",
+        "C. 3 kits + benzodiazepine",
+        "D. 2 kits"
+      ],
+      "correct": 2,
+      "rationale": "Severe poisoning: 3 kits rapidly plus a benzodiazepine; support ventilation.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q04",
+      "question": "Pralidoxime should be given early because:",
+      "options": [
+        "A. It reverses opioids",
+        "B. It's an anticonvulsant",
+        "C. It dries secretions",
+        "D. Agent–enzyme binding 'ages' and becomes irreversible"
+      ],
+      "correct": 3,
+      "rationale": "Oximes only work before aging occurs.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q05",
+      "question": "A house-fire victim is hypotensive and unresponsive. Which antidote is most appropriate?",
+      "options": [
+        "A. Atropine",
+        "B. Naloxone",
+        "C. Pralidoxime",
+        "D. Hydroxocobalamin"
+      ],
+      "correct": 3,
+      "rationale": "Smoke inhalation → consider cyanide toxicity → hydroxocobalamin.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c10_q06",
+      "question": "Why are nitrites avoided in smoke-inhalation victims?",
+      "options": [
+        "A. They cause seizures",
+        "B. They induce methemoglobinemia, worsening oxygen delivery with CO poisoning",
+        "C. They are ineffective",
+        "D. They cause bradycardia"
+      ],
+      "correct": 1,
+      "rationale": "Methemoglobin + carboxyhemoglobin is a dangerous combination.",
+      "difficulty": "Advanced"
+    },
+    {
+      "id": "c10_q07",
+      "question": "A factory worker exposed to a gas smelling of 'freshly mown hay' feels fine. You should:",
+      "options": [
+        "A. Advise rest and observation for ~24 h for delayed pulmonary edema",
+        "B. Give hydroxocobalamin",
+        "C. Release him",
+        "D. Give atropine"
+      ],
+      "correct": 0,
+      "rationale": "Phosgene causes delayed non-cardiogenic pulmonary edema.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q08",
+      "question": "Which agent causes painless exposure with blisters appearing hours later?",
+      "options": [
+        "A. Sulfur mustard",
+        "B. CS gas",
+        "C. Chlorine",
+        "D. Lewisite"
+      ],
+      "correct": 0,
+      "rationale": "Mustard is painless at exposure; lesions appear 2–24 h later.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q09",
+      "question": "A theater crowd collapses with pinpoint pupils, slow shallow breathing, dry skin, no twitching. Best treatment:",
+      "options": [
+        "A. Atropine",
+        "B. Ventilation and naloxone",
+        "C. Pralidoxime",
+        "D. Hydroxocobalamin"
+      ],
+      "correct": 1,
+      "rationale": "Dry miosis with respiratory depression = opioid agent.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "c10_q10",
+      "question": "Most riot-control agent exposures:",
+      "options": [
+        "A. Cause delayed pulmonary edema in all patients",
+        "B. Require atropine",
+        "C. Resolve within ~15–30 min after removal to fresh air",
+        "D. Need hydroxocobalamin"
+      ],
+      "correct": 2,
+      "rationale": "Self-limited; watch asthmatics and enclosed-space exposures.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "c10_q11",
+      "question": "Chlorine causes early upper-airway symptoms because it is:",
+      "options": [
+        "A. An enzyme inhibitor",
+        "B. Highly water-soluble",
+        "C. Radioactive",
+        "D. Poorly water-soluble"
+      ],
+      "correct": 1,
+      "rationale": "Highly soluble gases react with moist upper airways immediately.",
+      "difficulty": "Medium"
+    }
+  ]
+}

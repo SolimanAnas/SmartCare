@@ -1,0 +1,74 @@
+{
+  "id": "c03",
+  "title": "ICS for EMS: Command Structure",
+  "shortTitle": "ICS for EMS",
+  "estimatedStudyTime": 35,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Apply the ICS principles that matter on an EMS scene: unity of command, span of control, modular growth, common terminology.",
+    "Distinguish command staff from general staff and name each position.",
+    "Map the EMS/Medical Branch structure under Operations.",
+    "Perform a correct transfer of command and explain unified command."
+  ],
+  "summary": [
+    {
+      "title": "Why ICS",
+      "content": "ICS (Incident Command System, part of NIMS) gives every agency the same org chart, titles, and language, so a medic from another county can plug into your scene in seconds. It grows and shrinks with the incident (modular): a 5-patient crash may be IC + Triage only; a stadium collapse fills the whole chart. Every position not filled is held by the person above it — so the IC owns everything until delegated."
+    },
+    {
+      "title": "The Principles You Actually Use",
+      "content": "Unity of command: everyone reports to ONE supervisor. Span of control: one supervisor manages roughly 3–7 people/units, ~5 is optimal — beyond that, add a layer. Common terminology: plain language and standard titles. Management by objectives via an Incident Action Plan (IAP; verbal for small incidents). Accountability: check-in, assignments tracked. Chain of command: orders flow down, info flows up — no freelancing."
+    },
+    {
+      "title": "Command Staff vs General Staff",
+      "content": "COMMAND STAFF (report directly to IC, title = Officer): Safety Officer (can stop unsafe acts immediately), Public Information Officer (media), Liaison Officer (other agencies). GENERAL STAFF (title = Section Chief): Operations (does the work — EMS lives here), Planning (situation, resources, IAP, documentation), Logistics (supplies, facilities, comms equipment, food, responder medical), Finance/Admin (costs, time, claims). Memory: 'Officers advise, Chiefs execute'."
+    },
+    {
+      "title": "ICS Titles by Level",
+      "content": "Incident Commander → Section = Chief → Branch = Director → Division (geographic) / Group (functional) = Supervisor → Unit = Leader → Strike Team / Task Force = Leader → Staging Area = Manager. Division = WHERE (Division A = front of building, Division 2 = 2nd floor). Group = WHAT (Medical Group, Rescue Group). The EMS piece is usually the Medical Group (or Medical Branch when large)."
+    },
+    {
+      "title": "EMS Inside ICS",
+      "content": "Operations Section → Medical Branch Director (large incidents) → Medical Group Supervisor → Triage Unit Leader (with triage teams; morgue manager), Treatment Unit Leader (with Red/Yellow/Green treatment managers), Patient Transportation Unit/Group Leader (with Medical Communications Coordinator and ground/air ambulance coordinators), plus Medical Supply Coordinator. Staging Area Manager reports to Operations (or IC early). Chapter 4 covers each role's action card."
+    },
+    {
+      "title": "Transfer of Command & Unified Command",
+      "content": "Transfer of command: face-to-face whenever possible; brief situation, objectives, hazards, resources, org chart; announce the change on the radio so everyone knows who is IC now. Arriving senior officers don't automatically take over — they assume command only after a formal transfer. Unified Command: when multiple agencies share jurisdiction (fire, police, EMS, public health), their commanders co-locate at one command post and produce ONE set of objectives/IAP — each agency keeps authority over its own people."
+    }
+  ],
+  "clinicalPearls": [
+    "If you're the first EMS unit, you ARE every ICS position until you hand one off.",
+    "When your span exceeds ~5, don't work harder — add a supervisor layer.",
+    "Division = geography (where), Group = function (what).",
+    "The Safety Officer can halt any unsafe act on the spot without waiting for the IC.",
+    "A freelancer — a crew acting without assignment — is a safety and accountability hazard, no matter how well-intentioned."
+  ],
+  "redFlags": [
+    "Two people both believing they're IC (no formal transfer).",
+    "One supervisor running 12 crews directly.",
+    "Units self-dispatching into the scene instead of checking in at staging.",
+    "Agencies running parallel command posts with conflicting objectives."
+  ],
+  "commonMistakes": [
+    "Calling a Section 'Branch' or a Unit 'Group' — titles carry meaning.",
+    "Forgetting that unfilled positions stay with the supervisor above.",
+    "Transferring command by radio only, without a briefing.",
+    "Thinking unified command means one agency gives up its authority."
+  ],
+  "memoryAids": [
+    "Command Staff = 'SLP': Safety, Liaison, PIO — they're Officers.",
+    "General Staff = 'OPLF' (Operations, Planning, Logistics, Finance) — 'Only Paramedics Love Food' — they're Chiefs.",
+    "Titles ladder: Chief → Director → Supervisor → Leader → Manager (staging). 'Cheerful Directors Supervise Lazy Managers.'",
+    "Span of control: 'Five alive' (3–7)."
+  ],
+  "decisionTrees": [
+    {
+      "title": "Scale the Org Chart",
+      "content": "Small MCI (≤ ~10 pts)\n  → IC (first EMS officer) + Triage + Transport\nMedium MCI\n  → IC → Medical Group Supervisor → Triage / Treatment / Transport Unit Leaders + Staging\nLarge / multi-agency MCI\n  → Unified Command + Command Staff (Safety, PIO, Liaison)\n  → Operations Section Chief → Medical Branch Director → Medical Groups / Divisions\n  → Planning, Logistics, Finance as needed\nRule: span of control > ~5–7 → add a layer"
+    }
+  ],
+  "references": [
+    "FEMA NIMS (2017) and ICS-100/200 curriculum",
+    "FIRESCOPE ICS Multi-Casualty Branch organization"
+  ]
+}
