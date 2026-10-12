@@ -8,34 +8,25 @@ window.CPG_DATA = {
             id: "formulary-overview",
             shortTitle: "Full Drug Formulary",
             summary: `
-                <div class="sum-card" style="text-align:center;padding:28px 20px;">
-                    <div style="font-size:2.8rem;margin-bottom:12px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <h3 style="color:var(--primary-accent);font-size:1.2rem;margin-bottom:8px;">SmartCare Medication Formulary</h3>
-                    <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;margin-bottom:20px;">
-                        Browse the complete 77-drug formulary by clinical category, or jump straight to a weight-based dose calculator for the 31 medications with pediatric dosing tables. Every drug also has its own full monograph — classification, mechanism, contraindications, scope of practice — in the medication tabs above.
-                    </p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-                        <a href="../pages/drug-index.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--primary-accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 4px 16px rgba(0,86,179,.35);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-                            <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Browse Full Formulary <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>
-                        </a>
-                        <a href="../pages/med-index.html" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--primary-accent);border:1.5px solid var(--primary-accent);text-decoration:none;padding:11px 24px;border-radius:12px;font-weight:700;font-size:.9rem;transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
-                            <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Dose Calculator
-                        </a>
+                <div class="fx-hero">
+                    <div class="fx-top">
+                        <div class="fx-text">
+                            <span class="fx-eyebrow"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Chapter 11</span>
+                            <h2 class="fx-title">Medication <span>Formulary</span></h2>
+                            <p class="fx-lead">Every prehospital drug with its full monograph, plus weight-based dosing for pediatric patients.</p>
+                        </div>
+                        <div class="fx-art"><img src="../images/formulary-capsule.webp" alt="" width="420" height="382" decoding="async"></div>
                     </div>
-                    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;">
-                        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:10px;">
-                            <div style="font-size:1.3rem;font-weight:900;color:var(--primary-accent);">77</div>
-                            <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-secondary);font-weight:700;">Medications</div>
-                        </div>
-                        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:10px;">
-                            <div style="font-size:1.3rem;font-weight:900;color:var(--primary-accent);">6</div>
-                            <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-secondary);font-weight:700;">Categories</div>
-                        </div>
-                        <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:10px;">
-                            <div style="font-size:1.3rem;font-weight:900;color:var(--primary-accent);">31</div>
-                            <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-secondary);font-weight:700;">Calculator-Ready</div>
-                        </div>
+                    <div class="fx-stats">
+                        <div class="fx-stat"><b>77</b><small>Medications</small></div>
+                        <div class="fx-stat"><b>6</b><small>Categories</small></div>
+                        <div class="fx-stat"><b>31</b><small>Calculators</small></div>
                     </div>
+                    <div class="fx-actions">
+                        <a class="fx-btn fx-btn-primary" href="../pages/drug-index.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Browse all</a>
+                        <a class="fx-btn fx-btn-ghost" href="../pages/med-index.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Calculator</a>
+                    </div>
+                    <p class="fx-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-up"/></svg> Or open any medication from the tabs above</p>
                 </div>
                 <div class="sum-card">
                     <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg> Cardiac / Resus</h3>
