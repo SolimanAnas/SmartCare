@@ -534,22 +534,28 @@ function initScrollReveal() {
     const headers = dom.main.querySelectorAll('.sum-card h3, .sum-card h4');
     if (!headers.length) return;
 
+    // Observe each header's card, not the header itself: .reveal-clip starts
+    // fully clipped (clip-path inset 100%), and Chrome counts a fully clipped
+    // target as never intersecting — so observing the header directly meant
+    // no header ever revealed and every card title stayed invisible.
     if (!_revealObserver) {
         _revealObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-in');
+                    entry.target.querySelectorAll('.reveal-clip').forEach(h => h.classList.add('reveal-in'));
                     obs.unobserve(entry.target);   // reveal once, then stop watching
                 }
             });
-        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
     }
 
+    const cards = new Set();
     headers.forEach(h => {
         if (h.classList.contains('reveal-clip')) return;
         h.classList.add('reveal-clip');
-        _revealObserver.observe(h);   // in-view headers fire on the next frame
+        cards.add(h.closest('.sum-card'));
     });
+    cards.forEach(card => _revealObserver.observe(card));   // in-view cards fire on the next frame
 }
 
 // ---- Toasts: slide in top-right, stack, swipe-to-dismiss with momentum ----
