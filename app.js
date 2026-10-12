@@ -1216,30 +1216,6 @@ const criticalEngine = {
     }
 };
 
-// ---------- WATER RIPPLE EFFECT ----------  
-function createRipple(event, target) {  
-    try {
-        const rect = target.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const ripple = document.createElement('span');
-        ripple.className = 'ripple';
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-        ripple.style.width = ripple.style.height = '20px';
-        ripple.style.background = 'rgba(255, 255, 255, 0.7)';
-
-        target.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    } catch (err) {
-        // Silently fail
-    }
-}  
-
 // ---------- OPTIMISED MUTATION OBSERVER (only watches #mainContent) ----------
 const observer = new MutationObserver((mutations) => {
     for (const m of mutations) {
@@ -1260,9 +1236,7 @@ if (dom.main) {
 document.addEventListener('click', function(e) {  
     const target = e.target.closest('button, .nav-pill');  
     if (!target) return;  
-    
-    createRipple(e, target);
-    
+
     // FIX #4: integrate home button handling directly
     if (target.id === 'homeBtn') {
         e.preventDefault();
