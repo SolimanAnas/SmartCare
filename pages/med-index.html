@@ -151,6 +151,26 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .hs-num{font-size:1.3rem;font-weight:900;font-family:var(--mono);color:var(--text);line-height:1}
 .hs-lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.7px;color:var(--text2);margin-top:4px;font-weight:700}
 
+/* ── ANIMATED CALCULATOR ILLUSTRATION ── */
+.calc-art{position:relative;flex:0 0 auto;aspect-ratio:440/398}
+.calc-art::before{content:"";position:absolute;inset:12% 8% 4%;border-radius:50%;background:radial-gradient(closest-side,rgba(59,130,246,.55),transparent);filter:blur(10px);animation:caGlow 3.6s ease-in-out infinite;pointer-events:none}
+.calc-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;transform-origin:50% 90%;animation:caFloat 4.8s ease-in-out infinite;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.calc-art .spark{position:absolute;z-index:2;width:10px;height:10px;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0;animation:caSpark 3.2s ease-in-out infinite;pointer-events:none}
+.calc-art .spark.s1{top:8%;left:14%}
+.calc-art .spark.s2{top:30%;right:2%;width:7px;height:7px;animation-delay:1.1s}
+.calc-art .spark.s3{bottom:16%;left:2%;width:8px;height:8px;animation-delay:2.1s}
+@keyframes caFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes caGlow{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes caSpark{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(45deg)}60%{opacity:0;transform:scale(.6) rotate(90deg)}}
+@media (prefers-reduced-motion:reduce){.calc-art img,.calc-art::before,.calc-art .spark{animation:none}.calc-art .spark{display:none}}
+
+.hero-top{display:flex;align-items:center;gap:10px}
+.hero-top>div:first-child{flex:1;min-width:0}
+.hero .calc-art{width:clamp(104px,30vw,170px);margin:-6px -4px -6px 0}
+[data-theme="light"] .calc-art::before,[data-theme="sepia"] .calc-art::before{opacity:.5}
+[data-theme="light"] .calc-art img,[data-theme="sepia"] .calc-art img{filter:drop-shadow(0 8px 14px rgba(30,64,175,.25))}
+.hs-num.counting{color:var(--accent)}
+
 /* SEARCH */
 .search-wrap{padding:10px 16px;border-bottom:1px solid var(--br);background:rgba(7,17,31,.92);position:sticky;top:calc(var(--hdr) + env(safe-area-inset-top));z-index:90;flex-shrink:0;transition:background .3s}
 [data-theme="light"] .search-wrap{background:rgba(244,247,251,.9)}
@@ -292,10 +312,13 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-top">
   <div>
     <div class="hero-eyebrow">SmartCare · Formulary</div>
     <div class="hero-heading">EMS <span class="hl">Drug Reference</span></div>
     <div class="hero-desc">Open the weight-based dose calculator, or read the full clinical monograph in Chapter 11</div>
+  </div>
+  <div class="calc-art" aria-hidden="true"><img src="../images/dose-calculator.webp" alt="" width="440" height="398" decoding="async"><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span></div>
   </div>
   <div class="hero-stats">
     <div class="h-stat"><div class="hs-num" id="hsTotalDrugs">—</div><div class="hs-lbl">Medications</div></div>
@@ -444,15 +467,24 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeThemePanel();})
 window.addEventListener('resize',moveRing,{passive:true});
 syncThemeUI(false);
 
+/* Stat count-up (instant under reduced motion) */
+function countUp(id,target){
+  const el=document.getElementById(id);if(!el)return;
+  if(reduceMotion()||!window.requestAnimationFrame){el.textContent=target;return;}
+  const t0=performance.now(),dur=900;el.classList.add('counting');
+  (function step(t){const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(target*e);
+    if(k<1)requestAnimationFrame(step);else el.classList.remove('counting');})(t0);
+}
+
 /* INIT */
 async function init(){
   try{
     const data=await (await fetch('drug-data.json')).json();
     CATS=data.categories; DRUGS=data.drugs;
     const totalInds=Object.values(DRUGS).reduce((s,d)=>s+(d.indications||[]).length,0);
-    document.getElementById('hsTotalDrugs').textContent=Object.keys(DRUGS).length;
-    document.getElementById('hsTotalCats').textContent=CATS.length;
-    document.getElementById('hsTotalInds').textContent=totalInds;
+    countUp('hsTotalDrugs',Object.keys(DRUGS).length);
+    countUp('hsTotalCats',CATS.length);
+    countUp('hsTotalInds',totalInds);
     document.getElementById('hdrSub').textContent=Object.keys(DRUGS).length+' calculator-ready · 77 in formulary';
     buildPills(); buildAZ(); render();
     // deep-link
