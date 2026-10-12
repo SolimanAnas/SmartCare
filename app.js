@@ -697,8 +697,10 @@ const render = {
         }
         if (this.loadFailed()) return;
         const tabs = renderSectionTabs(section.id);
-        // FIX #3: exclude c-index from special pages so bottom nav appears
-        const isSpecialPage = chapterData && (chapterData.id === 'c0');
+        // c-index hides the bottom nav entirely (chapters/c-index.html), so
+        // don't render it there — a hidden blurred nav can still leave paint
+        // artifacts on some GPUs.
+        const isSpecialPage = chapterData && (chapterData.id === 'c0' || chapterData.id === 'c-index');
         const summaryContent = section.summary || '<div class="sum-card">No summary available.</div>';
         const nav = renderSectionNavigation();
 
