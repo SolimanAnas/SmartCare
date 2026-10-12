@@ -12,7 +12,7 @@ window.CPG_DATA = {
                     <div style="font-size:2.8rem;margin-bottom:12px;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <h3 style="color:var(--primary-accent);font-size:1.2rem;margin-bottom:8px;">SmartCare Medication Formulary</h3>
                     <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;margin-bottom:20px;">
-                        Browse the complete 48-drug formulary by clinical category, or jump straight to a weight-based dose calculator for the 31 medications with pediatric dosing tables. Every drug also has its own full monograph — classification, mechanism, contraindications, scope of practice — in the Drug 1–48 tabs above.
+                        Browse the complete 77-drug formulary by clinical category, or jump straight to a weight-based dose calculator for the 31 medications with pediatric dosing tables. Every drug also has its own full monograph — classification, mechanism, contraindications, scope of practice — in the medication tabs above.
                     </p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
                         <a href="../pages/drug-index.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--primary-accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 4px 16px rgba(0,86,179,.35);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
@@ -24,7 +24,7 @@ window.CPG_DATA = {
                     </div>
                     <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;">
                         <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:10px;">
-                            <div style="font-size:1.3rem;font-weight:900;color:var(--primary-accent);">48</div>
+                            <div style="font-size:1.3rem;font-weight:900;color:var(--primary-accent);">77</div>
                             <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text-secondary);font-weight:700;">Medications</div>
                         </div>
                         <div style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:10px;">
@@ -55,7 +55,7 @@ window.CPG_DATA = {
                         <li><strong>Racemic Epi:</strong> Croup — &gt;4y: 0.5 ml; &lt;4y: 0.05 ml/kg nebulized in 3 ml NS.</li>
                         <li><strong>Hydrocortisone:</strong> Anaphylaxis/Asthma — 2 mg/kg IV/IM/IO.</li>
                         <li><strong>Magnesium Sulphate:</strong> Severe asthma/eclampsia — Adult 2 g IV over 20 min; Peds 40 mg/kg.</li>
-                        <li><strong>Methoxyflurane (Penthrox):</strong> Pain — 3 ml inhaled, self-administered (max 6 ml/24 h adult).</li>
+                        <li><strong>Methoxyflurane (Penthrox inhaler):</strong> Pain — 3 ml inhaled, self-administered (max 6 ml/24 h adult).</li>
                     </ul>
                 </div>
                 <div class="sum-card">
@@ -136,7 +136,7 @@ window.CPG_DATA = {
                 { category: "Airway", question: "Hydrocortisone: Dose for anaphylaxis/asthma?", answer: "2 mg/kg IV/IM/IO\nAlternative: <1y 25 mg, 1-5y 50 mg, >5y 100 mg" },
                 { category: "Airway", question: "Magnesium Sulphate: Severe asthma dose?", answer: "Adult: 2 g IV/IO over 20 min\nPediatric: 40 mg/kg IV/IO over 20 min" },
                 { category: "Airway", question: "Magnesium Sulphate: Eclampsia dose?", answer: "4 g IV over 5-10 min (loading)\nMonitor for loss of reflexes and respiratory depression" },
-                { category: "Airway", question: "Methoxyflurane (Penthrox): Route and dose?", answer: "Inhaled, self-administered via green whistle inhaler\n3 ml per episode, max 6 ml/24 h (adult)\nPediatric: max 3 ml" },
+                { category: "Airway", question: "Methoxyflurane (Penthrox inhaler): Route and dose?", answer: "Inhaled, self-administered via green whistle inhaler\n3 ml per episode, max 6 ml/24 h (adult)\nPediatric: max 3 ml" },
 
                 /* ── NEURO / SEDATION ── */
                 { category: "Neuro", question: "Diazepam: Seizure dose (adult)?", answer: "5 mg IV slow (over 2 min)\nRepeat once if no effect after 5 min" },
@@ -193,7 +193,7 @@ window.CPG_DATA = {
                 { q: "Salbutamol pediatric dose for a 3-year-old?", options: ["1.25 mg nebulized", "2.5 mg nebulized", "5 mg nebulized", "Same as adult"], correct: 1, explanation: "Children under 5 years receive 2.5 mg salbutamol nebulized. Children ≥5 years receive 5 mg (adult dose)." },
                 { q: "Racemic epinephrine is indicated for:", options: ["Anaphylaxis", "Asthma exacerbation", "Croup (stridor)", "Post-intubation hypertension"], correct: 2, explanation: "Racemic epinephrine is nebulized for croup — it reduces upper airway edema and stridor. It is not used for asthma or anaphylaxis in SmartCare." },
                 { q: "Magnesium sulphate adult dose for severe asthma?", options: ["1 g IV over 10 min", "2 g IV over 20 min", "4 g IV over 5 min", "40 mg/kg IV"], correct: 1, explanation: "2 g IV over 20 minutes for adults with severe/life-threatening asthma not responding to bronchodilators." },
-                { q: "Methoxyflurane (Penthrox) maximum adult dose per episode?", options: ["3 ml", "6 ml", "9 ml", "12 ml"], correct: 1, explanation: "Maximum 6 ml per 24 hours in adults (one use of 3 ml + one repeat). Pediatric max is 3 ml total." },
+                { q: "Methoxyflurane (Penthrox inhaler) maximum adult dose per episode?", options: ["3 ml", "6 ml", "9 ml", "12 ml"], correct: 1, explanation: "Maximum 6 ml per 24 hours in adults (one use of 3 ml + one repeat). Pediatric max is 3 ml total." },
 
                 /* NEURO */
                 { q: "Diazepam rectal (PR) dose for a 20 kg child in status epilepticus?", options: ["2 mg", "5 mg", "10 mg", "20 mg"], correct: 2, explanation: "PR dose is 0.5 mg/kg. For a 20 kg child: 0.5 × 20 = 10 mg PR (max 20 mg)." },
@@ -329,63 +329,63 @@ window.CPG_DATA = {
             ]
         },
             {
-                id: "formulary-1",
-                shortTitle: "Drug 1 ActiMaris",
+                id: "formulary-72",
+                shortTitle: "Activated Charcoal",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 1 &middot; Other Medications</div>
-                        <h3 class="rx-name">ActiMaris (Wound Irrigation Solution)</h3>
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Activated Charcoal</h3>
                     </div>
-                    <div class="rx-scope" title="All clinical levels (EMR, EMT, EMT‑A, P, AP, EP) – independent practice.">
-                        <span class="rx-scope-badge">All Levels</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
                     </div>
                 </div>
 
                 <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Topical Antiseptic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">300 mL bottle containing: water, sea salt (1.2%), sodium hypochlorite NaOCl (0.04%) and hypochlorous acid HOCl (0.004%).</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Adsorbent / Antidote</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 g in 250 mL suspension (200 mg/mL).</span></div>
                 </div>
 
-                <p class="rx-moa">Has an eliminating effect on wound pathogens.</p>
+                <p class="rx-moa">Adsorbs many drugs and toxins within the gut lumen, preventing their absorption into the bloodstream.</p>
 
                 <div class="rx-box rx-box-go">
                     <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Irrigation of traumatic and chronic wounds.</p>
+                    <p>Recent (ideally within 1 hour) ingestion of a potentially toxic amount of an adsorbable substance, on Poison Center or medical advice.</p>
                 </div>
 
                 <div class="rx-dose-grid">
                     <div class="rx-dose-card">
                         <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Use ample amount to provide sufficient wound irrigation.</p>
+                        <p>50 g PO.</p>
                     </div>
                     <div class="rx-dose-card">
                         <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Use ample amount to provide sufficient wound irrigation.</p>
+                        <p>1 g/kg PO (max 50 g).</p>
                     </div>
                 </div>
 
                 <div class="rx-box rx-box-stop">
                     <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to ActiMaris ingredients.</p>
+                    <p>Altered level of consciousness or unprotected airway; caustic (acid/alkali) ingestion; hydrocarbons; bowel obstruction or perforation; substances not adsorbed (iron, lithium, alcohols, metals).</p>
                 </div>
                 <div class="rx-box rx-box-caution">
                     <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>None noted.</p>
+                    <p>Vomiting (aspiration risk); seizure‑inducing ingestions.</p>
                 </div>
 
                 <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Slight, temporary burning sensation around wound area.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Safety has not been demonstrated. Sterile water or saline is preferred if available.</p></div>
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Vomiting; constipation; black stools; aspiration pneumonitis.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: not absorbed systemically; administer if clinically indicated.<br>Lactation: compatible.</p></div>
                 </div>
 
                 <div class="rx-box rx-box-info">
                     <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Cross contamination between patients may occur with incorrect handling of ActiMaris bottle.</p>
+                    <p>Shake the container well. Charcoal is tasteless but gritty — offer through a straw in an opaque cup. Do not delay transport to give it.</p>
                 </div>
             </div>
         `,
@@ -395,14 +395,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-2",
-                shortTitle: "Drug 2 Adenosine",
+                shortTitle: "Adenosine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 2 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Adenosine</h3>
                     </div>
                     <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
@@ -460,14 +460,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-3",
-                shortTitle: "Drug 3 Amiodarone",
+                shortTitle: "Amiodarone",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 3 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Amiodarone</h3>
                     </div>
                     <div class="rx-scope" title="EMT (for cardiac arrest) and above; Advanced Paramedic (AP) and above for infusion.">
@@ -525,14 +525,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-4",
-                shortTitle: "Drug 4 Aspirin",
+                shortTitle: "Aspirin",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 4 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Aspirin</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
@@ -590,14 +590,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-5",
-                shortTitle: "Drug 5 Atropine",
+                shortTitle: "Atropine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 5 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Atropine</h3>
                     </div>
                     <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
@@ -654,15 +654,405 @@ window.CPG_DATA = {
                 critical: []
             },
             {
-                id: "formulary-6",
-                shortTitle: "Drug 6 Combivent",
+                id: "formulary-60",
+                shortTitle: "Budesonide (Nebulized)",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 6 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Budesonide (Nebulized)</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Inhaled Corticosteroid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.5 mg/2 mL and 1 mg/2 mL nebules.</span></div>
+                </div>
+
+                <p class="rx-moa">Topical corticosteroid that reduces subglottic and airway mucosal edema and inflammation.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Croup (moderate to severe) when oral or IM steroids cannot be given.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Not routinely indicated.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>2 mg nebulized as a single dose.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Does not replace Racemic Epinephrine for severe croup with stridor at rest. Avoid agitating the child.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Cough; oral irritation; hoarseness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: considered safe.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Allow the child to sit on the caregiver’s lap during nebulization. Oral Dexamethasone remains the first‑line steroid for croup.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-39",
+                shortTitle: "Calcium Chloride",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Calcium Chloride</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g/10 mL (10%) prefilled syringe or ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Increases serum ionized calcium, directly stabilizing the cardiac cell membrane and improving myocardial contractility. Antagonizes the cardiotoxic effects of hyperkalemia and calcium channel blocker overdose at the membrane level.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Hyperkalemia with ECG changes; calcium channel blocker or magnesium overdose; hypocalcemia; adjunct in cardiac arrest with suspected hyperkalemia.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>1 g (10 mL of 10%) IV/IO slow push over 5 minutes. May repeat once for refractory hyperkalemia or CCB overdose.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>20 mg/kg (0.2 mL/kg of 10%) IV/IO slow push over 5 minutes (maximum 1 g).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; digoxin toxicity (may precipitate fatal arrhythmia); concurrent sodium bicarbonate in the same line (precipitates).</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Ensure IV is patent — extravasation causes severe tissue necrosis. Administer slowly through a large vein.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension if given rapidly; local tissue injury on extravasation; metallic taste.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Flush the line with Normal Saline before and after administration. Never administer through the same line as sodium bicarbonate — the two will precipitate and occlude the line.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-69",
+                shortTitle: "Calcium Gluconate",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Calcium Gluconate 10%</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10% solution, 10 mL ampule (1 g = 2.2 mmol calcium).</span></div>
+                </div>
+
+                <p class="rx-moa">Replaces ionized calcium, stabilizing the cardiac cell membrane against hyperkalemia and counteracting calcium channel blocker and magnesium toxicity.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Hyperkalemia with ECG changes or cardiac arrest; calcium channel blocker overdose; magnesium toxicity; hypocalcemia; hydrofluoric acid burns (topical gel).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>30 mL (3 g) IV/IO over 5–10 min; in cardiac arrest give as a push. May repeat.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.5 mL/kg (50 mg/kg) IV/IO over 5–10 min (max 20 mL).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Digoxin toxicity (relative); hypercalcemia.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Do not mix with Sodium Bicarbonate in the same line (precipitates). Less irritant than Calcium Chloride and suitable for peripheral veins.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension; tissue irritation on extravasation.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Calcium Gluconate contains about one‑third of the elemental calcium of the same volume of Calcium Chloride, so three times the volume is needed for an equivalent dose.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-76",
+                shortTitle: "Ceftriaxone",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Ceftriaxone</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antibiotic (Third‑Generation Cephalosporin)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g / 2 g vial (powder for reconstitution).</span></div>
+                </div>
+
+                <p class="rx-moa">Inhibits bacterial cell wall synthesis; broad‑spectrum bactericidal activity including meningococcus.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Suspected meningococcal sepsis (non‑blanching rash with signs of sepsis) or severe sepsis / septic shock with prolonged transport, per local protocol.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>2 g IV/IO over 2–4 min, or 2 g IM (divided between two sites).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>80 mg/kg IV/IO/IM (max 2 g).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known anaphylaxis to cephalosporins or penicillins; neonates &lt;28 days receiving calcium‑containing IV fluids.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Do not mix with or give in the same line as calcium‑containing fluids (Ringers Lactate). History of minor penicillin allergy.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Allergic reaction; injection‑site pain; diarrhea.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: considered safe.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Do not delay transport. Obtain blood cultures only if it does not delay the antibiotic. Notify the receiving hospital and document the time given.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-77",
+                shortTitle: "Chlorphenamine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Chlorphenamine (Chlorpheniramine)</h3>
+                    </div>
+                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT-A+</span>
+                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine (H1 Antagonist)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/mL ampule; 4 mg tablets; 2 mg/5 mL oral solution.</span></div>
+                </div>
+
+                <p class="rx-moa">Competitively blocks H1 histamine receptors, reducing itching, urticaria and angioedema.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Allergic reaction (urticaria, pruritus); adjunct after Epinephrine in anaphylaxis.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>10 mg IM or slow IV over 1 min; 4 mg PO for mild reactions.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>6 months–6 years: 2.5 mg IM/IV; 6–12 years: 5 mg IM/IV; &gt;12 years: 10 mg IM/IV.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; infants &lt;6 months.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Narrow‑angle glaucoma; urinary retention; epilepsy; elderly (sedation, falls).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Drowsiness; dizziness; dry mouth; hypotension with rapid IV injection.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: may cause infant drowsiness; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Antihistamines do not treat airway compromise or shock — never delay Epinephrine in anaphylaxis. Advise the patient not to drive after administration.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-53",
+                shortTitle: "Clopidogrel",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Clopidogrel</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiplatelet (P2Y12 Inhibitor)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">75 mg and 300 mg tablets.</span></div>
+                </div>
+
+                <p class="rx-moa">Irreversibly blocks the platelet P2Y12 ADP receptor, inhibiting platelet activation and aggregation.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>STEMI confirmed on 12‑lead ECG (per local STEMI / PCI pathway and online medical direction) in addition to Aspirin.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>600 mg PO loading dose (300 mg if fibrinolysis is planned; 75 mg if age &gt;75 years with fibrinolysis), per cath lab / medical direction.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not indicated.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Active bleeding; history of intracranial hemorrhage; known allergy; severe hepatic impairment.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Recent surgery or trauma; patient already taking an anticoagulant or another P2Y12 inhibitor (Ticagrelor / Prasugrel); possible need for urgent CABG.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; bruising; GI upset.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; avoid unless clinically essential.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Give only one P2Y12 inhibitor. Confirm with the receiving PCI center before administration and document the time of the loading dose.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-6",
+                shortTitle: "Combivent",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Combivent</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -720,14 +1110,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-7",
-                shortTitle: "Drug 7 D5W",
+                shortTitle: "D5W",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 7 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Dextrose 5% Water (D5W)</h3>
                     </div>
                     <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
@@ -784,15 +1174,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-40",
+                shortTitle: "Dexamethasone",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Dexamethasone</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/mL vial, typically supplied as a 2 mL (8 mg) or 5 mL (20 mg) vial.</span></div>
+                </div>
+
+                <p class="rx-moa">Long-acting glucocorticoid that suppresses inflammatory mediator release and reduces airway edema. Onset is delayed (1–2 hours) relative to hydrocortisone but has a longer duration of action.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Moderate–severe croup; asthma/COPD exacerbation as an adjunct to bronchodilators; anaphylaxis as an adjunct after epinephrine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>10 mg IV/IM/PO single dose.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.6 mg/kg PO/IV/IM (maximum 10 mg) single dose — most commonly used for croup.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Not a substitute for epinephrine in anaphylaxis — give after, not instead of, epinephrine. Use caution in known active infection.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Rare with single prehospital dose; hyperglycemia; mild agitation.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated.<br>Lactation: considered compatible with breastfeeding at standard single doses.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Oral and IV routes are considered equally effective for croup — oral is preferred in a cooperative patient to avoid the distress of an injection.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-8",
-                shortTitle: "Drug 8 Dextrose 10%",
+                shortTitle: "Dextrose 10%",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 8 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Dextrose 10%</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -849,15 +1304,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-68",
+                shortTitle: "Dextrose 50%",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Dextrose 50% (D50)</h3>
+                    </div>
+                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT-A+</span>
+                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Carbohydrate</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 g/50 mL prefilled syringe.</span></div>
+                </div>
+
+                <p class="rx-moa">Hypertonic glucose that rapidly raises blood glucose concentration.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Symptomatic hypoglycemia (BGL &lt;70 mg/dL) in an adult unable to take oral glucose, when Dextrose 10% is not available.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>12.5–25 g (25–50 mL) slow IV push via a large, patent vein; recheck BGL after 10 min.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended — use Dextrose 10% (5 mL/kg).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known hyperglycemia; no secure IV access.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Highly irritant — extravasation causes tissue necrosis. Suspected stroke without confirmed hypoglycemia; possible alcohol‑dependent patient (give Thiamine).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Phlebitis; tissue necrosis on extravasation; hyperglycemia.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Dextrose 10% is preferred where available — equally effective with less risk of rebound hyperglycemia and tissue injury.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-9",
-                shortTitle: "Drug 9 Diazepam",
+                shortTitle: "Diazepam",
                 summary: `
             <div class="rx-card" style="--rx-cat:#8b5cf6;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 9 &middot; Neuro / Sedation</div>
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
                         <h3 class="rx-name">Diazepam</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -915,14 +1435,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-10",
-                shortTitle: "Drug 10 Diclofenac",
+                shortTitle: "Diclofenac",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 10 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Diclofenac (Voltaren)</h3>
                     </div>
                     <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
@@ -979,15 +1499,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-50",
+                shortTitle: "Diltiazem",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Diltiazem</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Calcium Channel Blocker (Non‑Dihydropyridine) / Class IV Antiarrhythmic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 mg/5 mL vial (5 mg/mL).</span></div>
+                </div>
+
+                <p class="rx-moa">Blocks L‑type calcium channels in the SA/AV nodes and vascular smooth muscle, slowing AV nodal conduction and reducing ventricular rate.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Rate control of atrial fibrillation / atrial flutter with rapid ventricular response in a hemodynamically stable patient; narrow‑complex SVT refractory to vagal maneuvers and Adenosine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>0.25 mg/kg (typically 15–20 mg) IV over 2 min. If inadequate response after 15 min, 0.35 mg/kg (typically 20–25 mg) IV over 2 min.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended in the prehospital setting.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Hypotension (SBP &lt;90 mmHg); cardiogenic shock; decompensated heart failure; wide‑complex tachycardia of uncertain origin; WPW / pre‑excited AF; sick sinus syndrome or 2nd/3rd degree AV block without a pacemaker.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Concurrent IV Beta blockers (risk of profound bradycardia / heart block); reduced LV function; elderly.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; bradycardia; AV block; flushing; dizziness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if benefit outweighs risk.<br>Lactation: excreted in breast milk; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Have Calcium Chloride available to treat calcium channel blocker–induced hypotension. Obtain and document a 12‑lead ECG before and after administration.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-11",
-                shortTitle: "Drug 11 Diphenhydramine",
+                shortTitle: "Diphenhydramine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 11 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Diphenhydramine</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -1045,14 +1630,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-12",
-                shortTitle: "Drug 12 Dopamine",
+                shortTitle: "Dopamine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 12 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Dopamine</h3>
                     </div>
                     <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
@@ -1112,15 +1697,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-62",
+                shortTitle: "Droperidol",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Droperidol</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antipsychotic (Butyrophenone) / Antiemetic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2.5 mg/mL, 2 mL vial.</span></div>
+                </div>
+
+                <p class="rx-moa">Dopamine D2 receptor antagonist producing rapid sedation and antiemetic effect.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Severe acute behavioral disturbance / agitation; refractory nausea and vomiting.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Agitation: 5–10 mg IM or 2.5–5 mg IV; may repeat once after 15 min. Nausea: 0.625–1.25 mg IV.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended in the prehospital setting.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known prolonged QT interval; Parkinson’s disease; known allergy; coma.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Elderly; concurrent QT‑prolonging drugs; electrolyte abnormality; alcohol or sedative intoxication.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Sedation; hypotension; extrapyramidal reactions (dystonia, akathisia); QT prolongation.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; use only if clinically essential.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Obtain a 12‑lead ECG and continuous cardiac monitoring once the patient is safe to approach. Treat dystonic reactions with Diphenhydramine.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-13",
-                shortTitle: "Drug 13 Epinephrine",
+                shortTitle: "Epinephrine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 13 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Epinephrine (Adrenaline)</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above for IM/IV/IO (as per specific indication). Advanced Paramedic (AP) for infusions.">
@@ -1186,14 +1836,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-14",
-                shortTitle: "Drug 14 Ethyl Chloride",
+                shortTitle: "Ethyl Chloride",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 14 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Ethyl Chloride (Chloroethane)</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
@@ -1250,15 +1900,145 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-41",
+                shortTitle: "Etomidate",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Etomidate</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
+                        <span class="rx-scope-badge">EP / AP · RSI</span>
+                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Sedative-Hypnotic (Induction Agent)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2 mg/mL, 10 mL vial (20 mg/10 mL).</span></div>
+                </div>
+
+                <p class="rx-moa">Enhances GABA-mediated inhibition in the CNS, producing rapid sedation and unconsciousness with relative hemodynamic stability compared to other induction agents.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Induction agent for Rapid Sequence Intubation (RSI); procedural sedation for cardioversion or reduction where hemodynamic stability is a priority.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>0.3 mg/kg IV push over 30–60 seconds for RSI induction.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.2–0.3 mg/kg IV push. Use with caution — limited pediatric prehospital evidence; local RSI protocol and physician order required.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Adrenal suppression with repeated or prolonged dosing — use single-dose only in the prehospital setting. Does not provide analgesia — pair with an opioid for painful procedures.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Myoclonus (transient involuntary muscle movement); injection site pain; nausea/vomiting on emergence; adrenal suppression.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: safety not established; use only if clinically indicated (e.g., maternal RSI).<br>Lactation: safety not established.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Etomidate has minimal effect on blood pressure and heart rate, making it a preferred induction agent in hemodynamically unstable patients. Always have a paralytic and airway equipment ready before administration.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-42",
+                shortTitle: "Fentanyl",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#f97316;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Pain</div>
+                        <h3 class="rx-name">Fentanyl</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opioid Analgesic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mcg/2 mL ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Synthetic opioid agonist that binds mu-opioid receptors in the CNS, producing potent analgesia with rapid onset (1–2 minutes IV) and short duration (30–60 minutes).</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Moderate–severe pain, including traumatic and cardiac chest pain; analgesia prior to painful procedures (e.g., fracture reduction, cardioversion).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>25–50 mcg IV slow push every 5 minutes, titrated to pain (maximum 200 mcg); 1–2 mcg/kg IN/IM if no IV access.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>1 mcg/kg IV slow push every 5 minutes (maximum single dose 50 mcg); 1.5 mcg/kg IN if no IV access.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; respiratory depression without ventilatory support available.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Hypotension; head injury with altered mental status (may confound neurological exam); renal/hepatic impairment.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; nausea/vomiting; sedation; chest wall rigidity with rapid high-dose administration.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated for maternal pain control.<br>Lactation: infant sedation possible; monitor if breastfeeding shortly after administration.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Faster onset and shorter duration than Morphine, making it preferred for procedural analgesia. Have Naloxone and airway equipment immediately available.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-15",
-                shortTitle: "Drug 15 Furosemide",
+                shortTitle: "Furosemide",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 15 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Furosemide</h3>
                     </div>
                     <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
@@ -1316,14 +2096,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-16",
-                shortTitle: "Drug 16 Glucagon",
+                shortTitle: "Glucagon",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 16 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Glucagon</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -1383,14 +2163,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-17",
-                shortTitle: "Drug 17 Glucose Paste",
+                shortTitle: "Glucose Paste",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 17 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Glucose 40% Oral Paste</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
@@ -1448,14 +2228,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-18",
-                shortTitle: "Drug 18 GTN",
+                shortTitle: "GTN",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 18 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Glyceryl Trinitrate (GTN)</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -1513,14 +2293,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-19",
-                shortTitle: "Drug 19 Haloperidol",
+                shortTitle: "Haloperidol",
                 summary: `
             <div class="rx-card" style="--rx-cat:#8b5cf6;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 19 &middot; Neuro / Sedation</div>
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
                         <h3 class="rx-name">Haloperidol</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -1577,15 +2357,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-55",
+                shortTitle: "Heparin",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Heparin (Unfractionated)</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticoagulant</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5,000 units/mL vial.</span></div>
+                </div>
+
+                <p class="rx-moa">Potentiates antithrombin III, inactivating thrombin and factor Xa and preventing clot propagation.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>STEMI as an adjunct to primary PCI or fibrinolysis, per local STEMI pathway and online medical direction.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>70–100 units/kg IV bolus (typically 5,000 units) for primary PCI; 60 units/kg IV bolus (max 4,000 units) with fibrinolysis.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not indicated in the prehospital setting.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Active bleeding; history of hemorrhagic stroke; recent major trauma or surgery; severe thrombocytopenia; known heparin‑induced thrombocytopenia (HIT); known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Patient on oral anticoagulants; uncontrolled hypertension; recent GI bleed; elderly.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; thrombocytopenia; injection‑site hematoma.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: does not cross the placenta; considered safe.<br>Lactation: not excreted in breast milk; compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Protamine sulfate is the reversal agent (hospital). Confirm units carefully — dosing errors are a common cause of serious harm.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-20",
-                shortTitle: "Drug 20 Hydrocortisone",
+                shortTitle: "Hydrocortisone",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 20 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Hydrocortisone</h3>
                     </div>
                     <div class="rx-scope" title="EMT‑Advanced (EMT‑A) for IM; Emergency Medical Technician (EMT) for IV – independent practice.">
@@ -1645,15 +2490,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
-                id: "formulary-21",
-                shortTitle: "Drug 21 Hyoscine",
+                id: "formulary-73",
+                shortTitle: "Hydroxocobalamin",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 21 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Hydroxocobalamin (Cyanokit)</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antidote (Cyanide)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 g vial (powder) for reconstitution with 200 mL NS.</span></div>
+                </div>
+
+                <p class="rx-moa">Binds cyanide to form cyanocobalamin (Vitamin B12), which is excreted in the urine.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Known or suspected cyanide poisoning — e.g. smoke inhalation from an enclosed‑space fire with altered consciousness, seizures, hypotension, cardiac arrest or high lactate.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>5 g IV/IO over 15 min; a second 5 g dose may be given based on severity (max 10 g).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>70 mg/kg IV/IO over 15 min (max 5 g).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy (relative — benefit outweighs risk in life‑threatening poisoning).</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Administer through a dedicated line — incompatible with many drugs. Interferes with colorimetric lab tests and pulse oximetry.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Red discoloration of skin, mucous membranes and urine; transient hypertension; rash.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer in life‑threatening poisoning.<br>Lactation: no data; treatment takes priority.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Give high‑flow Oxygen and consider concurrent carbon monoxide poisoning. Take a blood sample before administration if possible.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-21",
+                shortTitle: "Hyoscine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Hyoscine Butyl bromide</h3>
                     </div>
                     <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
@@ -1710,15 +2620,210 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-71",
+                shortTitle: "Hypertonic Saline 3%",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Hypertonic Saline 3%</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Hyperosmolar Crystalloid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">3% sodium chloride, 250 mL / 500 mL bag.</span></div>
+                </div>
+
+                <p class="rx-moa">Creates an osmotic gradient drawing water from brain tissue into the vascular space, lowering intracranial pressure and expanding plasma volume.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Severe traumatic brain injury with signs of herniation (unequal / dilated pupils, extensor posturing, Cushing’s response); symptomatic severe hyponatremia (seizures).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>250 mL IV/IO over 10–20 min (TBI with herniation signs).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>3–5 mL/kg IV/IO over 10–20 min (max 250 mL).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known hypernatremia; no signs of raised ICP.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Use a large vein or IO; heart failure and fluid overload; repeated doses need sodium monitoring.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypernatremia; fluid overload; phlebitis.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Hypertonic saline is a bridge to definitive neurosurgical care. Maintain SpO2 ≥94%, normocapnia (EtCO2 35–40 mmHg) and SBP ≥110 mmHg in TBI.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-66",
+                shortTitle: "Ibuprofen",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#f97316;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Pain</div>
+                        <h3 class="rx-name">Ibuprofen</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
+                        <span class="rx-scope-badge">EMR+</span>
+                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑Steroidal Anti‑inflammatory (NSAID)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">200 mg / 400 mg tablets; 100 mg/5 mL oral suspension.</span></div>
+                </div>
+
+                <p class="rx-moa">Reversibly inhibits COX‑1 and COX‑2, reducing prostaglandin synthesis to provide analgesic, anti‑inflammatory and antipyretic effects.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Mild to moderate pain (musculoskeletal, minor trauma); fever.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>400 mg PO single dose.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>10 mg/kg PO (max 400 mg). Age &gt;3 months and weight &gt;5 kg.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy to NSAIDs or Aspirin‑sensitive asthma; active GI bleeding / peptic ulcer; renal impairment; pregnancy (third trimester); dehydration / hypovolemia; anticoagulant use; suspected major hemorrhage.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Asthma; elderly; heart failure; hypertension; recent NSAID use.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Dyspepsia; nausea; GI bleeding; bronchospasm in sensitive patients.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: avoid, contraindicated after 20 weeks.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Can be combined with Paracetamol for additive analgesia. Ask about any NSAID taken in the last 6 hours before administration.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-56",
+                shortTitle: "Ipratropium Bromide",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Ipratropium Bromide (Atrovent)</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticholinergic Bronchodilator</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mcg/2 mL nebule; 250 mcg/2 mL nebule.</span></div>
+                </div>
+
+                <p class="rx-moa">Blocks muscarinic receptors in bronchial smooth muscle, reducing vagally mediated bronchoconstriction and mucus secretion.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Moderate to severe bronchospasm in asthma or COPD exacerbation, in combination with Salbutamol.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>500 mcg nebulized; may repeat every 20 min to a total of 3 doses.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>&lt;12 years: 250 mcg nebulized; ≥12 years: 500 mcg nebulized; may repeat every 20 min to a total of 3 doses.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy to Ipratropium, Atropine or soy / peanut products.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Narrow‑angle glaucoma (avoid contact with eyes — use a mouthpiece where possible); prostatic hypertrophy / urinary retention.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Dry mouth; headache; blurred vision; tachycardia.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Ipratropium is not a rescue drug on its own — always give with a beta‑2 agonist. Combivent already contains Ipratropium; do not double dose.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-22",
-                shortTitle: "Drug 22 Ketamine",
+                shortTitle: "Ketamine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#8b5cf6;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 22 &middot; Neuro / Sedation</div>
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
                         <h3 class="rx-name">Ketamine</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -1777,15 +2882,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-43",
+                shortTitle: "Ketorolac",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#f97316;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Pain</div>
+                        <h3 class="rx-name">Ketorolac</h3>
+                    </div>
+                    <div class="rx-scope" title="EMT-Advanced (EMT-A) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT-A+</span>
+                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non-Steroidal Anti-inflammatory (NSAID)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">30 mg/1 mL vial.</span></div>
+                </div>
+
+                <p class="rx-moa">Inhibits cyclooxygenase (COX-1 and COX-2), reducing prostaglandin synthesis and producing analgesic and anti-inflammatory effects without respiratory depression or sedation.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Moderate pain, particularly musculoskeletal, renal colic, and migraine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>15–30 mg IV over 15 seconds or 30–60 mg IM. Single prehospital dose.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended for pediatric prehospital use.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; previous reaction to NSAIDs; active GI bleeding or peptic ulcer disease; renal insufficiency; pregnancy (third trimester); age under 17.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Asthma/COPD with history of NSAID-induced bronchospasm; concurrent anticoagulant use; dehydration.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>GI upset; injection site discomfort; increased bleeding risk.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: contraindicated, particularly in the third trimester (risk of premature ductus arteriosus closure).<br>Lactation: generally considered compatible in short courses; consult local guidance.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Does not cause sedation or respiratory depression, making it a useful non-opioid option, but onset is slower (30–60 min for full effect) than opioids.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-23",
-                shortTitle: "Drug 23 Labetalol",
+                shortTitle: "Labetalol",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 23 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Labetalol</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -1843,15 +3013,145 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-44",
+                shortTitle: "Lidocaine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Lidocaine</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiarrhythmic / Local Anesthetic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/5 mL (2%) prefilled syringe.</span></div>
+                </div>
+
+                <p class="rx-moa">Class Ib antiarrhythmic that blocks fast sodium channels, decreasing automaticity and suppressing ventricular ectopy. As a local anesthetic, it blocks sodium channels in peripheral nerve fibers.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Alternative antiarrhythmic for refractory VF/pulseless VT when Amiodarone is unavailable or contraindicated; local anesthesia prior to IO insertion in a conscious patient.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Cardiac Arrest: 1–1.5 mg/kg IV/IO push, may repeat 0.5–0.75 mg/kg once (maximum total 3 mg/kg). IO local anesthesia: 20–40 mg (1–2 mL of 2%) slow push into the IO space prior to infusion in a conscious patient.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Cardiac Arrest: 1 mg/kg IV/IO push. IO local anesthesia: 0.5 mg/kg (maximum 20 mg) slow push into the IO space.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy to amide local anesthetics; second- or third-degree heart block without a pacemaker; Wolff-Parkinson-White syndrome.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Reduce dose in hepatic impairment and heart failure — reduced clearance increases toxicity risk. Avoid in wide-complex tachycardia of unclear origin without expert guidance.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>CNS toxicity at high doses (tinnitus, perioral numbness, seizures); bradycardia; hypotension.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Lidocaine is a second-line alternative to Amiodarone for refractory VF/VT in current resuscitation guidelines — do not administer both agents in the same arrest without medical direction.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-61",
+                shortTitle: "Lorazepam",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Lorazepam</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Benzodiazepine</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2 mg/mL or 4 mg/mL vial (refrigerated).</span></div>
+                </div>
+
+                <p class="rx-moa">Enhances GABA‑A receptor activity, increasing inhibitory neurotransmission to terminate seizures and produce sedation and anxiolysis.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Status epilepticus / active seizure; severe agitation; stimulant toxicity.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Seizure: 4 mg IV/IO slow over 2 min; may repeat once after 5–10 min.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Seizure: 0.1 mg/kg IV/IO (max 4 mg); may repeat once after 5–10 min.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Respiratory depression; known allergy to benzodiazepines; acute narrow‑angle glaucoma.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Elderly; concurrent opioids or alcohol (additive respiratory depression); hypotension; myasthenia gravis.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; sedation; paradoxical agitation.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: treat status epilepticus — benefit outweighs risk.<br>Lactation: excreted in breast milk; monitor infant for sedation.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Have airway equipment and BVM ready. Midazolam IM/IN is preferred when IV access is not available.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-24",
-                shortTitle: "Drug 24 Magnesium Sulphate",
+                shortTitle: "Magnesium Sulphate",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 24 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Magnesium Sulphate</h3>
                     </div>
                     <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
@@ -1912,15 +3212,15 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-25",
-                shortTitle: "Drug 25 Penthrox",
+                shortTitle: "Methoxyflurane (Penthrox inhaler)",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 25 &middot; Airway / Respiratory</div>
-                        <h3 class="rx-name">Methoxyflurane (Penthrox)</h3>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Methoxyflurane (Penthrox inhaler)</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
                         <span class="rx-scope-badge">EMT+</span>
@@ -1976,15 +3276,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-58",
+                shortTitle: "Methylprednisolone",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Methylprednisolone (Solu‑Medrol)</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">40 mg, 125 mg vial (powder for reconstitution).</span></div>
+                </div>
+
+                <p class="rx-moa">Potent glucocorticoid that suppresses inflammatory and immune responses, reducing airway edema and late‑phase allergic reactions.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Severe asthma / COPD exacerbation; anaphylaxis (adjunct after Epinephrine); severe allergic reaction.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>125 mg IV/IM over at least 1 min.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>2 mg/kg IV/IM (max 125 mg).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; systemic fungal infection.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Diabetes; active infection; GI bleeding history; rapid IV push of large doses can cause arrhythmia — give slowly.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia; hypertension; agitation; fluid retention.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: benefit outweighs risk in severe asthma or anaphylaxis; administer if clinically indicated.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Use only one systemic corticosteroid (Hydrocortisone, Dexamethasone or Methylprednisolone). Never delay Epinephrine in anaphylaxis to give a steroid.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-26",
-                shortTitle: "Drug 26 Metoclopramide",
+                shortTitle: "Metoclopramide",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 26 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Metoclopramide</h3>
                     </div>
                     <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
@@ -2041,15 +3406,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-51",
+                shortTitle: "Metoprolol",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Metoprolol</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Beta Blocker (Cardioselective Beta‑1 Antagonist)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg/5 mL ampule (1 mg/mL).</span></div>
+                </div>
+
+                <p class="rx-moa">Selectively blocks beta‑1 receptors, decreasing heart rate, contractility and AV nodal conduction, reducing myocardial oxygen demand.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Rate control of atrial fibrillation / flutter with rapid ventricular response in a hemodynamically stable patient; narrow‑complex SVT refractory to Adenosine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>2.5–5 mg IV slow over 2 min; may repeat every 5 min to a maximum of 15 mg.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended in the prehospital setting.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Hypotension (SBP &lt;100 mmHg); bradycardia (HR &lt;60); 2nd/3rd degree AV block; acute decompensated heart failure; cardiogenic shock; acute bronchospasm / severe asthma; cocaine or stimulant toxicity.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>COPD; diabetes (masks hypoglycemia signs); recent IV calcium channel blocker; WPW.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension; heart block; bronchospasm; fatigue; dizziness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may cause fetal bradycardia and growth restriction; use only if clearly needed.<br>Lactation: compatible; monitor infant.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Glucagon is the antidote for beta blocker toxicity. Continuous cardiac monitoring and repeated blood pressure measurements are required between doses.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-27",
-                shortTitle: "Drug 27 Midazolam",
+                shortTitle: "Midazolam",
                 summary: `
             <div class="rx-card" style="--rx-cat:#8b5cf6;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 27 &middot; Neuro / Sedation</div>
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
                         <h3 class="rx-name">Midazolam</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -2109,15 +3539,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-78",
+                shortTitle: "Misoprostol",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Misoprostol</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Uterotonic (Prostaglandin E1 Analog)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">200 mcg tablets.</span></div>
+                </div>
+
+                <p class="rx-moa">Prostaglandin analog that stimulates uterine contraction; heat‑stable and does not need IV access.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Postpartum hemorrhage when Oxytocin is unavailable or ineffective.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>800 mcg sublingual (4 × 200 mcg tablets) once.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not applicable.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Undelivered fetus (including possible twin); known allergy to prostaglandins.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Asthma (rare bronchospasm); cardiovascular disease.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Shivering; fever; nausea; diarrhea.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: indicated only after delivery of the baby.<br>Lactation: small amounts excreted; short‑term use compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Shivering and fever are common and transient after a dose. Continue fundal massage and give Tranexamic Acid per PPH protocol.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-28",
-                shortTitle: "Drug 28 Morphine",
+                shortTitle: "Morphine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 28 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Morphine</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -2176,14 +3671,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-29",
-                shortTitle: "Drug 29 Naloxone",
+                shortTitle: "Naloxone",
                 summary: `
             <div class="rx-card" style="--rx-cat:#94a3b8;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 29 &middot; Other Medications</div>
+                        <div class="rx-eyebrow">Other Medications</div>
                         <h3 class="rx-name">Naloxone</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -2241,14 +3736,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-30",
-                shortTitle: "Drug 30 Nefopam",
+                shortTitle: "Nefopam",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 30 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Nefopam</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -2305,15 +3800,275 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-67",
+                shortTitle: "Nitrous Oxide (Entonox)",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#f97316;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Pain</div>
+                        <h3 class="rx-name">Nitrous Oxide 50% / Oxygen 50% (Entonox)</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Inhaled Analgesic Gas</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">Cylinder of premixed 50% nitrous oxide and 50% oxygen with demand valve.</span></div>
+                </div>
+
+                <p class="rx-moa">Inhaled NMDA receptor antagonist with central analgesic and mild anxiolytic effect; rapid onset (2–3 min) and offset.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Moderate to severe pain (trauma, burns, labor, procedural pain such as splinting).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Self‑administered via demand valve and mouthpiece / mask until pain is controlled.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Self‑administered for children able to follow instructions (generally ≥5 years).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Altered level of consciousness or unable to self‑administer; pneumothorax; decompression illness / recent diving; bowel obstruction; middle‑ear or sinus disease; head injury with reduced GCS; first 16 weeks of pregnancy (relative).</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Cylinder must be inverted several times before use if stored below 10 °C (gas separation). Ensure the vehicle is ventilated.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Light‑headedness; nausea; euphoria; drowsiness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: widely used in labor; avoid in early pregnancy unless clinically essential.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>The patient must hold the mouthpiece themselves — this self‑limits the dose. Analgesia wears off within minutes once inhalation stops.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-49",
+                shortTitle: "Norepinephrine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Norepinephrine (Noradrenaline)</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Vasopressor (Alpha‑1 &gt; Beta‑1 Adrenergic Agonist)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/4 mL ampule (1 mg/mL) for dilution; commonly 4 mg in 250 mL D5W or NS (16 mcg/mL).</span></div>
+                </div>
+
+                <p class="rx-moa">Potent alpha‑1 agonist causing peripheral vasoconstriction with modest beta‑1 inotropic effect, raising systemic vascular resistance and mean arterial pressure.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Hypotension / shock that persists after adequate fluid resuscitation (septic, cardiogenic, neurogenic); post‑ROSC hypotension.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>0.05–0.5 mcg/kg/min IV/IO infusion (or 2–20 mcg/min), titrated to MAP ≥65 mmHg. Infusion pump only.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.05–0.5 mcg/kg/min IV/IO infusion, titrated to age‑appropriate blood pressure and perfusion.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Uncorrected hypovolemia (as sole therapy); known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Correct hypovolemia first. Use a large, secure vein or IO — extravasation causes tissue necrosis. Avoid in mesenteric or peripheral vascular thrombosis. Hypertension and reflex bradycardia with high doses.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypertension; arrhythmias; headache; peripheral and mesenteric ischemia; tissue necrosis on extravasation.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may reduce uterine blood flow; use when maternal benefit outweighs risk.<br>Lactation: no significant data; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Never give as an undiluted bolus. Clearly label the infusion and double‑check concentration and pump rate before starting.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-37",
+                shortTitle: "Normal Saline",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Sodium Chloride 0.9% (Normal Saline)</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Isotonic Crystalloid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">250 mL bottle or bag; 100 mL bottle</span></div>
+                </div>
+
+                <p class="rx-moa">Replaces intravascular volume to maintain organ perfusion.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Maintenance of end organ perfusion as per appropriate CPG; Hyperglycemia; Flushing of IV/IO lines; Medication dilution.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>As per appropriate CPG.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>As per appropriate CPG.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy to normal saline preparation; Pulmonary edema / Fluid overload.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Cardiovascular disease; Heart Failure; Renal Failure.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Fluid overload.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safe to use in pregnancy.<br>Lactation: Safe to use in lactation.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Nil.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-45",
+                shortTitle: "Ondansetron",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Ondansetron</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiemetic (5-HT3 Receptor Antagonist)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/2 mL vial or 4 mg orally disintegrating tablet (ODT).</span></div>
+                </div>
+
+                <p class="rx-moa">Selectively blocks serotonin (5-HT3) receptors in the chemoreceptor trigger zone and vagal afferents in the gut, reducing nausea and vomiting.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Nausea and vomiting of any prehospital etiology.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>4 mg IV slow push over 2–5 minutes or 4 mg ODT sublingual. May repeat once (maximum 8 mg total).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.1 mg/kg IV (maximum 4 mg) or ODT: 8–15 kg 2 mg, 15–30 kg 4 mg, >30 kg 4–8 mg.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; congenital long QT syndrome.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>QT prolongation — use caution with other QT-prolonging drugs or known electrolyte abnormalities (hypokalemia, hypomagnesemia).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Headache; constipation; transient QT prolongation; dizziness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: conflicting data on minor fetal risk with first-trimester use; administer if clinically indicated for severe nausea/vomiting.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>The ODT formulation is useful when IV access is not available or not clinically necessary. Does not cause sedation, unlike Metoclopramide.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-31",
-                shortTitle: "Drug 31 Oxygen",
+                shortTitle: "Oxygen",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 31 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Oxygen</h3>
                     </div>
                     <div class="rx-scope" title="All clinical levels – independent practice.">
@@ -2370,15 +4125,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-75",
+                shortTitle: "Oxytocin",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Oxytocin</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Uterotonic Hormone</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 units/mL ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Stimulates uterine smooth muscle contraction, compressing uterine blood vessels and reducing postpartum bleeding.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Postpartum hemorrhage; prophylaxis after delivery of the baby once a second fetus is excluded.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>10 units IM; or 10–40 units in 1,000 mL NS IV infusion titrated to uterine tone and bleeding.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not applicable.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Undelivered fetus (including possible twin); known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Rapid IV bolus causes hypotension and tachycardia — avoid. Pre‑eclampsia; cardiovascular disease.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Nausea; vomiting; hypotension; tachycardia; uterine cramping.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: indicated only after delivery of the baby.<br>Lactation: compatible (promotes milk let‑down).</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Combine with fundal massage, bladder emptying and Tranexamic Acid for PPH. Always palpate the abdomen to exclude a second fetus before administration.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-32",
-                shortTitle: "Drug 32 Paracetamol",
+                shortTitle: "Paracetamol",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 32 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Paracetamol (Acetaminophen)</h3>
                     </div>
                     <div class="rx-scope" title="EMR for PO; EMT for IV/PR – independent practice.">
@@ -2436,14 +4256,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-33",
-                shortTitle: "Drug 33 Pethidine",
+                shortTitle: "Pethidine",
                 summary: `
             <div class="rx-card" style="--rx-cat:#f97316;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 33 &middot; Pain</div>
+                        <div class="rx-eyebrow">Pain</div>
                         <h3 class="rx-name">Pethidine</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
@@ -2501,15 +4321,340 @@ window.CPG_DATA = {
                 critical: []
             },
             {
-                id: "formulary-34",
-                shortTitle: "Drug 34 Racemic Epinephrine",
+                id: "formulary-74",
+                shortTitle: "Pralidoxime",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Pralidoxime (2‑PAM)</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antidote (Cholinesterase Reactivator)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g vial; 600 mg auto‑injector (DuoDote / Mark I kit with Atropine).</span></div>
+                </div>
+
+                <p class="rx-moa">Reactivates acetylcholinesterase inhibited by organophosphates before the enzyme–toxin bond ‘ages’, reversing nicotinic effects (muscle weakness, fasciculations).</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Organophosphate insecticide or nerve agent poisoning with moderate to severe symptoms, given with Atropine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>30 mg/kg (1–2 g) IV over 15–30 min, or 600 mg IM auto‑injector (up to 3 for severe symptoms).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>25–50 mg/kg IV over 15–30 min (max 2 g), or IM per auto‑injector weight guidance.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy (relative in life‑threatening poisoning).</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Rapid IV administration causes laryngospasm, muscle rigidity and tachycardia. Renal impairment. Not effective for carbamate poisoning alone.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Blurred vision; dizziness; hypertension; tachycardia; muscle weakness.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: treatment of poisoning takes priority.<br>Lactation: no data; treatment takes priority.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Atropine treats the muscarinic ‘wet’ signs and is titrated to dry secretions; Pralidoxime treats muscle weakness. Decontaminate and protect crew with PPE first.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-57",
+                shortTitle: "Prednisolone",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 34 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Prednisolone</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
+                        <span class="rx-scope-badge">EMT+</span>
+                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg tablets; 5 mg/5 mL or 15 mg/5 mL oral solution.</span></div>
+                </div>
+
+                <p class="rx-moa">Reduces airway inflammation and edema by suppressing inflammatory mediators; onset of effect within 4–6 hours.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Acute asthma exacerbation; croup; COPD exacerbation (oral route, patient able to swallow).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>40–50 mg PO single dose.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>1–2 mg/kg PO (max 40 mg) for asthma; 1 mg/kg PO for croup.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; unable to swallow or protect the airway.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Diabetes (hyperglycemia); active systemic infection; recent live vaccine in children.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia; nausea; mood changes (short course usually well tolerated).</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: benefit of treating asthma outweighs risk; administer if clinically indicated.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Corticosteroids do not give immediate relief — continue bronchodilators. Dexamethasone is an acceptable alternative for croup.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-52",
+                shortTitle: "Procainamide",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Procainamide</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Class IA Antiarrhythmic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g/10 mL vial (100 mg/mL) for dilution.</span></div>
+                </div>
+
+                <p class="rx-moa">Blocks fast sodium channels, slowing conduction and prolonging the effective refractory period in atrial and ventricular tissue.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Stable wide‑complex (monomorphic) tachycardia; atrial fibrillation with pre‑excitation (WPW).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>20–50 mg/min IV infusion until arrhythmia suppressed, hypotension develops, QRS widens by &gt;50%, or maximum 17 mg/kg is given. Maintenance 1–4 mg/min.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>15 mg/kg IV/IO over 30–60 min (physician consultation required).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Prolonged QT / torsades de pointes; 2nd/3rd degree AV block without pacemaker; systemic lupus erythematosus; myasthenia gravis; known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Avoid combining with Amiodarone or other QT‑prolonging drugs. Reduce dose in renal impairment and heart failure.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; QRS / QT prolongation; torsades de pointes; nausea.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if benefit outweighs risk.<br>Lactation: excreted in breast milk; administer if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Monitor QRS width and blood pressure continuously. Stop the infusion if hypotension develops or QRS widens by more than 50% from baseline.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-46",
+                shortTitle: "Promethazine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Promethazine</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine / Antiemetic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 mg/mL, 1 mL ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Blocks H1 histamine receptors and has central antidopaminergic and anticholinergic activity, producing antiemetic and sedative effects.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Nausea and vomiting refractory to other antiemetics; allergic reaction as an adjunct to Diphenhydramine.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>12.5–25 mg IM (preferred) or slow IV push diluted, deep into a large muscle or well-running large-bore IV.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not recommended under 2 years. Age 2 and above: 0.25–0.5 mg/kg IM (maximum 25 mg) — use with caution and only per local protocol.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; age under 2 years (risk of fatal respiratory depression); severe CNS depression.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Significant sedation — use caution in patients requiring ongoing neurological assessment. Severe tissue injury with IV extravasation or intra-arterial injection — IM route preferred prehospital.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Sedation; hypotension; extrapyramidal symptoms; respiratory depression in young children.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: has been used for hyperemesis; administer if clinically indicated.<br>Lactation: may cause infant sedation; use lowest effective dose.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>IM administration is strongly preferred over IV in the prehospital setting due to the risk of severe tissue necrosis with extravasation or inadvertent intra-arterial injection.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-65",
+                shortTitle: "Propofol",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Propofol</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
+                        <span class="rx-scope-badge">EP</span>
+                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Sedative‑Hypnotic (General Anesthetic)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/mL emulsion, 20 mL ampule / 50 mL vial.</span></div>
+                </div>
+
+                <p class="rx-moa">Potentiates GABA‑A receptor activity producing rapid sedation and loss of consciousness; very short duration of action.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Post‑intubation sedation during critical care transport; induction for RSI (hemodynamically stable patients only).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>Induction: 1–2 mg/kg IV. Sedation: 5–50 mcg/kg/min IV infusion (0.3–3 mg/kg/h), titrated to effect.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Induction: 1–2.5 mg/kg IV. Sedation infusion per physician direction.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Hypotension / shock; known allergy to propofol, egg or soy products.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Causes dose‑dependent hypotension and apnea — reduce dose in elderly and hypovolemic patients. Strict aseptic technique (lipid emulsion supports bacterial growth).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; apnea; bradycardia; pain on injection.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: crosses the placenta; use only if benefit outweighs risk.<br>Lactation: small amounts excreted; compatible after recovery.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>No analgesic effect — combine with an opioid (e.g. Fentanyl) for post‑intubation care. Discard open ampules after 6 hours.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-34",
+                shortTitle: "Racemic Epinephrine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Racemic Epinephrine (Adrenaline)</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -2567,14 +4712,14 @@ window.CPG_DATA = {
             },
             {
                 id: "formulary-35",
-                shortTitle: "Drug 35 Ringers Lactate",
+                shortTitle: "Ringers Lactate",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 35 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Ringers Lactate</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -2631,15 +4776,80 @@ window.CPG_DATA = {
                 critical: []
             },
             {
+                id: "formulary-63",
+                shortTitle: "Rocuronium",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Rocuronium</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
+                        <span class="rx-scope-badge">EP / AP · RSI</span>
+                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑Depolarizing Neuromuscular Blocker (Paralytic)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 mg/5 mL vial (10 mg/mL) — refrigerated.</span></div>
+                </div>
+
+                <p class="rx-moa">Competitively blocks acetylcholine at nicotinic receptors of the neuromuscular junction, producing flaccid paralysis within 45–60 seconds at RSI doses.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Rapid sequence intubation (RSI) after induction; maintenance of paralysis in an intubated patient.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>RSI: 1–1.2 mg/kg IV/IO (ideal body weight). Maintenance: 0.1–0.2 mg/kg IV as required.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>RSI: 1–1.2 mg/kg IV/IO.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Inability to manage the airway (no rescue airway plan); known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Duration 30–60 min — patient cannot breathe spontaneously if intubation fails. Must always be preceded by an induction agent and followed by ongoing sedation and analgesia.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Prolonged paralysis; tachycardia; anaphylaxis (rare).</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: minimal placental transfer; use for maternal airway management.<br>Lactation: not applicable in the emergency setting.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Paralysis without sedation is awareness — always give post‑intubation sedation. Sugammadex reverses rocuronium (hospital / EP).</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
                 id: "formulary-36",
-                shortTitle: "Drug 36 Salbutamol",
+                shortTitle: "Salbutamol",
                 summary: `
             <div class="rx-card" style="--rx-cat:#10b981;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 36 &middot; Airway / Respiratory</div>
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
                         <h3 class="rx-name">Salbutamol</h3>
                     </div>
                     <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
@@ -2696,665 +4906,15 @@ window.CPG_DATA = {
                 critical: []
             },
             {
-                id: "formulary-37",
-                shortTitle: "Drug 37 Normal Saline",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 37 &middot; Metabolic / Fluids</div>
-                        <h3 class="rx-name">Sodium Chloride 0.9% (Normal Saline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Isotonic Crystalloid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">250 mL bottle or bag; 100 mL bottle</span></div>
-                </div>
-
-                <p class="rx-moa">Replaces intravascular volume to maintain organ perfusion.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Maintenance of end organ perfusion as per appropriate CPG; Hyperglycemia; Flushing of IV/IO lines; Medication dilution.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>As per appropriate CPG.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>As per appropriate CPG.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to normal saline preparation; Pulmonary edema / Fluid overload.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Cardiovascular disease; Heart Failure; Renal Failure.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Fluid overload.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safe to use in pregnancy.<br>Lactation: Safe to use in lactation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-38",
-                shortTitle: "Drug 38 Tranexamic Acid",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 38 &middot; Other Medications</div>
-                        <h3 class="rx-name">Tranexamic Acid</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antifibrinolytic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mg/5 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Tranexamic Acid blocks the conversion of plasminogen to plasmin, reducing fibrinolysis, reducing blood loss.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Uncontrolled bleeding secondary to trauma; Significant bleeding associated with post partum hemorrhage.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1000 mg IV. Once only. Administered within 3 hours since onset of bleeding. Dilute in 100 mL normal saline, administer over 10 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>15 mg/kg IV. Once only. Slow IV over 10 minutes.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; >3 hours since time of injury or start of bleeding.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>First trimester pregnancy; renal impairment; females taking oral contraceptives; concurrent thromboembolic disease process; suspected subarachnoid hemorrhage.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Thrombosis; convulsions; hypotension with rapid injections.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However tranexamic acid should be administered if clinically indicated.<br>Lactation: Safety has not been established. However tranexamic acid should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-39",
-                shortTitle: "Drug 39 Calcium Chloride",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 39 &middot; Metabolic / Fluids</div>
-                        <h3 class="rx-name">Calcium Chloride</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g/10 mL (10%) prefilled syringe or ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Increases serum ionized calcium, directly stabilizing the cardiac cell membrane and improving myocardial contractility. Antagonizes the cardiotoxic effects of hyperkalemia and calcium channel blocker overdose at the membrane level.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hyperkalemia with ECG changes; calcium channel blocker or magnesium overdose; hypocalcemia; adjunct in cardiac arrest with suspected hyperkalemia.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1 g (10 mL of 10%) IV/IO slow push over 5 minutes. May repeat once for refractory hyperkalemia or CCB overdose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>20 mg/kg (0.2 mL/kg of 10%) IV/IO slow push over 5 minutes (maximum 1 g).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; digoxin toxicity (may precipitate fatal arrhythmia); concurrent sodium bicarbonate in the same line (precipitates).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Ensure IV is patent — extravasation causes severe tissue necrosis. Administer slowly through a large vein.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension if given rapidly; local tissue injury on extravasation; metallic taste.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Flush the line with Normal Saline before and after administration. Never administer through the same line as sodium bicarbonate — the two will precipitate and occlude the line.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-40",
-                shortTitle: "Drug 40 Dexamethasone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 40 &middot; Airway / Respiratory</div>
-                        <h3 class="rx-name">Dexamethasone</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/mL vial, typically supplied as a 2 mL (8 mg) or 5 mL (20 mg) vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Long-acting glucocorticoid that suppresses inflammatory mediator release and reduces airway edema. Onset is delayed (1–2 hours) relative to hydrocortisone but has a longer duration of action.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate–severe croup; asthma/COPD exacerbation as an adjunct to bronchodilators; anaphylaxis as an adjunct after epinephrine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>10 mg IV/IM/PO single dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.6 mg/kg PO/IV/IM (maximum 10 mg) single dose — most commonly used for croup.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Not a substitute for epinephrine in anaphylaxis — give after, not instead of, epinephrine. Use caution in known active infection.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Rare with single prehospital dose; hyperglycemia; mild agitation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated.<br>Lactation: considered compatible with breastfeeding at standard single doses.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Oral and IV routes are considered equally effective for croup — oral is preferred in a cooperative patient to avoid the distress of an injection.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-41",
-                shortTitle: "Drug 41 Etomidate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 41 &middot; Neuro / Sedation</div>
-                        <h3 class="rx-name">Etomidate</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
-                        <span class="rx-scope-badge">EP / AP · RSI</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Sedative-Hypnotic (Induction Agent)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2 mg/mL, 10 mL vial (20 mg/10 mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Enhances GABA-mediated inhibition in the CNS, producing rapid sedation and unconsciousness with relative hemodynamic stability compared to other induction agents.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Induction agent for Rapid Sequence Intubation (RSI); procedural sedation for cardioversion or reduction where hemodynamic stability is a priority.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.3 mg/kg IV push over 30–60 seconds for RSI induction.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.2–0.3 mg/kg IV push. Use with caution — limited pediatric prehospital evidence; local RSI protocol and physician order required.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Adrenal suppression with repeated or prolonged dosing — use single-dose only in the prehospital setting. Does not provide analgesia — pair with an opioid for painful procedures.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Myoclonus (transient involuntary muscle movement); injection site pain; nausea/vomiting on emergence; adrenal suppression.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: safety not established; use only if clinically indicated (e.g., maternal RSI).<br>Lactation: safety not established.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Etomidate has minimal effect on blood pressure and heart rate, making it a preferred induction agent in hemodynamically unstable patients. Always have a paralytic and airway equipment ready before administration.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-42",
-                shortTitle: "Drug 42 Fentanyl",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 42 &middot; Pain</div>
-                        <h3 class="rx-name">Fentanyl</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opioid Analgesic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mcg/2 mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Synthetic opioid agonist that binds mu-opioid receptors in the CNS, producing potent analgesia with rapid onset (1–2 minutes IV) and short duration (30–60 minutes).</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate–severe pain, including traumatic and cardiac chest pain; analgesia prior to painful procedures (e.g., fracture reduction, cardioversion).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>25–50 mcg IV slow push every 5 minutes, titrated to pain (maximum 200 mcg); 1–2 mcg/kg IN/IM if no IV access.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1 mcg/kg IV slow push every 5 minutes (maximum single dose 50 mcg); 1.5 mcg/kg IN if no IV access.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; respiratory depression without ventilatory support available.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Hypotension; head injury with altered mental status (may confound neurological exam); renal/hepatic impairment.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; nausea/vomiting; sedation; chest wall rigidity with rapid high-dose administration.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated for maternal pain control.<br>Lactation: infant sedation possible; monitor if breastfeeding shortly after administration.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Faster onset and shorter duration than Morphine, making it preferred for procedural analgesia. Have Naloxone and airway equipment immediately available.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-43",
-                shortTitle: "Drug 43 Ketorolac",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 43 &middot; Pain</div>
-                        <h3 class="rx-name">Ketorolac</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT-Advanced (EMT-A) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT-A+</span>
-                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non-Steroidal Anti-inflammatory (NSAID)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">30 mg/1 mL vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Inhibits cyclooxygenase (COX-1 and COX-2), reducing prostaglandin synthesis and producing analgesic and anti-inflammatory effects without respiratory depression or sedation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate pain, particularly musculoskeletal, renal colic, and migraine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>15–30 mg IV over 15 seconds or 30–60 mg IM. Single prehospital dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended for pediatric prehospital use.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; previous reaction to NSAIDs; active GI bleeding or peptic ulcer disease; renal insufficiency; pregnancy (third trimester); age under 17.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma/COPD with history of NSAID-induced bronchospasm; concurrent anticoagulant use; dehydration.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>GI upset; injection site discomfort; increased bleeding risk.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: contraindicated, particularly in the third trimester (risk of premature ductus arteriosus closure).<br>Lactation: generally considered compatible in short courses; consult local guidance.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Does not cause sedation or respiratory depression, making it a useful non-opioid option, but onset is slower (30–60 min for full effect) than opioids.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-44",
-                shortTitle: "Drug 44 Lidocaine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 44 &middot; Cardiac / Resus</div>
-                        <h3 class="rx-name">Lidocaine</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiarrhythmic / Local Anesthetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/5 mL (2%) prefilled syringe.</span></div>
-                </div>
-
-                <p class="rx-moa">Class Ib antiarrhythmic that blocks fast sodium channels, decreasing automaticity and suppressing ventricular ectopy. As a local anesthetic, it blocks sodium channels in peripheral nerve fibers.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Alternative antiarrhythmic for refractory VF/pulseless VT when Amiodarone is unavailable or contraindicated; local anesthesia prior to IO insertion in a conscious patient.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Cardiac Arrest: 1–1.5 mg/kg IV/IO push, may repeat 0.5–0.75 mg/kg once (maximum total 3 mg/kg). IO local anesthesia: 20–40 mg (1–2 mL of 2%) slow push into the IO space prior to infusion in a conscious patient.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Cardiac Arrest: 1 mg/kg IV/IO push. IO local anesthesia: 0.5 mg/kg (maximum 20 mg) slow push into the IO space.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to amide local anesthetics; second- or third-degree heart block without a pacemaker; Wolff-Parkinson-White syndrome.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Reduce dose in hepatic impairment and heart failure — reduced clearance increases toxicity risk. Avoid in wide-complex tachycardia of unclear origin without expert guidance.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>CNS toxicity at high doses (tinnitus, perioral numbness, seizures); bradycardia; hypotension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Lidocaine is a second-line alternative to Amiodarone for refractory VF/VT in current resuscitation guidelines — do not administer both agents in the same arrest without medical direction.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-45",
-                shortTitle: "Drug 45 Ondansetron",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 45 &middot; Other Medications</div>
-                        <h3 class="rx-name">Ondansetron</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiemetic (5-HT3 Receptor Antagonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/2 mL vial or 4 mg orally disintegrating tablet (ODT).</span></div>
-                </div>
-
-                <p class="rx-moa">Selectively blocks serotonin (5-HT3) receptors in the chemoreceptor trigger zone and vagal afferents in the gut, reducing nausea and vomiting.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Nausea and vomiting of any prehospital etiology.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>4 mg IV slow push over 2–5 minutes or 4 mg ODT sublingual. May repeat once (maximum 8 mg total).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.1 mg/kg IV (maximum 4 mg) or ODT: 8–15 kg 2 mg, 15–30 kg 4 mg, >30 kg 4–8 mg.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; congenital long QT syndrome.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>QT prolongation — use caution with other QT-prolonging drugs or known electrolyte abnormalities (hypokalemia, hypomagnesemia).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Headache; constipation; transient QT prolongation; dizziness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: conflicting data on minor fetal risk with first-trimester use; administer if clinically indicated for severe nausea/vomiting.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>The ODT formulation is useful when IV access is not available or not clinically necessary. Does not cause sedation, unlike Metoclopramide.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
-                id: "formulary-46",
-                shortTitle: "Drug 46 Promethazine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 46 &middot; Other Medications</div>
-                        <h3 class="rx-name">Promethazine</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine / Antiemetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 mg/mL, 1 mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks H1 histamine receptors and has central antidopaminergic and anticholinergic activity, producing antiemetic and sedative effects.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Nausea and vomiting refractory to other antiemetics; allergic reaction as an adjunct to Diphenhydramine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>12.5–25 mg IM (preferred) or slow IV push diluted, deep into a large muscle or well-running large-bore IV.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended under 2 years. Age 2 and above: 0.25–0.5 mg/kg IM (maximum 25 mg) — use with caution and only per local protocol.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; age under 2 years (risk of fatal respiratory depression); severe CNS depression.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Significant sedation — use caution in patients requiring ongoing neurological assessment. Severe tissue injury with IV extravasation or intra-arterial injection — IM route preferred prehospital.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Sedation; hypotension; extrapyramidal symptoms; respiratory depression in young children.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: has been used for hyperemesis; administer if clinically indicated.<br>Lactation: may cause infant sedation; use lowest effective dose.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>IM administration is strongly preferred over IV in the prehospital setting due to the risk of severe tissue necrosis with extravasation or inadvertent intra-arterial injection.</p>
-                </div>
-            </div>
-        `,
-                flashcards: [],
-                quiz: [],
-                critical: []
-            },
-            {
                 id: "formulary-47",
-                shortTitle: "Drug 47 Sodium Bicarbonate",
+                shortTitle: "Sodium Bicarbonate",
                 summary: `
             <div class="rx-card" style="--rx-cat:#06b6d4;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 47 &middot; Metabolic / Fluids</div>
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
                         <h3 class="rx-name">Sodium Bicarbonate</h3>
                     </div>
                     <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
@@ -3411,15 +4971,340 @@ window.CPG_DATA = {
                 critical: []
             },
             {
-                id: "formulary-48",
-                shortTitle: "Drug 48 Vasopressin",
+                id: "formulary-64",
+                shortTitle: "Succinylcholine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#8b5cf6;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Neuro / Sedation</div>
+                        <h3 class="rx-name">Succinylcholine (Suxamethonium)</h3>
+                    </div>
+                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
+                        <span class="rx-scope-badge">EP / AP · RSI</span>
+                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Depolarizing Neuromuscular Blocker (Paralytic)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/2 mL vial (50 mg/mL) or 200 mg/10 mL — refrigerated.</span></div>
+                </div>
+
+                <p class="rx-moa">Depolarizes the motor end plate at nicotinic receptors, causing fasciculations followed by paralysis within 45–60 seconds lasting 5–10 min.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Rapid sequence intubation (RSI) after induction.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>1.5 mg/kg IV/IO (actual body weight), max 200 mg. IM 3–4 mg/kg if no access.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>2 mg/kg IV/IO (infants &lt;10 kg); 1–1.5 mg/kg IV/IO (children).</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known or suspected hyperkalemia (renal failure, crush injury); burns, spinal cord injury or stroke &gt;72 hours old; neuromuscular disease (muscular dystrophy, myopathies); personal or family history of malignant hyperthermia; known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Bradycardia (especially children and repeat doses); raised intraocular pressure; pseudocholinesterase deficiency (prolonged paralysis).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperkalemia; bradycardia; fasciculations; muscle pain; malignant hyperthermia.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: used for maternal RSI.<br>Lactation: not applicable in the emergency setting.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Have Atropine available for bradycardia. When contraindications exist or cannot be excluded, use Rocuronium instead.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-59",
+                shortTitle: "Terbutaline",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#10b981;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Airway / Respiratory</div>
+                        <h3 class="rx-name">Terbutaline</h3>
+                    </div>
+                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
+                        <span class="rx-scope-badge">AP+</span>
+                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Bronchodilator (Beta‑2 Selective Adrenergic Agonist)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 mg/mL ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Stimulates beta‑2 receptors causing bronchial smooth muscle relaxation; given subcutaneously when inhaled therapy cannot be delivered effectively.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Severe or life‑threatening asthma with poor air entry not responding to nebulized therapy.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>0.25 mg SC; may repeat once after 15–30 min (max 0.5 mg in 4 hours).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>0.01 mg/kg SC (max 0.25 mg); may repeat once after 15–30 min.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; tachyarrhythmia.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Cardiac disease; hypertension; hyperthyroidism; diabetes; hypokalemia.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; tremor; palpitations; hypokalemia; anxiety.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: used for asthma when needed; not for tocolysis in the prehospital setting.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Consider IM Epinephrine as an alternative per local protocol. Continue nebulized bronchodilators and monitor the ECG.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-70",
+                shortTitle: "Thiamine",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#06b6d4;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Metabolic / Fluids</div>
+                        <h3 class="rx-name">Thiamine (Vitamin B1)</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Vitamin</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/mL ampule.</span></div>
+                </div>
+
+                <p class="rx-moa">Essential coenzyme for carbohydrate metabolism; prevents or treats Wernicke’s encephalopathy in thiamine‑deficient patients.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Suspected Wernicke’s encephalopathy; altered consciousness or hypoglycemia in a patient with chronic alcohol use or malnutrition (before or with glucose).</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>100 mg IV slow over 5 min or IM.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not routinely indicated.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Rare anaphylaxis with IV use — give slowly and have resuscitation equipment available.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Injection‑site pain; flushing; rarely anaphylaxis.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: safe; indicated in hyperemesis gravidarum.<br>Lactation: compatible.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Never delay glucose in a hypoglycemic patient to give Thiamine first — give both.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-54",
+                shortTitle: "Ticagrelor",
                 summary: `
             <div class="rx-card" style="--rx-cat:#ef4444;">
                 <div class="rx-topbar"></div>
                 <div class="rx-head">
                     <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
                     <div class="rx-head-text">
-                        <div class="rx-eyebrow">Drug 48 &middot; Cardiac / Resus</div>
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
+                        <h3 class="rx-name">Ticagrelor</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiplatelet (Reversible P2Y12 Inhibitor)</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">90 mg tablets.</span></div>
+                </div>
+
+                <p class="rx-moa">Reversibly blocks the platelet P2Y12 ADP receptor, giving faster and more potent platelet inhibition than Clopidogrel.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>STEMI / high‑risk ACS on 12‑lead ECG (per local STEMI / PCI pathway and online medical direction) in addition to Aspirin.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>180 mg PO loading dose (2 × 90 mg tablets).</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>Not indicated.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Active bleeding; history of intracranial hemorrhage; severe hepatic impairment; known allergy.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>Concurrent anticoagulant; planned fibrinolysis (use Clopidogrel instead); bradyarrhythmia; asthma / COPD (dyspnea).</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; dyspnea; bradycardia; GI upset.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; avoid unless clinically essential.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Do not combine with Clopidogrel. Aspirin maintenance doses should not exceed 100 mg/day when used with Ticagrelor.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-38",
+                shortTitle: "Tranexamic Acid",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#94a3b8;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Other Medications</div>
+                        <h3 class="rx-name">Tranexamic Acid</h3>
+                    </div>
+                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
+                        <span class="rx-scope-badge">P+</span>
+                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
+                    </div>
+                </div>
+
+                <div class="rx-quickfacts">
+                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antifibrinolytic</span></div>
+                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mg/5 mL ampule</span></div>
+                </div>
+
+                <p class="rx-moa">Tranexamic Acid blocks the conversion of plasminogen to plasmin, reducing fibrinolysis, reducing blood loss.</p>
+
+                <div class="rx-box rx-box-go">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
+                    <p>Uncontrolled bleeding secondary to trauma; Significant bleeding associated with post partum hemorrhage.</p>
+                </div>
+
+                <div class="rx-dose-grid">
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
+                        <p>1000 mg IV. Once only. Administered within 3 hours since onset of bleeding. Dilute in 100 mL normal saline, administer over 10 minutes.</p>
+                    </div>
+                    <div class="rx-dose-card">
+                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
+                        <p>15 mg/kg IV. Once only. Slow IV over 10 minutes.</p>
+                    </div>
+                </div>
+
+                <div class="rx-box rx-box-stop">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
+                    <p>Known allergy; >3 hours since time of injury or start of bleeding.</p>
+                </div>
+                <div class="rx-box rx-box-caution">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
+                    <p>First trimester pregnancy; renal impairment; females taking oral contraceptives; concurrent thromboembolic disease process; suspected subarachnoid hemorrhage.</p>
+                </div>
+
+                <div class="rx-two-col">
+                    <div class="rx-mini"><h4>Side Effects</h4><p>Thrombosis; convulsions; hypotension with rapid injections.</p></div>
+                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However tranexamic acid should be administered if clinically indicated.<br>Lactation: Safety has not been established. However tranexamic acid should be administered if clinically indicated.</p></div>
+                </div>
+
+                <div class="rx-box rx-box-info">
+                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
+                    <p>Nil.</p>
+                </div>
+            </div>
+        `,
+                flashcards: [],
+                quiz: [],
+                critical: []
+            },
+            {
+                id: "formulary-48",
+                shortTitle: "Vasopressin",
+                summary: `
+            <div class="rx-card" style="--rx-cat:#ef4444;">
+                <div class="rx-topbar"></div>
+                <div class="rx-head">
+                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
+                    <div class="rx-head-text">
+                        <div class="rx-eyebrow">Cardiac / Resus</div>
                         <h3 class="rx-name">Vasopressin</h3>
                     </div>
                     <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice, cardiac arrest only.">

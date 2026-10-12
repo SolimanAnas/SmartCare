@@ -10,7 +10,7 @@
       "name": "Airway / Respiratory",
       "icon": "🫁",
       "color": "#10b981",
-      "drugs": ["Combivent", "Salbutamol", "Racemic Epinephrine (Adrenaline)", "Methoxyflurane (Penthrox)", "Hydrocortisone", "Magnesium Sulphate"]
+      "drugs": ["Combivent", "Salbutamol", "Racemic Epinephrine (Adrenaline)", "Methoxyflurane (Penthrox inhaler)", "Hydrocortisone", "Magnesium Sulphate"]
     },
     {
       "name": "Neuro / Sedation",
@@ -284,7 +284,7 @@
         { "age": "Adult", "weight": "50kg +", "dose1": "0.5 mL", "vol1": "3 mL", "dose2": null, "vol2": null }
       ]
     },
-    "Methoxyflurane (Penthrox)": {
+    "Methoxyflurane (Penthrox inhaler)": {
       "category": "Airway / Respiratory",
       "color": "#10b981",
       "icon": "🫁",
