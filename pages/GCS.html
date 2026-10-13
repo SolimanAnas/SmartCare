@@ -439,6 +439,12 @@ body::before{
 /* Progress bar per section */
 .opt-progress{height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin:0 10px 10px;overflow:hidden}
 .opt-progress-bar{height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue));border-radius:2px;transition:width .4s cubic-bezier(.25,1,.5,1)}
+
+/* Header fits on phones: single-line title/subtitle (the header is a fixed
+   --hdr tall, and wrapped lines spilled out and clipped the title). */
+.hdr-info{flex:1;min-width:0}
+.hdr-title,.hdr-sub,.hdr-disclaimer{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (max-width:420px){.hdr-badge{display:none}}
 </style>
 </head>
 <body>

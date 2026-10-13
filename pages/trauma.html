@@ -527,7 +527,7 @@ function buildPage() {
     pill.style.color = phase.color;
     pill.style.borderColor = phase.color + '60';
     pill.style.background  = phase.color + '18';
-    pill.textContent = phase.icon + ' ' + phase.label;
+    pill.innerHTML = phase.icon + ' ' + phase.label;   // icon is trusted SVG markup from SCHEMA
     pill.onclick = () => document.getElementById('phase-' + phase.id)
         ?.scrollIntoView({ behavior:'smooth', block:'start' });
     pills.appendChild(pill);

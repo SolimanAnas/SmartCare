@@ -1345,7 +1345,11 @@
             .drawer-trigger:hover .trigger-line.top { width: 24px; }
             .drawer-trigger:hover .trigger-line.bottom { width: 14px; }
         }
-    </style>
+    
+        /* Clear the drawer pull-tab that hangs 35px below the header
+           (styles.css .drawer-trigger) so it doesn't sit on the search box. */
+        #mainContent > .search-wrap:first-child { margin-top: 30px; }
+</style>
     <script src="supabase-config.js"></script>
     <script src="supabase-client.js"></script>
 </head>
