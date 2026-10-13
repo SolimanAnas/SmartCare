@@ -5,14 +5,14 @@ const EXAM_PAGE = `${BASE}/src/prometric/exam.html`;
 const DB_URL = `${BASE}/src/prometric/exam-db.json`;
 
 // ── 1. Database integrity ──────────────────────────────────────────────
-test('exam-db.json has 2559 questions and 17 categories', async ({ request }) => {
+test('exam-db.json has 2749 questions and 18 categories', async ({ request }) => {
   const resp = await request.get(DB_URL);
   expect(resp.ok()).toBeTruthy();
   const db = await resp.json();
 
-  expect(db.title).toBe('EMT Basic Exam Database');
-  expect(db.questions.length).toBe(2559);
-  expect(db.categories.length).toBe(17);
+  expect(db.title).toBe('Paramedic / EMT Exam Database');
+  expect(db.questions.length).toBe(2749);
+  expect(db.categories.length).toBe(18);
 
   // Every question must have the required fields
   for (const q of db.questions) {
@@ -25,15 +25,31 @@ test('exam-db.json has 2559 questions and 17 categories', async ({ request }) =>
     expect(['easy', 'medium', 'hard']).toContain(q.difficulty);
     expect(typeof q.subject).toBe('string');
     expect(db.categories).toContain(q.subject);
+    expect(['paramedic', 'emt']).toContain(q.level);
   }
 
   // Newly imported questions (id > 879) must all have 4 options + source
   const imported = db.questions.filter(q => q.id > 879);
-  expect(imported.length).toBe(1680);
+  expect(imported.length).toBe(1870);
   for (const q of imported) {
     expect(q.options.length).toBe(4);
     expect(typeof q.source).toBe('string');
     expect(q.source.length).toBeGreaterThan(0);
+  }
+});
+
+// Paramedic-level (ALS) set: explanations on every question, no HTML-unsafe
+// characters (options and explanations are rendered with innerHTML).
+test('paramedic ALS questions are complete and HTML-safe', async ({ request }) => {
+  const db = await (await request.get(DB_URL)).json();
+  const als = db.questions.filter(q => q.source === 'smartcare-paramedic-als');
+  expect(als.length).toBe(190);
+  expect(db.questions.filter(q => q.level === 'paramedic').length).toBe(910);
+  for (const q of als) {
+    expect(q.level).toBe('paramedic');
+    expect(q.options.length).toBe(4);
+    expect(q.explanation.length).toBeGreaterThan(20);
+    expect(JSON.stringify(q)).not.toMatch(/[<>&]/);
   }
 });
 
@@ -61,6 +77,23 @@ async function navigateWizard(page) {
   // Step 3: click Start Exam
   await page.locator('#start-exam').click();
 }
+
+test('every category is selectable and the level filter narrows the pool', async ({ page }) => {
+  await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });
+  const db = await page.evaluate(() => fetch('exam-db.json').then(r => r.json()));
+  const topics = await page.locator('.topic-checkbox input').evaluateAll(els => els.map(e => e.value));
+  expect([...topics].sort()).toEqual([...db.categories].sort());
+
+  await page.locator('.wizard-next[data-next="2"]').click();
+  await page.locator('.wizard-next[data-next="3"]').click();
+  const count = page.locator('#available-count');
+  await page.locator('[data-setting="level"][data-value="paramedic"]').click();
+  await expect(count).toHaveText('910 questions available');
+  await page.locator('[data-setting="level"][data-value="emt"]').click();
+  await expect(count).toHaveText('1839 questions available');
+  await page.locator('[data-setting="level"][data-value="all"]').click();
+  await expect(count).toHaveText('2749 questions available');
+});
 
 test('can select random mode and start an exam', async ({ page }) => {
   await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });

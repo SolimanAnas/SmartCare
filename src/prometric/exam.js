@@ -20,7 +20,7 @@ class ExamEngine {
         this.examStats = this.loadStats();
         this.improvementChart = null;
         this.questionHistory = this.loadQuestionHistory();
-        this.settings = { count: 50, difficulty: 'all', timer: 'tutor', score: 'show' };
+        this.settings = { count: 50, level: 'all', difficulty: 'all', timer: 'tutor', score: 'show' };
         this.keyboardHandler = (e) => this.handleKeyboard(e);
         this.touchStartX = 0;
         this.touchStartY = 0;
@@ -265,6 +265,10 @@ class ExamEngine {
 
         if (this.mode === 'topic' && topics) {
             pool = pool.filter(q => topics.includes(q.subject));
+        }
+
+        if (this.settings.level !== 'all') {
+            pool = pool.filter(q => q.level === this.settings.level);
         }
 
         if (difficulty !== 'all') {
