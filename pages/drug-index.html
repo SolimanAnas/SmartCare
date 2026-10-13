@@ -178,6 +178,13 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 .empty-state{text-align:center;padding:60px 20px;color:var(--text2)}
 .empty-icon{font-size:2.5rem;margin-bottom:12px;opacity:.4}
 .empty-title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px}
+
+/* Header fits on phones: single-line title/subtitle (the header is a fixed
+   --hdr tall, and wrapped lines spilled out and clipped the title). */
+.hdr-info{flex:1;min-width:0}
+.hdr-title,.hdr-sub,.hdr-disclaimer{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (max-width:420px){.hdr-badge{display:none}}
+@media (max-width:439px){.hdr-pill{padding:0 10px}.hdr-pill-label{display:none}}
 </style>
 </head>
 <body>
@@ -192,7 +199,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
     <div class="hdr-sub">77 medications &middot; Chapter 11</div>
   </div>
   <div class="hdr-actions">
-    <a href="med-index.html" class="hdr-pill"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Calculator</a>
+    <a href="med-index.html" class="hdr-pill" aria-label="Dose calculator"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg><span class="hdr-pill-label"> Calculator</span></a>
     <button class="theme-btn" id="themeBtn" onclick="toggleThemePanel()" title="Change theme"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#palette"/></svg></button>
   </div>
 </header>

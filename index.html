@@ -113,8 +113,6 @@
     <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="splash/splash-1668x2388.png">
     <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="splash/splash-2048x2732.png">
 
-    <!-- Chart.js is loaded lazily (see loadChartJs()) only when the stats modal
-         renders a progress chart, instead of blocking every page load. -->
     <script src="pages/supabase-config.js"></script>
     <script src="pages/supabase-client.js"></script>
 
@@ -430,26 +428,119 @@
         }
         .cpg-search-hint.visible { display: block; }
 
-        /* ━━ Global Stats Modal ━━ */
-        .stats-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
-        .stats-modal-content { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 24px; width: 100%; max-width: 500px; max-height: 85vh; overflow-y: auto; box-shadow: var(--glass-shadow); }
-        .stats-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px 0; position: sticky; top: 0; background: var(--glass-bg); backdrop-filter: blur(12px); }
-        .stats-modal-header h2 { font-size: 1.4rem; margin: 0; color: var(--text-primary); }
-        .stats-modal-close { background: rgba(0,0,0,0.06); border: none; font-size: 1rem; cursor: pointer; color: var(--text-secondary); padding: 6px 10px; border-radius: 10px; transition: background 0.2s; }
-        .stats-modal-close:hover { background: rgba(0,0,0,0.12); }
-        .stats-modal-body { padding: 20px 24px 30px; }
-        .stats-modal-body h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin: 24px 0 12px; color: var(--primary-accent); border-bottom: 1px solid var(--glass-border); padding-bottom: 8px; }
-        .stats-modal-body h3:first-of-type { margin-top: 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .stat-card { background: rgba(255,255,255,0.08); border: 1px solid var(--glass-border); border-radius: 14px; padding: 16px 12px; text-align: center; }
-        .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--primary-accent); }
-        .stat-label { font-size: 0.72rem; color: var(--text-secondary); margin-top: 4px; font-weight: 600; }
-        .stats-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.85rem; }
-        .stats-table th, .stats-table td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--glass-border); }
-        .stats-table th { color: var(--text-secondary); font-weight: 600; font-size: 0.75rem; }
-        .stats-clear-btn { width: 100%; margin-top: 24px; padding: 14px; background: rgba(231,76,60,0.12); color: #e74c3c; border: 1px solid rgba(231,76,60,0.3); border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-        .stats-clear-btn:hover { background: rgba(231,76,60,0.22); }
-        .stats-chart-container { height: 200px; margin: 16px 0; }
+        /* ━━ Global Stats sheet (showGlobalStatsModal) ━━
+           Built on the shared theme tokens; charts are inline SVG (no Chart.js),
+           so they render offline and theme with CSS. */
+        .gs-overlay { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: flex-end; justify-content: center; background: rgba(2,6,23,.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: gsFade .25s ease both; }
+        .gs-overlay.closing { animation: gsFade .2s ease reverse both; }
+        .gs-sheet {
+            --gs-base: #f8fafc; --gs-acc: color-mix(in srgb, var(--primary-accent) 78%, var(--text-primary));
+            --gs-good: #15803d; --gs-bad: #b91c1c;
+            position: relative; width: 100%; max-width: 560px; max-height: 92vh; display: flex; flex-direction: column;
+            background: linear-gradient(var(--glass-bg), var(--glass-bg)), var(--gs-base);
+            border: 1px solid var(--glass-border); border-bottom: none; border-radius: 26px 26px 0 0;
+            box-shadow: 0 -18px 50px rgba(0,0,0,.35); color: var(--text-primary);
+            animation: gsUp .42s cubic-bezier(.32,.72,0,1) both; overflow: hidden;
+        }
+        [data-theme="amoled"] .gs-sheet { --gs-base: #050505; --gs-good: #4ade80; --gs-bad: #f87171; }
+        .gs-overlay.closing .gs-sheet { animation: gsUp .22s ease-in reverse both; }
+        @media (min-width: 640px) { .gs-overlay { align-items: center; padding: 20px; } .gs-sheet { border-radius: 26px; border-bottom: 1px solid var(--glass-border); max-height: 88vh; } }
+        .gs-grab { width: 42px; height: 4px; border-radius: 4px; background: color-mix(in srgb, var(--text-primary) 22%, transparent); margin: 10px auto 0; flex: 0 0 auto; }
+        .gs-head { display: flex; align-items: center; gap: 12px; padding: 12px 20px 12px; flex: 0 0 auto; }
+        .gs-head-ico { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; font-size: 1.2rem; color: #fff; background: linear-gradient(135deg, var(--gs-acc), color-mix(in srgb, var(--gs-acc) 55%, #7c3aed)); box-shadow: 0 6px 16px color-mix(in srgb, var(--gs-acc) 40%, transparent); }
+        .gs-head h2 { margin: 0; font-size: 1.25rem; font-weight: 900; letter-spacing: -.4px; color: var(--text-primary); }
+        .gs-head p { margin: 2px 0 0; font-size: .78rem; color: var(--text-secondary); }
+        .gs-close { margin-left: auto; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--glass-border); background: color-mix(in srgb, var(--text-primary) 6%, transparent); color: var(--text-primary); display: grid; place-items: center; font-size: 1.05rem; cursor: pointer; }
+        .gs-body { overflow-y: auto; padding: 4px 18px calc(22px + env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+        .gs-sec { margin-top: 18px; animation: gsRise .5s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i, 0) * 70ms + 120ms); }
+        .gs-sec-title { display: flex; align-items: center; gap: 8px; margin: 0 2px 10px; font-size: .74rem; font-weight: 800; letter-spacing: .9px; text-transform: uppercase; color: var(--text-secondary); }
+        .gs-sec-title svg { color: var(--gs-acc); font-size: 1rem; }
+        .gs-sec-title .gs-aside { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 600; font-size: .74rem; }
+        .gs-card { background: color-mix(in srgb, var(--text-primary) 4%, transparent); border: 1px solid color-mix(in srgb, var(--text-primary) 9%, transparent); border-radius: 18px; padding: 14px; }
+
+        /* Hero ring */
+        .gs-hero { display: flex; align-items: center; gap: 16px; padding: 16px; background: radial-gradient(120% 120% at 0% 0%, color-mix(in srgb, var(--gs-acc) 16%, transparent), transparent 60%), color-mix(in srgb, var(--text-primary) 4%, transparent); }
+        .gs-ring { position: relative; width: 116px; height: 116px; flex: 0 0 auto; }
+        .gs-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+        .gs-ring .trk { stroke: color-mix(in srgb, var(--text-primary) 10%, transparent); }
+        .gs-ring .val { stroke: var(--gs-acc); stroke-linecap: round; transition: stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1); }
+        .gs-ring-txt { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+        .gs-ring-txt b { font-size: 1.7rem; font-weight: 900; letter-spacing: -1px; line-height: 1; font-variant-numeric: tabular-nums; }
+        .gs-ring-txt span { white-space: nowrap; font-size: .62rem; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: var(--text-secondary); margin-top: 3px; }
+        .gs-hero-txt h3 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 800; color: var(--text-primary); }
+        .gs-hero-txt p { margin: 0; font-size: .84rem; line-height: 1.45; color: var(--text-secondary); }
+        .gs-hero-txt .gs-badge { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800; color: var(--gs-acc); background: color-mix(in srgb, var(--gs-acc) 13%, transparent); }
+        .gs-ring.done .val { stroke: var(--gs-good); }
+        .gs-confetti { position: absolute; inset: -8px; pointer-events: none; }
+        .gs-confetti i { position: absolute; left: 50%; top: 50%; width: 6px; height: 10px; border-radius: 2px; opacity: 0; animation: gsPop 1.1s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: 1.05s; }
+
+        /* KPI tiles */
+        .gs-kpis { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+        .gs-kpi { position: relative; overflow: hidden; display: flex; align-items: center; gap: 11px; padding: 13px 12px; }
+        .gs-kpi-ico { width: 38px; height: 38px; border-radius: 12px; flex: 0 0 auto; display: grid; place-items: center; font-size: 1.05rem; color: var(--gs-acc); background: color-mix(in srgb, var(--gs-acc) 13%, transparent); }
+        .gs-kpi b { display: block; font-size: 1.35rem; font-weight: 900; letter-spacing: -.5px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--text-primary); }
+        .gs-kpi small { display: block; margin-top: 2px; font-size: .7rem; font-weight: 700; color: var(--text-secondary); line-height: 1.25; }
+        .gs-kpi .gs-meter { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: color-mix(in srgb, var(--text-primary) 8%, transparent); }
+        .gs-kpi .gs-meter i { display: block; height: 100%; width: 0; background: var(--gs-acc); border-radius: 0 3px 3px 0; transition: width 1s cubic-bezier(.2,.8,.2,1) .3s; }
+
+        /* Chapter mastery bars */
+        .gs-bars { display: flex; flex-direction: column; gap: 10px; }
+        .gs-bar-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; }
+        .gs-bar-name { font-size: .82rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 6px; }
+        .gs-bar-name svg { flex: 0 0 auto; color: var(--gs-good); }
+        .gs-bar-val { font-size: .78rem; font-weight: 800; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+        .gs-track { grid-column: 1 / -1; height: 9px; border-radius: 6px; background: color-mix(in srgb, var(--text-primary) 8%, transparent); overflow: hidden; }
+        .gs-track i { display: block; height: 100%; width: 0; border-radius: 0 6px 6px 0; background: linear-gradient(90deg, color-mix(in srgb, var(--gs-acc) 55%, transparent), var(--gs-acc)); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+        .gs-track.none i { background: none; }
+
+        /* Exam trend chart */
+        .gs-chart { position: relative; }
+        .gs-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+        .gs-chart .grid { stroke: color-mix(in srgb, var(--text-primary) 10%, transparent); stroke-width: 1; }
+        .gs-chart .axis { fill: var(--text-secondary); font-size: 10px; font-weight: 600; }
+        .gs-chart .pass { stroke: var(--gs-good); stroke-width: 1.5; stroke-dasharray: 5 4; }
+        .gs-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 8px; font-size: .72rem; font-weight: 700; color: var(--text-secondary); }
+        .gs-legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .gs-legend .sw-line { width: 16px; height: 3px; border-radius: 2px; background: var(--gs-acc); }
+        .gs-legend .sw-pass { width: 16px; border-top: 2px dashed var(--gs-good); }
+        .gs-legend-hint { margin-left: auto; font-weight: 600; opacity: .8; }
+        .gs-sheet:focus { outline: none; }
+        .gs-chart .area { fill: url(#gsArea); }
+        .gs-chart .line { fill: none; stroke: var(--gs-acc); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+        .gs-chart .dot { fill: var(--gs-acc); stroke: var(--gs-base); stroke-width: 2; transition: r .15s; pointer-events: none; }
+        .gs-chart .hit { fill: transparent; cursor: pointer; }
+        .gs-chart .hit:hover + .dot, .gs-chart .dot.on { r: 7; }
+        .gs-tip { position: absolute; pointer-events: none; transform: translate(-50%, calc(-100% - 12px)); background: var(--text-primary); color: var(--gs-base); border-radius: 10px; padding: 6px 9px; font-size: .74rem; font-weight: 700; white-space: nowrap; opacity: 0; transition: opacity .15s; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+        .gs-tip.on { opacity: 1; }
+        .gs-tip small { display: block; font-weight: 600; opacity: .75; }
+
+        /* Recent exams list */
+        .gs-exams { display: flex; flex-direction: column; gap: 8px; }
+        .gs-exam { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+        .gs-exam-main { flex: 1; min-width: 0; }
+        .gs-exam-main b { display: block; font-size: .86rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .gs-exam-main small { font-size: .72rem; color: var(--text-secondary); }
+        .gs-exam-score { text-align: right; font-variant-numeric: tabular-nums; }
+        .gs-exam-score b { display: block; font-size: 1rem; font-weight: 900; }
+        .gs-pill { display: inline-flex; align-items: center; gap: 4px; font-size: .66rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+        .gs-pill.ok { color: var(--gs-good); background: color-mix(in srgb, var(--gs-good) 13%, transparent); }
+        .gs-pill.no { color: var(--gs-bad); background: color-mix(in srgb, var(--gs-bad) 12%, transparent); }
+
+        /* Empty states + footer */
+        .gs-empty { display: flex; align-items: center; gap: 12px; padding: 14px; font-size: .84rem; line-height: 1.45; color: var(--text-secondary); }
+        .gs-empty .gs-kpi-ico { animation: gsBob 2.6s ease-in-out infinite; }
+        .gs-reset { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; margin-top: 22px; padding: 12px; border-radius: 14px; border: 1px dashed color-mix(in srgb, var(--gs-bad) 45%, transparent); background: transparent; color: var(--gs-bad); font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer; }
+
+        @keyframes gsFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes gsUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+        @keyframes gsRise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        @keyframes gsBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes gsPop { 0% { opacity: 1; transform: translate(-50%,-50%) rotate(0) scale(.6); } 100% { opacity: 0; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) rotate(var(--r)) scale(1); } }
+        @media (prefers-reduced-motion: reduce) {
+            .gs-overlay, .gs-sheet, .gs-sec, .gs-empty .gs-kpi-ico { animation: none !important; }
+            .gs-ring .val, .gs-track i, .gs-kpi .gs-meter i { transition: none !important; }
+            .gs-confetti { display: none; }
+        }
 
         /* ━━ Progress popup ━━ */
         .progress-popup { position: absolute; top: 60px; right: 10px; background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 20px; box-shadow: var(--glass-shadow); z-index: 1001; min-width: 250px; display: none; color: var(--text-primary); }
@@ -1541,206 +1632,192 @@
     function showGlobalStatsModal() {
         const stats = loadStorage(STATS_KEY, { chapters: {}, totalAttempts: 0, critical: {total: 0, correct: 0}, flashcards: [], quizzes: [] });
         const completion = loadStorage(COMPLETION_KEY, {});
-        const examFromEngine = loadStorage(EXAM_STATS_KEY, []);
-        
-        const totalChaps = CHAPTERS.filter(c => c.id !== 'c0' && c.id !== 'c-index').length;
-        const completedCount = Object.values(completion).filter(v => v).length;
+        const exams = (loadStorage(EXAM_STATS_KEY, []) || []).filter(e => e && e.max);
+
+        const chapters = CHAPTERS.filter(c => !c.isSpecial && c.id !== 'c0' && c.id !== 'c-index');
+        const totalChaps = chapters.length;
+        const completedCount = chapters.filter(c => completion[c.id]).length;
         const overallPercent = totalChaps ? Math.round((completedCount / totalChaps) * 100) : 0;
-        
-        const critAcc = stats.critical?.total ? Math.round((stats.critical.correct / stats.critical.total) * 100) : 0;
-        
-        const flashcardStats = stats.flashcards || [];
-        const fcTotal = flashcardStats.length;
-        const fcCorrect = flashcardStats.filter(f => f.correct).length;
-        const fcAcc = fcTotal ? Math.round((fcCorrect / fcTotal) * 100) : 0;
-        
-        const examStats = examFromEngine || [];
-        const examAvg = examStats.length ? Math.round(examStats.reduce((a, e) => a + (e.score && e.max ? (e.score/e.max)*100 : 0), 0) / examStats.length) : 0;
-        
-        const quizStats = stats.quizzes || [];
-        const quizTotal = quizStats.length;
-        const quizCorrect = quizStats.filter(q => q.correct).length;
-        const quizAcc = quizTotal ? Math.round((quizCorrect / quizTotal) * 100) : 0;
-        
-        // Build chart data
-        const chartLabels = examStats.slice(-10).map((e, i) => `Exam ${i+1}`);
-        const chartData = examStats.slice(-10).map(e => e.score && e.max ? Math.round((e.score/e.max)*100) : 0);
-        const chartColors = chartData.map(v => v >= 70 ? '#27ae60' : v >= 50 ? '#f39c12' : '#e74c3c');
-        
-        const recentExams = examStats.slice(-5).reverse().map(e => `
-            <tr>
-                <td>${e.exam || 'NREMT'}</td>
-                <td>${e.score || 0}/${e.max || 0}</td>
-                <td>${e.score && e.max ? Math.round((e.score/e.max)*100) : 0}%</td>
-                <td>${new Date(e.date).toLocaleDateString() || ''}</td>
-            </tr>
-        `).join('') || '<tr><td colspan="4">No exam data</td></tr>';
+
+        const pct = (a, b) => b ? Math.round((a / b) * 100) : 0;
+        const critTotal = stats.critical?.total || 0;
+        const critAcc = pct(stats.critical?.correct || 0, critTotal);
+        const fc = stats.flashcards || [], qz = stats.quizzes || [];
+        const fcAcc = pct(fc.filter(f => f.correct).length, fc.length);
+        const examPcts = exams.map(e => pct(e.score || 0, e.max));
+        const examAvg = examPcts.length ? Math.round(examPcts.reduce((a, b) => a + b, 0) / examPcts.length) : 0;
+        const examBest = examPcts.length ? Math.max(...examPcts) : 0;
+
+        const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const ico = n => `<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#${n}"/></svg>`;
+        const fmtDate = d => { const t = new Date(d); return isNaN(t) ? '' : t.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }); };
+
+        // Hero message
+        const left = totalChaps - completedCount;
+        const hero = completedCount === 0
+            ? { h: 'Let’s get started', p: 'Mark a chapter complete to start filling your progress ring.', b: `${totalChaps} chapters to explore` }
+            : left === 0
+                ? { h: 'All chapters complete!', p: 'Outstanding work. Keep your edge sharp with quizzes and mock exams.', b: 'Curriculum mastered' }
+                : { h: overallPercent >= 50 ? 'Over halfway there' : 'Great momentum', p: `${completedCount} of ${totalChaps} chapters done — just ${left} to go.`, b: `${left} chapter${left === 1 ? '' : 's'} left` };
+
+        // KPI tiles: [icon, value, label, meter %]
+        const kpis = [
+            ['target', critTotal ? critAcc + '%' : '—', critTotal ? `Critical skills · ${critTotal} tries` : 'Critical skills', critAcc],
+            ['notebook-pen', stats.totalAttempts || 0, 'Quiz attempts', null],
+            ['zap', fc.length ? fcAcc + '%' : fc.length, fc.length ? `Flashcards · ${fc.length} cards` : 'Flashcards practiced', fc.length ? fcAcc : null],
+            ['trophy', exams.length ? examAvg + '%' : 0, exams.length ? `Exam average · ${exams.length} taken` : 'Exams taken', exams.length ? examAvg : null],
+        ];
+
+        // Chapter mastery rows (quiz accuracy per chapter)
+        const rows = chapters.map(c => {
+            const s = (stats.chapters || {})[c.id];
+            const acc = s && s.totalMax ? pct(s.totalScore, s.totalMax) : null;
+            return { name: c.shortTitle || c.title, done: !!completion[c.id], acc, tries: s ? s.attempts : 0 };
+        });
+        const anyQuiz = rows.some(r => r.acc !== null);
+
+        // Exam trend (last 10) as inline SVG
+        const trend = exams.slice(-10);
+        let chart = '';
+        if (trend.length >= 2) {
+            const W = 320, H = 150, L = 30, R = 10, T = 12, B = 22;
+            const x = i => L + (i * (W - L - R)) / (trend.length - 1);
+            const y = v => T + (1 - v / 100) * (H - T - B);
+            const vals = trend.map(e => pct(e.score || 0, e.max));
+            const pts = vals.map((v, i) => [x(i), y(v)]);
+            const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+            const area = line + ` L${x(vals.length - 1).toFixed(1)} ${y(0)} L${x(0).toFixed(1)} ${y(0)} Z`;
+            const grid = [0, 50, 100].map(v => `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${L - 6}" y="${y(v) + 3}" text-anchor="end">${v}</text>`).join('');
+            const dots = trend.map((e, i) => `<circle class="hit" cx="${pts[i][0]}" cy="${pts[i][1]}" r="16" data-i="${i}"/><circle class="dot" cx="${pts[i][0]}" cy="${pts[i][1]}" r="5"/>`).join('');
+            chart = `<div class="gs-chart" id="gsChart">
+                <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Exam scores over the last ${trend.length} exams">
+                    <defs><linearGradient id="gsArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--gs-acc)" stop-opacity=".28"/><stop offset="1" stop-color="var(--gs-acc)" stop-opacity="0"/></linearGradient></defs>
+                    ${grid}
+                    <line class="pass" x1="${L}" x2="${W - R}" y1="${y(70)}" y2="${y(70)}"/>
+                    <path class="area" d="${area}"/>
+                    <path class="line" id="gsLine" d="${line}"/>
+                    ${dots}
+                    <text class="axis" x="${L}" y="${H - 6}">Oldest</text><text class="axis" x="${W - R}" y="${H - 6}" text-anchor="end">Latest</text>
+                </svg>
+                <div class="gs-tip" id="gsTip"></div>
+                <div class="gs-legend"><span><i class="sw-line"></i>Your score</span><span><i class="sw-pass"></i>Pass mark 70%</span><span class="gs-legend-hint">Tap a point for details</span></div>
+            </div>`;
+        }
+
+        const recent = exams.slice(-5).reverse().map(e => {
+            const p = pct(e.score || 0, e.max), ok = p >= 70;
+            return `<div class="gs-card gs-exam">
+                <div class="gs-kpi-ico">${ico('clipboard-list')}</div>
+                <div class="gs-exam-main"><b>${esc(e.exam || 'NREMT')}</b><small>${esc(fmtDate(e.date))} · ${esc(e.score || 0)}/${esc(e.max)}</small></div>
+                <div class="gs-exam-score"><b>${p}%</b><span class="gs-pill ${ok ? 'ok' : 'no'}">${ico(ok ? 'circle-check-big' : 'circle-x')} ${ok ? 'Pass' : 'Below 70%'}</span></div>
+            </div>`;
+        }).join('');
+
+        const C = 2 * Math.PI * 50;
+        const confetti = left === 0 && completedCount ? `<div class="gs-confetti">${Array.from({ length: 14 }, (_, i) => {
+            const a = (i / 14) * Math.PI * 2, d = 62 + (i % 3) * 10;
+            const col = ['var(--gs-acc)', 'var(--gs-good)', '#f59e0b', '#ec4899'][i % 4];
+            return `<i style="background:${col};--x:${(Math.cos(a) * d).toFixed(0)}px;--y:${(Math.sin(a) * d).toFixed(0)}px;--r:${i * 47}deg"></i>`;
+        }).join('')}</div>` : '';
 
         const modal = document.createElement('div');
-        modal.className = 'stats-modal-overlay';
+        modal.className = 'gs-overlay';
         modal.innerHTML = `
-            <div class="stats-modal-content" onclick="event.stopPropagation()">
-                <div class="stats-modal-header">
-                    <h2><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#chart-no-axes-column"/></svg> Global Statistics</h2>
-                    <button class="stats-modal-close" onclick="this.closest('.stats-modal-overlay').remove()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#x"/></svg></button>
+            <div class="gs-sheet" role="dialog" aria-modal="true" aria-labelledby="gsTitle" tabindex="-1">
+                <div class="gs-grab" aria-hidden="true"></div>
+                <div class="gs-head">
+                    <div class="gs-head-ico">${ico('chart-no-axes-column')}</div>
+                    <div><h2 id="gsTitle">Your Progress</h2><p>Study statistics on this device</p></div>
+                    <button class="gs-close" type="button" aria-label="Close statistics">${ico('x')}</button>
                 </div>
-                <div class="stats-modal-body">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-num">${completedCount}/${totalChaps}</div>
-                            <div class="stat-label">Chapters Completed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${overallPercent}%</div>
-                            <div class="stat-label">Overall Progress</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${stats.totalAttempts || 0}</div>
-                            <div class="stat-label">Total Attempts</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${critAcc}%</div>
-                            <div class="stat-label">Critical Skills</div>
+                <div class="gs-body">
+                    <div class="gs-sec" style="--i:0">
+                        <div class="gs-card gs-hero">
+                            <div class="gs-ring${left === 0 && completedCount ? ' done' : ''}">
+                                <svg viewBox="0 0 120 120"><circle class="trk" cx="60" cy="60" r="50" fill="none" stroke-width="11"/><circle class="val" id="gsRing" cx="60" cy="60" r="50" fill="none" stroke-width="11" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}"/></svg>
+                                <div class="gs-ring-txt"><b data-count="${overallPercent}" data-suffix="%">0%</b><span>${completedCount}/${totalChaps} done</span></div>
+                                ${confetti}
+                            </div>
+                            <div class="gs-hero-txt"><h3>${hero.h}</h3><p>${hero.p}</p><span class="gs-badge">${ico(left === 0 && completedCount ? 'trophy' : 'rocket')} ${hero.b}</span></div>
                         </div>
                     </div>
-                    <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#zap"/></svg> Flashcards</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-num">${fcTotal}</div>
-                            <div class="stat-label">Cards Practiced</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${fcAcc}%</div>
-                            <div class="stat-label">Accuracy</div>
+
+                    <div class="gs-sec" style="--i:1">
+                        <div class="gs-kpis">
+                            ${kpis.map(([ic, v, lbl, m]) => `<div class="gs-card gs-kpi"><div class="gs-kpi-ico">${ico(ic)}</div><div><b ${typeof v === 'number' ? `data-count="${v}"` : (/^\d+%$/.test(v) ? `data-count="${parseInt(v)}" data-suffix="%"` : '')}>${typeof v === 'number' ? 0 : v}</b><small>${lbl}</small></div>${m !== null ? `<div class="gs-meter"><i data-w="${m}"></i></div>` : ''}</div>`).join('')}
                         </div>
                     </div>
-                    <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#notebook-pen"/></svg> Quizzes</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-num">${quizTotal}</div>
-                            <div class="stat-label">Questions Answered</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${quizAcc}%</div>
-                            <div class="stat-label">Accuracy</div>
-                        </div>
+
+                    <div class="gs-sec" style="--i:2">
+                        <div class="gs-sec-title">${ico('chart-no-axes-column')} Chapter mastery<span class="gs-aside">quiz accuracy</span></div>
+                        ${anyQuiz ? `<div class="gs-card gs-bars">${rows.map(r => `
+                            <div class="gs-bar-row" title="${esc(r.name)}: ${r.acc === null ? 'no quiz yet' : r.acc + '% over ' + r.tries + ' attempt' + (r.tries === 1 ? '' : 's')}">
+                                <div class="gs-bar-name">${r.done ? ico('circle-check-big') : ''}${esc(r.name)}</div>
+                                <div class="gs-bar-val">${r.acc === null ? '—' : r.acc + '%'}</div>
+                                <div class="gs-track${r.acc === null ? ' none' : ''}"><i data-w="${r.acc || 0}"></i></div>
+                            </div>`).join('')}</div>`
+                        : `<div class="gs-card gs-empty"><div class="gs-kpi-ico">${ico('notebook-pen')}</div><div>Take a chapter quiz and your accuracy for each chapter will chart here.</div></div>`}
                     </div>
-                    <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#clipboard-list"/></svg> Exam Results</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-num">${examStats.length}</div>
-                            <div class="stat-label">Exams Taken</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">${examAvg}%</div>
-                            <div class="stat-label">Average Score</div>
-                        </div>
+
+                    <div class="gs-sec" style="--i:3">
+                        <div class="gs-sec-title">${ico('trending-up')} Exam trend${exams.length ? `<span class="gs-aside">best ${examBest}%</span>` : ''}</div>
+                        ${chart ? `<div class="gs-card">${chart}</div>` : `<div class="gs-card gs-empty"><div class="gs-kpi-ico">${ico('trending-up')}</div><div>${exams.length === 1 ? 'One exam logged — take another to see your trend line.' : 'Take a Prometric mock exam to start tracking your scores over time.'}</div></div>`}
                     </div>
-                    ${examStats.length > 1 ? `
-                    <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#trending-up"/></svg> Progress Chart</h3>
-                    <div class="stats-chart-container" id="statsChartContainer"></div>
-                    ` : ''}
-                    <h3>Recent Exams</h3>
-                    <table class="stats-table">
-                        <thead><tr><th>Exam</th><th>Score</th><th>%</th><th>Date</th></tr></thead>
-                        <tbody>${recentExams}</tbody>
-                    </table>
-                    <button class="stats-clear-btn" onclick="clearAllStats()">Clear All Stats</button>
+
+                    ${recent ? `<div class="gs-sec" style="--i:4"><div class="gs-sec-title">${ico('clock')} Recent exams</div><div class="gs-exams">${recent}</div></div>` : ''}
+
+                    <button class="gs-reset" type="button">${ico('trash-2')} Reset all statistics</button>
                 </div>
-            </div>
-        `;
+            </div>`;
+
+        const close = () => {
+            if (modal.classList.contains('closing')) return;
+            const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (rm) { modal.remove(); return; }
+            modal.classList.add('closing');
+            setTimeout(() => modal.remove(), 220);
+        };
+        modal.addEventListener('click', e => { if (e.target === modal) close(); });
+        modal.querySelector('.gs-close').addEventListener('click', close);
+        modal.querySelector('.gs-reset').addEventListener('click', clearAllStats);
+        const onKey = e => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); } };
+        document.addEventListener('keydown', onKey);
         document.body.appendChild(modal);
+        modal.querySelector('.gs-sheet').focus({ preventScroll: true });
 
-        // Render chart if data exists
-        if (examStats.length > 1) {
-            loadProgressChart(chartLabels, chartData, chartColors);
-        }
-    }
-
-    function loadProgressChart(chartLabels, chartData, chartColors) {
-        const container = document.getElementById('statsChartContainer');
-        if (!container) return;
-        renderState(container, 'loading', { lines: 1 });
-        loadChartJs()
-            .then(() => {
-                container.innerHTML = '<canvas id="progress-chart"></canvas>';
-                setTimeout(() => renderProgressChart(chartLabels, chartData, chartColors), 100);
-            })
-            .catch(err => {
-                console.warn('[SmartCare] Chart.js failed to load:', err);
-                renderState(container, 'error', {
-                    title: "Couldn't load the chart",
-                    message: 'Check your connection and try again.',
-                    iconHref: 'icons/sprite.svg#triangle-alert',
-                    onRetry: () => loadProgressChart(chartLabels, chartData, chartColors),
-                });
+        // Animate: ring, count-ups, bars, meters
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            const ring = modal.querySelector('#gsRing');
+            if (ring) ring.style.strokeDashoffset = (C * (1 - overallPercent / 100)).toFixed(1);
+            modal.querySelectorAll('[data-w]').forEach((el, i) => { el.style.transitionDelay = reduce ? '0s' : (0.35 + i * 0.05) + 's'; el.style.width = el.dataset.w + '%'; });
+            modal.querySelectorAll('[data-count]').forEach(el => {
+                const target = +el.dataset.count, suf = el.dataset.suffix || '';
+                if (reduce || !target) { el.textContent = target + suf; return; }
+                const t0 = performance.now(), dur = 1100;
+                (function step(t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(target * e) + suf; if (k < 1) requestAnimationFrame(step); })(t0);
             });
-    }
+            const ln = modal.querySelector('#gsLine');
+            if (ln && !reduce && ln.getTotalLength) { const L = ln.getTotalLength(); ln.style.strokeDasharray = L; ln.style.strokeDashoffset = L; ln.getBoundingClientRect(); ln.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1) .4s'; ln.style.strokeDashoffset = 0; }
+        }));
 
-    // Vendored locally (vendor/chart-4.5.1.umd.min.js, byte-for-byte from the
-    // npm package) instead of loaded from jsdelivr — under service-worker
-    // control, so the stats chart works offline, and no SRI/CDN trust needed.
-    let chartJsPromise = null;
-    function loadChartJs() {
-        if (window.Chart) return Promise.resolve();
-        if (chartJsPromise) return chartJsPromise;
-        chartJsPromise = new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'vendor/chart-4.5.1.umd.min.js';
-            script.onload = () => resolve();
-            script.onerror = () => { chartJsPromise = null; reject(new Error('Chart.js failed to load')); };
-            document.head.appendChild(script);
-        });
-        return chartJsPromise;
-    }
-
-    function renderProgressChart(labels, data, colors) {
-        const canvas = document.getElementById('progress-chart');
-        if (!canvas) return;
-        
-        const ctx = canvas.getContext('2d');
-        if (window.progressChartInstance) window.progressChartInstance.destroy();
-        
-        canvas.width = canvas.offsetWidth || 300;
-        canvas.height = 180;
-        
-        window.progressChartInstance = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Score %',
-                    data: data,
-                    borderColor: '#3498db',
-                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: colors,
-                    pointRadius: 6,
-                    pointBorderWidth: 2,
-                    pointBorderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        grid: { color: 'rgba(255,255,255,0.1)' },
-                        ticks: { color: '#aaa' }
-                    },
-                    x: {
-                        grid: { display: false },
-                        ticks: { color: '#aaa' }
-                    }
-                }
-            }
-        });
+        // Exam chart tooltip (hover + tap)
+        const chartEl = modal.querySelector('#gsChart');
+        if (chartEl) {
+            const tip = chartEl.querySelector('#gsTip'), svg = chartEl.querySelector('svg');
+            const show = hit => {
+                const i = +hit.dataset.i, e = trend[i], p = pct(e.score || 0, e.max);
+                chartEl.querySelectorAll('.dot').forEach(d => d.classList.remove('on'));
+                hit.nextElementSibling.classList.add('on');
+                tip.innerHTML = `${p}% · ${p >= 70 ? 'Pass' : 'Below 70%'}<small>${esc(e.exam || 'NREMT')} · ${esc(fmtDate(e.date))}</small>`;
+                const sr = svg.getBoundingClientRect(), cr = chartEl.getBoundingClientRect(), vb = svg.viewBox.baseVal;
+                tip.style.left = ((+hit.getAttribute('cx')) * sr.width / vb.width + sr.left - cr.left) + 'px';
+                tip.style.top = ((+hit.getAttribute('cy')) * sr.height / vb.height + sr.top - cr.top) + 'px';
+                tip.classList.add('on');
+            };
+            chartEl.querySelectorAll('.hit').forEach(h => { h.addEventListener('mouseenter', () => show(h)); h.addEventListener('click', () => show(h)); });
+            chartEl.addEventListener('mouseleave', () => { tip.classList.remove('on'); chartEl.querySelectorAll('.dot').forEach(d => d.classList.remove('on')); });
+        }
     }
 
     function clearAllStats() {

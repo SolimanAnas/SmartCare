@@ -375,6 +375,12 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .zone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:8px}
 .zone-box{padding:6px 4px;border-radius:8px;text-align:center;border:1px solid var(--br);font-size:.65rem;font-weight:700;background:rgba(255,255,255,.03)}
 .zone-box.hot{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.1);color:#fca5a5}
+
+/* Header fits on phones: single-line title/subtitle (the header is a fixed
+   --hdr tall, and wrapped lines spilled out and clipped the title). */
+.hdr-info{flex:1;min-width:0}
+.hdr-title,.hdr-sub,.hdr-disclaimer{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (max-width:420px){.hdr-badge{display:none}}
 </style>
 </head>
 <body>
