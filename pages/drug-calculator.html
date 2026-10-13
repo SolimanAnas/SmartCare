@@ -80,10 +80,10 @@ body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);displ
 body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 20% 0%,#0f2744,transparent 60%),radial-gradient(ellipse at 80% 100%,#111827,transparent 60%);pointer-events:none;z-index:-1}
 
 /* ── HEADER ─────────────────────────────────────────── */
-.app-header{height:var(--hdr);background:rgba(7,17,31,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--br);display:flex;align-items:center;padding:0 14px;gap:10px;flex-shrink:0;z-index:50}
+.app-header{min-height:var(--hdr);background:rgba(7,17,31,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--br);display:flex;align-items:center;padding:calc(8px + env(safe-area-inset-top)) 14px 8px;gap:10px;flex-shrink:0;z-index:50}
 .hdr-back{width:38px;height:38px;border-radius:12px;background:var(--sf2);border:1px solid var(--br);color:var(--text);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.95rem;flex-shrink:0}
 .hdr-back:active{background:var(--br2)}
-.hdr-info{flex:1}
+.hdr-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
 .hdr-title{font-size:.95rem;font-weight:800;letter-spacing:-.3px}
 .hdr-sub{font-size:.65rem;color:var(--muted);font-weight:400}
 .hdr-disclaimer{font-size:.6rem;color:var(--muted);text-decoration:underline;text-underline-offset:2px;font-weight:400}
@@ -153,6 +153,27 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
   .dose-panel { display: flex !important; padding: 24px; }
   .mob-back-btn { display: none !important; }
 }
+
+/* ── ANIMATED CALCULATOR ILLUSTRATION ── */
+.calc-art{position:relative;flex:0 0 auto;aspect-ratio:440/398}
+.calc-art::before{content:"";position:absolute;inset:12% 8% 4%;border-radius:50%;background:radial-gradient(closest-side,rgba(59,130,246,.55),transparent);filter:blur(10px);animation:caGlow 3.6s ease-in-out infinite;pointer-events:none}
+.calc-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;transform-origin:50% 90%;animation:caFloat 4.8s ease-in-out infinite;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.calc-art .spark{position:absolute;z-index:2;width:10px;height:10px;background:#fff;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0;animation:caSpark 3.2s ease-in-out infinite;pointer-events:none}
+.calc-art .spark.s1{top:8%;left:14%}
+.calc-art .spark.s2{top:30%;right:2%;width:7px;height:7px;animation-delay:1.1s}
+.calc-art .spark.s3{bottom:16%;left:2%;width:8px;height:8px;animation-delay:2.1s}
+@keyframes caFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes caGlow{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes caSpark{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(45deg)}60%{opacity:0;transform:scale(.6) rotate(90deg)}}
+@media (prefers-reduced-motion:reduce){.calc-art img,.calc-art::before,.calc-art .spark{animation:none}.calc-art .spark{display:none}}
+
+/* Compact intro banner above the medication list */
+.calc-hero{display:flex;align-items:center;gap:12px;margin:12px 12px 0;padding:10px 14px 10px 10px;border-radius:18px;background:linear-gradient(135deg,rgba(37,99,235,.22),rgba(14,165,233,.08));border:1px solid rgba(96,165,250,.25);flex-shrink:0;overflow:hidden}
+.calc-hero .calc-art{width:78px}
+.ch-title{font-size:1rem;font-weight:800;letter-spacing:-.2px;color:#fff}
+.ch-sub{font-size:.78rem;color:#a5b4c8;margin-top:3px;line-height:1.35}
+.dose-empty .calc-art{width:min(240px,60vw);margin-bottom:6px}
+.dose-empty strong{color:var(--text);font-size:1.05rem}
 
 /* ── SEARCH BAR ─────────────────────────────────────── */
 .search-wrap{padding:12px;border-bottom:1px solid var(--br);flex-shrink:0}
@@ -278,6 +299,13 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 <div class="split" id="mainSplit">
 
   <div class="drug-panel">
+    <div class="calc-hero">
+      <div class="calc-art sm" aria-hidden="true"><img src="../images/dose-calculator.webp" alt="" width="440" height="398" decoding="async"><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span></div>
+      <div>
+        <div class="ch-title">Weight-based dosing</div>
+        <div class="ch-sub">Pick a medication, then the patient's age group</div>
+      </div>
+    </div>
     <div class="search-wrap">
       <div class="search-inner">
         <span class="si-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg></span>
@@ -310,7 +338,7 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 
     <div id="doseArea">
       <div class="dose-empty full">
-        <div class="de-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
+        <div class="calc-art lg" aria-hidden="true"><img src="../images/dose-calculator.webp" alt="" width="440" height="398" decoding="async"><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span></div>
         <strong>Select a medication</strong>
         <span>Choose from the list to see age-based dosing</span>
       </div>
