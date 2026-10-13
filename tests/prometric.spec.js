@@ -10,7 +10,7 @@ test('exam-db.json has 2559 questions and 17 categories', async ({ request }) =>
   expect(resp.ok()).toBeTruthy();
   const db = await resp.json();
 
-  expect(db.title).toBe('EMT Basic Exam Database');
+  expect(db.title).toBe('Paramedic / EMT Exam Database');
   expect(db.questions.length).toBe(2559);
   expect(db.categories.length).toBe(17);
 

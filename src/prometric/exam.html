@@ -154,6 +154,26 @@
         <p class="step-hint">Skip to include all topics</p>
         <div class="topics-grid">
           <label class="topic-checkbox">
+            <input type="checkbox" value="Cardiology" checked>
+            <span class="topic-name">Cardiology</span>
+          </label>
+          <label class="topic-checkbox">
+            <input type="checkbox" value="Airway and Breathing" checked>
+            <span class="topic-name">Airway and Breathing</span>
+          </label>
+          <label class="topic-checkbox">
+            <input type="checkbox" value="Medical" checked>
+            <span class="topic-name">Medical</span>
+          </label>
+          <label class="topic-checkbox">
+            <input type="checkbox" value="Obstetrics and Pediatrics" checked>
+            <span class="topic-name">Obstetrics and Pediatrics</span>
+          </label>
+          <label class="topic-checkbox">
+            <input type="checkbox" value="Operations" checked>
+            <span class="topic-name">Operations</span>
+          </label>
+          <label class="topic-checkbox">
             <input type="checkbox" value="Fundamentals and Operations" checked>
             <span class="topic-name">Fundamentals and Operations</span>
           </label>
@@ -215,6 +235,14 @@
       <div class="wizard-step" data-step="3">
         <h3>Configure Your Exam</h3>
         <div class="settings-grid">
+          <div class="setting-card">
+            <label>Exam Level</label>
+            <div class="setting-options">
+              <button class="setting-btn selected" data-value="all" data-setting="level">All</button>
+              <button class="setting-btn" data-value="paramedic" data-setting="level">Paramedic</button>
+              <button class="setting-btn" data-value="emt" data-setting="level">EMT</button>
+            </div>
+          </div>
           <div class="setting-card">
             <label>Number of Questions</label>
             <div class="setting-options">
