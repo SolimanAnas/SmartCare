@@ -169,6 +169,8 @@
     .btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .btn-google { background: #fff; color: #1f2937; box-shadow: 0 6px 20px -6px rgba(0,0,0,0.5); }
     .btn-google:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(0,0,0,0.5); }
+    .gis-btn { display: flex; justify-content: center; min-height: 44px; }
+    .gis-btn iframe { margin: 0 auto !important; }
     .btn-google .g-logo { width: 20px; height: 20px; flex: 0 0 auto; }
     .acct-chip .g-logo { width: 12px; height: 12px; }
     .btn-primary {
@@ -335,6 +337,10 @@
           <span id="googleLabel">Continue with Google</span>
           <div class="spinner" id="googleSpinner"></div>
         </button>
+        <!-- Google's official button (Google Identity Services). Replaces the
+             button above once GIS loads; its popup names the app instead of
+             the Supabase project URL. The button above stays as a fallback. -->
+        <div id="gisBtn" class="gis-btn hidden"></div>
       </section>
 
       <section class="opt" aria-labelledby="optLocalTitle">
@@ -533,57 +539,92 @@
     return;
   }
 
-  /* ── Google sign-in popup (shows "SmartCare" branding) ──
-   * Uses Google Identity Services (GIS) popup instead of Supabase
-   * redirect, so the Google account chooser shows "SmartCare"
-   * instead of the raw Supabase project URL.
+  /* ── Google sign-in ──
+   * Primary: Google Identity Services ID-token flow (google.accounts.id +
+   * renderButton). Google's popup names the app, and the ID token is handed
+   * to Supabase via signInWithIdToken — so the account chooser never shows
+   * the raw Supabase project URL.
    *
-   * Falls back to Supabase redirect if GIS isn't loaded yet
-   * (e.g. on slow networks).                                */
-  var gisReady = typeof google !== 'undefined' && google.accounts;
+   * Two bugs made the old code always fall back to the Supabase redirect
+   * (which shows "<project>.supabase.co"): GIS availability was checked once
+   * at load, before the async GIS script had loaded; and it used the OAuth2
+   * *token* client, which returns an access token, never the id_token that
+   * signInWithIdToken needs.
+   *
+   * Fallback (GIS blocked/offline): the custom button → Supabase redirect. */
+  function sha256Hex(text) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+    });
+  }
+  function randomNonce() {
+    var a = new Uint8Array(16); crypto.getRandomValues(a);
+    return Array.prototype.map.call(a, function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+  function whenGis(timeoutMs) {
+    return new Promise(function (resolve, reject) {
+      var t0 = Date.now();
+      (function poll() {
+        if (window.google && google.accounts && google.accounts.id) return resolve();
+        if (Date.now() - t0 > timeoutMs) return reject(new Error('GIS unavailable'));
+        setTimeout(poll, 150);
+      })();
+    });
+  }
 
+  function initGis() {
+    if (!window.crypto || !crypto.subtle) return;
+    whenGis(8000).then(function () {
+      var rawNonce = randomNonce();
+      return sha256Hex(rawNonce).then(function (hashedNonce) {
+        google.accounts.id.initialize({
+          client_id: SmartCareCloud.GOOGLE_CLIENT_ID,
+          nonce: hashedNonce,
+          ux_mode: 'popup',
+          context: 'signin',
+          auto_select: false,
+          itp_support: true,
+          callback: function (resp) { onGoogleCredential(resp && resp.credential, rawNonce); }
+        });
+        var host = $('gisBtn');
+        host.innerHTML = '';
+        host.classList.remove('hidden');
+        var w = Math.round(host.getBoundingClientRect().width) || 320;
+        google.accounts.id.renderButton(host, {
+          type: 'standard', theme: 'outline', size: 'large', shape: 'pill',
+          text: 'continue_with', logo_alignment: 'center',
+          width: Math.max(220, Math.min(400, w))
+        });
+        $('googleBtn').classList.add('hidden');
+      });
+    }).catch(function () { /* keep the redirect fallback button */ });
+  }
+
+  function onGoogleCredential(credential, rawNonce) {
+    clearMsg($('feedbackOut'));
+    if (!credential) { msg($('feedbackOut'), 'Google sign-in was cancelled.', 'err'); return; }
+    msg($('feedbackOut'), 'Signing you in…', 'info');
+    SmartCareCloud.signInWithGooglePopup(credential, rawNonce)
+      .then(function () { clearMsg($('feedbackOut')); /* showSignedIn via onChange */ })
+      .catch(function (e) {
+        msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+        initGis();   // fresh nonce for the next attempt
+      });
+  }
+
+  initGis();
+
+  // Fallback button: Supabase OAuth redirect.
   $('googleBtn').addEventListener('click', function () {
     clearMsg($('feedbackOut'));
     if (!navigator.onLine) { msg($('feedbackOut'), 'You\'re offline. Connect to sign in.', 'err'); return; }
-
-    if (gisReady) {
-      busy($('googleBtn'), $('googleSpinner'), true);
-      $('googleLabel').textContent = 'Signing in…';
-      var client = google.accounts.oauth2.initTokenClient({
-        client_id: SmartCareCloud.GOOGLE_CLIENT_ID,
-        scope: 'openid email profile',
-        callback: function (tokenResponse) {
-          if (tokenResponse && tokenResponse.id_token) {
-            SmartCareCloud.signInWithGooglePopup(tokenResponse.id_token)
-              .then(function () { /* showSignedIn called by onChange */ })
-              .catch(function (e) {
-                busy($('googleBtn'), $('googleSpinner'), false);
-                $('googleLabel').textContent = 'Continue with Google';
-                msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
-              });
-          } else {
-            busy($('googleBtn'), $('googleSpinner'), false);
-            $('googleLabel').textContent = 'Continue with Google';
-            msg($('feedbackOut'), 'Google sign-in cancelled or failed.', 'err');
-          }
-        },
-        error_callback: function () {
-          busy($('googleBtn'), $('googleSpinner'), false);
-          $('googleLabel').textContent = 'Continue with Google';
-          msg($('feedbackOut'), 'Google sign-in popup closed.', 'err');
-        }
-      });
-      client.requestAccessToken();
-    } else {
-      // Fallback: Supabase OAuth redirect
-      busy($('googleBtn'), $('googleSpinner'), true);
-      $('googleLabel').textContent = 'Redirecting…';
-      SmartCareCloud.signInWithGoogle().catch(function (e) {
-        busy($('googleBtn'), $('googleSpinner'), false);
-        $('googleLabel').textContent = 'Continue with Google';
-        msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
-      });
-    }
+    busy($('googleBtn'), $('googleSpinner'), true);
+    $('googleLabel').textContent = 'Redirecting…';
+    SmartCareCloud.signInWithGoogle().catch(function (e) {
+      busy($('googleBtn'), $('googleSpinner'), false);
+      $('googleLabel').textContent = 'Continue with Google';
+      msg($('feedbackOut'), 'Sign-in failed: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+    });
   });
 
   // ── Sync now (pull newest, then push merged) ──
