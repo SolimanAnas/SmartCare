@@ -2391,3 +2391,8 @@ progress::-webkit-progress-value { background-color: var(--primary-accent); bord
     .fx-hint { justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .fx-art img, .fx-art::after { animation: none; } }
+
+/* The decorative "⚡ AMOLED" header badge (index, courses) has no room on
+   phones: it pushed the header's icon buttons ~90px past the viewport, so
+   the whole page zoomed out in the AMOLED theme. */
+@media (max-width: 520px) { #amoledBadge { display: none !important; } }
