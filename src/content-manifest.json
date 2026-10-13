@@ -269,9 +269,9 @@
     {
       "file": "src/prometric/exam-db.json",
       "exam_id": "prometric",
-      "title": "NREMT-Style Practice Exam",
-      "guideline_source": "NREMT Cognitive Exam Domains",
-      "content_version": "1.0",
+      "title": "NREMT-Style Paramedic / EMT Practice Exam",
+      "guideline_source": "NREMT Cognitive Exam Domains; AHA 2020/2025 Guidelines for CPR and ECC (ACLS, PALS, NRP) for the paramedic ALS set",
+      "content_version": "1.1",
       "review_status": "unreviewed",
       "reviewer": null,
       "review_date": null

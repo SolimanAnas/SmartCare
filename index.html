@@ -1939,8 +1939,13 @@ if ('serviceWorker' in navigator) {
             .catch(e => console.log('SW failed', e));
     });
 
+    // Reload only when an updated worker replaces an existing one. On a first
+    // visit the page was already served from the network, and reloading would
+    // wipe whatever the visitor has started doing (e.g. typing a search).
+    let swHadController = !!navigator.serviceWorker.controller;
     let swRefreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', function() {
+        if (!swHadController) { swHadController = true; return; }
         if (swRefreshing) return;
         swRefreshing = true;
         window.location.reload();
