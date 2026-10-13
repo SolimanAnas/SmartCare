@@ -1304,14 +1304,26 @@
 
         cardEl.classList.toggle('hero-guest', !user);
 
+        // Names are user-controlled: insert as text, never as markup.
+        const setGreeting = who => {
+            greetingEl.textContent = getGreeting() + (who ? ', ' + who : '') + ' ';
+            greetingEl.insertAdjacentHTML('beforeend', handSvg);
+        };
+        // Local profile name (pages/login.html → "Use without an account")
+        let localName = '';
+        try { localName = (localStorage.getItem('smartcare_local_name') || '').trim().split(/\s+/)[0] || ''; } catch (e) {}
+
         if (user) {
             const completion     = loadStorage(COMPLETION_KEY, {});
             const totalChaps     = CHAPTERS.filter(c => c.id !== 'c0' && c.id !== 'c-index').length;
             const completedCount = Object.values(completion).filter(v => v).length;
-            greetingEl.innerHTML = `${getGreeting()}${firstName ? ', ' + firstName : ''} ${handSvg}`;
+            setGreeting(firstName || localName);
             subEl.textContent = `${completedCount}/${totalChaps} chapters · keep it up!`;
+        } else if (localName) {
+            setGreeting(localName);
+            subEl.textContent = 'Local profile · tap to sync across devices →';
         } else {
-            greetingEl.innerHTML = `${getGreeting()}, Guest ${handSvg}`;
+            setGreeting('Guest');
             subEl.textContent = 'Tap to sign in & sync your progress →';
         }
     }

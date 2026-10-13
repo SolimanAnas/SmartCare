@@ -83,13 +83,13 @@
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-    html, body { height: 100%; }
+    html, body { min-height: 100%; }
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
+      background: var(--bg); color: var(--text);
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      padding: 1.5rem; overflow: hidden; position: relative;
+      padding: max(1.25rem, env(safe-area-inset-top)) 1rem max(1.25rem, env(safe-area-inset-bottom)); overflow-x: hidden; position: relative;
     }
 
     /* ── Layered ambient background ── */
@@ -163,11 +163,14 @@
       font-family: 'DM Sans', sans-serif; font-size: 0.97rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center; gap: 10px;
       cursor: pointer; transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+      text-decoration: none; min-height: 50px; -webkit-tap-highlight-color: transparent;
     }
+    .btn:focus-visible, .link-btn:focus-visible, .field input:focus-visible, summary:focus-visible { outline: 2px solid #93C5FD; outline-offset: 2px; }
     .btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .btn-google { background: #fff; color: #1f2937; box-shadow: 0 6px 20px -6px rgba(0,0,0,0.5); }
     .btn-google:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(0,0,0,0.5); }
-    .btn-google img { width: 18px; height: 18px; }
+    .btn-google .g-logo { width: 20px; height: 20px; flex: 0 0 auto; }
+    .acct-chip .g-logo { width: 12px; height: 12px; }
     .btn-primary {
       background: linear-gradient(95deg, #2563EB, #1D4ED8); color: #fff;
       box-shadow: 0 6px 20px -6px rgba(29, 78, 216, 0.7); margin-top: 0.6rem;
@@ -187,27 +190,69 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* ── Option cards (signed out) ── */
+    .opt { border: 1px solid var(--border); background: rgba(4,10,20,.55); border-radius: 1.25rem; padding: 1.05rem; }
+    .opt + .opt { margin-top: .8rem; }
+    .opt-head { display: flex; align-items: center; gap: 10px; margin-bottom: .75rem; }
+    .opt-ico { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; flex: 0 0 auto; font-size: .95rem; }
+    .opt-ico.cloud { background: rgba(59,130,246,.16); color: #93C5FD; }
+    .opt-ico.local { background: rgba(74,222,128,.13); color: #86EFAC; }
+    .opt-title { font-weight: 700; font-size: .98rem; color: var(--text); }
+    .opt-sub { font-size: .78rem; color: var(--muted); margin-top: 1px; }
+    .opt-tag { display: inline-block; vertical-align: 2px; margin-left: 4px; font-size: .58rem; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #93C5FD; background: rgba(59,130,246,.14); border: 1px solid rgba(59,130,246,.3); padding: 3px 8px; border-radius: 999px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: .85rem; }
+    .chips span { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; color: #C9D6EC; background: rgba(56,120,220,.1); border: 1px solid rgba(56,120,220,.18); padding: 4px 9px; border-radius: 999px; }
+    .chips i { color: #60A5FA; font-size: .7rem; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: .7rem; }
+    .field label { font-size: .78rem; font-weight: 600; color: #B5C6E0; }
+    .field input { width: 100%; min-height: 48px; padding: 0 14px; border-radius: .9rem; border: 1.5px solid rgba(56,120,220,.28); background: var(--input-bg); color: var(--text); font: inherit; font-size: 1rem; transition: border-color .2s, box-shadow .2s; }
+    .field input::placeholder { color: #51658A; }
+    .field input:focus { outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 4px rgba(59,130,246,.15); }
+    .field-hint { font-size: .72rem; color: var(--muted); }
+    .btn-local { background: rgba(74,222,128,.14); color: #BBF7D0; border: 1px solid rgba(74,222,128,.35); }
+    .btn-local:hover:not(:disabled) { background: rgba(74,222,128,.22); }
+    .local-known { display: flex; align-items: center; gap: 10px; margin-bottom: .75rem; }
+    .local-known .user-avatar { width: 40px; height: 40px; font-size: 1rem; background: linear-gradient(145deg,#166534,#22C55E); }
+    .local-known b { font-size: .95rem; color: var(--text); }
+    .local-known small { display: block; font-size: .74rem; color: var(--muted); }
+    .link-btn { margin-left: auto; background: none; border: none; color: #60A5FA; font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; padding: 6px 4px; }
+
     /* ── Signed-in panel ── */
-    .user-row {
-      display: flex; align-items: center; gap: 12px;
-      background: var(--input-bg); border: 1px solid rgba(56,120,220,0.25);
-      border-radius: var(--radius); padding: 0.85rem 1rem; margin-bottom: 1.1rem;
-    }
+    .profile { display: flex; align-items: center; gap: 14px; padding: 1rem; border-radius: 1.25rem; background: linear-gradient(135deg, rgba(37,99,235,.18), rgba(4,10,20,.6)); border: 1px solid var(--border); }
     .user-avatar {
-      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      position: relative; width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
       background: linear-gradient(145deg, #1E3A8A, #3B82F6);
       display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 700; font-size: 1.1rem; overflow: hidden;
+      color: #fff; font-weight: 700; font-size: 1.3rem; overflow: hidden;
+      box-shadow: 0 0 0 3px rgba(147,197,253,.25);
     }
     .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .user-meta { min-width: 0; }
-    .user-name { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .user-email { font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .sync-status {
-      font-family: 'DM Mono', monospace; font-size: 0.76rem; color: var(--muted);
-      text-align: center; margin: 0.4rem 0 0.9rem;
-    }
-    .sync-status b { color: #93C5FD; font-weight: 500; }
+    .user-meta { min-width: 0; flex: 1; }
+    .user-name { font-weight: 700; font-size: 1.08rem; color: var(--text); line-height: 1.25; overflow-wrap: anywhere; }
+    .user-email { font-size: .82rem; color: #9FB3D4; margin-top: 2px; overflow-wrap: anywhere; }
+    .acct-chip { display: inline-flex; align-items: center; gap: 6px; margin-top: 7px; font-size: .7rem; font-weight: 600; color: #C9D6EC; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); padding: 3px 9px; border-radius: 999px; }
+
+    .sync-card { display: flex; align-items: center; gap: 12px; margin: .9rem 0; padding: .85rem 1rem; border-radius: 1.1rem; background: rgba(4,10,20,.55); border: 1px solid var(--border); }
+    .sync-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: 0 0 auto; background: rgba(74,222,128,.12); color: var(--ok); font-size: 1rem; }
+    .sync-card.never .sync-ico { background: rgba(252,211,77,.12); color: #FCD34D; }
+    .sync-card.busy .sync-ico i { animation: spin 1s linear infinite; }
+    .sync-title { font-size: .9rem; font-weight: 700; color: var(--text); }
+    .sync-status { font-size: .78rem; color: var(--muted); margin-top: 1px; }
+    .sync-status b { color: #93C5FD; font-weight: 600; }
+
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .6rem; }
+    .btn-row .btn { margin-top: 0; font-size: .86rem; padding: .8rem .6rem; }
+    .btn-signout { margin-top: .6rem; background: transparent; border: 1px solid rgba(248,113,113,.28); color: #FCA5A5; font-weight: 600; font-size: .9rem; }
+    .btn-signout:hover:not(:disabled) { background: rgba(248,113,113,.08); }
+
+    .danger { margin-top: 1.2rem; border-top: 1px solid rgba(56,120,220,.15); padding-top: .4rem; }
+    .danger summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; padding: .7rem; font-size: .78rem; font-weight: 600; color: var(--muted); border-radius: .8rem; }
+    .danger summary::-webkit-details-marker { display: none; }
+    .danger summary i { font-size: .7rem; transition: transform .2s; }
+    .danger[open] summary i { transform: rotate(180deg); }
+    .danger-body { padding: .2rem .2rem .3rem; }
+    .danger-body p { text-align: center; font-size: .76rem; color: var(--muted); margin: .55rem 0 0; line-height: 1.45; }
+    .btn-delete { background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.3); color: var(--err); font-size: .86rem; font-weight: 600; min-height: 44px; }
 
     /* ── Feedback ── */
     .feedback {
@@ -242,8 +287,9 @@
     @media (max-width: 480px) {
       .card { padding: 2rem 1.4rem 1.6rem; border-radius: 1.4rem; }
       .brand h1 { font-size: 1.5rem; }
-      .sync-list { grid-template-columns: 1fr; }
+      .btn-row .btn { font-size: .82rem; }
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
 </head>
 <body>
@@ -270,59 +316,95 @@
 
     <!-- ───────── SIGNED OUT ───────── -->
     <div id="signedOut">
-      <p class="sync-intro">Signing in is <b>optional</b>. SmartCare works fully offline — sign in only to back up and sync your study data.</p>
-      <ul class="sync-list">
-        <li><i class="fas fa-star"></i> Favorites</li>
-        <li><i class="fas fa-book-open"></i> Reading progress</li>
-        <li><i class="fas fa-clipboard-list"></i> Quiz history</li>
-        <li><i class="fas fa-trophy"></i> Achievements</li>
-        <li><i class="fas fa-sliders"></i> Settings</li>
-        <li><i class="fas fa-cloud-arrow-down"></i> Offline list</li>
-      </ul>
+      <p class="sync-intro">Signing in is <b>optional</b> — SmartCare works fully offline. Choose how you'd like to continue.</p>
 
-      <button class="btn btn-google" id="googleBtn">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" aria-hidden="true">
-        <span id="googleLabel">Continue with Google</span>
-        <div class="spinner" id="googleSpinner"></div>
-      </button>
+      <section class="opt" aria-labelledby="optCloudTitle">
+        <div class="opt-head">
+          <div class="opt-ico cloud"><i class="fas fa-cloud"></i></div>
+          <div><div class="opt-title" id="optCloudTitle">Sync with Google <span class="opt-tag">Recommended</span></div><div class="opt-sub">Back up &amp; use on all your devices</div></div>
+        </div>
+        <div class="chips" aria-label="What syncs">
+          <span><i class="fas fa-book-open"></i> Progress</span>
+          <span><i class="fas fa-clipboard-list"></i> Quiz history</span>
+          <span><i class="fas fa-star"></i> Favorites</span>
+          <span><i class="fas fa-trophy"></i> Achievements</span>
+          <span><i class="fas fa-sliders"></i> Settings</span>
+        </div>
+        <button class="btn btn-google" id="googleBtn" type="button">
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+          <span id="googleLabel">Continue with Google</span>
+          <div class="spinner" id="googleSpinner"></div>
+        </button>
+      </section>
 
-      <a class="btn btn-ghost" href="../index.html">Continue without signing in</a>
+      <section class="opt" aria-labelledby="optLocalTitle">
+        <div class="opt-head">
+          <div class="opt-ico local"><i class="fas fa-mobile-screen"></i></div>
+          <div><div class="opt-title" id="optLocalTitle">Use without an account</div><div class="opt-sub">Progress stays on this device only</div></div>
+        </div>
+        <!-- Returning local user -->
+        <div id="localKnown" class="hidden">
+          <div class="local-known">
+            <div class="user-avatar" id="localAvatar">?</div>
+            <div><b id="localNameShow"></b><small>Local profile on this device</small></div>
+            <button class="link-btn" id="localEdit" type="button">Edit</button>
+          </div>
+          <a class="btn btn-local" id="localContinue" href="../index.html"><i class="fas fa-arrow-right"></i> <span id="localContinueLabel">Continue</span></a>
+        </div>
+        <!-- First visit / editing -->
+        <form id="localForm" novalidate>
+          <div class="field">
+            <label for="localName">What should we call you?</label>
+            <input id="localName" name="localName" type="text" maxlength="40" autocomplete="given-name" autocapitalize="words" placeholder="Your name (optional)">
+            <span class="field-hint">Shown in your greeting. Saved on this device only.</span>
+          </div>
+          <button class="btn btn-local" type="submit"><i class="fas fa-arrow-right"></i> Continue without signing in</button>
+        </form>
+      </section>
 
       <div class="feedback" id="feedbackOut" role="alert" aria-live="polite"></div>
 
-      <div class="card-footer">
-        Your data stays private and is protected by row-level security.
-      </div>
+      <div class="card-footer"><i class="fas fa-shield-halved"></i> Cloud data is private and protected by row-level security.</div>
     </div>
 
     <!-- ───────── SIGNED IN ───────── -->
     <div id="signedIn" class="hidden">
-      <div class="user-row">
+      <div class="profile">
         <div class="user-avatar" id="userAvatar">?</div>
         <div class="user-meta">
           <div class="user-name" id="userName">Signed in</div>
           <div class="user-email" id="userEmail"></div>
+          <span class="acct-chip"><svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg> Google account</span>
         </div>
       </div>
 
-      <div class="sync-status" id="syncStatus">Last synced: <b>never</b></div>
+      <div class="sync-card" id="syncCard">
+        <div class="sync-ico"><i class="fas fa-cloud-arrow-up" id="syncIcon"></i></div>
+        <div><div class="sync-title" id="syncTitle">Cloud sync on</div><div class="sync-status" id="syncStatus">Last synced: <b>never</b></div></div>
+      </div>
 
-      <button class="btn btn-primary" id="syncBtn">
+      <button class="btn btn-primary" id="syncBtn" type="button">
         <i class="fas fa-arrows-rotate"></i> <span id="syncLabel">Sync now</span>
         <div class="spinner" id="syncSpinner" style="border-color:rgba(255,255,255,0.3);border-top-color:#fff"></div>
       </button>
-      <button class="btn btn-ghost" id="restoreBtn"><i class="fas fa-cloud-arrow-down"></i> Restore from cloud</button>
-      <a class="btn btn-ghost" href="../index.html"><i class="fas fa-arrow-left"></i> Back to app</a>
-      <button class="btn btn-ghost btn-danger" id="signoutBtn"><i class="fas fa-right-from-bracket"></i> Sign out</button>
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="restoreBtn" type="button"><i class="fas fa-cloud-arrow-down"></i> Restore</button>
+        <a class="btn btn-ghost" href="../index.html"><i class="fas fa-house"></i> Back to app</a>
+      </div>
+      <button class="btn btn-signout" id="signoutBtn" type="button"><i class="fas fa-right-from-bracket"></i> Sign out</button>
 
       <div class="feedback" id="feedbackIn" role="alert" aria-live="polite"></div>
 
-      <div class="divider"><div class="div-line"></div><span class="div-text">Danger Zone</span><div class="div-line"></div></div>
-      <button class="btn btn-ghost btn-danger" id="deleteAccountBtn" style="font-size:0.82rem; padding:0.7rem 1rem;">
-        <i class="fas fa-trash-alt"></i> <span id="deleteAccountLabel">Delete my account</span>
-        <div class="spinner" id="deleteAccountSpinner" style="border-color:rgba(248,113,113,0.3);border-top-color:var(--err)"></div>
-      </button>
-      <p style="text-align:center; font-size:0.74rem; color:var(--muted); margin-top:0.5rem;">Permanently deletes your account and cloud-synced data. This cannot be undone.</p>
+      <details class="danger">
+        <summary>Danger zone <i class="fas fa-chevron-down"></i></summary>
+        <div class="danger-body">
+          <button class="btn btn-delete" id="deleteAccountBtn" type="button">
+            <i class="fas fa-trash-alt"></i> <span id="deleteAccountLabel">Delete my account</span>
+            <div class="spinner" id="deleteAccountSpinner" style="border-color:rgba(248,113,113,0.3);border-top-color:var(--err)"></div>
+          </button>
+          <p>Permanently deletes your account and cloud-synced data. This cannot be undone.</p>
+        </div>
+      </details>
     </div>
 
   </div>
@@ -360,6 +442,62 @@
     if (!iso) return 'never';
     try { return new Date(iso).toLocaleString(); } catch (e) { return iso; }
   }
+  function relTime(iso) {
+    var t = new Date(iso).getTime();
+    if (!iso || isNaN(t)) return '';
+    var s = Math.round((Date.now() - t) / 1000);
+    if (s < 45) return 'just now';
+    var m = Math.round(s / 60); if (m < 60) return m + ' min ago';
+    var h = Math.round(m / 60); if (h < 24) return h + ' hour' + (h === 1 ? '' : 's') + ' ago';
+    var d = Math.round(h / 24); if (d < 7) return d + ' day' + (d === 1 ? '' : 's') + ' ago';
+    return new Date(iso).toLocaleDateString();
+  }
+  function renderSync(state) {
+    var card = $('syncCard'), last = window.SmartCareCloud ? SmartCareCloud.lastSync() : null;
+    card.classList.toggle('busy', state === 'busy');
+    card.classList.toggle('never', !last && state !== 'busy');
+    $('syncIcon').className = 'fas ' + (state === 'busy' ? 'fa-arrows-rotate' : last ? 'fa-cloud-arrow-up' : 'fa-cloud');
+    if (state === 'busy') {
+      $('syncTitle').textContent = 'Syncing…';
+      $('syncStatus').textContent = 'Merging this device with your cloud backup';
+    } else if (last) {
+      $('syncTitle').textContent = 'Cloud sync on';
+      $('syncStatus').innerHTML = 'Last synced <b></b>';
+      $('syncStatus').querySelector('b').textContent = relTime(last);
+      $('syncStatus').title = fmtTime(last);
+    } else {
+      $('syncTitle').textContent = 'Not synced yet';
+      $('syncStatus').textContent = 'Tap “Sync now” to back up this device';
+    }
+  }
+
+  // ── Local profile (continue without an account) ──
+  // A display name kept on this device only (smartcare_local_name); the home
+  // greeting falls back to it when nobody is signed in.
+  var LOCAL_NAME_KEY = 'smartcare_local_name';
+  function getLocalName() { try { return (localStorage.getItem(LOCAL_NAME_KEY) || '').trim(); } catch (e) { return ''; } }
+  function cleanName(v) { return String(v || '').replace(/[\u0000-\u001f\u007f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 40); }
+  function renderLocal(editing) {
+    var name = getLocalName();
+    var known = !!name && !editing;
+    $('localKnown').classList.toggle('hidden', !known);
+    $('localForm').classList.toggle('hidden', known);
+    if (known) {
+      $('localNameShow').textContent = name;
+      $('localAvatar').textContent = name.charAt(0).toUpperCase();
+      $('localContinueLabel').textContent = 'Continue as ' + name.split(' ')[0];
+    } else {
+      $('localName').value = name;
+    }
+  }
+  $('localEdit').addEventListener('click', function () { renderLocal(true); $('localName').focus(); });
+  $('localForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = cleanName($('localName').value);
+    try { if (name) localStorage.setItem(LOCAL_NAME_KEY, name); else localStorage.removeItem(LOCAL_NAME_KEY); } catch (err) {}
+    window.location.href = '../index.html';
+  });
+  renderLocal(false);
 
   function showSignedIn(user) {
     signedOut.classList.add('hidden');
@@ -370,21 +508,27 @@
     $('userName').textContent = name;
     $('userEmail').textContent = email;
     var avatar = $('userAvatar');
-    if (meta.avatar_url) {
-      avatar.innerHTML = '<img src="' + meta.avatar_url + '" alt="">';
-    } else {
-      avatar.textContent = (name[0] || '?').toUpperCase();
+    avatar.textContent = (name[0] || '?').toUpperCase();
+    if (meta.avatar_url && /^https:\/\//.test(meta.avatar_url)) {
+      var img = new Image();
+      img.alt = '';
+      img.referrerPolicy = 'no-referrer';
+      img.onload = function () { avatar.textContent = ''; avatar.appendChild(img); };
+      img.src = meta.avatar_url;
     }
-    $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
+    renderSync();
   }
 
   function showSignedOut() {
     signedIn.classList.add('hidden');
     signedOut.classList.remove('hidden');
+    renderLocal(false);
   }
+  // Keep "Last synced 5 min ago" fresh while the page is open.
+  setInterval(function () { if (!signedIn.classList.contains('hidden') && !$('syncCard').classList.contains('busy')) renderSync(); }, 30000);
 
   if (!window.SmartCareCloud || !SmartCareCloud.isConfigured()) {
-    msg($('feedbackOut'), 'Cloud sync isn\'t configured on this build. The app still works fully offline.', 'info');
+    msg($('feedbackOut'), 'Cloud sync isn\'t available on this build — use SmartCare without an account below.', 'info');
     $('googleBtn').disabled = true;
     return;
   }
@@ -447,14 +591,15 @@
     clearMsg($('feedbackIn'));
     busy($('syncBtn'), $('syncSpinner'), true);
     $('syncLabel').textContent = 'Syncing…';
+    renderSync('busy');
     SmartCareCloud.sync().then(function () {
-      $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
       msg($('feedbackIn'), '✓ Synced to the cloud.', 'ok');
     }).catch(function (e) {
         msg($('feedbackIn'), 'Sync failed: ' + (e && e.message ? e.message : 'unknown error') + '. Try signing out and back in.', 'err');
     }).then(function () {
       busy($('syncBtn'), $('syncSpinner'), false);
       $('syncLabel').textContent = 'Sync now';
+      renderSync();
     });
   });
 
@@ -577,9 +722,8 @@
       // Auto-merge once right after sign-in
       if (!didAutoSync) {
         didAutoSync = true;
-        SmartCareCloud.sync().then(function () {
-          $('syncStatus').innerHTML = 'Last synced: <b>' + fmtTime(SmartCareCloud.lastSync()) + '</b>';
-        }).catch(function () {});
+        renderSync('busy');
+        SmartCareCloud.sync().catch(function () {}).then(function () { renderSync(); });
       }
     } else {
       showSignedOut();
