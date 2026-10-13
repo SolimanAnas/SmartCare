@@ -190,14 +190,15 @@
       });
     },
 
-    /** Sign in via Google Identity Services popup — shows "SmartCare" brand. */
-    signInWithGooglePopup: function (idToken) {
+    /** Sign in with a Google ID token from Google Identity Services
+     *  (google.accounts.id). Pass the RAW nonce whose SHA-256 hash was given
+     *  to google.accounts.id.initialize, so Supabase can verify it. */
+    signInWithGooglePopup: function (idToken, rawNonce) {
       if (!idToken) return Promise.reject(new Error('No Google ID token'));
       return requireClient().then(function (c) {
-        return c.auth.signInWithIdToken({
-          provider: 'google',
-          token: idToken
-        }).then(function (r) {
+        var creds = { provider: 'google', token: idToken };
+        if (rawNonce) creds.nonce = rawNonce;
+        return c.auth.signInWithIdToken(creds).then(function (r) {
           if (r.error) throw r.error;
           return r.data;
         });
