@@ -127,9 +127,9 @@
       ]
     },
     {
-      "name": "Prometric EMT Exam",
+      "name": "Prometric Paramedic / EMT Exam",
       "short_name": "Exam",
-      "description": "NREMT-style practice questions with analytics",
+      "description": "NREMT-style practice for Paramedic & EMT candidates",
       "url": "src/prometric/exam.html",
       "icons": [
         {
