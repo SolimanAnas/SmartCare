@@ -71,6 +71,9 @@ self.__PRECACHE = [
   "pages/med-index.html",
   "pages/medical-asm.html",
   "pages/medical.html",
+  "pages/megacode-scenarios.js",
+  "pages/megacode.html",
+  "pages/megacode.js",
   "pages/pals.html",
   "pages/pepp.html",
   "pages/ppet.html",
@@ -152,4 +155,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "c48adfd898";
+self.__PRECACHE_VERSION = "684820266f";
