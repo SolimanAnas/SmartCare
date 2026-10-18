@@ -97,6 +97,7 @@ test('every scenario starts and renders the live monitor', async ({ page }) => {
   page.on('pageerror', e => errors.push(e.message));
   for (let id = 1; id <= 12; id++) {
     await page.goto(`/pages/megacode.html?s=${id}`);
+    await page.locator('[data-mode="train"]').click();
     await page.locator('[data-x="go"]').click();
     await page.locator('[data-act="monitor"]').click();
     await page.waitForTimeout(600);

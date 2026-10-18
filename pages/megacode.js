@@ -383,7 +383,7 @@ function newSim(sc, mode) {
     v: { hr: 0, sbp: 0, dbp: 0, spo2: 0, rr: 0, etco2: 0 },
     log: [], errs: [], sd: {}, roles: false, compCycles: 0, switched: false, fatigue: false,
     lastShockT: null, awaitResume: false, pauses: [], resumeLags: [], earlyChecks: 0, overdueWarned: false,
-    clues: {}, flags: new Set(), alarmQuietUntil: 0, lastAlarm: -99, everArrest: false, destDone: false
+    clues: {}, flags: new Set(), lite: { cur: null, done: new Set(), n: 0, first: 0, shockQ: false }, alarmQuietUntil: 0, lastAlarm: -99, everArrest: false, destDone: false
   };
   if (sc.monitorOn) S.flags.add('monitorEarly');
 }
@@ -487,6 +487,7 @@ function judge(kind, text, tag) {
   const d = sd();
   if (tag === 'drug') { if (kind === 'good') d.drugGood++; else if (kind === 'bad' || kind === 'warn') d.drugBad++; }
   if (S.mode === 'train') { pushLog(kind, text); toast(kind, text); }
+  else if (S.mode === 'quick') { pushLog(kind, text); if (kind === 'warn' || kind === 'bad') toast(kind, text); }
 }
 const TOAST_ICON = { good: '✅', warn: '⚠️', bad: '⛔', info: 'ℹ️', scene: '🚨', find: '🔎', act: '•' };
 function toast(kind, text, ms = 4600) {
@@ -1322,7 +1323,7 @@ function openBriefing(sc) {
   const fields = ['HR', 'BP', 'RR', 'SpO₂', 'Temp', 'Weight', 'Age'];
   const vit = fields.map(f => `<div class="vit"><div class="vl">${f}</div><div class="vv${sc.known[f] ? '' : ' unk'}">${sc.known[f] || 'assess'}</div></div>`).join('');
   const extra = Object.keys(sc.known).filter(k => !fields.includes(k)).map(f => `<div class="vit"><div class="vl">${f}</div><div class="vv">${sc.known[f]}</div></div>`).join('');
-  let mode = store.get('megacode.mode', 'train');
+  let mode = store.get('megacode.mode2', 'quick');
   const set = sc.setting === 'ooh' ? '🚑 Out-of-hospital' : sc.setting === 'ed' ? '🏥 Emergency department' : '🏥 In-hospital';
   const m = openModal(`
     <div class="sh-k">Megacode ${sc.id} · ${set}</div>
@@ -1332,14 +1333,15 @@ function openBriefing(sc) {
     <ul class="bul">${sc.assessment.map(a => `<li>${a}</li>`).join('')}</ul>
     <p class="sh-p" style="margin-bottom:10px"><b>What are your initial actions?</b></p>
     <div class="mode-row">
-      <button type="button" class="mode${mode === 'train' ? ' on' : ''}" data-mode="train"><b>🎓 Training</b><span>Coach hints and instant feedback on every action.</span></button>
-      <button type="button" class="mode${mode === 'exam' ? ' on' : ''}" data-mode="exam"><b>📝 Megacode test</b><span>No hints. Every decision is scored at the end.</span></button>
+      <button type="button" class="mode${mode === 'quick' ? ' on' : ''}" data-mode="quick"><b>⚡ Quick Code</b><span>You make the Team Leader's calls — 4 choices each. Your team does the hands-on work.</span></button>
+      <button type="button" class="mode${mode === 'train' ? ' on' : ''}" data-mode="train"><b>🎓 Training</b><span>Full control panel, coach hints and instant feedback.</span></button>
+      <button type="button" class="mode${mode === 'exam' ? ' on' : ''}" data-mode="exam"><b>📝 Megacode test</b><span>Full control panel, no hints — scored at the end.</span></button>
     </div>
-    <p class="hint-s" style="margin:-4px 0 14px">Keyboard: <b>Space</b> CPR · <b>C</b> charge · <b>S</b> shock · <b>P</b> pulse check</p>
+    <p class="hint-s" style="margin:-4px 0 14px">Keyboard: <b>1–4</b> pick an option · <b>Enter</b> continue (Quick Code) · <b>Space</b> CPR · <b>C</b> charge · <b>S</b> shock · <b>P</b> pulse (full modes)</p>
     <div class="sh-actions"><button type="button" class="btn" data-x="back">Back</button><button type="button" class="btn btn-primary" data-x="go" data-autofocus>${ico('play')} Start scenario</button></div>`);
   m.el.addEventListener('click', e => {
     const md = e.target.closest('[data-mode]');
-    if (md) { mode = md.dataset.mode; store.set('megacode.mode', mode); m.el.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('on', b.dataset.mode === mode)); }
+    if (md) { mode = md.dataset.mode; store.set('megacode.mode2', mode); m.el.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('on', b.dataset.mode === mode)); }
     const x = e.target.closest('[data-x]');
     if (!x) return;
     m.close();
@@ -1579,8 +1581,10 @@ function endSim() {
   const secs = checklist();
   const items = secs.flatMap(s => s.items);
   const okN = items.filter(i => i.ok).length;
-  const score = Math.round(okN / items.length * 100);
-  const pass = S.roscId && score >= 85 && !S.errs.some(e => /non-shockable|has a pulse — defibrillation|chest compressions are not indicated/i.test(e.text));
+  const quick = S.mode === 'quick', Lt = S.lite;
+  const acc = Lt.n ? Math.round(Lt.first / Lt.n * 100) : 0;
+  const score = quick ? acc : Math.round(okN / items.length * 100);
+  const pass = quick ? S.roscId && acc >= 80 : S.roscId && score >= 85 && !S.errs.some(e => /non-shockable|has a pulse — defibrillation|chest compressions are not indicated/i.test(e.text));
   const best = bestMap(), prev = best[SC.id];
   if (!prev || score > prev.score || (pass && !prev.pass)) { best[SC.id] = { score, pass, date: Date.now() }; store.set('megacode.best', best); }
   const ccf = S.arrestT > 5 ? Math.round(S.cprT / S.arrestT * 100) + '%' : '—';
@@ -1593,9 +1597,9 @@ function endSim() {
     <div class="sh-t">${SC.title}</div>
     <div class="res-banner ${pass ? 'pass' : 'nr'}">
       <div class="res-score">${score}%</div>
-      <div><div class="res-l">${pass ? 'PASS' : 'NR — needs remediation'}</div><div class="res-s">${okN}/${items.length} critical performance steps · ${S.roscId ? 'ROSC achieved' : 'ROSC not achieved'}</div></div>
+      <div><div class="res-l">${pass ? 'PASS' : 'NR — needs remediation'}</div><div class="res-s">${quick ? `${Lt.first}/${Lt.n} Team Leader decisions right on the first try (pass ≥ 80%)` : `${okN}/${items.length} critical performance steps`} · ${S.roscId ? 'ROSC achieved' : 'ROSC not achieved'}</div></div>
     </div>
-    <div class="stat-row">${stat('Total time', fmt(S.simT))}${stat('Arrest time', fmt(S.arrestT))}${stat('CPR fraction', ccf)}${stat('Shocks', S.shocks)}${stat('Epinephrine', S.epi)}${stat('Longest pause', maxP)}${stat('Shock → CPR', lag)}${stat('Flags', S.errs.length)}</div>
+    <div class="stat-row">${quick ? stat('Decisions', `${Lt.first}/${Lt.n}`) : ''}${stat('Total time', fmt(S.simT))}${stat('Arrest time', fmt(S.arrestT))}${stat('CPR fraction', ccf)}${stat('Shocks', S.shocks)}${stat('Epinephrine', S.epi)}${stat('Longest pause', maxP)}${stat('Shock → CPR', lag)}${stat('Flags', S.errs.length)}</div>
     ${secs.map(s => `<div class="cl-sec"><div class="cl-h"><span>${s.h}</span><span>${s.items.filter(i => i.ok).length}/${s.items.length}</span></div>${s.items.map(i => `<div class="cl-i"><span class="cl-m ${i.ok ? 'y' : 'n'}">${i.ok ? '✓' : '✗'}</span><span>${i.t}${i.why ? `<span class="cl-why">${i.why}</span>` : ''}</span></div>`).join('')}</div>`).join('')}
     ${errs.length ? `<div class="grp-t" style="margin-top:14px">What to work on</div><div class="err-list">${errs.map(e => `<div class="le ${e.kind}"><span class="lt">${fmt(e.t)}</span><span>${e.text}</span></div>`).join('')}</div>` : ''}
     <div class="teach"><h4>Teaching points</h4><ul>${SC.teach.map(t => `<li>${t}</li>`).join('')}</ul></div>
@@ -1611,6 +1615,461 @@ function endSim() {
   });
 }
 
+/* ═══════════════════════ QUICK CODE (lite mode) ═══════════════════════
+ * You make the Team Leader's calls — one decision at a time, four options
+ * each. The right option is carried out by the team through the same engine
+ * actions the full modes use; a wrong pick costs 10 s of sim time and is
+ * scored. Rhythm-ID quizzes still pop up as in the other modes. */
+const TREAT_TXT = {
+  hypovolemia: 'Rapid fluid / blood bolus',
+  hypoxia: 'Secure the airway: 100% O₂, advanced airway, confirm with capnography',
+  acidosis: 'Optimize ventilation; consider sodium bicarbonate',
+  hyperK: 'Calcium chloride 1 g IV + sodium bicarbonate 50 mEq',
+  hypothermia: 'Active internal rewarming',
+  tension: 'Needle decompression of the chest',
+  tamponade: 'Bedside ultrasound → pericardiocentesis',
+  toxins: 'Antidote for the suspected toxin',
+  thrombosisP: 'Thrombolytics for suspected massive PE',
+  thrombosisC: 'Plan emergent PCI — activate the cath lab'
+};
+const htsName = k => HTS.find(h => h[0] === k)[1];
+const shuffle = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(p => p[1]);
+const pick = (a, n) => shuffle(a).slice(0, n);
+const DONE_FLAG = { o2: () => S.o2, bvm: () => S.bvm, airway: () => S.airway, capno: () => S.capno, iv: () => S.iv };
+const epiDue = () => S.lastEpi == null || S.simT - S.lastEpi >= 180;
+const pron = () => SC.sex === 'F' ? 'She' : 'He';
+
+function ensureIV() { if (!S.iv) doAction('iv'); if (!S.iv) doAction('io'); }
+function act(...keys) {
+  for (const k of keys) {
+    if (DONE_FLAG[k] && DONE_FLAG[k]()) continue;
+    if (DRUGS[k] && !NO_IV.has(k)) ensureIV();
+    doAction(k);
+  }
+}
+function treatFor(k) {
+  if (k === 'tension' && SC.id === 9) return ['Disconnect the bag, allow full exhalation, slow ventilation to 1 breath every 6 s (auto-PEEP)', ['ventSlow']];
+  if (k === 'toxins') {
+    return SC.stages.some(s => s.fx && s.fx.lipid)
+      ? ['IV lipid emulsion 20% + calcium for the calcium-channel-blocker overdose', ['lipid', 'calcium']]
+      : ['Reverse the sedatives: naloxone + flumazenil', ['naloxone', 'flumazenil']];
+  }
+  const acts = { hypovolemia: ['fluids'], hypoxia: ['bvm', 'airway', 'capno'], acidosis: ['bicarb'], hyperK: ['calcium', 'bicarb'], thrombosisC: ['cathlab'] }[k] || [];
+  return [TREAT_TXT[k], acts];
+}
+function litePace() {
+  S.pacer.mA = (S.stage.paceThreshold || 60) + 10;
+  if (!S.pacer.on) togglePacer(); else updateCapture();
+}
+function liteShock(sync, energy) {
+  if (S.cpr) toggleCPR();
+  if (S.pacer.on && isArrest()) togglePacer();
+  const D = S.defib;
+  D.sync = sync;
+  if (D.energy !== energy) { D.energy = energy; if (D.charged) D.charged = false; }
+  if (D.charged) shock();
+  else { if (!D.charging) charge(); S.lite.shockQ = true; }
+}
+function liteBP() {
+  count('nibp');
+  S.nibp = { s: Math.round(S.v.sbp), d: Math.round(S.v.dbp), t: S.simT };
+  if (S.stage.type === 'rosc') sd('rosc').bp = true;
+  find(`NIBP ${S.nibp.s}/${S.nibp.d} mmHg (MAP ${Math.round((S.nibp.s + 2 * S.nibp.d) / 3)}).`);
+}
+function liteWait(sec) {
+  const idx = S.idx;
+  for (let i = 0; i < sec && S.idx === idx && !S.over; i++) tick(1);
+}
+function settle() { let g = 0; while (S.pending && g++ < 150 && !S.over) tick(1); }
+function quizDue() {
+  const st = S.stage;
+  return !!st.quiz && !S.quizDone[S.idx] && S.monitor && !S.cpr && st.type !== 'rosc' && !(st.type === 'pea' && !S.pulseChecked);
+}
+function vitCtx() {
+  if (isArrest()) return `No pulse · ${S.cpr ? `CPR ${fmt(S.cycle)}` : 'compressions paused'} · shocks ${S.arrestShocks} · epi ${S.epi}${S.lastEpi != null ? ` (${fmt(S.simT - S.lastEpi)} ago)` : ''}`;
+  const v = S.v;
+  return `HR ${Synth.hr()} · BP ${Math.round(v.sbp)}/${Math.round(v.dbp)} · SpO₂ ${Math.round(v.spo2)}% · RR ${Math.round(v.rr)}`;
+}
+function mk(id, q, ctx, right, wrongs) {
+  return { id, q, ctx: ctx || vitCtx(), tries: 0, state: 'ask', opts: shuffle([{ ...right, ok: true }, ...wrongs.map(w => ({ ...w, ok: false }))]) };
+}
+function reassess() {
+  return mk(`${S.idx}:wait${Math.floor(S.simT)}`, 'Treatment is under way. What now?', null,
+    { t: 'Reassess: repeat vitals, keep the pads on, look for the cause', why: 'Frequent reassessment catches deterioration early — unstable patients can arrest at any moment.', run: () => { liteBP(); liteWait(30); } },
+    [{ t: 'Remove the pads to make the patient comfortable', why: 'Keep the pads on — this patient can deteriorate suddenly.' },
+      { t: 'Step out to complete the documentation', why: 'The Team Leader never leaves an unstable patient.' },
+      { t: 'Give a precautionary amiodarone bolus', why: 'No indication — treat what you see, not what might happen.' }]);
+}
+
+function liteNext() {
+  const st = S.stage, t = st.type, A = isArrest(), done = S.lite.done;
+  const D = (s, q, ctx, right, wrongs) => done.has(`${S.idx}:${s}`) ? null : mk(`${S.idx}:${s}`, q, ctx, right, wrongs);
+  const spo2 = Math.round(S.v.spo2), hr = Synth.hr();
+  let d = null;
+
+  // Organized rhythm with no confirmed pulse status → pulse check
+  if (!S.cpr && ((t === 'pea' && !S.pulseChecked) || (t === 'rosc' && !S.roscId))) {
+    return D(`pulse${S.checks}`, 'Organized rhythm on the monitor. Next?', 'Compressions paused',
+      { t: 'Check a carotid pulse (≤ 10 s)', why: 'An organized rhythm can be PEA or ROSC — only a pulse check tells them apart.', run: () => pulseCheck() },
+      [{ t: 'Defibrillate 200 J', why: 'Organized rhythms are not shockable — and this one may already have a pulse.' },
+        { t: 'Resume CPR — skip the pulse check to save time', why: 'You could be compressing a patient with ROSC. A ≤ 10 s pulse check is required.' },
+        { t: hr < 60 ? 'Atropine 1 mg for the slow rate' : 'Synchronized cardioversion for the fast rate', why: 'Treat the patient, not the monitor — first find out whether there is a pulse.' }]);
+  }
+  if (t === 'rosc' && S.cpr) {
+    return D('etco2', 'ETCO₂ suddenly jumps to ~40 mmHg during compressions. Next?', 'CPR running',
+      { t: 'Pause compressions and check for a pulse', why: 'An abrupt, sustained ETCO₂ rise is a reliable sign of ROSC — don\'t wait for the 2-minute mark.', run: () => { toggleCPR(); pulseCheck(); } },
+      [{ t: 'Great CPR — keep going until the 2-minute mark', why: 'A sudden jump to ≥ 40 mmHg means ROSC, not just good compressions.' },
+        { t: 'Give epinephrine — perfusion is improving', why: 'Epinephrine on a perfusing heart can trigger re-arrest. Check the pulse.' },
+        { t: 'Hyperventilate to bring the CO₂ down', why: 'Never hyperventilate — and here the CO₂ rise is good news.' }]);
+  }
+
+  if (t === 'brady' && st.stable) {
+    return D('stable', `Inferior STEMI, HR ${hr}, BP ${Math.round(S.v.sbp)}/${Math.round(S.v.dbp)}, SpO₂ ${spo2}%. Best next step?`, null,
+      { t: 'Oxygen, aspirin and activate the cath lab', why: 'BP is stable — the bradycardia needs no treatment. Treat the STEMI.', run: () => act('o2', 'aspirin', 'cathlab') },
+      [{ t: 'Atropine 1 mg IV for the heart rate', why: 'He is stable — atropine isn\'t needed and can worsen ischemia in acute MI.' },
+        { t: 'Nitroglycerin 0.4 mg SL for the chest pain', why: 'Avoid nitrates in inferior MI — possible RV infarct makes him preload-dependent.' },
+        { t: 'Transcutaneous pacing as a precaution', why: 'Keep pads on, but pacing is for unstable bradycardia.' }]) || reassess();
+  }
+
+  if (t === 'brady') {
+    if (S.v.rr < 8 && !S.vent) {
+      d = D('vent', `${pron()} is barely breathing (RR ${Math.round(S.v.rr)}) with a strong, slow pulse. First priority?`, null,
+        { t: 'Bag-mask ventilation with 100% O₂, then IV access', why: 'Airway and breathing first — the bradycardia may well be hypoxic.', run: () => { act('bvm'); ensureIV(); } },
+        [{ t: `Atropine 1 mg IV for the heart rate of ${hr}`, why: `RR ${Math.round(S.v.rr)}/min is the immediate threat — ventilate before drugs.` },
+          { t: 'Start chest compressions', why: 'There is a strong pulse — CPR is not indicated.' },
+          { t: 'Transcutaneous pacing at 70 ppm', why: 'Pacing does not treat apnea. Fix oxygenation and ventilation first.' }]);
+    }
+    if (!d && !S.iv) {
+      d = D('init', 'Symptomatic bradycardia. Initial actions?', null,
+        { t: `${spo2 < 94 ? 'Oxygen, ' : ''}IV access and a 12-lead ECG`, why: 'Support ABCs, get access and a 12-lead while you prepare treatment.', run: () => { if (spo2 < 94) act('o2'); ensureIV(); act('ecg12'); } },
+        [{ t: 'Atropine 1 mg IV push right away', why: 'There is no IV access yet — establish it first (it takes seconds).' },
+          { t: 'Epinephrine 1 mg IV push', why: 'A 1 mg bolus is a cardiac-arrest dose — never for a patient with a pulse.' },
+          { t: 'Start CPR — the pulse is weak', why: 'A weak pulse is still a pulse. CPR is for pulseless patients.' }]);
+    }
+    const transplant = st.atropineOptional && /transplant/i.test(SC.history || '');
+    const ccb = !!(st.fx && st.fx.calcium);
+    if (!d && !S.atropine && !S.pacer.on && !S.pressor) {
+      d = transplant
+        ? D('drug', `Heart transplant 2 years ago. Complete heart block at ${hr}/min, BP ${Math.round(S.v.sbp)}/${Math.round(S.v.dbp)}. Treatment?`, null,
+          { t: 'Transcutaneous pacing (or an epinephrine infusion)', why: 'A denervated transplanted heart does not respond to atropine — go straight to pacing or adrenergic drugs.', run: () => litePace() },
+          [{ t: 'Atropine 1 mg IV', why: 'Usually first-line — but atropine has no effect on a denervated (transplanted) heart.' },
+            { t: 'Adenosine 6 mg rapid push', why: 'Adenosine is for SVT and would deepen the block.' },
+            { t: 'Amiodarone 150 mg IV', why: 'Antiarrhythmics worsen heart block.' }])
+        : D('drug', `${st.quiz ? RHY[st.quiz.rhythm][0] : 'Bradycardia'} with poor perfusion. First drug?`, null,
+          { t: ccb ? 'Atropine 1 mg IV + calcium chloride 1 g (CCB overdose)' : 'Atropine 1 mg IV', why: ccb ? 'Atropine is first-line; calcium is the antidote step for calcium-channel-blocker toxicity.' : 'First-line for symptomatic bradycardia: 1 mg every 3–5 min, max 3 mg.', run: () => { if (spo2 < 94) act('o2'); act('atropine'); if (ccb) act('calcium'); } },
+          [{ t: 'Atropine 0.5 mg IV', why: 'Outdated dose — the 2020 AHA dose is 1 mg (max 3 mg).' },
+            { t: 'Adenosine 6 mg rapid push', why: 'Adenosine slows AV conduction — the opposite of what this patient needs.' },
+            { t: 'Epinephrine 1 mg IV push', why: 'A 1 mg bolus is for cardiac arrest. For bradycardia, epinephrine is an infusion (2–10 mcg/min).' }]);
+    }
+    if (!d && !S.pacer.on && !S.pressor) {
+      d = D('second', `No response to atropine — HR ${hr}, still hypotensive. Next?`, null,
+        { t: 'Transcutaneous pacing (or a dopamine / epinephrine infusion)', why: 'Second-line therapy when atropine fails.', run: () => litePace() },
+        [{ t: 'Repeat atropine every minute up to 6 mg', why: 'The maximum is 3 mg — and repeating a drug that failed delays effective therapy.' },
+          { t: 'Wait for the cardiology consult', why: 'The patient is unstable — don\'t delay second-line therapy.' },
+          { t: 'Amiodarone 300 mg IV', why: 'Antiarrhythmics slow conduction further.' }]);
+    }
+    if (!d && S.pacer.on && conscious() && !S.sedation) {
+      d = D('paced', 'The pacer is running. Now?', null,
+        { t: 'Confirm a femoral pulse and give analgesia / sedation', why: 'Electrical capture must be confirmed mechanically — and pacing is painful.', run: () => { act('sedation'); find(`Femoral pulse ${S.pacer.capture ? 'present at the paced rate' : 'not palpable yet'}.`); } },
+          [{ t: 'Turn the output to the maximum 200 mA', why: 'Set the output ~10 mA above the capture threshold — more only adds pain.' },
+            { t: 'Stop pacing now that the rhythm looks better', why: 'The underlying rhythm hasn\'t changed — stopping will drop the BP again.' },
+            { t: 'Trust the ECG — capture is confirmed', why: 'Electrical capture ≠ mechanical capture. Feel for a femoral pulse.' }]);
+    }
+    return d || reassess();
+  }
+
+  if (t === 'tachyU') {
+    if (!S.used.sync) {
+      d = D('cv', 'Wide-complex tachycardia with a pulse and signs of instability. Treatment?', null,
+        { t: 'Synchronized cardioversion', why: 'Unstable tachycardia with a pulse → immediate synchronized cardioversion.', run: () => {} },
+        [{ t: 'Amiodarone 150 mg IV over 10 minutes', why: 'That is for stable wide-complex tachycardia. Unstable patients need electricity now.' },
+          { t: 'Adenosine 6 mg rapid push', why: 'Adenosine is for regular narrow-complex SVT — not unstable VT.' },
+          { t: 'Unsynchronized defibrillation 200 J', why: 'An unsynchronized shock on a perfusing rhythm can land on the T wave (R-on-T) and cause VF.' }]);
+      if (!d) {
+        d = D('cvset', 'Set up the cardioversion:', null,
+          { t: `${conscious() ? 'Sedate if it won\'t delay · ' : ''}SYNC ON · 100 J`, why: 'Monomorphic VT: synchronized, starting at 100 J. Sedate conscious patients when it doesn\'t delay therapy.', run: () => { if (conscious()) act('sedation'); liteShock(true, 100); } },
+          [{ t: 'SYNC OFF · 200 J', why: 'Unsynchronized shocks are for pulseless rhythms only.' },
+            { t: 'SYNC ON · 50 J', why: '50–100 J is for narrow regular rhythms (SVT, flutter). Monomorphic VT starts at 100 J.' },
+            { t: 'Get a 12-lead ECG before shocking', why: 'Don\'t delay cardioversion in an unstable patient.' }]);
+      }
+      return d;
+    }
+    return D('cv2', 'No conversion after the first synchronized shock. Next?', null,
+      { t: 'Re-select SYNC and repeat at a higher energy (200 J)', why: 'Escalate the energy — and many devices drop SYNC after each shock, so always re-engage it.', run: () => liteShock(true, 200) },
+      [{ t: 'Shock again — the device is still in SYNC', why: 'Many defibrillators revert to unsynchronized after a shock. Always re-check SYNC.' },
+        { t: 'Stop electricity: start an amiodarone infusion and observe', why: 'The patient is still unstable — repeat cardioversion with more energy.' },
+        { t: 'Start CPR', why: 'There is still a pulse.' }]) || reassess();
+  }
+
+  if (t === 'tachyS') {
+    if (!S.used.vagal && !S.used.adenosine && !S.used.diltiazem) {
+      d = D('vagal', `Regular narrow-complex tachycardia ${hr}/min, BP ${Math.round(S.v.sbp)}/${Math.round(S.v.dbp)}, alert. Asthma, on albuterol. First step?`, null,
+        { t: 'Vagal maneuver (modified Valsalva)', why: 'Stable SVT: start with vagal maneuvers.', run: () => act('ecg12', 'vagal') },
+        [{ t: 'Synchronized cardioversion 100 J', why: 'She is stable — no need for electricity or sedation.' },
+          { t: 'Metoprolol 5 mg IV', why: 'β-blockers can trigger severe bronchospasm in an asthmatic.' },
+          { t: 'Amiodarone 300 mg IV push', why: 'That\'s the cardiac-arrest dose — and not first-line for SVT.' }]);
+    }
+    return d || D('svtdrug', `Vagal maneuver failed — still SVT at ${hr}. Next?`, null,
+      { t: 'Diltiazem 15–20 mg IV', why: 'Adenosine is relatively contraindicated in an asthma exacerbation — a calcium-channel blocker is the safer choice here.', run: () => act('diltiazem') },
+      [{ t: 'Adenosine 6 mg rapid push', why: 'Normally right — but adenosine can cause severe bronchospasm in active asthma. Prefer a CCB.' },
+        { t: 'Synchronized cardioversion 50 J', why: 'She is stable — drug therapy comes first.' },
+        { t: 'Adenosine 6 mg slow IV push', why: 'Adenosine must be a rapid push with a flush — and it\'s risky in asthma.' }]) || reassess();
+  }
+
+  if (t === 'resp') {
+    d = st.fx && st.fx.naloxone
+      ? D('resp', `RR ${Math.round(S.v.rr)}, SpO₂ ${spo2}%, ETCO₂ ${Math.round(S.v.etco2)} after fentanyl + midazolam. Next?`, null,
+        { t: 'Bag-mask with 100% O₂ + naloxone and flumazenil', why: 'Ventilate first, then reverse the opioid and the benzodiazepine.', run: () => act('bvm', 'naloxone', 'flumazenil') },
+        [{ t: `Atropine 1 mg for the heart rate of ${hr}`, why: 'This bradycardia is hypoxic — fix ventilation first.' },
+          { t: 'Turn the nasal cannula up to 6 L/min', why: 'Hypoventilation needs ventilation, not just more oxygen.' },
+          { t: 'Start CPR', why: 'He still has a pulse.' }])
+      : D('resp', `Silent chest, RR ${Math.round(S.v.rr)}, SpO₂ ${spo2}% — ${pron().toLowerCase()} is tiring. Next?`, null,
+        { t: 'Bag-mask with 100% O₂ and intubate', why: 'Impending respiratory failure — support ventilation and secure the airway.', run: () => act('bvm', 'airway') },
+        [{ t: 'Another albuterol neb, reassess in 10 minutes', why: 'Exhausted with a silent chest — ventilatory support is needed now.' },
+          { t: 'Non-rebreather mask and observe', why: 'Oxygen alone won\'t fix failing ventilation.' },
+          { t: 'Sedate to reduce the work of breathing', why: 'Sedation without airway control can cause respiratory arrest.' }]);
+    return d || reassess();
+  }
+
+  if (A) {
+    const nm = RHY[t][0], shockable = SHOCKABLE.has(t);
+    if (!S.cpr) {
+      if (shockable && S.awaitResume) {
+        return D(`resume${S.shocks}`, 'Shock delivered. Next?', null,
+          { t: 'Resume CPR immediately — 2 minutes', why: 'Start compressions right after the shock — no pulse or rhythm check.', run: () => toggleCPR() },
+          [{ t: 'Check the pulse and rhythm first', why: 'Post-shock rhythms rarely perfuse straight away — checking costs perfusion time.' },
+            { t: 'Deliver a second, stacked shock', why: 'One shock, then 2 minutes of CPR.' },
+            { t: 'Push amiodarone before restarting CPR', why: 'Drugs are given during CPR — never instead of it.' }]);
+      }
+      if (shockable) {
+        const first = S.arrestShocks === 0;
+        return D(`shock${S.arrestShocks}`, first ? `${nm} — the patient is pulseless. Next?` : `Rhythm check: still ${nm}. Next?`, null,
+          { t: `${S.pacer.on ? 'Stop pacing, then d' : 'D'}efibrillate 200 J — unsynchronized`, why: first ? 'Shockable rhythm: defibrillate as soon as possible.' : 'Persistent VF/pVT: shock, then 2 more minutes of CPR.', run: () => liteShock(false, 200) },
+          [{ t: first ? 'Epinephrine 1 mg first, then shock' : 'Give amiodarone and let it circulate before shocking', why: 'Never delay defibrillation for drugs. In VF/pVT epinephrine comes after the 2nd shock.' },
+            { t: 'Synchronized cardioversion 200 J', why: 'SYNC can\'t find R waves in VF and delays the shock in pVT — use unsynchronized.' },
+            { t: first ? 'Check a carotid pulse for 30 seconds' : 'Do 2 more minutes of CPR before shocking', why: first ? 'Pulse checks take ≤ 10 s — and the monitor already shows a shockable rhythm.' : 'Shock now — every minute of delay lowers survival.' }]);
+      }
+      const due = epiDue();
+      return D(`ns${S.checks}`, `${nm} — no pulse. Next?`, null,
+        { t: due ? 'Resume CPR now and give epinephrine 1 mg ASAP' : 'Resume CPR now — next epinephrine at 3–5 min', why: 'Non-shockable: high-quality CPR, epinephrine as soon as possible, then every 3–5 minutes.', run: () => { toggleCPR(); if (due) act('epi'); } },
+        [{ t: 'Defibrillate 200 J', why: `${nm} is not shockable — shocking only delays CPR.` },
+          { t: 'Transcutaneous pacing', why: 'Pacing is not effective in cardiac arrest.' },
+          { t: 'Atropine 1 mg IV', why: 'Atropine is no longer recommended in PEA or asystole.' }]);
+    }
+    // CPR running
+    if (!S.iv) {
+      d = D('access', 'CPR is running. Team priority now?', null,
+        { t: 'IV access — IO if the IV is difficult', why: 'Get vascular access without interrupting compressions.', run: () => ensureIV() },
+        [{ t: 'Pause compressions to place the IV', why: 'Never stop compressions for access.' },
+          { t: 'Epinephrine down the endotracheal tube', why: 'IV/IO is preferred — endotracheal drug delivery is unreliable.' },
+          { t: 'Intubate first — pause CPR as long as needed', why: 'Airway placement must not interrupt compressions for more than a few seconds.' }]);
+    }
+    if (!d && !S.vent) {
+      d = D('vent', 'How should the team ventilate during CPR?', null,
+        { t: 'Bag-mask 30:2 with 100% O₂ — advanced airway + capnography when ready', why: 'Effective ventilation without long interruptions; capnography monitors CPR quality.', run: () => act('bvm', 'capno') },
+        [{ t: 'Hyperventilate at 20–30 breaths/min', why: 'Hyperventilation raises intrathoracic pressure and lowers coronary perfusion.' },
+          { t: 'Compression-only CPR — no breaths needed', why: 'Compression-only is for untrained lay rescuers. The ALS team ventilates.' },
+          { t: 'Pause CPR for a 2-minute intubation attempt', why: 'Keep interruptions under 10 seconds.' }]);
+    }
+    if (!d && ((shockable && S.arrestShocks >= 2) || !shockable) && epiDue()) {
+      d = D(`epi${S.epi}`, S.epi ? `${fmt(S.simT - S.lastEpi)} since the last epinephrine. Drug now?` : shockable ? `${S.arrestShocks} shocks delivered. Drug now?` : 'Which drug now?', null,
+        { t: 'Epinephrine 1 mg IV/IO', why: shockable ? 'VF/pVT: epinephrine after the 2nd shock, then every 3–5 min.' : 'PEA/asystole: epinephrine as soon as possible, then every 3–5 min.', run: () => act('epi') },
+        [shockable && S.arrestShocks < 3 ? { t: 'Amiodarone 300 mg IV/IO', why: 'Amiodarone comes after the 3rd shock — epinephrine first.' } : shockable ? { t: 'High-dose epinephrine 5 mg', why: 'The dose is always 1 mg — high-dose epinephrine shows no benefit.' } : { t: 'Amiodarone 300 mg IV/IO', why: 'Antiarrhythmics have no role in PEA or asystole.' },
+          { t: 'Atropine 1 mg IV', why: 'Atropine is not part of the cardiac arrest algorithm.' },
+          { t: 'Sodium bicarbonate 1 mEq/kg (routine)', why: 'Routine bicarbonate is not recommended — only for specific causes like hyperkalemia.' }]);
+    }
+    if (!d && shockable && S.arrestShocks >= 3 && S.amio === 0) {
+      d = D('amio1', `${S.arrestShocks} shocks and still in ${nm}. Antiarrhythmic?`, null,
+        { t: 'Amiodarone 300 mg IV/IO', why: 'Shock-refractory VF/pVT: amiodarone 300 mg (or lidocaine 1–1.5 mg/kg).', run: () => act('amio') },
+        [{ t: 'Amiodarone 150 mg IV over 10 minutes', why: 'That is the stable-VT infusion (or the 2nd arrest dose). First arrest dose is 300 mg push.' },
+          { t: 'Magnesium 2 g IV', why: 'Magnesium is for torsades de pointes, not monomorphic VF/VT.' },
+          { t: 'Lidocaine 3 mg/kg IV', why: 'Lidocaine is an alternative — but the dose is 1–1.5 mg/kg.' }]);
+    }
+    if (!d && shockable && S.arrestShocks >= 4 && S.amio === 1) {
+      d = D('amio2', `Still in ${nm} after ${S.arrestShocks} shocks. Antiarrhythmic?`, null,
+        { t: 'Amiodarone 150 mg IV/IO (second dose)', why: 'Second amiodarone dose is 150 mg.', run: () => act('amio') },
+        [{ t: 'Amiodarone 300 mg again', why: 'The second dose is half: 150 mg.' },
+          { t: 'Magnesium 2 g IV', why: 'Only for torsades de pointes.' },
+          { t: 'Procainamide 20 mg/min', why: 'Procainamide is used for stable wide-complex tachycardia, not cardiac arrest.' }]);
+    }
+    if (!d && !shockable && !sd().hts && st.hts && st.hts.length) {
+      const k = st.hts[0], others = HTS.map(h => h[0]).filter(x => !st.hts.includes(x));
+      const clue = (st.clue && st.clue.text) || SC.history || '';
+      d = D('cause', 'Which reversible cause fits best?', clue,
+        { t: htsName(k), why: `The history points to ${htsName(k).toLowerCase()} — treat it while CPR continues.`, run: () => { showClue(); count('hts'); sd().hts = true; did(`H's & T's verbalized — ${htsName(k)}.`); } },
+        pick(others, 3).map(o => ({ t: htsName(o), why: 'Always on the list — but nothing in this case points to it. Re-read the clues.' })));
+    }
+    if (!d && !shockable && sd().hts && st.hts && st.hts.length) {
+      const k = st.hts[0], [txt, acts] = treatFor(k), others = HTS.map(h => h[0]).filter(x => !st.hts.includes(x));
+      d = D('treat', `Treat ${htsName(k).toLowerCase()}:`, null,
+        { t: txt, why: 'Correct — reversing the cause is what restores circulation in PEA/asystole.', run: () => { act(...acts); } },
+        pick(others, 3).map(o => ({ t: TREAT_TXT[o], why: `That treats ${htsName(o).toLowerCase()} — not this patient's problem.` })));
+    }
+    if (!d && S.vent && !S.capno) {
+      d = D('capno', 'Ventilation is going in. What adds the most right now?', null,
+        { t: 'Waveform capnography', why: 'ETCO₂ tracks CPR quality (aim > 10 mmHg) and detects ROSC (sudden rise ≥ 40).', run: () => act('capno') },
+        [{ t: 'Pulse checks every 30 seconds', why: 'Pulse checks only at the 2-minute rhythm check — each one interrupts CPR.' },
+          { t: 'Pulse oximetry to judge CPR quality', why: 'SpO₂ is unreliable without spontaneous circulation.' },
+          { t: 'Routine sodium bicarbonate', why: 'Not recommended routinely.' }]);
+    }
+    if (!d && !done.has(`${S.idx}:team`)) {
+      d = D('team', 'The 2-minute cycle is nearly up. How do you run the rhythm check?', null,
+        { t: `${shockable ? 'Pre-charge during compressions, ' : ''}switch compressors, pause ≤ 10 s`, why: 'Fresh compressors prevent fatigue; pre-charging and a tight pause keep the CPR fraction high.', run: () => { act('switch'); if (shockable && !S.defib.charged && !S.defib.charging) { S.defib.sync = false; S.defib.energy = 200; charge(); } liteCycle(true); } },
+        [{ t: 'Keep the same compressor — consistency matters', why: 'Compression quality drops within 2 minutes — switch every cycle.' },
+          { t: shockable ? 'Stop CPR first, then charge the defibrillator' : 'Pause for 30 s to discuss the plan with the team', why: shockable ? 'Charge during compressions — it shortens the hands-off time.' : 'Pauses must stay under 10 s — plan during compressions.' },
+          { t: 'Skip this rhythm check to keep the CPR fraction high', why: 'Rhythm checks every 2 minutes are mandatory — the rhythm may have changed.' }]);
+    }
+    return d || { auto: 'cycle' };
+  }
+
+  if (t === 'rosc') {
+    const r = sd('rosc'), spoT = S.v.spo2;
+    if (!r.bp) {
+      d = D('p1', 'ROSC! First priorities?', null,
+        { t: 'Check BP, titrate O₂ to SpO₂ 92–98%, target ETCO₂ 35–45', why: 'Post-arrest care starts with hemodynamics, oxygenation and ventilation targets.', run: () => { liteBP(); if (spoT < 92) act('o2'); act('capno'); } },
+        [{ t: 'Continue CPR for 2 more minutes to be safe', why: 'There is a pulse — compressions are no longer indicated.' },
+          { t: 'Ventilate with 100% O₂ to keep SpO₂ at 100%', why: 'Avoid hyperoxia — titrate to SpO₂ 92–98%.' },
+          { t: 'Give a prophylactic amiodarone bolus', why: 'No routine antiarrhythmic prophylaxis after ROSC.' }]);
+    }
+    if (!d && S.v.sbp < 90 && !S.pressor) {
+      d = D('p2', `BP ${Math.round(S.v.sbp)}/${Math.round(S.v.dbp)} after ROSC. Next?`, null,
+        { t: 'Fluid bolus + vasopressor infusion (target SBP ≥ 90, MAP ≥ 65)', why: 'Treat post-arrest hypotension promptly — hypotension worsens brain and heart outcomes.', run: () => { act('fluids', 'epiInf'); liteBP(); } },
+          [{ t: 'Epinephrine 1 mg IV push', why: 'The 1 mg bolus is for arrest — after ROSC use a titrated infusion.' },
+            { t: 'Nitroglycerin to reduce afterload', why: 'Nitrates would make the hypotension worse.' },
+            { t: 'Accept it — permissive hypotension after arrest', why: 'Permissive hypotension is a trauma concept. After ROSC target SBP ≥ 90 / MAP ≥ 65.' }]);
+    }
+    if (!d && (!S.airway || !r.ecg12 || !r.labs)) {
+      d = D('p3', 'Next step in the post-ROSC bundle?', null,
+        { t: 'Advanced airway + capnography, 12-lead ECG, labs/ABG', why: 'Secure ventilation, look for STEMI, and check K⁺, lactate and blood gases.', run: () => { act('airway', 'capno', 'ecg12', 'labs'); } },
+        [{ t: 'Skip the 12-lead — ST changes are expected after CPR', why: 'A 12-lead can reveal a STEMI needing emergent PCI.' },
+          { t: 'Remove the airway now that there is a pulse', why: `${pron()} is not protecting the airway — keep it secured.` },
+          { t: 'Hold all tests until the patient wakes up', why: 'Diagnostics now guide time-critical treatment.' }]);
+    }
+    if (!d && /ST elevation/i.test(st.ecg12 || '') && !S.used.cathlab) {
+      d = D('p4', '12-lead shows ST elevation. Next?', null,
+        { t: 'Emergent coronary angiography — activate the cath lab', why: 'STEMI after ROSC → emergent PCI.', run: () => act('cathlab') },
+        [{ t: 'Repeat the ECG in 24 hours', why: 'STEMI is a time-critical diagnosis — act now.' },
+          { t: 'Wait for the troponin before calling cardiology', why: 'STEMI is diagnosed on the ECG — don\'t wait for biomarkers.' },
+          { t: 'Nitroglycerin infusion and observe', why: 'Not with this blood pressure — and it doesn\'t reopen the artery.' }]);
+    }
+    if (!d && !conscious() && !r.ttm) {
+      d = D('p5', `${pron()} does not follow commands. Next?`, null,
+        { t: 'Targeted temperature management 32–36 °C for ≥ 24 h', why: 'TTM for every comatose post-arrest patient.', run: () => act('ttm') },
+        [{ t: 'Decide on prognosis now', why: 'Neuroprognostication waits at least 72 hours after normothermia.' },
+          { t: 'Give flumazenil to wake the patient up', why: 'Coma after arrest is usually hypoxic brain injury, not benzodiazepines.' },
+          { t: 'Actively warm to 38 °C', why: 'Fever worsens neurologic outcome — prevent it.' }]);
+    }
+    if (!d && st.dest && !S.destDone) return { modal: 'dest' };
+    return d || { finish: true };
+  }
+  return reassess();
+}
+
+function liteCycle(fromTeam) {
+  const idx = S.idx, dueBefore = epiDue();
+  while (S.cpr && S.cycle < 120 && S.idx === idx && !S.over) {
+    tick(1);
+    if (!fromTeam && !dueBefore && epiDue() && (!SHOCKABLE.has(S.stage.type) || S.arrestShocks >= 2)) return;
+  }
+  if (S.idx !== idx || !S.cpr) return;
+  toast('info', '⏩ 2 minutes of high-quality CPR — pausing for the rhythm check', 2600);
+  toggleCPR();
+}
+
+function liteAdvance() {
+  const Lt = S.lite;
+  for (let g = 0; g < 8; g++) {
+    settle();
+    if (S.over || modalOpen() || quizDue()) break;
+    const d = liteNext();
+    if (d && d.auto === 'cycle') { liteCycle(false); continue; }
+    if (d && d.modal === 'dest') { transport(); break; }
+    if (d && d.finish) { Lt.cur = { finish: true, q: 'Post-cardiac arrest care is under way — great work, Team Leader.', ctx: vitCtx(), opts: [], state: 'finish' }; break; }
+    if (d) { Lt.cur = d; break; }
+  }
+  renderLite();
+}
+
+function liteTick() {
+  const Lt = S.lite;
+  if (S.over || S.paused || modalOpen()) return;
+  if (Lt.shockQ && S.defib.charged) { Lt.shockQ = false; shock(); renderLite(); }
+  if (Lt.cur) { if (Lt.cur.state === 'right') renderLiteBusy(); return; }
+  if (S.defib.charging || Lt.shockQ || S.nibpBusy || quizDue()) { renderLite(); return; }
+  liteAdvance();
+}
+
+const liteBusy = () => S.defib.charging || S.lite.shockQ;
+function renderLiteBusy() {
+  const b = $('#liteNext');
+  if (!b) return;
+  const busy = liteBusy();
+  if (b.disabled !== busy) { b.disabled = busy; b.innerHTML = busy ? '<span class="spin"></span> Team working…' : 'Continue ▶'; }
+}
+function renderLite() {
+  const Lt = S.lite, c = Lt.cur;
+  $('#liteScore').textContent = `${Lt.first}/${Lt.n} first try`;
+  if (!c) {
+    const key = `${quizDue()}|${S.defib.charging || Lt.shockQ}`;
+    if (UI.liteKey === key) return;
+    UI.liteKey = key;
+    $('#liteK').textContent = 'Team Leader';
+    $('#liteQ').innerHTML = `<span class="lite-busy"><span class="spin"></span>${quizDue() ? 'Read the monitor…' : S.defib.charging || Lt.shockQ ? 'Charging — stand clear…' : 'Your team is working…'}</span>`;
+    $('#liteCtx').textContent = vitCtx();
+    $('#liteOpts').innerHTML = ''; $('#liteFb').hidden = true; $('#liteFb').innerHTML = '';
+    return;
+  }
+  UI.liteKey = null;
+  $('#liteK').textContent = c.finish ? 'Wrap-up' : `Decision ${Lt.n + (c.state === 'ask' ? 1 : 0)}`;
+  $('#liteQ').textContent = c.q;
+  $('#liteCtx').textContent = c.ctx;
+  if (c.finish) {
+    $('#liteOpts').innerHTML = '';
+    $('#liteFb').hidden = false; $('#liteFb').className = 'lite-fb ok';
+    $('#liteFb').innerHTML = `${S.lite.first}/${S.lite.n} decisions right on the first try.<div class="lite-next"><button type="button" class="btn btn-primary" id="liteEnd">${ico('flag')} Finish &amp; debrief</button></div>`;
+    return;
+  }
+  $('#liteOpts').innerHTML = c.opts.map((o, i) => {
+    const cls = c.state === 'right' ? (o.ok ? ' right' : ' dim') : o.bad ? ' wrong' : '';
+    return `<button type="button" class="lo${cls}" data-lo="${i}"${c.state !== 'ask' || o.bad ? ' disabled' : ''}><span class="n">${i + 1}</span><span>${o.t}</span></button>`;
+  }).join('');
+  const fb = $('#liteFb');
+  if (!c.fb) { fb.hidden = true; return; }
+  fb.hidden = false;
+  fb.className = `lite-fb ${c.fb.ok ? 'ok' : 'no'}`;
+  fb.innerHTML = c.fb.ok
+    ? `✅ ${c.fb.text}<div class="lite-next"><button type="button" class="btn btn-primary" id="liteNext">Continue ▶</button></div>`
+    : `⛔ ${c.fb.text} <b>−10 s</b> — try again.`;
+  renderLiteBusy();
+}
+function liteChoose(i) {
+  const Lt = S.lite, c = Lt.cur;
+  if (!c || c.state !== 'ask') return;
+  const o = c.opts[i];
+  if (!o || o.bad) return;
+  if (o.ok) {
+    c.state = 'right'; c.fb = { ok: true, text: o.why };
+    Lt.n++; if (!c.tries) Lt.first++;
+    Lt.done.add(c.id);
+    pushLog('act', `Team Leader call: ${o.t}`);
+    if (o.run) o.run();
+  } else {
+    c.tries++; o.bad = true; c.fb = { ok: false, text: o.why };
+    S.errs.push({ t: S.simT, kind: 'warn', text: `Decision — “${o.t}”: ${o.why}`, sec: secKey() });
+    const idx = S.idx;
+    liteWait(10);
+    if (S.idx !== idx) { Lt.n++; Lt.cur = null; toast('warn', 'While you hesitated, the patient changed — new decision.'); }
+  }
+  renderLite();
+  refreshUI(true);
+}
+function liteContinue() {
+  const c = S.lite.cur;
+  if (!c || c.state !== 'right' || liteBusy()) return;
+  S.lite.cur = null;
+  liteAdvance();
+}
+
 /* ═══════════════════════ VIEW SWITCHING ═══════════════════════ */
 let view = 'pick';
 function startSim(sc, mode) {
@@ -1619,7 +2078,8 @@ function startSim(sc, mode) {
   view = 'sim';
   $('#viewPick').hidden = true; $('#viewSim').hidden = false; $('#pauseBtn').hidden = false;
   $('#hdrTitle').textContent = `Megacode ${sc.id} · ${sc.title}`;
-  $('#hdrSub').textContent = `${sc.place} · ${mode === 'train' ? 'Training mode' : 'Megacode test'}`;
+  $('#hdrSub').textContent = `${sc.place} · ${{ quick: 'Quick Code', train: 'Training mode', exam: 'Megacode test' }[mode]}`;
+  $('#viewSim').classList.toggle('is-quick', mode === 'quick');
   $('#monPt').textContent = `ADULT · ${sc.sex} ${sc.age}y · ${sc.place.toUpperCase()}`;
   $('#log').innerHTML = '';
   $('#toasts').innerHTML = '';
@@ -1633,6 +2093,12 @@ function startSim(sc, mode) {
   if (sc.monitorOn) pushLog('find', 'The bedside monitor is already connected.');
   if (sc.ivStart) pushLog('find', 'A peripheral IV is in place.');
   if (sc.o2Start) pushLog('find', 'Supplemental oxygen is already running.');
+  if (mode === 'quick') {
+    doAction('roles');
+    if (!S.monitor) doAction('monitor');
+    pushLog('find', 'Your team has assigned roles and attached the monitor — you make the calls.');
+    renderLite();
+  }
   renderTeam();
   refreshUI(true);
 }
@@ -1681,6 +2147,13 @@ function bind() {
   $('#qPulse').addEventListener('click', () => doAction('pulse'));
   $('#qSkip').addEventListener('click', skipAhead);
   $('#endBtn').addEventListener('click', () => S && !S.over && confirmEnd());
+  $('#lite').addEventListener('click', e => {
+    if (!S || S.over) return;
+    const o = e.target.closest('[data-lo]');
+    if (o) { liteChoose(+o.dataset.lo); return; }
+    if (e.target.closest('#liteNext')) liteContinue();
+    else if (e.target.closest('#liteEnd')) endSim();
+  });
   $('#tabs').addEventListener('click', e => {
     const tb = e.target.closest('[data-tab]');
     if (!tb) return;
@@ -1703,6 +2176,11 @@ function bind() {
   });
   document.addEventListener('keydown', e => {
     if (view !== 'sim' || !S || S.over || modalOpen() || e.target.matches('input,textarea,select')) return;
+    if (S.mode === 'quick') {
+      if (/^[1-4]$/.test(e.key)) liteChoose(+e.key - 1);
+      else if (e.key === 'Enter' && S.lite.cur && S.lite.cur.state === 'right' && !e.target.closest('button')) liteContinue();
+      return;
+    }
     if (e.key === ' ' && !e.target.closest('button')) { e.preventDefault(); toggleCPR(); }
     else if (e.key === 'c' || e.key === 'C') charge();
     else if (e.key === 's' || e.key === 'S') shock();
@@ -1725,7 +2203,8 @@ function loop(ts) {
   const dt = Math.min(0.1, (ts - lastTs) / 1000);
   lastTs = ts;
   if (view !== 'sim' || !S || !S.stage) return;
-  if (!S.paused && !S.over && !modalOpen()) tick(dt);
+  const Lc = S.lite.cur, liteHold = S.mode === 'quick' && Lc && !(Lc.state === 'right' && (liteBusy() || S.pending));
+  if (!S.paused && !S.over && !modalOpen() && !liteHold) tick(dt);
   const D = S.defib;
   if (D.charging) {
     const p = (performance.now() - D.chargeT0) / 2400;
@@ -1735,6 +2214,7 @@ function loop(ts) {
   if (D.charged && !S.paused && Math.floor(ts / 900) !== UI.lastReady) { UI.lastReady = Math.floor(ts / 900); Snd.ready(); }
   if (!S.over && !S.paused && !modalOpen() && S.stage.quiz && !S.quizDone[S.idx] && S.monitor && !S.cpr && S.stage.type !== 'rosc'
     && !(S.stage.type === 'pea' && !S.pulseChecked) && S.simT - S.stageT0 > 1.6) openQuiz();
+  if (S.mode === 'quick') liteTick();
   Mon.frame(dt);
   refreshUI(false);
 }
