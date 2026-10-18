@@ -135,6 +135,35 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
+        /* ── Opaque surfaces + readable text per theme. The shared --glass-bg is
+              75% white over the dark default gradient, which turned cards grey and
+              washed out secondary text; these keep the glass feel but stay legible. ── */
+        :root {
+            --cc-surface: rgba(248, 250, 252, 0.97); --cc-surface-2: #eef2f7;
+            --cc-text: #0f1b2a; --cc-text-2: #3e4c5e; --cc-muted: #64748b;
+            --cc-line: rgba(15, 27, 42, 0.11); --cc-drawer: rgba(246, 249, 252, 0.98);
+        }
+        [data-theme="amoled"] {
+            --cc-surface: rgba(16, 19, 24, 0.97); --cc-surface-2: #1a1f27;
+            --cc-text: #eef4fa; --cc-text-2: #b3c0cf; --cc-muted: #8593a5;
+            --cc-line: rgba(255, 255, 255, 0.11); --cc-drawer: rgba(12, 14, 18, 0.98);
+        }
+        [data-theme="light"] {
+            --cc-surface: #ffffff; --cc-surface-2: #f1f5f9;
+            --cc-text: #0f1b2a; --cc-text-2: #3e4c5e; --cc-muted: #64748b;
+            --cc-line: rgba(15, 27, 42, 0.10); --cc-drawer: rgba(255, 255, 255, 0.98);
+        }
+        [data-theme="sepia"] {
+            --cc-surface: #fff9ee; --cc-surface-2: #f5e9d3;
+            --cc-text: #33281c; --cc-text-2: #5e4d3b; --cc-muted: #7c6a56;
+            --cc-line: rgba(74, 60, 44, 0.16); --cc-drawer: rgba(255, 249, 238, 0.98);
+        }
+        [data-theme="forest"] {
+            --cc-surface: #eef6e4; --cc-surface-2: #dfecca;
+            --cc-text: #0d281b; --cc-text-2: #2a4f36; --cc-muted: #4b6b53;
+            --cc-line: rgba(13, 40, 27, 0.15); --cc-drawer: rgba(238, 246, 228, 0.98);
+        }
+
         /* ══════════════ Courses v2 — compact, collapsible, sticky search ══════════════ */
         :root { --hdr-h: 72px; }
         body.compact { --hdr-h: 56px; }
@@ -168,37 +197,37 @@
         .toolbar {
             position: sticky; top: var(--hdr-h); z-index: 50;
             margin: 0 -16px 6px; padding: 10px 16px 0;
-            background: color-mix(in srgb, var(--glass-bg) 88%, transparent);
+            background: color-mix(in srgb, var(--cc-surface) 88%, transparent);
             backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(16px) saturate(150%);
             border-bottom: 1px solid transparent;
             transition: top 0.25s cubic-bezier(0.23, 1, 0.32, 1), padding 0.25s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.2s;
         }
-        body.compact .toolbar { border-bottom-color: var(--glass-border); }
+        body.compact .toolbar { border-bottom-color: var(--cc-line); }
         .tb-row { display: flex; gap: 8px; align-items: center; }
         .search-wrap {
             flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px;
             height: 42px; padding: 0 8px 0 14px;
-            background: var(--glass-bg); border: 1.5px solid var(--glass-border); border-radius: 14px;
+            background: var(--cc-surface); border: 1.5px solid var(--cc-line); border-radius: 14px;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         .search-wrap:focus-within { border-color: var(--primary-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-accent) 18%, transparent); }
         .search-wrap svg.lucide { width: 17px; height: 17px; opacity: 0.5; flex-shrink: 0; }
         .search-wrap:focus-within svg.lucide { opacity: 0.85; color: var(--primary-accent); }
-        #searchInput { flex: 1; min-width: 0; height: 100%; background: none; border: none; outline: none; color: var(--text-primary); font: 500 0.92rem var(--font-body); }
-        #searchInput::placeholder { color: var(--text-secondary); opacity: 0.6; }
+        #searchInput { flex: 1; min-width: 0; height: 100%; background: none; border: none; outline: none; color: var(--cc-text); font: 500 0.92rem var(--font-body); }
+        #searchInput::placeholder { color: var(--cc-text-2); opacity: 0.6; }
         #searchInput::-webkit-search-cancel-button { display: none; }
-        .search-key { font: 700 0.62rem var(--font-body); color: var(--text-secondary); opacity: 0.55; border: 1px solid var(--glass-border); border-radius: 6px; padding: 2px 6px; }
-        .search-clear { width: 28px; height: 28px; border-radius: 9px; border: none; background: rgba(127,127,127,0.14); color: var(--text-secondary); font-size: 0.7rem; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; padding: 0; }
+        .search-key { font: 700 0.62rem var(--font-body); color: var(--cc-text-2); opacity: 0.55; border: 1px solid var(--cc-line); border-radius: 6px; padding: 2px 6px; }
+        .search-clear { width: 28px; height: 28px; border-radius: 9px; border: none; background: rgba(127,127,127,0.14); color: var(--cc-text-2); font-size: 0.7rem; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; padding: 0; }
         .search-clear.visible { display: flex; }
         .search-wrap:has(.search-clear.visible) .search-key { display: none; }
         @media (hover: none) { .search-key { display: none; } }
         .tb-btn {
             height: 42px; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px;
-            border-radius: 14px; border: 1.5px solid var(--glass-border); background: var(--glass-bg);
-            color: var(--text-secondary); font: 700 0.76rem var(--font-body); cursor: pointer;
+            border-radius: 14px; border: 1.5px solid var(--cc-line); background: var(--cc-surface);
+            color: var(--cc-text-2); font: 700 0.76rem var(--font-body); cursor: pointer;
             transition: color 0.15s, border-color 0.15s, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .tb-btn:hover { color: var(--text-primary); border-color: color-mix(in srgb, var(--primary-accent) 45%, var(--glass-border)); }
+        .tb-btn:hover { color: var(--cc-text); border-color: color-mix(in srgb, var(--primary-accent) 45%, var(--cc-line)); }
         .tb-btn:active { transform: scale(0.96); }
         .tb-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
         .tb-btn[hidden] { display: none; }
@@ -215,7 +244,7 @@
         .filter-row::-webkit-scrollbar { display: none; }
         .chip {
             flex-shrink: 0; height: 32px; padding: 0 14px; border-radius: 100px;
-            border: 1.5px solid var(--glass-border); background: var(--glass-bg); color: var(--text-secondary);
+            border: 1.5px solid var(--cc-line); background: var(--cc-surface); color: var(--cc-text-2);
             font: 650 0.78rem var(--font-body); white-space: nowrap; cursor: pointer;
             display: inline-flex; align-items: center; gap: 6px;
             transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
@@ -237,8 +266,8 @@
         .continue-card {
             display: flex; align-items: center; gap: 12px; padding: 10px 12px; margin: 6px 0 4px;
             border-radius: 16px; text-decoration: none; color: inherit;
-            background: linear-gradient(120deg, color-mix(in srgb, var(--cat-color) 16%, var(--glass-bg)), var(--glass-bg) 70%);
-            border: 1.5px solid color-mix(in srgb, var(--cat-color) 32%, var(--glass-border));
+            background: linear-gradient(120deg, color-mix(in srgb, var(--cat-color) 16%, var(--cc-surface)), var(--cc-surface) 70%);
+            border: 1.5px solid color-mix(in srgb, var(--cat-color) 32%, var(--cc-line));
             transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.2s;
         }
         .continue-card:hover { border-color: color-mix(in srgb, var(--cat-color) 55%, transparent); }
@@ -256,21 +285,21 @@
         .cat-h {
             width: 100%; display: flex; align-items: center; gap: 10px; padding: 9px 12px;
             border-radius: 12px; border: 1px solid transparent; cursor: pointer; text-align: left;
-            background: color-mix(in srgb, var(--cat-color) 13%, var(--glass-bg));
-            border-color: var(--glass-border);
-            color: var(--text-primary); font-family: var(--font-body);
+            background: color-mix(in srgb, var(--cat-color) 13%, var(--cc-surface));
+            border-color: var(--cc-line);
+            color: var(--cc-text); font-family: var(--font-body);
             transition: background 0.2s, border-color 0.2s;
         }
         .cat-h:hover { border-color: color-mix(in srgb, var(--cat-color) 35%, transparent); }
         .cat-h:focus-visible { outline: 2px solid var(--cat-color); outline-offset: 2px; }
         .cat-name { font: 800 0.74rem var(--font-body); letter-spacing: 1.2px; text-transform: uppercase; }
         .cat-count { font: 800 0.64rem var(--font-body); min-width: 20px; height: 20px; padding: 0 6px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--cat-color) 22%, transparent); color: var(--cat-color); font-variant-numeric: tabular-nums; }
-        .cat-meta { margin-left: auto; display: flex; align-items: center; gap: 8px; font: 650 0.68rem var(--font-body); color: var(--text-secondary); white-space: nowrap; }
+        .cat-meta { margin-left: auto; display: flex; align-items: center; gap: 8px; font: 650 0.68rem var(--font-body); color: var(--cc-text-2); white-space: nowrap; }
         .cat-thumbs { display: none; }
         .cat.collapsed .cat-thumbs { display: flex; }
-        .cat-thumbs img { width: 22px; height: 22px; border-radius: 7px; margin-left: -7px; box-shadow: 0 0 0 2px var(--glass-bg); }
+        .cat-thumbs img { width: 22px; height: 22px; border-radius: 7px; margin-left: -7px; box-shadow: 0 0 0 2px var(--cc-surface); }
         .cat-thumbs img:first-child { margin-left: 0; }
-        .cat-chev { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-secondary); transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1); }
+        .cat-chev { width: 18px; height: 18px; flex-shrink: 0; color: var(--cc-text-2); transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1); }
         .cat.collapsed .cat-chev { transform: rotate(-90deg); }
         .cat-body { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         .cat.collapsed .cat-body { grid-template-rows: 0fr; }
@@ -279,13 +308,13 @@
         @media (min-width: 640px) { .cat-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
         .results-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
         @media (min-width: 640px) { .results-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
-        .results-h { align-self: flex-start; font: 700 0.72rem var(--font-body); color: var(--text-secondary); padding: 5px 10px; border-radius: 9px; background: var(--glass-bg); border: 1px solid var(--glass-border); }
+        .results-h { align-self: flex-start; font: 700 0.72rem var(--font-body); color: var(--cc-text-2); padding: 5px 10px; border-radius: 9px; background: var(--cc-surface); border: 1px solid var(--cc-line); }
 
         /* ── Course card (compact) ── */
         .course-card {
             position: relative; display: flex; flex-direction: column; gap: 10px;
             padding: 11px 12px 11px 14px; border-radius: 16px; overflow: hidden;
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            background: var(--cc-surface); border: 1px solid var(--cc-line);
             color: inherit; text-decoration: none;
             transition: border-color 0.2s, transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
             animation: cardIn 0.35s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -307,35 +336,71 @@
         .cc-icon svg.lucide { width: 26px; height: 26px; stroke-width: 2.25; }
         .cc-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
         .cc-top { display: flex; align-items: center; gap: 8px; min-width: 0; }
-        .cc-title { font: 800 0.98rem/1.2 var(--font-display); color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cc-title { font: 800 0.98rem/1.2 var(--font-display); color: var(--cc-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .cc-tag { font: 700 0.58rem var(--font-body); text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 6px; border-radius: 6px; color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 12%, transparent); white-space: nowrap; }
         .cc-badge {
             margin-left: auto; flex-shrink: 0; font: 750 0.64rem var(--font-body); font-variant-numeric: tabular-nums;
             padding: 3px 7px; border-radius: 7px; white-space: nowrap;
-            color: var(--text-secondary); background: rgba(127,127,127,0.12); border: 1px solid rgba(127,127,127,0.16);
+            color: var(--cc-text-2); background: rgba(127,127,127,0.12); border: 1px solid rgba(127,127,127,0.16);
         }
-        .cc-sub { font-size: 0.74rem; line-height: 1.3; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .cc-progress { display: flex; align-items: center; gap: 8px; margin-top: 4px; min-height: 14px; }
-        .cc-progress-track { flex: 1; height: 5px; border-radius: 99px; overflow: hidden; background: color-mix(in srgb, var(--cat-color) 14%, rgba(127,127,127,0.14)); }
-        .cc-progress-fill { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--cat-color), color-mix(in srgb, var(--cat-color) 65%, #fff)); transition: width 0.9s cubic-bezier(0.23, 1, 0.32, 1); }
-        .cc-pct { font: 750 0.66rem var(--font-body); font-variant-numeric: tabular-nums; color: var(--cat-color); white-space: nowrap; }
-        .cc-pct.done { color: #22c55e; }
-        .cc-state { font: 600 0.68rem var(--font-body); color: var(--text-secondary); opacity: 0.8; }
+        .cc-sub { font-size: 0.74rem; line-height: 1.3; color: var(--cc-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* Progress row — one layout, three states (+ "untracked" for exams/simulators):
+           .is-new  0 done   → empty track, muted "0/N"      .is-going → category colour
+           .is-done all done → green track, "✓ Completed"    .is-untracked → status dot + text */
+        .cc-progress { display: flex; align-items: center; gap: 8px; margin-top: 5px; height: 16px; }
+        .cc-progress-track { flex: 1; height: 6px; border-radius: 99px; overflow: hidden; background: color-mix(in srgb, var(--cat-color) 14%, var(--cc-surface-2)); box-shadow: inset 0 0 0 1px var(--cc-line); }
+        .cc-progress-fill { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, color-mix(in srgb, var(--cat-color) 85%, #000), var(--cat-color)); transition: width 0.9s cubic-bezier(0.23, 1, 0.32, 1); }
+        .cc-pct { font: 750 0.68rem var(--font-body); font-variant-numeric: tabular-nums; white-space: nowrap; color: color-mix(in srgb, var(--cat-color) 70%, var(--cc-text)); }
+        .is-new .cc-pct, .is-untracked .cc-pct { color: var(--cc-muted); font-weight: 650; }
+        .is-done .cc-progress-fill { background: linear-gradient(90deg, #16a34a, #22c55e); }
+        .is-done .cc-pct { color: #15803d; }
+        [data-theme="amoled"] .is-done .cc-pct { color: #4ade80; }
+        .cc-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: var(--cc-muted); opacity: 0.6; }
+        .is-untracked.was-opened .cc-dot { background: var(--cat-color); opacity: 1; }
+
+        /* Actions — every card gets one row: primary (filled) + secondary (outlined),
+           or a single full-width primary. */
         .cc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .cc-actions.single { grid-template-columns: 1fr; }
         .cc-btn {
-            height: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-            border-radius: 10px; text-decoration: none; font: 750 0.78rem var(--font-display);
-            transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+            height: 36px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0 10px;
+            border-radius: 11px; text-decoration: none; font: 750 0.8rem/1 var(--font-display); letter-spacing: 0.1px; white-space: nowrap;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, filter 0.2s, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .cc-btn:active { transform: scale(0.97); }
-        .cc-btn svg.lucide { width: 15px; height: 15px; }
-        .cc-btn-review { color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 12%, transparent); border: 1px solid color-mix(in srgb, var(--cat-color) 30%, transparent); }
-        .cc-btn-exam { color: var(--text-primary); background: rgba(127,127,127,0.1); border: 1px solid rgba(127,127,127,0.2); }
-        @media (hover: hover) {
-            .cc-btn-review:hover { background: var(--cat-color); color: #fff; }
-            .cc-btn-exam:hover { border-color: color-mix(in srgb, var(--cat-color) 45%, transparent); }
+        .cc-btn:focus-visible { outline: 2px solid var(--cat-color); outline-offset: 2px; }
+        .cc-btn svg.lucide { width: 15px; height: 15px; stroke-width: 2.4; flex-shrink: 0; }
+        /* darkened 18% so white text keeps ≥ 4.5:1 on every category colour */
+        .cc-btn-primary {
+            color: #fff; background: color-mix(in srgb, var(--cat-color) 82%, #000);
+            border: 1px solid color-mix(in srgb, var(--cat-color) 70%, #000);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 4px 12px -6px color-mix(in srgb, var(--cat-color) 75%, transparent);
         }
-        .empty-state { text-align: center; padding: 36px 20px; color: var(--text-secondary); font-size: 0.88rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; }
+        .cc-btn-secondary {
+            color: color-mix(in srgb, var(--cat-color) 68%, var(--cc-text)); background: var(--cc-surface-2);
+            border: 1px solid color-mix(in srgb, var(--cat-color) 38%, var(--cc-line));
+        }
+        @media (hover: hover) {
+            .cc-btn-primary:hover { filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 8px 18px -8px color-mix(in srgb, var(--cat-color) 85%, transparent); }
+            .cc-btn-secondary:hover { border-color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 10%, var(--cc-surface-2)); }
+        }
+
+        /* ── Toggles panel (control-center drawer): it used var(--bg), which no theme
+              defines, so the panel rendered fully transparent over blurred content. ── */
+        .notification-drawer { background: var(--cc-drawer) !important; border-bottom: 1px solid var(--cc-line) !important; box-shadow: 0 24px 60px -12px rgba(0,0,0,0.5) !important; }
+        .drawer-overlay { background: rgba(4, 10, 18, 0.62) !important; backdrop-filter: blur(4px) !important; -webkit-backdrop-filter: blur(4px) !important; }
+        .drawer-section-title { color: var(--cc-text-2) !important; opacity: 1 !important; }
+        .toggle-btn { background: var(--cc-surface-2) !important; border: 1px solid var(--cc-line) !important; color: var(--cc-text) !important; box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important; }
+        .toggle-btn:hover { border-color: color-mix(in srgb, var(--primary-accent) 50%, var(--cc-line)) !important; }
+        .toggle-btn.active { background: var(--primary-accent) !important; border-color: var(--primary-accent) !important; color: #fff !important; box-shadow: 0 6px 18px color-mix(in srgb, var(--primary-accent) 45%, transparent) !important; }
+        #qsLogout { background: color-mix(in srgb, #ef4444 14%, var(--cc-surface-2)) !important; border-color: color-mix(in srgb, #ef4444 40%, var(--cc-line)) !important; color: #dc2626 !important; }
+        .toggle-label { color: var(--cc-text) !important; font-weight: 650 !important; }
+        .toggle-item:has(.toggle-btn.active) .toggle-label { color: var(--primary-accent) !important; font-weight: 800 !important; }
+        .close-drawer-btn { opacity: 0.7 !important; }
+        .close-drawer-btn svg { stroke: var(--cc-text) !important; }
+        .amoled-circle-icon { box-shadow: 0 0 0 1px var(--cc-line); }
+
+        .empty-state { text-align: center; padding: 36px 20px; color: var(--cc-text-2); font-size: 0.88rem; background: var(--cc-surface); border: 1px solid var(--cc-line); border-radius: 16px; }
         .empty-state button { margin-top: 12px; }
         @media (prefers-reduced-motion: reduce) {
             .course-card, .cat-body, .filter-wrap, header, .toolbar, .cc-progress-fill { animation: none !important; transition: none !important; }
@@ -1064,16 +1129,22 @@
         return Math.floor(days / 30) + 'mo ago';
     }
 
+    // One progress row for every card. Tracked courses always show the bar in one
+    // of three states (is-new / is-going / is-done) with the same "done/total unit"
+    // label; exams and simulators that don't track progress show a status dot.
+    function progressLabel(p) {
+        return (p.done >= p.total ? '✓ ' : '') + p.done + '/' + p.total + ' ' + p.unit;
+    }
     function progressHtml(course) {
         const p = courseProgress(course);
-        const last = getProgress(course.id).lastStudied;
-        if (p && p.done > 0) {
-            const done = p.done >= p.total;
-            return `<div class="cc-progress" title="${p.done} of ${p.total} ${p.unit}">
-                <div class="cc-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${p.total}" aria-valuenow="${p.done}" aria-label="${esc(course.shortTitle)} progress"><div class="cc-progress-fill" data-fill="${p.pct}"></div></div>
-                <span class="cc-pct${done ? ' done' : ''}">${done ? '✓ ' : ''}${p.done}/${p.total} ${p.unit}</span></div>`;
+        if (p) {
+            const state = p.done >= p.total ? 'is-done' : p.done > 0 ? 'is-going' : 'is-new';
+            return `<div class="cc-progress ${state}">
+                <div class="cc-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${p.total}" aria-valuenow="${p.done}" aria-label="${esc(course.shortTitle)}: ${p.done} of ${p.total} ${p.unit}"><div class="cc-progress-fill" data-fill="${p.pct}"></div></div>
+                <span class="cc-pct">${progressLabel(p)}</span></div>`;
         }
-        return `<div class="cc-progress"><span class="cc-state">${last ? 'Opened ' + timeAgo(last) : p ? 'Not started · ' + p.total + ' ' + (p.unit === 'passed' ? 'scenarios' : p.unit) : 'Not started'}</span></div>`;
+        const last = getProgress(course.id).lastStudied;
+        return `<div class="cc-progress is-untracked${last ? ' was-opened' : ''}"><span class="cc-dot" aria-hidden="true"></span><span class="cc-pct">${last ? 'Opened ' + timeAgo(last) : 'Not started yet'}</span></div>`;
     }
 
     function renderContinueLearning() {
@@ -1088,7 +1159,7 @@
         const href = rv ? rv.review : course.link;
         if (!href) return '';
         const p = courseProgress(course);
-        const detail = p && p.done > 0 ? `${p.done}/${p.total} ${p.unit}` : 'Pick up where you left off';
+        const detail = p && p.done > 0 ? progressLabel(p) : 'Pick up where you left off';
         return `<a href="${href}" class="continue-card" data-id="${course.id}" style="--cat-color:${CAT_COLORS[course.category] || CAT_COLORS.general}">
                 <div class="cc-icon">${courseIcon(course)}</div>
                 <div class="continue-body">
@@ -1100,28 +1171,38 @@
             </a>`;
     }
 
+    // Every card has the same structure: tappable header (opens the first action)
+    // + an action row. Reviewer courses get Review + Exam; the rest get their own.
+    const SINGLE_ACTIONS = {
+        megacode:  [['Scenarios', 'play', 'megacode.html'], ['Random case', 'zap', 'megacode.html?s=random']],
+        ecg:       [['Open simulator', 'activity', 'ecg.html']],
+        prometric: [['Start mock exam', 'notebook-pen', '../src/prometric/exam.html']],
+        ppet:      [['Start exam', 'notebook-pen', 'ppet.html']]
+    };
+    function actionsFor(course) {
+        const rv = REVIEWER_LINKS[course.id];
+        if (rv) return [['Review', 'book-open', rv.review], ['Exam', 'notebook-pen', rv.exam]];
+        return SINGLE_ACTIONS[course.id] || [['Open', 'arrow-right', course.link]];
+    }
     function renderCard(course, showTag) {
         const catColor = CAT_COLORS[course.category] || CAT_COLORS.general;
         const badgeTxt = BADGE_TEXT[course.id] || (course.count > 0 ? course.count + ' Q' : '');
         const badge = badgeTxt ? `<span class="cc-badge">${badgeTxt}</span>` : '';
         const tag = showTag ? `<span class="cc-tag">${CATEGORY_LABELS[course.category] || course.category}</span>` : '';
-        const info = `<div class="cc-icon">${courseIcon(course)}</div>
-            <div class="cc-info">
-                <div class="cc-top"><span class="cc-title">${course.shortTitle}</span>${tag}${badge}</div>
-                <div class="cc-sub">${course.title}</div>
-                ${progressHtml(course)}
+        const acts = actionsFor(course).filter(a => a[2]);
+        const btns = acts.map(([label, icon, href], k) =>
+            `<a href="${href}" class="cc-btn ${k === 0 ? 'cc-btn-primary' : 'cc-btn-secondary'}"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${icon}"/></svg>${label}</a>`).join('');
+        return `<div class="course-card" data-id="${course.id}" style="--cat-color:${catColor}">
+                <a class="cc-main" href="${acts[0] ? acts[0][2] : '#'}" aria-label="${esc(course.shortTitle)} — ${acts[0] ? acts[0][0] : 'open'}">
+                    <div class="cc-icon">${courseIcon(course)}</div>
+                    <div class="cc-info">
+                        <div class="cc-top"><span class="cc-title">${course.shortTitle}</span>${tag}${badge}</div>
+                        <div class="cc-sub">${course.title}</div>
+                        ${progressHtml(course)}
+                    </div>
+                </a>
+                <div class="cc-actions${acts.length === 1 ? ' single' : ''}">${btns}</div>
             </div>`;
-        const rv = REVIEWER_LINKS[course.id];
-        if (rv) {
-            return `<div class="course-card" data-id="${course.id}" style="--cat-color:${catColor}">
-                <a class="cc-main" href="${rv.review}" aria-label="${esc(course.shortTitle)} — open reviewer">${info}</a>
-                <div class="cc-actions">
-                    <a href="${rv.review}" class="cc-btn cc-btn-review"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg>Review</a>
-                    <a href="${rv.exam}" class="cc-btn cc-btn-exam"><svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg>Exam</a>
-                </div>
-            </div>`;
-        }
-        return `<a href="${course.link}" class="course-card" data-id="${course.id}" style="--cat-color:${catColor}"><div class="cc-main">${info}</div></a>`;
     }
 
     function setupFilterAndSearch() {

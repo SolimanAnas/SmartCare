@@ -22,7 +22,10 @@ test('progress bars reflect real reviewer progress', async ({ page }) => {
   await expect(acls.locator('.cc-progress-fill')).toHaveAttribute('style', /width: 50%/);
   await expect(page.locator('.course-card[data-id="bls"] .cc-pct')).toHaveText('✓ 12/12 chapters');
   await expect(page.locator('.course-card[data-id="megacode"] .cc-pct')).toHaveText('1/12 passed');
-  await expect(page.locator('.course-card[data-id="itls"] .cc-state')).toHaveText('Not started · 22 chapters');
+  await expect(page.locator('.course-card[data-id="itls"] .cc-progress')).toHaveClass(/is-new/);
+  await expect(page.locator('.course-card[data-id="itls"] .cc-pct')).toHaveText('0/22 chapters');
+  await expect(page.locator('.course-card[data-id="bls"] .cc-progress')).toHaveClass(/is-done/);
+  await expect(page.locator('.course-card[data-id="prometric"] .cc-progress')).toHaveClass(/is-untracked/);
   await expect(page.locator('#pageSubtitle')).toContainText('3 started');
 });
 
@@ -62,4 +65,23 @@ test('menu control sits in the header, not over the search box', async ({ page }
   expect(search.y).toBeGreaterThanOrEqual(header.y + header.height);
   await page.click('#drawerTrigger');
   await expect(page.locator('#notificationDrawer')).toHaveClass(/open/);
+});
+
+test('every card has the same action row; Megacode offers Scenarios + Random case', async ({ page }) => {
+  const cards = page.locator('#courseList .course-card');
+  const n = await cards.count();
+  expect(n).toBeGreaterThan(10);
+  await expect(page.locator('#courseList .course-card:not(:has(.cc-actions .cc-btn-primary))')).toHaveCount(0);
+  const mega = page.locator('.course-card[data-id="megacode"]');
+  await expect(mega.locator('.cc-btn')).toHaveText(['Scenarios', 'Random case']);
+  await mega.locator('.cc-btn', { hasText: 'Random case' }).click();
+  await expect(page).toHaveURL(/megacode\.html\?s=random/);
+  await expect(page.locator('.sheet .sh-k')).toContainText('Megacode');
+});
+
+test('toggles panel is opaque and readable', async ({ page }) => {
+  await page.click('#drawerTrigger');
+  const bg = await page.locator('#notificationDrawer').evaluate(el => getComputedStyle(el).backgroundColor);
+  const alpha = bg.startsWith('rgba') ? parseFloat(bg.split(',')[3]) : 1;
+  expect(alpha).toBeGreaterThan(0.9);
 });
