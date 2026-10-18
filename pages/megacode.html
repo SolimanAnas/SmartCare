@@ -93,6 +93,7 @@ button{font:inherit;color:inherit}
 .hdr-back{width:36px;height:36px;border-radius:11px;background:var(--sf2);border:1px solid var(--br);color:var(--text);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;flex-shrink:0;transition:background .15s;cursor:pointer}
 .hdr-back:active{background:var(--br2)}
 .hdr-badge{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#be123c,#f43f5e);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;box-shadow:0 4px 12px rgba(244,63,94,.4)}
+.hdr-logo{width:38px;height:38px;flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(244,63,94,.35))}
 .hdr-info{flex:1;min-width:0}
 .hdr-title{font-size:.93rem;font-weight:800;letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hdr-sub{font-size:.62rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -436,7 +437,7 @@ details.tl summary{cursor:pointer;font-size:.76rem;font-weight:700;color:var(--m
 
 <header class="app-header">
   <a class="hdr-back" id="backBtn" href="ems-tools.html" aria-label="Back to EMS tools">&#8592;</a>
-  <div class="hdr-badge" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg></div>
+  <img class="hdr-logo" src="../icons/courses/thumb/megacode.png" alt="" width="36" height="36" decoding="async">
   <div class="hdr-info">
     <div class="hdr-title" id="hdrTitle">ACLS Megacode</div>
     <div class="hdr-sub" id="hdrSub">Live monitor simulator · 12 AHA scenarios</div>

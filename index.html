@@ -355,6 +355,13 @@
         .ems-btn-drug  { background: var(--btn-grad-flash); color: var(--text-flash); border: 1px solid var(--border-flash); }
         .ems-btn-ecg   { background: var(--btn-grad-quiz); color: var(--text-quiz); border: 1px solid var(--border-quiz); }
         .ems-btn-more  { background: var(--btn-grad-scen); color: var(--text-scen); border: 1px solid var(--border-scen); }
+        .ems-btn-mega  { grid-column: 1 / -1; justify-content: flex-start; gap: 12px; padding: 9px 14px; color: #fff;
+                         background: linear-gradient(135deg, #7f1d1d, #dc2626 55%, #f43f5e); border: 1px solid rgba(254,202,202,0.35);
+                         box-shadow: 0 6px 18px -6px rgba(220,38,38,0.55); }
+        .ems-btn-mega img { width: 34px; height: 34px; flex-shrink: 0; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
+        .ems-btn-mega .mega-txt { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; line-height: 1.2; }
+        .ems-btn-mega b { font-size: 0.9rem; font-weight: 700; }
+        .ems-btn-mega small { font-size: 0.72rem; font-weight: 500; opacity: 0.85; }
 
         /* SmartCare expand button */
         .sc-expand-btn {
@@ -1430,7 +1437,7 @@
             <div class="section-label">EMS Tools</div>
             <div class="menu-grid" data-section="ems">
                 <div class="menu-card special-card"
-                     data-chapter="ems" data-search="EMS Essentials Drug Calculations ECG GCS AHA Algorithms Tools">
+                     data-chapter="ems" data-search="EMS Essentials Drug Calculations ECG GCS AHA Algorithms Tools ACLS Megacode Simulator Cardiac Arrest">
                     <span class="sc-icon"></span>
                     <h2>EMS Essentials</h2>
                     <p>Quick-access clinical tools</p>
@@ -1439,6 +1446,10 @@
                         <a href="pages/drug-calculator.html" class="ems-btn ems-btn-drug">Drug Calculator</a>
                         <a href="pages/ecg.html"             class="ems-btn ems-btn-ecg">ECG Simulator</a>
                         <a href="pages/ems-tools.html"       class="ems-btn ems-btn-more">More Tools</a>
+                        <a href="pages/megacode.html"        class="ems-btn ems-btn-mega">
+                            <img src="icons/courses/thumb/megacode.png" alt="" width="34" height="34" loading="lazy" decoding="async">
+                            <span class="mega-txt"><b>ACLS Megacode</b><small>12 live-monitor scenarios</small></span>
+                        </a>
                     </div>
                 </div>
             </div>`;

@@ -1587,6 +1587,7 @@ function endSim() {
   const pass = quick ? S.roscId && acc >= 80 : S.roscId && score >= 85 && !S.errs.some(e => /non-shockable|has a pulse — defibrillation|chest compressions are not indicated/i.test(e.text));
   const best = bestMap(), prev = best[SC.id];
   if (!prev || score > prev.score || (pass && !prev.pass)) { best[SC.id] = { score, pass, date: Date.now() }; store.set('megacode.best', best); }
+  syncCourseProgress();
   const ccf = S.arrestT > 5 ? Math.round(S.cprT / S.arrestT * 100) + '%' : '—';
   const maxP = S.pauses.length ? Math.round(Math.max(...S.pauses)) + ' s' : '—';
   const lag = S.resumeLags.length ? Math.round(S.resumeLags.reduce((a, b) => a + b, 0) / S.resumeLags.length) + ' s' : '—';
@@ -2068,6 +2069,15 @@ function liteContinue() {
   if (!c || c.state !== 'right' || liteBusy()) return;
   S.lite.cur = null;
   liteAdvance();
+}
+
+// Mirror progress into the Courses page's shared store so the ACLS Megacode
+// card there shows "passed / 12" and appears under "Continue".
+function syncCourseProgress() {
+  const all = store.get('smartcare_course_progress', {});
+  const passed = Object.values(bestMap()).filter(b => b.pass).length;
+  all.megacode = { ...(all.megacode || {}), completed: passed, total: SCN.length, pct: Math.round(passed / SCN.length * 100), lastStudied: Date.now() };
+  store.set('smartcare_course_progress', all);
 }
 
 /* ═══════════════════════ VIEW SWITCHING ═══════════════════════ */
