@@ -2234,8 +2234,10 @@ function init() {
   renderPicker();
   bind();
   requestAnimationFrame(loop);
+  // ?s=<id> opens that scenario's briefing; ?s=random picks one (Courses page "Random case")
   const q = new URLSearchParams(location.search).get('s');
-  if (q && SCN.find(s => s.id === +q)) openBriefing(SCN.find(s => s.id === +q));
+  const pick = q === 'random' ? SCN[Math.floor(Math.random() * SCN.length)] : SCN.find(s => s.id === +q);
+  if (pick) openBriefing(pick);
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
