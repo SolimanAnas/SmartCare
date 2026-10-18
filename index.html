@@ -362,6 +362,22 @@
         .ems-btn-mega .mega-txt { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; line-height: 1.2; }
         .ems-btn-mega b { font-size: 0.9rem; font-weight: 700; }
         .ems-btn-mega small { font-size: 0.72rem; font-weight: 500; opacity: 0.85; }
+        /* "NEW" corner ribbon — the button already clips (overflow: hidden) */
+        .ems-btn-mega { position: relative; padding-right: 64px; }
+        .mega-ribbon {
+            position: absolute; top: 13px; right: -30px; width: 108px; transform: rotate(45deg);
+            padding: 4px 0; text-align: center; font-size: 0.64rem; font-weight: 900; letter-spacing: 1.6px;
+            color: #4a1d00; background: linear-gradient(90deg, #fbbf24, #fde68a 50%, #fbbf24);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.35); text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+            overflow: hidden; pointer-events: none;
+        }
+        .mega-ribbon::after {
+            content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
+            animation: megaShine 3.2s ease-in-out 1s infinite;
+        }
+        @keyframes megaShine { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+        @media (prefers-reduced-motion: reduce) { .mega-ribbon::after { animation: none; } }
 
         /* SmartCare expand button */
         .sc-expand-btn {
@@ -1449,6 +1465,7 @@
                         <a href="pages/megacode.html"        class="ems-btn ems-btn-mega">
                             <img src="icons/courses/thumb/megacode.png" alt="" width="34" height="34" loading="lazy" decoding="async">
                             <span class="mega-txt"><b>ACLS Megacode</b><small>12 live-monitor scenarios</small></span>
+                            <span class="mega-ribbon" aria-label="New">NEW</span>
                         </a>
                     </div>
                 </div>
