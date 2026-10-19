@@ -64,8 +64,10 @@ self.__PRECACHE = [
   "pages/ems-tools.html",
   "pages/exam-review.css",
   "pages/exam-review.js",
+  "pages/high-score.js",
   "pages/itls-chapter.html",
   "pages/itls.html",
+  "pages/leaderboard.html",
   "pages/login.html",
   "pages/mci.html",
   "pages/med-index.html",
@@ -155,4 +157,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "19ae1ec41f";
+self.__PRECACHE_VERSION = "2d7a48d46e";

@@ -15,7 +15,7 @@ supabase link --project-ref zltfrrudihtrtxutvdqq
 supabase db push
 ```
 
-Both migrations are **idempotent** (`create table if not exists`,
+All migrations are **idempotent** (`create table if not exists`,
 `drop policy if exists` before every `create policy`), so pushing them against
 a project where the dashboard SQL was already run is safe and changes nothing.
 

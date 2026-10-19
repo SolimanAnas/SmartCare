@@ -674,6 +674,14 @@ function submitExam() {
   });
 
   const pct = Math.round(c/n*100), pass = pct>=75;
+  if (ST.mode === 'exam' && window.SmartCareHighScore) {
+    const course = EXAM_ID.toUpperCase();
+    SmartCareHighScore.report({
+      section: 'courses', testId: `${EXAM_ID}-${SmartCareHighScore.slug(ST.name)}`,
+      testLabel: ST.name.toUpperCase().includes(course) ? ST.name : `${course} · ${ST.name}`,
+      score: pct, questions: n
+    });
+  }
 
   let html = `
     <div class="score-banner">

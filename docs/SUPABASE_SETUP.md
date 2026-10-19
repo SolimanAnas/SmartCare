@@ -13,6 +13,7 @@ The frontend is wired in:
 | `pages/login.html` | Google sign-in + sync/backup/restore UI. |
 | `pages/signup.html` | Redirects to `login.html` (Google sign-in == sign-up). |
 | `pages/admin.html` | Hidden admin console — calls the Supabase Edge Functions below. |
+| `pages/leaderboard.html`, `pages/high-score.js` | Public top-achievers board + the "High score 🎊 → publish" toast. See §5. |
 | `supabase/functions/admin-*` | Serverless admin API (list/update-role/delete users) — holds the `service_role` key server-side. See §4. |
 
 To make sign-in actually work you must complete the **3 dashboard steps** below
@@ -207,6 +208,48 @@ On `pages/login.html`, tap the cloud icon above "SmartCare Cloud" **4 times with
 from `ADMIN_EMAILS` — the PIN only unlocks navigation to `admin.html`; the page
 itself will bounce you back to login if your account isn't allow-listed (the
 admin-list-users function returns `403`, which the page treats the same as `401`).
+
+---
+
+## 5. Leaderboard (top achievers)
+
+The public leaderboard (`pages/leaderboard.html`) and the "High score 🎊" toast
+(`pages/high-score.js`) need two tables and three functions. Run
+[`supabase/migrations/20261019000001_create_leaderboard.sql`](../supabase/migrations/20261019000001_create_leaderboard.sql)
+— either `supabase db push`, or paste the whole file into the dashboard SQL
+editor and run it. It is idempotent, so re-running it is safe.
+
+**What it creates**
+
+| Object | Purpose |
+|---|---|
+| `leaderboard_players` | One public display name per user (never the email). |
+| `leaderboard_scores` | One row per (user, section, test) holding that user's **best** score. |
+| `submit_high_score(...)` | The only write path. Validates input and only ever raises a score. |
+| `set_leaderboard_name(name)` | Rename yourself on the board. |
+| `leave_leaderboard()` | Remove yourself and all your scores. |
+
+**Rules enforced in the database** (the client applies the same rules before
+offering the toast, see `pages/high-score.js`):
+
+- Three separate sections: `megacode`, `prometric`, `courses`.
+- Score must be **85–100%**.
+- Prometric and course exams need **at least 20 questions**.
+- Megacode counts the *Megacode test* and *Quick Code* modes, not *Training*
+  (which shows coach hints). Course exams count *Exam* mode, not *Study* mode.
+  Prometric counts *Random* exams across all difficulties.
+- Test ids must match each section's naming pattern; at most 100 rows per user.
+- Everyone (guests included) can **read** the board; the tables have no
+  insert/update/delete grants, so writes are only possible through the functions.
+- Deleting an account (`auth.users`) cascades and removes its leaderboard rows.
+
+**Moderation:** to remove an inappropriate name or a suspicious score, delete the
+row in the dashboard (Table Editor → `leaderboard_players` removes the user and
+all their scores; `leaderboard_scores` removes a single entry).
+
+> Scores are calculated in the browser, so a determined user could submit a
+> score they didn't earn. The database rejects out-of-range values, but grading
+> on the server would be the only complete fix.
 
 ---
 

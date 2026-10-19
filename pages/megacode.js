@@ -1588,6 +1588,12 @@ function endSim() {
   const best = bestMap(), prev = best[SC.id];
   if (!prev || score > prev.score || (pass && !prev.pass)) { best[SC.id] = { score, pass, date: Date.now() }; store.set('megacode.best', best); }
   syncCourseProgress();
+  if (S.mode !== 'train' && window.SmartCareHighScore) {
+    SmartCareHighScore.report({
+      section: 'megacode', testId: `mc-${S.mode}-${SC.id}`,
+      testLabel: `Megacode ${SC.id} · ${SC.title}${quick ? ' (Quick Code)' : ''}`, score
+    });
+  }
   const ccf = S.arrestT > 5 ? Math.round(S.cprT / S.arrestT * 100) + '%' : '—';
   const maxP = S.pauses.length ? Math.round(Math.max(...S.pauses)) + ' s' : '—';
   const lag = S.resumeLags.length ? Math.round(S.resumeLags.reduce((a, b) => a + b, 0) / S.resumeLags.length) + ' s' : '—';
