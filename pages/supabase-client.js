@@ -22,6 +22,13 @@
  *   SmartCareCloud.pull()           -> download + merge cloud data into local
  *   SmartCareCloud.sync()           -> pull (newest wins) then push
  *   SmartCareCloud.lastSync()       -> ISO string | null (from localStorage)
+ *
+ * Leaderboard (public read, signed-in write — see docs/SUPABASE_SETUP.md §5):
+ *   SmartCareCloud.fetchLeaderboard(section)  -> Promise<rows[]>  works for guests
+ *   SmartCareCloud.getLeaderboardName()       -> Promise<string|null>
+ *   SmartCareCloud.submitHighScore(entry)     -> Promise<boolean> true = new best
+ *   SmartCareCloud.setLeaderboardName(name)
+ *   SmartCareCloud.leaveLeaderboard()
  * ========================================================================== */
 (function () {
   'use strict';
@@ -260,7 +267,75 @@
       return api.pull().then(function () { return api.push(); });
     },
 
-    lastSync: function () { return localStorage.getItem(LAST_SYNC_KEY); }
+    lastSync: function () { return localStorage.getItem(LAST_SYNC_KEY); },
+
+    /** Every published score in a section, best first, with the player's
+     *  public display name. Readable without signing in. */
+    fetchLeaderboard: function (section) {
+      return requireClient().then(function (c) {
+        return c.from('leaderboard_scores')
+          .select('user_id, test_id, test_label, score, questions, achieved_at, leaderboard_players(display_name)')
+          .eq('section', section)
+          .order('score', { ascending: false })
+          .order('achieved_at', { ascending: true })
+          .limit(2000)
+          .then(function (r) {
+            if (r.error) throw r.error;
+            return (r.data || []).map(function (row) {
+              var p = row.leaderboard_players;
+              return {
+                userId: row.user_id, testId: row.test_id, testLabel: row.test_label,
+                score: row.score, questions: row.questions, achievedAt: row.achieved_at,
+                name: (p && p.display_name) || 'Anonymous'
+              };
+            });
+          });
+      });
+    },
+
+    /** The signed-in user's public leaderboard name, or null if they've never published. */
+    getLeaderboardName: function () {
+      return Promise.all([requireClient(), api.getUser()]).then(function (res) {
+        var c = res[0], user = res[1];
+        if (!user) return null;
+        return c.from('leaderboard_players').select('display_name').eq('user_id', user.id).maybeSingle()
+          .then(function (r) {
+            if (r.error) throw r.error;
+            return r.data ? r.data.display_name : null;
+          });
+      });
+    },
+
+    /** Publish { section, testId, testLabel, score, questions, name }.
+     *  Resolves true if it became the user's new best for that test. */
+    submitHighScore: function (e) {
+      return requireClient().then(function (c) {
+        return c.rpc('submit_high_score', {
+          p_section: e.section, p_test_id: e.testId, p_test_label: e.testLabel,
+          p_score: e.score, p_questions: e.questions == null ? null : e.questions,
+          p_display_name: e.name
+        }).then(function (r) {
+          if (r.error) throw r.error;
+          return !!r.data;
+        });
+      });
+    },
+
+    setLeaderboardName: function (name) {
+      return requireClient().then(function (c) {
+        return c.rpc('set_leaderboard_name', { p_display_name: name }).then(function (r) {
+          if (r.error) throw r.error;
+        });
+      });
+    },
+
+    leaveLeaderboard: function () {
+      return requireClient().then(function (c) {
+        return c.rpc('leave_leaderboard').then(function (r) {
+          if (r.error) throw r.error;
+        });
+      });
+    }
   };
 
   window.SmartCareCloud = api;

@@ -503,6 +503,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);displ
   </div>
 </div>
 
+<script src="high-score.js"></script>
 <script>
 'use strict';
 
@@ -753,6 +754,9 @@ function submitExam() {
   let c=0,x=0,o=0;
   qs.forEach(q => { let a = ST.answers[q.id]; if(!a) o++; else if(a===q.correct_answer) c++; else x++; });
   const pct = Math.round(c/n*100), pass = pct>=75;
+  if (ST.mode === 'exam' && window.SmartCareHighScore) {
+    SmartCareHighScore.report({ section: 'courses', testId: `empact-${SmartCareHighScore.slug(ST.name)}`, testLabel: ST.name, score: pct, questions: n });
+  }
   let html = `<div class="score-banner"><div class="score-ring ${pass?'ring-pass':'ring-fail'}"><div class="ring-num">${pct}%</div><div class="ring-lbl">${pass?'PASS':'FAIL'}</div></div><div class="score-stats"><div class="ss-box"><div class="ss-num" style="color:var(--green)">${c}</div><div class="ss-lbl">Correct</div></div><div class="ss-box"><div class="ss-num" style="color:var(--red)">${x}</div><div class="ss-lbl">Incorrect</div></div><div class="ss-box"><div class="ss-num" style="color:var(--muted)">${o}</div><div class="ss-lbl">Omitted</div></div></div></div><div class="rq-list">`;
   qs.forEach((q,i) => {
     const ua = ST.answers[q.id];

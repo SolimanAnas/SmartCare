@@ -755,6 +755,23 @@
     });
   })();
 
+  // ── Optional return page (login.html?next=leaderboard.html) ──
+  // Kept in sessionStorage because the OAuth redirect fallback drops the
+  // query string. Only bare same-folder page names are accepted, so this
+  // can't be turned into an open redirect.
+  var NEXT_KEY = 'login.next';
+  (function () {
+    var next = new URLSearchParams(window.location.search).get('next');
+    if (next && /^[a-z0-9-]+\.html$/i.test(next)) {
+      try { sessionStorage.setItem(NEXT_KEY, next); } catch (e) {}
+    }
+  })();
+  function goNext() {
+    var next = null;
+    try { next = sessionStorage.getItem(NEXT_KEY); sessionStorage.removeItem(NEXT_KEY); } catch (e) {}
+    if (next && /^[a-z0-9-]+\.html$/i.test(next)) window.location.replace(next);
+  }
+
   // ── React to auth state + initial load ──
   var didAutoSync = false;
   SmartCareCloud.onChange(function (user) {
@@ -764,7 +781,7 @@
       if (!didAutoSync) {
         didAutoSync = true;
         renderSync('busy');
-        SmartCareCloud.sync().catch(function () {}).then(function () { renderSync(); });
+        SmartCareCloud.sync().catch(function () {}).then(function () { renderSync(); goNext(); });
       }
     } else {
       showSignedOut();

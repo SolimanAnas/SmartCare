@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SmartCare · Leaderboard</title>
+  <meta name="description" content="SmartCare top achievers — the best Megacode, Prometric and course exam scores (85% and above) from learners on every device.">
+  <meta name="author" content="Soliman Anas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solimananas.github.io/SmartCare/pages/leaderboard">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solimananas.github.io/SmartCare/pages/leaderboard">
+  <meta property="og:title" content="SmartCare · Leaderboard">
+  <meta property="og:description" content="Top achievers in Megacode, Prometric and course exams.">
+  <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
+  <meta property="og:site_name" content="SmartCare">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="../icons/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <script src="../src/theme.js"></script>
+  <script>SmartTheme.init();</script>
+  <style>
+    :root {
+      --bg: #070d18; --card: #0f1828; --card2: #142036; --line: rgba(120,150,210,.16);
+      --text: #e9f0ff; --muted: #8a9bbd; --accent: #facc15; --accent2: #f59e0b;
+      --blue: #3b82f6; --ok: #4ade80; --err: #f87171; --you: rgba(59,130,246,.14);
+      --gold: #facc15; --silver: #cbd5e1; --bronze: #f59e0b;
+    }
+    [data-theme="amoled"] { --bg: #000; --card: #0a0a0a; --card2: #121212; --line: rgba(255,255,255,.1); }
+    [data-theme="light"] {
+      --bg: #f3f6fb; --card: #fff; --card2: #eef2f8; --line: rgba(15,23,42,.1);
+      --text: #0f172a; --muted: #5b6b86; --accent: #b45309; --accent2: #d97706; --you: rgba(37,99,235,.09);
+      --gold: #ca8a04; --silver: #64748b; --bronze: #c2410c;
+    }
+    [data-theme="sepia"] {
+      --bg: #f4ecd8; --card: #fbf6ea; --card2: #efe5cc; --line: rgba(91,70,54,.16);
+      --text: #3b2f25; --muted: #7a6650; --accent: #a16207; --accent2: #b45309; --you: rgba(161,98,7,.1);
+      --gold: #a16207; --silver: #6b7280; --bronze: #b45309;
+    }
+    [data-theme="forest"] { --bg: #07140e; --card: #0d1f16; --card2: #12291d; --line: rgba(120,200,150,.15); --muted: #8fb3a0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); min-height: 100vh;
+      padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .top { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .icon-btn {
+      width: 40px; height: 40px; flex: none; border-radius: 12px; border: 1px solid var(--line);
+      background: var(--card); display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; cursor: pointer; font-size: 18px;
+    }
+    .lucide { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; }
+    .title h1 { font-size: 1.45rem; font-weight: 800; letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
+    .title p { color: var(--muted); font-size: .86rem; margin-top: 2px; }
+
+    .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 5px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+    .tab {
+      border: 0; background: transparent; border-radius: 10px; padding: 10px 6px; font-weight: 700; font-size: .9rem;
+      cursor: pointer; color: var(--muted); transition: background .15s ease, color .15s ease;
+    }
+    .tab[aria-selected="true"] { background: var(--card2); color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); }
+    .tab .em { display: block; font-size: 1.15rem; margin-bottom: 2px; }
+
+    .bar { display: flex; gap: 8px; align-items: center; margin: 14px 0 12px; flex-wrap: wrap; }
+    .bar label { color: var(--muted); font-size: .82rem; font-weight: 700; }
+    select {
+      flex: 1 1 220px; min-height: 40px; padding: 8px 12px; border-radius: 11px; border: 1px solid var(--line);
+      background: var(--card); color: var(--text); font: inherit; font-size: .92rem; max-width: 100%;
+    }
+    .rule { color: var(--muted); font-size: .8rem; margin: -2px 0 12px; }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+    .pending { padding: 16px; margin: 0 0 14px; border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+    .pending h2 { font-size: 1rem; font-weight: 800; }
+    .pending p { color: var(--muted); font-size: .88rem; margin-top: 4px; }
+    .pending form, .pending .row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .in {
+      flex: 1 1 180px; min-height: 42px; padding: 9px 12px; border-radius: 11px; border: 1px solid var(--line);
+      background: var(--card2); color: var(--text); font: inherit; font-size: .95rem;
+    }
+    .btn {
+      min-height: 42px; padding: 9px 16px; border-radius: 11px; border: 1px solid var(--line); background: var(--card2);
+      font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      transition: transform .12s ease;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn.pri { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-color: transparent; color: #1a1300; }
+    .btn.link { background: transparent; border: 0; color: var(--muted); padding: 6px 8px; min-height: 0; font-weight: 600; text-decoration: underline; }
+    .msg { font-size: .85rem; margin-top: 8px; }
+    .msg.err { color: var(--err); } .msg.ok { color: var(--ok); }
+
+    .podium { display: grid; grid-template-columns: 1fr 1.12fr 1fr; gap: 8px; align-items: end; margin-bottom: 12px; }
+    .pod { padding: 14px 8px 12px; text-align: center; min-width: 0; }
+    .pod .medal { font-size: 1.9rem; line-height: 1; }
+    .pod .nm { font-weight: 800; margin-top: 6px; font-size: .95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pod .sc { font-size: 1.35rem; font-weight: 800; margin-top: 2px; }
+    .pod .dt { color: var(--muted); font-size: .74rem; margin-top: 2px; }
+    .pod.p1 { padding-top: 22px; border-color: color-mix(in srgb, var(--gold) 55%, transparent); }
+    .pod.p1 .sc { color: var(--gold); } .pod.p2 .sc { color: var(--silver); } .pod.p3 .sc { color: var(--bronze); }
+    .pod.me, .row-i.me { background: var(--you); }
+
+    .list { list-style: none; overflow: hidden; }
+    .row-i { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--line); }
+    .row-i:first-child { border-top: 0; }
+    .rk { width: 34px; flex: none; text-align: center; font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .who { flex: 1; min-width: 0; }
+    .who .nm { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .who .dt { color: var(--muted); font-size: .8rem; margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .you { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; font-size: .68rem; font-weight: 800; background: var(--blue); color: #fff; vertical-align: 2px; }
+    .val { font-weight: 800; font-size: 1.08rem; font-variant-numeric: tabular-nums; }
+    .myrank { margin-top: 10px; padding: 12px 14px; font-size: .9rem; }
+
+    .state { padding: 34px 18px; text-align: center; color: var(--muted); }
+    .state .big { font-size: 2.2rem; margin-bottom: 6px; }
+    .state b { color: var(--text); display: block; font-size: 1rem; margin-bottom: 4px; }
+    .skel { height: 58px; border-top: 1px solid var(--line); background: linear-gradient(90deg, transparent, var(--card2), transparent); background-size: 200% 100%; animation: sh 1.2s linear infinite; }
+    .skel:first-child { border-top: 0; }
+    @keyframes sh { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+    .foot { margin-top: 18px; display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 420px) {
+      .pod .medal { font-size: 1.5rem; } .pod .sc { font-size: 1.1rem; }
+      .tab { font-size: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .skel { animation: none; } .btn:active { transform: none; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="icon-btn" href="../index.html" aria-label="Back to home">
+      <svg class="lucide" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg>
+    </a>
+    <div class="title">
+      <h1>🏆 Leaderboard</h1>
+      <p>Top achievers on SmartCare — every device, one board.</p>
+    </div>
+  </header>
+
+  <section id="pending" class="card pending" hidden aria-live="polite"></section>
+
+  <div class="tabs" role="tablist" aria-label="Leaderboard section">
+    <button class="tab" role="tab" id="tab-megacode" data-section="megacode" aria-controls="board"><span class="em" aria-hidden="true">🫀</span>Megacode</button>
+    <button class="tab" role="tab" id="tab-prometric" data-section="prometric" aria-controls="board"><span class="em" aria-hidden="true">📝</span>Prometric</button>
+    <button class="tab" role="tab" id="tab-courses" data-section="courses" aria-controls="board"><span class="em" aria-hidden="true">🎓</span>Course Exams</button>
+  </div>
+
+  <div class="bar">
+    <label for="testSel">Show</label>
+    <select id="testSel"><option value="">All tests</option></select>
+  </div>
+  <p class="rule" id="rule"></p>
+
+  <div id="board" role="tabpanel" aria-live="polite"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script src="supabase-config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="high-score.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var SECTIONS = ['megacode', 'prometric', 'courses'];
+  var RULES = {
+    megacode: 'Megacode test & Quick Code runs scoring 85% or higher. Training mode doesn’t count.',
+    prometric: 'Full random Prometric exams (all difficulties, 20+ questions) scoring 85% or higher.',
+    courses: 'Course exams in Exam mode (20+ questions) scoring 85% or higher. Study mode doesn’t count.'
+  };
+  var TOP_N = 50;
+  var SEC_KEY = 'leaderboard.section';
+
+  var state = { section: 'megacode', test: '', rows: null, user: null, error: null };
+  var cache = {};
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); }
+    catch (e) { return ''; }
+  }
+
+  /* ── Ranking ──
+   * One test selected: best score wins, earliest to reach it breaks ties.
+   * All tests: most high scores wins, then the higher average, then whoever
+   * got there first. */
+  function rank(rows, test) {
+    if (test) {
+      return rows.filter(function (r) { return r.testId === test; })
+        .sort(function (a, b) { return b.score - a.score || a.achievedAt.localeCompare(b.achievedAt); })
+        .map(function (r) {
+          return { userId: r.userId, name: r.name, value: r.score + '%',
+                   detail: (r.questions ? r.questions + ' Qs · ' : '') + fmtDate(r.achievedAt) };
+        });
+    }
+    var by = {};
+    rows.forEach(function (r) {
+      var u = by[r.userId] || (by[r.userId] = { userId: r.userId, name: r.name, n: 0, sum: 0, best: 0, last: '' });
+      u.n++; u.sum += r.score; u.best = Math.max(u.best, r.score);
+      if (r.achievedAt > u.last) u.last = r.achievedAt;
+    });
+    return Object.keys(by).map(function (k) { var u = by[k]; u.avg = u.sum / u.n; return u; })
+      .sort(function (a, b) { return b.n - a.n || b.avg - a.avg || a.last.localeCompare(b.last); })
+      .map(function (u) {
+        return { userId: u.userId, name: u.name, value: Math.round(u.avg) + '%',
+                 detail: u.n + ' high score' + (u.n === 1 ? '' : 's') + ' · best ' + u.best + '%' };
+      });
+  }
+
+  /* ── Rendering ── */
+  function renderTabs() {
+    document.querySelectorAll('.tab').forEach(function (t) {
+      var on = t.dataset.section === state.section;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    $('board').setAttribute('aria-labelledby', 'tab-' + state.section);
+    renderRule();
+  }
+
+  function renderRule() {
+    $('rule').textContent = RULES[state.section] + (state.test
+      ? ' Ranked by best score.'
+      : ' Overall: most high scores first, then the highest average (big number).');
+  }
+
+  function renderSelect() {
+    var sel = $('testSel');
+    var tests = {};
+    (state.rows || []).forEach(function (r) { if (!tests[r.testId]) tests[r.testId] = r.testLabel; });
+    var ids = Object.keys(tests).sort(function (a, b) {
+      return tests[a].localeCompare(tests[b], undefined, { numeric: true });
+    });
+    if (state.test && !tests[state.test]) state.test = '';
+    sel.textContent = '';
+    var all = el('option', null, 'All tests (overall)');
+    all.value = '';
+    sel.appendChild(all);
+    ids.forEach(function (id) {
+      var o = el('option', null, tests[id]);
+      o.value = id;
+      sel.appendChild(o);
+    });
+    sel.value = state.test;
+    renderRule();
+  }
+
+  function stateBox(big, title, text, retry) {
+    var b = el('div', 'card state');
+    b.appendChild(el('div', 'big', big));
+    b.appendChild(el('b', null, title));
+    if (text) b.appendChild(el('span', null, text));
+    if (retry) {
+      var r = el('button', 'btn', 'Try again');
+      r.type = 'button';
+      r.style.marginTop = '12px';
+      r.addEventListener('click', retry);
+      b.appendChild(el('br'));
+      b.appendChild(r);
+    }
+    return b;
+  }
+
+  function renderBoard() {
+    var board = $('board');
+    board.textContent = '';
+    if (state.error) {
+      board.appendChild(stateBox('📡', 'Couldn’t load the leaderboard',
+        navigator.onLine ? 'The leaderboard service didn’t respond.' : 'You’re offline — the leaderboard needs a connection.',
+        function () { load(state.section, true); }));
+      return;
+    }
+    if (!state.rows) {
+      var sk = el('div', 'card list');
+      for (var i = 0; i < 6; i++) sk.appendChild(el('div', 'skel'));
+      board.appendChild(sk);
+      return;
+    }
+    var ranked = rank(state.rows, state.test);
+    if (!ranked.length) {
+      board.appendChild(stateBox('🌱', 'No high scores yet', 'Score 85% or higher and be the first on this board!'));
+      return;
+    }
+    var me = state.user && state.user.id;
+    var medals = ['🥇', '🥈', '🥉'];
+
+    if (ranked.length >= 3) {
+      var pod = el('div', 'podium');
+      [1, 0, 2].forEach(function (i) {
+        var r = ranked[i];
+        var c = el('div', 'card pod p' + (i + 1) + (r.userId === me ? ' me' : ''));
+        c.appendChild(el('div', 'medal', medals[i]));
+        var nm = el('div', 'nm', r.name);
+        nm.title = r.name;
+        c.appendChild(nm);
+        c.appendChild(el('div', 'sc', r.value));
+        c.appendChild(el('div', 'dt', r.detail));
+        c.setAttribute('aria-label', 'Rank ' + (i + 1) + ': ' + r.name + ', ' + r.value + ', ' + r.detail);
+        pod.appendChild(c);
+      });
+      board.appendChild(pod);
+    }
+
+    var start = ranked.length >= 3 ? 3 : 0;
+    var shown = ranked.slice(start, TOP_N);
+    if (shown.length) {
+      var ol = el('ol', 'card list');
+      ol.start = start + 1;
+      shown.forEach(function (r, j) {
+        var pos = start + j;
+        var li = el('li', 'row-i' + (r.userId === me ? ' me' : ''));
+        li.appendChild(el('span', 'rk', pos < 3 ? medals[pos] : String(pos + 1)));
+        var who = el('div', 'who');
+        var nm = el('div', 'nm', r.name);
+        if (r.userId === me) nm.appendChild(el('span', 'you', 'YOU'));
+        who.appendChild(nm);
+        who.appendChild(el('div', 'dt', r.detail));
+        li.appendChild(who);
+        li.appendChild(el('span', 'val', r.value));
+        ol.appendChild(li);
+      });
+      board.appendChild(ol);
+    }
+
+    if (me) {
+      var idx = -1;
+      for (var k = 0; k < ranked.length; k++) if (ranked[k].userId === me) { idx = k; break; }
+      if (idx >= TOP_N) {
+        board.appendChild(el('div', 'card myrank', 'Your rank: #' + (idx + 1) + ' of ' + ranked.length + ' · ' + ranked[idx].value));
+      }
+    }
+  }
+
+  function renderFoot() {
+    var foot = $('foot');
+    foot.textContent = '';
+    if (!state.user) {
+      var a = el('a', 'btn link', 'Sign in to publish your high scores');
+      a.href = 'login.html?next=leaderboard.html';
+      foot.appendChild(a);
+      return;
+    }
+    SmartCareCloud.getLeaderboardName().then(function (name) {
+      if (!name) return;
+      var rename = el('button', 'btn link', 'Change my name (' + name + ')');
+      rename.type = 'button';
+      rename.addEventListener('click', function () {
+        var n = window.prompt('Name shown on the leaderboard (public):', name);
+        if (n == null) return;
+        n = SmartCareHighScore.cleanName(n);
+        if (n.length < 2) { window.alert('Please use at least 2 characters.'); return; }
+        SmartCareCloud.setLeaderboardName(n).then(function () { cache = {}; load(state.section, true); renderFoot(); })
+          .catch(function (e) { window.alert('Couldn’t rename: ' + (e && e.message || 'unknown error')); });
+      });
+      var leave = el('button', 'btn link', 'Remove me from the leaderboard');
+      leave.type = 'button';
+      leave.addEventListener('click', function () {
+        if (!window.confirm('Remove your name and all your scores from the leaderboard? You can publish again later.')) return;
+        SmartCareCloud.leaveLeaderboard().then(function () {
+          try { localStorage.removeItem('smartcare_leaderboard_published'); } catch (e) {}
+          cache = {}; load(state.section, true); renderFoot();
+        }).catch(function (e) { window.alert('Couldn’t remove: ' + (e && e.message || 'unknown error')); });
+      });
+      foot.appendChild(rename);
+      foot.appendChild(leave);
+    }).catch(function () {});
+  }
+
+  /* ── Pending score (guest earned it, then signed in) ── */
+  function renderPending() {
+    var box = $('pending');
+    var e = SmartCareHighScore.pending();
+    box.textContent = '';
+    if (!e) { box.hidden = true; return; }
+    box.hidden = false;
+    box.appendChild(el('h2', null, '🎊 High score ready to publish'));
+    box.appendChild(el('p', null, e.score + '% · ' + e.testLabel));
+
+    if (!state.user) {
+      var row = el('div', 'row');
+      var a = el('a', 'btn pri', 'Sign in & publish');
+      a.href = 'login.html?next=leaderboard.html';
+      var no = el('button', 'btn', 'Discard');
+      no.type = 'button';
+      no.addEventListener('click', function () { SmartCareHighScore.clearPending(); renderPending(); });
+      row.appendChild(no);
+      row.appendChild(a);
+      box.appendChild(row);
+      return;
+    }
+
+    var form = el('form');
+    var lbl = el('label', 'sr-only', 'Name shown on the leaderboard');
+    var input = el('input', 'in');
+    input.id = 'pendingName';
+    lbl.htmlFor = 'pendingName';
+    input.maxLength = 32;
+    input.placeholder = 'Name shown on the leaderboard (public)';
+    input.value = SmartCareHighScore.defaultName(state.user);
+    var go = el('button', 'btn pri', '🏆 Publish');
+    go.type = 'submit';
+    var no2 = el('button', 'btn', 'Discard');
+    no2.type = 'button';
+    no2.addEventListener('click', function () { SmartCareHighScore.clearPending(); renderPending(); });
+    var msg = el('div', 'msg');
+    form.appendChild(lbl);
+    form.appendChild(input);
+    form.appendChild(no2);
+    form.appendChild(go);
+    box.appendChild(form);
+    box.appendChild(msg);
+
+    SmartCareCloud.getLeaderboardName().then(function (n) { if (n) input.value = n; }).catch(function () {});
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var name = SmartCareHighScore.cleanName(input.value);
+      if (name.length < 2) { input.focus(); return; }
+      go.disabled = true;
+      msg.className = 'msg';
+      msg.textContent = 'Publishing…';
+      SmartCareHighScore.publish(e, name).then(function () {
+        box.textContent = '';
+        box.appendChild(el('h2', null, '🏆 You’re on the board, ' + name + '!'));
+        box.appendChild(el('p', null, e.score + '% · ' + e.testLabel));
+        delete cache[e.section];
+        state.test = '';
+        setSection(e.section, true);
+        renderFoot();
+      }).catch(function (err) {
+        go.disabled = false;
+        msg.className = 'msg err';
+        msg.textContent = (err && err.message) || 'Couldn’t publish. Please try again.';
+      });
+    });
+  }
+
+  /* ── Data ── */
+  var loadSeq = 0;
+  function load(section, force) {
+    var seq = ++loadSeq;
+    state.error = null;
+    if (!force && cache[section]) { state.rows = cache[section]; renderSelect(); renderBoard(); return; }
+    state.rows = null;
+    renderBoard();
+    SmartCareCloud.fetchLeaderboard(section).then(function (rows) {
+      cache[section] = rows;
+      if (seq !== loadSeq) return;
+      state.rows = rows;
+      renderSelect();
+      renderBoard();
+    }).catch(function () {
+      if (seq !== loadSeq) return;
+      state.error = true;
+      renderBoard();
+    });
+  }
+
+  function setSection(section, force) {
+    if (SECTIONS.indexOf(section) === -1) section = 'megacode';
+    if (section !== state.section) state.test = '';
+    state.section = section;
+    try { localStorage.setItem(SEC_KEY, section); } catch (e) {}
+    var u = new URL(window.location.href);
+    u.searchParams.set('section', section);
+    u.searchParams.delete('publish');
+    history.replaceState(null, '', u.pathname + u.search);
+    renderTabs();
+    load(section, force);
+  }
+
+  /* ── Events ── */
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () { setSection(t.dataset.section); });
+    t.addEventListener('keydown', function (ev) {
+      var i = SECTIONS.indexOf(state.section);
+      if (ev.key === 'ArrowRight') i = (i + 1) % 3;
+      else if (ev.key === 'ArrowLeft') i = (i + 2) % 3;
+      else return;
+      ev.preventDefault();
+      setSection(SECTIONS[i]);
+      $('tab-' + SECTIONS[i]).focus();
+    });
+  });
+  $('testSel').addEventListener('change', function () { state.test = this.value; renderRule(); renderBoard(); });
+
+  /* ── Boot ── */
+  var initial = new URLSearchParams(window.location.search).get('section');
+  if (!initial) { try { initial = localStorage.getItem(SEC_KEY); } catch (e) {} }
+  var pend = SmartCareHighScore.pending();
+  if (pend) initial = pend.section;
+
+  SmartCareCloud.ready.then(function (ok) {
+    if (!ok) { state.error = true; renderTabs(); renderBoard(); return; }
+    return SmartCareCloud.getUser().then(function (user) {
+      state.user = user;
+      setSection(initial);
+      renderPending();
+      renderFoot();
+    });
+  });
+  SmartCareCloud.onChange(function (user) {
+    var was = state.user && state.user.id, now = user && user.id;
+    state.user = user;
+    if (was !== now) { renderPending(); renderFoot(); renderBoard(); }
+  });
+  renderTabs();
+  renderBoard();
+})();
+</script>
+</body>
+</html>

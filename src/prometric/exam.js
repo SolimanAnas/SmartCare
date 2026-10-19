@@ -884,6 +884,19 @@ class ExamEngine {
             topicStats,
             timeSpent
         });
+
+        // Leaderboard: only full random exams across all difficulties count —
+        // a hand-picked topic or "easy only" run isn't comparable.
+        if (this.mode === 'random' && this.settings.difficulty === 'all' && window.SmartCareHighScore) {
+            const level = this.settings.level;
+            SmartCareHighScore.report({
+                section: 'prometric',
+                testId: `prometric-${level}`,
+                testLabel: level === 'paramedic' ? 'Prometric · Paramedic' : level === 'emt' ? 'Prometric · EMT' : 'Prometric · All levels',
+                score,
+                questions: total
+            });
+        }
     }
 
     renderInsights(correct, total, topicStats) {
