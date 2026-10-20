@@ -53,6 +53,16 @@
       "review_date": null
     },
     {
+      "file": "src/MCI/officers.json",
+      "exam_id": "mci",
+      "title": "MCI Officer Roles",
+      "guideline_source": "NIMS/ICS, START/JumpSTART, CDC SALT, JESIP METHANE",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
       "file": "src/BLS/bls.json",
       "exam_id": "bls",
       "title": "BLS Exam",

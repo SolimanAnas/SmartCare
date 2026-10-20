@@ -1,0 +1,131 @@
+{
+  "title": "MCI Officer Roles",
+  "description": "Duties of the MCI sector officers: Incident Commander, Triage, Treatment, Staging and Transport. From the MCI Reviewer, Chapter 4 (MCI Officer Roles & Action Cards).",
+  "pearls": [
+    {
+      "id": 1,
+      "category": "Incident Commander",
+      "text": "Establish and name command at a fixed, visible command post, and announce it over the radio."
+    },
+    {
+      "id": 2,
+      "category": "Incident Commander",
+      "text": "Declare the MCI and send the METHANE report. Request more resources early."
+    },
+    {
+      "id": 3,
+      "category": "Incident Commander",
+      "text": "Set the objectives: life safety, triage, treatment, transport and hazard control. Lay out the scene: zones, staging, the treatment area and the loading zone."
+    },
+    {
+      "id": 4,
+      "category": "Incident Commander",
+      "text": "Assign the Triage, Treatment, Transport and Staging Officers, and a Safety Officer. Keep your span of control to 3 to 7 people."
+    },
+    {
+      "id": 5,
+      "category": "Incident Commander",
+      "text": "Coordinate with fire and police under unified command. Stay at the command post and do not get hands-on with patients. Hand over command face to face when you are relieved."
+    },
+    {
+      "id": 6,
+      "category": "Triage Officer",
+      "text": "Report to the Incident Commander, put on the Triage vest and take the action card. Get the area to triage and your triage teams, working in pairs."
+    },
+    {
+      "id": 7,
+      "category": "Triage Officer",
+      "text": "Do a global sort: \"If you can walk, go to the collection point\", then \"Wave if you need help\"."
+    },
+    {
+      "id": 8,
+      "category": "Triage Officer",
+      "text": "Sweep the area systematically and triage every patient with START (JumpSTART for children) or SALT, per local protocol. Tag every patient and mark the areas already searched."
+    },
+    {
+      "id": 9,
+      "category": "Triage Officer",
+      "text": "Do only seconds-long lifesaving interventions: a tourniquet or pressure, open the airway, position the patient. Do not stop to treat or transport."
+    },
+    {
+      "id": 10,
+      "category": "Triage Officer",
+      "text": "Report counts by category (red, yellow, green, black) to the Incident Commander and keep them updated. Have litter teams move red patients to the treatment area first, then re-triage."
+    },
+    {
+      "id": 11,
+      "category": "Treatment Officer",
+      "text": "Report to the Incident Commander, put on the Treatment vest and take the action card."
+    },
+    {
+      "id": 12,
+      "category": "Treatment Officer",
+      "text": "Choose the treatment area: safe, upwind of hazards, next to the loading zone, with room to expand and one entrance and one exit."
+    },
+    {
+      "id": 13,
+      "category": "Treatment Officer",
+      "text": "Lay out red, yellow and green sections with tarps or flags, and a separate black area out of view. Assign a manager to each section."
+    },
+    {
+      "id": 14,
+      "category": "Treatment Officer",
+      "text": "Re-triage every patient on arrival and regularly after that. Give focused care that does not slow the flow: airway, oxygen, bleeding control, splinting, warmth."
+    },
+    {
+      "id": 15,
+      "category": "Treatment Officer",
+      "text": "Prioritize patients for the Transport Officer and request supplies through logistics. The treatment area is not a holding hospital: keep patients moving out."
+    },
+    {
+      "id": 16,
+      "category": "Staging Officer",
+      "text": "Report to the Incident Commander, put on the Staging vest and take the action card."
+    },
+    {
+      "id": 17,
+      "category": "Staging Officer",
+      "text": "Set up staging at a safe distance from the scene, with easy one-way access in and out."
+    },
+    {
+      "id": 18,
+      "category": "Staging Officer",
+      "text": "Check in every arriving unit: unit ID, level of care and crew."
+    },
+    {
+      "id": 19,
+      "category": "Staging Officer",
+      "text": "Crews stay with their vehicles, keys in, ready to move. Release units only when the Transport Officer asks for them."
+    },
+    {
+      "id": 20,
+      "category": "Staging Officer",
+      "text": "Tell the Incident Commander when the number of available units drops to the set level, so more can be requested."
+    },
+    {
+      "id": 21,
+      "category": "Transport Officer",
+      "text": "Report to the Incident Commander, put on the Transport vest and take the action card."
+    },
+    {
+      "id": 22,
+      "category": "Transport Officer",
+      "text": "Set up the ambulance loading zone next to the treatment area exit, with one-way traffic."
+    },
+    {
+      "id": 23,
+      "category": "Transport Officer",
+      "text": "Get each hospital's capacity and capabilities (trauma, burns, children) through medical communications."
+    },
+    {
+      "id": 24,
+      "category": "Transport Officer",
+      "text": "Call units forward from Staging as patients are ready. Load red patients first and send each one to a hospital that suits their category, spreading patients across hospitals. Crews do not choose their own hospital."
+    },
+    {
+      "id": 25,
+      "category": "Transport Officer",
+      "text": "Keep a transport log: tag number, category, unit, destination and time out. Update the Incident Commander on patients transported and still waiting."
+    }
+  ]
+}

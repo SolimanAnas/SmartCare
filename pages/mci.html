@@ -338,6 +338,13 @@ button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:foc
 .hub-row:hover{background:var(--blue-d)}
 .chev{width:20px;height:20px;flex-shrink:0;color:var(--dim)}
 .hub-row .chev{color:currentColor}
+.role-chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px}
+.role-chips a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border-radius:999px;
+  border:1px solid var(--border2);background:var(--panel);color:var(--text);
+  font:600 1rem/1 var(--f-ui);text-decoration:none;
+}
+.role-chips a:hover{border-color:var(--blue);color:var(--blue)}
 
 @media (max-width:359px){
   .tt-art{gap:2px}
@@ -376,7 +383,39 @@ button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:foc
 .tool-share:hover{border-color:var(--blue);color:var(--blue)}
 .tool-bar{padding:4px 16px 0;background:var(--panel);border-bottom:1px solid var(--border)}
 .tool-bar:empty{display:none}
-.tool-scroll{flex:1;overflow-y:auto;padding:4px 16px 56px}
+.tool-scroll{flex:1;overflow-y:auto;overscroll-behavior-x:none;padding:4px 16px 56px}
+.p-empty{margin:32px 2px;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
+/* Officer roles */
+.chip-row{display:flex;gap:8px;overflow-x:auto;padding:10px 0 12px;scrollbar-width:none}
+.chip-row::-webkit-scrollbar{display:none}
+.chip-row[hidden]{display:none}
+.chip-row button{
+  flex-shrink:0;min-height:38px;padding:0 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
+  border:1px solid var(--border2);background:transparent;color:var(--dim);font:600 1.0625rem/1 var(--f-display);
+}
+.chip-row button:hover{color:var(--text);border-color:var(--text)}
+.chip-row button[aria-selected="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
+.role-tabs{flex-wrap:wrap;overflow:visible;gap:6px;padding:8px 0 10px}
+.role-tabs button{min-height:36px;padding:0 12px}
+/* pan-y: sideways swipes on the duties change the role instead of browser history */
+.role-panel{max-width:680px;margin:0 auto;padding-top:20px;transition:opacity .16s ease,transform .16s ease;touch-action:pan-y}
+.role-panel.switching{opacity:0}
+.role-panel.switching.to-next{transform:translateX(-28px)}
+.role-panel.switching.to-prev{transform:translateX(28px)}
+.role-name{margin:0 0 4px;font:700 2.25rem/1 var(--f-display);color:var(--text)}
+.role-meta{margin:0 0 22px;font:400 1rem var(--f-ui);color:var(--dim)}
+.duty-list{list-style:none;margin:0;padding:0;counter-reset:duty}
+.duty-list > li{position:relative;display:grid;grid-template-columns:34px 1fr;gap:14px;padding-bottom:22px}
+.duty-list > li::before{
+  counter-increment:duty;content:counter(duty);position:relative;z-index:1;
+  width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--card);border:1.5px solid var(--border2);color:var(--text);font:600 1.125rem/1 var(--f-display);
+}
+.duty-list > li::after{content:'';position:absolute;left:16px;top:36px;bottom:2px;width:1.5px;background:var(--border2)}
+.duty-list > li:last-child::after{display:none}
+.duty-text{padding-top:5px;font:400 1.0625rem/1.55 var(--f-ui);color:var(--text);max-width:66ch}
+.duty-points{margin:8px 0 0;padding-left:1.15em;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
+.duty-points li{margin-top:4px}
 /* START triage tool */
 .st-wrap{max-width:560px;margin:0 auto;padding-top:20px}
 .st-step{font:600 1rem var(--f-display);color:var(--dim);margin:0 0 6px}
@@ -864,6 +903,19 @@ input:checked+.slider:before{transform:translateX(20px)}
             </a>
           </div>
         </section>
+
+        <section class="hub-sec" aria-labelledby="rolesH">
+          <div class="hub-head"><h2 class="hub-h" id="rolesH">Officer roles</h2><span class="hub-aside">Duties for each sector</span></div>
+          <div class="hub-list">
+            <nav class="role-chips" aria-label="Open an officer role">
+              <a href="#officers/incident-commander">Incident Commander</a>
+              <a href="#officers/triage-officer">Triage</a>
+              <a href="#officers/treatment-officer">Treatment</a>
+              <a href="#officers/staging-officer">Staging</a>
+              <a href="#officers/transport-officer">Transport</a>
+            </nav>
+          </div>
+        </section>
       </div>
 
       <div class="hub-col">
@@ -1227,25 +1279,145 @@ function showScreen(s) {
   }
 }
 
-// The field tools. Each has a direct link that can be shared: mci.html#start-triage · #methane
+// The field tools and Officer roles. Each has a direct link that can be shared:
+//   mci.html#start-triage · #methane · #officers · #officers/<role-slug>
 const TOOL_VIEWS = {
-  'start-triage': { tool: () => renderStartTool(),   title: 'START triage' },
-  methane:        { tool: () => renderMethaneTool(), title: 'METHANE report' }
+  'start-triage': { tool: () => renderStartTool(),     title: 'START triage' },
+  methane:        { tool: () => renderMethaneTool(),   title: 'METHANE report' },
+  officers:       { tool: role => openOfficers(role), title: 'Officer roles' }
 };
 const DEFAULT_TITLE = document.title;
 let toolView = 'start-triage';
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function openTool(view) {
+function openTool(view, sub) {
   toolView = view;
   const cfg = TOOL_VIEWS[view];
   document.getElementById('toolTitleText').textContent = cfg.title;
   document.title = cfg.title;
   showScreen('tool');
   document.getElementById('toolBar').innerHTML = '';
-  cfg.tool();
+  cfg.tool(sub);
   document.getElementById('toolContainer').scrollTop = 0;
 }
+
+const slugify = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+function groupByCategory(items) {
+  const cats = new Map();
+  items.forEach(p => {
+    if (!cats.has(p.category)) cats.set(p.category, []);
+    cats.get(p.category).push(p);
+  });
+  return cats;
+}
+
+let officersData = null;
+let currentRole = '';
+async function openOfficers(roleSlug) {
+  const container = document.getElementById('toolContainer');
+  currentRole = '';
+  if (!officersData) container.innerHTML = '';
+  try {
+    if (!officersData) {
+      const res = await fetch('../src/MCI/officers.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      officersData = await res.json();
+    }
+    if (toolView !== 'officers') return; // the user left while this was loading
+    renderOfficers(officersData.pearls, roleSlug);
+  } catch (e) {
+    container.innerHTML = `<p class="p-empty">Couldn't load the officer roles (${escapeHtml(e.message)}). Check your connection, then <button class="study-btn" onclick="openTool('officers')">try again</button>.</p>`;
+  }
+}
+
+function renderOfficers(items, roleSlug) {
+  const cats = groupByCategory(items);
+  const roles = [...cats.keys()];
+  const start = roles.find(r => slugify(r) === slugify(roleSlug || '')) || roles[0];
+  const tools = document.getElementById('toolBar');
+  const container = document.getElementById('toolContainer');
+
+  tools.innerHTML = `<div class="chip-row role-tabs" role="tablist" aria-label="Officer roles">
+    ${roles.map(r => `<button type="button" role="tab" id="tab-${slugify(r)}" data-role="${escapeHtml(r)}" aria-controls="rolePanel">${escapeHtml(r.replace(/ Officer$/, ''))}</button>`).join('')}
+  </div>`;
+  container.innerHTML = '<section class="role-panel" id="rolePanel" role="tabpanel"></section>';
+
+  const tabs = [...tools.querySelectorAll('[role="tab"]')];
+  const swipeHint = window.matchMedia('(pointer: coarse)').matches ? '. Swipe for the next role.' : '';
+  // dir: 'next' or 'prev' slides the duties that way when the user switches role
+  const show = (role, fromUser, dir) => {
+    const panel = document.getElementById('rolePanel');
+    const slug = slugify(role);
+    const list = cats.get(role);
+    const fill = () => {
+      panel.setAttribute('aria-labelledby', `tab-${slug}`);
+      panel.dataset.role = slug;
+      panel.innerHTML = `
+        <h2 class="role-name">${escapeHtml(role)}</h2>
+        <p class="role-meta">${list.length} duties${swipeHint}</p>
+        <ol class="duty-list">${list.map(d => `<li><div class="duty-text">${escapeHtml(d.text)}${
+          Array.isArray(d.points) ? `<ul class="duty-points">${d.points.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''
+        }</div></li>`).join('')}</ol>`;
+      if (dir) { // enter from the other side
+        panel.style.transition = 'none';
+        panel.style.transform = `translateX(${dir === 'next' ? 28 : -28}px)`;
+        void panel.offsetWidth;
+        panel.style.transition = panel.style.transform = '';
+      }
+      panel.classList.remove('switching', 'to-next', 'to-prev');
+    };
+    tabs.forEach(t => {
+      const on = t.dataset.role === role;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      if (on) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
+    currentRole = role;
+    document.title = `${role} duties`;
+    document.querySelector('.tool-share').setAttribute('aria-label', `Share a link to ${role} duties`);
+    if (fromUser) {
+      history.replaceState(history.state, '', `#officers/${slug}`);
+      lastRoute = location.hash;
+      container.scrollTop = 0;
+      if (reducedMotion()) { dir = ''; fill(); }
+      else { panel.classList.add('switching'); if (dir) panel.classList.add(`to-${dir}`); setTimeout(fill, 120); }
+    } else fill();
+  };
+  const dirTo = role => roles.indexOf(role) > roles.indexOf(currentRole) ? 'next' : 'prev';
+
+  const tablist = tools.querySelector('[role="tablist"]');
+  tablist.addEventListener('click', e => {
+    const t = e.target.closest('[role="tab"]');
+    if (t && t.dataset.role !== currentRole) show(t.dataset.role, true, dirTo(t.dataset.role));
+  });
+  tablist.addEventListener('keydown', e => {
+    const i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    const t = tabs[(next + tabs.length) % tabs.length];
+    t.focus();
+    show(t.dataset.role, true, dirTo(t.dataset.role));
+  });
+
+  // Swipe left / right on the duties for the next / previous role
+  const panel = document.getElementById('rolePanel');
+  let touch = null;
+  panel.addEventListener('touchstart', e => {
+    touch = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+  }, { passive: true });
+  panel.addEventListener('touchend', e => {
+    if (!touch) return;
+    const dx = e.changedTouches[0].clientX - touch.x, dy = e.changedTouches[0].clientY - touch.y;
+    touch = null;
+    if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    const role = roles[roles.indexOf(currentRole) + (dx < 0 ? 1 : -1)];
+    if (role) show(role, true, dx < 0 ? 'next' : 'prev');
+  });
+  show(start, false);
+}
+
 
 // Back: if we got here from inside the MCI page, step back to where we came from.
 // If the page was opened on this view (a shared link), go to the MCI home instead
@@ -1260,8 +1432,9 @@ function closeTool() {
 
 // Share (native share sheet on phones) or copy the direct link to what's on screen.
 async function shareToolLink(btn) {
-  const url = location.origin + location.pathname + '#' + toolView;
-  const title = TOOL_VIEWS[toolView].title;
+  const role = toolView === 'officers' ? currentRole : '';
+  const url = location.origin + location.pathname + '#' + toolView + (role ? '/' + slugify(role) : '');
+  const title = role ? `${role} duties` : TOOL_VIEWS[toolView].title;
   if (navigator.share) {
     try { await navigator.share({ title, url }); return; }
     catch (e) { if (e && e.name === 'AbortError') return; }
@@ -1282,8 +1455,8 @@ let lastRoute = null;
 function routeFromHash() {
   if (location.hash === lastRoute) return; // popstate and hashchange can both fire for one Back
   lastRoute = location.hash;
-  const view = decodeURIComponent(location.hash.slice(1));
-  if (TOOL_VIEWS[view]) openTool(view);
+  const [view, sub] = decodeURIComponent(location.hash.slice(1)).split('/');
+  if (TOOL_VIEWS[view]) openTool(view, sub || '');
   else if (document.getElementById('toolScreen').style.display === 'flex') {
     document.title = DEFAULT_TITLE;
     showScreen('sel');
@@ -1292,7 +1465,7 @@ function routeFromHash() {
 window.addEventListener('hashchange', routeFromHash);
 window.addEventListener('popstate', routeFromHash);
 
-// In-page links (#start-triage, #methane) add a history entry we can step back through.
+// In-page links (#start-triage, #methane, #officers/…) add a history entry we can step back through.
 document.addEventListener('click', e => {
   if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   const a = e.target.closest('a[href^="#"]');
