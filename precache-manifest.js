@@ -116,6 +116,7 @@ self.__PRECACHE = [
   "src/ITLS/itls-pre-9th.json",
   "src/ITLS/itls-pre.json",
   "src/ITLS/pearls.json",
+  "src/MCI/MCI-exam1.json",
   "src/MCI/MCI-practice.json",
   "src/MCI/MCI.json",
   "src/Medical/medical.json",
@@ -156,4 +157,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "d9dacbf2a8";
+self.__PRECACHE_VERSION = "2a3a8bfa83";

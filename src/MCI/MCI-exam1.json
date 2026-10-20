@@ -1,0 +1,1311 @@
+{
+  "title": "MCI — Exam 1",
+  "description": "Core MCI operations: definitions, scene safety, METHANE, START triage and triage tags, incident command and sector officer roles, scene layout and HAZMAT.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "The word \"triage\" comes from a French verb meaning:",
+      "options": [
+        "To sort",
+        "To treat",
+        "To divide",
+        "To select"
+      ],
+      "correct_answer": "A",
+      "explanation": "From the French \"trier\" — to sort patients by priority.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 2,
+      "text": "What turns an incident into a mass casualty incident?",
+      "options": [
+        "Any incident involving a fatality",
+        "The number of casualties overwhelms the local resources available to manage them",
+        "An incident that requires air medical transport",
+        "A fixed threshold of 25 or more patients"
+      ],
+      "correct_answer": "B",
+      "explanation": "An MCI is defined by the gap between patient needs and available resources, not by a fixed patient count.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 3,
+      "text": "Which statement BEST defines a mass casualty incident?",
+      "options": [
+        "There is major loss of community property and revenue",
+        "A government has formally declared a disaster area",
+        "Healthcare needs exceed the healthcare resources available",
+        "The event was caused by an act of terrorism"
+      ],
+      "correct_answer": "C",
+      "explanation": "Needs exceeding resources is the defining feature; cause and official declarations are irrelevant.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 4,
+      "text": "An incident whose casualty number or injury severity exceeds the capacity of the first-arriving crews, preventing effective management and transport, is called a:",
+      "options": [
+        "Multiple injury event",
+        "Routine trauma call",
+        "Large-scale disaster",
+        "Multiple casualty incident"
+      ],
+      "correct_answer": "D",
+      "explanation": "Exceeding the capacity of the initial crews defines a multiple casualty incident.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 5,
+      "text": "A multiple casualty incident is MOST accurately defined as an event in which:",
+      "options": [
+        "Most patients need advanced life support",
+        "Mutual aid from other agencies is always required",
+        "There are at least 25 patients, more than half critically injured",
+        "The number of patients exceeds the resources available to the initial responders"
+      ],
+      "correct_answer": "D",
+      "explanation": "Again, resources — not a number — define it.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 6,
+      "text": "An event that overwhelms resources BOTH at the scene AND at the receiving hospitals is the typical definition of a:",
+      "options": [
+        "Multiple casualty incident",
+        "Routine major incident",
+        "Mass casualty incident",
+        "Disaster"
+      ],
+      "correct_answer": "D",
+      "explanation": "When the whole system — scene and hospitals — is overwhelmed and outside help is required, the event is a disaster.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "hard",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 7,
+      "text": "A sudden accident or natural catastrophe that causes great damage or loss of life is a:",
+      "options": [
+        "Hazardous materials release",
+        "Terrorist attack",
+        "Disaster",
+        "Crisis"
+      ],
+      "correct_answer": "C",
+      "explanation": "That is the standard definition of a disaster.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 8,
+      "text": "An event that is expected to lead to an unstable and dangerous situation is described as a:",
+      "options": [
+        "Disaster",
+        "Mass casualty incident",
+        "Terrorist attack",
+        "Crisis"
+      ],
+      "correct_answer": "D",
+      "explanation": "A crisis is an unstable, dangerous situation that is developing or expected.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 9,
+      "text": "The immediate, urgent movement of people away from a threat or actual hazard is called:",
+      "options": [
+        "Evacuation",
+        "Containment",
+        "Escape",
+        "Dispersal"
+      ],
+      "correct_answer": "A",
+      "explanation": "Evacuation is the organised movement of people away from danger.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 10,
+      "text": "Which of these are examples of natural disasters?",
+      "options": [
+        "Typhoon",
+        "Earthquake",
+        "Flood",
+        "All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "All three are natural hazards.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "easy",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 11,
+      "text": "Which event is MOST likely to produce an open (uncontained) multiple casualty incident?",
+      "options": [
+        "Bus crash",
+        "Tornado",
+        "Small contained explosion",
+        "Two-car collision"
+      ],
+      "correct_answer": "B",
+      "explanation": "A tornado affects a wide, evolving area, so the number and location of victims is not known at the start.",
+      "hint": "Topic: Fundamentals.",
+      "difficulty": "medium",
+      "topic": "Fundamentals"
+    },
+    {
+      "id": 12,
+      "text": "When responding to any emergency, whose safety comes first?",
+      "options": [
+        "The patient's",
+        "The driver's",
+        "Your own",
+        "Bystanders'"
+      ],
+      "correct_answer": "C",
+      "explanation": "Rescuer safety first — an injured responder becomes another casualty and removes a resource.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "easy",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 13,
+      "text": "On arrival at an MCI, your first responsibility is to:",
+      "options": [
+        "Start triaging immediately",
+        "Call the receiving hospital",
+        "Transport the most critical patient",
+        "Make sure the scene is safe"
+      ],
+      "correct_answer": "D",
+      "explanation": "Scene safety precedes every other action.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "easy",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 14,
+      "text": "As the first crew at an MCI, which action takes priority?",
+      "options": [
+        "Request additional ambulances",
+        "Begin triage",
+        "Scene size-up",
+        "Send a METHANE report"
+      ],
+      "correct_answer": "C",
+      "explanation": "Size-up comes first; it provides the information for the METHANE report, resource requests and the triage plan.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "medium",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 15,
+      "text": "You are a bystander at the scene of an explosion. What should you do first?",
+      "options": [
+        "Enter the scene, then call emergency dispatch",
+        "Begin first aid on the injured",
+        "Keep curious onlookers away from the scene",
+        "Clear debris that may cause injury"
+      ],
+      "correct_answer": "C",
+      "explanation": "Prevent further casualties (secondary devices, collapse, fire) — don't enter or let others enter.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "medium",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 16,
+      "text": "At a building fire, a police officer reports a patient lying in a hallway inside and asks you to help. What is your initial action?",
+      "options": [
+        "Tell the police officer to carry the patient out",
+        "Refuse, as it is not your responsibility",
+        "Ask fire/rescue to bring the patient out to you",
+        "Go in immediately — the patient needs care"
+      ],
+      "correct_answer": "C",
+      "explanation": "EMS does not enter a fire hazard zone without protective equipment and training; fire/rescue extracts the patient.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "medium",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 17,
+      "text": "Why should you approach a driver trapped in a vehicle from the front?",
+      "options": [
+        "So you can check whether the engine is running",
+        "So you can reach the ignition key",
+        "So the patient does not turn their head to look at you",
+        "So you can watch for traffic from behind"
+      ],
+      "correct_answer": "C",
+      "explanation": "Approaching in the patient's line of sight stops them turning their head, protecting a possibly injured cervical spine.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "medium",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 18,
+      "text": "Which patient is the BEST candidate for extrication with a short spinal immobilisation device (e.g., KED)?",
+      "options": [
+        "A walking patient with only minor cuts",
+        "A patient already lying on the ground",
+        "An unstable (red) patient with suspected spinal injury",
+        "A stable, alert patient seated in a vehicle who has neck pain and numbness in the legs"
+      ],
+      "correct_answer": "D",
+      "explanation": "Short devices are for stable seated patients with suspected spinal injury; unstable patients need rapid extrication.",
+      "hint": "Topic: Scene Safety.",
+      "difficulty": "hard",
+      "topic": "Scene Safety"
+    },
+    {
+      "id": 19,
+      "text": "In the METHANE report, N stands for:",
+      "options": [
+        "Number of vehicles",
+        "Nature of the incident",
+        "Nuclear hazard",
+        "Number of casualties"
+      ],
+      "correct_answer": "D",
+      "explanation": "METHANE: Major incident declared, Exact location, Type of incident, Hazards, Access, Number of casualties, Emergency services.",
+      "hint": "Topic: METHANE.",
+      "difficulty": "easy",
+      "topic": "METHANE"
+    },
+    {
+      "id": 20,
+      "text": "In the METHANE report, T stands for:",
+      "options": [
+        "Time of incident",
+        "Type of incident",
+        "Threat level",
+        "Triage category"
+      ],
+      "correct_answer": "B",
+      "explanation": "T = Type of incident (e.g., road traffic collision, explosion, chemical release).",
+      "hint": "Topic: METHANE.",
+      "difficulty": "easy",
+      "topic": "METHANE"
+    },
+    {
+      "id": 21,
+      "text": "The primary goal of triage at a mass casualty incident is to:",
+      "options": [
+        "Do the most good for the greatest number of potential survivors",
+        "Treat and release patients as quickly as possible",
+        "Tell hospitals the total number of casualties",
+        "Ensure every victim gets immediate medical care"
+      ],
+      "correct_answer": "A",
+      "explanation": "Triage rations limited resources so the greatest number survive.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 22,
+      "text": "At an MCI, which victim should you triage first?",
+      "options": [
+        "The loudest victim",
+        "The closest victim",
+        "The youngest victim",
+        "The worst-looking victim"
+      ],
+      "correct_answer": "B",
+      "explanation": "Start where you stand and move systematically — chasing the worst-looking or loudest wastes time.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 23,
+      "text": "Once the scene is safe, what is the first step of START triage?",
+      "options": [
+        "Direct everyone who can walk to move to a designated area",
+        "Apply a triage tag to the nearest patient",
+        "Check the respiratory rate of every patient",
+        "Treat the worst-looking victim"
+      ],
+      "correct_answer": "A",
+      "explanation": "START begins with a voice command to identify the walking wounded; the rest are then assessed one by one.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 24,
+      "text": "The purpose of a voice command at the start of triage is to:",
+      "options": [
+        "Separate out the victims who can walk on their own",
+        "Identify the conscious victims for transport",
+        "Identify victims with hearing problems",
+        "Separate victims by age and sex"
+      ],
+      "correct_answer": "A",
+      "explanation": "Anyone who can walk to the collection point is initially GREEN.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 25,
+      "text": "At an MCI, victims are initially grouped according to:",
+      "options": [
+        "Their ability to speak",
+        "Their age and sex",
+        "Their ability to walk",
+        "Their medical history"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ambulatory status is the first sort in START.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 26,
+      "text": "How long should the initial triage of one patient take?",
+      "options": [
+        "About 2 minutes",
+        "About 5 minutes",
+        "As long as needed for a full assessment",
+        "30–60 seconds"
+      ],
+      "correct_answer": "D",
+      "explanation": "START is designed to be completed in under a minute per patient.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 27,
+      "text": "Which interventions are permitted during START triage?",
+      "options": [
+        "Airway, breathing support and IV access",
+        "Full primary survey and splinting",
+        "Airway, bleeding control and immediate transport",
+        "Open the airway, control major bleeding and position the patient"
+      ],
+      "correct_answer": "D",
+      "explanation": "Only quick, life-saving actions that take seconds are done during triage.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 28,
+      "text": "Which is part of managing bleeding during triage?",
+      "options": [
+        "Rinsing minor wounds",
+        "Cleaning and dressing all wounds",
+        "Controlling severe bleeding only",
+        "Bandaging every wound"
+      ],
+      "correct_answer": "C",
+      "explanation": "During triage you only stop life-threatening haemorrhage (direct pressure or tourniquet) — wound care waits for the treatment area.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 29,
+      "text": "How are fractures managed during triage?",
+      "options": [
+        "Splint the injured limb",
+        "Splint and elevate the limb",
+        "Remove jewellery before swelling starts",
+        "They are not treated during triage"
+      ],
+      "correct_answer": "D",
+      "explanation": "Splinting and fracture care are done later in the treatment area.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 30,
+      "text": "Which of the following is NOT done during triage?",
+      "options": [
+        "CPR",
+        "IV access",
+        "Cooling dressings",
+        "All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "None of these are triage interventions; they consume time that should be spent sorting.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 31,
+      "text": "A patient triaged as GREEN at a disaster scene should be:",
+      "options": [
+        "Told to make their own way to a hospital",
+        "Kept at a safe distance from the scene for re-assessment",
+        "Told to see their own doctor",
+        "Sent home immediately"
+      ],
+      "correct_answer": "B",
+      "explanation": "Minor-category patients can deteriorate and must stay in a safe area to be re-triaged.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 32,
+      "text": "Which findings place a victim in the BLACK (dead/expectant) category?",
+      "options": [
+        "Decapitation",
+        "Incineration",
+        "Rigor mortis",
+        "All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "Each is an obvious sign of death.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 33,
+      "text": "During the initial triage phase, a dead body should be moved only to:",
+      "options": [
+        "Reach a possibly living victim",
+        "Allow positive identification",
+        "Recover personal belongings",
+        "Let family members view the body"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bodies are left in place (evidence and identification) unless they block access to the living.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 34,
+      "text": "Secondary triage should be performed:",
+      "options": [
+        "In the triage area",
+        "In the treatment area",
+        "Inside the ambulance",
+        "In the hospital emergency department"
+      ],
+      "correct_answer": "B",
+      "explanation": "Patients are re-triaged on arrival in the treatment area, where conditions are re-evaluated.",
+      "hint": "Topic: Triage.",
+      "difficulty": "easy",
+      "topic": "Triage"
+    },
+    {
+      "id": 35,
+      "text": "As a triage officer, you find an unconscious adult with no obvious injuries who does not breathe after the airway is opened and has no pulse. You should:",
+      "options": [
+        "Tag as expectant (black) and move on",
+        "Call one ambulance and load this patient now",
+        "Start CPR immediately",
+        "Tag as red and make them your priority"
+      ],
+      "correct_answer": "A",
+      "explanation": "No CPR during MCI triage — resources go to salvageable patients.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 36,
+      "text": "Which of these patients should be transported first?",
+      "options": [
+        "Apneic patient with a severe head injury",
+        "Conscious patient with a fractured femur",
+        "Coherent 80-year-old, BP 140/90, RR 20",
+        "8-year-old crying loudly with minor cuts"
+      ],
+      "correct_answer": "B",
+      "explanation": "The femur fracture is the most urgent salvageable patient; the apneic head injury is expectant.",
+      "hint": "Topic: Triage.",
+      "difficulty": "medium",
+      "topic": "Triage"
+    },
+    {
+      "id": 37,
+      "text": "START stands for:",
+      "options": [
+        "Simple Triage And Rapid Treatment",
+        "Simple Treatment And Rapid Transport",
+        "Simple Transport And Rapid Treatment",
+        "Simple Triage And Rapid Transport"
+      ],
+      "correct_answer": "A",
+      "explanation": "START = Simple Triage And Rapid Treatment.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 38,
+      "text": "In START, RPM stands for:",
+      "options": [
+        "Rest, Perspiration, Motor ability",
+        "Rate, Pulse, Movement",
+        "Respiration, Palpation, Memory",
+        "Respiration, Perfusion, Mental status"
+      ],
+      "correct_answer": "D",
+      "explanation": "The three START parameters.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 39,
+      "text": "START relies on simple commands and which three physiological parameters?",
+      "options": [
+        "Respiration, pulse and mental status",
+        "Respiration, pain and mental status",
+        "Circulation, sensation and motor function",
+        "Respiration, sensation and motor function"
+      ],
+      "correct_answer": "A",
+      "explanation": "Respirations, perfusion (radial pulse/capillary refill) and the ability to follow commands.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 40,
+      "text": "In RPM, the P (perfusion) is assessed by:",
+      "options": [
+        "Pupil reaction",
+        "Pain score",
+        "Capillary refill or radial pulse",
+        "Number of chest compressions"
+      ],
+      "correct_answer": "C",
+      "explanation": "Capillary refill over 2 seconds or an absent radial pulse = RED.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 41,
+      "text": "In the START memory aid \"30 – 2 – Can do\", \"Can do\" refers to:",
+      "options": [
+        "Motor strength",
+        "Ability to walk",
+        "Mental status",
+        "Ability to speak"
+      ],
+      "correct_answer": "C",
+      "explanation": "30 = respiratory rate, 2 = capillary refill seconds, Can do = follows simple commands.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 42,
+      "text": "A patient who cannot follow simple commands is tagged:",
+      "options": [
+        "Red",
+        "Green",
+        "Yellow",
+        "Black"
+      ],
+      "correct_answer": "A",
+      "explanation": "Failing the mental status check = RED (immediate).",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 43,
+      "text": "A walking man has two amputated fingers and several crushed fingers. He follows commands. His START category is:",
+      "options": [
+        "Red",
+        "Green",
+        "Yellow",
+        "Black"
+      ],
+      "correct_answer": "B",
+      "explanation": "In START anyone who can walk is initially GREEN, however dramatic the injury looks.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "medium",
+      "topic": "START Triage"
+    },
+    {
+      "id": 44,
+      "text": "A 15-year-old with an obviously broken arm is walking around the scene. His category is:",
+      "options": [
+        "Red",
+        "Green",
+        "Yellow",
+        "Black"
+      ],
+      "correct_answer": "B",
+      "explanation": "Ambulatory = GREEN.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 45,
+      "text": "A responsive 35-year-old man has pale, moist skin and a respiratory rate of 32/min. His category is:",
+      "options": [
+        "Red",
+        "Black",
+        "Yellow",
+        "Green"
+      ],
+      "correct_answer": "A",
+      "explanation": "Respirations over 30/min = RED.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 46,
+      "text": "An unresponsive man has snoring respirations that improve when you open his airway. His category is:",
+      "options": [
+        "Black",
+        "Green",
+        "Red",
+        "Yellow"
+      ],
+      "correct_answer": "C",
+      "explanation": "Breathing only after airway positioning = RED.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "easy",
+      "topic": "START Triage"
+    },
+    {
+      "id": 47,
+      "text": "A patient who cannot walk is alert, follows commands, breathes 22/min and has a capillary refill under 2 seconds. Using START, they are:",
+      "options": [
+        "Green",
+        "Red",
+        "Black",
+        "Yellow"
+      ],
+      "correct_answer": "D",
+      "explanation": "Non-ambulatory with normal RPM = YELLOW (delayed).",
+      "hint": "Topic: START Triage.",
+      "difficulty": "medium",
+      "topic": "START Triage"
+    },
+    {
+      "id": 48,
+      "text": "A 50-year-old man with bilateral femur fractures cannot walk. He breathes 24/min, has a weak but present radial pulse and follows commands. By strict START criteria he is:",
+      "options": [
+        "Black",
+        "Yellow",
+        "Red",
+        "Green"
+      ],
+      "correct_answer": "B",
+      "explanation": "RR under 30, radial pulse present and obeys commands = YELLOW. Watch closely and re-triage — bilateral femur fractures can cause shock and he may soon become RED.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "hard",
+      "topic": "START Triage"
+    },
+    {
+      "id": 49,
+      "text": "A patient with a severe head injury is not breathing even after the airway is opened. His pulse is 10/min. His category is:",
+      "options": [
+        "Minimal (green)",
+        "Immediate (red)",
+        "Delayed (yellow)",
+        "Expectant (black)"
+      ],
+      "correct_answer": "D",
+      "explanation": "Apneic after airway repositioning = BLACK in START.",
+      "hint": "Topic: START Triage.",
+      "difficulty": "medium",
+      "topic": "START Triage"
+    },
+    {
+      "id": 50,
+      "text": "What tool do responders use to sort and identify patients during an MCI?",
+      "options": [
+        "Coloured ribbon",
+        "Marker pen on the skin",
+        "Triage tag",
+        "Patient care report"
+      ],
+      "correct_answer": "C",
+      "explanation": "Triage tags record the priority colour and stay with the patient.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "easy",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 51,
+      "text": "Triage tags are mainly used during:",
+      "options": [
+        "Routine road traffic collisions",
+        "Single-patient medical calls",
+        "Mass casualty incidents",
+        "Inter-facility transfers"
+      ],
+      "correct_answer": "C",
+      "explanation": "Tags are an MCI tool for tracking many patients at once.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "easy",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 52,
+      "text": "Applying triage tags at the scene is the responsibility of the:",
+      "options": [
+        "Triage Officer",
+        "Treatment Officer",
+        "Incident Commander",
+        "Transport Officer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Initial tagging is done by the triage team under the Triage Officer.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "easy",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 53,
+      "text": "On a tear-off triage tag, how do you upgrade a patient to a higher priority?",
+      "options": [
+        "Tear off the lower colour strip so the higher priority shows",
+        "Ask the Incident Commander for backup",
+        "Write the new priority on the patient's forehead",
+        "Discard the old tag and apply a new one"
+      ],
+      "correct_answer": "A",
+      "explanation": "Tear-off tags are upgraded by removing strips until the correct colour is at the bottom.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "medium",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 54,
+      "text": "A tagged patient's condition improves. What should you do with the triage tag?",
+      "options": [
+        "Tear off another strip",
+        "Leave the tag unchanged",
+        "Apply a new tag and keep the original attached",
+        "Discard the old tag and apply a new one"
+      ],
+      "correct_answer": "C",
+      "explanation": "Torn strips cannot be re-attached, so a new tag is applied; keeping the old one preserves the record.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "hard",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 55,
+      "text": "Before sending a contaminated patient to hospital, which part of the triage tag must be completed so the receiving hospital can prepare?",
+      "options": [
+        "The destination section",
+        "The contamination section",
+        "The personal property receipt",
+        "The personal details section"
+      ],
+      "correct_answer": "B",
+      "explanation": "The contamination marking warns the destination so a contaminated patient is not sent to an unprepared facility.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "medium",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 56,
+      "text": "In the SLUDGEM mnemonic for nerve-agent poisoning, D stands for:",
+      "options": [
+        "Disorientation",
+        "Debilitation",
+        "Decapitation",
+        "Defecation"
+      ],
+      "correct_answer": "D",
+      "explanation": "SLUDGEM: Salivation, Lacrimation, Urination, Defecation, GI upset, Emesis, Miosis.",
+      "hint": "Topic: Triage Tag.",
+      "difficulty": "medium",
+      "topic": "Triage Tag"
+    },
+    {
+      "id": 57,
+      "text": "Which is the only position that is staffed at EVERY incident?",
+      "options": [
+        "Incident Commander",
+        "Transport Officer",
+        "Triage Officer",
+        "Staging Officer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Every incident, however small, has an Incident Commander.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 58,
+      "text": "You are on the first ambulance to arrive at an MCI. Which role do you assume?",
+      "options": [
+        "Safety Officer",
+        "Treatment Officer",
+        "Triage Officer",
+        "Incident Commander"
+      ],
+      "correct_answer": "D",
+      "explanation": "The first-arriving crew establishes command until relieved by a more senior officer.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 59,
+      "text": "Ideally, the first ambulance on scene will be:",
+      "options": [
+        "The last ambulance to leave the scene",
+        "The first crew to be relieved",
+        "Assigned to transport because it knows the location",
+        "The first to transport a red patient"
+      ],
+      "correct_answer": "A",
+      "explanation": "The first crew takes command and stays to keep continuity until the incident closes.",
+      "hint": "Topic: Command.",
+      "difficulty": "medium",
+      "topic": "Command"
+    },
+    {
+      "id": 60,
+      "text": "You are Incident Commander when a more senior officer arrives. You should:",
+      "options": [
+        "Send the senior officer to the treatment area",
+        "Transfer command and leave with patients",
+        "Formally transfer command and stay on to assist",
+        "Keep command until the incident ends"
+      ],
+      "correct_answer": "C",
+      "explanation": "Command is handed over with a briefing; the former IC usually stays as an assistant.",
+      "hint": "Topic: Command.",
+      "difficulty": "medium",
+      "topic": "Command"
+    },
+    {
+      "id": 61,
+      "text": "During a small incident, the Incident Commander:",
+      "options": [
+        "Delegates all authority to the senior paramedic",
+        "Usually does not attend the scene",
+        "Acts mainly as the safety officer",
+        "May perform all the command functions personally"
+      ],
+      "correct_answer": "D",
+      "explanation": "ICS is scalable — on a small incident one person can cover every function.",
+      "hint": "Topic: Command.",
+      "difficulty": "medium",
+      "topic": "Command"
+    },
+    {
+      "id": 62,
+      "text": "Which of the following is NOT a responsibility of the Incident Commander?",
+      "options": [
+        "Setting strategic objectives and priorities",
+        "Developing the incident action plan",
+        "Assessing the whole incident scene",
+        "Authorising individual medical treatments"
+      ],
+      "correct_answer": "D",
+      "explanation": "The IC manages the incident; individual treatment decisions are clinical, not command, functions.",
+      "hint": "Topic: Command.",
+      "difficulty": "hard",
+      "topic": "Command"
+    },
+    {
+      "id": 63,
+      "text": "The location from which the Incident Commander directs all operations is the:",
+      "options": [
+        "Incident command post",
+        "Treatment area",
+        "Emergency operations centre",
+        "Staging area"
+      ],
+      "correct_answer": "A",
+      "explanation": "The ICP is the on-scene command location.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 64,
+      "text": "Which ICS role coordinates with other responding agencies?",
+      "options": [
+        "Staging Officer",
+        "Safety Officer",
+        "Liaison Officer",
+        "Treatment Officer"
+      ],
+      "correct_answer": "C",
+      "explanation": "The Liaison Officer is the point of contact for other agencies; on small incidents the IC does this personally.",
+      "hint": "Topic: Command.",
+      "difficulty": "medium",
+      "topic": "Command"
+    },
+    {
+      "id": 65,
+      "text": "In the Gold–Silver–Bronze command structure, Gold is:",
+      "options": [
+        "Unified command",
+        "Tactical",
+        "Strategic",
+        "Operational"
+      ],
+      "correct_answer": "C",
+      "explanation": "Gold = strategic, Silver = tactical, Bronze = operational.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 66,
+      "text": "In the Gold–Silver–Bronze command structure, Bronze is:",
+      "options": [
+        "Strategic",
+        "Tactical",
+        "Dispatch",
+        "Operational"
+      ],
+      "correct_answer": "D",
+      "explanation": "Bronze works at the scene, carrying out tasks.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 67,
+      "text": "Food and clean water are needed for responders during a long MCI. Which ICS section obtains them?",
+      "options": [
+        "Operations",
+        "Finance",
+        "Logistics",
+        "Planning"
+      ],
+      "correct_answer": "C",
+      "explanation": "Logistics provides facilities, services, food and supplies.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 68,
+      "text": "A news reporter asks you for an interview at an MCI. You should:",
+      "options": [
+        "Answer their questions politely",
+        "Tell them to contact your chief executive",
+        "Ignore them and walk away",
+        "Refer them to the Public Information Officer"
+      ],
+      "correct_answer": "D",
+      "explanation": "All media enquiries go through the Public Information Officer.",
+      "hint": "Topic: Command.",
+      "difficulty": "easy",
+      "topic": "Command"
+    },
+    {
+      "id": 69,
+      "text": "A backup ambulance arriving at an established MCI should report to the:",
+      "options": [
+        "Transport Officer",
+        "Staging area / Staging Officer",
+        "Treatment area",
+        "Triage Officer"
+      ],
+      "correct_answer": "B",
+      "explanation": "Arriving units check in at staging and wait to be assigned, so the IC knows what resources are on scene.",
+      "hint": "Topic: Command.",
+      "difficulty": "medium",
+      "topic": "Command"
+    },
+    {
+      "id": 70,
+      "text": "Which sector officer sorts and prioritises all victims?",
+      "options": [
+        "Transport Officer",
+        "Triage Officer",
+        "Treatment Officer",
+        "Incident Commander"
+      ],
+      "correct_answer": "B",
+      "explanation": "Sorting is triage.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "easy",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 71,
+      "text": "Which officer tells dispatch and the hospitals where each patient is being sent?",
+      "options": [
+        "Transport Officer",
+        "Treatment Officer",
+        "Staging Officer",
+        "Liaison Officer"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Transport Officer coordinates destinations with dispatch and hospitals.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "easy",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 72,
+      "text": "Which officer records each patient's destination and tracking number?",
+      "options": [
+        "Treatment Officer",
+        "Staging Officer",
+        "Triage Officer",
+        "Transport Officer"
+      ],
+      "correct_answer": "D",
+      "explanation": "Transport keeps the log of which patient went where.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "medium",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 73,
+      "text": "The Staging Officer is responsible for:",
+      "options": [
+        "Making sure every patient has been triaged",
+        "Confirming that patients have been transported",
+        "Telling the Treatment Officer when to transport patients",
+        "Reporting the status of available resources to the Incident Commander"
+      ],
+      "correct_answer": "D",
+      "explanation": "Staging manages and reports on incoming resources until they are assigned.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "medium",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 74,
+      "text": "Which officer monitors operations to make sure responders follow safety procedures?",
+      "options": [
+        "Security Officer",
+        "Safety Officer",
+        "Staging Officer",
+        "Rehab Officer"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Safety Officer watches for hazards and unsafe practices.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "easy",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 75,
+      "text": "Who gives the Incident Commander a risk assessment of the incident action plan?",
+      "options": [
+        "Safety Officer",
+        "Staging Officer",
+        "Liaison Officer",
+        "Triage Officer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Risk assessment is a core Safety Officer function.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "easy",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 76,
+      "text": "Who has the authority to stop a rescuer immediately if they are in danger?",
+      "options": [
+        "Safety Officer",
+        "Staging Officer",
+        "Treatment Officer",
+        "Triage Officer"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Safety Officer can halt unsafe acts on the spot.",
+      "hint": "Topic: Sector Officers.",
+      "difficulty": "easy",
+      "topic": "Sector Officers"
+    },
+    {
+      "id": 77,
+      "text": "What is gathered in the staging area?",
+      "options": [
+        "Patients waiting for transport",
+        "Personnel, vehicles, equipment and supplies",
+        "Supplies and members of the media",
+        "Patients waiting to be triaged"
+      ],
+      "correct_answer": "B",
+      "explanation": "Staging holds incoming resources until they are assigned.",
+      "hint": "Topic: Scene Layout.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 78,
+      "text": "Patients are cared for in which area of an MCI?",
+      "options": [
+        "Staging area",
+        "Treatment area",
+        "Collection area",
+        "Triage area"
+      ],
+      "correct_answer": "B",
+      "explanation": "Self-explanatory.",
+      "hint": "Topic: Scene Layout.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 79,
+      "text": "A team of physicians arrives at an MCI from a local hospital. Where are they best used?",
+      "options": [
+        "Transport area",
+        "Triage area",
+        "Command post",
+        "Treatment area"
+      ],
+      "correct_answer": "D",
+      "explanation": "Physicians add the most value giving advanced care in the treatment area.",
+      "hint": "Topic: Scene Layout.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 80,
+      "text": "Which colour tarp in the treatment area should be closest to the loading/transport area?",
+      "options": [
+        "Red",
+        "Yellow",
+        "Black",
+        "Green"
+      ],
+      "correct_answer": "A",
+      "explanation": "RED patients leave first, so their tarp sits nearest the ambulance loading point.",
+      "hint": "Topic: Scene Layout.",
+      "difficulty": "easy",
+      "topic": "Scene Layout"
+    },
+    {
+      "id": 81,
+      "text": "HAZMAT is short for:",
+      "options": [
+        "Hazard map",
+        "Hospital hazard alert",
+        "Hazardous materials",
+        "Hazard management"
+      ],
+      "correct_answer": "C",
+      "explanation": "HAZardous MATerials.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "easy",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 82,
+      "text": "A substance that can harm life, property or the environment is called a:",
+      "options": [
+        "Irritant",
+        "Pollutant",
+        "Poison",
+        "Hazardous material"
+      ],
+      "correct_answer": "D",
+      "explanation": "That is the definition of a hazardous material.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "easy",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 83,
+      "text": "Signs on a transport vehicle that identify the hazardous material it is carrying are called:",
+      "options": [
+        "Safety data sheets",
+        "Warning labels",
+        "Shipping papers",
+        "Placards"
+      ],
+      "correct_answer": "D",
+      "explanation": "Placards show the hazard class and UN number on the outside of vehicles.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "easy",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 84,
+      "text": "How can a hazardous material enter the body?",
+      "options": [
+        "Injection",
+        "Absorption and inhalation",
+        "Ingestion",
+        "All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "All four routes of exposure apply.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "easy",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 85,
+      "text": "At a hazardous materials incident, EMS should stage in the:",
+      "options": [
+        "Cold zone",
+        "Hot zone",
+        "Warm zone",
+        "Centre of the scene"
+      ],
+      "correct_answer": "A",
+      "explanation": "EMS stages and treats in the cold (support) zone, upwind and uphill.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "easy",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 86,
+      "text": "At a HAZMAT incident, contaminated patients must be decontaminated:",
+      "options": [
+        "Before any triage takes place",
+        "After they are treated at the scene",
+        "Before they enter the treatment area",
+        "When they arrive at the hospital"
+      ],
+      "correct_answer": "C",
+      "explanation": "Decontamination happens in the warm zone before patients reach the clean treatment area. Quick initial triage may be done before decontamination to set its order.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "medium",
+      "topic": "HAZMAT"
+    },
+    {
+      "id": 87,
+      "text": "Which is NOT a role of the first-arriving EMT at a possible hazardous materials emergency?",
+      "options": [
+        "Rescuing victims still in the spill area",
+        "Establishing a safe zone",
+        "Requesting specialist resources",
+        "Recognising that it is a hazardous materials emergency"
+      ],
+      "correct_answer": "A",
+      "explanation": "Entering the hot zone is for trained, protected HAZMAT teams only.",
+      "hint": "Topic: HAZMAT.",
+      "difficulty": "medium",
+      "topic": "HAZMAT"
+    }
+  ]
+}

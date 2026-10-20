@@ -23,9 +23,19 @@
       "review_date": null
     },
     {
+      "file": "src/MCI/MCI-exam1.json",
+      "exam_id": "mci",
+      "title": "MCI Exam 1",
+      "guideline_source": "START triage, NIMS/ICS, JESIP METHANE, DOT ERG",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
       "file": "src/MCI/MCI.json",
       "exam_id": "mci",
-      "title": "MCI Final Exam",
+      "title": "MCI Exam 2",
       "guideline_source": "NIMS/ICS, JESIP METHANE, START/JumpSTART, CDC SALT, DOT ERG, HHS CHEMM/REMM, C-TECC",
       "content_version": "1.0",
       "review_status": "unreviewed",

@@ -172,7 +172,7 @@ shortTitle: "<svg class='lucide' …><use href='…'/></svg> Full Index",
 
 ### 8. Service worker
 
-`sw.js` was bumped from `dcas-cpg-v5.1` to `dcas-cpg-v5.2` and `icons/sprite.svg` was added to `PRE_CACHE` so the sprite is available offline. Existing `CACHE_FIRST_PATTERNS` already covered `/\/icons\//`, so once cached the sprite is served from cache.
+`sw.js` cache version was bumped from v5.1 to v5.2 and `icons/sprite.svg` was added to `PRE_CACHE` so the sprite is available offline. Existing `CACHE_FIRST_PATTERNS` already covered `/\/icons\//`, so once cached the sprite is served from cache.
 
 ---
 
@@ -216,7 +216,7 @@ A handful of pages (`pages/acls.html`, `pages/medical.html`, etc.) define their 
 
 ### 3. Service-worker version
 
-`sw.js` now reports `dcas-cpg-v5.2`. Existing users on v5.1 will need the new service worker to be activated before they get the offline sprite. There is no forced update path beyond `self.skipWaiting()` which is already called. Worth a sanity check on a real device after deploy.
+`sw.js` now reports cache version v5.2. Existing users on v5.1 will need the new service worker to be activated before they get the offline sprite. There is no forced update path beyond `self.skipWaiting()` which is already called. Worth a sanity check on a real device after deploy.
 
 ### 4. Theme-color and ARIA labelling
 
