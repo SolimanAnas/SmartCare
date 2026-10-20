@@ -62,7 +62,7 @@ function setModeUI(m) {
     examBtn.classList.remove('active-exam');
     examBtn.setAttribute('aria-pressed', 'false');
   }
-  document.getElementById('startBtn').textContent = m === 'exam' ? 'Start the exam' : 'Start studying';
+  document.getElementById('startBtn').textContent = m === 'exam' ? 'Start the exam' : 'Start practice';
 }
 
 // Load saved mode
@@ -416,7 +416,7 @@ async function startExam(path, name) {
     document.getElementById('resExamName').textContent = name;
     
     const modeBadge = document.getElementById('modeBadge');
-    modeBadge.innerHTML =ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
+    modeBadge.innerHTML =ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Practice' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
     modeBadge.className = 'hdr-mode ' + (ST.mode === 'study' ? 'm-study' : 'm-exam');
     
     const isStudy = ST.mode === 'study';

@@ -84,7 +84,7 @@ test('MCI exam page lists all banks and runs a 20-question exam to results', asy
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Practice']);
+  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Exam 3']);
 
   await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
   await page.locator('#qSeg button[data-n="20"]').click();
@@ -104,9 +104,9 @@ test('MCI exam page lists all banks and runs a 20-question exam to results', asy
   expect(errors).toEqual([]);
 });
 
-test('MCI practice bank loads all generated reviewer questions', async ({ page }) => {
+test('MCI Exam 3 loads all generated reviewer questions', async ({ page }) => {
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await page.locator('#bankSeg button', { hasText: 'Practice' }).click();
+  await page.locator('#bankSeg button', { hasText: 'Exam 3' }).click();
   await page.locator('#qSeg button[data-n="9999"]').click();
   await page.locator('#startBtn').click();
   await expect(page.locator('#examScreen')).toBeVisible();

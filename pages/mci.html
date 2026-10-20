@@ -288,11 +288,11 @@ textarea.mt-input{min-height:64px;resize:vertical}
             <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank">
               <button type="button" data-bank="exam1" data-path="../src/MCI/MCI-exam1.json" data-name="MCI Exam 1" data-label="Exam 1" data-n="87" data-about="87 questions on core MCI operations." aria-pressed="true">Exam 1</button>
               <button type="button" data-bank="exam2" data-path="../src/MCI/MCI.json" data-name="MCI Exam 2" data-label="Exam 2" data-n="66" data-about="66 integrated scenario questions." aria-pressed="false">Exam 2</button>
-              <button type="button" data-bank="practice" data-path="../src/MCI/MCI-practice.json" data-name="MCI Practice Bank" data-label="the practice bank" data-n="177" data-about="177 chapter questions and scenarios from the MCI Reviewer." aria-pressed="false">Practice</button>
+              <button type="button" data-bank="practice" data-path="../src/MCI/MCI-practice.json" data-name="MCI Exam 3" data-label="Exam 3" data-n="177" data-about="177 chapter questions and scenarios from the MCI Reviewer." aria-pressed="false">Exam 3</button>
             </div>
             <p class="bank-about" id="bankAbout" aria-live="polite">87 questions on core MCI operations.</p>
             <div class="mode-row" role="group" aria-label="Exam mode">
-              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Study<span class="mode-hint">Hints and answers as you go</span></button>
+              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Practice<span class="mode-hint">Answer and explanation after each question</span></button>
               <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>
             </div>
             <div class="qcount">
@@ -304,7 +304,7 @@ textarea.mt-input{min-height:64px;resize:vertical}
               </div>
               <input type="hidden" id="qCount" value="40">
             </div>
-            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start studying</button>
+            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start practice</button>
             <p class="hub-last" id="hubLast" hidden></p>
           </div>
         </section>

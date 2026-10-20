@@ -54,3 +54,15 @@ test('EMPACT pearls open in the page, with search and topic links', async ({ pag
   await page.goBack();
   await expect(page.locator('#selectorScreen')).toBeVisible();
 });
+
+test('the two modes are Practice and Exam, and the start button says which', async ({ page }) => {
+  await page.goto('pages/bls.html', { waitUntil: 'networkidle' });
+  await expect(page.locator('#modeStudyBtn')).toContainText('Practice');
+  await expect(page.locator('#modeExamBtn')).toContainText('Exam');
+  await page.locator('#modeExamBtn').click();
+  await expect(page.locator('#startBtn')).toHaveText('Start the exam');
+  await page.locator('#modeStudyBtn').click();
+  await expect(page.locator('#startBtn')).toHaveText('Start practice');
+  await page.locator('#startBtn').click();
+  await expect(page.locator('#modeBadge')).toHaveText('Practice');
+});

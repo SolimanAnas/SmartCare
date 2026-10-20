@@ -113,7 +113,7 @@
             </div>
             <p class="bank-about" id="bankAbout" aria-live="polite">Pre-test, 8th edition: 50 questions. Allow 60 minutes.</p>
             <div class="mode-row" role="group" aria-label="Exam mode">
-              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Study<span class="mode-hint">Hints and answers as you go</span></button>
+              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Practice<span class="mode-hint">Answer and explanation after each question</span></button>
               <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>
             </div>
             <div class="qcount">
@@ -125,7 +125,7 @@
               </div>
               <input type="hidden" id="qCount" value="40">
             </div>
-            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start studying</button>
+            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start practice</button>
             <p class="hub-last" id="hubLast" hidden></p>
           </div>
         </section>
