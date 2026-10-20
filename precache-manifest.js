@@ -157,4 +157,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "2a3a8bfa83";
+self.__PRECACHE_VERSION = "236b5fd7ce";
