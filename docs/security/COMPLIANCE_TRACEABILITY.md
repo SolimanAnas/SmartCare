@@ -58,7 +58,7 @@
 | §4.3(g) | Session cookies hardened | `SESSION_COOKIE_HTTPONLY=True`, `SESSION_COOKIE_SAMESITE="Lax"`, `SESSION_COOKIE_SECURE=True` (production) | ✅ |
 | §4.3(h) | Generic error messages (anti-enumeration) | `server.py:login()`: single `"Invalid username or password"` for all login failures | ✅ |
 | §4.3(i) | `debug=False` in production | `app.run(debug=bool(os.getenv("FLASK_DEBUG", "0")))` — default off | ✅ |
-| §4.3(j) | Audit logging for security events | `_audit()` emits JSON to `dcas.audit` logger for: register, login, google_login, logout, admin actions, rate_limit, csrf_guard | ✅ |
+| §4.3(j) | Audit logging for security events | `_audit()` emits JSON to `smartcare.audit` logger for: register, login, google_login, logout, admin actions, rate_limit, csrf_guard | ✅ |
 
 ---
 

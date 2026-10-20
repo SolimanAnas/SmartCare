@@ -53,7 +53,7 @@ The reboot maps the new generic clinical learning curriculum onto the existing c
 ## 4. LocalStorage & PWA Migrations
 
 To transition application identifiers and local cache configurations:
-* **Cache Name:** Updated from `dcas-cpg-v5.5` to `smartcare-v1.0` in `sw.js`.
+* **Cache Name:** Updated from the legacy v5.5 cache name to `smartcare-v1.0` in `sw.js`.
 * **LocalStorage Key Renames:**
   - `dcas_local_auth` $\rightarrow$ `smartcare_local_auth`
   - `dcas_cpg_stats` $\rightarrow$ `smartcare_cpg_stats`

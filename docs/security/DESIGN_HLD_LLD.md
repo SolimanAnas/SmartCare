@@ -76,7 +76,7 @@ This document traces the security requirements from `docs/requirements.md` throu
 └──────────────────────────┬──────────────────────────────────┘
                            │
 ┌──────────────────────────▼──────────────────────────────────┐
-│  Layer 9 — Audit Log (dcas.audit logger)                    │
+│  Layer 9 — Audit Log (smartcare.audit logger)                    │
 │  JSON line per event: ts · event · outcome · actor · ip     │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -95,7 +95,7 @@ This document traces the security requirements from `docs/requirements.md` throu
 | Login UI | `pages/login.html` | Email/pw + Google One-Tap; server-side auth only |
 | Admin UI | `pages/admin.html` | User management; all output through `escapeHtml()` |
 | Signup UI | `pages/signup.html` | Registration form; server validates everything |
-| Audit log | `server.py:_audit()` | Structured JSON events to `dcas.audit` logger |
+| Audit log | `server.py:_audit()` | Structured JSON events to `smartcare.audit` logger |
 | ORM model | `server.py:User` | SQLAlchemy model; password never stored plaintext |
 
 ---
@@ -176,7 +176,7 @@ DELETE does not require `Content-Type` because it carries no body.
 
 ### 3.5 Audit Log Schema
 
-Every security event emits one JSON line to the `dcas.audit` logger:
+Every security event emits one JSON line to the `smartcare.audit` logger:
 
 ```json
 {

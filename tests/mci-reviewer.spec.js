@@ -71,18 +71,18 @@ for (const vp of [{ w: 360, h: 740 }, { w: 320, h: 568 }]) {
   });
 }
 
-// Exam page (pages/mci.html) on the shared exam-review engine: both banks
+// Exam page (pages/mci.html) on the shared exam-review engine: all banks
 // load, the question-count selector slices the set, and an exam can be
 // answered and submitted through to the results screen.
-test('MCI exam page lists both banks and runs a 20-question exam to results', async ({ page }) => {
+test('MCI exam page lists all banks and runs a 20-question exam to results', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('.exam-card')).toHaveCount(2);
+  await expect(page.locator('.exam-card')).toHaveCount(3);
 
   await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
   await page.selectOption('#qCount', '20');
-  await page.locator('.exam-card', { hasText: 'MCI Final Exam' }).click();
+  await page.locator('.exam-card', { hasText: 'MCI Exam 1' }).click();
   await expect(page.locator('#examScreen')).toBeVisible();
   await expect(page.locator('#qBadge')).toHaveText('Question 1 of 20');
 

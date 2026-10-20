@@ -71,9 +71,11 @@ render time).
 ## Exam page (`pages/mci.html`)
 
 Runs on the shared exam engine (`pages/exam-review.js`) with Study and Exam modes and a
-20 / 40 / All question selector (questions are shuffled each attempt). Two banks:
+20 / 40 / All question selector (questions are shuffled each attempt). Three banks:
 
-- **MCI Final Exam** — `src/MCI/MCI.json`: 66 new integrated, scenario-style questions
+- **MCI Exam 1** — `src/MCI/MCI-exam1.json`: 87 core MCI operations questions (definitions, scene safety, METHANE,
+  START triage and tags, incident command, scene layout, HAZMAT), each with an explanation.
+- **MCI Exam 2** — `src/MCI/MCI.json`: 66 new integrated, scenario-style questions
   spanning all 14 chapters, each with an explanation and a non-revealing hint.
   Hand-authored; not duplicated from the reviewer quizzes.
 - **MCI Practice Bank** — `src/MCI/MCI-practice.json`: all 137 reviewer quiz questions +

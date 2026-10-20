@@ -136,9 +136,9 @@
 
 Per SmartCare Security Monitoring Policy:
 
-- `dcas.audit` logger emits one JSON line per security event: `ts`, `event`, `outcome`, `actor`, `ip`, `detail`.
+- `smartcare.audit` logger emits one JSON line per security event: `ts`, `event`, `outcome`, `actor`, `ip`, `detail`.
 - Covered events: `register`, `login`, `google_login`, `logout`, `admin_list_users`, `admin_update_role`, `admin_delete_user`, `rate_limit`, `csrf_guard`.
-- **Action required:** Ship `dcas.audit` logger to a monitored sink (CloudWatch, Datadog, SIEM) in production.
+- **Action required:** Ship `smartcare.audit` logger to a monitored sink (CloudWatch, Datadog, SIEM) in production.
 
 ### 5.6 Network Positioning
 
