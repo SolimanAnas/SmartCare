@@ -87,6 +87,12 @@ self.__PRECACHE = [
   "pages/supabase-config.js",
   "pages/terms.html",
   "pages/trauma.html",
+  "fonts/barlow-400.woff2",
+  "fonts/barlow-500.woff2",
+  "fonts/barlow-600.woff2",
+  "fonts/barlow-700.woff2",
+  "fonts/barlow-condensed-600.woff2",
+  "fonts/barlow-condensed-700.woff2",
   "fonts/dm-mono-400.woff2",
   "fonts/dm-mono-500.woff2",
   "fonts/fonts.css",
@@ -157,4 +163,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "236b5fd7ce";
+self.__PRECACHE_VERSION = "8a518d3b88";
