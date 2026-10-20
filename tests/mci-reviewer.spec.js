@@ -84,7 +84,7 @@ test('MCI exam page lists all banks and runs a 20-question exam to results', asy
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Practice']);
+  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Exam 3']);
 
   await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
   await page.locator('#qSeg button[data-n="20"]').click();
@@ -104,9 +104,9 @@ test('MCI exam page lists all banks and runs a 20-question exam to results', asy
   expect(errors).toEqual([]);
 });
 
-test('MCI practice bank loads all generated reviewer questions', async ({ page }) => {
+test('MCI Exam 3 loads all generated reviewer questions', async ({ page }) => {
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await page.locator('#bankSeg button', { hasText: 'Practice' }).click();
+  await page.locator('#bankSeg button', { hasText: 'Exam 3' }).click();
   await page.locator('#qSeg button[data-n="9999"]').click();
   await page.locator('#startBtn').click();
   await expect(page.locator('#examScreen')).toBeVisible();
@@ -135,4 +135,37 @@ test('MCI field tools open in the page and Back returns home', async ({ page }) 
   await page.goBack();
   await expect(page.locator('#selectorScreen')).toBeVisible();
   expect(errors).toEqual([]);
+});
+
+// Officer roles: a role opens from the home page, and a sideways swipe on the
+// duties moves to the next role (touch events through the DevTools protocol).
+test('MCI officer roles open from home and swipe to the next role', async ({ browser }) => {
+  const context = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 412, height: 860 } });
+  const page = await context.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
+
+  await page.locator('.role-chips a', { hasText: 'Treatment' }).click();
+  await expect(page.locator('.role-name')).toHaveText('Treatment Officer');
+  await expect(page.locator('.role-tabs [role="tab"]')).toHaveCount(5);
+
+  const cdp = await context.newCDPSession(page);
+  const swipe = async (x0, x1) => {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x0, y: 500 }] });
+    for (let i = 1; i <= 5; i++) {
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x0 + ((x1 - x0) * i) / 5, y: 500 }] });
+    }
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  };
+  await swipe(330, 80);
+  await expect(page.locator('.role-name')).toHaveText('Staging Officer');
+  await expect(page).toHaveURL(/#officers\/staging-officer$/);
+  await swipe(80, 330);
+  await expect(page.locator('.role-name')).toHaveText('Treatment Officer');
+
+  await page.locator('.tool-back').click();
+  await expect(page.locator('#selectorScreen')).toBeVisible();
+  expect(errors).toEqual([]);
+  await context.close();
 });

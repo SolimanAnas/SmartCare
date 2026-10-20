@@ -45,8 +45,18 @@
     {
       "file": "src/MCI/MCI-practice.json",
       "exam_id": "mci",
-      "title": "MCI Practice Bank (generated from courses/mci reviewer quizzes + scenarios)",
+      "title": "MCI Exam 3 (generated from courses/mci reviewer quizzes + scenarios)",
       "guideline_source": "NIMS/ICS, JESIP METHANE, START/JumpSTART, CDC SALT, DOT ERG, HHS CHEMM/REMM, C-TECC",
+      "content_version": "1.0",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "review_date": null
+    },
+    {
+      "file": "src/MCI/officers.json",
+      "exam_id": "mci",
+      "title": "MCI Officer Roles",
+      "guideline_source": "NIMS/ICS, START/JumpSTART, CDC SALT, JESIP METHANE",
       "content_version": "1.0",
       "review_status": "unreviewed",
       "reviewer": null,

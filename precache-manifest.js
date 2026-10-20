@@ -125,6 +125,7 @@ self.__PRECACHE = [
   "src/MCI/MCI-exam1.json",
   "src/MCI/MCI-practice.json",
   "src/MCI/MCI.json",
+  "src/MCI/officers.json",
   "src/Medical/medical.json",
   "src/PALS/pals.json",
   "src/PEPP/exam_a.json",
@@ -163,4 +164,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "8a518d3b88";
+self.__PRECACHE_VERSION = "4c10b7b8e4";
