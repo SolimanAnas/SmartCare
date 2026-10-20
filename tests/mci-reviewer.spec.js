@@ -16,6 +16,12 @@ test('MCI reviewer boots and renders sidebar + first chapter', async ({ page }) 
   await expect(page.locator('#ctitle')).toContainText('MCI Fundamentals');
 });
 
+test('a chapter link (#c06) opens the reviewer at that chapter', async ({ page }) => {
+  await page.goto('courses/mci/index.html#c06', { waitUntil: 'networkidle' });
+  await expect(page.locator('#ctitle')).toContainText('START');
+  await expect(page.locator('#chapters .chap.active')).toContainText('START & JumpSTART');
+});
+
 test('MCI reviewer exposes all seven content tabs', async ({ page }) => {
   await page.goto('courses/mci/index.html', { waitUntil: 'networkidle' });
   const tabs = page.locator('#tabs .tab');
@@ -71,19 +77,21 @@ for (const vp of [{ w: 360, h: 740 }, { w: 320, h: 568 }]) {
   });
 }
 
-// Exam page (pages/mci.html) on the shared exam-review engine: all banks
-// load, the question-count selector slices the set, and an exam can be
-// answered and submitted through to the results screen.
+// Exam page (pages/mci.html): all three banks are offered, the question-count
+// buttons slice the set, and an exam can be answered and submitted through to
+// the results screen.
 test('MCI exam page lists all banks and runs a 20-question exam to results', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('.exam-card')).toHaveCount(3);
+  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Practice']);
 
   await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
-  await page.selectOption('#qCount', '20');
-  await page.locator('.exam-card', { hasText: 'MCI Exam 1' }).click();
+  await page.locator('#qSeg button[data-n="20"]').click();
+  await page.locator('#bankSeg button', { hasText: 'Exam 1' }).click();
+  await page.locator('#startBtn').click();
   await expect(page.locator('#examScreen')).toBeVisible();
+  await expect(page.locator('#examName')).toHaveText('MCI Exam 1');
   await expect(page.locator('#qBadge')).toHaveText('Question 1 of 20');
 
   for (let i = 0; i < 20; i++) {
@@ -98,9 +106,33 @@ test('MCI exam page lists all banks and runs a 20-question exam to results', asy
 
 test('MCI practice bank loads all generated reviewer questions', async ({ page }) => {
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await page.selectOption('#qCount', '9999');
-  await page.locator('.exam-card', { hasText: 'Practice Bank' }).click();
+  await page.locator('#bankSeg button', { hasText: 'Practice' }).click();
+  await page.locator('#qSeg button[data-n="9999"]').click();
+  await page.locator('#startBtn').click();
   await expect(page.locator('#examScreen')).toBeVisible();
   const total = await page.evaluate(async () => (await (await fetch('../src/MCI/MCI-practice.json')).json()).questions.length);
   await expect(page.locator('#qBadge')).toHaveText(`Question 1 of ${total}`);
+});
+
+// The START triage and METHANE tools open inside the page, and Back (the
+// page's own arrow or the browser's) returns to the MCI home.
+test('MCI field tools open in the page and Back returns home', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
+
+  await page.locator('a.tool-tile[href="#start-triage"]').click();
+  await expect(page.locator('#toolTitleText')).toHaveText('START triage');
+  for (let i = 0; i < 3; i++) await page.locator('[data-st="no"]').click();
+  await expect(page.locator('.st-cat')).toHaveText('Expectant');
+  await page.locator('.tool-back').click();
+  await expect(page.locator('#selectorScreen')).toBeVisible();
+
+  await page.locator('a.tool-tile[href="#methane"]').click();
+  await expect(page.locator('#toolTitleText')).toHaveText('METHANE report');
+  await page.locator('[data-multi="type"] button', { hasText: 'Explosion' }).click();
+  await expect(page.locator('#mtReport')).toContainText('T - Type of incident: Explosion');
+  await page.goBack();
+  await expect(page.locator('#selectorScreen')).toBeVisible();
+  expect(errors).toEqual([]);
 });

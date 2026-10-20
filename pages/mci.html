@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MCI Exam Review</title>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="MCI exam review — mass casualty incident management for EMS: METHANE, ICS and officer roles, START/JumpSTART/SALT triage, CBRNE, blast and hostile events.">
     <meta name="keywords" content="SmartCare, pages, mci, mass casualty incident, triage, START, SALT, METHANE, CBRNE, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -61,13 +64,725 @@
   "inLanguage": "en-US"
 }
     </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MCI Exam Review</title>
-    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../fonts/fonts.css">
 
-<link rel="stylesheet" href="exam-review.css">
+<style>
+/* ================================================================
+   MCI — Enhanced UI/UX
+ ================================================================ */
+:root,[data-theme="dark"]{
+  --bg:#070f1d;--panel:#0c1628;--card:#111d30;--card2:#162035;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+  --text:#dde6f0;--muted:#5a7080;--dim:#8a9bb0;
+  --blue:#3b82f6;--blue-d:rgba(59,130,246,.15);--blue-2:rgba(59,130,246,.25);
+  --green:#22c55e;--green-d:rgba(34,197,94,.15);--green-2:rgba(34,197,94,.25);
+  --red:#ef4444;--red-d:rgba(239,68,68,.15);--red-2:rgba(239,68,68,.25);
+  --yellow:#f59e0b;--yellow-d:rgba(245,158,11,.15);--yellow-2:rgba(245,158,11,.25);
+  --shadow:0 8px 32px rgba(0,0,0,.45);--shadow-sm:0 4px 12px rgba(0,0,0,.25);
+  --modal-bg:rgba(0,0,0,.78);
+  --sb-bg:rgba(0,0,0,.2);--elim-bg:rgba(0,0,0,.2);
+  --opt-bg:var(--card);--opt-inner:rgba(0,0,0,.15);
+  --study-box:rgba(59,130,246,.07);--study-bdr:rgba(59,130,246,.22);--study-lbl:#60a5fa;
+  --g1:rgba(37,99,235,.14);--g2:rgba(10,25,60,.9);
+  --focus:0 0 0 3px rgba(59,130,246,.5), 0 0 0 6px rgba(59,130,246,.2);
+  --toast-bg:rgba(22,34,54,.95);--toast-border:rgba(59,130,246,.4);
+}
+[data-theme="light"]{
+  --bg:#eef2f7;--panel:#ffffff;--card:#ffffff;--card2:#f5f8fc;
+  --border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.15);
+  --text:#1a2637;--muted:#6b7a8d;--dim:#4a5568;
+  --blue:#2563eb;--blue-d:rgba(37,99,235,.1);--blue-2:rgba(37,99,235,.2);
+  --green:#16a34a;--green-d:rgba(22,163,74,.12);--green-2:rgba(22,163,74,.22);
+  --red:#dc2626;--red-d:rgba(220,38,38,.1);--red-2:rgba(220,38,38,.2);
+  --yellow:#d97706;--yellow-d:rgba(217,119,6,.12);--yellow-2:rgba(217,119,6,.22);
+  --shadow:0 8px 24px rgba(0,0,0,.1);--shadow-sm:0 4px 12px rgba(0,0,0,.08);
+  --modal-bg:rgba(0,0,0,.5);
+  --sb-bg:rgba(0,0,0,.04);--elim-bg:rgba(0,0,0,.04);
+  --opt-bg:#ffffff;--opt-inner:rgba(0,0,0,.04);
+  --study-box:rgba(37,99,235,.06);--study-bdr:rgba(37,99,235,.22);--study-lbl:#1d4ed8;
+  --g1:rgba(37,99,235,.06);--g2:rgba(200,220,255,.25);
+  --focus:0 0 0 3px rgba(37,99,235,.4), 0 0 0 6px rgba(37,99,235,.15);
+  --toast-bg:rgba(255,255,255,.98);--toast-border:rgba(37,99,235,.3);
+}
+[data-theme="sepia"]{
+  --bg:#f4ead8;--panel:#ece0ca;--card:#ece0ca;--card2:#e4d6bc;
+  --border:rgba(100,65,20,.1);--border2:rgba(100,65,20,.2);
+  --text:#362010;--muted:#8a7060;--dim:#5c4033;
+  --blue:#8b5e00;--blue-d:rgba(139,94,0,.12);--blue-2:rgba(139,94,0,.22);
+  --green:#3a6b35;--green-d:rgba(58,107,53,.14);--green-2:rgba(58,107,53,.24);
+  --red:#b91c1c;--red-d:rgba(185,28,28,.12);--red-2:rgba(185,28,28,.22);
+  --yellow:#92400e;--yellow-d:rgba(146,64,14,.14);--yellow-2:rgba(146,64,14,.24);
+  --shadow:0 8px 24px rgba(60,30,0,.18);--shadow-sm:0 4px 12px rgba(40,20,0,.15);
+  --modal-bg:rgba(50,25,5,.65);
+  --sb-bg:rgba(0,0,0,.04);--elim-bg:rgba(0,0,0,.05);
+  --opt-bg:#ece0ca;--opt-inner:rgba(0,0,0,.04);
+  --study-box:rgba(139,94,0,.07);--study-bdr:rgba(139,94,0,.22);--study-lbl:#8b5e00;
+  --g1:rgba(160,110,40,.08);--g2:rgba(200,160,80,.12);
+  --focus:0 0 0 3px rgba(139,94,0,.4), 0 0 0 6px rgba(139,94,0,.15);
+  --toast-bg:rgba(244,234,216,.98);--toast-border:rgba(139,94,0,.35);
+}
+[data-theme="green"]{
+  --bg:#040e06;--panel:#071408;--card:#0b1a0d;--card2:#0e1f10;
+  --border:rgba(34,197,94,.1);--border2:rgba(34,197,94,.18);
+  --text:#c5eecc;--muted:#3d6943;--dim:#6aab70;
+  --blue:#22c55e;--blue-d:rgba(34,197,94,.15);--blue-2:rgba(34,197,94,.25);
+  --green:#4ade80;--green-d:rgba(74,222,128,.15);--green-2:rgba(74,222,128,.25);
+  --red:#f87171;--red-d:rgba(248,113,113,.15);--red-2:rgba(248,113,113,.25);
+  --yellow:#fbbf24;--yellow-d:rgba(251,191,36,.15);--yellow-2:rgba(251,191,36,.25);
+  --shadow:0 8px 32px rgba(0,0,0,.6);--shadow-sm:0 4px 16px rgba(0,0,0,.4);
+  --modal-bg:rgba(0,0,0,.82);
+  --sb-bg:rgba(0,0,0,.3);--elim-bg:rgba(0,0,0,.28);
+  --opt-bg:var(--card);--opt-inner:rgba(0,0,0,.2);
+  --study-box:rgba(34,197,94,.07);--study-bdr:rgba(34,197,94,.24);--study-lbl:#4ade80;
+  --g1:rgba(34,197,94,.07);--g2:rgba(5,35,8,.9);
+  --focus:0 0 0 3px rgba(34,197,94,.45), 0 0 0 6px rgba(34,197,94,.2);
+  --toast-bg:rgba(7,20,8,.95);--toast-border:rgba(34,197,94,.4);
+}
+
+/* Base & Accessibility */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+button,input,select,textarea{font-family:inherit}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+}
+html,body{height:100%;overflow:hidden}
+body{
+  font-family:var(--f-ui);background:var(--bg);color:var(--text);
+  display:flex;flex-direction:column;font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.skip-link{
+  position:absolute;top:-40px;left:0;background:var(--blue);color:#fff;
+  padding:8px 16px;z-index:1000;text-decoration:none;font-weight:600;
+  border-radius:0 0 8px 0;transition:top 0.2s;
+}
+.skip-link:focus{top:0;box-shadow:var(--focus);outline:none}
+:focus-visible{outline:none;box-shadow:var(--focus)}
+button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:focus-visible{box-shadow:var(--focus)}
+
+/* ================================================================
+   MCI hub and field tools
+   One loud object: the triage tag on the hub. Triage colours appear
+   only where they mean triage. Real sequences get numbers; nothing else.
+ ================================================================ */
+:root{
+  --stock:#ECE2C6;--stock-edge:#C9B98F;--stock-ink:#1C2430;
+  --tri-red:#D62828;--tri-yellow:#F4C20D;--tri-green:#2B9348;--tri-black:#14171C;
+  --f-ui:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-display:'Barlow Condensed','Barlow',system-ui,sans-serif;
+  --primary-bg:#2563eb;--primary-fg:#fff;
+}
+[data-theme="sepia"]{--primary-bg:#8b5e00}
+[data-theme="green"]{--primary-bg:#22c55e;--primary-fg:#04120a}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Theme dots (hub + exam header) */
+.tp{
+  width:24px;height:24px;border-radius:50%;cursor:pointer;
+  border:2.5px solid rgba(128,128,255,.4);
+  box-shadow:0 1px 4px rgba(0,0,0,.4);
+  transition:transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  flex-shrink:0;position:relative;
+}
+.tp:hover{transform:scale(1.15)}
+.tp:active{transform:scale(0.95)}
+.tp.active{
+  border-color:var(--text) !important;
+  box-shadow:0 0 0 3px var(--blue-d), 0 0 0 6px var(--blue-2), 0 2px 8px rgba(0,0,0,.3);
+}
+.tp::after{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  border:2px solid transparent;transition:border-color 0.2s;
+  pointer-events:none;
+}
+.tp.active::after{border-color:var(--blue)}
+.tp-dark {background:linear-gradient(145deg,#1e3a5f,#070f1d)}
+.tp-light{background:linear-gradient(145deg,#c8d8f0,#f0f4f8)}
+.tp-sepia{background:linear-gradient(145deg,#c49a52,#f4ead8)}
+.tp-green{background:linear-gradient(145deg,#14532d,#040e06)}
+.q-select{
+  flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);
+  background:var(--panel);color:var(--text);font-size:.9rem;cursor:pointer;
+}
+
+/* Hub */
+#selectorScreen{
+  flex:1;overflow-y:auto;display:flex;flex-direction:column;
+  padding:max(12px,env(safe-area-inset-top)) 16px 48px;background:var(--bg);
+}
+.hub{width:100%;max-width:560px;margin:0 auto}
+.hub-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.hub-back{
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 6px 0 2px;
+  color:var(--dim);font:600 1rem/1 var(--f-ui);text-decoration:none;border-radius:10px;
+}
+.hub-back:hover{color:var(--text)}
+.hub-back svg{width:20px;height:20px}
+.sel-theme-row{display:flex;align-items:center;gap:12px;padding:6px 4px}
+.sel-theme-row .tp{width:22px;height:22px;box-shadow:none}
+.sel-theme-row .tp.active{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--dim)}
+.sel-theme-row .tp.active::after{display:none}
+
+/* The triage tag */
+.tag-wrap{filter:drop-shadow(0 12px 24px rgba(0,0,0,.4))}
+[data-theme="light"] .tag-wrap,[data-theme="sepia"] .tag-wrap{filter:drop-shadow(0 0 1px rgba(70,50,15,.55)) drop-shadow(0 8px 16px rgba(50,35,10,.16))}
+.tag{
+  position:relative;background:var(--stock);color:var(--stock-ink);
+  clip-path:polygon(30px 0,100% 0,100% 100%,30px 100%,0 calc(100% - 30px),0 30px);
+  padding:20px 20px 0 64px;
+}
+.tag-hole{
+  position:absolute;left:21px;top:34px;width:18px;height:18px;border-radius:50%;
+  background:var(--bg);box-shadow:0 0 0 5px var(--stock-edge);
+}
+.tag-title{font:700 3.5rem/.9 var(--f-display);letter-spacing:.01em;margin:0}
+.tag-sub{font:500 1.0625rem/1.3 var(--f-ui);margin:8px 0 18px;max-width:22ch}
+.tag-strips{margin:0 -20px 0 -64px}
+.tag-strips span{
+  display:block;height:22px;padding-left:64px;
+  font:600 .875rem/20px var(--f-display);letter-spacing:.03em;color:#fff;
+  border-top:2px dotted var(--stock);
+}
+.tag-strips .s-black{background:var(--tri-black)}
+.tag-strips .s-red{background:var(--tri-red)}
+.tag-strips .s-yellow{background:var(--tri-yellow);color:var(--stock-ink)}
+.tag-strips .s-green{background:var(--tri-green)}
+
+.hub-sec{margin-top:28px}
+.hub-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 2px 10px}
+.hub-h{margin:0;font:600 1.5625rem/1.1 var(--f-display);letter-spacing:.005em;color:var(--text)}
+.hub-aside{font:400 .9375rem/1.3 var(--f-ui);color:var(--dim);text-align:right}
+.hub-panel{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:12px}
+
+.mode-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;
+  background:var(--panel);border:1px solid var(--border2);border-radius:12px;
+}
+.mode-btn{
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:58px;padding:8px 12px;
+  border:0;border-radius:9px;background:transparent;color:var(--dim);cursor:pointer;text-align:left;
+  font:600 1.1875rem/1.1 var(--f-display);transition:background-color .15s ease,color .15s ease;
+}
+.mode-btn:hover{color:var(--text)}
+.mode-hint{font:400 .875rem/1.3 var(--f-ui);color:inherit;opacity:.9}
+.mode-btn.active-study{background:var(--green-d);color:var(--green);box-shadow:inset 0 0 0 1.5px var(--green)}
+.mode-btn.active-exam{background:var(--blue-d);color:var(--blue);box-shadow:inset 0 0 0 1.5px var(--blue)}
+
+/* Question count: one tap, no dropdown */
+.qcount{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 12px 4px}
+.qcount-l{font:500 1rem var(--f-ui);color:var(--text)}
+.seg{display:flex;gap:4px;padding:4px;border-radius:12px;background:var(--panel);border:1px solid var(--border2)}
+.seg button{
+  min-width:50px;min-height:40px;padding:0 12px;border:0;border-radius:9px;background:transparent;
+  color:var(--dim);cursor:pointer;font:600 1.125rem/1 var(--f-display);font-variant-numeric:tabular-nums;
+  transition:background-color .15s ease,color .15s ease;
+}
+.seg button:hover{color:var(--text)}
+.seg button[aria-pressed="true"]{background:var(--text);color:var(--bg)}
+.bank-seg{display:grid;grid-template-columns:repeat(3,1fr)}
+.bank-seg button{min-height:46px;padding:0 8px;font-size:1.1875rem}
+.bank-about{margin:8px 4px 12px;font:400 .9375rem/1.4 var(--f-ui);color:var(--dim)}
+.hub-disclaimer{display:inline-block;margin:14px 2px 0;font:400 .9375rem/1.4 var(--f-ui);color:var(--dim);text-decoration:underline;text-underline-offset:3px}
+.hub-disclaimer:hover{color:var(--text)}
+
+.start-btn{
+  display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;
+  border:0;border-radius:12px;background:var(--primary-bg);color:var(--primary-fg);cursor:pointer;
+  font:600 1.3125rem/1 var(--f-display);letter-spacing:.01em;
+}
+.start-btn:hover{filter:brightness(1.08)}
+.start-btn:active{transform:scale(.99)}
+.hub-last{margin:12px 4px 2px;font:400 .9375rem/1.4 var(--f-ui);color:var(--dim)}
+.hub-last b{font:600 1.125rem/1 var(--f-display);font-variant-numeric:tabular-nums}
+.hub-last b.ok{color:var(--green)}
+.hub-last b.low{color:var(--red)}
+
+/* Field tools: each tile shows a piece of its tool */
+.tool-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tool-tile{
+  display:flex;flex-direction:column;gap:4px;min-height:148px;padding:14px;border-radius:16px;
+  background:var(--card);border:1px solid var(--border2);color:inherit;text-decoration:none;
+  transition:border-color .15s ease;
+}
+.tool-tile:hover{border-color:var(--blue)}
+.tool-tile:hover .tt-title{color:var(--blue)}
+.tt-art{display:flex;gap:3px;margin-bottom:auto;padding-bottom:16px}
+.tt-art i{flex:1;min-width:0;height:26px;border-radius:5px}
+.tt-start i:nth-child(1){background:var(--tri-red)}
+.tt-start i:nth-child(2){background:var(--tri-yellow)}
+.tt-start i:nth-child(3){background:var(--tri-green)}
+.tt-start i:nth-child(4){background:var(--tri-black);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.tt-methane i{
+  display:flex;align-items:center;justify-content:center;border:1px solid var(--border2);
+  background:var(--panel);color:var(--text);font:700 .9375rem/1 var(--f-display);font-style:normal;
+}
+.tt-title{font:600 1.375rem/1.05 var(--f-display);color:var(--text)}
+.tt-sub{font:400 .9375rem/1.35 var(--f-ui);color:var(--dim)}
+
+/* MCI Reviewer chapters: a real sequence, so they are numbered */
+.hub-list{background:var(--card);border:1px solid var(--border2);border-radius:16px;overflow:hidden}
+.chapters{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--border);border-bottom:1px solid var(--border2)}
+.chapters a{
+  display:grid;grid-template-columns:28px 1fr 16px;align-items:center;gap:8px;min-height:50px;padding:8px 14px;
+  background:var(--card);color:var(--text);text-decoration:none;font:500 1rem/1.3 var(--f-ui);
+}
+.chapters a:hover{color:var(--blue)}
+.ch-n{font:600 1.125rem/1 var(--f-display);color:var(--dim);font-variant-numeric:tabular-nums}
+.chapters .chev{width:16px;height:16px}
+.hub-row{display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;color:var(--blue);text-decoration:none;font:600 1rem/1.3 var(--f-ui)}
+.hub-row span{flex:1;min-width:0}
+.hub-row:hover{background:var(--blue-d)}
+.chev{width:20px;height:20px;flex-shrink:0;color:var(--dim)}
+.hub-row .chev{color:currentColor}
+
+@media (max-width:359px){
+  .tt-art{gap:2px}
+  .tool-tile{padding:12px}
+  .seg button{min-width:44px;padding:0 9px}
+}
+/* Wide screens: tag, exams and tools on the left; the reviewer on the right */
+@media (min-width:920px){
+  .hub{max-width:1040px}
+  .hub-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 40px;align-items:start}
+  .hub-col + .hub-col > .hub-sec:first-child{margin-top:0}
+}
+
+/* Field tool screen */
+#toolScreen{flex:1;display:none;flex-direction:column;overflow:hidden;background:var(--bg)}
+.tool-header{
+  display:flex;align-items:center;gap:6px;min-height:56px;
+  padding:max(6px,env(safe-area-inset-top)) 12px 6px 6px;background:var(--panel);
+}
+.tool-back{
+  flex-shrink:0;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;
+  border:0;border-radius:12px;background:transparent;color:var(--text);cursor:pointer;
+}
+.tool-back svg{width:22px;height:22px}
+.tool-back:hover{background:var(--card)}
+.tool-title{
+  flex:1;min-width:0;margin:0;font:600 1.375rem/1.1 var(--f-display);color:var(--text);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.tool-share{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;
+  border-radius:10px;border:1px solid var(--border2);background:var(--card);color:var(--text);
+  font:600 .9375rem/1 var(--f-ui);cursor:pointer;
+}
+.tool-share svg{width:17px;height:17px}
+.tool-share:hover{border-color:var(--blue);color:var(--blue)}
+.tool-bar{padding:4px 16px 0;background:var(--panel);border-bottom:1px solid var(--border)}
+.tool-bar:empty{display:none}
+.tool-scroll{flex:1;overflow-y:auto;padding:4px 16px 56px}
+/* START triage tool */
+.st-wrap{max-width:560px;margin:0 auto;padding-top:20px}
+.st-step{font:600 1rem var(--f-display);color:var(--dim);margin:0 0 6px}
+.st-q{margin:0 0 6px;font:600 2rem/1.1 var(--f-display);color:var(--text)}
+.st-sub{margin:0 0 22px;font:400 1.0625rem/1.5 var(--f-ui);color:var(--dim)}
+.st-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.st-btn{
+  min-height:72px;border-radius:16px;border:1.5px solid var(--border2);background:var(--card);color:var(--text);
+  cursor:pointer;font:600 1.75rem/1 var(--f-display);transition:border-color .15s ease,background-color .15s ease;
+}
+.st-btn:hover{border-color:var(--text)}
+.st-btn:active{background:var(--card2)}
+.st-link{
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:10px;padding:0 4px;border:0;background:transparent;
+  color:var(--blue);cursor:pointer;font:600 1rem var(--f-ui);
+}
+.st-link svg{width:17px;height:17px}
+.st-h{margin:26px 0 10px;font:600 1.375rem/1.1 var(--f-display);color:var(--text)}
+.st-path{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
+.st-path li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--card);font:400 1rem/1.4 var(--f-ui);color:var(--text)}
+.st-path b{flex-shrink:0;font:600 1.0625rem var(--f-display)}
+.st-path .ans-yes{color:var(--green)}
+.st-path .ans-no{color:var(--red)}
+.st-result{padding:20px 20px 18px;border-radius:16px;color:#fff}
+.st-result.res-red{background:var(--tri-red)}
+.st-result.res-yellow{background:var(--tri-yellow);color:var(--stock-ink)}
+.st-result.res-green{background:var(--tri-green)}
+.st-result.res-black{background:var(--tri-black);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.st-cat{font:700 3rem/1 var(--f-display)}
+.st-col{margin-top:4px;font:600 1.25rem var(--f-display);opacity:.9}
+.st-acts{margin:0;padding-left:1.15em;font:400 1.0625rem/1.55 var(--f-ui);color:var(--text)}
+.st-acts li{margin-bottom:6px}
+.st-next{margin-top:24px}
+
+/* METHANE report tool */
+.mt-letters{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:4px 0 12px}
+.mt-letters a{
+  display:flex;align-items:center;justify-content:center;height:40px;border-radius:10px;border:1px solid var(--border2);
+  color:var(--dim);text-decoration:none;font:700 1.25rem/1 var(--f-display);
+}
+.mt-letters a.done{background:var(--text);border-color:var(--text);color:var(--bg)}
+.mt-wrap{max-width:620px;margin:0 auto;padding-top:14px}
+.mt-intro{margin:0 2px 14px;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
+.mt-sec{margin-bottom:12px;padding:14px;border-radius:16px;background:var(--card);border:1px solid var(--border2);scroll-margin-top:12px}
+.mt-sec.done{border-color:var(--green)}
+.mt-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.mt-ltr{
+  flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:var(--panel);border:1px solid var(--border2);color:var(--text);font:700 1.375rem/1 var(--f-display);
+}
+.mt-sec.done .mt-ltr{background:var(--green-d);border-color:var(--green);color:var(--green)}
+.mt-h{font:600 1.25rem/1.1 var(--f-display);color:var(--text)}
+.mt-hint{margin-top:2px;font:400 .9375rem/1.35 var(--f-ui);color:var(--dim)}
+.mt-label{display:block;margin:12px 2px 6px;font:500 .9375rem var(--f-ui);color:var(--dim)}
+.mt-input{
+  display:block;width:100%;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--border2);
+  background:var(--panel);color:var(--text);font:400 1rem/1.4 var(--f-ui);outline:none;
+}
+.mt-input:focus{border-color:var(--blue);box-shadow:var(--focus)}
+textarea.mt-input{min-height:64px;resize:vertical}
+.mt-input::placeholder{color:var(--dim);opacity:.8}
+.mt-row{display:flex;gap:8px}
+.mt-row .mt-input{flex:1;min-width:0}
+.mt-gps{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:0 14px;border-radius:10px;border:1px solid var(--border2);background:var(--panel);color:var(--text);cursor:pointer;font:600 .9375rem var(--f-ui)}
+.mt-gps svg{width:16px;height:16px}
+.mt-gps:disabled{opacity:.6;cursor:progress}
+.mt-chips{display:flex;flex-wrap:wrap;gap:8px}
+.mt-chips button,.mt-seg button{
+  min-height:40px;padding:0 13px;border-radius:999px;border:1px solid var(--border2);background:transparent;color:var(--text);
+  cursor:pointer;font:500 .9375rem/1 var(--f-ui);
+}
+.mt-chips button[aria-pressed="true"],.mt-seg button[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
+.mt-seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mt-seg button{border-radius:10px;min-height:48px;font-weight:600}
+.mt-count{display:flex;align-items:center;gap:10px;padding:8px 0}
+.mt-count + .mt-count{border-top:1px solid var(--border)}
+.mt-sw{flex-shrink:0;width:14px;height:36px;border-radius:4px}
+.mt-sw.red{background:var(--tri-red)} .mt-sw.yellow{background:var(--tri-yellow)} .mt-sw.green{background:var(--tri-green)} .mt-sw.black{background:var(--tri-black);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.mt-cl{flex:1;min-width:0;font:600 1.125rem/1.1 var(--f-display);color:var(--text)}
+.mt-cl small{display:block;font:400 .875rem var(--f-ui);color:var(--dim)}
+.mt-step{width:44px;height:44px;border-radius:10px;border:1px solid var(--border2);background:var(--panel);color:var(--text);cursor:pointer;font:600 1.5rem/1 var(--f-display)}
+.mt-num{width:56px;height:44px;text-align:center;border-radius:10px;border:1px solid var(--border2);background:transparent;color:var(--text);font:600 1.25rem var(--f-display);-moz-appearance:textfield}
+.mt-num::-webkit-outer-spin-button,.mt-num::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.mt-total{margin-top:6px;text-align:right;font:400 .9375rem var(--f-ui);color:var(--dim)}
+.mt-total b{font:600 1.25rem var(--f-display);color:var(--text)}
+.mt-out{margin-top:18px;padding:14px;border-radius:16px;background:var(--panel);border:1px solid var(--border2)}
+.mt-out h2{margin:0 0 8px;font:600 1.25rem var(--f-display);color:var(--text)}
+#mtReport{margin:0;white-space:pre-wrap;word-break:break-word;font:400 .9375rem/1.55 var(--f-ui);color:var(--text)}
+.mt-acts{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-top:14px}
+.mt-acts button{min-height:48px;border-radius:12px;border:1px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;font:600 1.0625rem/1 var(--f-display)}
+.mt-acts .pri{background:var(--primary-bg);border-color:var(--primary-bg);color:var(--primary-fg)}
+.mt-msg{margin:8px 2px 0;font:400 .875rem var(--f-ui);color:var(--red)}
+
+/* Toast: bottom centre, above the question nav, so it never covers the header */
+#toastContainer{
+  position:fixed;left:50%;bottom:92px;transform:translateX(-50%);z-index:1000;
+  display:flex;flex-direction:column;align-items:center;gap:6px;max-width:calc(100vw - 32px);pointer-events:none;
+}
+.toast{
+  display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+  background:var(--toast-bg);border:1px solid var(--toast-border);box-shadow:var(--shadow-sm);
+  font:500 .9375rem/1.2 var(--f-ui);color:var(--text);white-space:nowrap;
+  opacity:0;animation:slideIn .15s ease forwards, fadeOut .2s ease 1.3s forwards;
+}
+.toast svg{width:16px;height:16px}
+@keyframes slideIn{to{opacity:1}}
+@keyframes fadeOut{to{opacity:0}}
+.toast.success{border-color:var(--green)} .toast.success svg{color:var(--green)}
+.toast.info{border-color:var(--blue)}
+.toast.warning{border-color:var(--yellow)} .toast.warning svg{color:var(--yellow)}
+
+/* Exam screen */
+#examScreen,#resultsScreen{flex:1;display:none;flex-direction:column;overflow:hidden;background:var(--bg)}
+#examScreen.active,#resultsScreen.active{display:flex}
+.exam-header{
+  flex-shrink:0;height:56px;display:flex;align-items:center;gap:6px;padding:0 10px 0 6px;
+  background:var(--panel);border-bottom:1px solid var(--border);position:relative;z-index:50;
+}
+.eh-left{display:flex;align-items:center;gap:8px;flex:1;min-width:0;padding-left:6px}
+.hdr-brand{display:none}
+.hdr-exam{min-width:0;font:600 1.25rem/1.1 var(--f-display);color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-mode{flex-shrink:0;display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;font:600 .8125rem/1 var(--f-ui)}
+.hdr-mode svg{display:none}
+.hdr-mode.m-exam{color:var(--blue);background:var(--blue-d)}
+.hdr-mode.m-study{color:var(--green);background:var(--green-d)}
+.eh-center{flex-shrink:0}
+.hdr-timer{min-width:56px;padding:6px 6px;border-radius:8px;text-align:center;font:600 1.125rem/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--dim)}
+.hdr-timer.warning{color:var(--yellow);background:var(--yellow-d)}
+.eh-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.hdr-themes{display:flex;gap:8px;padding:0 6px}
+.hdr-themes .tp{width:18px;height:18px;border-width:1.5px;box-shadow:none}
+.hbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;min-width:40px;padding:0 12px;
+  border-radius:10px;border:1px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;font:600 .9375rem/1 var(--f-ui);
+}
+.hbtn svg{width:17px;height:17px}
+.hbtn:hover{background:var(--card)}
+.hbtn-flag.flagged{color:var(--yellow);border-color:var(--yellow);background:var(--yellow-d)}
+.sb-toggle{
+  display:none;width:44px;height:44px;padding:0;border:0;border-radius:12px;background:transparent;color:var(--text);
+  cursor:pointer;align-items:center;justify-content:center;flex-shrink:0;
+}
+.sb-toggle svg{width:22px;height:22px}
+.sb-toggle:hover{background:var(--card)}
+
+.exam-body{flex:1;display:flex;overflow:hidden;position:relative}
+.sidebar{width:236px;flex-shrink:0;display:flex;flex-direction:column;background:var(--panel);border-right:1px solid var(--border);transition:transform .25s ease}
+.sb-hdr{padding:14px 14px 12px;border-bottom:1px solid var(--border)}
+.sb-ttl{margin:0 0 10px;font:600 1.25rem/1 var(--f-display);color:var(--text)}
+.sb-filters{display:flex;gap:6px;margin-bottom:12px}
+.sb-filter-btn{
+  flex:1;min-height:34px;padding:0 6px;border-radius:8px;border:1px solid var(--border2);background:transparent;
+  color:var(--dim);cursor:pointer;font:600 .8125rem/1 var(--f-ui);
+}
+.sb-filter-btn:hover{color:var(--text)}
+.sb-filter-btn.active{background:var(--text);border-color:var(--text);color:var(--bg)}
+.sb-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
+.sb-leg{display:flex;align-items:center;gap:7px;font:400 .8125rem var(--f-ui);color:var(--dim)}
+.leg-dot{width:12px;height:12px;border-radius:4px;border:1.5px solid}
+.ld-unseen{border-color:var(--border2)}
+.ld-current{border-color:var(--blue);background:var(--blue)}
+.ld-done{border-color:var(--green);background:var(--green-d)}
+.ld-flag{border-color:var(--yellow);background:var(--yellow-d)}
+.sb-scroll{flex:1;overflow-y:auto;padding:12px 14px}
+.q-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.qn{
+  aspect-ratio:1;min-height:36px;position:relative;border-radius:8px;border:1.5px solid var(--border2);background:transparent;
+  color:var(--dim);cursor:pointer;font:600 1rem/1 var(--f-display);font-variant-numeric:tabular-nums;
+}
+.qn:hover{color:var(--text);border-color:var(--dim)}
+.qn.done{border-color:var(--green);background:var(--green-d);color:var(--green)}
+.qn.flg{border-color:var(--yellow);background:var(--yellow-d);color:var(--yellow)}
+.qn.cur{border-color:var(--blue);background:var(--blue);color:#fff}
+.flag-pip{position:absolute;top:3px;right:3px;width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+.sb-stats{display:flex;flex-direction:column;gap:4px;padding:10px 14px;border-top:1px solid var(--border)}
+.sb-stat{display:flex;justify-content:space-between;font:400 .875rem var(--f-ui);color:var(--dim)}
+.sb-stat .ss-val{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+
+.q-main{flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.q-scroll{flex:1;overflow-y:auto;padding:16px 18px 32px}
+.q-scroll > *{max-width:680px;margin-left:auto;margin-right:auto}
+.q-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.q-badge{flex-shrink:0;font:600 1rem/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--dim)}
+.q-pbar{flex:1;height:4px;border-radius:2px;background:var(--border2);overflow:hidden}
+.q-pfill{height:100%;width:0;background:var(--blue);transition:width .3s ease}
+.q-box{margin-bottom:20px}
+#qText{display:block;font:500 1.3125rem/1.45 var(--f-ui);color:var(--text)}
+.study-watermark{display:none}
+
+.opts{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.opt{
+  display:flex;align-items:stretch;overflow:hidden;cursor:pointer;
+  border:1.5px solid var(--border2);border-radius:14px;background:var(--card);
+  transition:border-color .15s ease,background-color .15s ease;
+}
+.opt:hover{border-color:var(--dim)}
+.opt-letter{
+  flex-shrink:0;align-self:center;width:32px;height:32px;margin-left:12px;border-radius:50%;border:1.5px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;font:700 1rem/1 var(--f-display);color:var(--dim);
+}
+.opt-wrap{flex:1;min-width:0;min-height:58px;display:flex;align-items:center;gap:10px;padding:14px 14px 14px 12px;cursor:pointer}
+.opt-txt{flex:1;font:400 1.0625rem/1.45 var(--f-ui);color:var(--text)}
+.opt.selected{border-color:var(--blue);background:var(--blue-d)}
+.opt.selected .opt-letter{background:var(--blue);border-color:var(--blue);color:#fff}
+.opt.eliminated{opacity:.55}
+.opt.eliminated .opt-txt{text-decoration:line-through;color:var(--dim)}
+.elim-btn{
+  flex-shrink:0;width:40px;border:0;border-right:1px solid var(--border);background:transparent;color:var(--dim);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.elim-btn svg{width:16px;height:16px}
+.elim-btn:hover{color:var(--red);background:var(--red-d)}
+.opt.rev-correct{border-color:var(--green);background:var(--green-d)}
+.opt.rev-correct .opt-letter{background:var(--green);border-color:var(--green);color:#fff}
+.opt.rev-wrong{border-color:var(--red);background:var(--red-d)}
+.opt.rev-wrong .opt-letter{background:var(--red);border-color:var(--red);color:#fff}
+.rev-tag{flex-shrink:0;display:inline-flex;align-items:center;gap:4px;font:600 .875rem/1 var(--f-ui)}
+.rev-tag svg{width:15px;height:15px}
+.rev-tag-ok,.rev-tag-ans{color:var(--green)}
+.rev-tag-ng{color:var(--red)}
+
+.study-actions{display:flex;gap:8px;margin-top:4px;margin-bottom:14px}
+.study-btn{
+  flex:1;min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--border2);background:transparent;color:var(--text);
+  cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;font:600 .9375rem/1 var(--f-ui);
+}
+.study-btn svg{width:17px;height:17px}
+.study-btn:hover:not(:disabled){background:var(--card)}
+.study-btn:disabled{opacity:.45;cursor:not-allowed}
+.study-btn.primary{border-color:var(--blue);color:var(--blue)}
+.study-btn.primary:hover:not(:disabled){background:var(--blue-d)}
+.confidence-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.conf-label{flex-basis:100%;margin-bottom:2px;font:500 .9375rem var(--f-ui);color:var(--dim)}
+.confidence-btn{
+  display:inline-flex;align-items:center;gap:5px;min-height:36px;padding:0 12px;border-radius:999px;
+  border:1px solid var(--border2);background:transparent;color:var(--dim);cursor:pointer;font:600 .875rem/1 var(--f-ui);
+}
+.confidence-btn svg{width:15px;height:15px}
+.confidence-btn:hover{color:var(--text)}
+.confidence-btn.active{color:var(--text);border-color:var(--text);background:var(--card)}
+.confidence-btn[data-level="high"].active{color:var(--green);border-color:var(--green);background:var(--green-d)}
+.confidence-btn[data-level="low"].active{color:var(--red);border-color:var(--red);background:var(--red-d)}
+#expArea{margin-bottom:14px}
+.study-exp{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border2);border-left:4px solid var(--green);animation:fadeIn .2s ease}
+.exp-label{display:block;margin-bottom:6px;font:600 1.125rem/1 var(--f-display);color:var(--green)}
+.exp-body{font:400 1rem/1.55 var(--f-ui);color:var(--text)}
+.exp-conf{margin-top:10px;font:400 .9375rem var(--f-ui);color:var(--dim)}
+.study-hint{padding:2px 2px 0;font:400 .9375rem/1.5 var(--f-ui);color:var(--dim)}
+.study-hint.has-hint{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border2);border-left:4px solid var(--yellow);color:var(--text);cursor:pointer}
+.hint-cta{margin-top:8px;font:600 .9375rem var(--f-ui);color:var(--blue)}
+
+.q-nav{
+  flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 16px max(10px,env(safe-area-inset-bottom));background:var(--panel);border-top:1px solid var(--border);position:relative;z-index:30;
+}
+.nav-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;min-width:112px;padding:0 18px;
+  border-radius:12px;border:1px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;font:600 1.125rem/1 var(--f-display);
+}
+.nav-btn svg{width:18px;height:18px}
+.nav-btn:disabled{opacity:.4;cursor:not-allowed}
+.nav-prev:hover:not(:disabled){background:var(--card)}
+.nav-next{background:var(--primary-bg);border-color:var(--primary-bg);color:var(--primary-fg)}
+.nav-next:hover:not(:disabled){filter:brightness(1.08)}
+.nav-ctr{font:600 1rem var(--f-display);font-variant-numeric:tabular-nums;color:var(--dim)}
+
+/* Modals: a bottom sheet on phones, centred on wider screens */
+.modal-bg{position:fixed;inset:0;z-index:200;display:none;align-items:flex-end;justify-content:center;padding:16px;background:var(--modal-bg)}
+.modal-bg.open{display:flex;animation:fadeIn .2s ease}
+@media(min-width:560px){.modal-bg{align-items:center}}
+.modal{width:100%;max-width:420px;max-height:90vh;overflow-y:auto;padding:22px 20px 18px;border-radius:20px;background:var(--card);border:1px solid var(--border2);box-shadow:var(--shadow)}
+.modal-ico{display:none}
+.modal-ttl{margin-bottom:6px;font:600 1.75rem/1.1 var(--f-display);color:var(--text)}
+.modal-sub{margin-bottom:16px;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
+.modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:0 0 18px;background:var(--border2);border:1px solid var(--border2);border-radius:12px;overflow:hidden}
+.ms-box{padding:12px 8px;text-align:center;background:var(--card)}
+.ms-num{font:600 1.75rem/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--text)}
+.ms-lbl{margin-top:4px;font:400 .8125rem var(--f-ui);color:var(--dim)}
+.modal-btns{display:flex;gap:10px}
+.mbtn{flex:1;min-height:48px;border-radius:12px;border:1px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;font:600 1.125rem/1 var(--f-display)}
+.mbtn-cancel:hover{background:var(--card2)}
+.mbtn-submit{background:var(--primary-bg);border-color:var(--primary-bg);color:var(--primary-fg)}
+.mbtn-submit:hover{filter:brightness(1.08)}
+
+/* Results screen */
+.res-hdr{flex-shrink:0;display:flex;align-items:center;gap:10px;min-height:56px;padding:6px 12px 6px 16px;background:var(--panel);border-bottom:1px solid var(--border)}
+.res-ttl{font:600 1.375rem/1.1 var(--f-display);color:var(--text)}
+.res-ttl svg{display:none}
+#resExamName{flex:1;min-width:0;font:400 .9375rem var(--f-ui);color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.res-back{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:10px;
+  border:1px solid var(--border2);background:var(--card);color:var(--text);cursor:pointer;font:600 .9375rem/1 var(--f-ui);
+}
+.res-back svg{width:17px;height:17px}
+.res-scroll{flex:1;overflow-y:auto;padding:18px 16px 48px}
+#resContent{max-width:680px;margin:0 auto}
+.score{padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--border2)}
+.score-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.score-pct{font:700 3.5rem/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--text)}
+.score-verdict{font:600 1.375rem/1.15 var(--f-display)}
+.score-verdict.pass{color:var(--green)}
+.score-verdict.fail{color:var(--red)}
+.score-note{margin-top:2px;font:400 .9375rem var(--f-ui);color:var(--dim)}
+.score-bar{display:flex;gap:2px;height:10px;margin:16px 0 12px;border-radius:5px;overflow:hidden;background:var(--border2)}
+.score-bar span{display:block;min-width:4px}
+.sb-c{background:var(--green)} .sb-x{background:var(--red)} .sb-o{background:var(--dim)}
+.score-legend{display:flex;gap:18px;flex-wrap:wrap;font:400 .9375rem var(--f-ui);color:var(--dim)}
+.score-legend b{margin-right:4px;font:600 1.25rem var(--f-display);font-variant-numeric:tabular-nums;color:var(--text)}
+.res-filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:22px 0 12px}
+.res-filters button{
+  min-height:38px;padding:0 13px;border-radius:999px;border:1px solid var(--border2);background:transparent;color:var(--dim);
+  cursor:pointer;display:inline-flex;align-items:center;gap:6px;font:600 1.0625rem/1 var(--f-display);
+}
+.res-filters button svg{width:16px;height:16px}
+.res-filters button:hover{color:var(--text)}
+.res-filters button[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--bg)}
+.res-filters .res-print{margin-left:auto;border-color:transparent}
+.rq-list{display:flex;flex-direction:column;gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
+.rq-item{background:var(--card)}
+.rq-row{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;cursor:pointer}
+.rq-row:hover{background:var(--card2)}
+.rq-n{flex-shrink:0;min-width:1.4em;font:600 1rem/1.5 var(--f-display);font-variant-numeric:tabular-nums;color:var(--dim)}
+.rq-dot{flex-shrink:0;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.rq-dot svg{width:14px;height:14px}
+.dot-c{background:var(--green-d);color:var(--green)}
+.dot-x{background:var(--red-d);color:var(--red)}
+.dot-o{background:var(--card2);color:var(--dim)}
+.rq-q{flex:1;min-width:0;font:400 1rem/1.5 var(--f-ui);color:var(--text)}
+.rq-badge{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rq-chev{flex-shrink:0;width:20px;height:20px;margin-top:2px;color:var(--dim);transition:transform .2s ease}
+.rq-row.expanded .rq-chev{transform:rotate(180deg)}
+.rq-body{display:none;padding:0 16px 16px}
+.rq-body.open{display:block}
+.res-opts{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.res-opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:1px solid var(--border2);font:400 .9375rem/1.4 var(--f-ui)}
+.res-opt.ro-correct{border-color:var(--green);background:var(--green-d)}
+.res-opt.ro-wrong{border-color:var(--red);background:var(--red-d)}
+.ro-ltr{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font:700 .9375rem/1 var(--f-display);color:var(--dim)}
+.res-opt.ro-correct .ro-ltr{background:var(--green);border-color:var(--green);color:#fff}
+.res-opt.ro-wrong .ro-ltr{background:var(--red);border-color:var(--red);color:#fff}
+.ro-tag{flex-shrink:0;display:inline-flex;align-items:center;gap:4px;font:600 .8125rem var(--f-ui)}
+.ro-tag svg{width:14px;height:14px}
+.exp-box{padding:12px 14px;border-radius:12px;background:var(--card2);border-left:4px solid var(--green)}
+.exp-box .exp-label{margin-bottom:6px}
+.res-empty{padding:18px 16px;background:var(--card);font:400 1rem var(--f-ui);color:var(--dim)}
+
+/* Responsive */
+@media(max-width:720px){
+  .sidebar{position:fixed;top:56px;left:0;bottom:0;z-index:40;transform:translateX(-100%);box-shadow:8px 0 32px rgba(0,0,0,.4)}
+  .sidebar.open{transform:translateX(0)}
+  .sb-toggle{display:flex!important}
+  .eh-left{padding-left:0}
+  .hdr-themes{display:none}
+  .hbtn-flag .btn-txt{display:none}
+  .hbtn-flag{padding:0}
+  .q-nav{padding-left:12px;padding-right:12px}
+  .nav-btn{min-width:100px}
+}
+@media(max-width:380px){
+  .hdr-mode{display:none}
+  .nav-btn{min-width:88px;padding:0 12px}
+}
+
+/* Toggle switch for hints */
+.toggle{position:relative;display:inline-block;width:44px;height:24px}
+.toggle input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--border2);transition:.3s;border-radius:24px}
+.slider:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background-color:white;transition:.3s;border-radius:50%}
+input:checked+.slider{background-color:var(--green)}
+input:checked+.slider:before{transform:translateX(20px)}
+
+/* Loading skeleton */
+.skeleton{
+  background:linear-gradient(90deg, var(--card) 25%, var(--card2) 50%, var(--card) 75%);
+  background-size:200% 100%;animation:loading 1.5s infinite;
+  border-radius:8px;min-height:1em;
+}
+@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skeleton-text{width:100%;height:1.2em;margin-bottom:8px}
+.skeleton-text:last-child{width:70%;margin-bottom:0}
+.skeleton-opt{height:44px;margin-bottom:7px}
+.skeleton-opt:last-child{margin-bottom:0}
+
+/* Print styles */
+@media print{
+  body{background:#fff;color:#000;font-size:12px}
+  .exam-header,.q-nav,.sidebar,.hbtn,.sb-toggle{display:none !important}
+  #examScreen{display:block !important;overflow:visible}
+  .q-scroll{overflow:visible;padding:0}
+  .q-box{border-left:4px solid #000;background:#fff}
+  .opt{border:1px solid #ccc;background:#fff}
+  .opt-letter{background:#eee}
+}
+
+/* Lucide icon sizing within common containers (also in styles.css) */
+.icon-btn svg.lucide,
+.toggle-btn svg.lucide { width: 60%; height: 60%; }
+.btn-action svg.lucide,
+.study-btn svg.lucide,
+.view-tab svg.lucide { width: 1.5em; height: 1.5em; }
+
+.stats-badge svg.lucide,
+.popup-title svg.lucide,
+.amoled-badge svg.lucide,
+.res-ttl svg.lucide { width: 1em; height: 1em; margin-right: 4px; }
+</style>
 </head>
 <body>
 
@@ -79,63 +794,104 @@
 
 <!-- Selector -->
 <div id="selectorScreen">
-  <!-- Theme toggle upper left -->
-  <div class="theme-top">
-    <div class="sel-theme-row" role="group" aria-label="Theme selection">
-      <span class="sel-theme-lbl">Theme</span>
-      <button class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme" aria-pressed="false"></button>
-      <button class="tp tp-light" id="s-tp-light" onclick="setTheme('light')" aria-label="Light theme" aria-pressed="false"></button>
-      <button class="tp tp-sepia" id="s-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme" aria-pressed="false"></button>
-      <button class="tp tp-green" id="s-tp-green" onclick="setTheme('green')" aria-label="Green theme" aria-pressed="false"></button>
+  <div class="hub">
+    <div class="hub-top">
+      <a href="courses.html" class="hub-back"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Courses</a>
+      <div class="sel-theme-row" role="group" aria-label="Theme">
+        <button class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme" aria-pressed="false"></button>
+        <button class="tp tp-light" id="s-tp-light" onclick="setTheme('light')" aria-label="Light theme" aria-pressed="false"></button>
+        <button class="tp tp-sepia" id="s-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme" aria-pressed="false"></button>
+        <button class="tp tp-green" id="s-tp-green" onclick="setTheme('green')" aria-label="Green theme" aria-pressed="false"></button>
+      </div>
     </div>
-  </div>
 
-  <div class="sel-logo"><span class="brand-name">MCI</span> Review</div>
-  <div class="sel-sub">Mass Casualty Incident Management</div>
-  
-  <!-- Mode row - identical size -->
-  <div class="mode-row" role="group" aria-label="Study mode selection">
-    <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">
-      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study Mode
-      <span class="mode-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Hints & Review answers</span>
-    </button>
-    <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">
-      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam Mode
-      <span class="mode-hint">No hints • Timed • Submit to score</span>
-    </button>
-  </div>
+    <div class="hub-cols">
+      <div class="hub-col">
+        <div class="tag-wrap">
+          <header class="tag">
+            <span class="tag-hole" aria-hidden="true"></span>
+            <h1 class="tag-title">MCI</h1>
+            <p class="tag-sub">Mass casualty incident management</p>
+            <div class="tag-strips" aria-hidden="true">
+              <span class="s-black">Expectant</span>
+              <span class="s-red">Immediate</span>
+              <span class="s-yellow">Delayed</span>
+              <span class="s-green">Minor</span>
+            </div>
+          </header>
+        </div>
+        <a class="hub-disclaimer" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
 
-  <div class="exam-q-selector">
-    <label for="qCount">Number of Questions:</label>
-    <select id="qCount" class="q-select">
-        <option value="20">20 Questions</option>
-        <option value="40" selected>40 Questions</option>
-        <option value="9999">All Questions</option>
-    </select>
-  </div>
+        <section class="hub-sec" aria-labelledby="examH">
+          <div class="hub-head"><h2 class="hub-h" id="examH">Course exams</h2><span class="hub-aside">3 question banks</span></div>
+          <div class="hub-panel">
+            <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank">
+              <button type="button" data-bank="exam1" aria-pressed="true">Exam 1</button>
+              <button type="button" data-bank="exam2" aria-pressed="false">Exam 2</button>
+              <button type="button" data-bank="practice" aria-pressed="false">Practice</button>
+            </div>
+            <p class="bank-about" id="bankAbout" aria-live="polite">87 questions on core MCI operations.</p>
+            <div class="mode-row" role="group" aria-label="Exam mode">
+              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Study<span class="mode-hint">Hints and answers as you go</span></button>
+              <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>
+            </div>
+            <div class="qcount">
+              <span class="qcount-l" id="qCountL">Questions</span>
+              <div class="seg" id="qSeg" role="group" aria-labelledby="qCountL">
+                <button type="button" data-n="20" aria-pressed="false">20</button>
+                <button type="button" data-n="40" aria-pressed="true">40</button>
+                <button type="button" data-n="9999" aria-pressed="false" id="qAll">All 87</button>
+              </div>
+              <input type="hidden" id="qCount" value="40">
+            </div>
+            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start studying</button>
+            <p class="hub-last" id="hubLast" hidden></p>
+          </div>
+        </section>
 
-  <div class="exam-cards" role="list">
-    <div class="exam-card" onclick="startExam('../src/MCI/MCI-exam1.json', 'MCI Exam 1')" role="listitem" tabindex="0" aria-label="Start MCI Exam 1">
-      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg></div>
-      <div class="ec-title">MCI Exam 1</div>
-      <div class="ec-meta">87 core MCI operations questions · Exam & Study modes</div>
-      <span class="ec-tag tag-exam">Exam 1</span>
-    </div>
-    <div class="exam-card" onclick="startExam('../src/MCI/MCI.json', 'MCI Exam 2')" role="listitem" tabindex="0" aria-label="Start MCI Exam 2">
-      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#siren"/></svg></div>
-      <div class="ec-title">MCI Exam 2</div>
-      <div class="ec-meta">66 integrated scenario questions · Exam & Study modes</div>
-      <span class="ec-tag tag-exam">Exam 2</span>
-    </div>
-    <div class="exam-card" onclick="startExam('../src/MCI/MCI-practice.json', 'MCI Practice Bank')" role="listitem" tabindex="0" aria-label="Start MCI Practice Bank">
-      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#clipboard-list"/></svg></div>
-      <div class="ec-title">MCI Practice Bank</div>
-      <div class="ec-meta">177 chapter questions & scenarios · Exam & Study modes</div>
-      <span class="ec-tag tag-exam">Practice</span>
+        <section class="hub-sec" aria-labelledby="toolsH">
+          <div class="hub-head"><h2 class="hub-h" id="toolsH">Field tools</h2><span class="hub-aside">Work offline</span></div>
+          <div class="tool-tiles">
+            <a class="tool-tile" href="#start-triage">
+              <span class="tt-art tt-start" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span class="tt-title">START triage</span>
+              <span class="tt-sub">Triage one patient, step by step</span>
+            </a>
+            <a class="tool-tile" href="#methane">
+              <span class="tt-art tt-methane" aria-hidden="true"><i>M</i><i>E</i><i>T</i><i>H</i><i>A</i><i>N</i><i>E</i></span>
+              <span class="tt-title">METHANE report</span>
+              <span class="tt-sub">Build the report to send to control</span>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <div class="hub-col">
+        <section class="hub-sec" aria-labelledby="studyH">
+          <div class="hub-head"><h2 class="hub-h" id="studyH">MCI Reviewer</h2><span class="hub-aside">Cards, quizzes, drills</span></div>
+          <div class="hub-list">
+            <ol class="chapters" aria-label="Reviewer chapters">
+              <li><a href="../courses/mci/index.html#c01"><span class="ch-n">1</span><span>MCI Fundamentals &amp; Types of Disasters</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c02"><span class="ch-n">2</span><span>First-Due: Size-Up, CSCATTT &amp; METHANE</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c03"><span class="ch-n">3</span><span>ICS for EMS: Command Structure</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c04"><span class="ch-n">4</span><span>MCI Officer Roles &amp; Action Cards</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c05"><span class="ch-n">5</span><span>Scene Layout: Zones, Staging &amp; Patient Flow</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c06"><span class="ch-n">6</span><span>Triage I: START &amp; JumpSTART</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c07"><span class="ch-n">7</span><span>Triage II: SALT, Tags &amp; Re-Triage</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c08"><span class="ch-n">8</span><span>Treatment Area, Transport &amp; Hospital Distribution</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c09"><span class="ch-n">9</span><span>CBRNE I: HazMat Recognition, PPE &amp; Decon</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c10"><span class="ch-n">10</span><span>CBRNE II: Chemical Agents &amp; Antidotes</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c11"><span class="ch-n">11</span><span>CBRNE III: Biological &amp; Radiological/Nuclear</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c12"><span class="ch-n">12</span><span>Explosive &amp; Hostile Events: Blast, Active Shooter, TECC</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c13"><span class="ch-n">13</span><span>Special MCIs: Collapse, Crush, Crowds &amp; Natural Disasters</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/mci/index.html#c14"><span class="ch-n">14</span><span>Demobilization, Recovery &amp; Responder Resilience</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+            </ol>
+            <a class="hub-row" href="../courses/mci/index.html"><span>Open the MCI Reviewer</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
-  <a href="../courses/mci/index.html" class="back-link"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Open MCI Reviewer</a>
-  <a href="courses.html" class="back-link"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back to Courses</a>
 </div>
 
 <!-- Exam screen -->
@@ -161,21 +917,19 @@
         <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg> <span class="btn-txt">Flag</span>
       </button>
       <!-- Back button for study mode -->
-      <button class="hbtn hbtn-back" id="backBtn" onclick="confirmExit()" style="display:none"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back</button>
-      <button class="hbtn hbtn-end" id="endBtn" onclick="openEndModal()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg> <span class="btn-txt">End</span></button>
+      <button class="hbtn hbtn-back" id="backBtn" onclick="confirmExit()" style="display:none"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Exit</button>
+      <button class="hbtn hbtn-end" id="endBtn" onclick="openEndModal()">Submit</button>
     </div>
   </header>
   
   <div class="exam-body">
     <aside class="sidebar" id="sidebar" aria-label="Question navigator">
       <div class="sb-hdr">
-        <div class="sb-ttl">
-          <span>Navigator</span>
+        <h2 class="sb-ttl">Questions</h2>
+        <div class="sb-filters" role="group" aria-label="Show questions">
           <button class="sb-filter-btn active" data-filter="all" onclick="filterGrid('all')" aria-pressed="true">All</button>
-        </div>
-        <div class="sb-filters">
-          <button class="sb-filter-btn" data-filter="unanswered" onclick="filterGrid('unanswered')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-dot"/></svg></button>
-          <button class="sb-filter-btn" data-filter="flagged" onclick="filterGrid('flagged')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg></button>
+          <button class="sb-filter-btn" data-filter="unanswered" onclick="filterGrid('unanswered')" aria-pressed="false">To do</button>
+          <button class="sb-filter-btn" data-filter="flagged" onclick="filterGrid('flagged')" aria-pressed="false">Flagged</button>
         </div>
         <div class="sb-legend" aria-label="Question status legend">
           <div class="sb-leg"><div class="leg-dot ld-unseen" aria-hidden="true"></div>Unanswered</div>
@@ -217,22 +971,23 @@
 		<span id="qText" aria-live="polite">Loading…</span>
 		</div>
         
-        <!-- Study mode actions -->
-        <div id="studyActions" class="study-actions" style="display:none">
-          <button class="study-btn" id="hintBtn" onclick="showHint()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Show Hint</button>
-          <button class="study-btn primary" id="answerBtn" onclick="revealAnswer()" disabled><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Reveal Answer</button>
-        </div>
-        
         <div class="opts" id="optsList" role="radiogroup" aria-label="Answer choices"></div>
         
+        <div id="expArea" aria-live="polite"></div>
+
+        <!-- Study mode actions -->
+        <div id="studyActions" class="study-actions" style="display:none">
+          <button class="study-btn" id="hintBtn" onclick="showHint()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Show hint</button>
+          <button class="study-btn primary" id="answerBtn" onclick="revealAnswer()" disabled><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Reveal answer</button>
+        </div>
+        
         <!-- Confidence rating for study mode -->
-        <div id="confidenceRow" class="confidence-row" style="display:none" aria-label="How confident were you?">
+        <div id="confidenceRow" class="confidence-row" style="display:none" aria-label="How sure are you?">
+          <span class="conf-label" aria-hidden="true">How sure are you?</span>
           <button class="confidence-btn" data-level="high" onclick="setConfidence('high')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg> Sure</button>
           <button class="confidence-btn" data-level="medium" onclick="setConfidence('medium')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#message-circle-question"/></svg> Maybe</button>
           <button class="confidence-btn" data-level="low" onclick="setConfidence('low')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#frown"/></svg> Guessed</button>
         </div>
-        
-        <div id="expArea" aria-live="polite"></div>
       </div>
       
       <div class="q-nav">
@@ -247,9 +1002,9 @@
 <!-- Results screen -->
 <div id="resultsScreen">
   <div class="res-hdr">
-    <span class="res-ttl"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg> Exam Results</span>
+    <span class="res-ttl">Results</span>
     <span id="resExamName" aria-live="polite"></span>
-    <button class="res-back" onclick="goSelector()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> New Exam</button>
+    <button class="res-back" onclick="goSelector()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> MCI home</button>
   </div>
   <div class="res-scroll">
     <div id="resContent">
@@ -258,21 +1013,31 @@
   </div>
 </div>
 
+<!-- Field tool screen -->
+<div id="toolScreen">
+  <div class="tool-header">
+    <button type="button" class="tool-back" onclick="closeTool()" aria-label="Back to MCI"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg></button>
+    <h1 class="tool-title" id="toolTitleText">START triage</h1>
+    <button type="button" class="tool-share" onclick="shareToolLink(this)"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#link"/></svg> <span class="lbl">Share</span></button>
+  </div>
+  <div class="tool-bar" id="toolBar"></div>
+  <div class="tool-scroll" id="toolContainer"></div>
+</div>
 
 <!-- Modal -->
 <div class="modal-bg" id="endModal" onclick="if(event.target===this)closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg></div>
-    <div class="modal-ttl" id="modalTitle">Submit Exam Block?</div>
-    <div class="modal-sub">You are about to submit your answers. This action cannot be undone.</div>
+    <div class="modal-ttl" id="modalTitle">Submit your answers?</div>
+    <div class="modal-sub">You can't change answers after you submit.</div>
     <div class="modal-stats" aria-live="polite">
       <div class="ms-box"><div class="ms-num" id="mAns">0</div><div class="ms-lbl">Answered</div></div>
-      <div class="ms-box"><div class="ms-num" id="mUns">0</div><div class="ms-lbl">Unanswered</div></div>
+      <div class="ms-box"><div class="ms-num" id="mUns">0</div><div class="ms-lbl">To do</div></div>
       <div class="ms-box"><div class="ms-num" id="mFlg">0</div><div class="ms-lbl">Flagged</div></div>
     </div>
     <div class="modal-btns">
-      <button class="mbtn mbtn-cancel" onclick="closeModal()">Cancel</button>
-      <button class="mbtn mbtn-submit" onclick="submitExam()">Submit Answers</button>
+      <button class="mbtn mbtn-cancel" onclick="closeModal()">Keep going</button>
+      <button class="mbtn mbtn-submit" onclick="submitExam()">Submit</button>
     </div>
   </div>
 </div>
@@ -280,9 +1045,9 @@
 <!-- Exit Confirmation Modal -->
 <div class="modal-bg" id="exitModal" onclick="if(event.target===this)closeExitModal()" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle">
   <div class="modal">
-    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg></div>
-    <div class="modal-ttl" id="exitModalTitle">Leave Exam?</div>
-    <div class="modal-sub" id="exitModalSub">Your progress will be saved. You can resume later.</div>
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️</div>
+    <div class="modal-ttl" id="exitModalTitle">Leave this exam?</div>
+    <div class="modal-sub" id="exitModalSub">Your progress is saved. You can pick up where you left off.</div>
     <div class="modal-btns">
       <button class="mbtn mbtn-cancel" onclick="closeExitModal()">Stay</button>
       <button class="mbtn mbtn-submit" onclick="confirmExitNow()">Leave</button>
@@ -290,8 +1055,1240 @@
   </div>
 </div>
 
+<!-- Settings Modal for Hint Toggle -->
+<div class="modal-bg" id="settingsModal" onclick="if(event.target===this)closeSettingsModal()" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+  <div class="modal">
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#settings-2"/></svg>️</div>
+    <div class="modal-ttl" id="settingsModalTitle">Settings</div>
+    <div class="modal-sub">Customize your experience</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--border)">
+      <div>
+        <div style="font-weight:600">Hints (toasts) <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile-plus"/></svg></div>
+        <div style="font-size:.75rem;color:var(--muted)">Show quick feedback messages</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="hintsToggle" onchange="toggleHints()">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="modal-btns" style="margin-top:16px">
+      <button class="mbtn mbtn-cancel" onclick="closeSettingsModal()">Close</button>
+    </div>
+  </div>
+</div>
 
-<script>window.EXAM_CONFIG = { id: 'mci', qCountFallback: '40' };</script>
-<script src="exam-review.js"></script>
+<script>
+'use strict';
+
+// State management with persistence
+let ST = {
+  qs: [], idx: 0, answers: {}, elim: {}, marked: {}, name: '',
+  mode: 'exam', timerSec: 0, timerRef: null,
+  confidence: {}, hintsShown: {}, answersRevealed: {},
+  currentFilter: 'all', autoSaveInterval: null,
+  hintsEnabled: true
+};
+const THEMES = ['dark','light','sepia','green'];
+const STORAGE_KEY = 'mci-progress';
+
+// Theme management
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('mci-theme', t);
+  THEMES.forEach(th => {
+    const selBtn = document.getElementById(`s-tp-${th}`);
+    const hdrBtn = document.getElementById(`h-tp-${th}`);
+    if (selBtn) {
+      selBtn.classList.toggle('active', th === t);
+      selBtn.setAttribute('aria-pressed', th === t);
+    }
+    if (hdrBtn) {
+      hdrBtn.classList.toggle('active', th === t);
+      hdrBtn.setAttribute('aria-pressed', th === t);
+    }
+  });
+}
+
+// Initialize theme
+let savedTheme = localStorage.getItem('mci-theme');
+setTheme(THEMES.includes(savedTheme) ? savedTheme : 'dark');
+
+// Mode UI with persistence
+function setModeUI(m) {
+  ST.mode = m;
+  localStorage.setItem('mci-mode', m);
+  
+  const examBtn = document.getElementById('modeExamBtn');
+  const studyBtn = document.getElementById('modeStudyBtn');
+  
+  if (m === 'exam') {
+    examBtn.classList.add('active-exam');
+    examBtn.setAttribute('aria-pressed', 'true');
+    studyBtn.classList.remove('active-study');
+    studyBtn.setAttribute('aria-pressed', 'false');
+  } else {
+    studyBtn.classList.add('active-study');
+    studyBtn.setAttribute('aria-pressed', 'true');
+    examBtn.classList.remove('active-exam');
+    examBtn.setAttribute('aria-pressed', 'false');
+  }
+  document.getElementById('startBtn').textContent = m === 'exam' ? 'Start the exam' : 'Start studying';
+}
+
+// Load saved mode
+let savedMode = localStorage.getItem('mci-mode');
+setModeUI(['exam','study'].includes(savedMode) ? savedMode : 'study');
+
+// Question banks
+const BANKS = {
+  exam1:    { path: '../src/MCI/MCI-exam1.json',    name: 'MCI Exam 1',        label: 'Exam 1',            n: 87,  about: '87 questions on core MCI operations.' },
+  exam2:    { path: '../src/MCI/MCI.json',          name: 'MCI Exam 2',        label: 'Exam 2',            n: 66,  about: '66 integrated scenario questions.' },
+  practice: { path: '../src/MCI/MCI-practice.json', name: 'MCI Practice Bank', label: 'the practice bank', n: 177, about: '177 chapter questions and scenarios from the MCI Reviewer.' }
+};
+let bank = 'exam1';
+function setBank(k) {
+  bank = BANKS[k] ? k : 'exam1';
+  document.querySelectorAll('#bankSeg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.bank === bank));
+  document.getElementById('bankAbout').textContent = BANKS[bank].about;
+  document.getElementById('qAll').textContent = `All ${BANKS[bank].n}`;
+  localStorage.setItem('mci-bank', bank);
+}
+document.getElementById('bankSeg').addEventListener('click', e => {
+  const b = e.target.closest('button[data-bank]');
+  if (b) setBank(b.dataset.bank);
+});
+setBank(localStorage.getItem('mci-bank'));
+function startSelectedExam() {
+  startExam(BANKS[bank].path, BANKS[bank].name);
+}
+
+// Question count (20 / 40 / all), remembered on this device
+function setQCount(n) {
+  n = ['20', '40', '9999'].includes(String(n)) ? String(n) : '40';
+  document.getElementById('qCount').value = n;
+  document.querySelectorAll('#qSeg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.n === n));
+  localStorage.setItem('mci-qcount', n);
+}
+document.getElementById('qSeg').addEventListener('click', e => {
+  const b = e.target.closest('button[data-n]');
+  if (b) setQCount(b.dataset.n);
+});
+setQCount(localStorage.getItem('mci-qcount'));
+
+// "Last score" line on the hub, from the last submitted exam on this device
+function renderHubLast() {
+  const el = document.getElementById('hubLast');
+  let r = null;
+  try { r = JSON.parse(localStorage.getItem('mci-last-score')); } catch {}
+  if (!r || typeof r.pct !== 'number') { el.hidden = true; return; }
+  const days = Math.floor((new Date().setHours(0, 0, 0, 0) - new Date(r.t).setHours(0, 0, 0, 0)) / 86400000);
+  const when = days <= 0 ? 'today' : days === 1 ? 'yesterday'
+    : days < 7 ? `${days} days ago` : new Date(r.t).toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+  const where = Object.values(BANKS).find(b => b.name === r.exam);
+  el.innerHTML = `Last score <b class="${r.pct >= 75 ? 'ok' : 'low'}">${r.pct}%</b> on ${where ? where.label + ', ' : ''}${Number(r.n) || 0} questions, ${when}.`;
+  el.hidden = false;
+}
+renderHubLast();
+
+// Load hints toggle preference
+ST.hintsEnabled = localStorage.getItem('itls-hints-enabled') !== 'false';
+
+// Toast notification system - respects hints toggle
+function showToast(message, type = 'info', duration = 1500) {
+  if (!ST.hintsEnabled) return;
+  
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.setAttribute('role', 'status');
+  
+  const icons = { success: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>', info: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg>', warning: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>' };
+  toast.innerHTML = `<span class="toast-icon" aria-hidden="true">${icons[type] || '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg>'}</span><span>${escapeHtml(message)}</span>`;
+  
+  container.appendChild(toast);
+  
+  requestAnimationFrame(() => toast.classList.add('show'));
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 200);
+  }, duration);
+}
+
+// Screen manager
+function showScreen(s) {
+  document.getElementById('selectorScreen').style.display = s === 'sel' ? 'flex' : 'none';
+  document.getElementById('examScreen').classList.toggle('active', s === 'exam');
+  document.getElementById('resultsScreen').classList.toggle('active', s === 'res');
+  document.getElementById('toolScreen').style.display = s === 'tool' ? 'flex' : 'none';
+  
+  if (s === 'exam') {
+    document.getElementById('qText')?.focus?.();
+  }
+}
+
+// The field tools. Each has a direct link that can be shared: mci.html#start-triage · #methane
+const TOOL_VIEWS = {
+  'start-triage': { tool: () => renderStartTool(),   title: 'START triage' },
+  methane:        { tool: () => renderMethaneTool(), title: 'METHANE report' }
+};
+const DEFAULT_TITLE = document.title;
+let toolView = 'start-triage';
+const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function openTool(view) {
+  toolView = view;
+  const cfg = TOOL_VIEWS[view];
+  document.getElementById('toolTitleText').textContent = cfg.title;
+  document.title = cfg.title;
+  showScreen('tool');
+  document.getElementById('toolBar').innerHTML = '';
+  cfg.tool();
+  document.getElementById('toolContainer').scrollTop = 0;
+}
+
+// Back: if we got here from inside the MCI page, step back to where we came from.
+// If the page was opened on this view (a shared link), go to the MCI home instead
+// of leaving the app.
+function closeTool() {
+  if (history.state && history.state.mciInApp) { history.back(); return; }
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  lastRoute = '';
+  document.title = DEFAULT_TITLE;
+  showScreen('sel');
+}
+
+// Share (native share sheet on phones) or copy the direct link to what's on screen.
+async function shareToolLink(btn) {
+  const url = location.origin + location.pathname + '#' + toolView;
+  const title = TOOL_VIEWS[toolView].title;
+  if (navigator.share) {
+    try { await navigator.share({ title, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    const lbl = btn.querySelector('.lbl');
+    if (lbl) {
+      lbl.textContent = 'Link copied';
+      setTimeout(() => { lbl.textContent = 'Share'; }, 1600);
+    }
+  } catch {
+    window.prompt('Copy this link:', url);
+  }
+}
+
+let lastRoute = null;
+function routeFromHash() {
+  if (location.hash === lastRoute) return; // popstate and hashchange can both fire for one Back
+  lastRoute = location.hash;
+  const view = decodeURIComponent(location.hash.slice(1));
+  if (TOOL_VIEWS[view]) openTool(view);
+  else if (document.getElementById('toolScreen').style.display === 'flex') {
+    document.title = DEFAULT_TITLE;
+    showScreen('sel');
+  }
+}
+window.addEventListener('hashchange', routeFromHash);
+window.addEventListener('popstate', routeFromHash);
+
+// In-page links (#start-triage, #methane) add a history entry we can step back through.
+document.addEventListener('click', e => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.target) return;
+  const href = a.getAttribute('href');
+  if (href.length < 2 || href.startsWith('#mt-')) return;
+  e.preventDefault();
+  if (href !== location.hash) history.pushState({ mciInApp: true }, '', href);
+  routeFromHash();
+});
+
+/* ── START triage tool (same decision steps as the EMS tools version) ── */
+const ST_STEPS = {
+  walk:      { q: 'Can the patient walk?', sub: 'Tell everyone who can walk to move to a set point.', yes: 'GREEN', no: 'breathing' },
+  breathing: { q: 'Is the patient breathing?', sub: 'Look, listen and feel.', yes: 'rr', no: 'airway' },
+  airway:    { q: 'Open the airway. Does breathing start?', sub: 'Head-tilt chin-lift or jaw thrust. One attempt only.', yes: 'RED', no: 'BLACK' },
+  rr:        { q: 'Breathing faster than 30 a minute?', sub: 'Count for 15 seconds and multiply by 4.', yes: 'RED', no: 'perfusion' },
+  perfusion: { q: 'No radial pulse, or capillary refill over 2 seconds?', sub: 'Press the nail bed, release, and count the seconds until the colour returns.', yes: 'RED', no: 'mental' },
+  mental:    { q: 'Unable to follow simple commands?', sub: 'Ask them to squeeze your hand or open their eyes.', yes: 'RED', no: 'YELLOW' }
+};
+const ST_RESULTS = {
+  RED:    { cat: 'Immediate', col: 'Red', cls: 'res-red', acts: [
+    'First priority for the treatment area and for transport.',
+    'In triage, only open the airway, control severe bleeding and position the patient.',
+    'Goes on the red tarp, nearest the loading area.' ] },
+  YELLOW: { cat: 'Delayed', col: 'Yellow', cls: 'res-yellow', acts: [
+    'Serious but stable for now. Treatment can wait until the red patients are cared for.',
+    'Re-triage in the treatment area. A delayed patient can become immediate.' ] },
+  GREEN:  { cat: 'Minor', col: 'Green', cls: 'res-green', acts: [
+    'Walking wounded. Direct them to the collection point and the green area.',
+    'Keep them at a safe distance for re-assessment. They can still deteriorate.' ] },
+  BLACK:  { cat: 'Expectant', col: 'Black', cls: 'res-black', acts: [
+    'Not breathing after the airway is opened. No CPR during MCI triage.',
+    'Move the body only if it blocks access to a living patient. Mark it and move on.' ] }
+};
+let stStep = 'walk', stPath = [];
+
+function renderStartTool() {
+  document.querySelector('.tool-share').setAttribute('aria-label', 'Share a link to the START triage tool');
+  stStep = 'walk'; stPath = [];
+  drawStart();
+}
+function drawStart() {
+  const c = document.getElementById('toolContainer');
+  const pathHtml = stPath.length ? `<h2 class="st-h">Your answers</h2><ol class="st-path">${stPath.map(p =>
+    `<li><span>${escapeHtml(ST_STEPS[p.id].q)}</span><b class="${p.a === 'yes' ? 'ans-yes' : 'ans-no'}">${p.a === 'yes' ? 'Yes' : 'No'}</b></li>`).join('')}</ol>` : '';
+  const undo = stPath.length ? `<button type="button" class="st-link" data-st="undo"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Change the last answer</button>` : '';
+  const result = ST_RESULTS[stStep];
+  if (result) {
+    c.innerHTML = `<div class="st-wrap">
+      <div class="st-result ${result.cls}" role="status"><div class="st-cat">${result.cat}</div><div class="st-col">${result.col}</div></div>
+      <h2 class="st-h">What to do</h2>
+      <ul class="st-acts">${result.acts.map(a => `<li>${escapeHtml(a)}</li>`).join('')}</ul>
+      ${pathHtml}
+      <button type="button" class="start-btn st-next" data-st="restart">Triage the next patient</button>
+      ${undo}
+    </div>`;
+  } else {
+    const step = ST_STEPS[stStep];
+    c.innerHTML = `<div class="st-wrap">
+      <p class="st-step">Question ${stPath.length + 1}</p>
+      <h2 class="st-q" tabindex="-1">${escapeHtml(step.q)}</h2>
+      <p class="st-sub">${escapeHtml(step.sub)}</p>
+      <div class="st-btns">
+        <button type="button" class="st-btn" data-st="yes">Yes</button>
+        <button type="button" class="st-btn" data-st="no">No</button>
+      </div>
+      ${undo}
+      ${pathHtml}
+    </div>`;
+  }
+  c.querySelector('.st-wrap').addEventListener('click', e => {
+    const b = e.target.closest('[data-st]');
+    if (!b) return;
+    const act = b.dataset.st;
+    if (act === 'yes' || act === 'no') {
+      if (navigator.vibrate) navigator.vibrate(10);
+      stPath.push({ id: stStep, a: act });
+      stStep = ST_STEPS[stStep][act];
+    } else if (act === 'undo') {
+      const last = stPath.pop();
+      if (last) stStep = last.id;
+    } else if (act === 'restart') {
+      stStep = 'walk'; stPath = [];
+    }
+    drawStart();
+    c.scrollTop = 0;
+    const focusEl = c.querySelector('.st-q, .st-result');
+    if (focusEl && act !== 'restart') focusEl.focus?.();
+  });
+}
+
+/* ── METHANE report tool (same report as the EMS tools version; draft kept on this device) ── */
+const MT_KEY = 'mci-methane-draft';
+const MT_CHIPS = {
+  type: ['Road traffic collision', 'Fire', 'Explosion', 'Building collapse', 'Rail', 'Aircraft', 'CBRN', 'Flood / water', 'Crowd / crush', 'Shooting / attack'],
+  haz: ['Fire / smoke', 'Fuel spill', 'Gas leak', 'Chemical', 'Electrical', 'Structural', 'Moving traffic', 'Water', 'Weather', 'Violence', 'None seen'],
+  svcOn: ['Ambulance', 'Police', 'Fire & Rescue', 'Air ambulance', 'Civil defence'],
+  svcReq: ['More ambulances', 'Police', 'Fire & Rescue', 'Air ambulance', 'HAZMAT / CBRN', 'USAR / heavy rescue', 'Medical team', 'Utilities', 'Hospital alert']
+};
+const MT_COUNTS = [['p1', 'Immediate', 'Red', 'red'], ['p2', 'Delayed', 'Yellow', 'yellow'], ['p3', 'Minor', 'Green', 'green'], ['dead', 'Dead', 'Black', 'black']];
+const mtBlank = () => ({ f: {}, multi: {}, major: '', n: { p1: 0, p2: 0, p3: 0, dead: 0 } });
+let MT = mtBlank();
+
+function renderMethaneTool() {
+  try { const d = JSON.parse(localStorage.getItem(MT_KEY)); if (d && d.f) MT = Object.assign(mtBlank(), d); } catch {}
+  document.querySelector('.tool-share').setAttribute('aria-label', 'Share a link to the METHANE report tool');
+  const tools = document.getElementById('toolBar');
+  const c = document.getElementById('toolContainer');
+  const L = [['M', 'M'], ['E1', 'E'], ['T', 'T'], ['H', 'H'], ['A', 'A'], ['N', 'N'], ['E2', 'E']];
+  tools.innerHTML = `<nav class="mt-letters" aria-label="METHANE sections">${L.map(([k, l]) => `<a href="#mt-${k}" data-k="${k}">${l}</a>`).join('')}</nav>`;
+  const field = (id, label, ph, area) => `<label class="mt-label" for="mt_${id}">${label}</label>` + (area
+    ? `<textarea class="mt-input" id="mt_${id}" data-f="${id}" placeholder="${ph}"></textarea>`
+    : `<input class="mt-input" type="text" id="mt_${id}" data-f="${id}" placeholder="${ph}" autocomplete="off">`);
+  const chips = (k, label) => (label ? `<span class="mt-label">${label}</span>` : '') +
+    `<div class="mt-chips" data-multi="${k}" role="group" aria-label="${label || k}">${MT_CHIPS[k].map(t => `<button type="button" aria-pressed="false">${escapeHtml(t)}</button>`).join('')}</div>`;
+  const sec = (k, l, h, hint, body) => `<section class="mt-sec" id="mt-${k}" aria-labelledby="mth-${k}">
+      <div class="mt-top"><div class="mt-ltr" aria-hidden="true">${l}</div><div><div class="mt-h" id="mth-${k}">${h}</div><div class="mt-hint">${hint}</div></div></div>${body}</section>`;
+  c.innerHTML = `<div class="mt-wrap">
+    <p class="mt-intro">Send this to control as soon as you can, then update it as the picture changes. Your draft stays on this phone.</p>
+    ${sec('M', 'M', 'Major incident', 'Declared, on standby, or not declared', `<div class="mt-seg" data-single="major" role="group" aria-label="Major incident">
+        <button type="button" data-v="DECLARED" aria-pressed="false">Declared</button><button type="button" data-v="STANDBY" aria-pressed="false">Standby</button><button type="button" data-v="NOT DECLARED" aria-pressed="false">Not declared</button></div>`)}
+    ${sec('E1', 'E', 'Exact location', 'Address, landmark or GPS', field('loc', 'Location', 'e.g. Sheikh Zayed Rd, northbound, near Exit 41') +
+      `<label class="mt-label" for="mt_gps">Coordinates</label><div class="mt-row"><input class="mt-input" type="text" id="mt_gps" data-f="gps" placeholder="lat, long" autocomplete="off" inputmode="decimal"><button type="button" class="mt-gps" id="mtGps"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pin"/></svg> GPS</button></div><p class="mt-msg" id="mtGpsMsg" hidden></p>`)}
+    ${sec('T', 'T', 'Type of incident', 'What happened; vehicles or buildings involved', chips('type') + field('typeTxt', 'Details', 'e.g. Bus vs 2 cars, bus on its side', true))}
+    ${sec('H', 'H', 'Hazards', 'Present and potential', chips('haz') + field('hazTxt', 'Details', 'e.g. Diesel leaking from the bus, wind blowing east', true))}
+    ${sec('A', 'A', 'Access', 'Safe routes in and out, rendezvous point, staging', field('accIn', 'Route in and out', 'e.g. Approach from the south via Exit 40') + field('rvp', 'Rendezvous point', 'e.g. ENOC station, Exit 40') + field('stg', 'Staging / loading area', 'e.g. Service road, west side'))}
+    ${sec('N', 'N', 'Number of casualties', 'Estimated number and severity', MT_COUNTS.map(([k, cat, col, cls]) => `<div class="mt-count">
+        <span class="mt-sw ${cls}" aria-hidden="true"></span><span class="mt-cl">${cat}<small>${col}</small></span>
+        <button type="button" class="mt-step" data-n="${k}" data-d="-1" aria-label="One fewer ${cat}">−</button>
+        <input class="mt-num" type="number" min="0" inputmode="numeric" data-nv="${k}" aria-label="${cat} casualties" value="0">
+        <button type="button" class="mt-step" data-n="${k}" data-d="1" aria-label="One more ${cat}">+</button></div>`).join('') +
+      `<div class="mt-total">Total: <b id="mtTotal">0</b></div>` + field('casTxt', 'Injury types / special groups', 'e.g. Crush injuries, 3 children, 2 trapped', true))}
+    ${sec('E2', 'E', 'Emergency services', 'On scene and still needed', chips('svcOn', 'On scene') + chips('svcReq', 'Needed') + field('svcTxt', 'Details', 'e.g. 6 more ambulances, 1 supervisor', true))}
+    <section class="mt-sec">${field('callsign', 'Reported by (call sign)', 'e.g. Unit 214')}</section>
+    <section class="mt-out" aria-live="polite"><h2>Report</h2><pre id="mtReport"></pre>
+      <div class="mt-acts"><button type="button" class="pri" id="mtCopy">Copy report</button><button type="button" id="mtShare">Share</button><button type="button" id="mtNew">New</button></div>
+    </section>
+  </div>`;
+
+  const save = () => { try { localStorage.setItem(MT_KEY, JSON.stringify(MT)); } catch {} };
+  const $$ = sel => [...c.querySelectorAll(sel)];
+  const hydrate = () => {
+    $$('[data-f]').forEach(el => { el.value = MT.f[el.dataset.f] || ''; });
+    $$('[data-multi]').forEach(g => { const on = MT.multi[g.dataset.multi] || []; g.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', on.includes(b.textContent))); });
+    $$('[data-single] button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === MT.major));
+    $$('[data-nv]').forEach(el => { el.value = MT.n[el.dataset.nv] || 0; });
+    mtRender();
+  };
+  $$('[data-f]').forEach(el => el.addEventListener('input', () => { MT.f[el.dataset.f] = el.value; mtRender(); save(); }));
+  $$('[data-multi]').forEach(g => g.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true');
+    MT.multi[g.dataset.multi] = [...g.querySelectorAll('button[aria-pressed="true"]')].map(x => x.textContent);
+    mtRender(); save();
+  }));
+  c.querySelector('[data-single]').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    MT.major = MT.major === b.dataset.v ? '' : b.dataset.v;
+    $$('[data-single] button').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === MT.major));
+    mtRender(); save();
+  });
+  const setN = (k, v) => {
+    v = Math.max(0, Math.min(9999, parseInt(v, 10) || 0));
+    MT.n[k] = v; c.querySelector(`[data-nv="${k}"]`).value = v; mtRender(); save();
+  };
+  $$('.mt-step').forEach(b => b.addEventListener('click', () => setN(b.dataset.n, (MT.n[b.dataset.n] || 0) + Number(b.dataset.d))));
+  $$('[data-nv]').forEach(el => el.addEventListener('input', () => setN(el.dataset.nv, el.value)));
+  tools.querySelector('.mt-letters').addEventListener('click', e => {
+    const a = e.target.closest('a[data-k]'); if (!a) return;
+    e.preventDefault();
+    document.getElementById('mt-' + a.dataset.k).scrollIntoView({ block: 'start', behavior: reducedMotion() ? 'auto' : 'smooth' });
+  });
+
+  const gps = document.getElementById('mtGps'), gpsMsg = document.getElementById('mtGpsMsg');
+  if (!('geolocation' in navigator)) gps.hidden = true;
+  gps.addEventListener('click', () => {
+    gps.disabled = true; gpsMsg.hidden = true;
+    navigator.geolocation.getCurrentPosition(p => {
+      gps.disabled = false;
+      setGps(p.coords.latitude.toFixed(5) + ', ' + p.coords.longitude.toFixed(5));
+    }, () => { gps.disabled = false; gpsMsg.textContent = 'Location unavailable. Type the coordinates instead.'; gpsMsg.hidden = false; },
+    { enableHighAccuracy: true, timeout: 10000 });
+  });
+  const setGps = v => { document.getElementById('mt_gps').value = v; MT.f.gps = v; mtRender(); save(); };
+
+  const flash = (btn, msg) => { const was = btn.textContent; btn.textContent = msg; setTimeout(() => { btn.textContent = was; }, 1600); };
+  document.getElementById('mtCopy').addEventListener('click', e => {
+    const txt = mtText(), btn = e.currentTarget;
+    const fallback = () => {
+      const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); flash(btn, 'Copied'); } catch { flash(btn, 'Copy failed'); }
+      ta.remove();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(() => flash(btn, 'Copied'), fallback);
+    else fallback();
+  });
+  const share = document.getElementById('mtShare');
+  if (!navigator.share) { share.hidden = true; c.querySelector('.mt-acts').style.gridTemplateColumns = '2fr 1fr'; }
+  share.addEventListener('click', () => navigator.share({ title: 'METHANE report', text: mtText() }).catch(() => {}));
+  document.getElementById('mtNew').addEventListener('click', () => {
+    if (!confirm('Start a new METHANE report? The current draft will be cleared.')) return;
+    MT = mtBlank(); save(); hydrate(); c.scrollTop = 0;
+  });
+  hydrate();
+}
+function mtSections() {
+  const f = MT.f, m = MT.multi, n = MT.n, t = s => (s || '').trim();
+  const total = n.p1 + n.p2 + n.p3 + n.dead;
+  const list = (arr, txt) => [(arr || []).join(', '), t(txt)].filter(Boolean).join('. ');
+  return [
+    ['M', 'Major incident', MT.major],
+    ['E1', 'Exact location', [t(f.loc), t(f.gps) && 'GPS ' + t(f.gps)].filter(Boolean).join(', ')],
+    ['T', 'Type of incident', list(m.type, f.typeTxt)],
+    ['H', 'Hazards', list(m.haz, f.hazTxt)],
+    ['A', 'Access', [t(f.accIn), t(f.rvp) && 'RVP: ' + t(f.rvp), t(f.stg) && 'Staging: ' + t(f.stg)].filter(Boolean).join('. ')],
+    ['N', 'Number of casualties', [total ? `${total} total (Immediate ${n.p1}, Delayed ${n.p2}, Minor ${n.p3}, Dead ${n.dead})` : '', t(f.casTxt)].filter(Boolean).join('. ')],
+    ['E2', 'Emergency services', [(m.svcOn || []).length ? 'On scene: ' + m.svcOn.join(', ') : '', (m.svcReq || []).length ? 'Needed: ' + m.svcReq.join(', ') : '', t(f.svcTxt)].filter(Boolean).join('. ')]
+  ];
+}
+function mtText() {
+  const d = new Date();
+  const lines = ['METHANE REPORT ' + d.toTimeString().slice(0, 5) + ' ' + d.toLocaleDateString()];
+  if ((MT.f.callsign || '').trim()) lines.push('From: ' + MT.f.callsign.trim());
+  lines.push('');
+  mtSections().forEach(([k, label, v]) => lines.push(k[0] + ' - ' + label + ': ' + (v || '-')));
+  return lines.join('\n');
+}
+function mtRender() {
+  mtSections().forEach(([k, , v]) => {
+    document.querySelector(`.mt-letters a[data-k="${k}"]`)?.classList.toggle('done', !!v);
+    document.getElementById('mt-' + k)?.classList.toggle('done', !!v);
+  });
+  const tot = document.getElementById('mtTotal');
+  if (tot) tot.textContent = MT.n.p1 + MT.n.p2 + MT.n.p3 + MT.n.dead;
+  const rep = document.getElementById('mtReport');
+  if (rep) rep.textContent = mtText();
+}
+
+// Save/Load progress
+function saveProgress() {
+  if (!ST.name) return;
+  const progress = {
+    examName: ST.name,
+    answers: ST.answers,
+    elim: ST.elim,
+    marked: ST.marked,
+    idx: ST.idx,
+    timerSec: ST.timerSec,
+    confidence: ST.confidence,
+    timestamp: Date.now()
+  };
+  localStorage.setItem(`${STORAGE_KEY}-${ST.name}`, JSON.stringify(progress));
+}
+
+function loadProgress(name) {
+  const saved = localStorage.getItem(`${STORAGE_KEY}-${name}`);
+  if (!saved) return false;
+  try {
+    const progress = JSON.parse(saved);
+    if (Date.now() - progress.timestamp < 86400000) {
+      ST.answers = progress.answers || {};
+      ST.elim = progress.elim || {};
+      ST.marked = progress.marked || {};
+      ST.idx = progress.idx || 0;
+      ST.timerSec = progress.timerSec || 0;
+      ST.confidence = progress.confidence || {};
+      return true;
+    }
+  } catch(e) {
+    console.warn('Failed to load progress:', e);
+  }
+  return false;
+}
+
+// Exam engine
+async function startExam(path, name) {
+  const qCount = parseInt(document.getElementById('qCount')?.value || '40');
+  document.getElementById('qLoading').style.display = 'block';
+  document.getElementById('qBox').style.display = 'none';
+  document.getElementById('optsList').innerHTML = '';
+  
+  try {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    
+    if (json.questions && Array.isArray(json.questions)) {
+      ST.qs = json.questions;
+    } else if (Array.isArray(json)) {
+      ST.qs = json;
+    } else {
+      throw new Error('JSON must contain a "questions" array');
+    }
+    
+    if (ST.qs.length === 0) throw new Error('No questions found');
+    
+    const totalQs = ST.qs.length;
+    const shuffled = [...ST.qs].sort(() => Math.random() - 0.5);
+    ST.qs = qCount >= totalQs ? shuffled : shuffled.slice(0, qCount);
+    
+    ST.name = name;
+    const restored = loadProgress(name);
+    if (!restored) {
+      ST.idx = 0; ST.answers = {}; ST.elim = {}; ST.marked = {}; 
+      ST.confidence = {}; ST.hintsShown = {}; ST.answersRevealed = {};
+    }
+    
+    document.getElementById('examName').textContent = name;
+    document.getElementById('resExamName').textContent = name;
+    
+    const modeBadge = document.getElementById('modeBadge');
+    modeBadge.innerHTML =ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
+    modeBadge.className = 'hdr-mode ' + (ST.mode === 'study' ? 'm-study' : 'm-exam');
+    
+    const isStudy = ST.mode === 'study';
+    document.getElementById('backBtn').style.display = isStudy ? '' : 'none';
+    document.getElementById('endBtn').style.display = isStudy ? 'none' : '';
+    document.getElementById('markBtn').style.display = isStudy ? 'none' : '';
+    document.getElementById('qBox').classList.toggle('is-study', isStudy);
+    document.getElementById('studyActions').style.display = isStudy ? 'flex' : 'none';
+    document.getElementById('confidenceRow').style.display = isStudy ? 'flex' : 'none';
+    
+    if (ST.timerRef) clearInterval(ST.timerRef);
+    ST.timerRef = setInterval(() => {
+      ST.timerSec++;
+      let m = Math.floor(ST.timerSec/60), s = ST.timerSec%60;
+      const timerEl = document.getElementById('timerDisplay');
+      timerEl.textContent = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+      
+      if (ST.timerSec >= 2700 && ST.mode === 'exam') {
+        timerEl.classList.add('warning');
+        if (ST.timerSec === 2700) {
+          showToast('<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#alarm-clock"/></svg> 45 min - review flagged', 'warning', 1500);
+        }
+      }
+    }, 1000);
+    
+    if (ST.timerSec > 0) {
+      let m = Math.floor(ST.timerSec/60), s = ST.timerSec%60;
+      document.getElementById('timerDisplay').textContent = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+    }
+    
+    buildGrid();
+    renderQ();
+    showScreen('exam');
+    
+    if (!ST.autoSaveInterval) {
+      ST.autoSaveInterval = setInterval(saveProgress, 30000);
+    }
+    
+    if (restored) showToast('Progress restored', 'success', 1200);
+    
+  } catch(e) {
+    document.getElementById('qLoading').style.display = 'none';
+    document.getElementById('qBox').style.display = 'block';
+    document.getElementById('qText').textContent = `Error: ${e.message}`;
+    showToast('Load failed', 'warning', 1200);
+    console.error(e);
+  }
+}
+
+// Grid building
+function buildGrid() {
+  const grid = document.getElementById('qGrid');
+  grid.innerHTML = '';
+  ST.qs.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qn'; 
+    btn.id = `qb${i}`; 
+    btn.textContent = i+1;
+    btn.setAttribute('role', 'option');
+    btn.setAttribute('aria-selected', i === ST.idx);
+    btn.onclick = () => jumpTo(i);
+    btn.onkeydown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        jumpTo(i);
+      }
+    };
+    grid.appendChild(btn);
+  });
+  applyGridFilter();
+  syncGrid(); 
+  syncStats();
+}
+
+// Grid filtering
+function filterGrid(filter) {
+  ST.currentFilter = filter;
+  document.querySelectorAll('.sb-filter-btn').forEach(btn => {
+    const isActive = btn.dataset.filter === filter;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive);
+  });
+  applyGridFilter();
+}
+
+function applyGridFilter() {
+  ST.qs.forEach((q, i) => {
+    const btn = document.getElementById(`qb${i}`);
+    if (!btn) return;
+    
+    let show = true;
+    if (ST.currentFilter === 'unanswered' && ST.answers[q.id]) show = false;
+    if (ST.currentFilter === 'flagged' && !ST.marked[q.id]) show = false;
+    
+    btn.style.display = show ? '' : 'none';
+  });
+}
+
+function syncGrid() {
+  ST.qs.forEach((q, i) => {
+    const btn = document.getElementById(`qb${i}`);
+    if (!btn) return;
+    
+    const pip = btn.querySelector('.flag-pip');
+    if (pip) pip.remove();
+    
+    btn.className = 'qn' + (i===ST.idx ? ' cur' : '') + (ST.answers[q.id] ? ' done' : '') + (ST.marked[q.id] ? ' flg' : '');
+    btn.setAttribute('aria-selected', i === ST.idx);
+    
+    if (ST.marked[q.id]) {
+      const d = document.createElement('span'); 
+      d.className = 'flag-pip'; 
+      d.setAttribute('aria-hidden', 'true');
+      btn.appendChild(d);
+    }
+  });
+}
+
+function syncStats() {
+  const ans = Object.keys(ST.answers).length;
+  const uns = ST.qs.length - ans;
+  const flg = Object.values(ST.marked).filter(Boolean).length;
+  
+  ['stAns','mAns'].forEach(id => { 
+    let el = document.getElementById(id); 
+    if(el) {
+      el.textContent = ans;
+      el.parentElement?.parentElement?.setAttribute('aria-label', `${ans} questions answered`);
+    }
+  });
+  ['stUns','mUns'].forEach(id => { 
+    let el = document.getElementById(id); 
+    if(el) el.textContent = uns; 
+  });
+  ['stFlg','mFlg'].forEach(id => { 
+    let el = document.getElementById(id); 
+    if(el) el.textContent = flg; 
+  });
+}
+
+// Question rendering - FIXED study mode buttons
+function renderQ() {
+  const total = ST.qs.length, q = ST.qs[ST.idx];
+  const isStudy = ST.mode === 'study';
+  const selected = ST.answers[q.id] || null;
+  const revealed = isStudy && ST.answersRevealed[q.id];
+  const hintShown = isStudy && ST.hintsShown[q.id];
+  const elim = ST.elim[q.id] || [];
+  const letters = ['A', 'B', 'C', 'D'];
+  const confidence = ST.confidence[q.id];
+
+  document.getElementById('qLoading').style.display = 'none';
+  document.getElementById('qBox').style.display = 'block';
+
+  document.getElementById('qBadge').textContent = `Question ${ST.idx+1} of ${total}`;
+  const pfill = document.getElementById('qPfill');
+  const progress = ((ST.idx+1)/total*100).toFixed(1);
+  pfill.style.width = `${progress}%`;
+  pfill.parentElement.setAttribute('aria-valuenow', progress);
+  
+  document.getElementById('navCtr').textContent = `${ST.idx+1} / ${total}`;
+  document.getElementById('qText').textContent = q.text;
+  
+  const markBtn = document.getElementById('markBtn');
+  if (markBtn) {
+    const isFlagged = !!ST.marked[q.id];
+    markBtn.classList.toggle('flagged', isFlagged);
+    markBtn.setAttribute('aria-pressed', isFlagged);
+  }
+
+  // FIXED: Allow reveal without hint, disable buttons when revealed
+  if (isStudy) {
+    const hintBtn = document.getElementById('hintBtn');
+    const answerBtn = document.getElementById('answerBtn');
+    hintBtn.disabled = hintShown || revealed;
+    answerBtn.disabled = revealed;
+    document.getElementById('studyActions').style.display = revealed ? 'none' : 'flex';
+    document.getElementById('confidenceRow').style.display = revealed ? 'none' : 'flex';
+    document.querySelectorAll('.confidence-btn').forEach(b => b.classList.toggle('active', b.dataset.level === confidence));
+  }
+
+  const optsDiv = document.getElementById('optsList');
+  optsDiv.innerHTML = '';
+  optsDiv.setAttribute('aria-label', `Answer choices for question ${ST.idx+1}`);
+  
+  q.options.forEach((optText, idx) => {
+    const letter = letters[idx];
+    const isSel = selected === letter;
+    const isElim = elim.includes(idx);
+    const isCorrect = letter === q.correct_answer;
+    
+    let revClass = '';
+    if (revealed) {
+      if (isCorrect) revClass = ' rev-correct';
+      else if (isSel) revClass = ' rev-wrong';
+    }
+    
+    const row = document.createElement('div');
+    row.className = 'opt' + (isSel && !revealed ? ' selected' : '') + (isElim && !revealed ? ' eliminated' : '') + revClass;
+    row.setAttribute('role', 'radio');
+    row.setAttribute('aria-checked', isSel && !revealed);
+    row.setAttribute('tabindex', isSel ? '0' : '-1');
+    
+    let elimHtml = '';
+    if (!isStudy && !revealed) {
+      elimHtml = `<button class="elim-btn" onclick="doElim(${ST.idx},${idx},event)" aria-label="${isElim ? 'Restore' : 'Eliminate'} option ${letter}">${isElim ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#undo-2"/></svg>' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>'}</button>`;
+    }
+    
+    let tagHtml = '';
+    if (revealed) {
+      if (isCorrect && isSel) tagHtml = '<span class="rev-tag rev-tag-ok"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg> Correct</span>';
+      else if (isCorrect) tagHtml = '<span class="rev-tag rev-tag-ans"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg> Answer</span>';
+      else if (isSel) tagHtml = '<span class="rev-tag rev-tag-ng"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg> Wrong</span>';
+    }
+    
+    row.innerHTML = elimHtml + 
+      `<div class="opt-letter" aria-hidden="true">${letter}</div>
+       <div class="opt-wrap" onclick="doSelect('${letter}')" role="presentation">
+         <span class="opt-txt">${escapeHtml(optText)}</span>${tagHtml}
+       </div>`;
+    
+    row.onkeydown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        doSelect(letter);
+      }
+    };
+    
+    optsDiv.appendChild(row);
+  });
+
+  const expDiv = document.getElementById('expArea');
+  if (isStudy) {
+    if (revealed) {
+      const confLabels = { high: 'Sure', medium: 'Maybe', low: 'Guessed' };
+      expDiv.innerHTML = `
+        <div class="study-exp">
+          <div class="exp-label">Explanation</div>
+          <div class="exp-body">${escapeHtml(q.explanation || 'No explanation for this question.')}</div>
+          ${confidence ? `<div class="exp-conf">You said: ${confLabels[confidence]}</div>` : ''}
+        </div>`;
+    } else if (hintShown) {
+      const hint = q.hint || 'Think about which principle the question is testing.';
+      expDiv.innerHTML = `
+        <div class="study-hint has-hint" onclick="revealAnswer()" role="button" tabindex="0">
+          <strong>Hint:</strong> ${escapeHtml(hint)}
+          <div class="hint-cta">Tap to reveal the answer</div>
+        </div>`;
+    } else {
+      expDiv.innerHTML = '<div class="study-hint">Pick an answer, then tap Check answer. Stuck? Show a hint.</div>';
+    }
+  } else {
+    expDiv.innerHTML = '';
+  }
+
+  document.getElementById('prevBtn').disabled = ST.idx === 0;
+  
+  const nextBtn = document.getElementById('nextBtn');
+  if (isStudy && !revealed) {
+    nextBtn.textContent = 'Check answer';
+    nextBtn.disabled = false;
+  } else {
+    nextBtn.innerHTML = 'Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
+    nextBtn.disabled = ST.idx === total - 1;
+  }
+  
+  syncGrid();
+  
+  const qScroll = document.getElementById('qScroll');
+  if (qScroll) qScroll.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  const firstOpt = optsDiv.querySelector('.opt-wrap');
+  if (firstOpt && !revealed) {
+    setTimeout(() => firstOpt.focus(), 100);
+  }
+  
+  saveProgress();
+}
+
+// FIXED: Answer selection allows changing before reveal
+function doSelect(letter) {
+  const q = ST.qs[ST.idx];
+  
+  // Only block if answer is already revealed
+  if (ST.mode === 'study' && ST.answersRevealed[q.id]) return;
+  
+  // Toggle or set selection
+  if (ST.answers[q.id] === letter) {
+    delete ST.answers[q.id];
+  } else {
+    ST.answers[q.id] = letter;
+  }
+  
+  renderQ(); 
+  syncStats();
+}
+
+// Elimination
+function doElim(qi, oi, e) {
+  e.stopPropagation();
+  const q = ST.qs[qi];
+  if (!ST.elim[q.id]) ST.elim[q.id] = [];
+  const arr = ST.elim[q.id];
+  const idx = arr.indexOf(oi);
+  
+  if (idx === -1) {
+    arr.push(oi);
+  } else {
+    arr.splice(idx,1);
+  }
+  renderQ();
+}
+
+// Flag
+function toggleMark() {
+  const q = ST.qs[ST.idx];
+  const wasMarked = !!ST.marked[q.id];
+  
+  if (wasMarked) {
+    delete ST.marked[q.id];
+  } else {
+    ST.marked[q.id] = true;
+  }
+  
+  const markBtn = document.getElementById('markBtn');
+  if (markBtn) {
+    markBtn.classList.toggle('flagged', !wasMarked);
+    markBtn.setAttribute('aria-pressed', !wasMarked);
+  }
+  
+  syncGrid(); 
+  syncStats();
+  saveProgress();
+}
+
+// Study mode: Show hint
+function showHint() {
+  const q = ST.qs[ST.idx];
+  ST.hintsShown[q.id] = true;
+  renderQ();
+  const hint = q.hint || 'Think about age-appropriate vital signs and pediatric assessment priorities.';
+}
+
+// Study mode: Reveal answer
+function revealAnswer() {
+  const q = ST.qs[ST.idx];
+  ST.answersRevealed[q.id] = true;
+  
+  if (!ST.answers[q.id]) {
+    ST.answers[q.id] = q.correct_answer;
+  }
+  
+  renderQ();
+}
+
+// Study mode: Set confidence
+function setConfidence(level) {
+  const q = ST.qs[ST.idx];
+  ST.confidence[q.id] = level;
+  
+  document.querySelectorAll('.confidence-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.level === level);
+  });
+  
+  renderQ();
+  saveProgress();
+}
+
+// Navigation
+function nav(d) {
+  const q = ST.qs[ST.idx];
+
+  // Intercept 'Next' in study mode to validate first
+  if (d === 1 && ST.mode === 'study' && !ST.answersRevealed[q.id]) {
+    // Force user to pick an answer before checking
+    if (!ST.answers[q.id]) {
+      showToast('Please select an answer first', 'warning');
+      return; 
+    }
+    revealAnswer(); // Validate the answer
+    return; // Stop navigation so they can read the explanation
+  }
+
+  const n = ST.idx + d;
+  if (n >= 0 && n < ST.qs.length) { 
+    ST.idx = n; 
+    renderQ(); 
+    closeSidebar(); 
+  }
+}
+
+function jumpTo(i) { 
+  ST.idx = i; 
+  renderQ(); 
+  closeSidebar(); 
+}
+
+// Sidebar management
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.querySelector('.sb-toggle');
+  const isOpen = sidebar.classList.toggle('open');
+  toggleBtn.setAttribute('aria-expanded', isOpen);
+}
+
+function closeSidebar() { 
+  if (window.innerWidth <= 720) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sb-toggle');
+    sidebar?.classList.remove('open');
+    toggleBtn?.setAttribute('aria-expanded', 'false');
+  }
+}
+
+document.addEventListener('click', function(e) {
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.querySelector('.sb-toggle');
+  if (!sidebar || !sidebar.classList.contains('open')) return;
+  if (!sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn?.contains(e.target)) {
+    closeSidebar();
+  }
+});
+
+// Modal management
+function openEndModal() { 
+  syncStats(); 
+  document.getElementById('endModal')?.classList.add('open');
+  setTimeout(() => {
+    document.querySelector('.mbtn-cancel')?.focus();
+  }, 100);
+}
+
+function closeModal() { 
+  document.getElementById('endModal')?.classList.remove('open');
+}
+
+// Exit confirmation for study mode back button
+function confirmExit() {
+  document.getElementById('exitModal')?.classList.add('open');
+  setTimeout(() => {
+    document.querySelector('#exitModal .mbtn-cancel')?.focus();
+  }, 100);
+}
+
+function closeExitModal() {
+  document.getElementById('exitModal')?.classList.remove('open');
+}
+
+function confirmExitNow() {
+  closeExitModal();
+  goSelector();
+}
+
+// Settings modal for hints toggle
+function openSettings() {
+  document.getElementById('hintsToggle').checked = ST.hintsEnabled;
+  document.getElementById('settingsModal')?.classList.add('open');
+}
+
+function closeSettingsModal() {
+  document.getElementById('settingsModal')?.classList.remove('open');
+}
+
+function toggleHints() {
+  ST.hintsEnabled = document.getElementById('hintsToggle').checked;
+  localStorage.setItem('itls-hints-enabled', ST.hintsEnabled);
+  showToast(ST.hintsEnabled ? 'Hints enabled <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile-plus"/></svg>' : 'Hints disabled', 'info', 1200);
+}
+
+function goSelector() { 
+  clearInterval(ST.timerRef);
+  if (ST.autoSaveInterval) {
+    clearInterval(ST.autoSaveInterval);
+    ST.autoSaveInterval = null;
+  }
+  saveProgress();
+  showScreen('sel'); 
+}
+
+// Submit exam
+function submitExam() {
+  closeModal();
+  clearInterval(ST.timerRef);
+  if (ST.autoSaveInterval) {
+    clearInterval(ST.autoSaveInterval);
+    ST.autoSaveInterval = null;
+  }
+  
+  const qs = ST.qs, n = qs.length;
+  let c=0, x=0, o=0;
+  
+  qs.forEach(q => { 
+    let a = ST.answers[q.id]; 
+    if(!a) o++; 
+    else if(a===q.correct_answer) c++; 
+    else x++; 
+  });
+  
+  const pct = Math.round(c/n*100), pass = pct>=75;
+  localStorage.setItem('mci-last-score', JSON.stringify({ pct, n, exam: ST.name, t: Date.now() }));
+  renderHubLast();
+  const flagged = qs.filter(q => ST.marked[q.id]).length;
+  const seg = (k, cls) => k ? `<span class="${cls}" style="flex:${k}"></span>` : '';
+  
+  let html = `
+    <section class="score" aria-label="Your score">
+      <div class="score-top">
+        <div class="score-pct">${pct}%</div>
+        <div>
+          <div class="score-verdict ${pass ? 'pass' : 'fail'}">${pass ? 'Pass' : 'Below the pass mark'}</div>
+          <div class="score-note">The pass mark is 75%. ${n} questions.</div>
+        </div>
+      </div>
+      <div class="score-bar" aria-hidden="true">${seg(c, 'sb-c')}${seg(x, 'sb-x')}${seg(o, 'sb-o')}</div>
+      <div class="score-legend">
+        <span><b>${c}</b>correct</span><span><b>${x}</b>incorrect</span><span><b>${o}</b>skipped</span>
+      </div>
+    </section>
+    
+    <div class="res-filters" role="group" aria-label="Show questions">
+      <button type="button" data-f="all" aria-pressed="true" onclick="filterResults('all')">All ${n}</button>
+      <button type="button" data-f="incorrect" aria-pressed="false" onclick="filterResults('incorrect')">Incorrect ${x}</button>
+      <button type="button" data-f="flagged" aria-pressed="false" onclick="filterResults('flagged')">Flagged ${flagged}</button>
+      <button type="button" class="res-print" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg> Print</button>
+    </div>
+    
+    <div class="rq-list" id="resultsList">`;
+  
+  qs.forEach((q,i) => {
+    const ua = ST.answers[q.id];
+    const isC = ua && ua === q.correct_answer, isX = ua && !isC, isO = !ua;
+    const dotClass = isC ? 'dot-c' : isX ? 'dot-x' : 'dot-o';
+    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : '–';
+    const badgeText = isC ? 'Correct' : isX ? 'Incorrect' : 'Skipped';
+    
+    html += `<div class="rq-item" data-status="${isC?'correct':isX?'incorrect':'omitted'}" data-flagged="${!!ST.marked[q.id]}">
+      <div class="rq-row" onclick="xpand(this,${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();xpand(this,${i})}" role="button" tabindex="0" aria-expanded="false">
+        <span class="rq-n">${i+1}</span>
+        <span class="rq-dot ${dotClass}" aria-hidden="true">${ind}</span>
+        <span class="rq-q">${escapeHtml(q.text)}</span>
+        <span class="rq-badge">${badgeText}</span>
+        <svg class="rq-chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="rq-body" id="rb${i}">
+        ${buildResOpts(q,ua)}
+        <div class="exp-box">
+          <div class="exp-label">Explanation</div>
+          <div class="exp-body">${escapeHtml(q.explanation||'No explanation for this question.')}</div>
+        </div>
+      </div>
+    </div>`;
+  });
+  
+  html += '<p class="res-empty" id="resEmpty" hidden></p></div>';
+  document.getElementById('resContent').innerHTML = html;
+  showScreen('res');
+}
+
+// Results filtering
+function filterResults(filter) {
+  let shown = 0;
+  document.querySelectorAll('.rq-item').forEach(item => {
+    const show = filter === 'all'
+      || (filter === 'incorrect' && item.dataset.status === 'incorrect')
+      || (filter === 'flagged' && item.dataset.flagged === 'true');
+    item.style.display = show ? '' : 'none';
+    if (show) shown++;
+  });
+  document.querySelectorAll('.res-filters [data-f]').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === filter));
+  const empty = document.getElementById('resEmpty');
+  empty.hidden = shown > 0;
+  if (!shown) empty.textContent = filter === 'flagged' ? 'You didn\'t flag any questions.' : 'No incorrect answers. Nice work.';
+}
+
+function buildResOpts(q, ua) {
+  const letters = ['A','B','C','D'];
+  let h = '<div class="res-opts" role="list">';
+  
+  q.options.forEach((optText, idx) => {
+    const letter = letters[idx];
+    const isC = letter === q.correct_answer;
+    const isSel = letter === ua;
+    const isW = isSel && !isC;
+    let cls = isC ? 'ro-correct' : isW ? 'ro-wrong' : '';
+    
+    h += `<div class="res-opt ${cls}" role="listitem">
+      <div class="ro-ltr" aria-hidden="true">${letter}</div>
+      <span style="font-size:.82rem;flex:1">${escapeHtml(optText)}</span>
+      ${isC ? '<span class="ro-tag" style="color:var(--green)"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg> Correct</span>' : ''}
+      ${isW ? '<span class="ro-tag" style="color:var(--red)"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg> Your pick</span>' : ''}
+    </div>`;
+  });
+  
+  return h + '</div>';
+}
+
+function xpand(hdr, i) {
+  const body = document.getElementById(`rb${i}`);
+  if (!body) return;
+  
+  const isOpen = body.classList.toggle('open');
+  hdr.classList.toggle('expanded', isOpen);
+  hdr.setAttribute('aria-expanded', isOpen);
+  
+  if (isOpen) {
+    setTimeout(() => body.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  }
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+  
+  const isExamActive = document.getElementById('examScreen')?.classList.contains('active');
+  
+  if (isExamActive) {
+    if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') { 
+      e.preventDefault(); nav(1); 
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') { 
+      e.preventDefault(); nav(-1); 
+    }
+    
+    if (['1','a','A'].includes(e.key)) { e.preventDefault(); doSelect('A'); }
+    if (['2','b','B'].includes(e.key)) { e.preventDefault(); doSelect('B'); }
+    if (['3','c','C'].includes(e.key)) { e.preventDefault(); doSelect('C'); }
+    if (['4','d','D'].includes(e.key)) { e.preventDefault(); doSelect('D'); }
+    
+    if ((e.key === 'f' || e.key === 'F') && ST.mode === 'exam') { 
+      e.preventDefault(); toggleMark(); 
+    }
+    if (e.key === 'Escape') { 
+      closeModal(); 
+      closeExitModal();
+      closeSettingsModal();
+      closeSidebar();
+    }
+    
+    if (ST.mode === 'study') {
+      if (e.key === 'h' || e.key === 'H') {
+        e.preventDefault();
+        if (!ST.hintsShown[ST.qs[ST.idx]?.id]) showHint();
+      }
+      if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        if (ST.hintsShown[ST.qs[ST.idx]?.id] && !ST.answersRevealed[ST.qs[ST.idx]?.id]) revealAnswer();
+      }
+    }
+  }
+  
+  if (e.key === 'd' || e.key === 'D') setTheme('dark');
+  if (e.key === 'l' || e.key === 'L') setTheme('light');
+  if (e.key === 's' || e.key === 'S') setTheme('sepia');
+  if (e.key === 'g' || e.key === 'G') setTheme('green');
+});
+
+// Exit confirmation on browser back/close
+window.addEventListener('beforeunload', (e) => {
+  if (document.getElementById('examScreen')?.classList.contains('active')) {
+    saveProgress();
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+// Utility: Escape HTML
+function escapeHtml(s) { 
+  if (!s) return ''; 
+  return String(s).replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m])); 
+}
+
+// Initialize
+showScreen('sel');
+routeFromHash();
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+  if (ST.autoSaveInterval) clearInterval(ST.autoSaveInterval);
+  saveProgress();
+});
+</script>
 </body>
 </html>
