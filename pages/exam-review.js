@@ -1,27 +1,22 @@
 'use strict';
-
-/* SmartCare Exam Review — shared quiz engine.
- * Used by acls/bdls/bls/itls/mci/medical/pals/pepp/ppet.html. Each page defines
- * `window.EXAM_CONFIG = { id, qCountFallback }` in an inline <script> before
- * loading this file — `id` namespaces this page's localStorage keys
- * (progress/theme/mode) so pages don't collide with each other.
+/*
+ * Shared exam engine for the course exam pages (pages/<course>.html).
  *
- * A page opts into the qCount "how many questions" selector purely by
- * having a #qCount <select> in its markup — startExam() checks for the
- * element rather than reading a config flag. Pages without one (itls,
- * pepp — they use a multi-form-card picker instead) load their exam's
- * full question set unshuffled, matching their original behavior.
+ * Each page sets `window.EXAM_CONFIG = { id }` before loading this file;
+ * `id` namespaces the page's localStorage keys. The question banks come from
+ * the page's #bankSeg buttons (data-path, data-name, data-label, data-n,
+ * data-about). A page can add in-page views (field tools, Officer roles,
+ * Pearls) with registerView(); they open at page.html#<view>[/<sub>].
  */
-
 const EXAM_ID = (window.EXAM_CONFIG && window.EXAM_CONFIG.id) || 'exam';
-const QCOUNT_FALLBACK = (window.EXAM_CONFIG && window.EXAM_CONFIG.qCountFallback) || '25';
 
 // State management with persistence
 let ST = {
   qs: [], idx: 0, answers: {}, elim: {}, marked: {}, name: '',
   mode: 'exam', timerSec: 0, timerRef: null,
   confidence: {}, hintsShown: {}, answersRevealed: {},
-  currentFilter: 'all', autoSaveInterval: null
+  currentFilter: 'all', autoSaveInterval: null,
+  hintsEnabled: true
 };
 const THEMES = ['dark','light','sepia','green'];
 const STORAGE_KEY = `${EXAM_ID}-progress`;
@@ -52,10 +47,10 @@ setTheme(THEMES.includes(savedTheme) ? savedTheme : 'dark');
 function setModeUI(m) {
   ST.mode = m;
   localStorage.setItem(`${EXAM_ID}-mode`, m);
-
+  
   const examBtn = document.getElementById('modeExamBtn');
   const studyBtn = document.getElementById('modeStudyBtn');
-
+  
   if (m === 'exam') {
     examBtn.classList.add('active-exam');
     examBtn.setAttribute('aria-pressed', 'true');
@@ -67,26 +62,91 @@ function setModeUI(m) {
     examBtn.classList.remove('active-exam');
     examBtn.setAttribute('aria-pressed', 'false');
   }
+  document.getElementById('startBtn').textContent = m === 'exam' ? 'Start the exam' : 'Start studying';
 }
 
 // Load saved mode
 let savedMode = localStorage.getItem(`${EXAM_ID}-mode`);
 setModeUI(['exam','study'].includes(savedMode) ? savedMode : 'study');
 
-// Toast notification system
+// Question banks: the page's #bankSeg buttons (hidden when there is only one)
+const BANKS = {};
+document.querySelectorAll('#bankSeg button[data-bank]').forEach(b => {
+  BANKS[b.dataset.bank] = { path: b.dataset.path, name: b.dataset.name, label: b.dataset.label || '', n: Number(b.dataset.n), about: b.dataset.about };
+});
+const BANK_KEYS = Object.keys(BANKS);
+let bank = BANK_KEYS[0];
+function setBank(k) {
+  bank = BANKS[k] ? k : BANK_KEYS[0];
+  document.querySelectorAll('#bankSeg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.bank === bank));
+  document.getElementById('bankAbout').textContent = BANKS[bank].about;
+  document.getElementById('qAll').textContent = `All ${BANKS[bank].n}`;
+  localStorage.setItem(`${EXAM_ID}-bank`, bank);
+  setQCount(qPref, false);
+}
+document.getElementById('bankSeg').addEventListener('click', e => {
+  const b = e.target.closest('button[data-bank]');
+  if (b) setBank(b.dataset.bank);
+});
+function startSelectedExam() {
+  startExam(BANKS[bank].path, BANKS[bank].name);
+}
+
+// Question count (20 / 40 / all), remembered on this device. Counts the bank
+// doesn't reach are hidden, and "All" stands in for them.
+let qPref = '40';
+function setQCount(n, remember = true) {
+  qPref = ['20', '40', '9999'].includes(String(n)) ? String(n) : '40';
+  if (remember) localStorage.setItem(`${EXAM_ID}-qcount`, qPref);
+  const total = BANKS[bank].n;
+  const eff = qPref !== '9999' && Number(qPref) < total ? qPref : '9999';
+  document.getElementById('qCount').value = eff;
+  document.querySelectorAll('#qSeg button').forEach(b => {
+    b.hidden = b.dataset.n !== '9999' && Number(b.dataset.n) >= total;
+    b.setAttribute('aria-pressed', b.dataset.n === eff);
+  });
+}
+document.getElementById('qSeg').addEventListener('click', e => {
+  const b = e.target.closest('button[data-n]');
+  if (b) setQCount(b.dataset.n);
+});
+qPref = localStorage.getItem(`${EXAM_ID}-qcount`) || '40';
+setBank(localStorage.getItem(`${EXAM_ID}-bank`));
+
+// "Last score" line on the hub, from the last submitted exam on this device
+function renderHubLast() {
+  const el = document.getElementById('hubLast');
+  let r = null;
+  try { r = JSON.parse(localStorage.getItem(`${EXAM_ID}-last-score`)); } catch {}
+  if (!r || typeof r.pct !== 'number') { el.hidden = true; return; }
+  const days = Math.floor((new Date().setHours(0, 0, 0, 0) - new Date(r.t).setHours(0, 0, 0, 0)) / 86400000);
+  const when = days <= 0 ? 'today' : days === 1 ? 'yesterday'
+    : days < 7 ? `${days} days ago` : new Date(r.t).toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+  const where = Object.values(BANKS).find(b => b.name === r.exam);
+  el.innerHTML = `Last score <b class="${r.pct >= 75 ? 'ok' : 'low'}">${r.pct}%</b> on ${where && where.label ? escapeHtml(where.label) + ', ' : ''}${Number(r.n) || 0} questions, ${when}.`;
+  el.hidden = false;
+}
+renderHubLast();
+
+// Load hints toggle preference
+ST.hintsEnabled = localStorage.getItem('itls-hints-enabled') !== 'false';
+
+// Toast notification system - respects hints toggle
 function showToast(message, type = 'info', duration = 1500) {
+  if (!ST.hintsEnabled) return;
+  
   const container = document.getElementById('toastContainer');
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
   toast.setAttribute('role', 'status');
-
+  
   const icons = { success: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>', info: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg>', warning: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>' };
   toast.innerHTML = `<span class="toast-icon" aria-hidden="true">${icons[type] || '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-help"/></svg>'}</span><span>${escapeHtml(message)}</span>`;
-
+  
   container.appendChild(toast);
-
+  
   requestAnimationFrame(() => toast.classList.add('show'));
-
+  
   setTimeout(() => {
     toast.classList.remove('show');
     setTimeout(() => toast.remove(), 200);
@@ -98,11 +158,190 @@ function showScreen(s) {
   document.getElementById('selectorScreen').style.display = s === 'sel' ? 'flex' : 'none';
   document.getElementById('examScreen').classList.toggle('active', s === 'exam');
   document.getElementById('resultsScreen').classList.toggle('active', s === 'res');
-
+  const tool = document.getElementById('toolScreen');
+  if (tool) tool.style.display = s === 'tool' ? 'flex' : 'none';
+  
   if (s === 'exam') {
     document.getElementById('qText')?.focus?.();
   }
 }
+
+// In-page views (field tools, Officer roles, Pearls). Each has a direct link
+// that can be shared: page.html#<view> or #<view>/<sub>.
+const VIEWS = {};
+function registerView(key, cfg) { VIEWS[key] = cfg; }
+const DEFAULT_TITLE = document.title;
+let toolView = '';
+let viewSub = '';   // e.g. the officer role on screen; it is part of the shared link
+const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function openTool(view, sub) {
+  toolView = view;
+  viewSub = '';
+  const cfg = VIEWS[view];
+  document.getElementById('toolTitleText').textContent = cfg.title;
+  document.title = cfg.title;
+  showScreen('tool');
+  document.getElementById('toolBar').innerHTML = '';
+  document.getElementById('toolContainer').scrollTop = 0; // before render: a view may scroll to a section
+  cfg.render(sub || '');
+}
+
+const slugify = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+function groupByCategory(items) {
+  const cats = new Map();
+  items.forEach(p => {
+    if (!cats.has(p.category)) cats.set(p.category, []);
+    cats.get(p.category).push(p);
+  });
+  return cats;
+}
+
+const SEARCH_ICON = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#search"/></svg>';
+const CHEV_SVG = '<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+const CLEAR_ICON = '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>';
+
+// "Term: definition" gets a bold term.
+function pearlHtml(text) {
+  const i = text.indexOf(': ');
+  if (i > 0 && i <= 60 && !text.slice(0, i).includes('. ')) {
+    return `<span class="p-lead">${escapeHtml(text.slice(0, i))}:</span> ${escapeHtml(text.slice(i + 2))}`;
+  }
+  return escapeHtml(text);
+}
+
+// A Pearls view (page.html#pearls, #pearls/<topic>): search, topic chips and the pearls by topic.
+function registerPearls(src, title) {
+  let data = null;
+  registerView('pearls', { title, render: async topic => {
+    const container = document.getElementById('toolContainer');
+    if (!data) container.innerHTML = '';
+    try {
+      if (!data) {
+        const res = await fetch(src);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        data = await res.json();
+      }
+      if (toolView !== 'pearls') return; // the user left while this was loading
+      renderPearls(data.pearls);
+      container.scrollTop = 0;
+      if (topic) document.getElementById('sec-' + slugify(topic))?.scrollIntoView({ block: 'start' });
+    } catch (e) {
+      container.innerHTML = `<p class="p-empty">Couldn't load ${escapeHtml(title)} (${escapeHtml(e.message)}). Check your connection, then <button class="study-btn" onclick="openTool('pearls')">try again</button>.</p>`;
+    }
+  } });
+}
+
+function renderPearls(items) {
+  const cats = groupByCategory(items);
+  const tools = document.getElementById('toolBar');
+  const container = document.getElementById('toolContainer');
+  document.querySelector('.tool-share').setAttribute('aria-label', `Share a link to ${document.title}`);
+
+  tools.innerHTML = `
+    <label class="p-search">${SEARCH_ICON}
+      <input type="search" id="pearlSearch" placeholder="Search pearls" aria-label="Search pearls" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="p-clear" aria-label="Clear search">${CLEAR_ICON}</button>
+    </label>
+    <nav class="chip-row" id="pearlChips" aria-label="Jump to a section">
+      ${[...cats.keys()].map(c => `<button type="button" data-sec="sec-${slugify(c)}">${escapeHtml(c)}</button>`).join('')}
+    </nav>`;
+
+  container.innerHTML = `<div class="p-wrap">${[...cats].map(([cat, list]) => `
+    <section class="p-sec" id="sec-${slugify(cat)}" aria-labelledby="h-${slugify(cat)}">
+      <h2 class="p-sec-h" id="h-${slugify(cat)}">${escapeHtml(cat)}<span class="p-sec-n" aria-label="${list.length} pearls">${list.length}</span></h2>
+      <ul class="p-list">${list.map(p => `<li data-q="${escapeHtml((cat + ' ' + p.text).toLowerCase())}">${pearlHtml(p.text)}</li>`).join('')}</ul>
+    </section>`).join('')}
+    <p class="p-empty" id="pearlEmpty" role="status" hidden></p></div>`;
+
+  document.getElementById('pearlChips').addEventListener('click', e => {
+    const btn = e.target.closest('button[data-sec]');
+    if (!btn) return;
+    document.getElementById(btn.dataset.sec)?.scrollIntoView({ block: 'start', behavior: reducedMotion() ? 'auto' : 'smooth' });
+  });
+
+  const input = document.getElementById('pearlSearch');
+  const box = input.closest('.p-search');
+  const filter = () => {
+    const raw = input.value.trim();
+    const q = raw.toLowerCase();
+    let shown = 0;
+    container.querySelectorAll('.p-sec').forEach(sec => {
+      let n = 0;
+      sec.querySelectorAll('li').forEach(li => {
+        const hit = !q || li.dataset.q.includes(q);
+        li.hidden = !hit;
+        if (hit) n++;
+      });
+      sec.hidden = n === 0;
+      shown += n;
+    });
+    box.classList.toggle('has-q', !!q);
+    document.getElementById('pearlChips').hidden = !!q;
+    const empty = document.getElementById('pearlEmpty');
+    empty.hidden = shown > 0;
+    if (!shown) empty.textContent = `No pearls match “${raw}”. Try a single word.`;
+  };
+  input.addEventListener('input', filter);
+  box.querySelector('.p-clear').addEventListener('click', () => { input.value = ''; filter(); input.focus(); });
+}
+
+// Back: if we got here from inside this page, step back to where we came from.
+// If the page was opened on this view (a shared link), go to the course home instead
+// of leaving the app.
+function closeTool() {
+  if (history.state && history.state.inApp) { history.back(); return; }
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  lastRoute = '';
+  document.title = DEFAULT_TITLE;
+  showScreen('sel');
+}
+
+// Share (native share sheet on phones) or copy the direct link to what's on screen.
+async function shareToolLink(btn) {
+  const url = location.origin + location.pathname + '#' + toolView + (viewSub ? '/' + viewSub : '');
+  const title = document.title;
+  if (navigator.share) {
+    try { await navigator.share({ title, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    const lbl = btn.querySelector('.lbl');
+    if (lbl) {
+      lbl.textContent = 'Link copied';
+      setTimeout(() => { lbl.textContent = 'Share'; }, 1600);
+    }
+  } catch {
+    window.prompt('Copy this link:', url);
+  }
+}
+
+let lastRoute = null;
+function routeFromHash() {
+  if (location.hash === lastRoute) return; // popstate and hashchange can both fire for one Back
+  lastRoute = location.hash;
+  const [view, sub] = decodeURIComponent(location.hash.slice(1)).split('/');
+  if (VIEWS[view]) openTool(view, sub || '');
+  else if (document.getElementById('toolScreen')?.style.display === 'flex') {
+    document.title = DEFAULT_TITLE;
+    showScreen('sel');
+  }
+}
+window.addEventListener('hashchange', routeFromHash);
+window.addEventListener('popstate', routeFromHash);
+
+// In-page links (#pearls, #officers/…, …) add a history entry we can step back through.
+document.addEventListener('click', e => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.target) return;
+  const href = a.getAttribute('href');
+  if (href.length < 2 || href.startsWith('#mt-')) return;
+  e.preventDefault();
+  if (href !== location.hash) history.pushState({ inApp: true }, '', href);
+  routeFromHash();
+});
 
 // Save/Load progress
 function saveProgress() {
@@ -142,17 +381,16 @@ function loadProgress(name) {
 
 // Exam engine
 async function startExam(path, name) {
-  const qCountEl = document.getElementById('qCount');
-  const qCount = qCountEl ? parseInt(qCountEl.value || QCOUNT_FALLBACK) : null;
+  const qCount = parseInt(document.getElementById('qCount')?.value || '40');
   document.getElementById('qLoading').style.display = 'block';
   document.getElementById('qBox').style.display = 'none';
   document.getElementById('optsList').innerHTML = '';
-
+  
   try {
     const res = await fetch(path);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
-
+    
     if (json.questions && Array.isArray(json.questions)) {
       ST.qs = json.questions;
     } else if (Array.isArray(json)) {
@@ -160,31 +398,27 @@ async function startExam(path, name) {
     } else {
       throw new Error('JSON must contain a "questions" array');
     }
-
+    
     if (ST.qs.length === 0) throw new Error('No questions found');
-
-    // Pages with a #qCount selector shuffle + slice to the chosen count;
-    // pages without one (multi-form pickers) load the full set as-is.
-    if (qCount !== null) {
-      const totalQs = ST.qs.length;
-      const shuffled = [...ST.qs].sort(() => Math.random() - 0.5);
-      ST.qs = qCount >= totalQs ? shuffled : shuffled.slice(0, qCount);
-    }
-
+    
+    const totalQs = ST.qs.length;
+    const shuffled = [...ST.qs].sort(() => Math.random() - 0.5);
+    ST.qs = qCount >= totalQs ? shuffled : shuffled.slice(0, qCount);
+    
     ST.name = name;
     const restored = loadProgress(name);
     if (!restored) {
-      ST.idx = 0; ST.answers = {}; ST.elim = {}; ST.marked = {};
+      ST.idx = 0; ST.answers = {}; ST.elim = {}; ST.marked = {}; 
       ST.confidence = {}; ST.hintsShown = {}; ST.answersRevealed = {};
     }
-
+    
     document.getElementById('examName').textContent = name;
     document.getElementById('resExamName').textContent = name;
-
+    
     const modeBadge = document.getElementById('modeBadge');
     modeBadge.innerHTML =ST.mode === 'study' ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam';
     modeBadge.className = 'hdr-mode ' + (ST.mode === 'study' ? 'm-study' : 'm-exam');
-
+    
     const isStudy = ST.mode === 'study';
     document.getElementById('backBtn').style.display = isStudy ? '' : 'none';
     document.getElementById('endBtn').style.display = isStudy ? 'none' : '';
@@ -192,14 +426,14 @@ async function startExam(path, name) {
     document.getElementById('qBox').classList.toggle('is-study', isStudy);
     document.getElementById('studyActions').style.display = isStudy ? 'flex' : 'none';
     document.getElementById('confidenceRow').style.display = isStudy ? 'flex' : 'none';
-
+    
     if (ST.timerRef) clearInterval(ST.timerRef);
     ST.timerRef = setInterval(() => {
       ST.timerSec++;
       let m = Math.floor(ST.timerSec/60), s = ST.timerSec%60;
       const timerEl = document.getElementById('timerDisplay');
       timerEl.textContent = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
-
+      
       if (ST.timerSec >= 2700 && ST.mode === 'exam') {
         timerEl.classList.add('warning');
         if (ST.timerSec === 2700) {
@@ -207,22 +441,22 @@ async function startExam(path, name) {
         }
       }
     }, 1000);
-
+    
     if (ST.timerSec > 0) {
       let m = Math.floor(ST.timerSec/60), s = ST.timerSec%60;
       document.getElementById('timerDisplay').textContent = `${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
     }
-
+    
     buildGrid();
     renderQ();
     showScreen('exam');
-
+    
     if (!ST.autoSaveInterval) {
       ST.autoSaveInterval = setInterval(saveProgress, 30000);
     }
-
-    showToast(restored ? 'Progress restored' : 'Exam started', 'success', 1200);
-
+    
+    if (restored) showToast('Progress restored', 'success', 1200);
+    
   } catch(e) {
     document.getElementById('qLoading').style.display = 'none';
     document.getElementById('qBox').style.display = 'block';
@@ -238,8 +472,8 @@ function buildGrid() {
   grid.innerHTML = '';
   ST.qs.forEach((_, i) => {
     const btn = document.createElement('button');
-    btn.className = 'qn';
-    btn.id = `qb${i}`;
+    btn.className = 'qn'; 
+    btn.id = `qb${i}`; 
     btn.textContent = i+1;
     btn.setAttribute('role', 'option');
     btn.setAttribute('aria-selected', i === ST.idx);
@@ -253,7 +487,7 @@ function buildGrid() {
     grid.appendChild(btn);
   });
   applyGridFilter();
-  syncGrid();
+  syncGrid(); 
   syncStats();
 }
 
@@ -266,18 +500,17 @@ function filterGrid(filter) {
     btn.setAttribute('aria-pressed', isActive);
   });
   applyGridFilter();
-  showToast(`Showing ${filter === 'all' ? 'all' : filter}`, 'info', 1000);
 }
 
 function applyGridFilter() {
   ST.qs.forEach((q, i) => {
     const btn = document.getElementById(`qb${i}`);
     if (!btn) return;
-
+    
     let show = true;
     if (ST.currentFilter === 'unanswered' && ST.answers[q.id]) show = false;
     if (ST.currentFilter === 'flagged' && !ST.marked[q.id]) show = false;
-
+    
     btn.style.display = show ? '' : 'none';
   });
 }
@@ -286,16 +519,16 @@ function syncGrid() {
   ST.qs.forEach((q, i) => {
     const btn = document.getElementById(`qb${i}`);
     if (!btn) return;
-
+    
     const pip = btn.querySelector('.flag-pip');
     if (pip) pip.remove();
-
+    
     btn.className = 'qn' + (i===ST.idx ? ' cur' : '') + (ST.answers[q.id] ? ' done' : '') + (ST.marked[q.id] ? ' flg' : '');
     btn.setAttribute('aria-selected', i === ST.idx);
-
+    
     if (ST.marked[q.id]) {
-      const d = document.createElement('span');
-      d.className = 'flag-pip';
+      const d = document.createElement('span'); 
+      d.className = 'flag-pip'; 
       d.setAttribute('aria-hidden', 'true');
       btn.appendChild(d);
     }
@@ -306,25 +539,25 @@ function syncStats() {
   const ans = Object.keys(ST.answers).length;
   const uns = ST.qs.length - ans;
   const flg = Object.values(ST.marked).filter(Boolean).length;
-
-  ['stAns','mAns'].forEach(id => {
-    let el = document.getElementById(id);
+  
+  ['stAns','mAns'].forEach(id => { 
+    let el = document.getElementById(id); 
     if(el) {
       el.textContent = ans;
       el.parentElement?.parentElement?.setAttribute('aria-label', `${ans} questions answered`);
     }
   });
-  ['stUns','mUns'].forEach(id => {
-    let el = document.getElementById(id);
-    if(el) el.textContent = uns;
+  ['stUns','mUns'].forEach(id => { 
+    let el = document.getElementById(id); 
+    if(el) el.textContent = uns; 
   });
-  ['stFlg','mFlg'].forEach(id => {
-    let el = document.getElementById(id);
-    if(el) el.textContent = flg;
+  ['stFlg','mFlg'].forEach(id => { 
+    let el = document.getElementById(id); 
+    if(el) el.textContent = flg; 
   });
 }
 
-// Question rendering
+// Question rendering - FIXED study mode buttons
 function renderQ() {
   const total = ST.qs.length, q = ST.qs[ST.idx];
   const isStudy = ST.mode === 'study';
@@ -343,10 +576,10 @@ function renderQ() {
   const progress = ((ST.idx+1)/total*100).toFixed(1);
   pfill.style.width = `${progress}%`;
   pfill.parentElement.setAttribute('aria-valuenow', progress);
-
+  
   document.getElementById('navCtr').textContent = `${ST.idx+1} / ${total}`;
   document.getElementById('qText').textContent = q.text;
-
+  
   const markBtn = document.getElementById('markBtn');
   if (markBtn) {
     const isFlagged = !!ST.marked[q.id];
@@ -354,132 +587,130 @@ function renderQ() {
     markBtn.setAttribute('aria-pressed', isFlagged);
   }
 
+  // FIXED: Allow reveal without hint, disable buttons when revealed
   if (isStudy) {
     const hintBtn = document.getElementById('hintBtn');
     const answerBtn = document.getElementById('answerBtn');
     hintBtn.disabled = hintShown || revealed;
     answerBtn.disabled = revealed;
+    document.getElementById('studyActions').style.display = revealed ? 'none' : 'flex';
+    document.getElementById('confidenceRow').style.display = revealed ? 'none' : 'flex';
+    document.querySelectorAll('.confidence-btn').forEach(b => b.classList.toggle('active', b.dataset.level === confidence));
   }
 
   const optsDiv = document.getElementById('optsList');
   optsDiv.innerHTML = '';
   optsDiv.setAttribute('aria-label', `Answer choices for question ${ST.idx+1}`);
-
+  
   q.options.forEach((optText, idx) => {
     const letter = letters[idx];
     const isSel = selected === letter;
     const isElim = elim.includes(idx);
     const isCorrect = letter === q.correct_answer;
-
+    
     let revClass = '';
     if (revealed) {
       if (isCorrect) revClass = ' rev-correct';
       else if (isSel) revClass = ' rev-wrong';
     }
-
+    
     const row = document.createElement('div');
     row.className = 'opt' + (isSel && !revealed ? ' selected' : '') + (isElim && !revealed ? ' eliminated' : '') + revClass;
     row.setAttribute('role', 'radio');
     row.setAttribute('aria-checked', isSel && !revealed);
     row.setAttribute('tabindex', isSel ? '0' : '-1');
-
+    
     let elimHtml = '';
     if (!isStudy && !revealed) {
       elimHtml = `<button class="elim-btn" onclick="doElim(${ST.idx},${idx},event)" aria-label="${isElim ? 'Restore' : 'Eliminate'} option ${letter}">${isElim ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#undo-2"/></svg>' : '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>'}</button>`;
     }
-
+    
     let tagHtml = '';
     if (revealed) {
       if (isCorrect && isSel) tagHtml = '<span class="rev-tag rev-tag-ok"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg> Correct</span>';
       else if (isCorrect) tagHtml = '<span class="rev-tag rev-tag-ans"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg> Answer</span>';
       else if (isSel) tagHtml = '<span class="rev-tag rev-tag-ng"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg> Wrong</span>';
     }
-
-    row.innerHTML = elimHtml +
+    
+    row.innerHTML = elimHtml + 
       `<div class="opt-letter" aria-hidden="true">${letter}</div>
        <div class="opt-wrap" onclick="doSelect('${letter}')" role="presentation">
          <span class="opt-txt">${escapeHtml(optText)}</span>${tagHtml}
        </div>`;
-
+    
     row.onkeydown = (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         doSelect(letter);
       }
     };
-
+    
     optsDiv.appendChild(row);
   });
 
   const expDiv = document.getElementById('expArea');
   if (isStudy) {
     if (revealed) {
+      const confLabels = { high: 'Sure', medium: 'Maybe', low: 'Guessed' };
       expDiv.innerHTML = `
         <div class="study-exp">
           <div class="exp-label">Explanation</div>
-          <div class="exp-body">${escapeHtml(q.explanation || 'No explanation provided.')}</div>
+          <div class="exp-body">${escapeHtml(q.explanation || 'No explanation for this question.')}</div>
+          ${confidence ? `<div class="exp-conf">You said: ${confLabels[confidence]}</div>` : ''}
         </div>`;
     } else if (hintShown) {
-      const hint = q.hint || 'Review the key assessment findings and prioritize life-threatening conditions first.';
+      const hint = q.hint || 'Think about which principle the question is testing.';
       expDiv.innerHTML = `
-        <div class="study-hint" onclick="revealAnswer()" style="cursor:pointer">
-          <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> <strong>Hint:</strong> ${escapeHtml(hint)}
-          <div style="margin-top:8px;font-size:.75rem;color:var(--blue)">Click to reveal answer</div>
+        <div class="study-hint has-hint" onclick="revealAnswer()" role="button" tabindex="0">
+          <strong>Hint:</strong> ${escapeHtml(hint)}
+          <div class="hint-cta">Tap to reveal the answer</div>
         </div>`;
     } else {
-      expDiv.innerHTML = '<div class="study-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Select an answer, then use the buttons above to get help</div>';
+      expDiv.innerHTML = '<div class="study-hint">Pick an answer, then tap Check answer. Stuck? Show a hint.</div>';
     }
   } else {
     expDiv.innerHTML = '';
   }
 
-  if (isStudy && revealed && confidence) {
-    const confLabels = { high: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg> Sure', medium: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#message-circle-question"/></svg> Maybe', low: '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#frown"/></svg> Guessed' };
-    expDiv.innerHTML += `
-      <div style="margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)">
-        <span style="font-size:.7rem;color:var(--muted)">Your confidence: <strong>${confLabels[confidence]}</strong></span>
-      </div>`;
-  }
-
   document.getElementById('prevBtn').disabled = ST.idx === 0;
-
+  
   const nextBtn = document.getElementById('nextBtn');
   if (isStudy && !revealed) {
-    nextBtn.textContent = 'Check Answer';
+    nextBtn.textContent = 'Check answer';
     nextBtn.disabled = false;
   } else {
-    nextBtn.innerHTML ='Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
+    nextBtn.innerHTML = 'Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
     nextBtn.disabled = ST.idx === total - 1;
   }
-
+  
   syncGrid();
-
+  
   const qScroll = document.getElementById('qScroll');
   if (qScroll) qScroll.scrollTo({ top: 0, behavior: 'smooth' });
-
+  
   const firstOpt = optsDiv.querySelector('.opt-wrap');
   if (firstOpt && !revealed) {
     setTimeout(() => firstOpt.focus(), 100);
   }
-
+  
   saveProgress();
 }
 
-// Answer selection — allows changing before reveal
+// FIXED: Answer selection allows changing before reveal
 function doSelect(letter) {
   const q = ST.qs[ST.idx];
-
+  
   // Only block if answer is already revealed
   if (ST.mode === 'study' && ST.answersRevealed[q.id]) return;
-
+  
   // Toggle or set selection
   if (ST.answers[q.id] === letter) {
     delete ST.answers[q.id];
   } else {
     ST.answers[q.id] = letter;
   }
-
-  renderQ();
+  
+  renderQ(); 
   syncStats();
 }
 
@@ -490,13 +721,11 @@ function doElim(qi, oi, e) {
   if (!ST.elim[q.id]) ST.elim[q.id] = [];
   const arr = ST.elim[q.id];
   const idx = arr.indexOf(oi);
-
+  
   if (idx === -1) {
     arr.push(oi);
-    showToast(`Eliminated ${['A','B','C','D'][oi]}`, 'info', 1000);
   } else {
     arr.splice(idx,1);
-    showToast('Restored', 'info', 1000);
   }
   renderQ();
 }
@@ -505,22 +734,20 @@ function doElim(qi, oi, e) {
 function toggleMark() {
   const q = ST.qs[ST.idx];
   const wasMarked = !!ST.marked[q.id];
-
+  
   if (wasMarked) {
     delete ST.marked[q.id];
-    showToast('Flag removed', 'info', 1000);
   } else {
     ST.marked[q.id] = true;
-    showToast('Flagged', 'info', 1000);
   }
-
+  
   const markBtn = document.getElementById('markBtn');
   if (markBtn) {
     markBtn.classList.toggle('flagged', !wasMarked);
     markBtn.setAttribute('aria-pressed', !wasMarked);
   }
-
-  syncGrid();
+  
+  syncGrid(); 
   syncStats();
   saveProgress();
 }
@@ -530,32 +757,30 @@ function showHint() {
   const q = ST.qs[ST.idx];
   ST.hintsShown[q.id] = true;
   renderQ();
-  const hint = q.hint || 'Think about primary survey priorities: Airway, Breathing, Circulation.';
-  showToast('Hint: ' + hint, 'info', 2000);
+  const hint = q.hint || 'Think about age-appropriate vital signs and pediatric assessment priorities.';
 }
 
 // Study mode: Reveal answer
 function revealAnswer() {
   const q = ST.qs[ST.idx];
   ST.answersRevealed[q.id] = true;
-
+  
   if (!ST.answers[q.id]) {
     ST.answers[q.id] = q.correct_answer;
   }
-
+  
   renderQ();
-  showToast('Answer revealed', 'success', 1000);
 }
 
 // Study mode: Set confidence
 function setConfidence(level) {
   const q = ST.qs[ST.idx];
   ST.confidence[q.id] = level;
-
+  
   document.querySelectorAll('.confidence-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.level === level);
   });
-
+  
   renderQ();
   saveProgress();
 }
@@ -566,26 +791,27 @@ function nav(d) {
 
   // Intercept 'Next' in study mode to validate first
   if (d === 1 && ST.mode === 'study' && !ST.answersRevealed[q.id]) {
+    // Force user to pick an answer before checking
     if (!ST.answers[q.id]) {
       showToast('Please select an answer first', 'warning');
-      return;
+      return; 
     }
-    revealAnswer();
-    return;
+    revealAnswer(); // Validate the answer
+    return; // Stop navigation so they can read the explanation
   }
 
   const n = ST.idx + d;
-  if (n >= 0 && n < ST.qs.length) {
-    ST.idx = n;
-    renderQ();
-    closeSidebar();
+  if (n >= 0 && n < ST.qs.length) { 
+    ST.idx = n; 
+    renderQ(); 
+    closeSidebar(); 
   }
 }
 
-function jumpTo(i) {
-  ST.idx = i;
-  renderQ();
-  closeSidebar();
+function jumpTo(i) { 
+  ST.idx = i; 
+  renderQ(); 
+  closeSidebar(); 
 }
 
 // Sidebar management
@@ -596,7 +822,7 @@ function toggleSidebar() {
   toggleBtn.setAttribute('aria-expanded', isOpen);
 }
 
-function closeSidebar() {
+function closeSidebar() { 
   if (window.innerWidth <= 720) {
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.querySelector('.sb-toggle');
@@ -615,15 +841,15 @@ document.addEventListener('click', function(e) {
 });
 
 // Modal management
-function openEndModal() {
-  syncStats();
+function openEndModal() { 
+  syncStats(); 
   document.getElementById('endModal')?.classList.add('open');
   setTimeout(() => {
     document.querySelector('.mbtn-cancel')?.focus();
   }, 100);
 }
 
-function closeModal() {
+function closeModal() { 
   document.getElementById('endModal')?.classList.remove('open');
 }
 
@@ -644,14 +870,30 @@ function confirmExitNow() {
   goSelector();
 }
 
-function goSelector() {
+// Settings modal for hints toggle
+function openSettings() {
+  document.getElementById('hintsToggle').checked = ST.hintsEnabled;
+  document.getElementById('settingsModal')?.classList.add('open');
+}
+
+function closeSettingsModal() {
+  document.getElementById('settingsModal')?.classList.remove('open');
+}
+
+function toggleHints() {
+  ST.hintsEnabled = document.getElementById('hintsToggle').checked;
+  localStorage.setItem('itls-hints-enabled', ST.hintsEnabled);
+  showToast(ST.hintsEnabled ? 'Hints enabled <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile-plus"/></svg>' : 'Hints disabled', 'info', 1200);
+}
+
+function goSelector() { 
   clearInterval(ST.timerRef);
   if (ST.autoSaveInterval) {
     clearInterval(ST.autoSaveInterval);
     ST.autoSaveInterval = null;
   }
   saveProgress();
-  showScreen('sel');
+  showScreen('sel'); 
 }
 
 // Submit exam
@@ -662,112 +904,104 @@ function submitExam() {
     clearInterval(ST.autoSaveInterval);
     ST.autoSaveInterval = null;
   }
-
+  
   const qs = ST.qs, n = qs.length;
   let c=0, x=0, o=0;
-
-  qs.forEach(q => {
-    let a = ST.answers[q.id];
-    if(!a) o++;
-    else if(a===q.correct_answer) c++;
-    else x++;
+  
+  qs.forEach(q => { 
+    let a = ST.answers[q.id]; 
+    if(!a) o++; 
+    else if(a===q.correct_answer) c++; 
+    else x++; 
   });
-
+  
   const pct = Math.round(c/n*100), pass = pct>=75;
-
+  localStorage.setItem(`${EXAM_ID}-last-score`, JSON.stringify({ pct, n, exam: ST.name, t: Date.now() }));
+  renderHubLast();
+  const flagged = qs.filter(q => ST.marked[q.id]).length;
+  const seg = (k, cls) => k ? `<span class="${cls}" style="flex:${k}"></span>` : '';
+  
   let html = `
-    <div class="score-banner">
-      <div class="score-ring ${pass?'ring-pass':'ring-fail'}" role="img" aria-label="Score: ${pct}%, ${pass?'Pass':'Fail'}">
-        <div class="ring-num">${pct}%</div>
-        <div class="ring-lbl">${pass?'PASS':'FAIL'}</div>
-      </div>
-      <div class="score-stats">
-        <div class="ss-box">
-          <div class="ss-num" style="color:var(--green)">${c}</div>
-          <div class="ss-lbl">Correct</div>
-        </div>
-        <div class="ss-box">
-          <div class="ss-num" style="color:var(--red)">${x}</div>
-          <div class="ss-lbl">Incorrect</div>
-        </div>
-        <div class="ss-box">
-          <div class="ss-num" style="color:var(--muted)">${o}</div>
-          <div class="ss-lbl">Omitted</div>
+    <section class="score" aria-label="Your score">
+      <div class="score-top">
+        <div class="score-pct">${pct}%</div>
+        <div>
+          <div class="score-verdict ${pass ? 'pass' : 'fail'}">${pass ? 'Pass' : 'Below the pass mark'}</div>
+          <div class="score-note">The pass mark is 75%. ${n} questions.</div>
         </div>
       </div>
+      <div class="score-bar" aria-hidden="true">${seg(c, 'sb-c')}${seg(x, 'sb-x')}${seg(o, 'sb-o')}</div>
+      <div class="score-legend">
+        <span><b>${c}</b>correct</span><span><b>${x}</b>incorrect</span><span><b>${o}</b>skipped</span>
+      </div>
+    </section>
+    
+    <div class="res-filters" role="group" aria-label="Show questions">
+      <button type="button" data-f="all" aria-pressed="true" onclick="filterResults('all')">All ${n}</button>
+      <button type="button" data-f="incorrect" aria-pressed="false" onclick="filterResults('incorrect')">Incorrect ${x}</button>
+      <button type="button" data-f="flagged" aria-pressed="false" onclick="filterResults('flagged')">Flagged ${flagged}</button>
+      <button type="button" class="res-print" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg> Print</button>
     </div>
-
-    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-      <button class="study-btn" onclick="filterResults('all')">All Questions</button>
-      <button class="study-btn" onclick="filterResults('incorrect')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-x"/></svg> Incorrect Only</button>
-      <button class="study-btn" onclick="filterResults('flagged')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg> Flagged</button>
-      <button class="study-btn" onclick="window.print()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#printer"/></svg>️ Print</button>
-    </div>
-
+    
     <div class="rq-list" id="resultsList">`;
-
+  
   qs.forEach((q,i) => {
     const ua = ST.answers[q.id];
     const isC = ua && ua === q.correct_answer, isX = ua && !isC, isO = !ua;
     const dotClass = isC ? 'dot-c' : isX ? 'dot-x' : 'dot-o';
-    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : '—';
-    const badgeClass = isC ? 'rqb-c' : isX ? 'rqb-x' : 'rqb-o';
-    const badgeText = isC ? 'Correct' : isX ? 'Incorrect' : 'Omitted';
-    const confidence = ST.confidence[q.id];
-    const confDisplay = confidence ? ` <span style="font-size:.65rem;color:var(--muted)">[${confidence}]</span>` : '';
-
+    const ind = isC ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>' : isX ? '<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg>' : '–';
+    const badgeText = isC ? 'Correct' : isX ? 'Incorrect' : 'Skipped';
+    
     html += `<div class="rq-item" data-status="${isC?'correct':isX?'incorrect':'omitted'}" data-flagged="${!!ST.marked[q.id]}">
-      <div class="rq-row" onclick="xpand(this,${i})" role="button" tabindex="0" aria-expanded="false">
+      <div class="rq-row" onclick="xpand(this,${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();xpand(this,${i})}" role="button" tabindex="0" aria-expanded="false">
         <span class="rq-n">${i+1}</span>
         <span class="rq-dot ${dotClass}" aria-hidden="true">${ind}</span>
         <span class="rq-q">${escapeHtml(q.text)}</span>
-        <span class="rq-badge ${badgeClass}">${badgeText}${confDisplay}</span>
-        <span class="rq-chev" aria-hidden="true">▼</span>
+        <span class="rq-badge">${badgeText}</span>
+        <svg class="rq-chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="rq-body" id="rb${i}">
         ${buildResOpts(q,ua)}
         <div class="exp-box">
           <div class="exp-label">Explanation</div>
-          <div class="exp-body">${escapeHtml(q.explanation||'No explanation provided.')}</div>
+          <div class="exp-body">${escapeHtml(q.explanation||'No explanation for this question.')}</div>
         </div>
       </div>
     </div>`;
   });
-
-  html += '</div>';
+  
+  html += '<p class="res-empty" id="resEmpty" hidden></p></div>';
   document.getElementById('resContent').innerHTML = html;
   showScreen('res');
-  showToast('Submitted!', 'success', 1000);
 }
 
 // Results filtering
 function filterResults(filter) {
-  const items = document.querySelectorAll('.rq-item');
-  items.forEach(item => {
-    const status = item.dataset.status;
-    const flagged = item.dataset.flagged === 'true';
-    let show = true;
-
-    if (filter === 'incorrect' && status !== 'incorrect') show = false;
-    if (filter === 'flagged' && !flagged) show = false;
-
+  let shown = 0;
+  document.querySelectorAll('.rq-item').forEach(item => {
+    const show = filter === 'all'
+      || (filter === 'incorrect' && item.dataset.status === 'incorrect')
+      || (filter === 'flagged' && item.dataset.flagged === 'true');
     item.style.display = show ? '' : 'none';
+    if (show) shown++;
   });
-
-  showToast(`Showing ${filter === 'all' ? 'all' : filter}`, 'info', 1000);
+  document.querySelectorAll('.res-filters [data-f]').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === filter));
+  const empty = document.getElementById('resEmpty');
+  empty.hidden = shown > 0;
+  if (!shown) empty.textContent = filter === 'flagged' ? 'You didn\'t flag any questions.' : 'No incorrect answers. Nice work.';
 }
 
 function buildResOpts(q, ua) {
   const letters = ['A','B','C','D'];
   let h = '<div class="res-opts" role="list">';
-
+  
   q.options.forEach((optText, idx) => {
     const letter = letters[idx];
     const isC = letter === q.correct_answer;
     const isSel = letter === ua;
     const isW = isSel && !isC;
     let cls = isC ? 'ro-correct' : isW ? 'ro-wrong' : '';
-
+    
     h += `<div class="res-opt ${cls}" role="listitem">
       <div class="ro-ltr" aria-hidden="true">${letter}</div>
       <span style="font-size:.82rem;flex:1">${escapeHtml(optText)}</span>
@@ -775,18 +1009,18 @@ function buildResOpts(q, ua) {
       ${isW ? '<span class="ro-tag" style="color:var(--red)"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#x"/></svg> Your pick</span>' : ''}
     </div>`;
   });
-
+  
   return h + '</div>';
 }
 
 function xpand(hdr, i) {
   const body = document.getElementById(`rb${i}`);
   if (!body) return;
-
+  
   const isOpen = body.classList.toggle('open');
   hdr.classList.toggle('expanded', isOpen);
   hdr.setAttribute('aria-expanded', isOpen);
-
+  
   if (isOpen) {
     setTimeout(() => body.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
   }
@@ -795,31 +1029,32 @@ function xpand(hdr, i) {
 // Keyboard shortcuts
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
-
+  
   const isExamActive = document.getElementById('examScreen')?.classList.contains('active');
-
+  
   if (isExamActive) {
-    if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') {
-      e.preventDefault(); nav(1);
+    if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') { 
+      e.preventDefault(); nav(1); 
     }
-    if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') {
-      e.preventDefault(); nav(-1);
+    if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') { 
+      e.preventDefault(); nav(-1); 
     }
-
+    
     if (['1','a','A'].includes(e.key)) { e.preventDefault(); doSelect('A'); }
     if (['2','b','B'].includes(e.key)) { e.preventDefault(); doSelect('B'); }
     if (['3','c','C'].includes(e.key)) { e.preventDefault(); doSelect('C'); }
     if (['4','d','D'].includes(e.key)) { e.preventDefault(); doSelect('D'); }
-
-    if ((e.key === 'f' || e.key === 'F') && ST.mode === 'exam') {
-      e.preventDefault(); toggleMark();
+    
+    if ((e.key === 'f' || e.key === 'F') && ST.mode === 'exam') { 
+      e.preventDefault(); toggleMark(); 
     }
-    if (e.key === 'Escape') {
-      closeModal();
+    if (e.key === 'Escape') { 
+      closeModal(); 
       closeExitModal();
+      closeSettingsModal();
       closeSidebar();
     }
-
+    
     if (ST.mode === 'study') {
       if (e.key === 'h' || e.key === 'H') {
         e.preventDefault();
@@ -831,7 +1066,7 @@ document.addEventListener('keydown', e => {
       }
     }
   }
-
+  
   if (e.key === 'd' || e.key === 'D') setTheme('dark');
   if (e.key === 'l' || e.key === 'L') setTheme('light');
   if (e.key === 's' || e.key === 'S') setTheme('sepia');
@@ -848,27 +1083,17 @@ window.addEventListener('beforeunload', (e) => {
 });
 
 // Utility: Escape HTML
-function escapeHtml(s) {
-  if (!s) return '';
+function escapeHtml(s) { 
+  if (!s) return ''; 
   return String(s).replace(/[&<>"']/g, m => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  }[m]));
+  }[m])); 
 }
-
-// Educational-use disclaimer, injected once so all 8 exam-review pages stay
-// in sync from this one place rather than 8 near-identical HTML edits.
-(function addDisclaimerLink() {
-  const sub = document.querySelector('.sel-sub');
-  if (!sub || document.querySelector('.sel-disclaimer')) return;
-  const a = document.createElement('a');
-  a.className = 'sel-disclaimer';
-  a.href = 'about.html#disclaimer';
-  a.textContent = 'Study aid only — not for direct patient care';
-  sub.insertAdjacentElement('afterend', a);
-})();
 
 // Initialize
 showScreen('sel');
+// After the page's own script has registered its views
+document.addEventListener('DOMContentLoaded', routeFromHash);
 
 // Cleanup on page unload
 window.addEventListener('beforeunload', () => {

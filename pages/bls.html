@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BLS Exam Review</title>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="BLS exam review — Basic Life Support CPR, AED use, and emergency cardiovascular care for healthcare providers and first responders.">
     <meta name="keywords" content="SmartCare, pages, bls, clinical learning, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -61,13 +64,10 @@
   "inLanguage": "en-US"
 }
     </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>BLS Exam Review</title>
-    <link rel="preload" href="../fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../fonts/fonts.css">
-
-<link rel="stylesheet" href="exam-review.css">
+    <link rel="stylesheet" href="exam-review.css">
 </head>
 <body>
 
@@ -79,53 +79,79 @@
 
 <!-- Selector -->
 <div id="selectorScreen">
-  <!-- Theme toggle upper left -->
-  <div class="theme-top">
-    <div class="sel-theme-row" role="group" aria-label="Theme selection">
-      <span class="sel-theme-lbl">Theme</span>
-      <button class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme" aria-pressed="false"></button>
-      <button class="tp tp-light" id="s-tp-light" onclick="setTheme('light')" aria-label="Light theme" aria-pressed="false"></button>
-      <button class="tp tp-sepia" id="s-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme" aria-pressed="false"></button>
-      <button class="tp tp-green" id="s-tp-green" onclick="setTheme('green')" aria-label="Green theme" aria-pressed="false"></button>
+  <div class="hub">
+    <div class="hub-top">
+      <a href="courses.html" class="hub-back"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Courses</a>
+      <div class="sel-theme-row" role="group" aria-label="Theme">
+        <button class="tp tp-dark" id="s-tp-dark" onclick="setTheme('dark')" aria-label="Dark theme" aria-pressed="false"></button>
+        <button class="tp tp-light" id="s-tp-light" onclick="setTheme('light')" aria-label="Light theme" aria-pressed="false"></button>
+        <button class="tp tp-sepia" id="s-tp-sepia" onclick="setTheme('sepia')" aria-label="Sepia theme" aria-pressed="false"></button>
+        <button class="tp tp-green" id="s-tp-green" onclick="setTheme('green')" aria-label="Green theme" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <div class="hub-cols two-col">
+      <div class="hub-col">
+        <div class="course-card-wrap">
+          <header class="course-card" data-cat="cardiac">
+            <svg class="cc-icon" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg>
+            <h1 class="cc-short">BLS</h1>
+            <p class="cc-name">Basic Life Support</p>
+            <div class="cc-band">Cardiac</div>
+          </header>
+        </div>
+        <a class="hub-disclaimer" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
+
+        <section class="hub-sec" aria-labelledby="examH">
+          <div class="hub-head"><h2 class="hub-h" id="examH">Course exam</h2><span class="hub-aside">284 questions</span></div>
+          <div class="hub-panel">
+            <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank" hidden>
+              <button type="button" data-bank="b1" data-path="../src/BLS/bls.json" data-name="BLS Exam" data-label="" data-n="284" data-about="284 questions." aria-pressed="true">BLS</button>
+            </div>
+            <p class="bank-about" id="bankAbout" aria-live="polite" hidden>284 questions.</p>
+            <div class="mode-row" role="group" aria-label="Exam mode">
+              <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Study<span class="mode-hint">Hints and answers as you go</span></button>
+              <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>
+            </div>
+            <div class="qcount">
+              <span class="qcount-l" id="qCountL">Questions</span>
+              <div class="seg" id="qSeg" role="group" aria-labelledby="qCountL">
+                <button type="button" data-n="20" aria-pressed="false">20</button>
+                <button type="button" data-n="40" aria-pressed="true">40</button>
+                <button type="button" data-n="9999" aria-pressed="false" id="qAll">All 284</button>
+              </div>
+              <input type="hidden" id="qCount" value="40">
+            </div>
+            <button type="button" class="exam-card start-btn" id="startBtn" onclick="startSelectedExam()">Start studying</button>
+            <p class="hub-last" id="hubLast" hidden></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="hub-col">
+        <section class="hub-sec" aria-labelledby="studyH">
+          <div class="hub-head"><h2 class="hub-h" id="studyH">BLS Reviewer</h2><span class="hub-aside">12 chapters</span></div>
+          <div class="hub-list">
+            <ol class="chapters" aria-label="Reviewer chapters">
+              <li><a href="../courses/bls/index.html#c01"><span class="ch-n">1</span><span>Chain of Survival &amp; Systems of Care</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c02"><span class="ch-n">2</span><span>Scene Safety, Assessment &amp; Recognition of Cardiac Arrest</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c03"><span class="ch-n">3</span><span>High-Quality CPR: Adult (1-Rescuer)</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c04"><span class="ch-n">4</span><span>Adult 2-Rescuer CPR &amp; Team Dynamics</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c05"><span class="ch-n">5</span><span>Automated External Defibrillation (AED)</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c06"><span class="ch-n">6</span><span>Ventilation: Barrier Devices, Pocket Mask &amp; Bag-Mask</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c07"><span class="ch-n">7</span><span>Breaths, Ventilations &amp; Advanced Airway Considerations</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c08"><span class="ch-n">8</span><span>Child BLS</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c09"><span class="ch-n">9</span><span>Infant BLS</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c10"><span class="ch-n">10</span><span>Foreign-Body Airway Obstruction (Adult, Child, Infant)</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c11"><span class="ch-n">11</span><span>Opioid-Associated Life-Threatening Emergencies</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+              <li><a href="../courses/bls/index.html#c12"><span class="ch-n">12</span><span>Special Circumstances: Drowning, Pregnancy, Recovery &amp; Post-Arrest Care</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+            </ol>
+            <a class="hub-row" href="../courses/bls/index.html"><span>Open the BLS Reviewer</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
-
-  <div class="sel-logo"><span class="brand-name">BLS</span> Review</div>
-  <div class="sel-sub">Basic Life Support</div>
-  
-  <!-- Mode row - identical size -->
-  <div class="mode-row" role="group" aria-label="Study mode selection">
-    <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">
-      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Study Mode
-      <span class="mode-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Hints & Review answers</span>
-    </button>
-    <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">
-      <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Exam Mode
-      <span class="mode-hint">No hints • Timed • Submit to score</span>
-    </button>
-  </div>
-
-  <div class="exam-q-selector">
-    <label for="qCount">Number of Questions:</label>
-    <select id="qCount" class="q-select">
-        <option value="25">25 Questions</option>
-        <option value="50" selected>50 Questions</option>
-        <option value="75">75 Questions</option>
-        <option value="100">100 Questions</option>
-        <option value="150">150 Questions</option>
-        <option value="284">All 284 Questions</option>
-    </select>
-  </div>
-
-  <div class="exam-cards" role="list">
-    <div class="exam-card" onclick="startExam('../src/BLS/bls.json', 'BLS Exam')" role="listitem" tabindex="0" aria-label="Start BLS Exam">
-      <div class="ec-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart-pulse"/></svg></div>
-      <div class="ec-title">BLS Exam</div>
-      <div class="ec-meta">284 questions · Exam & Study modes</div>
-      <span class="ec-tag tag-exam">Practice Exam</span>
-    </div>
-  </div>
-  <a href="courses.html" class="back-link"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back to Courses</a>
 </div>
 
 <!-- Exam screen -->
@@ -151,21 +177,19 @@
         <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg> <span class="btn-txt">Flag</span>
       </button>
       <!-- Back button for study mode -->
-      <button class="hbtn hbtn-back" id="backBtn" onclick="confirmExit()" style="display:none"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Back</button>
-      <button class="hbtn hbtn-end" id="endBtn" onclick="openEndModal()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg> <span class="btn-txt">End</span></button>
+      <button class="hbtn hbtn-back" id="backBtn" onclick="confirmExit()" style="display:none"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Exit</button>
+      <button class="hbtn hbtn-end" id="endBtn" onclick="openEndModal()">Submit</button>
     </div>
   </header>
   
   <div class="exam-body">
     <aside class="sidebar" id="sidebar" aria-label="Question navigator">
       <div class="sb-hdr">
-        <div class="sb-ttl">
-          <span>Navigator</span>
+        <h2 class="sb-ttl">Questions</h2>
+        <div class="sb-filters" role="group" aria-label="Show questions">
           <button class="sb-filter-btn active" data-filter="all" onclick="filterGrid('all')" aria-pressed="true">All</button>
-        </div>
-        <div class="sb-filters">
-          <button class="sb-filter-btn" data-filter="unanswered" onclick="filterGrid('unanswered')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-dot"/></svg></button>
-          <button class="sb-filter-btn" data-filter="flagged" onclick="filterGrid('flagged')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flag"/></svg></button>
+          <button class="sb-filter-btn" data-filter="unanswered" onclick="filterGrid('unanswered')" aria-pressed="false">To do</button>
+          <button class="sb-filter-btn" data-filter="flagged" onclick="filterGrid('flagged')" aria-pressed="false">Flagged</button>
         </div>
         <div class="sb-legend" aria-label="Question status legend">
           <div class="sb-leg"><div class="leg-dot ld-unseen" aria-hidden="true"></div>Unanswered</div>
@@ -207,22 +231,23 @@
 		<span id="qText" aria-live="polite">Loading…</span>
 		</div>
         
-        <!-- Study mode actions -->
-        <div id="studyActions" class="study-actions" style="display:none">
-          <button class="study-btn" id="hintBtn" onclick="showHint()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Show Hint</button>
-          <button class="study-btn primary" id="answerBtn" onclick="revealAnswer()" disabled><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Reveal Answer</button>
-        </div>
-        
         <div class="opts" id="optsList" role="radiogroup" aria-label="Answer choices"></div>
         
+        <div id="expArea" aria-live="polite"></div>
+
+        <!-- Study mode actions -->
+        <div id="studyActions" class="study-actions" style="display:none">
+          <button class="study-btn" id="hintBtn" onclick="showHint()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#lightbulb"/></svg> Show hint</button>
+          <button class="study-btn primary" id="answerBtn" onclick="revealAnswer()" disabled><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Reveal answer</button>
+        </div>
+        
         <!-- Confidence rating for study mode -->
-        <div id="confidenceRow" class="confidence-row" style="display:none" aria-label="How confident were you?">
+        <div id="confidenceRow" class="confidence-row" style="display:none" aria-label="How sure are you?">
+          <span class="conf-label" aria-hidden="true">How sure are you?</span>
           <button class="confidence-btn" data-level="high" onclick="setConfidence('high')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile"/></svg> Sure</button>
           <button class="confidence-btn" data-level="medium" onclick="setConfidence('medium')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#message-circle-question"/></svg> Maybe</button>
           <button class="confidence-btn" data-level="low" onclick="setConfidence('low')"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#frown"/></svg> Guessed</button>
         </div>
-        
-        <div id="expArea" aria-live="polite"></div>
       </div>
       
       <div class="q-nav">
@@ -237,9 +262,9 @@
 <!-- Results screen -->
 <div id="resultsScreen">
   <div class="res-hdr">
-    <span class="res-ttl"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chart-no-axes-column"/></svg> Exam Results</span>
+    <span class="res-ttl">Results</span>
     <span id="resExamName" aria-live="polite"></span>
-    <button class="res-back" onclick="goSelector()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> New Exam</button>
+    <button class="res-back" onclick="goSelector()"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> BLS home</button>
   </div>
   <div class="res-scroll">
     <div id="resContent">
@@ -248,21 +273,20 @@
   </div>
 </div>
 
-
 <!-- Modal -->
 <div class="modal-bg" id="endModal" onclick="if(event.target===this)closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#upload"/></svg></div>
-    <div class="modal-ttl" id="modalTitle">Submit Exam Block?</div>
-    <div class="modal-sub">You are about to submit your answers. This action cannot be undone.</div>
+    <div class="modal-ttl" id="modalTitle">Submit your answers?</div>
+    <div class="modal-sub">You can't change answers after you submit.</div>
     <div class="modal-stats" aria-live="polite">
       <div class="ms-box"><div class="ms-num" id="mAns">0</div><div class="ms-lbl">Answered</div></div>
-      <div class="ms-box"><div class="ms-num" id="mUns">0</div><div class="ms-lbl">Unanswered</div></div>
+      <div class="ms-box"><div class="ms-num" id="mUns">0</div><div class="ms-lbl">To do</div></div>
       <div class="ms-box"><div class="ms-num" id="mFlg">0</div><div class="ms-lbl">Flagged</div></div>
     </div>
     <div class="modal-btns">
-      <button class="mbtn mbtn-cancel" onclick="closeModal()">Cancel</button>
-      <button class="mbtn mbtn-submit" onclick="submitExam()">Submit Answers</button>
+      <button class="mbtn mbtn-cancel" onclick="closeModal()">Keep going</button>
+      <button class="mbtn mbtn-submit" onclick="submitExam()">Submit</button>
     </div>
   </div>
 </div>
@@ -271,8 +295,8 @@
 <div class="modal-bg" id="exitModal" onclick="if(event.target===this)closeExitModal()" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle">
   <div class="modal">
     <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️</div>
-    <div class="modal-ttl" id="exitModalTitle">Leave Exam?</div>
-    <div class="modal-sub" id="exitModalSub">Your progress will be saved. You can resume later.</div>
+    <div class="modal-ttl" id="exitModalTitle">Leave this exam?</div>
+    <div class="modal-sub" id="exitModalSub">Your progress is saved. You can pick up where you left off.</div>
     <div class="modal-btns">
       <button class="mbtn mbtn-cancel" onclick="closeExitModal()">Stay</button>
       <button class="mbtn mbtn-submit" onclick="confirmExitNow()">Leave</button>
@@ -280,8 +304,29 @@
   </div>
 </div>
 
+<!-- Settings Modal for Hint Toggle -->
+<div class="modal-bg" id="settingsModal" onclick="if(event.target===this)closeSettingsModal()" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+  <div class="modal">
+    <div class="modal-ico" aria-hidden="true"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#settings-2"/></svg>️</div>
+    <div class="modal-ttl" id="settingsModalTitle">Settings</div>
+    <div class="modal-sub">Customize your experience</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--border)">
+      <div>
+        <div style="font-weight:600">Hints (toasts) <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#smile-plus"/></svg></div>
+        <div style="font-size:.75rem;color:var(--muted)">Show quick feedback messages</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="hintsToggle" onchange="toggleHints()">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="modal-btns" style="margin-top:16px">
+      <button class="mbtn mbtn-cancel" onclick="closeSettingsModal()">Close</button>
+    </div>
+  </div>
+</div>
 
-<script>window.EXAM_CONFIG = { id: 'bls', qCountFallback: '50' };</script>
+<script>window.EXAM_CONFIG = { id: 'bls' };</script>
 <script src="exam-review.js"></script>
 </body>
 </html>
