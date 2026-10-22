@@ -1,0 +1,5 @@
+# Regenerable intermediates (see README → Rebuild)
+node_modules/
+capture/
+build/
+assets/voice/
