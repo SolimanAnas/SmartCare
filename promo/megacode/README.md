@@ -8,6 +8,7 @@ to the app itself.
 |---|---|
 | Landscape master, 1920×1080, 30 fps, H.264 + AAC, 55 s | `output/smartcare-megacode-hero.mp4` |
 | Vertical cut, 1080×1920, for Reels, Shorts and TikTok | `output/smartcare-megacode-vertical.mp4` |
+| Google Play preview video, 1920×1080, 33 s, captioned | `output/smartcare-megacode-play-preview.mp4` |
 | Poster, 2160×2700 (4:5) | `output/smartcare-megacode-poster.png` |
 | QA report and contact sheets | `output/QA_REPORT.md`, `output/*_contact.jpg` |
 | Storyboard and clinical notes | `STORYBOARD.md` |
@@ -58,6 +59,24 @@ python3 scripts/compose.py land --stills 8.5 22.3   # QA stills at given seconds
 Capture takes about 20 minutes per layout (it screenshots at 2–3× device pixel ratio), and compose
 about 10 minutes. `capture/`, `build/`, `node_modules/` and the downloaded voice are git-ignored
 and regenerable.
+
+## Google Play preview cut
+
+`python3 scripts/compose.py land --cut play` (or `STEPS="play qa" ./build.sh land`) builds a separate
+33 s edit for the store listing, following Play Console guidance:
+
+* The real app is on screen from the first frame, and the core loop (read the rhythm, make the call)
+  appears within 10 s. There is no stylised cold open.
+* The store can autoplay the video **muted** for about 30 s, so the narration is burned in as
+  captions. When the camera is on the decision panel the captions move to the top, so the engine's
+  ✅/⛔ feedback stays readable.
+* The end card has no "Get it on Google Play" button or store URL, since the viewer is already on
+  the listing.
+* Narration lines and timings live in `scripts/vo_lines_play.json` (audio in `audio/vo/play*.wav`).
+
+To publish it, upload the MP4 to YouTube as Public or Unlisted (not age-restricted, embedding
+allowed, **monetization off**). Then paste the plain video URL (no playlist and no `&t=`) into
+Play Console → Grow → Store presence → Main store listing → *Video*.
 
 ## Notes and open items
 

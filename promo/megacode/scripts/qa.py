@@ -13,7 +13,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'output'
-FILES = {'smartcare-megacode-hero.mp4': (1920, 1080), 'smartcare-megacode-vertical.mp4': (1080, 1920)}
+FILES = {'smartcare-megacode-hero.mp4': (1920, 1080), 'smartcare-megacode-vertical.mp4': (1080, 1920),
+         'smartcare-megacode-play-preview.mp4': (1920, 1080)}
+DURATION = {'smartcare-megacode-play-preview.mp4': (30, 35)}  # store autoplays ~30 s muted
 SHEET_T = [0.5, 2.5, 4.5, 5.6, 7.5, 9.5, 12.5, 13.2, 15.0, 17.0, 19.5, 21.5, 23.6, 25.0, 26.8, 28.6, 30.4, 32.2,
            33.6, 35.5, 37.5, 39.4, 41.5, 43.4, 45.5, 47.5, 49.5, 51.5, 53.5, 54.6]
 
@@ -36,16 +38,17 @@ def blacks(p):
     return re.findall(r'black_start:([\d.]+) black_end:([\d.]+)', r.stderr)
 
 
-def sheet(p, size, name):
+def sheet(p, size, name, dur=55.0):
     w = 384 if size[0] > size[1] else 216
     h = int(w * size[1] / size[0])
     cols = 6
-    rows = (len(SHEET_T) + cols - 1) // cols
+    rows = (len(SHEET_T) + cols - 1) // cols  # 30 tiles max
     im = Image.new('RGB', (cols * w, rows * (h + 22)), (20, 20, 24))
     d = ImageDraw.Draw(im)
     f = ImageFont.truetype('/usr/share/fonts/opentype/inter/Inter-SemiBold.otf', 14)
     tmp = ROOT / 'build' / 'qa_frame.png'
-    for k, t in enumerate(SHEET_T):
+    ts = SHEET_T if dur > 50 else [round(0.05 + k * (dur - 0.2) / 23, 2) for k in range(24)]
+    for k, t in enumerate(ts):
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', str(t), '-i', str(p), '-frames:v', '1', str(tmp)], check=True)
         fr = Image.open(tmp).convert('RGB').resize((w, h), Image.LANCZOS)
         x, y = (k % cols) * w, (k // cols) * (h + 22)
@@ -73,16 +76,16 @@ def main():
         lufs, tp = loudness(p)
         bl = blacks(p)
         checks = [
-            ('Duration 45–60 s', 45 <= dur <= 60, f'{dur:.2f} s'),
+            ('Duration %d–%d s' % DURATION.get(fn, (45, 60)), DURATION.get(fn, (45, 60))[0] <= dur <= DURATION.get(fn, (45, 60))[1], f'{dur:.2f} s'),
             (f'Resolution {size[0]}×{size[1]}', (v['width'], v['height']) == size, f"{v['width']}×{v['height']}"),
             ('30 fps', abs(fps - 30) < 0.01, f'{fps:.3f}'),
             ('H.264 video', v['codec_name'] == 'h264', f"{v['codec_name']} {v.get('profile', '')} {v['pix_fmt']}"),
             ('AAC audio', a is not None and a['codec_name'] == 'aac', f"{a['codec_name']} {a['sample_rate']} Hz {a['channels']} ch" if a else 'none'),
             ('Loudness ≈ −16 LUFS', lufs is not None and -17.5 <= lufs <= -14.5, f'{lufs} LUFS'),
             ('True peak ≤ −1 dBTP', tp is not None and tp <= -0.9, f'{tp} dBFS'),
-            ('No black gaps > 0.25 s except the planned fade-out', all(float(s) > 54.0 for s, e in bl), ', '.join(f'{float(s):.2f}–{float(e):.2f}' for s, e in bl) or 'none'),
+            ('No black gaps > 0.25 s except the planned fade-out', all(float(s) > dur - 1.0 for s, e in bl), ', '.join(f'{float(s):.2f}–{float(e):.2f}' for s, e in bl) or 'none'),
         ]
-        sh = sheet(p, size, fn.replace('.mp4', '_contact.jpg'))
+        sh = sheet(p, size, fn.replace('.mp4', '_contact.jpg'), dur)
         lines += [f'## {fn}', '', '| Check | Result | Value |', '|---|---|---|']
         for name, ok, val in checks:
             ok_all &= ok

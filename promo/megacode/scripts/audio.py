@@ -308,7 +308,7 @@ def main():
     sfx = reverb(sfx, 1.2, 0.18, 6000)
 
     vo = np.zeros(n)
-    for line in json.loads((ROOT / 'scripts' / 'vo_lines.json').read_text()):
+    for line in json.loads((ROOT / tlj.get('vo_lines', 'scripts/vo_lines.json')).read_text()):
         x = voice_chain(read_wav(ROOT / 'audio' / 'vo' / f"{line['id']}.wav"))
         i = int(line['start'] * SR)
         vo[i:i + len(x)] += x[: n - i]

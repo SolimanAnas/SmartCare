@@ -9,6 +9,7 @@ audio.py uses to put the app's own sound cues, taps, whooshes and impacts on the
   python3 scripts/compose.py vert            # 1080×1920 social cut
   python3 scripts/compose.py land --stills   # contact frames only (QA)
   python3 scripts/compose.py land --timeline # only rewrite build/timeline_land.json (for audio.py)
+  python3 scripts/compose.py land --cut play # 33 s Google Play preview cut (app-first, captions, no store CTA)
 """
 import json
 import math
@@ -26,9 +27,13 @@ from compose_lib import (CHAR, FPS, GREEN, MUTED, RED, REPO, ROOT, WHITE, Bokeh,
 LAYOUT = sys.argv[1] if len(sys.argv) > 1 else 'land'
 STILLS = '--stills' in sys.argv
 VERT = LAYOUT == 'vert'
+# --cut play: Google Play store-listing preview (app from frame 0, burned-in captions for muted autoplay)
+PLAY = '--cut' in sys.argv and sys.argv[sys.argv.index('--cut') + 1] == 'play'
+TAG = LAYOUT + ('_play' if PLAY else '')
 W, H = (1080, 1920) if VERT else (1920, 1080)
-DUR = 55.0
-CUES = dict(s1=0.0, s2=5.0, s3=12.0, s4=21.0, s5=33.0, s6=43.0, end=48.2)
+DUR = 55.0 if not PLAY else 33.0
+CUES = dict(s1=0.0, s2=5.0, s3=12.0, s4=21.0, s5=33.0, s6=43.0, end=48.2) if not PLAY else \
+    dict(s1=0.0, s2=0.0, s3=4.6, s4=9.2, s5=18.0, s6=25.0, end=28.0)
 
 cap = Capture(LAYOUT)
 SRC_A = cap.size[1] / cap.size[0]
@@ -143,15 +148,85 @@ def build_edit():
     shot(43.0, DUR, 'debrief', fin + 8, 0.6, style='reveal')
 
 
-build_edit()
+def build_edit_play():
+    """33 s store-listing cut: the real app on screen from the first frame, core loop inside 10 s."""
+    vt, vf, pea, rosc = 'vt', 'vf', 'pea', 'rosc'
+    q = mk(vt, 'quiz')
+    c1, c2 = clk(vt, 'answer', 2), clk(vt, 'answer', 3)
+    shock = mk(vt, 'syncShock')
+    shot(0.0, 1.2, vt, c1 - 38, 1.0, cams=[(0, (0.40, 0.30, 1.7)), (1, CAM['mon'])])   # hook: live VT at 160/min
+    shot(1.2, 4.6, vt, q - 6, 1.0, cams=[(0, CAM['quiz']), (1, (0.52, 0.60, 1.5))])
+    shot(4.6, 7.4, vt, c1 - 30, 1.0, cams=[(0, CAM['lite']), (1, CAM['lite'])])
+    shot(7.4, 9.2, vt, c2 - 24, 1.0, cams=[(0, CAM['lite']), (1, CAM['main'])])
+    shot(9.2, 12.4, vt, shock - 30, 1.0, cams=[(0, CAM['main']), (0.35, CAM['main']), (1, CAM['mon'])])
+    shot(12.4, 13.4, vf, 0, 1.0, cams=[(0, (0.5, 0.55, 1.55)), (1, (0.5, 0.56, 1.6))])
+    vd, dsh = mk(vf, 'vfDecision'), mk(vf, 'defibShocked')
+    shot(13.4, 16.6, vf, vd + 20, (dsh - vd - 20) / (2.4 * FPS), cams=[(0, CAM['lite']), (0.45, CAM['lite']), (1, CAM['mon'])])
+    cp = mk(vf, 'cpr')
+    shot(16.6, 18.0, vf, cp + 5, 1.0, cams=[(0, CAM['mon']), (1, (0.33, 0.30, 1.8))])
+    wr = clk(pea, 'wrong')
+    shot(18.0, 23.0, pea, wr - 30, 1.0, cams=[(0, CAM['lite']), (1, (0.40, 0.80, 1.5))])
+    pc = clk(rosc, 'answer')
+    shot(23.0, 25.0, rosc, pc - 14, 1.0, cams=[(0, CAM['main']), (1, (0.45, 0.60, 1.32))])
+    fin = clk('debrief', 'finish')
+    shot(25.0, DUR, 'debrief', fin + 8, 0.6, style='reveal')
+
+
+build_edit_play() if PLAY else build_edit()
 
 # ───────────────────────── titles ─────────────────────────
-TITLES = [  # (t0, t1, big text, accent words, chip label)
+TITLES = [] if PLAY else [  # (t0, t1, big text, accent words, chip label)
     (6.45, 7.95, 'Recognize the rhythm.', ('rhythm',), 'Recognize the rhythm'),
     (12.0, 13.4, 'Make the call.', ('call',), 'Make the call'),
     (21.0, 22.25, 'Act with purpose.', ('purpose',), 'Act with purpose'),
     (33.0, 35.2, 'Every decision is a learning opportunity.', ('learning',), 'Every decision is a learning opportunity'),
 ]
+
+
+PLAY_CHIPS = [(0.0, 4.6, 'Recognize the rhythm'), (4.6, 9.2, 'Make the call'), (9.2, 18.0, 'Act with purpose'),
+              (18.0, 25.0, 'Every decision is a learning opportunity')]
+
+
+def captions():
+    """Narration as burned-in captions (the store autoplays muted), split by sentence and timed by length."""
+    import wave
+    out = []
+    for line in json.loads((ROOT / 'scripts' / 'vo_lines_play.json').read_text()):
+        w = wave.open(str(ROOT / 'audio' / 'vo' / f"{line['id']}.wav"))
+        dur = w.getnframes() / w.getframerate()
+        parts = [p.strip() + ('' if p.strip().endswith(('.', '?', '!')) else '.') for p in line['text'].replace('?', '?|').replace('. ', '.|').split('|') if p.strip()]
+        tot = sum(len(p) for p in parts)
+        t = line['start']
+        for p in parts:
+            d = dur * len(p) / tot
+            out.append((t, t + d, p))
+            t += d
+    return out
+
+
+CAPTIONS = captions() if PLAY else []
+
+
+def render_play_overlays(img, t):
+    ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    for t0, t1, label in PLAY_CHIPS:
+        if t0 <= t < t1:
+            ca = ramp(t, t0, t0 + 0.25) * (1 - ramp(t, t1 - 0.25, t1))
+            chip(ov, 40, 36, label, ca, size=24)
+    for t0, t1, text in CAPTIONS:
+        if t0 - 0.05 <= t < t1 + 0.15:
+            a = ramp(t, t0 - 0.05, t0 + 0.1) * (1 - ramp(t, t1, t1 + 0.15))
+            f = font('SemiBold', 44, display=False)
+            tw = f.getlength(text)
+            # keep the engine's feedback visible: when framed on the decision panel, caption at the top
+            sh_ = shot_at(t)
+            top = sh_['style'] == 'full' and cam_at(sh_, (t - sh_['t0']) / (sh_['t1'] - sh_['t0']))[1] >= 0.7
+            x, y = W / 2 - tw / 2, 108 if top else H - (150 if t < CUES['end'] else 230)
+            d = ImageDraw.Draw(ov)
+            d.rounded_rectangle([x - 28, y - 16, x + tw + 28, y + 64], 18, fill=(6, 8, 12, int(200 * a)))
+            d.text((x, y), text, font=f, fill=WHITE + (int(255 * a),))
+    img.alpha_composite(ov)
+    return img
 
 
 def shot_at(t):
@@ -498,6 +573,9 @@ def end_card(ov, lt, pb):
     # store line — plain text (official Google Play badge can be dropped into assets/, see README)
     y += 96 if not VERT else 120
     p4 = ramp(lt, 1.5, 2.1, 'out') * pb
+    if PLAY:  # already on the store page: no store CTA, just the disclaimer
+        _disclaimer(d, cx, p4)
+        return
     f4 = font('SemiBold', 30 if not VERT else 34, display=False)
     lab = 'GET IT ON GOOGLE PLAY'
     lw, _ = text_size(lab, f4, 3)
@@ -516,7 +594,10 @@ def end_card(ov, lt, pb):
             d.text((cx - f5.getlength(line) / 2, y + i * 36), line, font=f5, fill=(170, 180, 192, int(255 * p4)))
     else:
         d.text((cx - f5.getlength(url) / 2, y), url, font=f5, fill=(170, 180, 192, int(255 * p4)))
-    # disclaimer
+    _disclaimer(d, cx, p4)
+
+
+def _disclaimer(d, cx, p4):
     f6 = font('Regular', 19 if not VERT else 22, display=False)
     disc = ['Educational simulation for practice. Does not certify competence or replace',
             'accredited ACLS training or supervised clinical practice.'] if not VERT else \
@@ -577,7 +658,9 @@ def render_frame(i):
         img = render_reveal(s, t)
     else:
         img = render_full(s, t)
-    if st not in ('open', 'reveal'):
+    if PLAY:
+        img = render_play_overlays(img, t)
+    elif st not in ('open', 'reveal'):
         img = render_titles(img, t)
     # shock flash + micro shake (synced to the engine's own shock cue)
     for ts in SHOCKS:
@@ -590,7 +673,7 @@ def render_frame(i):
                 ox = int(8 * math.sin(dt * 180))
                 img = Image.fromarray(np.roll(np.asarray(img), ox, axis=1))
     # quick dip between scenes 1→2
-    if 4.85 <= t < 5.12:
+    if not PLAY and 4.85 <= t < 5.12:
         a = 1 - abs(t - 4.98) / 0.14
         img.alpha_composite(Image.new('RGBA', (W, H), (0, 0, 0, int(255 * max(0, min(1, a))))))
     out = grade(img.convert('RGB'), VIG, t, grain=4.0)
@@ -607,10 +690,12 @@ def write_timeline():
               app_sounds=app_events(),
               taps=[round(tt, 3) for tt, c, s in TAPS],
               shocks=SHOCKS,
-              whooshes=[CUES['s2'], CUES['s3'], CUES['s4'], CUES['s5'], 13.4, 16.0, 16.7, 18.7, 19.8],
+              whooshes=[CUES['s2'], CUES['s3'], CUES['s4'], CUES['s5'], 13.4, 16.0, 16.7, 18.7, 19.8] if not PLAY else
+              [CUES['s3'], 7.4, CUES['s4'], 12.4, 13.4, 16.6, CUES['s5'], 23.0],
+              vo_lines='scripts/vo_lines_play.json' if PLAY else 'scripts/vo_lines.json',
               impacts=[CUES['s2'], CUES['s6'], CUES['end']],
               shots=[{k: v for k, v in s.items() if k != 'cams'} for s in SHOTS])
-    p = ROOT / 'build' / f'timeline_{LAYOUT}.json'
+    p = ROOT / 'build' / f'timeline_{TAG}.json'
     p.parent.mkdir(exist_ok=True)
     p.write_text(json.dumps(tl, indent=1))
     return p
@@ -621,14 +706,14 @@ def main():
     if '--timeline' in sys.argv:
         return
     if STILLS:
-        outd = ROOT / 'build' / f'stills_{LAYOUT}'
+        outd = ROOT / 'build' / f'stills_{TAG}'
         outd.mkdir(parents=True, exist_ok=True)
-        ts = [float(x) for x in sys.argv[sys.argv.index('--stills') + 1:] if not x.startswith('--')] or [0.5 + k for k in range(int(DUR))]
+        ts = [float(x) for x in sys.argv[sys.argv.index('--stills') + 1:] if not x.startswith('--') and x != 'play'] or [0.5 + k for k in range(int(DUR))]
         for t in ts:
             render_frame(int(round(t * FPS))).save(outd / f't{t:05.2f}.jpg', quality=88)
         print('stills ->', outd)
         return
-    out = ROOT / 'build' / f'video_{LAYOUT}.mp4'
+    out = ROOT / 'build' / f'video_{TAG}.mp4'
     n = int(DUR * FPS)
     ff = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS),
                            '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p', '-r', str(FPS), str(out)],
