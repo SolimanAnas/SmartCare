@@ -1,0 +1,58 @@
+[
+  {
+    "file": "01-home.png",
+    "url": "index.html",
+    "feature": "Home — course library, quick access, search",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "02-courses.png",
+    "url": "pages/courses.html",
+    "feature": "Courses catalog — BLS, ACLS, Megacode, ITLS, BDLS…",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "03-acls-megacode.png",
+    "url": "pages/megacode.html",
+    "feature": "ACLS Megacode — scenario 4 (Roadside Dialysis Patient), Quick Code mode, live monitor in VT",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "04-ecg-trainer.png",
+    "url": "pages/ecg.html",
+    "feature": "ECG Trainer — Inferior STEMI (RCA) with territory map",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "05-exam-practice.png",
+    "url": "src/prometric/exam.html",
+    "feature": "Prometric Paramedic/EMT exam engine — tutor mode, answer checked with explanation",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "06-exam-results.png",
+    "url": "src/prometric/exam.html",
+    "feature": "Exam results — score, pass indicator, insights, performance by topic (25-question run, 22 correct)",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "07-ems-tools.png",
+    "url": "pages/ems-tools.html",
+    "feature": "EMS Tools — clinical calculators and decision-support tools",
+    "viewport": "412x915@3x",
+    "errors": []
+  },
+  {
+    "file": "08-study-planner.png",
+    "url": "pages/prometric-planner.html",
+    "feature": "Prometric Study Planner — exam in 60 days, 6 days/wk, 90 min/day",
+    "viewport": "412x915@3x",
+    "errors": []
+  }
+]
