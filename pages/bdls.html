@@ -105,11 +105,11 @@
         <section class="hub-sec" aria-labelledby="examH">
           <div class="hub-head"><h2 class="hub-h" id="examH">Course exams</h2><span class="hub-aside">2 question banks</span></div>
           <div class="hub-panel">
-            <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank">
-              <button type="button" data-bank="b1" data-path="../src/BDLS/BDLS.json" data-name="BDLS Exam" data-label="Exam" data-n="40" data-about="40 questions." aria-pressed="true">Exam</button>
-              <button type="button" data-bank="pre" data-path="../src/BDLS/BDLS-pre.json" data-name="BDLS Pre-Test" data-label="Pre-test" data-n="30" data-about="Official BDLS v3.0 pre/post-test: 30 questions." aria-pressed="false">Pre-test</button>
+            <div class="seg bank-seg b2" id="bankSeg" role="group" aria-label="Question bank">
+              <button type="button" data-bank="pre" data-path="../src/BDLS/BDLS-pre.json" data-name="BDLS Pre-Test" data-label="Pre-test" data-n="30" data-about="Official BDLS v3.0 pre/post-test: 30 questions." aria-pressed="true">Pre-test</button>
+              <button type="button" data-bank="b1" data-path="../src/BDLS/BDLS.json" data-name="BDLS Exam" data-label="Exam" data-n="40" data-about="40 questions." aria-pressed="false">Exam</button>
             </div>
-            <p class="bank-about" id="bankAbout" aria-live="polite">40 questions.</p>
+            <p class="bank-about" id="bankAbout" aria-live="polite">Official BDLS v3.0 pre/post-test: 30 questions.</p>
             <div class="mode-row" role="group" aria-label="Exam mode">
               <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Practice<span class="mode-hint">Answer and explanation after each question</span></button>
               <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>
@@ -118,8 +118,8 @@
               <span class="qcount-l" id="qCountL">Questions</span>
               <div class="seg" id="qSeg" role="group" aria-labelledby="qCountL">
                 <button type="button" data-n="20" aria-pressed="false">20</button>
-                <button type="button" data-n="40" aria-pressed="true">40</button>
-                <button type="button" data-n="9999" aria-pressed="false" id="qAll">All 40</button>
+                <button type="button" data-n="40" aria-pressed="false" hidden>40</button>
+                <button type="button" data-n="9999" aria-pressed="true" id="qAll">All 30</button>
               </div>
               <input type="hidden" id="qCount" value="40">
             </div>
