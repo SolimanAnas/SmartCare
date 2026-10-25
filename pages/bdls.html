@@ -103,12 +103,13 @@
         <a class="hub-disclaimer" href="about.html#disclaimer">Study aid only — not for direct patient care</a>
 
         <section class="hub-sec" aria-labelledby="examH">
-          <div class="hub-head"><h2 class="hub-h" id="examH">Course exam</h2><span class="hub-aside">40 questions</span></div>
+          <div class="hub-head"><h2 class="hub-h" id="examH">Course exams</h2><span class="hub-aside">2 question banks</span></div>
           <div class="hub-panel">
-            <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank" hidden>
-              <button type="button" data-bank="b1" data-path="../src/BDLS/BDLS.json" data-name="BDLS Exam" data-label="" data-n="40" data-about="40 questions." aria-pressed="true">BDLS</button>
+            <div class="seg bank-seg" id="bankSeg" role="group" aria-label="Question bank">
+              <button type="button" data-bank="b1" data-path="../src/BDLS/BDLS.json" data-name="BDLS Exam" data-label="Exam" data-n="40" data-about="40 questions." aria-pressed="true">Exam</button>
+              <button type="button" data-bank="pre" data-path="../src/BDLS/BDLS-pre.json" data-name="BDLS Pre-Test" data-label="Pre-test" data-n="30" data-about="Official BDLS v3.0 pre/post-test: 30 questions." aria-pressed="false">Pre-test</button>
             </div>
-            <p class="bank-about" id="bankAbout" aria-live="polite" hidden>40 questions.</p>
+            <p class="bank-about" id="bankAbout" aria-live="polite">40 questions.</p>
             <div class="mode-row" role="group" aria-label="Exam mode">
               <button class="mode-btn active-study" id="modeStudyBtn" onclick="setModeUI('study')" aria-pressed="true">Practice<span class="mode-hint">Answer and explanation after each question</span></button>
               <button class="mode-btn" id="modeExamBtn" onclick="setModeUI('exam')" aria-pressed="false">Exam<span class="mode-hint">Timed, scored when you submit</span></button>

@@ -108,6 +108,7 @@ self.__PRECACHE = [
   "src/render-state.js",
   "src/theme.js",
   "src/ACLS/acls.json",
+  "src/BDLS/BDLS-pre.json",
   "src/BDLS/BDLS.json",
   "src/BLS/bls-post-test.json",
   "src/BLS/bls.json",
@@ -164,4 +165,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "4c10b7b8e4";
+self.__PRECACHE_VERSION = "c72918ce87";
