@@ -58,6 +58,7 @@ self.__PRECACHE = [
   "pages/drug-data.json",
   "pages/drug-index.html",
   "pages/ecg-engine.js",
+  "pages/ecg-rhythms.js",
   "pages/ecg-test.html",
   "pages/ecg.html",
   "pages/empact.html",
@@ -165,4 +166,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "8d54d96b3d";
+self.__PRECACHE_VERSION = "ddea727665";
