@@ -100,6 +100,8 @@ test('page: library search, legacy deep links and live measurements', async ({ p
 
 test('page: calipers measure an interval on the frozen trace', async ({ page }) => {
   await page.goto('/pages/ecg.html?r=nsr');
+  await expect(page.locator('#calipBtn')).toBeHidden();               // Easy mode by default
+  await page.locator('#advTog').click();
   await page.locator('#playBtn').click();
   await expect(page.locator('#liveTxt')).toHaveText('Frozen');
   await page.locator('#calipBtn').click();
@@ -131,5 +133,26 @@ test('page: quiz hides the answer, scores it, then reveals it', async ({ page })
   await expect(page.locator('#rhName')).toContainText('Unknown rhythm');
   await page.locator('#modeLearn').click();
   await expect(page.locator('#details')).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('page: easy mode by default, rhythm picker opens the library, advanced reveals pro controls', async ({ page }) => {
+  const errors = trackErrors(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/pages/ecg.html');
+  await page.evaluate(() => localStorage.removeItem('ecg-sim-v4'));
+  await page.reload();
+  await expect(page.locator('#pickBtn')).toBeVisible();
+  await expect(page.locator('.panels')).toBeHidden();
+  await page.locator('#pickBtn').click();
+  await expect(page.locator('#library')).toHaveClass(/open/);
+  await page.locator('.li', { hasText: 'Atrial fibrillation' }).first().click();
+  await expect(page.locator('#pickName')).toHaveText('Atrial fibrillation');
+  await expect(page.locator('#library')).not.toHaveClass(/open/);
+  await page.locator('#advTog').click();
+  await expect(page.locator('.panels')).toBeVisible();
+  await expect(page.locator('#calipBtn')).toBeVisible();
+  await page.reload();
+  await expect(page.locator('#advTog')).toHaveAttribute('aria-pressed', 'true');    // remembered
   expect(errors).toEqual([]);
 });

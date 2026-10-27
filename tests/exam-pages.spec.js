@@ -4,7 +4,8 @@ import { test, expect } from '@playwright/test';
 // card, one exam card (question banks from #bankSeg, Study or Exam mode,
 // 20 / 40 / all questions) and the course reviewer's chapters.
 const COURSES = {
-  acls: 1, bls: 1, bdls: 1, itls: 4, medical: 1, pals: 1, pepp: 4, ppet: 2, empact: 1, mci: 3,
+  // bdls and mci both offer the BDLS pre-test first, ahead of their own banks.
+  acls: 1, bls: 1, bdls: 2, itls: 4, medical: 1, pals: 1, pepp: 4, ppet: 2, empact: 1, mci: 4,
 };
 
 for (const [course, banks] of Object.entries(COURSES)) {

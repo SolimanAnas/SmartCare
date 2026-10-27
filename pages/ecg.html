@@ -207,11 +207,6 @@ button{cursor:pointer}
 .alarm.med{color:#1b1200;background:var(--ch-warn)}
 @keyframes alarmBlink{50%{background:rgba(255,77,97,.25);color:var(--ch-alarm)}}
 .bar-spacer{flex:1}
-.stepper{display:inline-flex;gap:4px}
-.mbtn{width:32px;height:32px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--bezel-line);
-  background:rgba(255,255,255,.04);color:var(--ch-txt);transition:transform var(--dur-press) var(--ease-out)}
-.mbtn:active{transform:scale(.92)}
-.mbtn:disabled{opacity:.35;cursor:default}
 .live{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:650;color:var(--ch-mu);min-width:58px}
 .live i{width:7px;height:7px;border-radius:50%;background:var(--ch-ecg);box-shadow:0 0 8px var(--ch-ecg);animation:livePulse 2.4s ease-in-out infinite}
 .monitor.frozen .live i{animation:none;background:var(--ch-warn);box-shadow:none}
@@ -253,6 +248,25 @@ button{cursor:pointer}
 .legend{display:flex;flex-wrap:wrap;gap:4px 14px;padding:8px 14px 10px;border-top:1px solid var(--bezel-line);font-size:.74rem;color:var(--ch-mu)}
 .legend b{font-family:var(--num);font-weight:700;color:var(--ch-txt);margin-right:3px}
 .legend .lg-p{color:#7cb2ff}.legend .lg-b{color:#ff6b7c}.legend .lg-d{color:#c9a2ff}.legend .lg-f{color:#ffb547}
+
+/* ══════════════════════════ RHYTHM PICKER ══════════════════════════ */
+.picker{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:8px}
+.pick-step{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  transition:transform var(--dur-press) var(--ease-out)}
+.pick-step:active,.pick-btn:active{transform:scale(.97)}
+.pick-step:disabled{opacity:.4;cursor:default}
+.pick-btn{display:flex;align-items:center;gap:12px;text-align:left;min-height:58px;padding:8px 16px;border-radius:14px;
+  border:1.5px solid var(--accent-line);background:var(--accent-soft);color:var(--tx);transition:transform var(--dur-press) var(--ease-out)}
+.pick-txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.pick-lbl{font-size:.72rem;font-weight:650;color:var(--mu)}
+.pick-name{font-size:1.02rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-cat{font-size:.74rem;font-weight:650;color:var(--tx-2);border:1px solid var(--line-2);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.pick-btn>.ico{font-size:1.15rem;color:var(--accent)}
+@media(max-width:480px){.pick-cat{display:none}}
+.quiz-on .picker{display:none}
+/* Easy mode hides the pro controls until Advanced is switched on. */
+.lab:not(.adv) .adv-only{display:none!important}
+.adv-tog{min-height:38px}
 
 /* ══════════════════════════ TOOLBAR ══════════════════════════ */
 .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
@@ -454,10 +468,6 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
         <span class="acuity stable" id="rhAcuity">Stable</span>
         <span class="alarm" id="alarm" role="status" aria-live="polite"></span>
         <span class="bar-spacer"></span>
-        <span class="stepper">
-          <button type="button" class="mbtn" id="prevBtn" aria-label="Previous rhythm"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-left"/></svg></button>
-          <button type="button" class="mbtn" id="nextBtn" aria-label="Next rhythm"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-right"/></svg></button>
-        </span>
         <span class="live" id="live"><i aria-hidden="true"></i><span id="liveTxt">Live</span></span>
       </div>
       <div class="mon-body">
@@ -489,12 +499,23 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
       </div>
     </section>
 
+    <!-- ═══════════ RHYTHM PICKER ═══════════ -->
+    <div class="picker" id="pickerBar">
+      <button type="button" class="pick-step" id="prevBtn" aria-label="Previous rhythm"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-left"/></svg></button>
+      <button type="button" class="pick-btn" id="pickBtn" aria-haspopup="dialog" aria-controls="library">
+        <span class="pick-txt"><span class="pick-lbl">Choose rhythm</span><span class="pick-name" id="pickName">Normal sinus rhythm</span></span>
+        <span class="pick-cat" id="pickCat">Sinus</span>
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-down"/></svg>
+      </button>
+      <button type="button" class="pick-step" id="nextBtn" aria-label="Next rhythm"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-right"/></svg></button>
+    </div>
+
     <!-- ═══════════ TOOLBAR ═══════════ -->
     <div class="toolbar" role="toolbar" aria-label="Monitor controls">
       <div class="tb-group">
         <button type="button" class="btn" id="playBtn" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pause"/></svg><span id="playLbl">Freeze</span><span class="kbd" aria-hidden="true">Space</span></button>
-        <button type="button" class="btn" id="calBtn"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg>1 mV<span class="lbl-long">&nbsp;cal</span></button>
-        <button type="button" class="btn" id="calipBtn" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ruler"/></svg>Calipers</button>
+        <button type="button" class="btn adv-only" id="calBtn"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#activity"/></svg>1 mV<span class="lbl-long">&nbsp;cal</span></button>
+        <button type="button" class="btn adv-only" id="calipBtn" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ruler"/></svg>Calipers</button>
         <button type="button" class="btn" id="wavesBtn" aria-pressed="false"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#tag"/></svg><span>Label waves</span></button>
       </div>
       <span class="tb-spacer"></span>
@@ -503,12 +524,13 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
           <button type="button" id="viewMon" aria-pressed="true">Monitor</button>
           <button type="button" id="view12" aria-pressed="false">12-lead</button>
         </div>
-        <div class="seg" role="group" aria-label="Display">
+        <div class="seg adv-only" role="group" aria-label="Display">
           <button type="button" id="dispScreen" aria-pressed="true">Screen</button>
           <button type="button" id="dispPaper" aria-pressed="false">Paper</button>
         </div>
         <button type="button" class="btn" id="soundBtn" aria-pressed="false" aria-label="QRS tone and alarms"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#volume-x"/></svg><span class="lbl-long">Sound</span></button>
-        <button type="button" class="btn" id="snapBtn" aria-label="Save strip as image"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#camera"/></svg><span class="lbl-long">Save strip</span></button>
+        <button type="button" class="btn adv-only" id="snapBtn" aria-label="Save strip as image"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#camera"/></svg><span class="lbl-long">Save strip</span></button>
+        <button type="button" class="tog adv-tog" id="advTog" aria-pressed="false" title="Show calipers, paper display, rhythm controls, leads and filters">Advanced</button>
       </div>
     </div>
 
@@ -540,7 +562,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     </section>
 
     <!-- ═══════════ CONTROL CARDS ═══════════ -->
-    <div class="panels">
+    <div class="panels adv-only">
       <details class="card" id="tuneCard" open>
         <summary><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#sliders-horizontal"/></svg>Rhythm controls<svg class="ico chev" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#chevron-down"/></svg></summary>
         <div class="card-body">
@@ -646,6 +668,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     <kbd>W</kbd><span>Label waves on or off</span>
     <kbd>M</kbd><span>Inject a 1 mV calibration pulse</span>
     <kbd>S</kbd><span>Sound on or off</span>
+    <kbd>A</kbd><span>Advanced controls on or off</span>
     <kbd>Q</kbd><span>Quiz mode on or off</span>
     <kbd>1–4</kbd><span>Answer a quiz question</span>
     <kbd>Esc</kbd><span>Clear calipers or close panels</span>
@@ -698,7 +721,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     notch: !!PREF.notch, mainsHz: PREF.mainsHz === 60 ? 60 : 50,
     lead1: LI[PREF.lead1] != null ? PREF.lead1 : 'II',
     lead2: PREF.lead2 === 'auto' || LI[PREF.lead2] != null ? PREF.lead2 : 'auto',
-    sound: false, waves: false, calipers: false, playing: true,
+    sound: false, waves: false, calipers: false, playing: true, adv: !!PREF.adv,
     art: { wander: true, emg: 0, mains: false, loose: false, cpr: false },
     compare: null, tab: 'read', cat: 'all', query: '',
   };
@@ -1181,6 +1204,8 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
   function renderHeader() {
     const lib = R(S.key), hide = quizHidesInfo();
     $('rhName').textContent = hide ? 'Unknown rhythm — name it below' : lib.name;
+    $('pickName').textContent = lib.name;
+    $('pickCat').textContent = LIB.CATEGORIES.find(c => c.id === lib.cat).label;
     const ac = $('rhAcuity');
     ac.hidden = hide;
     ac.className = 'acuity ' + lib.acuity;
@@ -1682,9 +1707,17 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     layout();
   }
 
+  function setAdv(on) {
+    S.adv = on;
+    $('lab').classList.toggle('adv', on);
+    $('advTog').setAttribute('aria-pressed', String(on));
+    if (!on) { setCalipers(false); if (S.paper) setPaper(false); }
+    savePrefs();
+  }
+
   /* ── PREFS, URL, ANNOUNCE ──────────────────────────────────── */
   function savePrefs() {
-    store.set('ecg-sim-v4', { view: S.view, paper: S.paper, sweep: S.sweep, pleth: S.pleth, speed: S.speed, gain: S.gain,
+    store.set('ecg-sim-v4', { adv: S.adv, view: S.view, paper: S.paper, sweep: S.sweep, pleth: S.pleth, speed: S.speed, gain: S.gain,
       filter: S.filter, notch: S.notch, mainsHz: S.mainsHz, lead1: S.lead1, lead2: S.lead2 });
   }
   function updateURL() {
@@ -1792,6 +1825,13 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     $('helpBtn').addEventListener('click', () => (dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', '')));
     $('helpClose').addEventListener('click', () => dlg.close());
     $('rhPick').addEventListener('click', openSheet);
+    $('pickBtn').addEventListener('click', () => {
+      if (isSheet()) { openSheet(); return; }
+      const s = $('libSearch');
+      s.focus({ preventScroll: true }); s.select();
+      library.animate && !reduceMotion && library.animate([{ boxShadow: '0 0 0 3px var(--accent)' }, { boxShadow: '0 0 0 0 transparent' }], { duration: 900 });
+    });
+    $('advTog').addEventListener('click', () => setAdv(!S.adv));
     $('libClose').addEventListener('click', closeSheet);
     scrim.addEventListener('click', closeSheet);
     $('prevBtn').addEventListener('click', () => stepRhythm(-1));
@@ -1935,6 +1975,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
       else if (k === 'm') $('calBtn').click();
       else if (k === 's') setSound(!S.sound);
       else if (k === 'q') setMode(S.mode === 'quiz' ? 'learn' : 'quiz');
+      else if (k === 'a') setAdv(!S.adv);
       else if (S.mode === 'quiz' && /^[1-4]$/.test(e.key) && !Q.answered) quizAnswer(Q.opts[+e.key - 1]);
       else if (S.mode === 'quiz' && e.key === 'Enter' && Q.answered && tag !== 'button') quizNext();
     });
@@ -1951,6 +1992,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
     buildChips(); buildList(); wire();
     setPaper(S.paper);
+    setAdv(S.adv);
     if (window.matchMedia('(max-width:900px)').matches) { $('tuneCard').open = false; $('signalCard').open = false; }
     let start = 'nsr';
     try {
