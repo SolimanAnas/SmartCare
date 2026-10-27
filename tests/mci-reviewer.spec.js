@@ -77,14 +77,14 @@ for (const vp of [{ w: 360, h: 740 }, { w: 320, h: 568 }]) {
   });
 }
 
-// Exam page (pages/mci.html): all three banks are offered, the question-count
-// buttons slice the set, and an exam can be answered and submitted through to
-// the results screen.
+// Exam page (pages/mci.html): the BDLS pre-test and all three MCI banks are
+// offered, the question-count buttons slice the set, and an exam can be
+// answered and submitted through to the results screen.
 test('MCI exam page lists all banks and runs a 20-question exam to results', async ({ page }) => {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('pages/mci.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('#bankSeg button')).toHaveText(['Exam 1', 'Exam 2', 'Exam 3']);
+  await expect(page.locator('#bankSeg button')).toHaveText(['BDLS Pre-test', 'Exam 1', 'Exam 2', 'Exam 3']);
 
   await page.locator('#modeExamBtn').click(); // Study mode (default) hides End/Submit
   await page.locator('#qSeg button[data-n="20"]').click();
