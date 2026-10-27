@@ -34,8 +34,8 @@ def place(buf, x, t, gain=1.0, pan=0.0):
     if i >= buf.shape[0] or i + len(x) <= 0:
         return
     if x.ndim == 1:
-        l, r = np.cos((pan + 1) * np.pi / 4), np.sin((pan + 1) * np.pi / 4)
-        x = np.stack([x * l * 1.414, x * r * 1.414], 1)
+        gain_l, gain_r = np.cos((pan + 1) * np.pi / 4), np.sin((pan + 1) * np.pi / 4)
+        x = np.stack([x * gain_l * 1.414, x * gain_r * 1.414], 1)
     a, b = max(0, i), min(buf.shape[0], i + len(x))
     buf[a:b] += x[a - i:b - i] * gain
 
@@ -133,7 +133,7 @@ def score(D, cue):
         place(out, thump(48, 0.3), tb + 0.2, 0.35)
 
     # Pulse ostinato at 120 BPM (8ths), from scene 2 until the reveal, filter opening with tension.
-    bpm, step = 120, 0.25
+    step = 0.25  # one 8th note at 120 BPM
     pat = [50, 50, 53, 50, 57, 50, 52, 50]  # D F A C colour over D
     t0, t1 = cue['s2'], cue['s6'] - 0.5
     k = 0
