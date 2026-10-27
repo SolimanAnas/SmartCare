@@ -15,14 +15,38 @@ import json
 import math
 import subprocess
 import sys
-from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from compose_lib import (CHAR, FPS, GREEN, MUTED, RED, REPO, ROOT, WHITE, Bokeh, Capture, camera_view, card, chip,
-                         draw_tracked, ease, font, gradient_bg, grade, kicker, lerp, paste_center, perspective, ramp,
-                         tap_ring, text_size, vignette, with_alpha, words_reveal)
+from compose_lib import (
+    CHAR,
+    FPS,
+    RED,
+    REPO,
+    ROOT,
+    WHITE,
+    Bokeh,
+    Capture,
+    camera_view,
+    card,
+    chip,
+    draw_tracked,
+    ease,
+    font,
+    grade,
+    gradient_bg,
+    kicker,
+    lerp,
+    paste_center,
+    perspective,
+    ramp,
+    tap_ring,
+    text_size,
+    vignette,
+    with_alpha,
+    words_reveal,
+)
 
 LAYOUT = sys.argv[1] if len(sys.argv) > 1 else 'land'
 STILLS = '--stills' in sys.argv
@@ -96,7 +120,6 @@ def build_edit():
     vt, vf, pea, rosc = 'vt', 'vf', 'pea', 'rosc'
     q = mk(vt, 'quiz')
     c1 = clk(vt, 'answer', 2)                            # "Synchronized cardioversion"
-    c2 = clk(vt, 'answer', 3)                            # "Sedate if it won't delay · SYNC ON · 100 J"
     shock = mk(vt, 'syncShock')
     # S1 — cold open: the monitor in the room (real VT trace from the capture)
     shot(0.0, 5.0, vt, c1 - 40, 1.0, style='open')
@@ -611,7 +634,6 @@ def render_titles(img, t):
     ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     for t0, t1, text, acc, label in TITLES:
         if t0 - 0.05 <= t < t1:
-            lt = t - t0
             a = 1 - ramp(t, t1 - 0.35, t1)
             # scrim: darken/blur footage behind the title
             k = ramp(t, t0, t0 + 0.3) * a

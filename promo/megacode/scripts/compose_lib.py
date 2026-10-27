@@ -254,7 +254,6 @@ def draw_tracked(d, xy, txt, f, fill, tracking=0):
 
 def words_reveal(layer, x, y, text, f, t, t0, per=0.09, dur=0.45, fill=WHITE, accent_words=(), accent=RED, alpha=1.0, rise=26):
     """Word-by-word rise + fade. Returns width drawn."""
-    d = ImageDraw.Draw(layer)
     cx = x
     for i, w in enumerate(text.split(' ')):
         p = ramp(t, t0 + i * per, t0 + i * per + dur, 'out')

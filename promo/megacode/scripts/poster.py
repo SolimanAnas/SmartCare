@@ -3,8 +3,21 @@
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from compose_lib import (RED, REPO, ROOT, WHITE, Bokeh, Capture, draw_tracked, font, gradient_bg, grade, rounded_mask,
-                         text_size, vignette)
+from compose_lib import (
+    RED,
+    REPO,
+    ROOT,
+    WHITE,
+    Bokeh,
+    Capture,
+    draw_tracked,
+    font,
+    grade,
+    gradient_bg,
+    rounded_mask,
+    text_size,
+    vignette,
+)
 
 W, H = 2160, 2700
 

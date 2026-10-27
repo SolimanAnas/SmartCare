@@ -1,6 +1,9 @@
 # QA helper: tile build/stills_<layout> into contact sheets
-import sys, glob
+import glob
+import sys
+
 from PIL import Image, ImageDraw
+
 L = sys.argv[1]; cols = int(sys.argv[2]) if len(sys.argv) > 2 else 3; tw = int(sys.argv[3]) if len(sys.argv) > 3 else 640
 fs = sorted(glob.glob(f'build/stills_{L}/*.jpg'))
 per = cols * (4 if L == 'land' else 2)

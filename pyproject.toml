@@ -18,6 +18,13 @@ select = ["E", "F", "W", "I"]
 # One-off content generators: long f-string replacements / data strings are intentional.
 "scripts/gen.py" = ["E501"]
 "scripts/generate_all_itls_data.py" = ["E501"]
+# Promo video build scripts (frame and audio generators): long keyframe/data lines and
+# compact one-line statements are intentional, as for the content generators above.
+"promo/**/scripts/*.py" = ["E501", "E702"]
+
+[tool.ruff.lint.isort]
+# The promo scripts import their sibling helper module directly.
+known-first-party = ["compose_lib"]
 
 [tool.ruff.format]
 quote-style = "double"
