@@ -794,11 +794,11 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     if (S.paper) {
       return { bg: '#fffafa', mn: 'rgba(236,150,150,.42)', mj: 'rgba(222,96,96,.62)', ecg: '#1d1830', ecg2: '#1d1830',
         cmp: '#7a2bbd', pleth: '#1b5fae', label: '#3d2c3c', spike: '#c2185b', sep: 'rgba(120,60,60,.35)',
-        cal: '#1d1830', ann: { P: '#1b5fae', F: '#a35200', T: '#3d6a00', R: '#1d1830', blk: '#c81e1e', dis: '#7a2bbd' }, calip: '#c2185b', glow: null };
+        cal: '#1d1830', ann: { P: '#1b5fae', F: '#a35200', T: '#3d6a00', R: '#1d1830', blk: '#c81e1e', dis: '#7a2bbd' }, calip: '#c2185b' };
     }
     return { bg: '#02070b', mn: 'rgba(62,240,160,.055)', mj: 'rgba(62,240,160,.15)', ecg: '#3ef0a0', ecg2: '#3ef0a0',
       cmp: '#ffb547', pleth: '#4fd8f5', label: '#9fb3c4', spike: '#f5f7fa', sep: 'rgba(255,255,255,.07)',
-      cal: '#3ef0a0', ann: { P: '#7cb2ff', F: '#ffb547', T: '#c4f06a', R: '#e8f0f6', blk: '#ff6b7c', dis: '#c9a2ff' }, calip: '#ffd166', glow: 'rgba(62,240,160,.28)' };
+      cal: '#3ef0a0', ann: { P: '#7cb2ff', F: '#ffb547', T: '#c4f06a', R: '#e8f0f6', blk: '#ff6b7c', dis: '#c9a2ff' }, calip: '#ffd166' };
   }
 
   function laneLead(which) {
@@ -813,7 +813,8 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
   function layout() {
     const rect = screenEl.getBoundingClientRect();
     const W = Math.max(240, Math.floor(rect.width));
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    // Full device resolution for the monitor; the dense 12-lead grid caps at 2×.
+    const dpr = Math.min(S.view === '12' ? 2 : 3, window.devicePixelRatio || 1);
     let H, pxmm, win;
     if (S.view === 'monitor') {
       screenEl.style.height = '';
@@ -843,6 +844,8 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     }
     Object.assign(geo, { W, H, dpr, pxmm, win });
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    // Pin the CSS size to exactly W×H so the browser never rescales (blurs) the canvas.
+    cv.style.width = W + 'px'; cv.style.height = H + 'px';
     gridCv.width = cv.width; gridCv.height = cv.height;
     BUF = [];
     for (let l = 0; l < NL; l++) BUF.push(new Float32Array(N));
@@ -922,12 +925,12 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
   // (pacing spikes, QRS peaks) survive when several samples share a pixel.
   function seg(buf, a, b, x0, pxs, base, k, cont) {
     if (b - a < 2) return;
-    if (pxs >= 0.75) {
+    if (pxs * geo.dpr >= 0.67) {
       if (cont) ctx.lineTo(x0 + a * pxs, base - buf[a] * k); else ctx.moveTo(x0 + a * pxs, base - buf[a] * k);
       for (let i = a + 1; i < b; i++) ctx.lineTo(x0 + i * pxs, base - buf[i] * k);
       return;
     }
-    const spp = 1 / pxs;
+    const spp = 1 / (pxs * geo.dpr);   // samples per device pixel
     let i = a, first = !cont;
     while (i < b) {
       const end = Math.min(b, Math.floor(i + spp) + 1);
@@ -972,8 +975,9 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     return x0 + (g - (G - N)) * pxs;
   }
 
-  function strokeTrace(color, width, glow) {
-    if (glow) { ctx.save(); ctx.strokeStyle = glow; ctx.lineWidth = width + 3; ctx.globalAlpha = 0.55; ctx.stroke(); ctx.restore(); }
+  // One solid stroke at full opacity — no halo pass, so edges stay crisp.
+  function strokeTrace(color, width) {
+    ctx.globalAlpha = 1;
     ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
   }
 
@@ -997,12 +1001,12 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
       ctx.beginPath();
       if (L.kind === 'pleth') {
         plotRange(PLE, 0, N, 0, W, L.base, L.h * 0.62, S.sweep);
-        strokeTrace(c.pleth, 1.8, S.paper ? null : 'rgba(79,216,245,.25)');
+        strokeTrace(c.pleth, 1.6);
       } else {
         const cmp = L.which === 2 && simC;
         const lead = cmp ? S.lead1 : laneLead(L.which);
         plotRange(cmp ? CBUF : BUF[LI[lead]], 0, N, 0, W, L.base, k, S.sweep);
-        strokeTrace(cmp ? c.cmp : (L.which === 1 ? c.ecg : c.ecg2), S.paper ? 1.4 : 1.8, S.paper ? null : (cmp ? 'rgba(255,181,71,.25)' : c.glow));
+        strokeTrace(cmp ? c.cmp : (L.which === 1 ? c.ecg : c.ecg2), S.paper ? 1.3 : 1.6);
         drawSpikes(cmp ? cspikes : spikes, 0, W, L.base, L.h, c.spike);
       }
       ctx.restore();
@@ -1029,7 +1033,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     }
     const sb = geo.top + geo.rows * rowH + rowH * 0.62;
     plotRange(BUF[LI[S.lead1]], 0, N, geo.margin, W - geo.margin, sb, k, true);
-    strokeTrace(c.ecg, S.paper ? 1.25 : 1.5, null);
+    strokeTrace(c.ecg, S.paper ? 1.2 : 1.4);
     // Every lead is sampled simultaneously, so a spike sits at the same x in every row.
     for (let r = 0; r <= geo.rows; r++) drawSpikes(spikes, geo.margin, W - geo.margin, geo.top + r * rowH + rowH * 0.62, rowH * 0.8, c.spike);
     if (S.waves && !quizHidesInfo()) annotate(sb, geo.margin, W - geo.margin, k, BUF[LI[S.lead1]], { y0: sb - rowH * 0.62, h: rowH });
