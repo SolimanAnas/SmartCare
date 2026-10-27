@@ -1318,7 +1318,7 @@ const ECGEngine = (() => {
       for (let i = 0; i < s.events.length; i++) {
         const e = s.events[i];
         if (e.t > now) break;
-        if (e.t < now - 12) continue;
+        if (e.t < now - 12 || e.t < s.t0) continue;   // ignore the previous rhythm's beats
         // A beat counts as a pulse only with adequate stroke output (≈ palpable).
         if (e.type === 'V' && e.rPeak <= now) { vs.push(e); if (e.perf >= 0.2) ps.push(e); }
         if (e.type === 'A' && e.t <= now) as.push(e);
