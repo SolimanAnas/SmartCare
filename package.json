@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "playwright test",
-    "precache": "python3 scripts/build_precache.py"
+    "precache": "python3 scripts/build_precache.py",
+    "ecg-reference": "node scripts/build_ecg_reference.js"
   },
   "repository": {
     "type": "git",

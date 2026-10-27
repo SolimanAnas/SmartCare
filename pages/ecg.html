@@ -164,6 +164,16 @@ button{cursor:pointer}
 .chip:active{transform:scale(.95)}
 .chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent-line);color:var(--tx)}
 .lib-list{overflow-y:auto;flex:1;padding:2px 8px 12px;overscroll-behavior:contain}
+.lib-pdf{display:flex;align-items:center;gap:10px;flex-shrink:0;margin:0 10px 10px;padding:10px 12px;border-radius:12px;
+  background:var(--card);border:1px solid var(--line);color:var(--tx);text-decoration:none;
+  transition:border-color var(--dur-enter) var(--ease-out),transform var(--dur-press) var(--ease-out)}
+.lib-pdf:active{transform:scale(.98)}
+.lib-pdf>.ico{color:#e11d48;flex-shrink:0}
+.lib-pdf span{display:flex;flex-direction:column;min-width:0;flex:1}
+.lib-pdf b{font-size:.84rem;font-weight:650}
+.lib-pdf small{font-size:.72rem;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lib-pdf .dl{color:var(--mu)}
+@media(hover:hover) and (pointer:fine){.lib-pdf:hover{border-color:var(--line-2)}.lib-pdf:hover .dl{color:var(--tx)}}
 .lib-group{font-size:.74rem;font-weight:650;color:var(--mu);padding:12px 8px 5px}
 .li{width:100%;display:grid;grid-template-columns:10px minmax(0,1fr) 96px;align-items:center;gap:10px;text-align:left;
   border:1px solid transparent;background:transparent;border-radius:12px;padding:8px 8px;color:var(--tx);
@@ -434,6 +444,7 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     <button type="button" id="modeLearn" aria-pressed="true">Learn</button>
     <button type="button" id="modeQuiz" aria-pressed="false">Quiz</button>
   </div>
+  <a class="icon-btn" id="pdfBtn" href="../downloads/SmartCare-ECG-Rhythm-Reference.pdf" download aria-label="Download the ECG rhythm reference (PDF)" title="Download the ECG rhythm reference (PDF)"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#download"/></svg></a>
   <button type="button" class="icon-btn" id="helpBtn" aria-label="Keyboard shortcuts"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#keyboard"/></svg></button>
   <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch to light theme"><svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#moon"/></svg></button>
 </header>
@@ -453,6 +464,11 @@ dialog::backdrop{background:rgba(2,6,12,.6)}
     </div>
     <div class="chips" id="libChips" role="group" aria-label="Filter by category"></div>
     <div class="lib-list" id="libList" role="listbox" aria-labelledby="libTitle"></div>
+    <a class="lib-pdf" id="libPdf" href="../downloads/SmartCare-ECG-Rhythm-Reference.pdf" download>
+      <svg class="ico" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg>
+      <span><b>Rhythm reference PDF</b><small>Every rhythm on one card · MI map · printable</small></span>
+      <svg class="ico dl" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#download"/></svg>
+    </a>
   </aside>
   <div class="scrim" id="scrim" hidden></div>
 

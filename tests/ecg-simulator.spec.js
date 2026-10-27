@@ -136,6 +136,19 @@ test('page: quiz hides the answer, scores it, then reveals it', async ({ page })
   expect(errors).toEqual([]);
 });
 
+test('page: the rhythm reference PDF is offered for download', async ({ page, request }) => {
+  await page.goto('/pages/ecg.html');
+  const btn = page.locator('#pdfBtn');
+  await expect(btn).toBeVisible();                                    // Easy mode, no setup needed
+  await expect(btn).toHaveAttribute('download', '');
+  const href = await btn.getAttribute('href');
+  expect(await page.locator('#libPdf').getAttribute('href')).toBe(href);
+  const res = await request.get(new URL(href, page.url()).href);
+  expect(res.ok()).toBeTruthy();
+  const body = await res.body();
+  expect(body.subarray(0, 5).toString()).toBe('%PDF-');
+});
+
 test('page: easy mode by default, rhythm picker opens the library, advanced reveals pro controls', async ({ page }) => {
   const errors = trackErrors(page);
   await page.setViewportSize({ width: 390, height: 844 });
