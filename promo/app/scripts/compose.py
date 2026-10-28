@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Edit + render of the SmartCare app promo (1080×1920, 30 fps, vertical for Reels / Shorts / TikTok).
+"""Edit + render of the SmartCare app promo, 30 fps: vertical 1080×1920 (Reels / Shorts / TikTok)
+or, with --land, horizontal 1920×1080 (YouTube, Facebook feed, presentations).
 
 Every phone screen is a genuine capture of the running app (capture/<segment>/f*.jpg, made by
 scripts/record.js). This script only lays those frames out in a phone frame, adds the headline,
 the burned-in captions (social video autoplays muted), tap rings and transitions, and writes:
-  build/video.mp4      silent picture
-  build/timeline.json  scene/VO/tap timings for scripts/audio.py
+  build/video[_land].mp4   silent picture
+  build/timeline.json      scene/VO/tap timings for scripts/audio.py (identical for both layouts)
 
-Usage: python3 scripts/compose.py            # full render
-       python3 scripts/compose.py --stills 3 20.5   # PNG stills at those seconds → build/stills/
+Usage: python3 scripts/compose.py [--land]            # full render
+       python3 scripts/compose.py [--land] --stills 3 20.5   # PNG stills → build/stills[_land]/
 """
 import json
 import math
@@ -25,7 +26,10 @@ ROOT = Path(__file__).resolve().parent.parent
 REPO = ROOT.parent.parent
 CAP = ROOT / 'capture'
 BUILD = ROOT / 'build'
-W, H, FPS = 1080, 1920, 30
+FPS = 30
+LAND = '--land' in sys.argv
+TAG = '_land' if LAND else ''
+W, H = (1920, 1080) if LAND else (1080, 1920)
 
 NAVY = (9, 14, 28)
 WHITE = (244, 247, 252)
@@ -37,14 +41,25 @@ ACCENT = {
     'themes': (255, 196, 72), 'end': (88, 160, 255),
 }
 
-# Phone layout: 412×800 CSS-px captures shown 600 px wide.
-SCR_W = 600
-SCR_H = round(SCR_W * 800 / 412)
-BEZEL = 20
-PH_W, PH_H = SCR_W + 2 * BEZEL, SCR_H + 2 * BEZEL
-PH_X = (W - PH_W) // 2
-PH_Y = 540
+# Phone layout: 412×800 CSS-px captures. Vertical: centred under the headline, 600 px wide.
+# Horizontal: on the right, 880 px tall, with the headline and caption in a column on the left.
+if LAND:
+    SCR_H = 880
+    SCR_W = round(SCR_H * 412 / 800)
+    BEZEL = 18
+    PH_W, PH_H = SCR_W + 2 * BEZEL, SCR_H + 2 * BEZEL
+    PH_X = 1350 - PH_W // 2
+    PH_Y = (H - PH_H) // 2
+    TEXT_X, TEXT_W = 150, 800   # left column
+else:
+    SCR_W = 600
+    SCR_H = round(SCR_W * 800 / 412)
+    BEZEL = 20
+    PH_W, PH_H = SCR_W + 2 * BEZEL, SCR_H + 2 * BEZEL
+    PH_X = (W - PH_W) // 2
+    PH_Y = 540
 SCR_X, SCR_Y = PH_X + BEZEL, PH_Y + BEZEL
+K = SCR_W / 600  # scale for radii and tap rings
 
 PAD = 0.7         # scene length = narration + PAD
 VO_IN = 0.25      # narration starts this long after the cut
@@ -97,16 +112,16 @@ def background():
 def phone_layers():
     """Shadow + bezel (RGBA, full frame) and the screen's rounded mask."""
     sh = Image.new('L', (W, H), 0)
-    ImageDraw.Draw(sh).rounded_rectangle((PH_X + 10, PH_Y + 40, PH_X + PH_W - 10, PH_Y + PH_H + 30), 80, fill=200)
+    ImageDraw.Draw(sh).rounded_rectangle((PH_X + 10, PH_Y + 40, PH_X + PH_W - 10, PH_Y + PH_H + 30), int(80 * K), fill=200)
     sh = sh.filter(ImageFilter.GaussianBlur(40))
     shadow = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     shadow.putalpha(sh)
     bez = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(bez)
-    d.rounded_rectangle((PH_X - 3, PH_Y - 3, PH_X + PH_W + 3, PH_Y + PH_H + 3), 76, fill=(70, 82, 104))
-    d.rounded_rectangle((PH_X, PH_Y, PH_X + PH_W, PH_Y + PH_H), 74, fill=(10, 12, 16))
+    d.rounded_rectangle((PH_X - 3, PH_Y - 3, PH_X + PH_W + 3, PH_Y + PH_H + 3), int(76 * K), fill=(70, 82, 104))
+    d.rounded_rectangle((PH_X, PH_Y, PH_X + PH_W, PH_Y + PH_H), int(74 * K), fill=(10, 12, 16))
     mask = Image.new('L', (SCR_W, SCR_H), 0)
-    ImageDraw.Draw(mask).rounded_rectangle((0, 0, SCR_W - 1, SCR_H - 1), 56, fill=255)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, SCR_W - 1, SCR_H - 1), int(56 * K), fill=255)
     return shadow, bez, mask
 
 
@@ -127,28 +142,38 @@ def wrap(txt, f, maxw):
 
 
 def headline_layer(sc):
-    """Kicker pill + two-line title, as one RGBA layer (y 0…400)."""
+    """Kicker pill + two-line title, as one RGBA layer (y 0…400). Centred (vertical) or left-aligned (horizontal)."""
     acc = ACCENT[sc['id']]
     L = Image.new('RGBA', (W, 400), (0, 0, 0, 0))
     d = ImageDraw.Draw(L)
     fk = font('SemiBold', 26, False)
     k = sc['kicker']
     tw = sum(text_w(c, fk) + 3 for c in k)
-    x0 = (W - tw - 54) // 2
+    x0 = TEXT_X if LAND else (W - tw - 54) // 2
     d.rounded_rectangle((x0, 100, x0 + tw + 54, 146), 23, fill=acc + (40,), outline=acc + (150,), width=2)
     d.ellipse((x0 + 18, 117, x0 + 30, 129), fill=acc + (255,))
     x = x0 + 40
     for c in k:
         d.text((x, 108), c, font=fk, fill=WHITE + (255,))
         x += text_w(c, fk) + 3
-    ft = font('Bold', 84)
+    ft = font('Bold', 88 if LAND else 84)
     for i, line in enumerate(sc['title']):
         col = WHITE if i == 0 else tuple(min(255, int(c * 1.0 + 30)) for c in acc)
-        d.text(((W - text_w(line, ft)) // 2, 168 + i * 96), line, font=ft, fill=col + (255,))
+        x = TEXT_X - 4 if LAND else (W - text_w(line, ft)) // 2
+        d.text((x, 168 + i * 100), line, font=ft, fill=col + (255,))
     return L
 
 
 def caption_layer(txt):
+    if LAND:
+        f = font('Medium', 36, False)
+        lines = wrap(txt, f, TEXT_W)
+        assert len(lines) <= 4, txt
+        L = Image.new('RGBA', (W, 200), (0, 0, 0, 0))
+        d = ImageDraw.Draw(L)
+        for i, line in enumerate(lines):
+            d.text((TEXT_X, i * 48), line, font=f, fill=MUTED + (255,))
+        return L
     f = font('Medium', 32, False)
     lines = wrap(txt, f, 940)
     assert len(lines) <= 3, txt
@@ -161,37 +186,45 @@ def caption_layer(txt):
 
 
 def end_layer():
+    # y positions of: icon, wordmark, tagline, chip rows, store button, links, disclaimer
+    if LAND:
+        Y = dict(icon=70, isz=230, word=320, tag=460, chips=545, crow=70, btn=700, links=850, disc=960)
+        chips = [['14 courses', '12 megacodes', '68 ECG rhythms', '2,749 exam questions', 'EMS tools', 'Works offline']]
+    else:
+        Y = dict(icon=440, isz=300, word=790, tag=945, chips=1050, crow=76, btn=1260, links=1430, disc=1560)
+        chips = [['14 courses', '12 megacodes', '68 ECG rhythms'], ['2,749 exam questions', 'EMS tools', 'Works offline']]
     L = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(L)
-    icon = Image.open(REPO / 'icons' / 'icon-512x512.png').convert('RGBA').resize((300, 300), Image.LANCZOS)
-    m = Image.new('L', (300, 300), 0)
-    ImageDraw.Draw(m).rounded_rectangle((0, 0, 299, 299), 70, fill=255)
+    isz = Y['isz']
+    icon = Image.open(REPO / 'icons' / 'icon-512x512.png').convert('RGBA').resize((isz, isz), Image.LANCZOS)
+    m = Image.new('L', (isz, isz), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, isz - 1, isz - 1), int(isz * 0.23), fill=255)
     icon.putalpha(Image.fromarray(np.minimum(np.array(icon.getchannel('A')), np.array(m))))
     gl = Image.new('L', (W, H), 0)
-    ImageDraw.Draw(gl).ellipse((W // 2 - 260, 330, W // 2 + 260, 850), fill=140)
+    cy = Y['icon'] + isz // 2
+    ImageDraw.Draw(gl).ellipse((W // 2 - 260, cy - 260, W // 2 + 260, cy + 260), fill=140)
     gl = gl.filter(ImageFilter.GaussianBlur(90))
     glow = Image.new('RGBA', (W, H), (60, 130, 255, 0))
     glow.putalpha(gl)
     L = Image.alpha_composite(L, glow)
-    L.alpha_composite(icon, ((W - 300) // 2, 440))
+    L.alpha_composite(icon, ((W - isz) // 2, Y['icon']))
     d = ImageDraw.Draw(L)
     ft = font('Bold', 120)
-    d.text(((W - text_w('SmartCare', ft)) // 2, 790), 'SmartCare', font=ft, fill=WHITE)
+    d.text(((W - text_w('SmartCare', ft)) // 2, Y['word']), 'SmartCare', font=ft, fill=WHITE)
     fs = font('Medium', 40, False)
     s = 'Clinical learning for EMS & Nursing'
-    d.text(((W - text_w(s, fs)) // 2, 945), s, font=fs, fill=MUTED)
-    chips = [['14 courses', '12 megacodes', '68 ECG rhythms'], ['2,749 exam questions', 'EMS tools', 'Works offline']]
+    d.text(((W - text_w(s, fs)) // 2, Y['tag']), s, font=fs, fill=MUTED)
     fc = font('SemiBold', 30, False)
     for r, row in enumerate(chips):
         ws = [text_w(c, fc) + 48 for c in row]
         x = (W - sum(ws) - 16 * (len(row) - 1)) // 2
-        y = 1050 + r * 76
+        y = Y['chips'] + r * Y['crow']
         for c, w in zip(row, ws):
             d.rounded_rectangle((x, y, x + w, y + 58), 29, fill=(255, 255, 255, 18), outline=(255, 255, 255, 60), width=2)
             d.text((x + 24, y + 12), c, font=fc, fill=WHITE)
             x += w + 16
     # store call-to-action (plain pill: Google's official badge is trademarked artwork, not redrawn here)
-    bw, bh, by = 620, 128, 1260
+    bw, bh, by = 620, 128, Y['btn']
     bx = (W - bw) // 2
     d.rounded_rectangle((bx, by, bx + bw, by + bh), 28, fill=(255, 255, 255), outline=None)
     f1, f2 = font('SemiBold', 26, False), font('Bold', 52)
@@ -199,10 +232,10 @@ def end_layer():
     d.text((bx + (bw - text_w('Google Play', f2)) // 2, by + 50), 'Google Play', font=f2, fill=(20, 24, 32))
     fu = font('Medium', 30, False)
     for i, s in enumerate(['Search “SmartCare” on Google Play', 'Web: solimananas.github.io/SmartCare']):
-        d.text(((W - text_w(s, fu)) // 2, 1430 + i * 46), s, font=fu, fill=MUTED)
+        d.text(((W - text_w(s, fu)) // 2, Y['links'] + i * 46), s, font=fu, fill=MUTED)
     fd = font('Regular', 24, False)
     s = 'Study aid for education and revision. Not for direct patient care.'
-    d.text(((W - text_w(s, fd)) // 2, 1560), s, font=fd, fill=(130, 140, 160))
+    d.text(((W - text_w(s, fd)) // 2, Y['disc']), s, font=fd, fill=(130, 140, 160))
     return L
 
 
@@ -282,11 +315,12 @@ def screen_at(sc, f):
         d = ImageDraw.Draw(ov)
         for x, y, age in rings:
             p_ = age / 0.55
-            r = 22 + 46 * ease_out(p_)
+            r = (22 + 46 * ease_out(p_)) * K
             a = int(230 * (1 - p_))
-            d.ellipse((x - r, y - r, x + r, y + r), outline=(255, 255, 255, a), width=5)
+            d.ellipse((x - r, y - r, x + r, y + r), outline=(255, 255, 255, a), width=max(3, round(5 * K)))
             if age < 0.18:
-                d.ellipse((x - 20, y - 20, x + 20, y + 20), fill=(255, 255, 255, int(120 * (1 - age / 0.18))))
+                c0 = 20 * K
+                d.ellipse((x - c0, y - c0, x + c0, y + c0), fill=(255, 255, 255, int(120 * (1 - age / 0.18))))
         im = Image.alpha_composite(im, ov).convert('RGB')
     return im
 
@@ -301,7 +335,7 @@ def ecg_trace(t):
     y += 90 * np.exp(-((ph - 0.40) / 0.010) ** 2)
     y -= 26 * np.exp(-((ph - 0.44) / 0.010) ** 2)
     y += 20 * np.exp(-((ph - 0.65) / 0.05) ** 2)
-    return list(zip(xs.tolist(), (1100 - y).tolist()))
+    return list(zip(xs.tolist(), ((H * 0.78 if LAND else 1100) - y).tolist()))
 
 
 def render(stills=None):
@@ -369,7 +403,9 @@ def render(stills=None):
             fin = ease_out(f / 12)
             fout = 1 - ease((f - (sc['frames'] - 8)) / 8) if k + 1 < len(scenes) else 1
             a = min(fin, fout)
-            for L, y0, rise in ((heads[sc['id']], 0, 30), (caps[sc['id']], 384, 20)):
+            # horizontal: the text column is centred vertically on the left
+            ys = (190, 610) if LAND else (0, 384)
+            for L, y0, rise in ((heads[sc['id']], ys[0], 30), (caps[sc['id']], ys[1], 20)):
                 if a <= 0:
                     continue
                 Lx = L if a >= 1 else L.copy()
@@ -389,7 +425,7 @@ def render(stills=None):
         return img.convert('RGB')
 
     if stills:
-        out = BUILD / 'stills'
+        out = BUILD / f'stills{TAG}'
         out.mkdir(exist_ok=True)
         for s in stills:
             frame(round(float(s) * FPS)).save(out / f'still_{float(s):06.2f}.png')
@@ -398,14 +434,14 @@ def render(stills=None):
 
     ff = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}',
                            '-r', str(FPS), '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '14',
-                           '-pix_fmt', 'yuv420p', str(BUILD / 'video.mp4')], stdin=subprocess.PIPE)
+                           '-pix_fmt', 'yuv420p', str(BUILD / f'video{TAG}.mp4')], stdin=subprocess.PIPE)
     for n in range(N):
         ff.stdin.write(frame(n).tobytes())
         if n % 150 == 0:
             print(f'  frame {n}/{N}', flush=True)
     ff.stdin.close()
     ff.wait()
-    print(f'→ build/video.mp4  {N / FPS:.2f} s')
+    print(f'→ build/video{TAG}.mp4  {N / FPS:.2f} s')
 
 
 if __name__ == '__main__':

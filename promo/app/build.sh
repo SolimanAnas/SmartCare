@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# Reproducible build for the SmartCare app promo (vertical 1080×1920 social cut).
-#   ./build.sh                          # capture → voice → compose → audio → mux
+# Reproducible build for the SmartCare app promo: vertical 1080×1920 and horizontal 1920×1080 cuts.
+#   ./build.sh                          # capture → voice → compose → audio → mux, both layouts
+#   ./build.sh land                     # horizontal only (vert = vertical only)
 #   STEPS="compose audio mux" ./build.sh   # re-edit without re-capturing
 #   node scripts/record.js mega ecg     # re-shoot single scenes
 set -euo pipefail
 cd "$(dirname "$0")"
 REPO=$(cd ../.. && pwd)
 STEPS=${STEPS:-"capture voice compose audio mux"}
+LAYOUTS=${1:-"vert land"}
 PORT=8765
 export BASE="http://localhost:$PORT/"
 has() { [[ " $STEPS " == *" $1 "* ]]; }
@@ -38,12 +40,20 @@ PY
 fi
 
 mkdir -p build output
-if has compose; then python3 scripts/compose.py; fi
-if has audio; then python3 scripts/audio.py build/timeline.json build/mix.wav; fi
-if has mux; then
-  ffmpeg -y -loglevel error -i build/video.mp4 -i build/mix.wav \
-    -af "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000" \
-    -map 0:v -map 1:a -c:v libx264 -preset slow -crf 18 -maxrate 12M -bufsize 16M -pix_fmt yuv420p -profile:v high \
-    -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart output/smartcare-app-promo-vertical.mp4
-  echo "→ output/smartcare-app-promo-vertical.mp4"
-fi
+# Both layouts share one timeline, so one audio mix serves both.
+for L in $LAYOUTS; do
+  if [ "$L" = land ]; then flag=--land; tag=_land; name=horizontal; else flag=; tag=; name=vertical; fi
+  if has compose; then python3 scripts/compose.py $flag; fi
+  if has audio && [ ! -f build/mix.wav -o build/timeline.json -nt build/mix.wav ]; then
+    python3 scripts/audio.py build/timeline.json build/mix.wav
+  fi
+  if has mux; then
+    out=output/smartcare-app-promo-$name.mp4
+    ffmpeg -y -loglevel error -i "build/video$tag.mp4" -i build/mix.wav \
+      -af "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000" \
+      -map 0:v -map 1:a -c:v libx264 -preset slow -crf 18 -maxrate 12M -bufsize 16M -pix_fmt yuv420p -profile:v high \
+      -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$out"
+    ffmpeg -y -loglevel error -ss 3.2 -i "$out" -frames:v 1 -q:v 2 "output/smartcare-app-promo-$name-cover.jpg"
+    echo "→ $out"
+  fi
+done

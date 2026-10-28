@@ -1,13 +1,15 @@
-# SmartCare app promo (vertical social cut)
+# SmartCare app promo (vertical and horizontal cuts)
 
-A ~75-second vertical promo of the whole SmartCare app for Instagram/Facebook Reels, YouTube
-Shorts and TikTok. Every phone screen is a **genuine capture of the running app**: the frames come
+A ~75-second promo of the whole SmartCare app, in two layouts: vertical for Instagram/Facebook
+Reels, YouTube Shorts and TikTok, and horizontal for YouTube, the Facebook feed and
+presentations. Both cuts share the same edit, narration and music. Every phone screen is a **genuine capture of the running app**: the frames come
 from `record.js` driving the real pages, and none of the UI is redrawn.
 
 | Deliverable | File |
 |---|---|
 | Vertical video, 1080×1920, 30 fps, H.264 + AAC, −14 LUFS | `output/smartcare-app-promo-vertical.mp4` |
-| Cover / thumbnail frame | `output/smartcare-app-promo-cover.jpg` |
+| Horizontal video, 1920×1080, same specs | `output/smartcare-app-promo-horizontal.mp4` |
+| Cover / thumbnail frames | `output/smartcare-app-promo-{vertical,horizontal}-cover.jpg` |
 | Script: headlines, captions and narration | `scripts/script.json` |
 
 ## Running order
@@ -38,7 +40,7 @@ screen, and 17 cards on the AHA page. That the app works offline was verified fo
 
 ```
 real pages ──(Playwright, frozen virtual clock, 412×800 @2.5x, 30 fps)──▶ capture/<scene>/f*.jpg + seg.json
-scripts/compose.py ──(phone frame, headlines, captions, tap rings, cuts)──▶ build/video.mp4 + timeline.json
+scripts/compose.py ──(phone frame, headlines, captions, tap rings, cuts)──▶ build/video[_land].mp4 + timeline.json
 scripts/audio.py   ──(original score, UI foley, ducked narration)────────▶ build/mix.wav
 ffmpeg             ──(loudnorm −14 LUFS for social, AAC, faststart)───────▶ output/*.mp4
 ```
@@ -50,7 +52,9 @@ ffmpeg             ──(loudnorm −14 LUFS for social, AAC, faststart)──�
 * **Captions are burned in**, because social feeds autoplay muted. The caption is the narration
   word for word. `script.json` keeps a separate `say` spelling for the voice only, so acronyms
   are read out letter by letter (A-C-L-S, G-C-S, A-H-A).
-* **Layout:** the headline, caption and phone sit high in the frame, inside the area that Reels,
+* **Horizontal layout:** the phone is on the right, with the headline and caption in a column on
+  the left (`compose.py --land`).
+* **Vertical layout:** the headline, caption and phone sit high in the frame, inside the area that Reels,
   Shorts and TikTok leave clear of their own buttons.
 * **Narration:** Piper TTS, `en_US-joe-medium` voice. Its model card lists the dataset as CC0.
 * **Music:** an original synthesized D-major track (`audio.py`). No samples or licensed music.
@@ -63,10 +67,11 @@ Needs Node 18+ with Playwright, Python 3.10+ with `numpy pillow scipy piper-tts`
 
 ```bash
 cd promo/app
-./build.sh                              # everything (capture takes ~15 min, compose ~15 min)
+./build.sh                              # everything, both layouts (capture ~15 min, compose ~15 min per layout)
+./build.sh land                         # horizontal only (vert = vertical only)
 STEPS="compose audio mux" ./build.sh    # re-edit only
 node scripts/record.js ecg              # re-shoot one scene
-python3 scripts/compose.py --stills 12 40   # PNG stills → build/stills/
+python3 scripts/compose.py --land --stills 12 40   # PNG stills → build/stills_land/
 ```
 
 To change the wording, edit `scripts/script.json` and run `STEPS="voice compose audio mux" ./build.sh`.
