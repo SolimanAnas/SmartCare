@@ -1,0 +1,179 @@
+[
+ {
+  "id": "home",
+  "segs": [
+   "home"
+  ],
+  "kicker": "SMARTCARE",
+  "title": [
+   "Your clinical",
+   "learning companion"
+  ],
+  "vo": "Meet SmartCare: the clinical learning app for EMS and nursing professionals.",
+  "say": "Meet SmartCare: the clinical learning app for E-M-S and nursing professionals."
+ },
+ {
+  "id": "courses",
+  "segs": [
+   "courses"
+  ],
+  "kicker": "COURSE LIBRARY",
+  "title": [
+   "14 courses.",
+   "One app."
+  ],
+  "vo": "Fourteen courses in one place: BLS, ACLS, PALS, ITLS, PEPP, MCI, and more.",
+  "say": "Fourteen courses in one place: B-L-S, A-C-L-S, PALS, I-T-L-S, PEPP, M-C-I, and more."
+ },
+ {
+  "id": "study",
+  "segs": [
+   "summary",
+   "cards",
+   "quiz",
+   "scenario"
+  ],
+  "kicker": "STUDY MODES",
+  "title": [
+   "Read. Flip.",
+   "Quiz. Decide."
+  ],
+  "vo": "Every chapter has summaries, flashcards, quizzes, and clinical scenarios."
+ },
+ {
+  "id": "search",
+  "segs": [
+   "search"
+  ],
+  "kicker": "SMART SEARCH",
+  "title": [
+   "Find any topic",
+   "in seconds"
+  ],
+  "vo": "Search every chapter in seconds."
+ },
+ {
+  "id": "mega",
+  "segs": [
+   "mega"
+  ],
+  "kicker": "ACLS MEGACODE",
+  "title": [
+   "Run the code.",
+   "Read the monitor."
+  ],
+  "vo": "Lead twelve ACLS megacode scenarios on a live patient monitor.",
+  "say": "Lead twelve A-C-L-S megacode scenarios on a live patient monitor."
+ },
+ {
+  "id": "ecg",
+  "segs": [
+   "ecg",
+   "ecgcourse"
+  ],
+  "kicker": "ECG SIMULATOR & COURSE",
+  "title": [
+   "68 live rhythms.",
+   "Full 12-lead."
+  ],
+  "vo": "Master ECGs with a live simulator, sixty-eight rhythms, twelve-lead views, and a complete ECG course.",
+  "say": "Master E-C-G's with a live simulator, sixty-eight rhythms, twelve-lead views, and a complete E-C-G course."
+ },
+ {
+  "id": "resp",
+  "segs": [
+   "resp"
+  ],
+  "kicker": "RESPIRATORY PATTERNS",
+  "title": [
+   "See breathing",
+   "patterns live"
+  ],
+  "vo": "Recognise abnormal breathing patterns as they happen."
+ },
+ {
+  "id": "exam",
+  "segs": [
+   "exam",
+   "results"
+  ],
+  "kicker": "PROMETRIC MOCK EXAM",
+  "title": [
+   "2,749 Paramedic",
+   "& EMT questions"
+  ],
+  "vo": "Prepare for Prometric with over two thousand seven hundred Paramedic and EMT questions, and see your score by topic."
+ },
+ {
+  "id": "planner",
+  "segs": [
+   "planner"
+  ],
+  "kicker": "STUDY PLANNER",
+  "title": [
+   "A day-by-day plan",
+   "to exam day"
+  ],
+  "vo": "Build a study plan that counts down to your exam day."
+ },
+ {
+  "id": "tools",
+  "segs": [
+   "tools",
+   "mci"
+  ],
+  "kicker": "EMS TOOLS & MCI DRILLS",
+  "title": [
+   "Clinical tools at",
+   "your fingertips"
+  ],
+  "vo": "Use EMS tools like GCS, APGAR, burns, START triage, and METHANE, then sharpen your triage with timed drills.",
+  "say": "Use E-M-S tools like G-C-S, APGAR, burns, START triage, and METHANE, then sharpen your triage with timed drills."
+ },
+ {
+  "id": "drug",
+  "segs": [
+   "drug"
+  ],
+  "kicker": "DRUG CALCULATOR",
+  "title": [
+   "Weight-based",
+   "dosing"
+  ],
+  "vo": "Check weight-based drug doses by age group."
+ },
+ {
+  "id": "aha",
+  "segs": [
+   "aha"
+  ],
+  "kicker": "AHA ALGORITHMS",
+  "title": [
+   "17 algorithms.",
+   "Always at hand."
+  ],
+  "vo": "Review the AHA algorithms anytime.",
+  "say": "Review the Eigh H Eigh algorithms anytime."
+ },
+ {
+  "id": "themes",
+  "segs": [
+   "themes"
+  ],
+  "kicker": "5 THEMES · 100% OFFLINE",
+  "title": [
+   "Your style.",
+   "Anywhere."
+  ],
+  "vo": "Pick from five themes, and study fully offline, even in the ambulance."
+ },
+ {
+  "id": "end",
+  "segs": [],
+  "kicker": "",
+  "title": [
+   "SmartCare"
+  ],
+  "vo": "SmartCare. Get it now on Google Play."
+ }
+]
