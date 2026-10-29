@@ -53,6 +53,7 @@ function main() {
                     id: s.id,
                     shortTitle: s.shortTitle,
                     summary: s.summary || '',
+                    ...(s.guide ? { guide: s.guide } : {}),
                     quiz: s.quiz || [],
                     flashcards: s.flashcards || [],
                     critical: s.critical || []

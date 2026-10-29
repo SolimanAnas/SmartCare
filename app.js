@@ -160,7 +160,21 @@ if (!state.sections && chapterData) {
 
 // ---------- UTILITIES ----------  
 const utils = {  
-    shuffle: (arr) => [...arr].sort(() => Math.random() - 0.5),  
+    // Fisher–Yates: every order equally likely (sort-based shuffles are biased).
+    shuffle: (arr) => {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    },
+    // A copy of a quiz or scenario question with its options in random order,
+    // so the right answer is not always in the same place.
+    shuffleOptions: (q) => {
+        const order = utils.shuffle(q.options.map((_, i) => i));
+        return { ...q, options: order.map(i => q.options[i]), correct: order.indexOf(q.correct) };
+    },
     safeScrollTop: () => {  
         window.scrollTo(0,0);  
         document.body.scrollTop = 0;  
@@ -481,7 +495,7 @@ async function switchSection(sectionId, updateUrl = true) {
 
     await utils.ensureSectionData(section);
     state.flashData = section.flashcards || [];
-    state.criticalData = section.critical || [];
+    state.criticalData = (section.critical || []).map(utils.shuffleOptions);
 
     const currentView = utils.getQueryParam('view') || 'summary';
     if (currentView === 'summary') render.summary();
@@ -712,7 +726,9 @@ const render = {
         // don't render it there — a hidden blurred nav can still leave paint
         // artifacts on some GPUs.
         const isSpecialPage = chapterData && (chapterData.id === 'c0' || chapterData.id === 'c-index');
-        const summaryContent = section.summary || '<div class="sum-card">No summary available.</div>';
+        // Rewritten topics render from structured data (cpg-guide.js).
+        const summaryContent = section.guide && window.CPGGuide ? CPGGuide.renderGuide(section.guide)
+            : (section.summary || '<div class="sum-card">No summary available.</div>');
         const nav = renderSectionNavigation();
 
         const html = `
@@ -1086,7 +1102,7 @@ const quizEngine = {
         if (isChapterMissing) { renderComingSoon(); return; }  
         const section = state.activeSection;  
         if (!section || !section.quiz) return;  
-        state.quizData = utils.shuffle(section.quiz).slice(0, size);  
+        state.quizData = utils.shuffle(section.quiz).slice(0, size).map(utils.shuffleOptions);  
         state.qIndex = 0;  
         state.score = 0;  
         state.stats.totalAttempts = (state.stats.totalAttempts || 0) + 1;  
@@ -1375,7 +1391,7 @@ window.addEventListener('popstate', async function () {
 
     await utils.ensureSectionData(state.activeSection);
     state.flashData = (state.activeSection && state.activeSection.flashcards) || [];
-    state.criticalData = (state.activeSection && state.activeSection.critical) || [];
+    state.criticalData = ((state.activeSection && state.activeSection.critical) || []).map(utils.shuffleOptions);
 
     if (view === 'flashcards') render.flashcards();
     else if (view === 'quiz') render.quizSetup();
