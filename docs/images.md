@@ -408,3 +408,86 @@ House style for every image:
     **Image:** The START flowchart drawn as a simple tree: walking → green; breathing? → black / respiratory rate → perfusion → mental status → red or yellow.
 110. **Where:** "Running the scene", before the list.
     **Image:** An overhead view of a mass-casualty scene with colour-coded treatment areas (red, yellow, green), a command post, a staging area and an ambulance loading point.
+
+## Chapter 6 – Trauma Emergencies (accent yellow #d9a400)
+
+### c6s1 – Trauma Systems & Kinematics
+
+111. **Where:** "Mechanism → suspect", before the table.
+    **Image:** The three collisions of a frontal crash in three panels: the car hitting a wall, the driver hitting the steering wheel, the brain and aorta moving inside the body.
+112. **Where:** "Mechanism → suspect", in the "Child pedestrian" row.
+    **Image:** A child struck by a car bumper: impact points at the femur, the chest/abdomen (bonnet) and the head (ground), labelled Waddell's triad.
+
+### c6s2 – Bleeding Control
+
+113. **Where:** "Life-threatening external bleeding", step 2 (tourniquet).
+    **Image:** A windlass tourniquet on the upper thigh 5–7 cm above a lower-leg wound, with the time written on the tag; a second tourniquet shown above the first.
+114. **Where:** "Life-threatening external bleeding", step 4 (junctional).
+    **Image:** Wound packing in the groin: gauze pushed deep with two fingers, then both hands pressing with straight arms.
+115. **Where:** "Where else is the blood?", before the table.
+    **Image:** A body outline highlighting the five bleeding sites: the floor (external), chest, abdomen, pelvis/retroperitoneum and thighs.
+
+### c6s3 – Shock in Trauma
+
+116. **Where:** "Shock that fluid won't fix", before the table.
+    **Image:** Three small cross-sections: a collapsed lung pushing the heart across (tension pneumothorax), blood around the heart (tamponade), and a spinal cord injury with dilated vessels below it (neurogenic).
+
+### c6s4 – Soft-Tissue Injuries & Wound Care
+
+117. **Where:** "Special wounds", in the "Amputated part" row.
+    **Image:** An amputated finger wrapped in moist gauze, sealed in a bag, resting in a container of ice water; a crossed-out finger directly on ice.
+118. **Where:** "Special wounds", in the "Impaled object" row.
+    **Image:** A knife stabilised in the thigh with rolled bulky dressings on both sides, taped in place.
+
+### c6s5 – Burns
+
+119. **Where:** "Rule of nines (adult)", before the table.
+    **Image:** Front and back adult figures with the rule-of-nines areas shaded and labelled, and an infant figure beside them with the larger head (18%).
+120. **Where:** "Depth", before the table.
+    **Image:** A skin cross-section with superficial, partial-thickness and full-thickness burn depths marked.
+121. **Where:** "First minutes", step 3 (cool).
+    **Image:** A burned forearm under cool running water from a tap, with a 20-minute timer; a crossed-out ice pack.
+
+### c6s6 – Head & Brain Injury
+
+122. **Where:** "Patterns", in the "Epidural" and "Subdural" groups.
+    **Image:** Two skull cross-sections: a lens-shaped epidural bleed against the skull and a crescent-shaped subdural bleed over the brain surface.
+123. **Where:** "Signs of herniation?", before the gate.
+    **Image:** A face with one fixed, dilated pupil and a monitor showing rising BP and falling heart rate.
+
+### c6s7 – Spine & Motion Restriction
+
+124. **Where:** "How", step 3 (move as a unit).
+    **Image:** A scoop stretcher being closed around a supine patient wearing a collar, one rescuer holding in-line stabilisation at the head.
+125. **Where:** "How", step 2 (collar).
+    **Image:** Measuring collar size with fingers from the angle of the jaw to the top of the shoulder.
+
+### c6s8 – Chest Trauma
+
+126. **Where:** "The immediate killers", before the table.
+    **Image:** Five chest diagrams: tension pneumothorax (mediastinum pushed across), open wound with air entering, massive hemothorax (blood level), tamponade (blood around the heart), flail segment moving inward on inspiration.
+127. **Where:** "Needle decompression (ALS)", step 1 (adults).
+    **Image:** Chest landmarks for decompression: 4th/5th intercostal space just anterior to the mid-axillary line and 2nd intercostal space mid-clavicular line, the needle passing over the top of the rib.
+128. **Where:** "The immediate killers", in the "Open pneumothorax" row.
+    **Image:** A vented chest seal over a chest wound, with the one-way valve shown.
+
+### c6s9 – Abdominal & Pelvic Trauma
+
+129. **Where:** "Pelvic fracture with shock", step 3 (bind it).
+    **Image:** A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist.
+130. **Where:** "Watch for", in the "Thoracoabdominal wound" group.
+    **Image:** A torso showing the thoracoabdominal zone: from the nipple line (front) and scapula tip (back) down to the costal margin, with the diaphragm drawn at expiration height.
+
+### c6s10 – Musculoskeletal Injuries & Splinting
+
+131. **Where:** "Leg deformity: traction or not?", before the table.
+    **Image:** Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found).
+132. **Where:** "Splinting principles", step 5 (CMS after).
+    **Image:** A splinted forearm with fingers exposed and a rescuer checking capillary refill and finger movement.
+
+### c6s11 – Multisystem Trauma & Pregnancy
+
+133. **Where:** "Pregnancy over 20 weeks", in the "Positioning" group.
+    **Image:** Manual left uterine displacement: a rescuer standing on the patient's left pushing the uterus up and to the left with both hands while another does compressions.
+134. **Where:** "Time-critical multisystem trauma", before the steps.
+    **Image:** A team of three working in parallel on one patient: one at the airway with a BVM, one tightening a tourniquet, one applying a pelvic binder, an ambulance waiting with doors open.
