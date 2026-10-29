@@ -328,3 +328,83 @@ House style for every image:
     **Image:** A splinted forearm resting on a pillow with a wrapped cold pack, and a child distracted by a tablet video.
 88. **Where:** "Safety", in the "Fractures" group.
     **Image:** Side-by-side legs: a traction splint on a mid-shaft femur fracture (tick) and a hip fracture supported by pillows and a vacuum mattress (tick), with a crossed-out traction splint on the hip.
+
+## Chapter 2 – Patient Assessment (accent cyan #0891b2)
+
+### c2s1 – Anatomy & Physiology Essentials
+
+89. **Where:** "Say it precisely", before the table.
+    **Image:** A figure in the anatomical position with arrows labelled medial/lateral, proximal/distal, anterior/posterior and superior/inferior, plus the three body planes as translucent slices.
+90. **Where:** "What's under the pain?", before the table.
+    **Image:** The abdomen divided into four quadrants with the main organs drawn underneath (liver, gallbladder, stomach, spleen, appendix, sigmoid colon), and kidneys and aorta shown behind.
+91. **Where:** "Pain that travels", before the groups.
+    **Image:** A torso with referred-pain zones: right shoulder from the gallbladder, left shoulder from the spleen (Kehr's sign), jaw and left arm from the heart.
+
+### c2s2 – Perfusion & Shock
+
+92. **Where:** "Which part failed?", before the table.
+    **Image:** The perfusion triangle: a heart (pump), a blood drop (fluid) and a vessel (container), with one corner of the triangle broken for each shock type.
+93. **Where:** "Stages", before the table.
+    **Image:** A timeline of compensated → decompensated → irreversible shock with heart rate rising and BP holding then falling.
+
+### c2s3 – Scene Size-up & Safety
+
+94. **Where:** "Every scene", before the steps.
+    **Image:** An EMS crew stopping short of a scene and scanning: traffic, a downed power line, a person with a weapon, a leaking fuel puddle, each circled as a hazard.
+95. **Where:** "Stage, don't enter", in the "Roadway" group.
+    **Image:** An ambulance parked at an angle upstream of a crash to block traffic, warning lights on, crew in high-visibility vests working on the protected side.
+96. **Where:** "Spinal motion restriction (blunt trauma)", after the criteria.
+    **Image:** A patient in a cervical collar on a scoop stretcher and vacuum mattress, beside a long backboard labelled "extrication only".
+
+### c2s4 – Primary Assessment (XABCDE)
+
+97. **Where:** "XABCDE", before the steps.
+    **Image:** Six large letters X, A, B, C, D, E, each with a small icon: a tourniquet, an open airway, a lung, a pulse, a brain, a blanket.
+98. **Where:** "XABCDE", step 3 (airway).
+    **Image:** Jaw thrust with manual in-line stabilisation, the rescuer kneeling at the head.
+
+### c2s5 – Vital Signs
+
+99. **Where:** "Measure it right", in the "BP cuff" group.
+    **Image:** Three arms with cuffs: too small (reading high), correct (bladder about 40% of arm circumference) and too large (reading low).
+100. **Where:** "Measure it right", in the "Pulse sites" group.
+    **Image:** Pulse sites marked on an adult and an infant: carotid, radial, femoral, brachial (infant).
+
+### c2s6 – Monitoring Devices
+
+101. **Where:** "Read the capnograph", before the table.
+    **Image:** Four capnography waveforms on a monitor: normal square wave (35–45 mmHg), shark fin (bronchospasm), rising (hypoventilation), flat line (tube out).
+102. **Where:** "Cardiac monitor leads", before the table.
+    **Image:** Two torsos with limb electrodes: AHA colours (white, black, red, green) and IEC colours (red, yellow, green, black).
+
+### c2s7 – History Taking
+
+103. **Where:** "SAMPLE", before the table.
+    **Image:** An EMS provider at eye level with a seated patient, a family member holding a medication bag, and a notepad with SAMPLE written down the side.
+
+### c2s8 – Secondary Assessment
+
+104. **Where:** "Signs worth knowing", before the table.
+    **Image:** Four close-ups: raccoon eyes, Battle's sign behind the ear, seat-belt bruise across the abdomen, flail segment moving inward on inspiration.
+105. **Where:** "Special handling", after the list.
+    **Image:** A pelvic binder positioned at the level of the greater trochanters (not the waist), with the bony landmarks shown.
+
+### c2s9 – Reassessment & Trending
+
+106. **Where:** "Trends that mean trouble", before the table.
+    **Image:** A line chart of heart rate and BP over 20 minutes in a bleeding patient: heart rate climbing then suddenly dropping, BP holding then falling, with a "pre-arrest" warning at the crossing point.
+    **Notes:** Illustrative trend only; no numeric axis labels needed.
+
+### c2s10 – Clinical Decision Making
+
+107. **Where:** "The reasoning cycle", before the steps.
+    **Image:** A circular arrow diagram: gather → interpret → field impression → act → reassess → revise.
+108. **Where:** "Thinking traps", before the table.
+    **Image:** A cartoon EMS provider with a ship's anchor chained to a thought bubble saying "just a UTI", while a stroke sign (droopy face) is ignored behind them.
+
+### c2s11 – Field Triage
+
+109. **Where:** "START (adults)", before the pathways.
+    **Image:** The START flowchart drawn as a simple tree: walking → green; breathing? → black / respiratory rate → perfusion → mental status → red or yellow.
+110. **Where:** "Running the scene", before the list.
+    **Image:** An overhead view of a mass-casualty scene with colour-coded treatment areas (red, yellow, green), a command post, a staging area and an ambulance loading point.
