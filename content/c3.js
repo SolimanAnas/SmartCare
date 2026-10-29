@@ -801,7 +801,7 @@ window.CPG_DATA = {
                     "text": "Head down along your forearm: 5 back blows."
                   },
                   {
-                    "text": "Turn over: 5 chest thrusts (two fingers, lower sternum)."
+                    "text": "Turn over: 5 chest thrusts with the heel of one hand on the lower half of the sternum."
                   },
                   {
                     "text": "Repeat 5 + 5. Never abdominal thrusts."
@@ -949,13 +949,13 @@ window.CPG_DATA = {
         {
           "q": "Infant chest thrusts are given:",
           "options": [
-            "With two fingers on the lower half of the sternum",
+            "With the heel of one hand on the lower half of the sternum",
             "With a fist on the abdomen",
-            "With the heel of the hand on the back",
+            "With the heel of the hand between the shoulder blades",
             "On the upper abdomen"
           ],
           "correct": 0,
-          "explanation": "Alternating with 5 back blows."
+          "explanation": "Alternating with 5 back blows. AHA 2025 dropped the two-finger technique, which may not compress deeply enough."
         }
       ],
       "flashcards": [

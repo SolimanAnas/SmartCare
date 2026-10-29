@@ -64,7 +64,7 @@ House style for every image:
 11. **Where:** "Severe obstruction: by patient", in the "Adult or child over 1 year" path, at the late-pregnancy step.
     **Image:** Chest thrusts on a visibly pregnant woman, with the rescuer's hands on the lower half of the breastbone.
 12. **Where:** "Severe obstruction: by patient", in the "Infant under 1 year" path.
-    **Image:** Two panels. First, an infant face-down along the rescuer's forearm, head lower than the chest and supported at the jaw, receiving back blows. Second, the infant face-up on the other forearm, with two fingers on the breastbone for chest thrusts.
+    **Image:** Two panels. First, an infant face-down along the rescuer's forearm, head lower than the chest and supported at the jaw, receiving back blows. Second, the infant face-up on the other forearm, with the heel of one hand on the lower half of the breastbone for chest thrusts (not two fingers: AHA 2025).
     **Notes:** No abdominal thrusts on an infant. Make sure nothing in the drawing could read as one.
 13. **Where:** "Severe obstruction: by patient", after the paths (the unresponsive note).
     **Image:** A rescuer looking into the mouth of an unresponsive patient during CPR and seeing an object near the front.
