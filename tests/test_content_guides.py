@@ -30,7 +30,9 @@ CHAPTERS = [f"c{n}" for n in range(1, 11)]
 MIN_QUIZ, MIN_FLASHCARDS, MIN_SCENARIOS = 10, 8, 3
 
 # Keys that hold links, ids or labels rather than clinical text.
-SKIP_KEYS = {"id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg", "lead"}
+SKIP_KEYS = {
+    "id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg", "lead",
+}
 
 UNITS = (
     r"mcg/kg/min|mg/kg|ml/kg|j/kg|mcg/min|mcg|mg|ml|l/min|lpm|breaths/min|/min|bpm|mmhg|cmh2o|°c|%|j|cm|"
