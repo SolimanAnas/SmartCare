@@ -1850,8 +1850,11 @@ window.CPG_DATA = {
             "type": "gate",
             "title": "Signs of herniation?",
             "icon": "triangle-alert",
-            "question": "Falling GCS with a blown pupil, extensor posturing or Cushing's triad?",
+            "question": "Any one of these signs?",
             "items": [
+              "One or both pupils dilated and fixed, or unequal",
+              "Extensor posturing or no motor response",
+              "GCS falling by more than 2 points in a patient already below 9",
               "Cushing's triad: rising BP, slowing pulse, irregular breathing"
             ],
             "yes": "Brief hyperventilation to EtCO₂ 30–35 mmHg (adult about 20 breaths/min, child 25, infant 30) as a bridge; pre-alert neurosurgery.",
@@ -2087,7 +2090,7 @@ window.CPG_DATA = {
         },
         {
           "question": "Signs of herniation",
-          "answer": "Falling GCS, unequal or fixed dilated pupil, extensor posturing, Cushing's triad.",
+          "answer": "Any one of: unequal or fixed dilated pupil, extensor posturing or no motor response, GCS falling by more than 2 points when already below 9, Cushing's triad.",
           "category": "Head & Brain Injury"
         },
         {
