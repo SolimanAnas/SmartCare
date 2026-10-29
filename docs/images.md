@@ -234,3 +234,97 @@ House style for every image:
 60. **Where:** "After a death", before the steps.
     **Image:** An EMS provider sitting at eye level with a family member in a quiet room, hand open, calm posture.
     **Notes:** Respectful and non-graphic; no body visible.
+
+## Chapter 5 – Medical Emergencies (accent orange #f76707)
+
+### c5s1 – Respiratory Emergencies
+
+61. **Where:** "Who is breathless, and why?", before the table.
+    **Image:** Six small patient vignettes in a grid: wheezing asthmatic with inhaler, COPD patient with pursed lips and barrel chest, feverish patient coughing, patient clutching the side of the chest after a flight (PE), tall thin young man with one-sided pain (pneumothorax), patient sitting upright with frothy sputum (heart failure).
+62. **Where:** "Severe asthma", step 2 (bronchodilators).
+    **Image:** A small-volume nebulizer with mouthpiece, showing the reservoir, mist and oxygen or air tubing.
+63. **Where:** "COPD and oxygen", before the list.
+    **Image:** A Venturi mask with its color-coded valves labelled 24% and 28%, beside a pulse oximeter showing 88–92%.
+
+### c5s2 – Neurological Emergencies
+
+64. **Where:** "BE-FAST", before the table.
+    **Image:** Six icons for Balance, Eyes, Face, Arm, Speech, Time: a person swaying, an eye with half the visual field greyed out, a face drooping on one side, one arm drifting down, a speech bubble with jumbled letters, a clock.
+65. **Where:** "Seizures", in the "During" path.
+    **Image:** A rescuer kneeling beside a seizing person, cushioning the head with a folded jacket, furniture moved away, a watch visible, nothing in the mouth.
+66. **Where:** "Seizures", after the paths.
+    **Image:** The recovery position after a seizure, with airway open.
+
+### c5s3 – Endocrine Emergencies
+
+67. **Where:** "Low or high?", before the table.
+    **Image:** A glucometer reading next to two contrasting patients: a pale, sweaty, shaky person (low) and a flushed, dehydrated person breathing deeply (DKA).
+68. **Where:** "Hypoglycemia", after the gate.
+    **Image:** Three treatments side by side: oral glucose gel, a glucagon kit (vial and syringe) with an IM thigh site, and a nasal glucagon device.
+
+### c5s4 – Allergy & Anaphylaxis
+
+69. **Where:** "Is it anaphylaxis?", before the gate.
+    **Image:** A body outline with the systems affected: swollen lips and tongue, hives on the skin, wheeze from the lungs, a falling BP gauge, a cramping stomach.
+70. **Where:** "Treat anaphylaxis", step 1 (IM epinephrine).
+    **Image:** An auto-injector pressed into the outer middle thigh through clothing, with the target area shaded on the anterolateral thigh.
+    **Notes:** Show the needle end against the thigh and the thumb clear of the needle end.
+71. **Where:** "Treat anaphylaxis", step 2 (position).
+    **Image:** Two positions: lying flat with legs raised (low BP) and sitting up (breathing difficulty), with a crossed-out standing figure.
+
+### c5s5 – Toxicology & Overdose
+
+72. **Where:** "Toxidromes", before the table.
+    **Image:** Five pupil close-ups in a row (pinpoint, big, big, small, normal) labelled with the toxidrome names, each with a small skin icon (dry/hot, wet).
+73. **Where:** "Opioid overdose", step 1.
+    **Image:** Two-rescuer BVM ventilation of an unresponsive patient, with a naloxone nasal spray and syringe ready on the floor.
+74. **Where:** "Specific poisons", in the carbon monoxide row.
+    **Image:** A house with a furnace and a car in the garage, several family members and a pet feeling unwell, a CO alarm.
+
+### c5s6 – Gastrointestinal & Abdominal
+
+75. **Where:** "Where it hurts", before the table.
+    **Image:** The abdomen divided into four quadrants plus epigastric and periumbilical regions, with typical pain locations marked: appendix (right lower), gallbladder (right upper, arrow to shoulder), pancreas (epigastric, arrow to back), aorta (midline).
+76. **Where:** "Suspected ruptured aortic aneurysm", before the steps.
+    **Image:** A cut-away of the abdominal aorta with a bulging aneurysm below the kidneys, and a crossed-out hand pressing deeply on the abdomen.
+
+### c5s7 – Genitourinary & Renal
+
+77. **Where:** "Dialysis patients", in the "Fistula arm" group.
+    **Image:** A forearm with an arteriovenous fistula (raised vein), a crossed-out BP cuff on that arm and the cuff on the other arm instead.
+78. **Where:** "Hyperkalemia with ECG changes (ALS)", before the dose rows.
+    **Image:** An ECG progression strip: normal, peaked T waves, widened QRS, sine wave.
+
+### c5s8 – Hematologic Emergencies
+
+79. **Where:** "Sickle cell disease", before the groups.
+    **Image:** Normal round red cells flowing through a vessel next to sickled cells blocking it, with a pain icon downstream.
+80. **Where:** "Bleeding risk", before the table.
+    **Image:** A selection of anticoagulant tablet boxes (generic, unbranded) beside a head-injury icon with a CT scanner.
+
+### c5s9 – Infectious Disease & Sepsis
+
+81. **Where:** "Could this be sepsis?", before the gate.
+    **Image:** A patient with infection sources highlighted (lungs, urine, abdomen, skin wound) and warning signs around them: confusion, fast breathing, low BP, mottled skin.
+82. **Where:** "Protect yourself", before the table.
+    **Image:** Four EMS providers in protective equipment for standard, contact, droplet and airborne precautions (gloves; gown and gloves; surgical mask; N95 respirator).
+83. **Where:** "High-risk patients", after the list.
+    **Image:** The glass test: a clear glass pressed on a non-blanching purple rash that stays visible.
+
+### c5s10 – Behavioral & Psychiatric
+
+84. **Where:** "The agitated patient", step 2 (talk first).
+    **Image:** An EMS provider at a safe distance with open hands and calm posture, standing between the patient and the door, a partner nearby.
+85. **Where:** "The agitated patient", step 4 (restraint).
+    **Image:** Correct position: a restrained patient on their side on a stretcher with monitoring; a crossed-out prone figure with weight on the back.
+    **Notes:** Respectful, non-violent depiction.
+
+### c5s11 – Pain Management
+
+86. **Where:** "Choose the scale", before the table.
+    **Image:** A numeric 0–10 bar with mild, moderate and severe bands, the Wong-Baker style faces row underneath, and a small FLACC observation checklist.
+    **Notes:** Draw original faces; don't copy the copyrighted Wong-Baker artwork.
+87. **Where:** "Without drugs", before the list.
+    **Image:** A splinted forearm resting on a pillow with a wrapped cold pack, and a child distracted by a tablet video.
+88. **Where:** "Safety", in the "Fractures" group.
+    **Image:** Side-by-side legs: a traction splint on a mid-shaft femur fracture (tick) and a hip fracture supported by pillows and a vacuum mattress (tick), with a crossed-out traction splint on the hip.

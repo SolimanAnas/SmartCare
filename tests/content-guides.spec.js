@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 // summaries, and their study sets must still open. Facts and study-set sizes
 // are checked by tests/test_content_guides.py; this checks the pages.
 
-const CHAPTERS = { c3: 9, c4: 13 };
+const CHAPTERS = { c3: 9, c4: 13, c5: 11 };
 const topics = Object.entries(CHAPTERS).flatMap(([c, n]) =>
   Array.from({ length: n }, (_, i) => [c, `${c}s${i + 1}`]));
 
@@ -23,8 +23,15 @@ test.describe('rewritten topics', () => {
         overflow: document.documentElement.scrollWidth > window.innerWidth,
         emptyStrips: [...document.querySelectorAll('.cpg-guide svg[aria-label*="rhythm strip"]')]
           .filter(s => !s.querySelector('path')).length,
+        // Sections hide their overflow, so the page never scrolls sideways even
+        // when content is cut off: nothing outside a scrolling table may pass
+        // the screen's right edge.
+        offscreen: [...document.querySelectorAll('.cpg-guide *')]
+          .filter(el => !el.closest('.g-table-wrap') && el.getBoundingClientRect().right > window.innerWidth + 1)
+          .map(el => el.className || el.tagName).slice(0, 5),
       }));
       expect(info.overflow).toBe(false);
+      expect(info.offscreen).toEqual([]);
       expect(info.emptyStrips).toBe(0);
       expect(errors).toEqual([]);
     });

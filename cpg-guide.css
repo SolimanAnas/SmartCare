@@ -283,7 +283,8 @@
     .g-stack { display: grid; gap: 8px; margin-bottom: 10px; }
     .g-stack-card { padding: 10px 12px; border-radius: 10px; background: var(--g-tint); border: 1px solid var(--g-line); }
     .g-stack-card h4 { margin: 0 0 6px; color: var(--g-accent); }
-    .g-stack-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 0; font-size: .88rem; }
+    /* Labels take what they need up to 45%, then wrap, so long labels never push values off the card. */
+    .g-stack-card dl { display: grid; grid-template-columns: fit-content(45%) minmax(0, 1fr); gap: 4px 12px; margin: 0; font-size: .88rem; }
     .g-stack-card dt { font-weight: 650; color: var(--text-primary); }
     .g-stack-card dd { margin: 0; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 }
