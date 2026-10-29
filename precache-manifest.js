@@ -6,6 +6,9 @@ self.__PRECACHE = [
   "resume.html",
   "styles.css",
   "app.js",
+  "cpg-guide.js",
+  "cpg-guide.css",
+  "cpg-strip.js",
   "manifest.json",
   "icons/icon.png",
   "icons/sprite.svg",
@@ -166,4 +169,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "76c9984665";
+self.__PRECACHE_VERSION = "9d47fe364d";
