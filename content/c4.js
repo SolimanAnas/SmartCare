@@ -849,7 +849,7 @@ window.CPG_DATA = {
               "Sit them up, legs down",
               "Oxygen to SpO₂ 94–98%"
             ],
-            "yes": "CPAP 5–10 cmH₂O, nitrates per protocol, diuretic per protocol, transport.",
+            "yes": "Awake, protecting the airway and not vomiting: CPAP 5–10 cmH₂O. If not: assist ventilation with a BVM. Nitrates and diuretic per protocol; transport.",
             "no": "Cardiogenic shock: no nitrates, no CPAP. Assist ventilation if failing; vasopressors (ALS); PCI centre if STEMI."
           },
           {
