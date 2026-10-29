@@ -58,6 +58,8 @@
 .g-lvl[data-lvl="P"]     { background: #c92a2a; }
 .g-lvl[data-lvl="AP"]    { background: #7a1f1f; }
 .g-lvl[data-lvl="EP"]    { background: #16705f; }
+.g-lvl[data-lvl="BLS"]   { background: #3d72b8; }
+.g-lvl[data-lvl="ALS"]   { background: #c92a2a; }
 
 /* ---------- Sections ---------- */
 .g-sec {
