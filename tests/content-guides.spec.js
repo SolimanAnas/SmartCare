@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 // summaries, and their study sets must still open. Facts and study-set sizes
 // are checked by tests/test_content_guides.py; this checks the pages.
 
-const CHAPTERS = { c2: 11, c3: 9, c4: 13, c5: 11, c6: 11 };
+const CHAPTERS = { c2: 11, c3: 9, c4: 13, c5: 11, c6: 11, c7: 8 };
 const topics = Object.entries(CHAPTERS).flatMap(([c, n]) =>
   Array.from({ length: n }, (_, i) => [c, `${c}s${i + 1}`]));
 

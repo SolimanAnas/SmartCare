@@ -491,3 +491,81 @@ House style for every image:
     **Image:** Manual left uterine displacement: a rescuer standing on the patient's left pushing the uterus up and to the left with both hands while another does compressions.
 134. **Where:** "Time-critical multisystem trauma", before the steps.
     **Image:** A team of three working in parallel on one patient: one at the airway with a BVM, one tightening a tourniquet, one applying a pelvic binder, an ambulance waiting with doors open.
+
+## Chapter 7 – Special Populations (accent pink #f06595)
+
+### c7s1 – Obstetrics & Childbirth
+
+135. **Where:** "Normal delivery", step 2 (head).
+    **Image:** A rescuer's flat gloved hand resting on the crowning baby's head while the other hand supports the perineum with a towel; mother semi-reclined, knees bent.
+136. **Where:** "Normal delivery", step 6 (cord).
+    **Image:** A newborn skin-to-skin on the mother with the cord clamped twice (about 10 cm and 15 cm from the baby) and scissors cutting between the clamps.
+137. **Where:** "Delivery emergencies", in the "Prolapsed cord" row.
+    **Image:** The mother in knee-chest position with a rescuer's gloved hand lifting the presenting part off a cord covered by moist gauze.
+138. **Where:** "Delivery emergencies", in the "Shoulder dystocia" row.
+    **Image:** McRoberts manoeuvre: two helpers pulling the mother's knees towards her chest while a third presses just above the pubic bone with the heel of the hand.
+139. **Where:** "Postpartum hemorrhage", step 2 (massage).
+    **Image:** One hand cupping the fundus above the umbilicus and massaging in circles, the other hand just above the pubic bone supporting the lower uterus.
+
+### c7s2 – Gynecologic Emergencies
+
+140. **Where:** "Could this be a ruptured ectopic?", beside the gate.
+    **Image:** A simple diagram of the uterus and tubes with a ruptured pregnancy in one tube, blood collecting in the abdomen and an arrow to the shoulder tip (Kehr's sign).
+141. **Where:** "Sexual assault", step 3 (protect evidence).
+    **Image:** Clothing items each placed in a separate brown paper bag, labelled and sealed, next to a patient wrapped in a blanket.
+
+### c7s3 – Neonatal Resuscitation
+
+142. **Where:** "The first 30 seconds", before the gate.
+    **Image:** A newborn being dried with a warm towel on a flat surface, wet towel removed, hat on, head in the neutral "sniffing" position with a small roll under the shoulders.
+143. **Where:** "Newborn resuscitation", step 1 (PPV).
+    **Image:** A newborn bag-mask with the mask covering mouth and nose but not the eyes, held with a C-grip, and a pulse oximeter probe on the right wrist.
+144. **Where:** "Newborn resuscitation", step 3 (compressions).
+    **Image:** Two-thumb encircling technique on the lower third of a newborn's sternum, with a second rescuer giving breaths; a "3:1" rhythm label.
+145. **Where:** "Keep warm", next to the last item.
+    **Image:** A very preterm baby in a clear plastic bag up to the neck with a hat, lying on a warm mattress, not dried.
+
+### c7s4 – Pediatric Assessment & Emergencies
+
+146. **Where:** "Pediatric Assessment Triangle", before the groups.
+    **Image:** A triangle with three labelled sides – Appearance, Work of breathing, Circulation to skin – and a child on a parent's lap seen from a doorway.
+147. **Where:** "Stridor: croup or epiglottitis?", before the table.
+    **Image:** Side by side: a toddler with croup coughing on a parent's lap, and a child with epiglottitis sitting forward in tripod position, drooling, mouth open.
+148. **Where:** "Choking", beside the gate.
+    **Image:** An infant face-down along a rescuer's forearm receiving back blows, and the same infant face-up receiving chest thrusts with two thumbs.
+149. **Where:** "Arrest and rhythm", in the CPR row.
+    **Image:** Infant compressions with two thumbs encircling the chest and, as the alternative, the heel of one hand; the two-finger technique shown crossed out.
+
+### c7s5 – Child Abuse & Neglect Recognition
+
+150. **Where:** "Bruises: TEN-4-FACESp", before the groups.
+    **Image:** Front and side outlines of a toddler with the TEN-4 zones (torso, ears, neck) and FACESp sites (frenulum, jaw angle, cheek, eyelid, eye white) shaded.
+151. **Where:** "Injuries that suggest abuse", in the "Burns" row.
+    **Image:** Comparison: an immersion scald on both feet with a sharp horizontal line (stocking pattern) versus an accidental splash scald with irregular edges and drip marks.
+
+### c7s6 – Geriatrics
+
+152. **Where:** "Delirium, dementia or depression?", before the table.
+    **Image:** Three timelines: delirium as a sudden zig-zag over hours, dementia as a slow decline over years, depression as a gradual dip over weeks.
+153. **Where:** "After a fall", step 2 (long lie).
+    **Image:** An older woman on a living-room floor beside a rug, a clock on the wall, with callouts for pressure areas on the hip and heel.
+154. **Where:** "Medicines to ask about", beside the list.
+    **Image:** A table covered in pill boxes and a weekly organiser, with a rescuer bagging all the medicines to bring to hospital.
+
+### c7s7 – Patients with Special Challenges
+
+155. **Where:** "Communicating", in the "Deaf or hard of hearing" row.
+    **Image:** A rescuer facing a deaf patient in good light while a sign language interpreter appears on a tablet video call.
+156. **Where:** "Technology at home", in the "Tracheostomy" row.
+    **Image:** A child's tracheostomy tube with its flange, ties and inner cannula labelled, and a suction catheter marked at the pre-measured depth.
+157. **Where:** "Technology at home", in the "Dialysis fistula" row.
+    **Image:** A forearm with an AV fistula and a "no BP, no IV" symbol, with the cuff and IV placed on the other arm.
+
+### c7s8 – Bariatric Considerations
+
+158. **Where:** "Airway and breathing", step 2 (ramp).
+    **Image:** Side view of a large patient on a ramp of blankets with a dotted horizontal line from the ear canal to the sternal notch.
+159. **Where:** "Airway and breathing", step 4 (bag-mask).
+    **Image:** Two-person bag-mask: one rescuer with both hands sealing the mask (thumbs on the mask, fingers lifting the jaw), the other squeezing the bag.
+160. **Where:** "Moving the patient", step 3 (equipment).
+    **Image:** A team of six using an air-assisted transfer mat to move a patient from a bed to a bariatric cot, patient covered with a sheet.
