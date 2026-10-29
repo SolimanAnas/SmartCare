@@ -2135,8 +2135,8 @@ window.CPG_DATA = {
           "question": "Next action?",
           "options": [
             {
-              "t": "Respiratory failure with CO₂ retention: assist ventilation (BVM or CPAP/NIV per protocol), titrate oxygen to 88–92%, prepare for airway support",
-              "f": "Correct."
+              "t": "Respiratory failure with CO₂ retention and falling consciousness: assist ventilation with a BVM, titrate oxygen to 88–92%, call ALS and prepare for advanced airway support",
+              "f": "Correct. CPAP/NIV is only for patients awake enough to protect their airway."
             },
             {
               "t": "SpO₂ is above 90%: keep monitoring",
@@ -2152,7 +2152,7 @@ window.CPG_DATA = {
             }
           ],
           "correct": 0,
-          "explanation": "The trend matters more than any one number.",
+          "explanation": "The trend matters more than any one number. Had she been alert and protecting her airway, CPAP/NIV would be an option.",
           "kpi": "Capnography trend interpretation"
         },
         {
@@ -3226,7 +3226,7 @@ window.CPG_DATA = {
             }
           ],
           "correct": 0,
-          "explanation": "If SpO₂ plateaus or he tires, consider CPAP/NIV per protocol.",
+          "explanation": "If SpO₂ plateaus while he stays alert, consider CPAP/NIV per protocol; if he tires or gets drowsy, assist with a BVM.",
           "kpi": "Trend interpretation — improvement"
         },
         {
