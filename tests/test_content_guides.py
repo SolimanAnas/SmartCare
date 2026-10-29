@@ -29,10 +29,9 @@ REFERENCES = ROOT / "data" / "references"
 CHAPTERS = [f"c{n}" for n in range(1, 11)]
 MIN_QUIZ, MIN_FLASHCARDS, MIN_SCENARIOS = 10, 8, 3
 
-# Keys that hold links, ids or labels rather than clinical text.
-SKIP_KEYS = {
-    "id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg", "lead",
-}
+# Keys that hold links, ids or labels rather than clinical text. A strip's
+# `lead` (an ECG lead name) is skipped too; a guide's `lead` is its intro.
+SKIP_KEYS = {"id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg"}
 
 UNITS = (
     r"mcg/kg/min|mg/kg|ml/kg|j/kg|mcg/min|mcg|mg|ml|l/min|lpm|breaths/min|/min|bpm|mmhg|cmh2o|°c|%|j|cm|"
@@ -68,7 +67,8 @@ def strings(node, key=None):
             yield from strings(item)
     elif isinstance(node, dict):
         for k, v in node.items():
-            yield from strings(v, k)
+            if not (k == "lead" and "ecg" in node):
+                yield from strings(v, k)
 
 
 def study_strings(section: dict):

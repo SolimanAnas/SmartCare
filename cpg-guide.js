@@ -17,7 +17,10 @@
         'EMT-A': 'EMT-Advanced',
         'P': 'Paramedic',
         'AP': 'Advanced Paramedic',
-        'EP': 'Emergency Physician'
+        'EP': 'Emergency Physician',
+        // SmartCare (international): basic and advanced life support.
+        'BLS': 'Basic life support',
+        'ALS': 'Advanced life support'
     };
 
     // Table cells that are just a number or range ("120–160") never wrap.
@@ -172,8 +175,13 @@
 
     function legend(levels) {
         if (!levels.length) return '';
+        // BLS/ALS badges (SmartCare) name a skill set, not a ladder of levels.
+        const SKILL = { BLS: 'BLS: any trained provider.', ALS: 'ALS: paramedic or equivalent, where your protocol allows.' };
+        const text = levels.every(l => SKILL[l])
+            ? levels.map(l => SKILL[l]).join(' ')
+            : 'Lowest clinical level authorised; levels above it may also perform it.';
         return `<p class="g-legend">${levels.map(level).join('')}
-            <span>Lowest clinical level authorised; levels above it may also perform it.</span></p>`;
+            <span>${text}</span></p>`;
     }
 
     function usedLevels(obj) {

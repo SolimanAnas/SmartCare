@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 // summaries, and their study sets must still open. Facts and study-set sizes
 // are checked by tests/test_content_guides.py; this checks the pages.
 
-const CHAPTERS = { c3: 9 };
+const CHAPTERS = { c3: 9, c4: 13 };
 const topics = Object.entries(CHAPTERS).flatMap(([c, n]) =>
   Array.from({ length: n }, (_, i) => [c, `${c}s${i + 1}`]));
 
@@ -30,7 +30,7 @@ test.describe('rewritten topics', () => {
     });
   }
 
-  test('tool links from the c3 guides point at pages that exist', async ({ page, request }) => {
+  test('tool links from the rewritten guides point at pages that exist', async ({ page, request }) => {
     const hrefs = new Set();
     for (const [chapter, section] of topics) {
       await page.goto(`/chapters/${chapter}.html?view=summary&section=${section}`);
