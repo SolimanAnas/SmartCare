@@ -14,7 +14,8 @@ test('index.html search matches a sub-chapter topic, not just chapter titles', a
   await page.goto('/', { waitUntil: 'networkidle' });
   await page.fill('#searchInput', 'STEMI');
   await page.waitForTimeout(150);
-  const c4Card = page.locator('.chapter-card[data-search*="STEMI"]');
+  // Both c4's chapter row and its 4.6 topic row carry the term.
+  const c4Card = page.locator('.chapter-card[data-search*="STEMI"]').first();
   const c4Visible = await c4Card.evaluate(el => !el.classList.contains('filtered-out'));
   expect(c4Visible).toBe(true);
 
