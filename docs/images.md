@@ -569,3 +569,74 @@ House style for every image:
     **Image:** Two-person bag-mask: one rescuer with both hands sealing the mask (thumbs on the mask, fingers lifting the jaw), the other squeezing the bag.
 160. **Where:** "Moving the patient", step 3 (equipment).
     **Image:** A team of six using an air-assisted transfer mat to move a patient from a bed to a bariatric cot, patient covered with a sheet.
+
+## Chapter 1 – Foundations of Care (accent magenta #d63384)
+
+### c1s1 – EMS, Systems & Professionalism
+
+161. **Where:** "The chain", before the steps.
+    **Image:** A horizontal chain of six linked icons: a bystander with a phone, a dispatcher with a headset, an ambulance, a clipboard of protocols with a doctor, a hospital, and a looping arrow for quality review.
+162. **Where:** "Provider levels (US model)", before the table.
+    **Image:** Four stacked steps labelled EMR, EMT, AEMT and Paramedic, each step showing one added skill (AED, CPAP, IV line, intubation).
+
+### c1s3 – Workforce Safety & Wellness
+
+163. **Where:** "Roadway scenes", step 1 (block).
+    **Image:** Overhead view of a highway: a fire engine angled upstream as a block, cones tapering traffic, the ambulance beyond it, crew in high-visibility vests working on the protected side.
+164. **Where:** "Hazardous materials", step 1 (stay away).
+    **Image:** A tanker with a placard, with a wind arrow and an ambulance parked upwind, uphill and at a distance; hot, warm and cold zones shaded.
+165. **Where:** "Three kinds of stress", before the table.
+    **Image:** Three simple figures: one with a racing heart after a call (acute), one waking from a nightmare weeks later (delayed), one slumped and drained over a calendar of shifts (burnout).
+
+### c1s4 – Infection Prevention & PPE
+
+166. **Where:** "Add for the route", before the table.
+    **Image:** Three panels: contact (gloved hands and gown touching a wound), droplet (large droplets falling within a short distance of a cough, surgical mask), airborne (tiny particles drifting across a room, N95 respirator).
+167. **Where:** "PPE on and off", step 2 (off).
+    **Image:** A numbered sequence of a provider removing gloves, then goggles, then gown, then respirator by the straps, then cleaning hands.
+168. **Where:** "Needlestick or splash", step 1 (clean).
+    **Image:** A hand being washed under running water with soap after a needlestick, with crossed-out icons for squeezing and bleach.
+
+### c1s5 – Medical, Legal & Ethical Issues
+
+169. **Where:** "Negligence: all four must be proved", before the table.
+    **Image:** Four linked blocks – Duty, Breach, Damages, Causation – with a missing block breaking the chain.
+170. **Where:** "Crime scenes", step 3 (preserve evidence).
+    **Image:** Trauma shears cutting around a bullet hole in a shirt, and the shirt going into a brown paper evidence bag.
+
+### c1s6 – Consent, Refusal & Advance Directives
+
+171. **Where:** "Can this patient refuse?", beside the gate.
+    **Image:** A paramedic kneeling at eye level with a seated patient, explaining with an open hand, a refusal form and pen on a clipboard between them.
+172. **Where:** "Advance directives", before the table.
+    **Image:** Side-by-side documents: a DNR form with "No CPR" highlighted, and a POLST-style form with tick boxes for full, limited and comfort treatment.
+
+### c1s7 – Communication & Handoff
+
+173. **Where:** "Handover formats", before the table.
+    **Image:** A "hands-off" handover in an emergency bay: the paramedic speaking while the hospital team stands around the stretcher listening, hands at their sides.
+174. **Where:** "Team communication", in the "Closed loop" group.
+    **Image:** Three speech bubbles in a loop: "Give 0.3 mg epinephrine IM" → "0.3 mg epinephrine IM" → "Correct".
+
+### c1s8 – Documentation & the Patient Care Report
+
+175. **Where:** "Corrections", step 1 (paper).
+    **Image:** A handwritten report line with a single line struck through the wrong value, initials and date beside it, and the correct value written next to it.
+176. **Where:** "Describe, don't judge", before the table.
+    **Image:** Two report snippets: "Patient drunk" crossed out, and "Slurred speech, unsteady gait, smell of alcohol" ticked.
+
+### c1s9 – Medical Terminology
+
+177. **Where:** "Prefixes", before the table.
+    **Image:** The word "brady-cardi-a" split into coloured blocks labelled prefix, root and suffix, with "slow + heart + condition" underneath.
+178. **Where:** "Directions and positions", before the table.
+    **Image:** A body in anatomical position with arrows for medial/lateral, proximal/distal, anterior/posterior and superior/inferior, and the three planes drawn as translucent sheets.
+
+### c1s10 – Lifting, Moving & Positioning
+
+179. **Where:** "Before every lift", step 4 (body mechanics).
+    **Image:** Side view of a power lift: squatting provider with feet shoulder-width apart, straight back, load close; a second figure bending at the waist crossed out.
+180. **Where:** "Which move?", in the "Emergency" row.
+    **Image:** A clothes drag: a rescuer pulling a patient by the shirt at the shoulders along the long axis, the patient's head supported between the forearms, smoke in the background.
+181. **Where:** "Positions", before the table.
+    **Image:** Small labelled figures: Fowler's (sitting up), recovery position on the side, supine, and a pregnant patient tilted left with a wedge under the right hip.
