@@ -6,8 +6,13 @@ import { test, expect } from '@playwright/test';
 
 // Topic count per chapter, or the topic numbers where they aren't 1..n.
 const CHAPTERS = { c1: [1, 3, 4, 5, 6, 7, 8, 9, 10], c2: 11, c3: 9, c4: 13, c5: 11, c6: 11, c7: 8, c8: 9, c9: 7, c10: 8 };
-const topics = Object.entries(CHAPTERS).flatMap(([c, n]) =>
-  (Array.isArray(n) ? n : Array.from({ length: n }, (_, i) => i + 1)).map(i => [c, `${c}s${i}`]));
+// Formulary drug pages rewritten as guides, by section id.
+const FORMULARY = [2, 3, 4, 5, 12, 13, 18, 23, 39, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 69];
+const topics = [
+  ...Object.entries(CHAPTERS).flatMap(([c, n]) =>
+    (Array.isArray(n) ? n : Array.from({ length: n }, (_, i) => i + 1)).map(i => [c, `${c}s${i}`])),
+  ...FORMULARY.map(n => ['formulary', `formulary-${n}`])
+];
 
 test.describe('rewritten topics', () => {
   test.use({ viewport: { width: 360, height: 760 } });
