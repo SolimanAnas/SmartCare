@@ -2067,7 +2067,7 @@ window.CPG_DATA = {
                             "rows": [
                                 {
                                     "drug": "Seizure lasting 5 minutes or more",
-                                    "dose": "0.15–0.2 mg/kg IV (usually 10 mg)",
+                                    "dose": "0.15–0.2 mg/kg IV, maximum 10 mg per dose",
                                     "note": "Repeat once after 5 minutes",
                                     "level": "ALS"
                                 },
@@ -5750,7 +5750,7 @@ window.CPG_DATA = {
                                 {
                                     "drug": "Seizure lasting 5 minutes or more",
                                     "dose": "10 mg IM (over 40 kg), or 0.2 mg/kg intranasal (maximum 10 mg)",
-                                    "note": "IV 0.1–0.2 mg/kg; repeat once after 5–10 minutes",
+                                    "note": "IV 0.1–0.2 mg/kg (maximum 10 mg per dose); repeat once after 5–10 minutes",
                                     "level": "ALS"
                                 },
                                 {
@@ -5769,7 +5769,7 @@ window.CPG_DATA = {
                                 {
                                     "drug": "Seizure",
                                     "dose": "5 mg IM (13–40 kg), or 0.2 mg/kg intranasal (maximum 10 mg)",
-                                    "note": "IV 0.1–0.2 mg/kg; repeat once",
+                                    "note": "IV 0.1–0.2 mg/kg (maximum 10 mg per dose); repeat once",
                                     "level": "ALS"
                                 }
                             ]

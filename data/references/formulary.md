@@ -151,7 +151,7 @@ Sources:
 
 - **Diazepam** – 10 mg/2 mL; rectal 5 mg and 10 mg; onset 1–3 minutes IV,
   5–10 minutes rectal. Seizure 0.15–0.2 mg/kg IV (usually 10 mg), repeat
-  once after 5 minutes; child 0.1–0.2 mg/kg IV (maximum 10 mg) or 0.5 mg/kg
+  once after 5 minutes, maximum 10 mg per dose; child 0.1–0.2 mg/kg IV (maximum 10 mg) or 0.5 mg/kg
   rectally (maximum 20 mg). Agitation 5 mg IV. (AES 2016, BNF)
 - **Diclofenac** – 75 mg/3 mL; onset 15–30 minutes IM; 75 mg deep IM. (BNF)
 - **Droperidol** – 2.5 mg/mL; onset 3–10 minutes IV, 10–15 minutes IM.
@@ -188,7 +188,7 @@ Sources:
   (BNF/BNFc)
 - **Midazolam** – 5 mg/mL; onset 1–3 minutes IV, 5–10 minutes IM/IN. Seizure
   10 mg IM over 40 kg, 5 mg IM for 13–40 kg, 0.2 mg/kg IN (maximum 10 mg),
-  IV 0.1–0.2 mg/kg, repeat once after 5–10 minutes. Sedation 1–5 mg IV,
+  IV 0.1–0.2 mg/kg (maximum 10 mg per dose), repeat once after 5–10 minutes. Sedation 1–5 mg IV,
   5–10 mg IM. (AES 2016)
 - **Morphine** – 10 mg/mL; onset 5 minutes IV, lasts 3–5 hours. 2.5–5 mg IV
   every 5 minutes (0.1 mg/kg), maximum 10–20 mg per protocol; 5–10 mg IM;
