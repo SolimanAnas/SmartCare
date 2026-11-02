@@ -711,3 +711,54 @@ House style for every image:
     **Image:** An ICS organisation chart: Incident Commander at the top, Safety, Public Information and Liaison to the side, and Operations, Planning, Logistics and Finance/Administration below, with the Medical Branch expanded under Operations.
 202. **Where:** "Medical Branch", before the table.
     **Image:** A scene layout with triage at the entrance, red, yellow and green treatment tarps, a transport loading point and a line of ambulances in staging.
+
+## Chapter 9 – Emergency Pharmacology (accent green #2f9e44)
+
+### c9s1 – Principles of Pharmacology & Drug Classes
+
+203. **Where:** "Key terms", in the "Agonist" and "Antagonist" rows.
+    **Image:** A receptor drawn as a lock: an agonist key turning it (light on), an antagonist key sitting in it but not turning (light off), and a partial agonist half-turning it.
+204. **Where:** "Receptors you use", before the table.
+    **Image:** A body outline with labelled targets: alpha-1 on blood vessels, beta-1 on the heart, beta-2 in the lungs, muscarinic on the heart and glands, mu-opioid in the brainstem.
+
+### c9s2 – Routes of Administration
+
+205. **Where:** "Routes compared", before the table.
+    **Image:** A horizontal timeline of onset: IV/IO at the start, then inhaled, intranasal and sublingual, then IM, then oral, then transdermal patch at the far end.
+206. **Where:** "IM sites (adult)", before the table.
+    **Image:** Three body views marking the vastus lateralis (outer mid-thigh), ventrogluteal site (hand placed on the hip with a V between fingers) and deltoid, with maximum volumes.
+207. **Where:** "Vascular access in cardiac arrest", step 2 (IO).
+    **Image:** An IO driver placing a needle in the proximal tibia, a hand marking the landmark two fingerbreadths below the kneecap and medial to the tuberosity.
+
+### c9s3 – Rights of Medication Administration
+
+208. **Where:** "Three checks", before the steps.
+    **Image:** A paramedic holding up a vial and reading the label aloud to a partner, with three numbered tick marks: from the bag, at the syringe, at the patient.
+209. **Where:** "Check before you give", in the "Epinephrine" row.
+    **Image:** Two epinephrine products side by side: an IM 1 mg/mL ampoule and a 10 mL prefilled 0.1 mg/mL syringe for IV use, each labelled clearly in mg/mL.
+
+### c9s4 – Dose & Simple Calculations
+
+210. **Where:** "The formula", before the steps.
+    **Image:** A simple visual equation: "What you want ÷ What you have × What it's in = What you give", with a vial and syringe illustrating each part.
+211. **Where:** "Drip rates", step 1 (formula).
+    **Image:** An IV bag with a drip chamber, a 15 drops/mL label on the giving set, a stopwatch and the worked example 500 mL × 15 ÷ 240 ≈ 31 drops/min.
+
+### c9s5 – Emergency Drug Formulary
+
+212. **Where:** "BLS drugs", before the dose cards.
+    **Image:** A neatly organised drug pouch with labelled slots: aspirin, nitroglycerin spray, oral glucose, epinephrine auto-injector, naloxone nasal spray, albuterol nebules.
+
+### c9s6 – Medication-Assisted Treatment
+
+213. **Where:** "Opioid use disorder", before the table.
+    **Image:** Three receptor diagrams: methadone fully activating, buprenorphine partly activating with a "ceiling" line, naltrexone blocking.
+214. **Where:** "Overdose reversal done well", step 1 (breathe for them).
+    **Image:** A rescuer ventilating with a bag-mask while a second rescuer prepares a naloxone nasal spray, with a leave-behind naloxone kit beside them.
+
+### c9s7 – Medication Safety & Error Prevention
+
+215. **Where:** "Error traps", in the "Look-alike, sound-alike" row.
+    **Image:** Two near-identical vials labelled EPINEPHrine and ePHEDrine with the differing letters in tall-man capitals.
+216. **Where:** "Error traps", in the "Decimals" row.
+    **Image:** Handwritten doses: ".5 mg" and "1.0 mg" crossed out in red, "0.5 mg" and "1 mg" ticked in green.
