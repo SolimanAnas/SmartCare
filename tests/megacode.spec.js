@@ -26,6 +26,8 @@ async function shockNow(page) {
 }
 
 test('megacode 1 plays from bradycardia to ROSC and debrief', async ({ page }) => {
+  // A whole case in real time: about 25 s alone, longer when workers share CPUs.
+  test.setTimeout(90000);
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
   await page.goto('/pages/megacode.html');
