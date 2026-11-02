@@ -1,0 +1,1748 @@
+[
+ {
+  "id": 1,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. The air path: the head and neck drawn as a side-view cut, continuing into a front view of the chest with both lungs. Nose and mouth, pharynx, epiglottis, larynx with the vocal cords, trachea, carina, the two mainstem bronchi and bronchioles, plus a circular magnified inset of one alveolus with a capillary. The patient's right mainstem bronchus, on the viewer's left, is clearly shorter, wider and more vertical. The patient's left mainstem bronchus, on the viewer's right, is clearly longer, narrower and more horizontal. Show the right mainstem bronchus as shorter, wider and more vertical. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Upper airway; Lower airway; Nose; Mouth; Pharynx; Epiglottis; Larynx; Vocal cords; Trachea; Carina; Right mainstem bronchus; Left mainstem bronchus; Bronchioles; Alveolus; Capillary. No other words, titles or captions."
+ },
+ {
+  "id": 5,
+  "batch": "P00",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": "cea6eb15",
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Rescuer at the head of the patient, fingers behind the angles of the jaw lifting it forward, thumbs on the cheekbones, head kept neutral. Show that the neck stays in line. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 12,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Two side-by-side panels of a seated rescuer holding an infant. Left panel: the infant lies face-down along the rescuer's forearm, head lower than the chest, jaw supported by the rescuer's hand, while the heel of the rescuer's other hand strikes between the shoulder blades. Right panel: the infant lies face-up along the rescuer's other forearm, head lower than the chest and supported. The rescuer's free hand presses on the centre of the chest, on the lower half of the breastbone, using only the heel of the palm, which is the thick base of the palm next to the wrist. The fingers and thumb are lifted clearly off the chest and point toward the infant's head. No abdominal thrusts on an infant. Make sure nothing in the drawing could read as one. The infant is fully dressed in a onesie. No fingertip touches the chest in the second panel, and no hand is near the belly. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 14,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Two airway devices side by side, with nothing else in the image. Left: an oropharyngeal airway, a rigid J-shaped curved plastic device with a flat flange at one end and a short hollow bite block below it. Right: a nasopharyngeal airway, a soft narrow flexible tube with a flared flange at one end and an angled bevelled tip at the other. The label Bevel points only to the tip of the nasopharyngeal airway. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: OPA; NPA; Flange; Curve; Bevel. No other words, titles or captions."
+ },
+ {
+  "id": 22,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Two panels. Left panel, a close-up of bag-mask technique on a patient lying on their back: one gloved hand holds the mask on the face, with the thumb and index finger forming a C shape pressing the mask down, and the middle, ring and little fingers forming an E shape along the bony jaw, lifting it. The other hand squeezes the bag. Right panel: two rescuers, one kneeling at the head holding the mask on with both hands, the other beside the patient squeezing the bag. In both panels a small curved arrow shows the chest rising gently. Show the chest rising gently. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 31,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": "d365da32",
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. The same patient drawn twice. On the left, in distress: upright, alert, working hard to breathe. On the right, in failure: slumped, drowsy, with shallow breaths and a dusky color. Add a \"time\" arrow between the two drawings. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Distress; Failure; Time. No other words, titles or captions."
+ },
+ {
+  "id": 40,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": "8511000d",
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A seated patient on CPAP with legs hanging down, mask sealed, and a pressure dial showing 5–10 cmH₂O. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 64,
+  "batch": "P00",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": "1fd6aa90",
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Six icons for Balance, Eyes, Face, Arm, Speech, Time: a person swaying, an eye with half the visual field greyed out, a face drooping on one side, one arm drifting down, a speech bubble with jumbled letters, a clock. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Balance; Eyes; Face; Arm; Speech; Time. No other words, titles or captions."
+ },
+ {
+  "id": 2,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Side-by-side profiles of an adult and an infant airway, drawn at the same head size. Highlight the infant's larger tongue and large occiput, the narrowest point at the cricoid (infant) versus the vocal cords (adult), and the shorter, narrower trachea. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 3,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An infant lying supine, two views. First, the head flexed forward by the large occiput, with the airway kinked. Second, a folded towel under the shoulders, with the airway neutral (the \"sniffing\" position for a small child). Use a green tick on the correct view and a red cross on the wrong one. Infant is fully dressed in a onesie; draw as a simple schematic. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Airway kinked; Airway neutral. No other words, titles or captions."
+ },
+ {
+  "id": 4,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Rescuer's hand on the forehead and fingertips under the bony chin, with the tongue drawn lifting off the back of the throat. Fingers must be on bone, not soft tissue. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 8,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A child's chest showing where retractions occur: suprasternal, intercostal and subcostal. Add nasal flaring and see-saw (abdomen up, chest in) breathing. Show each retraction as an arrow pulling inward. Draw a simplified schematic torso outline, not a realistic bare child. Diagram only, clinical in tone. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 17,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Three small sagittal views of an OPA: correct size, too long (pushing the epiglottis over the glottis), and too short (pushing the tongue back). Use a tick on the correct view and crosses on the wrong ones. A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 28,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Two sagittal views. The first shows a supraglottic airway (i-gel style) sitting above the glottis. The second shows an endotracheal tube passing through the vocal cords with its cuff inflated in the trachea. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 6,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Four small icons in a row with sound waves: snoring (tongue against the pharynx), gurgling (fluid in the throat), stridor (a narrowed upper airway), wheeze (narrowed small bronchi). One icon per row of the table; label each with its sound name. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Snoring; Gurgling; Stridor; Wheeze. No other words, titles or captions."
+ },
+ {
+  "id": 19,
+  "batch": "B01",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Four devices on patients: a nasal cannula, a simple face mask, a non-rebreather mask with its reservoir bag inflated, and a bag-valve mask with a reservoir. Flow and percentage stay in the table. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Nasal cannula; Simple face mask; Non-rebreather mask; Bag-valve mask. No other words, titles or captions."
+ },
+ {
+  "id": 21,
+  "batch": "B02",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An oxygen cylinder strapped upright in an ambulance, with a no-smoking / no-flame symbol nearby. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 25,
+  "batch": "B02",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A rigid (Yankauer) tip and a soft French catheter side by side, labeled. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Rigid (Yankauer); Soft French catheter. No other words, titles or captions."
+ },
+ {
+  "id": 10,
+  "batch": "B02",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A rescuer behind a standing adult. Two panels: the first shows 5 back blows between the shoulder blades with the heel of the hand while the patient leans forward; the second shows 5 abdominal thrusts, with a fist just above the navel, the other hand over it, pulling in and up. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 11,
+  "batch": "B02",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Chest thrusts on a visibly pregnant woman, with the rescuer's hands on the lower half of the breastbone. Patient fully clothed. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 13,
+  "batch": "B02",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Two panels of a rescuer kneeling at the head of an unresponsive patient lying on their back. Left panel, marked with a green tick: the rescuer's hands stay clear of the mouth while they look into the open mouth and can see an object near the front. Right panel, marked with a red cross: a blind finger sweep, with the rescuer's finger pushed deep into the mouth while looking away. Strike through a blind finger sweep to show it should not be done. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 15,
+  "batch": "B02",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An OPA held against the face, measured from the corner of the mouth to the angle of the jaw (earlobe). Add an inset showing an adult insertion: tip toward the palate, then rotated 180°. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 16,
+  "batch": "B02",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An NPA measured from the tip of the nose to the earlobe. Add an inset showing the lubricated NPA in the larger nostril, with the bevel toward the septum. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 20,
+  "batch": "B02",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A pulse oximeter on a fingertip next to a band showing two SpO₂ targets: 94–98% for most patients and 88–92% for those at risk of CO₂ retention. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 24,
+  "batch": "B03",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Over-ventilation shown as cause and effect: a forceful squeeze leads to air in the stomach, a swollen abdomen, then regurgitation. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 26,
+  "batch": "B03",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A rigid catheter measured from the corner of the mouth to the earlobe, then inserted only as far as can be seen. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 27,
+  "batch": "B03",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An unresponsive patient who is vomiting, rolled onto the side so the fluid drains. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 30,
+  "batch": "B03",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. Four tiles, one per letter of DOPE: Displacement (a tube out of the trachea), Obstruction (a plug in the tube), Pneumothorax (a collapsed lung), Equipment (a disconnected circuit or an empty cylinder). Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 7,
+  "batch": "B03",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. A patient in the tripod position: sitting forward, hands on knees, neck muscles tensed (accessory muscle use), lips pursed. Add small callouts for the tripod position, accessory muscles and speaking in short sentences. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Tripod position; Accessory muscles; Short sentences. No other words, titles or captions."
+ },
+ {
+  "id": 9,
+  "batch": "B03",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0ca678 as the single highlight color. No logos or brand names. An adult giving the universal choking sign, both hands clutching the throat. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 33,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A front-view heart cut open to show the four chambers and four valves, with blue (deoxygenated) and red (oxygenated) arrows tracing flow from the venae cavae to the aorta. Draw the left ventricle wall visibly thicker. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Right atrium; Left atrium; Right ventricle; Left ventricle; Tricuspid valve; Pulmonary valve; Mitral valve; Aortic valve. No other words, titles or captions."
+ },
+ {
+  "id": 34,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. The heart's surface with the LAD, circumflex and right coronary arteries drawn in three colors, each shading the wall it feeds. Use the same three colors as the table rows if the table is ever colored. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 35,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. The conduction system: SA node, AV node, bundle of His, bundle branches and Purkinje fibres, each with its intrinsic rate as a small tag. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 41,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A body outline with five highlighted target organs (brain, eyes, heart, aorta, kidneys) and a pregnant abdomen as a sixth, each with a warning icon. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 42,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Cross-section of the aorta in the centre with a torn inner layer and a false lumen. One single patient seen from the front, the same person on both sides of the aorta drawing, with a blood pressure cuff on each of their two arms and a blank gauge beside each cuff. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 45,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Chest diagram with intercostal spaces numbered and the V1–V6 electrode positions, plus a small inset of V4R on the right chest and V7–V9 on the back. Anatomically correct landmarks: sternal angle, mid-clavicular, anterior and mid-axillary lines. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 46,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. The heart divided into inferior, anterior/septal, lateral and posterior walls, each labelled with its leads. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 57,
+  "batch": "B04",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. An intraosseous needle in the proximal tibia of a child, with landmarks (tibial tuberosity, flat medial surface). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 38,
+  "batch": "B05",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A medicine cabinet with an erectile-dysfunction tablet box and a \"24 h / 48 h\" timer next to a crossed-out nitroglycerin spray. Discreet and non-sexual: a plain pill box labelled \"PDE-5 inhibitor\". A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: PDE-5 inhibitor; 24 h / 48 h. No other words, titles or captions."
+ },
+ {
+  "id": 55,
+  "batch": "B05",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Four icons: a bleeding drop (hypovolemic), a failing heart (cardiogenic), a dilated vessel (distributive), a blocked vessel / collapsed lung (obstructive). Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 44,
+  "batch": "B05",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Transcutaneous pacing pads in anteroposterior position on a patient's chest and back, with the monitor showing paced spikes and capture. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 48,
+  "batch": "B05",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A rescuer kneeling beside the patient, shoulders over the hands, arms straight, heel of the hand on the lower half of the sternum, with a depth gauge showing 5–6 cm and a metronome at 100–120/min. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 50,
+  "batch": "B05",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Two panels. Left panel, a bare torso seen straight from the front showing anterolateral pad placement: one pad just below the collarbone on the patient's right, which is the left side of the image, and one pad on the patient's left side at the mid-axillary line below the armpit, on the right side of the image. Right panel, showing anteroposterior placement as a small front view and a small back view of the same torso: on the front view one pad at the centre-left of the chest, and on the back view, seen straight from behind, one pad between the spine and the left shoulder blade. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 51,
+  "batch": "B05",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Four small panels: shaving a hairy chest, drying a wet chest, peeling off a medication patch, and a pad placed beside (not over) an implanted device bulge. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 53,
+  "batch": "B05",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A windlass tourniquet on the thigh 5–7 cm above a wound, not over the knee, with the time written on the tag. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 56,
+  "batch": "B05",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. An IV bag with a 250 mL bolus marked, beside a palpable radial pulse icon to show the permissive-hypotension target. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 58,
+  "batch": "B06",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Two panels of a fully dressed infant lying face-up, seen from above. Left panel: two rescuers, one with two gloved hands encircling the chest with both thumbs side by side in the centre of the chest just below the line between the nipples, the other holding a bag-mask at the head. Right panel: the heel of one gloved hand, drawn small in proportion to the infant, rests in the centre of the chest just below the line between the nipples. The wrist is above the bottom of the ribs, well clear of the belly, and the fingers are lifted and point toward the infant's head, ending at the collarbones. No two-finger technique anywhere in the image. No two-finger technique anywhere in the image (AHA 2025). Infant is fully dressed in a onesie; schematic and clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 59,
+  "batch": "B06",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Child CPR with exactly one hand: a kneeling rescuer places the heel of one gloved hand on the lower half of the breastbone, arm straight, while their other hand rests on the child's forehead. A depth gauge shows about 5 cm. Child is fully dressed in a t-shirt and shorts; schematic and clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 36,
+  "batch": "B06",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. A sweaty patient facing the viewer, holding a fist to the chest (Levine sign). Arrows show typical pain radiation to the jaw, to the back, and down the patient's own left arm, which is the arm on the right side of the image. No arrow runs down the arm on the left side of the image. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 37,
+  "batch": "B06",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Three people side by side (an older woman, an older man, a person checking their blood glucose), each with a speech bubble: \"just tired\", \"indigestion\", \"short of breath\". Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: just tired; indigestion; short of breath. No other words, titles or captions."
+ },
+ {
+  "id": 39,
+  "batch": "B06",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. Split figure: on the left, a patient sitting bolt upright with fluid in the lungs and pink froth; on the right, a patient with distended neck veins and swollen ankles (pitting edema with a thumbprint). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 60,
+  "batch": "B06",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #e03131 as the single highlight color. No logos or brand names. An EMS provider sitting at eye level with a family member in a quiet room, hand open, calm posture. Respectful and non-graphic; no body visible. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 69,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A body outline with the systems affected: swollen lips and tongue, hives on the skin, wheeze from the lungs, a falling BP gauge, a cramping stomach. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 75,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. The abdomen divided into four quadrants plus epigastric and periumbilical regions, with typical pain locations marked: appendix (right lower), gallbladder (right upper, arrow to shoulder), pancreas (epigastric, arrow to back), aorta (midline). Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 76,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A cut-away of the abdominal aorta with a bulging aneurysm below the kidneys, and a crossed-out hand pressing deeply on the abdomen. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 79,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Normal round red cells flowing through a vessel next to sickled cells blocking it, with a pain icon downstream. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 62,
+  "batch": "B07",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A small-volume nebulizer with mouthpiece, showing the reservoir, mist and oxygen or air tubing. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 63,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A Venturi mask with its color-coded valves labelled 24% and 28%, beside a pulse oximeter showing 88–92%. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 68,
+  "batch": "B07",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Three treatments side by side: oral glucose gel, a glucagon kit (vial and syringe) with an IM thigh site, and a nasal glucagon device. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 72,
+  "batch": "B07",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Five pupil close-ups in a row (pinpoint, big, big, small, normal) labelled with the toxidrome names, each with a small skin icon (dry/hot, wet). Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 80,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A selection of anticoagulant tablet boxes (generic, unbranded) beside a head-injury icon with a CT scanner. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 65,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A rescuer kneeling beside a seizing person, cushioning the head with a folded jacket, furniture moved away, a watch visible, nothing in the mouth. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 66,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. The recovery position after a seizure, with airway open. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 67,
+  "batch": "B08",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A glucometer reading next to two contrasting patients: a pale, sweaty, shaky person (low) and a flushed, dehydrated person breathing deeply (DKA). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 70,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. An auto-injector pressed into the outer middle thigh through clothing, with the target area shaded on the anterolateral thigh. Show the needle end against the thigh and the thumb clear of the needle end. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 71,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Two positions: lying flat with legs raised (low BP) and sitting up (breathing difficulty), with a crossed-out standing figure. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 73,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Two-rescuer BVM ventilation of an unresponsive patient, with a naloxone nasal spray and syringe ready on the floor. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 77,
+  "batch": "B08",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A forearm with an arteriovenous fistula (raised vein), a crossed-out BP cuff on that arm and the cuff on the other arm instead. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 81,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A patient with infection sources highlighted (lungs, urine, abdomen, skin wound) and warning signs around them: confusion, fast breathing, low BP, mottled skin. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 82,
+  "batch": "B09",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Four EMS providers in protective equipment for standard, contact, droplet and airborne precautions (gloves; gown and gloves; surgical mask; N95 respirator). Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 83,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. The glass test: a clear glass pressed on a non-blanching purple rash that stays visible. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 85,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Correct position: a restrained patient on their side on a stretcher with monitoring; a crossed-out prone figure with weight on the back. Respectful, non-violent depiction. Non-violent, respectful and calm; the patient is treated with dignity. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 87,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A splinted forearm resting on a pillow with a wrapped cold pack, and a child distracted by a tablet video. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 61,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. Six small patient vignettes in a grid: wheezing asthmatic with inhaler, COPD patient with pursed lips and barrel chest, feverish patient coughing, patient clutching the side of the chest after a flight (PE), tall thin young man with one-sided pain (pneumothorax), patient sitting upright with frothy sputum (heart failure). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 74,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. A house with a furnace and a car in the garage, several family members and a pet feeling unwell, a CO alarm. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 84,
+  "batch": "B09",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f76707 as the single highlight color. No logos or brand names. An EMS provider at a safe distance with open hands and calm posture, standing between the patient and the door, a partner nearby. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 90,
+  "batch": "B10",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. The abdomen divided into four quadrants with the main organs drawn underneath (liver, gallbladder, stomach, spleen, appendix, sigmoid colon), and kidneys and aorta shown behind. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 91,
+  "batch": "B10",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. A torso with referred-pain zones: right shoulder from the gallbladder, left shoulder from the spleen (Kehr's sign), jaw and left arm from the heart. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 96,
+  "batch": "B10",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. A patient in a cervical collar on a scoop stretcher and vacuum mattress, beside a long backboard labelled \"extrication only\". Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Extrication only. No other words, titles or captions."
+ },
+ {
+  "id": 99,
+  "batch": "B10",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. Three arms with cuffs: too small (reading high), correct (bladder about 40% of arm circumference) and too large (reading low). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 100,
+  "batch": "B10",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. Pulse sites marked on an adult and an infant: carotid, radial, femoral, brachial (infant). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 102,
+  "batch": "B10",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. Two torsos with limb electrodes: AHA colours (white, black, red, green) and IEC colours (red, yellow, green, black). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 104,
+  "batch": "B10",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. Four close-ups: raccoon eyes, Battle's sign behind the ear, seat-belt bruise across the abdomen, flail segment moving inward on inspiration. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 94,
+  "batch": "B10",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. An EMS crew stopping short of a scene and scanning: traffic, a downed power line, a person with a weapon, a leaking fuel puddle, each circled as a hazard. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 95,
+  "batch": "B11",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. An ambulance parked at an angle upstream of a crash to block traffic, warning lights on, crew in high-visibility vests working on the protected side. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 103,
+  "batch": "B11",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. An EMS provider at eye level with a seated patient, a family member holding a medication bag, and a notepad with SAMPLE written down the side. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: SAMPLE. No other words, titles or captions."
+ },
+ {
+  "id": 108,
+  "batch": "B11",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. A cartoon EMS provider with a ship's anchor chained to a thought bubble saying \"just a UTI\", while a stroke sign (droopy face) is ignored behind them. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: just a UTI. No other words, titles or captions."
+ },
+ {
+  "id": 110,
+  "batch": "B11",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #0891b2 as the single highlight color. No logos or brand names. An overhead view of a mass-casualty scene with colour-coded treatment areas (red, yellow, green), a command post, a staging area and an ambulance loading point. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 115,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A body outline highlighting the five bleeding sites: the floor (external), chest, abdomen, pelvis/retroperitoneum and thighs. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 116,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Three small cross-sections: a collapsed lung pushing the heart across (tension pneumothorax), blood around the heart (tamponade), and a spinal cord injury with dilated vessels below it (neurogenic). Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 119,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Front and back adult figures with the rule-of-nines areas shaded and labelled, and an infant figure beside them with the larger head (18%). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 120,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A skin cross-section with superficial, partial-thickness and full-thickness burn depths marked. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 122,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Two skull cross-sections: a lens-shaped epidural bleed against the skull and a crescent-shaped subdural bleed over the brain surface. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 126,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Five chest diagrams: tension pneumothorax (mediastinum pushed across), open wound with air entering, massive hemothorax (blood level), tamponade (blood around the heart), flail segment moving inward on inspiration. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 127,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Front view of a rib cage showing two needle decompression sites on the same side of the chest, the patient's right, which is the left side of the image. One needle in the 2nd intercostal space at the mid-clavicular line. One needle in the 4th or 5th intercostal space just anterior to the mid-axillary line. A circular magnified inset shows a needle passing just over the top edge of a rib. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 129,
+  "batch": "B12",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist. A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 130,
+  "batch": "B13",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A torso showing the thoracoabdominal zone: from the nipple line (front) and scapula tip (back) down to the costal margin, with the diaphragm drawn at expiration height. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 117,
+  "batch": "B13",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. An amputated finger wrapped in moist gauze, sealed in a bag, resting in a container of ice water; a crossed-out finger directly on ice. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 128,
+  "batch": "B13",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A vented chest seal over a chest wound, with the one-way valve shown. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 113,
+  "batch": "B13",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A windlass tourniquet on the upper thigh 5–7 cm above a lower-leg wound, with the time written on the tag; a second tourniquet shown above the first. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 114,
+  "batch": "B13",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Wound packing in the groin by a rescuer's gloved hands, in two steps: gauze pushed deep into the wound with two fingers, then both hands pressing with straight arms. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 118,
+  "batch": "B13",
+  "model": "Nano Banana 2.1",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A knife stabilised in the thigh with rolled bulky dressings on both sides, taped in place. Clean and non-graphic: no blood pooling, no gore. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 121,
+  "batch": "B13",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A burned forearm under cool running water from a tap, with a 20-minute timer; a crossed-out ice pack. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 123,
+  "batch": "B13",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A face with one fixed, dilated pupil and a monitor showing rising BP and falling heart rate. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 124,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A scoop stretcher being closed around a supine patient wearing a collar, one rescuer holding in-line stabilisation at the head. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 131,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found). A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 132,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A splinted forearm with fingers exposed and a rescuer checking capillary refill and finger movement. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 133,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. Manual left uterine displacement on a visibly pregnant patient lying flat on their back, drawn from the side with the patient's head at the left of the image and the feet at the right, so the far side of the body is the patient's left. Two rescuers kneel on that far side. One does chest compressions with the hands on the lower half of the breastbone. The other, nearer the feet, has both hands on the pregnant abdomen, moving the uterus up off the spine and toward the far side. A single arrow on the abdomen points up and away from the viewer, toward that rescuer. Patient clothed; a simple clinical drawing. Patient clothed; a simple clinical drawing. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 111,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. The three collisions of a frontal crash in three panels: the car hitting a wall, the driver hitting the steering wheel, the brain and aorta moving inside the body. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 112,
+  "batch": "B14",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A child struck by a car bumper: impact points at the femur, the chest/abdomen (bonnet) and the head (ground), labelled Waddell's triad. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Waddell's triad. No other words, titles or captions."
+ },
+ {
+  "id": 134,
+  "batch": "B14",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d9a400 as the single highlight color. No logos or brand names. A team of three working in parallel on one patient: one at the airway with a BVM, one tightening a tourniquet, one applying a pelvic binder, an ambulance waiting with doors open. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 140,
+  "batch": "B15",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A simple diagram of the uterus and tubes with a ruptured pregnancy in one tube, blood collecting in the abdomen and an arrow to the shoulder tip (Kehr's sign). Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 156,
+  "batch": "B15",
+  "model": "Nano Banana Pro",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A child's tracheostomy tube with its flange, ties and inner cannula labelled, and a suction catheter marked at the pre-measured depth. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Flange; Ties; Inner cannula. No other words, titles or captions."
+ },
+ {
+  "id": 135,
+  "batch": "B15",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A rescuer's flat gloved hand resting on the crowning baby's head while the other hand supports the perineum with a towel; mother semi-reclined, knees bent. Side view. Mother fully draped with a sheet from the waist to the knees. No genital anatomy is visible; the sheet hides the delivery area. Clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 136,
+  "batch": "B15",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A newborn skin-to-skin on the mother with the cord clamped twice (about 10 cm and 15 cm from the baby) and scissors cutting between the clamps. Mother covered with a blanket; baby wrapped except where the cord is shown. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 137,
+  "batch": "B15",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. The mother in knee-chest position with a rescuer's gloved hand lifting the presenting part off a cord covered by moist gauze. Mother fully draped with a sheet. No genital anatomy visible; show the cord and hand as a small separate schematic inset. Clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 138,
+  "batch": "B15",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. McRoberts manoeuvre: two helpers pulling the mother's knees towards her chest while a third presses just above the pubic bone with the heel of the hand. Side view. Mother fully draped with a sheet from the waist to the knees. Clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 139,
+  "batch": "B15",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A rescuer's gloved hands on the lower abdomen: one hand cupping the fundus above the umbilicus and massaging in circles, the other hand just above the pubic bone supporting the lower uterus. Mother covered below the hips with a sheet; only the lower abdomen is exposed. Clinical in tone. Mother covered below the hips with a sheet; only the lower abdomen is exposed. Clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 141,
+  "batch": "B15",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Clothing items each placed in a separate brown paper bag, labelled and sealed, next to a patient wrapped in a blanket. Patient is seen from a respectful distance, fully wrapped and clothed. No injury shown. Emphasis on the bags. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 142,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A newborn being dried with a warm towel on a flat surface, wet towel removed, hat on, head in the neutral \"sniffing\" position with a small roll under the shoulders. Newborn wrapped in a towel apart from the face and top of the chest. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 143,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A newborn bag-mask seen from the side, with the mask covering the mouth and nose but not the eyes, held with a C-grip by a rescuer's gloved hand, and a pulse oximeter probe on the right wrist. Newborn wrapped in a towel apart from the face and upper chest. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 144,
+  "batch": "B16",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Two rescuers with a newborn lying face-up on a flat surface, wrapped in a towel with only the upper chest showing, seen from above at a slight angle. One rescuer's two gloved hands encircle the chest with both thumbs clearly visible side by side on the lower third of the breastbone. The second rescuer, at the head, holds a bag-mask over the mouth and nose. All skin is drawn in natural, warm human skin tones, never grey. Leave clear space beside the rescuers for a small label added later. Newborn wrapped in a towel with only the upper chest showing; schematic and clinical in tone. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 145,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A very preterm baby in a clear plastic bag up to the neck with a hat, lying on a warm mattress, not dried. The plastic wrap stops at the neck: the face is completely clear and uncovered. Baby wears a hat. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 149,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Two panels of a fully dressed infant lying face-up, seen from above, each marked with a green tick. Left panel: a rescuer's two gloved hands encircle the chest with both thumbs side by side on the lower half of the breastbone. Right panel: the heel of one gloved hand, drawn small in proportion to the infant, rests in the centre of the chest just below the line between the nipples. The wrist is above the bottom of the ribs, well clear of the belly, and the fingers are lifted and point toward the infant's head, ending at the collarbones. A small inset marked with a red cross shows two fingertips on the breastbone, the technique that is no longer used. Infant is fully dressed in a onesie. Show the crossed-out two-finger technique only as a small inset with a red cross. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 158,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Side view of a large patient on a ramp of blankets with a dotted horizontal line from the ear canal to the sternal notch. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 159,
+  "batch": "B16",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Two-person bag-mask: one rescuer with both hands sealing the mask (thumbs on the mask, fingers lifting the jaw), the other squeezing the bag. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 146,
+  "batch": "B16",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A triangle with three labelled sides – Appearance, Work of breathing, Circulation to skin – and a child on a parent's lap seen from a doorway. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Appearance; Work of breathing; Circulation to skin. No other words, titles or captions."
+ },
+ {
+  "id": 147,
+  "batch": "B17",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. Side by side: a toddler with croup coughing on a parent's lap, and a child with epiglottitis sitting forward in tripod position, drooling, mouth open. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 153,
+  "batch": "B17",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. An older woman on a living-room floor beside a rug, a clock on the wall, with callouts for pressure areas on the hip and heel. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Pressure areas. No other words, titles or captions."
+ },
+ {
+  "id": 154,
+  "batch": "B17",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A table covered in pill boxes and a weekly organiser, with a rescuer bagging all the medicines to bring to hospital. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 155,
+  "batch": "B17",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A rescuer facing a deaf patient in good light while a sign language interpreter appears on a tablet video call. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 160,
+  "batch": "B17",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #f06595 as the single highlight color. No logos or brand names. A team of six using an air-assisted transfer mat to move a patient from a bed to a bariatric cot, patient covered with a sheet. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 178,
+  "batch": "B18",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A body in anatomical position with arrows for medial/lateral, proximal/distal, anterior/posterior and superior/inferior, and the three planes drawn as translucent sheets. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 161,
+  "batch": "B18",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A horizontal chain of six linked icons: a bystander with a phone, a dispatcher with a headset, an ambulance, a clipboard of protocols with a doctor, a hospital, and a looping arrow for quality review. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 168,
+  "batch": "B18",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A hand being washed under running water with soap after a needlestick, with crossed-out icons for squeezing and bleach. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 166,
+  "batch": "B18",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Three panels: contact (gloved hands and gown touching a wound), droplet (large droplets falling within a short distance of a cough, surgical mask), airborne (tiny particles drifting across a room, N95 respirator). Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 167,
+  "batch": "B18",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A numbered sequence of a provider removing gloves, then goggles, then gown, then respirator by the straps, then cleaning hands. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 170,
+  "batch": "B18",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Trauma shears cutting around a bullet hole in a shirt, and the shirt going into a brown paper evidence bag. No blood and no wound; the shirt is off the patient or only the fabric is shown. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 179,
+  "batch": "B18",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Side view of a power lift: squatting provider with feet shoulder-width apart, straight back, load close; a second figure bending at the waist crossed out. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 180,
+  "batch": "B18",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A clothes drag: a rescuer pulling a patient by the shirt at the shoulders along the long axis, the patient's head supported between the forearms, smoke in the background. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 181,
+  "batch": "B19",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Small labelled figures: Fowler's (sitting up), recovery position on the side, supine, and a pregnant patient tilted left with a wedge under the right hip. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Fowler's; Recovery position; Supine; Left tilt. No other words, titles or captions."
+ },
+ {
+  "id": 163,
+  "batch": "B19",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Overhead view of a highway: a fire engine angled upstream as a block, cones tapering traffic, the ambulance beyond it, crew in high-visibility vests working on the protected side. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 164,
+  "batch": "B19",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A tanker with a placard, with a wind arrow and an ambulance parked upwind, uphill and at a distance; hot, warm and cold zones shaded. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 165,
+  "batch": "B19",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. Three simple figures: one with a racing heart after a call (acute), one waking from a nightmare weeks later (delayed), one slumped and drained over a calendar of shifts (burnout). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 171,
+  "batch": "B19",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A paramedic kneeling at eye level with a seated patient, explaining with an open hand, a refusal form and pen on a clipboard between them. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 173,
+  "batch": "B19",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #d63384 as the single highlight color. No logos or brand names. A \"hands-off\" handover in an emergency bay: the paramedic speaking while the hospital team stands around the stretcher listening, hands at their sides. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 187,
+  "batch": "B20",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Reach, throw, row, go: four small panels – a pole, a throw bag, a boat, and a trained swimmer with a flotation device. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 193,
+  "batch": "B20",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Crossed-out icons: knife and mouth (cut and suck), a tourniquet, an ice pack, an electric shock device, a bottle of alcohol. A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 184,
+  "batch": "B20",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Four figures in a row: shivering and alert; drowsy and not shivering; unconscious; no signs of life – each with a thermometer band in °C. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 185,
+  "batch": "B20",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A \"hypothermia wrap\": insulating mat underneath, vapour barrier, sleeping bag, outer shell, head covered, heat packs on the chest and armpits. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Insulating mat; Vapour barrier; Sleeping bag; Outer shell; Heat packs. No other words, titles or captions."
+ },
+ {
+  "id": 186,
+  "batch": "B20",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Hands with waxy white fingertips (frostbite) beside a basin of water with a thermometer reading 37–39 °C. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 188,
+  "batch": "B20",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A rescuer on a pool deck giving bag-mask breaths to a child, foam at the mouth, suction ready beside them. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 191,
+  "batch": "B20",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A bitten lower leg splinted at heart level with a pen line and times drawn at the edge of the swelling every 15 minutes. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 192,
+  "batch": "B20",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A pressure-immobilisation bandage being wrapped from the fingers up the whole arm, with a splint, labelled \"elapids only\". Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Elapids only. No other words, titles or captions."
+ },
+ {
+  "id": 196,
+  "batch": "B21",
+  "model": "Nano Banana Pro",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A patient's clothing being cut off and placed into a labelled bag, with \"up to 90%\" written beside it. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 197,
+  "batch": "B21",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A patient with pinpoint pupils, drooling and tearing, beside a nerve agent auto-injector being pressed into the outer thigh. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 198,
+  "batch": "B21",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Two body outlines comparing rashes: smallpox densest on face and limbs with all lesions alike, chickenpox mainly on the trunk with lesions at different stages. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 182,
+  "batch": "B21",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. An athlete immersed to the neck in a tub of ice water at a sports field, one rescuer supporting the head and stirring the water, another holding a rectal thermometer readout. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 183,
+  "batch": "B21",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": true,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. An older patient on a stretcher stripped to underwear, being misted with a spray bottle while a fan blows across, ice packs at the neck, armpits and groin. Patient wears shorts and has a sheet across the hips; respectful and non-sexual. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 189,
+  "batch": "B21",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A diver lying flat on a boat deck on 100% oxygen by mask, with a dive computer beside him and a timeline showing gas embolism (minutes) and decompression sickness (hours). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 190,
+  "batch": "B21",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. A mountain profile with arrows showing descent of 300–1000 m and three climbers: one with a headache (AMS), one staggering (HACE), one breathless with a cough (HAPE). Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 194,
+  "batch": "B21",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #845ef7 as the single highlight color. No logos or brand names. Overhead view of a spill with red hot zone, yellow warm zone containing a decontamination corridor, and green cold zone with the ambulance and command post upwind. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 204,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. A body outline with labelled targets: alpha-1 on blood vessels, beta-1 on the heart, beta-2 in the lungs, muscarinic on the heart and glands, mu-opioid in the brainstem. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Alpha-1; Beta-1; Beta-2; Muscarinic; Mu-opioid. No other words, titles or captions."
+ },
+ {
+  "id": 203,
+  "batch": "B22",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. A receptor drawn as a lock: an agonist key turning it (light on), an antagonist key sitting in it but not turning (light off), and a partial agonist half-turning it. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 209,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. Two epinephrine products side by side: an IM 1 mg/mL ampoule and a 10 mL prefilled 0.1 mg/mL syringe for IV use, each labelled clearly in mg/mL. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 212,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. A neatly organised drug pouch with labelled slots: aspirin, nitroglycerin spray, oral glucose, epinephrine auto-injector, naloxone nasal spray, albuterol nebules. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Aspirin; Nitroglycerin; Oral glucose; Epinephrine; Naloxone; Albuterol. No other words, titles or captions."
+ },
+ {
+  "id": 213,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. Three receptor diagrams: methadone fully activating, buprenorphine partly activating with a \"ceiling\" line, naltrexone blocking. Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Methadone; Buprenorphine; Naltrexone; Ceiling. No other words, titles or captions."
+ },
+ {
+  "id": 206,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. Three body views marking the vastus lateralis (outer mid-thigh), ventrogluteal site (hand placed on the hip with a V between fingers) and deltoid, with maximum volumes. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 207,
+  "batch": "B22",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. An IO driver placing a needle in the proximal tibia, a hand marking the landmark two fingerbreadths below the kneecap and medial to the tuberosity. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 208,
+  "batch": "B22",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. A paramedic holding up a vial and reading the label aloud to a partner, with three numbered tick marks: from the bag, at the syringe, at the patient. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: 1 From the bag; 2 At the syringe; 3 At the patient. No other words, titles or captions."
+ },
+ {
+  "id": 211,
+  "batch": "B23",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #2f9e44 as the single highlight color. No logos or brand names. An IV bag with a drip chamber, a 15 drops/mL label on the giving set, a stopwatch and the worked example 500 mL × 15 ÷ 240 ≈ 31 drops/min. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 230,
+  "batch": "B24",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Front and back views showing V4R on the right chest and V7–V9 on the left back at the level of V6. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 232,
+  "batch": "B24",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. A syringe with an atomiser tip delivering a fine mist into one nostril, labelled \"half in each side\". Show only what is described here, with no people, hands or extra body parts. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Half in each side. No other words, titles or captions."
+ },
+ {
+  "id": 217,
+  "batch": "B24",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Two side views: sizing an oral airway from the corner of the mouth to the earlobe, and a nasal airway from the nostril to the earlobe, each shown inserted in a cutaway head. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 219,
+  "batch": "B24",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. An E cylinder with a regulator gauge reading 2000 psi and a flowmeter at 15 L/min, with the worked calculation beside it. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 221,
+  "batch": "B24",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. A commercial tourniquet placed 5–7 cm above a forearm wound with the windlass locked and the time written on the label. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 223,
+  "batch": "B24",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Three small panels: feeling a radial pulse, asking the patient to wiggle fingers, touching the fingertip for sensation. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 224,
+  "batch": "B24",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. A sling and swath on a seated patient, padding in the armpit, the swath binding the arm to the chest. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 225,
+  "batch": "B24",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Measuring finger-widths from the top of the shoulder to the angle of the jaw, then matching the collar's sizing post. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 226,
+  "batch": "B25",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Side view of a child on a flat board with the head flexed forward, then corrected with padding under the shoulders so the neck is neutral. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 227,
+  "batch": "B25",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. Power lift from the side (straight back, squat, load close) and a close-up of the palms-up power grip on a stretcher handle. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 228,
+  "batch": "B25",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #6741d9 as the single highlight color. No logos or brand names. A landing zone with lit corners, wind indicator, a power line marked as a hazard, and the safe approach arc at the front of the helicopter, tail and uphill sides crossed out. A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 233,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. Three epinephrine products side by side with their routes: a 1 mg/mL ampoule labelled \"IM only\", a 10 mL 0.1 mg/mL prefilled syringe labelled \"IV/IO arrest\", and adult and junior auto-injectors. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 236,
+  "batch": "B26",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. Two IV lines with a red cross between a calcium syringe and a bicarbonate syringe, and a large antecubital vein highlighted for slow injection. A green tick marks what is correct and a red cross marks what is wrong. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ },
+ {
+  "id": 239,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "1:1",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A steroid emergency card and an emergency hydrocortisone injection kit, with a hand drawing up 100 mg. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 234,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. Rapid push technique: the patient's arm raised above the heart, one three-way tap close to the cannula with exactly two syringes attached, a small adenosine syringe and a larger 20 mL saline flush syringe, and a monitor strip showing a brief pause. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 235,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A checklist card before nitrates, with three rows: a blood pressure cuff with a blank gauge; a chest seen from the front with one ECG electrode on the patient's right side of the chest, which is the left side of the image, below the nipple line at the mid-clavicular line (the V4R position); and a crossed-out PDE-5 tablet with a blank tag. A green tick marks what is correct and a red cross marks what is wrong. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 237,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A child using an inhaler with a spacer and mask, a parent holding them on their lap, with \"1 puff, 5 breaths\" written beside it. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 238,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A paramedic testing the knee reflex with the edge of the hand, a respiratory rate counter showing 12/min, and a calcium gluconate syringe ready. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 240,
+  "batch": "B26",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. Three routes side by side: an IM injection into the outer thigh, an atomiser in a nostril, and an IV push, each labelled with its seizure dose. Show only what is described here, with no people, hands or extra body parts. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 242,
+  "batch": "B27",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A rescuer ventilating with a bag-mask while a partner gives a naloxone nasal spray, with a clock showing that naloxone wears off before many opioids. Show only the people and objects described here, with neutral, diverse people. Rescuers wear a plain navy uniform and blue gloves. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 243,
+  "batch": "B27",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. Icons for the contraindications: a high-potassium ECG, a crushed limb, an old burn, a spinal cord, and a family tree marked \"malignant hyperthermia\". Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The only text in the image is these short labels, in plain sans-serif, large and legible at small size: Malignant hyperthermia. No other words, titles or captions."
+ },
+ {
+  "id": 244,
+  "batch": "B27",
+  "model": "Nano Banana Pro",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A 250 mL D10 bag with a 50 mL syringe drawing up 5 mL/kg for a child on a scale, and a glucometer reading 48 mg/dL changing to 110 mg/dL. Show only the people and objects described here, with neutral, diverse people. There are no rescuers and no extra hands in this image. The image contains no words, digits or units at all. Gauges, tags, dials and labels are blank, with clear space around the subject."
+ },
+ {
+  "id": 247,
+  "batch": "B27",
+  "model": "Nano Banana 2.1",
+  "aspect": "4:3",
+  "keep": null,
+  "sensitive": false,
+  "prompt": "A flat, clean vector-style medical illustration, not photographic, on a plain solid off-white background (#F8F9FA) that fills the whole image, with no border, frame or drop shadow. Clean dark outlines and a soft limited palette, with #64748b as the single highlight color. No logos or brand names. A floating capsule and four colour-coded drug group icons (heart, lungs, syringe, IV bag). The old hero art `images/formulary-capsule.webp` can be reused or redrawn. Show only what is described here, with no people, hands or extra body parts. The image contains no words, letters or numbers."
+ }
+]

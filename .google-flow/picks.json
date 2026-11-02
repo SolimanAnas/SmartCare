@@ -1,0 +1,42 @@
+{
+  "_how": "My first-pass pick per prompt, from visual checks only. Not a medical review. update-tracker.js copies these into tracker.csv.",
+  "picks": {
+    "5": "kept", "31": "kept", "40": "kept", "64": "kept", "1": "b", "12": "b", "14": "b", "24": "a", "27": "b", "28": "a", "30": "a", "20": "b",
+    "13": "c", "8": "c", "9": "c", "2": "c",
+    "48": "b", "58": "c", "149": "c", "50": "d", "51": "b", "53": "a", "113": "a", "114": "c", "221": "b", "70": "b", "69": "a", "71": "a", "73": "b", "242": "a",
+    "143": "d", "142": "b", "145": "a", "126": "a", "128": "a", "129": "a", "116": "a", "66": "a", "65": "a", "44": "a", "36": "d", "133": "c",
+    "139": "c", "138": "b", "137": "a", "135": "a", "136": "a", "233": "b", "209": "b", "57": "a", "207": "b", "159": "b", "67": "b", "68": "a", "81": "b",
+    "83": "b", "85": "b", "182": "a", "185": "b", "184": "a", "188": "a", "197": "a", "38": "a", "238": "b", "240": "a", "244": "a", "243": "b",
+    "237": "b", "239": "a", "236": "a", "39": "a", "41": "b", "55": "a", "61": "a", "62": "b", "63": "a", "74": "a", "77": "a", "80": "a", "84": "a",
+    "94": "b", "95": "a", "163": "a", "164": "a", "194": "a", "124": "a", "225": "a", "104": "b", "123": "b", "117": "a", "118": "b", "131": "a", "132": "b",
+    "147": "a", "100": "a", "102": "b", "158": "a", "187": "a", "193": "b", "198": "a", "110": "a", "111": "a", "134": "a", "217": "a", "223": "a", "224": "a",
+    "226": "a", "203": "b", "60": "a", "87": "b", "141": "a", "154": "b", "155": "a", "160": "b", "161": "a", "168": "a", "170": "a", "179": "a", "180": "b",
+    "165": "a", "171": "a", "173": "a", "183": "b", "227": "a", "228": "a", "247": "a"
+  },
+  "notes": {
+    "1": "Carina leader line stops on the trachea above the fork. Fix before use.",
+    "31": "Remove the floating oxygen mask.",
+    "20": "Art only. Numbers go in at the overlay step.",
+    "58": "Two-thumb panel is good. Heel-of-hand panel is wrong after three tries: heel is beside or below the target. Needs a hand fix.",
+    "149": "Two-thumb panel and crossed-out inset are good. Heel-of-hand panel is wrong after three tries, same as #58. Needs a hand fix. 149-e has the best two-thumb panel.",
+    "50": "Picked because the back pad is on the patient's left. 50-c has it on the right.",
+    "36": "First two images drew radiation down the right arm. Rerun fixed it. Check how the back arrow reads.",
+    "133": "Rescuers are now on the patient's left. images.md says pushing; a clinician should confirm push or pull wording and the arrow.",
+    "126": "Check the direction of the mediastinal shift arrows.",
+    "142": "Shows position, hat and roll, but not the drying itself.",
+    "145": "Bare preterm baby in a plastic wrap. Schematic, but check you're happy with it.",
+    "185": "Vapour barrier is drawn as a flat sheet under the bag, not wrapped around the patient. Check against the text.",
+    "100": "Check the femoral marker position.",
+    "57": "Leg looks adult-sized for a child. The printed labels are spelled correctly; check where the lines point.",
+    "193": "Added a first-aid kit and phone as the ticked item, which wasn't requested.",
+    "102": "Colours and sides checked: both standards correct in both images."
+  },
+  "needs_pro_rerun": {
+    "59": "Both show the wrong thing: 59-b uses two hands and 59-a is an awkward outline.",
+    "127": "Doesn't show the needle passing over the rib. Sites were on opposite sides.",
+    "144": "Grey skin, garbled 3:1 label, thumbs not visible. Neither is usable.",
+    "234": "234-a is the best but has three syringes. 234-b has the arm down.",
+    "235": "235-a puts the V4R electrode on the left chest. 235-b is unclear.",
+    "42": "Shows two different people, not one patient with two arm readings."
+  }
+}
