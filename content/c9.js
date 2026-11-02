@@ -512,8 +512,8 @@ window.CPG_DATA = {
                 "level": "ALS"
               },
               {
-                "title": "Endotracheal",
-                "text": "Last resort only; absorption is unreliable."
+                "title": "Not via the tube",
+                "text": "Endotracheal drugs are no longer recommended in adults (AHA 2025): levels are unpredictable. If IV and IO both fail, central access may be considered at hospital."
               }
             ]
           },
@@ -745,7 +745,7 @@ window.CPG_DATA = {
             },
             {
               "t": "Endotracheal epinephrine",
-              "f": "Last resort."
+              "f": "No longer recommended in adult arrest: unpredictable absorption."
             },
             {
               "t": "Skip drugs",

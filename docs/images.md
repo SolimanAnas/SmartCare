@@ -762,3 +762,61 @@ House style for every image:
     **Image:** Two near-identical vials labelled EPINEPHrine and ePHEDrine with the differing letters in tall-man capitals.
 216. **Where:** "Error traps", in the "Decimals" row.
     **Image:** Handwritten doses: ".5 mg" and "1.0 mg" crossed out in red, "0.5 mg" and "1 mg" ticked in green.
+
+## Chapter 10 – Clinical Procedures & Skills (accent indigo #6741d9)
+
+### c10s1 – Airway & Breathing Skills
+
+217. **Where:** "Adjuncts", before the table.
+    **Image:** Two side views: sizing an oral airway from the corner of the mouth to the earlobe, and a nasal airway from the nostril to the earlobe, each shown inserted in a cutaway head.
+218. **Where:** "Bag-mask ventilation", step 1 (seal).
+    **Image:** Two-person bag-mask: one rescuer at the head with both thumbs on the mask and fingers lifting the jaw, the other squeezing the bag gently.
+
+### c10s2 – Oxygen & Ventilation Skills
+
+219. **Where:** "Cylinder time", step 3 (example).
+    **Image:** An E cylinder with a regulator gauge reading 2000 psi and a flowmeter at 15 L/min, with the worked calculation beside it.
+220. **Where:** "Capnography (ETCO₂)", before the table.
+    **Image:** Four capnography waveforms: normal square waves at 35–45 mmHg, tall waves (hypoventilation), low waves during CPR, and a sudden step up labelled "ROSC?".
+
+### c10s3 – Bleeding Control & Wound Care
+
+221. **Where:** "Tourniquet", step 1 (place).
+    **Image:** A commercial tourniquet placed 5–7 cm above a forearm wound with the windlass locked and the time written on the label.
+222. **Where:** "Wound packing", step 2 (pack).
+    **Image:** Gloved fingers pushing hemostatic gauze deep into a groin wound, then two hands pressing hard with a timer showing 3 minutes.
+
+### c10s4 – Splinting & Bandaging
+
+223. **Where:** "Every splint", step 1 (check PMS).
+    **Image:** Three small panels: feeling a radial pulse, asking the patient to wiggle fingers, touching the fingertip for sensation.
+224. **Where:** "Which splint?", in the "Shoulder dislocation or clavicle" row.
+    **Image:** A sling and swath on a seated patient, padding in the armpit, the swath binding the arm to the chest.
+
+### c10s5 – Spinal Motion Restriction Skills
+
+225. **Where:** "Techniques", step 2 (collar).
+    **Image:** Measuring finger-widths from the top of the shoulder to the angle of the jaw, then matching the collar's sizing post.
+226. **Where:** "Special cases", in the "Children under about 8" row.
+    **Image:** Side view of a child on a flat board with the head flexed forward, then corrected with padding under the shoulders so the neck is neutral.
+
+### c10s6 – Patient Movement & Lifting
+
+227. **Where:** "Power lift and grip", before the steps.
+    **Image:** Power lift from the side (straight back, squat, load close) and a close-up of the palms-up power grip on a stretcher handle.
+228. **Where:** "Helicopter landing zone", before the list.
+    **Image:** A landing zone with lit corners, wind indicator, a power line marked as a hazard, and the safe approach arc at the front of the helicopter, tail and uphill sides crossed out.
+
+### c10s7 – ECG Acquisition — 12-Lead
+
+229. **Where:** "Placement", before the steps.
+    **Image:** A chest diagram with the angle of Louis marked and V1–V6 positions numbered on the correct intercostal spaces and lines.
+230. **Where:** "Extra leads", before the table.
+    **Image:** Front and back views showing V4R on the right chest and V7–V9 on the left back at the level of V6.
+
+### c10s8 – Medication Administration Skills
+
+231. **Where:** "Technique by route", in the "IM auto-injector" row.
+    **Image:** An epinephrine auto-injector pressed against the outer mid-thigh through trousers, with the hold time shown.
+232. **Where:** "Technique by route", in the "Intranasal" row.
+    **Image:** A syringe with an atomiser tip delivering a fine mist into one nostril, labelled "half in each side".
