@@ -2026,64 +2026,127 @@ window.CPG_DATA = {
             {
                 id: "formulary-9",
                 shortTitle: "Diazepam",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Diazepam</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Benzodiazepine</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/2 mL ampule; 5 mg/2.5 mL rectal tube.</span></div>
-                </div>
-
-                <p class="rx-moa">Potentiates the action of the GABA neurotransmitter producing sedation and seizure inhibition.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Seizures; sedation of agitated or combative patients.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Seizures:</strong> 5 mg IV.<br><strong>Sedation:</strong> 5 mg IV. Doses should be reduced if agitation is secondary to traumatic brain injury.<br><strong>Dilution for IV/IO Administration:</strong> In a 10 mL syringe, draw up 8 mL normal saline. Add 2 mL (10 mg) of Diazepam. Solution concentration is then 1 mg/1 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Seizures:</strong> 0.1 mg/kg IV/IO (max 5 mg); 0.5 mg/kg PR (maximum 20 mg).<br>Dilution as for adults.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Respiratory distress; shock and/or hypotension.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Reduced level of consciousness; respiratory depression; hypotension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated however, diazepam should be administered if clinically indicated.<br>Lactation: Safety has not been established however, diazepam should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Diazepam is not recommended to be given IM due to its slow onset of action. Use IM midazolam. Benzodiazepines may cause airway, breathing and circulation compromise. If administered, all possible monitoring should be in place. An IV (if not available in place) should be established as soon as possible after administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Diazepam",
+                    "lead": "A benzodiazepine for seizures – IV, or rectally when there's no access. For IM or intranasal use choose midazolam: diazepam is absorbed poorly from muscle.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Benzodiazepine"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/2 mL injection; 5 mg and 10 mg rectal tubes"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–3 minutes IV; 5–10 minutes rectal"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Seizure lasting 5 minutes or more",
+                                    "dose": "0.15–0.2 mg/kg IV, maximum 10 mg per dose",
+                                    "note": "Repeat once after 5 minutes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Severe agitation",
+                                    "dose": "5 mg IV, titrated",
+                                    "note": "Reduce in head injury and older adults",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Seizure, IV",
+                                    "dose": "0.1–0.2 mg/kg IV/IO",
+                                    "note": "Maximum 10 mg",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Seizure, no access",
+                                    "dose": "0.5 mg/kg rectally",
+                                    "note": "Maximum 20 mg",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Seizure lasting 5 minutes or more",
+                                "Severe agitation (where protocol allows)"
+                            ],
+                            "exclude": [
+                                "IM route",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression: bag-mask ready, ETCO₂",
+                                "Hypotension",
+                                "Worse with alcohol or opioids"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2091,64 +2154,111 @@ window.CPG_DATA = {
             {
                 id: "formulary-10",
                 shortTitle: "Diclofenac",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Diclofenac (Voltaren)</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">—+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑Steroidal Anti‑inflammatory (NSAID)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">75 mg/3 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Inhibits cyclooxygenase (COX‑1 and COX‑2) enzymes, which stops the production of prostaglandins causing a reduction in pain, inflammation, and fever.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to Severe Pain</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>75 mg IM (into a large muscle); 75 mg IV (diluted into 100 mL normal saline, administered over 10 minutes).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not to be administered to pediatrics.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; previous reaction to NSAIDs; renal insufficiency; pregnancy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma/COPD (history of a previous worsening of asthma or COPD after NSAID administration).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Pain at injection site.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated. Diclofenac should not be administered.<br>Lactation: Safety has not been established. If essential to be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Intravenous administration should be avoided due to an increased risk of thromboembolic events.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Diclofenac",
+                    "lead": "An injectable anti-inflammatory for moderate to severe pain, especially renal colic. Avoid in kidney disease, dehydration, bleeding and late pregnancy.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "NSAID"
+                                ],
+                                [
+                                    "Presentation",
+                                    "75 mg/3 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "15–30 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe pain (renal colic, musculoskeletal)",
+                                    "dose": "75 mg deep IM",
+                                    "note": "IV only as a diluted infusion where protocol allows",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not used prehospital in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Renal colic and musculoskeletal pain"
+                            ],
+                            "exclude": [
+                                "NSAID allergy or NSAID-induced asthma",
+                                "Kidney disease, dehydration or shock",
+                                "Active bleeding, anticoagulants, peptic ulcer",
+                                "Third trimester of pregnancy",
+                                "Heart failure or recent MI"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bronchospasm in sensitive asthma",
+                                "Injection-site pain; same line as nefopam can precipitate"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2535,64 +2645,117 @@ window.CPG_DATA = {
             {
                 id: "formulary-62",
                 shortTitle: "Droperidol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Droperidol</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antipsychotic (Butyrophenone) / Antiemetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2.5 mg/mL, 2 mL vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Dopamine D2 receptor antagonist producing rapid sedation and antiemetic effect.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe acute behavioral disturbance / agitation; refractory nausea and vomiting.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Agitation: 5–10 mg IM or 2.5–5 mg IV; may repeat once after 15 min. Nausea: 0.625–1.25 mg IV.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended in the prehospital setting.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known prolonged QT interval; Parkinson’s disease; known allergy; coma.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Elderly; concurrent QT‑prolonging drugs; electrolyte abnormality; alcohol or sedative intoxication.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Sedation; hypotension; extrapyramidal reactions (dystonia, akathisia); QT prolongation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; use only if clinically essential.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Obtain a 12‑lead ECG and continuous cardiac monitoring once the patient is safe to approach. Treat dystonic reactions with Diphenhydramine.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Droperidol",
+                    "lead": "A fast, reliable sedative for severe acute behavioural disturbance, and a low-dose antiemetic. Monitor the ECG once it's safe to approach.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Butyrophenone antipsychotic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2.5 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "3–10 minutes IV; 10–15 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe agitation",
+                                    "dose": "5–10 mg IM or 2.5–5 mg IV",
+                                    "note": "May repeat once after 15 minutes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Refractory nausea",
+                                    "dose": "0.625–1.25 mg IV",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not recommended prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe agitation threatening safety",
+                                "Nausea not responding to other antiemetics"
+                            ],
+                            "exclude": [
+                                "Known long QT",
+                                "Parkinson's disease",
+                                "Coma"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "QT prolongation: 12-lead and monitor",
+                                "Dystonia, akathisia (treat with diphenhydramine)",
+                                "Hypotension; older adults"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2771,64 +2934,114 @@ window.CPG_DATA = {
             {
                 id: "formulary-14",
                 shortTitle: "Ethyl Chloride",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Ethyl Chloride (Chloroethane)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Topical Anesthetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mL Chloroethane without propellant bottle</span></div>
-                </div>
-
-                <p class="rx-moa">Chloroethane evaporates rapidly, cooling the skin surface, which temporarily desensitizes nerve endings by slowing their ability to transmit pain signals. May dissolve into nerve membranes, interfering with voltage‑gated sodium channels preventing nerve depolarization and blocking pain signals.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Topical anesthesia associated with minor contusions, sprains or IV cannulation.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Topically apply for 3‑7 seconds from distance of 3‑9 inches until just before skin begins to turn white.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Topically apply for 3‑7 seconds from distance of 3‑9 inches until just before skin begins to turn white.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hypersensitivity to ethyl chloride products.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Changes in skin pigmentation; frosting of the skin causing tissue necrosis.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Crossing the placenta is unlikely.<br>Lactation: Safety has not been established.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Ethyl Chloride (vapocoolant spray)",
+                    "lead": "A cold spray that numbs skin for seconds – enough for a cannula in a needle-anxious patient or a minor sprain. Stop before the skin frosts.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Topical vapocoolant"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mL spray bottle"
+                                ],
+                                [
+                                    "Duration",
+                                    "Seconds to a minute"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Cannulation or minor soft-tissue pain",
+                                    "dose": "Spray 3–7 seconds from 8–23 cm (3–9 inches)",
+                                    "note": "Stop just before the skin whitens",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Cannulation",
+                                    "dose": "Same as adults",
+                                    "note": "Explain the cold first",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Pain from cannulation or minor contusions and sprains"
+                            ],
+                            "exclude": [
+                                "Broken skin, eyes, mucous membranes",
+                                "Hypersensitivity",
+                                "Poor circulation to the area"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Frostbite and skin damage if over-sprayed",
+                                "Flammable"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2836,64 +3049,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-41",
                 shortTitle: "Etomidate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Etomidate</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
-                        <span class="rx-scope-badge">EP / AP · RSI</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Sedative-Hypnotic (Induction Agent)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2 mg/mL, 10 mL vial (20 mg/10 mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Enhances GABA-mediated inhibition in the CNS, producing rapid sedation and unconsciousness with relative hemodynamic stability compared to other induction agents.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Induction agent for Rapid Sequence Intubation (RSI); procedural sedation for cardioversion or reduction where hemodynamic stability is a priority.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.3 mg/kg IV push over 30–60 seconds for RSI induction.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.2–0.3 mg/kg IV push. Use with caution — limited pediatric prehospital evidence; local RSI protocol and physician order required.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Adrenal suppression with repeated or prolonged dosing — use single-dose only in the prehospital setting. Does not provide analgesia — pair with an opioid for painful procedures.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Myoclonus (transient involuntary muscle movement); injection site pain; nausea/vomiting on emergence; adrenal suppression.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: safety not established; use only if clinically indicated (e.g., maternal RSI).<br>Lactation: safety not established.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Etomidate has minimal effect on blood pressure and heart rate, making it a preferred induction agent in hemodynamically unstable patients. Always have a paralytic and airway equipment ready before administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Etomidate",
+                    "lead": "An induction agent for rapid sequence intubation that barely moves the blood pressure. One dose only, and it gives no pain relief.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Sedative-hypnotic (induction agent)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2 mg/mL (20 mg/10 mL)"
+                                ],
+                                [
+                                    "Onset",
+                                    "30–60 seconds; lasts 3–5 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Critical care / RSI-credentialed"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "RSI induction",
+                                    "dose": "0.3 mg/kg IV",
+                                    "note": "Have the paralytic and airway ready",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "RSI induction",
+                                    "dose": "0.2–0.3 mg/kg IV",
+                                    "note": "Physician order or local RSI protocol",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "RSI induction, especially in unstable patients",
+                                "Procedural sedation for cardioversion"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "Repeated doses or infusions (adrenal suppression)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Myoclonus",
+                                "Vomiting on emergence",
+                                "No analgesia: pair with an opioid"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Airway (chapter 3)",
+                                            "sub": "Advanced airway and RSI",
+                                            "href": "../chapters/c3.html",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2901,64 +3165,127 @@ window.CPG_DATA = {
             {
                 id: "formulary-42",
                 shortTitle: "Fentanyl",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Fentanyl</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opioid Analgesic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mcg/2 mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Synthetic opioid agonist that binds mu-opioid receptors in the CNS, producing potent analgesia with rapid onset (1–2 minutes IV) and short duration (30–60 minutes).</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate–severe pain, including traumatic and cardiac chest pain; analgesia prior to painful procedures (e.g., fracture reduction, cardioversion).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>25–50 mcg IV slow push every 5 minutes, titrated to pain (maximum 200 mcg); 1–2 mcg/kg IN/IM if no IV access.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1 mcg/kg IV slow push every 5 minutes (maximum single dose 50 mcg); 1.5 mcg/kg IN if no IV access.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; respiratory depression without ventilatory support available.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Hypotension; head injury with altered mental status (may confound neurological exam); renal/hepatic impairment.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; nausea/vomiting; sedation; chest wall rigidity with rapid high-dose administration.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated for maternal pain control.<br>Lactation: infant sedation possible; monitor if breastfeeding shortly after administration.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Faster onset and shorter duration than Morphine, making it preferred for procedural analgesia. Have Naloxone and airway equipment immediately available.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Fentanyl",
+                    "lead": "A fast, short-acting opioid that's kinder to blood pressure than morphine. Titrate small IV doses, or give it intranasally when there's no line.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Synthetic opioid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mcg/2 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 minutes IV; lasts 30–60 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe pain",
+                                    "dose": "25–50 mcg IV every 5 minutes, titrated",
+                                    "note": "Maximum 200 mcg (1 mcg/kg doses)",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "No IV access",
+                                    "dose": "1–2 mcg/kg intranasal or IM",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe pain",
+                                    "dose": "1 mcg/kg IV (maximum single dose 50 mcg)",
+                                    "note": "Every 5 minutes, titrated",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "No IV access",
+                                    "dose": "1.5 mcg/kg intranasal",
+                                    "note": "Maximum 100 mcg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe pain, including chest pain and trauma",
+                                "Analgesia before painful procedures"
+                            ],
+                            "exclude": [
+                                "Breathing depression without ventilation support",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression: naloxone and bag-mask ready",
+                                "Hypotension, nausea, sedation",
+                                "Chest wall rigidity with rapid large doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3301,64 +3628,118 @@ window.CPG_DATA = {
             {
                 id: "formulary-19",
                 shortTitle: "Haloperidol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Haloperidol</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antipsychotic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg/1 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Haloperidol binds to dopamine D1 and D2 receptors in the mesolimbic pathway, reducing excessive dopamine activity that can cause hallucinations, delusions, or severe agitation. Haloperidol also affects other histamine receptors leading to sedation, aiding in the management of acute agitation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Acute psychosis suspected to be secondary to a worsening mental health illness.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>5 mg IM (IM administration only).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric use.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; Parkinson's disease; dementia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Extrapyramidal effects; hyperactive behavior; increased muscle tone; prolonged QT; Torsade's de pointes.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated, not recommended for use in pregnancy.<br>Lactation: Safety has not been established, not recommended for use in lactation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Haloperidol",
+                    "lead": "An antipsychotic for agitation driven by psychosis. Slower and with more side effects than droperidol or midazolam for undifferentiated agitation.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Butyrophenone antipsychotic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "15–30 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Agitation from psychosis",
+                                    "dose": "5 mg IM",
+                                    "note": "Older adults 0.5–2 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe agitation from a known psychotic illness"
+                            ],
+                            "exclude": [
+                                "Parkinson's disease or Lewy body dementia",
+                                "Known long QT",
+                                "Coma or CNS depression"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Dystonia and akathisia",
+                                "QT prolongation and torsades",
+                                "Neuroleptic malignant syndrome (rare)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Older adults with dementia: higher risk of death and stroke – avoid unless essential"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3676,64 +4057,111 @@ window.CPG_DATA = {
             {
                 id: "formulary-21",
                 shortTitle: "Hyoscine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Hyoscine Butyl bromide</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticholinergic (antimuscarinic)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">20 mg/1 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks muscarinic acetylcholine receptors (primarily M3) on smooth muscle, reducing parasympathetic‑mediated contractions.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Lower abdominal cramping associated with gastroenteritis, renal colic, irritable bowel disease and dysmenorrhea.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>20 mg IV/IM/SC</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric administration.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Tachyarrhythmias; narrow angle glaucoma; stenosis of the GI or urinary tract; myasthenia gravis; hypertrophy of the prostate; renal impairment.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; bradycardia; hypotension; urinary urgency; dry mouth; constipation; drowsiness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Administration in pregnancy is not advised.<br>Lactation: Safety has not been established. Administration in lactation is not advised.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Hyoscine Butylbromide",
+                    "lead": "An antispasmodic for colicky abdominal pain from bowel, biliary or renal spasm. It doesn't cross into the brain, so it doesn't sedate.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antimuscarinic antispasmodic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "20 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes IV; 10–15 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Colicky abdominal or renal pain",
+                                    "dose": "20 mg IV, IM or SC",
+                                    "note": "May repeat after 30 minutes (maximum 100 mg a day)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not used prehospital in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Spasm pain: renal colic, gastroenteritis cramps, biliary colic, period pain"
+                            ],
+                            "exclude": [
+                                "Tachyarrhythmia",
+                                "Angle-closure glaucoma",
+                                "Myasthenia gravis",
+                                "Prostatic enlargement or urinary retention",
+                                "Bowel obstruction"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia, dry mouth, blurred vision",
+                                "Hypotension when given IV"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3806,64 +4234,116 @@ window.CPG_DATA = {
             {
                 id: "formulary-66",
                 shortTitle: "Ibuprofen",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Ibuprofen</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑Steroidal Anti‑inflammatory (NSAID)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">200 mg / 400 mg tablets; 100 mg/5 mL oral suspension.</span></div>
-                </div>
-
-                <p class="rx-moa">Reversibly inhibits COX‑1 and COX‑2, reducing prostaglandin synthesis to provide analgesic, anti‑inflammatory and antipyretic effects.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Mild to moderate pain (musculoskeletal, minor trauma); fever.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>400 mg PO single dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>10 mg/kg PO (max 400 mg). Age &gt;3 months and weight &gt;5 kg.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to NSAIDs or Aspirin‑sensitive asthma; active GI bleeding / peptic ulcer; renal impairment; pregnancy (third trimester); dehydration / hypovolemia; anticoagulant use; suspected major hemorrhage.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma; elderly; heart failure; hypertension; recent NSAID use.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Dyspepsia; nausea; GI bleeding; bronchospasm in sensitive patients.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: avoid, contraindicated after 20 weeks.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Can be combined with Paracetamol for additive analgesia. Ask about any NSAID taken in the last 6 hours before administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Ibuprofen",
+                    "lead": "An oral anti-inflammatory for mild to moderate pain and fever. Combine with paracetamol for better effect – but not in bleeding, kidney trouble or dehydration.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "NSAID"
+                                ],
+                                [
+                                    "Presentation",
+                                    "200 mg and 400 mg tablets; 100 mg/5 mL suspension"
+                                ],
+                                [
+                                    "Onset",
+                                    "30–60 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Mild to moderate pain or fever",
+                                    "dose": "400 mg orally",
+                                    "note": "Check NSAID use in the last 6 hours",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Pain or fever (over 3 months and 5 kg)",
+                                    "dose": "10 mg/kg orally",
+                                    "note": "Maximum 400 mg",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Musculoskeletal pain, minor trauma, fever"
+                            ],
+                            "exclude": [
+                                "NSAID allergy or aspirin-sensitive asthma",
+                                "Active bleeding, peptic ulcer, anticoagulants",
+                                "Kidney disease, dehydration, shock",
+                                "Third trimester of pregnancy",
+                                "Suspected major haemorrhage"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Indigestion, GI bleeding",
+                                "Bronchospasm in sensitive asthma"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3985,66 +4465,135 @@ window.CPG_DATA = {
             {
                 id: "formulary-22",
                 shortTitle: "Ketamine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Ketamine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Dissociative Anesthetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mg/10 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Predominantly blocks the action of glutamate on NMDA receptors, resulting in dose dependent analgesia, amnesia, disassociation and anesthesia.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Sedation of agitated patients.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Sedation for Abnormal Behavior:</strong> IM: 1‑4 mg/kg (repeat after 10 minutes, once only); IV/IO: 1 mg/kg bolus over 1‑2 minutes. Maximum dose 100 mg.<br>
-                <strong>Sedation for Agitation (e.g. ROSC/TBI/Cardioversion/Pacing):</strong> 0.25‑1 mg/kg IV/IO.<br>
-                <strong>Dilution for IV Administration:</strong> In a 10 mL syringe, draw up 8 mLs of normal saline. Add 2 mL (100 mg) of Ketamine. Final concentration is 10 mg/1 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric administration.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; significant hypertension.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Active psychosis – ketamine may make this worse; coadministration with haloperidol or benzodiazepines (enhanced sedative effect).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Laryngospasm; respiratory depression (usually associated with large or rapid IV doses); emergence phenomena; increase airway secretions; nystagmus; transient hypertension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been demonstrated. Administration in pregnancy is not recommended.<br>Lactation: Safety has not been demonstrated. Administration in lactation is not recommended.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Ketamine must not be administered to facilitate intubation. Many of the adverse effects of ketamine are related to high doses or rapid IV administration. Where possible slowly administer IV doses slowly. Emergence phenomena only requires management if it is impeding patient care. Low dose benzodiazepines may be administered if required however this may cause significant lowering of consciousness. Benzodiazepines should be administered IV to enable lower and more accurate dosages.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Ketamine",
+                    "lead": "A dissociative drug with three doses for three jobs: low dose for pain, a moderate dose for severe agitation, and a full dose for RSI induction. Breathing and blood pressure are usually preserved.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Dissociative anaesthetic (NMDA antagonist)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50 mg/mL (500 mg/10 mL); 10 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "1 minute IV; 3–5 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic (analgesia); critical care (RSI)"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Analgesia",
+                                    "dose": "0.1–0.3 mg/kg IV slowly",
+                                    "note": "Or 0.5–1 mg/kg intranasal",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Severe agitation",
+                                    "dose": "4–5 mg/kg IM, or 1–2 mg/kg IV",
+                                    "note": "Be ready to manage the airway",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "RSI induction",
+                                    "dose": "1–2 mg/kg IV",
+                                    "note": "Useful in shock and bronchospasm",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Analgesia",
+                                    "dose": "0.1–0.3 mg/kg IV or 1 mg/kg intranasal",
+                                    "note": "Per protocol",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "RSI induction",
+                                    "dose": "1–2 mg/kg IV",
+                                    "note": "Critical care",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe pain, especially trauma and burns",
+                                "Severe acute behavioural disturbance",
+                                "RSI induction, especially in hypotension or asthma"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "Uncontrolled severe hypertension or acute coronary syndrome (relative)",
+                                "Active psychosis for analgesia (relative)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Laryngospasm, hypersalivation",
+                                "Emergence reactions: calm environment; small benzodiazepine dose if needed",
+                                "Vomiting; rising BP and HR"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Airway (chapter 3)",
+                                            "sub": "Advanced airway and RSI",
+                                            "href": "../chapters/c3.html",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4052,64 +4601,111 @@ window.CPG_DATA = {
             {
                 id: "formulary-43",
                 shortTitle: "Ketorolac",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Ketorolac</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT-Advanced (EMT-A) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT-A+</span>
-                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non-Steroidal Anti-inflammatory (NSAID)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">30 mg/1 mL vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Inhibits cyclooxygenase (COX-1 and COX-2), reducing prostaglandin synthesis and producing analgesic and anti-inflammatory effects without respiratory depression or sedation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate pain, particularly musculoskeletal, renal colic, and migraine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>15–30 mg IV over 15 seconds or 30–60 mg IM. Single prehospital dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended for pediatric prehospital use.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; previous reaction to NSAIDs; active GI bleeding or peptic ulcer disease; renal insufficiency; pregnancy (third trimester); age under 17.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma/COPD with history of NSAID-induced bronchospasm; concurrent anticoagulant use; dehydration.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>GI upset; injection site discomfort; increased bleeding risk.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: contraindicated, particularly in the third trimester (risk of premature ductus arteriosus closure).<br>Lactation: generally considered compatible in short courses; consult local guidance.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Does not cause sedation or respiratory depression, making it a useful non-opioid option, but onset is slower (30–60 min for full effect) than opioids.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Ketorolac",
+                    "lead": "An injectable anti-inflammatory for renal colic and musculoskeletal pain without sedation. Low doses work as well as high ones.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "NSAID"
+                                ],
+                                [
+                                    "Presentation",
+                                    "30 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "30 minutes; full effect 1–2 hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate pain (renal colic, musculoskeletal, migraine)",
+                                    "dose": "15 mg IV or 30 mg IM",
+                                    "note": "Single dose; 15 mg IV is as effective as higher doses",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for prehospital use in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Renal colic, musculoskeletal pain, migraine"
+                            ],
+                            "exclude": [
+                                "NSAID allergy or NSAID-induced asthma",
+                                "Bleeding, anticoagulants, peptic ulcer",
+                                "Kidney disease, dehydration",
+                                "Third trimester of pregnancy",
+                                "Age under 17"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bleeding risk",
+                                "Older adults: kidney injury"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4376,64 +4972,114 @@ window.CPG_DATA = {
             {
                 id: "formulary-61",
                 shortTitle: "Lorazepam",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Lorazepam</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Benzodiazepine</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2 mg/mL or 4 mg/mL vial (refrigerated).</span></div>
-                </div>
-
-                <p class="rx-moa">Enhances GABA‑A receptor activity, increasing inhibitory neurotransmission to terminate seizures and produce sedation and anxiolysis.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Status epilepticus / active seizure; severe agitation; stimulant toxicity.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Seizure: 4 mg IV/IO slow over 2 min; may repeat once after 5–10 min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Seizure: 0.1 mg/kg IV/IO (max 4 mg); may repeat once after 5–10 min.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Respiratory depression; known allergy to benzodiazepines; acute narrow‑angle glaucoma.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Elderly; concurrent opioids or alcohol (additive respiratory depression); hypotension; myasthenia gravis.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; sedation; paradoxical agitation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: treat status epilepticus — benefit outweighs risk.<br>Lactation: excreted in breast milk; monitor infant for sedation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Have airway equipment and BVM ready. Midazolam IM/IN is preferred when IV access is not available.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Lorazepam",
+                    "lead": "A first-line IV benzodiazepine for status epilepticus with a longer action than midazolam. It must be refrigerated; without IV access, use midazolam IM or intranasally.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Benzodiazepine"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2 mg/mL or 4 mg/mL (refrigerated)"
+                                ],
+                                [
+                                    "Onset",
+                                    "2–3 minutes IV; lasts hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Seizure lasting 5 minutes or more",
+                                    "dose": "4 mg IV over 2 minutes (0.1 mg/kg)",
+                                    "note": "Repeat once after 5–10 minutes",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Seizure",
+                                    "dose": "0.1 mg/kg IV/IO",
+                                    "note": "Maximum 4 mg; repeat once",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Status epilepticus with IV access",
+                                "Severe agitation or stimulant toxicity (per protocol)"
+                            ],
+                            "exclude": [
+                                "Breathing depression without support",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression and hypotension",
+                                "Additive with opioids and alcohol"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4588,64 +5234,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-25",
                 shortTitle: "Methoxyflurane (Penthrox inhaler)",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Methoxyflurane (Penthrox inhaler)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Inhaled Anesthetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">3 mL vial</span></div>
-                </div>
-
-                <p class="rx-moa">Depresses the central nervous system primarily through enhancing GABA‑A receptor activity to increase inhibitory neurotransmission. Inhibits NMDA receptors to reduce excitatory pain signals.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to Severe Pain; Moderate Pain with occasional Severe Pain associated with procedures.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>3 mLs Methoxyflurane self‑administered (repeat dose once if required). Adult maximum dose in 24 hours is 6 mL (2 doses).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Pediatric maximum dose 3 mL (single dose). Generally, pediatrics should be greater than 5 years old to understand how to self‑administer methoxyflurane. Administration in pediatrics has not been widely studied. However, methoxyflurane is widely administered in the pre‑hospital setting with minimal reported adverse effects. When administered to pediatrics, methoxyflurane should be administered sparingly and more appropriate analgesics should be used once they are available.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Patients unable to obey commands, or are unable to self‑administer; history of malignant hyperthermia (rare); known renal impairment; severe liver disease; hypersensitivity to anesthetics.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Age >75 years – elderly patients are more likely to have renal impairment; pre‑eclampsia – renal impairment is likely in pre‑eclampsia.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Dizziness; headache; mild and temporary sedation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Administration during labor is not recommended.<br>Lactation: Safety has not been established. If essential to be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Methoxyflurane is an effective analgesic provided adequate coaching is provided. The analgesic effect of methoxyflurane will wear off approximately 30 seconds after inhalation has stopped. Constant inhalation is required to provide on‑going analgesia.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Methoxyflurane (Penthrox)",
+                    "lead": "A hand-held inhaled analgesic the patient controls: quick to start, quick to wear off. It needs a cooperative patient and healthy kidneys.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Inhaled anaesthetic (low dose)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "3 mL vial with inhaler"
+                                ],
+                                [
+                                    "Onset",
+                                    "6–10 breaths; wears off within minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe trauma or procedural pain",
+                                    "dose": "3 mL, self-administered",
+                                    "note": "One more 3 mL if needed; maximum 6 mL a day",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Pain, child able to self-administer",
+                                    "dose": "3 mL (single vial)",
+                                    "note": "Where licensed; switch to other analgesia when available",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe pain in a cooperative patient"
+                            ],
+                            "exclude": [
+                                "Can't follow instructions or hold the inhaler",
+                                "Kidney or severe liver disease",
+                                "Personal or family history of malignant hyperthermia",
+                                "Pre-eclampsia"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Dizziness, drowsiness, headache",
+                                "Ventilate the vehicle"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4768,64 +5465,116 @@ window.CPG_DATA = {
             {
                 id: "formulary-26",
                 shortTitle: "Metoclopramide",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Metoclopramide</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiemetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/2 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Antagonizes dopamine‑2 receptors in the chemoreceptor trigger zone (CTZ) reducing nausea. Metoclopramide also (weakly) blocks stimulation of the 5‑HT3 receptors in the gastro‑intestinal system further reducing nausea and increasing gastric motility.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Nausea and Vomiting.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>10 mg IV/IM (slow IV over 3 minutes, or diluted in 100 mL normal saline and administered as an infusion).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Generally not recommended for routine pediatric administration (significant risk of extrapyramidal effects). 0.1 mg/kg IV/IM (slow IV over 3 minutes).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; epilepsy; Parkinson's disease; tardive dyskinesia; suspected gastro‑intestinal hemorrhage or obstruction; pheochromocytoma; recent gastro‑intestinal surgery; age <1 year; allergy to procainamide.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Pediatrics (extrapyramidal effects).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Extrapyramidal effects (common in children); rash; hypotension; dyspnea; drowsiness and dizziness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Routine administration in pregnancy is not recommended.<br>Lactation: Safety has not been established. Routine administration in lactation is not recommended. If essential to be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Metoclopramide should not be mixed with morphine. Metoclopramide should not be administered prophylactically after opiate administration. Only administer if nausea occurs.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Metoclopramide",
+                    "lead": "A dopamine-blocking antiemetic that also speeds gastric emptying. Watch for dystonic reactions, especially in young people.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Dopamine antagonist antiemetic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/2 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–3 minutes IV; 10–15 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Nausea and vomiting",
+                                    "dose": "10 mg slow IV over 3 minutes, or IM",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Nausea (only if others unsuitable)",
+                                    "dose": "0.1–0.15 mg/kg slow IV or IM",
+                                    "note": "Not under 1 year",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Nausea and vomiting, including migraine"
+                            ],
+                            "exclude": [
+                                "Bowel obstruction or GI bleeding",
+                                "Parkinson's disease",
+                                "Phaeochromocytoma",
+                                "Epilepsy (relative)",
+                                "Under 1 year"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Dystonia and akathisia: diphenhydramine",
+                                "Drowsiness, hypotension if fast"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4959,67 +5708,122 @@ window.CPG_DATA = {
             {
                 id: "formulary-27",
                 shortTitle: "Midazolam",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Midazolam</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Benzodiazepine</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg/1 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Potentiates the action of the GABA neurotransmitter producing sedation and seizure inhibition.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Seizures; sedation of agitated or combative patients.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Seizures:</strong> 5 mg IV/IO/IM (repeat once after 10 minutes if required).<br>
-                <strong>Sedation:</strong> 1‑5 mg IV/IO/IM.<br>
-                <strong>Dilution for IV/IO administration:</strong> In a 5 mL syringe, draw up 4 mL of normal saline. Add 1 mL (5 mg) of Midazolam. Concentration is now 1 mg/1 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Seizures:</strong> 0.1 mg/kg IV (max 5 mg – may repeat once after 10 minutes if required); 0.2 mg/kg IM (max 5 mg – may repeat once after 10 minutes if required).<br>
-                Dilution as for adults.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Respiratory distress; shock and/or hypotension.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Reduced level of consciousness; respiratory depression; hypotension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated however, midazolam should be administered if clinically indicated.<br>Lactation: Safety has not been established however, midazolam should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Benzodiazepines may cause airway, breathing and circulation compromise. If administered, all possible monitoring should be in place, including nasal end‑tidal CO₂ monitoring. An IV (if not available in place) should be established as soon as possible after administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Midazolam",
+                    "lead": "The benzodiazepine for every route: IM and intranasal for seizures without IV access, and small IV doses for sedation. Have the bag-mask ready.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Benzodiazepine"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5 mg/mL (also 1 mg/mL)"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–3 minutes IV; 5–10 minutes IM/IN"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Seizure lasting 5 minutes or more",
+                                    "dose": "10 mg IM (over 40 kg), or 0.2 mg/kg intranasal (maximum 10 mg)",
+                                    "note": "IV 0.1–0.2 mg/kg (maximum 10 mg per dose); repeat once after 5–10 minutes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Sedation or agitation",
+                                    "dose": "1–5 mg IV, titrated; 5–10 mg IM",
+                                    "note": "Lower in older adults",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Seizure",
+                                    "dose": "5 mg IM (13–40 kg), or 0.2 mg/kg intranasal (maximum 10 mg)",
+                                    "note": "IV 0.1–0.2 mg/kg (maximum 10 mg per dose); repeat once",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Seizure lasting 5 minutes or more",
+                                "Severe agitation",
+                                "Procedural sedation (with analgesia)"
+                            ],
+                            "exclude": [
+                                "Breathing depression without support",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression: ETCO₂ and bag-mask",
+                                "Hypotension, especially with opioids",
+                                "Paradoxical agitation"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5092,65 +5896,121 @@ window.CPG_DATA = {
             {
                 id: "formulary-28",
                 shortTitle: "Morphine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Morphine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opiate Analgesic (opiate agonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/1 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Binds with Mu opioid pain receptors producing analgesia.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe pain.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>2.5 mg increments IV/IO (repeat every 5 minutes, maximum 10 mg); 2‑10 mg IM (maximum 20 mg).<br>
-                <strong>Dilution for IV/IO Administration:</strong> In a 10 mL syringe, draw up 9 mL of normal saline. Add 1 mL (10 mg) Morphine. Concentration is now 1 mg/1 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.1 mg/kg IV/IM/IO.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; respiratory depression; SBP <90 mmHg.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Respiratory distress or difficulty; elderly >65 years old; pediatrics age <1 year (increased risk of respiratory depression); morbid obesity; moderate hypotension / shock.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; drowsiness / reduced level of consciousness; rash.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: May cause fetal harm. Morphine should only be administered when the benefit outweighs the risk. This should be discussed with the mother and/or family wherever possible. Morphine should not be administered in labor. Morphine crosses the placenta and may result in respiratory depression of the newborn.<br>Lactation: Safety has not been established. Morphine should only be administered when the benefit outweighs the risk. This should be discussed with the mother and/or family wherever possible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Morphine should be administered with caution to patients with respiratory distress or difficulty (including chest injuries), the elderly >65 years, infants <1 year and morbidly obese individuals as it may suppress respiratory drive. Use lower, carefully titrated doses and monitor closely for respiratory depression.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Morphine",
+                    "lead": "The classic opioid for severe pain: titrate small IV doses to effect. It drops blood pressure more than fentanyl and lasts longer.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Opioid agonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "5 minutes IV; lasts 3–5 hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe pain",
+                                    "dose": "2.5–5 mg IV every 5 minutes, titrated (0.1 mg/kg)",
+                                    "note": "Typical maximum 10–20 mg per protocol",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "No IV access",
+                                    "dose": "5–10 mg IM",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe pain",
+                                    "dose": "0.1 mg/kg IV, titrated",
+                                    "note": "Maximum single dose 5 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe pain from injury, burns, ischaemia"
+                            ],
+                            "exclude": [
+                                "Breathing depression or SBP below 90 mmHg",
+                                "Allergy",
+                                "Head injury with reduced consciousness (relative)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression: naloxone ready",
+                                "Hypotension, nausea, itching",
+                                "Older adults and kidney disease: smaller doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5158,64 +6018,120 @@ window.CPG_DATA = {
             {
                 id: "formulary-29",
                 shortTitle: "Naloxone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Naloxone</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opiate Antagonist / Opiate Antidote</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.4 mg/1 mL ampule; 4 mg pre‑filled intranasal spray</span></div>
-                </div>
-
-                <p class="rx-moa">Naloxone competitively binds with opiate receptors reversing the effect of opiate agonists such as morphine.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Opiate overdose.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.4 mg IV/IO/IM (repeated every 3 minutes as required, maximum 2 mg); 4 mg IN (repeated every 3 minutes as required).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.01 mg/kg IV/IO/IM (repeated every 3 minutes as required).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Severe hypoxia prior to administration.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Withdrawal symptoms (including arrhythmias and seizures); hypoxia‑related agitation after rapid reversal without pre‑oxygenation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, naloxone should be administered when clinically indicated.<br>Lactation: Safety has not been established. However, naloxone should be administered when clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>IV or IN is the preferred method of administration. All cases of opiate overdose should be transferred to hospital even if naloxone has been effective. If maximum dose has been reached, strongly consider other causes of unconsciousness before further administration. For intranasal pre‑filled spray: Do not ‘test’ or ‘prime’ before use. Titrate naloxone carefully to reverse respiratory depression only, while monitoring to prevent fully awakening the patient which may cause excessive aggression.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Naloxone",
+                    "lead": "Reverses opioid breathing depression. Ventilate first, then titrate to adequate breathing – not to full wakefulness – and watch for re-sedation because it wears off first.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Opioid antagonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "0.4 mg/mL; 4 mg intranasal spray"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 minutes IV; lasts 30–90 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels (spray); EMT and above (injection)"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Opioid breathing depression",
+                                    "dose": "0.04–0.4 mg IV, titrated every 2–3 minutes",
+                                    "note": "Up to 2 mg, then think of other causes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "No IV",
+                                    "dose": "0.4 mg IM or 4 mg intranasal spray",
+                                    "note": "Repeat every 2–3 minutes as needed",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Opioid breathing depression",
+                                    "dose": "0.01 mg/kg, titrated; up to 0.1 mg/kg for full reversal",
+                                    "note": "Maximum 2 mg per dose",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Opioid overdose with slow or inadequate breathing"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "Newborn resuscitation (ventilate instead)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Precipitated withdrawal: vomiting, agitation",
+                                "Re-sedation with long-acting opioids: hospital observation",
+                                "Pulmonary oedema (rare)"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Opioid slow breathing",
+                                            "href": "../pages/respiratory-patterns.html?p=bradypnea",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5223,64 +6139,111 @@ window.CPG_DATA = {
             {
                 id: "formulary-30",
                 shortTitle: "Nefopam",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Nefopam</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑opioid analgesic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">20 mg/2 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Acts as a serotonin, norepinephrine, and dopamine reuptake inhibitor in the central nervous system, dampening pain signals.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to severe pain.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>20 mg IV (once only, dilute with 100 mL Normal Saline and administer as an infusion over 5 minutes).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric administration.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; history of epilepsy; pain associated with STEMI/NSTEMI; renal impairment; pediatrics <13 years.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Nausea; vomiting; tremors; dry mouth.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Nefopam is not recommended for use in pregnancy.<br>Lactation: Safety has not been established. Nefopam is not recommended for use during lactation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nefopam must not be administered in the same IV line as Diclofenac as there is a chance of precipitation.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Nefopam",
+                    "lead": "A non-opioid, non-NSAID analgesic for moderate pain where those drugs are unsuitable. Not available in every country.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Centrally acting non-opioid analgesic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "20 mg/2 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "15–20 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe pain",
+                                    "dose": "20 mg IV infusion over 15 minutes",
+                                    "note": "Diluted in 100 mL saline; once only",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate pain when opioids or NSAIDs are unsuitable"
+                            ],
+                            "exclude": [
+                                "Epilepsy or seizures",
+                                "Acute MI or ischaemic chest pain",
+                                "Severe kidney disease",
+                                "Glaucoma or urinary retention",
+                                "Children"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Nausea, sweating, tachycardia, dry mouth",
+                                "Same line as diclofenac can precipitate"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5288,64 +6251,117 @@ window.CPG_DATA = {
             {
                 id: "formulary-67",
                 shortTitle: "Nitrous Oxide (Entonox)",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Nitrous Oxide 50% / Oxygen 50% (Entonox)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Inhaled Analgesic Gas</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">Cylinder of premixed 50% nitrous oxide and 50% oxygen with demand valve.</span></div>
-                </div>
-
-                <p class="rx-moa">Inhaled NMDA receptor antagonist with central analgesic and mild anxiolytic effect; rapid onset (2–3 min) and offset.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to severe pain (trauma, burns, labor, procedural pain such as splinting).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Self‑administered via demand valve and mouthpiece / mask until pain is controlled.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Self‑administered for children able to follow instructions (generally ≥5 years).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Altered level of consciousness or unable to self‑administer; pneumothorax; decompression illness / recent diving; bowel obstruction; middle‑ear or sinus disease; head injury with reduced GCS; first 16 weeks of pregnancy (relative).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Cylinder must be inverted several times before use if stored below 10 °C (gas separation). Ensure the vehicle is ventilated.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Light‑headedness; nausea; euphoria; drowsiness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: widely used in labor; avoid in early pregnancy unless clinically essential.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>The patient must hold the mouthpiece themselves — this self‑limits the dose. Analgesia wears off within minutes once inhalation stops.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Nitrous Oxide / Oxygen (Entonox)",
+                    "lead": "Self-administered 50:50 gas for fast, short pain relief – splinting, labour, burns dressing. It expands gas spaces, so not with pneumothorax, diving illness or bowel obstruction.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Inhaled analgesic gas"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50% nitrous oxide / 50% oxygen with demand valve"
+                                ],
+                                [
+                                    "Onset",
+                                    "2–3 minutes; wears off in minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe pain",
+                                    "dose": "Self-administered via demand valve until comfortable",
+                                    "note": "Patient holds the mouthpiece",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Pain, child able to self-administer (usually 5 years or more)",
+                                    "dose": "Self-administered",
+                                    "note": "",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Trauma, burns, labour and procedural pain"
+                            ],
+                            "exclude": [
+                                "Reduced consciousness or can't self-administer",
+                                "Pneumothorax, chest injury with suspected air",
+                                "Diving illness, bowel obstruction, middle-ear or sinus problems",
+                                "Head injury with reduced GCS",
+                                "First 16 weeks of pregnancy (relative)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Light-headedness, nausea",
+                                "Below 10 °C gases separate: invert the cylinder several times before use",
+                                "Ventilate the vehicle"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5534,64 +6550,119 @@ window.CPG_DATA = {
             {
                 id: "formulary-45",
                 shortTitle: "Ondansetron",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Ondansetron</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiemetic (5-HT3 Receptor Antagonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/2 mL vial or 4 mg orally disintegrating tablet (ODT).</span></div>
-                </div>
-
-                <p class="rx-moa">Selectively blocks serotonin (5-HT3) receptors in the chemoreceptor trigger zone and vagal afferents in the gut, reducing nausea and vomiting.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Nausea and vomiting of any prehospital etiology.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>4 mg IV slow push over 2–5 minutes or 4 mg ODT sublingual. May repeat once (maximum 8 mg total).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.1 mg/kg IV (maximum 4 mg) or ODT: 8–15 kg 2 mg, 15–30 kg 4 mg, >30 kg 4–8 mg.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; congenital long QT syndrome.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>QT prolongation — use caution with other QT-prolonging drugs or known electrolyte abnormalities (hypokalemia, hypomagnesemia).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Headache; constipation; transient QT prolongation; dizziness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: conflicting data on minor fetal risk with first-trimester use; administer if clinically indicated for severe nausea/vomiting.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>The ODT formulation is useful when IV access is not available or not clinically necessary. Does not cause sedation, unlike Metoclopramide.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Ondansetron",
+                    "lead": "A non-sedating antiemetic for almost any cause of nausea. The dissolving tablet works without an IV. Caution with long QT.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "5-HT3 antagonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "4 mg/2 mL; 4 mg dissolving tablet"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes IV; 15–30 minutes ODT"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Nausea and vomiting",
+                                    "dose": "4 mg IV over 2–5 minutes, IM or ODT",
+                                    "note": "May repeat once (maximum 8 mg)",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "IV",
+                                    "dose": "0.1 mg/kg",
+                                    "note": "Maximum 4 mg",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Dissolving tablet",
+                                    "dose": "8–15 kg 2 mg; 15–30 kg 4 mg; over 30 kg 4–8 mg",
+                                    "note": "",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Nausea and vomiting from any cause"
+                            ],
+                            "exclude": [
+                                "Congenital long QT",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "QT prolongation with other QT drugs or low potassium or magnesium",
+                                "Headache, constipation"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5797,64 +6868,121 @@ window.CPG_DATA = {
             {
                 id: "formulary-32",
                 shortTitle: "Paracetamol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Paracetamol (Acetaminophen)</h3>
-                    </div>
-                    <div class="rx-scope" title="EMR for PO; EMT for IV/PR – independent practice.">
-                        <span class="rx-scope-badge">—</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑opioid analgesic and antipyretic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">Oral Tablets: 500 mg/tablet; Rectal Suppositories: 125 mg and 250 mg/suppository; Bottle for IV administration: 1000 mg/100 mL.</span></div>
-                </div>
-
-                <p class="rx-moa">Paracetamol works primarily by inhibiting prostaglandin synthesis in the central nervous system.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to Severe Pain; Fever >38°C.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>IV/PO: 1000 mg (maximum 4 g in 24 hours). IV doses should be administered slowly over 10 minutes to avoid toxicity.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>PR: <5 years: 125 mg; >5 years: 250 mg. IV: 10 mg/kg. IV doses should be administered slowly over 10‑15 minutes to avoid toxicity.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; if patient has already taken paracetamol within the last 4 hours, or if the maximum daily dose has already been reached.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Rapid administration of IV paracetamol may cause hypotension; pruritus; nausea; vomiting.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, paracetamol is generally considered safe to use in pregnancy and may be administered when clinically indicated.<br>Lactation: Safety has not been established. However, paracetamol is generally considered safe to use in lactation and may be administered when clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Caution should be utilised when administering IV paracetamol to pediatrics without a syringe driver, infusion pump or micro‑drip set due to the inability to accurately administer the dose. IV administration to pediatrics <33 kg is generally not recommended due to the risk of toxicity.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Paracetamol (Acetaminophen)",
+                    "lead": "A safe first step for pain and fever, and a useful partner to opioids and NSAIDs. Check what's already been taken today.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Non-opioid analgesic and antipyretic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "500 mg tablets; 125 mg and 250 mg suppositories; 1 g/100 mL IV"
+                                ],
+                                [
+                                    "Onset",
+                                    "30–60 minutes orally; 5–10 minutes IV"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels (oral); paramedic (IV)"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Pain or fever above 38 °C",
+                                    "dose": "1 g orally or IV over 15 minutes",
+                                    "note": "15 mg/kg if under 50 kg; maximum 4 g a day",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Oral or rectal",
+                                    "dose": "15 mg/kg",
+                                    "note": "Maximum 1 g per dose",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "IV",
+                                    "dose": "15 mg/kg (7.5 mg/kg if under 10 kg)",
+                                    "note": "Over 15 minutes, by pump or syringe",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Mild to severe pain (with other analgesics)",
+                                "Fever above 38 °C with discomfort"
+                            ],
+                            "exclude": [
+                                "Paracetamol in the last 4 hours, or the daily maximum reached",
+                                "Severe liver disease",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension with fast IV infusion",
+                                "Dosing errors in small children: use a pump or syringe"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5862,65 +6990,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-33",
                 shortTitle: "Pethidine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Pethidine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Opiate Analgesic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 mg/1 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Binds with Mu opioid pain receptors creating analgesia.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to Severe Pain.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>IM: 25‑100 mg (maximum 400 mg/24 hours). IV: 25‑50 mg. Administer slowly over 2 minutes. (maximum 200 mg/24 hours).<br>
-                <strong>Dilution for IV administration:</strong> In a 10 mL syringe, draw up 9 mL of normal saline. Add 1 mL (50 mg) of Pethidine. Concentration is 5 mg/1 mL (50 mg in 10 mL).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>IM: 0.5‑2 mg/kg (repeat after 4 hours).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; respiratory depression; SBP <90 mmHg; renal impairment; concurrent use of Mono Amine Oxidase Inhibitors; suspected bowel obstruction.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Respiratory distress or difficulty; elderly; pediatrics age <1 year (increased risk of respiratory depression); morbid obesity; moderate hypotension / shock.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Respiratory depression; hypotension; drowsiness / reduced level of consciousness; arrhythmias.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: May cause fetal harm. Pethidine should not be administered during pregnancy.<br>Lactation: Safety has not been established. Pethidine should only be administered if the benefit outweighs the risk. If administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Pethidine (Meperidine)",
+                    "lead": "An older opioid now rarely first choice: its metabolite can cause seizures and it interacts dangerously with MAO inhibitors. Use only where protocol still lists it.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Opioid agonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "5 minutes IV; 10–15 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe pain",
+                                    "dose": "25–50 mg slow IV, or 25–100 mg IM",
+                                    "note": "Maximum 400 mg a day",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe pain",
+                                    "dose": "0.5–1 mg/kg IM",
+                                    "note": "Only per protocol; prefer other opioids",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe pain where other opioids are unavailable"
+                            ],
+                            "exclude": [
+                                "MAO inhibitors in the last 2 weeks (serotonin syndrome)",
+                                "Breathing depression or SBP below 90 mmHg",
+                                "Kidney disease or seizures (metabolite toxicity)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Breathing depression: naloxone ready",
+                                "Tremor, twitching, seizures",
+                                "Hypotension"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6247,64 +7425,116 @@ window.CPG_DATA = {
             {
                 id: "formulary-46",
                 shortTitle: "Promethazine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Promethazine</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine / Antiemetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 mg/mL, 1 mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks H1 histamine receptors and has central antidopaminergic and anticholinergic activity, producing antiemetic and sedative effects.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Nausea and vomiting refractory to other antiemetics; allergic reaction as an adjunct to Diphenhydramine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>12.5–25 mg IM (preferred) or slow IV push diluted, deep into a large muscle or well-running large-bore IV.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended under 2 years. Age 2 and above: 0.25–0.5 mg/kg IM (maximum 25 mg) — use with caution and only per local protocol.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; age under 2 years (risk of fatal respiratory depression); severe CNS depression.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Significant sedation — use caution in patients requiring ongoing neurological assessment. Severe tissue injury with IV extravasation or intra-arterial injection — IM route preferred prehospital.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Sedation; hypotension; extrapyramidal symptoms; respiratory depression in young children.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: has been used for hyperemesis; administer if clinically indicated.<br>Lactation: may cause infant sedation; use lowest effective dose.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>IM administration is strongly preferred over IV in the prehospital setting due to the risk of severe tissue necrosis with extravasation or inadvertent intra-arterial injection.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Promethazine",
+                    "lead": "A sedating antihistamine-antiemetic for nausea that hasn't responded to others. Give it IM: IV extravasation or arterial injection causes severe tissue damage.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Phenothiazine antihistamine"
+                                ],
+                                [
+                                    "Presentation",
+                                    "25 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "20 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Refractory nausea and vomiting",
+                                    "dose": "12.5–25 mg deep IM",
+                                    "note": "IV only diluted into a free-running large vein",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Nausea, 2 years or older",
+                                    "dose": "0.25–0.5 mg/kg IM",
+                                    "note": "Maximum 25 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Nausea not responding to other antiemetics",
+                                "Allergic itch (adjunct)"
+                            ],
+                            "exclude": [
+                                "Children under 2 years (fatal respiratory depression)",
+                                "Severe CNS depression",
+                                "IV push into small veins"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Sedation – affects neuro assessment",
+                                "Hypotension, dystonia",
+                                "Tissue injury with IV"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6312,64 +7542,120 @@ window.CPG_DATA = {
             {
                 id: "formulary-65",
                 shortTitle: "Propofol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Propofol</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Sedative‑Hypnotic (General Anesthetic)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/mL emulsion, 20 mL ampule / 50 mL vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Potentiates GABA‑A receptor activity producing rapid sedation and loss of consciousness; very short duration of action.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Post‑intubation sedation during critical care transport; induction for RSI (hemodynamically stable patients only).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Induction: 1–2 mg/kg IV. Sedation: 5–50 mcg/kg/min IV infusion (0.3–3 mg/kg/h), titrated to effect.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Induction: 1–2.5 mg/kg IV. Sedation infusion per physician direction.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hypotension / shock; known allergy to propofol, egg or soy products.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Causes dose‑dependent hypotension and apnea — reduce dose in elderly and hypovolemic patients. Strict aseptic technique (lipid emulsion supports bacterial growth).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; apnea; bradycardia; pain on injection.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: crosses the placenta; use only if benefit outweighs risk.<br>Lactation: small amounts excreted; compatible after recovery.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>No analgesic effect — combine with an opioid (e.g. Fentanyl) for post‑intubation care. Discard open ampules after 6 hours.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Propofol",
+                    "lead": "A short-acting sedative for sedation after intubation in critical care transport, and induction in stable patients. It drops blood pressure and gives no pain relief.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Sedative-hypnotic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/mL emulsion"
+                                ],
+                                [
+                                    "Onset",
+                                    "30 seconds; lasts minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Critical care"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Induction (stable patient)",
+                                    "dose": "1–2 mg/kg IV",
+                                    "note": "Lower in older or unwell patients",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Sedation after intubation",
+                                    "dose": "5–50 mcg/kg/min (0.3–3 mg/kg/h)",
+                                    "note": "Pump; with analgesia",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Induction",
+                                    "dose": "1–2.5 mg/kg IV",
+                                    "note": "Infusion per physician",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Sedation of intubated patients",
+                                "RSI induction when blood pressure is stable"
+                            ],
+                            "exclude": [
+                                "Shock or hypotension",
+                                "Allergy to propofol (egg and soy allergy are generally not a problem)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension, apnoea, bradycardia",
+                                "Strict asepsis; discard opened product after 6 hours"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Airway (chapter 3)",
+                                            "sub": "Advanced airway and RSI",
+                                            "href": "../chapters/c3.html",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6564,64 +7850,120 @@ window.CPG_DATA = {
             {
                 id: "formulary-63",
                 shortTitle: "Rocuronium",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Rocuronium</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
-                        <span class="rx-scope-badge">EP / AP · RSI</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Non‑Depolarizing Neuromuscular Blocker (Paralytic)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 mg/5 mL vial (10 mg/mL) — refrigerated.</span></div>
-                </div>
-
-                <p class="rx-moa">Competitively blocks acetylcholine at nicotinic receptors of the neuromuscular junction, producing flaccid paralysis within 45–60 seconds at RSI doses.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Rapid sequence intubation (RSI) after induction; maintenance of paralysis in an intubated patient.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>RSI: 1–1.2 mg/kg IV/IO (ideal body weight). Maintenance: 0.1–0.2 mg/kg IV as required.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>RSI: 1–1.2 mg/kg IV/IO.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Inability to manage the airway (no rescue airway plan); known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Duration 30–60 min — patient cannot breathe spontaneously if intubation fails. Must always be preceded by an induction agent and followed by ongoing sedation and analgesia.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Prolonged paralysis; tachycardia; anaphylaxis (rare).</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: minimal placental transfer; use for maternal airway management.<br>Lactation: not applicable in the emergency setting.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Paralysis without sedation is awareness — always give post‑intubation sedation. Sugammadex reverses rocuronium (hospital / EP).</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Rocuronium",
+                    "lead": "A non-depolarising paralytic for RSI with few contraindications. Paralysis lasts 30–60 minutes, so a failed airway plan must be ready – and sedation must continue.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Non-depolarising neuromuscular blocker"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/mL (refrigerated)"
+                                ],
+                                [
+                                    "Onset",
+                                    "45–60 seconds at RSI dose; lasts 30–60 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Critical care / RSI-credentialed"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "RSI",
+                                    "dose": "1–1.2 mg/kg IV/IO",
+                                    "note": "After induction",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Maintenance",
+                                    "dose": "0.1–0.2 mg/kg IV",
+                                    "note": "Only with ongoing sedation",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "RSI",
+                                    "dose": "1–1.2 mg/kg IV/IO",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "RSI, especially when suxamethonium is contraindicated"
+                            ],
+                            "exclude": [
+                                "No plan for a failed airway",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Awareness: always continue sedation and analgesia",
+                                "Anaphylaxis (rare)",
+                                "Sugammadex reverses it (hospital)"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Airway (chapter 3)",
+                                            "sub": "Advanced airway and RSI",
+                                            "href": "../chapters/c3.html",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6877,64 +8219,116 @@ window.CPG_DATA = {
             {
                 id: "formulary-64",
                 shortTitle: "Succinylcholine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#8b5cf6;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Neuro / Sedation</div>
-                        <h3 class="rx-name">Succinylcholine (Suxamethonium)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) / Advanced Paramedic (AP) with RSI credentialing only.">
-                        <span class="rx-scope-badge">EP / AP · RSI</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Depolarizing Neuromuscular Blocker (Paralytic)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/2 mL vial (50 mg/mL) or 200 mg/10 mL — refrigerated.</span></div>
-                </div>
-
-                <p class="rx-moa">Depolarizes the motor end plate at nicotinic receptors, causing fasciculations followed by paralysis within 45–60 seconds lasting 5–10 min.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Rapid sequence intubation (RSI) after induction.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1.5 mg/kg IV/IO (actual body weight), max 200 mg. IM 3–4 mg/kg if no access.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>2 mg/kg IV/IO (infants &lt;10 kg); 1–1.5 mg/kg IV/IO (children).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known or suspected hyperkalemia (renal failure, crush injury); burns, spinal cord injury or stroke &gt;72 hours old; neuromuscular disease (muscular dystrophy, myopathies); personal or family history of malignant hyperthermia; known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Bradycardia (especially children and repeat doses); raised intraocular pressure; pseudocholinesterase deficiency (prolonged paralysis).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperkalemia; bradycardia; fasciculations; muscle pain; malignant hyperthermia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: used for maternal RSI.<br>Lactation: not applicable in the emergency setting.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Have Atropine available for bradycardia. When contraindications exist or cannot be excluded, use Rocuronium instead.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Sedation, Pain & Nausea",
+                    "title": "Succinylcholine (Suxamethonium)",
+                    "lead": "The fastest, shortest paralytic for RSI. It raises potassium, so avoid it in hyperkalaemia, crush, old burns, spinal injury, neuromuscular disease and malignant hyperthermia.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Depolarising neuromuscular blocker"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50 mg/mL (refrigerated)"
+                                ],
+                                [
+                                    "Onset",
+                                    "45–60 seconds; lasts 5–10 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Critical care / RSI-credentialed"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "RSI",
+                                    "dose": "1.5 mg/kg IV/IO (maximum 200 mg)",
+                                    "note": "IM 4 mg/kg if no access",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "RSI",
+                                    "dose": "2 mg/kg (infants under 10 kg); 1–1.5 mg/kg (children)",
+                                    "note": "Atropine ready for bradycardia",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "RSI when there's no contraindication"
+                            ],
+                            "exclude": [
+                                "Known or suspected hyperkalaemia (kidney failure, crush)",
+                                "Burns, spinal cord injury or stroke more than 72 hours old",
+                                "Neuromuscular disease",
+                                "Personal or family history of malignant hyperthermia"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bradycardia (children, repeat doses)",
+                                "Hyperkalaemia, fasciculations, muscle pain",
+                                "Prolonged paralysis with pseudocholinesterase deficiency"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Airway (chapter 3)",
+                                            "sub": "Advanced airway and RSI",
+                                            "href": "../chapters/c3.html",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
