@@ -146,3 +146,82 @@ Sources:
 - **Terbutaline** – 1 mg/mL; onset 5–15 minutes SC. Adult 0.25 mg SC, repeat
   once after 15–30 minutes (maximum 0.5 mg in 4 hours); child 0.01 mg/kg
   (maximum 0.25 mg). (NAEPP, Lexicomp)
+
+## Group C: sedation, seizures, airway drugs, analgesia and antiemetics
+
+- **Diazepam** – 10 mg/2 mL; rectal 5 mg and 10 mg; onset 1–3 minutes IV,
+  5–10 minutes rectal. Seizure 0.15–0.2 mg/kg IV (usually 10 mg), repeat
+  once after 5 minutes; child 0.1–0.2 mg/kg IV (maximum 10 mg) or 0.5 mg/kg
+  rectally (maximum 20 mg). Agitation 5 mg IV. (AES 2016, BNF)
+- **Diclofenac** – 75 mg/3 mL; onset 15–30 minutes IM; 75 mg deep IM. (BNF)
+- **Droperidol** – 2.5 mg/mL; onset 3–10 minutes IV, 10–15 minutes IM.
+  Agitation 5–10 mg IM or 2.5–5 mg IV, repeat once after 15 minutes; nausea
+  0.625–1.25 mg IV. (ACEP, Lexicomp)
+- **Ethyl chloride** – 100 mL spray; spray 3–7 seconds from 8–23 cm
+  (3–9 inches). (Manufacturer)
+- **Etomidate** – 2 mg/mL (20 mg/10 mL); onset 30–60 seconds, lasts
+  3–5 minutes; 0.3 mg/kg IV; child 0.2–0.3 mg/kg. (Lexicomp)
+- **Fentanyl** – 100 mcg/2 mL; onset 1–2 minutes, lasts 30–60 minutes. Adult
+  25–50 mcg IV every 5 minutes (maximum 200 mcg); 1–2 mcg/kg IN/IM. Child
+  1 mcg/kg IV (maximum single dose 50 mcg); 1.5 mcg/kg IN (maximum
+  100 mcg). (NASEMSO)
+- **Haloperidol** – 5 mg/mL; onset 15–30 minutes IM; 5 mg IM; older adults
+  0.5–2 mg. (BNF)
+- **Hyoscine butylbromide** – 20 mg/mL; onset 10–15 minutes IM; 20 mg IV, IM
+  or SC, repeat after 30 minutes, maximum 100 mg a day. (BNF)
+- **Ibuprofen** – 200 mg and 400 mg; 100 mg/5 mL; onset 30–60 minutes. Adult
+  400 mg; child 10 mg/kg (maximum 400 mg) over 3 months and 5 kg; ask about
+  NSAIDs in the last 6 hours. (BNFc)
+- **Ketamine** – 50 mg/mL (500 mg/10 mL); 10 mg/mL; onset 1 minute IV,
+  3–5 minutes IM. Analgesia 0.1–0.3 mg/kg IV or 0.5–1 mg/kg IN (child
+  1 mg/kg IN); agitation 4–5 mg/kg IM or 1–2 mg/kg IV; RSI 1–2 mg/kg IV.
+  (ACEP, NASEMSO)
+- **Ketorolac** – 30 mg/mL; onset 30 minutes, full effect 1–2 hours; 15 mg IV
+  or 30 mg IM; age under 17 excluded. (FDA label, ACEP)
+- **Lorazepam** – 2 mg/mL or 4 mg/mL; onset 2–3 minutes IV; 4 mg (0.1 mg/kg)
+  over 2 minutes, repeat once after 5–10 minutes; child 0.1 mg/kg (maximum
+  4 mg). (AES 2016)
+- **Methoxyflurane** – 3 mL; 6–10 breaths to onset; one more 3 mL, maximum
+  6 mL a day. (Product information)
+- **Metoclopramide** – 10 mg/2 mL; onset 1–3 minutes IV, 10–15 minutes IM;
+  10 mg slow IV over 3 minutes; child 0.1–0.15 mg/kg, not under 1 year.
+  (BNF/BNFc)
+- **Midazolam** – 5 mg/mL; onset 1–3 minutes IV, 5–10 minutes IM/IN. Seizure
+  10 mg IM over 40 kg, 5 mg IM for 13–40 kg, 0.2 mg/kg IN (maximum 10 mg),
+  IV 0.1–0.2 mg/kg, repeat once after 5–10 minutes. Sedation 1–5 mg IV,
+  5–10 mg IM. (AES 2016)
+- **Morphine** – 10 mg/mL; onset 5 minutes IV, lasts 3–5 hours. 2.5–5 mg IV
+  every 5 minutes (0.1 mg/kg), maximum 10–20 mg per protocol; 5–10 mg IM;
+  child 0.1 mg/kg (maximum single dose 5 mg); avoid if SBP below 90 mmHg.
+  (NASEMSO)
+- **Naloxone** – 0.4 mg/mL; 4 mg spray; onset 1–2 minutes IV, lasts
+  30–90 minutes. 0.04–0.4 mg IV every 2–3 minutes, up to 2 mg; 0.4 mg IM;
+  child 0.01 mg/kg titrated to 0.1 mg/kg (maximum 2 mg). (AHA 2025, PALS)
+- **Nefopam** – 20 mg/2 mL; 20 mg IV infusion over 15 minutes in 100 mL;
+  onset 15–20 minutes. (BNF)
+- **Nitrous oxide 50% / oxygen 50%** – onset 2–3 minutes; self-administered,
+  usually from 5 years; avoid in the first 16 weeks of pregnancy
+  (relative); below 10 °C invert the cylinder. (BOC Entonox, JRCALC)
+- **Ondansetron** – 4 mg/2 mL; 4 mg ODT; onset 15–30 minutes ODT. 4 mg over
+  2–5 minutes, maximum 8 mg; child 0.1 mg/kg (maximum 4 mg); ODT 8–15 kg
+  2 mg, 15–30 kg 4 mg, over 30 kg 4–8 mg. (Lexicomp)
+- **Paracetamol** – 500 mg tablets; 125 mg and 250 mg suppositories; 1 g/100 mL
+  IV; onset 30–60 minutes orally, 5–10 minutes IV. Adult 1 g over
+  15 minutes (15 mg/kg under 50 kg), maximum 4 g a day; fever above 38 °C;
+  not if taken in the last 4 hours. Child 15 mg/kg (maximum 1 g); IV under
+  10 kg 7.5 mg/kg. (BNF/BNFc)
+- **Pethidine** – 50 mg/mL; onset 5 minutes IV, 10–15 minutes IM;
+  25–50 mg IV or 25–100 mg IM, maximum 400 mg a day; child 0.5–1 mg/kg IM;
+  avoid with MAO inhibitors in the last 2 weeks. (BNF)
+- **Promethazine** – 25 mg/mL; onset 20 minutes IM; 12.5–25 mg deep IM; child
+  2 years or older 0.25–0.5 mg/kg (maximum 25 mg); not under 2 years. (FDA
+  boxed warning, Lexicomp)
+- **Propofol** – 10 mg/mL; onset 30 seconds. Induction 1–2 mg/kg (child
+  1–2.5 mg/kg); sedation 5–50 mcg/kg/min (0.3–3 mg/kg/h); discard after
+  6 hours. (Lexicomp)
+- **Rocuronium** – 10 mg/mL; onset 45–60 seconds, lasts 30–60 minutes; RSI
+  1–1.2 mg/kg; maintenance 0.1–0.2 mg/kg. (Lexicomp)
+- **Succinylcholine** – 50 mg/mL; onset 45–60 seconds, lasts 5–10 minutes;
+  1.5 mg/kg (maximum 200 mg); IM 4 mg/kg; child 2 mg/kg under 10 kg,
+  1–1.5 mg/kg; avoid in burns, spinal injury or stroke more than 72 hours
+  old. (Lexicomp)

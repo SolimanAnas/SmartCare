@@ -842,3 +842,14 @@ House style for every image:
     **Image:** A paramedic testing the knee reflex with the edge of the hand, a respiratory rate counter showing 12/min, and a calcium gluconate syringe ready.
 239. **Where:** Hydrocortisone, "Good to know", beside the note.
     **Image:** A steroid emergency card and an emergency hydrocortisone injection kit, with a hand drawing up 100 mg.
+
+### Group C – Sedation, Pain & Nausea
+
+240. **Where:** Midazolam, "Adult doses", beside the seizure card.
+    **Image:** Three routes side by side: an IM injection into the outer thigh, an atomiser in a nostril, and an IV push, each labelled with its seizure dose.
+241. **Where:** Ketamine, "At a glance", before the table.
+    **Image:** A dose ladder for ketamine: low dose for pain, a middle dose for agitation, a full dose for RSI induction, with the effect shown at each step.
+242. **Where:** Naloxone, "Adult doses", beside the cards.
+    **Image:** A rescuer ventilating with a bag-mask while a partner gives a naloxone nasal spray, with a clock showing that naloxone wears off before many opioids.
+243. **Where:** Succinylcholine, "Give or not?", beside the exclude list.
+    **Image:** Icons for the contraindications: a high-potassium ECG, a crushed limb, an old burn, a spinal cord, and a family tree marked "malignant hyperthermia".
