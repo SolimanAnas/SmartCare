@@ -225,3 +225,63 @@ Sources:
   1.5 mg/kg (maximum 200 mg); IM 4 mg/kg; child 2 mg/kg under 10 kg,
   1–1.5 mg/kg; avoid in burns, spinal injury or stroke more than 72 hours
   old. (Lexicomp)
+
+## Group D: fluids, glucose, antidotes, obstetric and other drugs
+
+- **Activated charcoal** – 50 g in 250 mL; ideally within 1 hour; adult 50 g,
+  child 1 g/kg (maximum 50 g). (AACT/EAPCCT position statement)
+- **Ceftriaxone** – 1 g and 2 g vials; 2 g IV over 2–4 minutes or IM split;
+  child 80 mg/kg (maximum 2 g); not with calcium fluids in newborns under
+  28 days. (NICE meningitis, Lexicomp)
+- **Dextrose 5%** – 100 mL (5 g); amiodarone 150 mg in 100 mL. (BNF)
+- **Dextrose 10%** – 25 g/250 mL, 50 g/500 mL; onset 1–2 minutes. Adult
+  100–250 mL (10–25 g) titrated, recheck after 10 minutes; child 5 mL/kg
+  (maximum 250 mL), glucose below 60 mg/dL in children, below 70 mg/dL in
+  adults; newborn 2 mL/kg. (ADA, PALS, JRCALC)
+- **Dextrose 50%** – 25 g/50 mL; 12.5–25 g (25–50 mL) slow IV; child: use
+  D10 5 mL/kg. (ADA)
+- **Furosemide** – 20 mg/2 mL; onset 5 minutes (venodilation), diuresis
+  30 minutes; 40 mg IV over 1–2 minutes. (ESC heart failure)
+- **Glucagon** – 1 mg kit; 3 mg nasal powder (from 4 years); onset about
+  10 minutes. Hypoglycaemia 1 mg IM/SC; child 0.5 mg under 25 kg, 1 mg
+  25 kg or more. Beta-blocker or calcium-channel blocker overdose 50 mcg/kg
+  (3–5 mg) IV over 1–2 minutes, repeat once, then infusion. (ADA,
+  toxicology references)
+- **Oral glucose** – 15 g tube (40% gel); onset 10–15 minutes; 15–20 g,
+  recheck after 15 minutes. (ADA)
+- **Hydroxocobalamin** – 5 g mixed with 200 mL saline; 5 g IV over
+  15 minutes, second 5 g (maximum 10 g); child 70 mg/kg (maximum 5 g).
+  (Cyanokit label)
+- **Hypertonic saline 3%** – 250 mL and 500 mL; 250 mL over 10–20 minutes;
+  child 3–5 mL/kg (maximum 250 mL). TBI targets: SpO₂ 94% or more, ETCO₂
+  35–45 mmHg, SBP 110 mmHg or more. (BTF, NAEMSP)
+- **Misoprostol** – 200 mcg tablets; 800 mcg sublingual once. (WHO 2023)
+- **Sodium chloride 0.9%** – sodium 154 and chloride 154 mmol/L; 100 mL,
+  250 mL, 500 mL and 1 L; adult boluses 250–500 mL; trauma SBP 80–90 mmHg
+  (110 mmHg with head injury); child 10–20 mL/kg, 10 mL/kg if heart disease.
+  (ATLS, PALS)
+- **Oxytocin** – 10 IU/mL; onset 2–3 minutes IM; 10 IU IM; infusion 40 IU in
+  1 L. (WHO 2023)
+- **Pralidoxime** – 1 g vial; auto-injector 600 mg with atropine 2.1 mg;
+  30 mg/kg (1–2 g) IV over 15–30 minutes or up to 3 auto-injectors; child
+  25–50 mg/kg (maximum 2 g). (CHEMM)
+- **Ringer's lactate** – sodium 130, potassium 4, calcium 3 mmol/L; 250 mL,
+  500 mL and 1 L; 250–500 mL boluses; child 10–20 mL/kg. (PALS, Surviving
+  Sepsis)
+- **Thiamine** – 100 mg/mL; 100 mg slow IV over 5 minutes or IM. (BNF, RCP)
+- **Tranexamic acid** – 500 mg/5 mL; within 3 hours. Trauma or TBI 1 g IV over
+  10 minutes then 1 g over 8 hours; postpartum haemorrhage 1 g, second 1 g
+  after 30 minutes; child 15 mg/kg (maximum 1 g). (CRASH-2, CRASH-3, WOMAN,
+  WHO 2023)
+
+## Overview page
+
+The overview groups the 77 drugs: cardiac and resuscitation 20, respiratory
+and allergy 14, sedation, pain and nausea 26, fluids, glucose, antidotes and
+other 17. Its study set reuses the doses above.
+
+- Adenosine half-life is under 10 seconds (AHA 2025): push fast and flush.
+- Sildenafil taken 20 hours ago is still inside the 24 hour window for GTN.
+- Worked examples: an 18 kg child seizing gets midazolam 0.2 mg/kg intranasal
+  = 3.6 mg, or rectal diazepam 0.5 mg/kg = 9 mg; a 22 kg child gets dextrose
+  10% 5 mL/kg = 110 mL.

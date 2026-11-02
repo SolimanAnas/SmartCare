@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 // Topic count per chapter, or the topic numbers where they aren't 1..n.
 const CHAPTERS = { c1: [1, 3, 4, 5, 6, 7, 8, 9, 10], c2: 11, c3: 9, c4: 13, c5: 11, c6: 11, c7: 8, c8: 9, c9: 7, c10: 8 };
 // Formulary drug pages rewritten as guides, by section id.
-const FORMULARY = [2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 69, 77];
+const FORMULARY = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78];
 const topics = [
   ...Object.entries(CHAPTERS).flatMap(([c, n]) =>
     (Array.isArray(n) ? n : Array.from({ length: n }, (_, i) => i + 1)).map(i => [c, `${c}s${i}`])),

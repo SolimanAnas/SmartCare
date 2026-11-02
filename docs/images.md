@@ -853,3 +853,17 @@ House style for every image:
     **Image:** A rescuer ventilating with a bag-mask while a partner gives a naloxone nasal spray, with a clock showing that naloxone wears off before many opioids.
 243. **Where:** Succinylcholine, "Give or not?", beside the exclude list.
     **Image:** Icons for the contraindications: a high-potassium ECG, a crushed limb, an old burn, a spinal cord, and a family tree marked "malignant hyperthermia".
+
+### Group D – Fluids, Glucose, Antidotes & Other
+
+244. **Where:** Dextrose 10%, "Child doses", beside the cards.
+    **Image:** A 250 mL D10 bag with a 50 mL syringe drawing up 5 mL/kg for a child on a scale, and a glucometer reading 48 mg/dL changing to 110 mg/dL.
+245. **Where:** Tranexamic Acid, "Adult doses", beside the postpartum card.
+    **Image:** A clock face shaded for the first 3 hours after injury or birth, with a 1 g TXA dose in 100 mL running over 10 minutes and a second 1 g marked at 30 minutes.
+246. **Where:** Glucagon, "At a glance", before the table.
+    **Image:** A glucagon kit being mixed (powder vial and diluent syringe) beside a 3 mg nasal glucagon device, with an IM injection into the outer thigh.
+
+### Formulary overview
+
+247. **Where:** Drug Formulary overview, before "Drug groups".
+    **Image:** A floating capsule and four colour-coded drug group icons (heart, lungs, syringe, IV bag). The old hero art `images/formulary-capsule.webp` can be reused or redrawn.
