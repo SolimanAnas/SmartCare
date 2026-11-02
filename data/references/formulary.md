@@ -255,6 +255,11 @@ Sources:
 - **Hypertonic saline 3%** – 250 mL and 500 mL; 250 mL over 10–20 minutes;
   child 3–5 mL/kg (maximum 250 mL). TBI targets: SpO₂ 94% or more, ETCO₂
   35–45 mmHg, SBP 110 mmHg or more. (BTF, NAEMSP)
+  Severe symptomatic hyponatraemia (seizures or coma) is dosed separately:
+  adult 100 mL of 3% IV over 10 minutes, repeated up to 3 doses until
+  symptoms stop; child 2 mL/kg over 10 minutes (maximum 100 mL per dose),
+  up to 3 doses. Raise sodium by no more than 10 mmol/L in 24 hours.
+  (US Hyponatremia Expert Panel 2013, ESE/ESICM/ERA-EDTA 2014, Moritz & Ayus)
 - **Misoprostol** – 200 mcg tablets; 800 mcg sublingual once. (WHO 2023)
 - **Sodium chloride 0.9%** – sodium 154 and chloride 154 mmol/L; 100 mL,
   250 mL, 500 mL and 1 L; adult boluses 250–500 mL; trauma SBP 80–90 mmHg

@@ -5249,9 +5249,15 @@ window.CPG_DATA = {
                             "icon": "syringe",
                             "rows": [
                                 {
-                                    "drug": "TBI with herniation signs; hyponatraemic seizures",
+                                    "drug": "TBI with herniation signs",
                                     "dose": "250 mL IV/IO over 10–20 minutes",
                                     "note": "",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Seizures or coma from severe hyponatraemia",
+                                    "dose": "100 mL IV/IO over 10 minutes",
+                                    "note": "Repeat up to 3 doses until symptoms stop; raise sodium by no more than 10 mmol/L in 24 hours",
                                     "level": "ALS"
                                 }
                             ]
@@ -5262,9 +5268,15 @@ window.CPG_DATA = {
                             "icon": "baby",
                             "rows": [
                                 {
-                                    "drug": "Same",
+                                    "drug": "TBI with herniation signs",
                                     "dose": "3–5 mL/kg IV/IO over 10–20 minutes",
                                     "note": "Maximum 250 mL",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Seizures from severe hyponatraemia",
+                                    "dose": "2 mL/kg IV/IO over 10 minutes",
+                                    "note": "Maximum 100 mL per dose; repeat up to 3 doses",
                                     "level": "ALS"
                                 }
                             ]
@@ -5275,11 +5287,12 @@ window.CPG_DATA = {
                             "icon": "circle-check-big",
                             "include": [
                                 "Head injury with signs of herniation (unequal or fixed pupils, extensor posturing, Cushing's triad)",
-                                "Seizures from severe hyponatraemia"
+                                "Seizures or coma from severe hyponatraemia (known low sodium or a strong history, on medical advice)"
                             ],
                             "exclude": [
                                 "Hypernatraemia",
-                                "No signs of raised intracranial pressure"
+                                "No signs of raised intracranial pressure",
+                                "Hyponatraemia without seizures or coma (too-fast correction damages the brain)"
                             ]
                         },
                         {
@@ -5288,7 +5301,8 @@ window.CPG_DATA = {
                             "icon": "triangle-alert",
                             "items": [
                                 "Fluid overload in heart failure",
-                                "Large vein or IO"
+                                "Large vein or IO",
+                                "Hyponatraemia: stop once seizures stop; over-correction causes osmotic demyelination"
                             ]
                         },
                         {
