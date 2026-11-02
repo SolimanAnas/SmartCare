@@ -4,9 +4,11 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   expect: { timeout: 10000 },
-  fullyParallel: false,
+  // Tests are independent (each gets its own browser context), so run them
+  // across workers; the megacode autoplayers alone take minutes in series.
+  fullyParallel: true,
   retries: 1,
-  workers: 1,
+  workers: process.env.CI ? 4 : '50%',
   reporter: [['list'], ['html', { outputFolder: 'playwright-report' }]],
   use: {
     baseURL: 'http://127.0.0.1:8899',
