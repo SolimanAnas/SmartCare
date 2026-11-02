@@ -640,3 +640,74 @@ House style for every image:
     **Image:** A clothes drag: a rescuer pulling a patient by the shirt at the shoulders along the long axis, the patient's head supported between the forearms, smoke in the background.
 181. **Where:** "Positions", before the table.
     **Image:** Small labelled figures: Fowler's (sitting up), recovery position on the side, supine, and a pregnant patient tilted left with a wedge under the right hip.
+
+## Chapter 8 – Environmental & Disaster (accent violet #845ef7)
+
+### c8s1 – Heat-Related Illness
+
+182. **Where:** "Cooling heat stroke", step 1 (exertional).
+    **Image:** An athlete immersed to the neck in a tub of ice water at a sports field, one rescuer supporting the head and stirring the water, another holding a rectal thermometer readout.
+183. **Where:** "Cooling heat stroke", step 3 (classic).
+    **Image:** An older patient on a stretcher stripped to underwear, being misted with a spray bottle while a fan blows across, ice packs at the neck, armpits and groin.
+
+### c8s2 – Cold Exposure & Hypothermia
+
+184. **Where:** "Stage it (Swiss staging)", before the table.
+    **Image:** Four figures in a row: shivering and alert; drowsy and not shivering; unconscious; no signs of life – each with a thermometer band in °C.
+185. **Where:** "Everyone", step 2 (stop heat loss).
+    **Image:** A "hypothermia wrap": insulating mat underneath, vapour barrier, sleeping bag, outer shell, head covered, heat packs on the chest and armpits.
+186. **Where:** "Local cold injuries", in the "Frostbite" row.
+    **Image:** Hands with waxy white fingertips (frostbite) beside a basin of water with a thermometer reading 37–39 °C.
+
+### c8s3 – Drowning & Submersion Injury
+
+187. **Where:** "Rescue safely", before the list.
+    **Image:** Reach, throw, row, go: four small panels – a pole, a throw bag, a boat, and a trained swimmer with a flotation device.
+188. **Where:** "Not breathing", step 1 (rescue breaths).
+    **Image:** A rescuer on a pool deck giving bag-mask breaths to a child, foam at the mouth, suction ready beside them.
+
+### c8s4 – Diving & Altitude Emergencies
+
+189. **Where:** "After a dive", before the table.
+    **Image:** A diver lying flat on a boat deck on 100% oxygen by mask, with a dive computer beside him and a timeline showing gas embolism (minutes) and decompression sickness (hours).
+190. **Where:** "Altitude illness", before the table.
+    **Image:** A mountain profile with arrows showing descent of 300–1000 m and three climbers: one with a headache (AMS), one staggering (HACE), one breathless with a cough (HAPE).
+
+### c8s5 – Bites, Stings & Envenomation
+
+191. **Where:** "Snakebite", step 3 (mark it).
+    **Image:** A bitten lower leg splinted at heart level with a pen line and times drawn at the edge of the swelling every 15 minutes.
+192. **Where:** "Snakebite", step 4 (neurotoxic snakes).
+    **Image:** A pressure-immobilisation bandage being wrapped from the fingers up the whole arm, with a splint, labelled "elapids only".
+193. **Where:** "Never", beside the list.
+    **Image:** Crossed-out icons: knife and mouth (cut and suck), a tourniquet, an ice pack, an electric shock device, a bottle of alcohol.
+
+### c8s6 – Hazardous Materials & Radiation
+
+194. **Where:** "Arriving", step 4 (zones).
+    **Image:** Overhead view of a spill with red hot zone, yellow warm zone containing a decontamination corridor, and green cold zone with the ambulance and command post upwind.
+195. **Where:** "Placard colours", before the table.
+    **Image:** Eight diamond placards in a grid in their correct colours and symbols: orange explosive, red flame, green cylinder, white skull, red-white stripes, yellow oxidiser, yellow-white trefoil, black-white corrosive.
+196. **Where:** "Decontamination", step 1 (strip).
+    **Image:** A patient's clothing being cut off and placed into a labelled bag, with "up to 90%" written beside it.
+
+### c8s7 – CBRNE & Terrorism Response
+
+197. **Where:** "Chemical agents", in the "Nerve agents" row.
+    **Image:** A patient with pinpoint pupils, drooling and tearing, beside a nerve agent auto-injector being pressed into the outer thigh.
+198. **Where:** "Biological agents", in the "Smallpox" row.
+    **Image:** Two body outlines comparing rashes: smallpox densest on face and limbs with all lesions alike, chickenpox mainly on the trunk with lesions at different stages.
+
+### c8s8 – Mass-Casualty Incidents & Triage
+
+199. **Where:** "START (adults)", before the pathways.
+    **Image:** A START flowchart with walking → green, breathing check, respiratory rate over 30 → red, radial pulse or refill → red, follows commands → yellow, and tag colours along the bottom.
+200. **Where:** "Colours", before the table.
+    **Image:** Four triage tags laid side by side – red, yellow, green and black – each with a tear-off strip.
+
+### c8s9 – Incident Command System (ICS)
+
+201. **Where:** "Structure", before the groups.
+    **Image:** An ICS organisation chart: Incident Commander at the top, Safety, Public Information and Liaison to the side, and Operations, Planning, Logistics and Finance/Administration below, with the Medical Branch expanded under Operations.
+202. **Where:** "Medical Branch", before the table.
+    **Image:** A scene layout with triage at the entrance, red, yellow and green treatment tarps, a transport loading point and a line of ambulances in staging.
