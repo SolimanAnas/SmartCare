@@ -7,379 +7,1024 @@ window.CPG_DATA = {
         {
             id: "formulary-overview",
             shortTitle: "Full Drug Formulary",
-            summary: `
-                <div class="fx-hero">
-                    <div class="fx-top">
-                        <div class="fx-text">
-                            <span class="fx-eyebrow"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book-open"/></svg> Chapter 11</span>
-                            <h2 class="fx-title">Medication <span>Formulary</span></h2>
-                            <p class="fx-lead">Every prehospital drug with its full monograph, plus weight-based dosing for pediatric patients.</p>
-                        </div>
-                        <div class="fx-art"><img src="../images/formulary-capsule.webp" alt="" width="420" height="382" decoding="async"></div>
-                    </div>
-                    <div class="fx-stats">
-                        <div class="fx-stat"><b>77</b><small>Medications</small></div>
-                        <div class="fx-stat"><b>6</b><small>Categories</small></div>
-                        <div class="fx-stat"><b>31</b><small>Calculators</small></div>
-                    </div>
-                    <div class="fx-actions">
-                        <a class="fx-btn fx-btn-primary" href="../pages/drug-index.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#book"/></svg> Browse all</a>
-                        <a class="fx-btn fx-btn-ghost" href="../pages/med-index.html"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#scale"/></svg> Calculator</a>
-                    </div>
-                    <p class="fx-hint"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-up"/></svg> Or open any medication from the tabs above</p>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:var(--primary-accent);"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg> Cardiac / Resus</h3>
-                    <ul>
-                        <li><strong>Adenosine:</strong> SVT — 0.1 mg/kg IV rapid push (max 6 mg); 2nd dose 0.2 mg/kg (max 12 mg). Follow with NS flush.</li>
-                        <li><strong>Amiodarone:</strong> Arrest (VT/VF) 5 mg/kg IV/IO; Wide-complex tachycardia 5 mg/kg over 20 min.</li>
-                        <li><strong>Atropine:</strong> Bradycardia 0.02 mg/kg IV/IO q3-5 min (min 0.1 mg, max 0.5 mg peds / 3 mg adult); Organophosphate 2–4 mg IV until secretions dry.</li>
-                        <li><strong>Epinephrine:</strong> Arrest 0.01 mg/kg (1:10,000) IV/IO q3-5 min; Anaphylaxis 0.01 mg/kg (1:1,000) IM (max 0.5 mg).</li>
-                        <li><strong>Labetalol:</strong> Pre-eclampsia/eclampsia hypertension — 20 mg IV over 2 min, repeat q10 min (max 80 mg).</li>
-                    </ul>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:#10b981;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg> Airway / Respiratory</h3>
-                    <ul>
-                        <li><strong>Salbutamol:</strong> Bronchospasm — Nebulized: Adult 5 mg; Peds &lt;5y 2.5 mg, ≥5y 5 mg.</li>
-                        <li><strong>Combivent:</strong> Asthma/COPD — 2.5 ml nebulized (Salbutamol 2.5 mg + Ipratropium 0.5 mg).</li>
-                        <li><strong>Racemic Epi:</strong> Croup — &gt;4y: 0.5 ml; &lt;4y: 0.05 ml/kg nebulized in 3 ml NS.</li>
-                        <li><strong>Hydrocortisone:</strong> Anaphylaxis/Asthma — 2 mg/kg IV/IM/IO.</li>
-                        <li><strong>Magnesium Sulphate:</strong> Severe asthma/eclampsia — Adult 2 g IV over 20 min; Peds 40 mg/kg.</li>
-                        <li><strong>Methoxyflurane (Penthrox inhaler):</strong> Pain — 3 ml inhaled, self-administered (max 6 ml/24 h adult).</li>
-                    </ul>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:#8b5cf6;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#brain"/></svg> Neuro / Sedation</h3>
-                    <ul>
-                        <li><strong>Diazepam:</strong> Seizures — Adult 5 mg IV; Peds 0.1 mg/kg IV/IO (max 5 mg) or 0.5 mg/kg PR (max 20 mg).</li>
-                        <li><strong>Haloperidol:</strong> Acute psychosis — 5 mg IM only. Not IV. Not pediatric.</li>
-                    </ul>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:#f97316;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg> Pain Management</h3>
-                    <ul>
-                        <li><strong>Morphine:</strong> Severe pain — IV 2.5 mg q5 min (max 10 mg); Peds 0.1 mg/kg IV/IM/IO.</li>
-                        <li><strong>Paracetamol:</strong> Pain/Fever — Adult 1 g IV/PO (max 4 g/24h); Peds 10 mg/kg IV slow.</li>
-                        <li><strong>Diclofenac:</strong> Moderate-severe pain — 75 mg IM or IV in 100 ml NS over 10 min.</li>
-                        <li><strong>GTN:</strong> Cardiac chest pain — 0.4 mg SL spray q3-5 min (max 3 sprays). No hypotension.</li>
-                        <li><strong>Nefopam:</strong> Moderate pain — 20 mg IV in 100 ml NS over 5 min. Avoid in epilepsy/renal impairment.</li>
-                    </ul>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:#06b6d4;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg> Metabolic / Fluids</h3>
-                    <ul>
-                        <li><strong>Dextrose 10%:</strong> Hypoglycemia (&lt;70 mg/dl) — 10 ml/kg IV/IO (max 125 ml peds); Adult 125–250 ml.</li>
-                        <li><strong>Glucose 40% Oral Paste:</strong> Hypoglycemia (conscious) — Adult 1 tube (15 g); Peds ½ tube. Swallow only.</li>
-                        <li><strong>Glucagon:</strong> Hypoglycemia/BB overdose — &gt;25 kg: 1 mg IM/SC; &lt;25 kg: 0.5 mg IM/SC.</li>
-                        <li><strong>Normal Saline:</strong> Volume replacement — Peds 10 ml/kg bolus (max 500 ml).</li>
-                        <li><strong>Lactated Ringers:</strong> Volume replacement — Not for age &lt;1 month, DKA, or liver failure.</li>
-                    </ul>
-                </div>
-                <div class="sum-card">
-                    <h3 style="color:#94a3b8;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg> Other Medications</h3>
-                    <ul>
-                        <li><strong>Aspirin:</strong> ACS — 324 mg (4×81 mg) chewed. Not if already taken in last 60 min.</li>
-                        <li><strong>Naloxone:</strong> Opioid overdose — IV/IM 0.4 mg q3 min (max 2 mg); IN 4 mg q3 min. Titrate to respiratory effort.</li>
-                        <li><strong>TXA:</strong> Trauma/PPH bleeding — 1 g IV over 10 min (within 3 h of onset); Peds 15 mg/kg.</li>
-                        <li><strong>Furosemide:</strong> Pulmonary edema — 40 mg IV slow over 1–2 min. Adult only.</li>
-                        <li><strong>Diphenhydramine:</strong> Allergic reaction — 1 mg/kg IM/IV (max 50 mg).</li>
-                        <li><strong>Metoclopramide:</strong> Nausea/vomiting — 10 mg IV/IM adult slow over 3 min.</li>
-                        <li><strong>Hyoscine:</strong> Abdominal cramping — 20 mg IV/IM/SC. Not pediatric.</li>
-                    </ul>
-                </div>
-                <div class="sum-card red-flag">
-                    <h3><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg>️ High-Alert Drug Reminders</h3>
-                    <ul>
-                        <li><strong>Adenosine:</strong> Must be given as a RAPID IV push + 10–20 ml NS flush immediately after.</li>
-                        <li><strong>Amiodarone:</strong> Always dilute in D5W (NOT NS). Incompatible with NS.</li>
-                        <li><strong>GTN:</strong> Contraindicated if SBP &lt;100 mmHg or patient took PDE-5 inhibitor in 24–48 h.</li>
-                        <li><strong>Haloperidol:</strong> IM only in prehospital setting — never IV push.</li>
-                        <li><strong>Morphine:</strong> Monitor RR closely — have Naloxone ready.</li>
-                        <li><strong>TXA:</strong> Must be given within 3 hours of injury/PPH onset — ineffective after.</li>
-                        <li><strong>Glucose 40% paste:</strong> Swallow only — NOT buccally absorbed.</li>
-                    </ul>
-                </div>
-            `,
-
+            guide: {
+                "group": "formulary",
+                "groupLabel": "Drug Formulary",
+                "title": "Drug Formulary",
+                "lead": "77 emergency drugs, each on its own page: what it's for, adult and child doses, who should not get it, and what to watch for. Doses follow general international (AHA, ERC, WHO, BNF) practice; your local protocol decides who may give what.",
+                "sections": [
+                    {
+                        "type": "table",
+                        "title": "Drug groups",
+                        "icon": "pill",
+                        "stack": true,
+                        "columns": [
+                            "Group",
+                            "Drugs"
+                        ],
+                        "rows": [
+                            [
+                                "Cardiac & resuscitation (20)",
+                                "Adenosine, amiodarone, aspirin, atropine, calcium chloride and gluconate, clopidogrel, diltiazem, dopamine, epinephrine, GTN, heparin, labetalol, lidocaine, metoprolol, norepinephrine, procainamide, sodium bicarbonate, ticagrelor, vasopressin"
+                            ],
+                            [
+                                "Respiratory & allergy (14)",
+                                "Budesonide, chlorphenamine, Combivent, dexamethasone, diphenhydramine, hydrocortisone, ipratropium, magnesium sulfate, methylprednisolone, oxygen, prednisolone, racemic epinephrine, salbutamol, terbutaline"
+                            ],
+                            [
+                                "Sedation, pain & nausea (26)",
+                                "Diazepam, diclofenac, droperidol, ethyl chloride, etomidate, fentanyl, haloperidol, hyoscine, ibuprofen, ketamine, ketorolac, lorazepam, methoxyflurane, metoclopramide, midazolam, morphine, naloxone, nefopam, Entonox, ondansetron, paracetamol, pethidine, promethazine, propofol, rocuronium, succinylcholine"
+                            ],
+                            [
+                                "Fluids, glucose, antidotes & other (17)",
+                                "Activated charcoal, ceftriaxone, D5W, D10, D50, furosemide, glucagon, oral glucose, hydroxocobalamin, hypertonic saline, misoprostol, normal saline, oxytocin, pralidoxime, Ringer's lactate, thiamine, tranexamic acid"
+                            ]
+                        ]
+                    },
+                    {
+                        "type": "steps",
+                        "title": "Before every drug",
+                        "icon": "clipboard-list",
+                        "steps": [
+                            {
+                                "title": "Five rights",
+                                "text": "Right patient, drug, dose, route and time – and write it down."
+                            },
+                            {
+                                "title": "Ask",
+                                "text": "Allergies and what they already took (aspirin, GTN, sildenafil, insulin)."
+                            },
+                            {
+                                "title": "Read the vial",
+                                "text": "Check the concentration: epinephrine 1 mg/mL is IM, 0.1 mg/mL is IV."
+                            },
+                            {
+                                "title": "Children",
+                                "text": "Weigh or estimate the weight, use the calculator and say the dose out loud."
+                            },
+                            {
+                                "title": "Reassess",
+                                "text": "After every dose: vital signs, ETCO₂ and the effect you wanted."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "list",
+                        "title": "High-alert reminders",
+                        "icon": "triangle-alert",
+                        "items": [
+                            "Adenosine: rapid push with a saline flush – it lasts seconds",
+                            "Amiodarone: dilute only in D5W, never saline",
+                            "GTN: not if SBP is below 90 mmHg, or after sildenafil in 24 hours (tadalafil 48 hours)",
+                            "Naloxone: titrate to breathing, not to waking up",
+                            "Opioids and benzodiazepines: bag-mask and ETCO₂ ready",
+                            "Tranexamic acid: only within 3 hours of injury or birth",
+                            "Oral glucose: only if awake and able to swallow"
+                        ]
+                    },
+                    {
+                        "type": "tools",
+                        "title": "Tools",
+                        "icon": "monitor",
+                        "groups": [
+                            {
+                                "title": "Use it",
+                                "items": [
+                                    {
+                                        "label": "Drug calculator",
+                                        "sub": "Weight-based doses and volumes",
+                                        "href": "../pages/drug-calculator.html",
+                                        "icon": "syringe"
+                                    },
+                                    {
+                                        "label": "Drug index",
+                                        "sub": "All emergency drugs",
+                                        "href": "../pages/drug-index.html",
+                                        "icon": "book-open"
+                                    },
+                                    {
+                                        "label": "Medication index",
+                                        "sub": "Find a drug fast",
+                                        "href": "../pages/med-index.html",
+                                        "icon": "search"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
             flashcards: [
-                /* ── CARDIAC / RESUS ── */
-                { category: "Cardiac", question: "Adenosine: SVT 1st dose (adult)?", answer: "6 mg IV rapid push\n(0.1 mg/kg pediatric)\nFollow immediately with 10–20 ml NS flush" },
-                { category: "Cardiac", question: "Adenosine: SVT 2nd dose (adult)?", answer: "12 mg IV rapid push\n(0.2 mg/kg pediatric, max 12 mg)" },
-                { category: "Cardiac", question: "Adenosine: Critical administration tip?", answer: "Must be given as RAPID PUSH — the faster the better.\nFlush immediately with 10–20 ml NS.\nConsider arm elevation." },
-                { category: "Cardiac", question: "Amiodarone: Cardiac arrest dose?", answer: "5 mg/kg IV/IO\n(after 3rd shock in VF/VT)" },
-                { category: "Cardiac", question: "Amiodarone: Stable wide-complex tachycardia dose?", answer: "5 mg/kg IV/IO over 20 minutes" },
-                { category: "Cardiac", question: "Amiodarone: What is the correct diluent?", answer: "Dextrose 5% Water (D5W) ONLY\nNever Normal Saline — incompatible" },
-                { category: "Cardiac", question: "Atropine: Bradycardia dose?", answer: "0.02 mg/kg IV/IO q3-5 min\nMin: 0.1 mg | Peds max: 0.5 mg | Adult max: 3 mg" },
-                { category: "Cardiac", question: "Atropine: Organophosphate poisoning dose?", answer: "2–4 mg IV q5-10 min\nTitrate until secretions dry (not HR)" },
-                { category: "Cardiac", question: "Epinephrine: Cardiac arrest dose?", answer: "0.01 mg/kg (1:10,000) IV/IO\nAdult: 1 mg IV/IO every 3–5 min" },
-                { category: "Cardiac", question: "Epinephrine: Anaphylaxis dose?", answer: "0.01 mg/kg (1:1,000) IM (lateral thigh)\nMax: 0.3 mg pediatric / 0.5 mg adult" },
-                { category: "Cardiac", question: "Epinephrine: Push-dose for bradycardia?", answer: "10–20 mcg IV bolus (1:100,000 dilution)\nRepeat q2-5 min as needed" },
-                { category: "Cardiac", question: "Labetalol: Indication in obstetrics?", answer: "Pre-eclampsia with severe hypertension / Eclampsia\n(SBP ≥160 or DBP ≥110 mmHg)" },
-                { category: "Cardiac", question: "Labetalol: Dose?", answer: "20 mg IV over 2 minutes\nRepeat 40–80 mg q10 min — max 80 mg total" },
-
-                /* ── AIRWAY / RESPIRATORY ── */
-                { category: "Airway", question: "Salbutamol: Dose for adult bronchospasm?", answer: "5 mg nebulized in max 5 ml NS\nRepeat q20 min x3 if needed" },
-                { category: "Airway", question: "Salbutamol: Pediatric dose?", answer: "<5 years: 2.5 mg nebulized\n≥5 years: 5 mg nebulized" },
-                { category: "Airway", question: "Combivent: Contents?", answer: "Salbutamol 2.5 mg + Ipratropium 0.5 mg\nNebulize 2.5 ml, dilute to max 5 ml NS" },
-                { category: "Airway", question: "Racemic Epinephrine: Indication?", answer: "Croup (stridor, barking cough)\nPost-extubation stridor" },
-                { category: "Airway", question: "Racemic Epinephrine: Dose?", answer: ">4 years: 0.5 ml nebulized in 3 ml NS\n<4 years: 0.05 ml/kg (max 0.5 ml) in 3 ml NS" },
-                { category: "Airway", question: "Hydrocortisone: Dose for anaphylaxis/asthma?", answer: "2 mg/kg IV/IM/IO\nAlternative: <1y 25 mg, 1-5y 50 mg, >5y 100 mg" },
-                { category: "Airway", question: "Magnesium Sulphate: Severe asthma dose?", answer: "Adult: 2 g IV/IO over 20 min\nPediatric: 40 mg/kg IV/IO over 20 min" },
-                { category: "Airway", question: "Magnesium Sulphate: Eclampsia dose?", answer: "4 g IV over 5-10 min (loading)\nMonitor for loss of reflexes and respiratory depression" },
-                { category: "Airway", question: "Methoxyflurane (Penthrox inhaler): Route and dose?", answer: "Inhaled, self-administered via green whistle inhaler\n3 ml per episode, max 6 ml/24 h (adult)\nPediatric: max 3 ml" },
-
-                /* ── NEURO / SEDATION ── */
-                { category: "Neuro", question: "Diazepam: Seizure dose (adult)?", answer: "5 mg IV slow (over 2 min)\nRepeat once if no effect after 5 min" },
-                { category: "Neuro", question: "Diazepam: Seizure dose (pediatric)?", answer: "IV/IO: 0.1 mg/kg (max 5 mg)\nPR (rectal): 0.5 mg/kg (max 20 mg)" },
-                { category: "Neuro", question: "Diazepam: What is the reversal agent?", answer: "Flumazenil (not prehospital)\nSupport airway — have BVM ready" },
-                { category: "Neuro", question: "Haloperidol: Indication?", answer: "Acute psychosis / agitated patient (suspected mental health illness)" },
-                { category: "Neuro", question: "Haloperidol: Dose and route?", answer: "5 mg IM only\nNEVER IV in prehospital setting\nNot for pediatric use" },
-
-                /* ── PAIN ── */
-                { category: "Pain", question: "Morphine: Adult dose for severe pain?", answer: "IV: 2.5 mg increments q5 min (max 10 mg)\nIM: 2–10 mg (max 20 mg)\nMonitor RR — Naloxone reversal ready" },
-                { category: "Pain", question: "Morphine: Pediatric dose?", answer: "0.1 mg/kg IV/IM/IO\nMax single dose 5 mg" },
-                { category: "Pain", question: "GTN: Indication?", answer: "Cardiac chest pain (ACS/suspected MI)\nAcute pulmonary edema" },
-                { category: "Pain", question: "GTN: Dose and route?", answer: "0.4 mg SL spray q3-5 min\nMax 3 sprays (1.2 mg total)\nDo NOT shake bottle" },
-                { category: "Pain", question: "GTN: Contraindications?", answer: "SBP <100 mmHg\nPDE-5 inhibitor use in last 24-48 h (Sildenafil/Viagra)\nRV infarction" },
-                { category: "Pain", question: "Paracetamol: Adult dose?", answer: "1000 mg IV over 10-15 min or PO\nMax 4 g per 24 hours\nReduce dose in hepatic impairment" },
-                { category: "Pain", question: "Paracetamol: Pediatric IV dose?", answer: "10 mg/kg IV slow over 10-15 min\nPR: <5y 125 mg, ≥5y 250 mg" },
-                { category: "Pain", question: "Diclofenac: Dose and route?", answer: "75 mg IM (large muscle) OR IV diluted in 100 ml NS over 10 min\nDo not repeat dose prehospital" },
-                { category: "Pain", question: "Nefopam: Dose and contraindications?", answer: "20 mg IV in 100 ml NS over 5 min\nContraindicated: Epilepsy, STEMI/NSTEMI, Renal impairment, <13 years" },
-
-                /* ── METABOLIC / FLUIDS ── */
-                { category: "Metabolic", question: "Dextrose 10%: Hypoglycemia threshold?", answer: "Blood glucose <70 mg/dl" },
-                { category: "Metabolic", question: "Dextrose 10%: Adult dose?", answer: "125–250 ml IV/IO\nRecheck glucose after 5-10 min" },
-                { category: "Metabolic", question: "Dextrose 10%: Pediatric dose?", answer: "10 ml/kg IV/IO (max 125 ml in children)\nNeonates: 2 ml/kg D10W" },
-                { category: "Metabolic", question: "Glucose 40% Oral Paste: Indication?", answer: "Hypoglycemia in a CONSCIOUS patient who can swallow\nNOT for unconscious patients" },
-                { category: "Metabolic", question: "Glucose 40% Oral Paste: Dose?", answer: "Adult: 1 tube (15 g)\nPediatric: ½ tube\nMust be SWALLOWED — not buccally absorbed" },
-                { category: "Metabolic", question: "Glucagon: Dose by weight?", answer: ">6 years or >25 kg: 1 mg IM/SC\n<6 years or <25 kg: 0.5 mg IM/SC\nRepeat q10-15 min; up to 5 mg for BB/CCB overdose" },
-                { category: "Metabolic", question: "Normal Saline: Pediatric fluid bolus?", answer: "10 ml/kg IV/IO bolus\nMax 500 ml — reassess after each bolus" },
-                { category: "Metabolic", question: "Lactated Ringers: Key contraindications?", answer: "<1 month of age\nDKA (may worsen)\nHypervolemia\nLiver failure" },
-
-                /* ── OTHER MEDICATIONS ── */
-                { category: "Other", question: "Aspirin: Dose for ACS?", answer: '324 mg (4 × 81 mg tablets) CHEWED\nIf already taken in last 60 min <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> give additional to reach 324 mg total' },
-                { category: "Other", question: "Naloxone: Opioid overdose dose?", answer: "IV/IM: 0.4 mg q3 min (max 2 mg)\nIN: 4 mg q3 min\nPeds: 0.01 mg/kg IV/IM/IO q3 min\nTitrate to restore respirations ONLY — do not over-reverse" },
-                { category: "Other", question: "Naloxone: Why titrate carefully?", answer: "Over-reversal causes acute withdrawal: agitation, vomiting, tachycardia, hypertension\nGoal: adequate spontaneous respirations, not full consciousness" },
-                { category: "Other", question: "Tranexamic Acid (TXA): Indication?", answer: "Uncontrolled traumatic bleeding OR postpartum hemorrhage\nMust be within 3 hours of onset of bleeding" },
-                { category: "Other", question: "TXA: Dose?", answer: "Adult: 1 g IV in 100 ml NS over 10 min (single dose)\nPediatric: 15 mg/kg IV over 10 min" },
-                { category: "Other", question: "Furosemide: Indication and dose?", answer: "Acute pulmonary edema with fluid overload\n40 mg IV slowly over 1–2 min\nADULT ONLY — not for pediatric prehospital use" },
-                { category: "Other", question: "Diphenhydramine: Dose?", answer: "1 mg/kg IM/IV (max 50 mg)\nIM preferred\nIV: dilute in 100 ml NS adult (1 ml/kg NS peds) over 5 min" },
-                { category: "Other", question: "Metoclopramide: Dose?", answer: "Adult: 10 mg IV/IM slow (3 min) or diluted in 100 ml NS\nPeds: 0.1 mg/kg IV/IM — generally not recommended (extrapyramidal risk)" },
-                { category: "Other", question: "Hyoscine Butylbromide: Indication?", answer: "Lower abdominal cramping: gastroenteritis, renal colic, IBS, dysmenorrhea\n20 mg IV/IM/SC — adult only" }
+                {
+                    "category": "Cardiac",
+                    "question": "Adenosine: SVT 1st dose (adult)?",
+                    "answer": "6 mg rapid IV push with a 20 mL saline flush (child 0.1 mg/kg, maximum 6 mg)"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Adenosine: SVT 2nd dose (adult)?",
+                    "answer": "12 mg rapid IV push (child 0.2 mg/kg, maximum 12 mg)"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Adenosine: key administration tip?",
+                    "answer": "Rapid push and immediate flush, arm raised; record the strip during the dose."
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Amiodarone: cardiac arrest dose?",
+                    "answer": "Adult 300 mg IV/IO after the 3rd shock, then 150 mg after the 5th. Child 5 mg/kg."
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Amiodarone: stable wide-complex tachycardia dose?",
+                    "answer": "150 mg IV over 10 minutes in 100 mL D5W"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Amiodarone: which diluent?",
+                    "answer": "Dextrose 5% (D5W), not saline"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Atropine: bradycardia dose?",
+                    "answer": "Adult 1 mg IV every 3–5 minutes (maximum 3 mg). Child 0.02 mg/kg (minimum 0.1 mg, maximum 0.5 mg)."
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Atropine: organophosphate dose?",
+                    "answer": "2 mg IV/IM, doubling every 5 minutes until secretions dry"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Epinephrine: cardiac arrest dose?",
+                    "answer": "Adult 1 mg (0.1 mg/mL) IV/IO every 3–5 minutes. Child 0.01 mg/kg."
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Epinephrine: anaphylaxis dose?",
+                    "answer": "0.01 mg/kg of 1 mg/mL IM in the outer thigh: adult 0.5 mg, child maximum 0.5 mg"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Epinephrine: push dose for bradycardia or shock?",
+                    "answer": "10–20 mcg IV every 2–5 minutes"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Labetalol: obstetric indication?",
+                    "answer": "Severe hypertension in pregnancy: 160/110 mmHg or more"
+                },
+                {
+                    "category": "Cardiac",
+                    "question": "Labetalol: dose?",
+                    "answer": "20 mg IV over 2 minutes, then 40 mg, then 80 mg every 10 minutes; maximum 300 mg"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Salbutamol: adult dose?",
+                    "answer": "5 mg nebulised, repeat every 20 minutes or back-to-back if severe; or 4–10 puffs by spacer"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Salbutamol: child dose?",
+                    "answer": "Under 5 years 2.5 mg; 5 years or older 2.5–5 mg nebulised"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Combivent: contents?",
+                    "answer": "Salbutamol 2.5 mg + ipratropium 0.5 mg in one 2.5 mL nebule (adults)"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Racemic epinephrine: indication?",
+                    "answer": "Croup with stridor at rest; post-extubation stridor"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Racemic epinephrine: dose?",
+                    "answer": "0.05 mL/kg of 2.25% (maximum 0.5 mL) in 3 mL saline nebulised"
+                },
+                {
+                    "category": "Airway",
+                    "question": "Hydrocortisone: doses?",
+                    "answer": "Severe asthma: 4 mg/kg IV (maximum 100 mg). Adrenal crisis: under 1 year 25 mg, 1–5 years 50 mg, 6 years or more 100 mg."
+                },
+                {
+                    "category": "Airway",
+                    "question": "Magnesium sulfate: severe asthma dose?",
+                    "answer": "Adult 2 g IV over 20 minutes. Child 40 mg/kg (maximum 2 g)."
+                },
+                {
+                    "category": "Airway",
+                    "question": "Magnesium sulfate: eclampsia dose?",
+                    "answer": "4–6 g IV over 20–30 minutes, or 10 g IM if no IV. Watch reflexes and breathing."
+                },
+                {
+                    "category": "Airway",
+                    "question": "Methoxyflurane (Penthrox): route and dose?",
+                    "answer": "Self-administered inhaler: 3 mL, one more 3 mL if needed; maximum 6 mL a day"
+                },
+                {
+                    "category": "Neuro",
+                    "question": "Diazepam: seizure dose (adult)?",
+                    "answer": "0.15–0.2 mg/kg IV, maximum 10 mg per dose; repeat once after 5 minutes"
+                },
+                {
+                    "category": "Neuro",
+                    "question": "Diazepam: seizure dose (child)?",
+                    "answer": "IV/IO 0.1–0.2 mg/kg (maximum 10 mg). Rectal 0.5 mg/kg (maximum 20 mg)."
+                },
+                {
+                    "category": "Neuro",
+                    "question": "Benzodiazepine overdose: what do you do?",
+                    "answer": "Support the airway and breathing with a bag-mask; flumazenil is not a prehospital drug"
+                },
+                {
+                    "category": "Neuro",
+                    "question": "Haloperidol: indication?",
+                    "answer": "Severe agitation from psychosis"
+                },
+                {
+                    "category": "Neuro",
+                    "question": "Haloperidol: dose and route?",
+                    "answer": "5 mg IM (older adults 0.5–2 mg); not for children prehospital"
+                },
+                {
+                    "category": "Pain",
+                    "question": "Morphine: adult dose for severe pain?",
+                    "answer": "2.5–5 mg IV every 5 minutes, titrated; 5–10 mg IM if no IV. Naloxone ready."
+                },
+                {
+                    "category": "Pain",
+                    "question": "Morphine: child dose?",
+                    "answer": "0.1 mg/kg IV, titrated; maximum single dose 5 mg"
+                },
+                {
+                    "category": "Pain",
+                    "question": "GTN: indications?",
+                    "answer": "Ischaemic chest pain; acute pulmonary oedema with high BP"
+                },
+                {
+                    "category": "Pain",
+                    "question": "GTN: dose and route?",
+                    "answer": "0.4 mg sublingual every 5 minutes, up to 3 doses"
+                },
+                {
+                    "category": "Pain",
+                    "question": "GTN: contraindications?",
+                    "answer": "SBP below 90 mmHg; sildenafil or vardenafil in 24 hours, tadalafil in 48 hours; right ventricular infarction"
+                },
+                {
+                    "category": "Pain",
+                    "question": "Paracetamol: adult dose?",
+                    "answer": "1 g orally or IV over 15 minutes; maximum 4 g a day"
+                },
+                {
+                    "category": "Pain",
+                    "question": "Paracetamol: child IV dose?",
+                    "answer": "15 mg/kg (7.5 mg/kg if under 10 kg) over 15 minutes"
+                },
+                {
+                    "category": "Pain",
+                    "question": "Diclofenac: dose and route?",
+                    "answer": "75 mg deep IM; IV only as a diluted infusion where protocol allows"
+                },
+                {
+                    "category": "Pain",
+                    "question": "Nefopam: dose and contraindications?",
+                    "answer": "20 mg IV in 100 mL saline over 15 minutes. Not with seizures, MI, severe kidney disease or in children."
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Hypoglycaemia threshold?",
+                    "answer": "Below 70 mg/dL in adults (below 60 mg/dL in children)"
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Dextrose 10%: adult dose?",
+                    "answer": "100–250 mL (10–25 g) IV/IO, titrated; recheck glucose after 10 minutes"
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Dextrose 10%: child dose?",
+                    "answer": "5 mL/kg IV/IO (maximum 250 mL); newborns 2 mL/kg"
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Oral glucose: indication?",
+                    "answer": "Hypoglycaemia in a patient who is awake and can swallow"
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Oral glucose: dose?",
+                    "answer": "Adult 15–20 g (1 tube); child half to one tube. Recheck after 15 minutes."
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Glucagon: doses?",
+                    "answer": "Hypoglycaemia: 1 mg IM (0.5 mg if under 25 kg). Beta-blocker overdose: 50 mcg/kg IV."
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Normal saline: child fluid bolus?",
+                    "answer": "10–20 mL/kg, then reassess (10 mL/kg if heart disease is possible)"
+                },
+                {
+                    "category": "Metabolic",
+                    "question": "Ringer's lactate: cautions?",
+                    "answer": "Not in the same line as ceftriaxone; fluid overload; severe hyperkalaemia (prefer saline)"
+                },
+                {
+                    "category": "Other",
+                    "question": "Aspirin: ACS dose?",
+                    "answer": "324 mg (4 × 81 mg) chewed; top up to 324 mg if some was taken in the last hour"
+                },
+                {
+                    "category": "Other",
+                    "question": "Naloxone: opioid overdose dose?",
+                    "answer": "Adult 0.04–0.4 mg IV titrated (up to 2 mg), or 0.4 mg IM, or 4 mg intranasal. Child 0.01 mg/kg."
+                },
+                {
+                    "category": "Other",
+                    "question": "Naloxone: why titrate?",
+                    "answer": "Over-reversal causes vomiting, agitation and withdrawal; the goal is adequate breathing"
+                },
+                {
+                    "category": "Other",
+                    "question": "Tranexamic acid: indication?",
+                    "answer": "Major trauma bleeding or postpartum haemorrhage, within 3 hours"
+                },
+                {
+                    "category": "Other",
+                    "question": "Tranexamic acid: dose?",
+                    "answer": "1 g IV over 10 minutes (child 15 mg/kg). PPH: a second 1 g after 30 minutes if bleeding continues."
+                },
+                {
+                    "category": "Other",
+                    "question": "Furosemide: indication and dose?",
+                    "answer": "Adult pulmonary oedema with fluid overload: 40 mg slow IV over 1–2 minutes"
+                },
+                {
+                    "category": "Other",
+                    "question": "Diphenhydramine: dose?",
+                    "answer": "Adult 25–50 mg IM or slow IV. Child 1 mg/kg (maximum 50 mg)."
+                },
+                {
+                    "category": "Other",
+                    "question": "Metoclopramide: dose?",
+                    "answer": "Adult 10 mg slow IV over 3 minutes or IM. Child 0.1–0.15 mg/kg only if others unsuitable; not under 1 year."
+                },
+                {
+                    "category": "Other",
+                    "question": "Hyoscine butylbromide: indication and dose?",
+                    "answer": "Colicky abdominal or renal pain: 20 mg IV, IM or SC (adults)"
+                }
             ],
-
             quiz: [
-                /* CARDIAC */
-                { q: "Adenosine for SVT: what is the FIRST dose for an adult?", options: ["3 mg IV slow push", "6 mg IV rapid push", "12 mg IV slow push", "0.1 mg IV over 1 min"], correct: 1, explanation: "Adenosine 6 mg is the adult 1st dose for SVT, given as a RAPID push followed immediately by a 10–20 ml NS flush." },
-                { q: "Adenosine must be administered:", options: ["Slowly over 1–2 minutes", "As a rapid IV push with immediate NS flush", "Diluted in 100 ml NS", "Via IM injection only"], correct: 1, explanation: "Adenosine has a half-life of <10 seconds. It must be pushed rapidly and flushed immediately to reach the heart before it is metabolized." },
-                { q: "What diluent must be used for Amiodarone infusion?", options: ["Normal Saline", "Lactated Ringers", "Dextrose 5% Water", "Sterile water"], correct: 2, explanation: "Amiodarone is incompatible with Normal Saline and must be diluted in D5W only." },
-                { q: "Amiodarone dose for cardiac arrest (refractory VF/VT)?", options: ["1 mg/kg IV", "3 mg/kg IV/IO", "5 mg/kg IV/IO", "300 mg flat dose adult only"], correct: 2, explanation: "The SmartCare dose is 5 mg/kg IV/IO given after the 3rd shock in refractory VF/VT." },
-                { q: "Atropine for organophosphate poisoning: treatment endpoint is:", options: ["Heart rate >60", "Pupil dilation", "Drying of secretions", "BP normalization"], correct: 2, explanation: "In organophosphate poisoning, atropine is titrated until secretions dry — not to heart rate. Doses may be very high (2–4 mg q5-10 min)." },
-                { q: "Epinephrine for anaphylaxis: correct concentration and route?", options: ["1:10,000 IV", "1:1,000 IM lateral thigh", "1:1,000 IV push", "1:10,000 IM"], correct: 1, explanation: "Anaphylaxis: 1:1,000 (1 mg/ml) given IM into the lateral thigh. The 1:10,000 concentration is for cardiac arrest via IV/IO." },
-                { q: "GTN is CONTRAINDICATED in which scenario?", options: ["Anterior STEMI", "BP 110/70 with chest pain", "Patient took sildenafil 20 hours ago", "Pulmonary edema with normal BP"], correct: 2, explanation: "GTN + PDE-5 inhibitors (sildenafil/Viagra) causes severe refractory hypotension. Contraindicated within 24–48 hours of sildenafil use." },
-                { q: "Labetalol prehospital use: indication?", options: ["Hypertensive emergency in stroke", "Pre-eclampsia with severe hypertension", "Hypertension with tachycardia in all adults", "Post-cardiac arrest hypertension"], correct: 1, explanation: "Labetalol in SmartCare is indicated for pre-eclampsia with severe hypertension (SBP ≥160 or DBP ≥110) or eclampsia." },
-
-                /* AIRWAY */
-                { q: "Salbutamol pediatric dose for a 3-year-old?", options: ["1.25 mg nebulized", "2.5 mg nebulized", "5 mg nebulized", "Same as adult"], correct: 1, explanation: "Children under 5 years receive 2.5 mg salbutamol nebulized. Children ≥5 years receive 5 mg (adult dose)." },
-                { q: "Racemic epinephrine is indicated for:", options: ["Anaphylaxis", "Asthma exacerbation", "Croup (stridor)", "Post-intubation hypertension"], correct: 2, explanation: "Racemic epinephrine is nebulized for croup — it reduces upper airway edema and stridor. It is not used for asthma or anaphylaxis in SmartCare." },
-                { q: "Magnesium sulphate adult dose for severe asthma?", options: ["1 g IV over 10 min", "2 g IV over 20 min", "4 g IV over 5 min", "40 mg/kg IV"], correct: 1, explanation: "2 g IV over 20 minutes for adults with severe/life-threatening asthma not responding to bronchodilators." },
-                { q: "Methoxyflurane (Penthrox inhaler) maximum adult dose per episode?", options: ["3 ml", "6 ml", "9 ml", "12 ml"], correct: 1, explanation: "Maximum 6 ml per 24 hours in adults (one use of 3 ml + one repeat). Pediatric max is 3 ml total." },
-
-                /* NEURO */
-                { q: "Diazepam rectal (PR) dose for a 20 kg child in status epilepticus?", options: ["2 mg", "5 mg", "10 mg", "20 mg"], correct: 2, explanation: "PR dose is 0.5 mg/kg. For a 20 kg child: 0.5 × 20 = 10 mg PR (max 20 mg)." },
-                { q: "Haloperidol: which route is used in prehospital care?", options: ["IV slow push", "IM only", "Oral", "Sublingual"], correct: 1, explanation: "Haloperidol is given IM only in the prehospital setting. IV administration carries risks of QT prolongation and torsades — not used prehospital." },
-                { q: "A patient is seizing. You give Diazepam 5 mg IV. After 5 minutes the seizure continues. What next?", options: ["Repeat Diazepam 5 mg IV", "Give Haloperidol 5 mg IM", "Give Atropine", "Transport — no further drug"], correct: 0, explanation: "A single repeat dose of Diazepam 5 mg IV is appropriate if seizure continues after 5 minutes. Request ALS backup." },
-
-                /* PAIN */
-                { q: "Morphine maximum IV dose for an adult?", options: ["5 mg", "10 mg", "20 mg", "No maximum"], correct: 1, explanation: "Maximum IV dose is 10 mg (given as 2.5 mg increments q5 min). The IM maximum is 20 mg." },
-                { q: "Paracetamol adult IV dose?", options: ["500 mg", "750 mg", "1000 mg", "1500 mg"], correct: 2, explanation: "1000 mg (1 g) IV over 10–15 min. Maximum 4 g per 24 hours. Reduce in hepatic impairment." },
-                { q: "Nefopam is contraindicated in all EXCEPT:", options: ["Epilepsy", "STEMI", "Moderate fracture pain with normal renal function", "Age 10 years"], correct: 2, explanation: "Nefopam can be used for moderate-severe pain with normal renal function. It is contraindicated in epilepsy, STEMI/NSTEMI, renal impairment, and patients under 13 years." },
-                { q: "GTN maximum number of SL sprays prehospital?", options: ["1 spray (0.4 mg)", "2 sprays (0.8 mg)", "3 sprays (1.2 mg)", "5 sprays (2 mg)"], correct: 2, explanation: "Maximum 3 sprays (0.4 mg each = 1.2 mg total) at 3–5 minute intervals, provided SBP remains ≥100 mmHg." },
-
-                /* METABOLIC */
-                { q: "Blood glucose threshold to treat hypoglycemia?", options: ["<50 mg/dl", "<60 mg/dl", "<70 mg/dl", "<80 mg/dl"], correct: 2, explanation: "Treat hypoglycemia when blood glucose is <70 mg/dl regardless of symptoms in SmartCare." },
-                { q: "Dextrose 10% pediatric dose?", options: ["5 ml/kg", "10 ml/kg (max 125 ml)", "20 ml/kg", "2 ml/kg"], correct: 1, explanation: "10 ml/kg IV/IO (max 125 ml in children). Neonates receive 2 ml/kg of D10W." },
-                { q: "Glucose 40% oral paste: which patient CANNOT receive it?", options: ["A 70 kg adult", "A 20 kg child", "An unconscious patient", "A diabetic on insulin"], correct: 2, explanation: "Oral paste requires a conscious patient who can swallow. It must be swallowed — not buccally absorbed — so it cannot be given to unconscious patients." },
-                { q: "Glucagon dose for a 20 kg child?", options: ["1 mg IM", "0.5 mg IM", "2 mg IM", "0.1 mg/kg IM"], correct: 1, explanation: "Children under 6 years OR under 25 kg receive 0.5 mg IM/SC. Children over 25 kg receive 1 mg." },
-                { q: "Lactated Ringers is contraindicated in:", options: ["Hemorrhagic shock", "Burns", "Diabetic ketoacidosis", "Sepsis"], correct: 2, explanation: "LR is contraindicated in DKA (risk of worsening acidosis), <1 month of age, hypervolemia, and liver failure." },
-
-                /* OTHER */
-                { q: "Aspirin for ACS: correct dose and method?", options: ["600 mg swallowed whole", "325 mg chewed", "324 mg (4×81 mg) chewed", "162 mg sublingual"], correct: 2, explanation: "324 mg (4 × 81 mg) must be CHEWED (not swallowed whole) for rapid absorption. Do not give if patient already had 324 mg in the past 60 minutes." },
-                { q: "Naloxone: goal of titration in opioid overdose?", options: ["Full consciousness", "Normal BP", "Adequate spontaneous respirations", "HR >60"], correct: 2, explanation: "Titrate Naloxone to restore adequate spontaneous respirations ONLY. Over-reversal causes acute withdrawal (agitation, vomiting, tachycardia) and is dangerous." },
-                { q: "TXA must be given within how many hours of injury?", options: ["1 hour", "2 hours", "3 hours", "6 hours"], correct: 2, explanation: "Tranexamic Acid must be given within 3 hours of injury or onset of PPH. After 3 hours it may actually increase mortality." },
-                { q: "Furosemide 40 mg IV: which patient is it indicated for?", options: ["8-year-old with anaphylaxis", "Adult with acute pulmonary edema and fluid overload", "Any patient with dyspnea", "Pediatric septic shock"], correct: 1, explanation: "Furosemide is indicated for adults with acute pulmonary edema accompanied by signs of fluid overload. Not for pediatric prehospital use." },
-                { q: "Metoclopramide is generally avoided in pediatrics due to risk of:", options: ["Respiratory depression", "Extrapyramidal effects", "Hypoglycemia", "Hypertension"], correct: 1, explanation: "Metoclopramide causes extrapyramidal effects (dystonia, akathisia) especially in children and young adults — generally avoid prehospital in pediatrics." }
+                {
+                    "q": "Adenosine for SVT: what is the FIRST dose for an adult?",
+                    "options": [
+                        "6 mg IV rapid push",
+                        "3 mg IV slow push",
+                        "12 mg IV slow push",
+                        "0.1 mg IV over 1 minute"
+                    ],
+                    "correct": 0,
+                    "explanation": "6 mg rapid IV push with an immediate 20 mL saline flush; then 12 mg if needed."
+                },
+                {
+                    "q": "Adenosine must be given:",
+                    "options": [
+                        "As a rapid IV push with an immediate saline flush",
+                        "Slowly over 1–2 minutes",
+                        "Diluted in 100 mL saline",
+                        "IM only"
+                    ],
+                    "correct": 0,
+                    "explanation": "Its half-life is under 10 seconds, so push fast and flush."
+                },
+                {
+                    "q": "Which fluid is used to dilute an amiodarone infusion?",
+                    "options": [
+                        "Dextrose 5% (D5W)",
+                        "Normal saline",
+                        "Ringer's lactate",
+                        "Sterile water"
+                    ],
+                    "correct": 0,
+                    "explanation": "Amiodarone infusions are diluted in D5W, for example 150 mg in 100 mL."
+                },
+                {
+                    "q": "Adult amiodarone dose in VF or pulseless VT after the 3rd shock?",
+                    "options": [
+                        "300 mg IV/IO push",
+                        "5 mg/kg IV/IO",
+                        "150 mg over 10 minutes",
+                        "1 mg/kg IV"
+                    ],
+                    "correct": 0,
+                    "explanation": "300 mg IV/IO after the 3rd shock, then 150 mg after the 5th. Children: 5 mg/kg."
+                },
+                {
+                    "q": "Atropine in organophosphate poisoning: what is the endpoint?",
+                    "options": [
+                        "Dry bronchial secretions",
+                        "Heart rate above 60",
+                        "Dilated pupils",
+                        "Normal blood pressure"
+                    ],
+                    "correct": 0,
+                    "explanation": "Start 2 mg IV/IM and double every 5 minutes until the chest is dry, whatever the pupils or heart rate."
+                },
+                {
+                    "q": "Epinephrine for anaphylaxis: concentration and route?",
+                    "options": [
+                        "1 mg/mL IM in the outer thigh",
+                        "0.1 mg/mL IV",
+                        "1 mg/mL IV push",
+                        "0.1 mg/mL IM"
+                    ],
+                    "correct": 0,
+                    "explanation": "0.5 mg IM (0.5 mL of 1 mg/mL) in adults; 0.1 mg/mL is the IV arrest strength."
+                },
+                {
+                    "q": "GTN is CONTRAINDICATED in which patient?",
+                    "options": [
+                        "Took sildenafil 20 hours ago",
+                        "Anterior STEMI, BP 130/80",
+                        "Chest pain, BP 110/70",
+                        "Pulmonary oedema, BP 170/100"
+                    ],
+                    "correct": 0,
+                    "explanation": "Sildenafil or vardenafil in 24 hours, tadalafil in 48 hours: severe hypotension."
+                },
+                {
+                    "q": "Labetalol prehospital: main indication?",
+                    "options": [
+                        "Severe hypertension in pregnancy (160/110 mmHg or more)",
+                        "Hypertension in stroke in all patients",
+                        "Hypertension with tachycardia",
+                        "Hypertension after cardiac arrest"
+                    ],
+                    "correct": 0,
+                    "explanation": "20 mg IV over 2 minutes, then 40 mg, then 80 mg every 10 minutes; maximum 300 mg."
+                },
+                {
+                    "q": "Salbutamol nebuliser dose for a 3-year-old?",
+                    "options": [
+                        "2.5 mg",
+                        "1.25 mg",
+                        "5 mg",
+                        "10 mg"
+                    ],
+                    "correct": 0,
+                    "explanation": "Under 5 years: 2.5 mg. 5 years or older: 2.5–5 mg."
+                },
+                {
+                    "q": "Racemic epinephrine is mainly used for:",
+                    "options": [
+                        "Croup with stridor at rest",
+                        "Asthma",
+                        "Anaphylaxis instead of IM epinephrine",
+                        "Hypertension after intubation"
+                    ],
+                    "correct": 0,
+                    "explanation": "It shrinks upper airway swelling. Anaphylaxis always gets IM epinephrine."
+                },
+                {
+                    "q": "Magnesium sulfate adult dose for life-threatening asthma?",
+                    "options": [
+                        "2 g IV over 20 minutes",
+                        "1 g IV over 10 minutes",
+                        "4 g IV over 5 minutes",
+                        "40 mg/kg IV push"
+                    ],
+                    "correct": 0,
+                    "explanation": "2 g IV over 20 minutes; children 40 mg/kg (maximum 2 g)."
+                },
+                {
+                    "q": "Methoxyflurane (Penthrox): adult maximum?",
+                    "options": [
+                        "6 mL a day (two 3 mL doses)",
+                        "3 mL a day",
+                        "9 mL a day",
+                        "12 mL a day"
+                    ],
+                    "correct": 0,
+                    "explanation": "3 mL, then one more 3 mL if needed; maximum 6 mL a day."
+                },
+                {
+                    "q": "Rectal diazepam for a 20 kg child in status epilepticus?",
+                    "options": [
+                        "10 mg",
+                        "2 mg",
+                        "5 mg",
+                        "20 mg"
+                    ],
+                    "correct": 0,
+                    "explanation": "0.5 mg/kg rectally, maximum 20 mg: 0.5 × 20 = 10 mg. Intranasal or IM midazolam is an equal first choice."
+                },
+                {
+                    "q": "Prehospital route for haloperidol?",
+                    "options": [
+                        "IM",
+                        "IV push",
+                        "Sublingual",
+                        "Rectal"
+                    ],
+                    "correct": 0,
+                    "explanation": "5 mg IM; IV use raises the QT and torsades risk."
+                },
+                {
+                    "q": "Adult seizing for 5 minutes. You gave diazepam 0.15 mg/kg IV; 5 minutes later the seizure continues. Next?",
+                    "options": [
+                        "Repeat the benzodiazepine once",
+                        "Haloperidol 5 mg IM",
+                        "Atropine",
+                        "No more drugs, just transport"
+                    ],
+                    "correct": 0,
+                    "explanation": "Repeat once after 5 minutes (diazepam maximum 10 mg per dose), protect the airway and call ALS."
+                },
+                {
+                    "q": "Adult morphine for severe pain: how is it given IV?",
+                    "options": [
+                        "2.5–5 mg every 5 minutes, titrated",
+                        "10 mg single push",
+                        "20 mg over 1 minute",
+                        "0.5 mg/kg bolus"
+                    ],
+                    "correct": 0,
+                    "explanation": "Titrate small doses (typical maximum 10–20 mg per protocol) with naloxone ready."
+                },
+                {
+                    "q": "Paracetamol adult IV dose?",
+                    "options": [
+                        "1 g",
+                        "500 mg",
+                        "750 mg",
+                        "1500 mg"
+                    ],
+                    "correct": 0,
+                    "explanation": "1 g over 15 minutes (15 mg/kg under 50 kg); maximum 4 g a day."
+                },
+                {
+                    "q": "Nefopam is contraindicated in all EXCEPT:",
+                    "options": [
+                        "Moderate fracture pain, normal kidneys",
+                        "Epilepsy",
+                        "Acute MI",
+                        "A 10-year-old"
+                    ],
+                    "correct": 0,
+                    "explanation": "Nefopam is avoided in seizures, MI, severe kidney disease, glaucoma and children."
+                },
+                {
+                    "q": "GTN sublingual: maximum prehospital doses for chest pain?",
+                    "options": [
+                        "3 doses of 0.4 mg",
+                        "1 dose",
+                        "2 doses",
+                        "5 doses"
+                    ],
+                    "correct": 0,
+                    "explanation": "0.4 mg every 5 minutes up to 3 doses, while SBP stays at 90 mmHg or above."
+                },
+                {
+                    "q": "Adult blood glucose threshold to treat hypoglycaemia?",
+                    "options": [
+                        "Below 70 mg/dL",
+                        "Below 50 mg/dL",
+                        "Below 90 mg/dL",
+                        "Below 110 mg/dL"
+                    ],
+                    "correct": 0,
+                    "explanation": "Treat below 70 mg/dL (below 60 mg/dL in children) or any low with symptoms."
+                },
+                {
+                    "q": "Dextrose 10% dose for a child?",
+                    "options": [
+                        "5 mL/kg (maximum 250 mL)",
+                        "10 mL/kg (maximum 125 mL)",
+                        "20 mL/kg",
+                        "1 mL/kg"
+                    ],
+                    "correct": 0,
+                    "explanation": "5 mL/kg IV/IO, maximum 250 mL; newborns 2 mL/kg."
+                },
+                {
+                    "q": "Who must NOT get oral glucose?",
+                    "options": [
+                        "An unresponsive patient",
+                        "A 70 kg adult who is alert",
+                        "A 20 kg child who is alert",
+                        "A diabetic on insulin who can swallow"
+                    ],
+                    "correct": 0,
+                    "explanation": "Oral glucose needs a patient who is awake and can swallow."
+                },
+                {
+                    "q": "Glucagon dose for hypoglycaemia in a 20 kg child?",
+                    "options": [
+                        "0.5 mg IM",
+                        "1 mg IM",
+                        "2 mg IM",
+                        "0.1 mg/kg IM"
+                    ],
+                    "correct": 0,
+                    "explanation": "0.5 mg IM if under 25 kg; 1 mg if 25 kg or more."
+                },
+                {
+                    "q": "Ringer's lactate: what must you avoid?",
+                    "options": [
+                        "Running it in the same line as ceftriaxone",
+                        "Giving it in burns",
+                        "Giving it in sepsis",
+                        "Giving it in trauma"
+                    ],
+                    "correct": 0,
+                    "explanation": "Its calcium precipitates with ceftriaxone. It is a good fluid for burns, sepsis and trauma."
+                },
+                {
+                    "q": "Aspirin for suspected ACS: dose and method?",
+                    "options": [
+                        "324 mg (4 × 81 mg) chewed",
+                        "600 mg swallowed whole",
+                        "162 mg sublingual",
+                        "75 mg swallowed"
+                    ],
+                    "correct": 0,
+                    "explanation": "Chewed for fast absorption; top up to 324 mg if some was taken in the last hour."
+                },
+                {
+                    "q": "Naloxone in opioid overdose: what is the goal?",
+                    "options": [
+                        "Adequate breathing",
+                        "Full consciousness",
+                        "Normal BP",
+                        "Heart rate above 60"
+                    ],
+                    "correct": 0,
+                    "explanation": "Titrate small doses; over-reversal causes vomiting, agitation and withdrawal."
+                },
+                {
+                    "q": "Tranexamic acid must start within how long of injury or birth?",
+                    "options": [
+                        "3 hours",
+                        "1 hour",
+                        "6 hours",
+                        "12 hours"
+                    ],
+                    "correct": 0,
+                    "explanation": "Given later it may do harm. 1 g IV over 10 minutes."
+                },
+                {
+                    "q": "Furosemide 40 mg IV is indicated for:",
+                    "options": [
+                        "Adult pulmonary oedema with fluid overload",
+                        "Anaphylaxis in a child",
+                        "Any breathless patient",
+                        "Septic shock"
+                    ],
+                    "correct": 0,
+                    "explanation": "Give slowly over 1–2 minutes; never in hypotension or shock."
+                },
+                {
+                    "q": "Metoclopramide is avoided in children mainly because of:",
+                    "options": [
+                        "Dystonia and other movement reactions",
+                        "Breathing depression",
+                        "Hypoglycaemia",
+                        "Hypertension"
+                    ],
+                    "correct": 0,
+                    "explanation": "Extrapyramidal reactions are common in the young; ondansetron is preferred."
+                }
             ],
-
             critical: [
                 {
-                    scenario: "32F, 8 months pregnant. BP 178/112, severe headache, visual changes. GCS 15. No active seizure.",
-                    question: "Which drug is indicated FIRST?",
-                    options: [
-                        { t: "Diazepam 5 mg IV", f: "Diazepam is for active seizure (eclampsia), not prophylaxis here." },
-                        { t: "Labetalol 20 mg IV over 2 min", f: "Correct. Pre-eclampsia with severe hypertension — Labetalol is first-line to reduce BP." },
-                        { t: "GTN 0.4 mg SL", f: "GTN is not indicated in obstetric hypertension." },
-                        { t: "Magnesium 4 g IV over 5 min", f: "Magnesium is for active eclampsia seizure, not isolated hypertension." }
+                    "id": "crit_fx_1",
+                    "scenario": "32-year-old, 34 weeks pregnant. BP 178/112, severe headache, visual changes. GCS 15, no seizure.",
+                    "question": "Which drugs are indicated?",
+                    "options": [
+                        {
+                            "t": "Labetalol 20 mg IV over 2 minutes, plus magnesium 4–6 g IV over 20–30 minutes",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Diazepam IV",
+                            "f": "Benzodiazepines are for an active seizure; magnesium prevents it."
+                        },
+                        {
+                            "t": "GTN 0.4 mg sublingual",
+                            "f": "GTN is not the drug for hypertension in pregnancy."
+                        },
+                        {
+                            "t": "No drugs until she seizes",
+                            "f": "Severe pre-eclampsia needs BP control and magnesium now."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "Pre-eclampsia with severe features: SBP ≥160 or DBP ≥110 requires antihypertensive treatment. Labetalol 20 mg IV over 2 minutes per SmartCare.",
-                    kpi: "Administer Labetalol within 5 min of recognition of severe hypertension."
+                    "correct": 0,
+                    "explanation": "BP 160/110 mmHg or more in pregnancy is an emergency: labetalol lowers it, magnesium prevents eclampsia.",
+                    "kpi": "Treats severe hypertension in pregnancy within minutes"
                 },
                 {
-                    scenario: "58M, witnessed cardiac arrest. VF on monitor. 3 shocks delivered, CPR ongoing. IV access established.",
-                    question: "After the 3rd shock, which drug is given?",
-                    options: [
-                        { t: "Atropine 1 mg IV", f: "Atropine is not indicated in VF/VT arrest." },
-                        { t: "Amiodarone 5 mg/kg IV/IO", f: "Correct. Amiodarone 5 mg/kg IV/IO is given after the 3rd shock in refractory VF/VT." },
-                        { t: "Adenosine 6 mg IV rapid push", f: "Adenosine is for SVT — never used in cardiac arrest." },
-                        { t: "Lidocaine 1 mg/kg IV", f: "Lidocaine is an alternative, but SmartCare specifies Amiodarone." }
+                    "id": "crit_fx_2",
+                    "scenario": "58-year-old, witnessed VF arrest. 3 shocks given, CPR ongoing, IV in place, epinephrine given after the 2nd shock.",
+                    "question": "Which drug now?",
+                    "options": [
+                        {
+                            "t": "Amiodarone 300 mg IV push",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Atropine 1 mg IV",
+                            "f": "Atropine has no role in arrest."
+                        },
+                        {
+                            "t": "Adenosine 6 mg",
+                            "f": "Adenosine is for SVT with a pulse."
+                        },
+                        {
+                            "t": "Amiodarone 5 mg/kg in saline",
+                            "f": "5 mg/kg is the child dose, and amiodarone is diluted in D5W, not saline."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "Amiodarone 5 mg/kg IV/IO is the anti-arrhythmic of choice after the 3rd defibrillation in refractory VF/pulseless VT. Must be diluted in D5W, never NS.",
-                    kpi: "Do not interrupt CPR to draw up Amiodarone — prepare during compressions."
+                    "correct": 0,
+                    "explanation": "300 mg after the 3rd shock, then 150 mg after the 5th; prepare it during compressions.",
+                    "kpi": "Gives the antiarrhythmic without pausing CPR"
                 },
                 {
-                    scenario: "4-year-old, 18 kg. History of febrile seizures. Active generalized tonic-clonic seizure × 4 min. IV access not established.",
-                    question: "What is the MOST appropriate immediate intervention?",
-                    options: [
-                        { t: "Diazepam 5 mg IV — attempt IV access first", f: "No IV access is established. Attempting IV during active seizure wastes critical time." },
-                        { t: "Diazepam PR 9 mg (0.5 mg/kg)", f: 'Correct. No IV <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> rectal Diazepam 0.5 mg/kg = 9 mg. Fast, effective, atraumatic.' },
-                        { t: "Haloperidol 5 mg IM", f: "Haloperidol is for psychosis — never for seizures." },
-                        { t: "Intranasal Midazolam", f: "Not in SmartCare formulary for this indication." }
+                    "id": "crit_fx_3",
+                    "scenario": "4-year-old, 18 kg, known febrile seizures. Generalised seizure for 5 minutes, no IV access.",
+                    "question": "Best immediate drug?",
+                    "options": [
+                        {
+                            "t": "Midazolam 0.2 mg/kg intranasal (3.6 mg), or diazepam 0.5 mg/kg rectally (9 mg)",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Wait for IV access, then diazepam",
+                            "f": "Don't delay: intranasal, IM or rectal routes work now."
+                        },
+                        {
+                            "t": "Haloperidol 5 mg IM",
+                            "f": "Haloperidol is not an anticonvulsant."
+                        },
+                        {
+                            "t": "Paracetamol rectally first",
+                            "f": "Stop the seizure first; fever treatment comes later."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "When IV access is unavailable: rectal Diazepam 0.5 mg/kg (max 20 mg). For 18 kg: 9 mg PR. This is the fastest and safest route in a seizing child without IV access.",
-                    kpi: "Airway management takes priority — position patient, suction if needed, O2 via mask."
+                    "correct": 0,
+                    "explanation": "Seizures of 5 minutes or more need a benzodiazepine by the fastest route; protect the airway and check glucose.",
+                    "kpi": "Gives a benzodiazepine by the fastest route"
                 },
                 {
-                    scenario: "25M, found unresponsive. RR 4/min, pinpoint pupils, bradycardia. Suspected heroin overdose.",
-                    question: "Naloxone dose and route?",
-                    options: [
-                        { t: "0.4 mg IV — full dose at once to wake the patient", f: "Giving full dose at once risks acute withdrawal. Titrate to respirations, not consciousness." },
-                        { t: "0.4 mg IV/IM — titrate to adequate spontaneous respirations", f: "Correct. Start 0.4 mg, reassess in 3 min, repeat if needed. Goal: RR ≥10, not full consciousness." },
-                        { t: "2 mg IV — maximum dose immediately", f: "Start with 0.4 mg and titrate. 2 mg maximum is the total allowed, not the starting dose." },
-                        { t: "4 mg IN — intranasal only, avoid IV", f: "IV/IM is faster in this scenario. IN 4 mg is an option but IV is preferred with access." }
+                    "id": "crit_fx_4",
+                    "scenario": "25-year-old found unresponsive: RR 4/min, pinpoint pupils, heroin suspected.",
+                    "question": "Naloxone plan?",
+                    "options": [
+                        {
+                            "t": "Bag-mask first, then 0.04–0.4 mg IV (or 0.4 mg IM) titrated to breathing",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "2 mg IV at once to wake him",
+                            "f": "Large doses cause violent withdrawal and vomiting."
+                        },
+                        {
+                            "t": "Intranasal only; IV is dangerous",
+                            "f": "Any route works; titrate."
+                        },
+                        {
+                            "t": "Naloxone before any ventilation",
+                            "f": "Oxygenate first; hypoxia kills."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "Titrate Naloxone 0.4 mg IV/IM q3 min. Do NOT over-reverse — goal is spontaneous respirations ≥10/min. Over-reversal causes acute withdrawal (vomiting, agitation, pulmonary edema) and is dangerous.",
-                    kpi: "Support airway with BVM before and during Naloxone administration."
+                    "correct": 0,
+                    "explanation": "The aim is adequate breathing, not full waking. Long-acting opioids can re-sedate: transport.",
+                    "kpi": "Ventilates first and titrates naloxone"
                 },
                 {
-                    scenario: "19F, known asthma. Severe exacerbation, SpO2 82% on 15L O2 NRB. Accessory muscle use, tripod position, unable to speak in sentences. Salbutamol × 2 rounds given.",
-                    question: "What is the NEXT drug indicated?",
-                    options: [
-                        { t: "Repeat Salbutamol only", f: "Already given × 2. Add Ipratropium (Combivent) and consider Magnesium." },
-                        { t: "Magnesium Sulphate 2 g IV over 20 min", f: 'Correct. Life-threatening asthma not responding to bronchodilators <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> Magnesium 2 g IV/IO over 20 min.' },
-                        { t: "Haloperidol 5 mg IM for anxiety", f: "Never — causes respiratory depression in a patient already in extremis." },
-                        { t: "Furosemide 40 mg IV", f: "Not indicated — this is bronchoconstriction, not pulmonary edema." }
+                    "id": "crit_fx_5",
+                    "scenario": "19-year-old with asthma. SpO₂ 82% on oxygen, tripod position, single words. Two salbutamol nebulisers given.",
+                    "question": "Next drugs?",
+                    "options": [
+                        {
+                            "t": "Continue salbutamol with ipratropium, hydrocortisone 100 mg IV, magnesium 2 g IV over 20 minutes",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Salbutamol alone",
+                            "f": "Life-threatening asthma needs more."
+                        },
+                        {
+                            "t": "Haloperidol for anxiety",
+                            "f": "Sedation can stop her breathing."
+                        },
+                        {
+                            "t": "Furosemide 40 mg IV",
+                            "f": "This is not fluid overload."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "Life-threatening asthma not responding to repeated Salbutamol: add Combivent, Hydrocortisone 2 mg/kg IV, and Magnesium Sulphate 2 g IV over 20 min. Consider RSI and ALS backup.",
-                    kpi: "Request ALS backup immediately for life-threatening asthma. Do not delay transport."
+                    "correct": 0,
+                    "explanation": "Consider IM epinephrine 0.5 mg if she is tiring; call ALS early.",
+                    "kpi": "Escalates asthma treatment in the right order"
                 },
                 {
-                    scenario: "70M, STEMI confirmed on 12-lead. BP 126/78. Patient took sildenafil (Viagra) last night.",
-                    question: "Can you give GTN?",
-                    options: [
-                        { t: "Yes — STEMI always gets GTN regardless", f: "Incorrect. PDE-5 inhibitor use within 24-48 h is an absolute contraindication for GTN." },
-                        { t: "No — sildenafil use within 24 hours is a contraindication to GTN", f: "Correct. GTN + sildenafil causes severe, refractory hypotension that does not respond to fluid." },
-                        { t: "Yes, but use half the dose", f: "There is no safe dose of GTN after recent sildenafil. Contraindicated." },
-                        { t: "Yes — only contraindicated if BP <90 mmHg", f: "BP alone is not the only contraindication. PDE-5 inhibitors within 24-48 h are absolute CI." }
+                    "id": "crit_fx_6",
+                    "scenario": "70-year-old, inferior STEMI on the 12-lead. BP 126/78. Took sildenafil last night.",
+                    "question": "GTN?",
+                    "options": [
+                        {
+                            "t": "No: sildenafil in the last 24 hours; treat pain with an opioid",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Yes, STEMI always gets GTN",
+                            "f": "The combination causes profound hypotension."
+                        },
+                        {
+                            "t": "Half the dose",
+                            "f": "Still contraindicated."
+                        },
+                        {
+                            "t": "Yes, only contraindicated if BP below 90 mmHg",
+                            "f": "PDE-5 inhibitors are a separate contraindication."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "GTN + PDE-5 inhibitors (sildenafil, tadalafil, vardenafil) causes profound hypotension refractory to fluids. Absolute contraindication within 24 h (sildenafil) or 48 h (tadalafil). Manage pain with Morphine instead.",
-                    kpi: "ALWAYS ask about erectile dysfunction medications before giving GTN in male patients with chest pain."
+                    "correct": 0,
+                    "explanation": "Sildenafil or vardenafil 24 hours, tadalafil 48 hours. Get a right-sided ECG (V4R) in inferior STEMI too.",
+                    "kpi": "Asks about PDE-5 inhibitors before GTN"
                 },
                 {
-                    scenario: "6-year-old, 22 kg. BG 48 mg/dl. Altered mental status but responding to voice. IV access established.",
-                    question: "Which treatment is MOST appropriate?",
-                    options: [
-                        { t: "Glucose 40% oral paste ½ tube", f: "Altered mental status means uncertain airway protection — oral paste unsafe if at risk of aspiration." },
-                        { t: "Dextrose 10% 220 ml IV (10 ml/kg)", f: "Correct. 10 ml/kg = 220 ml D10W IV/IO for a 22 kg child with hypoglycemia and altered mental status." },
-                        { t: "Glucagon 1 mg IM", f: "Glucagon is for patients without IV access. With IV access, dextrose is preferred (faster and more reliable)." },
-                        { t: "Normal Saline bolus 220 ml", f: "NS does not treat hypoglycemia." }
+                    "id": "crit_fx_7",
+                    "scenario": "6-year-old, 22 kg. Glucose 48 mg/dL, responds to voice only. IV in place.",
+                    "question": "Best treatment?",
+                    "options": [
+                        {
+                            "t": "Dextrose 10% 5 mL/kg = 110 mL IV",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "Oral glucose",
+                            "f": "Not safe with reduced consciousness."
+                        },
+                        {
+                            "t": "Glucagon 1 mg IM",
+                            "f": "IV access is available, and dextrose works faster."
+                        },
+                        {
+                            "t": "Saline 220 mL bolus",
+                            "f": "This doesn't treat hypoglycaemia."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "With IV access: D10W 10 ml/kg (220 ml) is the preferred treatment for pediatric hypoglycemia. Recheck BG after 5-10 minutes. Glucagon IM is the backup when no IV access is available.",
-                    kpi: "Recheck blood glucose 5-10 minutes after treatment. Aim for BG >80 mg/dl."
+                    "correct": 0,
+                    "explanation": "Recheck glucose after 10 minutes and repeat if still low.",
+                    "kpi": "Doses dextrose by weight in children"
                 },
                 {
-                    scenario: "28F, 36 weeks pregnant. Active postpartum hemorrhage post-delivery on scene. Estimated blood loss >1L. Time since delivery: 45 minutes.",
-                    question: "Is TXA indicated? If so, what is the dose?",
-                    options: [
-                        { t: "No — TXA is only for trauma, not obstetric hemorrhage", f: "Incorrect. SmartCare includes TXA for postpartum hemorrhage within 3 hours of onset." },
-                        { t: "Yes — 1 g IV in 100 ml NS over 10 min", f: "Correct. TXA is indicated for PPH within 3 hours. 1 g IV over 10 min as a single dose." },
-                        { t: "Yes — 2 g IV bolus immediately", f: "Incorrect dose. The standard clinical dose is 1 g over 10 min (not bolus, not 2 g)." },
-                        { t: "No — too much time has passed", f: "45 minutes is well within the 3-hour window. TXA should be given." }
+                    "id": "crit_fx_8",
+                    "scenario": "28-year-old, delivered 45 minutes ago. Postpartum haemorrhage, estimated loss over 1 L.",
+                    "question": "Tranexamic acid?",
+                    "options": [
+                        {
+                            "t": "Yes: 1 g IV over 10 minutes; a second 1 g after 30 minutes if bleeding continues",
+                            "f": "Correct."
+                        },
+                        {
+                            "t": "No: only for trauma",
+                            "f": "It is proven in postpartum haemorrhage too."
+                        },
+                        {
+                            "t": "2 g IV push now",
+                            "f": "Too fast causes hypotension."
+                        },
+                        {
+                            "t": "No: too late",
+                            "f": "It works within 3 hours."
+                        }
                     ],
-                    correct: 1,
-                    explanation: "TXA is indicated for PPH within 3 hours of delivery. Dose: 1 g IV diluted in 100 ml NS over 10 minutes (single dose). Infusing too fast may cause nausea/hypotension. Time-critical — do not delay.",
-                    kpi: "Document exact time of PPH onset for TXA eligibility. Must be within 3 hours."
+                    "correct": 0,
+                    "explanation": "Uterine massage and oxytocin first; record the time of birth.",
+                    "kpi": "Gives TXA early in postpartum haemorrhage"
                 }
             ]
         },
             {
                 id: "formulary-72",
                 shortTitle: "Activated Charcoal",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Activated Charcoal</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Adsorbent / Antidote</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 g in 250 mL suspension (200 mg/mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Adsorbs many drugs and toxins within the gut lumen, preventing their absorption into the bloodstream.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Recent (ideally within 1 hour) ingestion of a potentially toxic amount of an adsorbable substance, on Poison Center or medical advice.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>50 g PO.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1 g/kg PO (max 50 g).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Altered level of consciousness or unprotected airway; caustic (acid/alkali) ingestion; hydrocarbons; bowel obstruction or perforation; substances not adsorbed (iron, lithium, alcohols, metals).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Vomiting (aspiration risk); seizure‑inducing ingestions.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Vomiting; constipation; black stools; aspiration pneumonitis.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: not absorbed systemically; administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Shake the container well. Charcoal is tasteless but gritty — offer through a straw in an opaque cup. Do not delay transport to give it.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Activated Charcoal",
+                    "lead": "Binds many drugs in the gut if given early (ideally within 1 hour) to a patient who is awake and can protect their airway – and only on poison-centre or medical advice.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Adsorbent"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50 g in 250 mL suspension"
+                                ],
+                                [
+                                    "Best within",
+                                    "1 hour of ingestion"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, with advice"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Recent toxic ingestion of an adsorbable substance",
+                                    "dose": "50 g orally",
+                                    "note": "Shake well; straw and opaque cup",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Recent toxic ingestion",
+                                    "dose": "1 g/kg orally",
+                                    "note": "Maximum 50 g",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Recent ingestion of a dangerous amount of a drug charcoal binds, in an alert patient, on poison-centre or medical advice"
+                            ],
+                            "exclude": [
+                                "Reduced consciousness or unprotected airway",
+                                "Caustics or hydrocarbons",
+                                "Bowel obstruction",
+                                "Substances not bound: iron, lithium, alcohols, metals"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Vomiting and aspiration",
+                                "Don't delay transport to give it"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1298,64 +1943,122 @@ window.CPG_DATA = {
             {
                 id: "formulary-76",
                 shortTitle: "Ceftriaxone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Ceftriaxone</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antibiotic (Third‑Generation Cephalosporin)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g / 2 g vial (powder for reconstitution).</span></div>
-                </div>
-
-                <p class="rx-moa">Inhibits bacterial cell wall synthesis; broad‑spectrum bactericidal activity including meningococcus.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Suspected meningococcal sepsis (non‑blanching rash with signs of sepsis) or severe sepsis / septic shock with prolonged transport, per local protocol.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>2 g IV/IO over 2–4 min, or 2 g IM (divided between two sites).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>80 mg/kg IV/IO/IM (max 2 g).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known anaphylaxis to cephalosporins or penicillins; neonates &lt;28 days receiving calcium‑containing IV fluids.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Do not mix with or give in the same line as calcium‑containing fluids (Ringers Lactate). History of minor penicillin allergy.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Allergic reaction; injection‑site pain; diarrhea.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: considered safe.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Do not delay transport. Obtain blood cultures only if it does not delay the antibiotic. Notify the receiving hospital and document the time given.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Ceftriaxone",
+                    "lead": "A broad-spectrum antibiotic for suspected meningococcal disease or septic shock when the hospital is far away. One dose early saves lives; don't delay transport for it.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Third-generation cephalosporin"
+                                ],
+                                [
+                                    "Presentation",
+                                    "1 g and 2 g powder vials"
+                                ],
+                                [
+                                    "Onset",
+                                    "Bactericidal within hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Suspected meningococcal disease or septic shock with long transport",
+                                    "dose": "2 g IV/IO over 2–4 minutes",
+                                    "note": "Or 2 g IM split between two sites",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same",
+                                    "dose": "80 mg/kg IV/IO or IM",
+                                    "note": "Maximum 2 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Non-blanching rash with signs of sepsis",
+                                "Septic shock with long transport, per protocol"
+                            ],
+                            "exclude": [
+                                "Anaphylaxis to cephalosporins or penicillins",
+                                "Newborns under 28 days receiving calcium-containing IV fluids"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Allergic reactions",
+                                "Never in the same line as calcium-containing fluids (Ringer's lactate)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Record the time given and tell the hospital"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1710,64 +2413,107 @@ window.CPG_DATA = {
             {
                 id: "formulary-7",
                 shortTitle: "D5W",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Dextrose 5% Water (D5W)</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Carbohydrate</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 g in 100 mL bottle</span></div>
-                </div>
-
-                <p class="rx-moa">Prevents precipitation of solutes during infusions.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Dilution of medications (amiodarone) for infusion.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Dosage as required by infusion amount.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Dosage as required by infusion amount.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Administration as treatment for Hypoglycemia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may cause fetal harm. However, should be administered if clinically indicated.<br>Lactation: Safety has not been established. However, should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>None noted.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Dextrose 5% (D5W)",
+                    "lead": "A carrier fluid for drugs that must not be mixed with saline, such as amiodarone infusions. It is not a treatment for hypoglycaemia or a resuscitation fluid.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Carbohydrate solution"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mL (5 g glucose)"
+                                ],
+                                [
+                                    "Use",
+                                    "Drug dilution"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Diluent",
+                                    "dose": "As needed for the infusion",
+                                    "note": "e.g. amiodarone 150 mg in 100 mL",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "As needed for drug dilution only."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Diluting drugs that need dextrose (amiodarone)"
+                            ],
+                            "exclude": [
+                                "Treating hypoglycaemia (too little glucose)",
+                                "Volume resuscitation or head injury (it becomes free water)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hyperglycaemia with large volumes"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1896,64 +2642,118 @@ window.CPG_DATA = {
             {
                 id: "formulary-8",
                 shortTitle: "Dextrose 10%",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Dextrose 10%</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Carbohydrate</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 g in 500 mL bottle; 25 g in 250 mL bottle.</span></div>
-                </div>
-
-                <p class="rx-moa">Provides glucose for cellular metabolism, raising blood glucose levels rapidly in hypoglycemia.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hypoglycemia (RBS <70 mg/dL).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>125‑250 mL (12.5‑25 g) IV/IO. May be repeated if hypoglycemia persists.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>10 mL/kg IV/IO (maximum 125 mL). May be repeated if hypoglycemia persists.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hyperglycemia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may cause fetal harm. However, should be administered if clinically indicated.<br>Lactation: Safety has not been established. However, should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>To prevent rebound hyperglycemia, avoid excessive doses of Dextrose 10% – titrate the dose based on the patient’s GCS and RBS. If GCS remains abnormal despite normalized glucose, investigate alternative causes of the patient’s condition.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Dextrose 10%",
+                    "lead": "The preferred IV glucose for hypoglycaemia: as effective as D50, kinder to veins and easier to titrate. Recheck glucose and consciousness after each portion.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Carbohydrate"
+                                ],
+                                [
+                                    "Presentation",
+                                    "25 g/250 mL; 50 g/500 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia (below 70 mg/dL) unable to take oral glucose",
+                                    "dose": "100–250 mL (10–25 g) IV/IO, titrated",
+                                    "note": "Recheck glucose after 10 minutes; repeat if needed",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia (below 60 mg/dL in children)",
+                                    "dose": "5 mL/kg IV/IO",
+                                    "note": "Maximum 250 mL; repeat if needed",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Newborn",
+                                    "dose": "2 mL/kg IV/IO",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hypoglycaemia in a patient who can't take oral glucose"
+                            ],
+                            "exclude": [
+                                "Hyperglycaemia"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "If consciousness doesn't recover with normal glucose, look for another cause",
+                                "Give thiamine as well in alcohol use or malnutrition"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1961,64 +2761,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-68",
                 shortTitle: "Dextrose 50%",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Dextrose 50% (D50)</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT-A+</span>
-                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Carbohydrate</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 g/50 mL prefilled syringe.</span></div>
-                </div>
-
-                <p class="rx-moa">Hypertonic glucose that rapidly raises blood glucose concentration.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Symptomatic hypoglycemia (BGL &lt;70 mg/dL) in an adult unable to take oral glucose, when Dextrose 10% is not available.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>12.5–25 g (25–50 mL) slow IV push via a large, patent vein; recheck BGL after 10 min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended — use Dextrose 10% (5 mL/kg).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known hyperglycemia; no secure IV access.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Highly irritant — extravasation causes tissue necrosis. Suspected stroke without confirmed hypoglycemia; possible alcohol‑dependent patient (give Thiamine).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Phlebitis; tissue necrosis on extravasation; hyperglycemia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Dextrose 10% is preferred where available — equally effective with less risk of rebound hyperglycemia and tissue injury.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Dextrose 50% (D50)",
+                    "lead": "Concentrated glucose for adults when D10 isn't available. It's very irritant: secure, large vein only.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Hypertonic carbohydrate"
+                                ],
+                                [
+                                    "Presentation",
+                                    "25 g/50 mL syringe"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia (below 70 mg/dL), no D10",
+                                    "dose": "12.5–25 g (25–50 mL) slow IV",
+                                    "note": "Recheck glucose after 10 minutes",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children: use dextrose 10% (5 mL/kg)."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Adult hypoglycaemia when D10 is unavailable"
+                            ],
+                            "exclude": [
+                                "No secure IV",
+                                "Children"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Extravasation causes necrosis",
+                                "Rebound hyperglycaemia"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3293,64 +4137,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-15",
                 shortTitle: "Furosemide",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Furosemide</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Loop Diuretic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">20 mg/2 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Inhibits sodium reabsorption in the ascending loop of Henle in the kidneys resulting in increased urinary output and fluid excretion.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Acute pulmonary edema with signs of fluid overload.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>40 mg IV (slow over 1‑2 minutes).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric use.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Liver cirrhosis; anuria.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Pulmonary edema without symptoms of fluid overload.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; increased urine output; dehydration; electrolyte imbalances.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: May cause fetal harm. Administration in the prehospital setting is not advised.<br>Lactation: Minimal infant risk. If essential to be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Furosemide should be administered only if signs of fluid overload are present. Administration to non‑fluid overloaded patients is highly associated with in‑hospital dehydration and electrolyte imbalances and has not demonstrated significant improvement in patient outcomes.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Furosemide",
+                    "lead": "A loop diuretic for pulmonary oedema with clear fluid overload. CPAP and nitrates come first; many breathless patients aren't overloaded and are harmed by it.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Loop diuretic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "20 mg/2 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "5 minutes (venodilation); diuresis 30 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Pulmonary oedema with fluid overload",
+                                    "dose": "40 mg slow IV over 1–2 minutes",
+                                    "note": "Or double the usual daily dose for patients already taking it, per protocol",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not used prehospital in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Acute pulmonary oedema with signs of fluid overload (weight gain, oedema, raised JVP)"
+                            ],
+                            "exclude": [
+                                "Hypotension or shock",
+                                "Dehydration, anuria",
+                                "Pneumonia or COPD mimicking heart failure"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension, low potassium, dehydration"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3358,66 +4246,120 @@ window.CPG_DATA = {
             {
                 id: "formulary-16",
                 shortTitle: "Glucagon",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Glucagon</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Hormone</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 mg/1 mL vial</span></div>
-                </div>
-
-                <p class="rx-moa">Glucagon stimulates glycogenolysis (the breakdown of glycogen into glucose) predominantly in the liver, increasing blood glucose levels.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hypoglycemia; Beta‑blocker overdose; Calcium Channel Blocker overdose.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Hypoglycemia:</strong> 1 mg IM/SC.<br>
-                <strong>Beta‑blocker & Calcium Channel Blocker Overdose:</strong> 1 mg IM. Administer up to 5 mg IM (at different injection sites) if additional IM glucagon is available. Repeat every 10‑15 minutes if required.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Hypoglycemia:</strong> >6 years (or >25 kg): 1 mg IM/SC; <6 years (or <25 kg): 0.5 mg IM/SC.<br>
-                <strong>Beta‑blocker & Calcium Channel Blocker Overdose:</strong> >6 years (or >25 kg): 1 mg IM; <6 years (or <25 kg): 0.5 mg IM. Repeat every 10‑15 minutes if required.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Patients where glycogen stores may be depleted (see additional information).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Reported difficulty maintaining stable glucose levels for up to two weeks following administration.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, glucagon should be administered if clinically indicated.<br>Lactation: Safety has not been established. If essential to be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Patients whose glycogen stores may already be depleted: non‑diabetics, septic patients, young children, following extreme exercise, has not eaten in >12 hours, adrenal insufficiency, chronic hypoglycemia, alcohol induced hypoglycemia. Glucagon is unlikely to be effective in these patients, however glucagon may be considered if no IV access can be obtained, the patient remains significantly hypoglycemic, and/or a reduced level of consciousness is causing airway, breathing or circulatory compromise.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Glucagon",
+                    "lead": "Raises glucose without an IV by releasing liver glycogen – and in much larger IV doses, it supports the heart in beta-blocker and calcium-channel blocker overdose.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Hormone"
+                                ],
+                                [
+                                    "Presentation",
+                                    "1 mg kit; 3 mg nasal powder"
+                                ],
+                                [
+                                    "Onset",
+                                    "About 10 minutes for glucose"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia, no IV",
+                                    "dose": "1 mg IM or SC",
+                                    "note": "Or 3 mg intranasal; feed when awake",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Beta-blocker or CCB overdose with shock",
+                                    "dose": "50 mcg/kg (3–5 mg) IV over 1–2 minutes",
+                                    "note": "Repeat once; then infusion; vomiting is common",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia",
+                                    "dose": "0.5 mg IM if under 25 kg; 1 mg if 25 kg or more",
+                                    "note": "Nasal 3 mg from 4 years",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hypoglycaemia without IV access",
+                                "Shock from beta-blocker or calcium-channel blocker toxicity"
+                            ],
+                            "exclude": [
+                                "Phaeochromocytoma",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Works poorly with low glycogen: starvation, alcohol, liver disease, prolonged hypoglycaemia",
+                                "Nausea and vomiting – protect the airway"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3425,64 +4367,112 @@ window.CPG_DATA = {
             {
                 id: "formulary-17",
                 shortTitle: "Glucose Paste",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Glucose 40% Oral Paste</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Carbohydrate</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">Plastic tube containing 15 g glucose</span></div>
-                </div>
-
-                <p class="rx-moa">Provides glucose for cellular metabolism, raising blood glucose levels rapidly in hypoglycemia.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hypoglycemia (RBS <70 mg/dL).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1 tube PO – adjusting amount of paste inserted according to space available. Repeat after 5‑10 minutes (if required).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>½ tube PO – adjusting amount of paste inserted according to space available. Repeat after 5‑10 minutes (if required).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; unresponsive patients or patients unable to swallow.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Airway occlusion in semi‑conscious patients (particularly children <2 years old).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>May cause vomiting.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, glucose should be administered if clinically indicated.<br>Lactation: Safety has not been established. However, glucose should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Glucose paste is not absorbed via the buccal mucosa and must be swallowed to be effective. In very young children/neonates, if the patient is able to suck, apply a small amount of glucose paste to the end of a gloved finger and allow the child to suck the paste.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Oral Glucose (gel or paste)",
+                    "lead": "Fast sugar by mouth for hypoglycaemia in a patient who is awake enough to swallow safely. It must be swallowed: it isn't absorbed through the cheek.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Carbohydrate"
+                                ],
+                                [
+                                    "Presentation",
+                                    "15 g tube (40% gel)"
+                                ],
+                                [
+                                    "Onset",
+                                    "10–15 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypoglycaemia (below 70 mg/dL), alert and swallowing",
+                                    "dose": "15–20 g (1 tube)",
+                                    "note": "Recheck after 15 minutes; repeat; then a meal",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same",
+                                    "dose": "Half to one tube",
+                                    "note": "Infants: small amounts on a gloved fingertip to suck",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hypoglycaemia in a patient who can swallow and protect the airway"
+                            ],
+                            "exclude": [
+                                "Unresponsive or unable to swallow"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Aspiration in drowsy patients",
+                                "Vomiting"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3992,64 +4982,114 @@ window.CPG_DATA = {
             {
                 id: "formulary-73",
                 shortTitle: "Hydroxocobalamin",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Hydroxocobalamin (Cyanokit)</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antidote (Cyanide)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 g vial (powder) for reconstitution with 200 mL NS.</span></div>
-                </div>
-
-                <p class="rx-moa">Binds cyanide to form cyanocobalamin (Vitamin B12), which is excreted in the urine.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Known or suspected cyanide poisoning — e.g. smoke inhalation from an enclosed‑space fire with altered consciousness, seizures, hypotension, cardiac arrest or high lactate.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>5 g IV/IO over 15 min; a second 5 g dose may be given based on severity (max 10 g).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>70 mg/kg IV/IO over 15 min (max 5 g).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy (relative — benefit outweighs risk in life‑threatening poisoning).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Administer through a dedicated line — incompatible with many drugs. Interferes with colorimetric lab tests and pulse oximetry.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Red discoloration of skin, mucous membranes and urine; transient hypertension; rash.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer in life‑threatening poisoning.<br>Lactation: no data; treatment takes priority.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Give high‑flow Oxygen and consider concurrent carbon monoxide poisoning. Take a blood sample before administration if possible.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Hydroxocobalamin (Cyanokit)",
+                    "lead": "Binds cyanide to form vitamin B12. Give it early to smoke-inhalation patients with collapse, seizures, shock or arrest – alongside 100% oxygen for carbon monoxide.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Cyanide antidote"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5 g powder, mixed with 200 mL saline"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Suspected cyanide poisoning",
+                                    "dose": "5 g IV/IO over 15 minutes",
+                                    "note": "Second 5 g by severity (maximum 10 g)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Suspected cyanide poisoning",
+                                    "dose": "70 mg/kg IV/IO over 15 minutes",
+                                    "note": "Maximum 5 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Enclosed-space fire with reduced consciousness, seizures, hypotension or arrest",
+                                "Known cyanide exposure"
+                            ],
+                            "exclude": [
+                                "Known allergy (relative in life-threatening poisoning)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Red skin and urine for days; interferes with SpO₂ and lab tests",
+                                "Separate line: incompatible with many drugs",
+                                "Transient hypertension"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4169,64 +5209,122 @@ window.CPG_DATA = {
             {
                 id: "formulary-71",
                 shortTitle: "Hypertonic Saline 3%",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Hypertonic Saline 3%</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Hyperosmolar Crystalloid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">3% sodium chloride, 250 mL / 500 mL bag.</span></div>
-                </div>
-
-                <p class="rx-moa">Creates an osmotic gradient drawing water from brain tissue into the vascular space, lowering intracranial pressure and expanding plasma volume.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe traumatic brain injury with signs of herniation (unequal / dilated pupils, extensor posturing, Cushing’s response); symptomatic severe hyponatremia (seizures).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>250 mL IV/IO over 10–20 min (TBI with herniation signs).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>3–5 mL/kg IV/IO over 10–20 min (max 250 mL).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known hypernatremia; no signs of raised ICP.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Use a large vein or IO; heart failure and fluid overload; repeated doses need sodium monitoring.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypernatremia; fluid overload; phlebitis.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Hypertonic saline is a bridge to definitive neurosurgical care. Maintain SpO2 ≥94%, normocapnia (EtCO2 35–40 mmHg) and SBP ≥110 mmHg in TBI.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Hypertonic Saline 3%",
+                    "lead": "Draws water out of the brain to buy time for a patient with signs of herniation after head injury, and treats seizures from severe low sodium.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Hyperosmolar crystalloid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "3% sodium chloride, 250 mL and 500 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic, critical care"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "TBI with herniation signs; hyponatraemic seizures",
+                                    "dose": "250 mL IV/IO over 10–20 minutes",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same",
+                                    "dose": "3–5 mL/kg IV/IO over 10–20 minutes",
+                                    "note": "Maximum 250 mL",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Head injury with signs of herniation (unequal or fixed pupils, extensor posturing, Cushing's triad)",
+                                "Seizures from severe hyponatraemia"
+                            ],
+                            "exclude": [
+                                "Hypernatraemia",
+                                "No signs of raised intracranial pressure"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Fluid overload in heart failure",
+                                "Large vein or IO"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "A bridge to neurosurgery: keep SpO₂ 94% or more, ETCO₂ 35–45 mmHg and SBP 110 mmHg or more"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "GCS",
+                                            "sub": "Track consciousness",
+                                            "href": "../pages/GCS.html",
+                                            "icon": "brain"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5831,64 +6929,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-78",
                 shortTitle: "Misoprostol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Misoprostol</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Uterotonic (Prostaglandin E1 Analog)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">200 mcg tablets.</span></div>
-                </div>
-
-                <p class="rx-moa">Prostaglandin analog that stimulates uterine contraction; heat‑stable and does not need IV access.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Postpartum hemorrhage when Oxytocin is unavailable or ineffective.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>800 mcg sublingual (4 × 200 mcg tablets) once.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not applicable.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Undelivered fetus (including possible twin); known allergy to prostaglandins.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma (rare bronchospasm); cardiovascular disease.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Shivering; fever; nausea; diarrhea.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: indicated only after delivery of the baby.<br>Lactation: small amounts excreted; short‑term use compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Shivering and fever are common and transient after a dose. Continue fundal massage and give Tranexamic Acid per PPH protocol.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Misoprostol",
+                    "lead": "A heat-stable tablet that makes the uterus contract when oxytocin isn't available or hasn't worked in postpartum haemorrhage. Exclude a second baby first.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Prostaglandin E1 analogue (uterotonic)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "200 mcg tablets"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes sublingually"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Postpartum haemorrhage",
+                                    "dose": "800 mcg sublingual (4 tablets) once",
+                                    "note": "With fundal massage and tranexamic acid",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not applicable."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Postpartum haemorrhage when oxytocin is unavailable or ineffective"
+                            ],
+                            "exclude": [
+                                "Baby not yet delivered (including a possible twin)",
+                                "Prostaglandin allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Shivering and fever (common, brief)",
+                                "Nausea, diarrhoea"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6485,64 +7627,119 @@ window.CPG_DATA = {
             {
                 id: "formulary-37",
                 shortTitle: "Normal Saline",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Sodium Chloride 0.9% (Normal Saline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Isotonic Crystalloid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">250 mL bottle or bag; 100 mL bottle</span></div>
-                </div>
-
-                <p class="rx-moa">Replaces intravascular volume to maintain organ perfusion.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Maintenance of end organ perfusion as per appropriate CPG; Hyperglycemia; Flushing of IV/IO lines; Medication dilution.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>As per appropriate CPG.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>As per appropriate CPG.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to normal saline preparation; Pulmonary edema / Fluid overload.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Cardiovascular disease; Heart Failure; Renal Failure.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Fluid overload.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safe to use in pregnancy.<br>Lactation: Safe to use in lactation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Sodium Chloride 0.9% (Normal Saline)",
+                    "lead": "The standard isotonic fluid for volume, flushing and dilution. Give in small boluses with reassessment; large volumes cause acidosis and overload.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Isotonic crystalloid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mL, 250 mL, 500 mL and 1 L"
+                                ],
+                                [
+                                    "Contains",
+                                    "Sodium 154 mmol/L, chloride 154 mmol/L"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypovolaemia or shock",
+                                    "dose": "250–500 mL boluses, reassess",
+                                    "note": "Trauma: titrate to radial pulse or SBP 80–90 mmHg (110 mmHg with head injury)",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Flush and drug dilution",
+                                    "dose": "As needed",
+                                    "note": "",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Shock",
+                                    "dose": "10–20 mL/kg bolus, reassess",
+                                    "note": "10 mL/kg if heart disease is possible",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hypovolaemia, sepsis, dehydration, DKA",
+                                "Flushing lines and diluting drugs"
+                            ],
+                            "exclude": [
+                                "Pulmonary oedema or fluid overload"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Overload in heart and kidney failure",
+                                "Hyperchloraemic acidosis with large volumes"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6803,64 +8000,123 @@ window.CPG_DATA = {
             {
                 id: "formulary-75",
                 shortTitle: "Oxytocin",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Oxytocin</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Uterotonic Hormone</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 units/mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Stimulates uterine smooth muscle contraction, compressing uterine blood vessels and reducing postpartum bleeding.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Postpartum hemorrhage; prophylaxis after delivery of the baby once a second fetus is excluded.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>10 units IM; or 10–40 units in 1,000 mL NS IV infusion titrated to uterine tone and bleeding.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not applicable.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Undelivered fetus (including possible twin); known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Rapid IV bolus causes hypotension and tachycardia — avoid. Pre‑eclampsia; cardiovascular disease.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Nausea; vomiting; hypotension; tachycardia; uterine cramping.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: indicated only after delivery of the baby.<br>Lactation: compatible (promotes milk let‑down).</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Combine with fundal massage, bladder emptying and Tranexamic Acid for PPH. Always palpate the abdomen to exclude a second fetus before administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Oxytocin",
+                    "lead": "The first-line drug to prevent and treat postpartum haemorrhage by contracting the uterus. Make sure there isn't a second baby, and never give a rapid IV bolus.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Uterotonic hormone"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 IU/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "2–3 minutes IM; about 1 minute IV"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "After birth (prevention) or postpartum haemorrhage",
+                                    "dose": "10 IU IM",
+                                    "note": "",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Ongoing haemorrhage",
+                                    "dose": "40 IU in 1 L saline IV infusion",
+                                    "note": "Titrate to uterine tone",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not applicable."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Postpartum haemorrhage",
+                                "Prevention after the baby is born, once a second baby is excluded"
+                            ],
+                            "exclude": [
+                                "Undelivered baby (including a possible twin)",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension and tachycardia with IV bolus – avoid",
+                                "Nausea, cramping"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Combine with fundal massage, an empty bladder and tranexamic acid"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -7106,64 +8362,121 @@ window.CPG_DATA = {
             {
                 id: "formulary-74",
                 shortTitle: "Pralidoxime",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Pralidoxime (2‑PAM)</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antidote (Cholinesterase Reactivator)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g vial; 600 mg auto‑injector (DuoDote / Mark I kit with Atropine).</span></div>
-                </div>
-
-                <p class="rx-moa">Reactivates acetylcholinesterase inhibited by organophosphates before the enzyme–toxin bond ‘ages’, reversing nicotinic effects (muscle weakness, fasciculations).</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Organophosphate insecticide or nerve agent poisoning with moderate to severe symptoms, given with Atropine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>30 mg/kg (1–2 g) IV over 15–30 min, or 600 mg IM auto‑injector (up to 3 for severe symptoms).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>25–50 mg/kg IV over 15–30 min (max 2 g), or IM per auto‑injector weight guidance.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy (relative in life‑threatening poisoning).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Rapid IV administration causes laryngospasm, muscle rigidity and tachycardia. Renal impairment. Not effective for carbamate poisoning alone.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Blurred vision; dizziness; hypertension; tachycardia; muscle weakness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: treatment of poisoning takes priority.<br>Lactation: no data; treatment takes priority.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Atropine treats the muscarinic ‘wet’ signs and is titrated to dry secretions; Pralidoxime treats muscle weakness. Decontaminate and protect crew with PPE first.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Pralidoxime (2-PAM)",
+                    "lead": "Reactivates the enzyme blocked by organophosphates and nerve agents, treating the muscle weakness that atropine can't. Always with atropine, after decontamination.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Cholinesterase reactivator"
+                                ],
+                                [
+                                    "Presentation",
+                                    "1 g vial; 600 mg auto-injector (with atropine 2.1 mg)"
+                                ],
+                                [
+                                    "Best given",
+                                    "Early, before the poison 'ages'"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Organophosphate or nerve agent with moderate to severe signs",
+                                    "dose": "30 mg/kg (1–2 g) IV over 15–30 minutes",
+                                    "note": "Or 600 mg IM auto-injector, up to 3",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same",
+                                    "dose": "25–50 mg/kg IV over 15–30 minutes",
+                                    "note": "Maximum 2 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Organophosphate or nerve agent poisoning with weakness, twitching or breathing failure, alongside atropine"
+                            ],
+                            "exclude": [
+                                "Carbamate poisoning alone (limited benefit)",
+                                "Allergy (relative)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Rapid IV: laryngospasm, rigidity, tachycardia",
+                                "Kidney impairment: lower dose"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Atropine dries secretions; pralidoxime restores muscle strength"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -7785,64 +9098,113 @@ window.CPG_DATA = {
             {
                 id: "formulary-35",
                 shortTitle: "Ringers Lactate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Ringers Lactate</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Isotonic Crystalloid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">250 mL bottle</span></div>
-                </div>
-
-                <p class="rx-moa">Replaces intravascular volume to maintain organ perfusion.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Maintenance of blood pressure / intravascular volume and end organ perfusion as per relevant CPG.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Administration as per relevant CPG.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Administration as per relevant CPG. Routine administration to pediatrics should be avoided. Normal Saline is preferred.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hypersensitivity to Ringers Lactate; pediatrics <1 month; Diabetic Ketoacidosis (DKA); hypervolemia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Crush Injuries; Renal Failure; Liver Failure.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperkalemia; hypervolemia; hyponatremia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, Ringers Lactate should be administered when clinically indicated.<br>Lactation: Safety has not been established. However, Ringers Lactate should be administered when clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Ringer's Lactate (Hartmann's)",
+                    "lead": "A balanced crystalloid, closer to plasma than saline. Good for trauma, burns, sepsis and children; its small potassium content isn't a problem in practice.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Balanced isotonic crystalloid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "250 mL, 500 mL and 1 L"
+                                ],
+                                [
+                                    "Contains",
+                                    "Sodium 130, potassium 4, calcium 3 mmol/L, lactate"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypovolaemia, burns, sepsis",
+                                    "dose": "250–500 mL boluses, reassess",
+                                    "note": "Burns: ABLS starting rates (chapter 6)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Shock",
+                                    "dose": "10–20 mL/kg bolus, reassess",
+                                    "note": "Balanced or isotonic saline are both acceptable",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Volume replacement in trauma, burns, sepsis and dehydration"
+                            ],
+                            "exclude": [
+                                "Same line as ceftriaxone (calcium)",
+                                "Fluid overload",
+                                "Severe hyperkalaemia (prefer saline)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Overload in heart and kidney failure"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -8450,64 +9812,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-70",
                 shortTitle: "Thiamine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Thiamine (Vitamin B1)</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Vitamin</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Essential coenzyme for carbohydrate metabolism; prevents or treats Wernicke’s encephalopathy in thiamine‑deficient patients.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Suspected Wernicke’s encephalopathy; altered consciousness or hypoglycemia in a patient with chronic alcohol use or malnutrition (before or with glucose).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>100 mg IV slow over 5 min or IM.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not routinely indicated.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Rare anaphylaxis with IV use — give slowly and have resuscitation equipment available.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Injection‑site pain; flushing; rarely anaphylaxis.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: safe; indicated in hyperemesis gravidarum.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Never delay glucose in a hypoglycemic patient to give Thiamine first — give both.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Thiamine (Vitamin B1)",
+                    "lead": "Prevents and treats Wernicke's encephalopathy in people with alcohol dependence or malnutrition. Give it with glucose – never delay the glucose to give thiamine first.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Vitamin"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "Hours to days"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Alcohol dependence or malnutrition with confusion or hypoglycaemia",
+                                    "dose": "100 mg slow IV over 5 minutes or IM",
+                                    "note": "Higher doses in hospital for Wernicke's",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not routinely indicated."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Confusion, ataxia or eye signs in alcohol use or malnutrition",
+                                "Hypoglycaemia in those patients, alongside glucose"
+                            ],
+                            "exclude": [
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Rare anaphylaxis with IV: give slowly",
+                                "Injection-site pain"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -8627,64 +10033,122 @@ window.CPG_DATA = {
             {
                 id: "formulary-38",
                 shortTitle: "Tranexamic Acid",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Tranexamic Acid</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antifibrinolytic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mg/5 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Tranexamic Acid blocks the conversion of plasminogen to plasmin, reducing fibrinolysis, reducing blood loss.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Uncontrolled bleeding secondary to trauma; Significant bleeding associated with post partum hemorrhage.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1000 mg IV. Once only. Administered within 3 hours since onset of bleeding. Dilute in 100 mL normal saline, administer over 10 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>15 mg/kg IV. Once only. Slow IV over 10 minutes.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; >3 hours since time of injury or start of bleeding.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>First trimester pregnancy; renal impairment; females taking oral contraceptives; concurrent thromboembolic disease process; suspected subarachnoid hemorrhage.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Thrombosis; convulsions; hypotension with rapid injections.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However tranexamic acid should be administered if clinically indicated.<br>Lactation: Safety has not been established. However tranexamic acid should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Fluids, Glucose, Antidotes & Other",
+                    "title": "Tranexamic Acid",
+                    "lead": "Slows clot breakdown. It saves lives in trauma, head injury and postpartum haemorrhage only if given early – within 3 hours.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antifibrinolytic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "500 mg/5 mL"
+                                ],
+                                [
+                                    "Time limit",
+                                    "Within 3 hours of injury or birth"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Major trauma bleeding or TBI",
+                                    "dose": "1 g IV over 10 minutes",
+                                    "note": "Then 1 g over 8 hours in hospital",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Postpartum haemorrhage",
+                                    "dose": "1 g IV over 10 minutes",
+                                    "note": "Second 1 g after 30 minutes if bleeding continues",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Major trauma bleeding",
+                                    "dose": "15 mg/kg IV over 10 minutes",
+                                    "note": "Maximum 1 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Significant bleeding after trauma within 3 hours",
+                                "Moderate TBI within 3 hours",
+                                "Postpartum haemorrhage within 3 hours of birth"
+                            ],
+                            "exclude": [
+                                "More than 3 hours since injury or birth",
+                                "Allergy",
+                                "Active thromboembolism"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension if given fast",
+                                "Seizures at high doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Trauma assessment",
+                                            "sub": "Find the bleeding",
+                                            "href": "../pages/trauma.html",
+                                            "icon": "ambulance"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
