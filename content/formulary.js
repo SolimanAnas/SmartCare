@@ -945,64 +945,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-60",
                 shortTitle: "Budesonide (Nebulized)",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Budesonide (Nebulized)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Inhaled Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.5 mg/2 mL and 1 mg/2 mL nebules.</span></div>
-                </div>
-
-                <p class="rx-moa">Topical corticosteroid that reduces subglottic and airway mucosal edema and inflammation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Croup (moderate to severe) when oral or IM steroids cannot be given.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Not routinely indicated.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>2 mg nebulized as a single dose.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Does not replace Racemic Epinephrine for severe croup with stridor at rest. Avoid agitating the child.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Cough; oral irritation; hoarseness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: considered safe.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Allow the child to sit on the caregiver’s lap during nebulization. Oral Dexamethasone remains the first‑line steroid for croup.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Budesonide (nebulised)",
+                    "lead": "An inhaled steroid for croup when the child can't take oral or injected dexamethasone. It doesn't act fast: severe stridor still needs nebulised epinephrine.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Inhaled corticosteroid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "0.5 mg/2 mL and 1 mg/2 mL nebules"
+                                ],
+                                [
+                                    "Onset",
+                                    "Hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Croup when oral or IM steroid isn't possible",
+                                    "dose": "2 mg nebulised once",
+                                    "note": "Keep the child calm on the carer's lap",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe croup when dexamethasone can't be given"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "As the only treatment for stridor at rest (give nebulised epinephrine)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Cough, hoarseness",
+                                "Agitation worsens stridor: blow-by if a mask upsets the child"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Oral dexamethasone is the first-line croup steroid"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1319,64 +1363,127 @@ window.CPG_DATA = {
             {
                 id: "formulary-77",
                 shortTitle: "Chlorphenamine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Chlorphenamine (Chlorpheniramine)</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT-A+</span>
-                        <div class="rx-scope-bar"><span style="width:40%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine (H1 Antagonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10 mg/mL ampule; 4 mg tablets; 2 mg/5 mL oral solution.</span></div>
-                </div>
-
-                <p class="rx-moa">Competitively blocks H1 histamine receptors, reducing itching, urticaria and angioedema.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Allergic reaction (urticaria, pruritus); adjunct after Epinephrine in anaphylaxis.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>10 mg IM or slow IV over 1 min; 4 mg PO for mild reactions.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>6 months–6 years: 2.5 mg IM/IV; 6–12 years: 5 mg IM/IV; &gt;12 years: 10 mg IM/IV.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; infants &lt;6 months.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Narrow‑angle glaucoma; urinary retention; epilepsy; elderly (sedation, falls).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Drowsiness; dizziness; dry mouth; hypotension with rapid IV injection.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: may cause infant drowsiness; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Antihistamines do not treat airway compromise or shock — never delay Epinephrine in anaphylaxis. Advise the patient not to drive after administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Chlorphenamine",
+                    "lead": "An antihistamine for itch and hives. In anaphylaxis it's an optional add-on after epinephrine – it does nothing for the airway or blood pressure.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "H1 antihistamine (sedating)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10 mg/mL injection; 4 mg tablets; 2 mg/5 mL syrup"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes IV; 30 minutes orally"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Allergic skin symptoms",
+                                    "dose": "10 mg IM or slow IV",
+                                    "note": "4 mg orally for mild reactions",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "6 months to 6 years",
+                                    "dose": "2.5 mg IM or slow IV",
+                                    "note": "",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "6–12 years",
+                                    "dose": "5 mg IM or slow IV",
+                                    "note": "",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Over 12 years",
+                                    "dose": "10 mg IM or slow IV",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Urticaria, itch, mild angioedema without airway or circulation problems",
+                                "After epinephrine in anaphylaxis, for skin symptoms"
+                            ],
+                            "exclude": [
+                                "Infants under 6 months",
+                                "Instead of epinephrine in anaphylaxis"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Drowsiness – no driving",
+                                "Hypotension if pushed fast IV",
+                                "Older adults: falls and confusion; glaucoma and urinary retention"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1494,64 +1601,108 @@ window.CPG_DATA = {
             {
                 id: "formulary-6",
                 shortTitle: "Combivent",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Combivent</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">β2 Agonist and Anticholinergic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2.5 mL nebule containing: 2.5 mg Salbutamol, 0.5 mg Ipratropium Bromide.</span></div>
-                </div>
-
-                <p class="rx-moa">Salbutamol agonizes β2 adrenergic receptors causing bronchodilation. Ipratropium Bromide blocks the action of acetylcholine at muscarinic receptors, resulting in bronchodilation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Asthma; COPD.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>2.5 mL nebulized (2.5 mg Salbutamol, 0.5 mg Ipratropium Bromide). Dilute dose with normal saline or sterile water to a maximum of 5 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended for pediatrics.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; palpitations; headache; dry mouth.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Combivent should be administered if clinically indicated.<br>Lactation: may be administered in lactation however, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Combivent does not have a significant role in the management of bronchospasm associated with smoke inhalation or chest infections. However, if significant bronchospasm is present, Combivent may be administered.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Combivent (salbutamol + ipratropium)",
+                    "lead": "A combined nebule of a beta-2 agonist and an anticholinergic for moderate to severe asthma or COPD attacks. Don't add separate ipratropium on top.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Beta-2 agonist plus anticholinergic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2.5 mL nebule: salbutamol 2.5 mg + ipratropium 0.5 mg"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe bronchospasm (asthma, COPD)",
+                                    "dose": "1 nebule (2.5 mL)",
+                                    "note": "Repeat salbutamol alone as needed; ipratropium up to 3 doses in the first hour",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not used in children: give salbutamol and ipratropium separately at pediatric doses."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe asthma or COPD exacerbation"
+                            ],
+                            "exclude": [
+                                "Allergy to either component"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia, tremor, dry mouth",
+                                "Eyes: avoid mist in the eyes (glaucoma)",
+                                "COPD: drive with air or titrate oxygen to 88–92%"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1624,64 +1775,120 @@ window.CPG_DATA = {
             {
                 id: "formulary-40",
                 shortTitle: "Dexamethasone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Dexamethasone</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/mL vial, typically supplied as a 2 mL (8 mg) or 5 mL (20 mg) vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Long-acting glucocorticoid that suppresses inflammatory mediator release and reduces airway edema. Onset is delayed (1–2 hours) relative to hydrocortisone but has a longer duration of action.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate–severe croup; asthma/COPD exacerbation as an adjunct to bronchodilators; anaphylaxis as an adjunct after epinephrine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>10 mg IV/IM/PO single dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.6 mg/kg PO/IV/IM (maximum 10 mg) single dose — most commonly used for croup.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Not a substitute for epinephrine in anaphylaxis — give after, not instead of, epinephrine. Use caution in known active infection.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Rare with single prehospital dose; hyperglycemia; mild agitation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal risk cannot be ruled out; administer if clinically indicated.<br>Lactation: considered compatible with breastfeeding at standard single doses.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Oral and IV routes are considered equally effective for croup — oral is preferred in a cooperative patient to avoid the distress of an injection.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Dexamethasone",
+                    "lead": "A long-acting steroid: one dose treats croup for days and helps asthma and COPD attacks recover. It takes hours to work, so it never replaces bronchodilators or epinephrine.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Corticosteroid (long-acting)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "4 mg/mL injection; tablets or oral solution"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 hours; lasts about 3 days"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Asthma or COPD exacerbation",
+                                    "dose": "10 mg IV, IM or orally",
+                                    "note": "Single dose",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Croup",
+                                    "dose": "0.15–0.6 mg/kg orally (or IM/IV)",
+                                    "note": "Maximum 16 mg; oral preferred in a calm child",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Asthma",
+                                    "dose": "0.6 mg/kg orally or IV/IM",
+                                    "note": "Maximum 16 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Croup of any severity",
+                                "Moderate to severe asthma or COPD exacerbation"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "Instead of epinephrine in anaphylaxis or croup with stridor at rest"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hyperglycaemia in diabetes",
+                                "Agitation"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2073,64 +2280,130 @@ window.CPG_DATA = {
             {
                 id: "formulary-11",
                 shortTitle: "Diphenhydramine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Diphenhydramine</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antihistamine</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">50 mg/1 mL vial</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks the action of histamine at H1 receptors reducing histamine induced symptoms (such as itching, urticaria and edema).</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to Severe Allergic Reactions / Anaphylaxis.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1 mg/kg IM/IV (maximum 50 mg). IM administration is preferred. For IV administration, dilute in 100 mL Normal Saline and administer as an infusion over 5 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1 mg/kg IM/IV (maximum 50 mg). IM administration is preferred. For IV administration, dilute in 1 mL/kg of Normal Saline and administer as an infusion over 5 minutes.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; lactation; children less than 4 weeks.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Nil.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Drowsiness / CNS depression; pain associated with IV injection.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated. Should not be routinely administered in pregnancy.<br>Lactation: Safety has not been established. Should not be routinely administered in lactation.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>IV administration is highly associated with pain at the injection site – avoid undiluted administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Diphenhydramine",
+                    "lead": "A sedating antihistamine for allergic itch and hives, and an add-on after epinephrine in anaphylaxis. Also used for acute dystonic reactions.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "H1 antihistamine (sedating, anticholinergic)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes IV; 15–30 minutes IM"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Allergic reaction (after epinephrine if anaphylaxis)",
+                                    "dose": "25–50 mg IM or slow IV",
+                                    "note": "IV diluted over 5 minutes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Acute dystonic reaction",
+                                    "dose": "25–50 mg IV or IM",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Allergic reaction",
+                                    "dose": "1 mg/kg IM or slow IV",
+                                    "note": "Maximum 50 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Urticaria, itch, angioedema without airway or circulation compromise",
+                                "Skin symptoms after epinephrine in anaphylaxis",
+                                "Dystonic reactions to antipsychotics or antiemetics"
+                            ],
+                            "exclude": [
+                                "Newborns",
+                                "Instead of epinephrine in anaphylaxis"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Drowsiness, confusion in older adults",
+                                "Anticholinergic effects: urinary retention, dry mouth, glaucoma",
+                                "Pain if given undiluted IV"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Pregnancy and breastfeeding: may be given when needed; short-term use"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3204,67 +3477,133 @@ window.CPG_DATA = {
             {
                 id: "formulary-20",
                 shortTitle: "Hydrocortisone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Hydrocortisone</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) for IM; Emergency Medical Technician (EMT) for IV – independent practice.">
-                        <span class="rx-scope-badge">EMT</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/2 mL (act‑o‑vial)</span></div>
-                </div>
-
-                <p class="rx-moa">Hydrocortisone has anti‑inflammatory and immunosuppressive effects. It reduces the production of inflammatory substances namely prostaglandins and leukotrienes, leading to a decrease in inflammation and immune activity.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Asthma; COPD; Anaphylaxis.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Asthma:</strong> Moderate: 100 mg IV/IM; Severe or life‑threatening: 200 mg IV/IM/IO.<br>
-                <strong>Anaphylaxis:</strong> 100‑200 mg IV/IM/IO.<br>
-                <strong>COPD:</strong> 100‑200 mg IM/IV/IO.<br>
-                IV doses should be given slowly over 2 minutes or diluted in 100 mL normal saline and administered over 2‑5 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Asthma & Anaphylaxis:</strong> Moderate: 2 mg/kg IV/IM/IO; or for ease of dilution: <1 year 25 mg, 1‑5 years 50 mg, >5 years 100 mg. Severe: 4 mg/kg IV/IM/IO.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Concurrent fungal infections.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Fatigue; hypertension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated. Hydrocortisone should only be administered in severe or life‑threatening cases.<br>Lactation: Safety has not been established. If essential to be administered the mother should be advised to stop breastfeeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>In severe asthma the dose may be increased to Adults: 200 mg and Pediatrics: 4 mg/kg and should be given IV.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Hydrocortisone",
+                    "lead": "A fast-acting steroid with one life-saving prehospital use – adrenal crisis – and supporting roles in severe asthma and COPD. Give it early to anyone with known adrenal insufficiency who is unwell.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Corticosteroid (with mineralocorticoid effect)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mg powder or 100 mg/2 mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "Hours for anti-inflammatory effect"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Adrenal crisis",
+                                    "dose": "100 mg IM or IV",
+                                    "note": "Plus fluids; don't delay for transport",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Severe asthma or COPD exacerbation",
+                                    "dose": "100 mg IV or IM",
+                                    "note": "If oral steroid can't be taken",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Adrenal crisis",
+                                    "dose": "Under 1 year 25 mg; 1–5 years 50 mg; 6 years or more 100 mg",
+                                    "note": "IM or IV",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Severe asthma",
+                                    "dose": "4 mg/kg IV (maximum 100 mg)",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Known adrenal insufficiency (Addison's, long-term steroids) with vomiting, shock or collapse",
+                                "Severe asthma or COPD when oral steroid isn't possible"
+                            ],
+                            "exclude": [
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hyperglycaemia",
+                                "Not a first-line anaphylaxis drug: epinephrine is"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Patients with adrenal insufficiency often carry an emergency card and their own injection: help them use it"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3532,64 +3871,113 @@ window.CPG_DATA = {
             {
                 id: "formulary-56",
                 shortTitle: "Ipratropium Bromide",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Ipratropium Bromide (Atrovent)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticholinergic Bronchodilator</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">500 mcg/2 mL nebule; 250 mcg/2 mL nebule.</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks muscarinic receptors in bronchial smooth muscle, reducing vagally mediated bronchoconstriction and mucus secretion.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Moderate to severe bronchospasm in asthma or COPD exacerbation, in combination with Salbutamol.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>500 mcg nebulized; may repeat every 20 min to a total of 3 doses.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>&lt;12 years: 250 mcg nebulized; ≥12 years: 500 mcg nebulized; may repeat every 20 min to a total of 3 doses.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to Ipratropium, Atropine or soy / peanut products.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Narrow‑angle glaucoma (avoid contact with eyes — use a mouthpiece where possible); prostatic hypertrophy / urinary retention.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Dry mouth; headache; blurred vision; tachycardia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Ipratropium is not a rescue drug on its own — always give with a beta‑2 agonist. Combivent already contains Ipratropium; do not double dose.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Ipratropium Bromide",
+                    "lead": "An anticholinergic bronchodilator added to salbutamol for moderate to severe asthma and COPD attacks. Never on its own as the rescue drug.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Anticholinergic bronchodilator"
+                                ],
+                                [
+                                    "Presentation",
+                                    "250 mcg/2 mL and 500 mcg/2 mL nebules"
+                                ],
+                                [
+                                    "Onset",
+                                    "15–20 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe bronchospasm",
+                                    "dose": "500 mcg nebulised with salbutamol",
+                                    "note": "Every 20 minutes, up to 3 doses",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Moderate to severe asthma",
+                                    "dose": "Under 12 years 250 mcg; 12 years or more 500 mcg",
+                                    "note": "With salbutamol; up to 3 doses",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Moderate to severe asthma or COPD exacerbation, with a beta-2 agonist"
+                            ],
+                            "exclude": [
+                                "Allergy to ipratropium or atropine",
+                                "Combivent already given (contains ipratropium)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Dry mouth, blurred vision; keep mist out of the eyes (glaucoma)",
+                                "Urinary retention"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4053,67 +4441,146 @@ window.CPG_DATA = {
             {
                 id: "formulary-24",
                 shortTitle: "Magnesium Sulphate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Magnesium Sulphate</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 g in 10 mL ampule; 500 mg in 2 mL vial</span></div>
-                </div>
-
-                <p class="rx-moa">Reduces bronchial smooth muscle contraction resulting in bronchodilation. Blocks calcium channels reducing calcium influx into cardiac myocytes, slowing abnormal electrical activity which causes Torsades de Pointes. Dilates cerebral blood vessels, improving blood flow to the brain and reducing hypertension‑related seizures, and as a central nervous system depressant, reducing neuronal excitability.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Asthma (severe or life‑threatening); Eclampsia; Torsades de pointes.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Asthma:</strong> 2 g IV/IO/IM. IV/IO doses should be administered as an infusion over 20 minutes.<br>
-                <strong>Eclampsia:</strong> 4 g IV/IO over 5‑10 minutes (dilute in 100 mL NaCl or use syringe driver); 8 g IM (4 g into each gluteal muscle).<br>
-                <strong>Torsades de Pointes:</strong> 1‑2 g IV/IO over 5‑20 minutes. May repeat once if required.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Asthma:</strong> 40 mg/kg IV/IO/IM.<br>
-                <strong>Torsades de Pointes:</strong> 25‑50 mg/kg IV/IO over 5‑20 minutes. May repeat once if required.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Previous severe reaction to magnesium; toxemia of pregnancy within the first 2 hours preceding delivery.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Hypotension.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Arrhythmias; hypotension (usually associated with fast administration); muscle weakness; CNS depression.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Magnesium should be administered if clinically indicated.<br>Lactation: Safety has not been established. Magnesium should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Do not run magnesium through the same line as adrenaline as precipitation may occur.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Magnesium Sulfate",
+                    "lead": "Three emergencies: severe asthma that isn't responding, eclamptic seizures, and torsades de pointes. Give it slowly unless the patient is in arrest.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Electrolyte"
+                                ],
+                                [
+                                    "Presentation",
+                                    "50% (5 g/10 mL); 500 mg/2 mL"
+                                ],
+                                [
+                                    "Toxicity",
+                                    "Loss of knee reflexes, respiratory rate below 12/min, low BP – antidote calcium"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe or life-threatening asthma",
+                                    "dose": "2 g IV over 20 minutes",
+                                    "note": "",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Eclampsia",
+                                    "dose": "4–6 g IV over 20–30 minutes",
+                                    "note": "Or 10 g IM (5 g in each buttock) if no IV (WHO)",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Torsades de pointes",
+                                    "dose": "1–2 g IV over 5–20 minutes",
+                                    "note": "Push in pulseless torsades",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe asthma",
+                                    "dose": "40 mg/kg IV over 20 minutes",
+                                    "note": "Maximum 2 g",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Torsades de pointes",
+                                    "dose": "25–50 mg/kg IV/IO",
+                                    "note": "Maximum 2 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Life-threatening asthma not responding to bronchodilators",
+                                "Eclamptic seizure or severe pre-eclampsia",
+                                "Torsades de pointes"
+                            ],
+                            "exclude": [
+                                "Heart block",
+                                "Myasthenia gravis",
+                                "Severe kidney failure (risk of toxicity)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension and flushing if fast",
+                                "Respiratory depression and loss of reflexes: stop, give calcium gluconate 1 g",
+                                "Same line as epinephrine: may precipitate"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "torsades",
+                                            "label": "Torsades de pointes",
+                                            "sub": "Magnesium 1–2 g.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4186,64 +4653,114 @@ window.CPG_DATA = {
             {
                 id: "formulary-58",
                 shortTitle: "Methylprednisolone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Methylprednisolone (Solu‑Medrol)</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">40 mg, 125 mg vial (powder for reconstitution).</span></div>
-                </div>
-
-                <p class="rx-moa">Potent glucocorticoid that suppresses inflammatory and immune responses, reducing airway edema and late‑phase allergic reactions.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe asthma / COPD exacerbation; anaphylaxis (adjunct after Epinephrine); severe allergic reaction.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>125 mg IV/IM over at least 1 min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>2 mg/kg IV/IM (max 125 mg).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; systemic fungal infection.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Diabetes; active infection; GI bleeding history; rapid IV push of large doses can cause arrhythmia — give slowly.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia; hypertension; agitation; fluid retention.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: benefit outweighs risk in severe asthma or anaphylaxis; administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Use only one systemic corticosteroid (Hydrocortisone, Dexamethasone or Methylprednisolone). Never delay Epinephrine in anaphylaxis to give a steroid.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Methylprednisolone",
+                    "lead": "A potent IV steroid for severe asthma or COPD attacks when oral steroids aren't possible. One systemic steroid only, and never before epinephrine.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Corticosteroid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "40 mg and 125 mg powder vials"
+                                ],
+                                [
+                                    "Onset",
+                                    "Hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe asthma or COPD exacerbation",
+                                    "dose": "125 mg IV or IM",
+                                    "note": "Give slowly (at least 1 minute)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe asthma",
+                                    "dose": "1–2 mg/kg IV or IM",
+                                    "note": "Maximum 125 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe asthma or COPD when oral steroid can't be taken"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "Systemic fungal infection",
+                                "A second systemic steroid"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hyperglycaemia, agitation",
+                                "Arrhythmia with rapid large IV doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5082,64 +5599,132 @@ window.CPG_DATA = {
             {
                 id: "formulary-31",
                 shortTitle: "Oxygen",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Oxygen</h3>
-                    </div>
-                    <div class="rx-scope" title="All clinical levels – independent practice.">
-                        <span class="rx-scope-badge">All Levels</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Gas</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">Black colour cylinder with white shoulder</span></div>
-                </div>
-
-                <p class="rx-moa">Oxygen administration delivers supplemental oxygen to patients with low blood oxygen levels (hypoxemia) to improve tissue oxygenation and support vital organ function.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>SpO₂ <94%.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>As determined by relevant CPG to maintain targeted oxygen levels.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>As determined by relevant CPG to maintain targeted oxygen levels.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Bleomycin lung injury.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Administration to newborns.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Prolonged use in COPD patients may lead to a reduction in ventilation stimulus.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safe to use in pregnancy and should be administered when clinically indicated.<br>Lactation: Safe to use in lactation and should be administered when clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Oxygen",
+                    "lead": "Treat hypoxaemia, not breathlessness. Titrate to a target saturation; too much oxygen harms patients with CO₂ retention and after cardiac arrest, stroke and MI.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Medical gas"
+                                ],
+                                [
+                                    "Presentation",
+                                    "Cylinders (colour codes vary by country); concentrators"
+                                ],
+                                [
+                                    "Targets",
+                                    "SpO₂ 94–98%; 88–92% if at risk of CO₂ retention"
+                                ],
+                                [
+                                    "Scope",
+                                    "All levels"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hypoxaemia",
+                                    "dose": "Titrate to SpO₂ 94–98%",
+                                    "note": "Nasal cannula, mask or non-rebreather as needed",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "COPD or other CO₂ retainers",
+                                    "dose": "Titrate to SpO₂ 88–92%",
+                                    "note": "Venturi mask 24–28% where available",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Carbon monoxide, cardiac arrest, critical illness",
+                                    "dose": "High-flow (15 L/min) or 100%",
+                                    "note": "Titrate after ROSC",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Hypoxaemia",
+                                    "dose": "Titrate to SpO₂ 94–98%",
+                                    "note": "Blow-by if a mask upsets the child",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Newborn resuscitation",
+                                    "dose": "Start with 21% (35 weeks or more)",
+                                    "note": "21–30% under 35 weeks; titrate to minute targets",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "SpO₂ below target",
+                                "Shock, carbon monoxide, cardiac arrest, major trauma (initially high flow)"
+                            ],
+                            "exclude": [
+                                "Routine oxygen for normal saturations (MI, stroke)",
+                                "Paraquat or bleomycin lung injury (titrate low)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "CO₂ retention in COPD: drowsiness, rising ETCO₂",
+                                "Fire risk: no smoking, no grease"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "O₂ duration calculator",
+                                            "sub": "Cylinder time remaining",
+                                            "href": "../pages/Carevent.html",
+                                            "icon": "clock"
+                                        },
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5408,64 +5993,119 @@ window.CPG_DATA = {
             {
                 id: "formulary-57",
                 shortTitle: "Prednisolone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Prednisolone</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Corticosteroid</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg tablets; 5 mg/5 mL or 15 mg/5 mL oral solution.</span></div>
-                </div>
-
-                <p class="rx-moa">Reduces airway inflammation and edema by suppressing inflammatory mediators; onset of effect within 4–6 hours.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Acute asthma exacerbation; croup; COPD exacerbation (oral route, patient able to swallow).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>40–50 mg PO single dose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1–2 mg/kg PO (max 40 mg) for asthma; 1 mg/kg PO for croup.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; unable to swallow or protect the airway.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Diabetes (hyperglycemia); active systemic infection; recent live vaccine in children.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hyperglycemia; nausea; mood changes (short course usually well tolerated).</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: benefit of treating asthma outweighs risk; administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Corticosteroids do not give immediate relief — continue bronchodilators. Dexamethasone is an acceptable alternative for croup.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Prednisolone",
+                    "lead": "The standard oral steroid for asthma and COPD attacks and an alternative for croup. Effect starts in hours, so bronchodilators continue.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Corticosteroid"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5 mg tablets; 5 mg/5 mL and 15 mg/5 mL oral solution"
+                                ],
+                                [
+                                    "Onset",
+                                    "4–6 hours"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Asthma or COPD exacerbation",
+                                    "dose": "40–50 mg orally",
+                                    "note": "Single daily dose",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Asthma",
+                                    "dose": "1–2 mg/kg orally",
+                                    "note": "Maximum 40 mg",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Croup",
+                                    "dose": "1 mg/kg orally",
+                                    "note": "Dexamethasone preferred",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Asthma, COPD or croup in a patient who can swallow"
+                            ],
+                            "exclude": [
+                                "Unable to swallow or protect the airway",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hyperglycaemia",
+                                "Mood changes, nausea"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5737,64 +6377,121 @@ window.CPG_DATA = {
             {
                 id: "formulary-34",
                 shortTitle: "Racemic Epinephrine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Racemic Epinephrine (Adrenaline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Adrenergic Agonist</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.5 mL nebule containing 2.25% racemic epinephrine</span></div>
-                </div>
-
-                <p class="rx-moa">Adrenaline acts on alpha‑1 adrenergic receptors in the mucosal blood vessels of the larynx and trachea. This causes vasoconstriction, reducing blood flow to the inflamed tissues and decreasing edema (swelling) in the airway.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Croup.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.5 mL Nebulized (diluted in 3 mL normal saline or sterile water).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>>4 years: 0.5 mL Nebulized (diluted in 3 mL normal saline or sterile water).<br><4 years: 0.05 mL/kg (max 0.5 mL, diluted in 3 mL normal saline or sterile water).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to racemic epinephrine preparation.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Heart disease or structural abnormalities; hypertension; thyroid disease.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; arrhythmias; tremors; arrhythmias (including VF); pulmonary edema; headache.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However racemic epinephrine should be administered when clinically indicated.<br>Lactation: Safety has not been established. However racemic epinephrine should be administered when clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Racemic Epinephrine (nebulised)",
+                    "lead": "Shrinks swollen airway mucosa within minutes in croup with stridor at rest. The effect wears off in about 2 hours, so the child needs observation after.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Adrenergic agonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2.25% solution (0.5 mL nebule)"
+                                ],
+                                [
+                                    "Alternative",
+                                    "Epinephrine 1 mg/mL: 0.5 mL/kg nebulised (maximum 5 mL)"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Upper airway swelling (post-extubation, angioedema adjunct)",
+                                    "dose": "0.5 mL of 2.25% in 3 mL saline nebulised",
+                                    "note": "",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Croup with stridor at rest",
+                                    "dose": "0.05 mL/kg of 2.25% (maximum 0.5 mL) in 3 mL saline",
+                                    "note": "Or epinephrine 1 mg/mL 0.5 mL/kg (maximum 5 mL)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Croup with stridor at rest or significant distress",
+                                "Upper airway swelling"
+                            ],
+                            "exclude": [
+                                "Allergy to the preparation"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia, tremor, arrhythmias",
+                                "Rebound after about 2 hours: observe"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Give dexamethasone as well"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "PALS review",
+                                            "sub": "Pediatric resuscitation",
+                                            "href": "../pages/pals.html",
+                                            "icon": "baby"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5932,64 +6629,119 @@ window.CPG_DATA = {
             {
                 id: "formulary-36",
                 shortTitle: "Salbutamol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Salbutamol</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Bronchodilator (Beta‑2 selective adrenergic agonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">2.5 mg/2.5 mL nebule</span></div>
-                </div>
-
-                <p class="rx-moa">Binds with B‑2 adrenergic receptors causing bronchodilation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Bronchospasm associated with: Asthma; COPD; Anaphylaxis; Post Drowning/water inhalation; Tocolysis associated with prolapsed umbilical cord.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>5 mg Nebulized, repeat as required. Dilute dose with normal saline or sterile water to a maximum of 5 mL.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><5 years: 2.5 mg nebulized, repeat as required; >5 years: 5 mg nebulized, repeat as required. Dilute dose with normal saline or sterile water to a maximum of 5 mL.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to salbutamol.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Hypertension; tachyarrhythmias; last trimester pregnancy.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Angina; tachycardia; tachyarrhythmias.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. However, salbutamol should be administered if clinically indicated.<br>Lactation: Safety has not been established. However, salbutamol should be administered if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Salbutamol (Albuterol)",
+                    "lead": "The rescue bronchodilator. Give it early and often for wheeze in asthma, COPD and anaphylaxis – and by spacer if a nebuliser isn't available.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Beta-2 agonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2.5 mg/2.5 mL and 5 mg/2.5 mL nebules; 100 mcg inhaler"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Bronchospasm (asthma, COPD, anaphylaxis)",
+                                    "dose": "5 mg nebulised",
+                                    "note": "Repeat every 20 minutes or back-to-back if severe; or 4–10 puffs by spacer",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Under 5 years",
+                                    "dose": "2.5 mg nebulised",
+                                    "note": "Or 2–6 puffs by spacer",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "5 years or older",
+                                    "dose": "2.5–5 mg nebulised",
+                                    "note": "Or 4–10 puffs by spacer",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Wheeze or bronchospasm in asthma, COPD, anaphylaxis, smoke or water inhalation"
+                            ],
+                            "exclude": [
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia, tremor, anxiety",
+                                "Hypokalaemia with repeated doses",
+                                "Lactic acidosis with very frequent dosing"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -6190,64 +6942,113 @@ window.CPG_DATA = {
             {
                 id: "formulary-59",
                 shortTitle: "Terbutaline",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#10b981;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#wind"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Airway / Respiratory</div>
-                        <h3 class="rx-name">Terbutaline</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Bronchodilator (Beta‑2 Selective Adrenergic Agonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 mg/mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Stimulates beta‑2 receptors causing bronchial smooth muscle relaxation; given subcutaneously when inhaled therapy cannot be delivered effectively.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe or life‑threatening asthma with poor air entry not responding to nebulized therapy.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.25 mg SC; may repeat once after 15–30 min (max 0.5 mg in 4 hours).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.01 mg/kg SC (max 0.25 mg); may repeat once after 15–30 min.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; tachyarrhythmia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Cardiac disease; hypertension; hyperthyroidism; diabetes; hypokalemia.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; tremor; palpitations; hypokalemia; anxiety.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: used for asthma when needed; not for tocolysis in the prehospital setting.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Consider IM Epinephrine as an alternative per local protocol. Continue nebulized bronchodilators and monitor the ECG.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Respiratory & Allergy",
+                    "title": "Terbutaline",
+                    "lead": "A subcutaneous beta-2 agonist for severe asthma when the patient can't take a nebuliser effectively. IM epinephrine is the alternative.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Beta-2 agonist"
+                                ],
+                                [
+                                    "Presentation",
+                                    "1 mg/mL"
+                                ],
+                                [
+                                    "Onset",
+                                    "5–15 minutes SC"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe asthma not responding to nebulised therapy",
+                                    "dose": "0.25 mg SC",
+                                    "note": "May repeat once after 15–30 minutes; maximum 0.5 mg in 4 hours",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Severe asthma",
+                                    "dose": "0.01 mg/kg SC (maximum 0.25 mg)",
+                                    "note": "May repeat once after 15–30 minutes",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Life-threatening asthma with poor air entry"
+                            ],
+                            "exclude": [
+                                "Tachyarrhythmia",
+                                "Allergy"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia, tremor, hypokalaemia",
+                                "Continue nebulised therapy and monitor the ECG"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Breathing patterns",
+                                            "sub": "Recognise respiratory distress",
+                                            "href": "../pages/respiratory-patterns.html?p=tachypnea",
+                                            "icon": "wind"
+                                        },
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []

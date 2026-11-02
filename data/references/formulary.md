@@ -97,3 +97,52 @@ Sources:
 - **Vasopressin** – 20 units/mL. 40 units once in arrest only where local
   protocol lists it (no advantage over epinephrine); septic shock
   0.03 units/min. (AHA 2025, Surviving Sepsis)
+
+## Group B: respiratory and allergy
+
+- **Budesonide** – 0.5 mg/2 mL and 1 mg/2 mL nebules. Croup: 2 mg nebulised
+  once when oral or IM steroid isn't possible. (BNFc, NICE CKS croup)
+- **Chlorphenamine** – 10 mg/mL injection; 4 mg tablets; 2 mg/5 mL syrup;
+  onset 30 minutes orally. Adult 10 mg IM or slow IV (4 mg orally). Child
+  6 months to 6 years 2.5 mg; 6–12 years 5 mg; over 12 years 10 mg. Not
+  first-line in anaphylaxis. (BNF/BNFc, RCUK 2021)
+- **Combivent** – 2.5 mL nebule: salbutamol 2.5 mg + ipratropium 0.5 mg;
+  ipratropium up to 3 doses in the first hour; COPD oxygen 88–92%. (GINA,
+  GOLD)
+- **Dexamethasone** – 4 mg/mL; onset 1–2 hours, lasts about 3 days. Adult
+  10 mg; croup 0.15–0.6 mg/kg (maximum 16 mg); asthma 0.6 mg/kg (maximum
+  16 mg). (AAP, GINA)
+- **Diphenhydramine** – 50 mg/mL; onset 15–30 minutes IM. Adult 25–50 mg IM
+  or slow IV over 5 minutes; child 1 mg/kg (maximum 50 mg). Dystonic
+  reactions 25–50 mg. (Lexicomp)
+- **Hydrocortisone** – 100 mg. Adrenal crisis 100 mg IM/IV; child under
+  1 year 25 mg, 1–5 years 50 mg, 6 years or more 100 mg. Severe asthma
+  100 mg; child 4 mg/kg (maximum 100 mg). (Society for Endocrinology 2020,
+  BNFc)
+- **Ipratropium** – 250 mcg/2 mL and 500 mcg/2 mL; onset 15–20 minutes.
+  Adult 500 mcg; child under 12 years 250 mcg, 12 years or more 500 mcg;
+  every 20 minutes up to 3 doses. (GINA, PALS)
+- **Magnesium sulfate** – 50% (5 g/10 mL); 500 mg/2 mL. Asthma 2 g IV over
+  20 minutes; child 40 mg/kg (maximum 2 g). Eclampsia 4–6 g IV over
+  20–30 minutes or 10 g IM (5 g each buttock, WHO). Torsades 1–2 g over
+  5–20 minutes; child 25–50 mg/kg (maximum 2 g). Toxicity: knee reflexes
+  lost, respiratory rate below 12/min; calcium gluconate 1 g. (BTS/SIGN,
+  ACOG, WHO, AHA 2025)
+- **Methylprednisolone** – 40 mg and 125 mg vials. Adult 125 mg IV/IM over at
+  least 1 minute; child 1–2 mg/kg (maximum 125 mg). (Lexicomp, NAEPP)
+- **Oxygen** – targets 94–98%, 88–92% in CO₂ retainers; Venturi 24–28%;
+  high-flow 15 L/min or 100% in CO poisoning and arrest; newborn 21% at
+  35 weeks or more, 21–30% under 35 weeks. (BTS 2017, NRP 2025)
+- **Prednisolone** – 5 mg tablets; 5 mg/5 mL and 15 mg/5 mL; onset 4–6 hours.
+  Adult 40–50 mg; child 1–2 mg/kg (maximum 40 mg); croup 1 mg/kg. (GINA,
+  BTS/SIGN)
+- **Racemic epinephrine 2.25%** – 0.5 mL nebule in 3 mL saline; child
+  0.05 mL/kg (maximum 0.5 mL). Alternative epinephrine 1 mg/mL 0.5 mL/kg
+  (maximum 5 mL). Rebound after about 2 hours. (AAP, PALS)
+- **Salbutamol (albuterol)** – 2.5 mg/2.5 mL and 5 mg/2.5 mL; 100 mcg
+  inhaler. Adult 5 mg every 20 minutes or 4–10 puffs; child under 5 years
+  2.5 mg (2–6 puffs), 5 years or older 2.5–5 mg (4–10 puffs). (BTS/SIGN,
+  GINA)
+- **Terbutaline** – 1 mg/mL; onset 5–15 minutes SC. Adult 0.25 mg SC, repeat
+  once after 15–30 minutes (maximum 0.5 mg in 4 hours); child 0.01 mg/kg
+  (maximum 0.25 mg). (NAEPP, Lexicomp)
