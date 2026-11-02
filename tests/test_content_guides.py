@@ -26,7 +26,10 @@ import pytest
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 REFERENCES = ROOT / "data" / "references"
-CHAPTERS = [f"c{n}" for n in range(1, 11)]
+# The formulary's drug pages are guides too (fact-checked against
+# data/references/formulary.md) but carry no study sets of their own.
+CHAPTERS = [f"c{n}" for n in range(1, 11)] + ["formulary"]
+REFERENCE_ONLY = {"formulary"}
 MIN_QUIZ, MIN_FLASHCARDS, MIN_SCENARIOS = 10, 8, 3
 
 # Keys that hold links, ids or labels rather than clinical text. A strip's
@@ -105,6 +108,8 @@ IDS = [s["id"] for _, s in TOPICS]
 
 @pytest.mark.parametrize("chapter,section", TOPICS, ids=IDS)
 def test_study_sets_meet_the_minimums(chapter, section):
+    if chapter in REFERENCE_ONLY:
+        pytest.skip("reference pages have no study sets")
     assert len(section["quiz"]) >= MIN_QUIZ, "quiz"
     assert len(section["flashcards"]) >= MIN_FLASHCARDS, "flashcards"
     assert len(section["critical"]) >= MIN_SCENARIOS, "scenarios"

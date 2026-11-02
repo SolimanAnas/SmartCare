@@ -820,3 +820,16 @@ House style for every image:
     **Image:** An epinephrine auto-injector pressed against the outer mid-thigh through trousers, with the hold time shown.
 232. **Where:** "Technique by route", in the "Intranasal" row.
     **Image:** A syringe with an atomiser tip delivering a fine mist into one nostril, labelled "half in each side".
+
+## Drug Formulary (accent slate #64748b)
+
+### Group A – Cardiac & Resuscitation
+
+233. **Where:** Epinephrine, "At a glance", in the "Presentations" row.
+    **Image:** Three epinephrine products side by side with their routes: a 1 mg/mL ampoule labelled "IM only", a 10 mL 0.1 mg/mL prefilled syringe labelled "IV/IO arrest", and adult and junior auto-injectors.
+234. **Where:** Adenosine, "Adult doses", beside the first card.
+    **Image:** Rapid push technique: a three-way tap close to the cannula with the adenosine syringe and a 20 mL saline flush syringe, the arm raised, and a monitor strip showing a brief pause.
+235. **Where:** Glyceryl Trinitrate, "Give or not?", beside the exclude list.
+    **Image:** A checklist card before nitrates: blood pressure cuff reading above 90 mmHg, a right-sided ECG lead at V4R, and a crossed-out PDE-5 tablet with "24 h / 48 h".
+236. **Where:** Calcium Chloride, "Watch for", beside the first item.
+    **Image:** Two IV lines with a red cross between a calcium syringe and a bicarbonate syringe, and a large antecubital vein highlighted for slow injection.

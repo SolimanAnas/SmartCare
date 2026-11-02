@@ -387,64 +387,134 @@ window.CPG_DATA = {
             {
                 id: "formulary-2",
                 shortTitle: "Adenosine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Adenosine</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiarrhythmic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">6 mg/2 mL vial</span></div>
-                </div>
-
-                <p class="rx-moa">Slows impulse formation in the sinoatrial (SA) node; slows conduction time through the atrioventricular (AV) node; can interrupt reentry pathways through the AV node.<br>Onset: Immediate / Peak: 20 seconds / Duration: 40 seconds.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Chemical cardioversion of narrow complex Supraventricular Tachycardias (SVT) and regular monomorphic Ventricular Tachycardias.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>1st Dose:</strong> 6 mg rapid IV/IO push over 1‑2 seconds.<br><strong>2nd Dose:</strong> 12 mg rapid IV/IO push over 1‑2 seconds.<br>Each dose should be followed by a 10‑20 mL Normal Saline flush. Consider elevation of the arm.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>1st Dose:</strong> 0.1 mg/kg (maximum 6 mg) rapid IV/IO push over 1‑2 seconds.<br><strong>2nd Dose:</strong> 0.2 mg/kg (maximum 12 mg) rapid IV/IO push over 1‑2 seconds.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; Wolf‑Parkinson‑White Syndrome with Atrial Fibrillation; known Sick Sinus Syndrome (without a pacemaker); previous 2nd or 3rd degree heart block (without a pacemaker).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma or Severe Reactive Airway Disease (COPD).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia / Asystole (usually transient) / VF/VT; hypotension; difficulty of breathing; chest pain; facial flushing.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal risk cannot be ruled out. Lactation: Fetal risk cannot be ruled out. Safety has not been demonstrated, however if indicated, the balance of risk is generally in favour of administration.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>At the time of conversion to normal sinus rhythm, a variety of new rhythms may appear on ECG including: short period of asystole, premature ventricular contractions, atrial premature contractions, sinus bradycardia, sinus tachycardia, skipped beats, AV nodal block.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Adenosine",
+                    "lead": "Briefly blocks the AV node to stop re-entry SVT. Give it fast, flush it fast, and warn the patient: a few seconds of asystole and chest discomfort are expected.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antiarrhythmic (AV nodal blocker)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "6 mg/2 mL vial"
+                                ],
+                                [
+                                    "Onset",
+                                    "Seconds; lasts under a minute"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Regular narrow-complex SVT",
+                                    "dose": "6 mg rapid IV push",
+                                    "note": "Then 12 mg if needed. Each with a 20 mL saline flush; arm raised",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Regular monomorphic wide-complex tachycardia",
+                                    "dose": "6 mg, then 12 mg",
+                                    "note": "Only if regular and monomorphic",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "SVT",
+                                    "dose": "0.1 mg/kg rapid IV/IO (maximum 6 mg)",
+                                    "note": "Then 0.2 mg/kg (maximum 12 mg)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Stable regular narrow-complex tachycardia after vagal manoeuvres",
+                                "Regular monomorphic wide-complex tachycardia (diagnostic and therapeutic)"
+                            ],
+                            "exclude": [
+                                "Irregular or polymorphic tachycardia",
+                                "AF with WPW (pre-excitation)",
+                                "2nd or 3rd degree block or sick sinus without a pacemaker",
+                                "Severe asthma (bronchospasm)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Transient asystole, flushing, chest pressure, breathlessness",
+                                "Heart transplant patients and dipyridamole or carbamazepine: smaller dose (3 mg) per protocol",
+                                "Record the rhythm strip during the dose"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "svt",
+                                            "label": "SVT",
+                                            "sub": "Regular narrow tachycardia: adenosine after vagal manoeuvres.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -452,64 +522,147 @@ window.CPG_DATA = {
             {
                 id: "formulary-3",
                 shortTitle: "Amiodarone",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Amiodarone</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT (for cardiac arrest) and above; Advanced Paramedic (AP) and above for infusion.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiarrhythmic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">150 mg/3 mL ampule</span></div>
-                </div>
-
-                <p class="rx-moa">Amiodarone is a wide‑acting antiarrhythmic drug, mainly classified as class III. It extends the action potential duration, lowers automaticity, and increases the refractory period in atrial, nodal, and ventricular tissues. Its electrophysiological effects reduce irregular electrical activity, slow down electrical conduction, decrease heart rate, and stabilize the SA and AV nodes. Amiodarone also slightly reduces myocardial oxygen demand by decreasing inotropy.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Cardiac Arrest (refractory VF or VT); rate control/reversion of wide complex tachyarrhythmias.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Cardiac Arrest:</strong> 1st Dose: 300 mg IV/IO push; 2nd Dose: 150 mg IV/IO push.<br><strong>Wide Complex Tachycardia:</strong> 150 mg/10 minutes. Dilute 150 mg (3 mL) of amiodarone with 100 mL D5W and administer over 10 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Cardiac Arrest:</strong> 1st Dose: 5 mg/kg IV/IO. Dose may be repeated twice (maximum 15 mg/kg total).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; VT or VF secondary to Tricyclic Antidepressant Overdose.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>None if the patient is in cardiac arrest. Otherwise: hypotension; sick sinus syndrome (without a pacemaker); previous 2nd or 3rd degree heart block (without a pacemaker).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; lightheadedness; arrhythmias – particularly bradyarrhythmias.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: fetal harm has been demonstrated. Administration is not recommended unless significantly clinically indicated. Amiodarone should not be withheld in cardiac arrest in pregnancy.<br>Lactation: May be administered during pregnancy, however the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Administer into a large vein where possible. If hypotension occurs slow or stop the rate of administration. The full dose should be administered even if the rhythm reverts to sinus rhythm (unless hypotension or bradycardia develops).</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Amiodarone",
+                    "lead": "The first-line antiarrhythmic for VF or pulseless VT that persists after shocks, and an option for stable wide-complex tachycardia.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antiarrhythmic (mainly class III)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "150 mg/3 mL ampoule"
+                                ],
+                                [
+                                    "Effect",
+                                    "Prolongs repolarisation; slows the AV node"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "VF or pulseless VT after 3 shocks",
+                                    "dose": "300 mg IV/IO push",
+                                    "note": "Then 150 mg after the 5th shock",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Stable wide-complex tachycardia",
+                                    "dose": "150 mg IV over 10 minutes",
+                                    "note": "Diluted in 100 mL D5W; may repeat per protocol",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "VF or pulseless VT",
+                                    "dose": "5 mg/kg IV/IO",
+                                    "note": "Repeat up to a total of 15 mg/kg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Shock-refractory VF or pulseless VT",
+                                "Stable regular wide-complex tachycardia"
+                            ],
+                            "exclude": [
+                                "Known allergy",
+                                "Arrhythmia from tricyclic antidepressant overdose (use sodium bicarbonate)",
+                                "Outside arrest: hypotension, 2nd or 3rd degree block without a pacemaker"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension and bradycardia during infusion: slow or stop it",
+                                "QT prolongation: avoid with other QT-prolonging drugs (procainamide)",
+                                "Large vein if possible: irritant"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "In pregnancy, don't withhold it in cardiac arrest"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "vfCoarse",
+                                            "label": "VF",
+                                            "sub": "After the 3rd shock: amiodarone 300 mg.",
+                                            "lead": "II"
+                                        },
+                                        {
+                                            "ecg": "vt",
+                                            "label": "Monomorphic VT",
+                                            "sub": "Stable: amiodarone 150 mg over 10 minutes.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -517,64 +670,128 @@ window.CPG_DATA = {
             {
                 id: "formulary-4",
                 shortTitle: "Aspirin",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#94a3b8;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#flask-conical"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Other Medications</div>
-                        <h3 class="rx-name">Aspirin</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Responder (EMR) and above – independent practice.">
-                        <span class="rx-scope-badge">EMR+</span>
-                        <div class="rx-scope-bar"><span style="width:0%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Platelet aggregator inhibitor</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">81 mg/tablet</span></div>
-                </div>
-
-                <p class="rx-moa">Aspirin provides antiplatelet, fever‑reducing, and pain‑relieving effects. In this formulary, aspirin is used solely for its antiplatelet properties. Aspirin blocks the cyclooxygenase enzyme, which leads to a decrease in the production of prostaglandin and thromboxane.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Acute Coronary Syndrome</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>324 mg (4 tablets). Tablets should be chewed before swallowing.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not to be administered to pediatrics.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; pregnancy; active peptic ulcer disease.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Asthma/COPD (previous history of worsening bronchospasm after NSAID administration); clinically significant active bleeding (e.g., GI bleeding) – aspirin will increase bleeding.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Increased bleeding.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: has demonstrated fetal harm in the third trimester. The likelihood of myocardial infarction or ischemia in pregnancy is very low, aspirin should generally be withheld.<br>Lactation: May be administered during pregnancy, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>If the patient has taken aspirin within the last 60 minutes: confirm the dose they have received. Administer additional Aspirin to reach a maximum total dose of 324 mg.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Aspirin",
+                    "lead": "Blocks platelet thromboxane for the life of the platelet. In suspected acute coronary syndrome, chewed aspirin early reduces deaths.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antiplatelet (COX inhibitor)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "81 mg chewable tablets (or 300 mg)"
+                                ],
+                                [
+                                    "Onset",
+                                    "Minutes when chewed"
+                                ],
+                                [
+                                    "Scope",
+                                    "Emergency medical responder and above"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Suspected ACS",
+                                    "dose": "162–325 mg chewed (e.g. 4 × 81 mg = 324 mg)",
+                                    "note": "Top up to a total of 324 mg if some was taken in the last hour",
+                                    "level": "BLS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children (Reye syndrome risk; ACS is rare)."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Chest pain or equivalent suspected to be ACS"
+                            ],
+                            "exclude": [
+                                "Allergy or aspirin-induced asthma",
+                                "Active bleeding or bleeding peptic ulcer",
+                                "Third trimester of pregnancy unless directed"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bleeding",
+                                "Bronchospasm in aspirin-sensitive asthma"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Give even if the patient takes another antiplatelet or anticoagulant, unless bleeding"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "stemiAnt",
+                                            "label": "Anterior STEMI",
+                                            "sub": "Aspirin plus a cath-lab pre-alert.",
+                                            "lead": "V3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "AHA algorithms",
+                                            "sub": "Step-by-step algorithms",
+                                            "href": "../pages/aha.html",
+                                            "icon": "activity"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -582,64 +799,145 @@ window.CPG_DATA = {
             {
                 id: "formulary-5",
                 shortTitle: "Atropine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Atropine</h3>
-                    </div>
-                    <div class="rx-scope" title="EMT‑Advanced (EMT‑A) and above – independent practice.">
-                        <span class="rx-scope-badge">—+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticholinergic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.5 mg/5 mL (prefilled syringe)</span></div>
-                </div>
-
-                <p class="rx-moa">Atropine blocks muscarinic acetylcholine receptors reducing vagal tone. This results in: increased heart rate; drying of salivary and bronchial secretions; bronchodilation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Compromised Bradycardia; Organophosphate poisoning.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Bradycardia:</strong> 1 mg IV every 3‑5 minutes.<br><strong>Organophosphate Poisoning:</strong> 2 mg IV Initial Dose. Double each subsequent dose (e.g., 4 mg/6 mg/8 mg) until resolution of symptoms.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Bradycardia:</strong> 0.02 mg/kg IV/IO every 3‑5 minutes.<br><strong>Organophosphate Poisoning:</strong> 0.02‑0.05 mg/kg IV/IO every 3‑5 minutes.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Myocardial Ischemia – Atropine will increase myocardial oxygen demand. Glaucoma – Atropine will increase intraocular pressure.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia and palpitations; confusion; dry mouth; blurred vision.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Fetal harm has been demonstrated. However, atropine should not be withheld if the patient is significantly compromised. Transcutaneous pacing is preferred if available.<br>Lactation: Infant harm cannot be ruled out. Atropine may be administered, the mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Administer as a fast IV push. Slow administration may result in further (transient) bradycardia.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Atropine",
+                    "lead": "Blocks the vagus nerve: speeds a slow sinus or AV nodal rhythm and dries secretions. First-line for unstable bradycardia; large doses for organophosphate poisoning.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Anticholinergic (muscarinic antagonist)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "0.5 mg/5 mL or 1 mg/10 mL prefilled syringe"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–2 minutes IV"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Symptomatic bradycardia",
+                                    "dose": "1 mg IV every 3–5 minutes",
+                                    "note": "Maximum 3 mg; push fast",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Organophosphate or nerve agent",
+                                    "dose": "2 mg IV/IM, doubling every 5 minutes",
+                                    "note": "Until bronchial secretions dry",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Bradycardia (vagal or AV block)",
+                                    "dose": "0.02 mg/kg IV/IO",
+                                    "note": "Minimum 0.1 mg; maximum single dose 0.5 mg",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Organophosphate",
+                                    "dose": "0.02–0.05 mg/kg IV/IO",
+                                    "note": "Repeat every 5 minutes until secretions dry",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Symptomatic sinus bradycardia or AV nodal block",
+                                "Cholinergic crisis (organophosphates, nerve agents)"
+                            ],
+                            "exclude": [
+                                "Cardiac arrest (no benefit)",
+                                "Heart transplant (no vagal effect)",
+                                "Wide-complex escape or Mobitz II and complete block: often ineffective – pace"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachycardia and increased myocardial oxygen demand in ischaemia",
+                                "Confusion, dry mouth, urinary retention, blurred vision",
+                                "Angle-closure glaucoma"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "sbrady",
+                                            "label": "Sinus bradycardia",
+                                            "sub": "Symptomatic: atropine 1 mg.",
+                                            "lead": "II"
+                                        },
+                                        {
+                                            "ecg": "chb",
+                                            "label": "Complete heart block",
+                                            "sub": "Atropine often fails: pace.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -712,64 +1010,127 @@ window.CPG_DATA = {
             {
                 id: "formulary-39",
                 shortTitle: "Calcium Chloride",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Calcium Chloride</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g/10 mL (10%) prefilled syringe or ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Increases serum ionized calcium, directly stabilizing the cardiac cell membrane and improving myocardial contractility. Antagonizes the cardiotoxic effects of hyperkalemia and calcium channel blocker overdose at the membrane level.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hyperkalemia with ECG changes; calcium channel blocker or magnesium overdose; hypocalcemia; adjunct in cardiac arrest with suspected hyperkalemia.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1 g (10 mL of 10%) IV/IO slow push over 5 minutes. May repeat once for refractory hyperkalemia or CCB overdose.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>20 mg/kg (0.2 mL/kg of 10%) IV/IO slow push over 5 minutes (maximum 1 g).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; digoxin toxicity (may precipitate fatal arrhythmia); concurrent sodium bicarbonate in the same line (precipitates).</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Ensure IV is patent — extravasation causes severe tissue necrosis. Administer slowly through a large vein.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension if given rapidly; local tissue injury on extravasation; metallic taste.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Flush the line with Normal Saline before and after administration. Never administer through the same line as sodium bicarbonate — the two will precipitate and occlude the line.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Calcium Chloride",
+                    "lead": "Stabilises the heart muscle membrane within minutes. Use it for hyperkalaemia with ECG changes and for calcium-channel blocker or magnesium toxicity – not routinely in arrest.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Electrolyte"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10% solution, 1 g/10 mL"
+                                ],
+                                [
+                                    "Strength",
+                                    "About 3 times the calcium of the same volume of gluconate"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hyperkalaemia with ECG changes, CCB or magnesium toxicity",
+                                    "dose": "1 g (10 mL of 10%) slow IV/IO over 5 minutes",
+                                    "note": "Push in cardiac arrest; may repeat once",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same indications",
+                                    "dose": "20 mg/kg (0.2 mL/kg of 10%) slow IV/IO",
+                                    "note": "Maximum 1 g",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hyperkalaemia with ECG changes (peaked T, wide QRS)",
+                                "Calcium-channel blocker or magnesium overdose",
+                                "Symptomatic hypocalcaemia"
+                            ],
+                            "exclude": [
+                                "Same line as sodium bicarbonate (precipitates)",
+                                "Routine use in cardiac arrest without a reason"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Extravasation causes tissue necrosis: large vein or IO",
+                                "Bradycardia and hypotension if pushed fast",
+                                "Patients on digoxin: give slowly, with monitoring"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "hyperK",
+                                            "label": "Hyperkalaemia",
+                                            "sub": "Peaked T waves or wide QRS: calcium first.",
+                                            "lead": "V3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -777,64 +1138,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-69",
                 shortTitle: "Calcium Gluconate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Calcium Gluconate 10%</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Electrolyte</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">10% solution, 10 mL ampule (1 g = 2.2 mmol calcium).</span></div>
-                </div>
-
-                <p class="rx-moa">Replaces ionized calcium, stabilizing the cardiac cell membrane against hyperkalemia and counteracting calcium channel blocker and magnesium toxicity.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hyperkalemia with ECG changes or cardiac arrest; calcium channel blocker overdose; magnesium toxicity; hypocalcemia; hydrofluoric acid burns (topical gel).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>30 mL (3 g) IV/IO over 5–10 min; in cardiac arrest give as a push. May repeat.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.5 mL/kg (50 mg/kg) IV/IO over 5–10 min (max 20 mL).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Digoxin toxicity (relative); hypercalcemia.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Do not mix with Sodium Bicarbonate in the same line (precipitates). Less irritant than Calcium Chloride and suitable for peripheral veins.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension; tissue irritation on extravasation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: administer if clinically indicated.<br>Lactation: compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Calcium Gluconate contains about one‑third of the elemental calcium of the same volume of Calcium Chloride, so three times the volume is needed for an equivalent dose.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Calcium Gluconate",
+                    "lead": "A gentler calcium for peripheral veins. Same uses as calcium chloride but three times the volume for the same effect – and the topical gel for hydrofluoric acid burns.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Electrolyte"
+                                ],
+                                [
+                                    "Presentation",
+                                    "10% solution, 10 mL ampoule (1 g)"
+                                ],
+                                [
+                                    "Strength",
+                                    "About one-third of calcium chloride's calcium"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Hyperkalaemia, CCB or magnesium toxicity",
+                                    "dose": "30 mL (3 g) of 10% IV/IO over 5–10 minutes",
+                                    "note": "Push in cardiac arrest; may repeat",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same indications",
+                                    "dose": "0.5 mL/kg (50 mg/kg) of 10% IV/IO",
+                                    "note": "Maximum 20 mL",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Hyperkalaemia with ECG changes",
+                                "Calcium-channel blocker or magnesium toxicity",
+                                "Hydrofluoric acid burns (topical gel 2.5%)"
+                            ],
+                            "exclude": [
+                                "Same line as sodium bicarbonate",
+                                "Hypercalcaemia"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bradycardia, hypotension if fast",
+                                "Less irritant than chloride but still avoid extravasation"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -972,64 +1384,109 @@ window.CPG_DATA = {
             {
                 id: "formulary-53",
                 shortTitle: "Clopidogrel",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Clopidogrel</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiplatelet (P2Y12 Inhibitor)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">75 mg and 300 mg tablets.</span></div>
-                </div>
-
-                <p class="rx-moa">Irreversibly blocks the platelet P2Y12 ADP receptor, inhibiting platelet activation and aggregation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>STEMI confirmed on 12‑lead ECG (per local STEMI / PCI pathway and online medical direction) in addition to Aspirin.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>600 mg PO loading dose (300 mg if fibrinolysis is planned; 75 mg if age &gt;75 years with fibrinolysis), per cath lab / medical direction.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not indicated.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Active bleeding; history of intracranial hemorrhage; known allergy; severe hepatic impairment.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Recent surgery or trauma; patient already taking an anticoagulant or another P2Y12 inhibitor (Ticagrelor / Prasugrel); possible need for urgent CABG.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; bruising; GI upset.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; avoid unless clinically essential.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Give only one P2Y12 inhibitor. Confirm with the receiving PCI center before administration and document the time of the loading dose.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Clopidogrel",
+                    "lead": "A second antiplatelet (P2Y12 inhibitor) added to aspirin for STEMI when your cath-lab pathway asks for it. Only one P2Y12 drug, only by protocol.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antiplatelet (irreversible P2Y12 inhibitor)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "75 mg and 300 mg tablets"
+                                ],
+                                [
+                                    "Use",
+                                    "STEMI pathway, with medical direction"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "STEMI for primary PCI",
+                                    "dose": "600 mg orally",
+                                    "note": "300 mg with fibrinolysis; 75 mg if over 75 years with fibrinolysis",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not indicated in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "STEMI on a 12-lead, with aspirin, per the receiving PCI centre"
+                            ],
+                            "exclude": [
+                                "Active bleeding or previous intracranial haemorrhage",
+                                "Already on another P2Y12 inhibitor (ticagrelor, prasugrel)",
+                                "Severe liver disease"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bleeding",
+                                "Possible urgent bypass surgery: check with the cath lab first"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "AHA algorithms",
+                                            "sub": "Step-by-step algorithms",
+                                            "href": "../pages/aha.html",
+                                            "icon": "activity"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1492,64 +1949,123 @@ window.CPG_DATA = {
             {
                 id: "formulary-50",
                 shortTitle: "Diltiazem",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Diltiazem</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Calcium Channel Blocker (Non‑Dihydropyridine) / Class IV Antiarrhythmic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">25 mg/5 mL vial (5 mg/mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks L‑type calcium channels in the SA/AV nodes and vascular smooth muscle, slowing AV nodal conduction and reducing ventricular rate.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Rate control of atrial fibrillation / atrial flutter with rapid ventricular response in a hemodynamically stable patient; narrow‑complex SVT refractory to vagal maneuvers and Adenosine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.25 mg/kg (typically 15–20 mg) IV over 2 min. If inadequate response after 15 min, 0.35 mg/kg (typically 20–25 mg) IV over 2 min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended in the prehospital setting.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hypotension (SBP &lt;90 mmHg); cardiogenic shock; decompensated heart failure; wide‑complex tachycardia of uncertain origin; WPW / pre‑excited AF; sick sinus syndrome or 2nd/3rd degree AV block without a pacemaker.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Concurrent IV Beta blockers (risk of profound bradycardia / heart block); reduced LV function; elderly.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; bradycardia; AV block; flushing; dizziness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if benefit outweighs risk.<br>Lactation: excreted in breast milk; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Have Calcium Chloride available to treat calcium channel blocker–induced hypotension. Obtain and document a 12‑lead ECG before and after administration.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Diltiazem",
+                    "lead": "Slows the AV node to control the rate of AF or flutter in a stable patient. Never for wide-complex or pre-excited rhythms, and never in heart failure or shock.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Calcium-channel blocker (non-dihydropyridine)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "25 mg/5 mL (5 mg/mL)"
+                                ],
+                                [
+                                    "Onset",
+                                    "2–5 minutes"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Rate control of AF or flutter; refractory narrow SVT",
+                                    "dose": "0.25 mg/kg IV over 2 minutes (about 15–20 mg)",
+                                    "note": "After 15 minutes: 0.35 mg/kg (about 20–25 mg)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not recommended prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Stable AF or flutter with rapid ventricular response",
+                                "Narrow-complex SVT not responding to vagal manoeuvres and adenosine"
+                            ],
+                            "exclude": [
+                                "SBP below 90 mmHg or shock",
+                                "Decompensated heart failure",
+                                "Wide-complex tachycardia or AF with WPW",
+                                "2nd or 3rd degree block or sick sinus without a pacemaker"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension and bradycardia: calcium can reverse",
+                                "Recent IV beta-blocker: risk of heart block",
+                                "12-lead before and after"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "afibRvr",
+                                            "label": "AF with fast ventricular rate",
+                                            "sub": "Stable: diltiazem for rate control.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1622,67 +2138,123 @@ window.CPG_DATA = {
             {
                 id: "formulary-12",
                 shortTitle: "Dopamine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Dopamine</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Catecholamine, Positive Inotrope, Vasopressor</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">200 mg/5 mL ampule (note: ampule presentation in mg, dose calculation in mcg).</span></div>
-                </div>
-
-                <p class="rx-moa">Dopamine stimulates dopaminergic (D1 & D2), adrenergic (α1 & β1) receptors, causing:<br>
-                – At low doses (1–5 mcg/kg/min): dopamine receptors <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> increased blood flow to kidneys, improved urine output.<br>
-                – At medium doses (5–10 mcg/kg/min): beta‑1 adrenergic receptors <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> increased heart rate and contractility (inotropic effect), improving cardiac output.<br>
-                – At high doses (10–20 mcg/kg/min): alpha‑1 adrenergic receptors <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg> vasoconstriction, increasing blood pressure.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hypotension/Shock associated with: cardiogenic shock / congestive heart failure; bradycardia; post cardiac arrest; sepsis.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>2‑20 mcg/kg/min IV/IO. Use syringe driver wherever possible.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>2‑20 mcg/kg/min IV/IO. Use syringe driver wherever possible.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; pheochromocytoma.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Arrhythmias are associated with high doses required for vasoconstriction.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Arrhythmias (particularly with high doses – including VF); chest pain; palpitations; widening of the QRS complex.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: May cause fetal harm. However, dopamine should be administered where clinically indicated.<br>Lactation: May be excreted in breast milk. However, dopamine should be administered where clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Due to difficulties in administration without a syringe driver, carefully evaluate the requirement for dopamine rather than using an alternative (e.g. adrenaline) which may be easier to administer accurately.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Dopamine",
+                    "lead": "A dose-dependent inotrope and vasopressor. Most services now prefer norepinephrine for shock and epinephrine for bradycardia; dopamine causes more arrhythmias.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Catecholamine (dopamine, beta-1 and alpha-1 agonist)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "200 mg/5 mL for infusion"
+                                ],
+                                [
+                                    "Effect by dose",
+                                    "5–10 mcg/kg/min mainly heart; 10–20 mcg/kg/min vasoconstriction"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Shock after fluids; symptomatic bradycardia",
+                                    "dose": "5–20 mcg/kg/min IV/IO infusion",
+                                    "note": "Pump only; titrate to blood pressure and perfusion",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Shock after fluids",
+                                    "dose": "2–20 mcg/kg/min IV/IO infusion",
+                                    "note": "Pump only",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Cardiogenic or distributive shock after fluids",
+                                "Symptomatic bradycardia not responding to atropine (alternative to epinephrine)"
+                            ],
+                            "exclude": [
+                                "Uncorrected hypovolaemia",
+                                "Phaeochromocytoma",
+                                "VF or VT"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tachyarrhythmias including VT and VF",
+                                "Extravasation necrosis: large vein or IO"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Without a pump, choose a drug you can give accurately (push-dose epinephrine)"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -1755,72 +2327,170 @@ window.CPG_DATA = {
             {
                 id: "formulary-13",
                 shortTitle: "Epinephrine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Epinephrine (Adrenaline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above for IM/IV/IO (as per specific indication). Advanced Paramedic (AP) for infusions.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Adrenergic agonist</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">IM EpiPen Auto‑Injector: Adult 0.3 mg, Pediatric 0.15 mg; Prefilled Syringe: 1 mg/10 mL; Ampule: 1 mg/1 mL. Note: Presentation in mg, adrenaline infusions in mcg.</span></div>
-                </div>
-
-                <p class="rx-moa">Adrenaline agonizes adrenergic receptors resulting in: bronchodilation; increased heart rate and contractility; vasoconstriction. Adrenaline also directly stabilizes mast cell degranulation in anaphylaxis.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Cardiac Arrest; shock not responsive to fluids or fluid refractory; bradycardia; anaphylaxis; life‑threatening asthma.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p><strong>Cardiac Arrest:</strong> 1 mg IV/IO every 3‑5 minutes.<br>
-                <strong>Septic Shock:</strong> IV/IO push dose: 0.01 mg every 2‑5 minutes; IV/IO infusion: 2‑10 mcg/min.<br>
-                <strong>Bradycardia:</strong> IV/IO push dose: 0.01 mg every 2‑5 minutes; IV/IO infusion: 2‑10 mcg/min.<br>
-                <strong>Anaphylaxis:</strong> IM 0.3‑0.5 mg (via auto injector or 1:1,000 ampule); IV/IO push dose: 0.01 mg every 2‑5 minutes; IV/IO infusion: 2‑10 mcg/min.<br>
-                <strong>Asthma:</strong> IM 0.3‑0.5 mg (via auto injector or 1:1,000 ampule); IV/IO push dose: 0.01 mg every 2‑5 minutes; IV/IO infusion: 2‑10 mcg/min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p><strong>Cardiac Arrest:</strong> 0.01 mg/kg IV/IO every 3‑5 minutes.<br>
-                <strong>Septic Shock:</strong> IV/IO push dose: 0.005 mg/kg; IV/IO infusion: 0.05‑0.3 mcg/kg/min.<br>
-                <strong>Bradycardia:</strong> 0.01 mg/kg IV/IO every 3‑5 minutes.<br>
-                <strong>Anaphylaxis:</strong> IM 0.15‑0.3 mg (via auto injector or 1:1,000 ampule); IV/IO push dose: 0.005 mg/kg; IV/IO infusion: 0.05‑0.3 mcg/kg/min.<br>
-                <strong>Asthma:</strong> IM 0.15‑0.3 mg; IV infusion: 0.1‑1 mcg/kg/min.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>None in the emergency context.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>High risk of arrhythmias; adrenaline will increase myocardial oxygen consumption and myocardial ischemia.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Tachycardia; arrhythmias; tremors, anxiety and sweating; nausea and vomiting.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>If clinically indicated, adrenaline should be administered.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Nil.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Epinephrine",
+                    "lead": "The most important emergency drug: IM for anaphylaxis, IV/IO in cardiac arrest, small push doses or an infusion for shock and bradycardia. Check the concentration every time.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Alpha and beta adrenergic agonist"
+                                ],
+                                [
+                                    "Presentations",
+                                    "1 mg/mL (IM); 0.1 mg/mL 10 mL syringe (IV arrest); auto-injectors 0.3 and 0.15 mg"
+                                ],
+                                [
+                                    "Effect",
+                                    "Vasoconstriction, stronger faster heart, bronchodilation, mast-cell stabilising"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT (auto-injector); paramedic (IV)"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Cardiac arrest",
+                                    "dose": "1 mg IV/IO every 3–5 minutes",
+                                    "note": "0.1 mg/mL. Non-shockable: as soon as possible; shockable: after the 2nd shock",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Anaphylaxis",
+                                    "dose": "0.5 mg IM (0.5 mL of 1 mg/mL), or 0.3 mg auto-injector",
+                                    "note": "Outer thigh; repeat after 5 minutes",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Refractory anaphylaxis, shock, bradycardia",
+                                    "dose": "Push dose 10–20 mcg IV every 2–5 minutes, or infusion 2–10 mcg/min",
+                                    "note": "Titrate; monitor closely",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Life-threatening asthma",
+                                    "dose": "0.5 mg IM",
+                                    "note": "When inhaled therapy fails",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Cardiac arrest",
+                                    "dose": "0.01 mg/kg IV/IO (0.1 mL/kg of 0.1 mg/mL)",
+                                    "note": "Maximum 1 mg; every 3–5 minutes",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Anaphylaxis",
+                                    "dose": "0.01 mg/kg IM (maximum 0.5 mg)",
+                                    "note": "Auto-injector 0.15 mg (under 25 kg) or 0.3 mg",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Shock or bradycardia infusion",
+                                    "dose": "0.05–0.3 mcg/kg/min",
+                                    "note": "Pump",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Cardiac arrest",
+                                "Anaphylaxis",
+                                "Shock or bradycardia not responding to first-line treatment",
+                                "Life-threatening asthma",
+                                "Croup with stridor at rest (nebulised)"
+                            ],
+                            "exclude": [
+                                "No absolute contraindication in an emergency"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Tenfold errors: 1 mg/mL is never pushed IV",
+                                "Tachycardia, arrhythmias, myocardial ischaemia, hypertension",
+                                "Anxiety, tremor, vomiting"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "vfCoarse",
+                                            "label": "VF",
+                                            "sub": "After the 2nd shock: epinephrine 1 mg.",
+                                            "lead": "II"
+                                        },
+                                        {
+                                            "ecg": "asystole",
+                                            "label": "Asystole",
+                                            "sub": "Epinephrine as soon as possible.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        },
+                                        {
+                                            "label": "PALS review",
+                                            "sub": "Pediatric resuscitation",
+                                            "href": "../pages/pals.html",
+                                            "icon": "baby"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2220,64 +2890,137 @@ window.CPG_DATA = {
             {
                 id: "formulary-18",
                 shortTitle: "GTN",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#f97316;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#pill"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Pain</div>
-                        <h3 class="rx-name">Glyceryl Trinitrate (GTN)</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Medical Technician (EMT) and above – independent practice.">
-                        <span class="rx-scope-badge">EMT+</span>
-                        <div class="rx-scope-bar"><span style="width:20%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Organic Nitrate / Vasodilator</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">0.4 mg (per spray) spray bottle</span></div>
-                </div>
-
-                <p class="rx-moa">GTN acts upon vascular smooth muscle to cause venous dilation (and arterial dilation to a lesser extent). This results in: reduced venous return (preload) reduces ventricular filling and cardiac output which reduces myocardial oxygen demand; reduced peripheral resistance (afterload) through arterial dilation; dilation to coronary arteries which may increase myocardial blood flow.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Cardiac Chest Pain; Pulmonary edema.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>SL: 0.4 mg (1x spray) every 3‑5 minutes (max 1.2 mg/3x sprays).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric administration.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to corn or corn products; SBP <90 mmHg; use of phosphodiesterase inhibitors within the last 24 hours (e.g. Viagra); right ventricular infarct; heart rate <50 or >150.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Physiologically unstable patients / patients with signs of poor perfusion.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; headache; tachycardia; lightheaded feeling.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Safety has not been established. The likelihood of myocardial infarction or ischemia in pregnancy or lactation is very low, GTN should generally be withheld.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Before administering GTN SL spray, do not shake the bottle as this may lead to sub‑therapeutic dosing. Consider performing a Right Sided 12‑Lead ECG to rule out right ventricular infarction.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Glyceryl Trinitrate (Nitroglycerin)",
+                    "lead": "Dilates veins (and coronary arteries) to cut preload and relieve ischaemic pain and pulmonary oedema. The danger is hypotension: check pressure, PDE-5 drugs and the right ventricle first.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Nitrate vasodilator"
+                                ],
+                                [
+                                    "Presentation",
+                                    "0.4 mg per spray or tablet"
+                                ],
+                                [
+                                    "Onset",
+                                    "1–3 minutes sublingual"
+                                ],
+                                [
+                                    "Scope",
+                                    "EMT and above, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Ischaemic chest pain",
+                                    "dose": "0.4 mg sublingual every 5 minutes",
+                                    "note": "Up to 3 doses",
+                                    "level": "BLS"
+                                },
+                                {
+                                    "drug": "Acute pulmonary oedema with high BP",
+                                    "dose": "0.4–0.8 mg sublingual, repeat",
+                                    "note": "Higher doses or infusion per protocol",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Ischaemic chest pain with adequate blood pressure",
+                                "Hypertensive pulmonary oedema"
+                            ],
+                            "exclude": [
+                                "SBP below 90 mmHg (or 30 below baseline)",
+                                "Heart rate below 50 or above 100",
+                                "Right ventricular infarction",
+                                "Sildenafil or vardenafil in 24 hours; tadalafil in 48 hours"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension: lie flat, fluids",
+                                "Headache, flushing, dizziness",
+                                "Do a right-sided ECG (V4R) in inferior STEMI first"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Spray: don't shake; under the tongue, not swallowed"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "stemiInfRv",
+                                            "label": "Inferior STEMI with RV infarction",
+                                            "sub": "ST elevation in V4R: no nitrates.",
+                                            "lead": "V4R"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "AHA algorithms",
+                                            "sub": "Step-by-step algorithms",
+                                            "href": "../pages/aha.html",
+                                            "icon": "activity"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2350,64 +3093,110 @@ window.CPG_DATA = {
             {
                 id: "formulary-55",
                 shortTitle: "Heparin",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Heparin (Unfractionated)</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Anticoagulant</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5,000 units/mL vial.</span></div>
-                </div>
-
-                <p class="rx-moa">Potentiates antithrombin III, inactivating thrombin and factor Xa and preventing clot propagation.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>STEMI as an adjunct to primary PCI or fibrinolysis, per local STEMI pathway and online medical direction.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>70–100 units/kg IV bolus (typically 5,000 units) for primary PCI; 60 units/kg IV bolus (max 4,000 units) with fibrinolysis.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not indicated in the prehospital setting.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Active bleeding; history of hemorrhagic stroke; recent major trauma or surgery; severe thrombocytopenia; known heparin‑induced thrombocytopenia (HIT); known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Patient on oral anticoagulants; uncontrolled hypertension; recent GI bleed; elderly.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; thrombocytopenia; injection‑site hematoma.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: does not cross the placenta; considered safe.<br>Lactation: not excreted in breast milk; compatible.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Protamine sulfate is the reversal agent (hospital). Confirm units carefully — dosing errors are a common cause of serious harm.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Heparin (unfractionated)",
+                    "lead": "An anticoagulant given on some STEMI pathways before PCI or with fibrinolysis. A high-alert drug: units, not milligrams, and only with medical direction.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Anticoagulant"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5,000 units/mL"
+                                ],
+                                [
+                                    "Reversal",
+                                    "Protamine (hospital)"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic, per STEMI pathway"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "STEMI for primary PCI",
+                                    "dose": "70–100 units/kg IV bolus (often 5,000 units)",
+                                    "note": "With fibrinolysis: 60 units/kg, maximum 4,000 units",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not indicated prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "STEMI on a pathway that uses prehospital heparin, with medical direction"
+                            ],
+                            "exclude": [
+                                "Active bleeding or haemorrhagic stroke",
+                                "Recent major trauma or surgery",
+                                "Heparin-induced thrombocytopenia",
+                                "Already fully anticoagulated"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bleeding",
+                                "Units errors: double-check every dose"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "AHA algorithms",
+                                            "sub": "Step-by-step algorithms",
+                                            "href": "../pages/aha.html",
+                                            "icon": "activity"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -2940,65 +3729,119 @@ window.CPG_DATA = {
             {
                 id: "formulary-23",
                 shortTitle: "Labetalol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Labetalol</h3>
-                    </div>
-                    <div class="rx-scope" title="Emergency Physician (EP) – independent practice.">
-                        <span class="rx-scope-badge">EP</span>
-                        <div class="rx-scope-bar"><span style="width:100%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Beta Blocker</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/20 mL ampule (5 mg/mL solution)</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks beta‑1 adrenergic receptors in the heart causing a decrease in heart rate and contractility, resulting in reduced blood pressure. Weakly blocks adrenergic receptors causing vasodilation resulting in reduced blood pressure.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Pre‑eclampsia with severe hypertension; Eclampsia.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>20 mg IV/IO over 2 minutes (maximum 80 mg). May repeat every 10 minutes as required.<br>
-                <strong>Dilution:</strong> In a 20 mL syringe, add 12 mLs of normal saline. Add 8 mLs of Labetalol. The syringe concentration is now 40 mg/20 mL (2 mg/mL). Administer 10 mLs (20 mg) of the preparation over 2 minutes.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not for pediatric administration.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; asthma; COPD; 2nd or 3rd degree heart block (without pacemaker); known sick sinus syndrome (without internal pacemaker); patient taking non‑dihydropyridine calcium channel blockers; heart failure.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>1st degree heart block (may cause bradycardia).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; nausea; dizziness; headache.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: Safety has not been established. Labetalol should be administered if clinically indicated.<br>Lactation: Infant harm is possible. If administered mother should be advised to stop breast feeding until advised by their physician.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>The dilution guideline above is intended to maintain cleanliness, minimize contamination risk, and eliminates the need to handle an open ampule if repeat dosing is required. Label both syringes with “Labetalol 2 mg/mL”.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Labetalol",
+                    "lead": "A combined alpha- and beta-blocker that lowers dangerous blood pressure smoothly. Prehospital use is mainly severe hypertension in pre-eclampsia.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Alpha-1 and beta-blocker"
+                                ],
+                                [
+                                    "Presentation",
+                                    "100 mg/20 mL (5 mg/mL)"
+                                ],
+                                [
+                                    "Onset",
+                                    "5–10 minutes IV"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Severe hypertension in pregnancy (160/110 mmHg or more)",
+                                    "dose": "20 mg IV over 2 minutes",
+                                    "note": "Then 40 mg after 10 minutes, then 80 mg every 10 minutes; maximum 300 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not for children prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Severe hypertension in pre-eclampsia or eclampsia, per protocol"
+                            ],
+                            "exclude": [
+                                "Asthma or active bronchospasm",
+                                "Bradycardia, 2nd or 3rd degree block",
+                                "Acute heart failure or shock",
+                                "Cocaine or stimulant toxicity"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension: aim to lower, not normalise",
+                                "Bradycardia; dizziness; nausea",
+                                "Neonatal bradycardia after delivery"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Good to know",
+                            "icon": "lightbulb",
+                            "items": [
+                                "Magnesium is still the drug for eclamptic seizures"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3006,64 +3849,138 @@ window.CPG_DATA = {
             {
                 id: "formulary-44",
                 shortTitle: "Lidocaine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Lidocaine</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiarrhythmic / Local Anesthetic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">100 mg/5 mL (2%) prefilled syringe.</span></div>
-                </div>
-
-                <p class="rx-moa">Class Ib antiarrhythmic that blocks fast sodium channels, decreasing automaticity and suppressing ventricular ectopy. As a local anesthetic, it blocks sodium channels in peripheral nerve fibers.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Alternative antiarrhythmic for refractory VF/pulseless VT when Amiodarone is unavailable or contraindicated; local anesthesia prior to IO insertion in a conscious patient.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>Cardiac Arrest: 1–1.5 mg/kg IV/IO push, may repeat 0.5–0.75 mg/kg once (maximum total 3 mg/kg). IO local anesthesia: 20–40 mg (1–2 mL of 2%) slow push into the IO space prior to infusion in a conscious patient.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Cardiac Arrest: 1 mg/kg IV/IO push. IO local anesthesia: 0.5 mg/kg (maximum 20 mg) slow push into the IO space.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy to amide local anesthetics; second- or third-degree heart block without a pacemaker; Wolff-Parkinson-White syndrome.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Reduce dose in hepatic impairment and heart failure — reduced clearance increases toxicity risk. Avoid in wide-complex tachycardia of unclear origin without expert guidance.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>CNS toxicity at high doses (tinnitus, perioral numbness, seizures); bradycardia; hypotension.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Lidocaine is a second-line alternative to Amiodarone for refractory VF/VT in current resuscitation guidelines — do not administer both agents in the same arrest without medical direction.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Lidocaine",
+                    "lead": "An alternative antiarrhythmic for shock-refractory VF or pulseless VT, and the local anaesthetic that makes IO infusion bearable for conscious patients.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Class Ib antiarrhythmic; local anaesthetic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "2% (100 mg/5 mL)"
+                                ],
+                                [
+                                    "Toxicity signs",
+                                    "Perioral numbness, tinnitus, confusion, seizures"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Refractory VF or pulseless VT (alternative to amiodarone)",
+                                    "dose": "1–1.5 mg/kg IV/IO",
+                                    "note": "Then 0.5–0.75 mg/kg; maximum total 3 mg/kg",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "IO pain in a conscious patient",
+                                    "dose": "40 mg (2 mL of 2%) slowly into the IO",
+                                    "note": "Wait about 60 seconds, flush, then 20 mg more if needed",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Refractory VF or pulseless VT",
+                                    "dose": "1 mg/kg IV/IO",
+                                    "note": "Alternative to amiodarone",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "IO pain",
+                                    "dose": "0.5 mg/kg slowly into the IO",
+                                    "note": "Maximum 40 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Shock-refractory VF or pulseless VT when amiodarone is unavailable",
+                                "IO infusion pain in conscious patients"
+                            ],
+                            "exclude": [
+                                "Allergy to amide local anaesthetics",
+                                "High-grade AV block without a pacemaker",
+                                "Bradycardia with ventricular escape beats"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Reduce dose in liver disease, heart failure and older adults",
+                                "Seizures at toxic doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "pulselessVt",
+                                            "label": "Pulseless VT",
+                                            "sub": "Shock-refractory: amiodarone or lidocaine.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3399,64 +4316,125 @@ window.CPG_DATA = {
             {
                 id: "formulary-51",
                 shortTitle: "Metoprolol",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Metoprolol</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Beta Blocker (Cardioselective Beta‑1 Antagonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">5 mg/5 mL ampule (1 mg/mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Selectively blocks beta‑1 receptors, decreasing heart rate, contractility and AV nodal conduction, reducing myocardial oxygen demand.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Rate control of atrial fibrillation / flutter with rapid ventricular response in a hemodynamically stable patient; narrow‑complex SVT refractory to Adenosine.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>2.5–5 mg IV slow over 2 min; may repeat every 5 min to a maximum of 15 mg.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not recommended in the prehospital setting.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Hypotension (SBP &lt;100 mmHg); bradycardia (HR &lt;60); 2nd/3rd degree AV block; acute decompensated heart failure; cardiogenic shock; acute bronchospasm / severe asthma; cocaine or stimulant toxicity.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>COPD; diabetes (masks hypoglycemia signs); recent IV calcium channel blocker; WPW.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bradycardia; hypotension; heart block; bronchospasm; fatigue; dizziness.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may cause fetal bradycardia and growth restriction; use only if clearly needed.<br>Lactation: compatible; monitor infant.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Glucagon is the antidote for beta blocker toxicity. Continuous cardiac monitoring and repeated blood pressure measurements are required between doses.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Metoprolol",
+                    "lead": "A cardioselective beta-blocker for rate control of stable AF or flutter. Avoid it in heart failure, bronchospasm, low blood pressure and stimulant toxicity.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Beta-1 selective blocker"
+                                ],
+                                [
+                                    "Presentation",
+                                    "5 mg/5 mL"
+                                ],
+                                [
+                                    "Antidote",
+                                    "Glucagon for beta-blocker toxicity"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Rate control of stable AF or flutter; refractory narrow SVT",
+                                    "dose": "2.5–5 mg IV over 2 minutes",
+                                    "note": "Repeat every 5 minutes; maximum 15 mg",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not recommended prehospital."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Stable AF or flutter with fast ventricular rate",
+                                "Narrow-complex SVT not responding to adenosine"
+                            ],
+                            "exclude": [
+                                "SBP below 100 mmHg or HR below 60",
+                                "2nd or 3rd degree block",
+                                "Acute heart failure or cardiogenic shock",
+                                "Acute bronchospasm",
+                                "Cocaine or stimulant toxicity",
+                                "Recent IV calcium-channel blocker"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bradycardia, block, hypotension",
+                                "Masks hypoglycaemia warning signs",
+                                "Monitor and recheck BP between doses"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "afibRvr",
+                                            "label": "AF with fast rate",
+                                            "sub": "Stable: beta-blocker or diltiazem.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -3858,64 +4836,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-49",
                 shortTitle: "Norepinephrine",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Norepinephrine (Noradrenaline)</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Vasopressor (Alpha‑1 &gt; Beta‑1 Adrenergic Agonist)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">4 mg/4 mL ampule (1 mg/mL) for dilution; commonly 4 mg in 250 mL D5W or NS (16 mcg/mL).</span></div>
-                </div>
-
-                <p class="rx-moa">Potent alpha‑1 agonist causing peripheral vasoconstriction with modest beta‑1 inotropic effect, raising systemic vascular resistance and mean arterial pressure.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Hypotension / shock that persists after adequate fluid resuscitation (septic, cardiogenic, neurogenic); post‑ROSC hypotension.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>0.05–0.5 mcg/kg/min IV/IO infusion (or 2–20 mcg/min), titrated to MAP ≥65 mmHg. Infusion pump only.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>0.05–0.5 mcg/kg/min IV/IO infusion, titrated to age‑appropriate blood pressure and perfusion.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Uncorrected hypovolemia (as sole therapy); known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Correct hypovolemia first. Use a large, secure vein or IO — extravasation causes tissue necrosis. Avoid in mesenteric or peripheral vascular thrombosis. Hypertension and reflex bradycardia with high doses.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypertension; arrhythmias; headache; peripheral and mesenteric ischemia; tissue necrosis on extravasation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: may reduce uterine blood flow; use when maternal benefit outweighs risk.<br>Lactation: no significant data; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Never give as an undiluted bolus. Clearly label the infusion and double‑check concentration and pump rate before starting.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Norepinephrine",
+                    "lead": "The first-choice vasopressor for shock that persists after fluids, including after ROSC. Always an infusion, never an undiluted bolus.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Vasopressor (alpha-1 more than beta-1)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "4 mg/4 mL; often 4 mg in 250 mL (16 mcg/mL)"
+                                ],
+                                [
+                                    "Target",
+                                    "MAP 65 mmHg or more (adults)"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic, critical care"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Shock after fluids; post-ROSC hypotension",
+                                    "dose": "0.1–0.5 mcg/kg/min IV/IO infusion (about 2–20 mcg/min)",
+                                    "note": "Start low; titrate to MAP 65 mmHg or more",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Fluid-refractory shock",
+                                    "dose": "0.05–0.5 mcg/kg/min IV/IO",
+                                    "note": "Titrate to perfusion and age-appropriate BP",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Septic, cardiogenic or neurogenic shock after fluids",
+                                "Hypotension after ROSC"
+                            ],
+                            "exclude": [
+                                "Uncorrected hypovolaemia as the only treatment",
+                                "Undiluted bolus"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Extravasation necrosis: secure large vein or IO",
+                                "Hypertension, reflex bradycardia, arrhythmias",
+                                "Label the infusion; double-check concentration and rate"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4444,64 +5473,133 @@ window.CPG_DATA = {
             {
                 id: "formulary-52",
                 shortTitle: "Procainamide",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Procainamide</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Class IA Antiarrhythmic</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">1 g/10 mL vial (100 mg/mL) for dilution.</span></div>
-                </div>
-
-                <p class="rx-moa">Blocks fast sodium channels, slowing conduction and prolonging the effective refractory period in atrial and ventricular tissue.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Stable wide‑complex (monomorphic) tachycardia; atrial fibrillation with pre‑excitation (WPW).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>20–50 mg/min IV infusion until arrhythmia suppressed, hypotension develops, QRS widens by &gt;50%, or maximum 17 mg/kg is given. Maintenance 1–4 mg/min.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>15 mg/kg IV/IO over 30–60 min (physician consultation required).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Prolonged QT / torsades de pointes; 2nd/3rd degree AV block without pacemaker; systemic lupus erythematosus; myasthenia gravis; known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Avoid combining with Amiodarone or other QT‑prolonging drugs. Reduce dose in renal impairment and heart failure.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Hypotension; QRS / QT prolongation; torsades de pointes; nausea.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if benefit outweighs risk.<br>Lactation: excreted in breast milk; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Monitor QRS width and blood pressure continuously. Stop the infusion if hypotension develops or QRS widens by more than 50% from baseline.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Procainamide",
+                    "lead": "An option for stable monomorphic wide-complex tachycardia and AF with pre-excitation (WPW). Slow infusion with constant QRS and BP monitoring.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Class Ia antiarrhythmic"
+                                ],
+                                [
+                                    "Presentation",
+                                    "1 g/10 mL (100 mg/mL) for dilution"
+                                ],
+                                [
+                                    "Stop when",
+                                    "Arrhythmia stops, hypotension, QRS widens over 50%, or 17 mg/kg given"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Stable monomorphic VT; AF with WPW",
+                                    "dose": "20–50 mg/min IV infusion",
+                                    "note": "Maximum 17 mg/kg; maintenance 1–4 mg/min",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Stable wide-complex tachycardia",
+                                    "dose": "15 mg/kg IV/IO over 30–60 minutes",
+                                    "note": "With expert consultation",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Stable regular monomorphic wide-complex tachycardia",
+                                "AF with pre-excitation (WPW)"
+                            ],
+                            "exclude": [
+                                "Long QT or torsades",
+                                "2nd or 3rd degree block without a pacemaker",
+                                "With amiodarone or other QT-prolonging drugs",
+                                "Heart failure (relative)"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Hypotension",
+                                "QRS and QT widening; torsades"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "vt",
+                                            "label": "Monomorphic VT",
+                                            "sub": "Stable: procainamide or amiodarone.",
+                                            "lead": "II"
+                                        },
+                                        {
+                                            "ecg": "torsades",
+                                            "label": "Torsades de pointes",
+                                            "sub": "Never procainamide: give magnesium.",
+                                            "lead": "II"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -4899,64 +5997,127 @@ window.CPG_DATA = {
             {
                 id: "formulary-47",
                 shortTitle: "Sodium Bicarbonate",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#06b6d4;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#droplet"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Metabolic / Fluids</div>
-                        <h3 class="rx-name">Sodium Bicarbonate</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice.">
-                        <span class="rx-scope-badge">AP+</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Alkalinizing Agent</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">8.4% solution, 50 mEq/50 mL prefilled syringe.</span></div>
-                </div>
-
-                <p class="rx-moa">Buffers hydrogen ions, raising blood and urine pH. In hyperkalemia, alkalinization drives potassium intracellularly. In sodium channel blocker (e.g., tricyclic antidepressant) overdose, the added sodium load and alkalinization narrow the QRS complex.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Severe hyperkalemia with ECG changes; tricyclic antidepressant overdose with wide QRS or arrhythmia; prolonged cardiac arrest with suspected hyperkalemia or known pre-arrest acidosis; crush syndrome.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>1 mEq/kg IV/IO slow push. In TCA overdose, repeat to maintain arterial pH 7.45–7.55 per medical direction.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>1 mEq/kg IV/IO slow push (dilute 1:1 with sterile water in neonates and infants to reduce osmolar load).</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy; hypokalemia; metabolic or respiratory alkalosis.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Do not mix or co-administer through the same line as Calcium Chloride or catecholamines (epinephrine/dopamine) — will precipitate or inactivate. Flush the line thoroughly before and after.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Metabolic alkalosis; hypokalemia; hypernatremia; tissue necrosis on extravasation.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: no evidence of fetal harm; administer if clinically indicated.<br>Lactation: considered compatible; administer if clinically indicated.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Ensure adequate ventilation before administration — bicarbonate generates CO2, which requires effective ventilation to be cleared, or paradoxical intracellular acidosis can result.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Sodium Bicarbonate",
+                    "lead": "A targeted drug, not a routine arrest drug: tricyclic overdose with wide QRS, hyperkalaemia, and crush injury. Ventilate well and keep it away from calcium.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Alkalinising agent"
+                                ],
+                                [
+                                    "Presentation",
+                                    "8.4%, 50 mEq/50 mL (1 mEq/mL)"
+                                ],
+                                [
+                                    "Mechanism",
+                                    "Sodium load and alkalosis narrow the QRS; shifts potassium into cells"
+                                ],
+                                [
+                                    "Scope",
+                                    "Advanced paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "TCA overdose with QRS over 100 ms; hyperkalaemia; crush",
+                                    "dose": "1–2 mEq/kg IV/IO",
+                                    "note": "Repeat to narrow the QRS (pH 7.45–7.55 in hospital)",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Child doses",
+                            "icon": "baby",
+                            "rows": [
+                                {
+                                    "drug": "Same indications",
+                                    "dose": "1 mEq/kg IV/IO",
+                                    "note": "Dilute to 4.2% for infants",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Sodium-channel blocker overdose (tricyclics) with wide QRS or arrhythmia",
+                                "Severe hyperkalaemia",
+                                "Crush syndrome; prolonged arrest with known acidosis or hyperkalaemia"
+                            ],
+                            "exclude": [
+                                "Routine use in cardiac arrest",
+                                "Same line as calcium or catecholamines",
+                                "Hypokalaemia or alkalosis"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Ventilate: it produces CO₂",
+                                "Hypokalaemia, hypernatraemia, extravasation injury"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Rhythms",
+                                    "items": [
+                                        {
+                                            "ecg": "hyperK",
+                                            "label": "Hyperkalaemia",
+                                            "sub": "Calcium first, then bicarbonate and insulin-glucose in hospital.",
+                                            "lead": "V3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "Drug calculator",
+                                            "sub": "Weight-based doses and volumes",
+                                            "href": "../pages/drug-calculator.html",
+                                            "icon": "syringe"
+                                        },
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5159,64 +6320,111 @@ window.CPG_DATA = {
             {
                 id: "formulary-54",
                 shortTitle: "Ticagrelor",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Ticagrelor</h3>
-                    </div>
-                    <div class="rx-scope" title="Paramedic (P) and above – independent practice.">
-                        <span class="rx-scope-badge">P+</span>
-                        <div class="rx-scope-bar"><span style="width:60%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Antiplatelet (Reversible P2Y12 Inhibitor)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">90 mg tablets.</span></div>
-                </div>
-
-                <p class="rx-moa">Reversibly blocks the platelet P2Y12 ADP receptor, giving faster and more potent platelet inhibition than Clopidogrel.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>STEMI / high‑risk ACS on 12‑lead ECG (per local STEMI / PCI pathway and online medical direction) in addition to Aspirin.</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>180 mg PO loading dose (2 × 90 mg tablets).</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not indicated.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Active bleeding; history of intracranial hemorrhage; severe hepatic impairment; known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Concurrent anticoagulant; planned fibrinolysis (use Clopidogrel instead); bradyarrhythmia; asthma / COPD (dyspnea).</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Bleeding; dyspnea; bradycardia; GI upset.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: limited data; use only if clearly needed.<br>Lactation: unknown; avoid unless clinically essential.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Do not combine with Clopidogrel. Aspirin maintenance doses should not exceed 100 mg/day when used with Ticagrelor.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Ticagrelor",
+                    "lead": "A fast, reversible P2Y12 antiplatelet given with aspirin on STEMI pathways for primary PCI. Not with fibrinolysis, and never with another P2Y12 drug.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Antiplatelet (reversible P2Y12 inhibitor)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "90 mg tablets"
+                                ],
+                                [
+                                    "Use",
+                                    "STEMI pathway with medical direction"
+                                ],
+                                [
+                                    "Scope",
+                                    "Paramedic"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "STEMI for primary PCI",
+                                    "dose": "180 mg orally (2 × 90 mg)",
+                                    "note": "With aspirin; keep daily aspirin at 100 mg or less afterwards",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not indicated in children."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "STEMI on a 12-lead going for primary PCI, per pathway"
+                            ],
+                            "exclude": [
+                                "Active bleeding or previous intracranial haemorrhage",
+                                "Planned fibrinolysis (use clopidogrel)",
+                                "Already on another P2Y12 inhibitor",
+                                "Severe liver disease"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Bleeding",
+                                "Breathlessness (common, usually benign)",
+                                "Bradyarrhythmias"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "AHA algorithms",
+                                            "sub": "Step-by-step algorithms",
+                                            "href": "../pages/aha.html",
+                                            "icon": "activity"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
@@ -5289,64 +6497,115 @@ window.CPG_DATA = {
             {
                 id: "formulary-48",
                 shortTitle: "Vasopressin",
-                summary: `
-            <div class="rx-card" style="--rx-cat:#ef4444;">
-                <div class="rx-topbar"></div>
-                <div class="rx-head">
-                    <div class="rx-head-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#heart"/></svg></div>
-                    <div class="rx-head-text">
-                        <div class="rx-eyebrow">Cardiac / Resus</div>
-                        <h3 class="rx-name">Vasopressin</h3>
-                    </div>
-                    <div class="rx-scope" title="Advanced Paramedic (AP) and above – independent practice, cardiac arrest only.">
-                        <span class="rx-scope-badge">AP+ · Arrest</span>
-                        <div class="rx-scope-bar"><span style="width:80%"></span></div>
-                    </div>
-                </div>
-
-                <div class="rx-quickfacts">
-                    <div class="rx-fact"><span class="rx-fact-lbl">Classification</span><span class="rx-fact-val">Vasopressor (Antidiuretic Hormone Analog)</span></div>
-                    <div class="rx-fact"><span class="rx-fact-lbl">Presentation</span><span class="rx-fact-val">20 units/mL, 1 mL ampule.</span></div>
-                </div>
-
-                <p class="rx-moa">Direct V1-receptor agonist causing peripheral vasoconstriction independent of adrenergic receptors, increasing coronary and cerebral perfusion pressure during cardiac arrest and in catecholamine-refractory shock.</p>
-
-                <div class="rx-box rx-box-go">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#circle-check-big"/></svg> Indications</h4>
-                    <p>Cardiac arrest as an alternative or adjunct to Epinephrine per local protocol; catecholamine-refractory septic shock (physician-directed, critical care transport).</p>
-                </div>
-
-                <div class="rx-dose-grid">
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#user"/></svg> Adult Dose</h4>
-                        <p>40 units IV/IO push, single dose, may be substituted for either the first or second dose of Epinephrine in cardiac arrest per local protocol.</p>
-                    </div>
-                    <div class="rx-dose-card">
-                        <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#baby"/></svg> Pediatric Dose</h4>
-                        <p>Not established for pediatric cardiac arrest — Epinephrine remains first-line.</p>
-                    </div>
-                </div>
-
-                <div class="rx-box rx-box-stop">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#ban"/></svg> Contraindications</h4>
-                    <p>Known allergy.</p>
-                </div>
-                <div class="rx-box rx-box-caution">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#triangle-alert"/></svg> Precautions</h4>
-                    <p>Not a substitute for high-quality CPR and defibrillation. Extravasation can cause severe local ischemia.</p>
-                </div>
-
-                <div class="rx-two-col">
-                    <div class="rx-mini"><h4>Side Effects</h4><p>Peripheral and mesenteric ischemia; hyponatremia with prolonged use; arrhythmia.</p></div>
-                    <div class="rx-mini"><h4>Pregnancy &amp; Lactation</h4><p>Pregnancy: use only in cardiac arrest where maternal survival is the priority.<br>Lactation: not applicable in the arrest setting.</p></div>
-                </div>
-
-                <div class="rx-box rx-box-info">
-                    <h4><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#notebook-pen"/></svg> Additional Information</h4>
-                    <p>Current resuscitation guidelines regard Vasopressin as having no significant advantage over Epinephrine alone in cardiac arrest; use per local medical direction only.</p>
-                </div>
-            </div>
-        `,
+                guide: {
+                    "group": "formulary",
+                    "groupLabel": "Drug Formulary · Cardiac & Resuscitation",
+                    "title": "Vasopressin",
+                    "lead": "A non-adrenergic vasopressor. In cardiac arrest it adds nothing over epinephrine and has left most algorithms; it's still used in refractory septic shock in critical care.",
+                    "sections": [
+                        {
+                            "type": "table",
+                            "title": "At a glance",
+                            "icon": "pill",
+                            "stack": true,
+                            "columns": [
+                                "Item",
+                                "Detail"
+                            ],
+                            "rows": [
+                                [
+                                    "Class",
+                                    "Vasopressor (V1 agonist)"
+                                ],
+                                [
+                                    "Presentation",
+                                    "20 units/mL"
+                                ],
+                                [
+                                    "Arrest guidelines",
+                                    "No advantage over epinephrine (AHA)"
+                                ],
+                                [
+                                    "Scope",
+                                    "Critical care, per protocol"
+                                ]
+                            ]
+                        },
+                        {
+                            "type": "doses",
+                            "title": "Adult doses",
+                            "icon": "syringe",
+                            "rows": [
+                                {
+                                    "drug": "Cardiac arrest (only where protocol still lists it)",
+                                    "dose": "40 units IV/IO once",
+                                    "note": "Instead of or with epinephrine per local protocol",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Catecholamine-refractory septic shock",
+                                    "dose": "0.03 units/min infusion",
+                                    "note": "Physician-directed",
+                                    "level": "ALS"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Children",
+                            "icon": "baby",
+                            "items": [
+                                "Not established for children: epinephrine remains first-line."
+                            ]
+                        },
+                        {
+                            "type": "criteria",
+                            "title": "Give or not?",
+                            "icon": "circle-check-big",
+                            "include": [
+                                "Refractory septic shock in critical care transport",
+                                "Arrest only if your protocol includes it"
+                            ],
+                            "exclude": [
+                                "Allergy",
+                                "As a replacement for good CPR and defibrillation"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "title": "Watch for",
+                            "icon": "triangle-alert",
+                            "items": [
+                                "Peripheral and mesenteric ischaemia",
+                                "Hyponatraemia with prolonged use"
+                            ]
+                        },
+                        {
+                            "type": "tools",
+                            "title": "Tools",
+                            "icon": "monitor",
+                            "groups": [
+                                {
+                                    "title": "Use it",
+                                    "items": [
+                                        {
+                                            "label": "ACLS review",
+                                            "sub": "Arrest and arrhythmia algorithms",
+                                            "href": "../pages/acls.html",
+                                            "icon": "heart-pulse"
+                                        },
+                                        {
+                                            "label": "Drug index",
+                                            "sub": "All emergency drugs",
+                                            "href": "../pages/drug-index.html",
+                                            "icon": "book-open"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
                 flashcards: [],
                 quiz: [],
                 critical: []
