@@ -833,3 +833,12 @@ House style for every image:
     **Image:** A checklist card before nitrates: blood pressure cuff reading above 90 mmHg, a right-sided ECG lead at V4R, and a crossed-out PDE-5 tablet with "24 h / 48 h".
 236. **Where:** Calcium Chloride, "Watch for", beside the first item.
     **Image:** Two IV lines with a red cross between a calcium syringe and a bicarbonate syringe, and a large antecubital vein highlighted for slow injection.
+
+### Group B – Respiratory & Allergy
+
+237. **Where:** Salbutamol, "Child doses", beside the cards.
+    **Image:** A child using an inhaler with a spacer and mask, a parent holding them on their lap, with "1 puff, 5 breaths" written beside it.
+238. **Where:** Magnesium Sulfate, "At a glance", in the "Toxicity" row.
+    **Image:** A paramedic testing the knee reflex with the edge of the hand, a respiratory rate counter showing 12/min, and a calcium gluconate syringe ready.
+239. **Where:** Hydrocortisone, "Good to know", beside the note.
+    **Image:** A steroid emergency card and an emergency hydrocortisone injection kit, with a hand drawing up 100 mg.

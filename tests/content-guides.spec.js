@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 // Topic count per chapter, or the topic numbers where they aren't 1..n.
 const CHAPTERS = { c1: [1, 3, 4, 5, 6, 7, 8, 9, 10], c2: 11, c3: 9, c4: 13, c5: 11, c6: 11, c7: 8, c8: 9, c9: 7, c10: 8 };
 // Formulary drug pages rewritten as guides, by section id.
-const FORMULARY = [2, 3, 4, 5, 12, 13, 18, 23, 39, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 69];
+const FORMULARY = [2, 3, 4, 5, 6, 11, 12, 13, 18, 20, 23, 24, 31, 34, 36, 39, 40, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 69, 77];
 const topics = [
   ...Object.entries(CHAPTERS).flatMap(([c, n]) =>
     (Array.isArray(n) ? n : Array.from({ length: n }, (_, i) => i + 1)).map(i => [c, `${c}s${i}`])),
@@ -44,6 +44,8 @@ test.describe('rewritten topics', () => {
   }
 
   test('tool links from the rewritten guides point at pages that exist', async ({ page, request }) => {
+    // Visits every rewritten page, so allow about a second per page.
+    test.setTimeout(30000 + topics.length * 1000);
     const hrefs = new Set();
     for (const [chapter, section] of topics) {
       await page.goto(`/chapters/${chapter}.html?view=summary&section=${section}`);
