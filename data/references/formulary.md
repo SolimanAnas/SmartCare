@@ -258,7 +258,11 @@ Sources:
   Severe symptomatic hyponatraemia (seizures or coma) is dosed separately:
   adult 100 mL of 3% IV over 10 minutes, repeated up to 3 doses until
   symptoms stop; child 2 mL/kg over 10 minutes (maximum 100 mL per dose),
-  up to 3 doses. Raise sodium by no more than 10 mmol/L in 24 hours.
+  up to 3 doses. Moderate symptoms (confusion, headache, vomiting): a single
+  100 mL dose over 10 minutes on medical advice (ESE 2014 gives one bolus
+  for moderately severe symptoms). Raise sodium by no more than 10 mmol/L in
+  24 hours, or 8 mmol/L in patients at high risk of osmotic demyelination
+  (alcohol use, malnutrition, low potassium, liver disease).
   (US Hyponatremia Expert Panel 2013, ESE/ESICM/ERA-EDTA 2014, Moritz & Ayus)
 - **Misoprostol** – 200 mcg tablets; 800 mcg sublingual once. (WHO 2023)
 - **Sodium chloride 0.9%** – sodium 154 and chloride 154 mmol/L; 100 mL,

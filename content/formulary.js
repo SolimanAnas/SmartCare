@@ -5257,7 +5257,13 @@ window.CPG_DATA = {
                                 {
                                     "drug": "Seizures or coma from severe hyponatraemia",
                                     "dose": "100 mL IV/IO over 10 minutes",
-                                    "note": "Repeat up to 3 doses until symptoms stop; raise sodium by no more than 10 mmol/L in 24 hours",
+                                    "note": "Repeat up to 3 doses until symptoms stop; raise sodium by no more than 10 mmol/L in 24 hours (8 mmol/L if at high risk)",
+                                    "level": "ALS"
+                                },
+                                {
+                                    "drug": "Moderate symptoms of hyponatraemia (confusion, headache, vomiting), on medical advice",
+                                    "dose": "100 mL IV/IO over 10 minutes, once",
+                                    "note": "Escalate to the seizure dose if seizures or coma develop",
                                     "level": "ALS"
                                 }
                             ]
@@ -5287,12 +5293,13 @@ window.CPG_DATA = {
                             "icon": "circle-check-big",
                             "include": [
                                 "Head injury with signs of herniation (unequal or fixed pupils, extensor posturing, Cushing's triad)",
-                                "Seizures or coma from severe hyponatraemia (known low sodium or a strong history, on medical advice)"
+                                "Seizures or coma from severe hyponatraemia (known low sodium or a strong history, on medical advice)",
+                                "Moderate symptoms of hyponatraemia (confusion, headache, vomiting), on medical advice"
                             ],
                             "exclude": [
                                 "Hypernatraemia",
                                 "No signs of raised intracranial pressure",
-                                "Hyponatraemia without seizures or coma (too-fast correction damages the brain)"
+                                "Hyponatraemia with no or only mild symptoms (too-fast correction damages the brain)"
                             ]
                         },
                         {
@@ -5302,7 +5309,8 @@ window.CPG_DATA = {
                             "items": [
                                 "Fluid overload in heart failure",
                                 "Large vein or IO",
-                                "Hyponatraemia: stop once seizures stop; over-correction causes osmotic demyelination"
+                                "Hyponatraemia: stop once symptoms improve; over-correction causes osmotic demyelination",
+                                "High risk of osmotic demyelination (alcohol use, malnutrition, low potassium, liver disease): limit the rise to 8 mmol/L in 24 hours"
                             ]
                         },
                         {
