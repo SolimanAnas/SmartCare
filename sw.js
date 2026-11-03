@@ -1,7 +1,7 @@
 // ============================================================
 //  SmartCare – Service Worker
 //  Strategy: cache-first for media/fonts, stale-while-revalidate
-//  for app-shell assets, network-first for /api/
+//  for app-shell assets, network-first for everything else
 // ============================================================
 //  v3.4: Offline & PWA — iOS install metadata + splash screens, precache
 //  list generated from the repo tree instead of hand-maintained, vendored
@@ -108,12 +108,6 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  // API calls always need fresh data — network-first with a short timeout.
-  if (req.url.includes('/api/')) {
-    event.respondWith(networkFirst(req, event));
-    return;
-  }
-
   // Same-origin app-shell assets: serve from cache instantly, refresh in background.
   if (!isCrossOrigin && (SWR_PATTERN.test(req.url) || req.mode === 'navigate')) {
     event.respondWith(staleWhileRevalidate(req, event));
@@ -202,13 +196,6 @@ function offlineFallback(req) {
     if (cached) {
       console.log('[SW] Offline fallback for:', req.url);
       return cached;
-    }
-
-    if (req.url.includes('/api/')) {
-        return new Response(JSON.stringify({ error: 'Server offline or unreachable.' }), {
-            status: 503,
-            headers: { 'Content-Type': 'application/json' }
-        });
     }
 
     // FIX: Only return the HTML error page if the browser is explicitly asking for a webpage.
