@@ -8,7 +8,6 @@ import requests
 from flask import Flask, abort, jsonify, request, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -64,18 +63,6 @@ def create_app(test_config=None):
 
     if test_config:
         app.config.update(test_config)
-
-    # ── Client IP behind a reverse proxy ────────────────────────────────────
-    # On Render (and most PaaS hosts) requests arrive via a load balancer, so
-    # request.remote_addr is the proxy's IP. Without ProxyFix every visitor
-    # shares one rate-limit bucket and audit records log the proxy address.
-    # TRUSTED_PROXY_COUNT = number of proxies in front of the app (default 1
-    # in production, 0 elsewhere). Never set it higher than the real number of
-    # hops, or clients can spoof X-Forwarded-For.
-    default_hops = "1" if is_production else "0"
-    proxy_hops = int(os.getenv("TRUSTED_PROXY_COUNT", default_hops) or 0)
-    if proxy_hops > 0:
-        app.wsgi_app = ProxyFix(app.wsgi_app, x_for=proxy_hops, x_proto=proxy_hops)
 
     limiter.init_app(app)
 

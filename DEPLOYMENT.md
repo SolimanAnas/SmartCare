@@ -24,7 +24,6 @@ and no separate env vars to set here.
 | `SUPABASE_URL` | For account self-deletion | — | Same project URL as `pages/supabase-config.js`. Without it, `/api/account` returns `503` |
 | `SUPABASE_SERVICE_ROLE_KEY` | For account self-deletion | — | Supabase dashboard → Project Settings → API → `service_role` secret. **Never** put this in a file shipped to the browser — see `docs/SUPABASE_SETUP.md` §4 |
 | `RATELIMIT_STORAGE_URI` | Multi-worker prod | `memory://` | Set to `redis://...` so rate limits are shared across workers |
-| `TRUSTED_PROXY_COUNT` | Behind a proxy | `1` in production, else `0` | Number of reverse proxies in front of the app (Render: `1`). Lets rate limits and audit logs use the real client IP from `X-Forwarded-For`. Never set it higher than the real hop count, or clients can spoof their IP |
 
 > Never commit secrets. `.env` is gitignored.
 
@@ -68,8 +67,6 @@ APP_ENV=production SECRET_KEY=... gunicorn server:app --bind 0.0.0.0:$PORT --wor
 1. **TLS / HTTPS** — terminate TLS at the host/load balancer. Setting
    `APP_ENV=production` makes session cookies `Secure` and emits HSTS.
 2. **Rate-limit storage** — Redis via `RATELIMIT_STORAGE_URI` for multi-worker.
-   Set `TRUSTED_PROXY_COUNT` to the number of proxies in front of gunicorn so
-   limits are per client, not per load balancer.
 3. **Audit log sink** — route the `smartcare.audit` logger to a monitored sink
    (CloudWatch/Datadog/etc.).
 4. **Health checks** — point the monitor at `GET /api/health` (`200` = alive;
