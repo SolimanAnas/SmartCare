@@ -1,7 +1,7 @@
 # Environment Separation — SmartCare CPG 2025
 
 **Policy ref:** Secure SDLC §6 (SAD §5.6 "Network Positioning") · §3.9 · ISR 8.1.1.4
-**Document ref:** CPG2025-ENV-001 · Version 1.0 · 2026-06-09
+**Document ref:** CPG2025-ENV-001 · Version 2.0 · 2026-11-03 (static site + Supabase; the Flask/Render setup was retired)
 **Classification:** Shared – Confidential
 
 ---
@@ -14,29 +14,24 @@ This document defines the separation of environments used throughout the SmartCa
 
 ## 2. Environment Inventory
 
+SmartCare has no application server: the app is static files plus Supabase.
+
 | Environment | Purpose | Hosting | Access |
 |-------------|---------|---------|--------|
-| **Development (DEV)** | Active coding and local testing | Developer workstation | Developer only — no external exposure |
-| **CI (Continuous Integration)** | Automated build, lint, test, SAST, dependency scan | GitHub Actions ephemeral runners | GitHub Actions — isolated per run |
-| **SIT (System Integration Test)** | End-to-end integration testing against dummy data | Local / ephemeral Docker | Developer + Test Lead |
-| **UAT (User Acceptance Test)** | Business / clinical acceptance testing | Render preview environment or separate Render service | Project Owner, BAs, End Users — no production data |
-| **Production (PROD)** | Live service for SmartCare clinical staff | Render cloud (HTTPS, public) | Authorised SmartCare clinical staff |
+| **Development (DEV)** | Active coding and local preview | Developer workstation — `python3 -m http.server 8899 --bind 127.0.0.1` | Developer only — bound to localhost |
+| **CI (Continuous Integration)** | Lint, tests, SAST, dependency scan | GitHub Actions ephemeral runners | GitHub Actions — isolated per run |
+| **Production (PROD)** | Live app | GitHub Pages (static, HTTPS) + Supabase project (auth, Postgres, Edge Functions) | Public site; data behind Google sign-in + row-level security |
 
 ---
 
 ## 3. Data Rules per Environment
 
-| Rule | DEV | CI | SIT | UAT | PROD |
-|------|:---:|:--:|:---:|:---:|:----:|
-| Real patient / PII data permitted | ✗ | ✗ | ✗ | ✗ | ✅ |
-| Dummy / masked data required | ✅ | ✅ | ✅ | ✅ | — |
-| Production `SECRET_KEY` used | ✗ | ✗ | ✗ | ✗ | ✅ |
-| Production `DATABASE_URL` used | ✗ | ✗ | ✗ | ✗ | ✅ |
-| `FLASK_DEBUG=1` permitted | ✅ | ✗ | ✗ | ✗ | ✗ |
-| TLS required | ✗ | ✗ | ✗ | ✅ | ✅ |
-| External network exposure | ✗ | ✗ | ✗ | Limited | ✅ |
-
-> **Policy requirement (Secure SDLC §7, UAT section):** UAT environment must use masked or dummy data only. No patient identifiers, real names, or production credentials may be imported into UAT.
+| Rule | DEV | CI | PROD |
+|------|:---:|:--:|:----:|
+| Real user data in the repo or CI | ✗ | ✗ | — |
+| Production `service_role` key outside Supabase | ✗ | ✗ | ✗ |
+| TLS required | ✗ | ✗ | ✅ |
+| External network exposure | ✗ (localhost only) | ✗ | ✅ |
 
 ---
 
@@ -44,80 +39,43 @@ This document defines the separation of environments used throughout the SmartCa
 
 ### 4.1 Development
 
-```
-FLASK_DEBUG=1
-SECRET_KEY=<random local value — not committed>
-DATABASE_URL=sqlite:///dev.db          # local file, ignored by .gitignore
-GOOGLE_CLIENT_ID=<dev OAuth client>
-ADMIN_EMAILS=developer@example.com
-APP_ENV=development
-```
-
-- `.env` file loaded locally; **never committed** (`.gitignore` covers `.env`, `.env.*`).
-- SQLite DB file stored in `instance/`; **never committed** (`.gitignore` covers `instance/`, `*.db`).
+- Static preview server bound to `127.0.0.1`; no secrets needed.
+- Signing in locally uses the production Supabase project; `http://localhost:8899/pages/login.html` must be listed in Supabase Redirect URLs.
+- `.env` files (if any) are git-ignored and excluded from the Pages build.
 
 ### 4.2 CI (GitHub Actions)
 
-```
-SECRET_KEY         → GitHub Actions secret (injected per run)
-DATABASE_URL       → sqlite:///:memory:   (in-memory, ephemeral)
-GOOGLE_CLIENT_ID   → ci-test-id           (non-functional placeholder)
-RATELIMIT_ENABLED  → False               (test fixture)
-```
-
-- Secrets injected via GitHub Actions environment; never echoed in logs.
+- Runs Ruff, pytest (content checks), Bandit, pip-audit, ESLint, Playwright.
+- Needs no secrets; Playwright serves the repo with a local static server.
 - Ephemeral runner destroyed after each run — no data persistence.
 
-### 4.3 UAT
+### 4.3 Production
 
-- Separate Render service (e.g. `cpg-2025-uat.onrender.com`).
-- Separate database instance — **no connection to production DB**.
-- `SECRET_KEY` and `GOOGLE_CLIENT_ID` are UAT-specific values, not production values.
-- Seeded with dummy clinical staff data only (no real emails, no real names).
-- Access restricted to project stakeholders via Render service password or IP allowlist.
-
-### 4.4 Production
-
-- `DATABASE_URL` points to encrypted managed DB (open item P2-6: Supabase / PlanetScale).
-- `SECRET_KEY` is a 64-character random value, rotated after any suspected exposure.
-- `FLASK_DEBUG` absent or `0`.
-- `APP_ENV=production` triggers HSTS header.
-- Render deploy hooks triggered only after ISO security sign-off (manual approval gate).
+- **GitHub Pages**: `.github/workflows/static.yml` publishes a filtered copy of the repo (`.pagesignore` excludes tooling, tests, docs, Supabase source, dotfiles).
+- **Supabase**: `service_role` key exists only in Edge Function environments (injected by Supabase); `ADMIN_EMAILS` is a Supabase secret; Email auth provider disabled, Google only.
 
 ---
 
 ## 5. Promotion Gates
 
 ```
-DEV ──► CI (automated on push)
-           │  CI green (lint + tests + SAST + pip-audit)
-           ▼
-        SIT sign-off (Test Lead)
-           │
-           ▼
-        ISO Software Security Testing (manual — see TEST_STRATEGY.md §5)
-           │  CISO sign-off
-           ▼
-        UAT (Project Owner + End Users)
-           │  UAT Manager sign-off
-           ▼
-        PROD deploy (via Render)
-```
+DEV ──► Pull request ──► CI green (lint + tests + SAST + pip-audit + E2E)
+                              │  review (CODEOWNERS)
+                              ▼
+                       merge to main ──► GitHub Pages deploy (automatic)
 
-No code may be deployed to production without all upstream gate sign-offs. Render deploy is **not** triggered automatically from `main` — it is triggered manually after sign-off confirmation.
+Supabase migrations / Edge Functions ──► deployed manually with the Supabase CLI
+```
 
 ---
 
 ## 6. Secret Isolation
 
-| Secret | DEV | CI | UAT | PROD |
-|--------|:---:|:--:|:---:|:----:|
-| `SECRET_KEY` | local `.env` | GitHub secret | Render UAT env var | Render prod env var |
-| `DATABASE_URL` | local `.env` | in-memory SQLite | Render UAT env var | Render prod env var |
-| `GOOGLE_CLIENT_ID` | local `.env` | placeholder | UAT OAuth client | Prod OAuth client |
-| `ADMIN_EMAILS` | local `.env` | not required | Render UAT env var | Render prod env var |
-
-Prod and UAT OAuth clients are **separate Google Cloud credentials** so that a UAT breach cannot be used against production Google accounts.
+| Secret | DEV | CI | PROD |
+|--------|:---:|:--:|:----:|
+| Supabase publishable (anon) key | `pages/supabase-config.js` (public by design) | same | same |
+| Supabase `service_role` key | never | never | Edge Function env (Supabase-injected) |
+| `ADMIN_EMAILS` | never | never | Supabase secret |
 
 ---
 
@@ -125,12 +83,10 @@ Prod and UAT OAuth clients are **separate Google Cloud credentials** so that a U
 
 | Zone | Exposure | Controls |
 |------|----------|---------|
-| DEV workstation | None (localhost only) | OS firewall; no open ports beyond localhost |
+| DEV workstation | None (localhost only) | Preview server bound to `127.0.0.1` |
 | CI runner | GitHub internal network | Ephemeral; destroyed post-run; no inbound |
-| UAT Render service | HTTPS (restricted) | Render TLS; optional IP allowlist or basic auth |
-| PROD Render service | HTTPS (public) | Render TLS + DDoS protection; rate limiting in app |
-
-Full VLAN / network-zone separation (dev/SIT/UAT/prod VLANs at the SmartCare perimeter level) is a SmartCare IT infrastructure control documented separately by the Network Security team.
+| GitHub Pages | HTTPS (public) | Static files only; filtered by `.pagesignore` |
+| Supabase | HTTPS (public API) | Google sign-in, row-level security, admin allow-list in Edge Functions |
 
 ---
 
@@ -138,8 +94,7 @@ Full VLAN / network-zone separation (dev/SIT/UAT/prod VLANs at the SmartCare per
 
 | ID | Item | Owner | Target |
 |----|------|-------|--------|
-| P2-6 | Provision encrypted managed DB for UAT and production | IT Admin | Sprint 2 end |
-| F-05 | Purge `instance/users.db` from git history; rotate secrets | Developer + ISO | On explicit approval |
+| — | Confirm Supabase Email auth provider is disabled | Project Owner | Next deploy |
 
 ---
 

@@ -14,10 +14,8 @@
 .pagesignore
 
 # ── Backend source & config (never serve server-side code) ─────────────────
-server.py
 requirements.txt
 pyproject.toml
-Procfile
 *.py
 instance/
 __pycache__/

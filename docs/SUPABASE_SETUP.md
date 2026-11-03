@@ -75,7 +75,7 @@ served from to **Redirect URLs** (the client redirects back to the current login
 
 ```
 https://solimananas.github.io/SmartCare/pages/login.html
-http://localhost:8000/pages/login.html      (local dev — match your port)
+http://localhost:8899/pages/login.html      (local preview — match your port)
 ```
 
 Also set **Site URL** to your primary origin (e.g. `https://solimananas.github.io/SmartCare/`).
@@ -93,10 +93,10 @@ API access.
 Reads/writes are handled by three **Supabase Edge Functions**
 (`supabase/functions/admin-list-users`, `admin-update-role`, `admin-delete-user`) —
 serverless, deployed straight to your Supabase project, no separate app server to
-host or keep alive. This replaced the old Flask (`server.py`) `/api/admin/*` routes,
-which required `server.py` to be deployed and reachable at the same origin as
-`pages/admin.html`; `server.py` now only serves the self-service account-deletion
-endpoint (`/api/account`), which every signed-in user is always authorized to call.
+host or keep alive. A fourth function, `account-delete`, backs the **Delete my
+account** button on `pages/login.html` (self-service, any signed-in user, own
+account only). The app has no server of its own: it is static files (GitHub
+Pages) plus Supabase.
 
 ### 4a. Create the `profiles` table + auto-sync trigger
 
@@ -163,7 +163,7 @@ from auth.users
 on conflict (id) do nothing;
 ```
 
-### 4b. Deploy the admin Edge Functions
+### 4b. Deploy the Edge Functions
 
 Requires the [Supabase CLI](https://supabase.com/docs/guides/cli) (`npm install -g
 supabase` or your platform's package manager), logged in and linked to your project:
@@ -175,6 +175,7 @@ supabase link --project-ref zltfrrudihtrtxutvdqq
 supabase functions deploy admin-list-users
 supabase functions deploy admin-update-role
 supabase functions deploy admin-delete-user
+supabase functions deploy account-delete
 ```
 
 Each function reads `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` automatically —
@@ -193,8 +194,13 @@ email to be confirmed and asserted by a Google identity, and only then checks it
 against this list. An unconfirmed or email/password account using an admin's
 address is rejected with `403`. Since the app only signs in with Google, also
 turn off **Authentication → Providers → Email** in the Supabase dashboard so
-nobody can register password accounts with the public anon key. The `service_role` key never leaves the function's server-side
-environment; it is not reachable from `pages/admin.html` or any other browser code.
+nobody can register password accounts with the public anon key. The
+`service_role` key never leaves the function's server-side environment; it is not reachable from `pages/admin.html` or any other browser code.
+
+`account-delete` needs no allow-list: it calls `requireUser()` and deletes the
+account the caller's own session token belongs to — the user id is never read
+from the request, so nobody can delete someone else's account through it. The
+`profiles` and `user_state` rows are removed by their `on delete cascade` FKs.
 
 To test a deployed function directly:
 
@@ -218,8 +224,12 @@ admin-list-users function returns `403`, which the page treats the same as `401`
 
 - **Key safety:** only the publishable/anon key lives in `supabase-config.js`. Never add
   `service_role` — it bypasses RLS and would be exposed in the browser.
-- **CSP:** `server.py` (the Render deployment) already allows `https://*.supabase.co`
-  and `https://cdn.jsdelivr.net`. GitHub Pages has no server CSP.
+- **CSP:** GitHub Pages sends no CSP header; each page's `<meta http-equiv=
+  "Content-Security-Policy">` allows `https://*.supabase.co` in `connect-src`.
+- **Local preview:** `python3 -m http.server 8899 --bind 127.0.0.1`, then open
+  `http://localhost:8899/` (use `localhost`, not `127.0.0.1`: the Edge Functions'
+  CORS allow-list accepts `http://localhost` origins). Add
+  `http://localhost:8899/pages/login.html` to the Redirect URLs in §3.
 - **What syncs:** `supabase-client.js` `SYNC_*` lists control which `localStorage`
   keys are backed up (currently `smartcare_*`, `*-theme`, `*-mode`, `*-hints-enabled`,
   `theme`, font size). `smartcare_local_auth` and Supabase session keys are excluded.

@@ -1,7 +1,6 @@
 # ── Secrets & local config (Secure SDLC §3.4) ──────────────────────────────
 .env
 .env.*
-!.env.example
 *.key
 *.pem
 secrets.json

@@ -1,82 +1,57 @@
 # Deployment Guide — SmartCare
 
-Covers local development and production deployment.
+SmartCare has no application server. It is:
 
-## 1. Prerequisites
+- **Static files** (HTML/CSS/JS, PWA service worker), published to GitHub Pages
+  by `.github/workflows/static.yml` on every push to `main`. `.pagesignore`
+  keeps tooling, tests, docs and Supabase source out of the published site.
+- **Supabase** for everything server-side: Google sign-in, cloud sync storage
+  (`user_state`, row-level security), user profiles, and four Edge Functions —
+  `admin-list-users`, `admin-update-role`, `admin-delete-user` and
+  `account-delete`. See [`docs/SUPABASE_SETUP.md`](docs/SUPABASE_SETUP.md).
 
-- Python 3.11+
-- `pip` / virtualenv
-- A WSGI host (Render, or standard server) running Gunicorn
+## 1. Local preview
 
-## 2. Environment Variables
-
-server.py has no database of its own — real users live in Supabase (the same
-account system the frontend uses for sign-in). It only serves static files plus
-one endpoint: self-service account deletion (`DELETE /api/account`). The admin
-console's API (list/update-role/delete users) runs as Supabase Edge Functions
-instead — see `docs/SUPABASE_SETUP.md` §4 — so it has no server.py dependency
-and no separate env vars to set here.
-
-| Variable | Required | Default | Purpose |
-|----------|----------|---------|---------|
-| `SECRET_KEY` | Strongly recommended | ephemeral random (logs a warning) | Flask session signing. Without it, sessions don't survive a restart. Generate: `python -c "import secrets; print(secrets.token_hex(32))"` |
-| `APP_ENV` | Prod | `development` | Set to `production` to enable `Secure` session cookies + HSTS |
-| `SUPABASE_URL` | For account self-deletion | — | Same project URL as `pages/supabase-config.js`. Without it, `/api/account` returns `503` |
-| `SUPABASE_SERVICE_ROLE_KEY` | For account self-deletion | — | Supabase dashboard → Project Settings → API → `service_role` secret. **Never** put this in a file shipped to the browser — see `docs/SUPABASE_SETUP.md` §4 |
-| `RATELIMIT_STORAGE_URI` | Multi-worker prod | `memory://` | Set to `redis://...` so rate limits are shared across workers |
-
-> Never commit secrets. `.env` is gitignored.
-
-## 3. Local Development
+Any static file server works. Bind it to localhost so it isn't reachable from
+your network (Python's `http.server` listens on every interface by default and
+would serve `.env`, `.git/`, etc. to anyone on the same Wi-Fi):
 
 ```bash
-python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-export SECRET_KEY=$(python -c "import secrets; print(secrets.token_hex(32))")
-python server.py        # http://localhost:8899 (set FLASK_DEBUG=1 for debug)
+python3 -m http.server 8899 --bind 127.0.0.1
+# open http://localhost:8899/
 ```
 
-Alternatively, run `server.bat` on Windows to launch and open the app in your browser automatically.
+Use `localhost` rather than `127.0.0.1` in the browser: the Edge Functions'
+CORS allow-list accepts `http://localhost` origins. To sign in locally, add
+`http://localhost:8899/pages/login.html` to Supabase → Authentication → URL
+Configuration → Redirect URLs.
 
-## 4. Running Tests
+## 2. Tests
 
 ```bash
-SECRET_KEY=test python -m pytest tests/ -v
+pip install -r requirements.txt    # pytest only
+python -m pytest tests/ -v         # content / course data checks
+npm ci && npm test                 # Playwright E2E (starts its own http.server)
 ```
 
-## 5. Production (Gunicorn)
+## 3. Production
 
-The app exposes a module-level `app = create_app()`, so the `Procfile` works as-is:
+1. **Static site** — merge to `main`; the Pages workflow builds `_site/` with
+   `rsync --exclude-from=.pagesignore` and deploys it. Nothing else to run.
+2. **Database** — apply `supabase/migrations/` (`supabase db push`).
+3. **Edge Functions** — `supabase functions deploy <name>` for each function
+   under `supabase/functions/`, and set the `ADMIN_EMAILS` secret
+   (`supabase secrets set ADMIN_EMAILS=...`). `SUPABASE_URL` and
+   `SUPABASE_SERVICE_ROLE_KEY` are injected by Supabase automatically.
+4. **Auth** — Google provider on; Email provider **off** (the app only signs in
+   with Google); Redirect URLs list every origin the app is served from.
 
-```
-web: gunicorn server:app
-```
-
-Manual launch:
+## 4. Post-deploy verification
 
 ```bash
-APP_ENV=production SECRET_KEY=... gunicorn server:app --bind 0.0.0.0:$PORT --workers 2
-```
-
-> When running more than one worker, set `RATELIMIT_STORAGE_URI=redis://...` so
-> rate limits are enforced consistently across processes.
-
-## 6. Host Configuration
-
-1. **TLS / HTTPS** — terminate TLS at the host/load balancer. Setting
-   `APP_ENV=production` makes session cookies `Secure` and emits HSTS.
-2. **Rate-limit storage** — Redis via `RATELIMIT_STORAGE_URI` for multi-worker.
-3. **Audit log sink** — route the `smartcare.audit` logger to a monitored sink
-   (CloudWatch/Datadog/etc.).
-4. **Health checks** — point the monitor at `GET /api/health` (`200` = alive;
-   this is a liveness probe only — there's no local database to be "down").
-
-## 7. Post-Deploy Verification
-
-```bash
-curl -fsS https://<host>/api/health        # {"status":"healthy"}
-curl -sI https://<host>/ | grep -iE "content-security-policy|x-frame-options|strict-transport-security"
-curl -s -o /dev/null -w "%{http_code}\n" https://<host>/.git/config   # must be 404
-curl -s -o /dev/null -w "%{http_code}\n" https://<host>/server.py     # must be 404
+curl -fsSI https://solimananas.github.io/SmartCare/ | head -1          # 200
+curl -s -o /dev/null -w "%{http_code}\n" \
+  https://solimananas.github.io/SmartCare/supabase/functions/_shared/admin.ts   # 404
+curl -s -o /dev/null -w "%{http_code}\n" -X DELETE \
+  "$SUPABASE_URL/functions/v1/account-delete" -H "apikey: $SUPABASE_ANON_KEY"   # 401
 ```

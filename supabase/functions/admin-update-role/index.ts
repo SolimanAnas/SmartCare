@@ -1,5 +1,5 @@
 // PATCH /functions/v1/admin-update-role   body: { userId, role }
-// Replaces server.py's PATCH /api/admin/users/<id>/role.
+
 import { audit, corsHeaders, json, requireAdmin } from "../_shared/admin.ts";
 
 Deno.serve(async (req: Request) => {

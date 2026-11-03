@@ -29,10 +29,6 @@ jobs:
 
       - name: Run Python tests with pytest
         run: python -m pytest tests/ -v
-        env:
-          SECRET_KEY: ci-test-key
-          DATABASE_URL: "sqlite:///:memory:"
-          GOOGLE_CLIENT_ID: ci-test-id
 
       # precache-manifest.js is generated, not hand-written (see
       # scripts/build_precache.py) — fail the build if someone added/removed
@@ -66,7 +62,7 @@ jobs:
       - name: SAST — Bandit (Python static analysis)
         run: |
           pip install bandit
-          bandit -r server.py scripts/ -ll
+          bandit -r scripts/ -ll
 
       - name: Dependency vulnerability scan — pip-audit
         run: |
