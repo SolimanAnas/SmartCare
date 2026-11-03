@@ -1,5 +1,5 @@
 // GET /functions/v1/admin-list-users
-// Replaces server.py's GET /api/admin/users.
+
 import { audit, corsHeaders, json, requireAdmin } from "../_shared/admin.ts";
 
 Deno.serve(async (req: Request) => {

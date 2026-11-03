@@ -668,10 +668,10 @@
   });
 
   // ── Delete my account (self-service, GDPR Art. 17) ──
-  // Calls the Flask-backed DELETE /api/account (server.py), which only exists
-  // on the Flask-served deployment, not the static GitHub Pages mirror — the
-  // fetch fails clearly with a feedback message there rather than doing
-  // nothing silently.
+  // Calls the account-delete Supabase Edge Function
+  // (supabase/functions/account-delete), which deletes the caller's own
+  // account — the user id comes from the verified session token, not the
+  // request. Works on every static host (GitHub Pages, local preview).
   $('deleteAccountBtn').addEventListener('click', function () {
     var typed = window.prompt('This permanently deletes your account and all cloud-synced data. This cannot be undone.\n\nType DELETE to confirm:');
     if (typed === null) return;
@@ -685,11 +685,12 @@
 
     SmartCareCloud.getAccessToken().then(function (token) {
       if (!token) throw new Error('No active session.');
-      return fetch('/api/account', {
+      var functionsBase = (window.SUPABASE_URL || '').replace(/\/$/, '') + '/functions/v1';
+      return fetch(functionsBase + '/account-delete', {
         method: 'DELETE',
         headers: {
           'Authorization': 'Bearer ' + token,
-          'X-Requested-With': 'XMLHttpRequest',
+          'apikey': window.SUPABASE_ANON_KEY || '',
         },
       });
     }).then(function (res) {

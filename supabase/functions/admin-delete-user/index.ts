@@ -1,5 +1,5 @@
 // DELETE /functions/v1/admin-delete-user   body: { userId }
-// Replaces server.py's DELETE /api/admin/users/<id>.
+
 import { audit, corsHeaders, json, requireAdmin } from "../_shared/admin.ts";
 
 Deno.serve(async (req: Request) => {

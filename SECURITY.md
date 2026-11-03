@@ -1,7 +1,5 @@
 # Security Policy
 
-SmartCare is developed following secure software development best practices.
-
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability, **do not open a public issue**.
@@ -16,27 +14,31 @@ Instead, report it privately so it can be triaged and remediated before disclosu
 
 | Component | Notes |
 |-----------|-------|
-| Backend API (`server.py`) | Self-service account deletion only (`/api/account`). |
-| Authentication | Google OAuth 2.0 via Supabase. |
-| Admin API (`supabase/functions/admin-*`) | Supabase Edge Functions — require a Supabase session token **and** an allow-listed email (`ADMIN_EMAILS` secret). |
+| Static web app (GitHub Pages) | HTML/CSS/JS + service worker. No server-side code. |
+| Authentication | Google OAuth 2.0 via Supabase Auth. Email/password sign-up should be disabled. |
+| Data | Supabase Postgres; `user_state` and `profiles` protected by row-level security (own row only). |
+| Edge Functions (`supabase/functions/`) | `account-delete` — any signed-in user, own account only. `admin-*` — confirmed, Google-verified email in the `ADMIN_EMAILS` secret. |
 
 ## Security Controls in CI
 
 Every push and pull request runs:
-- **Ruff** — Python static linting.
-- **pytest** — includes access-control regression tests.
-- **Bandit** — Python SAST (Static Source Code Scanning).
-- **pip-audit** — dependency vulnerability scanning.
+- **Ruff** — Python linting (build scripts, tests).
+- **pytest** — content and course data checks.
+- **Bandit** — Python SAST on `scripts/`.
+- **pip-audit** — Python dependency vulnerability scanning.
 - **ESLint** — JavaScript static analysis.
+- **Playwright** — end-to-end tests, including XSS and offline regressions.
 
 ## Handling of Secrets
 
-All secrets (`SECRET_KEY`, OAuth credentials, `DATABASE_URL`) are injected via
-environment variables — never hard-coded. See `.env.example`. Databases and
-`.env` files are git-ignored and must never be committed.
+- The browser only ever holds the Supabase publishable/anon key
+  (`pages/supabase-config.js`); access is enforced by row-level security.
+- The `service_role` key exists only inside Supabase Edge Functions, injected
+  by Supabase. `ADMIN_EMAILS` is a Supabase secret. Neither is in this repo.
+- `.env` files are git-ignored and excluded from the Pages build.
 
 ## Roadmap
 
-A full compliance gap analysis and remediation roadmap is maintained in
-[`upgrades.md`](upgrades.md); the mandated requirements specification is in
+A compliance gap analysis and remediation roadmap is maintained in
+[`docs/upgrades.md`](docs/upgrades.md); the requirements specification is in
 [`docs/requirements.md`](docs/requirements.md).

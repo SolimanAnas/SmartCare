@@ -1,99 +1,40 @@
-# API Reference — SmartCare – Clinical Learning Platform
+# API Reference — SmartCare
 
-Base URL (local): `http://localhost:8899`
+SmartCare has no API server of its own. The browser talks to Supabase directly
+(auth + the `user_state` table, protected by row-level security) and calls four
+Supabase Edge Functions for operations that need the `service_role` key.
 
-Request/response bodies are JSON. Authenticated endpoints use the Flask-Login
-session cookie issued on login.
+Base URL: `<SUPABASE_URL>/functions/v1` (the project URL is in
+`pages/supabase-config.js`).
 
-## CSRF requirement for state-changing requests
+Every request sends:
 
-For any `POST`, `PATCH`, `PUT`, or `DELETE` to a `/api/` route, the CSRF guard
-requires:
+- `Authorization: Bearer <supabase-access-token>` — the signed-in user's session
+- `apikey: <publishable/anon key>`
 
-- header `X-Requested-With: XMLHttpRequest`, **and**
-- `Content-Type: application/json` for body-carrying methods (POST/PATCH/PUT).
+Errors return `{ "error": "<message>" }`. `401` = missing/invalid session,
+`403` = signed in but not allowed.
 
-Requests missing these are rejected with `400 {"error": "Invalid request"}`.
+## Account
 
-## Authentication
+| Method | Path | Who | Description |
+|--------|------|-----|-------------|
+| DELETE | `/account-delete` | any signed-in user | Deletes the caller's **own** account. No body; the user id comes from the session token, never the request. `profiles` / `user_state` rows cascade. |
 
-| Method | Path | Auth | Rate limit |
-|--------|------|------|------------|
-| POST | `/api/register` | none | (see config) |
-| POST | `/api/login` | none | 10/min; 50/hour |
-| POST | `/api/google-login` | none | 10/min; 50/hour |
-| GET  | `/api/logout` | session | — |
+Responses: `200 {"message": "Account deleted"}` · `401` · `502` delete failed.
 
-### POST `/api/register`
+## Admin
 
-```json
-{ "username": "user@smartcare.org", "password": "Str0ngPass!", "full_name": "Jane Doe", "professional_level": "Paramedic" }
-```
-- `username` must be a valid email.
-- `password` policy: min 10 chars, with upper/lower/digit; common passwords blocked.
-- `professional_level` ∈ {Physician, Paramedic, EMT, Admin, ""}.
+Require a session whose email is **confirmed, asserted by Google, and listed
+in the `ADMIN_EMAILS`** Supabase secret; anyone else gets `403`.
 
-Responses: `201` success · `400` validation error / duplicate email.
-
-### POST `/api/login`
-
-```json
-{ "username": "user@smartcare.org", "password": "Str0ngPass!" }
-```
-- `200` — `{ "message", "redirect": "/index.html", "role", "email" }` (sets session)
-- `401` — `{ "error": "Invalid username or password" }` (generic, anti-enumeration)
-
-### POST `/api/google-login`
-
-```json
-{ "credential": "<google-id-token>" }
-```
-Responses: `200` success · `400` no token · `401` invalid token · `503` Google login not configured.
-
-### GET `/api/logout`
-
-Requires session. Redirects (`302`) to `/login.html`.
-
-## Admin API
-
-Not part of this Flask app — served by Supabase Edge Functions
-(`supabase/functions/admin-*`), deployed separately from `server.py`. See
-`docs/SUPABASE_SETUP.md` §4 for deployment. All require a Supabase session
-token (`Authorization: Bearer <token>`) **and** an email in the `ADMIN_EMAILS`
-Supabase secret; non-admins get `403`.
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET    | `<SUPABASE_URL>/functions/v1/admin-list-users` | List all users |
-| PATCH  | `<SUPABASE_URL>/functions/v1/admin-update-role` | Update a user's role (`{ "userId", "role" }`) |
-| DELETE | `<SUPABASE_URL>/functions/v1/admin-delete-user` | Delete a user (`{ "userId" }`) |
-
-`GET admin-list-users` returns `[{ "id", "full_name", "email", "role", "created_at" }]`.
-
-## Account API
-
-### DELETE `/api/account`
-
-Requires a Supabase session token. Deletes the caller's **own** account — no
-admin role required, any signed-in user may always delete themself.
-
-Responses: `200` success · `401` no/invalid session · `503` not configured.
-
-## Operations
-
-### GET `/api/health`
-
-Liveness probe (rate-limit exempt). `server.py` has no database of its own —
-the process responding at all is the signal.
-
-- `200` — `{ "status": "healthy" }`
-
-## Error format
-
-Errors return `{ "error": "<message>" }` with the matching status. Rate-limit
-breaches return `429`; forbidden returns `403`.
+| Method | Path | Body | Description |
+|--------|------|------|-------------|
+| GET    | `/admin-list-users`  | — | `[{ "id", "full_name", "email", "role", "created_at" }]` |
+| PATCH  | `/admin-update-role` | `{ "userId", "role" }` | Set a user's role (≤ 50 chars) |
+| DELETE | `/admin-delete-user` | `{ "userId" }` | Delete another user (not yourself) |
 
 ## Audit logging
 
-Auth and admin events emit one JSON line to the `smartcare.audit` logger
-(`_audit`). Wire this to a monitored sink in production (see `DEPLOYMENT.md`).
+Each function writes one JSON line per security event (`admin_access`,
+`admin_*`, `account_self_delete`) to the Supabase Functions logs.

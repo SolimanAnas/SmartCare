@@ -15,8 +15,6 @@
 
 <p align="center">
   <a href="https://github.com/SolimanAnas/SmartCare/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-All%20Rights%20Reserved-red" alt="License" /></a>
-  <img src="https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Flask-3.x-000000.svg?logo=flask&logoColor=white" alt="Flask" />
   <img src="https://img.shields.io/badge/Frontend-Vanilla_JS-F7DF1E.svg?logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/PWA-Offline_Ready-5A0FC8.svg?logo=pwa&logoColor=white" alt="PWA" />
   <img src="https://img.shields.io/badge/Supabase-Auth-3FCF8E.svg?logo=supabase&logoColor=white" alt="Supabase" />
@@ -89,7 +87,6 @@ Each course includes **chapters**, **flashcards**, **quizzes**, **clinical scena
 
 ```
 SmartCare/
-├── server.py              # Flask app — static serving, rate limiting, account deletion API
 ├── sw.js                  # Service Worker — offline caching layer
 ├── app.js                 # Core client-side application logic
 ├── styles.css             # Global stylesheet (glassmorphism design system)
@@ -101,7 +98,7 @@ SmartCare/
 ├── pages/                 # Sub-pages (admin, drug calculator, etc.)
 ├── scripts/               # Build & deploy utilities
 ├── tests/                 # Playwright + pytest test suites
-└── supabase/              # Edge Functions (admin API)
+└── supabase/              # Migrations + Edge Functions (admin API, account deletion)
 ```
 
 ---
@@ -110,14 +107,14 @@ SmartCare/
 
 | Layer | Technology |
 |-------|-----------|
-| **Backend** | Python 3.10+, Flask 3.x, Gunicorn |
-| **Auth** | Google OAuth 2.0, Supabase Auth, Flask sessions |
-| **Security** | Flask-Limiter (rate limiting), Werkzeug password hashing, structured audit logging |
+| **Backend** | Supabase (Postgres + row-level security, Edge Functions) — no app server |
+| **Auth** | Google OAuth 2.0 via Supabase Auth |
+| **Security** | Row-level security, server-side admin allow-list, structured audit logging in Edge Functions |
 | **Frontend** | HTML5, CSS3 (glassmorphism), Vanilla JavaScript (ES6+) |
 | **PWA** | Service Workers, Cache API, Web App Manifest |
-| **Testing** | Playwright (E2E), pytest (API/integration), ESLint, Ruff, Bandit, pip-audit |
+| **Testing** | Playwright (E2E), pytest (content checks), ESLint, Ruff, Bandit, pip-audit |
 | **Database** | Supabase (PostgreSQL) — no local DB required |
-| **Deployment** | Gunicorn + Procfile (Render, Railway, or any WSGI host) |
+| **Deployment** | GitHub Pages (static) + Supabase |
 
 ---
 
@@ -125,58 +122,35 @@ SmartCare/
 
 ### Prerequisites
 
-- Python 3.10 or higher
-- [Supabase](https://supabase.com) project (for authentication)
+- Python 3 (for the local preview server and build scripts) and Node 20 (for tests)
+- [Supabase](https://supabase.com) project (only for sign-in / cloud sync)
 
-### Local Development
+### Local Preview
 
 ```bash
-# Clone the repository
 git clone https://github.com/SolimanAnas/SmartCare.git
 cd SmartCare
-
-# Create a virtual environment
-python -m venv venv
-venv\Scripts\activate          # Windows
-# source venv/bin/activate     # macOS / Linux
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set environment variables (see .env.example)
-export SECRET_KEY=$(python -c "import secrets; print(secrets.token_hex(32))")
-
-# Start the server
-python server.py               # http://localhost:8899
+python3 -m http.server 8899 --bind 127.0.0.1    # open http://localhost:8899/
 ```
 
-Or on Windows, double-click **`server.bat`** to launch and open the app automatically.
+The app is static, so any file server works. Keep it bound to `127.0.0.1` so
+it isn't reachable from your network.
 
 ### Running Tests
 
 ```bash
-SECRET_KEY=test python -m pytest tests/ -v
+pip install -r requirements.txt && python -m pytest tests/ -v
+npm ci && npm test
 ```
 
 ---
 
-## Production Deployment
+## Deployment
 
-```bash
-# Set environment variables
-export APP_ENV=production
-export SECRET_KEY=<your-secret>
-export SUPABASE_URL=<your-supabase-url>
-export SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>
-export RATELIMIT_STORAGE_URI=redis://<your-redis-url>
-
-# Run with Gunicorn
-gunicorn server:app --bind 0.0.0.0:8899
-```
-
-Or deploy via the included **`Procfile`** to any platform that supports it (Render, Railway, Heroku, etc.).
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for full configuration details.
+Pushing to `main` publishes the site to GitHub Pages
+(`.github/workflows/static.yml`). Supabase migrations and Edge Functions are
+deployed with the Supabase CLI. See [DEPLOYMENT.md](DEPLOYMENT.md) and
+[docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md).
 
 ---
 
@@ -184,10 +158,10 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for full configuration details.
 
 SmartCare follows secure development best practices. Security controls include:
 
-- **CI/CD pipeline** — Ruff, Bandit (SAST), pip-audit (dependency scanning), ESLint, and access-control regression tests run on every push.
-- **Secrets management** — all credentials injected via environment variables; `.env` is gitignored.
-- **Rate limiting** — API endpoints protected via Flask-Limiter with configurable storage backend.
-- **Audit logging** — structured JSON audit trail for authentication and admin events.
+- **CI/CD pipeline** — Ruff, Bandit (SAST), pip-audit (dependency scanning), ESLint, pytest and Playwright run on every push.
+- **No server-side secrets in the repo** — the browser holds only the Supabase publishable key; the `service_role` key lives only in Edge Functions.
+- **Row-level security** — each user can read and write only their own sync data.
+- **Audit logging** — structured JSON audit trail for admin and account-deletion events (Supabase Functions logs).
 
 To report a vulnerability, see [SECURITY.md](SECURITY.md).
 

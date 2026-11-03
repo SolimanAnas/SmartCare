@@ -1,25 +1,28 @@
 # CODEOWNERS — SmartCare
-# Any PR that modifies these files requires review from @security-reviewer
-# (Information Security Section GitHub team) before merge.
+# Changes to these paths request review from the listed owner.
 # See docs/security/SOURCE_CODE_VC_PROCESS.md §4 for the full policy.
 
-# Security-sensitive backend
-/server.py                      @security-reviewer
-/requirements.txt               @security-reviewer
-/Procfile                       @security-reviewer
+# Server-side code: Supabase Edge Functions + database migrations
+/supabase/                      @SolimanAnas
 
-# CI/CD pipeline
-/.github/                       @security-reviewer
+# Dependencies
+/requirements.txt               @SolimanAnas
+/package.json                   @SolimanAnas
+/package-lock.json              @SolimanAnas
 
-# Authentication and admin UI
-/pages/login.html               @security-reviewer
-/pages/admin.html               @security-reviewer
-/pages/signup.html              @security-reviewer
+# CI/CD pipeline and Pages publish filter
+/.github/                       @SolimanAnas
+/.pagesignore                   @SolimanAnas
 
-# Security documentation
-/docs/security/                 @security-reviewer
+# Authentication, admin UI and Supabase client
+/pages/login.html               @SolimanAnas
+/pages/admin.html               @SolimanAnas
+/pages/signup.html              @SolimanAnas
+/pages/supabase-client.js       @SolimanAnas
+/pages/supabase-config.js       @SolimanAnas
 
-# Root security config
-/.gitignore                     @security-reviewer
-/pyproject.toml                 @security-reviewer
-/SECURITY.md                    @security-reviewer
+# Security documentation and config
+/docs/security/                 @SolimanAnas
+/.gitignore                     @SolimanAnas
+/pyproject.toml                 @SolimanAnas
+/SECURITY.md                    @SolimanAnas
