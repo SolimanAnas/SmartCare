@@ -188,8 +188,12 @@ supabase secrets set ADMIN_EMAILS=you@example.com,teammate@example.com
 
 `ADMIN_EMAILS` is a comma-separated list of emails allowed to reach the admin
 functions — each function verifies the caller's Supabase session token first
-(`supabase/functions/_shared/admin.ts`'s `requireAdmin()`), then checks their email
-against this list. The `service_role` key never leaves the function's server-side
+(`supabase/functions/_shared/admin.ts`'s `requireAdmin()`), then requires the
+email to be confirmed and asserted by a Google identity, and only then checks it
+against this list. An unconfirmed or email/password account using an admin's
+address is rejected with `403`. Since the app only signs in with Google, also
+turn off **Authentication → Providers → Email** in the Supabase dashboard so
+nobody can register password accounts with the public anon key. The `service_role` key never leaves the function's server-side
 environment; it is not reachable from `pages/admin.html` or any other browser code.
 
 To test a deployed function directly:

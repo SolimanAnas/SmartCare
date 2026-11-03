@@ -73,6 +73,23 @@ export async function requireAdmin(req: Request): Promise<AdminCaller | Response
   if (error || !data?.user?.email) return json(req, { error: "Sign in required." }, 401);
 
   const email = data.user.email.toLowerCase();
+
+  // An email address alone is not proof of identity: if the Supabase Email
+  // provider is enabled (it is by default) anyone holding the public anon key
+  // can call auth.signUp() with an ADMIN_EMAILS address. Only trust the email
+  // when Supabase has confirmed it AND it was asserted by Google, the app's
+  // only sign-in method.
+  const providers: string[] = Array.isArray(data.user.app_metadata?.providers)
+    ? data.user.app_metadata.providers
+    : [data.user.app_metadata?.provider].filter(Boolean);
+  const verifiedByGoogle = (data.user.identities || []).some(
+    (i) => i.provider === "google" && (i.identity_data?.email || "").toLowerCase() === email,
+  );
+  if (!data.user.email_confirmed_at || !providers.includes("google") || !verifiedByGoogle) {
+    audit("admin_access", "denied", email, "unverified_identity");
+    return json(req, { error: "Forbidden" }, 403);
+  }
+
   if (!adminEmails().has(email)) {
     audit("admin_access", "denied", email);
     return json(req, { error: "Forbidden" }, 403);

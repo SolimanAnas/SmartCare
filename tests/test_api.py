@@ -221,3 +221,91 @@ class TestStaticFiles:
     def test_nonexistent_file_returns_404(self, client):
         resp = client.get("/nonexistent-file.xyz")
         assert resp.status_code == 404
+
+
+# ── Static file exposure (repo root is the static folder) ───────────────────
+class TestStaticFileExposure:
+    @pytest.mark.parametrize("path", [
+        "/.env",
+        "/.env.production",
+        "/.git/config",
+        "/.git/HEAD",
+        "/.github/workflows/ci.yml",
+        "/.graphify/GRAPH_REPORT.md",
+        "/server.py",
+        "/requirements.txt",
+        "/Procfile",
+        "/package.json",
+        "/supabase/functions/_shared/admin.ts",
+        "/supabase/migrations/20260702000002_create_profiles.sql",
+        "/scripts/build_precache.py",
+        "/reports/inspect_db.py",
+        "/tests/test_api.py",
+        "/docs/SUPABASE_SETUP.md",
+        "/SECURITY.md",
+        "/pages/.secret",
+        "/Server.PY",
+    ])
+    def test_non_public_files_are_404(self, client, path):
+        assert client.get(path).status_code == 404
+
+    @pytest.mark.parametrize("path", [
+        "/index.html",
+        "/app.js",
+        "/sw.js",
+        "/manifest.json",
+        "/robots.txt",
+        "/pages/login.html",
+        "/data/toc.json",
+        "/.well-known/assetlinks.json",
+    ])
+    def test_public_files_are_served(self, client, path):
+        assert client.get(path).status_code == 200
+
+    def test_hidden_file_not_served_even_if_present(self, client):
+        import os
+        probe = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env.probe-test")
+        with open(probe, "w") as f:
+            f.write("SECRET=leak")
+        try:
+            assert client.get("/.env.probe-test").status_code == 404
+        finally:
+            os.remove(probe)
+
+
+# ── Client IP behind a reverse proxy ────────────────────────────────────────
+class TestProxyFix:
+    def _remote_addr(self, app):
+        seen = {}
+
+        @app.route("/_ip_probe")
+        def _ip_probe():
+            from flask import request
+            seen["ip"] = request.remote_addr
+            return "ok"
+
+        app.test_client().get(
+            "/_ip_probe",
+            headers={"X-Forwarded-For": "203.0.113.7"},
+            environ_base={"REMOTE_ADDR": "10.0.0.1"},
+        )
+        return seen["ip"]
+
+    def test_uses_forwarded_client_ip_when_proxy_trusted(self, monkeypatch):
+        import server
+        monkeypatch.setenv("TRUSTED_PROXY_COUNT", "1")
+        app = server.create_app({"TESTING": True, "RATELIMIT_ENABLED": False})
+        assert self._remote_addr(app) == "203.0.113.7"
+
+    def test_ignores_forwarded_header_without_trusted_proxy(self, monkeypatch):
+        import server
+        monkeypatch.setenv("TRUSTED_PROXY_COUNT", "0")
+        app = server.create_app({"TESTING": True, "RATELIMIT_ENABLED": False})
+        assert self._remote_addr(app) == "10.0.0.1"
+
+    def test_production_trusts_one_proxy_by_default(self, monkeypatch):
+        import server
+        monkeypatch.delenv("TRUSTED_PROXY_COUNT", raising=False)
+        monkeypatch.setenv("APP_ENV", "production")
+        app = server.create_app({"TESTING": True, "RATELIMIT_ENABLED": False})
+        assert self._remote_addr(app) == "203.0.113.7"

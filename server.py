@@ -8,6 +8,7 @@ import requests
 from flask import Flask, abort, jsonify, request, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -31,7 +32,10 @@ def _audit(event: str, outcome: str, actor: str = "anonymous", detail: str = "")
 
 
 def create_app(test_config=None):
-    app = Flask(__name__, static_folder=".", static_url_path="")
+    # No built-in static route: Flask's would serve every file in the repo
+    # root (.env, .git/, server.py ...). All static files go through
+    # serve_static() below, which applies _is_public_path().
+    app = Flask(__name__, static_folder=None)
 
     # ── Secrets & config (Secure SDLC §3.4: no hard-coded secrets) ──────────
     secret_key = os.getenv("SECRET_KEY")
@@ -60,6 +64,18 @@ def create_app(test_config=None):
 
     if test_config:
         app.config.update(test_config)
+
+    # ── Client IP behind a reverse proxy ────────────────────────────────────
+    # On Render (and most PaaS hosts) requests arrive via a load balancer, so
+    # request.remote_addr is the proxy's IP. Without ProxyFix every visitor
+    # shares one rate-limit bucket and audit records log the proxy address.
+    # TRUSTED_PROXY_COUNT = number of proxies in front of the app (default 1
+    # in production, 0 elsewhere). Never set it higher than the real number of
+    # hops, or clients can spoof X-Forwarded-For.
+    default_hops = "1" if is_production else "0"
+    proxy_hops = int(os.getenv("TRUSTED_PROXY_COUNT", default_hops) or 0)
+    if proxy_hops > 0:
+        app.wsgi_app = ProxyFix(app.wsgi_app, x_for=proxy_hops, x_proto=proxy_hops)
 
     limiter.init_app(app)
 
@@ -131,6 +147,53 @@ def _require_supabase_user():
 
 
 # ==========================================
+# STATIC FILE ALLOW-RULES
+# ==========================================
+# The static folder is the repository root, so the catch-all route below must
+# never hand out backend source, secrets, VCS data or dev tooling. These rules
+# mirror .pagesignore (the GitHub Pages deploy filter) so both deployments
+# publish the same set of files.
+_ALLOWED_DOT_DIRS = {".well-known"}  # Android assetlinks.json
+_BLOCKED_TOP_DIRS = {
+    "supabase", "scripts", "tests", "docs", "reports", "pdf_sections",
+    "instance", "node_modules", "venv", "env", "_archive",
+    "content_starters_backup", "playwright-report", "test-results",
+}
+_BLOCKED_TOP_FILES = {
+    "server.py", "requirements.txt", "pyproject.toml", "procfile",
+    "playwright.config.js", "package.json", "package-lock.json",
+    "agents.md", "api.md", "claude.md", "deployment.md", "security.md",
+    "graphify.html", "graphify.yaml", "server.bat",
+}
+_BLOCKED_ANY_DIRS = {"__pycache__"}
+_BLOCKED_FILENAMES = {"secrets.json", "thumbs.db"}
+_BLOCKED_SUFFIXES = (".py", ".pyc", ".pyo", ".key", ".pem", ".swp", ".db", ".sqlite", ".sqlite3")
+
+
+def _is_public_path(path):
+    """True if `path` (relative to the repo root) may be served publicly."""
+    parts = [p for p in path.replace("\\", "/").split("/") if p]
+    if not parts:
+        return False
+    lowered = [p.lower() for p in parts]
+    for i, part in enumerate(lowered):
+        # Hidden files/dirs (.env, .git/, .github/, .graphify/ ...), except
+        # the explicitly allowed top-level .well-known/.
+        if part.startswith(".") and not (i == 0 and part in _ALLOWED_DOT_DIRS):
+            return False
+        if part in _BLOCKED_ANY_DIRS:
+            return False
+    if lowered[0] in _BLOCKED_TOP_DIRS:
+        return False
+    if len(lowered) == 1 and lowered[0] in _BLOCKED_TOP_FILES:
+        return False
+    name = lowered[-1]
+    if name in _BLOCKED_FILENAMES or name.endswith(_BLOCKED_SUFFIXES):
+        return False
+    return True
+
+
+# ==========================================
 # ROUTES
 # ==========================================
 def _register_routes(app):
@@ -141,6 +204,8 @@ def _register_routes(app):
 
     @app.route("/<path:path>")
     def serve_static(path):
+        if not _is_public_path(path):
+            abort(404)
         return send_from_directory(".", path)
 
     # ── Self-service account deletion (Secure SDLC §4.4(c), GDPR Art. 17) ────
@@ -202,7 +267,7 @@ def _register_routes(app):
 
     @app.errorhandler(404)
     def not_found(e):
-        return send_from_directory(app.static_folder or ".", "404.html"), 404
+        return send_from_directory(".", "404.html"), 404
 
 
 # ==========================================
