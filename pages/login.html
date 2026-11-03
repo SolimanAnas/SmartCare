@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
-         its own header, but Pages can't send headers, so it lives here. -->
+    <!-- CSP lives in a meta tag because GitHub Pages can't send headers. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; img-src 'self' data: https://www.gstatic.com https://*.googleusercontent.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://accounts.google.com; frame-src https://accounts.google.com; object-src 'none'; base-uri 'self'">
+    <!-- Anti-clickjacking: GitHub Pages can't send X-Frame-Options or CSP
+         frame-ancestors, so keep the page hidden unless it is the top window. -->
+    <style id="antiClickjack">html{display:none !important}</style>
+    <script>
+      if (window.self === window.top) {
+        document.getElementById('antiClickjack').remove();
+      } else {
+        try { window.top.location = window.self.location.href; } catch (e) { /* stay hidden */ }
+      }
+    </script>
     <!-- General SEO Meta Tags -->
     <meta name="description" content="Sign in to SmartCare to sync your study progress across devices. Signing in is optional — everything works offline without an account.">
     <meta name="keywords" content="SmartCare, sign in, cloud sync, EMS, NREMT, paramedic study, EMT exam, healthcare education">
@@ -434,7 +443,9 @@
   syncOffline();
 
   function msg(el, text, type) {
-    el.innerHTML = text;
+    // textContent, not innerHTML: callers pass error messages from Supabase
+    // and Google, which must never be parsed as markup.
+    el.textContent = text;
     el.className = 'feedback ' + (type || 'info');
   }
   function clearMsg(el) { el.className = 'feedback'; }
@@ -714,25 +725,18 @@
     });
   });
 
-  // ── Hidden admin entry: 4 fast taps on the cloud icon, then a PIN ──
-  // The PIN below is stored hashed, not in plain text — this only hides the
-  // link from casual inspection. The real access control is server-side:
-  // admin.html always re-verifies the signed-in user's email against
-  // ADMIN_EMAILS before returning any data, regardless of how it was reached.
+  // ── Hidden admin entry: 4 fast taps on the cloud icon ──
+  // This only hides the link from casual users; it is not access control.
+  // (It used to ask for a PIN, but a hash shipped in page JavaScript can be
+  // brute-forced offline in seconds, so it added nothing.) admin.html is
+  // public, but every admin-* Edge Function re-verifies the caller's session
+  // and Google-verified email against ADMIN_EMAILS before returning any data,
+  // and the page sends anyone else back here.
   (function () {
     var TAP_WINDOW_MS = 2000;
     var TAP_COUNT = 4;
-    var PIN_HASH = '\x63\x62\x64\x32\x64\x38\x39\x32\x62\x31\x32\x38\x32\x35\x32\x37\x62\x34\x33\x30\x39\x66\x38\x31\x30\x33\x37\x36\x32\x33\x62\x64\x33\x64\x61\x34\x64\x34\x39\x61\x32\x65\x33\x65\x61\x66\x30\x33\x66\x65\x63\x37\x64\x62\x37\x31\x32\x35\x64\x63\x66\x36\x36\x62';
     var logoRing = document.querySelector('.logo-ring');
-    if (!logoRing || !window.crypto || !window.crypto.subtle) return;
-
-    function sha256Hex(text) {
-      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
-        return Array.prototype.map.call(new Uint8Array(buf), function (b) {
-          return b.toString(16).padStart(2, '0');
-        }).join('');
-      });
-    }
+    if (!logoRing) return;
 
     var taps = [];
     logoRing.style.cursor = 'pointer';
@@ -742,17 +746,7 @@
       taps.push(now);
       if (taps.length < TAP_COUNT) return;
       taps = [];
-
-      var pin = window.prompt('Enter secret pin');
-      if (pin === null) return;
-      sha256Hex(pin.trim()).then(function (hash) {
-        var out = signedIn.classList.contains('hidden') ? $('feedbackOut') : $('feedbackIn');
-        if (hash === PIN_HASH) {
-          window.location.href = 'admin.html';
-        } else {
-          msg(out, 'Incorrect PIN.', 'err');
-        }
-      });
+      window.location.href = 'admin.html';
     });
   })();
 

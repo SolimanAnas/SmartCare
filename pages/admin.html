@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- CSP for the static (GitHub Pages) deployment — the Flask backend sets
-         its own header, but Pages can't send headers, so it lives here. -->
+    <!-- CSP lives in a meta tag because GitHub Pages can't send headers. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'">
+    <!-- Anti-clickjacking: GitHub Pages can't send X-Frame-Options or CSP
+         frame-ancestors, so keep the page hidden unless it is the top window. -->
+    <style id="antiClickjack">html{display:none !important}</style>
+    <script>
+      if (window.self === window.top) {
+        document.getElementById('antiClickjack').remove();
+      } else {
+        try { window.top.location = window.self.location.href; } catch (e) { /* stay hidden */ }
+      }
+    </script>
     <!-- This page is a hidden admin console — deliberately not indexed, not
          shared on social media, and not described to crawlers. See
          docs/upgrades.md "Critical Fixes #2" for rationale. -->
@@ -1083,8 +1092,7 @@
   // admin-delete-user) — small serverless functions that hold the
   // service_role key server-side and independently re-verify the caller's
   // token + ADMIN_EMAILS allow-list before touching any data. The client-side
-  // check here is only a UX shortcut, not the security boundary. This
-  // replaces the old Flask backend (/api/admin/*) entirely — see
+  // check here is only a UX shortcut, not the security boundary. See
   // docs/SUPABASE_SETUP.md §4 for deploying the functions.
   const FUNCTIONS_BASE = (window.SUPABASE_URL || '').replace(/\/$/, '') + '/functions/v1';
 
