@@ -12,10 +12,15 @@ const ALLOWED_ORIGINS = new Set([
   "https://solimananas.github.io",
 ]);
 
+// Local preview (python3 -m http.server ...). Exact host match: a prefix
+// check like startsWith("http://localhost") would also accept
+// "http://localhost.evil.com".
+const LOCALHOST_ORIGIN = /^http:\/\/localhost(:\d{1,5})?$/;
+
 export function corsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get("Origin") || "";
   const allow =
-    ALLOWED_ORIGINS.has(origin) || origin.startsWith("http://localhost")
+    ALLOWED_ORIGINS.has(origin) || LOCALHOST_ORIGIN.test(origin)
       ? origin
       : "https://smartcare-learning.net";
   return {

@@ -227,6 +227,10 @@ the same as `401`).
   `service_role` — it bypasses RLS and would be exposed in the browser.
 - **CSP:** GitHub Pages sends no CSP header; each page's `<meta http-equiv=
   "Content-Security-Policy">` allows `https://*.supabase.co` in `connect-src`.
+- **Migrations:** apply everything in `supabase/migrations/` in filename order
+  (`supabase db push`). Besides the tables, they revoke Supabase's default
+  `TRUNCATE`/`TRIGGER`/`REFERENCES` grants (TRUNCATE bypasses RLS) and cap each
+  `user_state.data` blob at 1 MiB of JSON.
 - **Local preview:** `python3 -m http.server 8899 --bind 127.0.0.1`, then open
   `http://localhost:8899/` (use `localhost`, not `127.0.0.1`: the Edge Functions'
   CORS allow-list accepts `http://localhost` origins). Add
