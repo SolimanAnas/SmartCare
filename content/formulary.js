@@ -16,6 +16,15 @@ window.CPG_DATA = {
                     {
                         "type": "table",
                         "title": "Drug groups",
+                        "figures": [
+                          {
+                            "src": "../images/guides/formulary-247.webp",
+                            "alt": "A medicine capsule with four icons for the drug groups: heart, lungs, syringe and IV bag.",
+                            "w": 1200,
+                            "h": 896,
+                            "pos": "before"
+                          }
+                        ],
                         "icon": "pill",
                         "stack": true,
                         "columns": [
@@ -1776,6 +1785,15 @@ window.CPG_DATA = {
                         {
                             "type": "list",
                             "title": "Watch for",
+                            "figures": [
+                              {
+                                "src": "../images/guides/formulary-236.webp",
+                                "alt": "Two IV lines with a red cross between a calcium syringe and a bicarbonate syringe, and a large antecubital vein highlighted for slow injection.",
+                                "w": 1200,
+                                "h": 896,
+                                "pos": "after"
+                              }
+                            ],
                             "icon": "triangle-alert",
                             "items": [
                                 "Extravasation causes tissue necrosis: large vein or IO",
@@ -4255,6 +4273,15 @@ window.CPG_DATA = {
                         {
                             "type": "table",
                             "title": "At a glance",
+                            "figures": [
+                              {
+                                "src": "../images/guides/c5s3-068.webp",
+                                "alt": "Three treatments side by side: oral glucose gel, a glucagon kit (vial and syringe) with an IM thigh site, and a nasal glucagon device.",
+                                "w": 1200,
+                                "h": 896,
+                                "pos": "before"
+                              }
+                            ],
                             "icon": "pill",
                             "stack": true,
                             "columns": [
@@ -9666,6 +9693,15 @@ window.CPG_DATA = {
                         {
                             "type": "criteria",
                             "title": "Give or not?",
+                            "figures": [
+                              {
+                                "src": "../images/guides/formulary-243.webp",
+                                "alt": "Icons for the contraindications: a high-potassium ECG, a crushed limb, an old burn, a spinal cord, and a family tree marked \"malignant hyperthermia\".",
+                                "w": 1200,
+                                "h": 896,
+                                "pos": "after"
+                              }
+                            ],
                             "icon": "circle-check-big",
                             "include": [
                                 "RSI when there's no contraindication"

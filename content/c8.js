@@ -58,7 +58,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Exertional (young, exercising)",
-                "text": "Cold-water immersion up to the neck – the fastest method. Stir the water; protect the airway."
+                "text": "Cold-water immersion up to the neck – the fastest method. Stir the water; protect the airway.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c8s1-182.webp",
+                    "alt": "An athlete immersed to the neck in a tub of ice water at a sports field, one rescuer supporting the head and stirring the water, another holding a rectal thermometer readout.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "No tub?",
@@ -66,7 +74,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Classic (older, during heat waves)",
-                "text": "Evaporative cooling: strip, mist with water, fan hard; ice packs; cold IV fluids per protocol."
+                "text": "Evaporative cooling: strip, mist with water, fan hard; ice packs; cold IV fluids per protocol.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c8s1-183.webp",
+                    "alt": "An older patient on a stretcher stripped to underwear, being misted with a spray bottle while a fan blows across, ice packs at the neck, armpits and groin.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Stop at 39 °C",
@@ -420,7 +436,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Stop heat loss",
-                "text": "Remove wet clothing (cut it), insulate top and bottom, vapour barrier, cover the head."
+                "text": "Remove wet clothing (cut it), insulate top and bottom, vapour barrier, cover the head.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c8s2-185.webp",
+                    "alt": "A \"hypothermia wrap\": insulating mat underneath, vapour barrier, sleeping bag, outer shell, head covered, heat packs on the chest and armpits.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Warm the trunk",
@@ -782,6 +806,15 @@ window.CPG_DATA = {
               "Reach, throw, row – then go (trained rescuers only)",
               "Spinal care only if there's a diving, fall or high-energy mechanism, or signs of injury",
               "Cold water: limit your own time in it"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c8s3-187.webp",
+                "alt": "Reach, throw, row, go: four small panels – a pole, a throw bag, a boat, and a trained swimmer with a flotation device.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -792,7 +825,15 @@ window.CPG_DATA = {
               {
                 "title": "Open the airway and breathe",
                 "text": "Start with rescue breaths: 5 initial breaths (ERC). Suction only what blocks the airway.",
-                "level": "BLS"
+                "level": "BLS",
+                "figures": [
+                  {
+                    "src": "../images/guides/c8s3-188.webp",
+                    "alt": "A rescuer on a pool deck giving bag-mask breaths to a child, foam at the mouth, suction ready beside them.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "No signs of life",
@@ -1504,6 +1545,15 @@ window.CPG_DATA = {
               "Ice",
               "Electric shock",
               "Alcohol"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c8s5-193.webp",
+                "alt": "Crossed-out icons: knife and mouth (cut and suck), a tourniquet, an ice pack, an electric shock device, a bottle of alcohol.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1838,7 +1888,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Zones",
-                "text": "Hot (contamination), warm (decontamination), cold (treatment and staging). EMS works in the cold zone unless trained and equipped."
+                "text": "Hot (contamination), warm (decontamination), cold (treatment and staging). EMS works in the cold zone unless trained and equipped.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c8s6-194.webp",
+                    "alt": "Overhead view of a spill with red hot zone, yellow warm zone containing a decontamination corridor, and green cold zone with the ambulance and command post upwind.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               }
             ]
           },
@@ -2361,6 +2419,15 @@ window.CPG_DATA = {
             ],
             "notes": [
               "Auto-injector kits (DuoDote and similar) hold atropine 2.1 mg and pralidoxime 600 mg; benzodiazepines are separate."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c8s7-197.webp",
+                "alt": "A patient with pinpoint pupils, drooling and tearing, beside a nerve agent auto-injector being pressed into the outer thigh.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -2392,6 +2459,15 @@ window.CPG_DATA = {
             ],
             "notes": [
               "Chickenpox lesions appear in crops at different stages and cluster on the trunk."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c8s7-198.webp",
+                "alt": "Two body outlines comparing rashes: smallpox densest on face and limbs with all lesions alike, chickenpox mainly on the trunk with lesions at different stages.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -3130,6 +3206,15 @@ window.CPG_DATA = {
                 "Morgue",
                 "With police and coroner"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s11-110.webp",
+                "alt": "An overhead view of a mass-casualty scene with colour-coded treatment areas (red, yellow, green), a command post, a staging area and an ambulance loading point.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {

@@ -57,6 +57,15 @@ window.CPG_DATA = {
             "notes": [
               "Kinetic energy = ½ × mass × velocity²: doubling speed gives 4 times the energy.",
               "Three collisions: vehicle, body, organs."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s1-111.webp",
+                "alt": "The three collisions of a frontal crash in three panels: the car hitting a wall, the driver hitting the steering wheel, the brain and aorta moving inside the body.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -388,7 +397,16 @@ window.CPG_DATA = {
               },
               {
                 "title": "Limb: tourniquet",
-                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops and the distal pulse disappears. Write the time."
+                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops and the distal pulse disappears. Write the time.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s2-113.webp",
+                    "alt": "A windlass tourniquet on the upper thigh 5–7 cm above a lower-leg wound, with the time written on the tag; a second tourniquet shown above the first.",
+                    "caption": "Tourniquet 5–7 cm above the wound. If bleeding continues, add a second one above the first.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Still bleeding?",
@@ -396,7 +414,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Junctional (groin, armpit, neck)",
-                "text": "Pack the wound with hemostatic or plain gauze; press at least 3 minutes; pressure dressing."
+                "text": "Pack the wound with hemostatic or plain gauze; press at least 3 minutes; pressure dressing.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s2-114.webp",
+                    "alt": "Wound packing in the groin: gauze pushed deep with two fingers, then both hands pressing with straight arms.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Tranexamic acid",
@@ -803,6 +829,15 @@ window.CPG_DATA = {
                 "Bradycardia, warm dry skin, cord injury",
                 "Fluids, vasopressors, atropine (ALS); still look for bleeding"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s3-116.webp",
+                "alt": "Three small cross-sections: a collapsed lung pushing the heart across (tension pneumothorax), blood around the heart (tamponade), and a spinal cord injury with dilated vessels below it (neurogenic).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1109,6 +1144,22 @@ window.CPG_DATA = {
                 "Keep the flap attached, gently replace, moist dressing",
                 "Cut the flap off"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s4-117.webp",
+                "alt": "An amputated finger wrapped in moist gauze, sealed in a bag, resting in a container of ice water; a crossed-out finger directly on ice.",
+                "w": 1024,
+                "h": 1024,
+                "pos": "after"
+              },
+              {
+                "src": "../images/guides/c6s4-118.webp",
+                "alt": "A knife stabilised in the thigh with rolled bulky dressings on both sides, taped in place.",
+                "w": 1024,
+                "h": 1024,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1858,7 +1909,16 @@ window.CPG_DATA = {
               "Cushing's triad: rising BP, slowing pulse, irregular breathing"
             ],
             "yes": "Brief hyperventilation to EtCO₂ 30–35 mmHg (adult about 20 breaths/min, child 25, infant 30) as a bridge; pre-alert neurosurgery.",
-            "no": "Ventilate normally to EtCO₂ 35–45 mmHg."
+            "no": "Ventilate normally to EtCO₂ 35–45 mmHg.",
+            "figures": [
+              {
+                "src": "../images/guides/c6s6-123.webp",
+                "alt": "A face with one fixed, dilated pupil and a monitor showing rising BP and falling heart rate.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "table",
@@ -2216,11 +2276,27 @@ window.CPG_DATA = {
               },
               {
                 "title": "Collar",
-                "text": "Size from the angle of the jaw to the top of the shoulder."
+                "text": "Size from the angle of the jaw to the top of the shoulder.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c10s5-225.webp",
+                    "alt": "Measuring finger-widths from the top of the shoulder to the angle of the jaw, then matching the collar's sizing post.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Move as a unit",
-                "text": "Scoop stretcher or minimal log roll."
+                "text": "Scoop stretcher or minimal log roll.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s7-124.webp",
+                    "alt": "A scoop stretcher being closed around a supine patient wearing a collar, one rescuer holding in-line stabilisation at the head.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Transport",
@@ -2562,6 +2638,22 @@ window.CPG_DATA = {
                 "Paradoxical segment, hypoxia (contusion)",
                 "Oxygen, analgesia, assist ventilation if failing"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s8-126.webp",
+                "alt": "Five chest diagrams: tension pneumothorax (mediastinum pushed across), open wound with air entering, massive hemothorax (blood level), tamponade (blood around the heart), flail segment moving inward on inspiration.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              },
+              {
+                "src": "../images/guides/c6s8-128.webp",
+                "alt": "A vented chest seal over a chest wound, with the one-way valve shown.",
+                "w": 1024,
+                "h": 1024,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -2904,7 +2996,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Bind it",
-                "text": "Pelvic binder centred on the greater trochanters (not the iliac crests)."
+                "text": "Pelvic binder centred on the greater trochanters (not the iliac crests).",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s9-129.webp",
+                    "alt": "A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Move carefully",
@@ -3236,7 +3336,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "CMS after",
-                "text": "And after every move; cold pack wrapped in cloth."
+                "text": "And after every move; cold pack wrapped in cloth.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s10-132.webp",
+                    "alt": "A splinted forearm with fingers exposed and a rescuer checking capillary refill and finger movement.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               }
             ]
           },
@@ -3275,6 +3383,15 @@ window.CPG_DATA = {
             "notes": [
               "No traction with knee, lower leg or ankle injury on the same side, or partial amputation.",
               "Femur fracture can lose 1–1.5 L of blood."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s10-131.webp",
+                "alt": "Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3590,6 +3707,15 @@ window.CPG_DATA = {
                 "title": "Pre-alert",
                 "text": "Trauma team ready on arrival."
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s11-134.webp",
+                "alt": "A team of three working in parallel on one patient: one at the airway with a BVM, one tightening a tourniquet, one applying a pelvic binder, an ambulance waiting with doors open.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3653,6 +3779,14 @@ window.CPG_DATA = {
                 "items": [
                   "Manual left uterine displacement or tilt",
                   "Lying flat compresses the vena cava"
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s11-133.webp",
+                    "alt": "Manual left uterine displacement: a rescuer standing on the patient's left pushing the uterus up and to the left with both hands while another does compressions.",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               },
               {

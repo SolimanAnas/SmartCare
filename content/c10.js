@@ -58,6 +58,15 @@ window.CPG_DATA = {
                 "Lubricate; bevel toward the septum; gentle rotation if resistance",
                 "Suspected basal skull fracture (relative), severe facial trauma"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c10s1-217.webp",
+                "alt": "Two side views: sizing an oral airway from the corner of the mouth to the earlobe, and a nasal airway from the nostril to the earlobe, each shown inserted in a cutaway head.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -67,7 +76,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Seal",
-                "text": "Two people when possible: two-hand thumb-and-palm grip with a jaw lift, partner squeezes. One person: E-C clamp."
+                "text": "Two people when possible: two-hand thumb-and-palm grip with a jaw lift, partner squeezes. One person: E-C clamp.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s8-159.webp",
+                    "alt": "Two-person bag-mask: one rescuer with both hands sealing the mask (thumbs on the mask, fingers lifting the jaw), the other squeezing the bag.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Volume",
@@ -764,7 +781,16 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Place",
-                "text": "5–7 cm (2–3 inches) above the wound, not over a joint; on the forearm or lower leg if there's room, otherwise above the elbow or knee."
+                "text": "5–7 cm (2–3 inches) above the wound, not over a joint; on the forearm or lower leg if there's room, otherwise above the elbow or knee.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c10s3-221.webp",
+                    "alt": "A commercial tourniquet placed 5–7 cm above a forearm wound with the windlass locked and the time written on the label.",
+                    "caption": "Tourniquet 5–7 cm above the wound, windlass locked. Write the time on the label.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Tighten",
@@ -791,7 +817,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Pack",
-                "text": "Hemostatic or plain gauze pushed deep onto the bleeding point until the wound is full."
+                "text": "Hemostatic or plain gauze pushed deep onto the bleeding point until the wound is full.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s2-114.webp",
+                    "alt": "Wound packing in the groin: gauze pushed deep with two fingers, then both hands pressing with straight arms.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Press",
@@ -1106,7 +1140,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Check PMS",
-                "text": "Pulse, movement and sensation below the injury; remove rings and watches."
+                "text": "Pulse, movement and sensation below the injury; remove rings and watches.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c10s4-223.webp",
+                    "alt": "Three small panels: feeling a radial pulse, asking the patient to wiggle fingers, touching the fingertip for sensation.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Choose",
@@ -1160,6 +1202,15 @@ window.CPG_DATA = {
                 "Knee",
                 "In the position found, bones above and below"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c10s4-224.webp",
+                "alt": "A sling and swath on a seated patient, padding in the armpit, the swath binding the arm to the chest.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1475,7 +1526,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Collar",
-                "text": "Size from the top of the shoulder (trapezius) to the angle of the jaw; neutral position."
+                "text": "Size from the top of the shoulder (trapezius) to the angle of the jaw; neutral position.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c10s5-225.webp",
+                    "alt": "Measuring finger-widths from the top of the shoulder to the angle of the jaw, then matching the collar's sizing post.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Ambulatory patient",
@@ -1525,6 +1584,15 @@ window.CPG_DATA = {
                 "Unsafe scene or arrest in a car",
                 "Rapid extrication with as much alignment as possible"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c10s5-226.webp",
+                "alt": "Side view of a child on a flat board with the head flexed forward, then corrected with padding under the shoulders so the neck is neutral.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1822,6 +1890,15 @@ window.CPG_DATA = {
                 "title": "Talk",
                 "text": "One leader: \"Ready? Lift on three: one, two, three.\" Same for lowering."
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c10s6-227.webp",
+                "alt": "Power lift from the side (straight back, squat, load close) and a close-up of the palms-up power grip on a stretcher handle.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1862,6 +1939,15 @@ window.CPG_DATA = {
               "No one approaches until the crew signals",
               "Approach from the front, in the pilot's view – never from the tail or the uphill side",
               "Secure loose items; no running; eye protection"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c10s6-228.webp",
+                "alt": "A landing zone with lit corners, wind indicator, a power line marked as a hazard, and the safe approach arc at the front of the helicopter, tail and uphill sides crossed out.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2535,6 +2621,15 @@ window.CPG_DATA = {
                 "Metered-dose inhaler",
                 "Spacer, shake, one puff, slow deep breaths"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s4-070.webp",
+                "alt": "An auto-injector pressed into the outer middle thigh through clothing, with the target area shaded on the anterolateral thigh.",
+                "w": 1024,
+                "h": 1024,
+                "pos": "after"
+              }
             ]
           },
           {

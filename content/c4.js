@@ -465,6 +465,15 @@ window.CPG_DATA = {
                 "title": "Destination",
                 "text": "STEMI: straight to a PCI-capable centre with pre-notification. Aim for first contact to device in 90 minutes or less."
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s2-036.webp",
+                "alt": "A sweaty patient holding a fist to the chest (Levine sign), with arrows showing typical radiation to the jaw, left arm and back.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -481,6 +490,15 @@ window.CPG_DATA = {
               "Inferior STEMI until V4R rules out RV infarction",
               "Sildenafil or vardenafil within 24 hours",
               "Tadalafil within 48 hours"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s2-038.webp",
+                "alt": "A medicine cabinet with an erectile-dysfunction tablet box and a \"24 h / 48 h\" timer next to a crossed-out nitroglycerin spray.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -838,6 +856,15 @@ window.CPG_DATA = {
                 "MI, hypertension, valve disease",
                 "Left heart failure; lung disease; PE"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s3-039.webp",
+                "alt": "Split figure: on the left, a patient sitting bolt upright with fluid in the lungs and pink froth; on the right, a patient with distended neck veins and swollen ankles (pitting edema with a thumbprint).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1214,6 +1241,15 @@ window.CPG_DATA = {
                 "Left lateral, dim lights, seizure precautions; magnesium (ALS)",
                 "Supine position"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s4-041.webp",
+                "alt": "A body outline with five highlighted target organs (brain, eyes, heart, aorta, kidneys) and a pregnant abdomen as a sixth, each with a warning icon.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1596,7 +1632,16 @@ window.CPG_DATA = {
                 ]
               }
             ],
-            "after": "Atropine often fails in Mobitz II and complete heart block with a wide QRS: go to pacing."
+            "after": "Atropine often fails in Mobitz II and complete heart block with a wide QRS: go to pacing.",
+            "figures": [
+              {
+                "src": "../images/guides/c4s5-044.webp",
+                "alt": "Transcutaneous pacing pads in anteroposterior position on a patient's chest and back, with the monitor showing paced spikes and capture.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "table",
@@ -2472,6 +2517,16 @@ window.CPG_DATA = {
                 "Compressor change",
                 "Every 2 minutes"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s7-048.webp",
+                "alt": "A rescuer kneeling beside the patient, shoulders over the hands, arms straight, heel of the hand on the lower half of the sternum, with a depth gauge showing 5–6 cm and a metronome at 100–120/min.",
+                "caption": "Depth 5–6 cm, rate 100–120/min.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2880,7 +2935,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Pads on bare, dry chest",
-                "text": "Anterolateral (right upper chest below the clavicle; left side in the mid-axillary line) or anteroposterior."
+                "text": "Anterolateral (right upper chest below the clavicle; left side in the mid-axillary line) or anteroposterior.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c4s8-050.webp",
+                    "alt": "Two torsos: anterolateral pad placement (right below the clavicle, left mid-axillary) and anteroposterior placement (front centre-left and back between the shoulder blades).",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Analyse: hands off",
@@ -2929,6 +2992,15 @@ window.CPG_DATA = {
                 "Oxygen",
                 "Keep the source away from the chest during the shock"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s8-051.webp",
+                "alt": "Four small panels: shaving a hairy chest, drying a wet chest, peeling off a medication patch, and a pad placed beside (not over) an implanted device bulge.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3635,7 +3707,16 @@ window.CPG_DATA = {
                 "Relieve the obstruction (ALS)"
               ]
             ],
-            "stack": true
+            "stack": true,
+            "figures": [
+              {
+                "src": "../images/guides/c4s10-055.webp",
+                "alt": "Four icons: a bleeding drop (hypovolemic), a failing heart (cardiogenic), a dilated vessel (distributive), a blocked vessel / collapsed lung (obstructive).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "steps",
@@ -3648,7 +3729,16 @@ window.CPG_DATA = {
               },
               {
                 "title": "Tourniquet",
-                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops; note the time."
+                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops; note the time.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c4s10-053.webp",
+                    "alt": "A windlass tourniquet on the thigh 5–7 cm above a wound, not over the knee, with the time written on the tag.",
+                    "caption": "Tourniquet 5–7 cm above the wound, not over a joint. Write the time on the tag.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Still bleeding?",
@@ -3656,7 +3746,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Junctional wound (groin, armpit, neck)",
-                "text": "Pack with hemostatic gauze and press."
+                "text": "Pack with hemostatic gauze and press.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s2-114.webp",
+                    "alt": "Wound packing in the groin: gauze pushed deep with two fingers, then both hands pressing with straight arms.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Tranexamic acid",
@@ -4060,6 +4158,15 @@ window.CPG_DATA = {
               "IO access when IV fails in a critical patient",
               "Warm the fluids",
               "PASG/MAST: no longer used"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s11-057.webp",
+                "alt": "An intraosseous needle in the proximal tibia of a child, with landmarks (tibial tuberosity, flat medial surface).",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -4390,6 +4497,15 @@ window.CPG_DATA = {
             "notes": [
               "The two-finger technique is no longer recommended for infants.",
               "Depth: at least one third of the chest depth."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s12-058.webp",
+                "alt": "Two gloved hands encircling an infant's chest with both thumbs side by side on the breastbone, while a second rescuer holds a bag-mask at the head.",
+                "w": 594,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -4765,6 +4881,15 @@ window.CPG_DATA = {
               {
                 "title": "Scene",
                 "text": "Possible crime: touch as little as possible; notify police or the coroner per local rules."
+              }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s13-060.webp",
+                "alt": "An EMS provider sitting at eye level with a family member in a quiet room, hand open, calm posture.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
               }
             ]
           },

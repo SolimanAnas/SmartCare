@@ -212,6 +212,13 @@
     .g-head, .g-sec { box-shadow: none; break-inside: avoid; }
 }
 
+/* ---------- Illustrations ----------
+ * The art has an off-white background, so the card stays light in every theme.
+ */
+.g-fig { margin: 12px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--g-line); background: #F8F9FA; }
+.g-fig img { display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto; }
+.g-fig figcaption { padding: 8px 12px; font-size: .85rem; line-height: 1.4; color: #343a40; text-align: center; }
+
 /* ---------- Rhythm strips (cpg-strip.js) ----------
  * Monitor-style paper: a 1 mm / 5 mm grid drawn as a background.
  * --ecg-cols / --ecg-rows are the strip's size in mm (set by cpg-strip.js).

@@ -1,8 +1,9 @@
 # Chapter images: to be generated
 
-Illustrations planned for the rewritten chapter pages. They are not on the
-pages yet, and the pages carry no placeholders. When an image is made, add it
-to the topic's guide in `content/cN.js` at the place named below.
+Illustrations for the rewritten chapter pages. Images that are ready are on the
+pages already. They are listed in `data/guide-images.json` and written into each
+topic's guide in `content/` by `scripts/apply_guide_images.js`. Do not edit the
+`figures` in `content/` by hand.
 
 Each entry gives:
 

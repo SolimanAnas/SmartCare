@@ -56,6 +56,15 @@ window.CPG_DATA = {
                 "Crackles, orthopnea, edema",
                 "Sit up, CPAP, nitrates (see Heart Failure)"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s1-061.webp",
+                "alt": "Six small patient vignettes in a grid: wheezing asthmatic with inhaler, COPD patient with pursed lips and barrel chest, feverish patient coughing, patient clutching the side of the chest after a flight (PE), tall thin young man with one-sided pain (pneumothorax), patient sitting upright with frothy ",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -102,6 +111,14 @@ window.CPG_DATA = {
                     "drug": "Ipratropium",
                     "dose": "0.5 mg nebulized",
                     "note": "With salbutamol in severe attacks"
+                  }
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s1-062.webp",
+                    "alt": "A small-volume nebulizer with mouthpiece, showing the reservoir, mist and oxygen or air tubing.",
+                    "w": 1024,
+                    "h": 1024
                   }
                 ]
               },
@@ -455,6 +472,15 @@ window.CPG_DATA = {
                 "Time",
                 "When were they last known well?"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s2-064.webp",
+                "alt": "Six icons for Balance, Eyes, Face, Arm, Speech, Time: a person swaying, an eye with half the visual field greyed out, a face drooping on one side, one arm drifting down, a speech bubble with jumbled letters, a clock.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -502,6 +528,14 @@ window.CPG_DATA = {
                   {
                     "text": "Check glucose."
                   }
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s2-065.webp",
+                    "alt": "A rescuer kneeling beside a seizing person, cushioning the head with a folded jacket, furniture moved away, a watch visible, nothing in the mouth.",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               },
               {
@@ -521,7 +555,16 @@ window.CPG_DATA = {
                 ]
               }
             ],
-            "after": "Afterwards: recovery position, look for injury, transport if it's a first seizure, injury, pregnancy, diabetes or no return to baseline."
+            "after": "Afterwards: recovery position, look for injury, transport if it's a first seizure, injury, pregnancy, diabetes or no return to baseline.",
+            "figures": [
+              {
+                "src": "../images/guides/c5s2-066.webp",
+                "alt": "The recovery position after a seizure, with airway open.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
+            ]
           },
           {
             "type": "groups",
@@ -881,7 +924,16 @@ window.CPG_DATA = {
               "Below 54 mg/dL (3.0 mmol/L) is severe"
             ],
             "yes": "15–20 g oral glucose; recheck after 15 minutes; repeat if still low; then food.",
-            "no": "Glucagon 1 mg IM (0.5 mg if under 25 kg) or nasal glucagon 3 mg; or IV dextrose 10%, 100 mL (ALS). Never oral glucose when unresponsive."
+            "no": "Glucagon 1 mg IM (0.5 mg if under 25 kg) or nasal glucagon 3 mg; or IV dextrose 10%, 100 mL (ALS). Never oral glucose when unresponsive.",
+            "figures": [
+              {
+                "src": "../images/guides/c5s3-068.webp",
+                "alt": "Three treatments side by side: oral glucose gel, a glucagon kit (vial and syringe) with an IM thigh site, and a nasal glucagon device.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
+            ]
           },
           {
             "type": "groups",
@@ -1196,7 +1248,16 @@ window.CPG_DATA = {
               "Severe gut symptoms: cramps, vomiting"
             ],
             "yes": "Anaphylaxis: IM epinephrine now.",
-            "no": "Local or mild allergic reaction: monitor, antihistamine per protocol, reassess."
+            "no": "Local or mild allergic reaction: monitor, antihistamine per protocol, reassess.",
+            "figures": [
+              {
+                "src": "../images/guides/c5s4-069.webp",
+                "alt": "A body outline with the systems affected: swollen lips and tongue, hives on the skin, wheeze from the lungs, a falling BP gauge, a cramping stomach.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "steps",
@@ -1215,11 +1276,27 @@ window.CPG_DATA = {
                     "drug": "Auto-injector",
                     "dose": "0.15 mg (about 15–30 kg); 0.3 mg (30 kg or more)"
                   }
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s4-070.webp",
+                    "alt": "An auto-injector pressed into the outer middle thigh through clothing, with the target area shaded on the anterolateral thigh.",
+                    "w": 1024,
+                    "h": 1024
+                  }
                 ]
               },
               {
                 "title": "Position",
-                "text": "Lying with legs raised if BP is low; sitting if breathing is the problem; never stand up suddenly."
+                "text": "Lying with legs raised if BP is low; sitting if breathing is the problem; never stand up suddenly.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s4-071.webp",
+                    "alt": "Two positions: lying flat with legs raised (low BP) and sitting up (breathing difficulty), with a crossed-out standing figure.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Oxygen, call ALS, monitor",
@@ -1574,7 +1651,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Airway and BVM first",
-                "text": "Ventilate with oxygen before any drug."
+                "text": "Ventilate with oxygen before any drug.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s5-073.webp",
+                    "alt": "Two-rescuer BVM ventilation of an unresponsive patient, with a naloxone nasal spray and syringe ready on the floor.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Naloxone",
@@ -1641,6 +1726,15 @@ window.CPG_DATA = {
                 "Hyperthermia, agitation",
                 "Cool; benzodiazepines (ALS); avoid struggling against restraint"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s5-074.webp",
+                "alt": "A house with a furnace and a car in the garage, several family members and a pet feeling unwell, a CO alarm.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -2346,6 +2440,14 @@ window.CPG_DATA = {
                 "items": [
                   "No BP cuff, no IV",
                   "Bleeding: firm direct pressure"
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s7-077.webp",
+                    "alt": "A forearm with an arteriovenous fistula (raised vein), a crossed-out BP cuff on that arm and the cuff on the other arm instead.",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               },
               {
@@ -2703,6 +2805,15 @@ window.CPG_DATA = {
                 "Fever, rash, wheeze, low BP during a transfusion",
                 "Stop it, keep the line, oxygen, keep the bag"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s8-080.webp",
+                "alt": "A selection of anticoagulant tablet boxes (generic, unbranded) beside a head-injury icon with a CT scanner.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2997,7 +3108,16 @@ window.CPG_DATA = {
               "Little urine; temperature above 38 °C or below 36 °C"
             ],
             "yes": "Sepsis alert: oxygen to SpO₂ 94–98%, IV access and fluids per protocol, pre-alert, rapid transport. Antibiotics within 1 hour for shock or probable sepsis.",
-            "no": "Keep reassessing: sepsis can develop over hours."
+            "no": "Keep reassessing: sepsis can develop over hours.",
+            "figures": [
+              {
+                "src": "../images/guides/c5s9-081.webp",
+                "alt": "A patient with infection sources highlighted (lungs, urine, abdomen, skin wound) and warning signs around them: confusion, fast breathing, low BP, mottled skin.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "table",
@@ -3071,6 +3191,15 @@ window.CPG_DATA = {
               "No spleen (including sickle cell)",
               "Very young, very old, immunosuppressed",
               "Non-blanching rash with fever: meningococcal sepsis"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s9-083.webp",
+                "alt": "The glass test: a clear glass pressed on a non-blanching purple rash that stays visible.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -3366,7 +3495,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Talk first",
-                "text": "One calm speaker, space, listen, acknowledge feelings, offer choices."
+                "text": "One calm speaker, space, listen, acknowledge feelings, offer choices.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s10-084.webp",
+                    "alt": "An EMS provider at a safe distance with open hands and calm posture, standing between the patient and the door, a partner nearby.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Hyperactive delirium?",
@@ -3374,7 +3511,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Restraint only if needed",
-                "text": "Minimal; never prone or with weight on the back or neck."
+                "text": "Minimal; never prone or with weight on the back or neck.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c5s10-085.webp",
+                    "alt": "Correct position: a restrained patient on their side on a stretcher with monitoring; a crossed-out prone figure with weight on the back.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Sedation per protocol",
@@ -3732,6 +3877,15 @@ window.CPG_DATA = {
               "Cold pack wrapped in cloth",
               "Reassurance, distraction (toys, videos for children)",
               "Gentle handling and a smooth ride"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s11-087.webp",
+                "alt": "A splinted forearm resting on a pillow with a wrapped cold pack, and a child distracted by a tablet video.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3795,6 +3949,14 @@ window.CPG_DATA = {
                 "items": [
                   "Mid-shaft femur: traction splint helps pain",
                   "Hip fracture: padded immobilisation (pillows, vacuum mattress, scoop); no traction splint"
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c6s10-131.webp",
+                    "alt": "Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found).",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               },
               {
