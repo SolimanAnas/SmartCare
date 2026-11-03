@@ -34,7 +34,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Head",
-                "text": "A flat hand on the head prevents an explosive delivery. If the sac is still intact over the head, tear it."
+                "text": "A flat hand on the head prevents an explosive delivery. If the sac is still intact over the head, tear it.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s1-135.webp",
+                    "alt": "A rescuer's flat gloved hand resting on the crowning baby's head while the other hand supports the perineum with a towel; mother semi-reclined, knees bent.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Neck",
@@ -50,7 +58,16 @@ window.CPG_DATA = {
               },
               {
                 "title": "Cord",
-                "text": "Vigorous baby: wait at least 60 seconds before clamping. Clamp about 10 cm from the baby and again 5 cm further out; cut between."
+                "text": "Vigorous baby: wait at least 60 seconds before clamping. Clamp about 10 cm from the baby and again 5 cm further out; cut between.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s1-136.webp",
+                    "alt": "A newborn skin-to-skin on the mother with the cord clamped twice and scissors cutting between the clamps.",
+                    "caption": "Clamp about 10 cm from the baby and again 5 cm further out; cut between.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Placenta",
@@ -149,6 +166,22 @@ window.CPG_DATA = {
                 "Green or brown fluid",
                 "Vigorous baby: routine care. Floppy baby: start breaths within the first minute; no routine suction."
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s1-137.webp",
+                "alt": "The mother in knee-chest position with a rescuer's gloved hand lifting the presenting part off a cord covered by moist gauze.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              },
+              {
+                "src": "../images/guides/c7s1-138.webp",
+                "alt": "McRoberts manoeuvre: two helpers pulling the mother's knees towards her chest while a third presses just above the pubic bone with the heel of the hand.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -186,7 +219,15 @@ window.CPG_DATA = {
               {
                 "title": "Massage",
                 "text": "Firm fundal massage until the uterus is hard. Let the baby breastfeed.",
-                "level": "BLS"
+                "level": "BLS",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s1-139.webp",
+                    "alt": "One hand cupping the fundus above the umbilicus and massaging in circles, the other hand just above the pubic bone supporting the lower uterus.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Drugs",
@@ -594,7 +635,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Protect evidence",
-                "text": "Ask them not to wash, change, eat, drink, brush teeth or urinate if possible. Put removed clothing in separate paper bags. Don't examine the genitals unless bleeding is severe."
+                "text": "Ask them not to wash, change, eat, drink, brush teeth or urinate if possible. Put removed clothing in separate paper bags. Don't examine the genitals unless bleeding is severe.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s2-141.webp",
+                    "alt": "Clothing items each placed in a separate brown paper bag, labelled and sealed, next to a patient wrapped in a blanket.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Document",
@@ -891,7 +940,16 @@ window.CPG_DATA = {
             "icon": "baby",
             "question": "Term, good tone, breathing or crying?",
             "yes": "Stay with the mother: skin-to-skin, dry, cover, hat. Watch breathing, colour and tone. Delay cord clamping at least 60 seconds.",
-            "no": "Warm, dry and stimulate. Position the head neutral (\"sniffing\"); clear secretions only if they block the airway."
+            "no": "Warm, dry and stimulate. Position the head neutral (\"sniffing\"); clear secretions only if they block the airway.",
+            "figures": [
+              {
+                "src": "../images/guides/c7s3-142.webp",
+                "alt": "A newborn being dried with a warm towel on a flat surface, wet towel removed, hat on, head in the neutral \"sniffing\" position with a small roll under the shoulders.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
+            ]
           },
           {
             "type": "steps",
@@ -901,7 +959,15 @@ window.CPG_DATA = {
               {
                 "title": "Not breathing, gasping, or HR below 100",
                 "text": "Start PPV within 60 seconds of birth: 40–60 breaths/min at 20–25 cmH₂O. Room air (21%) at 35 weeks or more; 21–30% under 35 weeks. Pulse oximeter on the right hand.",
-                "level": "BLS"
+                "level": "BLS",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s3-143.webp",
+                    "alt": "A newborn bag-mask with the mask covering mouth and nose but not the eyes, held with a C-grip, and a pulse oximeter probe on the right wrist.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Is the chest rising?",
@@ -985,6 +1051,15 @@ window.CPG_DATA = {
               "Skin-to-skin on the mother, cover both, hat on",
               "Room or ambulance 23–25 °C",
               "Under 32 weeks: plastic bag up to the neck without drying, then a hat"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s3-145.webp",
+                "alt": "A very preterm baby in a clear plastic bag up to the neck with a hat, lying on a warm mattress, not dried.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1470,6 +1545,15 @@ window.CPG_DATA = {
                 "Keep calm on the parent's lap; nebulized epinephrine for stridor at rest; dexamethasone",
                 "Don't look in the throat or lay the child down; oxygen as tolerated; go with pre-alert"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s4-147.webp",
+                "alt": "Side by side: a toddler with croup coughing on a parent's lap, and a child with epiglottitis sitting forward in tripod position, drooling, mouth open.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1508,7 +1592,16 @@ window.CPG_DATA = {
             "icon": "triangle-alert",
             "question": "Coughing forcefully, crying or speaking?",
             "yes": "Mild obstruction: let them cough, keep things calm, transport and watch for change.",
-            "no": "Severe: over 1 year, abdominal thrusts; under 1 year, 5 back blows and 5 chest thrusts. Unresponsive: start CPR."
+            "no": "Severe: over 1 year, abdominal thrusts; under 1 year, 5 back blows and 5 chest thrusts. Unresponsive: start CPR.",
+            "figures": [
+              {
+                "src": "../images/guides/c3s3-012.webp",
+                "alt": "Two panels. First, an infant face-down along the rescuer's forearm, head lower than the chest and supported at the jaw, receiving back blows. Second, the infant face-up on the other forearm, with the heel of one hand on the lower half of the breastbone for chest thrusts (not two fingers: AHA 2025).",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
+            ]
           },
           {
             "type": "steps",
@@ -1590,6 +1683,15 @@ window.CPG_DATA = {
                 "dose": "0.5–1 J/kg, then 2 J/kg",
                 "note": "Unstable SVT",
                 "level": "ALS"
+              }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s4-149.webp",
+                "alt": "Two gloved hands encircling a dressed infant's chest with both thumbs side by side on the breastbone, marked with a green tick.",
+                "w": 594,
+                "h": 896,
+                "pos": "after"
               }
             ]
           },
@@ -2438,6 +2540,15 @@ window.CPG_DATA = {
               "Benzodiazepines, opioids, sleeping tablets: falls and confusion",
               "Anticholinergics: delirium, urinary retention",
               "Bring all the medicines or a list"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s6-154.webp",
+                "alt": "A table covered in pill boxes and a weekly organiser, with a rescuer bagging all the medicines to bring to hospital.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -2807,6 +2918,15 @@ window.CPG_DATA = {
                 "Dementia",
                 "Introduce yourself each time; one question at a time; calm voice."
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c7s7-155.webp",
+                "alt": "A rescuer facing a deaf patient in good light while a sign language interpreter appears on a tablet video call.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -2868,6 +2988,15 @@ window.CPG_DATA = {
                 "Low glucose",
                 "Suspend or disconnect the pump, then treat the glucose."
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s7-077.webp",
+                "alt": "A forearm with an arteriovenous fistula (raised vein), a crossed-out BP cuff on that arm and the cuff on the other arm instead.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -3201,7 +3330,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Ramp for airway work",
-                "text": "Blankets under the shoulders and head until the ear canal is level with the sternal notch; head up 25–30°."
+                "text": "Blankets under the shoulders and head until the ear canal is level with the sternal notch; head up 25–30°.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s8-158.webp",
+                    "alt": "Side view of a large patient on a ramp of blankets with a dotted horizontal line from the ear canal to the sternal notch.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Pre-oxygenate",
@@ -3210,7 +3347,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Bag-mask",
-                "text": "Two people: two-hand mask seal with oral and nasal airways; early second-generation supraglottic airway if ventilation fails."
+                "text": "Two people: two-hand mask seal with oral and nasal airways; early second-generation supraglottic airway if ventilation fails.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s8-159.webp",
+                    "alt": "Two-person bag-mask: one rescuer with both hands sealing the mask (thumbs on the mask, fingers lifting the jaw), the other squeezing the bag.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               }
             ]
           },
@@ -3293,7 +3438,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Use equipment",
-                "text": "Slide sheets, air-assisted transfer mats, mechanical lifts. Never exceed equipment ratings."
+                "text": "Slide sheets, air-assisted transfer mats, mechanical lifts. Never exceed equipment ratings.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s8-160.webp",
+                    "alt": "A team of six using an air-assisted transfer mat to move a patient from a bed to a bariatric cot, patient covered with a sheet.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Dignity",

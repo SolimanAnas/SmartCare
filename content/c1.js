@@ -44,6 +44,15 @@ window.CPG_DATA = {
                 "title": "Quality improvement",
                 "text": "Review calls, find system problems, change protocols and training, measure again."
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c1s1-161.webp",
+                "alt": "A horizontal chain of six linked icons: a bystander with a phone, a dispatcher with a headset, an ambulance, a clipboard of protocols with a doctor, a hospital, and a looping arrow for quality review.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -596,7 +605,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Block",
-                "text": "Park upstream at an angle so the vehicle shields the work area."
+                "text": "Park upstream at an angle so the vehicle shields the work area.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c1s3-163.webp",
+                    "alt": "Overhead view of a highway: a fire engine angled upstream as a block, cones tapering traffic, the ambulance beyond it, crew in high-visibility vests working on the protected side.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Be seen",
@@ -619,7 +636,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Stay away",
-                "text": "Upwind, uphill and upstream."
+                "text": "Upwind, uphill and upstream.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c1s3-164.webp",
+                    "alt": "A tanker with a placard, with a wind arrow and an ambulance parked upwind, uphill and at a distance; hot, warm and cold zones shaded.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Identify from a distance",
@@ -661,6 +686,15 @@ window.CPG_DATA = {
                 "Exhaustion, cynicism, less empathy, feeling ineffective, drinking more",
                 "Act early: rest, support, professional help"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c1s3-165.webp",
+                "alt": "Three simple figures: one with a racing heart after a call (acute), one waking from a nightmare weeks later (delayed), one slumped and drained over a calendar of shifts (burnout).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1061,7 +1095,15 @@ window.CPG_DATA = {
             "steps": [
               {
                 "title": "Clean",
-                "text": "Wash with soap and water; don't scrub, squeeze or use bleach. Flush eyes, nose or mouth with water or saline."
+                "text": "Wash with soap and water; don't scrub, squeeze or use bleach. Flush eyes, nose or mouth with water or saline.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c1s4-168.webp",
+                    "alt": "A hand being washed under running water with soap after a needlestick, with crossed-out icons for squeezing and bleach.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Report now",
@@ -1478,7 +1520,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Preserve evidence",
-                "text": "Cut around bullet and knife holes; put clothing in separate paper bags; don't move weapons unless needed for safety."
+                "text": "Cut around bullet and knife holes; put clothing in separate paper bags; don't move weapons unless needed for safety.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c1s5-170.webp",
+                    "alt": "Trauma shears cutting around a bullet hole in a shirt, and the shirt going into a brown paper evidence bag.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Document",
@@ -1830,7 +1880,16 @@ window.CPG_DATA = {
             "icon": "brain",
             "question": "An adult (or emancipated minor) who can understand, retain and weigh the information and communicate a choice – not impaired by low oxygen, low glucose, head injury, intoxication or shock?",
             "yes": "Respect the decision. Explain the risks (including death) in plain words, offer alternatives and a way back, involve family if they agree, call medical direction, document.",
-            "no": "They lack capacity for this decision: treat in their best interest under your protocol, with police and medical direction as needed."
+            "no": "They lack capacity for this decision: treat in their best interest under your protocol, with police and medical direction as needed.",
+            "figures": [
+              {
+                "src": "../images/guides/c1s6-171.webp",
+                "alt": "A paramedic kneeling at eye level with a seated patient, explaining with an open hand, a refusal form and pen on a clipboard between them.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
+            ]
           },
           {
             "type": "steps",
@@ -2223,6 +2282,15 @@ window.CPG_DATA = {
             ],
             "notes": [
               "Add trends, response to treatment, scene details, pertinent negatives, and where belongings are."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c1s7-173.webp",
+                "alt": "A \"hands-off\" handover in an emergency bay: the paramedic speaking while the hospital team stands around the stretcher listening, hands at their sides.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3485,7 +3553,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Body mechanics",
-                "text": "Feet shoulder-width apart, back straight, load close, lift with your legs (power lift). Pivot your whole body – never twist your spine."
+                "text": "Feet shoulder-width apart, back straight, load close, lift with your legs (power lift). Pivot your whole body – never twist your spine.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c1s10-179.webp",
+                    "alt": "Side view of a power lift: squatting provider with feet shoulder-width apart, straight back, load close; a second figure bending at the waist crossed out.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               }
             ]
           },
@@ -3515,6 +3591,15 @@ window.CPG_DATA = {
                 "Stable patient, no danger",
                 "Planned transfers: draw sheet, direct ground lift, extremity lift"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c1s10-180.webp",
+                "alt": "A clothes drag: a rescuer pulling a patient by the shirt at the shoulders along the long axis, the patient's head supported between the forearms, smoke in the background.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {

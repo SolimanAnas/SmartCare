@@ -34,7 +34,7 @@ MIN_QUIZ, MIN_FLASHCARDS, MIN_SCENARIOS = 10, 8, 3
 
 # Keys that hold links, ids or labels rather than clinical text. A strip's
 # `lead` (an ECG lead name) is skipped too; a guide's `lead` is its intro.
-SKIP_KEYS = {"id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg"}
+SKIP_KEYS = {"src", "id", "href", "group", "type", "icon", "tone", "start", "level", "label", "ecg"}
 
 UNITS = (
     r"mcg/kg/min|mg/kg|ml/kg|j/kg|mcg/min|mcg|mg|ml|l/min|lpm|breaths/min|/min|bpm|mmhg|cmh2o|°c|%|j|cm|"

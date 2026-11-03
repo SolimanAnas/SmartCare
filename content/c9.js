@@ -49,6 +49,15 @@ window.CPG_DATA = {
                 "First-pass effect",
                 "The liver breaks down swallowed drugs before they circulate; IV, IO, IM, sublingual, intranasal and inhaled routes avoid it"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c9s1-203.webp",
+                "alt": "A receptor drawn as a lock: an agonist key turning it (light on), an antagonist key sitting in it but not turning (light off), and a partial agonist half-turning it.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -509,7 +518,15 @@ window.CPG_DATA = {
               {
                 "title": "IO if IV fails",
                 "text": "Tibia or humerus; flush; same doses. Don't keep trying veins while drugs are delayed.",
-                "level": "ALS"
+                "level": "ALS",
+                "figures": [
+                  {
+                    "src": "../images/guides/c9s2-207.webp",
+                    "alt": "An IO driver placing a needle in the proximal tibia, a hand marking the landmark two fingerbreadths below the kneecap and medial to the tuberosity.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Not via the tube",

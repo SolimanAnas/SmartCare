@@ -62,6 +62,18 @@
         </div>`;
     }
 
+    const attr = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+    // Illustrations from data/guide-images.json, written into content/ by
+    // scripts/apply_guide_images.js. `pos` applies to section-level figures only.
+    function figures(items, pos) {
+        const shown = (items || []).filter(f => !pos || (f.pos || 'after') === pos);
+        return shown.map(f => `<figure class="g-fig">
+            <img src="${attr(f.src)}" alt="${attr(f.alt)}" width="${f.w}" height="${f.h}" loading="lazy" decoding="async">
+            ${f.caption ? `<figcaption>${f.caption}</figcaption>` : ''}
+        </figure>`).join('');
+    }
+
     function step(s, n) {
         // A step that is one drug shows its dose on a line, not as a table.
         const single = s.doses && s.doses.length === 1 && s.doses[0].drug === s.title && s.doses[0].level === s.level ? s.doses[0] : null;
@@ -72,6 +84,7 @@
                 ${s.text ? `<p>${s.text}</p>` : ''}
                 ${list(s.items)}
                 ${single ? `<p class="g-dose-line"><b>${single.dose}</b>${single.note ? ` · ${single.note}` : ''}</p>` : doseTable(s.doses, s.level)}
+                ${figures(s.figures)}
             </div>
         </li>`;
     }
@@ -99,6 +112,7 @@
             <div class="g-path" data-tone="${p.tone || ''}">
                 <h4>${p.title}</h4>
                 <ol>${p.steps.map(x => `<li><span>${x.text}</span>${level(x.level)}</li>`).join('')}</ol>
+                ${figures(p.figures)}
             </div>`).join('')}</div>
             ${s.after ? `<p class="g-after">${s.after}</p>` : ''}`,
 
@@ -118,7 +132,7 @@
             ${s.stack ? stackedTable(s) : ''}
             ${list(s.notes)}`,
 
-        groups: (s) => s.groups.map(g => `<div class="g-group"><h4>${g.title}</h4>${list(g.items)}</div>`).join(''),
+        groups: (s) => s.groups.map(g => `<div class="g-group"><h4>${g.title}</h4>${list(g.items)}${figures(g.figures)}</div>`).join(''),
 
         related: (s) => `<ul class="g-related">${s.items.map(r =>
             `<li><a href="${r.href}">${r.label}</a></li>`).join('')}</ul>`,
@@ -161,7 +175,9 @@
         return `<section class="g-sec" data-tone="${s.tone || ''}">
             <h3>${s.icon ? ICON(s.icon) : ''}${s.title}</h3>
             ${s.intro ? `<p class="g-intro">${s.intro}</p>` : ''}
+            ${figures(s.figures, 'before')}
             ${body}
+            ${figures(s.figures, 'after')}
         </section>`;
     }
 

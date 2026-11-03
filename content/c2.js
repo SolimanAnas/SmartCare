@@ -760,6 +760,15 @@ window.CPG_DATA = {
                 "title": "What help?",
                 "text": "Police, fire, ALS, more ambulances, specialist teams; declare a multiple-casualty incident early."
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s3-094.webp",
+                "alt": "An EMS crew stopping short of a scene and scanning: traffic, a downed power line, a person with a weapon, a leaking fuel puddle, each circled as a hazard.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -786,6 +795,14 @@ window.CPG_DATA = {
                 "items": [
                   "Block with the vehicle, lights on, high-visibility clothing",
                   "Transportation incidents are the leading cause of on-duty EMS deaths"
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c2s3-095.webp",
+                    "alt": "An ambulance parked at an angle upstream of a crash to block traffic, warning lights on, crew in high-visibility vests working on the protected side.",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               }
             ]
@@ -1091,7 +1108,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "A – airway",
-                "text": "Talking? Sounds? Head-tilt/chin-lift (medical) or jaw thrust with in-line stabilisation (trauma); suction; OPA or NPA."
+                "text": "Talking? Sounds? Head-tilt/chin-lift (medical) or jaw thrust with in-line stabilisation (trauma); suction; OPA or NPA.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c3s1-005.webp",
+                    "alt": "Rescuer at the head of the patient, fingers behind the angles of the jaw lifting it forward, thumbs on the cheekbones, head kept neutral.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "B – breathing",
@@ -1495,6 +1520,14 @@ window.CPG_DATA = {
                   "Infant: brachial",
                   "Unresponsive adult or child: carotid (femoral also)",
                   "Radial present: some perfusion"
+                ],
+                "figures": [
+                  {
+                    "src": "../images/guides/c2s5-100.webp",
+                    "alt": "Pulse sites marked on an adult and an infant: carotid, radial, femoral, brachial (infant).",
+                    "w": 1200,
+                    "h": 896
+                  }
                 ]
               },
               {
@@ -1900,6 +1933,15 @@ window.CPG_DATA = {
             "notes": [
               "AHA: \"white on right, smoke over fire\".",
               "A rhythm strip can't rule out a STEMI: record a 12-lead within 10 minutes for chest pain."
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s6-102.webp",
+                "alt": "Two torsos with limb electrodes: AHA colours (white, black, red, green) and IEC colours (red, yellow, green, black).",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2647,6 +2689,15 @@ window.CPG_DATA = {
                 "Crepitus, deformity, no distal pulse",
                 "Fracture; vascular injury"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s8-104.webp",
+                "alt": "Four close-ups: raccoon eyes, Battle's sign behind the ear, seat-belt bruise across the abdomen, flail segment moving inward on inspiration.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2657,6 +2708,15 @@ window.CPG_DATA = {
               "Pelvis: don't rock it; pelvic binder at the greater trochanters for suspected fracture with shock",
               "Open chest wound: vented chest seal (or an occlusive dressing taped on three sides); watch for tension",
               "Check circulation, motor and sensation (CMS) before and after every splint"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s9-129.webp",
+                "alt": "A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist.",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -3774,6 +3834,15 @@ window.CPG_DATA = {
               "Roles: incident command, triage, treatment, transport, staging",
               "First report: METHANE – major incident, exact location, type, hazards, access, number of casualties, emergency services",
               "Re-triage repeatedly"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s11-110.webp",
+                "alt": "An overhead view of a mass-casualty scene with colour-coded treatment areas (red, yellow, green), a command post, a staging area and an ambulance loading point.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
