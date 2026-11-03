@@ -86,9 +86,9 @@ Also set **Site URL** to your primary origin (e.g. `https://solimananas.github.i
 
 The hidden admin console (`pages/admin.html`) manages your **real** signed-in users
 (the people who actually sign in with Google), not a separate account system. It's
-reached via a secret gesture on the login page (tap the cloud icon 4× fast, enter the
-PIN) and is protected server-side — the PIN only reveals the link, it does not grant
-API access.
+reached via a hidden gesture on the login page (tap the cloud icon 4× fast) and is
+protected server-side — the gesture only reveals the link, it does not grant API
+access.
 
 Reads/writes are handled by three **Supabase Edge Functions**
 (`supabase/functions/admin-list-users`, `admin-update-role`, `admin-delete-user`) —
@@ -213,10 +213,11 @@ curl -i "$SUPABASE_URL/functions/v1/admin-list-users" \
 ### 4c. Reaching the admin console
 
 On `pages/login.html`, tap the cloud icon above "SmartCare Cloud" **4 times within
-~2 seconds** to trigger a PIN prompt. You must already be signed in with an email
-from `ADMIN_EMAILS` — the PIN only unlocks navigation to `admin.html`; the page
-itself will bounce you back to login if your account isn't allow-listed (the
-admin-list-users function returns `403`, which the page treats the same as `401`).
+~2 seconds** to open `admin.html`. You must already be signed in with a Google
+account whose email is in `ADMIN_EMAILS`. The gesture only hides the link from
+casual users; the page itself sends you back to login if your account isn't
+allow-listed (the admin-list-users function returns `403`, which the page treats
+the same as `401`).
 
 ---
 

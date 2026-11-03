@@ -122,7 +122,10 @@
 
         // Parse query params to load active chapter
         const urlParams = new URLSearchParams(window.location.search);
-        const chapterId = urlParams.get('chapter') || 'c01';
+        // The id becomes part of a <script src>, so only accept real chapter ids
+        // (c01, c02, ...): anything else could load another same-origin script.
+        const requestedId = urlParams.get('chapter') || 'c01';
+        const chapterId = /^c\d{1,3}$/.test(requestedId) ? requestedId : 'c01';
 
         // Load correct stats
         function loadStats() {
