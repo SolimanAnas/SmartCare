@@ -1,4 +1,4 @@
-# Node Description Batch 24 of 49
+# Node Description Batch 24 of 62
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,58 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "commit:repo:github.com/SolimanAnas/SmartCare@8541abefec7ae7fa9d781e820ae6356b7c77b72b": "8541abe chore: Change index page title from landing page to clinical learning p…" | kind=Commit | source=git | neighbors=[main, d00c567 feat: Remove Scope of Practice …, 92652ca feat: Update search placeholder…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@90c10bb9124d5ae485f96aeae6b5c0b137683cdd": "90c10bb Make hero greeting on index.html sign-in aware" | kind=Commit | source=git | neighbors=[8a6ee0b Fix invisible table borders and…, main, 4389d53 Improve drawer toggle panel ide…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@98be90d66a0dcd109768dee26ba7727d0e6608ab": "98be90d Add files via upload" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, 213cb39 NEW CHAPTERS ADDED V 4.0.1, c-index.js]
-- "commit:repo:github.com/SolimanAnas/SmartCare@aa3705ce2c482dd0e6d4138b26ebca7007daa232": "aa3705c Add mid-cycle v2.0 audit: verify roadmap status against code, re-priori…" | kind=Commit | source=git | neighbors=[83a1ea8 Ship the Offline & PWA section …, main, 94235c6 Ship the critical hardening lis…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@aa81a0c05ca6c23af3be35bcd63b1bbbe66aca54": "aa81a0c fix: set SUPABASE_URL in supabase-config.js" | kind=Commit | source=git | neighbors=[main, 4561a63 fix: correct SUPABASE_URL typo …, b0748c1 feat: Supabase integration]
-- "commit:repo:github.com/SolimanAnas/SmartCare@c9276aedf9c658368f229db910044abccc835060": "c9276ae chore: update graphify knowledge graph" | kind=Commit | source=git | neighbors=[1fc629e fix(app.js): handle DOMContentL…, main, 1a00316 feat(itls): restructure itls co…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@d546791e464c038a52e24f9309be76c8b998d88f": "d546791 feat: add screenshots, orientation, and safe categories to manifest" | kind=Commit | source=git | neighbors=[18fb7dc Added ├── .well-known/, main, fefe4cd chore: bump SW to v2.2 for init…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@d5777e9b8a0fe40413ec7e62d9487650a17bb5f7": "d5777e9 feat: comprehensive privacy policy with premium UI/UX design" | kind=Commit | source=git | neighbors=[829a86d update: refresh PWA icons from …, main, 67cd1eb fix: update contact email and a…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@d641fa0ed1193b3e8493f17ea46f056c534b259f": "d641fa0 feat: improve SEO, Open Graph metadata, and accessibility across all pa…" | kind=Commit | source=git | neighbors=[1a00316 feat(itls): restructure itls co…, main, 074617f feat: update chapter files with…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@d7918ff93f973a6649510d7bf4ebeac6b20d0e70": "d7918ff fix: commit package-lock.json — CI's npm ci can't run without it" | kind=Commit | source=git | neighbors=[d7008b7 Add the actual content changes …, main, 53ec4c1 Merge pull request #16 ✅]
-- "commit:repo:github.com/SolimanAnas/SmartCare@e9a2970ac4d468aa16c5f6977b0d134651b8fd56": "e9a2970 Add agentic implementation plans for ACLS and PALS reviewers" | kind=Commit | source=git | neighbors=[82ff814 Add Playwright smoke test for B…, main, 5157b39 Fix horizontal overflow on phon…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@f3382e1e94cfa0b78d93256a3c9dbd64dc054bfa": "f3382e1 Add agentic implementation plan for BLS course reviewer (docs/BLS.md)" | kind=Commit | source=git | neighbors=[817a4bf Merge pull request #23 Fixed: r…, main, a75c415 Scaffold BLS reviewer (courses/…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@feedaf7c27886f8816012f5856135349bf1a1366": "feedaf7 Add fresh production-readiness audit (July 2026)" | kind=Commit | source=git | neighbors=[c9e85ef Deduplicate the 8 standalone ex…, main, ef31570 Fix offline precache gap, add c…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@ff409d5260a1de9557f95c0878f5781ccf2651b8": "ff409d5 fix: match section-header style to index.html section-label" | kind=Commit | source=git | neighbors=[7f26548 fix: UTF-8 mojibake across exam…, main, 6c55b58 fix: sync section-header & cont…]
-- "migrations_20260702000002_create_profiles_auth_users": "auth.users" | kind=code-symbol | source=supabase/migrations/20260702000002_create_profiles.sql:L7 | neighbors=[20260702000002_create_profiles.sql, on_auth_user_created, public.profiles]
-- "migrations_20260702000002_create_profiles_public_profiles": "public.profiles" | kind=code-symbol | source=supabase/migrations/20260702000002_create_profiles.sql:L6 | neighbors=[20260702000002_create_profiles.sql, public.handle_new_user(), auth.users]
-- "pals_build": "build.py" | kind=code-symbol | source=courses/pals/build.py:L1 | neighbors=[2e859ad Adding PALS Course, load(), main()]
-- "playwright_config": "playwright.config.js" | kind=code-symbol | source=playwright.config.js:L1 | neighbors=[53ec4c1 Merge pull request #16 ✅, beb9c47 fix(ui): swap CSS to 0dad921 gl…, d7008b7 Add the actual content changes …]
-- "prometric_exam_examengine_closemodal": ".closeModal()" | kind=code-symbol | source=src/prometric/exam.js:L1086 | neighbors=[ExamEngine, .endExam(), .resumeExam()]
-- "prometric_exam_examengine_inittheme": ".initTheme()" | kind=code-symbol | source=src/prometric/exam.js:L65 | neighbors=[ExamEngine, .init(), .setTheme()]
-- "prometric_exam_examengine_resumeexam": ".resumeExam()" | kind=code-symbol | source=src/prometric/exam.js:L770 | neighbors=[ExamEngine, .closeModal(), .startTimer()]
-- "prometric_exam_examengine_selectoption": ".selectOption()" | kind=code-symbol | source=src/prometric/exam.js:L602 | neighbors=[ExamEngine, .handleKeyboard(), .updateNavigator()]
-- "prometric_exam_examengine_showanalytics": ".showAnalytics()" | kind=code-symbol | source=src/prometric/exam.js:L1104 | neighbors=[ExamEngine, .renderAnalyticsDashboard(), .showScreen()]
-- "prometric_exam_examengine_showmodal": ".showModal()" | kind=code-symbol | source=src/prometric/exam.js:L1044 | neighbors=[ExamEngine, .confirmEnd(), .pauseExam()]
-- "prometric_exam_examengine_updateprogressbar": ".updateProgressBar()" | kind=code-symbol | source=src/prometric/exam.js:L492 | neighbors=[ExamEngine, .startExam(), .updateNavigator()]
-- "scripts_assemble_chapters_extract_sections": "extract_sections()" | kind=code-symbol | source=scripts/assemble_chapters.py:L44 | neighbors=[assemble_chapters.py, assemble(), Extract section objects from a TOC sect…]
-- "scripts_build_courses": "build_courses.py" | kind=code-symbol | source=scripts/build_courses.py:L1 | neighbors=[20fdfa2 feat(itls): complete itls revie…, a4df22b fix: resolve CI lint failure an…, main()]
-- "scripts_build_precache_collect_globs": "collect_globs()" | kind=code-symbol | source=scripts/build_precache.py:L100 | neighbors=[build_precache.py, build_list(), rel()]
-- "scripts_build_toc_gen_chapter": "gen_chapter()" | kind=code-symbol | source=scripts/build_toc.py:L92 | neighbors=[build_toc.py, esc(), main()]
-- "scripts_check_contrast_main": "main()" | kind=code-symbol | source=scripts/check_contrast.py:L65 | neighbors=[check_contrast.py, contrast(), parse_themes()]
-- "scripts_check_contrast_parse_themes": "parse_themes()" | kind=code-symbol | source=scripts/check_contrast.py:L52 | neighbors=[check_contrast.py, main(), Extract {theme_name: {var_name: hex}} f…]
-- "scripts_extract_itls_toc": "extract_itls_toc.py" | kind=code-symbol | source=scripts/extract_itls_toc.py:L1 | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, b791fda content: deploy chapters 4-5 (C…, Extract TOC from International Trauma L…]
-- "scripts_gen_create_src_folders": "create_src_folders()" | kind=code-symbol | source=scripts/gen.py:L24 | neighbors=[gen.py, main(), Creates the necessary src/COURSE folder…]
-- "scripts_gen_generate_course_page": "generate_course_page()" | kind=code-symbol | source=scripts/gen.py:L32 | neighbors=[gen.py, main(), Replaces placeholders in the template w…]
-- "scripts_gen_main": "main()" | kind=code-symbol | source=scripts/gen.py:L55 | neighbors=[gen.py, create_src_folders(), generate_course_page()]
-- "scripts_generate_all_itls_data": "generate_all_itls_data.py" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L1 | neighbors=[20fdfa2 feat(itls): complete itls revie…, a4df22b fix: resolve CI lint failure an…, main()]
-- "scripts_generate_maskable_icons": "generate_maskable_icons.py" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L1 | neighbors=[83a1ea8 Ship the Offline & PWA section …, d1b235f Merge pull request #15 Offline …, main()]
-- "scripts_validate_content_load_json_lenient": "load_json_lenient()" | kind=code-symbol | source=scripts/validate_content.py:L50 | neighbors=[validate_content.py, Several banks were authored with a UTF-…, validate_bank_content()]
-- "scripts_validate_content_question_core_fields": "question_core_fields()" | kind=code-symbol | source=scripts/validate_content.py:L104 | neighbors=[validate_content.py, Extract (text, options, correct_answer)…, validate_question()]
-- "scripts_validate_content_rel": "rel()" | kind=code-symbol | source=scripts/validate_content.py:L46 | neighbors=[validate_content.py, main(), validate_manifest_coverage()]
+- "migrations_20260702000001_create_user_state": "20260702000001_create_user_state.sql" | kind=code-symbol | source=supabase/migrations/20260702000001_create_user_state.sql:L1 | neighbors=[53ec4c1 Merge pull request #16 ✅, 94235c6 Ship the critical hardening lis…, auth.users, public.user_state]
+- "pepp_build": "build.py" | kind=code-symbol | source=courses/pepp/build.py:L1 | neighbors=[179984f Scaffold PEPP reviewer (courses…, 877d856 Medical-bdls-empact-pepp-review…, load(), main()]
+- "prometric_exam_examengine_buildnavigator": ".buildNavigator()" | kind=code-symbol | source=src/prometric/exam.js:L447 | neighbors=[ExamEngine, .updateNavigator(), .retryIncorrect(), .startExam()]
+- "prometric_exam_examengine_constructor": ".constructor()" | kind=code-symbol | source=src/prometric/exam.js:L2 | neighbors=[ExamEngine, .init(), .loadQuestionHistory(), .loadStats()]
+- "prometric_exam_examengine_navigate": ".navigate()" | kind=code-symbol | source=src/prometric/exam.js:L711 | neighbors=[ExamEngine, .handleKeyboard(), .handleTouchEnd(), .renderQuestion()]
+- "prometric_exam_examengine_newexam": ".newExam()" | kind=code-symbol | source=src/prometric/exam.js:L818 | neighbors=[ExamEngine, .goToStep(), .removeTouchListeners(), .showScreen()]
+- "prometric_exam_examengine_removetouchlisteners": ".removeTouchListeners()" | kind=code-symbol | source=src/prometric/exam.js:L793 | neighbors=[ExamEngine, .endExam(), .newExam(), .retryIncorrect()]
+- "prometric_exam_examengine_shufflearray": ".shuffleArray()" | kind=code-symbol | source=src/prometric/exam.js:L342 | neighbors=[ExamEngine, .retryIncorrect(), .shuffleOptions(), .startExam()]
+- "prometric_exam_examengine_starttimer": ".startTimer()" | kind=code-symbol | source=src/prometric/exam.js:L724 | neighbors=[ExamEngine, .resumeExam(), .retryIncorrect(), .startExam()]
+- "prometric_exam_examengine_toggleflag": ".toggleFlag()" | kind=code-symbol | source=src/prometric/exam.js:L703 | neighbors=[ExamEngine, .handleKeyboard(), .showToast(), .updateNavigator()]
+- "prometric_exam_examengine_updateavailablecount": ".updateAvailableCount()" | kind=code-symbol | source=src/prometric/exam.js:L150 | neighbors=[ExamEngine, .selectMode(), .selectSetting(), .filterQuestions()]
+- "scripts_assemble_chapters_assemble": "assemble()" | kind=code-symbol | source=scripts/assemble_chapters.py:L90 | neighbors=[assemble_chapters.py, extract_sections(), main(), Assemble a complete chapter JS file.]
+- "scripts_audio_bp": "bp()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L90 | neighbors=[audio.py, foley_tap(), voice_chain(), whoosh()]
+- "scripts_audio_foley_tap": "foley_tap()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L240 | neighbors=[audio.py, bp(), tl(), main()]
+- "scripts_audio_impact": "impact()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L254 | neighbors=[audio.py, lp(), tl(), main()]
+- "scripts_audio_place": "place()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L31 | neighbors=[audio.py, main(), Add mono/stereo clip x into stereo buf …, score()]
+- "scripts_audio_reverb": "reverb()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L95 | neighbors=[audio.py, main(), lp(), score()]
+- "scripts_audio_whoosh": "whoosh()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L245 | neighbors=[audio.py, main(), bp(), tl()]
+- "scripts_build_ecg_reference_esc": "esc()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L34 | neighbors=[build_ecg_reference.js, card(), paper(), rhythmStrip()]
+- "scripts_build_precache_build_list": "build_list()" | kind=code-symbol | source=scripts/build_precache.py:L134 | neighbors=[build_precache.py, collect_content_files(), collect_globs(), main()]
+- "scripts_build_precache_main": "main()" | kind=code-symbol | source=scripts/build_precache.py:L160 | neighbors=[build_precache.py, build_list(), content_hash(), rel()]
+- "scripts_build_precache_rel": "rel()" | kind=code-symbol | source=scripts/build_precache.py:L80 | neighbors=[build_precache.py, collect_content_files(), collect_globs(), main()]
+- "scripts_check_contrast_contrast": "contrast()" | kind=code-symbol | source=scripts/check_contrast.py:L46 | neighbors=[check_contrast.py, hex_to_rgb(), luminance(), main()]
+- "scripts_compose_build_edit": "build_edit()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L119 | neighbors=[compose.py, clk(), mk(), shot()]
+- "scripts_compose_lib_ramp": "ramp()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L43 | neighbors=[compose_lib.py, kicker(), ease(), words_reveal()]
+- "scripts_compose_render_play_overlays": "render_play_overlays()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L233 | neighbors=[compose.py, render_frame(), cam_at(), shot_at()]
+- "scripts_compose_render_reveal": "render_reveal()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L513 | neighbors=[compose.py, render_frame(), debrief_card(), end_card()]
+- "scripts_driver_open": "open()" | kind=code-symbol | source=promo/megacode/scripts/driver.js:L7 | neighbors=[driver.js, explore2.js, peek_vert.js, record.js]
+- "scripts_generate_screenshots": "generate_screenshots.py" | kind=code-symbol | source=scripts/generate_screenshots.py:L1 | neighbors=[53ec4c1 Merge pull request #16 ✅, 94235c6 Ship the critical hardening lis…, compress(), main()]
+- "scripts_generate_splash": "generate_splash.py" | kind=code-symbol | source=scripts/generate_splash.py:L1 | neighbors=[83a1ea8 Ship the Offline & PWA section …, d1b235f Merge pull request #15 Offline …, device_entry(), main()]
+- "scripts_record_advance": "advance()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L50 | neighbors=[record.js, auto(), frame(), waitFor()]
+- "scripts_sheet": "sheet.py" | kind=code-symbol | source=promo/megacode/scripts/sheet.py:L1 | neighbors=[17232c9 Fix Ruff lint failure in Megaco…, 2a5f204 Add SmartCare Megacode cinemati…, 6663113 PR #63 Update ECG simulator, 7421ea4 Megacode cinematic promo]
+- "server_create_app": "create_app()" | kind=code-symbol | source=server.py:L33 | neighbors=[server.py, _register_csrf_guard(), _register_routes(), _register_security_headers()]
+- "server_require_supabase_user": "_require_supabase_user()" | kind=code-symbol | source=server.py:L120 | neighbors=[server.py, Abort with 503/401 unless the caller ha…, _supabase_admin_configured(), _supabase_user_from_token()]
+- "server_supabase_user_from_token": "_supabase_user_from_token()" | kind=code-symbol | source=server.py:L98 | neighbors=[server.py, Resolve a Supabase access token (from t…, _require_supabase_user(), _supabase_admin_configured()]
+- "src_render_state_renderemptyorerror": "renderEmptyOrError()" | kind=code-symbol | source=src/render-state.js:L49 | neighbors=[render-state.js, escapeHtml(), icon(), renderState()]
+- "tests_bls_reviewer_spec": "bls-reviewer.spec.js" | kind=code-symbol | source=tests/bls-reviewer.spec.js:L1 | neighbors=[154f42d Merge pull request #25 BLS revi…, 5157b39 Fix horizontal overflow on phon…, 82ff814 Add Playwright smoke test for B…, f953366 PR #26 BLS-reviewer]
+- "tests_check_exam_flow_spec": "_check_exam_flow.spec.js" | kind=code-symbol | source=tests/_check_exam_flow.spec.js:L1 | neighbors=[106f200 Add MCI exam page with final ex…, e98b15c Merge PR #36 MCI Course, PAGES, 99f095b fix: resolve mixed SVG quote mi…]
+- "tests_homepage_search_spec": "homepage-search.spec.js" | kind=code-symbol | source=tests/homepage-search.spec.js:L1 | neighbors=[0673752 PR #67 Homepage Redesigned ✨, 1543337 Fix raw markup in Last Visited,…, 6026b7a Redesign the home page: courses…, 8c61be7 Merge pull request #22 raw mark…]
+- "tests_test_api_fakeresp": "_FakeResp" | kind=code-symbol | source=tests/test_api.py:L15 | neighbors=[test_api.py, .__init__(), .json(), .raise_for_status()]
 
 ## Instructions
 

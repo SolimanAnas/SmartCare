@@ -1,4 +1,4 @@
-# Node Description Batch 39 of 49
+# Node Description Batch 39 of 62
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,58 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "vendor_supabase_js_2_110_0_bs": "bs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, x()]
-- "vendor_supabase_js_2_110_0_containedby": "containedBy()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_contains": "contains()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_copy": "copy()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_cr": "cr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs, invoke()]
-- "vendor_supabase_js_2_110_0_createbucket": "createBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_createnamespaceifnotexists": "createNamespaceIfNotExists()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, createNamespace()]
-- "vendor_supabase_js_2_110_0_createsigneduploadurl": "createSignedUploadUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_createsignedurl": "createSignedUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_createsignedurls": "createSignedUrls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_deletebucket": "deleteBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_deleteindex": "deleteIndex()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_dn": "Dn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, es()]
-- "vendor_supabase_js_2_110_0_ei": "ei()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge()]
-- "vendor_supabase_js_2_110_0_emitinitialsession": "_emitInitialSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _useSession()]
-- "vendor_supabase_js_2_110_0_emptybucket": "emptyBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_eq": "eq()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_explain": "explain()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_fi": "fi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, yi()]
-- "vendor_supabase_js_2_110_0_finally": "finally()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, getPromise()]
-- "vendor_supabase_js_2_110_0_fo": "fo()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, y()]
-- "vendor_supabase_js_2_110_0_fs": "fs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, ie()]
-- "vendor_supabase_js_2_110_0_getaccesstoken": "_getAccessToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, getSession()]
-- "vendor_supabase_js_2_110_0_getbucket": "getBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_getchannel": "getChannel()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, constructor()]
-- "vendor_supabase_js_2_110_0_getchannels": "getChannels()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, channel()]
-- "vendor_supabase_js_2_110_0_getindex": "getIndex()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_gs": "Gs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, transformState()]
-- "vendor_supabase_js_2_110_0_gte": "gte()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_hn": "Hn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, re()]
-- "vendor_supabase_js_2_110_0_ho": "ho()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, y()]
-- "vendor_supabase_js_2_110_0_i": "_i()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, push()]
-- "vendor_supabase_js_2_110_0_ii": "Ii()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, match()]
-- "vendor_supabase_js_2_110_0_ilike": "ilike()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_ilikeallof": "ilikeAllOf()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_ilikeanyof": "ilikeAnyOf()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_imatch": "imatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_inpendingsyncstate": "inPendingSyncState()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, joinRef()]
-- "vendor_supabase_js_2_110_0_isclosed": "isClosed()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, subscribe()]
-- "vendor_supabase_js_2_110_0_isdistinct": "isDistinct()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
+- "app_initbatteryindicator": "initBatteryIndicator()" | kind=code-symbol | source=app.js:L110 | neighbors=[app.js, initChapterPage()]
+- "app_initscrollreveal": "initScrollReveal()" | kind=code-symbol | source=app.js:L551 | neighbors=[app.js, setMainContent()]
+- "app_recordlastvisited": "recordLastVisited()" | kind=code-symbol | source=app.js:L37 | neighbors=[app.js, initChapterPage()]
+- "app_updateheader": "updateHeader()" | kind=code-symbol | source=app.js:L257 | neighbors=[app.js, renderComingSoon()]
+- "bdls_build_load": "load()" | kind=code-symbol | source=courses/bdls/build.py:L24 | neighbors=[build.py, main()]
+- "bdls_build_main": "main()" | kind=code-symbol | source=courses/bdls/build.py:L29 | neighbors=[build.py, load()]
+- "bls_build_load": "load()" | kind=code-symbol | source=courses/bls/build.py:L24 | neighbors=[build.py, main()]
+- "bls_build_main": "main()" | kind=code-symbol | source=courses/bls/build.py:L29 | neighbors=[build.py, load()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@224ab831c8425237c6980236996ae43fb14d8737": "224ab83 deps(deps): bump google-auth from 2.53.0 to 2.55.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/google-auth-2.55.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@755284cd614315df67e3a15aaacb18093c6d8400": "755284c ci(deps)(deps): bump actions/checkout from 4 to 7" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/check…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cb7e171493f7f62d600c7ed42b359f525dead499": "cb7e171 deps(deps): bump pytest from 9.0.3 to 9.1.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/pytest-9.1.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cd24feaf092b8444f058985570e0a18082d74874": "cd24fea ci(deps)(deps): bump actions/setup-python from 5 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@f95455824d4bb69e3f52741aca22ca53609903bb": "f954558 ci(deps)(deps): bump actions/setup-node from 4 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "content_c_index_bindindexbehaviour": "bindIndexBehaviour()" | kind=code-symbol | source=content/c-index.js:L255 | neighbors=[c-index.js, generateIndexHTML()]
+- "content_c_index_generateindexhtml": "generateIndexHTML()" | kind=code-symbol | source=content/c-index.js:L18 | neighbors=[c-index.js, bindIndexBehaviour()]
+- "content_c1_meta": "c1.meta.js" | kind=code-symbol | source=content/c1.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c10_meta": "c10.meta.js" | kind=code-symbol | source=content/c10.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c2_meta": "c2.meta.js" | kind=code-symbol | source=content/c2.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c3_meta": "c3.meta.js" | kind=code-symbol | source=content/c3.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c4_meta": "c4.meta.js" | kind=code-symbol | source=content/c4.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c5_meta": "c5.meta.js" | kind=code-symbol | source=content/c5.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c6_meta": "c6.meta.js" | kind=code-symbol | source=content/c6.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c7_meta": "c7.meta.js" | kind=code-symbol | source=content/c7.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c8_meta": "c8.meta.js" | kind=code-symbol | source=content/c8.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c9_meta": "c9.meta.js" | kind=code-symbol | source=content/c9.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "cpg_guide_dosetable": "doseTable()" | kind=code-symbol | source=cpg-guide.js:L43 | neighbors=[cpg-guide.js, step()]
+- "cpg_guide_ecghref": "ecgHref()" | kind=code-symbol | source=cpg-guide.js:L157 | neighbors=[cpg-guide.js, strip()]
+- "cpg_guide_legend": "legend()" | kind=code-symbol | source=cpg-guide.js:L192 | neighbors=[cpg-guide.js, renderGuide()]
+- "cpg_guide_level": "level()" | kind=code-symbol | source=cpg-guide.js:L31 | neighbors=[cpg-guide.js, step()]
+- "cpg_guide_strip": "strip()" | kind=code-symbol | source=cpg-guide.js:L161 | neighbors=[cpg-guide.js, ecgHref()]
+- "cpg_guide_usedlevels": "usedLevels()" | kind=code-symbol | source=cpg-guide.js:L203 | neighbors=[cpg-guide.js, renderGuide()]
+- "cpg_strip_svg": "svg()" | kind=code-symbol | source=cpg-strip.js:L35 | neighbors=[cpg-strip.js, trace()]
+- "cpg_strip_trace": "trace()" | kind=code-symbol | source=cpg-strip.js:L17 | neighbors=[cpg-strip.js, svg()]
+- "empact_build_load": "load()" | kind=code-symbol | source=courses/empact/build.py:L24 | neighbors=[build.py, main()]
+- "empact_build_main": "main()" | kind=code-symbol | source=courses/empact/build.py:L29 | neighbors=[build.py, load()]
+- "google_flow_run_batch_click": "click()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L28 | neighbors=[run-batch.mjs, prepare()]
+- "google_flow_run_batch_controls": "controls()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L24 | neighbors=[run-batch.mjs, prepare()]
+- "itls_build_load": "load()" | kind=code-symbol | source=courses/itls/build.py:L24 | neighbors=[build.py, main()]
+- "itls_build_main": "main()" | kind=code-symbol | source=courses/itls/build.py:L29 | neighbors=[build.py, load()]
+- "mci_build_load": "load()" | kind=code-symbol | source=courses/mci/build.py:L31 | neighbors=[build.py, main()]
 
 ## Instructions
 

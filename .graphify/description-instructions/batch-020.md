@@ -1,4 +1,4 @@
-# Node Description Batch 21 of 49
+# Node Description Batch 21 of 62
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,60 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-Write every description in English (en). Do not switch languages.
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
+LANGUAGE: each entry has a `lang=` marker giving the language of its source.
+Write that entry's description in EXACTLY that language. Do not translate to
+a single common language — match each node's source language individually.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "vendor_chart_4_5_1_umd_min_so_handletickrangeoptions": ".handleTickRangeOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[So, n(), o(), .getUserBounds()]
-- "vendor_chart_4_5_1_umd_min_start": "start()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, addBox(), wa, ya]
-- "vendor_chart_4_5_1_umd_min_te": "te()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .darken(), .hexString(), .saturate()]
-- "vendor_chart_4_5_1_umd_min_tn_bindresponsiveevents": ".bindResponsiveEvents()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .bindEvents(), a(), o()]
-- "vendor_chart_4_5_1_umd_min_tn_checkeventbindings": "._checkEventBindings()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .bindEvents(), .unbindEvents(), .update()]
-- "vendor_chart_4_5_1_umd_min_tn_destroy": ".destroy()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .clearCache(), .notifyPlugins(), .unbindEvents()]
-- "vendor_chart_4_5_1_umd_min_tn_getbasevalue": ".getBaseValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[da(), .getBasePosition(), tn, .getBasePixel()]
-- "vendor_chart_4_5_1_umd_min_tn_getelementsateventformode": ".getElementsAtEventForMode()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .getActiveElements(), n(), .getActiveElements()]
-- "vendor_chart_4_5_1_umd_min_tn_getminmax": ".getMinMax()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, r(), .getMatchingVisibleMetas(), .getUserBounds()]
-- "vendor_chart_4_5_1_umd_min_tn_getsorteddatasetmetas": "._getSortedDatasetMetas()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[es(), generateLabels(), tn, .getSortedVisibleDatasetMetas()]
-- "vendor_chart_4_5_1_umd_min_tn_unbindevents": ".unbindEvents()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._checkEventBindings(), .destroy(), u()]
-- "vendor_chart_4_5_1_umd_min_tn_updatedataset": "._updateDataset()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .getDatasetMeta(), .notifyPlugins(), ._updateDatasets()]
-- "vendor_chart_4_5_1_umd_min_tn_updatehoverstyle": ".updateHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, s(), .getDatasetMeta(), ._updateHoverStyles()]
-- "vendor_chart_4_5_1_umd_min_tn_updatelayout": "._updateLayout()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .update(), .notifyPlugins(), u()]
-- "vendor_chart_4_5_1_umd_min_tn_updatemetasets": "._updateMetasets()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .buildOrUpdateControllers(), kn(), ._destroyDatasetMeta()]
-- "vendor_chart_4_5_1_umd_min_ts_animateoptions": "._animateOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ts(), .active(), .wait(), ._createAnimations()]
-- "vendor_chart_4_5_1_umd_min_vn": "Vn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, parseArrayData(), parsePrimitiveData(), .getLabels()]
-- "vendor_chart_4_5_1_umd_min_vs": "vs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Fs(), zs(), ws()]
-- "vendor_chart_4_5_1_umd_min_vt": "vt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Bt(), Gt(), _t()]
-- "vendor_chart_4_5_1_umd_min_wa_drawtitle": ".drawTitle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, Oi(), Si(), x()]
-- "vendor_chart_4_5_1_umd_min_wa_getafterbody": ".getAfterBody()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, Ba(), za(), .update()]
-- "vendor_chart_4_5_1_umd_min_wa_getbeforebody": ".getBeforeBody()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, Ba(), za(), .update()]
-- "vendor_chart_4_5_1_umd_min_we": "we()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getMaximumSize(), ge(), pe()]
-- "vendor_chart_4_5_1_umd_min_xt_getanims": "._getAnims()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[xt, .add(), .has(), .listen()]
-- "vendor_chart_4_5_1_umd_min_xt_has": ".has()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[.getOptionScopes(), .render(), xt, ._getAnims()]
-- "vendor_chart_4_5_1_umd_min_y": "Y()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ao(), co(), .calculateLabelRotation()]
-- "vendor_chart_4_5_1_umd_min_ya_buildlabels": ".buildLabels()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[afterUpdate(), ya, d(), .update()]
-- "vendor_chart_4_5_1_umd_min_zi": "zi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .segments(), Fi(), o()]
-- "vendor_supabase_js_2_110_0_appendparams": "appendParams()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, match(), serialize(), endpointURL()]
-- "vendor_supabase_js_2_110_0_applytransformoptstoquery": "applyTransformOptsToQuery()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, toString(), download(), getPublicUrl()]
-- "vendor_supabase_js_2_110_0_approveauthorization": "_approveAuthorization()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _returnResult(), _useSession(), y()]
-- "vendor_supabase_js_2_110_0_autorefreshtokentick": "_autoRefreshTokenTick()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _debug(), _useSession()]
-- "vendor_supabase_js_2_110_0_build": "build()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, join(), on(), toString()]
-- "vendor_supabase_js_2_110_0_cancelrefevent": "cancelRefEvent()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, off(), destroy(), reset()]
-- "vendor_supabase_js_2_110_0_challengeandverify": "_challengeAndVerify()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _challenge(), _returnResult(), _verify()]
-- "vendor_supabase_js_2_110_0_ci": "Ci()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, match(), Oi(), constructor()]
-- "vendor_supabase_js_2_110_0_close": "close()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, closeAndRetry(), dispose(), replaceTransport()]
-- "vendor_supabase_js_2_110_0_connectionstate": "connectionState()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), isConnecting(), isDisconnecting()]
-- "vendor_supabase_js_2_110_0_createnewabortsignal": "createNewAbortSignal()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge(), registerPasskey(), signInWithPasskey()]
-- "vendor_supabase_js_2_110_0_createtable": "createTable()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, request(), Te(), createTableIfNotExists()]
+- "vendor_supabase_js_2_110_0_onconnerror": "onConnError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, hasLogger(), log(), triggerChanError(), triggerStateCallbacks()] | lang=en
+- "vendor_supabase_js_2_110_0_ping": "ping()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), makeRef(), onMessage(), push()] | lang=en
+- "vendor_supabase_js_2_110_0_reauthenticate": "reauthenticate()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _returnResult(), _useSession(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_refreshaccesstoken": "_refreshAccessToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _callRefreshToken(), _debug(), _returnResult(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_refreshsession": "refreshSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _returnResult(), _useSession(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_rejoin": "rejoin()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, join(), isLeaving(), leaveOpenTopic(), resend()] | lang=en
+- "vendor_supabase_js_2_110_0_remove": "remove()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, handleOperation(), log(), off(), _schedulePendingDisconnect()] | lang=en
+- "vendor_supabase_js_2_110_0_removevisibilitychangedcallback": "_removeVisibilityChangedCallback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, dispose(), _debug(), _startAutoRefresh(), _stopAutoRefresh()] | lang=en
+- "vendor_supabase_js_2_110_0_resetpasswordforemail": "resetPasswordForEmail()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_schedulependingdisconnect": "_schedulePendingDisconnect()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, remove(), _cancelPendingDisconnect(), disconnect(), log()] | lang=en
+- "vendor_supabase_js_2_110_0_setauthsafely": "_setAuthSafely()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, connect(), catch(), _isManualToken(), setAuth()] | lang=en
+- "vendor_supabase_js_2_110_0_setupconnectionhandlers": "_setupConnectionHandlers()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, connect(), onClose(), onMessage(), onOpen()] | lang=en
+- "vendor_supabase_js_2_110_0_signinwithotp": "signInWithOtp()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_signinwithsso": "signInWithSSO()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), re(), _returnResult(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_startautorefresh": "_startAutoRefresh()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _onVisibilityChanged(), _debug(), _removeVisibilityChangedCallback(), _stopAutoRefresh()] | lang=en
+- "vendor_supabase_js_2_110_0_triggerstatecallbacks": "triggerStateCallbacks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, onConnClose(), onConnError(), onConnOpen(), log()] | lang=en
+- "vendor_supabase_js_2_110_0_updatepasskey": "_updatePasskey()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, L(), _returnResult(), _useSession(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_updateuser": "updateUser()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _acquireLock(), _returnResult(), _useSession(), y()] | lang=en
+- "vendor_supabase_js_2_110_0_verify": "_verify()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _authenticate(), _challengeAndVerify(), _register(), _acquireLock()] | lang=en
+- "vendor_supabase_js_2_110_0_ye": "Ye()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, _getAuthenticatorAssuranceLevel(), getClaims(), setSession(), Wt()] | lang=en
+- "app_rendercomingsoon": "renderComingSoon()" | kind=code-symbol | source=app.js:L269 | neighbors=[app.js, bootApp(), setMainContent(), updateHeader()] | lang=en
+- "bdls_build": "build.py" | kind=code-symbol | source=courses/bdls/build.py:L1 | neighbors=[load(), main(), 2b1ffb7 Port BDLS and EMPACT course rev…, f008f88 Merge pull request #27 BDLS & E…] | lang=en
+- "bls_build": "build.py" | kind=code-symbol | source=courses/bls/build.py:L1 | neighbors=[load(), main(), 154f42d Merge pull request #25 BLS revi…, a75c415 Scaffold BLS reviewer (courses/…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@006f9af1ad1a1bbcd287dc250a76824c22388f19": "006f9af Update requirements.txt" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, e8be921 Remove leading slash from login…, bfe43fb Update requirements.txt] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@0555934e2b6e5e9f59ba4bb24065645c854d0506": "0555934 Author PEPP chapters c09-c11 (trauma, toxic/environmental, neonatal)" | kind=Commit | source=git | neighbors=[main, e630fb6 Author PEPP chapters c12-c14, c…, bundle.js, b88a05e Author PEPP chapters c05-c08 (r…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@061bcaea764dbcdde05eff0ec5f6d1311114d9bc": "061bcae local hashed authentication (SHA-256)✅" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 9d96839 Added Login pages, 236ac26 local hashed authentication (SH…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@07ec89d204627921b78d499e08f2571bcbc9bee2": "07ec89d Update index.html" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, c9f0400 Update index.html, 9ed5dd4 Update index.html] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@0801c559b31cf09ddc0994cae7077465833ac82b": "0801c55 Update styles.css" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 508e087 Update index.html, 730ad49 BLS] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@13785086b08d151bf6b027032d7ab8d37cc15a9f": "1378508 Add BDLS v3.0 pre-test question bank" | kind=Commit | source=git | neighbors=[main, 07b8707 Show BDLS pre-test first in exa…, precache-manifest.js, 7421ea4 Megacode cinematic promo] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@18ca925cc61b3852ead75191f1ed905f059e6066": "18ca925 Wrap a long line in the guide content test (ruff E501)" | kind=Commit | source=git | neighbors=[main, 6bcfae8 Infant choking: chest thrusts w…, test_content_guides.py, 7208d8e Rewrite chapter 3 (Airway & Ven…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@1c052319b55d91fb7aa2ec0f9e2a16d8daf892cc": "1c05231 Fix layout issues found in a mobile audit of all pages" | kind=Commit | source=git | neighbors=[1b4fd7d PR #42 Add animated dose-calcul…, main, a572e0a Redesign Global Statistics as a…, precache-manifest.js] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@1fc629ed8067812d2115ce0199634b321a6a231d": "1fc629e fix(app.js): handle DOMContentLoaded race condition for dynamically inj…" | kind=Commit | source=git | neighbors=[app.js, main, c9276ae chore: update graphify knowledg…, 20fdfa2 feat(itls): complete itls revie…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@27fd0d1773775a89c199c582747618213d909de5": "27fd0d1 Author PEPP chapters c03-c04 (primary assessment, history/secondary ass…" | kind=Commit | source=git | neighbors=[179984f Scaffold PEPP reviewer (courses…, main, b88a05e Author PEPP chapters c05-c08 (r…, bundle.js] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@2ac796c44aeef3174e8afa28f5ad23d8548c3b39": "2ac796c Pulmonary edema gate: CPAP only when awake, protecting the airway and n…" | kind=Commit | source=git | neighbors=[main, 63e2100 Chapter 4 rewrite: Cardiovascul…, c4.js, 6f6a46e Rewrite chapter 4 (Cardiovascul…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@30733863a7d00ae86a2ada463d90a25c6ef25149": "3073386 Update login.html" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 35a1e71 Update login.html, a9eb59e Update README.md] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@33c9dd7bb174acb9ced8ec3f37508895a6f4c4ac": "33c9dd7 Author BLS chapters c04-c06 (2-rescuer/teams, AED, ventilation)" | kind=Commit | source=git | neighbors=[main, f4356e0 Author BLS chapters c07-c09 (br…, bundle.js, 7c0b047 Author BLS chapters c02-c03 (as…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@349d35ae67680ca2ad186a9ca1811b9454fd3c2a": "349d35a Add files via upload" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 3f5e261 Revise README to enhance projec…, afa5eb0 Add files via upload] | lang=pt
+- "commit:repo:github.com/SolimanAnas/SmartCare@35a1e71c5c2ffd02e382b436b2f7eee1be57d954": "35a1e71 Update login.html" | kind=Commit | source=git | neighbors=[3073386 Update login.html, feat/lucide-svg-migration, fix/lucide-quote-consistency, c75db55 Update index.html] | lang=pt
+- "commit:repo:github.com/SolimanAnas/SmartCare@3e50ecde28aeeb0f121e4c5cc69418a913b88d72": "3e50ecd Merge remote-tracking branch 'origin/main' into ccr-81fddd6b-wx4wsm" | kind=Commit | source=git | neighbors=[main, 05afd15 Cap IV diazepam and midazolam s…, 8f65c40 Formulary group C: sedation, se…, 992b393 Drug Formulary group B: respira…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@3ecc147b35eb3e6948ba67c859c489066222418c": "3ecc147 Update index.html" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, 9ed5dd4 Update index.html, c75db55 Update index.html] | lang=en
 
 ## Instructions
 
