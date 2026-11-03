@@ -32,3 +32,18 @@ updates:
     commit-message:
       prefix: "ci(deps)"
       include: "scope"
+
+  # npm (dev tooling: ESLint, Prettier, Playwright)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Asia/Dubai"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "deps(npm)"
+      include: "scope"

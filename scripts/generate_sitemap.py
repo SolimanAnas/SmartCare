@@ -23,6 +23,8 @@ SCAN_DIRS = [
 EXCLUDE = {
     "404.html",           # error page
     "resume.html",        # redirect stub (manifest shortcut target)
+    "pages/ITLS-reviewer.html",  # redirect stub -> courses/itls/
+    "pages/itls-chapter.html",   # redirect stub -> courses/itls/
     "graphify.html",      # dev tool, deploy-excluded anyway
     "pages/admin.html",   # noindex — hidden console
     "pages/login.html",   # auth flow, no search value
