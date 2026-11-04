@@ -397,16 +397,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Limb: tourniquet",
-                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops and the distal pulse disappears. Write the time.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c6s2-113.webp",
-                    "alt": "A windlass tourniquet on the upper thigh 5–7 cm above a lower-leg wound, with the time written on the tag; a second tourniquet shown above the first.",
-                    "caption": "Tourniquet 5–7 cm above the wound. If bleeding continues, add a second one above the first.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "5–7 cm (2–3 inches) above the wound, not over a joint. Tighten until the bleeding stops and the distal pulse disappears. Write the time."
               },
               {
                 "title": "Still bleeding?",
@@ -468,6 +459,15 @@ window.CPG_DATA = {
                 "Femur can lose 1–1.5 L",
                 "Splint (traction for mid-shaft femur)"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s2-115.webp",
+                "alt": "A body outline highlighting the five bleeding sites: the floor (external), chest, abdomen, pelvis/retroperitoneum and thighs.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -829,15 +829,6 @@ window.CPG_DATA = {
                 "Bradycardia, warm dry skin, cord injury",
                 "Fluids, vasopressors, atropine (ALS); still look for bleeding"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c6s3-116.webp",
-                "alt": "Three small cross-sections: a collapsed lung pushing the heart across (tension pneumothorax), blood around the heart (tamponade), and a spinal cord injury with dilated vessels below it (neurogenic).",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -1512,6 +1503,15 @@ window.CPG_DATA = {
                 "White, leathery or charred",
                 "Painless"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c6s5-120.webp",
+                "alt": "A skin cross-section with superficial, partial-thickness and full-thickness burn depths marked.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2276,15 +2276,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Collar",
-                "text": "Size from the angle of the jaw to the top of the shoulder.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c10s5-225.webp",
-                    "alt": "Measuring finger-widths from the top of the shoulder to the angle of the jaw, then matching the collar's sizing post.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Size from the angle of the jaw to the top of the shoulder."
               },
               {
                 "title": "Move as a unit",
@@ -2638,22 +2630,6 @@ window.CPG_DATA = {
                 "Paradoxical segment, hypoxia (contusion)",
                 "Oxygen, analgesia, assist ventilation if failing"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c6s8-126.webp",
-                "alt": "Five chest diagrams: tension pneumothorax (mediastinum pushed across), open wound with air entering, massive hemothorax (blood level), tamponade (blood around the heart), flail segment moving inward on inspiration.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              },
-              {
-                "src": "../images/guides/c6s8-128.webp",
-                "alt": "A vented chest seal over a chest wound, with the one-way valve shown.",
-                "w": 1024,
-                "h": 1024,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -2996,15 +2972,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Bind it",
-                "text": "Pelvic binder centred on the greater trochanters (not the iliac crests).",
-                "figures": [
-                  {
-                    "src": "../images/guides/c6s9-129.webp",
-                    "alt": "A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Pelvic binder centred on the greater trochanters (not the iliac crests)."
               },
               {
                 "title": "Move carefully",
@@ -3383,15 +3351,6 @@ window.CPG_DATA = {
             "notes": [
               "No traction with knee, lower leg or ankle injury on the same side, or partial amputation.",
               "Femur fracture can lose 1–1.5 L of blood."
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c6s10-131.webp",
-                "alt": "Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found).",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -3779,14 +3738,6 @@ window.CPG_DATA = {
                 "items": [
                   "Manual left uterine displacement or tilt",
                   "Lying flat compresses the vena cava"
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c6s11-133.webp",
-                    "alt": "Manual left uterine displacement: a rescuer standing on the patient's left pushing the uterus up and to the left with both hands while another does compressions.",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               },
               {

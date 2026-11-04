@@ -86,6 +86,15 @@ window.CPG_DATA = {
                 "Kidneys, aorta",
                 "Renal colic, aortic aneurysm"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s1-090.webp",
+                "alt": "The abdomen divided into four quadrants with the main organs drawn underneath (liver, gallbladder, stomach, spleen, appendix, sigmoid colon), and kidneys and aorta shown behind.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -795,14 +804,6 @@ window.CPG_DATA = {
                 "items": [
                   "Block with the vehicle, lights on, high-visibility clothing",
                   "Transportation incidents are the leading cause of on-duty EMS deaths"
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c2s3-095.webp",
-                    "alt": "An ambulance parked at an angle upstream of a crash to block traffic, warning lights on, crew in high-visibility vests working on the protected side.",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               }
             ]
@@ -821,6 +822,15 @@ window.CPG_DATA = {
             "exclude": [
               "Alert, sober, no midline pain or tenderness, normal neuro exam, no distracting injury",
               "Long backboard for transport: use a collar and scoop or vacuum mattress instead"
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s3-096.webp",
+                "alt": "A patient in a cervical collar on a scoop stretcher and vacuum mattress, beside a long backboard labelled \"extrication only\".",
+                "w": 1200,
+                "h": 896,
+                "pos": "after"
+              }
             ]
           },
           {
@@ -1108,15 +1118,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "A – airway",
-                "text": "Talking? Sounds? Head-tilt/chin-lift (medical) or jaw thrust with in-line stabilisation (trauma); suction; OPA or NPA.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s1-005.webp",
-                    "alt": "Rescuer at the head of the patient, fingers behind the angles of the jaw lifting it forward, thumbs on the cheekbones, head kept neutral.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Talking? Sounds? Head-tilt/chin-lift (medical) or jaw thrust with in-line stabilisation (trauma); suction; OPA or NPA."
               },
               {
                 "title": "B – breathing",
@@ -1520,14 +1522,6 @@ window.CPG_DATA = {
                   "Infant: brachial",
                   "Unresponsive adult or child: carotid (femoral also)",
                   "Radial present: some perfusion"
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c2s5-100.webp",
-                    "alt": "Pulse sites marked on an adult and an infant: carotid, radial, femoral, brachial (infant).",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               },
               {
@@ -1933,15 +1927,6 @@ window.CPG_DATA = {
             "notes": [
               "AHA: \"white on right, smoke over fire\".",
               "A rhythm strip can't rule out a STEMI: record a 12-lead within 10 minutes for chest pain."
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c2s6-102.webp",
-                "alt": "Two torsos with limb electrodes: AHA colours (white, black, red, green) and IEC colours (red, yellow, green, black).",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -2267,6 +2252,15 @@ window.CPG_DATA = {
                 "Events",
                 "What happened just before?"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s7-103.webp",
+                "alt": "An EMS provider at eye level with a seated patient, a family member holding a medication bag, and a notepad with SAMPLE written down the side.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -2708,15 +2702,6 @@ window.CPG_DATA = {
               "Pelvis: don't rock it; pelvic binder at the greater trochanters for suspected fracture with shock",
               "Open chest wound: vented chest seal (or an occlusive dressing taped on three sides); watch for tension",
               "Check circulation, motor and sensation (CMS) before and after every splint"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c6s9-129.webp",
-                "alt": "A pelvic binder centred on the greater trochanters, with the iliac crests and trochanters marked, and a crossed-out binder placed around the waist.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -3392,6 +3377,15 @@ window.CPG_DATA = {
                 "Thinking of what you saw recently",
                 "Consider the worst case first"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c2s10-108.webp",
+                "alt": "A cartoon EMS provider with a ship's anchor chained to a thought bubble saying \"just a UTI\", while a stroke sign (droopy face) is ignored behind them.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {

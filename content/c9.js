@@ -518,15 +518,7 @@ window.CPG_DATA = {
               {
                 "title": "IO if IV fails",
                 "text": "Tibia or humerus; flush; same doses. Don't keep trying veins while drugs are delayed.",
-                "level": "ALS",
-                "figures": [
-                  {
-                    "src": "../images/guides/c9s2-207.webp",
-                    "alt": "An IO driver placing a needle in the proximal tibia, a hand marking the landmark two fingerbreadths below the kneecap and medial to the tuberosity.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "level": "ALS"
               },
               {
                 "title": "Not via the tube",
@@ -1574,6 +1566,15 @@ window.CPG_DATA = {
                 "note": "Repeat every 20 minutes up to 3; tachycardia, tremor",
                 "level": "BLS"
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c9s5-212.webp",
+                "alt": "A neatly organised drug pouch with labelled slots: aspirin, nitroglycerin spray, oral glucose, epinephrine auto-injector, naloxone nasal spray, albuterol nebules.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -1983,6 +1984,15 @@ window.CPG_DATA = {
                 "Antagonist",
                 "Opioid analgesics won't work: use ketamine, NSAIDs, acetaminophen"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c9s6-213.webp",
+                "alt": "Three receptor diagrams: methadone fully activating, buprenorphine partly activating with a \"ceiling\" line, naltrexone blocking.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {

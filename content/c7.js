@@ -34,15 +34,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Head",
-                "text": "A flat hand on the head prevents an explosive delivery. If the sac is still intact over the head, tear it.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c7s1-135.webp",
-                    "alt": "A rescuer's flat gloved hand resting on the crowning baby's head while the other hand supports the perineum with a towel; mother semi-reclined, knees bent.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "A flat hand on the head prevents an explosive delivery. If the sac is still intact over the head, tear it."
               },
               {
                 "title": "Neck",
@@ -58,16 +50,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Cord",
-                "text": "Vigorous baby: wait at least 60 seconds before clamping. Clamp about 10 cm from the baby and again 5 cm further out; cut between.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c7s1-136.webp",
-                    "alt": "A newborn skin-to-skin on the mother with the cord clamped twice and scissors cutting between the clamps.",
-                    "caption": "Clamp about 10 cm from the baby and again 5 cm further out; cut between.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Vigorous baby: wait at least 60 seconds before clamping. Clamp about 10 cm from the baby and again 5 cm further out; cut between."
               },
               {
                 "title": "Placenta",
@@ -168,13 +151,6 @@ window.CPG_DATA = {
               ]
             ],
             "figures": [
-              {
-                "src": "../images/guides/c7s1-137.webp",
-                "alt": "The mother in knee-chest position with a rescuer's gloved hand lifting the presenting part off a cord covered by moist gauze.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              },
               {
                 "src": "../images/guides/c7s1-138.webp",
                 "alt": "McRoberts manoeuvre: two helpers pulling the mother's knees towards her chest while a third presses just above the pubic bone with the heel of the hand.",
@@ -940,16 +916,7 @@ window.CPG_DATA = {
             "icon": "baby",
             "question": "Term, good tone, breathing or crying?",
             "yes": "Stay with the mother: skin-to-skin, dry, cover, hat. Watch breathing, colour and tone. Delay cord clamping at least 60 seconds.",
-            "no": "Warm, dry and stimulate. Position the head neutral (\"sniffing\"); clear secretions only if they block the airway.",
-            "figures": [
-              {
-                "src": "../images/guides/c7s3-142.webp",
-                "alt": "A newborn being dried with a warm towel on a flat surface, wet towel removed, hat on, head in the neutral \"sniffing\" position with a small roll under the shoulders.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
-            ]
+            "no": "Warm, dry and stimulate. Position the head neutral (\"sniffing\"); clear secretions only if they block the airway."
           },
           {
             "type": "steps",
@@ -1051,15 +1018,6 @@ window.CPG_DATA = {
               "Skin-to-skin on the mother, cover both, hat on",
               "Room or ambulance 23–25 °C",
               "Under 32 weeks: plastic bag up to the neck without drying, then a hat"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c7s3-145.webp",
-                "alt": "A very preterm baby in a clear plastic bag up to the neck with a hat, lying on a warm mattress, not dried.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -1592,16 +1550,7 @@ window.CPG_DATA = {
             "icon": "triangle-alert",
             "question": "Coughing forcefully, crying or speaking?",
             "yes": "Mild obstruction: let them cough, keep things calm, transport and watch for change.",
-            "no": "Severe: over 1 year, abdominal thrusts; under 1 year, 5 back blows and 5 chest thrusts. Unresponsive: start CPR.",
-            "figures": [
-              {
-                "src": "../images/guides/c3s3-012.webp",
-                "alt": "Two panels. First, an infant face-down along the rescuer's forearm, head lower than the chest and supported at the jaw, receiving back blows. Second, the infant face-up on the other forearm, with the heel of one hand on the lower half of the breastbone for chest thrusts (not two fingers: AHA 2025).",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
-            ]
+            "no": "Severe: over 1 year, abdominal thrusts; under 1 year, 5 back blows and 5 chest thrusts. Unresponsive: start CPR."
           },
           {
             "type": "steps",
@@ -1683,15 +1632,6 @@ window.CPG_DATA = {
                 "dose": "0.5–1 J/kg, then 2 J/kg",
                 "note": "Unstable SVT",
                 "level": "ALS"
-              }
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c7s4-149.webp",
-                "alt": "Two gloved hands encircling a dressed infant's chest with both thumbs side by side on the breastbone, marked with a green tick.",
-                "w": 594,
-                "h": 896,
-                "pos": "after"
               }
             ]
           },
@@ -2512,7 +2452,15 @@ window.CPG_DATA = {
               },
               {
                 "title": "Long lie",
-                "text": "On the floor for 1 hour or more: pressure injury, rhabdomyolysis, hypothermia, dehydration, pneumonia."
+                "text": "On the floor for 1 hour or more: pressure injury, rhabdomyolysis, hypothermia, dehydration, pneumonia.",
+                "figures": [
+                  {
+                    "src": "../images/guides/c7s6-153.webp",
+                    "alt": "An older woman on a living-room floor beside a rug, a clock on the wall, with callouts for pressure areas on the hip and heel.",
+                    "w": 1200,
+                    "h": 896
+                  }
+                ]
               },
               {
                 "title": "Injuries",
@@ -3330,15 +3278,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Ramp for airway work",
-                "text": "Blankets under the shoulders and head until the ear canal is level with the sternal notch; head up 25–30°.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c7s8-158.webp",
-                    "alt": "Side view of a large patient on a ramp of blankets with a dotted horizontal line from the ear canal to the sternal notch.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Blankets under the shoulders and head until the ear canal is level with the sternal notch; head up 25–30°."
               },
               {
                 "title": "Pre-oxygenate",

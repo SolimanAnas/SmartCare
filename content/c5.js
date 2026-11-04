@@ -2778,6 +2778,15 @@ window.CPG_DATA = {
                   "Hypoxia, stress, altitude"
                 ]
               }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c5s8-079.webp",
+                "alt": "Normal round red cells flowing through a vessel next to sickled cells blocking it, with a pain icon downstream.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -3877,15 +3886,6 @@ window.CPG_DATA = {
               "Cold pack wrapped in cloth",
               "Reassurance, distraction (toys, videos for children)",
               "Gentle handling and a smooth ride"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c5s11-087.webp",
-                "alt": "A splinted forearm resting on a pillow with a wrapped cold pack, and a child distracted by a tablet video.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -3949,14 +3949,6 @@ window.CPG_DATA = {
                 "items": [
                   "Mid-shaft femur: traction splint helps pain",
                   "Hip fracture: padded immobilisation (pillows, vacuum mattress, scoop); no traction splint"
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c6s10-131.webp",
-                    "alt": "Three legs: mid-thigh deformity (traction splint tick), shortened externally rotated leg (hip fracture, pillows/vacuum mattress tick, traction crossed out), shortened internally rotated flexed leg (posterior dislocation, splint as found).",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               },
               {
