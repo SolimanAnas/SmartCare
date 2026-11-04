@@ -12053,13 +12053,13 @@
       "id": 721,
       "text": "A 3 year old boy has been seizing for approximately 2 minutes. What is the first priority for treatment?",
       "options": [
-        "Suction airway",
+        "Protect the airway and suction secretions as needed",
         "Insert a bite block or oropharyngeal airway",
         "Restrain the child's extremities to prevent injury",
         "Check a blood glucose level"
       ],
       "correct_answer": "A",
-      "explanation": "Airway protection is always the first priority during an active seizure to manage secretions. Inserting objects into the mouth or physically restraining the child can cause severe injury.",
+      "explanation": "Protecting the airway comes first during an active seizure: position the child and suction only if secretions or vomit are present. Check the blood glucose second, because hypoglycemia is a common, treatable cause of seizures in children. Never put objects in the mouth or restrain the child.",
       "hint": "Seizure → airway",
       "subject": "Pediatrics",
       "difficulty": "medium",

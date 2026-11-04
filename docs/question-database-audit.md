@@ -223,6 +223,6 @@ Removed, leaving **2,687** questions (910 paramedic, 1,777 EMT):
 | 152 | PASG is obsolete for controlling bleeding |
 | 498 | All four answers are parts of the SEA-3 mental status exam, so it had no correct answer |
 
-Wording: question 502's answer "Mental retardation" now reads "Intellectual disability", and the stems of 13, 14, 15, 19, 20 and 29 no longer end in `:-`.
+Wording: question 502's answer "Mental retardation" now reads "Intellectual disability", and the stems of 13, 14, 15, 19, 20 and 29 no longer end in `:-`. Question 721's answer now reads "Protect the airway and suction secretions as needed" (was "Suction airway", which taught routine suctioning during a seizure), and its explanation adds checking blood glucose as the second step.
 
 The new explanations follow the key of each question and current EMT teaching, but like the rest of this bank (`review_status: unreviewed`) they have not had a clinical review.
