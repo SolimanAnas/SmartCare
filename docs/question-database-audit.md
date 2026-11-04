@@ -170,7 +170,7 @@ The scan flags ~25 questions with only 2 options (ACLS 6/8, PALS 19, Medical 4/5
 
 ## 6. Follow-up: Prometric bank cleanup (November 2026)
 
-The Prometric findings above were acted on in `src/prometric/exam-db.json` (content version 1.3). The 12 mojibake explanations had already been fixed, and the 13 single-option questions already had four answer choices.
+The Prometric findings above were acted on in `src/prometric/exam-db.json` (content version 1.4). The 12 mojibake explanations had already been fixed, and the 13 single-option questions already had four answer choices.
 
 ### What changed
 
@@ -185,51 +185,44 @@ The Prometric findings above were acted on in `src/prometric/exam-db.json` (cont
 | Space before punctuation, broken hyphens (`bag--mask`, `size- up`, `two - way`), double spaces | 52 |
 | New explanations written for questions that had none | 409 |
 
-The bank now has **2,690** questions (910 paramedic, 1,780 EMT). Removed duplicate ids: 249, 251, 290, 309, 388, 718, 830–879, 1485, 1511 and 1674.
+That left 2,690 questions before the clinical decisions below. Removed duplicate ids: 249, 251, 290, 309, 388, 718, 830–879, 1485, 1511 and 1674.
 
 Question 773's third answer read `insulin and ?`; it was restored as `insulin and glucose`, which matches the explanation and keeps it a wrong answer (it includes lidocaine).
 
-### Needs a clinical decision (22 questions)
+### Clinical decisions (22 questions)
 
-These were left **without** an explanation, because writing one would mean defending an answer that looks wrong or outdated. Each needs a decision on the key or a rewrite; they are listed with the change I would propose.
+These were flagged during the cleanup because the key looked wrong or taught outdated practice. Each was then resolved as below and given an explanation, so every question in the bank now has one.
 
-**Key looks wrong (7)**
+| ID | Question | Decision | Answer now |
+|---|---|---|---|
+| 4 | The S in the "OPQRST" acronym stands for: | Key fixed (was A. swelling) | D. severity |
+| 11 | The first step in the focused history and physical exam performed on an uncon… | Key fixed (was B. obtain a focused history) | D. Rapidly assess the patient from head to toe |
+| 189 | When assessing patient adult, EMTs should start with the: | Key fixed (was C. toe-head) | B. Head to-toe. |
+| 335 | When you assign patient you found his skin PALE this: | Key fixed (was B, the description for cyanosis) | A. Indicates poor perfusion. |
+| 501 | You are dispatched to a home for an 85 year old female who is not feeling wel… | Key fixed (was C. delirium) | D. Dementia |
+| 805 | You are dispatched to a soccer game for a 12-year-old female with signs and s… | Key fixed (was B. administer the epi-pen) | C. begin the primary assessment |
+| 825 | Which of the following signs of hypoxia is more common in pediatric patients? | Key fixed (was C. tachycardia) | A. bradycardia |
+| 39 | The single most important factor in determining survival from cardiac arrest is: | Key fixed (was A. early CPR) | B. Early defibrillation. |
+| 151 | Blood that oozes and is dark is most likely from a: | Key fixed (was A. venous) | C. Capillary |
+| 164 | Information using a standard medical format called: | Key fixed (was C. prehospital care report) | B. Patient narrative |
+| 198 | postical state is a term refers to a patients complains of: | Key fixed (was B) | D. B+C |
+| 507 | Which of the following statements about delirium tremens is not true? | Key fixed (was C) | B. They occur in individuals who have experienced recent binge drinking |
+| 780 | The primary assessment of an adult with chest pain includes: | Key fixed (was B. ensuring the scene is safe) | C. Determine the transport priority |
+| 45 | The preferred method of ventilation a nonbreathing patient is: | Key moved to two-person bag-mask (was A. mouth-to-mask) | B. Tow person bag-valve-mask |
+| 16 | A 63-year-old man is complaining of substernal chest pain radiating to his le… | Answer rewritten: aspirin, with oxygen only if SpO2 is below 94% (was routine high-concentration oxygen) | D. Place the patient in a position of comfort, give aspirin if there are no c… |
+| 156 | The right order of procedures for controlling severe external bleeding from a… | Answer rewritten: direct pressure, then a tourniquet (was elevation and pressure points) | A. Direct pressure, then a tourniquet above the wound if pressure does not co… |
+| 319 | To further reduce bleeding, the next action may be to: | Answer rewritten: a tourniquet above an extremity wound (was elevation) | C. Apply a tourniquet above the wound if it is on an extremity and direct pre… |
+| 366 | What modifications of the usual management of cardiac arrest should be made f… | Answer rewritten: manual left uterine displacement (was compressions higher on the sternum) | C. Manually displace the uterus to the patient's left during compressions |
+| 13 | During the assessment of the patient's pelvis, you should: | Options clarified: one gentle press toward the midline, then posteriorly; the other order replaced with rocking, which is wrong | B. Gently press the pelvic wings toward the midline and then posteriorly, onl… |
 
-| ID | Question | Current key | Proposed | Why |
-|---|---|---|---|---|
-| 4 | The S in the "OPQRST" acronym stands for: | A. swelling | D. severity | In OPQRST the S stands for severity, not swelling. |
-| 11 | The first step in the focused history and physical exam performed on an unconscious med… | B. Obtain a focused history | D. Rapidly assess the patient from head to toe | For an unresponsive medical patient the rapid head-to-toe exam comes first, then vital signs, then the history from bystanders. |
-| 189 | When assessing patient adult, EMTs should start with the: | C. Toe-head | B. Head to-toe. | Adults are assessed head to toe; toe to head is the approach for infants and young children (see question 160). |
-| 335 | When you assign patient you found his skin PALE this: | B. Indicate inadequate oxygenation or poor perfusion. | A. Indicates poor perfusion. | In the classic skin color teaching, pale skin indicates poor perfusion; inadequate oxygenation or poor perfusion describes cyanotic (blue-gray) skin. |
-| 501 | You are dispatched to a home for an 85 year old female who is not feeling well. Upon ar… | C. Delirium | D. Dementia | Acute confusion in a normally alert elderly patient is delirium; the condition to exclude is dementia, which is chronic and gradual. |
-| 805 | You are dispatched to a soccer game for a 12-year-old female with signs and symptoms of… | B. administer the epi-pen | C. begin the primary assessment | Assess before treating: epinephrine is for anaphylaxis (breathing problems or shock), which the primary assessment establishes. Question 817 in the same bank keeps epinephrine for a patient without these signs. |
-| 825 | Which of the following signs of hypoxia is more common in pediatric patients? | C. tachycardia | A. bradycardia | Bradycardia is the classic sign of hypoxia in infants and children (the bank relies on this in question 796); tachycardia is the typical adult response. |
+Removed, leaving **2,687** questions (910 paramedic, 1,777 EMT):
 
-**Outdated practice (7)**
+| ID | Reason |
+|---|---|
+| 38 | Near-duplicate of 16 with the same outdated oxygen answer |
+| 152 | PASG is obsolete for controlling bleeding |
+| 498 | All four answers are parts of the SEA-3 mental status exam, so it had no correct answer |
 
-| ID | Question | Current key | Proposed | Why |
-|---|---|---|---|---|
-| 16 | A 63-year-old man is complaining of substernal chest pain radiating to his left arm and… | D. Place the patient in a position of comfort and administer high-concentration oxygen by nonrebreather mask. | rewrite | routine high-concentration oxygen for chest pain is no longer recommended; give oxygen when SpO2 is below 94% or the patient is short of breath. Near-duplicate of 38. |
-| 38 | 63-year-old man is complaining of substernal chest pain radiating to his left arm and j… | D. Place the patient in a position of comfort and administer high-concentration oxygen by nonrebreather mask. | rewrite or remove | Outdated, same as 16 (near-duplicate). |
-| 45 | The preferred method of ventilation a nonbreathing patient is: | A. Mouth-to-mask | B. Tow person bag-valve-mask | Outdated curriculum: mouth-to-mask was listed first, but two-rescuer bag-valve-mask is now the preferred method for EMS providers. |
-| 152 | Pneumatic antis hock garments (PASGs) can be used for: | A. As a pressure dressing to control severe bleeding in the lower legs. | rewrite or remove | PASG is largely obsolete for controlling bleeding; current care is direct pressure and a tourniquet. |
-| 156 | The right order of procedures for control external bleeding is: | A. Direct pressure then extremity elevation then pressure points | rewrite | elevation and pressure points are no longer taught. Current order is direct pressure, then a tourniquet for uncontrolled extremity bleeding. |
-| 319 | To further reduce bleeding, the next action may be to: | C. Elevate the wound above the level of the patient's heart | rewrite | elevating the wound is no longer recommended for bleeding control, and none of the options is the current answer (a tourniquet above the wound for uncontrolled extremity bleeding). |
-| 366 | What modifications of the usual management of cardiac arrest should be made for a pregn… | C. Perform cardiac compressions higher on the sternum | rewrite | moving compressions higher on the sternum in pregnancy was dropped in the 2015 AHA guidelines. The current modification is manual left uterine displacement. |
-
-**Ambiguous, review the key (8)**
-
-| ID | Question | Current key | Proposed | Why |
-|---|---|---|---|---|
-| 13 | During the assessment of the patient's pelvis, you should :- | A. Gently push the patient's pelvic wings posteriorly and then to the patient's midline | review | Textbooks differ on the order (inward then posteriorly vs the reverse); current teaching is a single gentle compression without rocking. |
-| 39 | The single most important factor in determining survival from cardiac arrest is: | A. Early CPR. | B. Early defibrillation. | Standard teaching names early defibrillation as the single most important factor in surviving cardiac arrest (VF). |
-| 151 | Blood that oozes and is dark is most likely from a: | A. Venous | C. Capillary | Dark blood that oozes describes capillary bleeding; venous bleeding is dark and flows steadily. |
-| 164 | Information using a standard medical format called: | C. Pre hospital care report | B. Patient narrative | Ambiguous: the part of the report written in a standard medical format is the patient narrative; the prehospital care report is the whole document. |
-| 198 | postical state is a term refers to a patients complains of: | B. Sleep and unresponsive after a seizure | D. B+C | Ambiguous: the postictal state can include drowsiness and unresponsiveness as well as confusion, agitation or combativeness, so B+C fits better. |
-| 498 | All of the following are the components of SEA-3 assessment tool except? | D. Alertness | review | SEA-3 is usually listed as Speech, Emotion, Appearance, Alertness and Activity, which would make Alertness a component and Affect (emotion) the closest match too. |
-| 507 | Which of the following statements about delirium tremens is not true? | C. DT's are marked by decreased level of consciousness with hallucinations | B. They occur in individuals who have experienced recent binge drinking (review) | Texts differ. Delirium tremens typically follows stopping long-term heavy drinking rather than a recent binge, which makes B the likelier untrue statement; several texts describe DTs with a decreased level of consciousness and hallucinations (C). |
-| 780 | The primary assessment of an adult with chest pain includes: | B. Ensuring the scene is safe | C. Determine the transport priority | Scene safety is part of the scene size-up, not the primary assessment. The primary assessment ends with setting the transport priority. |
-
-**Wording:** question 502: Correct key, but the option text uses the outdated term 'Mental retardation'; consider 'Intellectual disability'.
+Wording: question 502's answer "Mental retardation" now reads "Intellectual disability", and the stems of 13, 14, 15, 19, 20 and 29 no longer end in `:-`.
 
 The new explanations follow the key of each question and current EMT teaching, but like the rest of this bank (`review_status: unreviewed`) they have not had a clinical review.

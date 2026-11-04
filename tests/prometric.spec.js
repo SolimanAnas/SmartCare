@@ -5,13 +5,13 @@ const EXAM_PAGE = `${BASE}/src/prometric/exam.html`;
 const DB_URL = `${BASE}/src/prometric/exam-db.json`;
 
 // ── 1. Database integrity ──────────────────────────────────────────────
-test('exam-db.json has 2690 questions and 18 categories', async ({ request }) => {
+test('exam-db.json has 2687 questions and 18 categories', async ({ request }) => {
   const resp = await request.get(DB_URL);
   expect(resp.ok()).toBeTruthy();
   const db = await resp.json();
 
   expect(db.title).toBe('Paramedic / EMT Exam Database');
-  expect(db.questions.length).toBe(2690);
+  expect(db.questions.length).toBe(2687);
   expect(db.categories.length).toBe(18);
 
   // Every question must have the required fields
@@ -67,6 +67,7 @@ test('question bank has no import artifacts or duplicates', async ({ request }) 
       if (/\S -[A-Za-z]/.test(v)) problems.push(`${q.id} stray dash: ${v.slice(0, 50)}`);
       if (/\S \? \S/.test(v)) problems.push(`${q.id} '?' in place of an arrow`);
       if (/\s+[,.;:?!]$/.test(v)) problems.push(`${q.id} space before punctuation`);
+      if (/:-\s*$/.test(v)) problems.push(`${q.id} ends with ':-'`);
     }
     if (/\b(?:option|answer|choice)\s+[A-D]\b|\([A-D]\)/.test(q.explanation || '')) problems.push(`${q.id} explanation names a letter`);
     const key = norm(q.text) + '|' + q.options.map(norm).sort().join('|');
@@ -74,9 +75,7 @@ test('question bank has no import artifacts or duplicates', async ({ request }) 
     seen.set(key, q.id);
   }
   expect(problems).toEqual([]);
-  // Every question has an explanation except the ones awaiting a clinical decision
-  // (listed in docs/question-database-audit.md, section 6).
-  expect(db.questions.filter(q => !q.explanation).length).toBeLessThanOrEqual(22);
+  expect(db.questions.filter(q => !q.explanation).map(q => q.id)).toEqual([]);
 });
 
 // ── 2. Page loads with no console errors ──────────────────────────────
@@ -111,9 +110,9 @@ test('every category is selectable and the level filter narrows the pool', async
   await page.locator('[data-setting="level"][data-value="paramedic"]').click();
   await expect(count).toHaveText('910 questions match');
   await page.locator('[data-setting="level"][data-value="emt"]').click();
-  await expect(count).toHaveText('1,780 questions match');
+  await expect(count).toHaveText('1,777 questions match');
   await page.locator('[data-setting="level"][data-value="all"]').click();
-  await expect(count).toHaveText('2,690 questions match');
+  await expect(count).toHaveText('2,687 questions match');
 });
 
 test('topic drill only uses the chosen topics and needs at least one', async ({ page }) => {

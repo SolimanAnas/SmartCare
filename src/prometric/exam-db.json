@@ -82,9 +82,9 @@
         "superior",
         "severity"
       ],
-      "correct_answer": "A",
+      "correct_answer": "D",
       "hint": null,
-      "explanation": null,
+      "explanation": "OPQRST stands for onset, provocation, quality, region and radiation, severity and time, so S is severity, usually rated on a 1 to 10 scale.",
       "subject": "Patient Assessment",
       "difficulty": "medium",
       "topic": "Patient Assessment",
@@ -201,9 +201,9 @@
         "Assess OPQRST",
         "Rapidly assess the patient from head to toe"
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "hint": null,
-      "explanation": null,
+      "explanation": "An unresponsive medical patient cannot tell you what is wrong, so start with a rapid head-to-toe exam, then baseline vital signs, then a history from family or bystanders.",
       "subject": "Patient Assessment",
       "difficulty": "medium",
       "topic": "Patient Assessment",
@@ -228,16 +228,16 @@
     },
     {
       "id": 13,
-      "text": "During the assessment of the patient's pelvis, you should :-",
+      "text": "During the assessment of the patient's pelvis, you should:",
       "options": [
-        "Gently push the patient's pelvic wings posteriorly and then to the patient's midline",
-        "Gently push the patient's pelvic wings to the patient's midline and then posteriorly.",
+        "Rock the pelvis firmly from side to side to check for instability",
+        "Gently press the pelvic wings toward the midline and then posteriorly, only once.",
         "Gently push the patient's pelvic wings superiorly and then to the patient's midline.",
         "There's no need to palpate the pelvic,just ask the patient if there's any pain and complete your assessment"
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "hint": null,
-      "explanation": null,
+      "explanation": "Press the iliac wings gently toward the midline and then posteriorly, only once. Rocking or repeatedly compressing an unstable pelvis can increase bleeding.",
       "subject": "Patient Assessment",
       "difficulty": "medium",
       "topic": "Patient Assessment",
@@ -245,7 +245,7 @@
     },
     {
       "id": 14,
-      "text": "During the assessment of the patient's mental status, the patient responded when you make gentle touch to his shoulders and spoke with him, so the patient is:-",
+      "text": "During the assessment of the patient's mental status, the patient responded when you make gentle touch to his shoulders and spoke with him, so the patient is:",
       "options": [
         "ALERT.",
         "Responded to VERBAL stimuli.",
@@ -262,7 +262,7 @@
     },
     {
       "id": 15,
-      "text": "If you make an error and discovered it after you completed writing the report, you should :-",
+      "text": "If you make an error and discovered it after you completed writing the report, you should:",
       "options": [
         "Erase the error.",
         "Write the correct information in another form",
@@ -284,11 +284,11 @@
         "Attach the external defibrillator pads to the patient's chest.",
         "Contact medical control and request permission to administer nitroglycerin.",
         "Ask your partner to assist the patient's respirations with a bag-valve-device.",
-        "Place the patient in a position of comfort and administer high-concentration oxygen by nonrebreather mask."
+        "Place the patient in a position of comfort, give aspirin if there are no contraindications, and give oxygen only if his SpO2 is below 94%."
       ],
       "correct_answer": "D",
       "hint": null,
-      "explanation": null,
+      "explanation": "For a suspected heart attack, place the patient in a position of comfort, give chewed aspirin if there are no contraindications, and give oxygen only for an SpO2 below 94% or shortness of breath. AED pads are for cardiac arrest.",
       "subject": "Patient Assessment",
       "difficulty": "medium",
       "topic": "Patient Assessment",
@@ -330,7 +330,7 @@
     },
     {
       "id": 19,
-      "text": "If need to move patient complain of inadequate breathing, you choose :-",
+      "text": "If need to move patient complain of inadequate breathing, you choose:",
       "options": [
         "Nonurgent technique",
         "Urgent technique.",
@@ -347,7 +347,7 @@
     },
     {
       "id": 20,
-      "text": "Involves multiple breaks creating bone fragments .is the defining of :-",
+      "text": "A fracture that involves multiple breaks creating bone fragments is called:",
       "options": [
         "Comminuted",
         "Spiral",
@@ -500,7 +500,7 @@
     },
     {
       "id": 29,
-      "text": "___ is the presentation of the baby's head first in delivery :-",
+      "text": "___ is the presentation of the baby's head first in delivery:",
       "options": [
         "Crowning",
         "Cephalic.",
@@ -652,23 +652,6 @@
       "level": "emt"
     },
     {
-      "id": 38,
-      "text": "63-year-old man is complaining of substernal chest pain radiating to his left arm and jaw. He rates his pain an 8 on a 1-10 scale. Baseline vital signs are: BP 136/70, P 126, R 16. The patient takes no medications regularly and has no allergies to medications. You should now:",
-      "options": [
-        "Attach the external defibrillator pads to the patient's chest.",
-        "Contact medical control and request permission to administer nitroglycerin",
-        "Ask your partner to assist the patient's respirations with a bag-valve-device.",
-        "Place the patient in a position of comfort and administer high-concentration oxygen by nonrebreather mask."
-      ],
-      "correct_answer": "D",
-      "hint": null,
-      "explanation": null,
-      "subject": "Patient Assessment",
-      "difficulty": "medium",
-      "topic": "Patient Assessment",
-      "level": "emt"
-    },
-    {
       "id": 39,
       "text": "The single most important factor in determining survival from cardiac arrest is:",
       "options": [
@@ -677,9 +660,9 @@
         "Recognition of risk factors.",
         "Recognition of warning signs."
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "hint": null,
-      "explanation": null,
+      "explanation": "In cardiac arrest from ventricular fibrillation, early defibrillation is the biggest factor in survival, which falls with every minute without a shock. High-quality CPR keeps the heart and brain perfused until then.",
       "subject": "Shock and Resuscitation",
       "difficulty": "hard",
       "topic": "Shock and Resuscitation",
@@ -779,9 +762,9 @@
         "One person bag-valve-mask",
         "Mouth-to-mouth"
       ],
-      "correct_answer": "A",
+      "correct_answer": "B",
       "hint": null,
-      "explanation": null,
+      "explanation": "Two-person bag-mask ventilation is preferred: one rescuer seals the mask with both hands while the other squeezes the bag, giving the best seal and volume. Mouth-to-mask is the backup when you are alone.",
       "subject": "Airway",
       "difficulty": "medium",
       "topic": "Airway",
@@ -2581,29 +2564,12 @@
         "Capillary",
         "non of all"
       ],
-      "correct_answer": "A",
+      "correct_answer": "C",
       "subject": "Fundamentals and Operations",
       "difficulty": "medium",
       "topic": "Fundamentals and Operations",
       "hint": null,
-      "explanation": null,
-      "level": "emt"
-    },
-    {
-      "id": 152,
-      "text": "Pneumatic antis hock garments (PASGs) can be used for:",
-      "options": [
-        "As a pressure dressing to control severe bleeding in the lower legs.",
-        "As splint for the hand",
-        "Control sever bleeding in the chest",
-        "All of the above"
-      ],
-      "correct_answer": "A",
-      "subject": "Fundamentals and Operations",
-      "difficulty": "medium",
-      "topic": "Fundamentals and Operations",
-      "hint": null,
-      "explanation": null,
+      "explanation": "Capillary bleeding is dark red and oozes slowly. Venous bleeding is dark red but flows steadily, and arterial bleeding is bright red and spurts.",
       "level": "emt"
     },
     {
@@ -2659,9 +2625,9 @@
     },
     {
       "id": 156,
-      "text": "The right order of procedures for control external bleeding is:",
+      "text": "The right order of procedures for controlling severe external bleeding from an extremity is:",
       "options": [
-        "Direct pressure then extremity elevation then pressure points",
+        "Direct pressure, then a tourniquet above the wound if pressure does not control the bleeding",
         "Extremity elevation then pressure points then direct pressure",
         "Pressure points then direct pressure then extremity elevation",
         "Extremity elevation then direct pressure then pressure points"
@@ -2671,7 +2637,7 @@
       "difficulty": "medium",
       "topic": "Trauma",
       "hint": null,
-      "explanation": null,
+      "explanation": "Start with firm direct pressure, and apply a tourniquet above the wound if pressure does not control severe bleeding from an extremity. Elevation and pressure points are no longer recommended.",
       "level": "emt"
     },
     {
@@ -2802,12 +2768,12 @@
         "Pre hospital care report",
         "Non of above"
       ],
-      "correct_answer": "C",
+      "correct_answer": "B",
       "subject": "Fundamentals and Operations",
       "difficulty": "medium",
       "topic": "Fundamentals and Operations",
       "hint": null,
-      "explanation": null,
+      "explanation": "The patient narrative is the part of the report written in a standard medical format, such as SOAP or CHART. The prehospital care report is the whole document.",
       "level": "emt"
     },
     {
@@ -3217,12 +3183,12 @@
         "Toe-head",
         "Non of above."
       ],
-      "correct_answer": "C",
+      "correct_answer": "B",
       "subject": "Fundamentals and Operations",
       "difficulty": "medium",
       "topic": "Fundamentals and Operations",
       "hint": null,
-      "explanation": null,
+      "explanation": "Adults are examined from head to toe. The toe-to-head order is used for infants and young children, who are less frightened when you start at the feet.",
       "level": "emt"
     },
     {
@@ -3364,12 +3330,12 @@
         "Includes agitation combativeness",
         "B+C"
       ],
-      "correct_answer": "B",
+      "correct_answer": "D",
       "subject": "Fundamentals and Operations",
       "difficulty": "medium",
       "topic": "Fundamentals and Operations",
       "hint": null,
-      "explanation": null,
+      "explanation": "After a seizure the postictal patient is often drowsy or unresponsive at first, then confused, and some become agitated or combative, so both descriptions fit.",
       "level": "emt"
     },
     {
@@ -5316,7 +5282,7 @@
       "options": [
         "Apply a venous tourniquet that does not affect arterial blood flow",
         "Massage the wound with a proximal-to-distal motion",
-        "Elevate the wound above the level of the patient's heart",
+        "Apply a tourniquet above the wound if it is on an extremity and direct pressure is not enough",
         "Apply a sterile dressing moistened with cold saline solution"
       ],
       "correct_answer": "C",
@@ -5324,7 +5290,7 @@
       "difficulty": "medium",
       "topic": "Trauma",
       "hint": null,
-      "explanation": null,
+      "explanation": "If direct pressure does not control bleeding from an extremity, apply a tourniquet a few inches above the wound and note the time. Massage, cold dressings and venous tourniquets do not stop serious bleeding.",
       "level": "emt"
     },
     {
@@ -5591,12 +5557,12 @@
         "Indicates exposure to heat or carbon monoxide poisoning.",
         "All of the above."
       ],
-      "correct_answer": "B",
+      "correct_answer": "A",
       "subject": "Fundamentals and Operations",
       "difficulty": "medium",
       "topic": "Fundamentals and Operations",
       "hint": null,
-      "explanation": null,
+      "explanation": "Pale skin means blood is being shunted away from the skin, a sign of poor perfusion. Cyanotic skin points to low oxygen, and flushed skin to heat exposure or carbon monoxide poisoning.",
       "level": "emt"
     },
     {
@@ -6105,7 +6071,7 @@
       "options": [
         "Deliver low-flow oxygen to prevent fetal oxygen toxicity",
         "Administer vasopressors at double the usual dose",
-        "Perform cardiac compressions higher on the sternum",
+        "Manually displace the uterus to the patient's left during compressions",
         "Deliver small boluses of crystalloids to prevent fetal pulmonary edema"
       ],
       "correct_answer": "C",
@@ -6113,7 +6079,7 @@
       "difficulty": "hard",
       "topic": "Shock and Resuscitation",
       "hint": null,
-      "explanation": null,
+      "explanation": "In late pregnancy the uterus presses on the vena cava and aorta when the patient lies flat. Continue standard CPR while a rescuer manually pushes the uterus to the left to restore blood flow.",
       "level": "emt"
     },
     {
@@ -8327,23 +8293,6 @@
       "level": "emt"
     },
     {
-      "id": 498,
-      "text": "All of the following are the components of SEA-3 assessment tool except?",
-      "options": [
-        "Activity",
-        "Appearance",
-        "Affect",
-        "Alertness"
-      ],
-      "correct_answer": "D",
-      "hint": null,
-      "explanation": null,
-      "subject": "Medical/Behavioral/Geriatric",
-      "difficulty": "medium",
-      "topic": "Medical/Behavioral/Geriatric",
-      "level": "emt"
-    },
-    {
       "id": 499,
       "text": "When an EMT begins to assist someone and then leaves the person without providing alternative form of care is referred to as?",
       "options": [
@@ -8386,9 +8335,9 @@
         "Delirium",
         "Dementia"
       ],
-      "correct_answer": "C",
+      "correct_answer": "D",
       "hint": null,
-      "explanation": null,
+      "explanation": "Confusion that began within the last hour in a normally alert patient is acute, which fits hypoglycemia, stroke or delirium. Dementia develops slowly over months or years, so it does not explain a sudden change.",
       "subject": "Medical/Behavioral/Geriatric",
       "difficulty": "hard",
       "topic": "Medical/Behavioral/Geriatric",
@@ -8399,7 +8348,7 @@
       "text": "The mental disorder that is present since birth that is diagnosed during childhood and is based upon the measurement of IQ is referred to as?",
       "options": [
         "Pervasive developmental disorder",
-        "Mental retardation",
+        "Intellectual disability",
         "Rett's syndrome",
         "Childhood disintegrative disorder"
       ],
@@ -8488,9 +8437,9 @@
         "DT's are marked by decreased level of consciousness with hallucinations",
         "Seizures and delirium tremens are ominous sign"
       ],
-      "correct_answer": "C",
+      "correct_answer": "B",
       "hint": null,
-      "explanation": null,
+      "explanation": "Delirium tremens develops 2 to 3 days after a long-term heavy drinker stops or cuts down, not after a recent binge. It brings confusion, hallucinations and a decreased level of consciousness, and seizures with DTs are an ominous sign.",
       "subject": "Medical/Behavioral/Geriatric",
       "difficulty": "hard",
       "topic": "Medical/Behavioral/Geriatric",
@@ -13112,9 +13061,9 @@
         "Determine the transport priority",
         "Reassessing vital signs"
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "hint": null,
-      "explanation": null,
+      "explanation": "The primary assessment finds and treats immediate life threats and ends with setting the transport priority. Scene safety belongs to the scene size-up.",
       "subject": "Patient Assessment",
       "difficulty": "easy",
       "topic": "Patient Assessment",
@@ -13537,9 +13486,9 @@
         "begin the primary assessment",
         "contact the physician that prescribed the epi-pen"
       ],
-      "correct_answer": "B",
+      "correct_answer": "C",
       "hint": null,
-      "explanation": null,
+      "explanation": "Assess the patient before giving any medication. If the primary assessment shows signs of anaphylaxis, such as difficulty breathing or shock, then use the epinephrine auto-injector.",
       "subject": "Medical/Behavioral/Geriatric",
       "difficulty": "medium",
       "topic": "Medical/Behavioral/Geriatric",
@@ -13877,9 +13826,9 @@
         "tachycardia",
         "restlessness"
       ],
-      "correct_answer": "C",
+      "correct_answer": "A",
       "hint": null,
-      "explanation": null,
+      "explanation": "Children often become tachycardic first, but a slowing heart rate from hypoxia is far more common in children than in adults and is an ominous sign that cardiac arrest may follow.",
       "subject": "Pediatrics",
       "difficulty": "medium",
       "topic": "Pediatrics",

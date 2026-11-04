@@ -44,7 +44,7 @@ Every claim in the headlines is visible in the app:
 
 - **12 megacode scenarios**: the Megacode picker ("Live monitor simulator · 12 AHA scenarios").
 - **24 live rhythms**: the ECG Trainer rhythm picker lists 24.
-- **2,690 Paramedic & EMT questions in tutor or timed mode**: the Prometric exam start screen and its Timer Mode setting.
+- **2,687 Paramedic & EMT questions in tutor or timed mode**: the Prometric exam start screen and its Timer Mode setting.
 - **Even offline**: verified. After the service worker installed (162 cached
   entries), `index.html`, `pages/courses.html`, `pages/acls.html`,
   `pages/megacode.html`, `pages/ecg.html` and `src/prometric/exam.html` all
