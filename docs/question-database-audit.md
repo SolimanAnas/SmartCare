@@ -223,6 +223,31 @@ Removed, leaving **2,687** questions (910 paramedic, 1,777 EMT):
 | 152 | PASG is obsolete for controlling bleeding |
 | 498 | All four answers are parts of the SEA-3 mental status exam, so it had no correct answer |
 
-Wording: question 502's answer "Mental retardation" now reads "Intellectual disability", and the stems of 13, 14, 15, 19, 20 and 29 no longer end in `:-`.
+Wording: question 502's answer "Mental retardation" now reads "Intellectual disability", and the stems of 13, 14, 15, 19, 20 and 29 no longer end in `:-`. Question 721's answer now reads "Protect the airway and suction secretions as needed" (was "Suction airway", which taught routine suctioning during a seizure), and its explanation adds checking blood glucose as the second step.
 
 The new explanations follow the key of each question and current EMT teaching, but like the rest of this bank (`review_status: unreviewed`) they have not had a clinical review.
+
+---
+
+## 7. Disaster questions added from the MCI course (November 2026)
+
+The Disaster category had 15 questions, all from the BDLS course. 92 questions from the MCI course practice bank (`src/MCI/MCI-practice.json`) were added as ids 2750–2841, bringing it to 107. They carry `source: "smartcare-mci-course"`.
+
+| Area | Questions |
+|---|---|
+| Triage (START, JumpSTART, SALT, tags, re-triage) | 21 |
+| Explosive and hostile events (blast, secondary devices, TECC, Rescue Task Force) | 9 |
+| MCI fundamentals (definitions, open/closed and simple/compound incidents) | 8 |
+| Chemical agents (nerve agents, cyanide, phosgene, mustard, opioids, chlorine) | 8 |
+| Biological and radiological (smallpox, anthrax, botulism, dirty bombs, KI) | 8 |
+| Special incidents (crush, crowds, floods, heat, power outages, unaccompanied children) | 8 |
+| Incident command (ICS roles, span of control, Unified Command, freelancing) | 7 |
+| Treatment area and transport | 6 |
+| Hazardous materials (Step 1-2-3, ERG, NFPA 704, PPE, decon) | 6 |
+| Recovery and responder resilience | 6 |
+| Scene management (zones, treatment area, vehicle flow) | 5 |
+
+Six need advanced skills and are `level: "paramedic"`: atropine titration, antidote kits plus a benzodiazepine for severe nerve-agent poisoning, hydroxocobalamin, blast-lung ventilation, and crush-syndrome fluids and calcium. The rest are `level: "emt"`.
+
+Left out: questions on local officer roles and action cards, the METHANE and CSCATTT report formats, and questions that repeated a concept already covered. Each added question has a new full-sentence explanation; the course's terse notes and its "Review Chapter" hints were not carried over. Answer choices were reworded in four questions: PPE levels now read "Level A" to "Level D", and two scenario answers and one option no longer use `>` or capitals for emphasis.
+
