@@ -57,8 +57,6 @@ async function waitExamReady(pg) {
 
 async function startPrometric(pg, count) {
   await waitExamReady(pg);
-  await pg.click('.wizard-next[data-next="2"]'); await settle(pg, 300);
-  await pg.click('.wizard-next[data-next="3"]'); await settle(pg, 300);
   await pg.click(`[data-setting="count"][data-value="${count}"]`);
   await pg.click('#start-exam'); await settle(pg, 1200);
 }
@@ -133,9 +131,12 @@ const SHOTS = [
       await startPrometric(pg, 25);
       const n = await pg.evaluate(() => examEngine.questions.length);
       for (let i = 0; i < n; i++) {
-        const c = await pg.evaluate(() => examEngine.questions[examEngine.currentIndex].shuffledCorrect);
+        const { c, n: choices } = await pg.evaluate(() => {
+          const q = examEngine.questions[examEngine.currentIndex];
+          return { c: q.shuffledCorrect, n: q.shuffledOptions.length };
+        });
         // Three deliberate misses so the result reads like a real attempt.
-        const pick = [3, 11, 19].includes(i) ? 'ABCD'[('ABCD'.indexOf(c) + 1) % 4] : c;
+        const pick = [3, 11, 19].includes(i) ? 'ABCD'[('ABCD'.indexOf(c) + 1) % choices] : c;
         await pg.clock.runFor(30000 + (i * 7919) % 30000);
         await pg.locator('.option-item').nth('ABCD'.indexOf(pick)).click();
         await pg.click('#submit-answer'); await pg.clock.runFor(8000);
