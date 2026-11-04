@@ -6,7 +6,7 @@
          this page's inline scripts/handlers move to .js files. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'">
     <!-- General SEO Meta Tags -->
-    <meta name="description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,749 questions across 18 categories with adaptive testing.">
+    <meta name="description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,687 questions across 18 categories with adaptive testing.">
     <meta name="keywords" content="SmartCare, src, prometric, exam, clinical learning, EMS, NREMT, paramedic study, paramedic exam, EMT exam, healthcare education">
     <meta name="author" content="Soliman Anas">
     <meta name="robots" content="index, follow">
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://solimananas.github.io/SmartCare/src/prometric/exam">
     <meta property="og:title" content="Paramedic / EMT Exam Engine — NREMT Prometric">
-    <meta property="og:description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,749 questions across 18 categories with adaptive testing.">
+    <meta property="og:description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,687 questions across 18 categories with adaptive testing.">
     <meta property="og:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta property="og:image:width" content="1538">
     <meta property="og:image:height" content="1022">
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://solimananas.github.io/SmartCare/src/prometric/exam">
     <meta name="twitter:title" content="Paramedic / EMT Exam Engine — NREMT Prometric">
-    <meta name="twitter:description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,749 questions across 18 categories with adaptive testing.">
+    <meta name="twitter:description" content="NREMT Prometric mock test engine for Paramedic &amp; EMT practice — 2,687 questions across 18 categories with adaptive testing.">
     <meta name="twitter:image" content="https://solimananas.github.io/SmartCare/images/og.jpg">
     <meta name="twitter:image:alt" content="SmartCare · Clinical Learning Platform">
 
@@ -48,7 +48,7 @@
   "@type": "WebApplication",
   "name": "Paramedic / EMT Exam Engine — NREMT Prometric",
   "url": "https://solimananas.github.io/SmartCare/src/prometric/exam",
-  "description": "NREMT Prometric mock test engine for Paramedic & EMT practice — 2,749 questions across 18 categories with adaptive testing.",
+  "description": "NREMT Prometric mock test engine for Paramedic & EMT practice — 2,687 questions across 18 categories with adaptive testing.",
   "image": "https://solimananas.github.io/SmartCare/images/og.jpg",
   "author": {
     "@type": "Person",
@@ -70,12 +70,14 @@
 <meta name="theme-color" content="#08111f">
 <link rel="stylesheet" href="../../fonts/fonts.css">
 <link rel="stylesheet" href="exam.css">
+<script src="../../src/theme.js"></script>
+<script>SmartTheme.init();</script>
 </head>
 <body>
 
 <div id="loading-overlay" class="loading-overlay" role="status">
   <div class="loading-spinner" aria-hidden="true"></div>
-  <span class="loading-text">Loading 2,749 questions…</span>
+  <span class="loading-text">Loading the question bank…</span>
 </div>
 
 <div id="app">
@@ -273,6 +275,16 @@
             </div>
             <h2 id="question-stem" class="question-stem"></h2>
             <div id="options-container" class="options-container" role="group" aria-label="Answer choices"></div>
+            <div id="hint-container" class="hint-container hidden">
+              <button type="button" id="show-hint" class="btn-ghost hint-btn">
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../../icons/sprite.svg#lightbulb"/></svg>
+                Show hint
+              </button>
+              <p id="hint-text" class="hint-text" tabindex="-1" hidden>
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../../icons/sprite.svg#lightbulb"/></svg>
+                <span></span>
+              </p>
+            </div>
             <div id="explanation-container" class="explanation-container hidden" role="status"></div>
           </article>
         </div>
@@ -322,7 +334,7 @@
         </div>
 
         <p class="kbd-hint">
-          <kbd>A</kbd>–<kbd>D</kbd> choose, <kbd>Enter</kbd> check, <kbd>F</kbd> flag,
+          <kbd>A</kbd>–<kbd>D</kbd> choose, <kbd>Enter</kbd> check, <kbd>F</kbd> flag, <kbd>H</kbd> hint,
           <kbd>←</kbd> <kbd>→</kbd> move
         </p>
       </aside>
@@ -430,6 +442,7 @@
   </section>
 </div>
 
+<script src="progress.js"></script>
 <script src="exam.js"></script>
 </body>
 </html>

@@ -7,11 +7,18 @@ const SECONDS_PER_QUESTION = 72;
 const PASS_MARK = 70;
 const DESKTOP_QUERY = '(min-width: 1024px)';
 const MODES = ['random', 'topic', 'cat', 'spaced'];
-const THEMES = [
-    { id: 'dark', label: 'Dark', icon: 'moon' },
-    { id: 'light', label: 'Light', icon: 'sun' },
-    { id: 'sepia', label: 'Sepia', icon: 'book-open' },
-];
+// Names and icons for the app-wide themes in src/theme.js.
+const THEME_INFO = {
+    dark: { label: 'Dark', icon: 'moon' },
+    amoled: { label: 'AMOLED', icon: 'smartphone' },
+    light: { label: 'Light', icon: 'sun' },
+    sepia: { label: 'Sepia', icon: 'book-open' },
+    forest: { label: 'Forest', icon: 'tree-pine' },
+};
+// Options that point at other options ("All of the above", "Both A and B")
+// only make sense in their original order.
+const REFERS_TO_OPTIONS = /\b(?:all|none|both|neither)\s+(?:of\s+)?(?:the\s+)?(?:above|following)\b/i;
+const REFERS_TO_LETTERS = /\b(?:[Bb]oth|[Nn]either|[Oo]nly)\s+[A-D]\b|\b[A-D]\s+(?:and|or|nor|&)\s+[A-D]\b/;
 const DEFAULT_SETTINGS = {
     mode: 'random',
     count: '50',
@@ -41,22 +48,8 @@ function formatDuration(seconds) {
     return rest ? `${plural(hours, 'hour')} ${plural(rest, 'minute')}` : plural(hours, 'hour');
 }
 
-function readJSON(key, fallback) {
-    try {
-        const raw = localStorage.getItem(key);
-        return raw === null ? fallback : JSON.parse(raw);
-    } catch {
-        return fallback;
-    }
-}
-
-function writeJSON(key, value) {
-    try {
-        localStorage.setItem(key, JSON.stringify(value));
-    } catch {
-        /* storage full or blocked: the exam still works, it just won't remember */
-    }
-}
+// Storage lives in progress.js so home, Courses and account sync share one format.
+const store = window.PrometricProgress;
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -94,10 +87,10 @@ class ExamEngine {
         this.backdropTimer = null;
         this.modalReturnFocus = null;
 
-        const stats = readJSON('examStats', []);
-        this.examStats = Array.isArray(stats) ? stats : [];
-        const history = readJSON('questionHistory', {});
-        this.questionHistory = history && typeof history === 'object' ? history : {};
+        this.examStats = store.loadExams();
+        // { [questionId]: [attempts, correct] }
+        this.questionHistory = store.loadHistory();
+        this.hintShown = [];
         this.settings = this.loadSetup();
         this.mode = this.settings.mode;
         this.desktop = window.matchMedia(DESKTOP_QUERY);
@@ -160,35 +153,26 @@ class ExamEngine {
     /* ── Theme ─────────────────────────────────────────────── */
 
     initTheme() {
-        let saved = null;
-        try {
-            saved = localStorage.getItem('examTheme');
-        } catch {
-            /* storage blocked */
-        }
-        this.setTheme(THEMES.some((t) => t.id === saved) ? saved : 'dark');
         document.querySelectorAll('.theme-toggle').forEach((btn) => {
-            btn.addEventListener('click', () => this.cycleTheme());
+            btn.addEventListener('click', () => this.applyTheme(window.SmartTheme ? SmartTheme.next() : 'dark'));
         });
+        this.applyTheme(document.documentElement.dataset.theme);
     }
 
-    cycleTheme() {
-        const current = THEMES.findIndex((t) => t.id === document.documentElement.dataset.theme);
-        this.setTheme(THEMES[(current + 1) % THEMES.length].id);
-    }
-
+    /* Kept for callers that pick a theme directly. */
     setTheme(theme) {
-        const active = THEMES.find((t) => t.id === theme) || THEMES[0];
-        const next = THEMES[(THEMES.indexOf(active) + 1) % THEMES.length];
-        document.documentElement.dataset.theme = active.id;
-        try {
-            localStorage.setItem('examTheme', active.id);
-        } catch {
-            /* storage blocked */
-        }
+        this.applyTheme(window.SmartTheme ? SmartTheme.set(theme) : theme);
+    }
+
+    applyTheme(theme) {
+        const ids = window.SmartTheme ? SmartTheme.THEMES : Object.keys(THEME_INFO);
+        const id = ids.includes(theme) ? theme : 'dark';
+        document.documentElement.dataset.theme = id;
+        const active = THEME_INFO[id] || THEME_INFO.dark;
+        const next = THEME_INFO[ids[(ids.indexOf(id) + 1) % ids.length]] || THEME_INFO.dark;
         document.querySelectorAll('.theme-toggle').forEach((btn) => {
             btn.querySelector('use')?.setAttribute('href', `${SPRITE}#${active.icon}`);
-            btn.setAttribute('aria-label', `${active.label} theme. Switch to ${next.label.toLowerCase()} theme`);
+            btn.setAttribute('aria-label', `${active.label} theme. Switch to ${next.label} theme`);
             const name = btn.querySelector('.theme-name');
             if (name) name.textContent = `${active.label} theme`;
         });
@@ -202,8 +186,7 @@ class ExamEngine {
     /* ── Setup screen ──────────────────────────────────────── */
 
     loadSetup() {
-        const saved = readJSON('examSetup', {});
-        const settings = { ...DEFAULT_SETTINGS, ...(saved && typeof saved === 'object' ? saved : {}) };
+        const settings = { ...DEFAULT_SETTINGS, ...store.loadSetup() };
         if (!MODES.includes(settings.mode)) settings.mode = DEFAULT_SETTINGS.mode;
         if (!['10', '25', '50', '100'].includes(String(settings.count))) settings.count = DEFAULT_SETTINGS.count;
         settings.count = String(settings.count);
@@ -216,7 +199,7 @@ class ExamEngine {
     }
 
     saveSetup() {
-        writeJSON('examSetup', this.settings);
+        store.saveSetup(this.settings);
     }
 
     renderTopics() {
@@ -267,6 +250,7 @@ class ExamEngine {
 
         $('submit-answer').addEventListener('click', () => this.submitAnswer());
         $('flag-question').addEventListener('click', () => this.toggleFlag());
+        $('show-hint').addEventListener('click', () => this.showHint());
         $('prev-question').addEventListener('click', () => this.navigate(-1));
         $('next-question').addEventListener('click', () => this.navigate(1));
         $('pause-exam').addEventListener('click', () => this.pauseExam());
@@ -478,24 +462,23 @@ class ExamEngine {
         (this.db?.categories || []).forEach((cat) => {
             stats[cat] = { correct: 0, total: 0 };
         });
-        Object.values(this.questionHistory).forEach((h) => {
-            if (!Array.isArray(h?.subjects)) return;
-            h.subjects.forEach((s) => {
-                if (!stats[s.topic]) return;
-                stats[s.topic].correct += s.correct ? 1 : 0;
-                stats[s.topic].total += 1;
-            });
+        (this.db?.questions || []).forEach((q) => {
+            const h = this.questionHistory[q.id];
+            if (!h || !stats[q.subject]) return;
+            stats[q.subject].total += h[0];
+            stats[q.subject].correct += h[1];
         });
         return stats;
     }
 
-    saveQuestionHistory(questionId, isCorrect, subject) {
-        const entry = this.questionHistory[questionId] || { correct: 0, attempts: 0, subjects: [] };
-        entry.attempts++;
-        if (isCorrect) entry.correct++;
-        entry.subjects.push({ topic: subject, correct: isCorrect, date: new Date().toISOString() });
-        this.questionHistory[questionId] = entry;
-        writeJSON('questionHistory', this.questionHistory);
+    attemptsOf(id) {
+        return this.questionHistory[id]?.[0] || 0;
+    }
+
+    saveQuestionHistory(questionId, isCorrect) {
+        const [attempts, correct] = this.questionHistory[questionId] || [0, 0];
+        this.questionHistory[questionId] = [attempts + 1, correct + (isCorrect ? 1 : 0)];
+        store.saveHistory(this.questionHistory);
     }
 
     shuffleArray(arr) {
@@ -509,8 +492,10 @@ class ExamEngine {
     shuffleOptions(question) {
         const options = question.options.slice(0, LETTERS.length);
         const order = options.map((_, i) => i);
-        // Two-choice questions are true/false: keep them in their natural order.
-        if (options.length > 2) this.shuffleArray(order);
+        // Two-choice questions are true/false, and some options refer to the
+        // others by position: both keep their original order.
+        const positional = options.some((o) => REFERS_TO_OPTIONS.test(o) || REFERS_TO_LETTERS.test(o));
+        if (options.length > 2 && !positional) this.shuffleArray(order);
         const original = LETTERS.indexOf(question.correct_answer);
         return {
             options: order.map((i) => options[i]),
@@ -526,13 +511,13 @@ class ExamEngine {
     /* Least-seen questions first. Weak-areas mode puts previously missed questions
        ahead of new ones. Sort is stable, so the shuffle survives within ties. */
     orderPool(pool) {
-        const attempts = (q) => this.questionHistory[q.id]?.attempts || 0;
+        const attempts = (q) => this.attemptsOf(q.id);
         const shuffled = this.shuffleArray([...pool]);
         if (this.mode === 'spaced') {
             const priority = (q) => {
                 const h = this.questionHistory[q.id];
-                if (!h || !h.attempts) return 1;
-                return h.correct / h.attempts < 0.7 ? 2 : 0;
+                if (!h || !h[0]) return 1;
+                return h[1] / h[0] < 0.7 ? 2 : 0;
             };
             return shuffled.sort((a, b) => priority(b) - priority(a) || attempts(a) - attempts(b));
         }
@@ -568,6 +553,7 @@ class ExamEngine {
         this.answers = new Array(n).fill(null);
         this.flagged = new Array(n).fill(false);
         this.submitted = new Array(n).fill(false);
+        this.hintShown = new Array(n).fill(false);
         this.currentIndex = 0;
         this.startTime = Date.now();
         this.elapsedSeconds = 0;
@@ -680,6 +666,7 @@ class ExamEngine {
         if (this.submitted[this.currentIndex]) this.gradeOptions(q);
 
         this.renderFeedback();
+        this.renderHint();
         this.updateActionButtons();
         this.updateFlagButton();
         this.updateNavigator();
@@ -740,6 +727,30 @@ class ExamEngine {
         box.classList.remove('hidden');
     }
 
+    /* Hints are a study aid, so they're offered in untimed exams only. */
+    renderHint() {
+        const i = this.currentIndex;
+        const q = this.questions[i];
+        const available = Boolean(this.tutorMode && q?.hint && !this.submitted[i]);
+        $('hint-container').classList.toggle('hidden', !available);
+        if (!available) return;
+        const shown = Boolean(this.hintShown[i]);
+        $('show-hint').hidden = shown;
+        const text = $('hint-text');
+        text.hidden = !shown;
+        if (shown) text.querySelector('span').textContent = q.hint;
+    }
+
+    showHint() {
+        const i = this.currentIndex;
+        const q = this.questions[i];
+        if (this.isEnded || !this.tutorMode || !q?.hint || this.submitted[i] || this.hintShown[i]) return;
+        const hadFocus = document.activeElement === $('show-hint');
+        this.hintShown[i] = true;
+        this.renderHint();
+        if (hadFocus) $('hint-text').focus({ preventScroll: true });
+    }
+
     updateActionButtons() {
         const i = this.currentIndex;
         const last = i === this.questions.length - 1;
@@ -791,9 +802,10 @@ class ExamEngine {
 
         const q = this.questions[i];
         this.submitted[i] = true;
-        this.saveQuestionHistory(q.id, this.answers[i] === q.shuffledCorrect, q.subject);
+        this.saveQuestionHistory(q.id, this.answers[i] === q.shuffledCorrect);
         this.gradeOptions(q);
         this.renderFeedback();
+        this.renderHint();
         if (this.mode === 'cat' && !this.isRetry) this.adjustCatDifficulty();
         this.updateActionButtons();
         this.updateNavigator();
@@ -998,6 +1010,9 @@ class ExamEngine {
         } else if (key === 'F') {
             e.preventDefault();
             this.toggleFlag();
+        } else if (key === 'H') {
+            e.preventDefault();
+            this.showHint();
         }
     }
 
@@ -1254,8 +1269,7 @@ class ExamEngine {
     }
 
     saveStats(result) {
-        this.examStats.push(result);
-        writeJSON('examStats', this.examStats);
+        this.examStats = store.addExam(result);
     }
 
     retryIncorrect() {
@@ -1339,6 +1353,7 @@ class ExamEngine {
                     <span class="result-number">Question ${i + 1}</span>
                     <span>${escapeHtml(q.subject)}</span>
                     ${this.flagged[i] ? `<span class="result-flag">${icon('flag')}Flagged</span>` : ''}
+                    ${this.hintShown[i] ? `<span class="result-hint">${icon('lightbulb')}Hint used</span>` : ''}
                     <span class="result-status is-${status}">${statusLabel}</span>
                 </div>
                 <p class="result-question">${escapeHtml(q.text)}</p>

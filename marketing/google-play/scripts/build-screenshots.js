@@ -30,7 +30,7 @@ const EXECUTABLE = process.env.CHROMIUM_PATH || (fs.existsSync('/opt/pw-browsers
 const W = 1080, H = 1920;
 
 // Headline copy. Every claim maps to something visible in the app:
-// counts come from the app's own UI (12 megacode scenarios, 2,749 questions,
+// counts come from the app's own UI (12 megacode scenarios, 2,687 questions,
 // 24 ECG rhythms) and "offline" was verified with the service worker and the
 // network disabled.
 const SLIDES = [
@@ -57,7 +57,7 @@ const SLIDES = [
   {
     raw: '05-exam-practice.png', out: '05-exam-practice.png', kicker: 'Exam practice',
     title: 'Train smarter.<br><em>Practice with purpose.</em>',
-    sub: '2,749 Paramedic & EMT questions in tutor or timed mode.',
+    sub: '2,687 Paramedic & EMT questions in tutor or timed mode.',
   },
   {
     raw: '06-exam-results.png', out: '06-knowledge-assessment.png', kicker: 'Results & insights',

@@ -99,6 +99,70 @@
     try { localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(entries)); } catch (e) {}
   }
 
+  /* ── Collection merges ───────────────────────────────────────────────
+   * Prometric progress (src/prometric/progress.js) keeps a whole collection
+   * in one key, so the per-key rule above would throw away one device's
+   * exams whenever both devices studied between syncs. These keys merge the
+   * items inside instead. Both are three-way, so a reset (empty collection)
+   * on one device still reaches the other. */
+  function parseOr(raw, fallback) {
+    try {
+      var v = JSON.parse(raw);
+      return v == null ? fallback : v;
+    } catch (e) { return fallback; }
+  }
+
+  // Exam log: items are identified by their ISO date.
+  function mergeExamLog(localRaw, cloudRaw, baseRaw) {
+    var local = parseOr(localRaw, null), cloud = parseOr(cloudRaw, null);
+    if (!Array.isArray(local) || !Array.isArray(cloud)) return localRaw;
+    var base = baseRaw == null ? null : parseOr(baseRaw, []);
+    var byDate = function (list) {
+      var map = {};
+      (Array.isArray(list) ? list : []).forEach(function (e) { if (e && e.date) map[e.date] = e; });
+      return map;
+    };
+    var L = byDate(local), C = byDate(cloud), B = base ? byDate(base) : null;
+    var out = {};
+    Object.keys(L).forEach(function (d) {
+      if (C[d] || !B || !B[d]) out[d] = L[d];       // on both sides, or new here
+    });
+    Object.keys(C).forEach(function (d) {
+      if (!out[d] && !L[d] && (!B || !B[d])) out[d] = C[d]; // new on the other device
+    });
+    return JSON.stringify(Object.keys(out).sort().map(function (d) { return out[d]; }));
+  }
+
+  // Answer history: { id: [attempts, correct] } counters. With a base, each
+  // side's new attempts are added together; without one, keep the side that
+  // has seen the question more often.
+  function mergeAnswerCounts(localRaw, cloudRaw, baseRaw) {
+    var local = parseOr(localRaw, null), cloud = parseOr(cloudRaw, null);
+    if (!local || typeof local !== 'object' || !cloud || typeof cloud !== 'object') return localRaw;
+    var base = baseRaw == null ? null : parseOr(baseRaw, {});
+    var pair = function (v) { return Array.isArray(v) ? [Number(v[0]) || 0, Number(v[1]) || 0] : [0, 0]; };
+    var ids = {};
+    [local, cloud, base || {}].forEach(function (m) { Object.keys(m).forEach(function (id) { ids[id] = true; }); });
+    var out = {};
+    Object.keys(ids).forEach(function (id) {
+      var l = pair(local[id]), c = pair(cloud[id]), v;
+      if (base) {
+        var b = pair(base[id]);
+        v = [l[0] + c[0] - b[0], l[1] + c[1] - b[1]];
+      } else {
+        v = l[0] >= c[0] ? l : c;
+      }
+      var attempts = Math.max(0, v[0]);
+      if (attempts > 0) out[id] = [attempts, Math.min(attempts, Math.max(0, v[1]))];
+    });
+    return JSON.stringify(out);
+  }
+
+  var COLLECTION_MERGERS = {
+    smartcare_prometric_exams: mergeExamLog,
+    smartcare_prometric_history: mergeAnswerCounts
+  };
+
   function mergeForSync(local, cloud, base) {
     local = local || {};
     cloud = cloud || {};
@@ -113,6 +177,12 @@
       if (!inCloud) { merged[k] = local[k]; return; }
       if (!inLocal) { merged[k] = cloud[k]; return; }
       if (local[k] === cloud[k]) { merged[k] = local[k]; return; }
+
+      if (COLLECTION_MERGERS[k]) {
+        var hasBase = base && Object.prototype.hasOwnProperty.call(base, k);
+        merged[k] = COLLECTION_MERGERS[k](local[k], cloud[k], hasBase ? base[k] : null);
+        return;
+      }
 
       if (base && Object.prototype.hasOwnProperty.call(base, k)) {
         if (local[k] === base[k]) { merged[k] = cloud[k]; return; } // only cloud changed

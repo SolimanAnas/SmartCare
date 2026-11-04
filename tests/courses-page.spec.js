@@ -29,6 +29,18 @@ test('progress bars reflect real reviewer progress', async ({ page }) => {
   await expect(page.locator('#pageSubtitle')).toContainText('3 started');
 });
 
+test('Prometric shows its average and last exam score', async ({ page }) => {
+  await page.evaluate(() => localStorage.setItem('smartcare_prometric_exams', JSON.stringify([
+    { date: '2026-01-01T00:00:00.000Z', score: 60, total: 10, correct: 6, answered: 10 },
+    { date: '2026-01-02T00:00:00.000Z', score: 90, total: 10, correct: 9, answered: 10 },
+  ])));
+  await page.reload();
+  const card = page.locator('.course-card[data-id="prometric"]');
+  await expect(card.locator('.cc-pct')).toHaveText('Avg 75%, last 90%');
+  await expect(card.locator('.cc-progress')).toHaveClass(/is-done/);
+  await expect(card.locator('.cc-progress-fill')).toHaveAttribute('style', /width: 75%/);
+});
+
 test('collapse all / expand all, remembered across reloads', async ({ page }) => {
   const sections = page.locator('#courseList .cat');
   await expect(sections.first()).not.toHaveClass(/collapsed/);
