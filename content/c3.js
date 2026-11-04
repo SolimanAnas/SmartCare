@@ -110,22 +110,6 @@ window.CPG_DATA = {
                 "Infant 30–53; toddler 22–37",
                 "Compare with age, not adult norms"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s1-002.webp",
-                "alt": "Side-by-side profiles of an adult and an infant airway, drawn at the same head size.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              },
-              {
-                "src": "../images/guides/c3s1-003.webp",
-                "alt": "An infant lying supine, two views. First, the head flexed forward by the large occiput, with the airway kinked. Second, a folded towel under the shoulders, with the airway neutral (the \"sniffing\" position for a small child).",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -139,15 +123,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Jaw thrust",
-                "text": "Suspected spinal injury: open the airway without moving the neck.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s1-005.webp",
-                    "alt": "Rescuer at the head of the patient, fingers behind the angles of the jaw lifting it forward, thumbs on the cheekbones, head kept neutral.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Suspected spinal injury: open the airway without moving the neck."
               },
               {
                 "title": "Then keep it open",
@@ -500,22 +476,6 @@ window.CPG_DATA = {
                   "SpO₂ normal 94–98%; unreliable with poor perfusion or CO poisoning"
                 ]
               }
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s2-007.webp",
-                "alt": "A patient in the tripod position: sitting forward, hands on knees, neck muscles tensed (accessory muscle use), lips pursed.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              },
-              {
-                "src": "../images/guides/c3s2-008.webp",
-                "alt": "A child's chest showing where retractions occur: suprasternal, intercostal and subcostal. Also shows nasal flaring and see-saw (abdomen up, chest in) breathing.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -849,21 +809,6 @@ window.CPG_DATA = {
                   {
                     "text": "Late pregnancy or obese: chest thrusts instead of abdominal thrusts."
                   }
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s3-010.webp",
-                    "alt": "A rescuer behind a standing adult. Two panels: the first shows 5 back blows between the shoulder blades with the heel of the hand while the patient leans forward; the second shows 5 abdominal thrusts, with a fist just above the navel, the other hand over it, pulling in and up.",
-                    "caption": "5 back blows, then 5 abdominal thrusts.",
-                    "w": 1200,
-                    "h": 896
-                  },
-                  {
-                    "src": "../images/guides/c3s3-011.webp",
-                    "alt": "Chest thrusts on a visibly pregnant woman, with the rescuer's hands on the lower half of the breastbone.",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               },
               {
@@ -879,27 +824,10 @@ window.CPG_DATA = {
                   {
                     "text": "Repeat 5 + 5. Never abdominal thrusts."
                   }
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s3-012.webp",
-                    "alt": "Two panels. First, an infant face-down along the rescuer's forearm, head lower than the chest and supported at the jaw, receiving back blows. Second, the infant face-up on the other forearm, with the heel of one hand on the lower half of the breastbone for chest thrusts (not two fingers: AHA 2025).",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               }
             ],
-            "after": "Becomes unresponsive: lower to the ground and start CPR. Each time you open the airway, look in the mouth and remove an object only if you can see it. No blind finger sweeps.",
-            "figures": [
-              {
-                "src": "../images/guides/c3s3-013.webp",
-                "alt": "A rescuer looking into the mouth of an unresponsive patient during CPR and seeing an object near the front.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
-            ]
+            "after": "Becomes unresponsive: lower to the ground and start CPR. Each time you open the airway, look in the mouth and remove an object only if you can see it. No blind finger sweeps."
           },
           {
             "type": "list",
@@ -1219,20 +1147,6 @@ window.CPG_DATA = {
                 "w": 1200,
                 "h": 896,
                 "pos": "before"
-              },
-              {
-                "src": "../images/guides/c3s4-015.webp",
-                "alt": "An OPA held against the face, measured from the corner of the mouth to the angle of the jaw (earlobe).",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              },
-              {
-                "src": "../images/guides/c3s4-016.webp",
-                "alt": "An NPA measured from the tip of the nose to the earlobe. Also shows an inset showing the lubricated NPA in the larger nostril, with the bevel toward the septum.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
               }
             ]
           },
@@ -1246,14 +1160,6 @@ window.CPG_DATA = {
                 "items": [
                   "Too long: pushes the epiglottis over the glottis",
                   "Too short: pushes the tongue back into the airway"
-                ],
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s4-017.webp",
-                    "alt": "Three small sagittal views of an OPA: correct size, too long (pushing the epiglottis over the glottis), and too short (pushing the tongue back).",
-                    "w": 1200,
-                    "h": 896
-                  }
                 ]
               },
               {
@@ -1585,15 +1491,6 @@ window.CPG_DATA = {
                 "Close to 100%",
                 "Inadequate or absent breathing: it ventilates"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s5-019.webp",
-                "alt": "Four devices on patients: a nasal cannula, a simple face mask, a non-rebreather mask with its reservoir bag inflated, and a bag-valve mask with a reservoir.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -1924,15 +1821,6 @@ window.CPG_DATA = {
               {
                 "title": "Watch",
                 "text": "Chest rise, SpO₂, colour, gastric distension."
-              }
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s6-022.webp",
-                "alt": "The E-C clamp. One hand forms a \"C\" (thumb and index finger on the mask) and an \"E\" (three fingers on the jaw). Also shows a second view of two rescuers: one holds the mask with both hands while the other squeezes the bag.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
               }
             ]
           },
@@ -2288,15 +2176,6 @@ window.CPG_DATA = {
                 "Soft (French)",
                 "Nose; through an adjunct or tube"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s7-025.webp",
-                "alt": "A rigid (Yankauer) tip and a soft French catheter side by side, labeled.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -2310,15 +2189,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Measure",
-                "text": "Corner of the mouth to the earlobe; never beyond what you can see.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c3s7-026.webp",
-                    "alt": "A rigid catheter measured from the corner of the mouth to the earlobe, then inserted only as far as can be seen.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Corner of the mouth to the earlobe; never beyond what you can see."
               },
               {
                 "title": "Insert without suction",
@@ -2633,15 +2504,6 @@ window.CPG_DATA = {
                 "Partial",
                 "Definitive"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c3s8-028.webp",
-                "alt": "Two sagittal views. The first shows a supraglottic airway (i-gel style) sitting above the glottis. The second shows an endotracheal tube passing through the vocal cords with its cuff inflated in the trachea.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {

@@ -81,6 +81,15 @@ window.CPG_DATA = {
                 "Right ventricle, inferior wall, and in most people the SA and AV nodes",
                 "Bradycardia, heart block, RV infarction with low BP"
               ]
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s1-034.webp",
+                "alt": "The heart's surface with the LAD, circumflex and right coronary arteries drawn in three colors, each shading the wall it feeds.",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
+              }
             ]
           },
           {
@@ -465,15 +474,6 @@ window.CPG_DATA = {
                 "title": "Destination",
                 "text": "STEMI: straight to a PCI-capable centre with pre-notification. Aim for first contact to device in 90 minutes or less."
               }
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c4s2-036.webp",
-                "alt": "A sweaty patient holding a fist to the chest (Levine sign), with arrows showing typical radiation to the jaw, left arm and back.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -490,15 +490,6 @@ window.CPG_DATA = {
               "Inferior STEMI until V4R rules out RV infarction",
               "Sildenafil or vardenafil within 24 hours",
               "Tadalafil within 48 hours"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c4s2-038.webp",
-                "alt": "A medicine cabinet with an erectile-dysfunction tablet box and a \"24 h / 48 h\" timer next to a crossed-out nitroglycerin spray.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -529,6 +520,15 @@ window.CPG_DATA = {
                   "Tension pneumothorax, tamponade",
                   "Esophageal rupture"
                 ]
+              }
+            ],
+            "figures": [
+              {
+                "src": "../images/guides/c4s2-037.webp",
+                "alt": "Three people side by side (an older woman, an older man, a person checking their blood glucose), each with a speech bubble: \"just tired\", \"indigestion\", \"short of breath\".",
+                "w": 1200,
+                "h": 896,
+                "pos": "before"
               }
             ]
           },
@@ -856,15 +856,6 @@ window.CPG_DATA = {
                 "MI, hypertension, valve disease",
                 "Left heart failure; lung disease; PE"
               ]
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c4s3-039.webp",
-                "alt": "Split figure: on the left, a patient sitting bolt upright with fluid in the lungs and pink froth; on the right, a patient with distended neck veins and swollen ankles (pitting edema with a thumbprint).",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {
@@ -1632,16 +1623,7 @@ window.CPG_DATA = {
                 ]
               }
             ],
-            "after": "Atropine often fails in Mobitz II and complete heart block with a wide QRS: go to pacing.",
-            "figures": [
-              {
-                "src": "../images/guides/c4s5-044.webp",
-                "alt": "Transcutaneous pacing pads in anteroposterior position on a patient's chest and back, with the monitor showing paced spikes and capture.",
-                "w": 1200,
-                "h": 896,
-                "pos": "before"
-              }
-            ]
+            "after": "Atropine often fails in Mobitz II and complete heart block with a wide QRS: go to pacing."
           },
           {
             "type": "table",
@@ -2935,15 +2917,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Pads on bare, dry chest",
-                "text": "Anterolateral (right upper chest below the clavicle; left side in the mid-axillary line) or anteroposterior.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c4s8-050.webp",
-                    "alt": "Two torsos: anterolateral pad placement (right below the clavicle, left mid-axillary) and anteroposterior placement (front centre-left and back between the shoulder blades).",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Anterolateral (right upper chest below the clavicle; left side in the mid-axillary line) or anteroposterior."
               },
               {
                 "title": "Analyse: hands off",
@@ -4158,15 +4132,6 @@ window.CPG_DATA = {
               "IO access when IV fails in a critical patient",
               "Warm the fluids",
               "PASG/MAST: no longer used"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c4s11-057.webp",
-                "alt": "An intraosseous needle in the proximal tibia of a child, with landmarks (tibial tuberosity, flat medial surface).",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -4497,15 +4462,6 @@ window.CPG_DATA = {
             "notes": [
               "The two-finger technique is no longer recommended for infants.",
               "Depth: at least one third of the chest depth."
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c4s12-058.webp",
-                "alt": "Two gloved hands encircling an infant's chest with both thumbs side by side on the breastbone, while a second rescuer holds a bag-mask at the head.",
-                "w": 594,
-                "h": 896,
-                "pos": "before"
-              }
             ]
           },
           {

@@ -436,15 +436,7 @@ window.CPG_DATA = {
               },
               {
                 "title": "Stop heat loss",
-                "text": "Remove wet clothing (cut it), insulate top and bottom, vapour barrier, cover the head.",
-                "figures": [
-                  {
-                    "src": "../images/guides/c8s2-185.webp",
-                    "alt": "A \"hypothermia wrap\": insulating mat underneath, vapour barrier, sleeping bag, outer shell, head covered, heat packs on the chest and armpits.",
-                    "w": 1200,
-                    "h": 896
-                  }
-                ]
+                "text": "Remove wet clothing (cut it), insulate top and bottom, vapour barrier, cover the head."
               },
               {
                 "title": "Warm the trunk",
@@ -1545,15 +1537,6 @@ window.CPG_DATA = {
               "Ice",
               "Electric shock",
               "Alcohol"
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c8s5-193.webp",
-                "alt": "Crossed-out icons: knife and mouth (cut and suck), a tourniquet, an ice pack, an electric shock device, a bottle of alcohol.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
@@ -2419,15 +2402,6 @@ window.CPG_DATA = {
             ],
             "notes": [
               "Auto-injector kits (DuoDote and similar) hold atropine 2.1 mg and pralidoxime 600 mg; benzodiazepines are separate."
-            ],
-            "figures": [
-              {
-                "src": "../images/guides/c8s7-197.webp",
-                "alt": "A patient with pinpoint pupils, drooling and tearing, beside a nerve agent auto-injector being pressed into the outer thigh.",
-                "w": 1200,
-                "h": 896,
-                "pos": "after"
-              }
             ]
           },
           {
