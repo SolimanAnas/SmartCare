@@ -5,13 +5,13 @@ const EXAM_PAGE = `${BASE}/src/prometric/exam.html`;
 const DB_URL = `${BASE}/src/prometric/exam-db.json`;
 
 // ── 1. Database integrity ──────────────────────────────────────────────
-test('exam-db.json has 2687 questions and 18 categories', async ({ request }) => {
+test('exam-db.json has 2779 questions and 18 categories', async ({ request }) => {
   const resp = await request.get(DB_URL);
   expect(resp.ok()).toBeTruthy();
   const db = await resp.json();
 
   expect(db.title).toBe('Paramedic / EMT Exam Database');
-  expect(db.questions.length).toBe(2687);
+  expect(db.questions.length).toBe(2779);
   expect(db.categories.length).toBe(18);
 
   // Every question must have the required fields
@@ -30,7 +30,7 @@ test('exam-db.json has 2687 questions and 18 categories', async ({ request }) =>
 
   // Newly imported questions (id > 879) must all have 4 options + source
   const imported = db.questions.filter(q => q.id > 879);
-  expect(imported.length).toBe(1867);
+  expect(imported.length).toBe(1959);
   for (const q of imported) {
     expect(q.options.length).toBe(4);
     expect(typeof q.source).toBe('string');
@@ -44,7 +44,7 @@ test('paramedic ALS questions are complete and HTML-safe', async ({ request }) =
   const db = await (await request.get(DB_URL)).json();
   const als = db.questions.filter(q => q.source === 'smartcare-paramedic-als');
   expect(als.length).toBe(190);
-  expect(db.questions.filter(q => q.level === 'paramedic').length).toBe(910);
+  expect(db.questions.filter(q => q.level === 'paramedic').length).toBe(916);
   for (const q of als) {
     expect(q.level).toBe('paramedic');
     expect(q.options.length).toBe(4);
@@ -108,11 +108,11 @@ test('every category is selectable and the level filter narrows the pool', async
 
   const count = page.locator('#available-count');
   await page.locator('[data-setting="level"][data-value="paramedic"]').click();
-  await expect(count).toHaveText('910 questions match');
+  await expect(count).toHaveText('916 questions match');
   await page.locator('[data-setting="level"][data-value="emt"]').click();
-  await expect(count).toHaveText('1,777 questions match');
+  await expect(count).toHaveText('1,863 questions match');
   await page.locator('[data-setting="level"][data-value="all"]').click();
-  await expect(count).toHaveText('2,687 questions match');
+  await expect(count).toHaveText('2,779 questions match');
 });
 
 test('topic drill only uses the chosen topics and needs at least one', async ({ page }) => {
