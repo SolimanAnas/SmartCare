@@ -144,6 +144,7 @@ self.__PRECACHE = [
   "src/prometric/exam.css",
   "src/prometric/exam.html",
   "src/prometric/exam.js",
+  "src/prometric/progress.js",
   "content/c-index.js",
   "content/c0.js",
   "content/c1.meta.js",
@@ -169,4 +170,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "29605dfcd6";
+self.__PRECACHE_VERSION = "ce0963717e";

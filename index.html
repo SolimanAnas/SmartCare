@@ -114,6 +114,7 @@
 
     <script src="pages/supabase-config.js"></script>
     <script src="pages/supabase-client.js"></script>
+    <script src="src/prometric/progress.js"></script>
 
     <style>
         /* ━━ Search ━━ */
@@ -1388,7 +1389,12 @@
     const COMPLETION_KEY = 'smartcare_cpg_completion';
     const OPEN_GROUPS_KEY = 'smartcare_home_open_groups';
     const STATS_KEY      = 'smartcare_cpg_stats';
-    const EXAM_STATS_KEY = 'examStats';
+    // Prometric results come from src/prometric/progress.js (a synced store).
+    function loadExamResults() {
+        const exams = window.PrometricProgress ? PrometricProgress.loadExams() : [];
+        // score is the number correct out of max, as the views below expect.
+        return exams.filter(e => e.total).map(e => ({ exam: 'Prometric mock exam', date: e.date, score: e.correct, max: e.total }));
+    }
 
     function loadStorage(key, def) { try { return JSON.parse(localStorage.getItem(key)) || def; } catch(e) { return def; } }
     function saveStorage(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} }
@@ -1739,7 +1745,7 @@
     function showGlobalStatsModal() {
         const stats = loadStorage(STATS_KEY, { chapters: {}, totalAttempts: 0, critical: {total: 0, correct: 0}, flashcards: [], quizzes: [] });
         const completion = loadStorage(COMPLETION_KEY, {});
-        const exams = (loadStorage(EXAM_STATS_KEY, []) || []).filter(e => e && e.max);
+        const exams = loadExamResults();
 
         const chapters = CHAPTERS.filter(c => !c.isSpecial && c.id !== 'c0' && c.id !== 'c-index');
         const totalChaps = chapters.length;
@@ -1931,7 +1937,7 @@
         if (confirm('Clear all statistics? This cannot be undone.')) {
             localStorage.removeItem(STATS_KEY);
             localStorage.removeItem(COMPLETION_KEY);
-            localStorage.removeItem(EXAM_STATS_KEY);
+            if (window.PrometricProgress) PrometricProgress.clear();
             location.reload();
         }
     }

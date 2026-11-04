@@ -70,6 +70,8 @@
 <meta name="theme-color" content="#08111f">
 <link rel="stylesheet" href="../../fonts/fonts.css">
 <link rel="stylesheet" href="exam.css">
+<script src="../../src/theme.js"></script>
+<script>SmartTheme.init();</script>
 </head>
 <body>
 
@@ -273,6 +275,16 @@
             </div>
             <h2 id="question-stem" class="question-stem"></h2>
             <div id="options-container" class="options-container" role="group" aria-label="Answer choices"></div>
+            <div id="hint-container" class="hint-container hidden">
+              <button type="button" id="show-hint" class="btn-ghost hint-btn">
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../../icons/sprite.svg#lightbulb"/></svg>
+                Show hint
+              </button>
+              <p id="hint-text" class="hint-text" tabindex="-1" hidden>
+                <svg class="lucide" aria-hidden="true" focusable="false"><use href="../../icons/sprite.svg#lightbulb"/></svg>
+                <span></span>
+              </p>
+            </div>
             <div id="explanation-container" class="explanation-container hidden" role="status"></div>
           </article>
         </div>
@@ -322,7 +334,7 @@
         </div>
 
         <p class="kbd-hint">
-          <kbd>A</kbd>–<kbd>D</kbd> choose, <kbd>Enter</kbd> check, <kbd>F</kbd> flag,
+          <kbd>A</kbd>–<kbd>D</kbd> choose, <kbd>Enter</kbd> check, <kbd>F</kbd> flag, <kbd>H</kbd> hint,
           <kbd>←</kbd> <kbd>→</kbd> move
         </p>
       </aside>
@@ -430,6 +442,7 @@
   </section>
 </div>
 
+<script src="progress.js"></script>
 <script src="exam.js"></script>
 </body>
 </html>

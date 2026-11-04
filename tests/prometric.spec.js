@@ -354,3 +354,209 @@ test('no horizontal scrolling on a 320px phone', async ({ page }) => {
   expect(await noOverflow()).toBe(true);
   await expect(page.locator('#submit-answer')).toBeInViewport();
 });
+
+// ── 9. Progress storage, sync and the rest of the app ─────────────────
+const HOME_PAGE = `${BASE}/index.html`;
+
+// Seed storage once per test (a reload must not re-seed).
+async function seedStorage(page, entries) {
+  await page.addInitScript(data => {
+    if (sessionStorage.getItem('seeded')) return;
+    localStorage.clear();
+    for (const [k, v] of Object.entries(data)) localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v));
+    sessionStorage.setItem('seeded', '1');
+  }, entries);
+}
+
+test('old progress moves to synced keys in a compact format', async ({ page }) => {
+  await seedStorage(page, {
+    examStats: [{ date: '2026-01-02T10:00:00.000Z', score: 60, total: 10, correct: 6, timeSpent: 300, topicStats: { Trauma: { correct: 6, total: 10 } } }],
+    questionHistory: { 1: { correct: 1, attempts: 2, subjects: [{ topic: 'Trauma', correct: true, date: 'x' }, { topic: 'Trauma', correct: false, date: 'y' }] } },
+    examSetup: { count: '25' },
+    examTheme: 'light',
+  });
+  await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });
+
+  const stored = await page.evaluate(() => Object.fromEntries(
+    ['smartcare_prometric_exams', 'smartcare_prometric_history', 'smartcare_prometric_setup', 'examStats', 'questionHistory', 'examSetup', 'examTheme']
+      .map(k => [k, JSON.parse(localStorage.getItem(k))])
+  ));
+  expect(stored.smartcare_prometric_exams).toEqual([
+    { date: '2026-01-02T10:00:00.000Z', score: 60, total: 10, correct: 6, answered: 10, timeSpent: 300 },
+  ]);
+  expect(stored.smartcare_prometric_history).toEqual({ 1: [2, 1] });
+  expect(stored.smartcare_prometric_setup).toEqual({ count: '25' });
+  for (const old of ['examStats', 'questionHistory', 'examSetup', 'examTheme']) expect(stored[old]).toBeNull();
+
+  await expect(page.locator('#start-exam')).toHaveText('Start 25-question exam');
+  await expect(page.locator('#ps-last')).toHaveText('60%');
+
+  // A finished exam is appended to the synced log, and answers are counted
+  await page.locator('[data-setting="count"][data-value="10"]').click();
+  await page.locator('#start-exam').click();
+  const firstId = await page.evaluate(() => {
+    const e = window.examEngine;
+    const id = e.questions[0].id;
+    for (let i = 0; i < e.questions.length; i++) {
+      e.selectOption(null, 'A');
+      e.submitAnswer();
+      e.nextOrEnd();
+    }
+    return id;
+  });
+  await expect(page.locator('#review-screen')).toBeVisible();
+  const after = await page.evaluate(id => ({
+    exams: JSON.parse(localStorage.getItem('smartcare_prometric_exams')),
+    entry: JSON.parse(localStorage.getItem('smartcare_prometric_history'))[id],
+  }), firstId);
+  expect(after.exams).toHaveLength(2);
+  expect(after.exams[1]).toMatchObject({ total: 10, answered: 10 });
+  expect(after.exams[1].topicStats).toBeUndefined();
+  expect(after.entry[0]).toBeGreaterThanOrEqual(1);
+});
+
+test('hints are offered in untimed exams only', async ({ page }) => {
+  await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });
+  await expect(page.locator('.topic-checkbox input')).toHaveCount(18);
+  await page.locator('#start-exam').click();
+  const hint = await page.evaluate(() => {
+    const e = window.examEngine;
+    e.beginSession(e.db.questions.filter(q => q.hint).slice(0, 3));
+    return e.questions[0].hint;
+  });
+
+  await expect(page.locator('#hint-text')).toBeHidden();
+  await page.locator('#show-hint').click();
+  await expect(page.locator('#hint-text')).toBeVisible();
+  await expect(page.locator('#hint-text')).toHaveText(hint);
+  await expect(page.locator('#show-hint')).toBeHidden();
+
+  await page.locator('.option-item').first().click();
+  await page.locator('#submit-answer').click();
+  await expect(page.locator('#hint-container')).toBeHidden();
+
+  // The answer review records that the hint was used
+  await page.evaluate(() => window.examEngine.endExam());
+  await page.locator('#review-questions').click();
+  await expect(page.locator('.result-item').first()).toContainText('Hint used');
+
+  // Timed exams have no hints
+  await page.locator('#back-to-review').click();
+  await page.locator('#new-exam').click();
+  await page.locator('[data-setting="timer"][data-value="timed"]').click();
+  await page.locator('#start-exam').click();
+  await page.evaluate(() => {
+    const e = window.examEngine;
+    e.beginSession(e.db.questions.filter(q => q.hint).slice(0, 3));
+  });
+  await expect(page.locator('#hint-container')).toBeHidden();
+  await page.keyboard.press('h');
+  await expect(page.locator('#hint-text')).toBeHidden();
+});
+
+test('answers that refer to other answers keep their order', async ({ page }) => {
+  await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });
+  await expect(page.locator('.topic-checkbox input')).toHaveCount(18);
+  const result = await page.evaluate(() => {
+    const e = window.examEngine;
+    const positional = e.db.questions.filter(q => q.options.some(o => /\b(all|none) of the above\b/i.test(o)));
+    let moved = 0;
+    for (let run = 0; run < 5; run++) {
+      for (const q of positional) {
+        const p = e.prepareQuestion(q);
+        const same = p.shuffledOptions.every((o, i) => o === q.options[i]) && p.shuffledCorrect === q.correct_answer;
+        if (!same) moved++;
+      }
+    }
+    // Ordinary four-option questions still get shuffled
+    const plain = e.db.questions.find(q => q.options.length === 4 && !q.options.some(o => /above|following|\b[A-D] (and|or) [A-D]\b/i.test(o)));
+    let shuffled = false;
+    for (let i = 0; i < 30 && !shuffled; i++) shuffled = e.prepareQuestion(plain).shuffledOptions.some((o, k) => o !== plain.options[k]);
+    return { count: positional.length, moved, shuffled };
+  });
+  expect(result.count).toBeGreaterThan(70);
+  expect(result.moved).toBe(0);
+  expect(result.shuffled).toBe(true);
+});
+
+test('exam page follows the app-wide theme', async ({ page }) => {
+  await seedStorage(page, { theme: 'amoled' });
+  await page.goto(EXAM_PAGE, { waitUntil: 'networkidle' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'amoled');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(0, 0, 0)');
+
+  await page.locator('.app-bar .theme-toggle').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  expect(await page.evaluate(() => localStorage.getItem('theme'))).toBe('light');
+  expect(await page.evaluate(() => localStorage.getItem('examTheme'))).toBeNull();
+
+  // Every app theme has its own colours on this page
+  for (const theme of ['dark', 'amoled', 'light', 'sepia', 'forest']) {
+    await page.evaluate(t => window.examEngine.setTheme(t), theme);
+    const bg = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--bg').trim());
+    expect(bg, theme).toMatch(/^#[0-9a-f]{6}$/i);
+  }
+});
+
+test.describe('account sync merges Prometric progress per item', () => {
+  const merge = (page, local, cloud, base) =>
+    page.evaluate(([l, c, b]) => window.SmartCareCloud._mergeForSync(l, c, b), [local, cloud, base]);
+  const exam = (date, score) => ({ date, score, total: 10, correct: score / 10, answered: 10 });
+  const K = 'smartcare_prometric_exams';
+  const H = 'smartcare_prometric_history';
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto(HOME_PAGE, { waitUntil: 'networkidle' });
+  });
+
+  test('exams taken on two devices are combined', async ({ page }) => {
+    const a = exam('2026-01-01T00:00:00.000Z', 50);
+    const b = exam('2026-01-02T00:00:00.000Z', 60);
+    const c = exam('2026-01-03T00:00:00.000Z', 70);
+    const base = { [K]: JSON.stringify([a]) };
+    const merged = await merge(page, { [K]: JSON.stringify([a, c]) }, { [K]: JSON.stringify([a, b]) }, base);
+    expect(JSON.parse(merged[K]).map(e => e.score)).toEqual([50, 60, 70]);
+
+    // First sync on a device (no base): still a union, nothing dropped
+    const first = await merge(page, { [K]: JSON.stringify([c]) }, { [K]: JSON.stringify([a, b]) }, null);
+    expect(JSON.parse(first[K]).map(e => e.score)).toEqual([50, 60, 70]);
+  });
+
+  test('a reset on one device reaches the other', async ({ page }) => {
+    const a = exam('2026-01-01T00:00:00.000Z', 50);
+    const base = { [K]: JSON.stringify([a]), [H]: JSON.stringify({ 7: [2, 1] }) };
+    const merged = await merge(page, { [K]: '[]', [H]: '{}' }, base, base);
+    expect(JSON.parse(merged[K])).toEqual([]);
+    expect(JSON.parse(merged[H])).toEqual({});
+  });
+
+  test('answer counts from both devices add up', async ({ page }) => {
+    const base = { [H]: JSON.stringify({ 1: [2, 1] }) };
+    const local = { [H]: JSON.stringify({ 1: [3, 2], 2: [1, 1] }) };
+    const cloud = { [H]: JSON.stringify({ 1: [4, 1] }) };
+    expect(JSON.parse((await merge(page, local, cloud, base))[H])).toEqual({ 1: [5, 2], 2: [1, 1] });
+    // Without a base, keep whichever side has seen each question more
+    expect(JSON.parse((await merge(page, local, cloud, null))[H])).toEqual({ 1: [4, 1], 2: [1, 1] });
+  });
+
+  test('other keys keep the existing per-key rule', async ({ page }) => {
+    const merged = await merge(page, { theme: 'light' }, { theme: 'dark' }, { theme: 'sepia' });
+    expect(merged.theme).toBe('light');
+  });
+});
+
+test('home statistics include Prometric results', async ({ page }) => {
+  await seedStorage(page, {
+    smartcare_prometric_exams: [
+      { date: '2026-01-01T00:00:00.000Z', score: 70, total: 10, correct: 7, answered: 10 },
+      { date: '2026-01-02T00:00:00.000Z', score: 80, total: 10, correct: 8, answered: 10 },
+    ],
+  });
+  await page.goto(HOME_PAGE, { waitUntil: 'networkidle' });
+  await page.click('.h-link[data-chapter="statistics"]');
+  const sheet = page.locator('.gs-sheet');
+  await expect(sheet).toBeVisible();
+  await expect(sheet).toContainText('2 taken');
+  await expect(sheet).toContainText('75%');
+  await expect(sheet).toContainText('Prometric mock exam');
+});
