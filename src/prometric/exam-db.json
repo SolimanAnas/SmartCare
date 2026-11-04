@@ -950,8 +950,8 @@
         "Sling and swath"
       ],
       "correct_answer": "C",
-      "hint": "Think about long bone fractures requiring stabilization along the axis.",
-      "explanation": "Although clinically controversial, exam logic often designates traction splints for long bone fractures like the tibia.",
+      "hint": "Splint the joint above and the joint below the fracture, and remember which device is meant only for the femur.",
+      "explanation": "A padded board splint immobilizes an isolated tibia fracture along with the joints above and below it, the knee and the ankle. Traction splints are only for isolated mid-shaft femur fractures; on a lower-leg fracture the ankle hitch pulls across the injury. A long spine board is for spinal immobilization rather than a single limb, and a sling and swath is for the shoulder and arm.",
       "subject": "Trauma",
       "difficulty": "medium",
       "topic": "Trauma",
