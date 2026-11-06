@@ -158,7 +158,9 @@ button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:foc
 }
 .hub-back:hover{color:var(--text)}
 .hub-back svg{width:20px;height:20px}
-.sel-theme-row{display:flex;align-items:center;gap:12px;padding:6px 4px}
+.sel-theme-row{display:flex;align-items:center;gap:18px;padding:6px 4px}
+/* 22px dots, 40px touch targets */
+.sel-theme-row .tp::before{content:"";position:absolute;inset:-9px;border-radius:50%}
 .sel-theme-row .tp{width:22px;height:22px;box-shadow:none}
 .sel-theme-row .tp.active{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--dim)}
 .sel-theme-row .tp.active::after{display:none}
@@ -578,8 +580,16 @@ button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:foc
   .hdr-themes{display:none}
   .hbtn-flag .btn-txt{display:none}
   .hbtn-flag{padding:0}
+  /* Exit is icon-only on phones so the exam name has room */
+  .hbtn-back{font-size:0;gap:0;padding:0;width:40px}
   .q-nav{padding-left:12px;padding-right:12px}
   .nav-btn{min-width:100px}
+}
+@media(max-width:420px){
+  .exam-header{gap:4px;padding-right:8px}
+  .hdr-exam{font-size:1.0625rem}
+  .hdr-timer{min-width:0;padding:6px 2px;font-size:1rem}
+  .hbtn-end{padding:0 10px}
 }
 @media(max-width:380px){
   .hdr-mode{display:none}

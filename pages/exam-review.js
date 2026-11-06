@@ -345,7 +345,7 @@ document.addEventListener('click', e => {
 
 // Save/Load progress
 function saveProgress() {
-  if (!ST.name) return;
+  if (!ST.name || ST.submitted) return;
   const progress = {
     examName: ST.name,
     answers: ST.answers,
@@ -354,6 +354,8 @@ function saveProgress() {
     idx: ST.idx,
     timerSec: ST.timerSec,
     confidence: ST.confidence,
+    hintsShown: ST.hintsShown,
+    answersRevealed: ST.answersRevealed,
     timestamp: Date.now()
   };
   localStorage.setItem(`${STORAGE_KEY}-${ST.name}`, JSON.stringify(progress));
@@ -371,6 +373,8 @@ function loadProgress(name) {
       ST.idx = progress.idx || 0;
       ST.timerSec = progress.timerSec || 0;
       ST.confidence = progress.confidence || {};
+      ST.hintsShown = progress.hintsShown || {};
+      ST.answersRevealed = progress.answersRevealed || {};
       return true;
     }
   } catch(e) {
@@ -406,6 +410,7 @@ async function startExam(path, name) {
     ST.qs = qCount >= totalQs ? shuffled : shuffled.slice(0, qCount);
     
     ST.name = name;
+    ST.submitted = false;
     const restored = loadProgress(name);
     if (!restored) {
       ST.idx = 0; ST.answers = {}; ST.elim = {}; ST.marked = {}; 
@@ -421,7 +426,10 @@ async function startExam(path, name) {
     
     const isStudy = ST.mode === 'study';
     document.getElementById('backBtn').style.display = isStudy ? '' : 'none';
-    document.getElementById('endBtn').style.display = isStudy ? 'none' : '';
+    document.getElementById('backBtn').setAttribute('aria-label', 'Exit practice');
+    const endBtn = document.getElementById('endBtn');
+    endBtn.style.display = '';
+    endBtn.textContent = isStudy ? 'Finish' : 'Submit';
     document.getElementById('markBtn').style.display = isStudy ? 'none' : '';
     document.getElementById('qBox').classList.toggle('is-study', isStudy);
     document.getElementById('studyActions').style.display = isStudy ? 'flex' : 'none';
@@ -679,8 +687,12 @@ function renderQ() {
     nextBtn.textContent = 'Check answer';
     nextBtn.disabled = false;
   } else {
-    nextBtn.innerHTML = 'Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
-    nextBtn.disabled = ST.idx === total - 1;
+    const last = ST.idx === total - 1;
+    nextBtn.innerHTML = last
+      ? (isStudy ? 'Finish' : 'Submit') + ' <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#check"/></svg>'
+      : 'Next <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-right"/></svg>';
+    nextBtn.disabled = false;
+    nextBtn.setAttribute('aria-label', last ? (isStudy ? 'Finish and see your report' : 'Submit and see your report') : 'Next question');
   }
   
   syncGrid();
@@ -764,12 +776,8 @@ function showHint() {
 function revealAnswer() {
   const q = ST.qs[ST.idx];
   ST.answersRevealed[q.id] = true;
-  
-  if (!ST.answers[q.id]) {
-    ST.answers[q.id] = q.correct_answer;
-  }
-  
   renderQ();
+  saveProgress();
 }
 
 // Study mode: Set confidence
@@ -801,6 +809,7 @@ function nav(d) {
   }
 
   const n = ST.idx + d;
+  if (d === 1 && n === ST.qs.length) { openEndModal(); return; }
   if (n >= 0 && n < ST.qs.length) { 
     ST.idx = n; 
     renderQ(); 
@@ -843,7 +852,16 @@ document.addEventListener('click', function(e) {
 // Modal management
 function openEndModal() { 
   syncStats(); 
-  document.getElementById('endModal')?.classList.add('open');
+  const m = document.getElementById('endModal');
+  if (!m) { submitExam(); return; }
+  const study = ST.mode === 'study';
+  const set = (sel, text) => { const el = m.querySelector(sel); if (el) el.textContent = text; };
+  set('#modalTitle', study ? 'Finish practice?' : 'Submit your answers?');
+  set('.modal-sub', study ? 'See your score and review every question with its explanation.'
+                          : "You can't change answers after you submit.");
+  set('.mbtn-cancel', study ? 'Keep practicing' : 'Keep going');
+  set('.mbtn-submit', study ? 'See report' : 'Submit');
+  m.classList.add('open');
   setTimeout(() => {
     document.querySelector('.mbtn-cancel')?.focus();
   }, 100);
@@ -905,6 +923,9 @@ function submitExam() {
     ST.autoSaveInterval = null;
   }
   
+  ST.submitted = true;
+  if (ST.name) localStorage.removeItem(`${STORAGE_KEY}-${ST.name}`);
+
   const qs = ST.qs, n = qs.length;
   let c=0, x=0, o=0;
   
