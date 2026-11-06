@@ -109,6 +109,7 @@ self.__PRECACHE = [
   "vendor/fontawesome/webfonts/fa-solid-900.woff2",
   "vendor/fontawesome/webfonts/fa-v4compatibility.woff2",
   "src/content-manifest.json",
+  "src/install-prompt.js",
   "src/render-state.js",
   "src/theme.js",
   "src/ACLS/acls.json",
@@ -170,4 +171,4 @@ self.__PRECACHE = [
   "content/c8/c8s1.json",
   "content/c9/c9s1.json",
 ];
-self.__PRECACHE_VERSION = "8dffecd687";
+self.__PRECACHE_VERSION = "2e2e3d53ff";

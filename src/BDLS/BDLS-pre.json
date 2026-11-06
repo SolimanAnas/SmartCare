@@ -12,6 +12,8 @@
         "Unique approach to respond to various types of natural disasters"
       ],
       "correct_answer": "C",
+      "explanation": "All-hazards preparedness is a single, uniform framework (command, communication, triage, surge, recovery) that applies whatever the cause: natural, technological, or intentional. Identifying at-risk populations is vulnerability assessment, and 'needs greater than resources' is the definition of a disaster. A plan built only for natural disasters is exactly what the all-hazards approach replaces.",
+      "hint": "'All' hazards means the cause does not change the core plan.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -24,6 +26,8 @@
         "Local or state public health department"
       ],
       "correct_answer": "D",
+      "explanation": "Suspected bioterrorism is first a public health event. The local or state health department runs surveillance and epidemiologic investigation, links to the CDC and law enforcement, and starts prophylaxis and containment. A personal physician cannot coordinate a community response, the governor's office acts through public health and emergency management, and alerting the media first risks panic and confused messaging.",
+      "hint": "Which agency runs disease surveillance and outbreak investigation for the community?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -36,6 +40,8 @@
         "Blunt injury from blast wind"
       ],
       "correct_answer": "C",
+      "explanation": "A blast injury is any injury caused by an explosive device. It includes primary injury (the pressure wave on air-filled organs), secondary (flying debris), tertiary (the body thrown by blast wind), and quaternary (burns, crush, toxic exposure). Penetrating debris and blunt blast-wind injury are only single categories, and a 'chemical explosion' describes the event, not the injury.",
+      "hint": "Pick the broadest definition, the one that covers every mechanism (primary to quaternary).",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -48,6 +54,8 @@
         "Be created in advance"
       ],
       "correct_answer": "D",
+      "explanation": "A regional disaster plan must be written, coordinated, and exercised before an event, so roles, resources, and mutual aid are already agreed. It should be all-hazards (not only natural disasters) and built on local self-sufficiency, because federal help often takes 72 hours or more to arrive. Website updates are a minor communication task, not an essential component of the plan.",
+      "hint": "You cannot write the plan while the disaster is happening.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -60,6 +68,8 @@
         "None of these answers are correct"
       ],
       "correct_answer": "C",
+      "explanation": "The warm zone (contamination reduction zone) is where decontamination happens, between the hot zone and the cold zone. The hot zone is the contaminated area where only rescue and life-saving actions take place in full PPE. The cold zone is clean and holds command, triage, and treatment of patients who have already been decontaminated.",
+      "hint": "Decontamination happens in the zone between the contaminated area and the clean area.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -72,6 +82,8 @@
         "Obtain physical exam"
       ],
       "correct_answer": "C",
+      "explanation": "Personal preparedness for deployment includes a supply of your own medications, up-to-date immunizations (for example tetanus and hepatitis B), and a health check so you are fit for austere, stressful work. Each listed step is correct, so 'All of these' is the answer. A responder who becomes a casualty adds to the burden instead of reducing it.",
+      "hint": "Personal readiness has several parts. Are any of these options unnecessary?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -84,6 +96,8 @@
         "ID-MED"
       ],
       "correct_answer": "A",
+      "explanation": "DUMBELS (Diarrhea, Urination, Miosis, Bradycardia/Bronchorrhea/Bronchospasm, Emesis, Lacrimation, Salivation/Sweating) recalls the muscarinic toxidrome of nerve agents and organophosphates. DISASTER is a framework for organizing a disaster response, SALT is a mass casualty triage method, and ID-MED is a mnemonic for triage categories (Immediate, Delayed, Minimal, Expectant, Dead). None of these diagnose a poisoning.",
+      "hint": "Choose the mnemonic that lists cholinergic (muscarinic) signs.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -96,6 +110,8 @@
         "Flooding"
       ],
       "correct_answer": "D",
+      "explanation": "Flooding is the most common natural disaster worldwide and affects the largest number of people each year, in coastal, river, and flash-flood forms. Hurricanes, tornadoes, and earthquakes can be more deadly in a single event, but they happen less often and in more limited regions.",
+      "hint": "Think about which hazard affects the most people every year on every continent.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -108,6 +124,8 @@
         "Triage is dynamic and continuous"
       ],
       "correct_answer": "D",
+      "explanation": "Triage is dynamic and continuous. Patients are re-triaged at every stage (scene, casualty collection point, transport, hospital) because their condition and the available resources change. Sending everyone to the nearest hospital overwhelms it. Disaster triage aims for the greatest good for the greatest number, not for each individual, and minor injuries are treated last.",
+      "hint": "A patient's condition can change after the first tag is placed.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -120,6 +138,8 @@
         "Heat emergencies"
       ],
       "correct_answer": "D",
+      "explanation": "Heat-related illness is the leading cause of death from weather and the environment in the United States, ahead of cold, floods, and storms. Elderly people, the chronically ill, outdoor workers, and the socially isolated are at highest risk. Asthma and diabetes are chronic diseases, and wound injuries are a trauma mechanism, not an environmental cause.",
+      "hint": "Which option is an environmental exposure rather than a disease or an injury mechanism?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -132,6 +152,8 @@
         "Sort"
       ],
       "correct_answer": "D",
+      "explanation": "SALT starts with a global Sort. Casualties are asked to walk to a set area (assessed last), then to wave or make a purposeful movement (assessed second), and those who remain still and those with obvious life threats are assessed first. The individual Assessment, Lifesaving interventions, and Treatment/Transport come after the Sort.",
+      "hint": "SALT = Sort, Assess, Lifesaving interventions, Treatment/Transport. What does the S stand for?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -144,6 +166,8 @@
         "None of these answers are functions of the public health system"
       ],
       "correct_answer": "B",
+      "explanation": "Public health protects the population from disease and injury, for example through surveillance, safe water and food, vaccination and prophylaxis, environmental health, and risk communication. Triage, treatment, and transport of casualties are done by EMS and hospitals, not by the public health system.",
+      "hint": "Public health serves the population, not the individual patient.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -156,6 +180,8 @@
         "To prevent, delay, and treat disease, injury, and disability in individual patients"
       ],
       "correct_answer": "A",
+      "explanation": "The main function of public health is to identify and monitor health threats to communities (surveillance and epidemiology) and to act on them at the population level. Emergency care and transport belong to EMS, scene safety belongs to law enforcement and fire, and treating individual patients is clinical medicine.",
+      "hint": "The focus is the community, and an early warning role.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -168,6 +194,8 @@
         "Preparedness"
       ],
       "correct_answer": "C",
+      "explanation": "Communication is the most common and most persistent challenge in incident management. Systems that cannot talk to each other, overloaded networks, different terms between agencies, and unclear lines of information all limit coordination. ICS addresses this with common terms and unified command. Recovery, evacuation, and preparedness are phases or activities of disaster management, not the main operational challenge.",
+      "hint": "After-action reports most often name the same failure in almost every disaster.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -180,6 +208,8 @@
         "Sort and assess casualties, identifying life-threatening injuries"
       ],
       "correct_answer": "D",
+      "explanation": "The first goal of mass casualty triage is to sort and assess casualties quickly and to find life-threatening injuries, so that limited resources go to those who will benefit most. Treating everyone equally or as fast as possible ignores the shortage of resources. Removing the dead is not a priority early in triage.",
+      "hint": "The first job is to find out who needs help immediately.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -192,6 +222,8 @@
         "Blast injury"
       ],
       "correct_answer": "C",
+      "explanation": "Nuclear and radiological events cause blast injuries, thermal burns, and radiation injury. Communicable disease is the least common, because radiation exposure is not contagious. Infection may appear later as a complication of immune suppression, but it does not spread as an outbreak from the event itself.",
+      "hint": "Radiation itself is not passed from person to person.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -204,6 +236,8 @@
         "Chronic disease"
       ],
       "correct_answer": "B",
+      "explanation": "Fear is a psychological effect of disaster, together with anxiety, grief, acute stress, and later PTSD and depression. Mental health effects often affect more people than physical injuries and last longer. Traumatic amputation and blast injury are physical injuries, and chronic disease is a medical condition.",
+      "hint": "Choose the psychological effect, not a physical one.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -216,6 +250,8 @@
         "Nuclear detonation and accompanying massive explosion"
       ],
       "correct_answer": "D",
+      "explanation": "A nuclear event is a nuclear detonation with a massive explosion that produces blast, thermal, and radiation effects together. Releasing radioactive material without a nuclear explosion is a radiological event (for example a dirty bomb or a reactor accident). 'A radiation emergency' is the general term that covers both, and 'an explosion' does not specify the nuclear part.",
+      "hint": "How is a nuclear detonation different from a radiological release, such as a 'dirty bomb'?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -228,6 +264,8 @@
         "Be ready to immediately deploy to disaster area"
       ],
       "correct_answer": "B",
+      "explanation": "Personal safety comes first for every citizen and responder: protect yourself from danger, then make the scene safe, then help others. A rescuer who is injured or contaminated reduces the resources available and adds another patient. Life support and deployment come only after the scene is safe.",
+      "hint": "A responder who becomes a casualty cannot help anyone.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -240,6 +278,8 @@
         "Multiple 911 calls from the same area"
       ],
       "correct_answer": "C",
+      "explanation": "Clues to a chemical event include a known hazard or a visible leak or spill, unusual odors, clouds or vapours, many 911 calls from one area, and many people with the same symptoms appearing suddenly (for example dead birds or animals). Each option is a valid clue, so 'All of these' is correct. Recognizing these clues early protects responders from entering a contaminated scene.",
+      "hint": "Every listed clue is a warning sign. Is any of them wrong?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -252,6 +292,8 @@
         "After action review"
       ],
       "correct_answer": "D",
+      "explanation": "The after-action review takes place in the recovery phase. It looks at what worked, what failed, and how the plan should change, which feeds back into preparedness. Evacuation and SALT triage are response activities. Risk communication runs through every phase and is not specific to recovery.",
+      "hint": "Recovery includes learning from the event to improve the next response.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -264,6 +306,8 @@
         "The ability of a community or a person to return to normal after an event"
       ],
       "correct_answer": "D",
+      "explanation": "In the PRE-DISASTER Paradigm, resilience is the ability of a community or a person to recover and return to normal function after an event. It includes physical, psychological, social, and economic recovery. It is not limited to rebuilding structures, does not depend on the federal government, and preventing disasters is mitigation, not resilience.",
+      "hint": "Resilience means 'bouncing back'. Who has to bounce back?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -276,6 +320,8 @@
         "Assess potential vulnerabilities"
       ],
       "correct_answer": "D",
+      "explanation": "Risk analysis (hazard vulnerability analysis) identifies the likely hazards and assesses the community's vulnerabilities to them, so planning and resources can match the most probable and most damaging events. 'The greatest good for the greatest number' is the triage principle, 'needs exceed resources' is the definition of a disaster, and 'ability to overcome adversity' describes resilience.",
+      "hint": "Risk analysis combines hazards with what could be harmed by them.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -288,6 +334,8 @@
         "After life-saving interventions administered"
       ],
       "correct_answer": "B",
+      "explanation": "Treatment at the scene continues until every casualty has been transported. Patients waiting for transport are re-triaged and treated while they wait, especially delayed (yellow) and expectant patients when transport is limited. Finishing triage, EMS arriving, or giving the first life-saving interventions does not end scene care.",
+      "hint": "Care on scene continues as long as patients are still on scene.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -300,6 +348,8 @@
         "Treatment not requiring personal protective equipment"
       ],
       "correct_answer": "C",
+      "explanation": "Only life-saving interventions (for example controlling major bleeding, opening the airway, and antidotes such as auto-injectors) are given before or during decontamination, by responders in the correct PPE. Other care waits until decontamination is complete, so the contaminant does not spread to responders, equipment, and the hospital. Mental health evaluation and other non-urgent care are given after decontamination.",
+      "hint": "Only care that cannot wait is given before decontamination, and only by responders in proper PPE.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -312,6 +362,8 @@
         "Minimal (Green)"
       ],
       "correct_answer": "C",
+      "explanation": "Delayed (yellow) patients need treatment, but it can be safely delayed without lowering their chance of survival. Immediate (red) patients have life threats needing intervention now, minimal (green) patients have minor injuries and can largely care for themselves, and expectant (grey) patients are unlikely to survive with the resources available.",
+      "hint": "The patient needs care, but a delay will not change the likelihood of survival.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -324,6 +376,8 @@
         "All of these answers are examples of a vulnerable population"
       ],
       "correct_answer": "D",
+      "explanation": "Vulnerable populations include children, the elderly, people with disabilities, pregnant women, people with chronic illness or limited English, and people who are homeless or socially isolated. Each listed group depends on others for evacuation, communication, medication, or care, so 'All of these' is correct, and plans must address their needs ahead of time.",
+      "hint": "Who cannot easily protect, evacuate, or care for themselves?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -336,6 +390,8 @@
         "Absorption"
       ],
       "correct_answer": "A",
+      "explanation": "Chemicals enter the body by inhalation (the most common and fastest route), absorption through skin and mucous membranes, ingestion, and injection. 'Transmigration' is not a route of exposure. It is a distractor.",
+      "hint": "The real routes are ingestion, inhalation, absorption, and injection. Which word is not one of them?",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -348,6 +404,8 @@
         "Burns"
       ],
       "correct_answer": "A",
+      "explanation": "Weeks after a natural disaster, communicable diseases (for example diarrheal illness from contaminated water, respiratory infection in crowded shelters, and vector-borne disease from standing water) become a major threat. Drowning, burns, and dehydration are immediate effects that appear in the first hours to days.",
+      "hint": "Consider the late effects: crowded shelters and damaged water and sanitation.",
       "topic": "BDLS Pre-Test"
     },
     {
@@ -360,6 +418,8 @@
         "None of these answers"
       ],
       "correct_answer": "A",
+      "explanation": "Explosive devices, including improvised explosive devices (IEDs), cause most terrorist incidents worldwide because they are cheap, easy to make, and require little expertise. Chemical and biological attacks are rare because they are harder to produce, store, and deliver.",
+      "hint": "Which method is cheapest, easiest to obtain, and used most often?",
       "topic": "BDLS Pre-Test"
     }
   ]
