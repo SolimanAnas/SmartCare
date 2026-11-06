@@ -623,56 +623,6 @@
         .trigger-line.bottom { width: 20px; }
         @keyframes floatDown { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-        /* ══════════════════════════════════════════════════════════
-           PWA INSTALL BANNER
-        ══════════════════════════════════════════════════════════ */
-        #pwaInstallBanner {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            z-index: 3000;
-            padding: 0 12px 12px;
-            animation: pwaBannerIn 0.45s cubic-bezier(0.16,1,0.3,1) both;
-        }
-        @keyframes pwaBannerIn {
-            from { transform: translateY(110%); opacity: 0; }
-            to   { transform: translateY(0);    opacity: 1; }
-        }
-        #pwaInstallBanner.pwa-hiding {
-            animation: pwaBannerOut 0.3s ease-in forwards;
-        }
-        @keyframes pwaBannerOut {
-            to { transform: translateY(110%); opacity: 0; }
-        }
-
-        .pwa-banner-inner {
-            display: flex; align-items: center; gap: 12px;
-            background: rgba(10, 20, 40, 0.92);
-            backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%);
-            border: 1px solid rgba(59,130,246,0.35); border-radius: 20px; padding: 14px;
-            box-shadow: 0 -4px 30px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(59,130,246,0.15) inset;
-        }
-
-        .pwa-banner-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; overflow: hidden; background: rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; }
-        .pwa-banner-icon img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; }
-        .pwa-icon-fallback { font-size: 1.5rem; }
-
-        .pwa-banner-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-        .pwa-banner-title { font-size: 0.92rem; font-weight: 700; color: #E8F0FE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .pwa-banner-sub { font-size: 0.75rem; color: #6B7FA3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-        .pwa-banner-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .pwa-btn-install { background: linear-gradient(135deg, #2563EB, #1D4ED8); color: white; border: none; border-radius: 30px; padding: 9px 20px; font-size: 0.85rem; font-weight: 700; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 14px -4px rgba(29,78,216,0.7); transition: all 0.2s; }
-        .pwa-btn-install:hover { background: linear-gradient(135deg, #3B82F6, #1E40AF); transform: translateY(-1px); }
-        .pwa-btn-install:active { transform: translateY(1px); }
-        .pwa-btn-dismiss { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: #6B7FA3; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; padding: 0; }
-        .pwa-btn-dismiss:hover { background: rgba(255,255,255,0.14); color: #E8F0FE; }
-
-        .pwa-ios-steps { margin-top: 8px; background: rgba(10,20,40,0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(59,130,246,0.25); border-radius: 16px; padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
-        .pwa-ios-step { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: #94A3B8; }
-        .pwa-ios-num { width: 22px; height: 22px; border-radius: 50%; background: rgba(59,130,246,0.2); border: 1px solid rgba(59,130,246,0.4); color: #60A5FA; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .pwa-share-icon { display: inline-block; font-size: 1rem; margin: 0 2px; }
-
-        #pwaInstallBanner { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
     
 /* Lucide icon sizing within common containers (also in styles.css) */
 .icon-btn svg.lucide,
@@ -811,34 +761,6 @@
 </head>
 <body>
 
-<div id="pwaInstallBanner" style="display:none;" role="complementary" aria-label="Install app">
-    <div class="pwa-banner-inner">
-        <div class="pwa-banner-icon">
-            <img src="icons/icon.png" alt="SmartCare"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <span class="pwa-icon-fallback" style="display:none;"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#shield"/></svg></span>
-        </div>
-        <div class="pwa-banner-text">
-            <strong class="pwa-banner-title">Install SmartCare</strong>
-            <span class="pwa-banner-sub" id="pwaBannerSub">Add to home screen · works offline</span>
-        </div>
-        <div class="pwa-banner-actions">
-            <button class="pwa-btn-install" id="pwaInstallBtn">Install</button>
-            <button class="pwa-btn-dismiss" id="pwaDismissBtn" aria-label="Dismiss"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#x"/></svg></button>
-        </div>
-    </div>
-    <div class="pwa-ios-steps" id="pwaIosSteps" style="display:none;">
-        <div class="pwa-ios-step">
-            <span class="pwa-ios-num">1</span>
-            Tap <strong style="color:#E8F0FE;">Share</strong> <span class="pwa-share-icon"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#printer-check"/></svg></span> in Safari's toolbar
-        </div>
-        <div class="pwa-ios-step">
-            <span class="pwa-ios-num">2</span>
-            Choose <strong style="color:#E8F0FE;">"Add to Home Screen"</strong> from the list
-        </div>
-    </div>
-</div>
-
 <div class="drawer-overlay" id="drawerOverlay"></div>
 
 <div class="notification-drawer" id="notificationDrawer">
@@ -933,150 +855,9 @@
 
     let showStats = false;
 
-    // ══════════════════════════════════════════════════════════
-    //  PWA INSTALL BANNER LOGIC
-    // ══════════════════════════════════════════════════════════
-    const PWA_KEY       = 'smartcare_pwa_install';
-    const PWA_NEVER_KEY = 'smartcare_pwa_never';
-    const PWA_DELAY_MS  = 4000;   // wait before showing on page load
-    const PWA_SNOOZE_MS = 24 * 60 * 60 * 1000; // re-show after 24 h if soft-dismissed
-
-    let deferredPrompt = null; // holds the beforeinstallprompt event
-
-    const banner      = document.getElementById('pwaInstallBanner');
-    const installBtn  = document.getElementById('pwaInstallBtn');
-    const dismissBtn  = document.getElementById('pwaDismissBtn');
-    const iosSteps    = document.getElementById('pwaIosSteps');
-    const bannerSub   = document.getElementById('pwaBannerSub');
-
-    // Detect environment
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-                      || window.navigator.standalone === true;
-    const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent)
-               && !window.MSStream;
-    const isIosSafari = isIos && /safari/i.test(navigator.userAgent)
-                     && !/crios|fxios|opios/i.test(navigator.userAgent);
-
-    function isPwaDismissedForever() {
-        return localStorage.getItem(PWA_NEVER_KEY) === '1';
-    }
-    function getPwaSnoozeUntil() {
-        return parseInt(localStorage.getItem(PWA_KEY) || '0', 10);
-    }
-    function shouldShowBanner() {
-        if (isStandalone)           return false; // already installed
-        if (isPwaDismissedForever()) return false;
-        if (Date.now() < getPwaSnoozeUntil()) return false;
-        // Android: only if browser supports install (deferredPrompt will arrive)
-        // iOS Safari: always eligible
-        // Other browsers: skip (no install API, not iOS)
-        return isIosSafari || true; // show on any browser; hide Install btn if no prompt
-    }
-
-    function showBanner() {
-        if (!shouldShowBanner()) return;
-        banner.style.display = 'block';
-        banner.classList.remove('pwa-hiding');
-
-        if (isIosSafari) {
-            // iOS: show manual steps, hide Install button
-            installBtn.style.display = 'none';
-            iosSteps.style.display   = 'flex';
-            bannerSub.textContent    = 'Follow the steps below to install';
-        } else if (!deferredPrompt) {
-            // Non-iOS, no prompt yet or unsupported: hide Install button
-            installBtn.style.display = 'none';
-            bannerSub.innerHTML    = 'Use browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"';
-        }
-    }
-
-    function hideBanner(permanent) {
-        banner.classList.add('pwa-hiding');
-        setTimeout(() => { banner.style.display = 'none'; }, 320);
-        if (permanent) {
-            localStorage.setItem(PWA_NEVER_KEY, '1');
-        } else {
-            // Snooze for 24 h
-            localStorage.setItem(PWA_KEY, String(Date.now() + PWA_SNOOZE_MS));
-        }
-    }
-
-    // Capture the browser's install prompt (Android/Chrome/Edge)
-    window.addEventListener('beforeinstallprompt', function(e) {
-        e.preventDefault();
-        deferredPrompt = e;
-        // If banner is already showing, make sure Install btn is visible
-        if (banner.style.display !== 'none') {
-            installBtn.style.display = '';
-        }
-        // Auto-show after delay if eligible
-        if (shouldShowBanner()) {
-            setTimeout(showBanner, PWA_DELAY_MS);
-        }
-    });
-
-    // When app is installed, hide the banner permanently
-    window.addEventListener('appinstalled', function() {
-        hideBanner(true);
-        deferredPrompt = null;
-    });
-
-    // Install button click
-    installBtn.addEventListener('click', async function() {
-        if (!deferredPrompt) return;
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        if (outcome === 'accepted') {
-            hideBanner(true);
-        } else {
-            hideBanner(false); // snooze if declined
-        }
-    });
-
-    // Dismiss button: single-tap = snooze, long-press (>600ms) = never again
-    let dismissTimer = null;
-    dismissBtn.addEventListener('pointerdown', function() {
-        dismissTimer = setTimeout(function() {
-            dismissTimer = null;
-            hideBanner(true); // long press = permanent
-        }, 600);
-    });
-    dismissBtn.addEventListener('pointerup', function() {
-        if (dismissTimer) {
-            clearTimeout(dismissTimer);
-            dismissTimer = null;
-            hideBanner(false); // short tap = snooze
-        }
-    });
-    dismissBtn.addEventListener('pointerleave', function() {
-        if (dismissTimer) { clearTimeout(dismissTimer); dismissTimer = null; }
-    });
-
-    // On iOS/other non-Chrome, show banner after delay without waiting for beforeinstallprompt
-    if (isIosSafari || (!('onbeforeinstallprompt' in window))) {
-        if (shouldShowBanner()) {
-            setTimeout(showBanner, PWA_DELAY_MS);
-        }
-    }
-
-    // Drawer "Install" shortcut — triggers native prompt or shows banner
+    // Drawer "Install" shortcut (src/install-prompt.js)
     document.getElementById('qsInstall').addEventListener('click', function() {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-        } else {
-            // Force show banner even if snoozed
-            banner.style.display = 'block';
-            banner.classList.remove('pwa-hiding');
-            if (isIosSafari) {
-                installBtn.style.display = 'none';
-                iosSteps.style.display   = 'flex';
-            } else {
-                bannerSub.innerHTML = 'Use your browser menu <svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="icons/sprite.svg#arrow-right"/></svg> "Add to Home Screen"';
-                installBtn.style.display = 'none';
-            }
-        }
-        // close drawer
+        if (window.SmartInstall) SmartInstall.open();
         document.getElementById('notificationDrawer').classList.remove('open');
         document.getElementById('drawerOverlay').classList.remove('active');
     });
@@ -2079,5 +1860,6 @@ function initSWUpdateToast(reg) {
     });
 }
 </script>
+<script src="src/install-prompt.js" defer></script>
 </body>
 </html>
