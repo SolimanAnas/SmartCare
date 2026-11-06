@@ -32,6 +32,7 @@
   --modal-bg:rgba(0,0,0,.5);
   --sb-bg:rgba(0,0,0,.04);--elim-bg:rgba(0,0,0,.04);
   --opt-bg:#ffffff;--opt-inner:rgba(0,0,0,.04);
+  --exp-lbl:#15803d;
   --study-box:rgba(37,99,235,.06);--study-bdr:rgba(37,99,235,.22);--study-lbl:#1d4ed8;
   --g1:rgba(37,99,235,.06);--g2:rgba(200,220,255,.25);
   --focus:0 0 0 3px rgba(37,99,235,.4), 0 0 0 6px rgba(37,99,235,.15);
@@ -49,6 +50,7 @@
   --modal-bg:rgba(50,25,5,.65);
   --sb-bg:rgba(0,0,0,.04);--elim-bg:rgba(0,0,0,.05);
   --opt-bg:#ece0ca;--opt-inner:rgba(0,0,0,.04);
+  --exp-lbl:#2d5629;--cta-text:#6e4a00;
   --study-box:rgba(139,94,0,.07);--study-bdr:rgba(139,94,0,.22);--study-lbl:#8b5e00;
   --g1:rgba(160,110,40,.08);--g2:rgba(200,160,80,.12);
   --focus:0 0 0 3px rgba(139,94,0,.4), 0 0 0 6px rgba(139,94,0,.15);
@@ -465,12 +467,12 @@ button:focus-visible, [tabindex]:focus-visible, .opt-wrap:focus-visible, .qn:foc
 .confidence-btn[data-level="low"].active{color:var(--red);border-color:var(--red);background:var(--red-d)}
 #expArea{margin-bottom:14px}
 .study-exp{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border2);border-left:4px solid var(--green);animation:fadeIn .2s ease}
-.exp-label{display:block;margin-bottom:6px;font:600 1.125rem/1 var(--f-display);color:var(--green)}
+.exp-label{display:block;margin-bottom:6px;font:600 1.125rem/1 var(--f-display);color:var(--exp-lbl,var(--green))}
 .exp-body{font:400 1rem/1.55 var(--f-ui);color:var(--text)}
 .exp-conf{margin-top:10px;font:400 .9375rem var(--f-ui);color:var(--dim)}
 .study-hint{padding:2px 2px 0;font:400 .9375rem/1.5 var(--f-ui);color:var(--dim)}
 .study-hint.has-hint{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border2);border-left:4px solid var(--yellow);color:var(--text);cursor:pointer}
-.hint-cta{margin-top:8px;font:600 .9375rem var(--f-ui);color:var(--blue)}
+.hint-cta{margin-top:8px;font:600 .9375rem var(--f-ui);color:var(--cta-text,var(--blue))}
 
 .q-nav{
   flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:12px;
