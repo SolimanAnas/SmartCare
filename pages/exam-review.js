@@ -426,6 +426,7 @@ async function startExam(path, name) {
     
     const isStudy = ST.mode === 'study';
     document.getElementById('backBtn').style.display = isStudy ? '' : 'none';
+    document.getElementById('backBtn').setAttribute('aria-label', 'Exit practice');
     const endBtn = document.getElementById('endBtn');
     endBtn.style.display = '';
     endBtn.textContent = isStudy ? 'Finish' : 'Submit';
