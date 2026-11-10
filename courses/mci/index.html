@@ -211,6 +211,50 @@
   pre.tree { white-space: pre-wrap; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 13px;
     color: var(--text-dim); background: var(--bg-2); border:1px solid var(--border); border-radius: 10px; padding: 14px; }
 
+  /* Triage category tags (IMMEDIATE, DELAYED, …) and colour swatches */
+  .tri { display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: .78em; font-weight: 800;
+    letter-spacing: .04em; line-height: 1.45; white-space: nowrap; vertical-align: .06em; }
+  .tri-red { background: #c8102e; color: #fff; }
+  .tri-yellow { background: #f4c20d; color: #1c2430; }
+  .tri-green { background: #23793b; color: #fff; }
+  .tri-black { background: #14171c; color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
+  .sw { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; color: var(--text); font-weight: 600; }
+  .sw::before { content: ""; width: 14px; height: 14px; border-radius: 4px; background: var(--c);
+    box-shadow: inset 0 0 0 1px rgba(127,127,127,.45); }
+
+  /* Decision flows (structured decisionTrees[].flow) */
+  .glance h2 { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); margin: 4px 2px 10px; }
+  .flow-switch { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 4px; padding: 4px; margin-bottom: 12px;
+    background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; }
+  .flow-switch button { min-height: 44px; padding: 6px 8px; border: 0; border-radius: 9px; background: transparent; color: var(--text-dim);
+    font: inherit; font-size: 14px; font-weight: 700; line-height: 1.2; cursor: pointer; }
+  .flow-switch button[aria-selected="true"] { background: var(--text); color: var(--bg); }
+  .flow-switch button:focus-visible, .flow-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .flow-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 16px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .flow-card > h3 { font-size: 17px; margin-bottom: 2px; }
+  .flow-card > .flow-sub { color: var(--text-dim); font-size: 13.5px; margin-bottom: 14px; }
+  .flow { list-style: none; margin: 0; padding: 0; }
+  .flow-step { position: relative; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; }
+  .flow-step:not(:last-child)::before { content: ""; position: absolute; left: 14px; top: 30px; bottom: 0; width: 2px; background: var(--border); }
+  .fs-n { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; font-weight: 800;
+    background: var(--panel-2); border: 2px solid var(--border); color: var(--text); }
+  .fs-body { padding-bottom: 6px; min-width: 0; }
+  .fs-q { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.3; padding-top: 4px; }
+  .fs-kid { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: 6px;
+    color: #b3a7ff; background: rgba(124,108,239,.16); }
+  .fs-hint { margin-top: 3px; font-size: 13.5px; color: var(--text-dim); line-height: 1.45; }
+  .fs-br { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+  .fs-br li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border-radius: 10px;
+    background: var(--panel-2); border: 1px solid var(--border); font-size: 14px; color: var(--text); line-height: 1.35; }
+  .fs-br li .tri { flex-shrink: 0; font-size: 12px; padding: 3px 9px; }
+  .fs-br li .fs-then { flex-shrink: 0; font-weight: 700; color: var(--text); }
+  .flow-next { display: flex; align-items: center; gap: 8px; margin: 2px 0 8px 42px; font-size: 13px; font-weight: 700; color: var(--text-dim); }
+  .flow-next::before { content: "↓"; font-size: 15px; color: var(--text-faint); }
+  .flow-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .flow-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--panel-2); color: var(--text); font-size: 14px; font-weight: 700; text-decoration: none; }
+  .flow-links a:hover { border-color: var(--text-dim); }
+
   /* Algorithms & Tables */
   .alg-card { background: var(--panel); border:1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
   .alg-card h3 { font-size: 16px; margin-bottom: 6px; }
@@ -446,6 +490,7 @@ function renderSidebar(filter="") {
 function selectChapter(id) {
   curChap = id;
   drillRun = null;
+  flowIdx = 0;
   progress[id] = progress[id] || {};
   progress[id].viewed = true;
   saveProgress();
@@ -514,9 +559,73 @@ function renderContent() {
 
 function block(title, pillClass, items, ulClass) {
   if (!items || !items.length) return "";
-  const lis = items.map(i => `<li>${esc(i)}</li>`).join("");
+  const lis = items.map(i => `<li>${tagify(esc(i))}</li>`).join("");
   return `<div class="card"><h3><span class="pill ${pillClass}">${title}</span></h3><ul class="clean ${ulClass||''}">${lis}</ul></div>`;
 }
+
+// Triage categories in upper case ("IMMEDIATE", "MINOR (green)") become coloured tags.
+const TRI = { IMMEDIATE: "red", DELAYED: "yellow", MINOR: "green", DECEASED: "black", EXPECTANT: "black", DEAD: "black" };
+function tagify(html) {
+  return html.replace(/\b(IMMEDIATE|DELAYED|MINOR|DECEASED|EXPECTANT)\b(?:\s*\((?:red|yellow|green|black|gr[ae]y)\))?/g,
+    (m, w) => `<span class="tri tri-${TRI[w]}">${w}</span>`);
+}
+const SWATCH = { red: "#c8102e", yellow: "#f4c20d", green: "#23793b", black: "#14171c", grey: "#8b949e", gray: "#8b949e" };
+const CAT_WORD = { immediate: "IMMEDIATE", delayed: "DELAYED", minor: "MINOR", deceased: "DECEASED", expectant: "EXPECTANT" };
+// A table cell that is only a colour ("Red") gets a swatch; only a category ("Delayed") gets its tag.
+function cellHtml(c) {
+  const t = String(c).trim(), k = t.toLowerCase();
+  if (SWATCH[k]) return `<span class="sw" style="--c:${SWATCH[k]}">${esc(t)}</span>`;
+  if (CAT_WORD[k]) return `<span class="tri tri-${TRI[CAT_WORD[k]]}">${esc(t)}</span>`;
+  return tagify(esc(t));
+}
+
+// Structured decision flows: decisionTrees[i].flow = [{ q, hint?, kid?, br: [{ if, then }], next? }],
+// optional decisionTrees[i].links = [{ label, href }] (practice tools for that flow).
+// `then` is a category key (IMMEDIATE…) shown as its tag, or plain text.
+function renderFlow(d) {
+  const steps = d.flow.map((st, i) => {
+    const br = (st.br || []).map(b => `<li><span>${tagify(esc(b.if))}</span>${
+      TRI[b.then] ? `<span class="tri tri-${TRI[b.then]}">${b.then}</span>` : `<span class="fs-then">${esc(b.then)}</span>`}</li>`).join("");
+    return `<li class="flow-step"><span class="fs-n" aria-hidden="true">${i + 1}</span><div class="fs-body">
+      <div class="fs-q">${esc(st.q)}${st.kid ? '<span class="fs-kid">Child-specific</span>' : ''}</div>
+      ${st.hint ? `<div class="fs-hint">${tagify(esc(st.hint))}</div>` : ''}
+      ${br ? `<ul class="fs-br">${br}</ul>` : ''}
+      ${st.next ? `<div class="flow-next">Otherwise: ${esc(st.next)}</div>` : ''}
+    </div></li>`;
+  }).join("");
+  return `<ol class="flow" aria-label="${esc(d.title)} steps">${steps}</ol>`;
+}
+function renderGlance(ch) {
+  const flows = (ch.decisionTrees || []).filter(d => Array.isArray(d.flow));
+  if (!flows.length) return "";
+  if (flowIdx >= flows.length) flowIdx = 0;
+  const d = flows[flowIdx];
+  const sw = flows.length > 1 ? `<div class="flow-switch" role="tablist" aria-label="Decision flows" style="--n:${flows.length}">${flows.map((f, i) =>
+    `<button type="button" role="tab" id="flowtab-${i}" aria-controls="flowpanel" aria-selected="${i === flowIdx}" tabindex="${i === flowIdx ? 0 : -1}" data-flow="${i}">${esc(f.label || f.title)}</button>`).join("")}</div>` : "";
+  const links = (d.links || []).map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("");
+  return `<section class="glance" aria-labelledby="glanceH"><h2 id="glanceH">At a glance</h2>${sw}
+    <div class="flow-card" id="flowpanel" ${sw ? `role="tabpanel" aria-labelledby="flowtab-${flowIdx}"` : ""}>
+      <h3>${esc(d.title)}</h3>${d.subtitle ? `<div class="flow-sub">${esc(d.subtitle)}</div>` : ""}
+      ${renderFlow(d)}
+      ${links ? `<div class="flow-links">${links}</div>` : ""}
+    </div></section>`;
+}
+let flowIdx = 0;
+document.addEventListener("click", e => {
+  const b = e.target.closest(".flow-switch [data-flow]");
+  if (!b) return;
+  flowIdx = +b.dataset.flow;
+  const glance = document.querySelector(".glance");
+  glance.outerHTML = renderGlance(DATA.chapters[curChap]);
+  document.getElementById(`flowtab-${flowIdx}`)?.focus();
+});
+document.addEventListener("keydown", e => {
+  const b = e.target.closest?.(".flow-switch [data-flow]");
+  if (!b || (e.key !== "ArrowLeft" && e.key !== "ArrowRight")) return;
+  e.preventDefault();
+  const n = document.querySelectorAll(".flow-switch [data-flow]").length;
+  document.querySelector(`.flow-switch [data-flow="${(+b.dataset.flow + (e.key === "ArrowRight" ? 1 : n - 1)) % n}"]`).click();
+});
 
 function renderSummary() {
   const ch = DATA.chapters[curChap];
@@ -524,17 +633,19 @@ function renderSummary() {
   let html = "";
   if (ch.learningObjectives?.length)
     html += `<div class="card"><h3><span class="pill obj">Learning Objectives</span></h3><ol class="num-list">${ch.learningObjectives.map(o=>`<li>${esc(o)}</li>`).join("")}</ol></div>`;
+  html += renderGlance(ch);
   if (ch.summary?.length) {
     html += ch.summary.map(s =>
-      `<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.content)}</p></div>`).join("");
+      `<div class="card"><h3>${esc(s.title)}</h3><p>${tagify(esc(s.content))}</p></div>`).join("");
   }
   html += block("Clinical Pearls", "pearl", ch.clinicalPearls, "pearl");
   html += block("Red Flags", "flag", ch.redFlags, "flag");
   html += block("Common Mistakes", "mistake", ch.commonMistakes, "mistake");
   html += block("Memory Aids", "aid", ch.memoryAids, "aid");
-  if (ch.decisionTrees?.length) {
-    html += ch.decisionTrees.map(d =>
-      `<div class="card"><h3>${esc(d.title)}</h3><pre class="tree">${esc(d.content)}</pre></div>`).join("");
+  const trees = (ch.decisionTrees || []).filter(d => !Array.isArray(d.flow));
+  if (trees.length) {
+    html += trees.map(d =>
+      `<div class="card"><h3>${esc(d.title)}</h3><pre class="tree">${tagify(esc(d.content))}</pre></div>`).join("");
   }
   if (ch.references?.length) {
     html += `<div class="card"><h3 style="color:var(--text-faint)">References</h3><ul class="clean" style="font-size:12px">${ch.references.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;
@@ -650,7 +761,7 @@ function renderAlgorithms() {
   const algs = DATA.algorithms[curChap]?.algorithms || [];
   if (!algs.length) return `<div class="empty">No algorithms yet.</div>`;
   return algs.map(a => {
-    const steps = (a.steps||[]).map(s=>`<li>${esc(s)}</li>`).join("");
+    const steps = (a.steps||[]).map(s=>`<li>${tagify(esc(s))}</li>`).join("");
     return `<div class="alg-card">
       <h3>${esc(a.title)}</h3>
       ${a.description?`<div class="desc">${esc(a.description)}</div>`:""}
@@ -665,7 +776,7 @@ function renderTables() {
   if (!tables.length) return `<div class="empty">No tables yet.</div>`;
   return tables.map(t => {
     const head = (t.headers||[]).map(h=>`<th>${esc(h)}</th>`).join("");
-    const body = (t.rows||[]).map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("");
+    const body = (t.rows||[]).map(r=>`<tr>${r.map(c=>`<td>${cellHtml(c)}</td>`).join("")}</tr>`).join("");
     return `<div class="table-wrap"><table class="data">
       ${t.title?`<caption>${esc(t.title)}</caption>`:""}
       ${head?`<thead><tr>${head}</tr></thead>`:""}
