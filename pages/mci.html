@@ -153,38 +153,102 @@
 .duty-points{margin:8px 0 0;padding-left:1.15em;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
 .duty-points li{margin-top:4px}
 /* START triage tool */
-.st-wrap{max-width:560px;margin:0 auto;padding-top:20px}
-.st-step{font:600 1rem var(--f-display);color:var(--dim);margin:0 0 6px}
-.st-q{margin:0 0 6px;font:600 2rem/1.1 var(--f-display);color:var(--text)}
-.st-sub{margin:0 0 22px;font:400 1.0625rem/1.5 var(--f-ui);color:var(--dim)}
-.st-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.st-btn{
-  min-height:72px;border-radius:16px;border:1.5px solid var(--border2);background:var(--card);color:var(--text);
-  cursor:pointer;font:600 1.75rem/1 var(--f-display);transition:border-color .15s ease,background-color .15s ease;
+.st-tabs{display:grid;grid-template-columns:1fr 1fr;margin:8px 0 10px}
+.st-tabs button{min-height:44px;font-size:1.0625rem}
+.st-tabs button[aria-selected="true"]{background:var(--text);color:var(--bg)}
+.st-wrap{max-width:560px;margin:0 auto;padding-top:14px}
+/* progress through the five checks */
+.st-rail{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.st-rail li{display:flex;flex-direction:column;gap:6px;font:600 .8125rem/1.15 var(--f-ui);color:var(--dim);text-align:center}
+.st-rail li::before{content:"";height:5px;border-radius:3px;background:var(--border2)}
+.st-rail li.done{color:var(--text)}
+.st-rail li.done::before{background:var(--text)}
+.st-rail li.now{color:var(--blue)}
+.st-rail li.now::before{background:var(--blue)}
+.st-q{margin:0 0 8px;font:600 1.875rem/1.12 var(--f-display);color:var(--text)}
+.st-q:focus{outline:none}
+.st-sub{margin:0 0 20px;font:400 1.0625rem/1.5 var(--f-ui);color:var(--dim)}
+.st-sub b{color:var(--text);font-weight:600}
+.st-opts{display:grid;gap:10px}
+.st-opt{
+  display:flex;align-items:center;gap:12px;width:100%;min-height:76px;padding:12px 14px 12px 18px;text-align:left;
+  border-radius:16px;border:1.5px solid var(--border2);background:var(--card);color:var(--text);cursor:pointer;
+  transition:border-color .15s ease,background-color .15s ease;
 }
-.st-btn:hover{border-color:var(--text)}
-.st-btn:active{background:var(--card2)}
+.st-opt:hover{border-color:var(--text)}
+.st-opt:active{background:var(--card2)}
+.st-opt:focus-visible{outline:none;box-shadow:var(--focus)}
+.st-opt{flex-wrap:wrap;row-gap:8px}
+.st-opt-t{flex:1 1 170px;min-width:0;font:600 1.375rem/1.15 var(--f-display)}
+.st-to{flex-shrink:0;display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border-radius:999px;font:600 .875rem/1 var(--f-ui);white-space:nowrap}
+.st-to svg{width:15px;height:15px}
+.st-to.to-next{color:var(--dim);border:1px solid var(--border2)}
+.tag-red{background:var(--tri-red);color:#fff}
+.tag-yellow{background:var(--tri-yellow);color:var(--stock-ink)}
+.tag-green{background:var(--tri-green);color:#fff}
+.tag-black{background:var(--tri-black);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.st-links{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:10px}
 .st-link{
-  display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:10px;padding:0 4px;border:0;background:transparent;
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px;border:0;background:transparent;
   color:var(--blue);cursor:pointer;font:600 1rem var(--f-ui);
 }
 .st-link svg{width:17px;height:17px}
 .st-h{margin:26px 0 10px;font:600 1.375rem/1.1 var(--f-display);color:var(--text)}
-.st-path{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
-.st-path li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--card);font:400 1rem/1.4 var(--f-ui);color:var(--text)}
-.st-path b{flex-shrink:0;font:600 1.0625rem var(--f-display)}
-.st-path .ans-yes{color:var(--green)}
-.st-path .ans-no{color:var(--red)}
-.st-result{padding:20px 20px 18px;border-radius:16px;color:#fff}
-.st-result.res-red{background:var(--tri-red)}
-.st-result.res-yellow{background:var(--tri-yellow);color:var(--stock-ink)}
-.st-result.res-green{background:var(--tri-green)}
-.st-result.res-black{background:var(--tri-black);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
-.st-cat{font:700 3rem/1 var(--f-display)}
-.st-col{margin-top:4px;font:600 1.25rem var(--f-display);opacity:.9}
+.st-path{list-style:none;margin:0;padding:0;border:1px solid var(--border2);border-radius:14px;overflow:hidden}
+.st-path li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 14px;background:var(--card);font:400 1rem/1.4 var(--f-ui);color:var(--dim)}
+.st-path li + li{border-top:1px solid var(--border2)}
+.st-path b{text-align:right;font:600 1.0625rem/1.3 var(--f-ui);color:var(--text)}
+.st-result{padding:18px 20px;border-radius:16px}
+.st-result:focus{outline:none}
+.st-cat{font:700 2.75rem/1 var(--f-display)}
+.st-col{margin-top:6px;font:600 1.125rem/1.2 var(--f-display);opacity:.92}
+.st-why{margin-top:10px;padding-top:10px;border-top:1px solid currentColor;font:500 1.0625rem/1.4 var(--f-ui)}
+.st-why{border-top-color:rgba(255,255,255,.35)}
+.tag-yellow .st-why{border-top-color:rgba(28,36,48,.3)}
 .st-acts{margin:0;padding-left:1.15em;font:400 1.0625rem/1.55 var(--f-ui);color:var(--text)}
 .st-acts li{margin-bottom:6px}
 .st-next{margin-top:24px}
+/* quick reference */
+.fc-wrap{max-width:560px;margin:0 auto;padding-top:12px}
+.fc-intro{margin:0 2px 12px;font:400 1rem/1.5 var(--f-ui);color:var(--dim)}
+.fc-fig{margin:0;padding:14px 10px;border-radius:16px;background:var(--panel);border:1px solid var(--border2)}
+.fc-svg{display:block;width:100%;height:auto;font-family:var(--f-ui)}
+.fc-dec{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
+.fc-t{fill:var(--text);font-size:14px;font-weight:600}
+.fc-s{fill:var(--dim);font-size:11.5px}
+.fc-ln{fill:none;stroke:var(--dim);stroke-width:1.6}
+.fc-arrow{fill:var(--dim)}
+.fc-lb rect{fill:var(--panel);stroke:var(--border2)}
+.fc-lb text{fill:var(--text);font-size:11.5px;font-weight:600}
+.fc-out text{font-size:13px;font-weight:700;letter-spacing:.02em}
+.fc-out .fc-on-red,.fc-out .fc-on-green,.fc-out .fc-on-black{fill:#fff}
+.fc-out .fc-on-yellow{fill:#1C2430}
+.fc-out .fc-note{font-size:10.5px;font-weight:500;letter-spacing:0}
+.fc-o-red{fill:var(--tri-red)}.fc-o-yellow{fill:var(--tri-yellow)}.fc-o-green{fill:var(--tri-green)}
+.fc-o-black{fill:var(--tri-black);stroke:rgba(255,255,255,.35)}
+.fc-o-step{fill:var(--card);stroke:var(--border2);stroke-width:1.5}
+/* the patient's path, when one is in progress */
+.fc-svg.has-path [data-k]{opacity:.28;transition:opacity .2s ease}
+.fc-svg.has-path [data-k].on{opacity:1}
+.fc-svg.has-path .fc-dec.on,.fc-svg.has-path .on .fc-dec{stroke:var(--blue);stroke-width:2.5}
+.fc-svg.has-path .fc-ln.on{stroke:var(--blue);stroke-width:2.6}
+.fc-svg.has-path .on .fc-arrow,.fc-svg.has-path .fc-arrow.on{fill:var(--blue)}
+.fc-caption{margin:10px 2px 0;font:400 .9375rem/1.45 var(--f-ui);color:var(--dim)}
+.fc-caption b{color:var(--blue);font-weight:600}
+.fc-cats{display:grid;gap:10px;margin-top:6px}
+.fc-cat{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border2)}
+.fc-cat-h{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.fc-cat-h .st-to{font-size:.9375rem;padding:6px 12px}
+.fc-cat-h span:last-child{font:600 1rem var(--f-ui);color:var(--dim)}
+.fc-cat ul{margin:0;padding-left:1.15em;font:400 1rem/1.5 var(--f-ui);color:var(--text)}
+.fc-cat li{margin-top:3px}
+.fc-rpm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fc-rpm div{padding:12px 10px;border-radius:14px;background:var(--card);border:1px solid var(--border2);text-align:center}
+.fc-rpm b{display:block;font:700 1.75rem/1 var(--f-display);color:var(--text)}
+.fc-rpm span{display:block;margin-top:6px;font:400 .875rem/1.35 var(--f-ui);color:var(--dim)}
+.fc-notes{margin:0;padding-left:1.15em;font:400 1rem/1.55 var(--f-ui);color:var(--text)}
+.fc-notes li{margin-bottom:6px}
+.fc-notes a{color:var(--blue)}
 
 /* METHANE report tool */
 .mt-letters{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:4px 0 12px}
@@ -559,8 +623,8 @@ textarea.mt-input{min-height:64px;resize:vertical}
 <script>
 'use strict';
 // MCI only: the START triage and METHANE tools and Officer roles, shown as
-// in-page views by exam-review.js: mci.html#start-triage · #methane · #officers/<role>
-registerView('start-triage', { title: 'START triage',   render: () => renderStartTool() });
+// in-page views by exam-review.js: mci.html#start-triage(/flowchart) · #methane · #officers/<role>
+registerView('start-triage', { title: 'START triage',   render: sub => renderStartTool(sub) });
 registerView('methane',      { title: 'METHANE report', render: () => renderMethaneTool() });
 registerView('officers',     { title: 'Officer roles',  render: role => openOfficers(role) });
 
@@ -672,85 +736,295 @@ function renderOfficers(items, roleSlug) {
 
 
 
-/* ── START triage tool (same decision steps as the EMS tools version) ── */
+/* ── START triage tool ──
+   Adult START (Simple Triage And Rapid Treatment): walk → breathing (airway) →
+   respiratory rate → perfusion → mental status. Each answer is a finding, not a
+   yes / no, and each button shows where it leads. Two tabs: the step-by-step
+   tool and a quick-reference flowchart that highlights the current patient's path
+   (mci.html#start-triage · #start-triage/flowchart). */
+const ST_STAGES = [
+  { k: 'walk', l: 'Walk' }, { k: 'breathing', l: 'Breathing' }, { k: 'rr', l: 'Resp. rate' },
+  { k: 'perfusion', l: 'Perfusion' }, { k: 'mental', l: 'Mental status' }
+];
+// opts: [normal finding, abnormal finding]; to: next step id or a category key
 const ST_STEPS = {
-  walk:      { q: 'Can the patient walk?', sub: 'Tell everyone who can walk to move to a set point.', yes: 'GREEN', no: 'breathing' },
-  breathing: { q: 'Is the patient breathing?', sub: 'Look, listen and feel.', yes: 'rr', no: 'airway' },
-  airway:    { q: 'Open the airway. Does breathing start?', sub: 'Head-tilt chin-lift or jaw thrust. One attempt only.', yes: 'RED', no: 'BLACK' },
-  rr:        { q: 'Breathing faster than 30 a minute?', sub: 'Count for 15 seconds and multiply by 4.', yes: 'RED', no: 'perfusion' },
-  perfusion: { q: 'No radial pulse, or capillary refill over 2 seconds?', sub: 'Press the nail bed, release, and count the seconds until the colour returns.', yes: 'RED', no: 'mental' },
-  mental:    { q: 'Unable to follow simple commands?', sub: 'Ask them to squeeze your hand or open their eyes.', yes: 'RED', no: 'YELLOW' }
+  walk: { stage: 'walk', q: 'Can the patient walk?',
+    sub: 'Call out: <b>“If you can walk, go to the collection point.”</b> Everyone who gets there is Minor for now.',
+    opts: [{ a: 'yes', t: 'Walks', to: 'GREEN', why: 'Able to walk' },
+           { a: 'no', t: 'Cannot walk', to: 'breathing' }] },
+  breathing: { stage: 'breathing', q: 'Is the patient breathing?', sub: 'Look, listen and feel.',
+    opts: [{ a: 'yes', t: 'Breathing', to: 'rr' },
+           { a: 'no', t: 'Not breathing', to: 'airway' }] },
+  airway: { stage: 'breathing', q: 'Open the airway. Does breathing start?',
+    sub: 'Head-tilt chin-lift, or jaw thrust if you suspect a spine injury. <b>One attempt only.</b> No rescue breaths.',
+    opts: [{ a: 'yes', t: 'Starts breathing', to: 'RED', why: 'Breathing only after the airway was opened' },
+           { a: 'no', t: 'Still not breathing', to: 'BLACK', why: 'Not breathing after the airway was opened' }] },
+  rr: { stage: 'rr', q: 'What is the breathing rate?', sub: 'Count breaths for 15 seconds and multiply by 4.',
+    opts: [{ a: 'le30', t: '30 a minute or less', to: 'perfusion' },
+           { a: 'gt30', t: 'Over 30 a minute', to: 'RED', why: 'Breathing rate over 30 a minute' }] },
+  perfusion: { stage: 'perfusion', q: 'Check the radial pulse',
+    sub: 'Feel the pulse at the wrist. If you cannot tell, press a nail bed, release, and count until the color returns. <b>Control severe bleeding now.</b>',
+    opts: [{ a: 'ok', t: 'Pulse present, refill 2 s or less', to: 'mental' },
+           { a: 'bad', t: 'No radial pulse, or refill over 2 s', to: 'RED', why: 'No radial pulse, or capillary refill over 2 seconds' }] },
+  mental: { stage: 'mental', q: 'Can the patient follow simple commands?',
+    sub: '“Squeeze my hand.” “Open your eyes.” Unconscious or confused counts as cannot.',
+    opts: [{ a: 'yes', t: 'Follows commands', to: 'YELLOW', why: 'Cannot walk, but breathing 30 a minute or less, radial pulse present and follows commands' },
+           { a: 'no', t: 'Cannot follow commands', to: 'RED', why: 'Cannot follow simple commands' }] }
 };
 const ST_RESULTS = {
-  RED:    { cat: 'Immediate', col: 'Red', cls: 'res-red', acts: [
-    'First priority for the treatment area and for transport.',
-    'In triage, only open the airway, control severe bleeding and position the patient.',
-    'Goes on the red tarp, nearest the loading area.' ] },
-  YELLOW: { cat: 'Delayed', col: 'Yellow', cls: 'res-yellow', acts: [
-    'Serious but stable for now. Treatment can wait until the red patients are cared for.',
-    'Re-triage in the treatment area. A delayed patient can become immediate.' ] },
-  GREEN:  { cat: 'Minor', col: 'Green', cls: 'res-green', acts: [
-    'Walking wounded. Direct them to the collection point and the green area.',
-    'Keep them at a safe distance for re-assessment. They can still deteriorate.' ] },
-  BLACK:  { cat: 'Expectant', col: 'Black', cls: 'res-black', acts: [
-    'Not breathing after the airway is opened. No CPR during MCI triage.',
-    'Move the body only if it blocks access to a living patient. Mark it and move on.' ] }
+  RED: { cat: 'Immediate', col: 'Red tag · priority 1', cls: 'tag-red', acts: [
+    'First priority for treatment and transport. Needs care within minutes.',
+    'Before you move on, only: open and position the airway, and control severe bleeding with pressure or a tourniquet.',
+    'Goes on the red tarp, nearest the loading area.'] },
+  YELLOW: { cat: 'Delayed', col: 'Yellow tag · priority 2', cls: 'tag-yellow', acts: [
+    'Serious injuries, but stable enough to wait for treatment and transport.',
+    'Treat after the immediate patients. Re-triage often: a delayed patient can become immediate.'] },
+  GREEN: { cat: 'Minor', col: 'Green tag · priority 3', cls: 'tag-green', acts: [
+    'Walking wounded. Send to the green collection point for secondary triage.',
+    'They can help with their own care, but re-assess them: walking patients can still deteriorate.'] },
+  BLACK: { cat: 'Expectant', col: 'Black tag', cls: 'tag-black', acts: [
+    'Still not breathing after one airway attempt. No CPR during MCI triage.',
+    'Move on to the next patient. Move the body only if it blocks access to a living patient.',
+    'Some systems label this tag Deceased.'] }
 };
-let stStep = 'walk', stPath = [];
+const ST_TAG = { RED: ['tag-red', 'Immediate'], YELLOW: ['tag-yellow', 'Delayed'], GREEN: ['tag-green', 'Minor'], BLACK: ['tag-black', 'Expectant'] };
+const ICON = id => `<svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#${id}"/></svg>`;
+let stStep = 'walk', stPath = [], stTab = 'triage';
 
-function renderStartTool() {
+function renderStartTool(sub) {
   document.querySelector('.tool-share').setAttribute('aria-label', 'Share a link to the START triage tool');
   stStep = 'walk'; stPath = [];
-  drawStart();
+  const bar = document.getElementById('toolBar');
+  bar.innerHTML = `<div class="seg st-tabs" role="tablist" aria-label="START triage">
+    <button type="button" role="tab" id="st-tab-triage" data-tab="triage" aria-controls="toolContainer">Triage a patient</button>
+    <button type="button" role="tab" id="st-tab-flowchart" data-tab="flowchart" aria-controls="toolContainer">Flowchart</button>
+  </div>`;
+  bar.querySelector('[role="tablist"]').addEventListener('click', e => {
+    const t = e.target.closest('[data-tab]');
+    if (t) stShowTab(t.dataset.tab, true);
+  });
+  bar.querySelector('[role="tablist"]').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    const next = stTab === 'triage' ? 'flowchart' : 'triage';
+    stShowTab(next, true);
+    document.getElementById(`st-tab-${next}`).focus();
+  });
+  stShowTab(sub === 'flowchart' ? 'flowchart' : 'triage', false);
 }
-function drawStart() {
+
+function stShowTab(tab, fromUser) {
+  stTab = tab;
+  document.querySelectorAll('.st-tabs [role="tab"]').forEach(b => {
+    const on = b.dataset.tab === tab;
+    b.setAttribute('aria-selected', on);
+    b.tabIndex = on ? 0 : -1;
+  });
+  viewSub = tab === 'flowchart' ? 'flowchart' : '';
+  document.title = tab === 'flowchart' ? 'START triage flowchart' : 'START triage';
+  if (fromUser) {
+    history.replaceState(history.state, '', tab === 'flowchart' ? '#start-triage/flowchart' : '#start-triage');
+    lastRoute = location.hash;
+  }
   const c = document.getElementById('toolContainer');
-  const pathHtml = stPath.length ? `<h2 class="st-h">Your answers</h2><ol class="st-path">${stPath.map(p =>
-    `<li><span>${escapeHtml(ST_STEPS[p.id].q)}</span><b class="${p.a === 'yes' ? 'ans-yes' : 'ans-no'}">${p.a === 'yes' ? 'Yes' : 'No'}</b></li>`).join('')}</ol>` : '';
-  const undo = stPath.length ? `<button type="button" class="st-link" data-st="undo"><svg class="lucide" width="1em" height="1em" aria-hidden="true" focusable="false"><use href="../icons/sprite.svg#arrow-left"/></svg> Change the last answer</button>` : '';
+  c.setAttribute('aria-labelledby', `st-tab-${tab}`);
+  c.setAttribute('role', 'tabpanel');
+  if (tab === 'flowchart') drawStartChart(); else drawStart();
+  c.scrollTop = 0;
+}
+
+function drawStart(focus) {
+  const c = document.getElementById('toolContainer');
   const result = ST_RESULTS[stStep];
+  const stage = result ? '' : ST_STEPS[stStep].stage;
+  const doneStages = new Set(stPath.map(p => ST_STEPS[p.id].stage));
+  const rail = `<ol class="st-rail" aria-label="START checks">${ST_STAGES.map(g => {
+    const cls = g.k === stage ? 'now' : doneStages.has(g.k) ? 'done' : '';
+    return `<li class="${cls}"${g.k === stage ? ' aria-current="step"' : ''}>${g.l}</li>`;
+  }).join('')}</ol>`;
+  const findings = stPath.length ? `<h2 class="st-h">Findings</h2><ol class="st-path">${stPath.map(p => {
+    const st = ST_STEPS[p.id], o = st.opts.find(x => x.a === p.a);
+    return `<li><span>${ST_STAGES.find(g => g.k === st.stage).l}${p.id === 'airway' ? ' (airway opened)' : ''}</span><b>${escapeHtml(o.t)}</b></li>`;
+  }).join('')}</ol>` : '';
+  const back = stPath.length ? `<div class="st-links">
+      <button type="button" class="st-link" data-st="undo">${ICON('arrow-left')} Back one step</button>
+      ${result ? '' : `<button type="button" class="st-link" data-st="restart">${ICON('rotate-ccw')} Start over</button>`}
+    </div>` : '';
+
   if (result) {
+    const last = stPath[stPath.length - 1];
+    const why = ST_STEPS[last.id].opts.find(o => o.a === last.a).why;
     c.innerHTML = `<div class="st-wrap">
-      <div class="st-result ${result.cls}" role="status"><div class="st-cat">${result.cat}</div><div class="st-col">${result.col}</div></div>
+      ${rail}
+      <div class="st-result ${result.cls}" role="status" tabindex="-1">
+        <div class="st-cat">${result.cat}</div><div class="st-col">${result.col}</div>
+        <div class="st-why">${escapeHtml(why)}</div>
+      </div>
       <h2 class="st-h">What to do</h2>
       <ul class="st-acts">${result.acts.map(a => `<li>${escapeHtml(a)}</li>`).join('')}</ul>
-      ${pathHtml}
+      ${findings}
       <button type="button" class="start-btn st-next" data-st="restart">Triage the next patient</button>
-      ${undo}
+      <div class="st-links">
+        <button type="button" class="st-link" data-st="undo">${ICON('arrow-left')} Back one step</button>
+        <button type="button" class="st-link" data-st="chart">${ICON('map')} See it on the flowchart</button>
+      </div>
     </div>`;
   } else {
     const step = ST_STEPS[stStep];
+    const stageName = id => ST_STAGES.find(g => g.k === ST_STEPS[id].stage).l;
+    const dest = to => ST_TAG[to]
+      ? `<span class="st-to ${ST_TAG[to][0]}">${ST_TAG[to][1]}</span>`
+      : `<span class="st-to to-next">${to === 'airway' ? 'Open airway' : 'Next: ' + stageName(to)} ${ICON('arrow-right')}</span>`;
     c.innerHTML = `<div class="st-wrap">
-      <p class="st-step">Question ${stPath.length + 1}</p>
+      ${rail}
       <h2 class="st-q" tabindex="-1">${escapeHtml(step.q)}</h2>
-      <p class="st-sub">${escapeHtml(step.sub)}</p>
-      <div class="st-btns">
-        <button type="button" class="st-btn" data-st="yes">Yes</button>
-        <button type="button" class="st-btn" data-st="no">No</button>
+      <p class="st-sub">${step.sub}</p>
+      <div class="st-opts" role="group" aria-label="Finding">
+        ${step.opts.map(o => `<button type="button" class="st-opt" data-st="${o.a}"><span class="st-opt-t">${escapeHtml(o.t)}</span>${dest(o.to)}</button>`).join('')}
       </div>
-      ${undo}
-      ${pathHtml}
+      ${back}
+      ${findings}
     </div>`;
   }
   c.querySelector('.st-wrap').addEventListener('click', e => {
     const b = e.target.closest('[data-st]');
     if (!b) return;
     const act = b.dataset.st;
-    if (act === 'yes' || act === 'no') {
+    if (act === 'chart') { stShowTab('flowchart', true); return; }
+    if (act === 'undo') { const last = stPath.pop(); if (last) stStep = last.id; }
+    else if (act === 'restart') { stStep = 'walk'; stPath = []; }
+    else {
+      const o = ST_STEPS[stStep].opts.find(x => x.a === act);
+      if (!o) return;
       if (navigator.vibrate) navigator.vibrate(10);
       stPath.push({ id: stStep, a: act });
-      stStep = ST_STEPS[stStep][act];
-    } else if (act === 'undo') {
-      const last = stPath.pop();
-      if (last) stStep = last.id;
-    } else if (act === 'restart') {
-      stStep = 'walk'; stPath = [];
+      stStep = o.to;
     }
-    drawStart();
+    drawStart(true);
     c.scrollTop = 0;
-    const focusEl = c.querySelector('.st-q, .st-result');
-    if (focusEl && act !== 'restart') focusEl.focus?.();
   });
+  if (focus) c.querySelector('.st-result, .st-q')?.focus({ preventScroll: true });
+}
+
+/* Quick-reference flowchart (inline SVG, follows the page theme). Elements carry
+   data-k keys: a step id for a question box, e-<step>-<answer> for an arrow, and
+   o-<step>-<answer> for an outcome, so the current patient's path can be lit up. */
+function startChartSvg() {
+  const W = 380, DX = 4, DW = 150, CX = DX + DW / 2, OX = 214, OW = 162, H = 48;
+  const esc = escapeHtml;
+  const out = [];
+  const box = (k, x, y, w, h, title, sub) => out.push(`<g data-k="${k}"><rect class="fc-dec" x="${x}" y="${y}" width="${w}" height="${h}" rx="10"/>` +
+    `<text class="fc-t" x="${x + w / 2}" y="${y + (sub ? h / 2 - 3 : h / 2 + 5)}" text-anchor="middle">${esc(title)}</text>` +
+    (sub ? `<text class="fc-s" x="${x + w / 2}" y="${y + h / 2 + 13}" text-anchor="middle">${esc(sub)}</text>` : '') + '</g>');
+  const res = (k, x, y, w, h, cat, note) => {
+    const [cls] = ST_TAG[cat], c = cls.replace('tag-', '');
+    out.push(`<g class="fc-out" data-k="${k}"><rect class="fc-o-${c}" x="${x}" y="${y}" width="${w}" height="${h}" rx="10"/>` +
+      `<text class="fc-on-${c}" x="${x + w / 2}" y="${y + (note ? h / 2 - 2 : h / 2 + 5)}" text-anchor="middle">${ST_TAG[cat][1].toUpperCase()}</text>` +
+      (note ? `<text class="fc-on-${c} fc-note" x="${x + w / 2}" y="${y + h / 2 + 13}" text-anchor="middle">${esc(note)}</text>` : '') + '</g>');
+  };
+  const label = (x, y, t) => { const w = t.length * 6.4 + 14; return `<g class="fc-lb"><rect x="${x - w / 2}" y="${y - 10}" width="${w}" height="20" rx="10"/><text x="${x}" y="${y + 4}" text-anchor="middle">${esc(t)}</text></g>`; };
+  // arrow: polyline points, arrowhead at the end, optional label at (lx, ly)
+  const arrow = (k, pts, lab, lx, ly) => {
+    const [x2, y2] = pts[pts.length - 1], [x1, y1] = pts[pts.length - 2];
+    const ang = Math.atan2(y2 - y1, x2 - x1), a = 7;
+    const head = [[x2, y2], [x2 - a * Math.cos(ang - 0.45), y2 - a * Math.sin(ang - 0.45)], [x2 - a * Math.cos(ang + 0.45), y2 - a * Math.sin(ang + 0.45)]];
+    out.push(`<g data-k="${k}"><polyline class="fc-ln" points="${pts.map(p => p.join(',')).join(' ')}"/>` +
+      `<polygon class="fc-arrow" points="${head.map(p => p.map(n => n.toFixed(1)).join(',')).join(' ')}"/>` +
+      (lab ? label(lx, ly, lab) : '') + '</g>');
+  };
+  const right = (k, y, lab) => arrow(k, [[DX + DW, y + H / 2], [OX, y + H / 2]], lab, (DX + DW + OX) / 2, y + H / 2);
+  const down = (k, y1, y2, lab) => arrow(k, [[CX, y1], [CX, y2]], lab, CX, (y1 + y2) / 2);
+
+  const Y = { walk: 0, breathing: 100, rr: 262, perfusion: 362, mental: 462, delayed: 562 };
+  // 1. walk
+  box('walk', DX, Y.walk, DW, H, 'Able to walk?');
+  right('e-walk-yes', Y.walk, 'Yes');
+  res('o-walk-yes', OX, Y.walk, OW, H, 'GREEN', 'then secondary triage');
+  down('e-walk-no', Y.walk + H, Y.breathing, 'No');
+  // 2. breathing, with the airway branch
+  box('breathing', DX, Y.breathing, DW, H, 'Breathing?');
+  right('e-breathing-no', Y.breathing, 'No');
+  box('airway', OX, Y.breathing, OW, H, 'Open airway', 'one attempt');
+  const ay = Y.breathing + H, sy = ay + 54, lx = OX + 39, rx = OX + OW - 39;
+  arrow('e-airway-yes', [[OX + OW / 2, ay], [OX + OW / 2, ay + 12], [lx, ay + 12], [lx, sy]], 'Breathes', lx, ay + 32);
+  arrow('e-airway-no', [[OX + OW / 2, ay], [OX + OW / 2, ay + 12], [rx, ay + 12], [rx, sy]], 'Apnea', rx, ay + 32);
+  res('o-airway-yes', OX, sy, 78, 40, 'RED');
+  res('o-airway-no', OX + OW - 78, sy, 78, 40, 'BLACK');
+  down('e-breathing-yes', Y.breathing + H, Y.rr, 'Yes');
+  // 3. respiratory rate
+  box('rr', DX, Y.rr, DW, H, 'Breathing rate', 'per minute');
+  right('e-rr-gt30', Y.rr, 'Over 30');
+  res('o-rr-gt30', OX, Y.rr, OW, H, 'RED');
+  down('e-rr-le30', Y.rr + H, Y.perfusion, '30 or less');
+  // 4. perfusion
+  box('perfusion', DX, Y.perfusion, DW, H, 'Radial pulse', 'or capillary refill');
+  right('e-perfusion-bad', Y.perfusion, 'None / >2 s');
+  res('o-perfusion-bad', OX, Y.perfusion, OW, H, 'RED', 'control bleeding');
+  down('e-perfusion-ok', Y.perfusion + H, Y.mental, 'Present, ≤2 s');
+  // 5. mental status
+  box('mental', DX, Y.mental, DW, H, 'Follows simple', 'commands?');
+  right('e-mental-no', Y.mental, 'No');
+  res('o-mental-no', OX, Y.mental, OW, H, 'RED');
+  down('e-mental-yes', Y.mental + H, Y.delayed, 'Yes');
+  res('o-mental-yes', DX, Y.delayed, DW, H, 'YELLOW');
+
+  const H_ALL = Y.delayed + H + 2;
+  const desc = 'START adult triage. Able to walk: Minor. If not, is the patient breathing? If not, open the airway once: ' +
+    'breathing starts, Immediate; still not breathing, Expectant. If breathing: rate over 30 a minute, Immediate. ' +
+    'Otherwise check perfusion: no radial pulse or capillary refill over 2 seconds, Immediate (control bleeding). ' +
+    'Otherwise mental status: cannot follow simple commands, Immediate; follows commands, Delayed.';
+  return `<svg class="fc-svg" viewBox="0 0 ${W} ${H_ALL}" role="img" aria-labelledby="fcTitle fcDesc">
+    <title id="fcTitle">START adult triage flowchart</title><desc id="fcDesc">${esc(desc)}</desc>${out.join('')}</svg>`;
+}
+
+function drawStartChart() {
+  const c = document.getElementById('toolContainer');
+  const cats = [
+    ['RED', 'Red tag', ['Life-threatening problem with the airway, breathing or circulation.',
+      'Can be helped by immediate treatment and transport. Needs care within minutes (up to about 60).']],
+    ['YELLOW', 'Yellow tag', ['Serious, possibly life-threatening injuries, but not expected to get much worse over several hours.',
+      'Transport can be delayed.']],
+    ['GREEN', 'Green tag', ['“Walking wounded”: relatively minor injuries, unlikely to get worse over days.',
+      'May be able to help with their own care.']],
+    ['BLACK', 'Black tag', ['Unlikely to survive given the injuries, the care available, or both. In START: not breathing after the airway is opened.',
+      'Give comfort care and pain relief when resources allow.']]
+  ];
+  const inProgress = stPath.length > 0;
+  c.innerHTML = `<div class="fc-wrap">
+    <p class="fc-intro">Adult START triage. Spend about 30 seconds on each patient. For children, use JumpSTART.</p>
+    <figure class="fc-fig">${startChartSvg()}</figure>
+    ${inProgress ? `<p class="fc-caption"><b>Highlighted:</b> the path of the patient you are triaging. <button type="button" class="st-link" data-fc="back">${ICON('arrow-left')} Back to the patient</button></p>` : ''}
+    <h2 class="st-h">RPM: 30 · 2 · Can do</h2>
+    <div class="fc-rpm">
+      <div><b>30</b><span>Respirations over 30 a minute</span></div>
+      <div><b>2</b><span>Perfusion: no radial pulse or refill over 2 s</span></div>
+      <div><b>Can do</b><span>Mental status: cannot follow commands</span></div>
+    </div>
+    <p class="fc-caption">Any one of the three in a patient who cannot walk means <b>Immediate</b>.</p>
+    <h2 class="st-h">Triage categories</h2>
+    <div class="fc-cats">${cats.map(([k, col, pts]) => `<section class="fc-cat">
+      <div class="fc-cat-h"><span class="st-to ${ST_TAG[k][0]}">${ST_TAG[k][1]}</span><span>${col}</span></div>
+      <ul>${pts.map(t => `<li>${escapeHtml(t)}</li>`).join('')}</ul></section>`).join('')}</div>
+    <h2 class="st-h">During triage</h2>
+    <ul class="fc-notes">
+      <li>Only two treatments: open and position the airway, and control severe bleeding.</li>
+      <li>One airway attempt for a patient who is not breathing. No CPR, no rescue breaths.</li>
+      <li>Triage is dynamic: re-triage at every stage, in the treatment area and before transport.</li>
+      <li>Children: <a href="../courses/mci/index.html#c06">Chapter 6, START &amp; JumpSTART</a>.</li>
+    </ul>
+  </div>`;
+  if (inProgress) {
+    const svg = c.querySelector('.fc-svg');
+    svg.classList.add('has-path');
+    const keys = new Set();
+    stPath.forEach(p => { keys.add(p.id); keys.add(`e-${p.id}-${p.a}`); });
+    const last = stPath[stPath.length - 1];
+    if (ST_RESULTS[stStep]) keys.add(`o-${last.id}-${last.a}`); else keys.add(stStep);
+    svg.querySelectorAll('[data-k]').forEach(el => {
+      if (keys.has(el.dataset.k)) { el.classList.add('on'); el.querySelector('.fc-dec, .fc-ln')?.classList.add('on'); }
+    });
+    c.querySelector('[data-fc="back"]').addEventListener('click', () => stShowTab('triage', true));
+  }
 }
 
 /* ── METHANE report tool (same report as the EMS tools version; draft kept on this device) ── */
