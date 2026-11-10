@@ -137,6 +137,48 @@ test('MCI field tools open in the page and Back returns home', async ({ page }) 
   expect(errors).toEqual([]);
 });
 
+// START triage: every branch of adult START gives the right category and says
+// why, and the flowchart tab lights up the patient's path and has its own link.
+test('START triage gives the right category on every path, and the flowchart shows it', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('pages/mci.html#start-triage', { waitUntil: 'networkidle' });
+
+  const paths = [
+    [['Walks'], 'Minor', 'Able to walk'],
+    [['Cannot walk', 'Not breathing', 'Starts breathing'], 'Immediate', 'only after the airway'],
+    [['Cannot walk', 'Not breathing', 'Still not breathing'], 'Expectant', 'Not breathing after'],
+    [['Cannot walk', 'Breathing', 'Over 30 a minute'], 'Immediate', 'over 30'],
+    [['Cannot walk', 'Breathing', '30 a minute or less', 'No radial pulse'], 'Immediate', 'No radial pulse'],
+    [['Cannot walk', 'Breathing', '30 a minute or less', 'Pulse present', 'Cannot follow commands'], 'Immediate', 'Cannot follow'],
+    [['Cannot walk', 'Breathing', '30 a minute or less', 'Pulse present', 'Follows commands'], 'Delayed', 'follows commands'],
+  ];
+  for (const [answers, category, why] of paths) {
+    for (const a of answers) await page.locator('.st-opt .st-opt-t', { hasText: new RegExp(`^${a}`) }).click();
+    await expect(page.locator('.st-cat')).toHaveText(category);
+    await expect(page.locator('.st-why')).toContainText(why);
+    await expect(page.locator('.st-path li')).toHaveCount(answers.length);
+    await page.locator('.st-next[data-st="restart"]').click();
+  }
+
+  // Breathing over 30 → Immediate, then see it on the flowchart
+  for (const a of ['Cannot walk', 'Breathing', 'Over 30 a minute']) {
+    await page.locator('.st-opt .st-opt-t', { hasText: new RegExp(`^${a}`) }).click();
+  }
+  await page.locator('[data-st="chart"]').click();
+  await expect(page).toHaveURL(/#start-triage\/flowchart$/);
+  await expect(page.locator('#st-tab-flowchart')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.fc-svg [data-k="o-rr-gt30"]')).toHaveClass(/\bon\b/);
+  await expect(page.locator('.fc-svg [data-k="o-mental-yes"]')).not.toHaveClass(/\bon\b/);
+  await page.locator('#st-tab-triage').click();
+  await expect(page.locator('.st-cat')).toHaveText('Immediate');
+
+  // The flowchart link opens straight to the chart
+  await page.goto('pages/mci.html#start-triage/flowchart', { waitUntil: 'networkidle' });
+  await expect(page.locator('.fc-svg')).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
 // Officer roles: a role opens from the home page, and a sideways swipe on the
 // duties moves to the next role (touch events through the DevTools protocol).
 test('MCI officer roles open from home and swipe to the next role', async ({ browser }) => {
