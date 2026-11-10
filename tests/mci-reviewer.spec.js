@@ -137,6 +137,37 @@ test('MCI field tools open in the page and Back returns home', async ({ page }) 
   expect(errors).toEqual([]);
 });
 
+// Chapter 6 shows START and JumpSTART as step-by-step flows with category tags,
+// switchable by click or arrow keys; the START flow links to the triage tool.
+test('chapter 6 shows START and JumpSTART as switchable decision flows', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('courses/mci/index.html#c06', { waitUntil: 'networkidle' });
+
+  const glance = page.locator('.glance');
+  await expect(glance.locator('.flow-card h3')).toHaveText('START (Adult)');
+  await expect(glance.locator('.flow-step')).toHaveCount(5);
+  await expect(glance.locator('.flow-step').nth(2)).toContainText('More than 30 a minute');
+  await expect(glance.locator('.flow-links a').first()).toHaveAttribute('href', '../../pages/mci.html#start-triage');
+  await expect(page.locator('pre.tree')).toHaveCount(0);
+
+  await page.locator('.flow-switch [data-flow="0"]').focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(glance.locator('.flow-card h3')).toHaveText('JumpSTART (Child ~1–8 y)');
+  await expect(page.locator('.flow-switch [data-flow="1"]')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.flow-switch [data-flow="1"]')).toBeFocused();
+  await expect(glance.locator('.flow-step').nth(1)).toContainText('5 rescue breaths');
+  await expect(glance.locator('.flow-step').nth(2)).toContainText('Under 15 or over 45');
+  await expect(glance.locator('.fs-kid')).toHaveCount(4);
+  await expect(glance.locator('.flow-links')).toHaveCount(0);
+
+  // Category words become coloured tags in the text and tables
+  await expect(page.locator('.card .tri-red').first()).toHaveText('IMMEDIATE');
+  await page.locator('#tabs .tab', { hasText: 'Tables' }).click();
+  await expect(page.locator('table.data .sw')).toHaveCount(4);
+  expect(errors).toEqual([]);
+});
+
 // START triage: every branch of adult START gives the right category and says
 // why, and the flowchart tab lights up the patient's path and has its own link.
 test('START triage gives the right category on every path, and the flowchart shows it', async ({ page }) => {

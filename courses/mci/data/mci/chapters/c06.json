@@ -59,11 +59,160 @@
   "decisionTrees": [
     {
       "title": "START (Adult)",
-      "content": "Can walk? → YES: MINOR (green)\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR > 30? → YES: IMMEDIATE\n  NO ↓\nRadial pulse absent OR CRT > 2 s? → YES: IMMEDIATE (control bleeding)\n  NO ↓\nFollows simple commands? → NO: IMMEDIATE | YES: DELAYED"
+      "content": "Can walk? → YES: MINOR (green)\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR > 30? → YES: IMMEDIATE\n  NO ↓\nRadial pulse absent OR CRT > 2 s? → YES: IMMEDIATE (control bleeding)\n  NO ↓\nFollows simple commands? → NO: IMMEDIATE | YES: DELAYED",
+      "label": "START · adult",
+      "subtitle": "About 30 seconds per patient, never more than 60.",
+      "flow": [
+        {
+          "q": "Can the patient walk?",
+          "hint": "Call out: “If you can walk, go to the green point.”",
+          "br": [
+            {
+              "if": "Walks",
+              "then": "MINOR"
+            }
+          ],
+          "next": "cannot walk"
+        },
+        {
+          "q": "Breathing?",
+          "br": [
+            {
+              "if": "Not breathing → position the airway → breathing starts",
+              "then": "IMMEDIATE"
+            },
+            {
+              "if": "Still not breathing after positioning",
+              "then": "DECEASED"
+            }
+          ],
+          "next": "breathing"
+        },
+        {
+          "q": "Respiratory rate",
+          "hint": "Count for 15 seconds × 4.",
+          "br": [
+            {
+              "if": "More than 30 a minute",
+              "then": "IMMEDIATE"
+            }
+          ],
+          "next": "30 or less"
+        },
+        {
+          "q": "Perfusion",
+          "hint": "Radial pulse first: capillary refill is unreliable in cold or dark.",
+          "br": [
+            {
+              "if": "No radial pulse, or capillary refill over 2 s (control bleeding)",
+              "then": "IMMEDIATE"
+            }
+          ],
+          "next": "radial pulse present, refill 2 s or less"
+        },
+        {
+          "q": "Mental status: follows simple commands?",
+          "br": [
+            {
+              "if": "Cannot follow simple commands",
+              "then": "IMMEDIATE"
+            },
+            {
+              "if": "Follows simple commands",
+              "then": "DELAYED"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Triage a patient step by step",
+          "href": "../../pages/mci.html#start-triage"
+        },
+        {
+          "label": "START flowchart",
+          "href": "../../pages/mci.html#start-triage/flowchart"
+        }
+      ]
     },
     {
       "title": "JumpSTART (Child ~1–8 y)",
-      "content": "Can walk? → YES: MINOR\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE\n        NO → palpable peripheral pulse? NO: DECEASED\n                YES → 5 rescue breaths → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR < 15 or > 45? → YES: IMMEDIATE\n  NO ↓\nPalpable peripheral pulse? → NO: IMMEDIATE\n  YES ↓\nAVPU: U or inappropriate P → IMMEDIATE | A, V, appropriate P → DELAYED"
+      "content": "Can walk? → YES: MINOR\n  NO ↓\nBreathing?\n  → NO: position airway → breathing? YES: IMMEDIATE\n        NO → palpable peripheral pulse? NO: DECEASED\n                YES → 5 rescue breaths → breathing? YES: IMMEDIATE | NO: DECEASED\n  → YES ↓\nRR < 15 or > 45? → YES: IMMEDIATE\n  NO ↓\nPalpable peripheral pulse? → NO: IMMEDIATE\n  YES ↓\nAVPU: U or inappropriate P → IMMEDIATE | A, V, appropriate P → DELAYED",
+      "label": "JumpSTART · child",
+      "subtitle": "Children about 1–8 years, or anyone who looks like a child.",
+      "flow": [
+        {
+          "q": "Can the patient walk?",
+          "hint": "A child too young to walk goes through the steps. Well-appearing, with normal findings and no significant injury, may be MINOR.",
+          "br": [
+            {
+              "if": "Walks",
+              "then": "MINOR"
+            }
+          ],
+          "next": "cannot walk"
+        },
+        {
+          "q": "Breathing?",
+          "kid": true,
+          "hint": "Children usually arrest from hypoxia, so they get a pulse check and 5 rescue breaths before being tagged DECEASED.",
+          "br": [
+            {
+              "if": "Not breathing → position the airway → breathing starts",
+              "then": "IMMEDIATE"
+            },
+            {
+              "if": "Still apneic and no palpable peripheral pulse",
+              "then": "DECEASED"
+            },
+            {
+              "if": "Still apneic, pulse present → 5 rescue breaths (~15 s) → breathing starts",
+              "then": "IMMEDIATE"
+            },
+            {
+              "if": "Still apneic after 5 rescue breaths",
+              "then": "DECEASED"
+            }
+          ],
+          "next": "breathing"
+        },
+        {
+          "q": "Respiratory rate",
+          "kid": true,
+          "br": [
+            {
+              "if": "Under 15 or over 45 a minute",
+              "then": "IMMEDIATE"
+            }
+          ],
+          "next": "15–45"
+        },
+        {
+          "q": "Perfusion: palpable peripheral pulse?",
+          "kid": true,
+          "br": [
+            {
+              "if": "No palpable peripheral pulse",
+              "then": "IMMEDIATE"
+            }
+          ],
+          "next": "pulse present"
+        },
+        {
+          "q": "Mental status (AVPU)",
+          "kid": true,
+          "br": [
+            {
+              "if": "U, or P with an inappropriate response (non-localizing, posturing)",
+              "then": "IMMEDIATE"
+            },
+            {
+              "if": "A, V, or P with an appropriate response",
+              "then": "DELAYED"
+            }
+          ]
+        }
+      ]
     }
   ],
   "references": [
