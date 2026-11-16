@@ -17,6 +17,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_tn_parse": ".parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tn_register": ".register()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tn_registry": ".registry()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tn_setdimensions": ".setDimensions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tn_tobase64image": ".toBase64Image()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tn_unregister": ".unregister()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn]
+- "vendor_chart_4_5_1_umd_min_tooltip": "Tooltip()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_ts_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ts()]
+- "vendor_chart_4_5_1_umd_min_uo": "uo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_updaterangefromparsed": "updateRangeFromParsed()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_va": "va()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
+- "vendor_chart_4_5_1_umd_min_wa_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa]
+- "vendor_chart_4_5_1_umd_min_wa_initialize": ".initialize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa]
 - "vendor_chart_4_5_1_umd_min_wa_ishorizontal": ".isHorizontal()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa]
 - "vendor_chart_4_5_1_umd_min_wa_resolveanimations": "._resolveAnimations()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa]
 - "vendor_chart_4_5_1_umd_min_xs": "xs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js]
@@ -44,19 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_ds": "ds()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_encodemetadata": "encodeMetadata()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_endpoint": "endPoint()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_filter": "filter()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_filterbindings": "filterBindings()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_functions": "functions()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_geojson": "geojson()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_getlongpolltransport": "getLongPollTransport()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_getpayloadrecords": "_getPayloadRecords()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_heartbeatintervalms": "heartbeatIntervalMs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_heartbeattimer": "heartbeatTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_index": "index()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_isactive": "isActive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_isauthenticationtimeout": "isAuthenticationTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_isconflict": "isConflict()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_iserrored": "isErrored()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
 
 ## Instructions
 

@@ -167,16 +167,19 @@
     ]
   },
   "total_files": 156,
-  "total_words": 662630,
+  "total_words": 657702,
   "needs_graph": true,
-  "warning": "Large corpus: 156 files · ~662,630 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 156 files · ~657,702 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 30,
   "git": {
     "source_owner": "git",
-    "source_hash": "d35441ed2d251619eabaacf3f89d863b2d49a33b",
+    "source_hash": "564422f9497054d27ccc5c852c1d02bd87b01756",
     "branches": [
-      "main"
+      "ccr-b58d9c43-7az2tj",
+      "guide-images",
+      "main",
+      "worktree-pr85-supabase-deploy"
     ],
     "max_commits": 200,
     "active_within_days": 30
@@ -187,11 +190,11 @@
     "source": "default-auto",
     "root": ".",
     "git_root": ".",
-    "head": "d35441ed2d251619eabaacf3f89d863b2d49a33b",
-    "candidate_count": 2002,
+    "head": "564422f9497054d27ccc5c852c1d02bd87b01756",
+    "candidate_count": 2094,
     "included_count": 156,
-    "excluded_untracked_count": 130,
-    "excluded_ignored_count": 15543,
+    "excluded_untracked_count": 100,
+    "excluded_ignored_count": 15211,
     "excluded_sensitive_count": 0,
     "missing_committed_count": 11,
     "warnings": [],

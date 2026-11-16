@@ -24,6 +24,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_record_fs": "fs" | kind=code-symbol | source=promo/megacode/scripts/record.js:L5 | neighbors=[record.js]
+- "scripts_record_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/record.js:L7 | neighbors=[record.js]
+- "scripts_record_out": "OUT" | kind=code-symbol | source=promo/megacode/scripts/record.js:L13 | neighbors=[record.js]
+- "scripts_record_path": "path" | kind=code-symbol | source=promo/megacode/scripts/record.js:L6 | neighbors=[record.js]
+- "scripts_record_quiz": "QUIZ" | kind=code-symbol | source=promo/megacode/scripts/record.js:L38 | neighbors=[record.js]
+- "scripts_split_content_chapter_ids": "CHAPTER_IDS" | kind=code-symbol | source=scripts/split_content.js:L22 | neighbors=[split_content.js]
+- "scripts_split_content_content_dir": "CONTENT_DIR" | kind=code-symbol | source=scripts/split_content.js:L17 | neighbors=[split_content.js]
+- "scripts_split_content_fs": "fs" | kind=code-symbol | source=scripts/split_content.js:L12 | neighbors=[split_content.js]
+- "scripts_split_content_path": "path" | kind=code-symbol | source=scripts/split_content.js:L13 | neighbors=[split_content.js]
+- "scripts_split_content_root": "ROOT" | kind=code-symbol | source=scripts/split_content.js:L16 | neighbors=[split_content.js]
+- "scripts_split_content_vm": "vm" | kind=code-symbol | source=scripts/split_content.js:L14 | neighbors=[split_content.js]
+- "scripts_validate_content_rationale_105": "Extract (text, options, correct_answer) regardless of which of the\r     bank's s" | kind=entity | source=scripts/validate_content.py:L105 | neighbors=[question_core_fields()]
+- "scripts_validate_content_rationale_51": "Several banks were authored with a UTF-8 BOM; browsers' fetch().json()\r     tole" | kind=entity | source=scripts/validate_content.py:L51 | neighbors=[load_json_lenient()]
 - "server_load_user": "load_user()" | kind=code-symbol | source=server.py:L146 | neighbors=[server.py]
 - "server_rationale_121": "Abort with 503/401 unless the caller has a valid Supabase session.\r     Returns" | kind=entity | source=server.py:L121 | neighbors=[_require_supabase_user()]
 - "server_rationale_151": "Allow-list of admin emails sourced from the environment (no hard-coding)." | kind=entity | source=server.py:L151 | neighbors=[_admin_emails()]
@@ -51,19 +64,6 @@ one-sentence description — no prose, no markdown fences.
 - "tests_content_guides_spec_formulary": "FORMULARY" | kind=code-symbol | source=tests/content-guides.spec.js:L10 | neighbors=[content-guides.spec.js]
 - "tests_content_guides_spec_topics": "topics" | kind=code-symbol | source=tests/content-guides.spec.js:L11 | neighbors=[content-guides.spec.js]
 - "tests_courses_page_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/courses-page.spec.js:L4 | neighbors=[courses-page.spec.js]
-- "tests_ecg_simulator_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L6 | neighbors=[ecg-simulator.spec.js]
-- "tests_ecg_simulator_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L8 | neighbors=[ecg-simulator.spec.js]
-- "tests_exam_pages_spec_courses": "COURSES" | kind=code-symbol | source=tests/exam-pages.spec.js:L6 | neighbors=[exam-pages.spec.js]
-- "tests_home_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/home.spec.js:L7 | neighbors=[home.spec.js]
-- "tests_megacode_quick_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode-quick.spec.js:L5 | neighbors=[megacode-quick.spec.js]
-- "tests_megacode_spec_answerquiz": "answerQuiz()" | kind=code-symbol | source=tests/megacode.spec.js:L6 | neighbors=[megacode.spec.js]
-- "tests_megacode_spec_cprcyclethencheck": "cprCycleThenCheck()" | kind=code-symbol | source=tests/megacode.spec.js:L16 | neighbors=[megacode.spec.js]
-- "tests_megacode_spec_shocknow": "shockNow()" | kind=code-symbol | source=tests/megacode.spec.js:L22 | neighbors=[megacode.spec.js]
-- "tests_megacode_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode.spec.js:L4 | neighbors=[megacode.spec.js]
-- "tests_offline_spec_exam_content_assets": "EXAM_CONTENT_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L31 | neighbors=[offline.spec.js]
-- "tests_offline_spec_key_pages": "KEY_PAGES" | kind=code-symbol | source=tests/offline.spec.js:L11 | neighbors=[offline.spec.js]
-- "tests_offline_spec_vendored_assets": "VENDORED_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L19 | neighbors=[offline.spec.js]
-- "tests_pals_reviewer_spec": "pals-reviewer.spec.js" | kind=code-symbol | source=tests/pals-reviewer.spec.js:L1 | neighbors=[2e859ad Adding PALS Course]
 
 ## Instructions
 

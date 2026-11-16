@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_rs": "rs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, onAuthStateChange()]
+- "vendor_supabase_js_2_110_0_scheduletimeout": "scheduleTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, onConnClose()]
+- "vendor_supabase_js_2_110_0_setheader": "setHeader()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs, ht()]
+- "vendor_supabase_js_2_110_0_signinwithoauth": "signInWithOAuth()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _handleProviderSignIn()]
+- "vendor_supabase_js_2_110_0_ss": "ss()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, initialize()]
+- "vendor_supabase_js_2_110_0_state": "state()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, transformState()]
+- "vendor_supabase_js_2_110_0_terminateworker": "_terminateWorker()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, log()]
+- "vendor_supabase_js_2_110_0_ti": "ti()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge()]
+- "vendor_supabase_js_2_110_0_track": "track()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, send()]
+- "vendor_supabase_js_2_110_0_transport": "transport()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, transportConnect()]
+- "vendor_supabase_js_2_110_0_transportname": "transportName()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback()]
+- "vendor_supabase_js_2_110_0_ts": "ts()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, U()]
+- "vendor_supabase_js_2_110_0_untrack": "untrack()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, send()]
+- "vendor_supabase_js_2_110_0_updatebucket": "updateBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
 - "vendor_supabase_js_2_110_0_updatefilterbindings": "updateFilterBindings()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, _updateFilterMessage()]
 - "vendor_supabase_js_2_110_0_updatejoinpayload": "updateJoinPayload()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, subscribe()]
 - "vendor_supabase_js_2_110_0_updatepayloadtransform": "updatePayloadTransform()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, _updateFilterTransform()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "app_rendersectionnavigation": "renderSectionNavigation()" | kind=code-symbol | source=app.js:L338 | neighbors=[app.js]
 - "app_rendersectiontabs": "renderSectionTabs()" | kind=code-symbol | source=app.js:L304 | neighbors=[app.js]
 - "app_timeago": "timeAgo()" | kind=code-symbol | source=app.js:L54 | neighbors=[app.js]
-- "app_updatebottomnavvisibility": "updateBottomNavVisibility()" | kind=code-symbol | source=app.js:L395 | neighbors=[app.js]
-- "app_updatefooternavposition": "updateFooterNavPosition()" | kind=code-symbol | source=app.js:L406 | neighbors=[app.js]
-- "app_updateheadervisibility": "updateHeaderVisibility()" | kind=code-symbol | source=app.js:L372 | neighbors=[app.js]
-- "app_updateprogressbarposition": "updateProgressBarPosition()" | kind=code-symbol | source=app.js:L385 | neighbors=[app.js]
-- "app_updatescrollprogress": "updateScrollProgress()" | kind=code-symbol | source=app.js:L415 | neighbors=[app.js]
-- "cpg_guide_list": "list()" | kind=code-symbol | source=cpg-guide.js:L37 | neighbors=[cpg-guide.js]
-- "cpg_guide_stackedtable": "stackedTable()" | kind=code-symbol | source=cpg-guide.js:L56 | neighbors=[cpg-guide.js]
-- "google_flow_generate_batches_anatomy": "ANATOMY" | kind=code-symbol | source=.google-flow/generate-batches.js:L12 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_batches": "batches" | kind=code-symbol | source=.google-flow/generate-batches.js:L159 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_byid": "byId" | kind=code-symbol | source=.google-flow/generate-batches.js:L106 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_chapters": "chapters" | kind=code-symbol | source=.google-flow/generate-batches.js:L157 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_count": "count()" | kind=code-symbol | source=.google-flow/generate-batches.js:L180 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_counted": "counted" | kind=code-symbol | source=.google-flow/generate-batches.js:L173 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_csv": "csv" | kind=code-symbol | source=.google-flow/generate-batches.js:L210 | neighbors=[generate-batches.js]
 
 ## Instructions
 

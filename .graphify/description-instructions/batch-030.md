@@ -24,6 +24,18 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_capture_screenshots_settle": "settle()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L50 | neighbors=[capture-screenshots.js, startPrometric(), waitExamReady()]
+- "scripts_capture_screenshots_startprometric": "startPrometric()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L58 | neighbors=[capture-screenshots.js, settle(), waitExamReady()]
+- "scripts_capture_screenshots_waitexamready": "waitExamReady()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L52 | neighbors=[capture-screenshots.js, startPrometric(), settle()]
+- "scripts_check_contrast_main": "main()" | kind=code-symbol | source=scripts/check_contrast.py:L65 | neighbors=[check_contrast.py, contrast(), parse_themes()]
+- "scripts_check_contrast_parse_themes": "parse_themes()" | kind=code-symbol | source=scripts/check_contrast.py:L52 | neighbors=[check_contrast.py, main(), Extract {theme_name: {var_name: hex}} f…]
+- "scripts_compose_cam_at": "cam_at()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L262 | neighbors=[compose.py, render_full(), render_play_overlays()]
+- "scripts_compose_clk": "clk()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L96 | neighbors=[compose.py, build_edit(), build_edit_play()]
+- "scripts_compose_end_card": "end_card()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L553 | neighbors=[compose.py, _disclaimer(), render_reveal()]
+- "scripts_compose_lib_card": "card()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L111 | neighbors=[compose_lib.py, rounded_mask(), Turn a camera view (smaller than frame)…]
+- "scripts_compose_lib_draw_tracked": "draw_tracked()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L245 | neighbors=[compose_lib.py, chip(), kicker()]
+- "scripts_compose_lib_ease": "ease()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L30 | neighbors=[compose_lib.py, ramp(), tap_ring()]
+- "scripts_compose_lib_font": "font()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L25 | neighbors=[compose_lib.py, chip(), kicker()]
 - "scripts_compose_lib_perspective": "perspective()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L144 | neighbors=[compose_lib.py, perspective_coeffs(), Warp the full src onto quad (tl, tr, br…]
 - "scripts_compose_lib_perspective_coeffs": "perspective_coeffs()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L135 | neighbors=[compose_lib.py, perspective(), PIL PERSPECTIVE coefficients mapping ou…]
 - "scripts_compose_lib_tap_ring": "tap_ring()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L300 | neighbors=[compose_lib.py, Touch indicator where the learner tappe…, ease()]
@@ -52,18 +64,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_generate_all_itls_data": "generate_all_itls_data.py" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L1 | neighbors=[main(), 20fdfa2 feat(itls): complete itls revie…, a4df22b fix: resolve CI lint failure an…]
 - "scripts_generate_maskable_icons": "generate_maskable_icons.py" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L1 | neighbors=[83a1ea8 Ship the Offline & PWA section …, d1b235f Merge pull request #15 Offline …, main()]
 - "scripts_record_auto": "auto()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L105 | neighbors=[record.js, advance(), click()]
-- "scripts_record_waitfor": "waitFor()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L100 | neighbors=[record.js, advance(), frame()]
-- "scripts_validate_content_load_json_lenient": "load_json_lenient()" | kind=code-symbol | source=scripts/validate_content.py:L50 | neighbors=[validate_content.py, Several banks were authored with a UTF-…, validate_bank_content()]
-- "scripts_validate_content_question_core_fields": "question_core_fields()" | kind=code-symbol | source=scripts/validate_content.py:L104 | neighbors=[validate_content.py, Extract (text, options, correct_answer)…, validate_question()]
-- "scripts_validate_content_rel": "rel()" | kind=code-symbol | source=scripts/validate_content.py:L46 | neighbors=[validate_content.py, main(), validate_manifest_coverage()]
-- "scripts_validate_content_validate_manifest_coverage": "validate_manifest_coverage()" | kind=code-symbol | source=scripts/validate_content.py:L91 | neighbors=[validate_content.py, main(), rel()]
-- "scripts_validate_content_validate_question": "validate_question()" | kind=code-symbol | source=scripts/validate_content.py:L113 | neighbors=[validate_content.py, validate_bank_content(), question_core_fields()]
-- "server_admin_emails": "_admin_emails()" | kind=code-symbol | source=server.py:L150 | neighbors=[server.py, _is_admin(), Allow-list of admin emails sourced from…]
-- "server_audit": "_audit()" | kind=code-symbol | source=server.py:L20 | neighbors=[server.py, Write a structured audit record for aut…, Write a structured audit record for aut…]
-- "server_is_admin": "_is_admin()" | kind=code-symbol | source=server.py:L156 | neighbors=[server.py, _admin_emails(), A user is an admin if their role is 'Ad…]
-- "server_supabase_admin_configured": "_supabase_admin_configured()" | kind=code-symbol | source=server.py:L83 | neighbors=[server.py, _require_supabase_user(), _supabase_user_from_token()]
-- "src_render_state_escapehtml": "escapeHtml()" | kind=code-symbol | source=src/render-state.js:L23 | neighbors=[render-state.js, icon(), renderEmptyOrError()]
-- "src_render_state_icon": "icon()" | kind=code-symbol | source=src/render-state.js:L31 | neighbors=[render-state.js, escapeHtml(), renderEmptyOrError()]
 
 ## Instructions
 

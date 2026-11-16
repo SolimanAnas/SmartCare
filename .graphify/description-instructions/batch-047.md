@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_createsigneduploadurl": "createSignedUploadUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_createsignedurl": "createSignedUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_createsignedurls": "createSignedUrls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_deletebucket": "deleteBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_deleteindex": "deleteIndex()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_dn": "Dn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, es()]
+- "vendor_supabase_js_2_110_0_ei": "ei()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge()]
+- "vendor_supabase_js_2_110_0_emitinitialsession": "_emitInitialSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _useSession()]
+- "vendor_supabase_js_2_110_0_emptybucket": "emptyBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
+- "vendor_supabase_js_2_110_0_eq": "eq()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
+- "vendor_supabase_js_2_110_0_explain": "explain()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
+- "vendor_supabase_js_2_110_0_fi": "fi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, yi()]
+- "vendor_supabase_js_2_110_0_finally": "finally()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, getPromise()]
+- "vendor_supabase_js_2_110_0_fo": "fo()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, y()]
 - "vendor_supabase_js_2_110_0_fs": "fs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, ie()]
 - "vendor_supabase_js_2_110_0_getaccesstoken": "_getAccessToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, getSession()]
 - "vendor_supabase_js_2_110_0_getbucket": "getBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_ismanualtoken": "_isManualToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, _setAuthSafely()]
 - "vendor_supabase_js_2_110_0_ispkcecallback": "_isPKCECallback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, initialize()]
 - "vendor_supabase_js_2_110_0_iswebsocketsupported": "isWebSocketSupported()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, detectEnvironment()]
-- "vendor_supabase_js_2_110_0_jr": "Jr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, y()]
-- "vendor_supabase_js_2_110_0_like": "like()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_likeallof": "likeAllOf()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_likeanyof": "likeAnyOf()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_list": "list()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_listbucketoptionstoquerystring": "listBucketOptionsToQueryString()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, toString()]
-- "vendor_supabase_js_2_110_0_listbuckets": "listBuckets()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_listv2": "listV2()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_ln": "ln()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, toString()]
-- "vendor_supabase_js_2_110_0_ls": "ls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, getClaims()]
-- "vendor_supabase_js_2_110_0_lte": "lte()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_mi": "mi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, Ri()]
-- "vendor_supabase_js_2_110_0_move": "move()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_neq": "neq()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
 
 ## Instructions
 

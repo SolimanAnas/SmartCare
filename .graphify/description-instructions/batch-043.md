@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_bo_parse": ".parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo, s()]
+- "vendor_chart_4_5_1_umd_min_buildlookuptable": "buildLookupTable()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, initOffsets()]
+- "vendor_chart_4_5_1_umd_min_buildticks": "buildTicks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getLabels()]
+- "vendor_chart_4_5_1_umd_min_cn": "cn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, hn()]
+- "vendor_chart_4_5_1_umd_min_de_get": ".get()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, he()]
+- "vendor_chart_4_5_1_umd_min_de_override": ".override()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, ce()]
+- "vendor_chart_4_5_1_umd_min_de_route": ".route()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, he()]
+- "vendor_chart_4_5_1_umd_min_de_set": ".set()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, ce()]
+- "vendor_chart_4_5_1_umd_min_dn": "dn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, fe()]
+- "vendor_chart_4_5_1_umd_min_do": "Do()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, co()]
+- "vendor_chart_4_5_1_umd_min_ei": "ei()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e()]
+- "vendor_chart_4_5_1_umd_min_en_isfortype": ".isForType()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en, ._getRegistryForType()]
+- "vendor_chart_4_5_1_umd_min_fo": "fo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, draw()]
+- "vendor_chart_4_5_1_umd_min_generate": "_generate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getDataTimestamps()]
 - "vendor_chart_4_5_1_umd_min_generatelabels": "generateLabels()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._getSortedDatasetMetas()]
 - "vendor_chart_4_5_1_umd_min_getdecimalforvalue": "getDecimalForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, jo()]
 - "vendor_chart_4_5_1_umd_min_getmaxoverflow": "getMaxOverflow()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, size()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_js_ondatashift": "._onDataShift()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._sync()]
 - "vendor_chart_4_5_1_umd_min_js_ondatasplice": "._onDataSplice()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._sync()]
 - "vendor_chart_4_5_1_umd_min_js_ondataunshift": "._onDataUnshift()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._sync()]
-- "vendor_chart_4_5_1_umd_min_js_parseprimitivedata": ".parsePrimitiveData()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .getLabels()]
-- "vendor_chart_4_5_1_umd_min_js_removedatasethoverstyle": "._removeDatasetHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
-- "vendor_chart_4_5_1_umd_min_js_removeelements": "._removeElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._resyncElements()]
-- "vendor_chart_4_5_1_umd_min_js_removehoverstyle": ".removeHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
-- "vendor_chart_4_5_1_umd_min_js_resolvedataelementoptions": ".resolveDataElementOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._resolveElementOptions()]
-- "vendor_chart_4_5_1_umd_min_js_setdatasethoverstyle": "._setDatasetHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
-- "vendor_chart_4_5_1_umd_min_js_sethoverstyle": ".setHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
-- "vendor_chart_4_5_1_umd_min_js_updateindex": ".updateIndex()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .buildOrUpdateControllers()]
-- "vendor_chart_4_5_1_umd_min_jt_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), Gt()]
-- "vendor_chart_4_5_1_umd_min_jt_darken": ".darken()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
-- "vendor_chart_4_5_1_umd_min_jt_greyscale": ".greyscale()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), _t()]
-- "vendor_chart_4_5_1_umd_min_jt_hexstring": ".hexString()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
-- "vendor_chart_4_5_1_umd_min_jt_rgbstring": ".rgbString()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), wt()]
-- "vendor_chart_4_5_1_umd_min_jt_saturate": ".saturate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
 
 ## Instructions
 

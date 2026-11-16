@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "cpg_guide_legend": "legend()" | kind=code-symbol | source=cpg-guide.js:L176 | neighbors=[cpg-guide.js, renderGuide()]
+- "cpg_guide_level": "level()" | kind=code-symbol | source=cpg-guide.js:L31 | neighbors=[cpg-guide.js, step()]
+- "cpg_guide_strip": "strip()" | kind=code-symbol | source=cpg-guide.js:L147 | neighbors=[cpg-guide.js, ecgHref()]
+- "cpg_guide_usedlevels": "usedLevels()" | kind=code-symbol | source=cpg-guide.js:L187 | neighbors=[cpg-guide.js, renderGuide()]
+- "cpg_strip_svg": "svg()" | kind=code-symbol | source=cpg-strip.js:L35 | neighbors=[cpg-strip.js, trace()]
+- "cpg_strip_trace": "trace()" | kind=code-symbol | source=cpg-strip.js:L17 | neighbors=[cpg-strip.js, svg()]
+- "empact_build_load": "load()" | kind=code-symbol | source=courses/empact/build.py:L24 | neighbors=[build.py, main()]
+- "empact_build_main": "main()" | kind=code-symbol | source=courses/empact/build.py:L29 | neighbors=[build.py, load()]
+- "google_flow_run_batch_click": "click()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L28 | neighbors=[run-batch.mjs, prepare()]
+- "google_flow_run_batch_controls": "controls()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L24 | neighbors=[run-batch.mjs, prepare()]
+- "google_flow_sheet": "sheet.py" | kind=code-symbol | source=.google-flow/sheet.py:L1 | neighbors=[9724717 Add google-flow workspace and s…, d35441e Add google-flow workspace and s…]
+- "itls_build_load": "load()" | kind=code-symbol | source=courses/itls/build.py:L24 | neighbors=[build.py, main()]
+- "itls_build_main": "main()" | kind=code-symbol | source=courses/itls/build.py:L29 | neighbors=[build.py, load()]
+- "mci_build_load": "load()" | kind=code-symbol | source=courses/mci/build.py:L31 | neighbors=[build.py, main()]
 - "medical_build_load": "load()" | kind=code-symbol | source=courses/medical/build.py:L24 | neighbors=[build.py, main()]
 - "medical_build_main": "main()" | kind=code-symbol | source=courses/medical/build.py:L29 | neighbors=[build.py, load()]
 - "migrations_20260702000001_create_user_state_auth_users": "auth.users" | kind=code-symbol | source=supabase/migrations/20260702000001_create_user_state.sql:L7 | neighbors=[20260702000001_create_user_state.sql, public.user_state]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "prometric_exam_examengine_pauseexam": ".pauseExam()" | kind=code-symbol | source=src/prometric/exam.js:L764 | neighbors=[ExamEngine, .showModal()]
 - "prometric_exam_examengine_renderheatmap": ".renderHeatmap()" | kind=code-symbol | source=src/prometric/exam.js:L1165 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
 - "prometric_exam_examengine_renderimprovementchart": ".renderImprovementChart()" | kind=code-symbol | source=src/prometric/exam.js:L1130 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_renderinsights": ".renderInsights()" | kind=code-symbol | source=src/prometric/exam.js:L889 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_renderstrengthsweaknesses": ".renderStrengthsWeaknesses()" | kind=code-symbol | source=src/prometric/exam.js:L1208 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_rendertopicperformance": ".renderTopicPerformance()" | kind=code-symbol | source=src/prometric/exam.js:L926 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_savequestionhistory": ".saveQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L332 | neighbors=[ExamEngine, .submitAnswer()]
-- "prometric_exam_examengine_savestats": ".saveStats()" | kind=code-symbol | source=src/prometric/exam.js:L1103 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_selectmode": ".selectMode()" | kind=code-symbol | source=src/prometric/exam.js:L126 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_selectsetting": ".selectSetting()" | kind=code-symbol | source=src/prometric/exam.js:L140 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_settheme": ".setTheme()" | kind=code-symbol | source=src/prometric/exam.js:L74 | neighbors=[ExamEngine, .initTheme()]
-- "prometric_exam_examengine_showresults": ".showResults()" | kind=code-symbol | source=src/prometric/exam.js:L948 | neighbors=[ExamEngine, .showScreen()]
-- "prometric_exam_examengine_showtoast": ".showToast()" | kind=code-symbol | source=src/prometric/exam.js:L1074 | neighbors=[ExamEngine, .toggleFlag()]
-- "prometric_exam_examengine_shuffleoptions": ".shuffleOptions()" | kind=code-symbol | source=src/prometric/exam.js:L350 | neighbors=[ExamEngine, .shuffleArray()]
-- "prometric_exam_examengine_updatelivescore": ".updateLiveScore()" | kind=code-symbol | source=src/prometric/exam.js:L504 | neighbors=[ExamEngine, .updateNavigator()]
-- "scripts_assemble_chapters_main": "main()" | kind=code-symbol | source=scripts/assemble_chapters.py:L122 | neighbors=[assemble_chapters.py, assemble()]
-- "scripts_audio_hp": "hp()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L85 | neighbors=[audio.py, voice_chain()]
 
 ## Instructions
 

@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_compose_lib_grid": "_grid()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L154 | neighbors=[compose_lib.py, gradient_bg()]
+- "scripts_compose_lib_lerp": "lerp()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L39 | neighbors=[compose_lib.py, kicker()]
+- "scripts_compose_lib_rounded_mask": "rounded_mask()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L105 | neighbors=[compose_lib.py, card()]
+- "scripts_compose_lib_text_size": "text_size()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L240 | neighbors=[compose_lib.py, chip()]
+- "scripts_compose_region_view": "region_view()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L420 | neighbors=[compose.py, render_macro()]
+- "scripts_compose_render_titles": "render_titles()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L633 | neighbors=[compose.py, render_frame()]
+- "scripts_compose_to_out": "to_out()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L386 | neighbors=[compose.py, render_full()]
+- "scripts_generate_screenshots_compress": "compress()" | kind=code-symbol | source=scripts/generate_screenshots.py:L54 | neighbors=[generate_screenshots.py, main()]
+- "scripts_generate_screenshots_main": "main()" | kind=code-symbol | source=scripts/generate_screenshots.py:L60 | neighbors=[generate_screenshots.py, compress()]
+- "scripts_generate_splash_device_entry": "device_entry()" | kind=code-symbol | source=scripts/generate_splash.py:L41 | neighbors=[generate_splash.py, main()]
+- "scripts_generate_splash_main": "main()" | kind=code-symbol | source=scripts/generate_splash.py:L51 | neighbors=[generate_splash.py, device_entry()]
+- "scripts_inject": "inject.js" | kind=code-symbol | source=promo/megacode/scripts/inject.js:L1 | neighbors=[2a5f204 Add SmartCare Megacode cinemati…, 7421ea4 Megacode cinematic promo]
+- "scripts_qa_blacks": "blacks()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L36 | neighbors=[qa.py, main()]
+- "scripts_qa_loudness": "loudness()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L28 | neighbors=[qa.py, main()]
 - "scripts_qa_probe": "probe()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L23 | neighbors=[qa.py, main()]
 - "scripts_qa_sheet": "sheet()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L41 | neighbors=[qa.py, main()]
 - "scripts_record_click": "click()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L76 | neighbors=[record.js, auto()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "tests_exam_review_a11y_spec": "exam-review-a11y.spec.js" | kind=code-symbol | source=tests/exam-review-a11y.spec.js:L1 | neighbors=[2ab1c09 Fix invisible Show Hint/confide…, 9b12c84 Merge pull request #20]
 - "tests_init": "__init__.py" | kind=code-symbol | source=tests/__init__.py:L1 | neighbors=[67cb179 Add files via upload, 8f311cd Merge branch 'main' of https://…]
 - "tests_last_visited_spec": "last-visited.spec.js" | kind=code-symbol | source=tests/last-visited.spec.js:L1 | neighbors=[1543337 Fix raw markup in Last Visited,…, 8c61be7 Merge pull request #22 raw mark…]
-- "tests_med_index_xss_spec": "med-index-xss.spec.js" | kind=code-symbol | source=tests/med-index-xss.spec.js:L1 | neighbors=[817a4bf Merge pull request #23 Fixed: r…, 81d920a Fix reflected XSS in med-index.…]
-- "tests_medical_reviewer_spec": "medical-reviewer.spec.js" | kind=code-symbol | source=tests/medical-reviewer.spec.js:L1 | neighbors=[3a000d0 Integrate Medical reviewer into…, 877d856 Medical-bdls-empact-pepp-review…]
-- "tests_pepp_reviewer_spec": "pepp-reviewer.spec.js" | kind=code-symbol | source=tests/pepp-reviewer.spec.js:L1 | neighbors=[20ed56a Integrate PEPP reviewer into pl…, 877d856 Medical-bdls-empact-pepp-review…]
-- "tests_sw_cache_writes_spec": "sw-cache-writes.spec.js" | kind=code-symbol | source=tests/sw-cache-writes.spec.js:L1 | neighbors=[1543337 Fix raw markup in Last Visited,…, 8c61be7 Merge pull request #22 raw mark…]
-- "tests_test_api_supabase_backend": "supabase_backend()" | kind=code-symbol | source=tests/test_api.py:L29 | neighbors=[test_api.py, Stubs server.py's Supabase integration …]
-- "tests_test_api_testaccountselfdelete_test_not_configured_returns_503": ".test_not_configured_returns_503()" | kind=code-symbol | source=tests/test_api.py:L94 | neighbors=[TestAccountSelfDelete, _auth()]
-- "tests_test_api_testadminusers_test_admin_users_requires_auth": ".test_admin_users_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L135 | neighbors=[Anonymous access to the admin API must …, TestAdminUsers]
-- "tests_test_api_testauditlogging_test_failed_login_is_audited": ".test_failed_login_is_audited()" | kind=code-symbol | source=tests/test_api.py:L229 | neighbors=[TestAuditLogging, _login()]
-- "tests_test_api_testauditlogging_test_self_delete_is_audited": ".test_self_delete_is_audited()" | kind=code-symbol | source=tests/test_api.py:L157 | neighbors=[TestAuditLogging, _auth()]
-- "tests_test_api_testcsrfguard_test_delete_without_xrw_header_rejected": ".test_delete_without_xrw_header_rejected()" | kind=code-symbol | source=tests/test_api.py:L187 | neighbors=[A request missing X-Requested-With must…, TestCsrfGuard]
-- "tests_test_api_testcsrfguard_test_post_without_xrw_header_rejected": ".test_post_without_xrw_header_rejected()" | kind=code-symbol | source=tests/test_api.py:L259 | neighbors=[A POST missing X-Requested-With must be…, TestCsrfGuard]
-- "tests_test_api_testcsrfguard_test_valid_delete_request_allowed": ".test_valid_delete_request_allowed()" | kind=code-symbol | source=tests/test_api.py:L195 | neighbors=[A well-formed request with the CSRF hea…, TestCsrfGuard]
-- "tests_test_api_testcsrfguard_test_valid_json_post_allowed": ".test_valid_json_post_allowed()" | kind=code-symbol | source=tests/test_api.py:L268 | neighbors=[A well-formed JSON POST with the CSRF h…, TestCsrfGuard]
-- "tests_test_api_testhealthcheck": "TestHealthCheck" | kind=code-symbol | source=tests/test_api.py:L144 | neighbors=[test_api.py, .test_health_returns_ok()]
 
 ## Instructions
 

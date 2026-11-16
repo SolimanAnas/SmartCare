@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_tn_getbasepixel": ".getBasePixel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .getBaseValue()]
+- "vendor_chart_4_5_1_umd_min_tn_getcontext": ".getContext()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, Ci()]
+- "vendor_chart_4_5_1_umd_min_tn_getpadding": ".getPadding()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ss(), tn]
+- "vendor_chart_4_5_1_umd_min_tn_getuniformdatachanges": "._getUniformDataChanges()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._updateHiddenIndices()]
+- "vendor_chart_4_5_1_umd_min_tn_getxaxislabelalignment": "._getXAxisLabelAlignment()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._computeLabelItems()]
+- "vendor_chart_4_5_1_umd_min_tn_handlemargins": "._handleMargins()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .fit()]
+- "vendor_chart_4_5_1_umd_min_tn_ispluginenabled": ".isPluginEnabled()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.initialize(), tn]
+- "vendor_chart_4_5_1_umd_min_tn_removeunreferencedmetasets": "._removeUnreferencedMetasets()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .buildOrUpdateControllers()]
+- "vendor_chart_4_5_1_umd_min_tn_stop": ".stop()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._destroyDatasetMeta()]
+- "vendor_chart_4_5_1_umd_min_tn_toggledatavisibility": ".toggleDataVisibility()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[onClick(), tn]
+- "vendor_chart_4_5_1_umd_min_to": "to()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Re()]
+- "vendor_chart_4_5_1_umd_min_tooltipposition": "tooltipPosition()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, getCenterPoint()]
+- "vendor_chart_4_5_1_umd_min_ts_configure": ".configure()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ts(), o()]
+- "vendor_chart_4_5_1_umd_min_ts_update": ".update()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ts(), ._createAnimations()]
 - "vendor_chart_4_5_1_umd_min_w": "w()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ._exec()]
 - "vendor_chart_4_5_1_umd_min_wa_drawargs": "._drawArgs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .draw()]
 - "vendor_chart_4_5_1_umd_min_wa_getactiveelements": ".getActiveElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .getElementsAtEventForMode()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_cr": "cr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs, invoke()]
 - "vendor_supabase_js_2_110_0_createbucket": "createBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
 - "vendor_supabase_js_2_110_0_createnamespaceifnotexists": "createNamespaceIfNotExists()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, createNamespace()]
-- "vendor_supabase_js_2_110_0_createsigneduploadurl": "createSignedUploadUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_createsignedurl": "createSignedUrl()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_createsignedurls": "createSignedUrls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_deletebucket": "deleteBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_deleteindex": "deleteIndex()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_dn": "Dn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, es()]
-- "vendor_supabase_js_2_110_0_ei": "ei()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge()]
-- "vendor_supabase_js_2_110_0_emitinitialsession": "_emitInitialSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, _useSession()]
-- "vendor_supabase_js_2_110_0_emptybucket": "emptyBucket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation()]
-- "vendor_supabase_js_2_110_0_eq": "eq()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, add()]
-- "vendor_supabase_js_2_110_0_explain": "explain()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, join()]
-- "vendor_supabase_js_2_110_0_fi": "fi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, yi()]
-- "vendor_supabase_js_2_110_0_finally": "finally()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, getPromise()]
-- "vendor_supabase_js_2_110_0_fo": "fo()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, y()]
 
 ## Instructions
 

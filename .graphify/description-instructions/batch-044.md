@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_js_parseprimitivedata": ".parsePrimitiveData()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .getLabels()]
+- "vendor_chart_4_5_1_umd_min_js_removedatasethoverstyle": "._removeDatasetHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
+- "vendor_chart_4_5_1_umd_min_js_removeelements": "._removeElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._resyncElements()]
+- "vendor_chart_4_5_1_umd_min_js_removehoverstyle": ".removeHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
+- "vendor_chart_4_5_1_umd_min_js_resolvedataelementoptions": ".resolveDataElementOptions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._resolveElementOptions()]
+- "vendor_chart_4_5_1_umd_min_js_setdatasethoverstyle": "._setDatasetHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
+- "vendor_chart_4_5_1_umd_min_js_sethoverstyle": ".setHoverStyle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, ._setStyle()]
+- "vendor_chart_4_5_1_umd_min_js_updateindex": ".updateIndex()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[js, .buildOrUpdateControllers()]
+- "vendor_chart_4_5_1_umd_min_jt_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), Gt()]
+- "vendor_chart_4_5_1_umd_min_jt_darken": ".darken()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
+- "vendor_chart_4_5_1_umd_min_jt_greyscale": ".greyscale()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), _t()]
+- "vendor_chart_4_5_1_umd_min_jt_hexstring": ".hexString()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
+- "vendor_chart_4_5_1_umd_min_jt_rgbstring": ".rgbString()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), wt()]
+- "vendor_chart_4_5_1_umd_min_jt_saturate": ".saturate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[jt(), te()]
 - "vendor_chart_4_5_1_umd_min_ks": "ks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ct()]
 - "vendor_chart_4_5_1_umd_min_li": "li()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, hi()]
 - "vendor_chart_4_5_1_umd_min_ls": "Ls()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._update()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_qs": "Qs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .drawTitle()]
 - "vendor_chart_4_5_1_umd_min_removebox": "removeBox()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, stop()]
 - "vendor_chart_4_5_1_umd_min_rn_endof": ".endOf()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.determineDataLimits(), rn()]
-- "vendor_chart_4_5_1_umd_min_rn_formats": ".formats()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.init(), rn()]
-- "vendor_chart_4_5_1_umd_min_ro_determinedatalimits": ".determineDataLimits()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), a()]
-- "vendor_chart_4_5_1_umd_min_ro_drawbackground": ".drawBackground()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), .getDistanceFromCenterForValue()]
-- "vendor_chart_4_5_1_umd_min_ro_fit": ".fit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), .setCenterPoint()]
-- "vendor_chart_4_5_1_umd_min_ro_generateticklabels": ".generateTickLabels()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), .getLabels()]
-- "vendor_chart_4_5_1_umd_min_ro_getvaluefordistancefromcenter": ".getValueForDistanceFromCenter()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), s()]
-- "vendor_chart_4_5_1_umd_min_ro_setdimensions": ".setDimensions()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ro(), ki()]
-- "vendor_chart_4_5_1_umd_min_s_tooltipposition": ".tooltipPosition()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[s(), .getProps()]
-- "vendor_chart_4_5_1_umd_min_sn_add": ".add()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, ._each()]
-- "vendor_chart_4_5_1_umd_min_sn_addcontrollers": ".addControllers()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, ._each()]
-- "vendor_chart_4_5_1_umd_min_sn_addelements": ".addElements()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, ._each()]
-- "vendor_chart_4_5_1_umd_min_sn_addplugins": ".addPlugins()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, ._each()]
-- "vendor_chart_4_5_1_umd_min_sn_addscales": ".addScales()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, ._each()]
-- "vendor_chart_4_5_1_umd_min_sn_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[sn, en]
 
 ## Instructions
 

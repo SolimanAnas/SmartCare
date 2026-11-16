@@ -17,6 +17,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_regeximatch": "regexIMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_regexmatch": "regexMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rejointimer": "rejoinTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_retry": "retry()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_returns": "returns()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rollback": "rollback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rpc": "rpc()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_schema": "schema()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_sendbuffer": "sendBuffer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_single": "single()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_statechangecallbacks": "stateChangeCallbacks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_storesession": "storeSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_stripnulls": "stripNulls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_textsearch": "textSearch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_throwonerror": "throwOnError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_timeout": "timeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]

@@ -11,7 +11,11 @@
     "94": "b", "95": "a", "163": "a", "164": "a", "194": "a", "124": "a", "225": "a", "104": "b", "123": "b", "117": "a", "118": "b", "131": "a", "132": "b",
     "147": "a", "100": "a", "102": "b", "158": "a", "187": "a", "193": "b", "198": "a", "110": "a", "111": "a", "134": "a", "217": "a", "223": "a", "224": "a",
     "226": "a", "203": "b", "60": "a", "87": "b", "141": "a", "154": "b", "155": "a", "160": "b", "161": "a", "168": "a", "170": "a", "179": "a", "180": "b",
-    "165": "a", "171": "a", "173": "a", "183": "b", "227": "a", "228": "a", "247": "a"
+    "165": "a", "171": "a", "173": "a", "183": "b", "227": "a", "228": "a", "247": "a",
+    "127": "d", "234": "c", "42": "d", "72": "a", "75": "a", "76": "b", "79": "a", "90": "b", "91": "a", "96": "a", "119": "b", "120": "a", "121": "a",
+    "115": "b", "130": "a", "146": "a", "99": "b", "34": "b", "46": "b", "140": "b", "190": "a", "189": "b", "186": "b", "192": "b", "196": "a", "112": "a",
+    "219": "a", "211": "a", "206": "b", "212": "a", "213": "a", "204": "b", "232": "a", "56": "a", "37": "a", "82": "a", "103": "a", "108": "a", "156": "b",
+    "153": "b", "178": "a", "166": "a"
   },
   "notes": {
     "1": "Carina leader line stops on the trachea above the fork. Fix before use.",
@@ -29,14 +33,36 @@
     "100": "Check the femoral marker position.",
     "57": "Leg looks adult-sized for a child. The printed labels are spelled correctly; check where the lines point.",
     "193": "Added a first-aid kit and phone as the ticked item, which wasn't requested.",
-    "102": "Colours and sides checked: both standards correct in both images."
+    "102": "Colours and sides checked: both standards correct in both images.",
+    "127": "Both sites on the patient's right and the inset shows the needle over the rib. Check the rib levels.",
+    "234": "Two syringes and no rescuer. Printed 20 mL matches the prompt. 234-d has an extra gloved hand.",
+    "42": "Mirrored figures can still read as two people. The caption must say same patient, both arms.",
+    "72": "Art only. Toxidrome names go in at the overlay step. Check the skin icons.",
+    "76": "Hand on the abdomen is crossed out. The ticked standing figure isn't explained, so check how it reads.",
+    "90": "90-a has the liver on the wrong side.",
+    "91": "91-b shades the wrong arm.",
+    "121": "The timer wedge isn't clearly 20 minutes. Check it, or label the time.",
+    "130": "Back dashed line sits above the scapula tip. Check it against the guide.",
+    "99": "Cuff sizes read clearly, but the needles don't show high and low. Fix at the overlay step.",
+    "46": "Paint out the four corner gauges and the red box. Printed wall names are spelled correctly.",
+    "189": "One knee is bent, though the patient should be flat. 189-a has garbled text.",
+    "196": "Hands aren't clearly gloved. 196-b lacks the required up to 90% text.",
+    "112": "Crop the title. The Waddell's triad label points at the knee and the bonnet arrow points at the arm. Check it.",
+    "206": "Check the ventrogluteal patch, which sits toward the buttock. Volumes go in at the overlay step.",
+    "204": "Paint out the stray Muscarinic label on the left. The mu-opioid dot is in the forebrain, not the brainstem.",
+    "56": "Red fluid can read as blood. Check it, or recolour it.",
+    "82": "The surgical mask and N95 look alike at small size. Check the last two figures.",
+    "190": "300-1000 m isn't drawn, so add it at the overlay step."
   },
   "needs_pro_rerun": {
-    "59": "Both show the wrong thing: 59-b uses two hands and 59-a is an awkward outline.",
-    "127": "Doesn't show the needle passing over the rib. Sites were on opposite sides.",
-    "144": "Grey skin, garbled 3:1 label, thumbs not visible. Neither is usable.",
-    "234": "234-a is the best but has three syringes. 234-b has the arm down.",
-    "235": "235-a puts the V4R electrode on the left chest. 235-b is unclear.",
-    "42": "Shows two different people, not one patient with two arm readings."
+    "59": "Pro rerun also failed: 59-c and 59-d add a third hand on the forehead, and 59-d uses a fist. Earlier images are also unusable.",
+    "144": "Pro rerun also failed: 144-c shows a two-finger technique, not two thumbs, and only one image came back.",
+    "235": "Pro rerun also failed: 235-c and 235-d put the V4R electrode on the patient's left. Consider drawing this row by hand.",
+    "33": "33-a has the IVC arrow pointing away from the heart, and the aortic valve label sits in the left atrium. Only one image came back.",
+    "35": "35-a puts the SA node on the left. 35-b has a stray node on the aorta with the top tag pointing to it.",
+    "45": "45-a puts V1 left of the sternum. 45-b has no V4. Electrode positions: consider SVG.",
+    "230": "Both put V4R on the patient's left. 230-b has V9 across the spine. Electrode positions: consider SVG.",
+    "191": "Both raise the leg above heart level on a wedge or pillows. 191-a also has an extra arm.",
+    "208": "Both show red crosses on steps 2 and 3 instead of three ticks. The generic tick-and-cross line in the prompt probably caused it, so remove it."
   }
 }

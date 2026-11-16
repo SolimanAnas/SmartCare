@@ -24,6 +24,18 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_vs": "vs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, signInWithEthereum(), Yt()]
+- "vendor_supabase_js_2_110_0_wrapheartbeatcallback": "_wrapHeartbeatCallback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, _initializeOptions(), onHeartbeat()]
+- "vendor_supabase_js_2_110_0_ws": "ws()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, Nr(), Qt()]
+- "vendor_supabase_js_2_110_0_wt": "Wt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, join(), Ye()]
+- "vendor_supabase_js_2_110_0_xdomainrequest": "xdomainRequest()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, request(), send()]
+- "vendor_supabase_js_2_110_0_xhrrequest": "xhrRequest()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, request(), send()]
+- "vendor_supabase_js_2_110_0_xi": "xi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, constructor(), x()]
+- "vendor_supabase_js_2_110_0_yt": "Yt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, signInWithEthereum(), vs()]
+- "vendor_supabase_js_2_110_0_ze": "ze()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, getUser(), y()]
+- "vendor_supabase_js_2_110_0_zr": "zr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, initialize(), y()]
+- "acls_build_load": "load()" | kind=code-symbol | source=courses/acls/build.py:L24 | neighbors=[build.py, main()]
+- "acls_build_main": "main()" | kind=code-symbol | source=courses/acls/build.py:L29 | neighbors=[build.py, load()]
 - "app_initbatteryindicator": "initBatteryIndicator()" | kind=code-symbol | source=app.js:L110 | neighbors=[app.js, initChapterPage()]
 - "app_initscrollreveal": "initScrollReveal()" | kind=code-symbol | source=app.js:L551 | neighbors=[app.js, setMainContent()]
 - "app_recordlastvisited": "recordLastVisited()" | kind=code-symbol | source=app.js:L37 | neighbors=[app.js, initChapterPage()]
@@ -33,6 +45,7 @@ one-sentence description — no prose, no markdown fences.
 - "bls_build_load": "load()" | kind=code-symbol | source=courses/bls/build.py:L24 | neighbors=[build.py, main()]
 - "bls_build_main": "main()" | kind=code-symbol | source=courses/bls/build.py:L29 | neighbors=[build.py, load()]
 - "commit:repo:github.com/SolimanAnas/SmartCare@224ab831c8425237c6980236996ae43fb14d8737": "224ab83 deps(deps): bump google-auth from 2.53.0 to 2.55.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/google-auth-2.55.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@564422f9497054d27ccc5c852c1d02bd87b01756": "564422f Sync graphify updates and unignore google-flow" | kind=Commit | source=git | neighbors=[main, 9724717 Add google-flow workspace and s…]
 - "commit:repo:github.com/SolimanAnas/SmartCare@755284cd614315df67e3a15aaacb18093c6d8400": "755284c ci(deps)(deps): bump actions/checkout from 4 to 7" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/check…]
 - "commit:repo:github.com/SolimanAnas/SmartCare@cb7e171493f7f62d600c7ed42b359f525dead499": "cb7e171 deps(deps): bump pytest from 9.0.3 to 9.1.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/pytest-9.1.1]
 - "commit:repo:github.com/SolimanAnas/SmartCare@cd24feaf092b8444f058985570e0a18082d74874": "cd24fea ci(deps)(deps): bump actions/setup-python from 5 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
@@ -50,20 +63,7 @@ one-sentence description — no prose, no markdown fences.
 - "content_c8_meta": "c8.meta.js" | kind=code-symbol | source=content/c8.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
 - "content_c9_meta": "c9.meta.js" | kind=code-symbol | source=content/c9.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
 - "cpg_guide_dosetable": "doseTable()" | kind=code-symbol | source=cpg-guide.js:L43 | neighbors=[cpg-guide.js, step()]
-- "cpg_guide_ecghref": "ecgHref()" | kind=code-symbol | source=cpg-guide.js:L157 | neighbors=[cpg-guide.js, strip()]
-- "cpg_guide_legend": "legend()" | kind=code-symbol | source=cpg-guide.js:L192 | neighbors=[cpg-guide.js, renderGuide()]
-- "cpg_guide_level": "level()" | kind=code-symbol | source=cpg-guide.js:L31 | neighbors=[cpg-guide.js, step()]
-- "cpg_guide_strip": "strip()" | kind=code-symbol | source=cpg-guide.js:L161 | neighbors=[cpg-guide.js, ecgHref()]
-- "cpg_guide_usedlevels": "usedLevels()" | kind=code-symbol | source=cpg-guide.js:L203 | neighbors=[cpg-guide.js, renderGuide()]
-- "cpg_strip_svg": "svg()" | kind=code-symbol | source=cpg-strip.js:L35 | neighbors=[cpg-strip.js, trace()]
-- "cpg_strip_trace": "trace()" | kind=code-symbol | source=cpg-strip.js:L17 | neighbors=[cpg-strip.js, svg()]
-- "empact_build_load": "load()" | kind=code-symbol | source=courses/empact/build.py:L24 | neighbors=[build.py, main()]
-- "empact_build_main": "main()" | kind=code-symbol | source=courses/empact/build.py:L29 | neighbors=[build.py, load()]
-- "google_flow_run_batch_click": "click()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L28 | neighbors=[run-batch.mjs, prepare()]
-- "google_flow_run_batch_controls": "controls()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L24 | neighbors=[run-batch.mjs, prepare()]
-- "itls_build_load": "load()" | kind=code-symbol | source=courses/itls/build.py:L24 | neighbors=[build.py, main()]
-- "itls_build_main": "main()" | kind=code-symbol | source=courses/itls/build.py:L29 | neighbors=[build.py, load()]
-- "mci_build_load": "load()" | kind=code-symbol | source=courses/mci/build.py:L31 | neighbors=[build.py, main()]
+- "cpg_guide_ecghref": "ecgHref()" | kind=code-symbol | source=cpg-guide.js:L143 | neighbors=[cpg-guide.js, strip()]
 
 ## Instructions
 

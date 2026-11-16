@@ -17,6 +17,18 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_de_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, .apply(), .describe()]
+- "vendor_chart_4_5_1_umd_min_determinedatalimits": "determineDataLimits()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getLabels(), .getUserBounds()]
+- "vendor_chart_4_5_1_umd_min_di": "Di()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, a(), .update()]
+- "vendor_chart_4_5_1_umd_min_dt": "dt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .apply(), .constructor()]
+- "vendor_chart_4_5_1_umd_min_ea": "ea()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, s(), pa()]
+- "vendor_chart_4_5_1_umd_min_ee": "Ee()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .rotate(), Le()]
+- "vendor_chart_4_5_1_umd_min_eo": "eo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, b(), .getPointPosition()]
+- "vendor_chart_4_5_1_umd_min_es": "es()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._getSortedDatasetMetas(), ss()]
+- "vendor_chart_4_5_1_umd_min_et": "et()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, s(), wo()]
+- "vendor_chart_4_5_1_umd_min_fe": "fe()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dn(), ps()]
+- "vendor_chart_4_5_1_umd_min_fs": "Fs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getMatchingVisibleMetas(), vs()]
+- "vendor_chart_4_5_1_umd_min_getaxiscount": "_getAxisCount()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getAxis()]
 - "vendor_chart_4_5_1_umd_min_getfirstscaleidforindexaxis": "getFirstScaleIdForIndexAxis()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getAxis()]
 - "vendor_chart_4_5_1_umd_min_getstackindex": "_getStackIndex()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getStacks()]
 - "vendor_chart_4_5_1_umd_min_getvalueforpixel": "getValueForPixel()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, jo(), .getDecimalForPixel()]
@@ -45,18 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_mi": "mi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, gi(), vi()]
 - "vendor_chart_4_5_1_umd_min_mt": "mt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, _t(), update()]
 - "vendor_chart_4_5_1_umd_min_n_calculatetotal": ".calculateTotal()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .getDataVisibility(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_chartoptionscopes": ".chartOptionScopes()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), .constructor(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), fn(), gn()]
-- "vendor_chart_4_5_1_umd_min_n_datasetanimationscopekeys": ".datasetAnimationScopeKeys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[._resolveAnimations(), n(), xn()]
-- "vendor_chart_4_5_1_umd_min_n_datasetelementscopekeys": ".datasetElementScopeKeys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[._resolveElementOptions(), n(), xn()]
-- "vendor_chart_4_5_1_umd_min_n_datasetscopekeys": ".datasetScopeKeys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[.configure(), n(), xn()]
-- "vendor_chart_4_5_1_umd_min_n_getcircumference": "._getCircumference()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._circumference(), ._getRotationExtents()]
-- "vendor_chart_4_5_1_umd_min_n_getrotation": "._getRotation()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._getRotationExtents(), .updateElements()]
-- "vendor_chart_4_5_1_umd_min_n_getvisibledatasetweighttotal": "._getVisibleDatasetWeightTotal()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._getRingWeightOffset(), .update()]
-- "vendor_chart_4_5_1_umd_min_n_pluginscopekeys": ".pluginScopeKeys()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), xn(), rn()]
-- "vendor_chart_4_5_1_umd_min_nearest": "nearest()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ve(), Xi()]
-- "vendor_chart_4_5_1_umd_min_ns": "ns()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, s(), os()]
-- "vendor_chart_4_5_1_umd_min_oa": "oa()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, beforeDatasetDraw(), beforeDatasetsDraw()]
 
 ## Instructions
 

@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "prometric_exam_examengine_renderinsights": ".renderInsights()" | kind=code-symbol | source=src/prometric/exam.js:L889 | neighbors=[ExamEngine, .calculateResults()]
+- "prometric_exam_examengine_renderstrengthsweaknesses": ".renderStrengthsWeaknesses()" | kind=code-symbol | source=src/prometric/exam.js:L1208 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
+- "prometric_exam_examengine_rendertopicperformance": ".renderTopicPerformance()" | kind=code-symbol | source=src/prometric/exam.js:L926 | neighbors=[ExamEngine, .calculateResults()]
+- "prometric_exam_examengine_savequestionhistory": ".saveQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L332 | neighbors=[ExamEngine, .submitAnswer()]
+- "prometric_exam_examengine_savestats": ".saveStats()" | kind=code-symbol | source=src/prometric/exam.js:L1103 | neighbors=[ExamEngine, .calculateResults()]
+- "prometric_exam_examengine_selectmode": ".selectMode()" | kind=code-symbol | source=src/prometric/exam.js:L126 | neighbors=[ExamEngine, .updateAvailableCount()]
+- "prometric_exam_examengine_selectsetting": ".selectSetting()" | kind=code-symbol | source=src/prometric/exam.js:L140 | neighbors=[ExamEngine, .updateAvailableCount()]
+- "prometric_exam_examengine_settheme": ".setTheme()" | kind=code-symbol | source=src/prometric/exam.js:L74 | neighbors=[ExamEngine, .initTheme()]
+- "prometric_exam_examengine_showresults": ".showResults()" | kind=code-symbol | source=src/prometric/exam.js:L948 | neighbors=[ExamEngine, .showScreen()]
+- "prometric_exam_examengine_showtoast": ".showToast()" | kind=code-symbol | source=src/prometric/exam.js:L1074 | neighbors=[ExamEngine, .toggleFlag()]
+- "prometric_exam_examengine_shuffleoptions": ".shuffleOptions()" | kind=code-symbol | source=src/prometric/exam.js:L350 | neighbors=[ExamEngine, .shuffleArray()]
+- "prometric_exam_examengine_updatelivescore": ".updateLiveScore()" | kind=code-symbol | source=src/prometric/exam.js:L504 | neighbors=[ExamEngine, .updateNavigator()]
+- "scripts_assemble_chapters_main": "main()" | kind=code-symbol | source=scripts/assemble_chapters.py:L122 | neighbors=[assemble_chapters.py, assemble()]
+- "scripts_audio_hp": "hp()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L85 | neighbors=[audio.py, voice_chain()]
 - "scripts_audio_midi": "midi()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L107 | neighbors=[audio.py, score()]
 - "scripts_audio_read_wav": "read_wav()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L262 | neighbors=[audio.py, main()]
 - "scripts_audio_square": "square()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L66 | neighbors=[audio.py, app_sound()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_compose_lib_grade": "grade()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L228 | neighbors=[compose_lib.py, _grain()]
 - "scripts_compose_lib_gradient_bg": "gradient_bg()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L159 | neighbors=[compose_lib.py, _grid()]
 - "scripts_compose_lib_grain": "_grain()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L224 | neighbors=[compose_lib.py, grade()]
-- "scripts_compose_lib_grid": "_grid()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L154 | neighbors=[compose_lib.py, gradient_bg()]
-- "scripts_compose_lib_lerp": "lerp()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L39 | neighbors=[compose_lib.py, kicker()]
-- "scripts_compose_lib_rounded_mask": "rounded_mask()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L105 | neighbors=[compose_lib.py, card()]
-- "scripts_compose_lib_text_size": "text_size()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L240 | neighbors=[compose_lib.py, chip()]
-- "scripts_compose_region_view": "region_view()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L420 | neighbors=[compose.py, render_macro()]
-- "scripts_compose_render_titles": "render_titles()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L633 | neighbors=[compose.py, render_frame()]
-- "scripts_compose_to_out": "to_out()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L386 | neighbors=[compose.py, render_full()]
-- "scripts_generate_screenshots_compress": "compress()" | kind=code-symbol | source=scripts/generate_screenshots.py:L54 | neighbors=[generate_screenshots.py, main()]
-- "scripts_generate_screenshots_main": "main()" | kind=code-symbol | source=scripts/generate_screenshots.py:L60 | neighbors=[generate_screenshots.py, compress()]
-- "scripts_generate_splash_device_entry": "device_entry()" | kind=code-symbol | source=scripts/generate_splash.py:L41 | neighbors=[generate_splash.py, main()]
-- "scripts_generate_splash_main": "main()" | kind=code-symbol | source=scripts/generate_splash.py:L51 | neighbors=[generate_splash.py, device_entry()]
-- "scripts_inject": "inject.js" | kind=code-symbol | source=promo/megacode/scripts/inject.js:L1 | neighbors=[2a5f204 Add SmartCare Megacode cinemati…, 7421ea4 Megacode cinematic promo]
-- "scripts_qa_blacks": "blacks()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L36 | neighbors=[qa.py, main()]
-- "scripts_qa_loudness": "loudness()" | kind=code-symbol | source=promo/megacode/scripts/qa.py:L28 | neighbors=[qa.py, main()]
 
 ## Instructions
 

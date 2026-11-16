@@ -26,12 +26,25 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "google_flow_generate_batches_subject": "SUBJECT" | kind=code-symbol | source=.google-flow/generate-batches.js:L59 | neighbors=[generate-batches.js] | lang=en
+- "google_flow_generate_batches_svg": "SVG" | kind=code-symbol | source=.google-flow/generate-batches.js:L6 | neighbors=[generate-batches.js] | lang=en
+- "google_flow_run_all_from_to": "[from, to]" | kind=code-symbol | source=.google-flow/run-all.mjs:L8 | neighbors=[run-all.mjs] | lang=en
+- "google_flow_run_all_limited": "limited" | kind=code-symbol | source=.google-flow/run-all.mjs:L12 | neighbors=[run-all.mjs] | lang=en
+- "google_flow_run_all_models": "MODELS" | kind=code-symbol | source=.google-flow/run-all.mjs:L11 | neighbors=[run-all.mjs] | lang=en
+- "google_flow_run_all_names": "names" | kind=code-symbol | source=.google-flow/run-all.mjs:L9 | neighbors=[run-all.mjs] | lang=en
+- "google_flow_run_batch_arg": "arg()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L18 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_batcharg": "batchArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_idsarg": "idsArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_jobs": "jobs" | kind=code-symbol | source=.google-flow/run-batch.mjs:L66 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_limited": "limited" | kind=code-symbol | source=.google-flow/run-batch.mjs:L85 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_load": "load()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L10 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_log": "LOG" | kind=code-symbol | source=.google-flow/run-batch.mjs:L20 | neighbors=[run-batch.mjs] | lang=en
+- "google_flow_run_batch_modelarg": "modelArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
 - "google_flow_run_batch_nextletter": "nextLetter()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L87 | neighbors=[run-batch.mjs] | lang=en
 - "google_flow_run_batch_pagenotice": "pageNotice()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L61 | neighbors=[run-batch.mjs] | lang=en
 - "google_flow_run_batch_queuearg": "queueArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L74 | neighbors=[run-batch.mjs] | lang=en
 - "google_flow_run_batch_saved": "saved" | kind=code-symbol | source=.google-flow/run-batch.mjs:L92 | neighbors=[run-batch.mjs] | lang=en
 - "google_flow_run_batch_sleep": "sleep()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L22 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_sheet": "sheet.py" | kind=code-symbol | source=.google-flow/sheet.py:L1 | neighbors=[d35441e Add google-flow workspace and s…] | lang=en
 - "google_flow_update_tracker_counts": "counts" | kind=code-symbol | source=.google-flow/update-tracker.js:L14 | neighbors=[update-tracker.js] | lang=en
 - "google_flow_update_tracker_fs": "fs" | kind=code-symbol | source=.google-flow/update-tracker.js:L3 | neighbors=[update-tracker.js] | lang=en
 - "google_flow_update_tracker_generated": "generated" | kind=code-symbol | source=.google-flow/update-tracker.js:L9 | neighbors=[update-tracker.js] | lang=en
@@ -53,19 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_audio_rationale_113": "cue: dict of section times from the edit (s1..s6)." | kind=entity | source=promo/megacode/scripts/audio.py:L113 | neighbors=[score()] | lang=en
 - "scripts_audio_rationale_272": "Gentle broadcast chain for the TTS narration: HPF, presence, warmth, light compr" | kind=entity | source=promo/megacode/scripts/audio.py:L272 | neighbors=[voice_chain()] | lang=en
 - "scripts_audio_rationale_32": "Add mono/stereo clip x into stereo buf at time t." | kind=entity | source=promo/megacode/scripts/audio.py:L32 | neighbors=[place()] | lang=en
-- "scripts_build_courses_main": "main()" | kind=code-symbol | source=scripts/build_courses.py:L6 | neighbors=[build_courses.py] | lang=en
-- "scripts_build_ecg_reference_datauri": "dataUri()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L38 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_defs": "defs()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L84 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_e": "E" | kind=code-symbol | source=scripts/build_ecg_reference.js:L25 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_fs": "fs" | kind=code-symbol | source=scripts/build_ecg_reference.js:L16 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_indexhtml": "indexHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L193 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_keep_html": "KEEP_HTML" | kind=code-symbol | source=scripts/build_ecg_reference.js:L22 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_kind_order": "KIND_ORDER" | kind=code-symbol | source=scripts/build_ecg_reference.js:L136 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_l": "L" | kind=code-symbol | source=scripts/build_ecg_reference.js:L26 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_logo": "LOGO" | kind=code-symbol | source=scripts/build_ecg_reference.js:L39 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_logo_small": "LOGO_SMALL" | kind=code-symbol | source=scripts/build_ecg_reference.js:L40 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_mi_img": "MI_IMG" | kind=code-symbol | source=scripts/build_ecg_reference.js:L41 | neighbors=[build_ecg_reference.js] | lang=en
-- "scripts_build_ecg_reference_mihtml": "miHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L217 | neighbors=[build_ecg_reference.js] | lang=en
 
 ## Instructions
 

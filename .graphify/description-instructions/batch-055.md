@@ -26,6 +26,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "tests_ecg_simulator_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L6 | neighbors=[ecg-simulator.spec.js] | lang=en
+- "tests_ecg_simulator_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L8 | neighbors=[ecg-simulator.spec.js] | lang=en
+- "tests_exam_pages_spec_courses": "COURSES" | kind=code-symbol | source=tests/exam-pages.spec.js:L6 | neighbors=[exam-pages.spec.js] | lang=en
+- "tests_home_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/home.spec.js:L7 | neighbors=[home.spec.js] | lang=en
+- "tests_megacode_quick_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode-quick.spec.js:L5 | neighbors=[megacode-quick.spec.js] | lang=en
+- "tests_megacode_spec_answerquiz": "answerQuiz()" | kind=code-symbol | source=tests/megacode.spec.js:L6 | neighbors=[megacode.spec.js] | lang=en
+- "tests_megacode_spec_cprcyclethencheck": "cprCycleThenCheck()" | kind=code-symbol | source=tests/megacode.spec.js:L16 | neighbors=[megacode.spec.js] | lang=en
+- "tests_megacode_spec_shocknow": "shockNow()" | kind=code-symbol | source=tests/megacode.spec.js:L22 | neighbors=[megacode.spec.js] | lang=en
+- "tests_megacode_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode.spec.js:L4 | neighbors=[megacode.spec.js] | lang=en
+- "tests_offline_spec_exam_content_assets": "EXAM_CONTENT_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L31 | neighbors=[offline.spec.js] | lang=en
+- "tests_offline_spec_key_pages": "KEY_PAGES" | kind=code-symbol | source=tests/offline.spec.js:L11 | neighbors=[offline.spec.js] | lang=en
+- "tests_offline_spec_vendored_assets": "VENDORED_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L19 | neighbors=[offline.spec.js] | lang=en
+- "tests_pals_reviewer_spec": "pals-reviewer.spec.js" | kind=code-symbol | source=tests/pals-reviewer.spec.js:L1 | neighbors=[2e859ad Adding PALS Course] | lang=en
 - "tests_prometric_spec_navigatewizard": "navigateWizard()" | kind=code-symbol | source=tests/prometric.spec.js:L70 | neighbors=[prometric.spec.js] | lang=en
 - "tests_test_api_fakeresp_init": ".__init__()" | kind=code-symbol | source=tests/test_api.py:L16 | neighbors=[_FakeResp] | lang=en
 - "tests_test_api_fakeresp_json": ".json()" | kind=code-symbol | source=tests/test_api.py:L20 | neighbors=[_FakeResp] | lang=en
@@ -53,19 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "tests_test_api_testindex_test_index_serves_html": ".test_index_serves_html()" | kind=code-symbol | source=tests/test_api.py:L74 | neighbors=[TestIndex] | lang=en
 - "tests_test_api_testlogout_test_logout_requires_auth": ".test_logout_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L128 | neighbors=[TestLogout] | lang=en
 - "tests_test_api_testregister_test_invalid_professional_level_rejected": ".test_invalid_professional_level_rejected()" | kind=code-symbol | source=tests/test_api.py:L78 | neighbors=[TestRegister] | lang=en
-- "tests_test_api_testregister_test_register_missing_password": ".test_register_missing_password()" | kind=code-symbol | source=tests/test_api.py:L43 | neighbors=[TestRegister] | lang=en
-- "tests_test_api_testsecurityheaders_test_csp_blocks_framing": ".test_csp_blocks_framing()" | kind=code-symbol | source=tests/test_api.py:L138 | neighbors=[TestSecurityHeaders] | lang=en
-- "tests_test_api_testsecurityheaders_test_security_headers_present": ".test_security_headers_present()" | kind=code-symbol | source=tests/test_api.py:L133 | neighbors=[TestSecurityHeaders] | lang=en
-- "tests_test_api_teststaticfiles_test_manifest_json": ".test_manifest_json()" | kind=code-symbol | source=tests/test_api.py:L216 | neighbors=[TestStaticFiles] | lang=en
-- "tests_test_api_teststaticfiles_test_nonexistent_file_returns_404": ".test_nonexistent_file_returns_404()" | kind=code-symbol | source=tests/test_api.py:L221 | neighbors=[TestStaticFiles] | lang=en
-- "tests_test_api_teststaticfiles_test_style_css": ".test_style_css()" | kind=code-symbol | source=tests/test_api.py:L211 | neighbors=[TestStaticFiles] | lang=en
-- "tests_test_content_guides_rationale_1": "Rewritten SmartCare topics must match their chapter's reference notes.  A rewrit" | kind=entity | source=tests/test_content_guides.py:L1 | neighbors=[test_content_guides.py] | lang=pt
-- "tests_test_content_guides_rationale_55": "A page string without its inline tags (<b>, <sub>) and entities." | kind=entity | source=tests/test_content_guides.py:L55 | neighbors=[page_text()] | lang=en
-- "tests_test_content_guides_rationale_78": "Right answers and explanations state facts; wrong options and     scenario stems" | kind=entity | source=tests/test_content_guides.py:L78 | neighbors=[study_strings()] | lang=en
-- "tests_test_content_guides_rewritten_topics": "rewritten_topics()" | kind=code-symbol | source=tests/test_content_guides.py:L90 | neighbors=[test_content_guides.py] | lang=en
-- "tests_test_content_guides_test_study_sets_meet_the_minimums": "test_study_sets_meet_the_minimums()" | kind=code-symbol | source=tests/test_content_guides.py:L110 | neighbors=[test_content_guides.py] | lang=en
-- "tests_test_courses_page_rationale_1": "pages/courses.html progress bars divide chapters viewed by a hard-coded\r chapter" | kind=entity | source=tests/test_courses_page.py:L1 | neighbors=[test_courses_page.py] | lang=en
-- "usermixin": "UserMixin" | kind=code-symbol | neighbors=[User] | lang=en
 
 ## Instructions
 

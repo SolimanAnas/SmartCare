@@ -17,6 +17,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_filter": "filter()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_filterbindings": "filterBindings()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_functions": "functions()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_geojson": "geojson()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_getlongpolltransport": "getLongPollTransport()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_getpayloadrecords": "_getPayloadRecords()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_heartbeatintervalms": "heartbeatIntervalMs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_heartbeattimer": "heartbeatTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_index": "index()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isactive": "isActive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isauthenticationtimeout": "isAuthenticationTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isconflict": "isConflict()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_iserrored": "isErrored()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_isnotfound": "isNotFound()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_isthrowonerrorenabled": "isThrowOnErrorEnabled()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_j": "J()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs]
@@ -44,19 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_rangelte": "rangeLte()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_reconnectafterms": "reconnectAfterMs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_reconnecttimer": "reconnectTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_regeximatch": "regexIMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_regexmatch": "regexMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_rejointimer": "rejoinTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_retry": "retry()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_returns": "returns()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_rollback": "rollback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_rpc": "rpc()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_schema": "schema()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_sendbuffer": "sendBuffer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_single": "single()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_statechangecallbacks": "stateChangeCallbacks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_storesession": "storeSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_stripnulls": "stripNulls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
 
 ## Instructions
 

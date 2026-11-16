@@ -26,6 +26,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_capture_screenshots_fs": "fs" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L25 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_capture_screenshots_path": "path" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L26 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_capture_screenshots_raw": "RAW" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L30 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_capture_screenshots_root": "ROOT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L29 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_capture_screenshots_shots": "SHOTS" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L66 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_capture_screenshots_viewport": "VIEWPORT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L35 | neighbors=[capture-screenshots.js] | lang=en
+- "scripts_check_contrast_rationale_53": "Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block." | kind=entity | source=scripts/check_contrast.py:L53 | neighbors=[parse_themes()] | lang=en
+- "scripts_compose_lib_bokeh_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L174 | neighbors=[Bokeh] | lang=en
+- "scripts_compose_lib_capture_clicks": ".clicks()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L62 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_capture_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L50 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_capture_mark": ".mark()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L58 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_paste_center": "paste_center()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L314 | neighbors=[compose_lib.py] | lang=en
+- "scripts_compose_lib_rationale_1": "Rendering primitives for the Megacode promo compositor (PIL + numpy)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L1 | neighbors=[compose_lib.py] | lang=en
 - "scripts_compose_lib_rationale_112": "Turn a camera view (smaller than frame) into a floating screen with shadow + edg" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L112 | neighbors=[card()] | lang=pt
 - "scripts_compose_lib_rationale_136": "PIL PERSPECTIVE coefficients mapping output (dst) points back to source points." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L136 | neighbors=[perspective_coeffs()] | lang=en
 - "scripts_compose_lib_rationale_145": "Warp the full src onto quad (tl, tr, br, bl) in a W×H RGBA canvas." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L145 | neighbors=[perspective()] | lang=en
@@ -53,19 +66,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_record_answers": "ANSWERS" | kind=code-symbol | source=promo/megacode/scripts/record.js:L17 | neighbors=[record.js] | lang=en
 - "scripts_record_begin": "begin()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L67 | neighbors=[record.js] | lang=en
 - "scripts_record_end": "end()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L74 | neighbors=[record.js] | lang=en
-- "scripts_record_fs": "fs" | kind=code-symbol | source=promo/megacode/scripts/record.js:L5 | neighbors=[record.js] | lang=en
-- "scripts_record_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/record.js:L7 | neighbors=[record.js] | lang=en
-- "scripts_record_out": "OUT" | kind=code-symbol | source=promo/megacode/scripts/record.js:L13 | neighbors=[record.js] | lang=en
-- "scripts_record_path": "path" | kind=code-symbol | source=promo/megacode/scripts/record.js:L6 | neighbors=[record.js] | lang=en
-- "scripts_record_quiz": "QUIZ" | kind=code-symbol | source=promo/megacode/scripts/record.js:L38 | neighbors=[record.js] | lang=en
-- "scripts_split_content_chapter_ids": "CHAPTER_IDS" | kind=code-symbol | source=scripts/split_content.js:L22 | neighbors=[split_content.js] | lang=en
-- "scripts_split_content_content_dir": "CONTENT_DIR" | kind=code-symbol | source=scripts/split_content.js:L17 | neighbors=[split_content.js] | lang=en
-- "scripts_split_content_fs": "fs" | kind=code-symbol | source=scripts/split_content.js:L12 | neighbors=[split_content.js] | lang=en
-- "scripts_split_content_path": "path" | kind=code-symbol | source=scripts/split_content.js:L13 | neighbors=[split_content.js] | lang=en
-- "scripts_split_content_root": "ROOT" | kind=code-symbol | source=scripts/split_content.js:L16 | neighbors=[split_content.js] | lang=en
-- "scripts_split_content_vm": "vm" | kind=code-symbol | source=scripts/split_content.js:L14 | neighbors=[split_content.js] | lang=en
-- "scripts_validate_content_rationale_105": "Extract (text, options, correct_answer) regardless of which of the\r     bank's s" | kind=entity | source=scripts/validate_content.py:L105 | neighbors=[question_core_fields()] | lang=en
-- "scripts_validate_content_rationale_51": "Several banks were authored with a UTF-8 BOM; browsers' fetch().json()\r     tole" | kind=entity | source=scripts/validate_content.py:L51 | neighbors=[load_json_lenient()] | lang=en
 
 ## Instructions
 

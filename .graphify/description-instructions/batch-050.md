@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "app_updatebottomnavvisibility": "updateBottomNavVisibility()" | kind=code-symbol | source=app.js:L395 | neighbors=[app.js]
+- "app_updatefooternavposition": "updateFooterNavPosition()" | kind=code-symbol | source=app.js:L406 | neighbors=[app.js]
+- "app_updateheadervisibility": "updateHeaderVisibility()" | kind=code-symbol | source=app.js:L372 | neighbors=[app.js]
+- "app_updateprogressbarposition": "updateProgressBarPosition()" | kind=code-symbol | source=app.js:L385 | neighbors=[app.js]
+- "app_updatescrollprogress": "updateScrollProgress()" | kind=code-symbol | source=app.js:L415 | neighbors=[app.js]
+- "cpg_guide_list": "list()" | kind=code-symbol | source=cpg-guide.js:L37 | neighbors=[cpg-guide.js]
+- "cpg_guide_stackedtable": "stackedTable()" | kind=code-symbol | source=cpg-guide.js:L56 | neighbors=[cpg-guide.js]
+- "google_flow_generate_batches_anatomy": "ANATOMY" | kind=code-symbol | source=.google-flow/generate-batches.js:L12 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_batches": "batches" | kind=code-symbol | source=.google-flow/generate-batches.js:L159 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_byid": "byId" | kind=code-symbol | source=.google-flow/generate-batches.js:L106 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_chapters": "chapters" | kind=code-symbol | source=.google-flow/generate-batches.js:L157 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_count": "count()" | kind=code-symbol | source=.google-flow/generate-batches.js:L180 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_counted": "counted" | kind=code-symbol | source=.google-flow/generate-batches.js:L173 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_csv": "csv" | kind=code-symbol | source=.google-flow/generate-batches.js:L210 | neighbors=[generate-batches.js]
 - "google_flow_generate_batches_days": "days()" | kind=code-symbol | source=.google-flow/generate-batches.js:L184 | neighbors=[generate-batches.js]
 - "google_flow_generate_batches_entries": "entries" | kind=code-symbol | source=.google-flow/generate-batches.js:L89 | neighbors=[generate-batches.js]
 - "google_flow_generate_batches_famorder": "famOrder" | kind=code-symbol | source=.google-flow/generate-batches.js:L158 | neighbors=[generate-batches.js]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "google_flow_generate_batches_square": "SQUARE" | kind=code-symbol | source=.google-flow/generate-batches.js:L11 | neighbors=[generate-batches.js]
 - "google_flow_generate_batches_stats": "stats" | kind=code-symbol | source=.google-flow/generate-batches.js:L185 | neighbors=[generate-batches.js]
 - "google_flow_generate_batches_stdgen": "stdGen" | kind=code-symbol | source=.google-flow/generate-batches.js:L183 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_subject": "SUBJECT" | kind=code-symbol | source=.google-flow/generate-batches.js:L59 | neighbors=[generate-batches.js]
-- "google_flow_generate_batches_svg": "SVG" | kind=code-symbol | source=.google-flow/generate-batches.js:L6 | neighbors=[generate-batches.js]
-- "google_flow_run_all_from_to": "[from, to]" | kind=code-symbol | source=.google-flow/run-all.mjs:L8 | neighbors=[run-all.mjs]
-- "google_flow_run_all_limited": "limited" | kind=code-symbol | source=.google-flow/run-all.mjs:L12 | neighbors=[run-all.mjs]
-- "google_flow_run_all_models": "MODELS" | kind=code-symbol | source=.google-flow/run-all.mjs:L11 | neighbors=[run-all.mjs]
-- "google_flow_run_all_names": "names" | kind=code-symbol | source=.google-flow/run-all.mjs:L9 | neighbors=[run-all.mjs]
-- "google_flow_run_batch_arg": "arg()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L18 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_batcharg": "batchArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_idsarg": "idsArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_jobs": "jobs" | kind=code-symbol | source=.google-flow/run-batch.mjs:L66 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_limited": "limited" | kind=code-symbol | source=.google-flow/run-batch.mjs:L85 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_load": "load()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L10 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_log": "LOG" | kind=code-symbol | source=.google-flow/run-batch.mjs:L20 | neighbors=[run-batch.mjs]
-- "google_flow_run_batch_modelarg": "modelArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
 
 ## Instructions
 

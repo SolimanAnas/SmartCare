@@ -17,6 +17,20 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "tests_med_index_xss_spec": "med-index-xss.spec.js" | kind=code-symbol | source=tests/med-index-xss.spec.js:L1 | neighbors=[817a4bf Merge pull request #23 Fixed: r…, 81d920a Fix reflected XSS in med-index.…]
+- "tests_medical_reviewer_spec": "medical-reviewer.spec.js" | kind=code-symbol | source=tests/medical-reviewer.spec.js:L1 | neighbors=[3a000d0 Integrate Medical reviewer into…, 877d856 Medical-bdls-empact-pepp-review…]
+- "tests_pepp_reviewer_spec": "pepp-reviewer.spec.js" | kind=code-symbol | source=tests/pepp-reviewer.spec.js:L1 | neighbors=[20ed56a Integrate PEPP reviewer into pl…, 877d856 Medical-bdls-empact-pepp-review…]
+- "tests_sw_cache_writes_spec": "sw-cache-writes.spec.js" | kind=code-symbol | source=tests/sw-cache-writes.spec.js:L1 | neighbors=[1543337 Fix raw markup in Last Visited,…, 8c61be7 Merge pull request #22 raw mark…]
+- "tests_test_api_supabase_backend": "supabase_backend()" | kind=code-symbol | source=tests/test_api.py:L29 | neighbors=[test_api.py, Stubs server.py's Supabase integration …]
+- "tests_test_api_testaccountselfdelete_test_not_configured_returns_503": ".test_not_configured_returns_503()" | kind=code-symbol | source=tests/test_api.py:L94 | neighbors=[TestAccountSelfDelete, _auth()]
+- "tests_test_api_testadminusers_test_admin_users_requires_auth": ".test_admin_users_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L135 | neighbors=[Anonymous access to the admin API must …, TestAdminUsers]
+- "tests_test_api_testauditlogging_test_failed_login_is_audited": ".test_failed_login_is_audited()" | kind=code-symbol | source=tests/test_api.py:L229 | neighbors=[TestAuditLogging, _login()]
+- "tests_test_api_testauditlogging_test_self_delete_is_audited": ".test_self_delete_is_audited()" | kind=code-symbol | source=tests/test_api.py:L157 | neighbors=[TestAuditLogging, _auth()]
+- "tests_test_api_testcsrfguard_test_delete_without_xrw_header_rejected": ".test_delete_without_xrw_header_rejected()" | kind=code-symbol | source=tests/test_api.py:L187 | neighbors=[A request missing X-Requested-With must…, TestCsrfGuard]
+- "tests_test_api_testcsrfguard_test_post_without_xrw_header_rejected": ".test_post_without_xrw_header_rejected()" | kind=code-symbol | source=tests/test_api.py:L259 | neighbors=[A POST missing X-Requested-With must be…, TestCsrfGuard]
+- "tests_test_api_testcsrfguard_test_valid_delete_request_allowed": ".test_valid_delete_request_allowed()" | kind=code-symbol | source=tests/test_api.py:L195 | neighbors=[A well-formed request with the CSRF hea…, TestCsrfGuard]
+- "tests_test_api_testcsrfguard_test_valid_json_post_allowed": ".test_valid_json_post_allowed()" | kind=code-symbol | source=tests/test_api.py:L268 | neighbors=[A well-formed JSON POST with the CSRF h…, TestCsrfGuard]
+- "tests_test_api_testhealthcheck": "TestHealthCheck" | kind=code-symbol | source=tests/test_api.py:L144 | neighbors=[test_api.py, .test_health_returns_ok()]
 - "tests_test_api_testindex": "TestIndex" | kind=code-symbol | source=tests/test_api.py:L73 | neighbors=[test_api.py, .test_index_serves_html()]
 - "tests_test_api_testlogin_test_login_nonexistent_user": ".test_login_nonexistent_user()" | kind=code-symbol | source=tests/test_api.py:L102 | neighbors=[TestLogin, _login()]
 - "tests_test_api_testlogout": "TestLogout" | kind=code-symbol | source=tests/test_api.py:L127 | neighbors=[test_api.py, .test_logout_requires_auth()]
@@ -43,20 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_bi": "Bi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Fi()]
 - "vendor_chart_4_5_1_umd_min_bo_getlabelforvalue": ".getLabelForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo, ne()]
 - "vendor_chart_4_5_1_umd_min_bo_getticklimit": ".getTickLimit()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo, .buildTicks()]
-- "vendor_chart_4_5_1_umd_min_bo_parse": ".parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[bo, s()]
-- "vendor_chart_4_5_1_umd_min_buildlookuptable": "buildLookupTable()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, initOffsets()]
-- "vendor_chart_4_5_1_umd_min_buildticks": "buildTicks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getLabels()]
-- "vendor_chart_4_5_1_umd_min_cn": "cn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, hn()]
-- "vendor_chart_4_5_1_umd_min_de_get": ".get()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, he()]
-- "vendor_chart_4_5_1_umd_min_de_override": ".override()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, ce()]
-- "vendor_chart_4_5_1_umd_min_de_route": ".route()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, he()]
-- "vendor_chart_4_5_1_umd_min_de_set": ".set()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, ce()]
-- "vendor_chart_4_5_1_umd_min_dn": "dn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, fe()]
-- "vendor_chart_4_5_1_umd_min_do": "Do()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, co()]
-- "vendor_chart_4_5_1_umd_min_ei": "ei()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e()]
-- "vendor_chart_4_5_1_umd_min_en_isfortype": ".isForType()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[en, ._getRegistryForType()]
-- "vendor_chart_4_5_1_umd_min_fo": "fo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, draw()]
-- "vendor_chart_4_5_1_umd_min_generate": "_generate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getDataTimestamps()]
 
 ## Instructions
 

@@ -121,8 +121,12 @@ for (const job of jobs) {
       const body = await page.evaluate(() => document.body.innerText).catch(() => '');
       const hit = (body.match(LIMIT_RE) || body.match(BLOCK_RE) || [''])[0];
       const text = `${err || ''} ${notice} ${hit}`;
+      // Flow's warning about the account: stop at once, never retry past it.
+      if (/unusual activity/i.test(`${err || ''} ${notice} ${body}`)) { log({ id: job.id, batch: job.batch, model: job.model, unusual: true, ok: false, text: text.slice(0, 400) }); stop = 'unusual activity'; break; }
       if (++failsInRow >= 3) { log({ id: job.id, batch: job.batch, model: job.model, ok: false, text: text.slice(0, 400) }); stop = 'repeated failures: ' + text.slice(0, 200); break; }
-      if (LIMIT_RE.test(text)) { log({ id: job.id, batch: job.batch, model: job.model, limit: true, text });
+      // Old failure cards stay on the page, newest first, so only the newest one counts as a limit.
+      const latest = (notice.match(/Failed[\s|]+([^\n|]+)/) || [, notice])[1];
+      if (LIMIT_RE.test(`${err || ''} ${latest}`)) { log({ id: job.id, batch: job.batch, model: job.model, limit: true, text });
         if (queueArg) {
           console.log(`LIMIT ${job.model}: ${text.slice(0, 160)}`);
           limited.add(job.model); failsInRow = 0;

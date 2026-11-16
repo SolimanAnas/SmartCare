@@ -17,6 +17,18 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_chart_4_5_1_umd_min_wa_updateanimationtarget": "._updateAnimationTarget()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[wa, .draw(), Ta()]
+- "vendor_chart_4_5_1_umd_min_wn": "wn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Nn(), o()]
+- "vendor_chart_4_5_1_umd_min_wo": "wo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ko(), et()]
+- "vendor_chart_4_5_1_umd_min_xt_listen": ".listen()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[.constructor(), xt, ._getAnims()]
+- "vendor_chart_4_5_1_umd_min_xt_running": ".running()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[.render(), .resize(), xt]
+- "vendor_chart_4_5_1_umd_min_ya_getlegenditemat": "._getLegendItemAt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, tt(), .handleEvent()]
+- "vendor_chart_4_5_1_umd_min_ya_handleevent": ".handleEvent()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, d(), ._getLegendItemAt()]
+- "vendor_chart_4_5_1_umd_min_ye": "Ye()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e(), .resolveNamedOptions()]
+- "vendor_chart_4_5_1_umd_min_yn_computeangle": "._computeAngle()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), .getDataVisibility(), .updateElements()]
+- "vendor_chart_4_5_1_umd_min_yn_updateradius": "._updateRadius()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[yn(), .update(), .getVisibleDatasetCount()]
+- "vendor_chart_4_5_1_umd_min_za": "za()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getAfterBody(), .getBeforeBody()]
+- "vendor_chart_4_5_1_umd_min_zt": "zt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Bt(), Ft()]
 - "vendor_supabase_js_2_110_0_an": "an()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, nn(), _initializeOptions()]
 - "vendor_supabase_js_2_110_0_authenticate": "_authenticate()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _verify(), y()]
 - "vendor_supabase_js_2_110_0_batchsend": "batchSend()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, ajax(), join()]
@@ -45,18 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_supabase_js_2_110_0_dropnamespace": "dropNamespace()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, ct(), request()]
 - "vendor_supabase_js_2_110_0_droptable": "dropTable()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, request(), Te()]
 - "vendor_supabase_js_2_110_0_encodebinaryuserbroadcastpush": "_encodeBinaryUserBroadcastPush()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, _binaryEncodeUserBroadcastPush(), _encodeUserBroadcastPush()]
-- "vendor_supabase_js_2_110_0_er": "er()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, ie(), registerPasskey()]
-- "vendor_supabase_js_2_110_0_es": "es()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, Dn(), getClaims()]
-- "vendor_supabase_js_2_110_0_execute": "execute()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, ft(), getPromise()]
-- "vendor_supabase_js_2_110_0_exists": "exists()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, ft(), _getFinalPath()]
-- "vendor_supabase_js_2_110_0_fetchjwk": "fetchJwk()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), getClaims()]
-- "vendor_supabase_js_2_110_0_fetchwithtimeout": "_fetchWithTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, httpSend(), send()]
-- "vendor_supabase_js_2_110_0_flushsendbuffer": "flushSendBuffer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), onConnOpen()]
-- "vendor_supabase_js_2_110_0_getcustomprovider": "_getCustomProvider()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, m(), y()]
-- "vendor_supabase_js_2_110_0_getoauthclient": "_getOAuthClient()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, m(), y()]
-- "vendor_supabase_js_2_110_0_getsocket": "getSocket()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, constructor(), _handleNodeJsRaceCondition()]
-- "vendor_supabase_js_2_110_0_getvectors": "getVectors()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, handleOperation(), S()]
-- "vendor_supabase_js_2_110_0_getwebsocketconstructor": "getWebSocketConstructor()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, detectEnvironment(), _initializeOptions()]
 
 ## Instructions
 

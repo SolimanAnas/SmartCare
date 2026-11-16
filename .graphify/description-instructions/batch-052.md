@@ -24,6 +24,19 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_build_courses_main": "main()" | kind=code-symbol | source=scripts/build_courses.py:L6 | neighbors=[build_courses.py]
+- "scripts_build_ecg_reference_datauri": "dataUri()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L38 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_defs": "defs()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L84 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_e": "E" | kind=code-symbol | source=scripts/build_ecg_reference.js:L25 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_fs": "fs" | kind=code-symbol | source=scripts/build_ecg_reference.js:L16 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_indexhtml": "indexHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L193 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_keep_html": "KEEP_HTML" | kind=code-symbol | source=scripts/build_ecg_reference.js:L22 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_kind_order": "KIND_ORDER" | kind=code-symbol | source=scripts/build_ecg_reference.js:L136 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_l": "L" | kind=code-symbol | source=scripts/build_ecg_reference.js:L26 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_logo": "LOGO" | kind=code-symbol | source=scripts/build_ecg_reference.js:L39 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_logo_small": "LOGO_SMALL" | kind=code-symbol | source=scripts/build_ecg_reference.js:L40 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_mi_img": "MI_IMG" | kind=code-symbol | source=scripts/build_ecg_reference.js:L41 | neighbors=[build_ecg_reference.js]
+- "scripts_build_ecg_reference_mihtml": "miHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L217 | neighbors=[build_ecg_reference.js]
 - "scripts_build_ecg_reference_out_pdf": "OUT_PDF" | kind=code-symbol | source=scripts/build_ecg_reference.js:L21 | neighbors=[build_ecg_reference.js]
 - "scripts_build_ecg_reference_path": "path" | kind=code-symbol | source=scripts/build_ecg_reference.js:L17 | neighbors=[build_ecg_reference.js]
 - "scripts_build_ecg_reference_pathwayshtml": "pathwaysHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L201 | neighbors=[build_ecg_reference.js]
@@ -51,19 +64,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_capture_screenshots_argbase": "argBase" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L31 | neighbors=[capture-screenshots.js]
 - "scripts_capture_screenshots_chromium": "{ chromium }" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L27 | neighbors=[capture-screenshots.js]
 - "scripts_capture_screenshots_fixed_now": "FIXED_NOW" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L37 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_fs": "fs" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L25 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_path": "path" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L26 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_raw": "RAW" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L30 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_root": "ROOT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L29 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_shots": "SHOTS" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L66 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_viewport": "VIEWPORT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L35 | neighbors=[capture-screenshots.js]
-- "scripts_check_contrast_rationale_53": "Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block." | kind=entity | source=scripts/check_contrast.py:L53 | neighbors=[parse_themes()]
-- "scripts_compose_lib_bokeh_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L174 | neighbors=[Bokeh]
-- "scripts_compose_lib_capture_clicks": ".clicks()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L62 | neighbors=[Capture]
-- "scripts_compose_lib_capture_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L50 | neighbors=[Capture]
-- "scripts_compose_lib_capture_mark": ".mark()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L58 | neighbors=[Capture]
-- "scripts_compose_lib_paste_center": "paste_center()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L314 | neighbors=[compose_lib.py]
-- "scripts_compose_lib_rationale_1": "Rendering primitives for the Megacode promo compositor (PIL + numpy)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L1 | neighbors=[compose_lib.py]
 
 ## Instructions
 

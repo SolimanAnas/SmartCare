@@ -17,6 +17,18 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_record_waitfor": "waitFor()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L100 | neighbors=[record.js, advance(), frame()]
+- "scripts_validate_content_load_json_lenient": "load_json_lenient()" | kind=code-symbol | source=scripts/validate_content.py:L50 | neighbors=[validate_content.py, Several banks were authored with a UTF-…, validate_bank_content()]
+- "scripts_validate_content_question_core_fields": "question_core_fields()" | kind=code-symbol | source=scripts/validate_content.py:L104 | neighbors=[validate_content.py, Extract (text, options, correct_answer)…, validate_question()]
+- "scripts_validate_content_rel": "rel()" | kind=code-symbol | source=scripts/validate_content.py:L46 | neighbors=[validate_content.py, main(), validate_manifest_coverage()]
+- "scripts_validate_content_validate_manifest_coverage": "validate_manifest_coverage()" | kind=code-symbol | source=scripts/validate_content.py:L91 | neighbors=[validate_content.py, main(), rel()]
+- "scripts_validate_content_validate_question": "validate_question()" | kind=code-symbol | source=scripts/validate_content.py:L113 | neighbors=[validate_content.py, validate_bank_content(), question_core_fields()]
+- "server_admin_emails": "_admin_emails()" | kind=code-symbol | source=server.py:L150 | neighbors=[server.py, _is_admin(), Allow-list of admin emails sourced from…]
+- "server_audit": "_audit()" | kind=code-symbol | source=server.py:L20 | neighbors=[server.py, Write a structured audit record for aut…, Write a structured audit record for aut…]
+- "server_is_admin": "_is_admin()" | kind=code-symbol | source=server.py:L156 | neighbors=[server.py, _admin_emails(), A user is an admin if their role is 'Ad…]
+- "server_supabase_admin_configured": "_supabase_admin_configured()" | kind=code-symbol | source=server.py:L83 | neighbors=[server.py, _require_supabase_user(), _supabase_user_from_token()]
+- "src_render_state_escapehtml": "escapeHtml()" | kind=code-symbol | source=src/render-state.js:L23 | neighbors=[render-state.js, icon(), renderEmptyOrError()]
+- "src_render_state_icon": "icon()" | kind=code-symbol | source=src/render-state.js:L31 | neighbors=[render-state.js, escapeHtml(), renderEmptyOrError()]
 - "src_render_state_renderstate": "renderState()" | kind=code-symbol | source=src/render-state.js:L70 | neighbors=[render-state.js, renderEmptyOrError(), renderLoading()]
 - "sw_networkfirst": "networkFirst()" | kind=code-symbol | source=sw.js:L129 | neighbors=[sw.js, offlineFallback(), staleWhileRevalidate()]
 - "sw_offlinefallback": "offlineFallback()" | kind=code-symbol | source=sw.js:L199 | neighbors=[sw.js, networkFirst(), staleWhileRevalidate()]
@@ -45,18 +57,6 @@ one-sentence description — no prose, no markdown fences.
 - "vendor_chart_4_5_1_umd_min_beforedatasetdraw": "beforeDatasetDraw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, oa(), ua()]
 - "vendor_chart_4_5_1_umd_min_cs": "cs" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .acquireContext(), .updateConfig()]
 - "vendor_chart_4_5_1_umd_min_ct": "ct()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, ks(), ms()]
-- "vendor_chart_4_5_1_umd_min_de_constructor": ".constructor()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[de, .apply(), .describe()]
-- "vendor_chart_4_5_1_umd_min_determinedatalimits": "determineDataLimits()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getLabels(), .getUserBounds()]
-- "vendor_chart_4_5_1_umd_min_di": "Di()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, a(), .update()]
-- "vendor_chart_4_5_1_umd_min_dt": "dt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, .apply(), .constructor()]
-- "vendor_chart_4_5_1_umd_min_ea": "ea()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, s(), pa()]
-- "vendor_chart_4_5_1_umd_min_ee": "Ee()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .rotate(), Le()]
-- "vendor_chart_4_5_1_umd_min_eo": "eo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, b(), .getPointPosition()]
-- "vendor_chart_4_5_1_umd_min_es": "es()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._getSortedDatasetMetas(), ss()]
-- "vendor_chart_4_5_1_umd_min_et": "et()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, s(), wo()]
-- "vendor_chart_4_5_1_umd_min_fe": "fe()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dn(), ps()]
-- "vendor_chart_4_5_1_umd_min_fs": "Fs()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getMatchingVisibleMetas(), vs()]
-- "vendor_chart_4_5_1_umd_min_getaxiscount": "_getAxisCount()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _calculateBarIndexPixels(), _getAxis()]
 
 ## Instructions
 

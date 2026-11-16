@@ -12,14 +12,33 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "cpg_guide_renderdrug": "renderDrug()" | kind=code-symbol | source=cpg-guide.js:L224 | neighbors=[cpg-guide.js, section(), source()]
-- "cpg_guide_section": "section()" | kind=code-symbol | source=cpg-guide.js:L173 | neighbors=[cpg-guide.js, renderDrug(), figures()]
-- "cpg_guide_source": "source()" | kind=code-symbol | source=cpg-guide.js:L185 | neighbors=[cpg-guide.js, renderDrug(), renderGuide()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@6c55b58a08f87310c2157a2ecec18a123b5f5594": "6c55b58 fix: sync section-header & continue-label colors with index.html sectio…" | kind=Commit | source=git | neighbors=[main, 0245fab update: refresh PWA icons and f…, ff409d5 fix: match section-header style…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@7c988c004c1065d2ba9e8065b9e0cdd475988565": "7c988c0 chore: commit graphify auto-updates, 404.html /SmartCare/ paths, supaba…" | kind=Commit | source=git | neighbors=[24d0345 fix: correct SUPABASE_URL typo …, main, 0465774 feat: Google Identity Services …]
+- "commit:repo:github.com/SolimanAnas/SmartCare@8541abefec7ae7fa9d781e820ae6356b7c77b72b": "8541abe chore: Change index page title from landing page to clinical learning p…" | kind=Commit | source=git | neighbors=[main, d00c567 feat: Remove Scope of Practice …, 92652ca feat: Update search placeholder…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@90c10bb9124d5ae485f96aeae6b5c0b137683cdd": "90c10bb Make hero greeting on index.html sign-in aware" | kind=Commit | source=git | neighbors=[8a6ee0b Fix invisible table borders and…, main, 4389d53 Improve drawer toggle panel ide…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@98be90d66a0dcd109768dee26ba7727d0e6608ab": "98be90d Add files via upload" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, 213cb39 NEW CHAPTERS ADDED V 4.0.1, c-index.js]
+- "commit:repo:github.com/SolimanAnas/SmartCare@aa81a0c05ca6c23af3be35bcd63b1bbbe66aca54": "aa81a0c fix: set SUPABASE_URL in supabase-config.js" | kind=Commit | source=git | neighbors=[main, 4561a63 fix: correct SUPABASE_URL typo …, b0748c1 feat: Supabase integration]
+- "commit:repo:github.com/SolimanAnas/SmartCare@c9276aedf9c658368f229db910044abccc835060": "c9276ae chore: update graphify knowledge graph" | kind=Commit | source=git | neighbors=[1fc629e fix(app.js): handle DOMContentL…, main, 1a00316 feat(itls): restructure itls co…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@d546791e464c038a52e24f9309be76c8b998d88f": "d546791 feat: add screenshots, orientation, and safe categories to manifest" | kind=Commit | source=git | neighbors=[18fb7dc Added ├── .well-known/, main, fefe4cd chore: bump SW to v2.2 for init…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@d5777e9b8a0fe40413ec7e62d9487650a17bb5f7": "d5777e9 feat: comprehensive privacy policy with premium UI/UX design" | kind=Commit | source=git | neighbors=[829a86d update: refresh PWA icons from …, main, 67cd1eb fix: update contact email and a…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@d641fa0ed1193b3e8493f17ea46f056c534b259f": "d641fa0 feat: improve SEO, Open Graph metadata, and accessibility across all pa…" | kind=Commit | source=git | neighbors=[1a00316 feat(itls): restructure itls co…, main, 074617f feat: update chapter files with…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@ff409d5260a1de9557f95c0878f5781ccf2651b8": "ff409d5 fix: match section-header style to index.html section-label" | kind=Commit | source=git | neighbors=[7f26548 fix: UTF-8 mojibake across exam…, main, 6c55b58 fix: sync section-header & cont…]
+- "cpg_guide_figures": "figures()" | kind=code-symbol | source=cpg-guide.js:L69 | neighbors=[cpg-guide.js, section(), step()]
+- "cpg_guide_renderdrug": "renderDrug()" | kind=code-symbol | source=cpg-guide.js:L208 | neighbors=[cpg-guide.js, section(), source()]
+- "cpg_guide_section": "section()" | kind=code-symbol | source=cpg-guide.js:L159 | neighbors=[cpg-guide.js, renderDrug(), figures()]
+- "cpg_guide_source": "source()" | kind=code-symbol | source=cpg-guide.js:L169 | neighbors=[cpg-guide.js, renderDrug(), renderGuide()]
 - "google_flow_run_batch_done": "done()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L70 | neighbors=[run-batch.mjs, logRows(), isDone()]
 - "google_flow_run_batch_isdone": "isDone()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L86 | neighbors=[run-batch.mjs, done(), logRows()]
 - "google_flow_run_batch_logrows": "logRows()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L69 | neighbors=[run-batch.mjs, done(), isDone()]
@@ -45,18 +64,6 @@ one-sentence description — no prose, no markdown fences.
 - "scripts_build_precache_collect_globs": "collect_globs()" | kind=code-symbol | source=scripts/build_precache.py:L113 | neighbors=[build_precache.py, build_list(), rel()]
 - "scripts_build_screenshots_slidehtml": "slideHtml()" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L95 | neighbors=[build-screenshots.js, dataUri(), ecgPath()]
 - "scripts_build_toc_gen_chapter": "gen_chapter()" | kind=code-symbol | source=scripts/build_toc.py:L92 | neighbors=[build_toc.py, esc(), main()]
-- "scripts_capture_screenshots_settle": "settle()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L50 | neighbors=[capture-screenshots.js, startPrometric(), waitExamReady()]
-- "scripts_capture_screenshots_startprometric": "startPrometric()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L58 | neighbors=[capture-screenshots.js, settle(), waitExamReady()]
-- "scripts_capture_screenshots_waitexamready": "waitExamReady()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L52 | neighbors=[capture-screenshots.js, startPrometric(), settle()]
-- "scripts_check_contrast_main": "main()" | kind=code-symbol | source=scripts/check_contrast.py:L65 | neighbors=[check_contrast.py, contrast(), parse_themes()]
-- "scripts_check_contrast_parse_themes": "parse_themes()" | kind=code-symbol | source=scripts/check_contrast.py:L52 | neighbors=[check_contrast.py, main(), Extract {theme_name: {var_name: hex}} f…]
-- "scripts_compose_cam_at": "cam_at()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L262 | neighbors=[compose.py, render_full(), render_play_overlays()]
-- "scripts_compose_clk": "clk()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L96 | neighbors=[compose.py, build_edit(), build_edit_play()]
-- "scripts_compose_end_card": "end_card()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L553 | neighbors=[compose.py, _disclaimer(), render_reveal()]
-- "scripts_compose_lib_card": "card()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L111 | neighbors=[compose_lib.py, rounded_mask(), Turn a camera view (smaller than frame)…]
-- "scripts_compose_lib_draw_tracked": "draw_tracked()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L245 | neighbors=[compose_lib.py, chip(), kicker()]
-- "scripts_compose_lib_ease": "ease()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L30 | neighbors=[compose_lib.py, ramp(), tap_ring()]
-- "scripts_compose_lib_font": "font()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L25 | neighbors=[compose_lib.py, chip(), kicker()]
 
 ## Instructions
 
