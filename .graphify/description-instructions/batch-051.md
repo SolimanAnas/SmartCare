@@ -1,4 +1,4 @@
-# Node Description Batch 52 of 62
+# Node Description Batch 52 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,60 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
-LANGUAGE: each entry has a `lang=` marker giving the language of its source.
-Write that entry's description in EXACTLY that language. Do not translate to
-a single common language — match each node's source language individually.
+Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "google_flow_generate_batches_subject": "SUBJECT" | kind=code-symbol | source=.google-flow/generate-batches.js:L59 | neighbors=[generate-batches.js] | lang=en
-- "google_flow_generate_batches_svg": "SVG" | kind=code-symbol | source=.google-flow/generate-batches.js:L6 | neighbors=[generate-batches.js] | lang=en
-- "google_flow_run_all_from_to": "[from, to]" | kind=code-symbol | source=.google-flow/run-all.mjs:L8 | neighbors=[run-all.mjs] | lang=en
-- "google_flow_run_all_limited": "limited" | kind=code-symbol | source=.google-flow/run-all.mjs:L12 | neighbors=[run-all.mjs] | lang=en
-- "google_flow_run_all_models": "MODELS" | kind=code-symbol | source=.google-flow/run-all.mjs:L11 | neighbors=[run-all.mjs] | lang=en
-- "google_flow_run_all_names": "names" | kind=code-symbol | source=.google-flow/run-all.mjs:L9 | neighbors=[run-all.mjs] | lang=en
-- "google_flow_run_batch_arg": "arg()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L18 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_batcharg": "batchArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_idsarg": "idsArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_jobs": "jobs" | kind=code-symbol | source=.google-flow/run-batch.mjs:L66 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_limited": "limited" | kind=code-symbol | source=.google-flow/run-batch.mjs:L85 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_load": "load()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L10 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_log": "LOG" | kind=code-symbol | source=.google-flow/run-batch.mjs:L20 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_modelarg": "modelArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_nextletter": "nextLetter()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L87 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_pagenotice": "pageNotice()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L61 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_queuearg": "queueArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L74 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_saved": "saved" | kind=code-symbol | source=.google-flow/run-batch.mjs:L92 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_run_batch_sleep": "sleep()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L22 | neighbors=[run-batch.mjs] | lang=en
-- "google_flow_update_tracker_counts": "counts" | kind=code-symbol | source=.google-flow/update-tracker.js:L14 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_fs": "fs" | kind=code-symbol | source=.google-flow/update-tracker.js:L3 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_generated": "generated" | kind=code-symbol | source=.google-flow/update-tracker.js:L9 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_head": "head" | kind=code-symbol | source=.google-flow/update-tracker.js:L12 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_iid_itrack_istatus_inotes": "[iId, iTrack, iStatus, iNotes]" | kind=code-symbol | source=.google-flow/update-tracker.js:L13 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_log": "log" | kind=code-symbol | source=.google-flow/update-tracker.js:L7 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_out": "out" | kind=code-symbol | source=.google-flow/update-tracker.js:L15 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_parseline": "parseLine()" | kind=code-symbol | source=.google-flow/update-tracker.js:L5 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_picks_notes_needs_pro_rerun_rerun": "{ picks, notes, needs_pro_rerun: rerun }" | kind=code-symbol | source=.google-flow/update-tracker.js:L8 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_quote": "quote()" | kind=code-symbol | source=.google-flow/update-tracker.js:L6 | neighbors=[update-tracker.js] | lang=en
-- "google_flow_update_tracker_rows": "rows" | kind=code-symbol | source=.google-flow/update-tracker.js:L11 | neighbors=[update-tracker.js] | lang=en
-- "mci_build_rationale_37": "Emit src/MCI/MCI-practice.json in the shared exam-engine shape\r     (text / opti" | kind=entity | source=courses/mci/build.py:L37 | neighbors=[write_practice_bank()] | lang=en
-- "prometric_exam_examengine_formattime": ".formatTime()" | kind=code-symbol | source=src/prometric/exam.js:L758 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_handletouchstart": ".handleTouchStart()" | kind=code-symbol | source=src/prometric/exam.js:L220 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_showmobilepanel": ".showMobilePanel()" | kind=code-symbol | source=src/prometric/exam.js:L240 | neighbors=[ExamEngine] | lang=en
-- "prometric_exam_examengine_togglefocusmode": ".toggleFocusMode()" | kind=code-symbol | source=src/prometric/exam.js:L236 | neighbors=[ExamEngine] | lang=en
-- "scripts_assemble_chapters_rationale_45": "Extract section objects from a TOC section file.      The file has the pattern:" | kind=entity | source=scripts/assemble_chapters.py:L45 | neighbors=[extract_sections()] | lang=en
-- "scripts_assemble_chapters_rationale_91": "Assemble a complete chapter JS file." | kind=entity | source=scripts/assemble_chapters.py:L91 | neighbors=[assemble()] | lang=pt
-- "scripts_audio_rationale_113": "cue: dict of section times from the edit (s1..s6)." | kind=entity | source=promo/megacode/scripts/audio.py:L113 | neighbors=[score()] | lang=en
-- "scripts_audio_rationale_272": "Gentle broadcast chain for the TTS narration: HPF, presence, warmth, light compr" | kind=entity | source=promo/megacode/scripts/audio.py:L272 | neighbors=[voice_chain()] | lang=en
-- "scripts_audio_rationale_32": "Add mono/stereo clip x into stereo buf at time t." | kind=entity | source=promo/megacode/scripts/audio.py:L32 | neighbors=[place()] | lang=en
+- "vendor_supabase_js_2_110_0_xr": "xr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, y()]
+- "vendor_supabase_js_2_110_0_yn": "yn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, constructor()]
+- "vendor_supabase_js_2_110_0_ys": "ys()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, signInWithEthereum()]
+- "vendor_supabase_js_2_110_0_zn": "zn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, U()]
+- "vendor_supabase_js_2_110_0_zs": "zs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, constructor()]
+- "vendor_supabase_js_2_110_0_zt": "zt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, constructor()]
+- "app_applytheme": "applyTheme()" | kind=code-symbol | source=app.js:L1270 | neighbors=[app.js]
+- "app_createripple": "createRipple()" | kind=code-symbol | source=app.js:L1218 | neighbors=[app.js]
+- "app_initindexsearch": "initIndexSearch()" | kind=code-symbol | source=app.js:L1042 | neighbors=[app.js]
+- "app_initswupdatetoast": "initSWUpdateToast()" | kind=code-symbol | source=app.js:L90 | neighbors=[app.js]
+- "app_refreshstatsbadge": "refreshStatsBadge()" | kind=code-symbol | source=app.js:L1437 | neighbors=[app.js]
+- "app_registerserviceworker": "registerServiceWorker()" | kind=code-symbol | source=app.js:L68 | neighbors=[app.js]
+- "app_renderbottomnav": "renderBottomNav()" | kind=code-symbol | source=app.js:L319 | neighbors=[app.js]
+- "app_rendersectionnavigation": "renderSectionNavigation()" | kind=code-symbol | source=app.js:L338 | neighbors=[app.js]
+- "app_rendersectiontabs": "renderSectionTabs()" | kind=code-symbol | source=app.js:L304 | neighbors=[app.js]
+- "app_timeago": "timeAgo()" | kind=code-symbol | source=app.js:L54 | neighbors=[app.js]
+- "app_updatebottomnavvisibility": "updateBottomNavVisibility()" | kind=code-symbol | source=app.js:L395 | neighbors=[app.js]
+- "app_updatefooternavposition": "updateFooterNavPosition()" | kind=code-symbol | source=app.js:L406 | neighbors=[app.js]
+- "app_updateheadervisibility": "updateHeaderVisibility()" | kind=code-symbol | source=app.js:L372 | neighbors=[app.js]
+- "app_updateprogressbarposition": "updateProgressBarPosition()" | kind=code-symbol | source=app.js:L385 | neighbors=[app.js]
+- "app_updatescrollprogress": "updateScrollProgress()" | kind=code-symbol | source=app.js:L415 | neighbors=[app.js]
+- "cpg_guide_list": "list()" | kind=code-symbol | source=cpg-guide.js:L37 | neighbors=[cpg-guide.js]
+- "cpg_guide_stackedtable": "stackedTable()" | kind=code-symbol | source=cpg-guide.js:L56 | neighbors=[cpg-guide.js]
+- "google_flow_generate_batches_anatomy": "ANATOMY" | kind=code-symbol | source=.google-flow/generate-batches.js:L12 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_batches": "batches" | kind=code-symbol | source=.google-flow/generate-batches.js:L159 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_byid": "byId" | kind=code-symbol | source=.google-flow/generate-batches.js:L106 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_chapters": "chapters" | kind=code-symbol | source=.google-flow/generate-batches.js:L157 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_count": "count()" | kind=code-symbol | source=.google-flow/generate-batches.js:L180 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_counted": "counted" | kind=code-symbol | source=.google-flow/generate-batches.js:L173 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_csv": "csv" | kind=code-symbol | source=.google-flow/generate-batches.js:L210 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_days": "days()" | kind=code-symbol | source=.google-flow/generate-batches.js:L184 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_entries": "entries" | kind=code-symbol | source=.google-flow/generate-batches.js:L89 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_famorder": "famOrder" | kind=code-symbol | source=.google-flow/generate-batches.js:L158 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_fix": "FIX" | kind=code-symbol | source=.google-flow/generate-batches.js:L16 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_flow": "flow" | kind=code-symbol | source=.google-flow/generate-batches.js:L153 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_force_pro": "FORCE_PRO" | kind=code-symbol | source=.google-flow/generate-batches.js:L9 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_fs": "fs" | kind=code-symbol | source=.google-flow/generate-batches.js:L2 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_keep": "KEEP" | kind=code-symbol | source=.google-flow/generate-batches.js:L84 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_labels": "LABELS" | kind=code-symbol | source=.google-flow/generate-batches.js:L42 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_many": "MANY" | kind=code-symbol | source=.google-flow/generate-batches.js:L15 | neighbors=[generate-batches.js]
 
 ## Instructions
 

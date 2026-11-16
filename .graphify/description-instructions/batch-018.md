@@ -1,4 +1,4 @@
-# Node Description Batch 19 of 62
+# Node Description Batch 19 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,58 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
-Write every description in Portuguese (pt). Do not switch languages.
+Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "scripts_build_ecg_reference_rhythmstrip": "rhythmStrip()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L96 | neighbors=[build_ecg_reference.js, card(), calPulse(), esc(), grid(), trace()]
+- "scripts_build_precache_collect_content_files": "collect_content_files()" | kind=code-symbol | source=scripts/build_precache.py:L84 | neighbors=[build_precache.py, build_list(), rel(), content/: *.meta.js + any full bundle t…, content/: *.meta.js + any full bundle t…, content/: *.meta.js + any full bundle t…]
+- "scripts_compose_app_events": "app_events()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L289 | neighbors=[compose.py, cap_of(), src_index(), Map the tapped Web Audio events into ou…, shock_times(), write_timeline()]
+- "scripts_compose_lib_kicker": "kicker()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L270 | neighbors=[compose_lib.py, draw_tracked(), font(), lerp(), ramp(), Small uppercase label with a red bar: e…]
+- "scripts_compose_render_macro": "render_macro()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L433 | neighbors=[compose.py, Cinematic macro of the real monitor: ti…, render_frame(), cap_of(), region_view(), src_index()]
+- "scripts_gen": "gen.py" | kind=code-symbol | source=scripts/gen.py:L1 | neighbors=[create_src_folders(), generate_course_page(), main(), 1d86134 Secure SDLC Phase 0: fix critic…, 4999b7f swot-its-compliance-GaiuJ, 99cd25c Organized the Repo, Fixing all …]
+- "scripts_validate_content_main": "main()" | kind=code-symbol | source=scripts/validate_content.py:L207 | neighbors=[validate_content.py, load_known_single_option(), rel(), validate_bank_content(), validate_manifest_coverage(), validate_manifest_shape()]
+- "shared_admin_audit": "audit()" | kind=code-symbol | source=supabase/functions/_shared/admin.ts:L55 | neighbors=[index.ts, index.ts, index.ts, index.ts, admin.ts, requireAdmin()]
+- "shared_admin_corsheaders": "corsHeaders()" | kind=code-symbol | source=supabase/functions/_shared/admin.ts:L20 | neighbors=[index.ts, index.ts, index.ts, index.ts, admin.ts, json()]
+- "src_theme": "theme.js" | kind=code-symbol | source=src/theme.js:L1 | neighbors=[d1b235f Merge pull request #15 Offline …, d708b15 Ship the UI/UX Improvements sec…, current(), init(), next(), set()]
+- "tests_csp_spec": "csp.spec.js" | kind=code-symbol | source=tests/csp.spec.js:L1 | neighbors=[49c0810 Add a baseline Content-Security…, 7c83637 CSP alignment 🛡️✅, PAGES, publishedPages(), ROOT, SKIP_DIRS]
+- "tests_exam_pages_spec": "exam-pages.spec.js" | kind=code-symbol | source=tests/exam-pages.spec.js:L1 | neighbors=[66d3118 BDLS update ,ECG engine update ✅, 81f95d0 ⭐PR #60 Unified Course Design s…, 8f44320 Update exam-page tests for the …, c254251 Exam pages: one design for ever…, c5c0567 Exam pages: Practice / Exam mod…, COURSES]
+- "tests_test_content_guides_test_numbers_match_the_reference_notes": "test_numbers_match_the_reference_notes()" | kind=code-symbol | source=tests/test_content_guides.py:L125 | neighbors=[test_content_guides.py, page_text(), squash(), strings(), study_strings(), unify()]
+- "tests_test_courses_page": "test_courses_page.py" | kind=code-symbol | source=tests/test_courses_page.py:L1 | neighbors=[62386af PR #51 Megacode 3, f272ce6 Courses page: compact, collapsi…, _chapter_counts(), test_every_reviewer_course_has_a_chapte…, test_reviewer_chapter_counts_match_mani…, pages/courses.html progress bars divide…]
+- "vendor_chart_4_5_1_umd_min_aa": "aa()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, a(), .getDataset(), .getParsed(), .getDatasetMeta(), afterDatasetsUpdate()]
+- "vendor_chart_4_5_1_umd_min_ao": "ao()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .getPointPosition(), .getProps(), Y(), inXRange(), inYRange()]
+- "vendor_chart_4_5_1_umd_min_ce": "ce()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, he(), x(), .describe(), .override(), .set()]
+- "vendor_chart_4_5_1_umd_min_ci": "Ci()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, Fi(), .getContext(), .getPointLabelContext(), .getContext(), .getContext()]
+- "vendor_chart_4_5_1_umd_min_dataset": "dataset()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, da(), .getDatasetMeta(), ve(), Xi(), Yi()]
+- "vendor_chart_4_5_1_umd_min_de_apply": ".apply()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ca, d(), de, .constructor(), dt(), .parse()]
+- "vendor_chart_4_5_1_umd_min_g": "g()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, n(), o(), .getMinMax(), m(), .update()]
+- "vendor_chart_4_5_1_umd_min_hi": "hi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ai(), li(), Re(), ri(), .updateControlPoints()]
+- "vendor_chart_4_5_1_umd_min_ho_buildticks": ".buildTicks()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho(), e(), ._getLabelCapacity(), .getLabelTimestamps(), nt(), .diff()]
+- "vendor_chart_4_5_1_umd_min_ho_generate": "._generate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ho(), .getDataTimestamps(), ._getLabelCapacity(), l(), .diff(), .startOf()]
+- "vendor_chart_4_5_1_umd_min_jt_rotate": ".rotate()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[Ee(), jt(), Ft(), It(), ne(), .drawLabels()]
+- "vendor_chart_4_5_1_umd_min_lo": "lo()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ho(), ki(), s(), wi(), Z()]
+- "vendor_chart_4_5_1_umd_min_m": "m()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L7 | neighbors=[chart-4.5.1.umd.min.js, g(), o(), p(), v(), x()]
+- "vendor_chart_4_5_1_umd_min_n_getrotationextents": "._getRotationExtents()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[n(), ._getCircumference(), ._getRotation(), .getDatasetMeta(), .isDatasetVisible(), .update()]
+- "vendor_chart_4_5_1_umd_min_parse": "parse()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, e(), l(), po(), s(), .getLabels()]
+- "vendor_chart_4_5_1_umd_min_re": "Re()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, draw(), hi(), .isPointInArea(), to(), Yi()]
+- "vendor_chart_4_5_1_umd_min_ri": "ri()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, hi(), a(), l(), r(), v()]
+- "vendor_chart_4_5_1_umd_min_ro_getpointpositionforvalue": ".getPointPositionForValue()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[da(), ro(), .getBasePosition(), .getDistanceFromCenterForValue(), .getPointPosition(), updateElements()]
+- "vendor_chart_4_5_1_umd_min_t": "_t()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .greyscale(), kt(), mt(), vt(), wt()]
+- "vendor_chart_4_5_1_umd_min_ta": "Ta()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ki(), Si(), u(), .update(), ._updateAnimationTarget()]
+- "vendor_chart_4_5_1_umd_min_tn_calculatelabelrotation": ".calculateLabelRotation()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._getLabelSizes(), ._isVisible(), Y(), Z(), .update()]
+- "vendor_chart_4_5_1_umd_min_tn_computelabelsizes": "._computeLabelSizes()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, n(), s(), ._resolveTickFontOptions(), u(), ._getLabelSizes()]
+- "vendor_chart_4_5_1_umd_min_tn_drawdataset": "._drawDataset()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, Ie(), Ni(), .notifyPlugins(), ze(), ._drawDatasets()]
+- "vendor_chart_4_5_1_umd_min_tn_eventhandler": "._eventHandler()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._handleEvent(), .isPointInArea(), .notifyPlugins(), .render(), .update()]
 - "vendor_chart_4_5_1_umd_min_tn_getdatavisibility": ".getDataVisibility()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[_calculateBarValuePixels(), .calculateTotal(), ._circumference(), tn, ._computeAngle(), .updateElements()]
 - "vendor_chart_4_5_1_umd_min_tn_initialize": "._initialize()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, .constructor(), ke(), .bindEvents(), .notifyPlugins(), .resize()]
-- "vendor_chart_4_5_1_umd_min_tn_ispointinarea": ".isPointInArea()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._eventHandler(), Re(), Ui(), Xi(), Yi()]
-- "vendor_chart_4_5_1_umd_min_tn_updatehoverstyles": "._updateHoverStyles()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[tn, ._handleEvent(), .setActiveElements(), .update(), n(), .updateHoverStyle()]
-- "vendor_chart_4_5_1_umd_min_vi": "vi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, mi(), a(), o(), wi(), xn()]
-- "vendor_chart_4_5_1_umd_min_wt": "wt()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, .hslString(), .interpolate(), .rgb(), .rgbString(), _t()]
-- "vendor_chart_4_5_1_umd_min_ya_draw": ".draw()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[ya, Ie(), Oi(), Si(), ._computeTitleHeight(), ze()]
-- "vendor_chart_4_5_1_umd_min_yi": "Yi()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, dataset(), index(), inRange(), Re(), .isPointInArea()]
-- "vendor_chart_4_5_1_umd_min_ze": "ze()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, ._drawDataset(), .drawLabels(), ua(), .draw(), je()]
-- "vendor_chart_4_5_1_umd_min_zn": "zn()" | kind=code-symbol | source=vendor/chart-4.5.1.umd.min.js:L13 | neighbors=[chart-4.5.1.umd.min.js, _getRuler(), .getAllParsedValues(), l(), lt(), .getMatchingVisibleMetas()]
-- "vendor_supabase_js_2_110_0_ajax": "ajax()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, add(), endpointURL(), request(), batchSend(), poll()]
-- "vendor_supabase_js_2_110_0_binarydecode": "_binaryDecode()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, decodeBroadcast(), decodePush(), decodeReply(), _decodeUserBroadcast(), decode()]
-- "vendor_supabase_js_2_110_0_canpush": "canPush()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, isConnected(), isJoined(), leave(), push(), send()]
-- "vendor_supabase_js_2_110_0_ct": "ct()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, join(), dropNamespace(), listNamespaces(), loadNamespaceMetadata(), namespaceExists()]
-- "vendor_supabase_js_2_110_0_fn": "fn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, encode(), from(), join(), Me(), pn()]
-- "vendor_supabase_js_2_110_0_getauthenticatorassurancelevel": "_getAuthenticatorAssuranceLevel()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, getSession(), getUser(), _returnResult(), y(), Ye()]
-- "vendor_supabase_js_2_110_0_getfinalpath": "_getFinalPath()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, download(), exists(), getPublicUrl(), info(), uploadToSignedUrl()]
-- "vendor_supabase_js_2_110_0_geturlforprovider": "_getUrlForProvider()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, join(), push(), re(), toString(), _handleProviderSignIn()]
-- "vendor_supabase_js_2_110_0_listfactors": "_listFactors()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, G(), getUser(), m(), push(), y()]
-- "vendor_supabase_js_2_110_0_onclose": "onClose()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, constructor(), makeRef(), on(), push(), _setupConnectionHandlers()]
-- "vendor_supabase_js_2_110_0_onerror": "onError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback(), constructor(), makeRef(), on(), push()]
-- "vendor_supabase_js_2_110_0_onmessage": "onMessage()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, makeRef(), push(), ping(), _setupConnectionHandlers(), trigger()]
-- "vendor_supabase_js_2_110_0_onopen": "onOpen()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs, connectWithFallback(), constructor(), makeRef(), push(), _setupConnectionHandlers()]
-- "vendor_supabase_js_2_110_0_q": "Q()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, join(), Qr(), rr(), signInWithSolana(), sr()]
-- "vendor_supabase_js_2_110_0_receive": "receive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, constructor(), leave(), hasReceived(), push(), subscribe()]
-- "vendor_supabase_js_2_110_0_register": "_register()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, _challenge(), _enroll(), then(), _verify(), y()]
-- "vendor_supabase_js_2_110_0_signinanonymously": "signInAnonymously()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
-- "vendor_supabase_js_2_110_0_signinwithidtoken": "signInWithIdToken()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
-- "vendor_supabase_js_2_110_0_signinwithpassword": "signInWithPassword()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
-- "vendor_supabase_js_2_110_0_startpasskeyauthentication": "_startPasskeyAuthentication()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, signInWithPasskey(), L(), m(), _returnResult(), y()]
-- "vendor_supabase_js_2_110_0_startpasskeyregistration": "_startPasskeyRegistration()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, registerPasskey(), L(), _returnResult(), _useSession(), y()]
-- "vendor_supabase_js_2_110_0_stopautorefresh": "_stopAutoRefresh()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, dispose(), _onVisibilityChanged(), _startAutoRefresh(), _debug(), _removeVisibilityChangedCallback()]
-- "vendor_supabase_js_2_110_0_verifyotp": "verifyOtp()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, m(), _notifyAllSubscribers(), _returnResult(), _saveSession(), y()]
-- "vendor_supabase_js_2_110_0_verifypasskeyregistration": "_verifyPasskeyRegistration()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, registerPasskey(), L(), _returnResult(), _useSession(), y()]
-- "app_switchsection": "switchSection()" | kind=code-symbol | source=app.js:L456 | neighbors=[app.js, bootApp(), handleScroll(), initBottomNav(), initFooterAwareNav()]
-- "commit:repo:github.com/SolimanAnas/SmartCare@03f6898862ab5b7297cba7df54116f3ce9035b9d": "03f6898 Update sw.js" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, fix/lucide-quote-consistency, c2479e9 Adding ECG & Drug calc 👍❤️💊, sw.js, d55c93d Update sw.js]
-- "commit:repo:github.com/SolimanAnas/SmartCare@1a00316819db35a82adaf7032ff8dccf28b57ecc": "1a00316 feat(itls): restructure itls course - replace static chapters with buil…" | kind=Commit | source=git | neighbors=[main, d641fa0 feat: improve SEO, Open Graph m…, bundle.js, build.py, c9276ae chore: update graphify knowledg…]
-- "commit:repo:github.com/SolimanAnas/SmartCare@1a56d75fd8f004df1227b903f4968fce222bd55f": "1a56d75 feat: graphify rebuild with descriptions + interactive file map view" | kind=Commit | source=git | neighbors=[main, b0748c1 feat: Supabase integration, c-index.js, sw.js, 5b988aa Create .nojekyll]
-- "commit:repo:github.com/SolimanAnas/SmartCare@236ac266e44dc9ad03abd77ae10b7c21d5715dcd": "236ac26 local hashed authentication (SHA-256)✅" | kind=Commit | source=git | neighbors=[app.js, feat/lucide-svg-migration, fix/lucide-quote-consistency, 061bcae local hashed authentication (SH…, 707c033 Major Updates ✅]
-- "commit:repo:github.com/SolimanAnas/SmartCare@393a5b03a5ff0a48da07588c899ce158c6a4b4db": "393a5b0 Drop ProxyFix: server.py is a local dev server, not deployed behind a p…" | kind=Commit | source=git | neighbors=[ccr-b58d9c43-7az2tj, 2c020d4 Remove the Flask server; move a…, server.py, test_api.py, badddb6 Harden static file serving, adm…]
 
 ## Instructions
 

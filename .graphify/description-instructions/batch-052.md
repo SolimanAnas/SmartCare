@@ -1,4 +1,4 @@
-# Node Description Batch 53 of 62
+# Node Description Batch 53 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,58 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "scripts_build_courses_main": "main()" | kind=code-symbol | source=scripts/build_courses.py:L6 | neighbors=[build_courses.py]
-- "scripts_build_ecg_reference_datauri": "dataUri()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L38 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_defs": "defs()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L84 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_e": "E" | kind=code-symbol | source=scripts/build_ecg_reference.js:L25 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_fs": "fs" | kind=code-symbol | source=scripts/build_ecg_reference.js:L16 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_indexhtml": "indexHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L193 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_keep_html": "KEEP_HTML" | kind=code-symbol | source=scripts/build_ecg_reference.js:L22 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_kind_order": "KIND_ORDER" | kind=code-symbol | source=scripts/build_ecg_reference.js:L136 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_l": "L" | kind=code-symbol | source=scripts/build_ecg_reference.js:L26 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_logo": "LOGO" | kind=code-symbol | source=scripts/build_ecg_reference.js:L39 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_logo_small": "LOGO_SMALL" | kind=code-symbol | source=scripts/build_ecg_reference.js:L40 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_mi_img": "MI_IMG" | kind=code-symbol | source=scripts/build_ecg_reference.js:L41 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_mihtml": "miHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L217 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_out_pdf": "OUT_PDF" | kind=code-symbol | source=scripts/build_ecg_reference.js:L21 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_path": "path" | kind=code-symbol | source=scripts/build_ecg_reference.js:L17 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_pathwayshtml": "pathwaysHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L201 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_qr": "qr()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L43 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_root": "ROOT" | kind=code-symbol | source=scripts/build_ecg_reference.js:L20 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_shortd": "shortD()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L152 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_start": "START" | kind=code-symbol | source=scripts/build_ecg_reference.js:L37 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_twelve": "TWELVE" | kind=code-symbol | source=scripts/build_ecg_reference.js:L45 | neighbors=[build_ecg_reference.js]
-- "scripts_build_ecg_reference_vm": "vm" | kind=code-symbol | source=scripts/build_ecg_reference.js:L18 | neighbors=[build_ecg_reference.js]
-- "scripts_build_precache_rationale_66": "content/: *.meta.js + any full bundle that ISN'T superseded by a\r     meta.js (c" | kind=entity | source=scripts/build_precache.py:L66 | neighbors=[collect_content_files()]
-- "scripts_build_precache_rationale_72": "content/: *.meta.js + any full bundle that ISN'T superseded by a\r     meta.js (c" | kind=entity | source=scripts/build_precache.py:L72 | neighbors=[collect_content_files()]
-- "scripts_build_precache_rationale_85": "content/: *.meta.js + any full bundle that ISN'T superseded by a\r     meta.js (c" | kind=entity | source=scripts/build_precache.py:L85 | neighbors=[collect_content_files()]
-- "scripts_build_screenshots_checkpng": "checkPng()" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L156 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_chromium": "{ chromium }" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L21 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_contactsheethtml": "contactSheetHtml()" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L144 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_fs": "fs" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L19 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_icon": "ICON" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L85 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_out": "OUT" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L26 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_path": "path" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L20 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_prev": "PREV" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L27 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_raw": "RAW" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L25 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_repo": "REPO" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L24 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_root": "ROOT" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L23 | neighbors=[build-screenshots.js]
-- "scripts_build_screenshots_slides": "SLIDES" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L36 | neighbors=[build-screenshots.js]
-- "scripts_capture_screenshots_argbase": "argBase" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L31 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_chromium": "{ chromium }" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L27 | neighbors=[capture-screenshots.js]
-- "scripts_capture_screenshots_fixed_now": "FIXED_NOW" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L37 | neighbors=[capture-screenshots.js]
+- "google_flow_generate_batches_md": "md" | kind=code-symbol | source=.google-flow/generate-batches.js:L87 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_object": "OBJECT" | kind=code-symbol | source=.google-flow/generate-batches.js:L13 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_out": "OUT" | kind=code-symbol | source=.google-flow/generate-batches.js:L3 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_overlay": "OVERLAY" | kind=code-symbol | source=.google-flow/generate-batches.js:L8 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_path": "path" | kind=code-symbol | source=.google-flow/generate-batches.js:L2 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_pilot": "PILOT" | kind=code-symbol | source=.google-flow/generate-batches.js:L10 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_progen": "proGen" | kind=code-symbol | source=.google-flow/generate-batches.js:L183 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_prompt": "prompt()" | kind=code-symbol | source=.google-flow/generate-batches.js:L126 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_q": "q()" | kind=code-symbol | source=.google-flow/generate-batches.js:L209 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_reuse": "REUSE" | kind=code-symbol | source=.google-flow/generate-batches.js:L7 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_rows": "rows" | kind=code-symbol | source=.google-flow/generate-batches.js:L221 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_scene": "SCENE" | kind=code-symbol | source=.google-flow/generate-batches.js:L14 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_sensitive": "SENSITIVE" | kind=code-symbol | source=.google-flow/generate-batches.js:L40 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_square": "SQUARE" | kind=code-symbol | source=.google-flow/generate-batches.js:L11 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_stats": "stats" | kind=code-symbol | source=.google-flow/generate-batches.js:L185 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_stdgen": "stdGen" | kind=code-symbol | source=.google-flow/generate-batches.js:L183 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_subject": "SUBJECT" | kind=code-symbol | source=.google-flow/generate-batches.js:L59 | neighbors=[generate-batches.js]
+- "google_flow_generate_batches_svg": "SVG" | kind=code-symbol | source=.google-flow/generate-batches.js:L6 | neighbors=[generate-batches.js]
+- "google_flow_run_all_from_to": "[from, to]" | kind=code-symbol | source=.google-flow/run-all.mjs:L8 | neighbors=[run-all.mjs]
+- "google_flow_run_all_limited": "limited" | kind=code-symbol | source=.google-flow/run-all.mjs:L12 | neighbors=[run-all.mjs]
+- "google_flow_run_all_models": "MODELS" | kind=code-symbol | source=.google-flow/run-all.mjs:L11 | neighbors=[run-all.mjs]
+- "google_flow_run_all_names": "names" | kind=code-symbol | source=.google-flow/run-all.mjs:L9 | neighbors=[run-all.mjs]
+- "google_flow_run_batch_arg": "arg()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L18 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_batcharg": "batchArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_idsarg": "idsArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_jobs": "jobs" | kind=code-symbol | source=.google-flow/run-batch.mjs:L66 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_limited": "limited" | kind=code-symbol | source=.google-flow/run-batch.mjs:L85 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_load": "load()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L10 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_log": "LOG" | kind=code-symbol | source=.google-flow/run-batch.mjs:L20 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_modelarg": "modelArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L19 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_nextletter": "nextLetter()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L87 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_pagenotice": "pageNotice()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L61 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_queuearg": "queueArg" | kind=code-symbol | source=.google-flow/run-batch.mjs:L74 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_saved": "saved" | kind=code-symbol | source=.google-flow/run-batch.mjs:L92 | neighbors=[run-batch.mjs]
+- "google_flow_run_batch_sleep": "sleep()" | kind=code-symbol | source=.google-flow/run-batch.mjs:L22 | neighbors=[run-batch.mjs]
+- "google_flow_update_tracker_counts": "counts" | kind=code-symbol | source=.google-flow/update-tracker.js:L14 | neighbors=[update-tracker.js]
+- "google_flow_update_tracker_fs": "fs" | kind=code-symbol | source=.google-flow/update-tracker.js:L3 | neighbors=[update-tracker.js]
+- "google_flow_update_tracker_generated": "generated" | kind=code-symbol | source=.google-flow/update-tracker.js:L9 | neighbors=[update-tracker.js]
+- "google_flow_update_tracker_head": "head" | kind=code-symbol | source=.google-flow/update-tracker.js:L12 | neighbors=[update-tracker.js]
+- "google_flow_update_tracker_iid_itrack_istatus_inotes": "[iId, iTrack, iStatus, iNotes]" | kind=code-symbol | source=.google-flow/update-tracker.js:L13 | neighbors=[update-tracker.js]
 
 ## Instructions
 

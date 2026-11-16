@@ -1,4 +1,4 @@
-# Node Description Batch 41 of 62
+# Node Description Batch 41 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,51 +12,58 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
+For an entity node (any other kind — e.g. a person, place, event, object),
+describe what the entity is and its role, grounded in its type, its
+relations (neighbors) and the provided citations/evidence — e.g.
+"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
+Ground entity descriptions in the citations/evidence when present; do not
+speculate beyond the context, so a node with no supporting context may be
+left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "prometric_exam_examengine_renderinsights": ".renderInsights()" | kind=code-symbol | source=src/prometric/exam.js:L889 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_renderstrengthsweaknesses": ".renderStrengthsWeaknesses()" | kind=code-symbol | source=src/prometric/exam.js:L1208 | neighbors=[ExamEngine, .renderAnalyticsDashboard()]
-- "prometric_exam_examengine_rendertopicperformance": ".renderTopicPerformance()" | kind=code-symbol | source=src/prometric/exam.js:L926 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_savequestionhistory": ".saveQuestionHistory()" | kind=code-symbol | source=src/prometric/exam.js:L332 | neighbors=[ExamEngine, .submitAnswer()]
-- "prometric_exam_examengine_savestats": ".saveStats()" | kind=code-symbol | source=src/prometric/exam.js:L1103 | neighbors=[ExamEngine, .calculateResults()]
-- "prometric_exam_examengine_selectmode": ".selectMode()" | kind=code-symbol | source=src/prometric/exam.js:L126 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_selectsetting": ".selectSetting()" | kind=code-symbol | source=src/prometric/exam.js:L140 | neighbors=[ExamEngine, .updateAvailableCount()]
-- "prometric_exam_examengine_settheme": ".setTheme()" | kind=code-symbol | source=src/prometric/exam.js:L74 | neighbors=[ExamEngine, .initTheme()]
-- "prometric_exam_examengine_showresults": ".showResults()" | kind=code-symbol | source=src/prometric/exam.js:L948 | neighbors=[ExamEngine, .showScreen()]
-- "prometric_exam_examengine_showtoast": ".showToast()" | kind=code-symbol | source=src/prometric/exam.js:L1074 | neighbors=[ExamEngine, .toggleFlag()]
-- "prometric_exam_examengine_shuffleoptions": ".shuffleOptions()" | kind=code-symbol | source=src/prometric/exam.js:L350 | neighbors=[ExamEngine, .shuffleArray()]
-- "prometric_exam_examengine_updatelivescore": ".updateLiveScore()" | kind=code-symbol | source=src/prometric/exam.js:L504 | neighbors=[ExamEngine, .updateNavigator()]
-- "scripts_assemble_chapters_main": "main()" | kind=code-symbol | source=scripts/assemble_chapters.py:L122 | neighbors=[assemble_chapters.py, assemble()]
-- "scripts_audio_hp": "hp()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L85 | neighbors=[audio.py, voice_chain()]
-- "scripts_audio_midi": "midi()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L107 | neighbors=[audio.py, score()]
-- "scripts_audio_read_wav": "read_wav()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L262 | neighbors=[audio.py, main()]
-- "scripts_audio_square": "square()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L66 | neighbors=[audio.py, app_sound()]
-- "scripts_audio_tri": "tri()" | kind=code-symbol | source=promo/megacode/scripts/audio.py:L76 | neighbors=[audio.py, app_sound()]
-- "scripts_build_ecg_reference_actions": "actions()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L139 | neighbors=[build_ecg_reference.js, card()]
-- "scripts_build_ecg_reference_calpulse": "calPulse()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L90 | neighbors=[build_ecg_reference.js, rhythmStrip()]
-- "scripts_build_ecg_reference_paper": "paper()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L30 | neighbors=[build_ecg_reference.js, esc()]
-- "scripts_build_ecg_reference_record": "record()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L47 | neighbors=[build_ecg_reference.js, card()]
-- "scripts_build_ecg_reference_trace": "trace()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L59 | neighbors=[build_ecg_reference.js, rhythmStrip()]
-- "scripts_build_precache_content_hash": "content_hash()" | kind=code-symbol | source=scripts/build_precache.py:L146 | neighbors=[build_precache.py, main()]
-- "scripts_build_screenshots_datauri": "dataUri()" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L79 | neighbors=[build-screenshots.js, slideHtml()]
-- "scripts_build_screenshots_ecgpath": "ecgPath()" | kind=code-symbol | source=marketing/google-play/scripts/build-screenshots.js:L88 | neighbors=[build-screenshots.js, slideHtml()]
-- "scripts_build_toc_esc": "esc()" | kind=code-symbol | source=scripts/build_toc.py:L88 | neighbors=[build_toc.py, gen_chapter()]
-- "scripts_build_toc_main": "main()" | kind=code-symbol | source=scripts/build_toc.py:L131 | neighbors=[build_toc.py, gen_chapter()]
-- "scripts_check_contrast_hex_to_rgb": "hex_to_rgb()" | kind=code-symbol | source=scripts/check_contrast.py:L30 | neighbors=[check_contrast.py, contrast()]
-- "scripts_check_contrast_luminance": "luminance()" | kind=code-symbol | source=scripts/check_contrast.py:L37 | neighbors=[check_contrast.py, contrast()]
-- "scripts_compose_captions": "captions()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L213 | neighbors=[compose.py, Narration as burned-in captions (the st…]
-- "scripts_compose_disclaimer": "_disclaimer()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L623 | neighbors=[compose.py, end_card()]
-- "scripts_compose_lib_bokeh_render": ".render()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L196 | neighbors=[Bokeh, .sprite()]
-- "scripts_compose_lib_bokeh_sprite": ".sprite()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L185 | neighbors=[Bokeh, .render()]
-- "scripts_compose_lib_camera_view": "camera_view()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L74 | neighbors=[compose_lib.py, Render src (RGB) as seen by a camera ce…]
-- "scripts_compose_lib_capture_frame": ".frame()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L69 | neighbors=[Capture, .frames()]
-- "scripts_compose_lib_capture_frames": ".frames()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L65 | neighbors=[Capture, .frame()]
-- "scripts_compose_lib_grade": "grade()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L228 | neighbors=[compose_lib.py, _grain()]
-- "scripts_compose_lib_gradient_bg": "gradient_bg()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L159 | neighbors=[compose_lib.py, _grid()]
-- "scripts_compose_lib_grain": "_grain()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L224 | neighbors=[compose_lib.py, grade()]
+- "vendor_supabase_js_2_110_0_updatetable": "updateTable()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, request(), Te()]
+- "vendor_supabase_js_2_110_0_upsert": "upsert()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs, cloneRequestState(), join()]
+- "vendor_supabase_js_2_110_0_vi": "vi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, Ri(), wi()]
+- "vendor_supabase_js_2_110_0_vs": "vs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, signInWithEthereum(), Yt()]
+- "vendor_supabase_js_2_110_0_wrapheartbeatcallback": "_wrapHeartbeatCallback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, _initializeOptions(), onHeartbeat()]
+- "vendor_supabase_js_2_110_0_ws": "ws()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs, Nr(), Qt()]
+- "vendor_supabase_js_2_110_0_wt": "Wt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, join(), Ye()]
+- "vendor_supabase_js_2_110_0_xdomainrequest": "xdomainRequest()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, request(), send()]
+- "vendor_supabase_js_2_110_0_xhrrequest": "xhrRequest()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs, request(), send()]
+- "vendor_supabase_js_2_110_0_xi": "xi()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L34 | neighbors=[supabase-js-2.110.0.mjs, constructor(), x()]
+- "vendor_supabase_js_2_110_0_yt": "Yt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs, signInWithEthereum(), vs()]
+- "vendor_supabase_js_2_110_0_ze": "ze()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, getUser(), y()]
+- "vendor_supabase_js_2_110_0_zr": "zr()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs, initialize(), y()]
+- "acls_build_load": "load()" | kind=code-symbol | source=courses/acls/build.py:L24 | neighbors=[build.py, main()]
+- "acls_build_main": "main()" | kind=code-symbol | source=courses/acls/build.py:L29 | neighbors=[build.py, load()]
+- "app_initbatteryindicator": "initBatteryIndicator()" | kind=code-symbol | source=app.js:L110 | neighbors=[app.js, initChapterPage()]
+- "app_initscrollreveal": "initScrollReveal()" | kind=code-symbol | source=app.js:L551 | neighbors=[app.js, setMainContent()]
+- "app_recordlastvisited": "recordLastVisited()" | kind=code-symbol | source=app.js:L37 | neighbors=[app.js, initChapterPage()]
+- "app_updateheader": "updateHeader()" | kind=code-symbol | source=app.js:L257 | neighbors=[app.js, renderComingSoon()]
+- "bdls_build_load": "load()" | kind=code-symbol | source=courses/bdls/build.py:L24 | neighbors=[build.py, main()]
+- "bdls_build_main": "main()" | kind=code-symbol | source=courses/bdls/build.py:L29 | neighbors=[build.py, load()]
+- "bls_build_load": "load()" | kind=code-symbol | source=courses/bls/build.py:L24 | neighbors=[build.py, main()]
+- "bls_build_main": "main()" | kind=code-symbol | source=courses/bls/build.py:L29 | neighbors=[build.py, load()]
+- "commit:repo:github.com/SolimanAnas/SmartCare@224ab831c8425237c6980236996ae43fb14d8737": "224ab83 deps(deps): bump google-auth from 2.53.0 to 2.55.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/google-auth-2.55.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@564422f9497054d27ccc5c852c1d02bd87b01756": "564422f Sync graphify updates and unignore google-flow" | kind=Commit | source=git | neighbors=[main, 9724717 Add google-flow workspace and s…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@755284cd614315df67e3a15aaacb18093c6d8400": "755284c ci(deps)(deps): bump actions/checkout from 4 to 7" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/check…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cb7e171493f7f62d600c7ed42b359f525dead499": "cb7e171 deps(deps): bump pytest from 9.0.3 to 9.1.1" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/pip/pytest-9.1.1]
+- "commit:repo:github.com/SolimanAnas/SmartCare@cd24feaf092b8444f058985570e0a18082d74874": "cd24fea ci(deps)(deps): bump actions/setup-python from 5 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "commit:repo:github.com/SolimanAnas/SmartCare@f95455824d4bb69e3f52741aca22ca53609903bb": "f954558 ci(deps)(deps): bump actions/setup-node from 4 to 6" | kind=Commit | source=git | neighbors=[0bee1e7 fix(ci): resolve ruff linting e…, dependabot/github_actions/actions/setup…]
+- "content_c_index_bindindexbehaviour": "bindIndexBehaviour()" | kind=code-symbol | source=content/c-index.js:L255 | neighbors=[c-index.js, generateIndexHTML()]
+- "content_c_index_generateindexhtml": "generateIndexHTML()" | kind=code-symbol | source=content/c-index.js:L18 | neighbors=[c-index.js, bindIndexBehaviour()]
+- "content_c1_meta": "c1.meta.js" | kind=code-symbol | source=content/c1.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c10_meta": "c10.meta.js" | kind=code-symbol | source=content/c10.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c2_meta": "c2.meta.js" | kind=code-symbol | source=content/c2.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c3_meta": "c3.meta.js" | kind=code-symbol | source=content/c3.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c4_meta": "c4.meta.js" | kind=code-symbol | source=content/c4.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c5_meta": "c5.meta.js" | kind=code-symbol | source=content/c5.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c6_meta": "c6.meta.js" | kind=code-symbol | source=content/c6.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c7_meta": "c7.meta.js" | kind=code-symbol | source=content/c7.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
+- "content_c8_meta": "c8.meta.js" | kind=code-symbol | source=content/c8.meta.js:L1 | neighbors=[662adfb Ship the Performance section fr…, 829493a Merge Merged: pull request #13 …]
 
 ## Instructions
 

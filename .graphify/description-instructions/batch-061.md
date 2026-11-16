@@ -1,4 +1,4 @@
-# Node Description Batch 62 of 62
+# Node Description Batch 62 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,25 +17,46 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
+- "vendor_supabase_js_2_110_0_getpayloadrecords": "_getPayloadRecords()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_heartbeatintervalms": "heartbeatIntervalMs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_heartbeattimer": "heartbeatTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_index": "index()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isactive": "isActive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isauthenticationtimeout": "isAuthenticationTimeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isconflict": "isConflict()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_iserrored": "isErrored()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isnotfound": "isNotFound()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_isthrowonerrorenabled": "isThrowOnErrorEnabled()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_j": "J()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_joinedonce": "joinedOnce()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_joinpush": "joinPush()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_jt": "Jt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L18 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_jwks": "jwks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_jwks_cached_at": "jwks_cached_at()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L33 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_limit": "limit()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_map": "map()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_matchreceive": "matchReceive()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L11 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_maxaffected": "maxAffected()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_maybesingle": "maybeSingle()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_notthischannelevent": "_notThisChannelEvent()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_order": "order()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_overridetypes": "overrideTypes()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_pendingheartbeatref": "pendingHeartbeatRef()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_presencestate": "presenceState()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_qe": "qe()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_range": "range()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rangeadjacent": "rangeAdjacent()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rangegt": "rangeGt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rangegte": "rangeGte()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rangelt": "rangeLt()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_rangelte": "rangeLte()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_reconnectafterms": "reconnectAfterMs()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
+- "vendor_supabase_js_2_110_0_reconnecttimer": "reconnectTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_regeximatch": "regexIMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_regexmatch": "regexMatch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_rejointimer": "rejoinTimer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_retry": "retry()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
 - "vendor_supabase_js_2_110_0_returns": "returns()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_rollback": "rollback()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_rpc": "rpc()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_schema": "schema()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_sendbuffer": "sendBuffer()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_single": "single()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_statechangecallbacks": "stateChangeCallbacks()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_storesession": "storeSession()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_stripnulls": "stripNulls()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_textsearch": "textSearch()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L9 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_throwonerror": "throwOnError()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L6 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_timeout": "timeout()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_vectors": "vectors()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L17 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_vsn": "vsn()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
-- "vendor_supabase_js_2_110_0_waitforsocketclosed": "waitForSocketClosed()" | kind=code-symbol | source=vendor/supabase-js-2.110.0.mjs:L12 | neighbors=[supabase-js-2.110.0.mjs]
 
 ## Instructions
 

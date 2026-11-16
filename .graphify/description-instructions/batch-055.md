@@ -1,4 +1,4 @@
-# Node Description Batch 56 of 62
+# Node Description Batch 56 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -26,46 +26,46 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "tests_ecg_simulator_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L6 | neighbors=[ecg-simulator.spec.js] | lang=en
-- "tests_ecg_simulator_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/ecg-simulator.spec.js:L8 | neighbors=[ecg-simulator.spec.js] | lang=en
-- "tests_exam_pages_spec_courses": "COURSES" | kind=code-symbol | source=tests/exam-pages.spec.js:L6 | neighbors=[exam-pages.spec.js] | lang=en
-- "tests_home_spec_trackerrors": "trackErrors()" | kind=code-symbol | source=tests/home.spec.js:L7 | neighbors=[home.spec.js] | lang=en
-- "tests_megacode_quick_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode-quick.spec.js:L5 | neighbors=[megacode-quick.spec.js] | lang=en
-- "tests_megacode_spec_answerquiz": "answerQuiz()" | kind=code-symbol | source=tests/megacode.spec.js:L6 | neighbors=[megacode.spec.js] | lang=en
-- "tests_megacode_spec_cprcyclethencheck": "cprCycleThenCheck()" | kind=code-symbol | source=tests/megacode.spec.js:L16 | neighbors=[megacode.spec.js] | lang=en
-- "tests_megacode_spec_shocknow": "shockNow()" | kind=code-symbol | source=tests/megacode.spec.js:L22 | neighbors=[megacode.spec.js] | lang=en
-- "tests_megacode_spec_test_expect": "{ test, expect }" | kind=code-symbol | source=tests/megacode.spec.js:L4 | neighbors=[megacode.spec.js] | lang=en
-- "tests_offline_spec_exam_content_assets": "EXAM_CONTENT_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L31 | neighbors=[offline.spec.js] | lang=en
-- "tests_offline_spec_key_pages": "KEY_PAGES" | kind=code-symbol | source=tests/offline.spec.js:L11 | neighbors=[offline.spec.js] | lang=en
-- "tests_offline_spec_vendored_assets": "VENDORED_ASSETS" | kind=code-symbol | source=tests/offline.spec.js:L19 | neighbors=[offline.spec.js] | lang=en
-- "tests_pals_reviewer_spec": "pals-reviewer.spec.js" | kind=code-symbol | source=tests/pals-reviewer.spec.js:L1 | neighbors=[2e859ad Adding PALS Course] | lang=en
-- "tests_prometric_spec_navigatewizard": "navigateWizard()" | kind=code-symbol | source=tests/prometric.spec.js:L70 | neighbors=[prometric.spec.js] | lang=en
-- "tests_test_api_fakeresp_init": ".__init__()" | kind=code-symbol | source=tests/test_api.py:L16 | neighbors=[_FakeResp] | lang=en
-- "tests_test_api_fakeresp_json": ".json()" | kind=code-symbol | source=tests/test_api.py:L20 | neighbors=[_FakeResp] | lang=en
-- "tests_test_api_fakeresp_raise_for_status": ".raise_for_status()" | kind=code-symbol | source=tests/test_api.py:L23 | neighbors=[_FakeResp] | lang=en
-- "tests_test_api_rationale_1": "Smoke tests for the SmartCare Flask API." | kind=entity | source=tests/test_api.py:L1 | neighbors=[test_api.py] | lang=en
-- "tests_test_api_rationale_102": "A completely ordinary (non-admin) signed-in user can delete themself." | kind=entity | source=tests/test_api.py:L102 | neighbors=[.test_self_delete_works_no_admin_requir…] | lang=pt
-- "tests_test_api_rationale_107": "Both bad-user and bad-password return the same message (anti-enumeration)." | kind=entity | source=tests/test_api.py:L107 | neighbors=[.test_login_generic_error_message()] | lang=en
-- "tests_test_api_rationale_112": "There is no id parameter on this route — it can only ever delete\r         the ac" | kind=entity | source=tests/test_api.py:L112 | neighbors=[.test_only_deletes_the_caller_own_accou…] | lang=en
-- "tests_test_api_rationale_136": "Anonymous access to the admin API must be denied (no PII leak)." | kind=entity | source=tests/test_api.py:L136 | neighbors=[.test_admin_users_requires_auth()] | lang=en
-- "tests_test_api_rationale_141": "A signed-in non-admin must be forbidden (broken-access-control fix)." | kind=entity | source=tests/test_api.py:L141 | neighbors=[.test_admin_users_forbidden_for_regular…] | lang=pt
-- "tests_test_api_rationale_147": "An authenticated admin (role == 'Admin') can list users." | kind=entity | source=tests/test_api.py:L147 | neighbors=[.test_admin_can_list_users()] | lang=en
-- "tests_test_api_rationale_178": "A plain-form request to an /api/ endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L178 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
-- "tests_test_api_rationale_188": "A request missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L188 | neighbors=[.test_delete_without_xrw_header_rejecte…] | lang=pt
-- "tests_test_api_rationale_196": "A well-formed request with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L196 | neighbors=[.test_valid_delete_request_allowed()] | lang=en
-- "tests_test_api_rationale_205": "GET requests are never subject to the CSRF guard (only auth applies)." | kind=entity | source=tests/test_api.py:L205 | neighbors=[.test_get_requests_not_blocked()] | lang=en
-- "tests_test_api_rationale_250": "A plain-form POST to an API endpoint must be rejected (CSRF)." | kind=entity | source=tests/test_api.py:L250 | neighbors=[.test_post_without_json_content_type_re…] | lang=en
-- "tests_test_api_rationale_260": "A POST missing X-Requested-With must be rejected." | kind=entity | source=tests/test_api.py:L260 | neighbors=[.test_post_without_xrw_header_rejected()] | lang=pt
-- "tests_test_api_rationale_269": "A well-formed JSON POST with the CSRF headers must reach the handler." | kind=entity | source=tests/test_api.py:L269 | neighbors=[.test_valid_json_post_allowed()] | lang=en
-- "tests_test_api_rationale_279": "GET requests are never subject to the CSRF guard." | kind=entity | source=tests/test_api.py:L279 | neighbors=[.test_get_requests_not_blocked()] | lang=en
-- "tests_test_api_rationale_30": "Stubs server.py's Supabase integration with an in-memory fake.\r     Returns a na" | kind=entity | source=tests/test_api.py:L30 | neighbors=[supabase_backend()] | lang=en
-- "tests_test_api_testaccountselfdelete_test_requires_auth": ".test_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L88 | neighbors=[TestAccountSelfDelete] | lang=en
-- "tests_test_api_testgooglelogin_test_google_login_bad_token": ".test_google_login_bad_token()" | kind=code-symbol | source=tests/test_api.py:L121 | neighbors=[TestGoogleLogin] | lang=en
-- "tests_test_api_testgooglelogin_test_google_login_missing_token": ".test_google_login_missing_token()" | kind=code-symbol | source=tests/test_api.py:L116 | neighbors=[TestGoogleLogin] | lang=en
-- "tests_test_api_testhealthcheck_test_health_returns_ok": ".test_health_returns_ok()" | kind=code-symbol | source=tests/test_api.py:L145 | neighbors=[TestHealthCheck] | lang=en
-- "tests_test_api_testindex_test_index_serves_html": ".test_index_serves_html()" | kind=code-symbol | source=tests/test_api.py:L74 | neighbors=[TestIndex] | lang=en
-- "tests_test_api_testlogout_test_logout_requires_auth": ".test_logout_requires_auth()" | kind=code-symbol | source=tests/test_api.py:L128 | neighbors=[TestLogout] | lang=en
-- "tests_test_api_testregister_test_invalid_professional_level_rejected": ".test_invalid_professional_level_rejected()" | kind=code-symbol | source=tests/test_api.py:L78 | neighbors=[TestRegister] | lang=en
+- "scripts_check_contrast_rationale_53": "Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block." | kind=entity | source=scripts/check_contrast.py:L53 | neighbors=[parse_themes()] | lang=en
+- "scripts_compose_lib_bokeh_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L174 | neighbors=[Bokeh] | lang=en
+- "scripts_compose_lib_capture_clicks": ".clicks()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L62 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_capture_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L50 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_capture_mark": ".mark()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L58 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_paste_center": "paste_center()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L314 | neighbors=[compose_lib.py] | lang=en
+- "scripts_compose_lib_rationale_1": "Rendering primitives for the Megacode promo compositor (PIL + numpy)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L1 | neighbors=[compose_lib.py] | lang=en
+- "scripts_compose_lib_rationale_112": "Turn a camera view (smaller than frame) into a floating screen with shadow + edg" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L112 | neighbors=[card()] | lang=pt
+- "scripts_compose_lib_rationale_136": "PIL PERSPECTIVE coefficients mapping output (dst) points back to source points." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L136 | neighbors=[perspective_coeffs()] | lang=en
+- "scripts_compose_lib_rationale_145": "Warp the full src onto quad (tl, tr, br, bl) in a W×H RGBA canvas." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L145 | neighbors=[perspective()] | lang=en
+- "scripts_compose_lib_rationale_172": "Out-of-focus clinical lights drifting slowly — a stylised resuscitation-bay back" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L172 | neighbors=[Bokeh] | lang=pt
+- "scripts_compose_lib_rationale_256": "Word-by-word rise + fade. Returns width drawn." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L256 | neighbors=[words_reveal()] | lang=en
+- "scripts_compose_lib_rationale_271": "Small uppercase label with a red bar: e.g.  ▍RECOGNIZE THE RHYTHM" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L271 | neighbors=[kicker()] | lang=en
+- "scripts_compose_lib_rationale_285": "Persistent corner label over footage: dark glass pill with red dot." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L285 | neighbors=[chip()] | lang=en
+- "scripts_compose_lib_rationale_301": "Touch indicator where the learner tapped (age in seconds since the tap)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L301 | neighbors=[tap_ring()] | lang=en
+- "scripts_compose_lib_rationale_48": "Frames + manifest of one recorded layout (land / vert)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L48 | neighbors=[Capture] | lang=en
+- "scripts_compose_lib_rationale_75": "Render src (RGB) as seen by a camera centred on (cx, cy) in normalised source" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L75 | neighbors=[camera_view()] | lang=en
+- "scripts_compose_lib_vignette": "vignette()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L211 | neighbors=[compose_lib.py] | lang=en
+- "scripts_compose_lib_with_alpha": "with_alpha()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L323 | neighbors=[compose_lib.py] | lang=en
+- "scripts_driver_chromium": "{ chromium }" | kind=code-symbol | source=promo/megacode/scripts/driver.js:L2 | neighbors=[driver.js] | lang=en
+- "scripts_driver_path": "path" | kind=code-symbol | source=promo/megacode/scripts/driver.js:L3 | neighbors=[driver.js] | lang=en
+- "scripts_explore_chromium": "{ chromium }" | kind=code-symbol | source=promo/megacode/scripts/explore.js:L1 | neighbors=[explore.js] | lang=en
+- "scripts_explore2_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/explore2.js:L1 | neighbors=[explore2.js] | lang=en
+- "scripts_extract_itls_toc_rationale_1": "Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in" | kind=entity | source=scripts/extract_itls_toc.py:L1 | neighbors=[extract_itls_toc.py] | lang=en
+- "scripts_gen_rationale_25": "Creates the necessary src/COURSE folders." | kind=entity | source=scripts/gen.py:L25 | neighbors=[create_src_folders()] | lang=en
+- "scripts_gen_rationale_33": "Replaces placeholders in the template with course-specific data." | kind=entity | source=scripts/gen.py:L33 | neighbors=[generate_course_page()] | lang=en
+- "scripts_generate_all_itls_data_main": "main()" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L975 | neighbors=[generate_all_itls_data.py] | lang=en
+- "scripts_generate_maskable_icons_main": "main()" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L29 | neighbors=[generate_maskable_icons.py] | lang=en
+- "scripts_generate_sitemap_main": "main()" | kind=code-symbol | source=scripts/generate_sitemap.py:L35 | neighbors=[generate_sitemap.py] | lang=en
+- "scripts_peek_vert_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/peek_vert.js:L1 | neighbors=[peek_vert.js] | lang=en
+- "scripts_poster_main": "main()" | kind=code-symbol | source=promo/megacode/scripts/poster.py:L25 | neighbors=[poster.py] | lang=en
+- "scripts_record_answers": "ANSWERS" | kind=code-symbol | source=promo/megacode/scripts/record.js:L17 | neighbors=[record.js] | lang=en
+- "scripts_record_begin": "begin()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L67 | neighbors=[record.js] | lang=en
+- "scripts_record_end": "end()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L74 | neighbors=[record.js] | lang=en
+- "scripts_record_fs": "fs" | kind=code-symbol | source=promo/megacode/scripts/record.js:L5 | neighbors=[record.js] | lang=en
+- "scripts_record_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/record.js:L7 | neighbors=[record.js] | lang=en
+- "scripts_record_out": "OUT" | kind=code-symbol | source=promo/megacode/scripts/record.js:L13 | neighbors=[record.js] | lang=en
+- "scripts_record_path": "path" | kind=code-symbol | source=promo/megacode/scripts/record.js:L6 | neighbors=[record.js] | lang=en
+- "scripts_record_quiz": "QUIZ" | kind=code-symbol | source=promo/megacode/scripts/record.js:L38 | neighbors=[record.js] | lang=en
+- "scripts_split_content_chapter_ids": "CHAPTER_IDS" | kind=code-symbol | source=scripts/split_content.js:L22 | neighbors=[split_content.js] | lang=en
 
 ## Instructions
 

@@ -1,0 +1,1 @@
+{"nodes":[{"id":"migrations_20261103000001_tighten_user_state_grants","label":"20261103000001_tighten_user_state_grants.sql","file_type":"code","source_file":"supabase/migrations/20261103000001_tighten_user_state_grants.sql","source_location":"L1"}],"edges":[]}

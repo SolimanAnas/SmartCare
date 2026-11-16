@@ -1,4 +1,4 @@
-# Node Description Batch 54 of 62
+# Node Description Batch 54 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -26,46 +26,46 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "scripts_capture_screenshots_fs": "fs" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L25 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_capture_screenshots_path": "path" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L26 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_capture_screenshots_raw": "RAW" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L30 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_capture_screenshots_root": "ROOT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L29 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_capture_screenshots_shots": "SHOTS" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L66 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_capture_screenshots_viewport": "VIEWPORT" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L35 | neighbors=[capture-screenshots.js] | lang=en
-- "scripts_check_contrast_rationale_53": "Extract {theme_name: {var_name: hex}} for each :root/[data-theme] block." | kind=entity | source=scripts/check_contrast.py:L53 | neighbors=[parse_themes()] | lang=en
-- "scripts_compose_lib_bokeh_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L174 | neighbors=[Bokeh] | lang=en
-- "scripts_compose_lib_capture_clicks": ".clicks()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L62 | neighbors=[Capture] | lang=en
-- "scripts_compose_lib_capture_init": ".__init__()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L50 | neighbors=[Capture] | lang=en
-- "scripts_compose_lib_capture_mark": ".mark()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L58 | neighbors=[Capture] | lang=en
-- "scripts_compose_lib_paste_center": "paste_center()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L314 | neighbors=[compose_lib.py] | lang=en
-- "scripts_compose_lib_rationale_1": "Rendering primitives for the Megacode promo compositor (PIL + numpy)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L1 | neighbors=[compose_lib.py] | lang=en
-- "scripts_compose_lib_rationale_112": "Turn a camera view (smaller than frame) into a floating screen with shadow + edg" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L112 | neighbors=[card()] | lang=pt
-- "scripts_compose_lib_rationale_136": "PIL PERSPECTIVE coefficients mapping output (dst) points back to source points." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L136 | neighbors=[perspective_coeffs()] | lang=en
-- "scripts_compose_lib_rationale_145": "Warp the full src onto quad (tl, tr, br, bl) in a W×H RGBA canvas." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L145 | neighbors=[perspective()] | lang=en
-- "scripts_compose_lib_rationale_172": "Out-of-focus clinical lights drifting slowly — a stylised resuscitation-bay back" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L172 | neighbors=[Bokeh] | lang=pt
-- "scripts_compose_lib_rationale_256": "Word-by-word rise + fade. Returns width drawn." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L256 | neighbors=[words_reveal()] | lang=en
-- "scripts_compose_lib_rationale_271": "Small uppercase label with a red bar: e.g.  ▍RECOGNIZE THE RHYTHM" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L271 | neighbors=[kicker()] | lang=en
-- "scripts_compose_lib_rationale_285": "Persistent corner label over footage: dark glass pill with red dot." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L285 | neighbors=[chip()] | lang=en
-- "scripts_compose_lib_rationale_301": "Touch indicator where the learner tapped (age in seconds since the tap)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L301 | neighbors=[tap_ring()] | lang=en
-- "scripts_compose_lib_rationale_48": "Frames + manifest of one recorded layout (land / vert)." | kind=entity | source=promo/megacode/scripts/compose_lib.py:L48 | neighbors=[Capture] | lang=en
-- "scripts_compose_lib_rationale_75": "Render src (RGB) as seen by a camera centred on (cx, cy) in normalised source" | kind=entity | source=promo/megacode/scripts/compose_lib.py:L75 | neighbors=[camera_view()] | lang=en
-- "scripts_compose_lib_vignette": "vignette()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L211 | neighbors=[compose_lib.py] | lang=en
-- "scripts_compose_lib_with_alpha": "with_alpha()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L323 | neighbors=[compose_lib.py] | lang=en
-- "scripts_driver_chromium": "{ chromium }" | kind=code-symbol | source=promo/megacode/scripts/driver.js:L2 | neighbors=[driver.js] | lang=en
-- "scripts_driver_path": "path" | kind=code-symbol | source=promo/megacode/scripts/driver.js:L3 | neighbors=[driver.js] | lang=en
-- "scripts_explore_chromium": "{ chromium }" | kind=code-symbol | source=promo/megacode/scripts/explore.js:L1 | neighbors=[explore.js] | lang=en
-- "scripts_explore2_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/explore2.js:L1 | neighbors=[explore2.js] | lang=en
-- "scripts_extract_itls_toc_rationale_1": "Extract TOC from International Trauma Life Support.pdf using PyMuPDF's built-in" | kind=entity | source=scripts/extract_itls_toc.py:L1 | neighbors=[extract_itls_toc.py] | lang=en
-- "scripts_gen_rationale_25": "Creates the necessary src/COURSE folders." | kind=entity | source=scripts/gen.py:L25 | neighbors=[create_src_folders()] | lang=en
-- "scripts_gen_rationale_33": "Replaces placeholders in the template with course-specific data." | kind=entity | source=scripts/gen.py:L33 | neighbors=[generate_course_page()] | lang=en
-- "scripts_generate_all_itls_data_main": "main()" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L975 | neighbors=[generate_all_itls_data.py] | lang=en
-- "scripts_generate_maskable_icons_main": "main()" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L29 | neighbors=[generate_maskable_icons.py] | lang=en
-- "scripts_generate_sitemap_main": "main()" | kind=code-symbol | source=scripts/generate_sitemap.py:L33 | neighbors=[generate_sitemap.py] | lang=en
-- "scripts_peek_vert_open": "{ open }" | kind=code-symbol | source=promo/megacode/scripts/peek_vert.js:L1 | neighbors=[peek_vert.js] | lang=en
-- "scripts_poster_main": "main()" | kind=code-symbol | source=promo/megacode/scripts/poster.py:L25 | neighbors=[poster.py] | lang=en
-- "scripts_record_answers": "ANSWERS" | kind=code-symbol | source=promo/megacode/scripts/record.js:L17 | neighbors=[record.js] | lang=en
-- "scripts_record_begin": "begin()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L67 | neighbors=[record.js] | lang=en
-- "scripts_record_end": "end()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L74 | neighbors=[record.js] | lang=en
+- "google_flow_update_tracker_log": "log" | kind=code-symbol | source=.google-flow/update-tracker.js:L7 | neighbors=[update-tracker.js] | lang=en
+- "google_flow_update_tracker_out": "out" | kind=code-symbol | source=.google-flow/update-tracker.js:L15 | neighbors=[update-tracker.js] | lang=en
+- "google_flow_update_tracker_parseline": "parseLine()" | kind=code-symbol | source=.google-flow/update-tracker.js:L5 | neighbors=[update-tracker.js] | lang=en
+- "google_flow_update_tracker_picks_notes_needs_pro_rerun_rerun": "{ picks, notes, needs_pro_rerun: rerun }" | kind=code-symbol | source=.google-flow/update-tracker.js:L8 | neighbors=[update-tracker.js] | lang=en
+- "google_flow_update_tracker_quote": "quote()" | kind=code-symbol | source=.google-flow/update-tracker.js:L6 | neighbors=[update-tracker.js] | lang=en
+- "google_flow_update_tracker_rows": "rows" | kind=code-symbol | source=.google-flow/update-tracker.js:L11 | neighbors=[update-tracker.js] | lang=en
+- "mci_build_rationale_37": "Emit src/MCI/MCI-practice.json in the shared exam-engine shape\r     (text / opti" | kind=entity | source=courses/mci/build.py:L37 | neighbors=[write_practice_bank()] | lang=en
+- "prometric_exam_default_settings": "DEFAULT_SETTINGS" | kind=code-symbol | source=src/prometric/exam.js:L22 | neighbors=[exam.js] | lang=en
+- "prometric_exam_examengine_attemptsof": ".attemptsOf()" | kind=code-symbol | source=src/prometric/exam.js:L474 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_examengine_buildoption": ".buildOption()" | kind=code-symbol | source=src/prometric/exam.js:L677 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_examengine_handletouchstart": ".handleTouchStart()" | kind=code-symbol | source=src/prometric/exam.js:L1019 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_examengine_questionstate": ".questionState()" | kind=code-symbol | source=src/prometric/exam.js:L598 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_examengine_showmobilepanel": ".showMobilePanel()" | kind=code-symbol | source=src/prometric/exam.js:L240 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_examengine_togglefocusmode": ".toggleFocusMode()" | kind=code-symbol | source=src/prometric/exam.js:L236 | neighbors=[ExamEngine] | lang=en
+- "prometric_exam_html_escapes": "HTML_ESCAPES" | kind=code-symbol | source=src/prometric/exam.js:L37 | neighbors=[exam.js] | lang=en
+- "prometric_exam_letters": "LETTERS" | kind=code-symbol | source=src/prometric/exam.js:L4 | neighbors=[exam.js] | lang=en
+- "prometric_exam_modes": "MODES" | kind=code-symbol | source=src/prometric/exam.js:L9 | neighbors=[exam.js] | lang=en
+- "prometric_exam_theme_info": "THEME_INFO" | kind=code-symbol | source=src/prometric/exam.js:L11 | neighbors=[exam.js] | lang=en
+- "scripts_apply_guide_images_chapterids": "chapterIds" | kind=code-symbol | source=scripts/apply_guide_images.js:L65 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_content": "CONTENT" | kind=code-symbol | source=scripts/apply_guide_images.js:L14 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_figures": "{ figures }" | kind=code-symbol | source=scripts/apply_guide_images.js:L15 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_findsection": "findSection()" | kind=code-symbol | source=scripts/apply_guide_images.js:L35 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_fs": "fs" | kind=code-symbol | source=scripts/apply_guide_images.js:L9 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_load": "load()" | kind=code-symbol | source=scripts/apply_guide_images.js:L18 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_path": "path" | kind=code-symbol | source=scripts/apply_guide_images.js:L10 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_problems": "problems" | kind=code-symbol | source=scripts/apply_guide_images.js:L16 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_root": "ROOT" | kind=code-symbol | source=scripts/apply_guide_images.js:L13 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_stripfigures": "stripFigures()" | kind=code-symbol | source=scripts/apply_guide_images.js:L38 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_apply_guide_images_vm": "vm" | kind=code-symbol | source=scripts/apply_guide_images.js:L11 | neighbors=[apply_guide_images.js] | lang=en
+- "scripts_assemble_chapters_rationale_45": "Extract section objects from a TOC section file.      The file has the pattern:" | kind=entity | source=scripts/assemble_chapters.py:L45 | neighbors=[extract_sections()] | lang=en
+- "scripts_assemble_chapters_rationale_91": "Assemble a complete chapter JS file." | kind=entity | source=scripts/assemble_chapters.py:L91 | neighbors=[assemble()] | lang=pt
+- "scripts_audio_rationale_113": "cue: dict of section times from the edit (s1..s6)." | kind=entity | source=promo/megacode/scripts/audio.py:L113 | neighbors=[score()] | lang=en
+- "scripts_audio_rationale_272": "Gentle broadcast chain for the TTS narration: HPF, presence, warmth, light compr" | kind=entity | source=promo/megacode/scripts/audio.py:L272 | neighbors=[voice_chain()] | lang=en
+- "scripts_audio_rationale_32": "Add mono/stereo clip x into stereo buf at time t." | kind=entity | source=promo/megacode/scripts/audio.py:L32 | neighbors=[place()] | lang=en
+- "scripts_build_courses_main": "main()" | kind=code-symbol | source=scripts/build_courses.py:L6 | neighbors=[build_courses.py] | lang=en
+- "scripts_build_ecg_reference_datauri": "dataUri()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L38 | neighbors=[build_ecg_reference.js] | lang=en
+- "scripts_build_ecg_reference_defs": "defs()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L84 | neighbors=[build_ecg_reference.js] | lang=en
+- "scripts_build_ecg_reference_e": "E" | kind=code-symbol | source=scripts/build_ecg_reference.js:L25 | neighbors=[build_ecg_reference.js] | lang=en
+- "scripts_build_ecg_reference_fs": "fs" | kind=code-symbol | source=scripts/build_ecg_reference.js:L16 | neighbors=[build_ecg_reference.js] | lang=en
+- "scripts_build_ecg_reference_indexhtml": "indexHtml()" | kind=code-symbol | source=scripts/build_ecg_reference.js:L193 | neighbors=[build_ecg_reference.js] | lang=en
 
 ## Instructions
 

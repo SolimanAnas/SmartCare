@@ -12,44 +12,44 @@
     "hash": "65d4b6b811afb7ef990b96054ac1159c"
   },
   "D:/Apps/SmartCare/content/c1.js": {
-    "mtime": 1793673127420.01,
-    "hash": "ea4835aa06bbeb5cf42d4ad5382b5145"
+    "mtime": 1794846187160.6582,
+    "hash": "e211d28c01700e0928f7251a64eb8081"
   },
   "D:/Apps/SmartCare/content/c10.js": {
-    "mtime": 1793673127422.5183,
-    "hash": "92c1264a2d8d040e94dc7a5ee28819df"
+    "mtime": 1794846187168.6963,
+    "hash": "23f0a859aa648129ccd262b47f1b2477"
   },
   "D:/Apps/SmartCare/content/c2.js": {
-    "mtime": 1793673127427.1765,
-    "hash": "d3e1b543f99d0ce1ffb35fd97b7968e8"
+    "mtime": 1794846187175.7463,
+    "hash": "9e43f457036e2fa175df0af220154e38"
   },
   "D:/Apps/SmartCare/content/c3.js": {
-    "mtime": 1793673127431.1777,
-    "hash": "d4ea76950729c1ad474c0e460d75237d"
+    "mtime": 1794846187184.3115,
+    "hash": "5979e04e3044cbffbdb6852b3db2088f"
   },
   "D:/Apps/SmartCare/content/c4.js": {
-    "mtime": 1793673127435.1785,
-    "hash": "c5255a05a197d6489ce0eef4f2d051b5"
+    "mtime": 1794846187194.751,
+    "hash": "f93492179097007742e9a87007b2d553"
   },
   "D:/Apps/SmartCare/content/c5.js": {
-    "mtime": 1793673127439.1785,
-    "hash": "4834f49bfb00f27ba274889222916b41"
+    "mtime": 1794846187204.8547,
+    "hash": "90638f411f095741614309ec1dab5bd0"
   },
   "D:/Apps/SmartCare/content/c6.js": {
-    "mtime": 1793673127444.172,
-    "hash": "4668526e168ec33e374d5b735767ddb7"
+    "mtime": 1794846187215.3823,
+    "hash": "44c70e71329ba80b142afc94b809c33e"
   },
   "D:/Apps/SmartCare/content/c7.js": {
-    "mtime": 1793673127447.6792,
-    "hash": "0af079f317fbd5608872a3a487d1aac3"
+    "mtime": 1794846187224.5518,
+    "hash": "7553fe863d40f8fe025454c352e207a4"
   },
   "D:/Apps/SmartCare/content/c8.js": {
-    "mtime": 1793673127452.37,
-    "hash": "d0c24d2166637ed8e92754e63a3777d4"
+    "mtime": 1794846187234.1748,
+    "hash": "b879b4cbd74115ff1de9fb3976d8b1ce"
   },
   "D:/Apps/SmartCare/content/c9.js": {
-    "mtime": 1793673127455.3706,
-    "hash": "ba9b9d3d54515217d2d03229e489c2a8"
+    "mtime": 1794846187240.2153,
+    "hash": "ea61de749c231c3b36aabcbf60dff5c6"
   },
   "D:/Apps/SmartCare/playwright.config.js": {
     "mtime": 1793639629511.3464,
@@ -80,12 +80,12 @@
     "hash": "d95a3b02d882c18d21b68e558f081ef9"
   },
   "D:/Apps/SmartCare/src/prometric/exam.js": {
-    "mtime": 1792783741855.3875,
-    "hash": "1bd1b5e28647296d1a837f52c6526194"
+    "mtime": 1794846187351.24,
+    "hash": "0f77ea6b778b6772e123b7d820ec22a3"
   },
   "D:/Apps/SmartCare/sw.js": {
-    "mtime": 1783945922829.566,
-    "hash": "ecd83e2c6765da62cac20e9ef096123c"
+    "mtime": 1794846187355.811,
+    "hash": "8f7bf2fddf09798dca4b5799ccd60c6f"
   },
   "D:/Apps/SmartCare/tests/__init__.py": {
     "mtime": 1782501980234.9783,
@@ -95,17 +95,9 @@
     "mtime": 1792783741856.387,
     "hash": "e434b72289a0770a89140ce3fa102237"
   },
-  "D:/Apps/SmartCare/tests/conftest.py": {
-    "mtime": 1783173630014.0872,
-    "hash": "b9f2a858818f1e786369f9203ed630cb"
-  },
   "D:/Apps/SmartCare/tests/prometric.spec.js": {
-    "mtime": 1792783741859.386,
-    "hash": "3f2c7abf8f119650fa3a08060999cc45"
-  },
-  "D:/Apps/SmartCare/tests/test_api.py": {
-    "mtime": 1783173630015.088,
-    "hash": "54f88a46bf522d8800dea1b2ad580c13"
+    "mtime": 1794846187357.3345,
+    "hash": "4385dd557b996d0d24f2043b4c45157d"
   },
   "D:/Apps/SmartCare/courses/itls/build.py": {
     "mtime": 1782585415900.2659,
@@ -114,10 +106,6 @@
   "D:/Apps/SmartCare/courses/itls/data/bundle.js": {
     "mtime": 1782519072487.3845,
     "hash": "8c80bd08e40869469fc8ee97246d4ac3"
-  },
-  "D:/Apps/SmartCare/server.py": {
-    "mtime": 1783179794256.6826,
-    "hash": "b0eefef356a67021e67d3765cc40c345"
   },
   "D:/Apps/SmartCare/graphify.yaml": {
     "mtime": 1782737214189.5989,
@@ -164,8 +152,8 @@
     "hash": "63d2da66e2fc4c4a474641acf14772e4"
   },
   "D:/Apps/SmartCare/precache-manifest.js": {
-    "mtime": 1793673252623.9578,
-    "hash": "56407ea90635ba1ab17ff31a5b5d8495"
+    "mtime": 1794846187330.8254,
+    "hash": "f60372d29125d68a818e20b1225cf176"
   },
   "D:/Apps/SmartCare/scripts/build_precache.py": {
     "mtime": 1793639629516.3474,
@@ -184,8 +172,8 @@
     "hash": "2af14cbdc09b96b2516e15ea14b48c6c"
   },
   "D:/Apps/SmartCare/scripts/generate_sitemap.py": {
-    "mtime": 1792783741832.2605,
-    "hash": "09cdf61a81e4489609785315b66e3f0a"
+    "mtime": 1794846187334.3545,
+    "hash": "f88ec3611c325dce517c16441578273f"
   },
   "D:/Apps/SmartCare/scripts/generate_splash.py": {
     "mtime": 1783173629978.1333,
@@ -208,20 +196,20 @@
     "hash": "ea78166273e5a31491da342a4500753a"
   },
   "D:/Apps/SmartCare/supabase/functions/_shared/admin.ts": {
-    "mtime": 1783173630011.0872,
-    "hash": "2aacee8bac6fbb26b3c038a422d5403d"
+    "mtime": 1794846187352.7808,
+    "hash": "fee39712de39a6d45eb18f95e36cf829"
   },
   "D:/Apps/SmartCare/supabase/functions/admin-delete-user/index.ts": {
-    "mtime": 1783173630012.0872,
-    "hash": "5fe8bcbf6baf8ebd5f5933663f1702aa"
+    "mtime": 1794846187352.7808,
+    "hash": "856a357167b1b6c7035eb806162fd965"
   },
   "D:/Apps/SmartCare/supabase/functions/admin-list-users/index.ts": {
-    "mtime": 1783173630012.0872,
-    "hash": "7647db40dc18e9f8584f04fb2cef608c"
+    "mtime": 1794846187354.3254,
+    "hash": "95d50c55d246f6be7029d6d877abd7f5"
   },
   "D:/Apps/SmartCare/supabase/functions/admin-update-role/index.ts": {
-    "mtime": 1783173630012.0872,
-    "hash": "b41287ad4cdfddce10022ab1dcdaa09e"
+    "mtime": 1794846187354.8035,
+    "hash": "b42a87e8c09db23f353b02c72bedc822"
   },
   "D:/Apps/SmartCare/supabase/migrations/20260702000001_create_user_state.sql": {
     "mtime": 1783173630013.0908,
@@ -372,28 +360,28 @@
     "hash": "9429034757333418f6957a80f8918290"
   },
   "D:/Apps/SmartCare/.google-flow/generate-batches.js": {
-    "mtime": 1793673252739.4167,
+    "mtime": 1794846187478.308,
     "hash": "887333a39f2ef6bc60ff9fbb4d9bdaa4"
   },
   "D:/Apps/SmartCare/.google-flow/run-all.mjs": {
-    "mtime": 1793673253050.3281,
+    "mtime": 1794846187789.642,
     "hash": "ca8cc00ebf46f3a015ad2ca3df0ff537"
   },
   "D:/Apps/SmartCare/.google-flow/run-batch.mjs": {
-    "mtime": 1793758830945.2078,
+    "mtime": 1794846188691.4204,
     "hash": "b86f4f4e4e2b13883e69ab35502eab56"
   },
   "D:/Apps/SmartCare/.google-flow/sheet.py": {
-    "mtime": 1793673253051.3098,
+    "mtime": 1794846187791.6436,
     "hash": "3cb07f2a42f35d4fb36fd7fbeca7b57f"
   },
   "D:/Apps/SmartCare/.google-flow/update-tracker.js": {
-    "mtime": 1793673253052.313,
+    "mtime": 1794846187792.6438,
     "hash": "f22002c274ad1e775033db5a8202219b"
   },
   "D:/Apps/SmartCare/content/formulary.js": {
-    "mtime": 1793673252622.9573,
-    "hash": "3bc88b0092d3b0a3e45c92c4c63e7fa5"
+    "mtime": 1794846187246.7644,
+    "hash": "353265d1411b6e418dfa2f3c17e40200"
   },
   "D:/Apps/SmartCare/courses/bdls/build.py": {
     "mtime": 1784100172181.725,
@@ -416,8 +404,8 @@
     "hash": "4327d3a29df87d5905474c7f23983fc8"
   },
   "D:/Apps/SmartCare/courses/mci/data/bundle.js": {
-    "mtime": 1792783740761.9658,
-    "hash": "5265cb247406b37e03ce89b258b8dc0d"
+    "mtime": 1794846187251.325,
+    "hash": "b5366740af135cdfb40db91af18b7cc5"
   },
   "D:/Apps/SmartCare/courses/medical/build.py": {
     "mtime": 1784100172207.2312,
@@ -436,20 +424,20 @@
     "hash": "e367257188f2417ffe73621e00bfcb14"
   },
   "D:/Apps/SmartCare/cpg-guide.js": {
-    "mtime": 1793673127461.1028,
-    "hash": "f0ba536ea3aef9b0ae769ce6939432c9"
+    "mtime": 1794846187256.987,
+    "hash": "770781c265b7a4eb4f7ddae7b2ef7d3f"
   },
   "D:/Apps/SmartCare/cpg-strip.js": {
     "mtime": 1793639629468.1238,
     "hash": "88fa5f9c44dc7216fe2027ab5b182d02"
   },
   "D:/Apps/SmartCare/marketing/google-play/scripts/build-screenshots.js": {
-    "mtime": 1792783740971.3088,
-    "hash": "5141dc099785c2fe5c4d9bfc405193fa"
+    "mtime": 1794846187305.898,
+    "hash": "efbea52bf103191d6673db8fc4b1df59"
   },
   "D:/Apps/SmartCare/marketing/google-play/scripts/capture-screenshots.js": {
-    "mtime": 1792783740972.3098,
-    "hash": "ee2359b04f9a963ff2e3d0de7f5ebebd"
+    "mtime": 1794846187305.898,
+    "hash": "ee1ea7f6ffdb8858fa018b12da23024b"
   },
   "D:/Apps/SmartCare/promo/megacode/scripts/audio.py": {
     "mtime": 1793639629513.3418,
@@ -512,8 +500,8 @@
     "hash": "697674c1d555a9340865c2e7dbe5a2c3"
   },
   "D:/Apps/SmartCare/tests/courses-page.spec.js": {
-    "mtime": 1792783741857.3865,
-    "hash": "d106238f1d371c472105d0fea2929f83"
+    "mtime": 1794846187355.811,
+    "hash": "d0b8740235943e68040de6322d1b4a40"
   },
   "D:/Apps/SmartCare/tests/ecg-simulator.spec.js": {
     "mtime": 1793639629518.3486,
@@ -532,8 +520,8 @@
     "hash": "805cc381f756e2958cb53f0c98103527"
   },
   "D:/Apps/SmartCare/tests/mci-reviewer.spec.js": {
-    "mtime": 1793639629519.3408,
-    "hash": "d587928d731608b958efe19b0de2e9cb"
+    "mtime": 1794846187357.3345,
+    "hash": "499858e943d17b4d91061e1c42126a22"
   },
   "D:/Apps/SmartCare/tests/medical-reviewer.spec.js": {
     "mtime": 1784100172237.2615,
@@ -552,8 +540,8 @@
     "hash": "3c430725f6689f854a21354f9479e095"
   },
   "D:/Apps/SmartCare/tests/test_content_guides.py": {
-    "mtime": 1793673127462.6072,
-    "hash": "8fe5e918e1a23a2dc723932b1856856a"
+    "mtime": 1794846187358.3694,
+    "hash": "ea7eedcf431587d7a1a90b62e3c032af"
   },
   "D:/Apps/SmartCare/tests/test_courses_page.py": {
     "mtime": 1792783741859.386,
@@ -622,5 +610,33 @@
   "D:/Apps/SmartCare/promo/megacode/output/smartcare-megacode-vertical.mp4": {
     "mtime": 1792783741816.0503,
     "hash": "c16170ca29fecb47337733ae1ff39d64"
+  },
+  "D:/Apps/SmartCare/scripts/apply_guide_images.js": {
+    "mtime": 1794846187334.3545,
+    "hash": "a3e865ccf32855db1974cb23619ad6d6"
+  },
+  "D:/Apps/SmartCare/src/install-prompt.js": {
+    "mtime": 1794846187335.9253,
+    "hash": "9393f30734c0c7f42f675d577785681d"
+  },
+  "D:/Apps/SmartCare/src/prometric/progress.js": {
+    "mtime": 1794846187351.24,
+    "hash": "3b4fb9eed76ac70bba86878fad07d64d"
+  },
+  "D:/Apps/SmartCare/supabase/functions/account-delete/index.ts": {
+    "mtime": 1794846187352.7808,
+    "hash": "f96912150a6f71d0cf67da9e45876f45"
+  },
+  "D:/Apps/SmartCare/supabase/migrations/20261103000001_tighten_user_state_grants.sql": {
+    "mtime": 1794846187355.811,
+    "hash": "df32bdf5b987f1955811fdc9d5fbed2c"
+  },
+  "D:/Apps/SmartCare/supabase/migrations/20261103000002_cap_user_state_size.sql": {
+    "mtime": 1794846187355.811,
+    "hash": "1d5ebebb75fd6534a48af2f70ba586c9"
+  },
+  "D:/Apps/SmartCare/tests/csp.spec.js": {
+    "mtime": 1794846187357.3345,
+    "hash": "d53bc1a37df4681ea68f10d770ac4ab0"
   }
 }

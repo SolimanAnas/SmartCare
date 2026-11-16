@@ -1,4 +1,4 @@
-# Node Description Batch 31 of 62
+# Node Description Batch 31 of 63
 
 Graphify is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -19,51 +19,53 @@ relations (neighbors) and the provided citations/evidence — e.g.
 Ground entity descriptions in the citations/evidence when present; do not
 speculate beyond the context, so a node with no supporting context may be
 left out of the reply.
-Write every description in English (en). Do not switch languages.
+LANGUAGE: each entry has a `lang=` marker giving the language of its source.
+Write that entry's description in EXACTLY that language. Do not translate to
+a single common language — match each node's source language individually.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "scripts_capture_screenshots_settle": "settle()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L50 | neighbors=[capture-screenshots.js, startPrometric(), waitExamReady()]
-- "scripts_capture_screenshots_startprometric": "startPrometric()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L58 | neighbors=[capture-screenshots.js, settle(), waitExamReady()]
-- "scripts_capture_screenshots_waitexamready": "waitExamReady()" | kind=code-symbol | source=marketing/google-play/scripts/capture-screenshots.js:L52 | neighbors=[capture-screenshots.js, startPrometric(), settle()]
-- "scripts_check_contrast_main": "main()" | kind=code-symbol | source=scripts/check_contrast.py:L65 | neighbors=[check_contrast.py, contrast(), parse_themes()]
-- "scripts_check_contrast_parse_themes": "parse_themes()" | kind=code-symbol | source=scripts/check_contrast.py:L52 | neighbors=[check_contrast.py, main(), Extract {theme_name: {var_name: hex}} f…]
-- "scripts_compose_cam_at": "cam_at()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L262 | neighbors=[compose.py, render_full(), render_play_overlays()]
-- "scripts_compose_clk": "clk()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L96 | neighbors=[compose.py, build_edit(), build_edit_play()]
-- "scripts_compose_end_card": "end_card()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L553 | neighbors=[compose.py, _disclaimer(), render_reveal()]
-- "scripts_compose_lib_card": "card()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L111 | neighbors=[compose_lib.py, rounded_mask(), Turn a camera view (smaller than frame)…]
-- "scripts_compose_lib_draw_tracked": "draw_tracked()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L245 | neighbors=[compose_lib.py, chip(), kicker()]
-- "scripts_compose_lib_ease": "ease()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L30 | neighbors=[compose_lib.py, ramp(), tap_ring()]
-- "scripts_compose_lib_font": "font()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L25 | neighbors=[compose_lib.py, chip(), kicker()]
-- "scripts_compose_lib_perspective": "perspective()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L144 | neighbors=[compose_lib.py, perspective_coeffs(), Warp the full src onto quad (tl, tr, br…]
-- "scripts_compose_lib_perspective_coeffs": "perspective_coeffs()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L135 | neighbors=[compose_lib.py, perspective(), PIL PERSPECTIVE coefficients mapping ou…]
-- "scripts_compose_lib_tap_ring": "tap_ring()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L300 | neighbors=[compose_lib.py, Touch indicator where the learner tappe…, ease()]
-- "scripts_compose_lib_words_reveal": "words_reveal()" | kind=code-symbol | source=promo/megacode/scripts/compose_lib.py:L255 | neighbors=[compose_lib.py, Word-by-word rise + fade. Returns width…, ramp()]
-- "scripts_compose_main": "main()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L726 | neighbors=[compose.py, render_frame(), write_timeline()]
-- "scripts_compose_mk": "mk()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L101 | neighbors=[compose.py, build_edit(), build_edit_play()]
-- "scripts_compose_rationale_175": "33 s store-listing cut: the real app on screen from the first frame, core loop i" | kind=entity | source=promo/megacode/scripts/compose.py:L175 | neighbors=[build_edit_play(), Bokeh, Capture]
-- "scripts_compose_rationale_214": "Narration as burned-in captions (the store autoplays muted), split by sentence a" | kind=entity | source=promo/megacode/scripts/compose.py:L214 | neighbors=[captions(), Bokeh, Capture]
-- "scripts_compose_rationale_278": "Output times of the engine's shock cues (noise bursts) — drives flash + impact." | kind=entity | source=promo/megacode/scripts/compose.py:L278 | neighbors=[Bokeh, Capture, shock_times()]
-- "scripts_compose_rationale_290": "Map the tapped Web Audio events into output time through the edit." | kind=entity | source=promo/megacode/scripts/compose.py:L290 | neighbors=[app_events(), Bokeh, Capture]
-- "scripts_compose_rationale_324": "Modals re-centre when feedback appears, so the tapped button moves on the very n" | kind=entity | source=promo/megacode/scripts/compose.py:L324 | neighbors=[Bokeh, Capture, refine_tap()]
-- "scripts_compose_rationale_434": "Cinematic macro of the real monitor: tight crop, slow push, shallow focus, glow." | kind=entity | source=promo/megacode/scripts/compose.py:L434 | neighbors=[Bokeh, Capture, render_macro()]
-- "scripts_compose_rationale_448": "Cold open: dark bay, alarm light, the real monitor glowing in perspective, slow" | kind=entity | source=promo/megacode/scripts/compose.py:L448 | neighbors=[Bokeh, Capture, render_open()]
-- "scripts_compose_rationale_501": "The genuine debrief sheet as a floating glass screen occupying `rect` (x0, y0, x" | kind=entity | source=promo/megacode/scripts/compose.py:L501 | neighbors=[debrief_card(), Bokeh, Capture]
-- "scripts_compose_refine_tap": "refine_tap()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L323 | neighbors=[compose.py, Modals re-centre when feedback appears,…, taps()]
-- "scripts_compose_shock_times": "shock_times()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L277 | neighbors=[compose.py, Output times of the engine's shock cues…, app_events()]
-- "scripts_compose_shot": "shot()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L110 | neighbors=[compose.py, build_edit(), build_edit_play()]
-- "scripts_compose_shot_at": "shot_at()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L255 | neighbors=[compose.py, render_frame(), render_play_overlays()]
-- "scripts_compose_taps": "taps()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L360 | neighbors=[compose.py, refine_tap(), src_index()]
-- "scripts_compose_write_timeline": "write_timeline()" | kind=code-symbol | source=promo/megacode/scripts/compose.py:L710 | neighbors=[compose.py, main(), app_events()]
-- "scripts_explore": "explore.js" | kind=code-symbol | source=promo/megacode/scripts/explore.js:L1 | neighbors=[2a5f204 Add SmartCare Megacode cinemati…, 7421ea4 Megacode cinematic promo, { chromium }]
-- "scripts_extract_itls_toc": "extract_itls_toc.py" | kind=code-symbol | source=scripts/extract_itls_toc.py:L1 | neighbors=[Extract TOC from International Trauma L…, 0bee1e7 fix(ci): resolve ruff linting e…, b791fda content: deploy chapters 4-5 (C…]
-- "scripts_gen_create_src_folders": "create_src_folders()" | kind=code-symbol | source=scripts/gen.py:L24 | neighbors=[gen.py, main(), Creates the necessary src/COURSE folder…]
-- "scripts_gen_generate_course_page": "generate_course_page()" | kind=code-symbol | source=scripts/gen.py:L32 | neighbors=[gen.py, main(), Replaces placeholders in the template w…]
-- "scripts_gen_main": "main()" | kind=code-symbol | source=scripts/gen.py:L55 | neighbors=[gen.py, create_src_folders(), generate_course_page()]
-- "scripts_generate_all_itls_data": "generate_all_itls_data.py" | kind=code-symbol | source=scripts/generate_all_itls_data.py:L1 | neighbors=[main(), 20fdfa2 feat(itls): complete itls revie…, a4df22b fix: resolve CI lint failure an…]
-- "scripts_generate_maskable_icons": "generate_maskable_icons.py" | kind=code-symbol | source=scripts/generate_maskable_icons.py:L1 | neighbors=[83a1ea8 Ship the Offline & PWA section …, d1b235f Merge pull request #15 Offline …, main()]
-- "scripts_record_auto": "auto()" | kind=code-symbol | source=promo/megacode/scripts/record.js:L105 | neighbors=[record.js, advance(), click()]
+- "acls_build": "build.py" | kind=code-symbol | source=courses/acls/build.py:L1 | neighbors=[load(), main(), bd7b1a9 Completing ACLS Course Reviewer] | lang=en
+- "app_bootapp": "bootApp()" | kind=code-symbol | source=app.js:L1455 | neighbors=[app.js, renderComingSoon(), switchSection()] | lang=en
+- "app_handlescroll": "handleScroll()" | kind=code-symbol | source=app.js:L425 | neighbors=[app.js, setMainContent(), switchSection()] | lang=en
+- "app_initbottomnav": "initBottomNav()" | kind=code-symbol | source=app.js:L440 | neighbors=[app.js, setMainContent(), switchSection()] | lang=en
+- "app_initchapterpage": "initChapterPage()" | kind=code-symbol | source=app.js:L137 | neighbors=[app.js, initBatteryIndicator(), recordLastVisited()] | lang=en
+- "app_initfooterawarenav": "initFooterAwareNav()" | kind=code-symbol | source=app.js:L447 | neighbors=[app.js, setMainContent(), switchSection()] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@0245fabcf0c44243e22efc59abc50b6787cfa680": "0245fab update: refresh PWA icons and favicon from new source image" | kind=Commit | source=git | neighbors=[main, 411adfd update: refresh PWA icons from …, 6c55b58 fix: sync section-header & cont…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@046577457e52193415e80f6327b6799d0722cf51": "0465774 feat: Google Identity Services popup sign-in (shows SmartCare brand) + …" | kind=Commit | source=git | neighbors=[main, 39cc6bb fix: remove extra '})' causing …, 7c988c0 chore: commit graphify auto-upd…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@04af7e8a04b95def18cba3521ef83cb3d46d09bf": "04af7e8 fix: correct UTF-8 mojibake in index.html (arrows, dashes, ellipsis, sy…" | kind=Commit | source=git | neighbors=[main, 7f26548 fix: UTF-8 mojibake across exam…, a4df22b fix: resolve CI lint failure an…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@074617fb80abc2dfd95727de3b786f490098ea7e": "074617f feat: update chapter files with SEO and accessibility improvements" | kind=Commit | source=git | neighbors=[main, c6c0a5c chore: update core app - servic…, d641fa0 feat: improve SEO, Open Graph m…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@18fb7dc6b575d168d26a094106448fc9450c7ce1": "18fb7dc Added ├── .well-known/" | kind=Commit | source=git | neighbors=[main, d546791 feat: add screenshots, orientat…, 67cd1eb fix: update contact email and a…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@213cb39f0d6e9525ba772b3c13089eed29d72086": "213cb39 NEW CHAPTERS ADDED V 4.0.1" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, edb1e1d Version 4.0.1, 98be90d Add files via upload] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@24d03450954f61f2a9c9ddc507ddcac3342d7716": "24d0345 fix: correct SUPABASE_URL typo round 2 (missing r in htrtr)" | kind=Commit | source=git | neighbors=[main, 7c988c0 chore: commit graphify auto-upd…, 4561a63 fix: correct SUPABASE_URL typo …] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@39cc6bba95ea026c09c42c0f51d4637430307b0a": "39cc6bb fix: remove extra '})' causing syntax error in login.html" | kind=Commit | source=git | neighbors=[0465774 feat: Google Identity Services …, main, bae7406 chore: graphify auto-update, EC…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@40d423a44d417ace48a649708990f8a719c1eb22": "40d423a Remove unused admin/login/signup pages" | kind=Commit | source=git | neighbors=[main, 5b988aa Create .nojekyll, fefe4cd chore: bump SW to v2.2 for init…] | lang=pt
+- "commit:repo:github.com/SolimanAnas/SmartCare@411adfde74e797e1ca7a7b580827cd87c17075b6": "411adfd update: refresh PWA icons from updated source image" | kind=Commit | source=git | neighbors=[0245fab update: refresh PWA icons and f…, main, 86a3d5c update PWA icons] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@4389d53bda9ae06f02d07ca5f034c22dff5a839d": "4389d53 Improve drawer toggle panel identification on index.html" | kind=Commit | source=git | neighbors=[main, b1f4385 Bump service worker cache to v2…, 90c10bb Make hero greeting on index.htm…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@4561a63df1296ad06c0f1a7ab9a7034c72d30cd1": "4561a63 fix: correct SUPABASE_URL typo (zltfrrudihtrtxutvdqq.supabase.co)" | kind=Commit | source=git | neighbors=[main, 24d0345 fix: correct SUPABASE_URL typo …, aa81a0c fix: set SUPABASE_URL in supaba…] | lang=pt
+- "commit:repo:github.com/SolimanAnas/SmartCare@4e4aac71df1a20829756dac2ca3735f2da6fd887": "4e4aac7 Sync graphify updates and unignore google-flow" | kind=Commit | source=git | neighbors=[main, b30297c Update google-flow outputs and …, dc19fef Add google-flow workspace and s…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@5b68bae00b78a61ac933c7fb7c18299e78178303": "5b68bae docs: add comprehensive v2.0 upgrade roadmap from full repository audit" | kind=Commit | source=git | neighbors=[main, eff053b Ship all six Critical Fixes fro…, acb0328 About ✅ Merge pull request #11 …] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@5b988aa93af5c5e028873d87c0cbd12b0379784f": "5b988aa Create .nojekyll" | kind=Commit | source=git | neighbors=[40d423a Remove unused admin/login/signu…, main, 1a56d75 feat: graphify rebuild with des…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@5dddc2fc156b7d7c32e9a543f909731384dafe25": "5dddc2f feat: update ECG-study.html footer to match index.html branding" | kind=Commit | source=git | neighbors=[main, 5d23c19 fix: improve heading and index-…, bae7406 chore: graphify auto-update, EC…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@60c17820d11ca70af36e0dffe44414c34a7b9672": "60c1782 chore: stop tracking TOC/ directory (now gitignored)" | kind=Commit | source=git | neighbors=[main, de0dcb2 feat: Add Open Graph metadata, …, 9b0bbbb content: deploy chapters 6-10 w…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@67cd1ebdd38c3b3a718d12f11d183faaa761dfd6": "67cd1eb fix: update contact email and all URLs in privacy policy" | kind=Commit | source=git | neighbors=[main, 18fb7dc Added ├── .well-known/, d5777e9 feat: comprehensive privacy pol…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@6c55b58a08f87310c2157a2ecec18a123b5f5594": "6c55b58 fix: sync section-header & continue-label colors with index.html sectio…" | kind=Commit | source=git | neighbors=[main, 0245fab update: refresh PWA icons and f…, ff409d5 fix: match section-header style…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@7c988c004c1065d2ba9e8065b9e0cdd475988565": "7c988c0 chore: commit graphify auto-updates, 404.html /SmartCare/ paths, supaba…" | kind=Commit | source=git | neighbors=[24d0345 fix: correct SUPABASE_URL typo …, main, 0465774 feat: Google Identity Services …] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@8541abefec7ae7fa9d781e820ae6356b7c77b72b": "8541abe chore: Change index page title from landing page to clinical learning p…" | kind=Commit | source=git | neighbors=[main, d00c567 feat: Remove Scope of Practice …, 92652ca feat: Update search placeholder…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@90c10bb9124d5ae485f96aeae6b5c0b137683cdd": "90c10bb Make hero greeting on index.html sign-in aware" | kind=Commit | source=git | neighbors=[8a6ee0b Fix invisible table borders and…, main, 4389d53 Improve drawer toggle panel ide…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@98be90d66a0dcd109768dee26ba7727d0e6608ab": "98be90d Add files via upload" | kind=Commit | source=git | neighbors=[feat/lucide-svg-migration, 213cb39 NEW CHAPTERS ADDED V 4.0.1, c-index.js] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@aa81a0c05ca6c23af3be35bcd63b1bbbe66aca54": "aa81a0c fix: set SUPABASE_URL in supabase-config.js" | kind=Commit | source=git | neighbors=[main, 4561a63 fix: correct SUPABASE_URL typo …, b0748c1 feat: Supabase integration] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@b30297c4571838aaf782ce4bb779d255e6263319": "b30297c Update google-flow outputs and graphify data" | kind=Commit | source=git | neighbors=[4e4aac7 Sync graphify updates and unign…, main, run-batch.mjs] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@c4f88109afac2738db596a6f664ca81a9a55bf56": "c4f8810 Wire admin.html to real app users via a hidden login-page gate" | kind=Commit | source=git | neighbors=[4ccb8df Merge pull request #9 from Soli…, main, b7039e9 Bump service worker cache to v2…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@c9276aedf9c658368f229db910044abccc835060": "c9276ae chore: update graphify knowledge graph" | kind=Commit | source=git | neighbors=[1fc629e fix(app.js): handle DOMContentL…, main, 1a00316 feat(itls): restructure itls co…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@d546791e464c038a52e24f9309be76c8b998d88f": "d546791 feat: add screenshots, orientation, and safe categories to manifest" | kind=Commit | source=git | neighbors=[18fb7dc Added ├── .well-known/, main, fefe4cd chore: bump SW to v2.2 for init…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@d5777e9b8a0fe40413ec7e62d9487650a17bb5f7": "d5777e9 feat: comprehensive privacy policy with premium UI/UX design" | kind=Commit | source=git | neighbors=[829a86d update: refresh PWA icons from …, main, 67cd1eb fix: update contact email and a…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@d641fa0ed1193b3e8493f17ea46f056c534b259f": "d641fa0 feat: improve SEO, Open Graph metadata, and accessibility across all pa…" | kind=Commit | source=git | neighbors=[1a00316 feat(itls): restructure itls co…, main, 074617f feat: update chapter files with…] | lang=en
+- "commit:repo:github.com/SolimanAnas/SmartCare@ff409d5260a1de9557f95c0878f5781ccf2651b8": "ff409d5 fix: match section-header style to index.html section-label" | kind=Commit | source=git | neighbors=[7f26548 fix: UTF-8 mojibake across exam…, main, 6c55b58 fix: sync section-header & cont…] | lang=en
+- "cpg_guide_figures": "figures()" | kind=code-symbol | source=cpg-guide.js:L69 | neighbors=[cpg-guide.js, section(), step()] | lang=en
+- "cpg_guide_renderdrug": "renderDrug()" | kind=code-symbol | source=cpg-guide.js:L224 | neighbors=[cpg-guide.js, section(), source()] | lang=en
+- "cpg_guide_section": "section()" | kind=code-symbol | source=cpg-guide.js:L173 | neighbors=[cpg-guide.js, renderDrug(), figures()] | lang=en
 
 ## Instructions
 
